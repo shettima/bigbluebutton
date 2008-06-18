@@ -5,21 +5,22 @@ The instructions assumes you are working on a Windows machine. (There is no spec
 
 
 == Create Directories ==
- 1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document
+ 1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}, you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
  1. Create {{{c:\source\client}}} - will be referred to as {{{CLIENT_DIR}}} for the rest of this document
  1. Create {{{c:\source\server}}} - will be referred to as {{{SERVER_DIR}}} for the rest of this document
 
 == Download and Install Software ==
 
-BigBlueButton requires some other open source software to run.  
+BigBlueButton requires some other open source software to run.
 
 === Ant ===
  1. Download [http://ant.apache.org Ant]
- 1. Install ant in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\ant-1.7.0}}}
+ 1. Install ant in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\apache-ant-1.7.0}}}
  1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer
- 1. Add {{{ANT_HOME}}} in your system variables - e.g {{{ANT_HOME = TOOLS_DIR\ant-1.7.0}}}
- 1. Add {{{ANT_HOME\bin}}} to your PATH
+ 1. Add {{{ANT_HOME}}} in your system variables - e.g {{{ANT_HOME = TOOLS_DIR\apache-ant-1.7.0}}}
+ 1. Add {{{ANT_HOME\bin}}} to your PATH - e.g. {{{TOOLS_DIR
  1. Open a command prompt and run {{{ant -version}}}. You should see the ant version displayed.
+
 
 === Tomcat ===
  1. Download [http://tomcat.apache.org Tomcat]
