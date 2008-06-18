@@ -1,9 +1,8 @@
-#How to install your own BigBlueButton Server
+#summary How to setup your own BigBlueButton Server
 
-#summary How to setup your development environment
+= Overview=
+The instructions assumes you are working on a Windows machine. (There is no specific requirement on what type of machine or OS is needed.) If it has enough processor and memory (at least 512MB), has Java installed, you're good to go.
 
-= Development Environment =
-Note: The instructions assumes you are working on a Windows machine. There is no specific requirement on what type of machine or OS is needed. If it has enough processor and memory (at least 512MB), has Java installed, you're good to go.
 
 == Create Directories ==
  1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document
@@ -11,6 +10,9 @@ Note: The instructions assumes you are working on a Windows machine. There is no
  1. Create {{{c:\source\server}}} - will be referred to as {{{SERVER_DIR}}} for the rest of this document
 
 == Download and Install Software ==
+
+BigBlueButton requires some other open source software to run.  
+
 === Ant ===
  1. Download [http://ant.apache.org Ant]
  1. Install ant in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\ant-1.7.0}}}
