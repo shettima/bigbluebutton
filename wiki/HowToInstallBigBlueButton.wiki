@@ -20,7 +20,7 @@ While these instructions are for setting up a BigBlueButton server on a Windows 
  1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}", you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
  1. Create {{{c:\source\client}}} - will be referred to as {{{CLIENT_DIR}}} for the rest of this document
  1. Create {{{c:\source\server}}} - will be referred to as {{{SERVER_DIR}}} for the rest of this document
-
+ 1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}", you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
 You'll also need to know the host name, referred to as {{HOSTNAME}}, for your server.
 
 
