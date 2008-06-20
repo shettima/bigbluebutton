@@ -1,7 +1,19 @@
-#summary How to setup your own BigBlueButton Server
+#summary How to setup your own BigBlueButton Server (Windows)
 
-= Overview=
-The instructions assumes you are working on a Windows machine. (There is no specific requirement on what type of machine or OS is needed.) If it has enough processor and memory (at least 512MB), has Java installed, you're good to go.
+= Overview =
+There are two main servers in a BigBlueButton setup
+* Application server - this server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client
+* Asterisk Server - this server provides the voice conferencing.  The Application server (specifically Red5) communicates with the Asterisk server using AsteriskJava.
+
+= Setting up the Asterisk Server =
+
+== Asterisk ==
+On a separate server, 
+ 1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
+ 1. Configure Asterisk using [http://blindside.googlecode.com/svn/trunk/asterisk sample conf].
+
+= Setting up the BigBlueButton Server =
+While these instructions are for setting up a BigBlueButton server on a Windows machine, there is no specific requirement on what type of machine or OS is needed. If your machine has enough processor and memory (at least 512MB), has Java installed, you're good to go.
 
 
 == Create Directories ==
@@ -9,14 +21,13 @@ The instructions assumes you are working on a Windows machine. (There is no spec
  1. Create {{{c:\source\client}}} - will be referred to as {{{CLIENT_DIR}}} for the rest of this document
  1. Create {{{c:\source\server}}} - will be referred to as {{{SERVER_DIR}}} for the rest of this document
 
-You'll also need to provide your host name if you want others to connect to BigBlueButton.   We'll refer to your host name as HOSTNAME for the rest of this document.
+You'll also need to know the host name, referred to as {{HOSTNAME}}, for your server.
+
 
 == Download and Install Software ==
-
-BigBlueButton requires some other open source software to run.
-
 Note
 * Some of the version numbers may differ -- download the latest versions.
+
 
 === Java Development Kit ===
  1. Download [http://java.sun.com/javase/downloads/index.jsp JDK 6] installer
@@ -25,48 +36,30 @@ Note
  1. Add {{{JAVA_HOME}}} in your system variables - e.g {{{JAVA_HOME = TOOLS_DIR\jdk1.6.0_06}}}
  1. Open a command prompt and run {{{java -version}}}. You should see the java version displayed.
 
+
 === Ant ===
  1. Download the [http://ant.apache.org Ant] ZIP file.
  1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\apache-ant-1.7.0}}}.
  1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer.
  1. Add {{{ANT_HOME}}} in your system variables - e.g {{{ANT_HOME = TOOLS_DIR\apache-ant-1.7.0}}}
  1. Add {{{ANT_HOME\bin}}} to your PATH - e.g. {{{TOOLS_DIR\apache-ant-1.7.0\bin}}}.
- 1. Open a command prompt and run {{{ant -version}}}. You should see the ant version displayed.
+ 1. Open a command prompt and run {{{ant -version}}}.  You should see the ant version displayed.
 
 
 === Tomcat ===
- 1. Download [http://tomcat.apache.org Tomcat] version 6 ZIP file
+ 1. Download [http://tomcat.apache.org Tomcat] ZIP file
  1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\apache-tomcat-6.0.16}}}
  1. Open a command prompt and cd to {{{TOOLS_DIR\apache-tomcat-6.0.16}}}
  1. Run {{{bin\catalina.bat start}}}
  1. Open your browser and go to {{{http://HOSTNAME:8080}}}
- 1. You should see the Tomcat page displayed.
+ 1. You should see the Tomcat welcome page displayed.
 
 === ActiveMQ ===
  1. Download [http://activemq.apache.org ActiveMQ]
  1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq-5.1.0}}}
  1. Open a command prompt and cd to {{{TOOLS_DIR\activemq-5.1.0}}}
  1. Run {{{bin\activemq}}}
- 1. Make sure it starts without any problems 
-
-=== Eclipse ===
- 1. Download [http://www.eclipse.org Eclipse IDE]
- 1. Install eclipse in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\eclipse-3.3}}}
- 1. Start eclipse and set your workspace to the {{{SERVER_DIR}}}
- 1. Install the [http://subclipse.tigris.org/ Subclipse plugin]. Make sure you get the correct version
-
-=== Flex Builder 2 ===
- 1. Download [http://www.adobe.com/products/flex/ Flex Builder 2]
- 1. Install flexbuilder in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\flex-2}}}
- 1. Start flexbuilder
- 1. Install the [http://subclipse.tigris.org/ Subclipse plugin]. Make sure you get the correct version. Flex Builder is built on top of Eclipse 3.0/3.1
-
-=== !OpenOffice (Optional) ===
- 1. Follow the instructions on [InstallOpenOffice Installing OpenOffice]
- 1. Create a batch file, {{{TOOLS_DIR\ooo-2.2\start-oo.bat}}} 
- 1. Copy this command inside batch file -- {{{C:\tools\ooo-2.2\program\soffice.exe -headless -accept="socket,port=8100;urp;" }}}
- 1. On a command window, run {{{start-oo.bat}}}
- 1. Open another command window and run {{{netstat -a}}} and verify if your computer is LISTENING on port 8100
+ 1. You should set the AcitveMQ startup messages with no errors.
 
 === SWF Tools and PDF Toolkit===
  1. Download [http://www.swftools.org SWF Tools]
@@ -75,10 +68,6 @@ Note
  1. Add {{{SWFTOOLS_HOME = TOOLS_DIR\swftools}}} in you environment variables
  1. Add {{{SWFTOOLS_HOME}}} to your PATH
 
-=== Asterisk ===
- 1. Download and install Asterisk 1.2 from [http://www.asterisk.org/downloads Asterisk website].
- 1. Apply [http://blindside.googlecode.com/svn/trunk/asterisk meetme.c.patch].
- 1. Configure Asterisk using [http://blindside.googlecode.com/svn/trunk/asterisk sample conf].
 
 == Checkout Blindside Components ==
  1. Checkout blindside-server and blindside-servlet from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Eclipse IDE and put into {{{SERVER_DIR}}}.
