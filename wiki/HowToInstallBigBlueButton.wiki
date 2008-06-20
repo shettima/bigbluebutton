@@ -1,21 +1,23 @@
 #summary How to setup your own BigBlueButton Server (Windows)
 
-= Overview =
-There are two main servers in a BigBlueButton setup
-* Application server - this server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client
-* Asterisk Server - this server provides the voice conferencing.  The Application server (specifically Red5) communicates with the Asterisk server using AsteriskJava.
+** Draft **
 
+= Overview =
+There are two main servers in a BigBlueButton setup:
+* Application server - This server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client
+* Asterisk Server - This server provides the voice conferencing.  The Application server (specifically Red5) communicates with the Asterisk server using AsteriskJava.
 
 
 = Setting up the BigBlueButton Server =
-While these instructions are for setting up a BigBlueButton server on a Windows machine, there is no specific requirement on what type of machine or OS is needed. If your machine has enough processor and memory (at least 512MB), has Java installed, you're good to go.
+While these instructions are for Windows, there is no specific requirement for BigBlueButton for machine or OS. If your machine has enough processor and memory (at least 512MB), has Java installed, you're good to go.
 
 
 == Create Directories ==
  1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}", you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
  1. Create {{{c:\source\client}}} - will be referred to as {{{CLIENT_DIR}}} for the rest of this document
  1. Create {{{c:\source\server}}} - will be referred to as {{{SERVER_DIR}}} for the rest of this document
- 1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}", you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
+ 1. Create {{{c:\temp}}} - will be referred to as {{{TEMP}}} for the rest of this document.  
+ 
 You'll also need to know the host name, referred to as {{HOSTNAME}}, for your server.
 
 
@@ -31,7 +33,6 @@ Note
  1. Add {{{JAVA_HOME}}} in your system variables - e.g {{{JAVA_HOME = TOOLS_DIR\jdk1.6.0_06}}}
  1. Open a command prompt and run {{{java -version}}}. You should see the java version displayed.
 
-
 === Ant ===
  1. Download the [http://ant.apache.org Ant] ZIP file.
  1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\apache-ant-1.7.0}}}.
@@ -39,7 +40,6 @@ Note
  1. Add {{{ANT_HOME}}} in your system variables - e.g {{{ANT_HOME = TOOLS_DIR\apache-ant-1.7.0}}}
  1. Add {{{ANT_HOME\bin}}} to your PATH - e.g. {{{TOOLS_DIR\apache-ant-1.7.0\bin}}}.
  1. Open a command prompt and run {{{ant -version}}}.  You should see the ant version displayed.
-
 
 === Tomcat ===
  1. Download [http://tomcat.apache.org Tomcat] ZIP file
@@ -67,11 +67,11 @@ Note
 = Setting up the Asterisk Server =
 
 == Asterisk ==
-On a separate server, 
+You'll need to setup an asterisk server (likely on a separate machine).
  1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
- 1. Configure Asterisk using [http://blindside.googlecode.com/svn/trunk/asterisk sample conf].
+ 1. Configure Asterisk using the [http://blindside.googlecode.com/svn/trunk/asterisk sample conf] files on the BigblueButton repository
 
-You'll need to setup a username and password for the Asterisk Management Interface (ami).
+You'll need to setup a username and password for the Asterisk Management Interface (ami).  You'll also need the host name for this server, referred to hereafter as {{{ASTERISK_HOSTNAME}}}.
 
 = Checking out the Blindside Components =
 
@@ -79,10 +79,12 @@ You'll need to setup a username and password for the Asterisk Management Interfa
  1. Checkout blindside-server and blindside-servlet from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Eclipse IDE and put into {{{SERVER_DIR}}}.
  1. Download the latest client from [http://code.google.com/p/bigbluebutton/downloads/list Downloads]
  1. Uncompress the client to the {{{SERVER_DIR\blindside-server\webapps}}} folder.
- 1. Edit {{{SERVER_DIR\blindside-server\webapps\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME .
+ 1. Edit {{{SERVER_DIR\blindside-server\webapps\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
   *    so.addVariable("red5Host", "localhost");
-  *    so.addVariable("presentationHost", "localhost");
-
+  *    so.addVariable("presentationHost", "localhost:8080");
+to
+  *    so.addVariable("red5Host", "192.168.0.104");
+  *    so.addVariable("presentationHost", "192.168.0.104:8080");
 
 
 == Running Blindside ==
@@ -93,10 +95,10 @@ You'll need to setup a username and password for the Asterisk Management Interfa
   * extractedFolder=extracted
  1. Edit {{{SERVER_DIR\blindside-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.
   * These properties are for Asterisk Management Interface (AMI)
-  * ami.host=134.117.62.208
+  * ami.host=ASTERISK_HOSTNAME
   * ami.port=5038
-  * ami.username=astmeetme
-  * ami.password=astpassword
+  * ami.username=<your_ami_username>
+  * ami.password=<your_ami_password>
 
 === Build BigBlueButton WAR file ===
  1. Open a new command window.
