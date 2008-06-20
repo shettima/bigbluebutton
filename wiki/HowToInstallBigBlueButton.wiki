@@ -44,8 +44,8 @@ Note
 
 === ActiveMQ ===
  1. Download [http://activemq.apache.org ActiveMQ]
- 1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq-4.1.1}}}
- 1. Open a command prompt and cd to {{{TOOLS_DIR\activemq-4.1.1}}}
+ 1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq-5.1.0}}}
+ 1. Open a command prompt and cd to {{{TOOLS_DIR\activemq-5.1.0}}}
  1. Run {{{bin\activemq}}}
  1. Make sure it starts without any problems 
 
