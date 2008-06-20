@@ -5,12 +5,7 @@ There are two main servers in a BigBlueButton setup
 * Application server - this server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client
 * Asterisk Server - this server provides the voice conferencing.  The Application server (specifically Red5) communicates with the Asterisk server using AsteriskJava.
 
-= Setting up the Asterisk Server =
 
-== Asterisk ==
-On a separate server, 
- 1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
- 1. Configure Asterisk using [http://blindside.googlecode.com/svn/trunk/asterisk sample conf].
 
 = Setting up the BigBlueButton Server =
 While these instructions are for setting up a BigBlueButton server on a Windows machine, there is no specific requirement on what type of machine or OS is needed. If your machine has enough processor and memory (at least 512MB), has Java installed, you're good to go.
@@ -69,7 +64,18 @@ Note
  1. Add {{{SWFTOOLS_HOME}}} to your PATH
 
 
-== Checkout Blindside Components ==
+= Setting up the Asterisk Server =
+
+== Asterisk ==
+On a separate server, 
+ 1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
+ 1. Configure Asterisk using [http://blindside.googlecode.com/svn/trunk/asterisk sample conf].
+
+You'll need to setup a username and password for the Asterisk Management Interface (ami).
+
+= Checking out the Blindside Components =
+
+== Checkout code ==
  1. Checkout blindside-server and blindside-servlet from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Eclipse IDE and put into {{{SERVER_DIR}}}.
  1. Checkout blindside-client from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Flex IDE and put into {{{CLIENT_DIR}}}.
 
@@ -82,10 +88,12 @@ Note
 
  1. Edit {{{SERVER_DIR\blindside-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.
   * These properties are for Asterisk Management Interface (AMI)
-  * ami.host=192.168.0.101
+  * ami.host=134.117.62.208
   * ami.port=5038
-  * ami.username=<username>
-  * ami.password=<password>
+  * ami.username=astmeetme
+  * ami.password=astpassword
+
+ 1. Build BigBlueButton WAR file.
 
  1. Edit {{{SERVER_DIR\blindside-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.
 	<conference-room>
