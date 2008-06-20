@@ -77,7 +77,13 @@ You'll need to setup a username and password for the Asterisk Management Interfa
 
 == Checkout code ==
  1. Checkout blindside-server and blindside-servlet from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Eclipse IDE and put into {{{SERVER_DIR}}}.
- 1. Checkout blindside-client from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Flex IDE and put into {{{CLIENT_DIR}}}.
+ 1. Download the latest client from [http://code.google.com/p/bigbluebutton/downloads/list Downloads]
+ 1. Uncompress the client to the {{{SERVER_DIR\blindside-server\webapps}}} folder.
+ 1. Edit {{{SERVER_DIR\blindside-server\webapps\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSSTNAME .
+  *    so.addVariable("red5Host", "localhost");
+  *    so.addVariable("presentationHost", "localhost");
+
+
 
 == Running Blindside ==
  1. Edit {{{SERVER_DIR\blindside-servlet\war\WEB-INF\blindside.properties}}}.
