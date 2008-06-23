@@ -3,14 +3,16 @@
 ** Draft **
 
 = Overview =
-There are two main servers in a BigBlueButton setup:
-* Application server - This server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client
-* Asterisk Server - This server provides the voice conferencing.  The Application server (specifically Red5) communicates with the Asterisk server using AsteriskJava.
+There are two main parts to setting up your own BigBlueButton server: 
+* Creating an Asterisk server (you can use your existing server if you already have one setup)
+* Setting up the components for the application server.
 
+The Application server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client.  The Asterisk server provides the voice conferencing.  
 
 = Setting up the BigBlueButton Server =
-While these instructions are for Windows, there is no specific requirement for BigBlueButton for machine or OS. If your machine has enough processor and memory (at least 512MB), has Java installed, you're good to go.
+While these instructions below are for Windows, there is no specific requirement for BigBlueButton for machine or OS. If your machine is running Windows XP (or above) and has at least 1GB of memory you're good to go.
 
+Before you begin installation, you'll need to create some directories.
 
 == Create Directories ==
  1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}", you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
