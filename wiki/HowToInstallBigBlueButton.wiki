@@ -78,10 +78,11 @@ You'll need to setup a username and password for the Asterisk Management Interfa
 = Checking out the Blindside Components =
 
 == Checkout code ==
- 1. Checkout blindside-server and blindside-servlet from [http://blindside.googlecode.com/svn/trunk/ code repository] on your Eclipse IDE and put into {{{SERVER_DIR}}}.
- 1. Download the latest client from [http://code.google.com/p/bigbluebutton/downloads/list Downloads]
+ 1. Checkout blindside-server from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
+ 1. Checkout blindside-servlet from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
+ 1. Download and unzip the latest client from [http://code.google.com/p/bigbluebutton/downloads/list Downloads] into the tomcat webapps directory
  1. Uncompress the client to the {{{SERVER_DIR\blindside-server\webapps}}} folder.
- 1. Edit {{{SERVER_DIR\blindside-server\webapps\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
+ 1. Edit {{{SERVER_DIR\blindside-server\webapps\bbbclient-release\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
   *    so.addVariable("red5Host", "localhost");
   *    so.addVariable("presentationHost", "localhost:8080");
 to
@@ -121,11 +122,9 @@ to
 
 === Start ActiveMQ ===
  1. Open a command window and start ActiveMQ.
-
  1. Open another command window and start Tomcat.
- 1. Open another command window and change directory to {{{SERVER_DIR\blindside-servlet}}} and build it by typing {{{ant warfile}}}. This will generate {{{blindside.war}}}.
- 1. Open {{{CLIENT_DIR\blindside-client\html-template\index.template.html}}} change value of {{{red5Host}}} to your blindside-server and {{{presentationHost}}} to your tomcat-server.
- 1. Run the {{{blindside-client}}} from your Flex IDE.
- 1. Login using information you provided in {{{conferences.xml}}}.
- 1. Convert a Powerpoint slide to PDF using OpenOffice or another tool.
- 1. Upload the converted PDF slides to share presentation.
+
+=== Try to open the BigBlueButton client.
+ 1. Using a web browser, open the URL http://HOSTNAME/bbbclient-release/BigBlueButton.html.
+
+Try uploading a PDF file for conversion or opening multiple clients and chatting between them.
