@@ -75,14 +75,14 @@ You'll need to setup an asterisk server (likely on a separate machine).
 
 You'll need to setup a username and password for the Asterisk Management Interface (ami).  You'll also need the host name for this server, referred to hereafter as {{{ASTERISK_HOSTNAME}}}.
 
-= Checking out the Blindside Components =
+= Checking out the BigBlueButton Components =
 
 == Checkout code ==
- 1. Checkout blindside-server from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
- 1. Checkout blindside-servlet from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
+ 1. Checkout bigbluebutton-server from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
+ 1. Checkout bigbluebutton-servlet from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
  1. Download and unzip the latest client from [http://code.google.com/p/bigbluebutton/downloads/list Downloads] into the tomcat webapps directory
- 1. Uncompress the client to the {{{SERVER_DIR\blindside-server\webapps}}} folder.
- 1. Edit {{{SERVER_DIR\blindside-server\webapps\bbbclient-release\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
+ 1. Uncompress the client to the {{{SERVER_DIR\bigbluebutton-server\webapps}}} folder.
+ 1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\bbbclient-release\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
   *    so.addVariable("red5Host", "localhost");
   *    so.addVariable("presentationHost", "localhost:8080");
 to
@@ -90,13 +90,13 @@ to
   *    so.addVariable("presentationHost", "192.168.0.104:8080");
 
 
-== Running Blindside ==
- 1. Edit {{{SERVER_DIR\blindside-servlet\war\WEB-INF\blindside.properties}}}.
+== Running BigBlueButton ==
+ 1. Edit {{{SERVER_DIR\bigbluebutton-servlet\war\WEB-INF\bigbluebutton.properties}}}.
   * swftoolLocation=c:/tools/pdf2swf (Edit to point to your pdf2swf executable)
   * pdfExtractor=c:/tools/pdftk (Edit to point to your pdftk executable)
   * presBaseDirectory=c:/temp/upload (directory where uploaded slides are extracted)
   * extractedFolder=extracted
- 1. Edit {{{SERVER_DIR\blindside-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.
+ 1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.
   * These properties are for Asterisk Management Interface (AMI)
   * ami.host=ASTERISK_HOSTNAME
   * ami.port=5038
@@ -105,8 +105,8 @@ to
 
 === Build BigBlueButton WAR file ===
  1. Open a new command window.
- 1. Change directory to {{{SERVER_DIR\blindside-server}}} 
- 1. Edit {{{SERVER_DIR\blindside-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.
+ 1. Change directory to {{{SERVER_DIR\bigbluebutton-server}}} 
+ 1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.
 	<conference-room>
 	    <name>85101</name>
 	    <mod-password>modpass</mod-password>
