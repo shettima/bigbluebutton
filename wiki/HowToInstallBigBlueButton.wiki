@@ -105,14 +105,14 @@ to
 
 === Build BigBlueButton WAR file ===
  1. Open a new command window.
- 1. Change directory to {{{SERVER_DIR\bigbluebutton-server}}} 
+ 1. Change directory to {{{SERVER_DIR\bigbluebutton-servlet}}} 
  1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.
 	<conference-room>
 	    <name>85101</name>
 	    <mod-password>modpass</mod-password>
 	    <view-password>viewpass</view-password>
 	</conference-room>
- 1. Type {{{ant server}}} to build the BigBlueButton WAR file.  This will build {{{bigbluebutton.war}}}.
+ 1. Type {{{ant warfile}}} to build the BigBlueButton WAR file.  This will build {{{bigbluebutton.war}}}.
 
 
 === Deploy WAR file to Tomcat server
