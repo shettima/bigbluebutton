@@ -112,37 +112,45 @@ You'll need to setup an asterisk server (though not required if you don't want v
 
 == Configure Client ==
   1. Edit {{{TOOLS_DIR\tomcat\webapps\client\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
-  *    so.addVariable("red5Host", "localhost");
-  *    so.addVariable("presentationHost", "localhost:8080");
+{{{
+    so.addVariable("red5Host", "localhost");
+    so.addVariable("presentationHost", "localhost:8080");
+}}}
 to
-  *    so.addVariable("red5Host", "192.168.0.104");
-  *    so.addVariable("presentationHost", "192.168.0.104:8080");
+{{{
+    so.addVariable("red5Host", "192.168.0.104");
+    so.addVariable("presentationHost", "192.168.0.104:8080");
+}}}
 
 == Configure bigbluebutton.war ==
 At this point you should have both activeMQ and tomcat running.
   1. Edit {{{SERVER_DIR\bigbluebutton-servlet\war\WEB-INF\bigbluebutton.properties}}}.
-  * swftoolLocation=c:/tools/swftools/pdf2swf (Edit to point to your pdf2swf executable)
-  * pdfExtractor=c:/tools/pdftk/pdftk (Edit to point to your pdftk executable)
-  * presBaseDirectory=c:/temp/upload (directory where uploaded slides are extracted)
-  * extractedFolder=extracted
+{{{
+    swftoolLocation=c:/tools/swftools/pdf2swf (Edit to point to your pdf2swf executable)
+    pdfExtractor=c:/tools/pdftk/pdftk (Edit to point to your pdftk executable)
+    presBaseDirectory=c:/temp/upload (directory where uploaded slides are extracted)
+    extractedFolder=extracted
+}}}
   1. Open a command prompt and {{{cd}}} to {{{SERVER_DIR\bigbluebutton-servlet}}} and type {{{ant warfile}}} to build the bigbluebutton.war file.  1. copy {{{bigbluebutton.war}}} to {{{SERVER_DIR\tomcat\webapps}}} to deploy it to your Tomcat server.
 
 You should see the tomcat server log deploy bigbluebutton.war.
 
 == Configure BigBlueButton server ==
-  1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.  (Note: If you don’t have asterisk running you can skip this step.)
-  * These properties are for Asterisk Management Interface (AMI)
-  * ami.host=ASTERISK_HOSTNAME
-  * ami.port=5038
-  * ami.username=<your_ami_username>
-  * ami.password=<your_ami_password>
+  1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.  (Note: If you don’t have asterisk running you can skip this step.)  These properties are for Asterisk Management Interface (AMI)
+{{{
+    ami.host=ASTERISK_HOSTNAME
+    ami.port=5038
+    ami.username=<your_ami_username>
+    ami.password=<your_ami_password>
+}}}
   1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.  You can use the default settings for now.
-  *	<conference-room>
-  *	    <name>85101</name>
-  *	    <mod-password>modpass</mod-password>
-  *	    <view-password>viewpass</view-password>
-  *	</conference-room>
-
+{{{
+    <conference-room>
+        <name>85101</name>
+        <mod-password>modpass</mod-password>
+        <view-password>viewpass</view-password>
+    </conference-room>
+}}}
 
 = Start BigBlueButton server =
   1. Open a new command window.
