@@ -95,10 +95,10 @@ You'll need a [http://tortoisesvn.tigris.org/ subversion client] to checkout the
 Make sure the tomcat server is running.  Open http://HOSTNAME:8080/client and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
 
 === BigBlueButton Servlet ===
- 1. Use a subversion client to checkout the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-servlet] into {{{SOURCE_DIR\bigbluebutton-servlet}}}
+ 1. Use a subversion client to checkout the latest [http://bigbluebutton.googlecode.com/svn/trunk/ bigbluebutton-servlet] into {{{SOURCE_DIR\bigbluebutton-servlet}}}
 
 === BigBlueButton Server ===
- 1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-server]
+ 1. Download the latest [http://bigbluebutton.googlecode.com/svn/trunk/ bigbluebutton-server]
  1. uncompress into {{{SOURCE_DIR\bigbluebutton-server}}}
 
 
