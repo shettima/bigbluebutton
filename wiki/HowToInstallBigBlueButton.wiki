@@ -92,7 +92,7 @@ You'll need a [http://tortoisesvn.tigris.org/ subversion client] to checkout the
  1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-client]
  1. Unzip the client into {{{TOOLS_DIR\tomcat\client}}}.  
  
-Make sure the tomcat server is running.  You should be able to open http://HOSTNAME:8080/client and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
+Make sure the tomcat server is running.  Open http://HOSTNAME:8080/client and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
 
 === BigBlueButton Servlet ===
  1. Use a subversion client to checkout the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-servlet] into {{{SOURCE_DIR\bigbluebutton-servlet}}}
@@ -124,8 +124,8 @@ to
 == Configure Server ==
 At this point you should have both activeMQ and tomcat running.
  1. Edit {{{SERVER_DIR\bigbluebutton-servlet\war\WEB-INF\bigbluebutton.properties}}}.
-  * swftoolLocation=c:/tools/pdf2swf (Edit to point to your pdf2swf executable)
-  * pdfExtractor=c:/tools/pdftk (Edit to point to your pdftk executable)
+  * swftoolLocation=c:/tools/swftools/pdf2swf (Edit to point to your pdf2swf executable)
+  * pdfExtractor=c:/tools/pdftk/pdftk (Edit to point to your pdftk executable)
   * presBaseDirectory=c:/temp/upload (directory where uploaded slides are extracted)
   * extractedFolder=extracted
  1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.
@@ -157,8 +157,9 @@ You should see the tomcat server log deploy bigbluebutton.war.
  
 This will start the red5 server.  
 
-=== Try to open the BigBlueButton client.
- 1. Using a web browser, open the URL http://HOSTNAME/client/
+=== Launch BigBlueButton client.
+ 1. Using a web browser, open the URL http://HOSTNAMEL8080/client/
+ 1. View the source. Make sure the {{{red5Host}}} and {{{presentationHost}}} variables are set.
  
 Login with
 *  name: <your name>
