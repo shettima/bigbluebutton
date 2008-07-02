@@ -3,94 +3,126 @@
 ** Draft **
 
 = Overview =
-There are two main parts to setting up your own BigBlueButton server: 
-* Creating an Asterisk server (you can use your existing server if you already have one setup)
-* Setting up the components for the application server.
+While these instructions are for Windows, there is no specific requirement for BigBlueButton for machine or OS. For a Windows machine, if your Windows XP (or above) and have at least 1GB of memory you're good to go.
 
-The Application server runs Red5, Tomcat, and ActiveMQ, and serves up the BigBlueButton Flash client.  The Asterisk server provides the voice conferencing.  
+There are four servers to setup for BigBlueButton:
+* asterisk server
+* bigbluebutton server (built on red5)
+* activeMQ server
+* tomcat server
 
-= Setting up the BigBlueButton Server =
-While these instructions below are for Windows, there is no specific requirement for BigBlueButton for machine or OS. If your machine is running Windows XP (or above) and has at least 1GB of memory you're good to go.
+These instructions  don't go into setting up an Asterisk server.  You actually don't need to have an Asterisk server running to use BigBlueButton, but you won't have an integrated voice conference server.
 
-Before you begin installation, you'll need to create some directories.
+There are two components you deploy to the tomcat server:
+* bigbluebutton.war (which handles the file upload) 
+* client (the bigbluebutton client).  
+
+There are also two supporting applications for the tomcat server:
+* pdftk (command-line tool that breaks up PDF files into individual pages)
+* pdf2swf (command-line tool that converts a PDF file to SWF)
+
+Here's a diagram that gives an overview of how these components work together.
+
+http://present.carleton.ca:8080/files/docs/images/bbb-overview.png
+
+
+= Installing Components =
+
+
+Before you begin, you'll need to create some directories.
 
 == Create Directories ==
- 1. Create {{{c:\tools}}} - will be referred to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\apache-ant-1.7.0}}}", you would set it to {{{c:\tools\apache-ant-1.7.0}}}.
- 1. Create {{{c:\source\client}}} - will be referred to as {{{CLIENT_DIR}}} for the rest of this document
- 1. Create {{{c:\source\server}}} - will be referred to as {{{SERVER_DIR}}} for the rest of this document
- 1. Create {{{c:\temp}}} - will be referred to as {{{TEMP}}} for the rest of this document.  
+ 1. Create {{{c:\tools}}} - to as {{{TOOLS_DIR}}} for the rest of this document.  For example, if this document says "Set an environment variable to {{{TOOLS_DIR\ant}}}", you would set it to {{{c:\tools\ant}}}.
+ 1. Create {{{c:\source\client}}} - referred to as {{{CLIENT_DIR}}} 
+ 1. Create {{{c:\source\server}}} - referred to as {{{SERVER_DIR}}}
+ 1. Create {{{c:\temp}}} - referred to as {{{TEMP}}}.  
  
-You'll also need to know the host name, referred to as {{HOSTNAME}}, for your server.
+You'll  need to know the host name (or IP address) of your server, referred to as {{{HOSTNAME}}}.
 
 
-== Download and Install Software ==
-Note
-* Some of the version numbers may differ -- download the latest versions.
+== Install Software ==
+When downloading software, just grab the latest version.  If your server already has a component, such as ant, skip that step.
 
 
 === Java Development Kit ===
- 1. Download [http://java.sun.com/javase/downloads/index.jsp JDK 6] installer
- 1. Install into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\jdk1.6.0_06}}}
+ 1. Download the [http://java.sun.com/javase/downloads/index.jsp JDK 6] installer
+ 1. Install into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\jdk}}}
  1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer.
- 1. Add {{{JAVA_HOME}}} in your system variables - e.g {{{JAVA_HOME = TOOLS_DIR\jdk1.6.0_06}}}
+ 1. Add {{{JAVA_HOME}}} in your system variables - e.g {{{JAVA_HOME = TOOLS_DIR\jdk}}}
  1. Open a command prompt and run {{{java -version}}}. You should see the java version displayed.
 
 === Ant ===
  1. Download the [http://ant.apache.org Ant] ZIP file.
- 1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\apache-ant-1.7.0}}}.
+ 1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\ant}}}.
  1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer.
- 1. Add {{{ANT_HOME}}} in your system variables - e.g {{{ANT_HOME = TOOLS_DIR\apache-ant-1.7.0}}}
- 1. Add {{{ANT_HOME\bin}}} to your PATH - e.g. {{{TOOLS_DIR\apache-ant-1.7.0\bin}}}.
+ 1. Add {{{ANT_HOME}}} in your system variables - e.g {{{ANT_HOME = TOOLS_DIR\ant}}}
+ 1. Add {{{ANT_HOME\bin}}} to your PATH - e.g. {{{TOOLS_DIR\ant\bin}}}.
  1. Open a command prompt and run {{{ant -version}}}.  You should see the ant version displayed.
-
-=== Tomcat ===
- 1. Download [http://tomcat.apache.org Tomcat] ZIP file
- 1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\apache-tomcat-6.0.16}}}
- 1. Open a command prompt and cd to {{{TOOLS_DIR\apache-tomcat-6.0.16}}}
- 1. Run {{{bin\catalina.bat start}}}
- 1. Open your browser and go to {{{http://HOSTNAME:8080}}}
- 1. You should see the Tomcat welcome page displayed.
 
 === ActiveMQ ===
  1. Download [http://activemq.apache.org ActiveMQ]
- 1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq-5.1.0}}}
- 1. Open a command prompt and cd to {{{TOOLS_DIR\activemq-5.1.0}}}
- 1. Run {{{bin\activemq}}}
+ 1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq}}}
+ 1. Open a command prompt and cd to {{{TOOLS_DIR\activemq\bin\win32}}}
+ 1. Run {{{activemq.bat}}}
  1. You should set the AcitveMQ startup messages with no errors.
 
-=== SWF Tools and PDF Toolkit===
+=== Tomcat ===
+ 1. Download [http://tomcat.apache.org Tomcat] ZIP file
+ 1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\tomcat}}}
+ 1. Open a command prompt and cd to {{{TOOLS_DIR\tomcat\bin}}}
+ 1. Run {{{catalina.bat start}}}
+ 1. Open your browser and go to {{{http://HOSTNAME:8080}}}
+ 1. You should see the Tomcat welcome page displayed.
+
+Note: Tomcat installs on port 8080 by default.  You can, of course, change this to run on port 80.  If you do, make sure you remove the 8080 when following the rest of these instructions.
+
+
+=== SWF Tools and PDF Toolkit ===
  1. Download [http://www.swftools.org SWF Tools]
- 1. Download [http://www.accesspdf.com/pdftk PDF Toolkit]
  1. Install in {{{TOOLS_DIR\swftools}}}
- 1. Add {{{SWFTOOLS_HOME = TOOLS_DIR\swftools}}} in you environment variables
- 1. Add {{{SWFTOOLS_HOME}}} to your PATH
+ 1. Download [http://www.accesspdf.com/pdftk PDF Toolkit]
+ 1. Install in {{{TOOLS_DIR\pdftk}}}
+
+
+
+== Download Source ==
+You'll need a [http://tortoisesvn.tigris.org/ subversion client] to checkout the following source code.
+
+=== BigBlueButton Client ===
+ 1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-client]
+ 1. Unzip the client into {{{TOOLS_DIR\tomcat\client}}}.  
+ 
+Make sure the tomcat server is running.  You should be able to open http://HOSTNAME:8080/client and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
+
+=== BigBlueButton Servlet ===
+ 1. Use a subversion client to checkout the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-servlet] into {{{SOURCE_DIR\bigbluebutton-servlet}}}
+
+=== BigBlueButton Server ===
+ 1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-server]
+ 1. uncompress into {{{SOURCE_DIR\bigbluebutton-server}}}
 
 
 = Setting up the Asterisk Server =
 
 == Asterisk ==
-You'll need to setup an asterisk server (likely on a separate machine).
+You'll need to setup an asterisk server (though not required if you don't want voice conferencing).  We'll refer to the host name for the asterisk server as {{{ASTERISK_HOSTNAME}}}.
+
  1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
- 1. Configure Asterisk using the [http://blindside.googlecode.com/svn/trunk/asterisk sample conf] files on the BigblueButton repository
+ 1. Configure Asterisk using the [http://bigbluebutton.googlecode.com/svn/trunk/asterisk/ sample extensions.conf and meetme.conf] files on the BigblueButton repository
 
-You'll need to setup a username and password for the Asterisk Management Interface (ami).  You'll also need the host name for this server, referred to hereafter as {{{ASTERISK_HOSTNAME}}}.
+= Configure Components =
 
-= Checking out the BigBlueButton Components =
 
-== Checkout code ==
- 1. Checkout bigbluebutton-server from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
- 1. Checkout bigbluebutton-servlet from [http://code.google.com/p/bigbluebutton/source/browse code repository] into {{{SERVER_DIR}}}.
- 1. Download and unzip the latest client from [http://code.google.com/p/bigbluebutton/downloads/list Downloads] into the tomcat webapps directory
- 1. Uncompress the client to the {{{SERVER_DIR\bigbluebutton-server\webapps}}} folder.
- 1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\bbbclient-release\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
+== Configure Client ==
+ 1. Edit {{{SERVER_DIR\tomcat\webapps\client\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
   *    so.addVariable("red5Host", "localhost");
   *    so.addVariable("presentationHost", "localhost:8080");
 to
   *    so.addVariable("red5Host", "192.168.0.104");
   *    so.addVariable("presentationHost", "192.168.0.104:8080");
 
-
-== Running BigBlueButton ==
+== Configure Server ==
+At this point you should have both activeMQ and tomcat running.
  1. Edit {{{SERVER_DIR\bigbluebutton-servlet\war\WEB-INF\bigbluebutton.properties}}}.
   * swftoolLocation=c:/tools/pdf2swf (Edit to point to your pdf2swf executable)
   * pdfExtractor=c:/tools/pdftk (Edit to point to your pdftk executable)
@@ -102,29 +134,36 @@ to
   * ami.port=5038
   * ami.username=<your_ami_username>
   * ami.password=<your_ami_password>
-
-=== Build BigBlueButton WAR file ===
- 1. Open a new command window.
- 1. Change directory to {{{SERVER_DIR\bigbluebutton-servlet}}} 
- 1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.
-	<conference-room>
-	    <name>85101</name>
-	    <mod-password>modpass</mod-password>
-	    <view-password>viewpass</view-password>
-	</conference-room>
  1. Type {{{ant warfile}}} to build the BigBlueButton WAR file.  This will build {{{bigbluebutton.war}}}.
+ 
+== Copy WAR file to tomcat server ==
+ 1. copy {{{bigbluebutton.war}}} to {{{SERVER_DIR\tomcat\webapps}}} to deploy it to your Tomcat server.
+
+You should see the tomcat server log deploy bigbluebutton.war.
+
+ == Configure BigBlueButton Server ==
+ 1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.  You can use the default settings for now.
+*	<conference-room>
+*	    <name>85101</name>
+*	    <mod-password>modpass</mod-password>
+*	    <view-password>viewpass</view-password>
+*	</conference-room>
 
 
-=== Deploy WAR file to Tomcat server
+= Start BigBlueButton server =
  1. Open a new command window.
- 1. Change directory to {{{SERVER_DIR\tomcat-5.1.0}}} 
- 1. copy {{{bigbluebutton.war}}} to {{{SERVER_DIR\tomcat-5.1.0\webapps}}} to deploy it to your Tomcat server.
-
-=== Start ActiveMQ ===
- 1. Open a command window and start ActiveMQ.
- 1. Open another command window and start Tomcat.
+ 1. Change directory to {{{SERVER_DIR\bigbluebutton-server}}} 
+ 1. type {{{ant server}}}
+ 
+This will start the red5 server.  
 
 === Try to open the BigBlueButton client.
- 1. Using a web browser, open the URL http://HOSTNAME/bbbclient-release/BigBlueButton.html.
+ 1. Using a web browser, open the URL http://HOSTNAME/client/
+ 
+Login with
+*  name: <your name>
+*  Conference ID: 85101
+*  password: modpass
+
 
 Try uploading a PDF file for conversion or opening multiple clients and chatting between them.
