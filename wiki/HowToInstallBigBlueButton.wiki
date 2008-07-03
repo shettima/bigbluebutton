@@ -176,7 +176,7 @@ If not already running, start the tomcat server.
 This will start the red5 server.  
 
 = Launch BigBlueButton client. =
-  1. Using a web browser, open the URL http://HOSTNAMEL8080/client/.  You should see the BigBlueButton client login.
+  1. Using a web browser, open the URL {{{http://HOSTNAMEL8080/client/BigBlueButton.html}}} (tomcat is case sensitive).  You should see the BigBlueButton client login.
   1. View the source. Make sure the {{{red5Host}}} and {{{presentationHost}}} variables are set.
  
 Login with
