@@ -125,26 +125,26 @@ to
 
 == Configure bigbluebutton.war ==
 If they are not running,  activeMQ and tomcat running.
-  1. Edit {{{SERVER_DIR\bigbluebutton-servlet\war\WEB-INF\bigbluebutton.properties}}}.
+  1. Edit {{{SOURCE_DIR\bigbluebutton-servlet\war\WEB-INF\bigbluebutton.properties}}}.
 {{{
     swftoolLocation=c:/tools/swftools/pdf2swf (Edit to point to your pdf2swf executable)
     pdfExtractor=c:/tools/pdftk/pdftk (Edit to point to your pdftk executable)
     presBaseDirectory=c:/temp/upload (directory where uploaded slides are extracted)
     extractedFolder=extracted
 }}}
-  1. Open a command prompt and {{{cd}}} to {{{SERVER_DIR\bigbluebutton-servlet}}} and type {{{ant warfile}}} to build the bigbluebutton.war file.  
-  1. copy {{{bigbluebutton.war}}} to {{{SERVER_DIR\tomcat\webapps}}} to deploy it to your Tomcat server.
+  1. Open a command prompt and {{{cd}}} to {{{SOURCE_DIR\bigbluebutton-servlet}}} and type {{{ant warfile}}} to build the bigbluebutton.war file.  
+  1. copy {{{bigbluebutton.war}}} to {{{TOOLS_DIR\tomcat\webapps}}} to deploy it to your Tomcat server.
 
 
 == Configure BigBlueButton server ==
-  1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.  (Note: If you don’t have asterisk running you can skip this step.)  These properties are for Asterisk Management Interface (AMI)
+  1. Edit {{{SOURCE_DIR\bigbluebutton-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.  (Note: If you don’t have asterisk running you can skip this step.)  These properties are for Asterisk Management Interface (AMI)
 {{{
     ami.host=ASTERISK_HOSTNAME
     ami.port=5038
     ami.username=<your_ami_username>
     ami.password=<your_ami_password>
 }}}
-  1. Edit {{{SERVER_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.  You can use the default settings for now.
+  1. Edit {{{SOURCE_DIR\bigbluebutton-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.  You can use the default settings for now.
 {{{
     <conference-room>
         <name>85101</name>
@@ -159,18 +159,18 @@ If they are not running,  activeMQ and tomcat running.
 == Start activeMQ server ==
 If not already running, start the activeMQ server.
   1. Open a new command window.
-  1. Change directory to {{{SERVER_DIR\activeMQ\bin\win32}}} 
+  1. Change directory to {{{TOOlS_DIR\activeMQ\bin\win32}}} 
   1. type {{{activemq.bat}}}
  
 == Start tomcat server ==
 If not already running, start the tomcat server.
   1. Open a new command window.
-  1. Change directory to {{{SERVER_DIR\tomcat\bin}}} 
+  1. Change directory to {{{TOOlS_DIR\tomcat\bin}}} 
   1. type {{{catalina.bat start}}}
 
 == Start BigBlueButton server ==
   1. Open a new command window.
-  1. Change directory to {{{SERVER_DIR\bigbluebutton-server}}} 
+  1. Change directory to {{{SOURCE_DIR\bigbluebutton-server}}} 
   1. type {{{ant server}}}
  
 This will start the red5 server.  
