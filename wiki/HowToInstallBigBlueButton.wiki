@@ -3,21 +3,21 @@
 ** Draft **
 
 = Overview =
-While these instructions are for Windows, there is no specific OS requirement for BigBlueButton.  For setup on a Windows machine, if you are running Windows XP (or above) with at least 1GB of memory, you're good to go.
+These instructions show how to setup BigBlueButton server for Windows.  While there is no specific OS requirement for BigBlueButton, BigBlueButton runs on Mac and Windows as well (hey, its open source!), if you are running Windows XP (or above) with at least 1GB of memory, you're good to go.
 
-There are four servers to setup for BigBlueButton:
+There are four servers to run for BigBlueButton:
   * bigbluebutton server (built on red5)
   * asterisk server
   * activeMQ server
   * tomcat server
 
-Note: these instructions don’t go into details on setting up an Asterisk server.  You don't need to have an Asterisk server running to use BigBlueButton; however, without it you won't have an integrated voice conference server.
+Note: These instructions don’t go into details on setting up an Asterisk server.  For now, you don't an Asterisk server running to setup and use BigBlueButton; however, if you want an integrated voice conference server, you'll need to setup Asterisk as well.
 
-There are two additional components to install on the tomcat server:
-  * bigbluebutton.war (which handles the file upload) 
-  * client (which contains the Flash client).  
-
-There are also two supporting command-line applications used by bigbluebutton.war to conver PDF slides to SWF files server:
+For the tomcat server, there are two additional components to install:
+  * bigbluebutton.war (which handles the upload of slies) 
+  * client.zip (a ZIP file containing the client)
+  
+For bigbluebutton.war, there are  two supporting command-line applications used to convert PDF slides to SWF images:
   * pdftk (breaks up PDF files into individual pages)
   * pdf2swf (converts a PDF file to SWF)
 
@@ -28,13 +28,13 @@ http://present.carleton.ca:8080/files/docs/images/bbb-overview.png
 
 = Installing Components =
 
-Before you begin, you'll need to create some directories.
+Before you begin, you'll need to create some directories.  Note: The instructions use the {{{c:}}} drive, but you can use any drive for installation.
 
-  1. Create {{{c:\tools}}} – referred to as {{{TOOLS_DIR}}} for the rest of these instructions.  For example, if the instructions say "Set ANT_HOME to point to {{{TOOLS_DIR\ant}}}", you would set it to {{{c:\tools\ant}}}.
+  1. Create {{{c:\tools}}} - referred to as {{{TOOLS_DIR}}} for the rest of these instructions.  For example, if you wanted to set the environment variable ANT_HOME to point to {{{TOOLS_DIR\ant}}},  set it to {{{c:\tools\ant}}}.
   1. Create {{{c:\source }}} - referred to as {{{SOURCE_DIR}}} 
-  1. Create {{{c:\temp}}} - referred to as {{{TEMP}}}.  
+  1. Create {{{c:\temp}}} - referred to as {{{TEMP_DIR}}}.  
  
-You will also need to know the host name (or IP address) of your server, referred to as {{{HOSTNAME}}}.
+You will also need to know the host name (or IP address) of your server, referred to as {{{HOSTNAME}}}.  Note: This could be a fully qualified domanin name, such as mycomputer.network.com, or an IP address.
 
 
 == Install Software ==
@@ -43,10 +43,10 @@ For the downloads below, just grab the latest version of each open source compon
 
 === Java Development Kit ===
   1. Download the [http://java.sun.com/javase/downloads/index.jsp JDK 6] installer
-  1. Install into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\jdk}}}
+  1. Install the JDK to {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\jdk}}}
   1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer.
   1. Add a system variable {{{JAVA_HOME}}} pointing to {{{JAVA_HOME = TOOLS_DIR\jdk}}}
-  1. Open a command prompt and run {{{java -version}}}. You should see the java version displayed.
+  1. Open a command prompt and run {{{java -version}}}. You should see the java version (JDK 1.6 or above) displayed.
 
 === Ant ===
   1. Download the [http://ant.apache.org Ant] ZIP file.
@@ -71,7 +71,7 @@ For the downloads below, just grab the latest version of each open source compon
   1. Open your browser and go to {{{http://HOSTNAME:8080}}}
   1. You should see the Tomcat welcome page displayed.
 
-Note: Tomcat installs on port 8080 by default.  You can, of course, change this to run on port 80.  If you do, make sure you omit 8080 from the rest of these instructions.
+Note: Tomcat installs on port 8080 by default.  You can, of course, change tomcat's settings to listen on port 80.  If you change the settings, you can omit the port 8080 qualifer from the rest of these instructions.
 
 
 === SWF Tools and PDF Toolkit ===
@@ -80,23 +80,23 @@ Note: Tomcat installs on port 8080 by default.  You can, of course, change this 
   1. Download [http://www.accesspdf.com/pdftk PDF Toolkit]
   1. Install in {{{TOOLS_DIR\pdftk}}}
 
+=== Subversion Client ===
+At this point we’re ready to checkout the needed source files for BigBlueButton.  To checkout code, you'll need a [http://tortoisesvn.tigris.org/ subversion client].
 
 
 == Download Source ==
-At this point we’re ready to checkout the needed source files for BigBlueButton.  To checkout code, you'll need a [http://tortoisesvn.tigris.org/ subversion client].
 
 === BigBlueButton Client ===
-  1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-client]
-  1. Unzip the client into {{{TOOLS_DIR\tomcat\client}}}.  
+  1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-client] ZIP file
+  1. Unzip the client into {{{TOOLS_DIR\tomcat\webapps\client}}}.  
  
 If you’ve left the tomcat server running, you should be able to open http://HOSTNAME:8080/client and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
 
 === BigBlueButton Servlet ===
-  1. Use a subversion client to checkout the latest [http://bigbluebutton.googlecode.com/svn/trunk/ bigbluebutton-servlet] into {{{SOURCE_DIR\bigbluebutton-servlet}}}
+  1. Use a subversion client to checkout the latest [http://bigbluebutton.googlecode.com/svn/trunk/ http://bigbluebutton.googlecode.com/svn/trunk/] bigbluebutton-servlet into {{{SOURCE_DIR\bigbluebutton-servlet}}}
 
 === BigBlueButton Server ===
-  1. Download the latest [http://bigbluebutton.googlecode.com/svn/trunk/ bigbluebutton-server]
-  1. uncompress into {{{SOURCE_DIR\bigbluebutton-server}}}
+  1. Download the latest [http://bigbluebutton.googlecode.com/svn/trunk/ http://bigbluebutton.googlecode.com/svn/trunk/] bigbluebutton-server into {{{SOURCE_DIR\bigbluebutton-server}}}
 
 
 = Setting up the Asterisk Server =
