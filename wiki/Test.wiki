@@ -1,7 +1,5 @@
 #summary One-sentence summary of this page.
 
-http://present.carleton.ca:8080/files/docs/images/company_logo.png
-
 = Introduction =
 
 Add your content here.
