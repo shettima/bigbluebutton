@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Add your content here. More tests. Another test.
+Add your content here. 
 
 
 = Details =
