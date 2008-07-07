@@ -1,0 +1,5 @@
+#summary Release Notes for new versions of BigBlueButton.
+
+=== Release 0.32M ===
+Added
+  * Pan and zoom around the slide with the mouse and mouse-wheel
