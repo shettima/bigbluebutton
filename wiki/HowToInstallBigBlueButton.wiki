@@ -113,15 +113,30 @@ You'll need to setup an asterisk server (though not required if you don't want v
 == Configure Client ==
   1. Edit {{{TOOLS_DIR\tomcat\webapps\client\BigBlueButton.html}}} and change the value of {{{localhost}}} with your HOSTNAME.  For example, if your HOSTNAME was 192.168.0.104, you would change
 {{{
-    so.addVariable("red5Host", "localhost");
-    so.addVariable("presentationHost", "localhost:8080");
+function getRed5()
+{
+	return "localhost"
+}
+
+function getPresentationHost()
+{
+	return "localhost:8080"
+}
 }}}
 to
 {{{
-    so.addVariable("red5Host", "192.168.0.104");
-    so.addVariable("presentationHost", "192.168.0.104:8080");
+function getRed5()
+{
+	return "192.168.0.104"
+}
+
+function getPresentationHost()
+{
+	return "192.168.0.104:8080"
+}
 }}}
 
+Note: 
 
 == Configure bigbluebutton.war ==
 If they are not running,  activeMQ and tomcat running.
