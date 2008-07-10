@@ -1,0 +1,155 @@
+#summary One-sentence summary of this page.
+#labels Phase-Design
+
+= Introduction =
+
+In this ection we have the user stories for the BigBlueButton system listed and updated through the ppersiod of the system developement
+
+
+= Details =
+
+|| Title: Record a session||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: The moderator wants session recorded automatically     ||
+|| Session: Ausio, video, presentaion, chat, adn whitebosrd||
+
+|| Title: Edit a recorded session ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Description: moderator could remove sections of the clip||
+|| *Cut only editing ||
+
+|| Title: Replay a recorded session ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: anyone could replay a recorded session in client||
+
+
+|| Title: Announce that a session is recorded ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Participants are notified that the session is being recorded.||
+
+|| Title: Retrieve a list of previously recorded session||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: A participants can retrieve a recorded session at a later time||
+|| *First Stage: Audio ||
+
+|| Title: Play a video ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: presenter can load and play a video, presenter can push a url linking the video(youtube)
+First step: link to a youtube video  ||
+
+|| Title: Test session for dry run||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: participants can test system ahead of time||
+
+|| Title: Periodic check ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: system can detect disruption and automatically reestablish
+Example: video disconnected (timeout)||
+
+|| Title: No setup time ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Moderator wants to be able to confirm a session is read to proceed without problems.
+Problems: multiple setups (windows, conference calls, a class etc)
+||
+
+|| Title: Schedule a session  ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Description: moderator can schedule a sessions for an event. (eg. Class, conference etc)
+
+C - create
+
+R - review
+
+U - update
+
+D- delete ||
+
+|| Title: Find Media ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Look up audio/video from past classes ||
+
+|| Title: Switching between slides  ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: presenter should be able to switch between slide decks to upload a slide
+
+Added value: slide persistent (eg. Dave call’s large slide deck, pre uploaded slides.)||
+
+|| Title: Progress notification to all participants  ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: notifies all participants of progress lengthy uploaded are occurring.
+
+Example: when presenter uploads slides, other participants are informed of progress.
+
+||
+
+|| Title: Progress notification to all participants  ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Description: notifies all participants of progress lengthy uploaded are occurring.
+
+Example: when presenter uploads slides, other participants are informed of progress. ||
+
+|| Title: Persistent slide decks ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: can go back to old side decks (eg. Go back to old classes), can re upload slide deck for session. ||
+
+|| Title: Good response time for user downloading slides ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: Quick download time for all users regardless of speed of respective computer.
+
+Example: it turns out full slide deck is downloaded to show thumbnails||
+
+|| Title: Late joiners can catch up ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: participants can catch up if logged in late (eg. Chat history)||
+
+|| Title: Enjoyment meter ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: monitor engagement meter of participants (show a graphic)
+
+First step: blindsided focus or blindside full screen ||
+
+|| Title: Dynamic Survey ||
+|| AccTest:|| 
+|| Priority:1 || 
+|| Story Points: ||  
+|| Description: moderator can push questions to user
+
+Example: Student questionaires/quizes ||
+
+-----
