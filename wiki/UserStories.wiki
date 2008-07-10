@@ -17,12 +17,12 @@ In this section we have the user stories for the BigBlueButton system listed and
 *Story Points:*
 
 *Description:* The moderator wants a session recorded automatically. 
-  # Run the recorder.
-  # Initialize the recording arguments for the session.
-  # Start recording.
-  # Stop recording.
-  # Finalize recording (store the data for the session etc) .
-  # Close the recorder.
+  * Run the recorder.
+  * Initialize the recording arguments for the session.
+  * Start recording.
+  * Stop recording.
+  * Finalize recording (store the data for the session etc) .
+  * Close the recorder.
  
 Session: Audio, video, presentation, chat, and whiteboard.
 
