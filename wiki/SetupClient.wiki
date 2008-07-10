@@ -1,0 +1,21 @@
+#summary How to setup your development environment for the client.
+
+== Download Flex Builder ==
+
+You will need Flex Builder 3 from Adobe. Adobe offers a 60 day trial. If you're a student or in academia you can get it for free from [https://www.flexregistration.com/ here]
+
+Once you've set up Flex, you will need the subclipse plugin, which can be found [http://subclipse.tigris.org/ here]. You need subclipse in order to check out the source code from google code.
+
+== Checking out the Source ==
+
+The BigBlueButton client is a modular application. To start, you will need to check out the bigbluebutton-core application. This contains only the skeleton of BigBlueButton, i.e. the Login system, the Logger, and the Viewers module, which exposes some of the API to interact with other Users in in the Conference.
+
+If you would like, you can check out any other modules from the repository as separate Flex Projects.
+
+== Running BigBlueButton == 
+
+After you've checked out all the source code you want, you're ready to build. The skeleton bigbluebutton-core project you can run as you would any other flex project.
+
+In order to run the other modules you will need the precompiled version of the skeleton. 
+Precompiled versions of the skeleton and all the modules already exist in the repository. If you don't plan on changing the skeleton for your own purposes, we strongly recommend that you simply check out the existing version.
+If you want to change the skeleton, you can compile bigbluebutton-core into a .swc library. To do this, create a new Flex Library Project and point the source folder to the src folder of the skeleton you've checked out. Flex Builder will automatically compile the code into an .swc file and put it in the bin folder of your new Flex Library Project. For more information on creating swc files refer to [http://livedocs.adobe.com/flex/2/docs/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00000237.html this document].
