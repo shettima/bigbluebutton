@@ -23,8 +23,7 @@ The primary VCR module functions should include:
     * Get participants list.
     * Create the required files to record the session.
   * Start recording - record the different events related to the conference room (chat, presentation and voice) 
-  * Stop recording.
-  * Finalize recording (store the data for the session etc) .
+  * Stop recording - finalize recording (store the data for the session etc) .
   * Terminate the recording process.
  
 Session: Audio, video, presentation, chat, and whiteboard.
