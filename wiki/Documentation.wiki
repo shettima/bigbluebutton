@@ -21,11 +21,11 @@ Add notes for client/server code development (i.e. requirements, settings, files
 
  * Add the path for the classes for your module or components in the section 
 {{{
-<!-- libraries and classes needed for building BigBlueButtonProject -->
+   <!-- libraries and classes needed for building BigBlueButtonProject -->
 }}}
  * Add the line 
 {{{ 
-		<compile-wardemo name="component or module name"/>
+    <compile-wardemo name="component or module name"/>
 }}}
 in the  section of
 {{{
@@ -33,11 +33,11 @@ in the  section of
 }}}
  * In the sction of 
 {{{
-<!-- create jar files for BigBlueButtonProject -->
+    <!-- create jar files for BigBlueButtonProject -->
 }}}
-add the following line
+ add the following line
 {{{
-<compile-jardemo name="bwcheck"/>
+   <compile-jardemo name="module or component name"/>
 }}}
 
 2. Add logback.html file to the added module directory. (check it again)
