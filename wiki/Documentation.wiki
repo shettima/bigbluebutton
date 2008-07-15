@@ -19,17 +19,15 @@ Add notes for client/server code development (i.e. requirements, settings, files
      </build-demo> 
 }}}
 
- * Add the path for the classes folder for your module or components in the sections:
-  *{{{
-       <!-- only certain classes from selected demos are copied to the war -->
+ * Add the path for the classes folder for your module or components in the section
+   {{{
+   <!-- libraries and classes needed for building BigBlueButtonProject -->
    }}}
    add the line 
    {{{
        <fileset dir="${webapps.build.dir}/vcr/WEB-INF/classes"/>
    }}}
-  *{{{
-   <!-- libraries and classes needed for building BigBlueButtonProject -->
-   }}}
+  
  * In the  section of
 {{{
   <!-- war up BigBlueButtonProject-->
