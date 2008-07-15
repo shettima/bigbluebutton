@@ -7,7 +7,33 @@ Add notes for client/server code development (i.e. requirements, settings, files
 ----
 == BigBlueButton Server ==
 
+1. When a new component added to the project, there are certain files need to be edited:
+ * BigBlueButton-server/build.xml as follows: 
+   * add the followinglins in the build-demo section   
+               
+{{{ 
+     <build-demo name="chatServer">
+	<copy-assets>
+		<logback webapp="chatServer"/>
+	</copy-assets>
+     </build-demo> 
+}}}
+
+ * Add the path for the classes for your module or components in the section 
+{{{
+<!-- libraries and classes needed for building BigBlueButtonProject -->
+}}}
+ * Add the line 
+{{{ 
+		<compile-wardemo name="vcr"/>
+}}}
+in the  section of
+{{{
+<!-- war up demos -->
+}}}
+2. Add logback.html file to the added module directory. (check it again)
+
+
 ----
 
 == BigBlueButton Client ==
-
