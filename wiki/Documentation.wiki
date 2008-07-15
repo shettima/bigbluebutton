@@ -1,0 +1,13 @@
+#summary This page contain notes from the developers of the BigBlueButton.
+
+= Introduction =
+
+Add notes for client/server code development (i.e. requirements, settings, files needed, etc) 
+
+----
+== BigBlueButton Server ==
+
+----
+
+== BigBlueButton Client ==
+
