@@ -12,9 +12,9 @@ Add notes for client/server code development (i.e. requirements, settings, files
    * add the followinglins in the build-demo section   
                
 {{{ 
-     <build-demo name="chatServer">
+     <build-demo name="component or module name">
 	<copy-assets>
-		<logback webapp="chatServer"/>
+		<logback webapp="component or module name"/>
 	</copy-assets>
      </build-demo> 
 }}}
@@ -25,12 +25,21 @@ Add notes for client/server code development (i.e. requirements, settings, files
 }}}
  * Add the line 
 {{{ 
-		<compile-wardemo name="vcr"/>
+		<compile-wardemo name="component or module name"/>
 }}}
 in the  section of
 {{{
-<!-- war up demos -->
+<!-- war up BigBlueButtonProject-->
 }}}
+ * In the sction of 
+{{{
+<!-- create jar files for BigBlueButtonProject -->
+}}}
+add the following line
+{{{
+<compile-jardemo name="bwcheck"/>
+}}}
+
 2. Add logback.html file to the added module directory. (check it again)
 
 
