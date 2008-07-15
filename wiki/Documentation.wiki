@@ -9,7 +9,7 @@ Add notes for client/server code development (i.e. requirements, settings, files
 
 1. When a new component added to the project, there are certain files need to be edited:
  * BigBlueButton-server/build.xml as follows: 
-   * add the followinglins in the build-demo section   
+   * add the following lines in the build-demo section   
                
 {{{ 
      <build-demo name="component or module name">
@@ -19,19 +19,27 @@ Add notes for client/server code development (i.e. requirements, settings, files
      </build-demo> 
 }}}
 
- * Add the path for the classes for your module or components in the section 
-{{{
+ * Add the path for the classes folder for your module or components in the sections:
+  *{{{
+       <!-- only certain classes from selected demos are copied to the war -->
+   }}}
+   add the line 
+   {{{
+       <fileset dir="${webapps.build.dir}/vcr/WEB-INF/classes"/>
+   }}}
+  *{{{
    <!-- libraries and classes needed for building BigBlueButtonProject -->
-}}}
- * Add the line 
-{{{ 
-    <compile-wardemo name="component or module name"/>
-}}}
-in the  section of
+   }}}
+ * In the  section of
 {{{
-<!-- war up BigBlueButtonProject-->
+  <!-- war up BigBlueButtonProject-->
 }}}
- * In the sction of 
+  add the line 
+  {{{ 
+     <compile-wardemo name="component or module name"/>
+  }}}
+
+ * In the section of 
 {{{
     <!-- create jar files for BigBlueButtonProject -->
 }}}
