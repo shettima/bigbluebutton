@@ -46,7 +46,29 @@ Add notes for client/server code development (i.e. requirements, settings, files
    <compile-jardemo name="module or component name"/>
 }}}
 
-2. Add logback.html file to the added module directory. (check it again)
+2. Add logback.html file to the new module directory. and edit the line
+{{{
+<appender-ref ref="Module_Name" />
+}}}
+{{{
+<logger name="org.blindsideproject.module_name">
+}}}
+3. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\module_folder\WEB-INF\".
+4. Edit the lines 
+{{{
+<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>/vcr</param-value>
+	</context-param>
+}}}
+in the web.xml file in the "project_root\webapps\module_folder\WEB-INF\" folder.
+5. Edit the line
+{{{
+<bean id="web.handler" 
+	    class="org.bigbluebuttonproject.module_name"
+}}}
+in the red5-web.xml file in the "project_root\webapps\module_folder\WEB-INF\" folder.
+
 
 
 ----
