@@ -53,7 +53,9 @@ Add notes for client/server code development (i.e. requirements, settings, files
 {{{
 <logger name="org.blindsideproject.module_name">
 }}}
+
 3. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\module_folder\WEB-INF\".
+
 4. Edit the lines 
 {{{
 <context-param>
@@ -62,6 +64,7 @@ Add notes for client/server code development (i.e. requirements, settings, files
 	</context-param>
 }}}
 in the web.xml file in the "project_root\webapps\module_folder\WEB-INF\" folder.
+
 5. Edit the line
 {{{
 <bean id="web.handler" 
