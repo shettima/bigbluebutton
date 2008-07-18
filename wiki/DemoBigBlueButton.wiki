@@ -1,0 +1,15 @@
+#summary Demo of BigBlueButton
+
+= Introduction =
+
+First, be sure to check out the [http://present.carleton.ca:8080/files/help/video2/index.html BigBlueButton video].  To try out the demo, we have create a couple of conference rooms:
+
+    (Conference, Moderator Password, Viewer Password) 
+
+    * 85002, modpass, viewpass
+    * 85003, modpass, viewpass 
+
+You can login at
+    http://present.carleton.ca/client/
+
+Please provide us with suggestions, comments, and bug reports to improve Blindside. 
