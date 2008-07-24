@@ -103,7 +103,7 @@ in the red5-web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
 == BigBlueButton Server Tasks==
 
-The BigBlueButton server commands cdn be found in the build.xml file in "C:\source\bigbluebutton-server" folder.
+The BigBlueButton server commands can be found in the build.xml file in "C:\source\bigbluebutton-server" folder.
 
 {{{
 <target name="prepare" description="Setup the directories for building">
@@ -195,4 +195,3 @@ The BigBlueButton server commands cdn be found in the build.xml file in "C:\sour
 {{{
 <target name="all" depends="clean, prepare, compile, jar, javadoc" description="Run all server tasks"/>
 }}}
-
