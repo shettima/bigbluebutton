@@ -9,12 +9,19 @@ Add notes for client/server code development (i.e. requirements, settings, files
 
 Note: To add a new application to the Red5 Server follow the instruction provided at "Red5 Documentation" [http://red5world.com/workshop/red5.pdf], "How to create new application in Red4" section. 
 
-1. New applications should be created in the following directory C:\source\bigbluebutton-server\webapps\vcr\WEB-INF
+1. New applications should be created in the following directory C:\source\bigbluebutton-server\webapps\myapps.
 
+2. WEB-INF folder also should be created within myapps folder, C:\source\bigbluebutton-server\webapps\myapps\WEB-INF.
 
-Three main files are needed to be setup when creating a new application for the BigBlueButton server (web.xml, red5-web.xml, and red5-web.properties)
+3. Three configuration files (web.xml, red3-web.xml, and red5-web.properties) should be added to myapps\WEB-INF folder. 
 
-2. When a new component added to the project, there are certain files need to be edited:
+4. red5-web.properties file contains the context path  and the local host for the new application so it should be setup as follows, 
+{{{
+      webapp.contextPath=/vcr
+      webapp.virtualHosts=*,localhost, 127.0.0.1
+}}}
+
+5. When a new component added to the project, there are certain files need to be edited:
  * BigBlueButton-server/build.xml as follows: 
    * add the following lines in the build-demo section   
                
@@ -53,7 +60,7 @@ Three main files are needed to be setup when creating a new application for the 
    <compile-jardemo name="myapps"/>
 }}}
 
-3. Add logback.html file to the new module directory. and edit the line
+6. Add logback.html file to the new module directory. and edit the line
 {{{
 <appender-ref ref="myapps" />
 }}}
@@ -61,9 +68,9 @@ Three main files are needed to be setup when creating a new application for the 
 <logger name="org.blindsideproject.myapps">
 }}}
 
-4. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\mtapps\WEB-INF\".
+7. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\mtapps\WEB-INF\".
 
-5. Edit the lines 
+8. Edit the lines 
 {{{
 <context-param>
 		<param-name>webAppRootKey</param-name>
@@ -72,7 +79,7 @@ Three main files are needed to be setup when creating a new application for the 
 }}}
 in the web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
-6. Edit the line
+9. Edit the line
 {{{
 <bean id="web.handler" 
 	    class="org.bigbluebuttonproject.myapps"
