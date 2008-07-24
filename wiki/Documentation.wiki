@@ -101,13 +101,9 @@ in the red5-web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
 ----
 
-== BigBlueButton Server Commands ==
+== BigBlueButton Server Tasks==
 
 The BigBlueButton server commands cdn be found in the build.xml file in "C:\source\bigbluebutton-server" folder.
-
-{{{
-<target name="prepare" description="Setup the directories for building">
-}}}
 
 {{{
 <target name="prepare" description="Setup the directories for building">
@@ -147,3 +143,56 @@ The BigBlueButton server commands cdn be found in the build.xml file in "C:\sour
 {{{
 <target name="dist" description="Make Binary distribution" depends="clean, jar">
 }}}
+
+{{{
+<target name="dist-installer" description="Make Installer distribution" depends="ivyclear, dist, javadoc">
+}}}
+
+{{{
+<target name="dist-archive" depends="dist-installer" description="Create archive file for distribution">
+}}}
+
+{{{
+<target name="dist-windows" description="Create Windows installer">
+}}}
+
+{{{
+<target name="dist-debian" description="Create Debian package" depends="dist-installer">
+}}}
+
+{{{
+<target name="dist-redhat" description="Create Redhat installer" depends="dist-installer">
+}}}
+
+{{{
+<target name="server" depends="compile" description="Compile and start the server">
+}}}
+
+{{{
+<target name="shutdown">
+}}}
+
+{{{
+<target name="udp_server" depends="compile" description="Compile and start experimental UDP server">
+}}}
+
+{{{
+<target name="run-tests" depends="compile_tests" description="Run JUnit tests and generate HTML reports">
+}}}
+
+{{{
+<target name="compile_tests" description="Compiles junit test classes">
+}}}
+
+{{{
+<target name="webwar" description="Make Web Archive" depends="compile_war">
+}}}
+
+{{{
+<target name="remotejar" description="Creates a jar that may be deployed with remote applications" depends="compile">
+}}}
+
+{{{
+<target name="all" depends="clean, prepare, compile, jar, javadoc" description="Run all server tasks"/>
+}}}
+
