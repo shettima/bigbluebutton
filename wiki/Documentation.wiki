@@ -21,6 +21,13 @@ Note: To add a new application to the Red5 Server follow the instruction provide
       webapp.virtualHosts=*,localhost, 127.0.0.1
 }}}
 
+Also edit the line to point to the path for the new application as follows,
+{{{
+     <bean id="web.handler" 
+	    class="org.bigbluebuttonproject.vcr.Application"
+		singleton="true" />
+}}}
+
 5. When a new component added to the project, there are certain files need to be edited:
  * BigBlueButton-server/build.xml as follows: 
    * add the following lines in the build-demo section   
