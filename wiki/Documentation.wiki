@@ -7,16 +7,17 @@ Add notes for client/server code development (i.e. requirements, settings, files
 ----
 == BigBlueButton Server ==
 
-Note: To add a new application to the Red5 Server follow the instruction provided at "Red5 Documentaion" [http://red5world.com/workshop/red5.pdf], "How to create new application in Red4" section. 
+Note: To add a new application to the Red5 Server follow the instruction provided at "Red5 Documentation" [http://red5world.com/workshop/red5.pdf], "How to create new application in Red4" section. 
+
 
 1. When a new component added to the project, there are certain files need to be edited:
  * BigBlueButton-server/build.xml as follows: 
    * add the following lines in the build-demo section   
                
 {{{ 
-     <build-demo name="component or module name">
+     <build-demo name="myapps">
 	<copy-assets>
-		<logback webapp="component or module name"/>
+		<logback webapp="myapps"/>
 	</copy-assets>
      </build-demo> 
 }}}
@@ -27,7 +28,7 @@ Note: To add a new application to the Red5 Server follow the instruction provide
    }}}
    add the line 
    {{{
-       <fileset dir="${webapps.build.dir}/vcr/WEB-INF/classes"/>
+       <fileset dir="${webapps.build.dir}/myapps/WEB-INF/classes"/>
    }}}
   
  * In the  section of
@@ -36,7 +37,7 @@ Note: To add a new application to the Red5 Server follow the instruction provide
 }}}
   add the line 
   {{{ 
-     <compile-wardemo name="component or module name"/>
+     <compile-wardemo name="myapps"/>
   }}}
 
  * In the section of 
@@ -45,34 +46,34 @@ Note: To add a new application to the Red5 Server follow the instruction provide
 }}}
  add the following line
 {{{
-   <compile-jardemo name="module or component name"/>
+   <compile-jardemo name="myapps"/>
 }}}
 
 2. Add logback.html file to the new module directory. and edit the line
 {{{
-<appender-ref ref="Module_Name" />
+<appender-ref ref="myapps" />
 }}}
 {{{
-<logger name="org.blindsideproject.module_name">
+<logger name="org.blindsideproject.myapps">
 }}}
 
-3. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\module_folder\WEB-INF\".
+3. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\mtapps\WEB-INF\".
 
 4. Edit the lines 
 {{{
 <context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>/vcr</param-value>
+		<param-value>/myapps</param-value>
 	</context-param>
 }}}
-in the web.xml file in the "project_root\webapps\module_folder\WEB-INF\" folder.
+in the web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
 5. Edit the line
 {{{
 <bean id="web.handler" 
 	    class="org.bigbluebuttonproject.module_name"
 }}}
-in the red5-web.xml file in the "project_root\webapps\module_folder\WEB-INF\" folder.
+in the red5-web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
 
 
