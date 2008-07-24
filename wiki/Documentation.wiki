@@ -98,3 +98,52 @@ in the red5-web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 ----
 
 == BigBlueButton Client ==
+
+----
+
+== BigBlueButton Server Commands ==
+
+The BigBlueButton server commands cdn be found in the build.xml file in "C:\source\bigbluebutton-server" folder.
+
+{{{
+<target name="prepare" description="Setup the directories for building">
+}}}
+
+{{{
+<target name="prepare" description="Setup the directories for building">
+}}}
+
+{{{
+<target name="retrieve" unless="library.installed" description="Retrieves the libraries if needed">
+}}}
+
+{{{
+<target name="ivyclear" description="Clears out the Ivy cache">
+}}}
+
+{{{
+<target name="compile" depends="-library.check, -java6.check, prepare" description="Compiles the server">
+}}}
+
+{{{
+<target name="compile_core" if="java6.installed" description="Build server core">
+}}}
+
+{{{
+<target name="compile_demos" description="Build demo apps">
+}}}
+{{{
+<target name="war_demos" description="Build wars for demo apps" depends="compile_demos">
+}}}
+
+{{{
+<target name="javadoc" description="Generate JavaDoc">
+}}}
+
+{{{
+<target name="jar" description="Make Archive" depends="compile">
+}}}
+
+{{{
+<target name="dist" description="Make Binary distribution" depends="clean, jar">
+}}}
