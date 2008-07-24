@@ -7,7 +7,11 @@ Add notes for client/server code development (i.e. requirements, settings, files
 ----
 == BigBlueButton Server ==
 
+The BigBlueButton Server is based on Adobe Red5 server. 
+
 Note: To add a new application to the Red5 Server follow the instruction provided at "Red5 Documentation" [http://red5world.com/workshop/red5.pdf], "How to create new application in Red4" section. 
+
+Other useful link is [http://www.red5tutorials.net/index.php/Main_Page]
 
 1. New applications should be created in the following directory C:\source\bigbluebutton-server\webapps\myapps.
 
