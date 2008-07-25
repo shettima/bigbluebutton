@@ -28,7 +28,7 @@ The primary VCR module functions should include:
  
 Session: Audio (MP3), video (FLV), presentation (slides), chat (history), and whiteboard.
 
-Notes: FLVWriter (org.red5.io.flv.impl.FLVWriter), RTMPClient (org.red5.server.net.rtmp.RTMPClient)
+Notes: useful classes for recording, FLVWriter (org.red5.io.flv.impl.FLVWriter), RTMPClient (org.red5.server.net.rtmp.RTMPClient)
 
 ----
 
