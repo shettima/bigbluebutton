@@ -13,13 +13,15 @@ Note: To add a new application to the Red5 Server follow the instruction provide
 
 Other useful link is [http://www.red5tutorials.net/index.php/Main_Page]
 
-1. New applications should be created in the following directory C:\source\bigbluebutton-server\webapps\myapps.
+1. Class ApplicationAdapter is used as a base for new applications. 
 
-2. WEB-INF folder also should be created within myapps folder, C:\source\bigbluebutton-server\webapps\myapps\WEB-INF.
+2. New applications should be created in the following directory C:\source\bigbluebutton-server\webapps\myapps.
 
-3. Three configuration files (web.xml, red3-web.xml, and red5-web.properties) should be added to myapps\WEB-INF folder. 
+3. WEB-INF folder also should be created within myapps folder, C:\source\bigbluebutton-server\webapps\myapps\WEB-INF.
 
-4. red5-web.properties file contains the context path  and the local host for the new application so it should be setup as follows, 
+4. Three configuration files (web.xml, red3-web.xml, and red5-web.properties) should be added to myapps\WEB-INF folder. 
+
+5. red5-web.properties file contains the context path  and the local host for the new application so it should be setup as follows, 
 {{{
       webapp.contextPath=/vcr
       webapp.virtualHosts=*,localhost, 127.0.0.1
@@ -32,7 +34,7 @@ Also edit the line to point to the path for the new application as follows,
 		singleton="true" />
 }}}
 
-5. When a new component added to the project, there are certain files need to be edited:
+6. When a new component added to the project, there are certain files need to be edited:
  * BigBlueButton-server/build.xml as follows: 
    * add the following lines in the build-demo section   
                
@@ -71,7 +73,7 @@ Also edit the line to point to the path for the new application as follows,
    <compile-jardemo name="myapps"/>
 }}}
 
-6. Add logback.html file to the new module directory. and edit the line
+7. Add logback.html file to the new module directory. and edit the line
 {{{
 <appender-ref ref="myapps" />
 }}}
@@ -79,9 +81,9 @@ Also edit the line to point to the path for the new application as follows,
 <logger name="org.blindsideproject.myapps">
 }}}
 
-7. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\mtapps\WEB-INF\".
+8. Add the files (red5-web.properties, red5-web.xml, and web.xml) to the directory "project_root\webapps\mtapps\WEB-INF\".
 
-8. Edit the lines 
+9. Edit the lines 
 {{{
 <context-param>
 		<param-name>webAppRootKey</param-name>
@@ -90,7 +92,7 @@ Also edit the line to point to the path for the new application as follows,
 }}}
 in the web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
-9. Edit the line
+10. Edit the line
 {{{
 <bean id="web.handler" 
 	    class="org.bigbluebuttonproject.myapps"
@@ -105,7 +107,7 @@ in the red5-web.xml file in the "project_root\webapps\myapps\WEB-INF\" folder.
 
 ----
 
-== BigBlueButton Server Tasks==
+== BigBlueButton - Red5 Server Tasks==
 
 The BigBlueButton server commands can be found in the build.xml file in "C:\source\bigbluebutton-server" folder.
 
