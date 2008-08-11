@@ -209,10 +209,8 @@ The BigBlueButton server commands can be found in the build.xml file in "C:\sour
 ----
 
 
-* When working with the IScope. getClients(), this funcion returns the set of Clients connected-1. The list doesn't include the last connected cilent!
+ * When working with the IScope. getClients(), this funcion returns the set of Clients connected-1. The list doesn't include the last connected cilent!
 
-* When one of the clinets leave the Room (or Scope) the ClientList will include the last missing client!
+ * When one of the clinets leave the Room (or Scope) the ClientList will include the last missing client!
 
-* When we log out we are calling the method leave() on the client side but this doesn't call the method roomLeave(IScope, IClient) until the browser is closed.
-
-
+ * When we log out we are calling the method leave() on the client side but this doesn't call the method roomLeave(IScope, IClient) until the browser is closed.
