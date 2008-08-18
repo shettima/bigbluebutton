@@ -36,7 +36,7 @@ Also edit the line to point to the path for the new application as follows,
 
 6. When a new component added to the project, there are certain files need to be edited:
  * BigBlueButton-server/build.xml as follows: 
-   * add the following lines in the build-demo section. Also add the file *logback.xml to your WEB-INF\src folder
+   * add the following lines in the build-demo section. Also add the file *logback.xml* to your WEB-INF\src folder
                
 {{{ 
      <build-demo name="myapps">
