@@ -4,7 +4,9 @@ This page describes some simple and basic work on performance testing on BigBlue
 
 A few small script files were written to measure the CPU/Memory usage (in percentage) by BigBlueButton server processes (Java, pdftk, pdf2swf, Asterisk, etc.) for a specific period of time. The measurement output are in text/Excel/CSV formats for easy data manipulation.
 
-The server scripts were written in Linux Shell program utilizing existing system functions such as _top_, _ps_, _gawk_, etc. The clients scripts were written in VBS and Dos batch for Windows, and in Linux Shell for Linux. The clients scripts are mainly providing user friendly testing environment (such as login-free web client loading and multiple clients loading by one command). 
+The server scripts were written in Linux Shell program utilizing existing system functions such as _top_, _ps_, _grep_, _gawk_, etc. The _top_ command is a good built in tool to find CPU/Memory utilizations for Linux. So it is the "engine" of the server scripts.
+
+The clients scripts were written in VBS and Dos batch for Windows, and in Linux Shell for Linux. The clients scripts are mainly providing user friendly testing environment (such as login-free web client loading and multiple clients loading by one command). 
 
 
 = Details =
@@ -12,7 +14,8 @@ The server scripts were written in Linux Shell program utilizing existing system
 == Linux Shell scripts - server ==
 The logic of the server scripts are as the following:
    {{{
-      Use _ps_ to find the Pid
+      1. use "ps", to find the process ids (PIDs) for persistent processes by part of their names (i.e., "tomcat" can be input as Apache Tomcat process' name - the more detailed the better)
+      2. run "top", find the process ids (PIDs) for targetted processes by their exact CMD names (i.e., "pdf2swf" is the CMD name for the process to convert PDF to SWF, it is not a permanent process like tomcat process, ) 
    }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
