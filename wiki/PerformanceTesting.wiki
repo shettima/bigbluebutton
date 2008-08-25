@@ -9,7 +9,6 @@ The server scripts were written in Linux Shell program utilizing existing system
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Linux Shell scripts - server
-  * Linux Shell scripts - client
-  * VBS/Dos batch - client
+* Linux Shell scripts - server
+* Linux Shell scripts - client
+* VBS/Dos batch - client
