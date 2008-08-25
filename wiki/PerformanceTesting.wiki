@@ -61,6 +61,15 @@ The core Linux Shell commands for the above steps are:
 
 The source code can be downloaded at (performance.tar):
 http://code.google.com/p/bigbluebutton/downloads/list
+
+After downloading, extract all the scripts (usually contained in folder performance). If you want the output to be accessed by web users, extract it into the webapps folder of tomcat server.
+
+The program can be run as (30 times of 1 second interval - about 30 seconds):
+   {{{
+      sh memcpu.sh 1 30 my_current_test_description 
+   }}}
+
+After starting the script, you can quickly start some clients (as described in the following sections). Once you finished the current test session (say, uploaded a PDF file and share it with the connected clients), go to folder performance, view the file performance.html for CPU/Memory usage details.
   
 == Linux Shell scripts - client ==
 The purpose of the script is to allow users to open several instances (say 20) Login-free BigBlueButton clients in Firefox (or other browsers) at one command under Linux systems.
