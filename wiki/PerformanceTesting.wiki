@@ -19,6 +19,9 @@ The logic of the server scripts are as the following:
       2. run "top" to get CPU/Memory usage data, filtering the results by the PIDs found in step1 and by exact CMD names 
          (i.e., "pdf2swf" is the CMD name for the process to convert PDF to SWF, since it is not a persistent process like tomcat, 
          it has no consistant PID, so its CMD name can be used to identify it) 
+      3. the results of the step 2 will be processed by another script to get the overall CPU/Memory usage data by the specified processes
+      4. pause a specified period of time
+      5. repeat 1 - 3 until the user exits or predefined loop times are over
    }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
