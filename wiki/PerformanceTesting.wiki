@@ -27,9 +27,10 @@ The logic of the server scripts are as the following:
 
 The core Linux Shell commands for the above steps are:
    {{{
-      1. ps -AF | gawk '/tomcat|activemq-|red5|bigbluebutton|ant-/ {print}' | gawk '!/gawk|findPidByName.sh/ {print}' | gawk '{printf "%d\t%d\t%s\n", $2, $3, $11, $12 >> "ProcessIdsFile"}'
+      1. ps -AF | gawk '/tomcat|activemq-|red5|bigbluebutton|ant-/ {print}' | 
+         gawk '!/gawk|findPidByName.sh/ {print}' | gawk '{printf "%d\t%d\t%s\n", $2, $3, $11, $12 >> "ProcessIdsFile"}'
       2. top -b -n 1 -d 1 | gawk '$1 ~ /^11542$|^13591$|^25279$/{print}$12 ~ /^pdftk|^pdf2swf/{print} $1 !~ /^[0-9]/ {print}'
-      3. echo -e "Putput of step 2 (see below)" | gawk '
+      3. echo -e "Output of step 2 (see below)" | gawk '
                     BEGIN {
                        lineNum=1
                     }
@@ -42,9 +43,7 @@ The core Linux Shell commands for the above steps are:
                        printf "%d,%f,%f\n", lineNum, totalCPU, totalMem >> outfile
                     } '
       4. sleep 1 (or .500 for 500 ms)
-      5. use loop (back to step 1)
-      6. 
-
+      
       Output of step 2 (top command):
       
          top - 11:40:06 up 38 days, 21:21,  2 users,  load average: 0.02, 0.02, 0.00
