@@ -10,5 +10,9 @@ The server scripts were written in Linux Shell program utilizing existing system
 = Details =
 
 == Linux Shell scripts - server ==
+The logic of the server scripts are as the following:
+   {{{
+      Use _ps_ to find the Pid
+   }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
