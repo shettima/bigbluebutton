@@ -123,7 +123,7 @@ public class Application extends ApplicationAdapter
 		  
 		if (!super.roomStart(room))
     		return false;
-		log.info("VCR::roomStart");
+		log.info("VCR::roomStart: "+ room.toString());
 		return true;            
 	  }
 	  
@@ -138,7 +138,7 @@ public class Application extends ApplicationAdapter
 	  
 	  public void roomLeave(IClient client, IScope room) {
 				 	
-		  log.info("VCR::roomLeave");	  		  		  
+		  log.info("VCR::roomLeave: "+ room.toString());	  		  		  
 	  }
 
 	  	  
@@ -152,7 +152,7 @@ public class Application extends ApplicationAdapter
   	 */ 
 	  public boolean roomJoin(IClient client, IScope room) {
 	     	
-		  log.info("VCR::roomJoin");
+		  log.info("VCR::roomJoin: "+ room.toString());
 		  return true;
 	  } 
 	  
@@ -168,7 +168,7 @@ public class Application extends ApplicationAdapter
   	 */
 	  public boolean roomConnect(IConnection conn, Object[] params) {
 		
-		  log.info("VCR::roomConnect");
+		  log.info("VCR::roomConnect:"+ conn.getScope().toString());
 		return true;
 	  }
 	    

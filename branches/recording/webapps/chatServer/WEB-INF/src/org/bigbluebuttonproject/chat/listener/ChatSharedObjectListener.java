@@ -78,7 +78,7 @@ public class ChatSharedObjectListener implements ISharedObjectListener {
 		// TODO Auto-generated method stub
 
 	}
-
+  
 	//@Override
 	/**
 	 * @see org.red5.server.api.so.ISharedObjectListener#onSharedObjectDisconnect(org.red5.server.api.so.ISharedObjectBase)
@@ -171,7 +171,7 @@ public class ChatSharedObjectListener implements ISharedObjectListener {
 		} 
 		return log.toString();		
 	}
-	
+	  
 	/**
 	 * To clear the chat history stored in buffer linkedlist.
 	 * 

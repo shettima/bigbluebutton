@@ -40,7 +40,7 @@ import org.red5.server.so.SharedObjectMessage;
 public abstract class EventStream extends RTMPClient implements ISharedObjectListener {
 	   
 	public static boolean debug = true;
-   
+     
 	protected String host;
 	protected String room;
 	protected EventWriter out;
@@ -188,5 +188,5 @@ public abstract class EventStream extends RTMPClient implements ISharedObjectLis
 
 	public void onSharedObjectUpdate(ISharedObjectBase so, Map<String, Object> values) {
 	}
-
+	
 }

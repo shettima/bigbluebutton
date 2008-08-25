@@ -11,7 +11,10 @@ import org.red5.server.api.so.IClientSharedObject;
 import org.red5.server.api.so.ISharedObjectBase;
 import org.red5.server.net.rtmp.RTMPConnection;
 import org.red5.server.net.rtmp.codec.RTMP;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import org.bigbluebuttonproject.vcr.Application;
 import org.bigbluebuttonproject.vcr.EvenstVCR.*;
 
  
@@ -26,12 +29,16 @@ import org.bigbluebuttonproject.vcr.EvenstVCR.*;
 public class ChatEventStream extends EventStream {
 
 protected IClientSharedObject chatSO;
+
+public static Logger log = LoggerFactory.getLogger( Application.class );
 	
 	public ChatEventStream(String host, String room) {
 		super(host,room);
+		log.info("chatServer host"+host+"chatServerRoom:"+room);
 		}
 
 	public String getApplication() {
+		log.info("application name: chatServer");
 		return "chatServer";
 	}
 	
@@ -39,10 +46,12 @@ protected IClientSharedObject chatSO;
 		super.connectionOpened(conn, state);
 		chatSO = subscribeSharedObject(conn, "chatSO");
 		if (chatSO == null){
-			System.out.println("connectionOpened could not subscribe chatSO");
-		}else System.out.println("connectionOpened could  subscribe chatSO");
-		
-	}
+			//System.out.println("connectionOpened could not subscribe chatSO");
+			log.info("connectionOpened could not subscribe chatSO");
+		}else log.info("connectionOpened could subscribe chatSO"); 
+					
+			//System.out.println("connectionOpened could  subscribe chatSO");
+			}
 	 
 	@SuppressWarnings("unchecked")
 	public void onSharedObjectSend(ISharedObjectBase so, String method, List params) {
@@ -53,7 +62,7 @@ protected IClientSharedObject chatSO;
 				"\" user=\"" + params.get(0) +"\" color= \"" + params.get(2)+
 				"\">" + params.get(1) + "</chat>");
 			out.flush();
-			/*Pattern p = Pattern.compile("\\[(.+)\\]</b> (.+)</font>");
+			Pattern p = Pattern.compile("\\[(.+)\\]</b> (.+)</font>");
 			Matcher m = p.matcher((String) params.get(0));
 			if (m.find()) {
 				String name = m.group(1);
@@ -61,7 +70,8 @@ protected IClientSharedObject chatSO;
 				out.println("<chat second  time=\"" + getTimestamp() + 
 						"\" user=\"" + name + "\">" + message + "</chat>");
 				out.flush();
-				*/
 			}
 		}
 	}
+	
+}

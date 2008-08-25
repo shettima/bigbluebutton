@@ -71,11 +71,11 @@ public class Application extends ApplicationAdapter
 	  {
 		  if (!super.appStart(app))
 	    		return false;
-		/*System.out.println("======================================================");
+		System.out.println("======================================================");
 		System.out.println("======================================================");
 		System.out.println("chat:application Start"+ app);
 		System.out.println("======================================================");
-		System.out.println("======================================================");*/
+		System.out.println("======================================================");
 	      return true;
 	  }
 	  
@@ -108,11 +108,11 @@ public class Application extends ApplicationAdapter
 		if (!super.roomStart(room))
 	    		return false;
 		
-		/*System.out.println("======================================================");
+		System.out.println("======================================================");
 		System.out.println("======================================================");
 		System.out.println("chat:Room Start"+ room);
 		System.out.println("======================================================");
-		System.out.println("======================================================");*/
+		System.out.println("======================================================");
 		  if(!hasSharedObject(room, "chatSO")){
 			  if(!createSharedObject(room, "chatSO", false))
 				  log.error("Sharedobject::chatSO could not be created");
@@ -151,11 +151,11 @@ public class Application extends ApplicationAdapter
 			  if(!createSharedObject(room, "chatSO", false))
 				  log.error("Sharedobject::chatSO could not be created");
 		  }
-		/*System.out.println("======================================================");
+		System.out.println("======================================================");
 		System.out.println("======================================================");
 		System.out.println("chat:Room Leave"+ client + room);
 		System.out.println("======================================================");
-		System.out.println("======================================================");*/
+		System.out.println("======================================================");
 	    ISharedObject so = getSharedObject(room, "chatSO", false);
 	      
 	      if(so == null){
@@ -177,11 +177,7 @@ public class Application extends ApplicationAdapter
 			  // call client method remotely to send chat Log
 			  sc.invoke("setChatLog", new Object[]{chatLog});
 		  }
-		  
-		  
-		  
-
-		  
+		  		  	  
 	  }
 
 	  	  
@@ -220,11 +216,11 @@ public class Application extends ApplicationAdapter
 			  if(!createSharedObject(conn.getScope(), "chatSO", false))
 				  log.error("Sharedobject::chatSO could not be created");
 		  }
-		/*System.out.println("======================================================");
+		System.out.println("======================================================");
 		System.out.println("======================================================");
 		System.out.println("chat:room connect"+ conn);
 		System.out.println("======================================================");
-		System.out.println("======================================================");*/
+		System.out.println("======================================================");
 		  
 		  ISharedObject so = getSharedObject(conn.getScope(), "chatSO", false);
 	      
@@ -232,7 +228,7 @@ public class Application extends ApplicationAdapter
 	    	  log.error("Sharedobject::chatSO was not created");
 	    	  return false;
 	      }
-		 
+		   
 		  if (conn instanceof IServiceCapableConnection) {
 			  IServiceCapableConnection sc = (IServiceCapableConnection) conn;
 			  String chatLog = chatListener.getChatLog();
@@ -240,7 +236,7 @@ public class Application extends ApplicationAdapter
 			  sc.invoke("setChatLog", new Object[]{chatLog});
 		  } 
 		  
-		  //System.out.print("134.117.58.103 server is runing");
+		  System.out.print("134.117.58.103 server is runing");
 	  	  return true;
 	  }
 	    
@@ -250,8 +246,8 @@ public class Application extends ApplicationAdapter
     	 * @param call IPendingServiceCall
     	 */
 	  public void resultReceived(IPendingServiceCall call) {
-//			log.info("Received result " + call.getResult() + " for "
-//					+ call.getServiceMethodName());		
+			log.info("Received result " + call.getResult() + " for "
+					+ call.getServiceMethodName());		
 		}
 	  
 }
