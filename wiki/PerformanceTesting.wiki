@@ -43,5 +43,19 @@ The core Linux Shell commands for the above steps are:
                     } '
          
    }}}
+
+   Output of step 2 (top command):
+   {{{
+   top - 11:40:06 up 38 days, 21:21,  2 users,  load average: 0.02, 0.02, 0.00
+   Tasks:  99 total,   1 running,  98 sleeping,   0 stopped,   0 zombie
+   Cpu(s):  0.1%us,  0.0%sy,  0.0%ni, 99.8%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+   Mem:   2071216k total,  1591896k used,   479320k free,   304520k buffers
+   Swap:  2031608k total,        0k used,  2031608k free,   844584k cached
+
+   PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+   11542 root      22   0  696m 136m  13m S    0  6.7  40:45.94 java
+   13591 root      25   0  682m  65m  11m S    0  3.2  22:58.78 java
+   25279 root      22   0  227m  77m  10m S    0  3.8   3:43.35 java
+   }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
