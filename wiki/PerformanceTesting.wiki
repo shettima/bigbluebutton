@@ -29,7 +29,7 @@ The core Linux Shell commands for the above steps are:
    {{{
       1. ps -AF | gawk '/tomcat|activemq-|red5|bigbluebutton|ant-/ {print}' | gawk '!/gawk|findPidByName.sh/ {print}' | gawk '{printf "%d\t%d\t%s\n", $2, $3, $11, $12 >> "ProcessIdsFile"}'
       2. top -b -n 1 -d 1 | gawk '$1 ~ /^11542$|^13591$|^25279$/{print}$12 ~ /^pdftk|^pdf2swf/{print} $1 !~ /^[0-9]/ {print}'
-      3. echo -e "RESULTS of step 2" | gawk '
+      3. echo -e "Putput of step 2 (see below)" | gawk '
                     BEGIN {
                        lineNum=1
                     }
@@ -46,7 +46,7 @@ The core Linux Shell commands for the above steps are:
       6. 
 
       Output of step 2 (top command):
-      {{{
+      
          top - 11:40:06 up 38 days, 21:21,  2 users,  load average: 0.02, 0.02, 0.00
          Tasks:  99 total,   1 running,  98 sleeping,   0 stopped,   0 zombie
          Cpu(s):  0.1%us,  0.0%sy,  0.0%ni, 99.8%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
@@ -57,7 +57,6 @@ The core Linux Shell commands for the above steps are:
          11542 root      22   0  696m 136m  13m S    0  6.7  40:45.94 java
          13591 root      25   0  682m  65m  11m S    0  3.2  22:58.78 java
          25279 root      22   0  227m  77m  10m S    0  3.8   3:43.35 java
-     }}}
          
    }}}
 
