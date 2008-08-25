@@ -43,7 +43,7 @@ public class VCR {
 	
 	protected EventWriter out;
 		
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		VCR vcr = new VCR(args);
 		vcr.startRecording();
@@ -51,11 +51,12 @@ public class VCR {
 		System.out.println("Press 's' to stop recording");
 		char a = Keyboard.getCharacter();
 		if (a == 's'){
-			vcr.stopRecording();
+			String str = vcr.stopRecording();
+			System.out.println("Session was stored @:  "+ str);
 			System.exit(0);			
 		}
 		
-	}*/
+	}
 	
 	public VCR(String[] args) {
 		getArgs(args);

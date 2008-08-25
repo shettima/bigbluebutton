@@ -205,14 +205,14 @@
 		<antcall target="compile_core" inheritAll="true" inheritRefs="true"/>
 		<antcall target="compile_core_compatibility" inheritAll="true" inheritRefs="true"/>
 
-		<!-- libraries and classes needed for building the demos -->
+		<!-- libraries and classes needed for building BigBlueButtonProject -->
 		<path id="webapps.classpath">
 			<fileset dir="${lib.dir}">
 				<filename name="*.jar"/>
 			</fileset>
 			<pathelement location="${classes.dir}"/>
 		</path>
-		<antcall target="compile_demos" inheritAll="true" inheritRefs="true"/>
+		<antcall target="compile_bigbluebutton" inheritAll="true" inheritRefs="true"/>
 		<antcall target="compile_script" inheritAll="true" inheritRefs="true"/>
 	</target>
 
@@ -239,7 +239,7 @@
 			 excludes="${std_excludes}" listfiles="false"/>
 	</target>
 
-	<macrodef name="build-demo">
+	<macrodef name="build-bigbluebutton">
    		<attribute name="name"/>
 		<element name="copy-assets" optional="yes"/>
    		<sequential>
@@ -274,13 +274,13 @@
 					<include name="slf4j-api-1.4.3.jar"/>
 					<include name="logback-core-0.9.8.jar"/>
 					<include name="logback-classic-0.9.8.jar"/>
-				</fileset>
+			 </fileset>
 			</copy>		
       		</sequential>
 	</macrodef>
 	
 	<!-- Demos -->
-	<target name="compile_demos" description="Build demo apps">
+	<target name="compile_bigbluebutton" description="Build bigbluebutton apps">
 		<echo message="Webapps dir: ${webapps.dir}"/>
 		<echo message="Webapps build dir: ${webapps.build.dir}"/>
 
@@ -300,100 +300,31 @@
 			</fileset>
 		</copy>
 
-		<!-- build demos -->
-		<build-demo name="admin">
-			<copy-assets>
-				<logback webapp="admin"/>
-				<!-- copy assets -->
-				<copy todir="${webapps.build.dir}/admin/assets">
-					<fileset dir="swf/DEV_Deploy/assets"/>
-					<fileset file="swf/DEV_Deploy/adminPanel.swf"/>
-				</copy>
-				<!-- copy libs -->
-				<copy todir="${webapps.build.dir}/admin/WEB-INF/lib">
-					<fileset dir="${lib.dir}">
-                        <include name="standard-*.jar"/>
-                        <include name="spring-web-*.jar"/>
-						<include name="spring-webmvc-*.jar"/>
-					</fileset>
-				</copy>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="astmeetme">
+		<!-- build bigbluebutton -->
+		<build-bigbluebutton name="astmeetme">
 			<copy-assets>
 				<logback webapp="astmeetme"/>
 			</copy-assets>
-		</build-demo>
-		<build-demo name="bwcheck">
-			<copy-assets>
-				<logback webapp="bwcheck"/>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="conference">
+		</build-bigbluebutton>
+		
+		<build-bigbluebutton name="conference">
 			<copy-assets>
 				<logback webapp="conference"/>
 			</copy-assets>
-		</build-demo>
-		<build-demo name="vcr">
-			<copy-assets>
-				<logback webapp="vcr"/>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="echo">
-			<copy-assets>
-				<logback webapp="echo"/>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="fitcDemo">
-			<copy-assets>
-				<logback webapp="fitcDemo"/>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="chatServer">
+		</build-bigbluebutton>
+		
+		<build-bigbluebutton name="chatServer">
 			<copy-assets>
 				<logback webapp="chatServer"/>
 			</copy-assets>
-		</build-demo>
-		<build-demo name="midiDemo">
-			<copy-assets>
-				<logback webapp="midiDemo"/>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="presentation">
+		</build-bigbluebutton>
+		
+		<build-bigbluebutton name="presentation">
 			<copy-assets>
 				<logback webapp="presentation"/>
 			</copy-assets>
-		</build-demo>
-		<build-demo name="oflaDemo">
-			<copy-assets>
-				<logback webapp="oflaDemo"/>
-				<!-- copy FLV files without filtering as it causes corruption -->
-				<copy todir="${webapps.build.dir}/oflaDemo/">
-					<fileset dir="webapps/oflaDemo/">
-						<include name="**/*.flv"/>
-					</fileset>
-				</copy>
-				<!-- copy javascript/python/ruby source for oflaDemo -->
-				<mkdir dir="${webapps.build.dir}/oflaDemo/WEB-INF/classes/applications"/>
-				<copy todir="${webapps.build.dir}/oflaDemo/WEB-INF/classes/applications">
-					<fileset dir="${webapps.dir}/oflaDemo/WEB-INF/src/applications"/>
-				</copy>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="tutorial">
-			<copy-assets>
-				<logback webapp="tutorial"/>
-			</copy-assets>
-		</build-demo>
-		<build-demo name="test"/>
-
-		<!-- no Java source for the messageRecorder and SOSample app -->
-		<copy todir="${webapps.build.dir}/messageRecorder" filtering="true">
-			<fileset dir="webapps/messageRecorder"/>
-		</copy>
-		<copy todir="${webapps.build.dir}/SOSample" filtering="true">
-			<fileset dir="webapps/SOSample"/>
-		</copy>
+		</build-bigbluebutton>
+		
 	</target>
 
 	<!-- Scripting -->
@@ -433,31 +364,27 @@
 		<antcall target="compile_core" inheritAll="true" inheritRefs="true"/>
 		<antcall target="compile_core_compatibility" inheritAll="true" inheritRefs="true"/>
 
-		<!-- libraries and classes needed for building the demos -->
+		<!-- libraries and classes needed for building BigBlueButtonProject / Nadia -->
 		<path id="webapps.classpath">
 			<fileset dir="${lib.dir}">
 				<filename name="*.jar"/>
 			</fileset>
 			<pathelement location="${dest.dir}"/>
 		</path>
-		<antcall target="compile_demos" inheritAll="true" inheritRefs="true"/>
+		<antcall target="compile_bigbluebutton" inheritAll="true" inheritRefs="true"/>
 
 		<!-- only certain classes from selected demos are copied to the war -->
 		<copy todir="${classes.dir}/WEB-INF/classes">
-			<fileset dir="${webapps.build.dir}/admin/WEB-INF/classes"/>
-			<fileset dir="${webapps.build.dir}/bwcheck/WEB-INF/classes"/>
-			<fileset dir="${webapps.build.dir}/echo/WEB-INF/classes"/>
-			<fileset dir="${webapps.build.dir}/fitcDemo/WEB-INF/classes"/>
+			<fileset dir="${webapps.build.dir}/vcr/WEB-INF/classes"/>
 			<fileset dir="${webapps.build.dir}/chatServer/WEB-INF/classes"/>
-			<fileset dir="${webapps.build.dir}/oflaDemo/WEB-INF/classes"/>
-			<fileset dir="${webapps.build.dir}/tutorial/WEB-INF/classes"/>
+			
 		</copy>
 		<antcall target="compile_script" inheritAll="true" inheritRefs="true">
 			<param name="dest.dir" value="${classes.dir}/WEB-INF/classes"/>
 		</antcall>
 	</target>
 
-	<macrodef name="compile-wardemo">
+	<macrodef name="compile-warbigbluebutton">
    		<attribute name="name"/>
    		<sequential>
 			<war destfile="${dist.dir}/@{name}.war" webxml="${webapps.build.dir}/@{name}/WEB-INF/web.xml">
@@ -473,7 +400,7 @@
       		</sequential>
 	</macrodef>
 
-	<target name="war_demos" description="Build wars for demo apps" depends="compile_demos">
+	<target name="war_bigbluebutton" description="Build wars for BigBlueButtonProject apps" depends="compile_bigbluebutton">
 		<!-- war up root -->
 		<war destfile="${dist.dir}/ROOT.war" webxml="${webapps.build.dir}/root/WEB-INF/web.xml">
 			<fileset dir="${webapps.build.dir}/root"/>
@@ -483,17 +410,10 @@
 			</manifest>
 		</war>
 		
-		<!-- war up demos -->
-		<compile-wardemo name="admin"/>
-		<compile-wardemo name="bwcheck"/>
-		<compile-wardemo name="fitcDemo"/>
-		<compile-wardemo name="chatServer"/>
-		<compile-wardemo name="echo"/>		
-		<compile-wardemo name="oflaDemo"/>
-		<compile-wardemo name="SOSample"/>
-		<compile-wardemo name="tutorial"/>
-		<compile-wardemo name="test"/>
-		<compile-wardemo name="messageRecorder"/>
+		<!-- war up BigBlueButtonProject -->
+		<compile-warbigbluebutton name="vcr"/>
+		<compile-warbigbluebutton name="chatServer"/>
+		
 	</target>
 
 	<target name="javadoc" description="Generate JavaDoc">
@@ -543,7 +463,7 @@
 		</javadoc>
 	</target>
 
-	<macrodef name="compile-jardemo">
+	<macrodef name="compile-jarbigbluebutton">
    		<attribute name="name"/>
 		<element name="copy-assets" optional="yes"/>
    		<sequential>
@@ -586,35 +506,14 @@
 			</metainf>
 		</jar>
 
-		<!-- create jar files for demos -->
-		<compile-jardemo name="astmeetme"/>
-		<compile-jardemo name="bwcheck"/>
-		<compile-jardemo name="conference"/>
-		<compile-jardemo name="vcr"/>
-		<compile-jardemo name="echo"/>
-		<compile-jardemo name="fitcDemo"/>
-		<compile-jardemo name="chatServer"/>
-		<compile-jardemo name="midiDemo"/>
-		<compile-jardemo name="oflaDemo">
-			<copy-assets>
-				<!-- copy scripts -->
-				<mkdir dir="${webapps.build.dir}/oflaDemo/WEB-INF/classes/applications"/>
-				<copy todir="${webapps.build.dir}/oflaDemo/WEB-INF/classes/applications">
-					<fileset dir="webapps/oflaDemo/WEB-INF/src/applications"/>
-				</copy>
-			</copy-assets>
-		</compile-jardemo>
-		<compile-jardemo name="presentation"/>
-		<compile-jardemo name="test"/>
-		<compile-jardemo name="tutorial"/>
+		<!-- create jar files for BigBlueButtonProject -->
+		<compile-jarbigbluebutton name="conference"/>
+		<compile-jarbigbluebutton name="chatServer"/>
+		<compile-jarbigbluebutton name="presentation"/>
 		
-		<!-- exclude logback.xml for admin -->
-		<jar destfile="${webapps.build.dir}/admin/WEB-INF/lib/admin.jar">
-			<fileset dir="${webapps.build.dir}/admin/WEB-INF/classes">
-				<include name="**"/>
-				<exclude name="logback.xml"/>
-			</fileset>
-		</jar>
+		</compile-jarbigbluebutton>
+		
+		
 	</target>
 
 	<target name="dist" description="Make Binary distribution" depends="clean, jar">
@@ -643,6 +542,7 @@
 		</copy>
 		<chmod file="${dist.dir}/red5.sh" perm="755"/>
 		<chmod file="${dist.dir}/red5-shutdown.sh" perm="755"/>
+	
 	</target>
 
 	<target name="dist-installer" description="Make Installer distribution" depends="ivyclear, dist, javadoc">
@@ -731,12 +631,7 @@
 		<move tofile="${origindist.dir}/conf/red5.xml" file="${dist.dir}/conf/red5-origin.xml" overwrite="true"/>
 	</target>
 
-	<target name="dist-cluster" description="Create Edge/Origin distribution" depends="dist-edge">
-		<copy tofile="${cluster.dir}/Readme.txt" file="${dist.dir}/doc/HOWTO-Clustering.txt" overwrite="true"/>
-		<echo>Edge configured in: ${edgedist.dir}</echo>
-		<echo>Origin configured in: ${origindist.dir}</echo>
-	</target>
-
+	
 	<target name="dist-macosx" description="Create Mac OSX installer">
 		<ant antfile="install/macosx/build.xml" inheritAll="false"/>
 	</target>
@@ -905,14 +800,7 @@
 				<include name="red5-core.xml"/>
 				<include name="*-web.xml"/>
 			</fileset>
-		</copy>		
-		<!-- copy the demo streams -->
-		<copy todir="${webapps.build.dir}/root">
-			<fileset dir="${webapps.build.dir}/oflaDemo">
-				<include name="streams/*.flv"/>
-				<exclude name="**/logback.xml"/>
-			</fileset>
-		</copy>
+		
 		<!-- war up root -->
 		<war destfile="${dist.dir}/ROOT.war" webxml="${webapps.build.dir}/root/WEB-INF/web.xml">
 			<fileset dir="${webapps.build.dir}/root"/>
@@ -942,65 +830,7 @@
 			</manifest>
 		</war>				
 				
-		<!-- Demo applications (Admin and Echo use AMF and therefore need wars) -->
-		<filter token="context.path" value="/admin"/>
-		<copy tofile="${webapps.build.dir}/admin/META-INF/context.xml" overwrite="true" filtering="true"				
-			file="${config.dir}/war/context.xml"/>
-		<copy todir="${webapps.build.dir}/admin/WEB-INF" overwrite="true" verbose="true">
-			<fileset dir="${config.dir}/war/admin">
-				<include name="web.xml"/>
-			</fileset>
-		</copy>		
-		<war destfile="${dist.dir}/admin.war" webxml="${webapps.build.dir}/admin/WEB-INF/web.xml">
-			<fileset dir="${webapps.build.dir}/admin"/>
-			<fileset dir="${classes.dir}">
-				<include name="**/AMFTunnelServlet.class"/>
-				<include name="**/ServletUtils.class"/>
-			</fileset>
-			<lib dir="${lib.dir}">
-				<include name="commons-codec-*.jar"/>
-				<include name="commons-httpclient-*.jar"/>
-				<include name="*-over-slf4j-*.jar"/>
-				<include name="mina-core-*.jar"/>
-				<exclude name="slf4j-*.jar"/>
-				<exclude name="logback-*.jar"/>
-			</lib>			
-			<manifest>
-				<attribute name="Built-By" value="${red5.fullname}"/>
-				<attribute name="Built-On" value="${build.TODAY}"/>
-			</manifest>
-		</war>	
 		
-		<filter token="context.path" value="/echo"/>
-		<copy tofile="${webapps.build.dir}/echo/META-INF/context.xml" overwrite="true" filtering="true"				
-			file="${config.dir}/war/context.xml"/>
-		<copy todir="${webapps.build.dir}/echo/WEB-INF" overwrite="true" verbose="true">
-			<fileset dir="${config.dir}/war/echo">
-				<include name="web.xml"/>
-			</fileset>
-		</copy>		
-		<war destfile="${dist.dir}/echo.war" webxml="${webapps.build.dir}/echo/WEB-INF/web.xml">
-			<fileset dir="${webapps.build.dir}/echo"/>
-			<fileset dir="${classes.dir}">
-				<include name="**/AMFTunnelServlet.class"/>
-				<include name="**/ServletUtils.class"/>
-			</fileset>
-			<lib dir="${lib.dir}">
-				<include name="commons-codec-*.jar"/>
-				<include name="commons-httpclient-*.jar"/>
-				<include name="*-over-slf4j-*.jar"/>
-				<include name="mina-core-*.jar"/>
-				<exclude name="slf4j-*.jar"/>
-				<exclude name="logback-*.jar"/>
-			</lib>			
-			<manifest>
-				<attribute name="Built-By" value="${red5.fullname}"/>
-				<attribute name="Built-On" value="${build.TODAY}"/>
-			</manifest>
-		</war>			
-		
-		<!-- cleanup -->
-		<delete dir="${dist.dir}/webapps"/>
 	</target>
 
 	<target name="remotejar" description="Creates a jar that may be deployed with remote applications" depends="compile">
@@ -1027,5 +857,6 @@
 
 	<target name="usage">
 		<echo message="Type ant -p for available targets"/>
+	
 	</target>
 </project>
