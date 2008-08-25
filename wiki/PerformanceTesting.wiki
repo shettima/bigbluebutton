@@ -59,7 +59,7 @@ The core Linux Shell commands for the above steps are:
          
    }}}
 
-The source code can be downloaded at:
+The source code can be downloaded at (performance.tar):
 http://code.google.com/p/bigbluebutton/downloads/list
   
 == Linux Shell scripts - client ==
@@ -69,6 +69,8 @@ It can be called as (to open 10 instances (tabs) of BBB clients in Firefox)
    {{{
       sh bbbcLinux.sh firefox 10 [http://a.b.c/BigBlueButton.html]
    }}}
+The source code can be downloaded at (autoLinux.tar):
+http://code.google.com/p/bigbluebutton/downloads/list
 
 == VBS/Dos batch - client ==
 The purpose of the scripts is to allow users to open several instances (say 20) Login-free BigBlueButton clients in Firefox (or IE) at one command under Windows systems.
@@ -77,3 +79,11 @@ It can be called as (to open 10 instances (tabs) of BBB clients in Firefox and 1
    {{{
       bbbc ie 10 firefox 10 [http://a.b.c/BigBlueButton.html]
    }}}
+
+The source code can be downloaded at (auto.tar):
+http://code.google.com/p/bigbluebutton/downloads/list
+
+== Login-free BigBlueButton client ==
+
+A version of Login-free BBB client can be downloaded at (client-auto.tar):
+http://code.google.com/p/bigbluebutton/downloads/list
