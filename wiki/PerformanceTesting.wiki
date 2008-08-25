@@ -1,4 +1,4 @@
-#This page describes some simple and basic work on performance testing on BigBlueButton server 
+This page describes some simple and basic work on performance testing on BigBlueButton server 
 
 = Introduction =
 
