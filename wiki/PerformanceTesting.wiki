@@ -65,7 +65,7 @@ The purpose of the script is to allow users to open several instances (say 20) L
 
 It can be called as (to open 10 instances (tabs) of BBB clients in Firefox)
    {{{
-      sh bbbcLinux.sh firefox 10 http://a.b.c/BigBlueButton.html
+      sh bbbcLinux.sh firefox 10 [http://a.b.c/BigBlueButton.html]
    }}}
 
 == VBS/Dos batch - client ==
@@ -73,5 +73,5 @@ The purpose of the scripts is to allow users to open several instances (say 20) 
 
 It can be called as (to open 10 instances (tabs) of BBB clients in Firefox and 10 IE windows)
    {{{
-      bbbc ie 10 firefox 10 http://a.b.c/BigBlueButton.html
+      bbbc ie 10 firefox 10 [http://a.b.c/BigBlueButton.html]
    }}}
