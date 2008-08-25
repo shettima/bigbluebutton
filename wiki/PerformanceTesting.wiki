@@ -14,8 +14,10 @@ The clients scripts were written in VBS and Dos batch for Windows, and in Linux 
 == Linux Shell scripts - server ==
 The logic of the server scripts are as the following:
    {{{
-      1. use "ps", to find the process ids (PIDs) for persistent processes by part of their names (i.e., "tomcat" can be input as Apache Tomcat process' name - the more detailed the better)
-      2. run "top", find the process ids (PIDs) for targetted processes by their exact CMD names (i.e., "pdf2swf" is the CMD name for the process to convert PDF to SWF, it is not a permanent process like tomcat process, ) 
+      1. use "ps", to find the process ids (PIDs) for persistent processes by part of their names 
+      (i.e., "tomcat" can be input as Apache Tomcat process' name - the more detailed the better)
+      2. run "top", find the process ids (PIDs) for targetted processes by their exact CMD names 
+      (i.e., "pdf2swf" is the CMD name for the process to convert PDF to SWF, it is not a permanent process like tomcat process, ) 
    }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
