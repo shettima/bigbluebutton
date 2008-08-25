@@ -21,7 +21,7 @@
 package org.bigbluebuttonproject.conference;
 
 import org.bigbluebuttonproject.conference.Role;
-
+   123
 
 /**
  * Participant class is an entity class used to create instances that can keep details about each participant of conference rooms.
