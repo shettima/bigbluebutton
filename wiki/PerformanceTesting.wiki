@@ -1,4 +1,4 @@
-This page describes some simple and basic work on performance testing on BigBlueButton server (currently for Linux only)
+This page describes some simple and basic work on performance testing on BigBlueButton server (server on Linux, clients on Windows or Linux)
 
 = Introduction =
 
