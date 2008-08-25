@@ -2,7 +2,7 @@ This page describes some simple and basic work on performance testing on BigBlue
 
 = Introduction =
 
-A few small script files were written to measure the CPU/Memory usage (in percentage) by BigBlueButton server processes (Java, pdftk, pdf2swf, Asterisk, etc.) for a specific period of time. The measurement output are in text/Excel/CSV formats for easy data manipulation.
+A few small script files were written to measure the CPU/Memory usage (in percentage) by BigBlueButton server processes (Java, pdftk, pdf2swf, Asterisk, etc.) for a specific period of time. The measurement output are in text/Excel/CSV formats for easy data manipulation. And also some HTML files (data/navigation) are generated for easy access to the current measurement data (and historical measurements) from the web browser.
 
 The server scripts were written in Linux Shell program utilizing existing system functions such as _top_, _ps_, _grep_, _gawk_, etc. The _top_ command is a good built in tool to find CPU/Memory utilizations for Linux. So it is the "engine" of the server scripts.
 
@@ -21,7 +21,8 @@ The logic of the server scripts are as the following:
          it has no consistant PID, so its CMD name can be used to identify it) 
       3. the results of the step 2 will be processed by another script to get the overall CPU/Memory usage data by the specified processes
       4. pause a specified period of time
-      5. repeat 1 - 3 until the user exits or predefined loop times are over
+      5. repeat 1 - 3 until the user exits or predefined loop times are reached
+      6. make conrespondent text, xls, csv and html files
    }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
