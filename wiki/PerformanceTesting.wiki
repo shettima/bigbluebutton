@@ -24,5 +24,24 @@ The logic of the server scripts are as the following:
       5. repeat 1 - 3 until the user exits or predefined loop times are reached
       6. make conrespondent text, xls, csv and html files
    }}}
+
+The core Linux Shell commands for the above steps are:
+   {{{
+      1. ps -AF | gawk '/tomcat|activemq-|red5|bigbluebutton|ant-/ {print}' | gawk '!/gawk|findPidByName.sh/ {print}' | gawk '{printf "%d\t%d\t%s\n", $2, $3, $11, $12 >> "ProcessIdsFile"}'
+      2. top -b -n 1 -d 1 | gawk '$1 ~ /^11542$|^13591$|^25279$/{print}$12 ~ /^pdftk|^pdf2swf/{print} $1 !~ /^[0-9]/ {print}'
+      3. echo -e "RESULTS of step 2" | gawk '
+                    BEGIN {
+                       lineNum=1
+                    }
+                    /^top/ { lineNum += 1 }
+                    /^[0-9]/ {  
+                       totalCPU += $9
+                       totalMem += $10
+                    }
+                    END {
+                       printf "%d,%f,%f\n", lineNum, totalCPU, totalMem >> outfile
+                    } '
+         
+   }}}
 == Linux Shell scripts - client ==
 == VBS/Dos batch - client ==
