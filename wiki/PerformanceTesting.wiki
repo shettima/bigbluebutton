@@ -69,3 +69,9 @@ It can be called as (to open 10 instances (tabs) of BBB clients in Firefox)
    }}}
 
 == VBS/Dos batch - client ==
+The purpose of the scripts is to allow users to open several instances (say 20) Login-free BigBlueButton clients in Firefox (or IE) at one command under Windows systems.
+
+It can be called as (to open 10 instances (tabs) of BBB clients in Firefox and 10 IE windows)
+   {{{
+      bbbc ie 10 firefox 10 http://a.b.c/BigBlueButton.html
+   }}}
