@@ -89,7 +89,7 @@ It can be called as (to open 10 instances (tabs) of BBB clients in Firefox and 1
       bbbc ie 10 firefox 10 [http://a.b.c/BigBlueButton.html]
    }}}
 
-The source code can be downloaded at (auto.tar):
+The source code can be downloaded at (auto.tar or auto.rar):
 http://code.google.com/p/bigbluebutton/downloads/list
 
 == Login-free BigBlueButton client ==
