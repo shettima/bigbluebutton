@@ -94,5 +94,5 @@ http://code.google.com/p/bigbluebutton/downloads/list
 
 == Login-free BigBlueButton client ==
 
-A version of Login-free BBB client can be downloaded at (client-auto.tar):
+A version of Login-free BBB client can be downloaded at (client-auto.tar or client-auto.rar):
 http://code.google.com/p/bigbluebutton/downloads/list
