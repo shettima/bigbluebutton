@@ -1,4 +1,4 @@
-#summary This page describes some basic work on performance testing on BigBlueButton server (server on Linux, clients on Windows or Linux)
+#summary This page describes basic performance testing on BigBlueButton server (server on Linux, clients on Windows or Linux)
 
 = Introduction =
 
