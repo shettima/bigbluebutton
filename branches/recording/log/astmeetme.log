@@ -1,28 +1,67 @@
-2008-08-25 17:12:16,715 [main] DEBUG o.b.a.meetme.ConferenceRoomListener - RoomListener started...
-2008-08-25 17:12:16,725 [main] DEBUG o.b.asterisk.meetme.Application - Setting voice Services...
-2008-08-25 17:12:16,725 [main] INFO  o.b.asterisk.meetme.Application - MeetMe::appStart - 
-2008-08-25 17:12:16,745 [main] INFO  o.b.asterisk.AsteriskVoiceService - Logging at 134.117.254.226:5038
-2008-08-25 17:13:49,278 [pool-4-thread-4] INFO  o.b.asterisk.meetme.Application - MeetMe::roomStart - 85115
-2008-08-25 17:13:49,278 [pool-4-thread-4] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 2
-2008-08-25 17:13:49,278 [pool-4-thread-4] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 2
-2008-08-25 17:13:49,368 [pool-4-thread-4] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
-2008-08-25 17:13:49,368 [pool-4-thread-4] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 2
-2008-08-25 17:13:49,408 [pool-4-thread-12] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
-2008-08-25 17:13:49,428 [pool-4-thread-12] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
-2008-08-25 17:13:49,428 [pool-4-thread-12] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
-2008-08-25 17:13:49,438 [pool-4-thread-12] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
-2008-08-25 17:13:49,438 [pool-4-thread-12] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
-2008-08-25 17:13:49,438 [pool-4-thread-12] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...
-2008-08-25 17:13:56,027 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 5
-2008-08-25 17:13:56,027 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 5
-2008-08-25 17:13:56,027 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 5
-2008-08-25 17:13:56,538 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
-2008-08-25 17:13:56,538 [pool-4-thread-16] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
-2008-08-25 17:13:56,538 [pool-4-thread-16] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
-2008-08-25 17:13:56,538 [pool-4-thread-16] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
-2008-08-25 17:13:56,538 [pool-4-thread-16] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
-2008-08-25 17:13:56,538 [pool-4-thread-16] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...
-2008-08-25 17:15:37,193 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomLeave - 2
-2008-08-25 17:15:37,193 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::appDisconnect - 2
-2008-08-25 17:15:37,774 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomLeave - 5
-2008-08-25 17:15:37,774 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::appDisconnect - 5
+2008-08-26 16:00:07,690 [main] DEBUG o.b.a.meetme.ConferenceRoomListener - RoomListener started...
+2008-08-26 16:00:07,700 [main] DEBUG o.b.asterisk.meetme.Application - Setting voice Services...
+2008-08-26 16:00:07,710 [main] INFO  o.b.asterisk.meetme.Application - MeetMe::appStart - 
+2008-08-26 16:00:07,730 [main] INFO  o.b.asterisk.AsteriskVoiceService - Logging at 134.117.254.226:5038
+2008-08-26 16:00:48,879 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomStart - 85115
+2008-08-26 16:00:48,879 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 6
+2008-08-26 16:00:48,879 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 6
+2008-08-26 16:00:48,879 [pool-4-thread-14] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:00:48,889 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 6
+2008-08-26 16:00:48,989 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
+2008-08-26 16:00:49,119 [pool-4-thread-15] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
+2008-08-26 16:00:49,119 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
+2008-08-26 16:00:49,119 [pool-4-thread-15] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:00:49,119 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
+2008-08-26 16:00:49,119 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...
+2008-08-26 16:02:09,815 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomLeave - 6
+2008-08-26 16:02:09,825 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::appDisconnect - 6
+2008-08-26 16:05:35,901 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomStart - 85115
+2008-08-26 16:05:35,901 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 12
+2008-08-26 16:05:35,901 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 12
+2008-08-26 16:05:35,901 [pool-4-thread-16] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:05:35,901 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 12
+2008-08-26 16:05:36,172 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
+2008-08-26 16:05:36,172 [pool-4-thread-15] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
+2008-08-26 16:05:36,172 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
+2008-08-26 16:05:36,172 [pool-4-thread-15] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:05:36,172 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
+2008-08-26 16:05:36,172 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...
+2008-08-26 16:07:13,722 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomLeave - 12
+2008-08-26 16:07:13,722 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::appDisconnect - 12
+2008-08-26 16:08:46,856 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomStart - 85115
+2008-08-26 16:08:46,856 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 19
+2008-08-26 16:08:46,856 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 19
+2008-08-26 16:08:46,856 [pool-4-thread-14] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:08:46,856 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 19
+2008-08-26 16:08:47,036 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
+2008-08-26 16:08:47,036 [pool-4-thread-14] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
+2008-08-26 16:08:47,036 [pool-4-thread-14] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
+2008-08-26 16:08:47,036 [pool-4-thread-14] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:08:47,036 [pool-4-thread-14] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
+2008-08-26 16:08:47,036 [pool-4-thread-14] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...
+2008-08-26 16:12:42,505 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::roomLeave - 19
+2008-08-26 16:12:42,505 [pool-4-thread-16] INFO  o.b.asterisk.meetme.Application - MeetMe::appDisconnect - 19
+2008-08-26 16:13:02,073 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomStart - 85115
+2008-08-26 16:13:02,073 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 25
+2008-08-26 16:13:02,073 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 25
+2008-08-26 16:13:02,073 [pool-4-thread-15] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:13:02,073 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 25
+2008-08-26 16:13:02,383 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
+2008-08-26 16:13:02,383 [pool-4-thread-15] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
+2008-08-26 16:13:02,383 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
+2008-08-26 16:13:02,383 [pool-4-thread-15] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:13:02,383 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
+2008-08-26 16:13:02,383 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...
+2008-08-26 16:16:26,176 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::roomLeave - 25
+2008-08-26 16:16:26,176 [pool-4-thread-15] INFO  o.b.asterisk.meetme.Application - MeetMe::appDisconnect - 25
+2008-08-26 16:16:52,945 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomStart - 85115
+2008-08-26 16:16:52,945 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::appConnect - 37
+2008-08-26 16:16:52,945 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomConnect 37
+2008-08-26 16:16:52,945 [pool-4-thread-14] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:16:52,945 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - MeetMe::roomJoin - 37
+2008-08-26 16:16:53,045 [pool-4-thread-14] INFO  o.b.asterisk.meetme.Application - Received result Okay for setRoomNumber
+2008-08-26 16:16:53,085 [pool-4-thread-15] DEBUG o.b.asterisk.meetme.MeetMeService - GetMeetmeUsers request for room[85115]
+2008-08-26 16:16:53,085 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Getting current users for room 85115
+2008-08-26 16:16:53,085 [pool-4-thread-15] INFO  o.b.a.meetme.ConferenceRoomListener - MeetMe::roomListener - There are 0 current users in room [85115]
+2008-08-26 16:16:53,085 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - There are 0 current users...
+2008-08-26 16:16:53,085 [pool-4-thread-15] INFO  o.b.asterisk.meetme.MeetMeService - MeetMe::service - Sending 0 current users...

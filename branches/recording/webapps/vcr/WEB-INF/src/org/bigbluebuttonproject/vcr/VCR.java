@@ -5,8 +5,11 @@ package org.bigbluebuttonproject.vcr;
 
 import java.util.Date;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.OutputStream;
 import java.text.DateFormat;
@@ -39,6 +42,8 @@ public class VCR {
 	
 	protected String root = "C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Session_";
 	
+	protected String urlIndex = "http://134.117.58.103:8080/VCRFILES/index.html";
+	
 	//protected String rootSlides; 
 	protected String rootSession;
 	
@@ -46,7 +51,7 @@ public class VCR {
 	
 	public static Logger log = LoggerFactory.getLogger( Application.class );
 		
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		VCR vcr = new VCR(args);
 		vcr.startRecording();
@@ -59,7 +64,7 @@ public class VCR {
 			System.exit(0);			
 		}
 		
-	}*/
+	}
 	
 	public VCR(String[] args) {
 		getArgs(args);
@@ -104,6 +109,10 @@ public class VCR {
 				out = new EventWriter(new FileOutputStream(file));
 				out.println("<lecture host=\"" + host + "\" room=\"" + room + 
 						"\" start=\"" + getTimestamp() + "\">");
+				out.println("<par>");
+				//Either at the begining of the code or at the end 
+				//i.e add it to the finalize funcion :)
+				//out.println("<audio src="audio-1215122005.mp3"/>");
 				out.println("<seq>");
 				out.flush();
 				
@@ -118,9 +127,9 @@ public class VCR {
 				EventStream presentation = new PresentationEventStream(host, room, rootSession);
 				presentation.setWriter(out);
 				
-				//EventStream meetme = new MeetMeEventStream(host, room);
+				//EventStream meetme = new MeetMeEventStream("134.117.254.226", room);
 				//meetme.setWriter(out);
-	  
+	  			
 				EventStream conference = new ConferenceEventStream(host, room);
 				conference.connect(host, 1935, conference.getApplication());
 				conference.setWriter(out);
@@ -135,18 +144,40 @@ public class VCR {
 		
 	public String stopRecording() {
 		//add the URL for the destination for the lecture location on server
+		//add the audio file URL at the end of the session and TimeStamp for
+		//the end of the session
 		out.println("</seq>");
+		out.println("</par>");
 		out.println("</lecture>");
 		out.flush();
+		finalize(rootSession);
 		//System.out.println("recording has been stopped: Session locatin"+ rootSession);
 		//log.info("recording has been stopped: Session locatin"+ rootSession);
-		return rootSession;
+		return urlIndex;
 	}
 	
-	public void finalize() {
+	public void finalize(String sessionPath) {
 		// TODO: this is not the appropriate place to do this
-		
-	}
+		//Add the session location on the server to the index.html 
+		// at the http://SERVER/VCRFILES/
+		File file = new File("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\index.html");
+	     	try {
+	      		if (! file.exists())
+	      			if (file.createNewFile()) {
+	      				System.out.println("index file was crated");
+	      				// File did not exist and was created
+	      			}else {
+	     				System.out.println("index file already exist");
+	      			}
+	      		
+	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\index.html", true));
+	            outIndex.write("<p><br>"+sessionPath+"<p>");
+	            outIndex.close();
+	            
+	     	} catch (IOException e) {
+	  			System.out.println("IO exception in the finalize function");
+	  			}
+    		}
 	
 	public String getRoom(){
 		return room;

@@ -13,8 +13,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 
+import org.red5.server.net.protocol.ProtocolState;
 import org.red5.server.net.rtmp.RTMPConnection;
 import org.red5.server.net.rtmp.codec.RTMP;
+import org.red5.server.net.rtmp.event.IRTMPEvent;
+import org.red5.server.net.rtmp.message.Packet;
 import org.red5.server.api.IAttributeStore;
 import org.red5.server.api.so.IClientSharedObject;
 import org.red5.server.api.so.ISharedObjectBase;
@@ -76,23 +79,26 @@ public class PresentationEventStream extends EventStream {
 			int slide = ((Integer) params.get(0)).intValue() + 1;
 			out.println("<slide time=\"" + getTimestamp() + "\">" + slide + "</slide>");
 			out.flush();
-		} 
+		}
 	}
 
 	public void onSharedObjectUpdate(ISharedObjectBase so, String key, Object value) {
 		if (debug) {
 			System.out.println("Update on shared object (Object): " + key + "{" + value + "}");
 		}
+		//Start adding the moving and zooming messages to the presentaion recording
 		if (key.equals("sharing")) {
 			Map<String, Object> values = (Map<String, Object>) value;
 			share = ((Boolean) values.get("share")).booleanValue();
-			out.println("<sharing time=\"" + getTimestamp() + 
+			//updated
+			out.println("<presentation event= \"sharing\" time=\"" + getTimestamp() + 
 				"\" share=\"" + share + "\"/>");
 		} else if (key.equals("presenter")) {
 			Map<String, Object> values = (Map<String, Object>) value;
 			userid = ((Integer) values.get("userid")).intValue();
 			name = (String) values.get("name");
-			out.println("<presenter time=\"" + getTimestamp() + 
+			//updated
+			out.println("<presentation event=\"presenter\" time=\"" + getTimestamp() + 
 				"\" userid=\"" + userid + "\" name=\"" + name + "\"/>");
 		} else if (key.equals("updateMessage")) {
 			Map<String, Object> values = (Map<String, Object>) value;
@@ -105,10 +111,11 @@ public class PresentationEventStream extends EventStream {
 				// since all tags should be printed consecutively)
 				out.acquireLock();
 				try {
-					out.println("<presentation time=\"" + time + "\">");
+					//updated
+					out.println("<presentation event=\"slides_created\" time=\"" + time + "\">");
 					for (Iterator<String> e = slides.iterator(); e.hasNext(); ) {
 						String slide = e.next();
-						out.println("<slide>" + slide + "</slide>");
+						out.println("<presentation event=\"slide\" name=\"" + slide + "\"/>");
 					}
 					out.println("</presentation>");
 					copySlidesDirectory(sourcePath, targetPath.concat(getTimestampFormat()));
@@ -126,7 +133,8 @@ public class PresentationEventStream extends EventStream {
 			} else if (values.get("completedSlides") != null) {
 				completedSlides = ((Integer) values.get("completedSlides")).intValue();
 				totalSlides = ((Integer) values.get("totalSlides")).intValue();
-				out.println("<conversion time=\"" + getTimestamp() + 
+				//updated
+				out.println("<presentation event=\"conversion\"time=\"" + getTimestamp() + 
 					"\" slide=\"" + completedSlides + 
 					"\" total=\"" + totalSlides + "\"/>");
 				}
@@ -239,4 +247,51 @@ public String getTimestampFormat() {
         return dateFormat.format(date);
 		
 	}
+synchronized public void messageReceived(RTMPConnection conn, ProtocolState state, Object in)
+	throws Exception {
+		if (debug) {
+			Packet packet = (Packet) in;
+			IRTMPEvent message = packet.getMessage();
+			String body = message.toString();
+			if (body.contains("zoomCallback")){
+				//updated
+				String[] messageSO= body.split(",");
+				String[] x = messageSO[3].split("\\)");
+				out.println("<presentation event=\"zoom\" time=\"" + getTimestamp() + "\" values="
+						+ messageSO[2]+","+x[0]+"/>");
+				
+			}
+			if (body.contains("maximizeCallback")){
+				//updated
+				//String[] messageSO =body.split(",");
+				out.println("<presentation event=\"maximize\" time=\"" + getTimestamp()+"\"/>");
+				//out.flush();				
+			}
+			
+			if (body.contains("moveCallback")){
+				//updated
+				String[] messageSO =body.split(",");
+				String x = messageSO[2].concat("," + messageSO[3]);
+				String[] y = x.split("\\)");	
+				out.println("<presentation event=\"move\" time=\"" +  getTimestamp() + "\" values=\""
+						+ y[0]+"/>");
+				//out.flush();
+				}
+			if (body.contains("gotoPageCallback")){
+				//updated
+				String[] messageSO =body.split(",");
+				String[] y = messageSO[2].split("\\)");	
+				out.println("<presentation event=\"gotoPage\" time=\"" +  getTimestamp() + "\" Slide="
+						+ y[0]+"/>");
+				//out.flush();
+				}
+			super.messageReceived(conn, state, in);
+			out.flush();
+		// the super method does all the real work, such as dispatching to 
+		// onPing, onSharedObject, and onInvoke
+		
+		}
+	
+	}
+	
 }
