@@ -107,5 +107,5 @@ To use login-free clients, as described in the section "VBS/Dos batch - client",
 
 == Login-free BigBlueButton client Source ==
 
-Only one MXML file and one HTML file have been modified to enable login free feature. You can download the 2 files from the following (select LoginFreeClientSource.rar) to accommodate the changes into your Flex project.
+Only one MXML file and one HTML file have been modified to enable login free feature. You can download the 2 files from the following (LoginFreeClientSource.rar) and accommodate the changes into your Flex project.
 http://code.google.com/p/bigbluebutton/downloads/list
