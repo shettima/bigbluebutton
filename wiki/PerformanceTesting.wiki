@@ -87,7 +87,7 @@ The purpose of the scripts is to allow users to open several instances (say 20) 
 
 It can be called as (to open 10 instances of BBB clients in Firefox and 10 IE windows, in the names of John Doe_1(ie), John Doe_2(ie)..., John Doe_1(ff), John Doe_2(ff)..., into the conference room 85115 by the password viewpass)
    {{{
-      bbbc ie 10 firefox 10 -"John Doe, 85115, viewpass" [http://a.b.c/BigBlueButton.html]
+      bbbc ie 10 firefox 10 -"John Doe, 85115, viewpass" http://www.mycomp.com/BigBlueButton.html
    }}}
 
 The source code can be downloaded at (auto.tar or auto.rar):
@@ -102,5 +102,5 @@ You can extract the folder into your web server's folder (i.e., 'webapps' for to
 
 To use login-free clients, as described in the section "VBS/Dos batch - client", just do the following (in Windows):
    {{{
-      bbbc ie 10 firefox 10 -"John Doe, 85115, viewpass" [http://my.company.com/client-auto/BigBlueButton.html]
+      bbbc ie 10 firefox 10 -"John Doe, 85115, viewpass" [http://www.mycomp.com/client-auto/BigBlueButton.html]
    }}}
