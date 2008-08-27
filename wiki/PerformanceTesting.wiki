@@ -74,9 +74,10 @@ After starting the script, you can quickly start some clients (as described in t
 == Linux Shell scripts - client ==
 The purpose of the script is to allow users to open several instances (say 20) Login-free BigBlueButton clients in Firefox (or other browsers) at one command under Linux systems.
 
-It can be called as (to open 10 instances of BBB clients in Firefox)
+It can be called as (to open 10 instances of BBB clients in Firefox, in the names of John Doe_1(ff), John Doe_2(ff)..., into the conference room 85115 by the password viewpass)
    {{{
-      sh bbbcLinux.sh firefox 10 [http://a.b.c/BigBlueButton.html]
+      sh bbbcLinux.sh ff 10 -"John Doe, 85115, viewpass" http://www.mycomp.com/BigBlueButton.html
+
    }}}
 The source code can be downloaded at (autoLinux.tar):
 http://code.google.com/p/bigbluebutton/downloads/list
