@@ -96,3 +96,7 @@ http://code.google.com/p/bigbluebutton/downloads/list
 
 A version of Login-free BBB client can be downloaded at (client-auto.tar or client-auto.rar):
 http://code.google.com/p/bigbluebutton/downloads/list
+
+You can extract the folder into your web server's folder (i.e., 'webapps' for tomcat), and change the methods (getRed5 and getPresentationHost) of BigBlueButton.html to point to the  targeted BigBlueButton server.
+
+To use login-free clients, just refer to the section "VBS/Dos batch - client"
