@@ -59,7 +59,7 @@ The core Linux Shell commands for the above steps are:
          
    }}}
 
-The source code can be downloaded at (performance.tar):
+The source code can be downloaded at (performance.tar or tgz or rar):
 http://code.google.com/p/bigbluebutton/downloads/list
 
 After downloading, extract all the scripts (usually contained in folder performance). If you want the output to be accessed by web users, extract it into the webapps folder of tomcat server.
