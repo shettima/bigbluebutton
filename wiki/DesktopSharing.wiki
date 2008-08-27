@@ -1,0 +1,14 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Application sharing for the purpose of this project is defined as the ability to show in real-time a particular desktop screen to a remote user.
+Although this concept is not new, a customized component designed specifically for BigBlueButton with strict guidelines such as pure mobility is what makes this unique.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
