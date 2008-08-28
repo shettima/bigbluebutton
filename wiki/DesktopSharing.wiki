@@ -13,3 +13,31 @@ Server of this module is using [http://osflash.org/red5 Red5] http://osflash.org
 The uploaded image on server is bind with the other clients (the other remote computer) through methods in server side and client side which their task is to download the new image to clients as soon as it arrives to server.
 ===Using Flash and Applet===
 Client side consists of an applet, SWF file and some JavaScript wrapped in HTML since this is supposed to be run in a browser.
+*Applet*
+The applet:
+The applet in this project is designed to carry out three different tasks. First is to periodically take a snapshot of the desktop that is running on. Taking a snapshot has been accomplished using java toolkit and robot class.
+
+{{{
+image = robot.createScreenCapture(screensize);
+}}}
+ 
+{{{
+ByteArrayOutputStream baos;
+ImageIO.write (image, "png", baos);
+}}}
+
+The second task is to convert the image 36(can be different) tiles and convert each to a Base64 string.
+
+The encoded tile as string will be sent to server in next step if it has been changed compared to the previous screen shot. By sending only changed tiles we lower the bandwidth traffic. This idea has been presented previously in [http://sourceforge.net/projects/ajaxvnc AjaxVNC]http://sourceforge.net/projects/ajaxvnc
+
+And finally the third task of the applet is to establish a connection with Red5 server and communicate with it (sending the encoded tile as string). This part is done using a particular class that red5 server offers which is RemotingClient class. This is in fact the way that red5 server has been devised to communicate with java applications. Through the capabilities that this class gives to the java client application, methods on the server applications can be invoked.
+{{{
+//imageString is the method on the server side to be called
+//arg is in fact an array of objects.
+RemotingClient client = new RemotingClient(url);
+client.invokeMethod("imageString", arg);
+}}}
+
+
+The invokeMethod method of RemothingClient class is accepting the name of the method to be invoked, an array of objects as parameters to be sent to servers, and returns an object as result of the method. 
+This communication in fact can be bidirectional since the applet can receive any object as return object of the method and do something with it. However this has not been shown here because this project using one way communication with server.
