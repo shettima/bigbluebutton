@@ -13,7 +13,7 @@ Server of this module is using [http://osflash.org/red5 Red5] http://osflash.org
 The uploaded image on server is bind with the other clients (the other remote computer) through methods in server side and client side which their task is to download the new image to clients as soon as it arrives to server.
 ===Using Flash and Applet===
 Client side consists of an applet, SWF file and some JavaScript wrapped in HTML since this is supposed to be run in a browser.
-*Applet*
+====Applet====
 The applet:
 The applet in this project is designed to carry out three different tasks. First is to periodically take a snapshot of the desktop that is running on. Taking a snapshot has been accomplished using java toolkit and robot class.
 
