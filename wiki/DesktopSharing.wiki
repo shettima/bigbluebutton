@@ -28,7 +28,7 @@ ImageIO.write (image, "png", baos);
 
 The second task is to convert the image 36(can be different) tiles and convert each to a Base64 string.
 
-The encoded tile as string will be sent to server in next step if it has been changed compared to the previous screen shot. By sending only changed tiles we lower the bandwidth traffic. This idea has been presented previously in [http://sourceforge.net/projects/ajaxvnc AjaxVNC]http://sourceforge.net/projects/ajaxvnc
+The encoded tile as string will be sent to server in next step if it has been changed compared to the previous screen shot. By sending only changed tiles we lower the bandwidth traffic. This idea has been presented previously in [http://sourceforge.net/projects/ajaxvnc] AjaxVNC
 
 And finally the third task of the applet is to establish a connection with Red5 server and communicate with it (sending the encoded tile as string). This part is done using a particular class that red5 server offers which is RemotingClient class. This is in fact the way that red5 server has been devised to communicate with java applications. Through the capabilities that this class gives to the java client application, methods on the server applications can be invoked.
 {{{
