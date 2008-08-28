@@ -13,7 +13,7 @@ Server of this module is using [http://osflash.org/red5 Red5] (Open source flash
 The uploaded image on server is bind with the other clients (the other remote computer) through methods in server side and client side which their task is to download the new image to clients as soon as it arrives to server.
 ===Using Flash and Applet===
 Client side consists of an applet, SWF file and some JavaScript wrapped in HTML since this is supposed to be run in a browser.
-====Applet====
+====The Applet====
 The applet:
 The applet in this project is designed to carry out three different tasks. First is to periodically take a snapshot of the desktop that is running on. Taking a snapshot has been accomplished using java toolkit and robot class.
 
@@ -41,3 +41,29 @@ client.invokeMethod("imageString", arg);
 
 The invokeMethod method of RemothingClient class is accepting the name of the method to be invoked, an array of objects as parameters to be sent to servers, and returns an object as result of the method. 
 This communication in fact can be bidirectional since the applet can receive any object as return object of the method and do something with it. However this has not been shown here because this project using one way communication with server.
+
+====The ActionScript code (swf file)====
+So far we have ensured that the snapshot of the desktop is taken periodically and being sent to the server. Here is when the AS code as swf file comes to play. The ActionScript Code is responsible for three different tasks.
+
+First task is to establish a connection to server. This is in fact a connection to be established with the shared object[http://dl.fancycode.com/red5/api/org/red5/server/so/SharedObject.html 1][http://livedocs.adobe.com/flex/3/langref 2] of the server side code/application. This way swf file stays updated with the changes made to the image (basically the encoded string) on server which has been arrived from applet. These changes are nothing but receiving new images and replacing the previous one which are taken place on server.
+To accomplish this task we need different listeners and handlers to take care of the connection and synchronization.
+{{{
+private var connection : NetConnection;
+private var appSO : SharedObject;
+}}}
+
+Since the image that resides on the server is a base64 string it needs to be decoded. However swf file downloads the string first and the decoding process takes place on the client side (swf file). This is the second task done by the swf file.
+One fact to be mentioned here is that although on the applet there was an open source tool required to encode an array of bytes to string, on the swf it will be decoded to array of bytes using an inner class of ActionScript library.
+
+{{{
+var byteArray : ByteArray = base64Decoder.drain();
+}}}
+
+The third task after decoding the string to a byte array is to display the image as raw data on screen. This results in fast processing methods since we are not dealing with any image, but an array of bytes which is filling the screen as soon as they receive new changes.
+
+{{{
+var loader : Loader = new Loader();
+ldr.loadBytes(byteArray);
+}}}
+
+The process of staying updated with the changes on image as string on server is carrying out using a method called setAttribute() provided by shared object. This method receives two parameters, one is the attribute or property to be registered to watch and the other is the value that the property has to be set to. The other to point to be mentioned is that when the property is registered to be watched, any changes to this property will dispatch a synchronization event with detail information to the client. Once the event is received by the client, it has to be extracted to get the useful data out of it. This is because this event can be lunched more than number of times that the property may change.
