@@ -68,11 +68,18 @@ ldr.loadBytes(byteArray);
 
 The process of staying updated with the changes on image as string on server is carrying out using a method called setAttribute() provided by shared object. This method receives two parameters, one is the attribute or property to be registered to watch and the other is the value that the property has to be set to. The other to point to be mentioned is that when the property is registered to be watched, any changes to this property will dispatch a synchronization event with detail information to the client. Once the event is received by the client, it has to be extracted to get the useful data out of it. This is because this event can be lunched more than number of times that the property may change.
 
+
 ----
 
+
 Before receiving remote desktop screen shots...
+
 http://present.carleton.ca:8080/files/docs/images/desktop-share-1.jpg
-Seeing remote desktop in Desktop share panel. 
+
+Seeing remote desktop in Desktop share panel.
+ 
 http://present.carleton.ca:8080/files/docs/images/desktop-share-2.jpg
+
 Can also do resizing...
+
 http://present.carleton.ca:8080/files/docs/images/desktop-share-3.jpg
