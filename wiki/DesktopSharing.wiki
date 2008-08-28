@@ -9,7 +9,7 @@ Although this concept is not new, a customized component designed specifically f
 == Methodology ==
 To accomplish the goal this module requires both server and client side coding.
 ===Using Red5 Server===
-Serevr of this module is using [http://osflash.org/red5 Red5] http://osflash.org/red5 (Open source flash server). A brief map of the plan is that using an applet on the client side, connection to the red5 server is established. Once the connection is made, Applet starts taking snapshots of the screen and transfer them to server.
+Server of this module is using [http://osflash.org/red5 Red5] http://osflash.org/red5 (Open source flash server). A brief map of the plan is that using an applet on the client side, connection to the red5 server is established. Once the connection is made, Applet starts taking snapshots of the screen and transfer them to server.
 The uploaded image on server is bind with the other clients (the other remote computer) through methods in server side and client side which their task is to download the new image to clients as soon as it arrives to server.
 ===Using Flash and Applet===
-Client side consists of an applet, ActionScript code (as SWF file), and some JavaScript all wrapped in HTML since this is supposed to be run in a browser.
+Client side consists of an applet, SWF file and some JavaScript all wrapped in HTML since this is supposed to be run in a browser.
