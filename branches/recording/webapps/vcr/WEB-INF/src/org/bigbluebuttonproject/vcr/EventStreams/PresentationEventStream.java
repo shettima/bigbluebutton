@@ -93,6 +93,7 @@ public class PresentationEventStream extends EventStream {
 			//updated
 			out.println("<presentation event= \"sharing\" time=\"" + getTimestamp() + 
 				"\" share=\"" + share + "\"/>");
+			out.flush();
 		} else if (key.equals("presenter")) {
 			Map<String, Object> values = (Map<String, Object>) value;
 			userid = ((Integer) values.get("userid")).intValue();
@@ -100,6 +101,7 @@ public class PresentationEventStream extends EventStream {
 			//updated
 			out.println("<presentation event=\"presenter\" time=\"" + getTimestamp() + 
 				"\" userid=\"" + userid + "\" name=\"" + name + "\"/>");
+			out.flush();
 		} else if (key.equals("updateMessage")) {
 			Map<String, Object> values = (Map<String, Object>) value;
 			if (values.get("message") != null) {
@@ -118,9 +120,9 @@ public class PresentationEventStream extends EventStream {
 						out.println("<presentation event=\"slide\" name=\"" + slide + "\"/>");
 					}
 					out.println("</presentation>");
-					copySlidesDirectory(sourcePath, targetPath.concat(getTimestampFormat()));
-					
+					out.flush();
 				} finally {
+					copySlidesDirectory(sourcePath, targetPath.concat(getTimestampFormat()));
 					out.releaseLock();
 				}
 				// download slides outside critical section
@@ -137,9 +139,10 @@ public class PresentationEventStream extends EventStream {
 				out.println("<presentation event=\"conversion\"time=\"" + getTimestamp() + 
 					"\" slide=\"" + completedSlides + 
 					"\" total=\"" + totalSlides + "\"/>");
+				out.flush();
 				}
 		}
-		out.flush();
+		
 	}
 	
 	/*protected void downloadSlide(String time, String slide) {
@@ -253,45 +256,51 @@ synchronized public void messageReceived(RTMPConnection conn, ProtocolState stat
 			Packet packet = (Packet) in;
 			IRTMPEvent message = packet.getMessage();
 			String body = message.toString();
-			if (body.contains("zoomCallback")){
-				//updated
-				String[] messageSO= body.split(",");
-				String[] x = messageSO[3].split("\\)");
-				out.println("<presentation event=\"zoom\" time=\"" + getTimestamp() + "\" values="
-						+ messageSO[2]+","+x[0]+"/>");
+			if (body.contains("presentationSO")){
+				if (body.contains("zoomCallback")){
+					//updated
+					String[] messageSO= body.split(",");
+					String[] x = messageSO[3].split("\\)");
+					out.println("<presentation event=\"zoom\" time=\"" + getTimestamp() + "\" values="
+							+ messageSO[2]+","+x[0]+"/>");
+					out.flush();	
+					
+				}
+				if (body.contains("maximizeCallback")){
+					//updated
+					//String[] messageSO =body.split(",");
+					out.println("<presentation event=\"maximize\" time=\"" + getTimestamp()+"\"/>");
+					out.flush();				
+				}
+				if (body.contains("restoreCallback")){
+					//updated
+					//String[] messageSO =body.split(",");
+					out.println("<presentation event=\"restore\" time=\"" + getTimestamp()+"\"/>");
+					out.flush();				
+				}
 				
-			}
-			if (body.contains("maximizeCallback")){
-				//updated
-				//String[] messageSO =body.split(",");
-				out.println("<presentation event=\"maximize\" time=\"" + getTimestamp()+"\"/>");
-				//out.flush();				
-			}
+				if (body.contains("moveCallback")){
+					//updated
+					String[] messageSO =body.split(",");
+					String x = messageSO[2].concat("," + messageSO[3]);
+					String[] y = x.split("\\)");	
+					out.println("<presentation event=\"move\" time=\"" +  getTimestamp() + "\" values=\""
+							+ y[0]+"/>");
+					out.flush();
+					}
+				if (body.contains("gotoPageCallback")){ 
+					//updated
+					String[] messageSO =body.split(",");
+					String[] y = messageSO[2].split("\\)");	
+					out.println("<presentation event=\"gotoPage\" time=\"" +  getTimestamp() + "\" Slide="
+							+ y[0]+"/>");
+					out.flush();
+					}
+				super.messageReceived(conn, state, in);
 			
-			if (body.contains("moveCallback")){
-				//updated
-				String[] messageSO =body.split(",");
-				String x = messageSO[2].concat("," + messageSO[3]);
-				String[] y = x.split("\\)");	
-				out.println("<presentation event=\"move\" time=\"" +  getTimestamp() + "\" values=\""
-						+ y[0]+"/>");
-				//out.flush();
-				}
-			if (body.contains("gotoPageCallback")){
-				//updated
-				String[] messageSO =body.split(",");
-				String[] y = messageSO[2].split("\\)");	
-				out.println("<presentation event=\"gotoPage\" time=\"" +  getTimestamp() + "\" Slide="
-						+ y[0]+"/>");
-				//out.flush();
-				}
-			super.messageReceived(conn, state, in);
-			out.flush();
-		// the super method does all the real work, such as dispatching to 
-		// onPing, onSharedObject, and onInvoke
-		
-		}
-	
+			
+			}	
+		}				
 	}
 	
 }

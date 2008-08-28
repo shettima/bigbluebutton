@@ -69,14 +69,11 @@ public class Application extends ApplicationAdapter
   	 */
 	  public boolean appStart (IScope app)
 	  {
-		  if (!super.appStart(app))
-	    		return false;
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-		System.out.println("chat:application Start"+ app);
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-	      return true;
+		  if (!super.appStart(app)){
+			  log.error("Application didn't start, application:"+app.getName());
+			  return false;  
+		  }
+		  return true;
 	  }
 	  
 	  /**
@@ -85,11 +82,7 @@ public class Application extends ApplicationAdapter
   	 */
 	  public void appStop ()
 	  {
-		/*System.out.println("======================================================");
-		System.out.println("======================================================");
-		System.out.println("chat:application Stop");
-		System.out.println("======================================================");
-		System.out.println("======================================================");*/
+		
 	  }
 	  
   	/**
@@ -105,24 +98,19 @@ public class Application extends ApplicationAdapter
 	  public boolean roomStart(IScope room) {
 		  // create a sharedobject with the name chatSO
 		  
-		if (!super.roomStart(room))
-	    		return false;
-		
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-		System.out.println("chat:Room Start"+ room);
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-		  if(!hasSharedObject(room, "chatSO")){
-			  if(!createSharedObject(room, "chatSO", false))
-				  log.error("Sharedobject::chatSO could not be created");
-		  }
+		if (!super.roomStart(room)){
+			log.error("Room didn't start, Room#:"+room.getName());
+			return false;	
+			}
+		if(!hasSharedObject(room, "chatSO")){
+			if(!createSharedObject(room, "chatSO", false))
+				log.error("Sharedobject::chatSO could not be created");
+		  	}
 	      ISharedObject so = getSharedObject(room, "chatSO", false);
-	      
 	      if(so == null){
 	    	  log.error("SharedObject was not created");
 	    	  return false;
-	      }
+	    	  }
 	      
 	      // create a SharedObject listener and register it to listen on chatSO
 	      chatListener = new ChatSharedObjectListener();
@@ -140,44 +128,7 @@ public class Application extends ApplicationAdapter
   	 * @see org.red5.server.adapter.MultiThreadedApplicationAdapter#roomLeave(org.red5.server.api.IClient, org.red5.server.api.IScope)
   	 */
 	  public void roomLeave(IClient client, IScope room) {
-		/**
-		 * When a client leaves the room the system will check if the Client List is empty
-		 * if the client list is empty then we will call the the buffer clear function
-		 *    
-		 */
-		 	
-		  this.getSharedObject(room, "chatSO");
-		  if(!hasSharedObject(room, "chatSO")){
-			  if(!createSharedObject(room, "chatSO", false))
-				  log.error("Sharedobject::chatSO could not be created");
-		  }
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-		System.out.println("chat:Room Leave"+ client + room);
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-	    ISharedObject so = getSharedObject(room, "chatSO", false);
-	      
-	      if(so == null){
-	    	  log.error("Sharedobject::chatSO was not created");
-	    	  }
-	      
-		  Set<IClient> clientList;  
-		  clientList = room.getClients();
-		  if (clientList.isEmpty()) { 
-			  //System.out.print("client list is empty");
-			  log.debug("Client List is Empty");
-			  chatListener = new ChatSharedObjectListener();
-			  chatListener.clearChatLog();				  
-			  }		 
-		  Set<IConnection> conn = client.getConnections(room);	      
-		if (conn instanceof IServiceCapableConnection) {
-			  IServiceCapableConnection sc = (IServiceCapableConnection) conn;
-			  String chatLog = chatListener.getChatLog();
-			  // call client method remotely to send chat Log
-			  sc.invoke("setChatLog", new Object[]{chatLog});
-		  }
-		  		  	  
+				  		  	  
 	  }
 
 	  	  
@@ -192,11 +143,7 @@ public class Application extends ApplicationAdapter
 	  public boolean roomJoin(IClient client, IScope room) {
 	     	
 		  log.info("NEW CLIENT JOINED. CLIENT ID IS: " + client.getId() +"\n");
-		/*System.out.println("======================================================");
-		System.out.println("======================================================");
-		System.out.println("chat:room join"+ client + room);
-		System.out.println("======================================================");
-		System.out.println("======================================================"); */
+		
 		  return true;
 	  } 
 	  
@@ -212,32 +159,35 @@ public class Application extends ApplicationAdapter
   	 */
 	  public boolean roomConnect(IConnection conn, Object[] params) {
 		  
+		  String chatLog = null;
+		  
 		  if(!hasSharedObject(conn.getScope(), "chatSO")){
 			  if(!createSharedObject(conn.getScope(), "chatSO", false))
 				  log.error("Sharedobject::chatSO could not be created");
 		  }
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-		System.out.println("chat:room connect"+ conn);
-		System.out.println("======================================================");
-		System.out.println("======================================================");
-		  
+		 
 		  ISharedObject so = getSharedObject(conn.getScope(), "chatSO", false);
 	      
 	      if(so == null){
 	    	  log.error("Sharedobject::chatSO was not created");
 	    	  return false;
 	      }
-		   
-		  if (conn instanceof IServiceCapableConnection) {
-			  IServiceCapableConnection sc = (IServiceCapableConnection) conn;
-			  String chatLog = chatListener.getChatLog();
+	      if (conn instanceof IServiceCapableConnection) {
+	    	  IServiceCapableConnection sc = (IServiceCapableConnection) conn;
+			  Set<IClient> clientList;  
+			  clientList = conn.getScope().getClients();
+			  if (clientList.isEmpty()) { 
+				 log.info("Client list is empty");
+				 chatListener = new ChatSharedObjectListener();
+				 chatLog = chatListener.clearChatLog();				  
+			  }else {
+				  log.info("Get chat history");
+				  chatLog = chatListener.getChatLog();
+			  }		  
 			  // call client method remotely to send chat Log
 			  sc.invoke("setChatLog", new Object[]{chatLog});
 		  } 
-		  
-		  System.out.print("134.117.58.103 server is runing");
-	  	  return true;
+		  return true;
 	  }
 	    
     	/**

@@ -91,12 +91,10 @@ public class Application extends ApplicationAdapter
 		  
 		  if (!success){
 			  log.info("VCRPath wasn't created!!!");
-		  }
-		  log.info("VCRPath was created!!!");
+		  }else log.info("VCRPath already exist!!!");
 		  log.info("VCR::appStart" + app.getName().toString()+"room"+app.toString());
 		  log.info("VCR::appPath" + app.getPath().toString());
-		  
-		  		  
+		  		  		  
 		  return true;
 	  }
 	  
@@ -119,8 +117,7 @@ public class Application extends ApplicationAdapter
   	 * @see org.red5.server.adapter.MultiThreadedApplicationAdapter#roomStart(org.red5.server.api.IScope)
   	 */
 	  public boolean roomStart(IScope room) {
-		
-		  
+				  
 		if (!super.roomStart(room))
     		return false;
 		log.info("VCR::roomStart: "+ room.toString());
@@ -137,7 +134,6 @@ public class Application extends ApplicationAdapter
   	 */
 	  
 	  public void roomLeave(IClient client, IScope room) {
-				 	
 		  log.info("VCR::roomLeave: "+ room.toString());	  		  		  
 	  }
 
@@ -192,9 +188,9 @@ public class Application extends ApplicationAdapter
 	  }	  
 	
 	  public String VCRStop()
-	  {		
+	  {	
 		String str = testvcr.stopRecording();
-		  log.info("VCR::VCR Stop");
+		log.info("VCR::VCR Stop");
 		return str;
 	  }
 	  

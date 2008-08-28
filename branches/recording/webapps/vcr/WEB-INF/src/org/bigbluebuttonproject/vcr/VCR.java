@@ -5,13 +5,17 @@ package org.bigbluebuttonproject.vcr;
 
 import java.util.Date;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import org.slf4j.Logger;
@@ -45,7 +49,7 @@ public class VCR {
 	protected String urlIndex = "http://134.117.58.103:8080/VCRFILES/index.html";
 	
 	//protected String rootSlides; 
-	protected String rootSession;
+	protected String rootSession = null;
 	
 	protected EventWriter out;
 	
@@ -60,8 +64,8 @@ public class VCR {
 		char a = Keyboard.getCharacter();
 		if (a == 's'){
 			String str = vcr.stopRecording();
-			System.out.println("Session was stored @:  "+ str);
-			System.exit(0);			
+			//System.out.println("Session was stored @:  "+ str);		
+			System.exit(0);
 		}
 		
 	}
@@ -130,9 +134,9 @@ public class VCR {
 				//EventStream meetme = new MeetMeEventStream("134.117.254.226", room);
 				//meetme.setWriter(out);
 	  			
-				EventStream conference = new ConferenceEventStream(host, room);
-				conference.connect(host, 1935, conference.getApplication());
-				conference.setWriter(out);
+				//EventStream conference = new ConferenceEventStream(host, room);
+				//conference.connect(host, 1935, conference.getApplication());
+				//conference.setWriter(out);
 				
 				out.flush();
 			} catch (Exception e) {
@@ -142,25 +146,29 @@ public class VCR {
 	}
 		
 		
-	public String stopRecording() {
+	public String stopRecording( ) {
 		//add the URL for the destination for the lecture location on server
 		//add the audio file URL at the end of the session and TimeStamp for
 		//the end of the session
+		//convertWAVtoMP3(getRoom());
+		out.println("<audio scr=\""+ convertWAVtoMP3("85901")+"\"/>");
 		out.println("</seq>");
 		out.println("</par>");
 		out.println("</lecture>");
 		out.flush();
+		out.close();
 		finalize(rootSession);
+		return urlIndex;
 		//System.out.println("recording has been stopped: Session locatin"+ rootSession);
 		//log.info("recording has been stopped: Session locatin"+ rootSession);
-		return urlIndex;
+			
 	}
 	
 	public void finalize(String sessionPath) {
 		// TODO: this is not the appropriate place to do this
 		//Add the session location on the server to the index.html 
 		// at the http://SERVER/VCRFILES/
-		File file = new File("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\index.html");
+		File file = new File("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html");
 	     	try {
 	      		if (! file.exists())
 	      			if (file.createNewFile()) {
@@ -170,10 +178,10 @@ public class VCR {
 	     				System.out.println("index file already exist");
 	      			}
 	      		
-	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\index.html", true));
+	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html", true));
 	            outIndex.write("<p><br>"+sessionPath+"<p>");
 	            outIndex.close();
-	            
+	           	            
 	     	} catch (IOException e) {
 	  			System.out.println("IO exception in the finalize function");
 	  			}
@@ -182,6 +190,33 @@ public class VCR {
 	public String getRoom(){
 		return room;
 	}
-	
+	 public String convertWAVtoMP3(String roomID){
+		   
+		 // http://134.117.254.226/cgi-bin/convert.pl?id=<id>
+		 //ex:  http://134.117.254.226/cgi-bin/convert.pl?id=5901
+		 char[] room1 = new char[4];
+		   
+		   roomID.getChars(1, 5, room1, 0);
+		   System.out.print(room1);
+		   //the http link to convert the WAV to MP3 
+		   String HTTPrequest = new String ("http://134.117.254.226/cgi-bin/convert.pl?id=");
+		   roomID = roomID.copyValueOf(room1);
+		   HTTPrequest = HTTPrequest.concat(roomID);
+		   System.out.println("The link is "+ HTTPrequest);
+		   String str = null;
+		   try {
+			   URL convert = new URL (HTTPrequest);
+			   HttpURLConnection u = (HttpURLConnection)convert.openConnection();
+			   BufferedReader in = new BufferedReader(new InputStreamReader(u.getInputStream()));
+			   str = in.readLine();
+			   System.out.println(str);
+			   in.close();			
+			   u.disconnect();
+			   }catch (Exception e){
+			   System.out.println(e);
+		   }
+		   return str;
+	   }
+
 }
 

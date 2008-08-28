@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 	<appender name="VCR" class="ch.qos.logback.core.FileAppender">
-		<File>log/chat.log</File>
+		<File>log/vcr.log</File>
 		<Append>false</Append>
 		<Encoding>UTF-8</Encoding>
 		<BufferedIO>false</BufferedIO>
@@ -16,7 +16,7 @@
 		<level value="DEBUG" />
 		<appender-ref ref="VCR" />
 	</root>	
-	<logger name="org.blindsideproject.vcr">
+	<logger name="org.bigbluebuttonproject.vcr">
 		<level value="DEBUG" />
 	</logger>			
 </configuration>

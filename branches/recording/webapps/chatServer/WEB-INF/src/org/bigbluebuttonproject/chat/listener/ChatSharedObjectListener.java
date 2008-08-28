@@ -187,7 +187,7 @@ public class ChatSharedObjectListener implements ISharedObjectListener {
 		StringBuffer log = new StringBuffer();
 		Object[] obj = buffer.toArray();
 		return log.toString();
-		//changes on July 09, 2008-NN
+		
 	}
 
 	

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<appender name="CONFERENCE" class="ch.qos.logback.core.FileAppender">
+	<appender name="CHATSERVER" class="ch.qos.logback.core.FileAppender">
 		<File>log/chat.log</File>
 		<Append>false</Append>
 		<Encoding>UTF-8</Encoding>
@@ -16,7 +16,7 @@
 		<level value="DEBUG" />
 		<appender-ref ref="CHAT" />
 	</root>	
-	<logger name="org.blindsideproject.chat">
+	<logger name="org.bigbluebuttonproject.chat">
 		<level value="DEBUG" />
 	</logger>			
 </configuration>
