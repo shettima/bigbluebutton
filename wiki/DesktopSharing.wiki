@@ -74,12 +74,17 @@ The process of staying updated with the changes on image as string on server is 
 
 Before receiving remote desktop screen shots...
 
+
 http://present.carleton.ca:8080/files/docs/images/desktop-share-1.jpg
 
+
 Seeing remote desktop in Desktop share panel.
- 
+
+
 http://present.carleton.ca:8080/files/docs/images/desktop-share-2.jpg
 
+
 Can also do resizing...
+
 
 http://present.carleton.ca:8080/files/docs/images/desktop-share-3.jpg
