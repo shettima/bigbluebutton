@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#Desktop sharing over public internet without installation of any software or plug-in.
 
 == Introduction ==
 
