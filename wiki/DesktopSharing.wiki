@@ -2,13 +2,12 @@
 
 == Introduction ==
 
-Application sharing for the purpose of this project is defined as the ability to show in real-time a particular desktop screen to a remote user.
+The desktop sharing module for the purpose of BigBlueButton is defined as the ability to show in real-time a particular desktop screen to a remote user.
 Although this concept is not new, a customized component designed specifically for BigBlueButton with strict guidelines such as pure mobility is what makes this unique.
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Methodology ==
+To accomplish the goal this module requires both server and client side coding.
+===Using Red5 Server===
+Serevr of this module is using [red5 server]http://osflash.org/red5 (Open source flash server). A brief map of the plan is that using an applet on the client side, connection to the red5 server is established. Once the connection is made, Applet starts taking snapshots of the screen and transfer them to server.
+The uploaded image on server is bind with the other clients (the other remote computer) through methods in server side and client side which their task is to download the new image to clients as soon as it arrives to server. The following figure is a simple schematic of the progress and the following is the detailed description.
