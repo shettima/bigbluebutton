@@ -45,7 +45,7 @@ This communication in fact can be bidirectional since the applet can receive any
 ====The ActionScript code (swf file)====
 So far we have ensured that the snapshot of the desktop is taken periodically and being sent to the server. Here is when the AS code as swf file comes to play. The ActionScript Code is responsible for three different tasks.
 
-First task is to establish a connection to server. This is in fact a connection to be established with the shared object[http://dl.fancycode.com/red5/api/org/red5/server/so/SharedObject.html server side]  [http://livedocs.adobe.com/flex/3/langref client side] of the server side code/application. This way swf file stays updated with the changes made to the image (basically the encoded string) on server which has been arrived from applet. These changes are nothing but receiving new images and replacing the previous one which are taken place on server.
+First task is to establish a connection to server. This is in fact a connection to be established with the shared object [http://dl.fancycode.com/red5/api/org/red5/server/so/SharedObject.html server side]   [http://livedocs.adobe.com/flex/3/langref client side] of the server side code/application. This way swf file stays updated with the changes made to the image (basically the encoded string) on server which has been arrived from applet. These changes are nothing but receiving new images and replacing the previous one which are taken place on server.
 To accomplish this task we need different listeners and handlers to take care of the connection and synchronization.
 {{{
 private var connection : NetConnection;
