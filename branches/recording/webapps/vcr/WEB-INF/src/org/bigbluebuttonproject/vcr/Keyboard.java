@@ -11,7 +11,7 @@ public class Keyboard {
 		} catch (Exception e) {
 	    	e.printStackTrace();
 	    	return 0;
-		}  
+		}    
     }      
     /* Get a double from the user and return it */
     public static double getDouble() { 

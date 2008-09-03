@@ -46,11 +46,11 @@ public class VCR {
 	private String host = null;
 	private String file = "lecture.xml";
 	//This is the root dir for the sessions saved files
-	//protected String root = "C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Session_";
-	protected String root = "/usr/local/tomcat-5.5.20/webapps/vcrfiles";
+	protected String root = "C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Session_";
+	//protected String root = "/usr/local/tomcat-5.5.20/webapps/vcrfiles/session_";
 	// The URL where the html where the dir's for the stored sessions are listed
-	//protected String urlIndex = "http://134.117.58.103:8080/VCRFILES/index.html";
-	protected String urlIndex = "http://present.carleton.ca/vcrfiles/index.html"; 
+	protected String urlIndex = "http://134.117.58.103:8080/vcrfiles/index.html";
+	//protected String urlIndex = "http://present.carleton.ca/vcrfiles/index.html"; 
 	protected String rootSession = null;
 	
 	protected EventWriter out;
@@ -61,7 +61,7 @@ public class VCR {
 		
 		
 		
-		VCR vcr = new VCR("134.117.58.103", "911");
+		VCR vcr = new VCR("present.carleton.ca", "85115");
 		vcr.startRecording();
 		
 		System.out.println("Press 's' to stop recording");
@@ -104,7 +104,8 @@ public class VCR {
 		public void startRecording() {
 			
 			log.info("recording has been started");
-			rootSession = root.concat(room + "_" + getTimestampFormat()+"/");
+			rootSession = root.concat(room + "_" + getTimestampFormat()+"\\");
+			//rootSession = root.concat(room + "_" + getTimestampFormat()+"/");
 			new File(rootSession).mkdir();
 						
 			try {
@@ -112,7 +113,7 @@ public class VCR {
 				//System.out.println("++++ File Name +++++"+ file + "++++++");
 				log.info("++++ File Name +++++"+ file + "++++++");
 				out = new EventWriter(new FileOutputStream(file));
-				System.out.println("<!-- versrion 1.0 vcr -->");
+				out.println("<!-- versrion 1.0 vcr -->");
 				out.println("<lecture host=\"" + host + "\" room=\"" + room + 
 						"\" start=\"" + getTimestamp() + "\">");
 				out.println("<par>");
@@ -170,8 +171,9 @@ public class VCR {
 		// TODO: this is not the appropriate place to do this
 		//Add the session location on the server to the index.html 
 		// at the http://SERVER/VCRFILES/
-		File file = new File("/usr/local/tomcat-5.5.20/webapps/vcrfiles/Index.html" );
-				//"C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html");
+		File file = new File("C:\\tools\\tomcat-5.5.26\\webapps\\vcrfiles\\index.html" );
+		//File file = new File("/usr/local/tomcat-5.5.20/webapps/vcrfiles/index.html" );
+				
 	     	try {
 	      		if (! file.exists())
 	      			if (file.createNewFile()) {
@@ -181,8 +183,8 @@ public class VCR {
 	     				System.out.println("index file already exist");
 	      			}
 	      		
-	      		//BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html", true));
-	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("/usr/local/tomcat-5.5.20/webapps/vcrfiles/Index.html", true));
+	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\vcrfiles\\index.html", true));
+	      		//BufferedWriter outIndex = new BufferedWriter(new FileWriter("/usr/local/tomcat-5.5.20/webapps/vcrfiles/index.html", true));
 	            outIndex.write("<p><br>"+sessionPath+"<p>");
 	            outIndex.close();
 	           	            

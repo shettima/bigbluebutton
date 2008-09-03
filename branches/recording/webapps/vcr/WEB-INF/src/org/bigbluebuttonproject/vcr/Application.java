@@ -60,19 +60,11 @@ public class Application extends ApplicationAdapter
 	
 	protected  VCR testvcr;
 	//Create the VCR directory to store the sessions
-	private String VCRPath = new String("/usr/local/tomcat-5.5.20/webapps/vcrfiles");
-	//private String VCRPath = new String("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES");
-	//C:\\VCRFILES
+	//the present server path for sessions storage
+	//private String VCRPath = new String("/usr/local/tomcat-5.5.20/webapps/vcrfiles");
+	private String VCRPath = new String("C:\\tools\\tomcat-5.5.26\\webapps\\vcrfiles");
 	
-	//Change it to present.carleton.ca
-	//private String host = "134.117.58.103";
-	//This needs to be changes later, it will be passed from the client 
-	//private String room = "85115";
-	//protected String room = "911";
-	//this later should include at least the class name and the date
-	//private String file = "lecture";
-	//protected String root = "C:/";
-	 
+		 
 	  /** 
   	 * This method is called once on scope start. overrides MultiThreadedApplicationAdapter.appStart(IScope).
   	 * Since this is the Application start handler method, all the initialization tasks that the server application needs, have to go here.

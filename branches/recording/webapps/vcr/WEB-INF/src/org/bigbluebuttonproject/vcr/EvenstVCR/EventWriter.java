@@ -21,7 +21,7 @@ public class EventWriter extends PrintWriter {
 		mutex = new ReentrantLock();
 	}      
 	               
-	/**  
+	/**    
 	 * Acquire a lock. Need this since events arrive asynchronously.
 	 * Locks are reentrant (@see also java.util.concurrent).
 	 */

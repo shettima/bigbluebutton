@@ -44,8 +44,9 @@ public class PresentationEventStream extends EventStream {
 
 	protected List<String> slides;
 	//get this path from the vcr.properties, item PresentaionPath
-	//private String sourcePath = "C:\\upload\\";
-	private String sourcePath = "/temp/upload";
+	private String sourcePath = "C:\\upload\\";
+	//present server path for sildes
+	//private String sourcePath = "/temp/upload";
 	
 	private String targetPath; 
 		
@@ -57,6 +58,9 @@ public class PresentationEventStream extends EventStream {
 	
 	public void init(String room, String path){
 		
+		//present.calreton.ca path for slides
+		//sourcePath = sourcePath.concat(room+"/extracted");
+		//targetPath = path.concat("/Slides");
 		sourcePath = sourcePath.concat(room+"\\extracted");
 		targetPath = path.concat("\\Slides");
 			 
@@ -123,7 +127,9 @@ public class PresentationEventStream extends EventStream {
 					out.println("</presentation>");
 					out.flush();
 				} finally {
-					copySlidesDirectory(sourcePath, targetPath.concat(getTimestampFormat()));
+					//copySlidesDirectory(sourcePath, targetPath.concat(getTimestampFormat()));
+					//put the slides in one folder called slides.. just for now!!!!!!
+					copySlidesDirectory(sourcePath, targetPath);
 					out.releaseLock();
 				}
 				// download slides outside critical section
