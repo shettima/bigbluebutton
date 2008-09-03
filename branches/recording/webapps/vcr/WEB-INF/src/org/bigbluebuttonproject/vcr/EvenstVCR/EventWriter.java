@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
         
 /** 
  * @author nnoori
- *    
+ *      
  */ 
 public class EventWriter extends PrintWriter {
 	
@@ -19,8 +19,8 @@ public class EventWriter extends PrintWriter {
 	public EventWriter(OutputStream out) {
 		super(out);
 		mutex = new ReentrantLock();
-	}   
-	           
+	}      
+	               
 	/**  
 	 * Acquire a lock. Need this since events arrive asynchronously.
 	 * Locks are reentrant (@see also java.util.concurrent).

@@ -60,16 +60,17 @@ public class Application extends ApplicationAdapter
 	
 	protected  VCR testvcr;
 	//Create the VCR directory to store the sessions
-	private String VCRPath = new String("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES");
+	private String VCRPath = new String("/usr/local/tomcat-5.5.20/webapps/vcrfiles");
+	//private String VCRPath = new String("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES");
 	//C:\\VCRFILES
 	
 	//Change it to present.carleton.ca
-	private String host = "134.117.58.103";
+	//private String host = "134.117.58.103";
 	//This needs to be changes later, it will be passed from the client 
-	private String room = "85115";
+	//private String room = "85115";
 	//protected String room = "911";
 	//this later should include at least the class name and the date
-	private String file = "lecture";
+	//private String file = "lecture";
 	//protected String root = "C:/";
 	 
 	  /** 
@@ -178,11 +179,10 @@ public class Application extends ApplicationAdapter
 			log.info("Received result " + call.getResult() + " for "
 					+ call.getServiceMethodName());		
 		}
-	  public void VCRStart (String room)
+	  public void VCRStart (String host, String room)
 	  {
-		String [] args = new String[1];
-		args[0]= room;
-	    testvcr = new VCR(args);
+		
+	    testvcr = new VCR(host,room);
 		testvcr.startRecording();
 		log.info("VCR::VCR Start");
 	  }	  

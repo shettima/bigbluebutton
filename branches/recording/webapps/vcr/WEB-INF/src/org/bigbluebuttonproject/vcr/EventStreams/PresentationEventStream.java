@@ -43,8 +43,9 @@ public class PresentationEventStream extends EventStream {
 	protected int totalSlides;
 
 	protected List<String> slides;
-	
-	private String sourcePath = "C:\\upload\\";
+	//get this path from the vcr.properties, item PresentaionPath
+	//private String sourcePath = "C:\\upload\\";
+	private String sourcePath = "/temp/upload";
 	
 	private String targetPath; 
 		
@@ -145,39 +146,7 @@ public class PresentationEventStream extends EventStream {
 		
 	}
 	
-	/*protected void downloadSlide(String time, String slide) {
-		OutputStream out = null;
-		InputStream in = null;
-		try {
-			// TODO: this may change at some point in the future
-			// refactor into a configuration variable
-			URL url = new URL("http://" + host + 
-				"/blindside/file/display?name=" + slide);
-			new File("slides_" + time).mkdir();
-			out = new BufferedOutputStream(
-				new FileOutputStream("slides_" + time + "/" + slide));
-			in = url.openConnection().getInputStream();
-			byte[] buffer = new byte[512];
-			int n;
-			while ((n = in.read(buffer)) > -1) {
-				out.write(buffer, 0, n);
-			}
-		} catch (Exception e) {
-			System.err.println("Could not download slide " + slide + ": " + e);
-		} finally {
-			try {
-				if (in != null) {
-					in.close();
-				}
-				if (out != null) {
-					out.close();
-				}
-			} catch (IOException e) { 
-				// ignore
-			}
-		}
-	}*/
-
+	
 	public void onSharedObjectUpdate(ISharedObjectBase so, IAttributeStore values) {
 		if (debug) {
 			System.out.println("Update on shared object (IAttributeStore): " + values);
@@ -261,8 +230,8 @@ synchronized public void messageReceived(RTMPConnection conn, ProtocolState stat
 					//updated
 					String[] messageSO= body.split(",");
 					String[] x = messageSO[3].split("\\)");
-					out.println("<presentation event=\"zoom\" time=\"" + getTimestamp() + "\" values="
-							+ messageSO[2]+","+x[0]+"/>");
+					out.println("<presentation event=\"zoom\" time=\"" + getTimestamp() + "\" values=\""
+							+ messageSO[2]+","+x[0]+"\"/>");
 					out.flush();	
 					
 				}
@@ -285,15 +254,17 @@ synchronized public void messageReceived(RTMPConnection conn, ProtocolState stat
 					String x = messageSO[2].concat("," + messageSO[3]);
 					String[] y = x.split("\\)");	
 					out.println("<presentation event=\"move\" time=\"" +  getTimestamp() + "\" values=\""
-							+ y[0]+"/>");
+							+ y[0]+"\"/>");
 					out.flush();
 					}
 				if (body.contains("gotoPageCallback")){ 
 					//updated
 					String[] messageSO =body.split(",");
 					String[] y = messageSO[2].split("\\)");	
-					out.println("<presentation event=\"gotoPage\" time=\"" +  getTimestamp() + "\" Slide="
-							+ y[0]+"/>");
+					String[] x = y[0].split("\\[");
+					String[] z = x[1].split("\\]");
+					out.println("<presentation event=\"gotoPage\" time=\"" +  getTimestamp() + "\" Slide=\""
+							+ z[0]+"\"/>");
 					out.flush();
 					}
 				super.messageReceived(conn, state, in);

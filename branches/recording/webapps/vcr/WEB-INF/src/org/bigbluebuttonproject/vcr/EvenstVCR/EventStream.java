@@ -45,8 +45,8 @@ public abstract class EventStream extends RTMPClient implements ISharedObjectLis
 	protected String room;
 	protected EventWriter out;
 	protected IConnection conn;
-	     
-	/**
+	       
+	/**  
 	 * For pretty printing talk events (@see also messageReceived).
 	 */ 
 	protected int events = 0;

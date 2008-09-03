@@ -36,28 +36,32 @@ import org.bigbluebuttonproject.vcr.*;
 public class VCR {
 
 	boolean debugMode = true;
-	//Change it to present.carleton.ca
+	//get parameters (host, file, root, urlIndex) from the vcr.properties
+	//This should be set by the user later in the vcr.properties file.
 	//private String host = "present.carleton.ca";
-	private String host = "134.117.58.103";
+	//private String host = "134.117.58.103";
 	//This needs to be changes later, it will be passed from the client 
-	private String room = "85115";
-	//this later should include at least the class name and the date
+	//private String room = "85115";
+	private String room = null;
+	private String host = null;
 	private String file = "lecture.xml";
-	
-	protected String root = "C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Session_";
-	
-	protected String urlIndex = "http://134.117.58.103:8080/VCRFILES/index.html";
-	
-	//protected String rootSlides; 
+	//This is the root dir for the sessions saved files
+	//protected String root = "C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Session_";
+	protected String root = "/usr/local/tomcat-5.5.20/webapps/vcrfiles";
+	// The URL where the html where the dir's for the stored sessions are listed
+	//protected String urlIndex = "http://134.117.58.103:8080/VCRFILES/index.html";
+	protected String urlIndex = "http://present.carleton.ca/vcrfiles/index.html"; 
 	protected String rootSession = null;
 	
 	protected EventWriter out;
 	
 	public static Logger log = LoggerFactory.getLogger( Application.class );
 		
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
-		VCR vcr = new VCR(args);
+		
+		
+		VCR vcr = new VCR("134.117.58.103", "911");
 		vcr.startRecording();
 		
 		System.out.println("Press 's' to stop recording");
@@ -68,24 +72,21 @@ public class VCR {
 			System.exit(0);
 		}
 		
-	}
+	}*/
 	
-	public VCR(String[] args) {
-		getArgs(args);
+	public VCR(String hst, String rm) {
+		room = rm;
+		host = hst;
 	}
 		
-	public void getArgs(String[] args) {
-		if (args.length >= 3) {
+	/*public void getArgs(String[] args) {
+		//if (args.length >= 3) {
 			host = args[0];
-			room = args[0];
+			room = args[1];
 			file = args[2];
-		}
-		//args[0]= host;
-		//args[1]= room;
-		//args[2]= file;
-		//System.out.println("Host: "+args[0] + "Room: "+ args[1]+ "File: "+ args[2]);
-						
-	}
+		//}
+		
+	}*/
 	
 	
 	public String getTimestampFormat() {
@@ -103,7 +104,7 @@ public class VCR {
 		public void startRecording() {
 			
 			log.info("recording has been started");
-			rootSession = root.concat(room + "_" + getTimestampFormat()+"\\");
+			rootSession = root.concat(room + "_" + getTimestampFormat()+"/");
 			new File(rootSession).mkdir();
 						
 			try {
@@ -111,6 +112,7 @@ public class VCR {
 				//System.out.println("++++ File Name +++++"+ file + "++++++");
 				log.info("++++ File Name +++++"+ file + "++++++");
 				out = new EventWriter(new FileOutputStream(file));
+				System.out.println("<!-- versrion 1.0 vcr -->");
 				out.println("<lecture host=\"" + host + "\" room=\"" + room + 
 						"\" start=\"" + getTimestamp() + "\">");
 				out.println("<par>");
@@ -168,7 +170,8 @@ public class VCR {
 		// TODO: this is not the appropriate place to do this
 		//Add the session location on the server to the index.html 
 		// at the http://SERVER/VCRFILES/
-		File file = new File("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html");
+		File file = new File("/usr/local/tomcat-5.5.20/webapps/vcrfiles/Index.html" );
+				//"C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html");
 	     	try {
 	      		if (! file.exists())
 	      			if (file.createNewFile()) {
@@ -178,7 +181,8 @@ public class VCR {
 	     				System.out.println("index file already exist");
 	      			}
 	      		
-	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html", true));
+	      		//BufferedWriter outIndex = new BufferedWriter(new FileWriter("C:\\tools\\tomcat-5.5.26\\webapps\\VCRFILES\\Index.html", true));
+	      		BufferedWriter outIndex = new BufferedWriter(new FileWriter("/usr/local/tomcat-5.5.20/webapps/vcrfiles/Index.html", true));
 	            outIndex.write("<p><br>"+sessionPath+"<p>");
 	            outIndex.close();
 	           	            
@@ -202,7 +206,7 @@ public class VCR {
 		   String HTTPrequest = new String ("http://134.117.254.226/cgi-bin/convert.pl?id=");
 		   roomID = roomID.copyValueOf(room1);
 		   HTTPrequest = HTTPrequest.concat(roomID);
-		   System.out.println("The link is "+ HTTPrequest);
+		  // System.out.println("The link is "+ HTTPrequest);
 		   String str = null;
 		   try {
 			   URL convert = new URL (HTTPrequest);
