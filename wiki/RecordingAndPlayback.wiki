@@ -1,4 +1,4 @@
-#summary Recording and playback are one of the new features of the BigBlueButton
+#summary This page contains information about the recording and playing back sessions for the BigBlueButton system
 = Introduction =
 
 Add your content here.
