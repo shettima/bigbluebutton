@@ -1,7 +1,14 @@
 #summary This page contains information about the recording and playing back sessions for the BigBlueButton system
 = Introduction =
 
-Add your content here.
+The main idea for recording a session on BigBlueButton system is to create listners for the different streams of the applications that exists on the BigBlueButton system (i.e. chat stream, presenation stream, whiteboard stream, etc).
+
+The recorder part is another Red5 server application. It listens to all the events that are exchanges via the  BigBlueButton applications' shared objects (i.e. charSO, presentaionSO, etc). 
+
+Each shared object has its own set of messages that can be found on the BigBlueButton client code. We can spacify what type of messages we want to capture via our recoder. 
+
+The recorede session is stored in a folder contains an XML file to save the captured events, a folder to save the presentaion slide (if any), and idealy an audio file 
+
 
 
 = Details =
