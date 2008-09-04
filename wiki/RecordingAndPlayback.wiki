@@ -12,9 +12,9 @@ The recorede session is stored in a folder contains an XML file to save the capt
 
 == XML schema for the recorded session ==
  
- *Chat Stream tags:
+ * Chat Stream tags:
 
- *Presenation Stream tags:
+ * Presenation Stream tags:
 
  * Conference Stream tags: TODO
 
@@ -26,7 +26,7 @@ The recorede session is stored in a folder contains an XML file to save the capt
 
  * Other tags:
 
-== Example of a recorded session ==
+== Example of the XML file for a recorded session ==
 
 {{{
 
@@ -107,5 +107,3 @@ The recorede session is stored in a folder contains an XML file to save the capt
 </lecture>
 
 }}}
-
-
