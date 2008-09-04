@@ -13,6 +13,7 @@ The recorede session is stored in a folder contains an XML file to save the capt
 == XML schema for the recorded session ==
  
  * Chat Stream tags:
+
  * Presenation Stream tags:
 
  * Conference Stream tags: TODO
