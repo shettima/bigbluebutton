@@ -14,10 +14,10 @@ The recorede session is stored in a folder contains an XML file to save the capt
 
 Various types of events are getting recorded for each stream on the BigBlueButton application. Each stream is tagged according to the stream and the evemt related to it. 
  
- * Chat Stream: Chat captured events are only the message received for a new txt being sent. The message contains the text, the color, time and the user name. Example of the recorded event: 
-    {{{
-     <chat time="1220463763244" user="Denis" color= "0">slide 5</chat>
-    }}} 
+ * Chat Stream: Chat captured events are only the message received for a new txt being sent. The message contains the text, the color, time and the user name. Example of the recorded event,
+        {{{
+         <chat time="1220463763244" user="Denis" color= "0">slide 5</chat>
+        }}} 
 
  * Presenation Stream tags
 
