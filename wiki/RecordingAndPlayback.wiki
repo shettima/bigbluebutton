@@ -7,13 +7,30 @@ The recorder part is another Red5 server application. It listens to all the even
 
 Each shared object has its own set of messages that can be found on the BigBlueButton client code. We can spacify what type of messages we want to capture via our recoder. 
 
-The recorede session is stored in a folder contains an XML file to save the captured events, a folder to save the presentaion slide (if any), and idealy an audio file 
+The recorede session is stored in a folder contains an XML file to save the captured events for playback, a folder to save the presentaion slide (if any), and an audio file (MP3 fprmat) for the recorded session (but now we are just passing a link to the session recording on the Asterisk server)
 
 
+= XML schema for the recorded session =
+ 
+ *Chat Stream tags:
 
-= Details =
+ *Presenation Stream tags:
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ * Conference Stream tags: TODO
+
+ * Audio Steam tags: TODO
+
+ * Whiteboard Stream tags: TODO
+
+ * Video Stream tags: TODO
+
+ * Other tags:
+
+= Example of a recorded session =
+
+{{{
+
+
+}}}
+
+
