@@ -1,7 +1,5 @@
 #summary How to setup your own BigBlueButton Server (Windows)
 
-** Draft **
-
 = Overview =
 These instructions show how to setup BigBlueButton server for Windows.  While there is no specific OS requirement for BigBlueButton, BigBlueButton runs on Mac and Windows as well (hey, its open source!), if you are running Windows XP (or above) with at least 1GB of memory, you're good to go.
 
