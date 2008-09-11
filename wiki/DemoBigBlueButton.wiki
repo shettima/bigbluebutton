@@ -2,7 +2,7 @@
 
 = Introduction =
 
-First, be sure to check out the [http://present.carleton.ca:8080/files/help/video2/index.html BigBlueButton video].  To try out the demo, we have create a couple of conference rooms:
+First, be sure to check out the [http://www.bigbluebutton.org/virtualmachine BigBlueButton Intro Videos].  To try out the demo, we have create a couple of conference rooms:
 
     (Conference, Moderator Password, Viewer Password) 
 
