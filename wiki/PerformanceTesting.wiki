@@ -75,7 +75,10 @@ After starting the script, you can quickly start some clients (as described in t
 A web tool has been developed to enable owners to monitor CPU/Memory percentage usage of software components of BigBlueButton. And one format of the result is in Excel with plot (done with open source software JXLS). So owners can just easily get their server's healthiness by just a few button clicks from web browsers. A open source JSP based file browser - jsp File Browser version 1.2 by www.vonloesch.de - is used to manage the result files. 
 
 Some screen snapshots:
-http://present.careleton.ca:8080/files/performance/images/MemCpuWeb.JPG   
+http://present.carleton.ca/files/performance/images/MemCpuWeb.JPG
+http://present.carleton.ca/files/performance/images/RawData.jpg 
+http://present.carleton.ca/files/performance/images/Excel.JPG 
+http://present.carleton.ca/files/performance/images/browser.JPG 
   
 == Linux Shell scripts - client ==
 The purpose of the script is to allow users to open several instances (say 20) Login-free BigBlueButton clients in Firefox (or other browsers) at one command under Linux systems.
