@@ -72,7 +72,10 @@ The program can be run as (30 times of 1 second interval - about 30 seconds):
 After starting the script, you can quickly start some clients (as described in the following sections). Once you finished the current test session (say, uploaded a PDF file and share it with the connected clients), go to folder performance, view the file performance.html for CPU/Memory usage details.
 
 == A web tool (in JSP mainly) for performance test ==
-A web tool has been developed to enable owners to monitor CPU/Memory percentage usage of software components of BigBlueButton. And one format of the result is in Excel with plot (done with open source software JXLS). So owners can just easily get their server's healthiness by just a few button clicks from web browsers.    
+A web tool has been developed to enable owners to monitor CPU/Memory percentage usage of software components of BigBlueButton. And one format of the result is in Excel with plot (done with open source software JXLS). So owners can just easily get their server's healthiness by just a few button clicks from web browsers. A open source JSP based file browser - jsp File Browser version 1.2 by www.vonloesch.de - is used to manage the result files. 
+
+Some screen snapshots:
+http://present.careleton.ca/files/performance/images/MemCpuWeb.JPG   
   
 == Linux Shell scripts - client ==
 The purpose of the script is to allow users to open several instances (say 20) Login-free BigBlueButton clients in Firefox (or other browsers) at one command under Linux systems.
