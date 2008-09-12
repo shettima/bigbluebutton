@@ -1,9 +1,5 @@
-#summary One-sentence summary of this page.
+#summary An open source web conferencing system.
 
 = Introduction =
 
-TBD
-
-= Details =
-
-TBD
+For an overview see [http://code.google.com/p/bigbluebutton/ Project Home]
