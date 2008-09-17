@@ -14,10 +14,7 @@ The recorded sessions currently are stored in the Tomcat folder on the BigBlueBu
 
 Various types of events are getting recorded for each stream on the BigBlueButton application. Each stream is tagged according to the stream and the event related to it.
 
- * Chat Stream, 
-
- * Chat Stream: Chat captured events are only the message received for a new text being sent. The message contains the text, the color, time and the user name. Example of the recorded event,
-
+ * Chat Stream, the captured events are only the message received for a new text being sent. The message contains the text, the color, time and the user name. Example of the recorded event,
 
 {{{
 <chat time="1220463763244" user="Denis" color= "0">slide 5</chat>
