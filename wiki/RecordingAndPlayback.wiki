@@ -1,18 +1,18 @@
 #summary This page contains information about the recording and playing back sessions for the BigBlueButton system
 = Introduction =
 
-The main idea for recording a session on BigBlueButton system is to create listners for the different streams of the applications that exists on the BigBlueButton system (i.e. chat stream, presenation stream, whiteboard stream, etc).
+The main idea for recording a session on BigBlueButton system is to create listeners for the different streams of the applications that exists on the BigBlueButton system (i.e. chat stream, presentation stream, whiteboard stream, etc).
 
 The recorder part for the BigBlueButton server is another Red5 server application. It listens to all the events that are exchanges via the  BigBlueButton applications' shared objects (i.e. charSO, presentaionSO, participantsSO, etc). 
 
-Each shared object has its own set of messages that can be found on the BigBlueButton client code (in the . We can spacify what type of messages we want to capture via our recoder. 
+Each shared object has its own set of messages that can be found on the BigBlueButton client source code. We can specify what type of messages we want to capture via our recorder. 
 
-The recorede session is stored in a folder contains an XML file to save the captured events for playback, a folder to save the presentaion slide (if any), and an audio file (MP3 fprmat) for the recorded session (but now we are just passing a link to the session recording on the Asterisk server)
+The recorded sessions currently are stored in the Tomcat folder on the BigBlueButton server. Each session folder contains an XML file (lecture.xml) to save the captured events, a folder to save the presentation slide (if any), and an audio file (MP3 format) for the recorded session (but for now we are just passing a link to the MP3 file that is stored on the Asterisk server for the session recording)
 
 
 == XML schema for the recorded session ==
 
-Various types of events are getting recorded for each stream on the BigBlueButton application. Each stream is tagged according to the stream and the evemt related to it. 
+Various types of events are getting recorded for each stream on the BigBlueButton application. Each stream is tagged according to the stream and the event related to it. 
  
  * Chat Stream: Chat captured events are only the message received for a new txt being sent. The message contains the text, the color, time and the user name. Example of the recorded event,
         {{{
@@ -20,7 +20,7 @@ Various types of events are getting recorded for each stream on the BigBlueButto
         }}} 
 
 
- * Presenation Stream tags
+ * Presentation Stream tags
 
  * Conference Stream tags: TODO
 
