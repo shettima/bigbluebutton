@@ -1,4 +1,10 @@
 #summary How to setup your own BigBlueButton Server (Linux Fedora 9)
 
 ----
+Here is the link:
+
+----
 [http://present.carleton.ca/files/performance/Install-BigBlueButton-Fedora9-gcode.html How to install BigBlueButton on Linux Fedora 9]
+
+----
+(Please note: the 2 sections on Asterisk servers in the document will be provided later)
