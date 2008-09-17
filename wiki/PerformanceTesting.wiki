@@ -1,4 +1,4 @@
-#summary This page describes basic performance testing on BigBlueButton server (server on Linux, clients on Windows or Linux) and a Web Tool
+#summary Performance measurement on BigBlueButton server (server on Linux, clients on Windows or Linux) and a Web Tool
 
 = Introduction =
 
