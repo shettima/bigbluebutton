@@ -18,7 +18,6 @@ Various types of events are getting recorded for each stream on the BigBlueButto
 {{{
      <chat time="1220463763244" user="Denis" color= "0">slide 5</chat>
 }}} 
-
  * Presentation Stream: for this  stream we are capturing the events related to the presentation application. So events like choosing a presenter, sharing a presentation, uploading slides, navigating between slide, zooming, moving the slide within its canvas, etc are all captured. 
 Sample of the presentation recorded events can be seen below;
 {{{
