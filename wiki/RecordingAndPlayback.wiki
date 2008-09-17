@@ -14,12 +14,23 @@ The recorded sessions currently are stored in the Tomcat folder on the BigBlueBu
 
 Various types of events are getting recorded for each stream on the BigBlueButton application. Each stream is tagged according to the stream and the event related to it. 
  
- * Chat Stream: Chat captured events are only the message received for a new txt being sent. The message contains the text, the color, time and the user name. Example of the recorded event,
+ * Chat Stream: Chat captured events are only the message received for a new text being sent. The message contains the text, the color, time and the user name. Example of the recorded event,
 {{{
      <chat time="1220463763244" user="Denis" color= "0">slide 5</chat>
 }}} 
 
- * Presentation Stream tags
+ * Presentation Stream: for this  stream we are capturing the events related to the presentation application. So events like choosing a presenter, sharing a presentation, uploading slides, navigating between slide, zooming, moving the slide within its canvas, etc are all captured. 
+Sample of the presentation recorded events can be seen below;
+{{{
+<presentation event="presenter" time="1220463733692" userid="12" name="test"/>
+<presentation event="conversion"time="1220463733702" slide="20" total="20"/>
+<presentation event="slide" name="85115-slide-7.swf"/>
+<presentation event="gotoPage" time="1220463754362" Slide="0"/>
+<presentation event="zoom" time="1220463764546" values=" [1.0810055865921788, 
+<presentation event="move" time="1220463770385" values=" [-0.25977653631284914, 
+<presentation event="maximize" time="1220463776433"/>
+<presentation event="restore" time="1220463779568"/>
+}}}
 
  * Conference Stream tags: TODO
 
