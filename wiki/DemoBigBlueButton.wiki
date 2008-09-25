@@ -6,9 +6,8 @@ First, be sure to check out the [http://www.bigbluebutton.org/virtualmachine Big
 
     (Conference, Moderator Password, Viewer Password) 
 
-    * 85002, modpass, viewpass
-    * 85003, modpass, viewpass 
-
+    * 85115, modpass, viewpass
+ 
 You can login at
     http://present.carleton.ca/client/
 
