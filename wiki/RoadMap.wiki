@@ -1,5 +1,13 @@
 #summary Development Road Map for BigBlueButton
 
-= Introduction =
+= Release 0.35 (UI updates) =
 
-The biggest feature we are working on now is recording of a session for later playback.
+  * Fix issues tagged for [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone:Release0.35&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary Release 0.35] in Issues tracker
+
+
+Documentation:
+  * How to add a new client module to BigBlueButton
+
+= Release 0.36 (Record and Playback) =
+
+  * Add support for record and playback
