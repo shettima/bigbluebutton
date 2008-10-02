@@ -4,3 +4,4 @@
  * http://jira.red5.org/confluence/display/docs/Home
  * http://jira.red5.org/confluence/dashboard.action
  * http://osflash.org/red5/help
+ * http://osflash.org/pipermail/red5_osflash.org/2006-May/003757.html
