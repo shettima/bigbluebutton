@@ -1,3 +1,5 @@
-#summary One-sentence summary of this page.
+#summary Links to Red5 information.
 
  * http://jira.red5.org/confluence/display/docs/Scopes+and+Contexts
+ * http://jira.red5.org/confluence/display/docs/Home
+ 
