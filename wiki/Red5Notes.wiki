@@ -7,5 +7,6 @@
  * http://osflash.org/pipermail/red5_osflash.org/2006-May/003757.html
  * http://www.dokeos.com/wiki/index.php/Installing_videoconference
  * http://dl.fancycode.com/red5/0.6.3/war/Red5%20War.pdf
+ * http://gregoire.org/
 
  * http://code.google.com/p/smartypants-ioc/
