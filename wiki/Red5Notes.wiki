@@ -9,4 +9,8 @@
  * http://dl.fancycode.com/red5/0.6.3/war/Red5%20War.pdf
  * http://gregoire.org/
 
+= SOme links =
  * http://code.google.com/p/smartypants-ioc/
+ * http://www.pranaframework.org/
+ * http://code.google.com/p/swizframework/
+ * http://www.oreillynet.com/ruby/blog/2006/07/deploying_rails_with_pound_in.html
