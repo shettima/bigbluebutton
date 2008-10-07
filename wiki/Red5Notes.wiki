@@ -9,6 +9,7 @@
  * http://dl.fancycode.com/red5/0.6.3/war/Red5%20War.pdf
  * http://gregoire.org/
  * http://www.orbited.org/
+ * http://jira.red5.org/confluence/display/docs/FAQ
 
 = SOme links =
  * http://code.google.com/p/smartypants-ioc/
