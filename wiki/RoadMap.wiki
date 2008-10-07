@@ -11,3 +11,10 @@ Documentation:
 = Release 0.36 (Record and Playback) =
 
   * Add support for record and playback
+
+= Release 0.4 (Record and Playback) =
+
+  * Have a "pre-flight check" module that will check 
+    # Flash plug-in version
+    # connectivity to red5 server (should the client use HTTP tunneling)
+    # sufficient bandwidth
