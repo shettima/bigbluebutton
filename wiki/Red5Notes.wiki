@@ -18,3 +18,5 @@
  * http://www.oreillynet.com/ruby/blog/2006/07/deploying_rails_with_pound_in.html
 
  * http://wrapper.tanukisoftware.org/doc/english/download.jsp
+
+ * http://www.javalobby.org/forums/thread.jspa?forumID=61&threadID=15711
