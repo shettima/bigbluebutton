@@ -6,7 +6,7 @@
 
 = Install SWFTools =
 
-= Install PDFTk
+= Install PDFTk =
 
 {{{
  > yum install swftools
