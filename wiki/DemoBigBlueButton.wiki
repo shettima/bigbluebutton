@@ -11,4 +11,6 @@ First, be sure to check out the [http://www.bigbluebutton.org/support BigBlueBut
 You can login at
     http://present.carleton.ca/client/
 
+You can call into the Asterisk conference bridge using the local number 613-520-7610.
+
 Please provide us with suggestions, comments, and bug reports to improve Blindside. 
