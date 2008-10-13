@@ -41,16 +41,16 @@ Please refer to the UML diagram SimpleModule.png in the Downloads section, to se
 = References =
 
 == ActionScript ==
-* Essential ActionScript 3.0. ; Colin Moock ; O'Reilly Media
-* ActionScript 3.0. CookBook ; Joey Lott, Darron Schall, Keith Peters ; O'Reilly Media
+  * Essential ActionScript 3.0. ; Colin Moock ; O'Reilly Media
+  * ActionScript 3.0. CookBook ; Joey Lott, Darron Schall, Keith Peters ; O'Reilly Media
 
 == Flex Modular Framework==
-* [http://blogs.adobe.com/flexdoc/pdfs/modular.pdf Creating Modular Applications]
+  * [http://blogs.adobe.com/flexdoc/pdfs/modular.pdf Creating Modular Applications]
 
 == PureMVC ==
-* [http://puremvc.org/ PureMVC]
-* [http://puremvc.org/component/option,com_wrapper/Itemid,174/ PureMVC Best Practises Document]
+  * [http://puremvc.org/ PureMVC]
+  * [http://puremvc.org/component/option,com_wrapper/Itemid,174/ PureMVC Best Practises Document]
 
 == Design Patterns ==
-* Gang of Four - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
-* Head First: Design Patterns; E&E Freeman - Like Gang of Four, but not as sleep-inducing
+  * Gang of Four - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
+  * Head First: Design Patterns; E&E Freeman - Like Gang of Four, but not as sleep-inducing
