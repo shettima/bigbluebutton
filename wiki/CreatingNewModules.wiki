@@ -35,7 +35,7 @@ The module itself contains 7 classes:
   * SampleProxy.as - The Proxy class is another PureMVC concept. Proxy classes are sort of like Mediator classes, except their job is to communicate with web services and manipulate data objects, rather than communicate with other classes. You should use these Proxies to communicate with things like the Red5 server, or make http connections. The Proxies need to be registered with the facade in the same way as Mediators. In this case the proxy isn't really doing much, it's just there to show you roughly of how you can use it.
 
 == Structure ==
-Please refer to the UML diagram below to see how the module is structured.
+Please refer to the UML diagram SimpleModule.png in the Downloads section, to see how the module is structured.
 
 
 = References =
