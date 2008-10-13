@@ -1,0 +1,56 @@
+#summary How to start creating a new BigBlueButton module.
+#labels Featured,Phase-Implementation,Phase-Design
+
+= Introduction =
+
+This is a short help file that will hopefully help you create a new BigBlueButton module.
+It assumes you've successfully checked out and ran the client code, and are able to connect and log in to a working server. It also assumes you have basic knowledge of ActionScript, the Flex Framework and PureMVC (or design patterns in general). Please check the References section below for recommended documentation on any of these topics.
+
+
+= The Sample Module =
+== Starting off ==
+
+A simple module, called SampleModule, already exists in the BigBlueButton source code, under org.bigbluebutton.modules.sample_module . To run it, go to org/common/modules.xml and add this line to the xml file:
+{{{
+<module id="Sample" swfpath="org/bigbluebutton/modules/sample_module/sample_module.swf" />
+}}}
+Run the client. When you log in you should see an empty window called Sample Module.
+
+
+== Skeleton Code ==
+
+The module doesn't really do anything. It's just there for you to extend, sort of like a skeleton. That being said, feel free to make a copy of it, rename the files and start your own module.
+
+
+== Examining the Sample Code ==
+
+The module itself contains 7 classes:
+* sample_module.mxml - This is the 'entry' class to your module. This is the class that first gets called. You might have noticed it implements an interface. This interface is simply a convention you need to follow in order for the BigBlueButton Core to run your module at runtime.
+* SampleModule.as - This is the Main class of your module. It extends BigBlueButtonModule.as to simplify a lot of the things you need to do to get your module to run successfully. Open up BigBlueButtonModule.as and read it's documentation. It will make it clear why you need to do certain things. The SampleModule.as takes care of some instantiation and housekeeping for your module.
+* SampleFacade.as is a Singleton class - it can only be instantiated once (well, actually, it's a multiton, but you probably don't need to worry about that). The class extends the Facade class of the PureMVC framework. It holds your entire module together by keeping references to the mediators and proxies, as well as executing commands.
+* StartupSampleCommand.as - This is a class with a very short lifespan. It's only purpose is to execute a sequential series of commands and instantiations that are needed to start your module. Then it dies. In this case, it creates two mediators and registers them with the facade.
+* SampleModuleMediator.as - extends the ModuleMediator, which in turns extends the Mediator class of the PureMVC framework. Mediators decrease coupling between your classes. Read the PureMVC Best Practises document to get a good grasp of what they do and why they're good. The SampleModuleMediator.as 'mediates' your SampleModule, but most importantly it communicates between your module and the rest of BigBlueButton. Since different modules must not know about each other directly, communication is rather complicated. However, most of this functionality is abstracted into the ModuleMediator.as and beyond...
+*SampleWindow.mxml - This is your placeholder GUI window. You can put anything here you want, as long as you follow one rule: this class must be of type MDIWindow.mxml, otherwise BBB will complain as it tries to add your window to the main canvas.
+*SampleWindowMediator.mxml - This is another Mediator class. In this case, it 'mediates' between your GUI class and the rest of your module.
+*SampleProxy.as - The Proxy class is another PureMVC concept. Proxy classes are sort of like Mediator classes, except their job is to communicate with web services and manipulate data objects, rather than communicate with other classes. You should use these Proxies to communicate with things like the Red5 server, or make http connections. The Proxies need to be registered with the facade in the same way as Mediators. In this case the proxy isn't really doing much, it's just there to show you roughly of how you can use it.
+
+== Structure ==
+Please refer to the UML diagram below to see how the module is structured.
+
+
+= References =
+
+== ActionScript ==
+* Essential ActionScript 3.0. ; Colin Moock ; O'Reilly Media
+* ActionScript 3.0. CookBook ; Joey Lott, Darron Schall, Keith Peters ; O'Reilly Media
+
+== Flex Modular Framework==
+* [http://blogs.adobe.com/flexdoc/pdfs/modular.pdf Creating Modular Applications]
+
+== PureMVC ==
+* [http://puremvc.org/ PureMVC]
+* [http://puremvc.org/component/option,com_wrapper/Itemid,174/ PureMVC Best Practises Document]
+
+== Design Patterns ==
+* Gang of Four - Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides
+* Head First: Design Patterns; E&E Freeman - Like Gang of Four, but not as sleep-inducing
