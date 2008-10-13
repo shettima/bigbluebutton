@@ -1,4 +1,5 @@
 #summary A brief explanation on how to create new red5 apps.
+#labels Phase-Implementation
 
 = Introduction =
 
@@ -7,7 +8,7 @@ This is a brief summary of the things you need to do in order to create a new re
 
 = Details =
 
-There are several tutorials on how to create new programs with red5 but most of them are outdated, as the process changes slightly with each new release of red5. This little tutorial is for red5 0.7. If you have any questions or you're unable to get red5 working please let me know (put it on the discussion page).
+There are several tutorials on how to create new programs with red5 but most of them are outdated, as the process changes slightly with each new release of red5. This little tutorial is for red5 0.7. If you have any questions or you're unable to get red5 working please let me know.
 
 First, go to the red5/webapps folder. This is the folder in which red5 looks for your application and builds it. The simplest application is the one called 'test'. Make a copy of it in the same folder and rename it to whatever you want your application to be called. Then go inside the folder, there are a few config files you will need to change:
 
@@ -18,7 +19,8 @@ Now go to the WEB-INF folder. You will have to repeat the previous process a few
 The next thing you have to do is go to the lib folder within the WEB-INF folder and rename the file test.jar to yourapplication.jar. Once this is done, open up Eclipse. Go to Create New Java Project, and click on the box that says 'Create Project From Existing Source'. Select the root directory of your application that we just created. Also name your project in Eclipse whatever you named the new application. Click next, and check the box at the bottom that says 'Allow output folders for source folders'. Click finish.
 
 The last thing you have to do is within Eclipse. Inside the WEB-INF/src folder, you will find a package called 'org.red5.server.webapp.test' . Right click on it, go to Refactor>Rename , and rename it to 'org.red5.server.webapp.yourapplication'. Make sure the box 'Update References' is selected. That's it, your application is ready to go.
-[edit] Working with server-side files
+
+== Working with server-side files ==
 
 You can save and load files in your Java red5 server-side application. When the application is running, red5 will save any new files you make in the red5/wrapper directory. But you probably don't want that because it can get messy. Instead, in your ApplicationAdapter subclass (the main class of your red5 server application), override the appStart(IScope scope) method, for example:
 
