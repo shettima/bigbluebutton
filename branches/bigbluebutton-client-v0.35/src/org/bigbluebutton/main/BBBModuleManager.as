@@ -67,6 +67,7 @@ package org.bigbluebutton.main
 			var item:XML;
 			this.modulesList = new Array();
 			for each(item in list){
+				trace("Available Modules: " + item.@swfpath);
 				this.modulesList.push(item.@swfpath);
 			}
 		}
@@ -86,6 +87,7 @@ package org.bigbluebutton.main
 			var iModule:* = loader.child as ModuleInterface;
 			if (iModule != null){
 				var bbbModule:BigBlueButtonModule = iModule.getBBBModule();	
+				trace("Adding module: " + bbbModule.getID());
 				sendNotification(MainApplicationFacade.ADD_MODULE, bbbModule);
 			} else{
 				Alert.show("Module could not be initialized");

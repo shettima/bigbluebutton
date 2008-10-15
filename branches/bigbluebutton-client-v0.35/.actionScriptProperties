@@ -11,8 +11,8 @@
 <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/framework.swc" sourcepath="${PROJECT_FRAMEWORKS}/source" useDefaultLinkType="true"/>
 </modifiedEntries>
 <excludedEntries>
-<libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
 <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation.swc" useDefaultLinkType="false"/>
+<libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_agent.swc" useDefaultLinkType="false"/>
 <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/qtp.swc" useDefaultLinkType="false"/>
 <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/automation_dmv.swc" useDefaultLinkType="false"/>
 </excludedEntries>
@@ -26,12 +26,11 @@
 </compiler>
 <applications>
 <application path="src/main.mxml"/>
-<application path="MessagingUnitTests.mxml"/>
 <application path="PresentationUnitTest.mxml"/>
-<application path="ChatModule2.mxml"/>
+<application path="MessagingUnitTests.mxml"/>
+<application path="TestModuleApplication.mxml"/>
 <application path="src/TestRunners.mxml"/>
 <application path="BigBlueButton.mxml"/>
-<application path="TestModuleApplication.mxml"/>
 </applications>
 <modules>
 <module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/presentation/presentation_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/presentation/presentation_module.mxml"/>
@@ -42,6 +41,8 @@
 <module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/playback/playback_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/playback/playback_module.mxml"/>
 <module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/sample_module/sample_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/sample_module/sample_module.mxml"/>
 <module application="src/BigBlueButton.mxml" destPath="ChatModule.swf" optimize="true" sourcePath="src/ChatModule.mxml"/>
+<module application="src/BigBlueButton.mxml" destPath="LoginModule.swf" optimize="true" sourcePath="src/LoginModule.mxml"/>
+<module application="src/BigBlueButton.mxml" destPath="TestModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/login/TestModule.as"/>
 </modules>
 <buildCSSFiles/>
 </actionScriptProperties>

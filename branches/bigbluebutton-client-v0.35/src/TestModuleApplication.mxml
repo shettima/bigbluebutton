@@ -8,9 +8,9 @@
 			public var selectedItem:Object;
 			[Bindable]
             public var cards:ArrayCollection = new ArrayCollection(
-                [ {label:"Visa", module:"ChatModule2.swf"}, 
-                  {label:"MasterCard", module:"ChatModule2.swf"}, 
-                  {label:"American Express", module:"ChatModule2.swf"} ]);
+                [ {label:"Visa", module:"LoginModule.swf"}, 
+                  {label:"MasterCard", module:"LoginModule.swf"}, 
+                  {label:"American Express", module:"LoginModule.swf"} ]);
         
             private function closeHandler(event:Event):void {
 				selectedItem =  ComboBox(event.target).selectedItem;
@@ -21,9 +21,7 @@
 
 	
 	<mx:Panel width="100%" height="100%">
-		<mx:ComboBox width="215" dataProvider="{cards}" labelField="label" close="closeHandler(event);">
-
-	</mx:ComboBox>
+		<mx:ComboBox width="215" dataProvider="{cards}" labelField="label" close="closeHandler(event);"/>
 		<CustomModuleLoader id="mod" width="100%" url="{selectedItem.module}"/>		
 	</mx:Panel>
 	<mx:HBox>

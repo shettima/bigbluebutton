@@ -36,7 +36,7 @@ package org.bigbluebutton.modules.viewers
 	 */	
 	public class ViewersModule extends BigBlueButtonModule implements IRouterAware
 	{
-		public static const NAME:String = "VoiceModule";
+		public static const NAME:String = "ViewersModule";
 		
 		private var facade:ViewersFacade;
 		public var activeWindow:MDIWindow;

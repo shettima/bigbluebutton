@@ -224,14 +224,15 @@ package org.bigbluebutton.main.view
 			var msg : String = message.getHeader().MSG as String;
 			var module :BigBlueButtonModule;
 			
-			//shell.debugLog.text = "Got message: " + msg;
+			
 			
 			switch (msg)
 			{
 				case MainApplicationConstants.ADD_WINDOW_MSG:
 					module = message.getBody() as BigBlueButtonModule;
-					//shell.mdiCanvas.windowManager.add(window);
-					setLayout(module);
+//					shell.mdiCanvas.windowManager.add(window);
+					trace("Got message ADD_WINDOW_MSG from " + module.getID());
+					//setLayout(module);
 					break;
 				case MainApplicationConstants.REMOVE_WINDOW_MSG:
 					module = message.getBody() as BigBlueButtonModule;

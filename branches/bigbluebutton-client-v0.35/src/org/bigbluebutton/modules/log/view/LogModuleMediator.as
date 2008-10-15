@@ -115,8 +115,7 @@ package org.bigbluebutton.modules.log.view
 		 * 
 		 */		
 		override public function handleNotification(note:INotification):void
-		{
-			
+		{			
 			switch ( note.getName() )
 			{
 				case LogModuleFacade.DEBUG:

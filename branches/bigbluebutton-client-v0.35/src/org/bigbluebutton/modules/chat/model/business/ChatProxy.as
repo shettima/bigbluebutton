@@ -33,10 +33,7 @@ package org.bigbluebutton.modules.chat.model.business
 	import org.bigbluebutton.modules.viewers.model.business.Conference;
 	import org.puremvc.as3.multicore.interfaces.IProxy;
 	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
-	
-	
-	
-	
+		
 	/**
 	 * 
 	 * This class gets a NetConnection instance and a shared object which try to connect.
