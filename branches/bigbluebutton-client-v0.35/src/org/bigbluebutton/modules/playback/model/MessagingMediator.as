@@ -3,9 +3,9 @@ package org.bigbluebutton.modules.playback.model
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
-	import org.bigbluebutton.common.InputPipe;
-	import org.bigbluebutton.common.OutputPipe;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.InputPipe;
+	import org.bigbluebutton.common.messaging.OutputPipe;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.modules.playback.PlaybackFacade;
 	import org.bigbluebutton.modules.playback.PlaybackModuleMediator;
 	import org.puremvc.as3.multicore.interfaces.IMediator;

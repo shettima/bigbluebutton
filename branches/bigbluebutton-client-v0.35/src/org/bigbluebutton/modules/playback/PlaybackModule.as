@@ -5,7 +5,7 @@ package org.bigbluebutton.modules.playback
 	import flexlib.mdi.containers.MDIWindow;
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	
 	public class PlaybackModule extends BigBlueButtonModule

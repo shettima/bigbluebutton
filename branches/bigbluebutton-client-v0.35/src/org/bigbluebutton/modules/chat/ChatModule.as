@@ -25,8 +25,8 @@ package org.bigbluebutton.modules.chat
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
 	import org.bigbluebutton.common.Constants;  
-	import org.bigbluebutton.common.IRouterAware;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.IRouterAware;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.bigbluebutton.modules.chat.model.business.ChatProxy;
 	import org.bigbluebutton.modules.chat.view.components.ChatWindow;

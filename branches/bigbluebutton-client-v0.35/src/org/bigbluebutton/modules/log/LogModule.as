@@ -61,10 +61,9 @@ package org.bigbluebutton.modules.log
 		override public function acceptRouter(router : Router, shell : MainApplicationShell) : void
 		{
 			super.acceptRouter(router, shell);
-			//shell.debugLog.text = 'In LogModule';
-			//shell.debugLog.text = 'In LogModule 2';
+			trace('In LogModule');
 			facade.startup(this);			
-			//shell.debugLog.text = 'In LogModule 3';
+			trace('In LogModule 3');
 		}
 		
 		override public function getMDIComponent():MDIWindow{

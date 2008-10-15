@@ -21,9 +21,9 @@
 			protected function initializeShell():void
 			{
 				Constants.setHost();
-				//debugLog.text = "before startup in initShell";
+				trace("before startup in initShell");
 				facade.startup(this);
-				//debugLog.text = "After startup in initShell";
+				trace("After startup in initShell");
 				this.LogBtn.addEventListener(MouseEvent.CLICK , openLogModule);
 				toolbar.btnLogout.addEventListener(MouseEvent.CLICK, logout);
 				//toolbar.webcamBtn.addEventListener(MouseEvent.CLICK, openWebcam);

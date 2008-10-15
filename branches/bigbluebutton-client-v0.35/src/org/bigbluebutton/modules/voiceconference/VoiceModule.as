@@ -23,8 +23,8 @@ package org.bigbluebutton.modules.voiceconference
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
 	import org.bigbluebutton.common.Constants;
-	import org.bigbluebutton.common.IRouterAware;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.IRouterAware;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
 	import org.bigbluebutton.modules.viewers.model.business.Conference;

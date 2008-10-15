@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" 
+	width="400" height="300" creationComplete="onComplete()">
+	<mx:Script>
+		<![CDATA[
+			public function onComplete():void {
+				trace("Got here");
+			} 
+		]]>
+	</mx:Script>
+	<mx:Button x="151" y="131" label="Hello" color="#010A0C"/>
+
+</mx:Module>

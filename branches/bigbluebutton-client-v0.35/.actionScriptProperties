@@ -26,11 +26,12 @@
 </compiler>
 <applications>
 <application path="src/main.mxml"/>
-<application path="BigBlueButton.mxml"/>
-<application path="PresentationUnitTest.mxml"/>
-<application path="src/TestRunners.mxml"/>
-<application path="ChatModule.mxml"/>
 <application path="MessagingUnitTests.mxml"/>
+<application path="PresentationUnitTest.mxml"/>
+<application path="ChatModule2.mxml"/>
+<application path="src/TestRunners.mxml"/>
+<application path="BigBlueButton.mxml"/>
+<application path="TestModuleApplication.mxml"/>
 </applications>
 <modules>
 <module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/presentation/presentation_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/presentation/presentation_module.mxml"/>
