@@ -27,9 +27,9 @@ package org.bigbluebutton.main.view
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
 	import org.bigbluebutton.common.Constants;
-	import org.bigbluebutton.common.InputPipe;
-	import org.bigbluebutton.common.OutputPipe;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.InputPipe;
+	import org.bigbluebutton.common.messaging.OutputPipe;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.main.MainApplicationFacade;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;

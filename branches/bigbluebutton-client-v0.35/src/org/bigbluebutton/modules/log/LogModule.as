@@ -24,8 +24,8 @@ package org.bigbluebutton.modules.log
 	import flexlib.mdi.containers.MDIWindow;
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
-	import org.bigbluebutton.common.IRouterAware;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.IRouterAware;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.bigbluebutton.modules.log.view.LogModuleMediator;
 	

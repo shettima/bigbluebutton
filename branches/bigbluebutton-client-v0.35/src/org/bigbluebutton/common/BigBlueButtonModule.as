@@ -26,7 +26,7 @@ package org.bigbluebutton.common
 	import org.bigbluebutton.common.red5.Connection;
 	import org.bigbluebutton.common.red5.ConnectionEvent;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
-	
+	import org.bigbluebutton.common.messaging.Router;
 	/**
 	 * This is an abstract-like class which is a base for a BigBlueButton Module. Extends this class if you
 	 * wish to dynamicaly add your module to the MainApplicationShell.

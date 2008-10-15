@@ -2,6 +2,9 @@ package org.bigbluebutton.common
 {
 	import flexlib.mdi.containers.MDIWindow;
 	
+	import org.bigbluebutton.common.messaging.InputPipe;
+	import org.bigbluebutton.common.messaging.OutputPipe;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;

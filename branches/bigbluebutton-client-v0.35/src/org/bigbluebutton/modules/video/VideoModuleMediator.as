@@ -19,9 +19,9 @@
 */
 package org.bigbluebutton.modules.video
 {
-	import org.bigbluebutton.common.InputPipe;
-	import org.bigbluebutton.common.OutputPipe;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.InputPipe;
+	import org.bigbluebutton.common.messaging.OutputPipe;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.modules.video.model.business.PublisherApplicationMediator;
 	import org.bigbluebutton.modules.video.model.vo.BroadcastMedia;

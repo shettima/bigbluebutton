@@ -3,7 +3,7 @@ package org.bigbluebutton.common
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import org.bigbluebutton.common.OutputPipe;
+	import org.bigbluebutton.common.messaging.OutputPipe;
 	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeFitting;
 	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
 	import org.puremvc.as3.multicore.utilities.pipes.messages.Message;

@@ -21,9 +21,9 @@ package org.bigbluebutton.modules.viewers
 {  
 	import flash.system.Capabilities;
 	
-	import org.bigbluebutton.common.InputPipe;
-	import org.bigbluebutton.common.OutputPipe;
-	import org.bigbluebutton.common.Router;
+	import org.bigbluebutton.common.messaging.InputPipe;
+	import org.bigbluebutton.common.messaging.OutputPipe;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.modules.log.LogModule;
 	import org.bigbluebutton.modules.log.LogModuleFacade;
