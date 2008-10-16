@@ -54,9 +54,9 @@ package org.bigbluebutton.modules.chat
 		public function ChatModule()
 		{
 			super(NAME);
-			log.debug("Creating new ChatWindow...");
+			trace("Creating new ChatWindow...");
 			chatWindow = new ChatWindow();
-			log.debug("Getting an instance of Chat Facade...");
+			trace("Getting an instance of Chat Facade...");
 			facade = ChatFacade.getInstance();			
 			this.preferedX = 700;
 			this.preferedY = 20;
@@ -71,7 +71,7 @@ package org.bigbluebutton.modules.chat
 		override public function acceptRouter(router : Router, shell : MainApplicationShell) : void
 		{
 			super.acceptRouter(router, shell);
-			log.debug("Setting Router for Chat Module...");
+			trace("Setting Router for Chat Module...");
 			ChatFacade(facade).startup(this);
 			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
 			var proxy:ChatProxy = facade.retrieveProxy(ChatProxy.NAME) as ChatProxy;

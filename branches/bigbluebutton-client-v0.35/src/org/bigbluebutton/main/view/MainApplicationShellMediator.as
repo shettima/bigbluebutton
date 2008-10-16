@@ -232,16 +232,18 @@ package org.bigbluebutton.main.view
 					module = message.getBody() as BigBlueButtonModule;
 //					shell.mdiCanvas.windowManager.add(window);
 					trace("Got message ADD_WINDOW_MSG from " + module.getID());
-					//setLayout(module);
+					setLayout(module);
 					break;
 				case MainApplicationConstants.REMOVE_WINDOW_MSG:
 					module = message.getBody() as BigBlueButtonModule;
+					trace("Got message REMOVE_WINDOW_MSG from " + module.getID());
 					if(module.getID() == LogModule.NAME) {
 						//shell.toolbar.LogBtn.enabled = true;
 						module.getMDIComponent().visible = false;
 					} else removeWindow(module);
 					break;					
 				case MainApplicationConstants.LOGIN_COMPLETE:
+					trace("Got message LOGIN_COMPLETE");
 					sendNotification(MainApplicationFacade.START_ALL_MODULES);
 					shell.toolbar.enabled = true;
 					break;	

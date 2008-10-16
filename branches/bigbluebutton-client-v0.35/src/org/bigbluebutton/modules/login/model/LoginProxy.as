@@ -15,43 +15,6 @@ package org.bigbluebutton.modules.login.model
 			//TODO: implement function
 			super(proxyName, data);
 		}
-		
-		public function getProxyName():String
-		{
-			//TODO: implement function
-			return null;
-		}
-		
-		public function setData(data:Object):void
-		{
-			//TODO: implement function
-		}
-		
-		public function getData():Object
-		{
-			//TODO: implement function
-			return null;
-		}
-		
-		public function onRegister():void
-		{
-			//TODO: implement function
-		}
-		
-		public function sendNotification(notificationName:String, body:Object=null, type:String=null):void
-		{
-			//TODO: implement function
-		}
-		
-		public function onRemove():void
-		{
-			//TODO: implement function
-		}
-		
-		public function initializeNotifier(key:String):void
-		{
-			//TODO: implement function
-		}
-		
+				
 	}
 }

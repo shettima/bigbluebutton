@@ -27,8 +27,8 @@ package org.bigbluebutton.modules.login
 		override protected function initializeController():void {
 			super.initializeController();
 			registerCommand(STARTUP, StartupCommand);
-			registerCommand(LOGIN, LoginCommand);
-			registerCommand(LOGOUT, LogoutCommand);
+//			registerCommand(LOGIN, LoginCommand);
+//			registerCommand(LOGOUT, LogoutCommand);
 		}
 		
 		public function startup(module:LoginModule):void {

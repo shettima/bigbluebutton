@@ -146,6 +146,7 @@ package org.bigbluebutton.modules.viewers
 		 * 
 		 */		
 		private function sendLoginCompleteNotice():void{
+			trace("Sending LOGIN_COMPLETE");
 			var msg:IPipeMessage = new Message(Message.NORMAL);
 			msg.setHeader({MSG:MainApplicationConstants.LOGIN_COMPLETE, SRC: ViewersConstants.FROM_VIEWERS_MODULE,
    						TO: MainApplicationConstants.TO_MAIN });

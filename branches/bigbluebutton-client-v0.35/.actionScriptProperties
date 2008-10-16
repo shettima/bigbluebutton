@@ -33,16 +33,13 @@
 <application path="BigBlueButton.mxml"/>
 </applications>
 <modules>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/presentation/presentation_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/presentation/presentation_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/whiteboard/whiteboard_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/whiteboard/whiteboard_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/voiceconference/voice_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/voiceconference/voice_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/chat/chat_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/chat/chat_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/video/video_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/video/video_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/playback/playback_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/playback/playback_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="org/bigbluebutton/modules/sample_module/sample_module.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/sample_module/sample_module.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="ChatModule.swf" optimize="true" sourcePath="src/ChatModule.mxml"/>
 <module application="src/BigBlueButton.mxml" destPath="LoginModule.swf" optimize="true" sourcePath="src/LoginModule.mxml"/>
-<module application="src/BigBlueButton.mxml" destPath="TestModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/login/TestModule.as"/>
+<module application="src/BigBlueButton.mxml" destPath="ChatModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/chat/ChatModule.as"/>
+<module application="src/BigBlueButton.mxml" destPath="LogModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/log/LogModule.as"/>
+<module application="src/BigBlueButton.mxml" destPath="PresentationModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/presentation/PresentationModule.as"/>
+<module application="src/BigBlueButton.mxml" destPath="VideoModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/video/VideoModule.as"/>
+<module application="src/BigBlueButton.mxml" destPath="ViewersModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/viewers/ViewersModule.as"/>
+<module application="src/BigBlueButton.mxml" destPath="VoiceModule.swf" optimize="true" sourcePath="src/org/bigbluebutton/modules/voiceconference/VoiceModule.as"/>
 </modules>
 <buildCSSFiles/>
 </actionScriptProperties>

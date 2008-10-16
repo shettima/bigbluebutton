@@ -9,8 +9,7 @@ package org.bigbluebutton.main
 	import mx.events.ModuleEvent;
 	import mx.modules.ModuleLoader;
 	
-	import org.bigbluebutton.common.BigBlueButtonModule;
-	import org.bigbluebutton.common.ModuleInterface;
+	import org.bigbluebutton.modules.chat.ChatModule;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -46,7 +45,8 @@ package org.bigbluebutton.main
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
 				case MainApplicationFacade.START_ALL_MODULES:
-					for (var i:Number = 0; i<this.modulesList.length ; i++){
+					// for (var i:Number = 0; i<this.modulesList.length ; i++){
+					for (var i:Number = 0; i<1 ; i++){
 						//Alert.show(modulesList[i]);
 						loadModule(this.modulesList[i]);
 					}
@@ -77,6 +77,7 @@ package org.bigbluebutton.main
 			var loader:ModuleLoader = new ModuleLoader();
 			modules.addItem(loader);
 			loader.addEventListener(ModuleEvent.READY, moduleReady);
+			trace("Loading module " + path);
 			loader.url = path;
 			loader.loadModule();
 		}
@@ -84,11 +85,12 @@ package org.bigbluebutton.main
 		private function moduleReady(e:ModuleEvent):void{
 			
 			var loader:ModuleLoader = e.target as ModuleLoader;
-			var iModule:* = loader.child as ModuleInterface;
+			var iModule:* = loader.child as ChatModule;
+			//var iModule:Module = e.module;
 			if (iModule != null){
-				var bbbModule:BigBlueButtonModule = iModule.getBBBModule();	
-				trace("Adding module: " + bbbModule.getID());
-				sendNotification(MainApplicationFacade.ADD_MODULE, bbbModule);
+				//var bbbModule:BigBlueButtonModule = iModule as BigBlueButtonModule;	
+				trace("Adding module: " + iModule.getID());
+				sendNotification(MainApplicationFacade.ADD_MODULE, iModule);
 			} else{
 				Alert.show("Module could not be initialized");
 			}

@@ -22,11 +22,12 @@ package org.bigbluebutton.common
 	import flexlib.mdi.containers.MDIWindow;
 	
 	import mx.controls.Button;
+	import mx.modules.Module;
 	
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.common.red5.Connection;
 	import org.bigbluebutton.common.red5.ConnectionEvent;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
-	import org.bigbluebutton.common.messaging.Router;
 	/**
 	 * This is an abstract-like class which is a base for a BigBlueButton Module. Extends this class if you
 	 * wish to dynamicaly add your module to the MainApplicationShell.
@@ -34,7 +35,7 @@ package org.bigbluebutton.common
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class BigBlueButtonModule
+	public class BigBlueButtonModule extends Module
 	{
 		//This is the X position on the screen where you would like your module to appear
 		public var preferedX:Number;
@@ -45,7 +46,7 @@ package org.bigbluebutton.common
 		private var MDIComponent:MDIWindow;
 		
 		//This is the name of your module
-		protected var name:String;
+		protected var moduleName:String;
 		public var _router:Router;
 		public var mshell:MainApplicationShell;
 		
@@ -67,7 +68,7 @@ package org.bigbluebutton.common
 		public function BigBlueButtonModule(name:String)
 		{
 			super();
-			this.name = name;
+			this.moduleName = name;
 		}
 		
 		/**
@@ -146,7 +147,7 @@ package org.bigbluebutton.common
 		 * 
 		 */		
 		public function getID():String{
-			return this.name;
+			return this.moduleName;
 		}
 		
 		/**
