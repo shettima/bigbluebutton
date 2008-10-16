@@ -1,12 +1,18 @@
-package org.bigbluebutton.common
+package org.bigbluebutton.main.model
 {
+	import flash.events.Event;
+	
 	import mx.modules.ModuleLoader;
 
 	public class BbbModuleLoader extends ModuleLoader
 	{
-		public function BbbModuleLoader()
+		private var moduleName:String;
+		
+		public function BbbModuleLoader(moduleName:String)
 		{
 			super();
+			this.moduleName = moduleName;
+			
 			addEventListener("urlChanged", onUrlChanged);
 			addEventListener("loading", onLoading);
 			addEventListener("progress", onProgress);

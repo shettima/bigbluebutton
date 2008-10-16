@@ -4,6 +4,7 @@
 	
 	<mx:Script>
 		<![CDATA[
+			import org.bigbluebutton.main.BbbModuleManagerTests;
 
 			import flexunit.framework.TestSuite;
 			private function onCreationComplete():void{
@@ -15,7 +16,10 @@
 				trace("test");
 				var ts:TestSuite = new TestSuite();
 		
-				
+ 				// TODO: Add more tests here to test more classes
+ 				// by calling addTest as often as necessary
+ 				ts.addTest( BbbModuleManagerTests.suite() );
+			
 				return ts;
 			}
 		]]>

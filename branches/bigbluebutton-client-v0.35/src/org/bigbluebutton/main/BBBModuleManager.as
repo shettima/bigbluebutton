@@ -9,6 +9,7 @@ package org.bigbluebutton.main
 	import mx.events.ModuleEvent;
 	import mx.modules.ModuleLoader;
 	
+	import org.bigbluebutton.main.model.ModuleDescriptor;
 	import org.bigbluebutton.modules.chat.ChatModule;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
@@ -45,11 +46,15 @@ package org.bigbluebutton.main
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
 				case MainApplicationFacade.START_ALL_MODULES:
+				trace("The modules: " + modulesList);
+					var m:ModuleDescriptor = modulesList["ChatModule"];
+					
+					loadModule(m.url);
 					// for (var i:Number = 0; i<this.modulesList.length ; i++){
-					for (var i:Number = 0; i<1 ; i++){
-						//Alert.show(modulesList[i]);
-						loadModule(this.modulesList[i]);
-					}
+//					for (var i:Number = 0; i<1 ; i++){
+//						//Alert.show(modulesList[i]);
+//						loadModule(this.modulesList[i]);
+//					}
 					break;
 			}
 		}
@@ -67,8 +72,9 @@ package org.bigbluebutton.main
 			var item:XML;
 			this.modulesList = new Array();
 			for each(item in list){
-				trace("Available Modules: " + item.@swfpath);
-				this.modulesList.push(item.@swfpath);
+				trace("Available Modules: " + item.@name + " at " + item.@swfpath);
+				var mod:ModuleDescriptor = new ModuleDescriptor(item.@name, item.@swfpath);
+				this.modulesList[item.@name] = mod;
 			}
 		}
 		
@@ -86,11 +92,11 @@ package org.bigbluebutton.main
 			
 			var loader:ModuleLoader = e.target as ModuleLoader;
 			var iModule:* = loader.child as ChatModule;
-			//var iModule:Module = e.module;
 			if (iModule != null){
 				//var bbbModule:BigBlueButtonModule = iModule as BigBlueButtonModule;	
 				trace("Adding module: " + iModule.getID());
 				sendNotification(MainApplicationFacade.ADD_MODULE, iModule);
+				sendNotification(MainApplicationFacade.MODULES_STARTED);
 			} else{
 				Alert.show("Module could not be initialized");
 			}

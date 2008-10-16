@@ -34,5 +34,13 @@ package org.bigbluebutton.main
 		
 		public static const LOGIN_COMPLETE:String = "LOGIN_COMPLETE";
 		public static const CONNECTION_LOST:String = "CONNECTION_LOST"
+		
+		// Try to maintain naming convention (NOUN_VERB)
+		public static const MODULE_LOAD:String = 'load the module';
+		public static const MODULE_LOADED:String = 'module has been loaded';
+		public static const MODULE_UNLOAD:String = 'unload the module';
+		public static const MODULE_START:String = 'start the module';
+		public static const MODULE_STOP:String = 'stop the module';
+		
 	}
 }

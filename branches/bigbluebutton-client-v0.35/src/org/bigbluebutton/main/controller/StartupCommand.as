@@ -20,6 +20,7 @@
 package org.bigbluebutton.main.controller
 {
 	import org.bigbluebutton.main.BBBModuleManager;
+	import org.bigbluebutton.main.model.ModulesProxy;
 	import org.bigbluebutton.main.view.MainApplicationShellMediator;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.puremvc.as3.multicore.interfaces.ICommand;
@@ -37,6 +38,7 @@ package org.bigbluebutton.main.controller
 			var app:MainApplicationShell = note.getBody() as MainApplicationShell;
 			facade.registerMediator( new MainApplicationShellMediator( app ) );		
 			facade.registerMediator(new BBBModuleManager());	
+			facade.registerProxy(new ModulesProxy());
 		}		
 	}
 }

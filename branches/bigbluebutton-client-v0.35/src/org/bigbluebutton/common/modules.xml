@@ -1,6 +1,6 @@
 <modules>
-	<module id="Chat" swfpath="org/bigbluebutton/modules/chat/ChatModule.swf" />
-	<module id="Presentation" swfpath="org/bigbluebutton/modules/presentation/PresentationModule.swf" />
-	<module id="Video" swfpath="org/bigbluebutton/modules/video/VideoModule.swf" />
-	<module id="Voice" swfpath="org/bigbluebutton/modules/voiceconference/VoiceModule.swf" />
+	<module name="ChatModule" swfpath="org/bigbluebutton/modules/chat/ChatModule.swf" />
+	<module name="PresentationModule" swfpath="org/bigbluebutton/modules/presentation/PresentationModule.swf" />
+	<module name="VideoModule" swfpath="org/bigbluebutton/modules/video/VideoModule.swf" />
+	<module name="VoiceModule" swfpath="org/bigbluebutton/modules/voiceconference/VoiceModule.swf" />
 </modules>
