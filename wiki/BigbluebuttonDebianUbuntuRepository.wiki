@@ -1,4 +1,4 @@
-#Install Bigbluebutton on Debian/Ubuntu by just one 'apt-get'
+#summary Install Bigbluebutton on Debian/Ubuntu by just one 'apt-get'
 
 = Introduction =
 
