@@ -4,11 +4,15 @@ package org.bigbluebutton.main.model
 	
 	import mx.modules.ModuleLoader;
 	
+	import org.bigbluebutton.common.BigBlueButtonModule;
+	
 	public class ModuleDescriptor
 	{
 		public var name:String;
 		public var url:String;
 		public var loader:ModuleLoader;
+		public var module:BigBlueButtonModule;
+		
 		private var callbackHandler:Function;
 		
 		public function ModuleDescriptor(name:String, url:String)
@@ -59,7 +63,8 @@ package org.bigbluebutton.main.model
 
 		private function onReady(event:Event):void {
 			trace("Module onReady Event");
-			callbackHandler(event);
+			var loader:ModuleLoader = event.target as ModuleLoader;
+			module = loader.child as BigBlueButtonModule;
 		}	
 
 		private function onError(event:Event):void {

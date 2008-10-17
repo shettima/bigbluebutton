@@ -37,10 +37,19 @@ package org.bigbluebutton.main
 		
 		// Try to maintain naming convention (NOUN_VERB)
 		public static const MODULE_LOAD:String = 'load the module';
-		public static const MODULE_LOADED:String = 'module has been loaded';
+		public static const MODULE_LOADED:String = 'module has loaded';
 		public static const MODULE_UNLOAD:String = 'unload the module';
 		public static const MODULE_START:String = 'start the module';
+		public static const MODULE_STARTED:String = 'module has started';
 		public static const MODULE_STOP:String = 'stop the module';
+		public static const MODULE_STOPPED:String = 'module has stopped';
+		public static const APP_START:String = 'start main application';
+		public static const APP_STARTED:String = 'app has started';
+		public static const APP_MODEL_INITIALIZED:String = 'app model initialized';
+		public static const USER_LOGIN:String = 'user logging in';
+		public static const USER_LOGGED_IN:String = 'user logged in'
+		public static const USER_LOGOUT:String = 'user logging out';
+		public static const USER_LOGGED_OUT:String = 'user logged out';
 		
 	}
 }

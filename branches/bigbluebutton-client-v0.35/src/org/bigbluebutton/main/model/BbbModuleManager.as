@@ -6,6 +6,8 @@ package org.bigbluebutton.main.model
 	
 	import mx.controls.Alert;
 	
+	import org.bigbluebutton.common.BigBlueButtonModule;
+	
 	public class BbbModuleManager
 	{
 		public static const FILE_PATH:String = "org/bigbluebutton/common/modules.xml";
@@ -16,6 +18,7 @@ package org.bigbluebutton.main.model
 		{
 			urlLoader = new URLLoader();
 			urlLoader.addEventListener(Event.COMPLETE, handleComplete);
+			loadXmlFile(urlLoader, FILE_PATH);
 		}
 		
 		public function loadXmlFile(loader:URLLoader, file:String):void {			
@@ -47,9 +50,11 @@ package org.bigbluebutton.main.model
 				trace("Available Modules: " + item.@name + " at " + item.@swfpath);
 				var mod:ModuleDescriptor = new ModuleDescriptor(item.@name, item.@swfpath);
 				modules[item.@name] = mod;
-				trace(modules[item.@name].name);
-				trace(modules.length);
 			}			
+		}
+		
+		public function start(name:String):void {
+			modules[name].module.start();
 		}
 	}
 }

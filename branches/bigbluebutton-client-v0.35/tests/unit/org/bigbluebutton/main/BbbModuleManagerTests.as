@@ -7,7 +7,12 @@ package org.bigbluebutton.main
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
+	import mx.modules.Module;
+	
+	import org.bigbluebutton.common.BigBlueButtonModule;
 	import org.bigbluebutton.main.model.BbbModuleManager;
+	import org.bigbluebutton.modules.chat.ChatModule;
+	import org.bigbluebutton.modules.video.VideoModule;
 
 	public class BbbModuleManagerTests extends TestCase
 	{
@@ -61,6 +66,9 @@ package org.bigbluebutton.main
             var urlLoader:URLLoader = new URLLoader();            
             urlLoader.addEventListener(Event.COMPLETE, addAsync(loadCompleteHandler, 1000));            
             urlLoader.load(new URLRequest("org/bigbluebutton/common/modules.xml"));
+            var n:Class;
+            var mn:Module = (Module) (new ChatModule());
+            assertTrue("Class is chat module", mn is ChatModule);
 		}
 		
 		public function testLoadModule():void {

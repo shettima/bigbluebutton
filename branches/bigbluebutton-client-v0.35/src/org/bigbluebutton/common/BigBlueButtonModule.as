@@ -168,5 +168,8 @@ package org.bigbluebutton.common
 			return this.startTime;
 		}
 
+		public function start():void {
+			
+		}
 	}
 }

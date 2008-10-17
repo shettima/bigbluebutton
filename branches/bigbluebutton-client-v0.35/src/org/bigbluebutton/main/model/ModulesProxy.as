@@ -11,7 +11,6 @@ package org.bigbluebutton.main.model
 		{
 			super(proxyName, data);
 			modulesManager = new BbbModuleManager();
-			//modulesManager.initialize();
 		}
 	}
 }

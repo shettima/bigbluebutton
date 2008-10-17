@@ -57,7 +57,6 @@ package org.bigbluebutton.main.view
 		public static const LOGOUT:String = "Logout";
 		public static const START_WEBCAM:String = "Start Webcam";
 
-		public var log:LogModuleFacade = LogModuleFacade.getInstance(LogModule.NAME);
 		private var mshell:MainApplicationShell;
 		
 		private var xPos:Number;
@@ -96,14 +95,6 @@ package org.bigbluebutton.main.view
 			router.registerOutputPipe(outpipe.name, outpipe);
 			router.registerInputPipe(inpipe.name, inpipe);
 			
-			logModule = new LogModule();
-			runModule(logModule);
-//			logModule.mediator.logWindow.visible = false;
-			
-			log.debug("red5:" + Constants.red5Host);
-			log.debug("present:" + Constants.presentationHost);
-			log.debug("url:" + Constants.TEST_URL);
-
 			trace("red5:" + Constants.red5Host);
 			trace("present:" + Constants.presentationHost);
 			trace("url:" + Constants.TEST_URL);
@@ -173,8 +164,7 @@ package org.bigbluebutton.main.view
 			shell.toolbar.enabled = false;	
 		}
 		
-		private function setLayout(module:BigBlueButtonModule):void{
-			
+		private function setLayout(module:BigBlueButtonModule):void{			
 			shell.mdiCanvas.windowManager.add(module.getMDIComponent());
 			shell.mdiCanvas.windowManager.absPos(module.getMDIComponent(), 
 								module.getXPosition(), module.getYPosition());			 
@@ -223,9 +213,7 @@ package org.bigbluebutton.main.view
 		{
 			var msg : String = message.getHeader().MSG as String;
 			var module :BigBlueButtonModule;
-			
-			
-			
+						
 			switch (msg)
 			{
 				case MainApplicationConstants.ADD_WINDOW_MSG:

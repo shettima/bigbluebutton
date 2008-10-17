@@ -91,5 +91,9 @@ package org.bigbluebutton.modules.chat
 			
 			facade.removeCore(ChatFacade.NAME);
 		}
+		
+		override public function start():void {
+			facade.startup(this);
+		}
 	}
 }
