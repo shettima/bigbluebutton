@@ -2,7 +2,7 @@
 
 = Introduction =
 
-A Debian package repository for BigBlueButton is set up. Now you can apt-get it by just a few lines of key typings. The 
+A Debian package repository for BigBlueButton is set up. Now you can apt-get it by just a few lines of key typings. The removal of the package from your Debian/Ubuntu system is as easy too.
 
 
 = Details =
