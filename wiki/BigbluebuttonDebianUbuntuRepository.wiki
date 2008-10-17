@@ -34,12 +34,10 @@ A Debian package repository for BigBlueButton is set up. Now you can apt-get it 
     }}}
 
   * (Optional) Removal:
-
     {{{
     sudo apt-get remove bigbluebutton
     sudo apt-get autoremove
     sudo apt-get autoclean
     (Optional):
     sudo gpg --delete-keys 7E2B25E3
-    
     }}}
