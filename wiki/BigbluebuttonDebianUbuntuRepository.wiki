@@ -30,4 +30,7 @@ A Debian package repository for BigBlueButton is set up. Now you can apt-get it 
     sudo apt-get install bigbluebutton
     }}}
 
-  * 
+  * Test it
+    {{{
+    
+    }}}
