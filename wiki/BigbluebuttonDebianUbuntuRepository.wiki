@@ -16,10 +16,7 @@ A Debian package repository for BigBlueButton is set up. Now you can apt-get it 
     sudo wget http://present.carleton.ca/debian/bigbluebutton.asc
     sudo apt-key add bigbluebutton.asc
     }}}
-    To remove it later: 
-    {{{
-    sudo gpg --delete-keys 7E2B25E3
-    }}}
+    
   * Connect to the repository
     {{{
     sudo apt-get update
@@ -42,4 +39,8 @@ A Debian package repository for BigBlueButton is set up. Now you can apt-get it 
     sudo apt-get remove bigbluebutton
     sudo apt-get autoremove
     sudo apt-get autoclean
+    (Optional 
+    {{{
+    sudo gpg --delete-keys 7E2B25E3
+    }}}
     }}}
