@@ -9,7 +9,7 @@ A Debian package repository for BigBlueButton is set up. Now you can apt-get it 
 
   * Add the following line to your sources list (/etc/apt/sources.list):
     {{{
-    deb http://present.carleton.ca/debian bigbluebutton main
+    deb will provide soon...
     }}}
   * (optional) Download public signing key and import it
     {{{
