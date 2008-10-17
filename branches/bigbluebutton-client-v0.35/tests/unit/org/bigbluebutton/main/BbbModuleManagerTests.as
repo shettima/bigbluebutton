@@ -2,6 +2,7 @@ package org.bigbluebutton.main
 {
 	import flash.events.Event;
 	import flash.net.URLLoader;
+	import flash.net.URLRequest;
 	
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
@@ -11,7 +12,14 @@ package org.bigbluebutton.main
 	public class BbbModuleManagerTests extends TestCase
 	{
 		private var manager:BbbModuleManager;
-		private var xml:XML;
+		private var xmlString:String = 
+			'<modules><module name="ChatModule" swfpath="org/bigbluebutton/modules/chat/ChatModule.swf" />' +
+			'<module name="PresentationModule" swfpath="org/bigbluebutton/modules/presentation/PresentationModule.swf" />' +
+			'<module name="VideoModule" swfpath="org/bigbluebutton/modules/video/VideoModule.swf" />' +
+			'<module name="VoiceModule" swfpath="org/bigbluebutton/modules/voiceconference/VoiceModule.swf" />' +
+			'</modules> '
+		
+		private var xml:XML = new XML(xmlString);
 		
 		public function BbbModuleManagerTests(methodName:String=null)
 		{
@@ -29,34 +37,40 @@ package org.bigbluebutton.main
    			var ts:TestSuite = new TestSuite();
    			
    			ts.addTest( new BbbModuleManagerTests( "testParseModuleXml" ) );
-   			//ts.addTest( new BbbModuleManagerTests( "testParseModuleXml" ) );
+   			ts.addTest( new BbbModuleManagerTests( "testLoadXmlFile" ) );
+   			ts.addTest( new BbbModuleManagerTests( "testLoadModule" ) );
    			return ts;
    		}
    		
-   		public function testLoadXmlFile():void {
-   			
-   		}
-   		
-   		
    		private function loadCompleteHandler(e:Event):void {
    			try{
-				trace("parsing xml file " + new XML(e.target.data));
 				manager.parse(new XML(e.target.data));
-				assertTrue( "Number of modules is 4", manager.modules.length == 4);
+				assertTrue( "There should be a VideoModule", manager.modules['VideoModule'].name == 'VideoModule');
+				assertTrue( "There should be a VoiceModule", manager.modules['VoiceModule'].name == 'VoiceModule');
 			} catch(error:TypeError){
 				trace(error.message);
 			}
    		}
    		
    		public function testParseModuleXml():void {   			
-   			var urlLoader:URLLoader = new URLLoader();
-			urlLoader.addEventListener(Event.COMPLETE, loadCompleteHandler);			
-   			manager.loadXmlFile(urlLoader, "org/bigbluebutton/common/modules.xml");
+   				manager.parse(new XML(xmlString));
+				assertTrue( "There should be a ChatModule", manager.modules['ChatModule'].name == "ChatModule");
    		}
 
-		public function testLoadXmlModule():void {
-			assertTrue( "testParseModuleXml", false);
+		public function testLoadXmlFile():void {
+            var urlLoader:URLLoader = new URLLoader();            
+            urlLoader.addEventListener(Event.COMPLETE, addAsync(loadCompleteHandler, 1000));            
+            urlLoader.load(new URLRequest("org/bigbluebutton/common/modules.xml"));
 		}
-
+		
+		public function testLoadModule():void {
+			manager.parse(new XML(xmlString));
+			assertTrue( "There should be a ChatModule", manager.modules['ChatModule'].name == "ChatModule");
+			manager.loadModule('ChatModule', resultHandler);
+		}
+		
+		private function resultHandler(e:Event):void {
+			trace(e.type);
+		}
 	}
 }

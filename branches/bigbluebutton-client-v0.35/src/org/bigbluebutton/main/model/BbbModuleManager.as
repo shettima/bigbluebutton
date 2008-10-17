@@ -10,7 +10,7 @@ package org.bigbluebutton.main.model
 	{
 		public static const FILE_PATH:String = "org/bigbluebutton/common/modules.xml";
 		private var urlLoader:URLLoader;
-		public var modules:Array;
+		public var modules:Array = new Array();
 		
 		public function BbbModuleManager()
 		{
@@ -23,13 +23,10 @@ package org.bigbluebutton.main.model
 			loader.load(new URLRequest(file));
 		}
 		
-		public function loadModule(name:String):void{
+		public function loadModule(name:String,resultHandler:Function):void{
 			var m:ModuleDescriptor = modules[name];
 			if (m != null) {
-				var loader:BbbModuleLoader = new BbbModuleLoader(m.name);
-				trace("Loading module " + m.url);
-				loader.url = m.url;
-				loader.loadModule();
+				m.load(resultHandler);
 			}
 		}
 		
@@ -45,14 +42,14 @@ package org.bigbluebutton.main.model
 		public function parse(xml:XML):void{
 			var list:XMLList = xml.module;
 			var item:XML;
-			
-			modules = new Array();
-			
+						
 			for each(item in list){
 				trace("Available Modules: " + item.@name + " at " + item.@swfpath);
 				var mod:ModuleDescriptor = new ModuleDescriptor(item.@name, item.@swfpath);
 				modules[item.@name] = mod;
-			}
+				trace(modules[item.@name].name);
+				trace(modules.length);
+			}			
 		}
 	}
 }
