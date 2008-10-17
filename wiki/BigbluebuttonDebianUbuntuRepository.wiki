@@ -7,23 +7,27 @@ A Debian package repository for BigBlueButton is set up. Now you can apt-get it 
 
 = Details =
 
-  * add the following line to your sources list:
-    
+  * Add the following line to your sources list:
+    {{{
     deb http://present.carleton.ca/debian bigbluebutton main
-
+    }}}
   * (optional) Download public signing key and import it
-     sudo wget http://present.carleton.ca/debian/bigbluebutton.asc
-     sudo apt-key add bigbluebutton.asc
-
-     To remove it later by: 
-     sudo gpg --delete-keys 7E2B25E3
-     
-
-
-  * 
+    {{{
+    sudo wget http://present.carleton.ca/debian/bigbluebutton.asc
+    sudo apt-key add bigbluebutton.asc
+    }}}
+    To remove it later: 
+    {{{
+    sudo gpg --delete-keys 7E2B25E3
+    }}}
+  * Connect to the repository
+    {{{
+    sudo apt-get update
+    }}}
  
-  * sudo apt-get update
- 
-  * sudo apt-get install bigbluebutton
+  * Install it
+    {{{
+    sudo apt-get install bigbluebutton
+    }}}
 
   * 
