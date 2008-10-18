@@ -4,20 +4,21 @@ package org.bigbluebutton.main.model
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
-	import mx.controls.Alert;
-	
-	import org.bigbluebutton.common.BigBlueButtonModule;
-	
 	public class BbbModuleManager
 	{
 		public static const FILE_PATH:String = "org/bigbluebutton/common/modules.xml";
 		private var urlLoader:URLLoader;
-		public var modules:Array = new Array();
+		private var callbackHandler:Function;
+		public var  modules:Array = new Array();
 		
 		public function BbbModuleManager()
 		{
 			urlLoader = new URLLoader();
-			urlLoader.addEventListener(Event.COMPLETE, handleComplete);
+			urlLoader.addEventListener(Event.COMPLETE, handleComplete);			
+		}
+		
+		public function initialize(onInitializeComplete:Function):void {
+			callbackHandler = onInitializeComplete;
 			loadXmlFile(urlLoader, FILE_PATH);
 		}
 		
@@ -25,20 +26,13 @@ package org.bigbluebutton.main.model
 			trace("Loading xml file " + FILE_PATH);
 			loader.load(new URLRequest(file));
 		}
-		
-		public function loadModule(name:String,resultHandler:Function):void{
-			var m:ModuleDescriptor = modules[name];
-			if (m != null) {
-				m.load(resultHandler);
-			}
-		}
-		
+				
 		private function handleComplete(e:Event):void{
 			try{
 				trace("parsing xml file " + FILE_PATH);
-				parse(new XML(e.target.data));
+				parse(new XML(e.target.data));				
 			} catch(error:TypeError){
-				Alert.show(error.message);
+				trace('Error loading XML modules file.');
 			}
 		}
 		
@@ -51,10 +45,8 @@ package org.bigbluebutton.main.model
 				var mod:ModuleDescriptor = new ModuleDescriptor(item.@name, item.@swfpath);
 				modules[item.@name] = mod;
 			}			
+			callbackHandler(modules);
 		}
-		
-		public function start(name:String):void {
-			modules[name].module.start();
-		}
+
 	}
 }

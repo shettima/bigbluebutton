@@ -19,7 +19,6 @@
 */
 package org.bigbluebutton.common.messaging
 {
-	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeFitting;
 	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
 	import org.puremvc.as3.multicore.utilities.pipes.plumbing.Junction;
@@ -84,13 +83,12 @@ package org.bigbluebutton.common.messaging
 		 */
 		private function routeMessage(message:IPipeMessage):void
 		{
-			trace('routing message to ' + message.getHeader().TO);
-			
+			trace('routing message to ' + message.getHeader().TO);			
 			var TO : String = message.getHeader().TO;
 			var haspipe : Boolean = junction.hasOutputPipe(TO);
 			trace('There is a pipe with name ' + message.getHeader().TO + " = " + haspipe);
 			var success: Boolean = junction.sendMessage(TO, message);
-			trace('Successfully routing message to ' + message.getHeader().TO + " = " + success);
+			trace('Successfully routing message to ' + message.getHeader().TO + " = " + success);				
 		}
 	}
 }

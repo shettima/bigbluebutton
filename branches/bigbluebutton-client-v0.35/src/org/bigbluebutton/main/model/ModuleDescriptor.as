@@ -21,23 +21,23 @@ package org.bigbluebutton.main.model
 			this.url = url;
 			
 			loader = new ModuleLoader();
-			loader.addEventListener("urlChanged", onUrlChanged);
-			loader.addEventListener("loading", onLoading);
-			loader.addEventListener("progress", onProgress);
-			loader.addEventListener("setup", onSetup);
-			loader.addEventListener("ready", onReady);
-			loader.addEventListener("error", onError);
-			loader.addEventListener("unload", onUnload);
+
 		}
 
 		public function load(resultHandler:Function):void {
 			callbackHandler = resultHandler;
+			loader.addEventListener("urlChanged", resultHandler);
+			loader.addEventListener("loading", resultHandler);
+			loader.addEventListener("progress", resultHandler);
+			loader.addEventListener("setup", resultHandler);
+			loader.addEventListener("ready", resultHandler);
+			loader.addEventListener("error", resultHandler);
+			loader.addEventListener("unload", resultHandler);
 			loader.url = url;
 			loader.loadModule();
 		}
 		
-		public function unload(resultHandler:Function):void {
-			callbackHandler = resultHandler;
+		public function unload():void {
 			loader.url = "";
 		}
 

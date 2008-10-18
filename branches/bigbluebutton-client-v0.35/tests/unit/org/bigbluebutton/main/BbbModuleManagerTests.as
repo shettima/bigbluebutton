@@ -43,7 +43,6 @@ package org.bigbluebutton.main
    			
    			ts.addTest( new BbbModuleManagerTests( "testParseModuleXml" ) );
    			ts.addTest( new BbbModuleManagerTests( "testLoadXmlFile" ) );
-   			ts.addTest( new BbbModuleManagerTests( "testLoadModule" ) );
    			return ts;
    		}
    		
@@ -69,16 +68,6 @@ package org.bigbluebutton.main
             var n:Class;
             var mn:Module = (Module) (new ChatModule());
             assertTrue("Class is chat module", mn is ChatModule);
-		}
-		
-		public function testLoadModule():void {
-			manager.parse(new XML(xmlString));
-			assertTrue( "There should be a ChatModule", manager.modules['ChatModule'].name == "ChatModule");
-			manager.loadModule('ChatModule', resultHandler);
-		}
-		
-		private function resultHandler(e:Event):void {
-			trace(e.type);
 		}
 	}
 }
