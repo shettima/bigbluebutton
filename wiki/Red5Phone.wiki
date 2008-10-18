@@ -10,12 +10,12 @@ This page provides steps to run [http://code.google.com/p/red5phone/ Red5Phone],
  # Create a distribution
    {{{
      > ant dist
-    }}}
+   }}}
  # Copy dist directory to another directory
  # Rename dist to wrapper
  # Replace jetty (hotfix)
-    http://osflash.org/red5/070hotfix
-    http://red5.googlecode.com/svn/repository/jetty/
+    * http://osflash.org/red5/070hotfix
+    * http://red5.googlecode.com/svn/repository/jetty/
  # Edit red5.bat
  # Edit logback.xml
  # Port 5070
