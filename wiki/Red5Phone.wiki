@@ -1,7 +1,13 @@
-#summary How to install Red5Phone
+#summary How to run Red5Phone within BigBlueButton server
 
 = Introduction =
 
-This page steps to run Red5Phone, the workarounds, and observations/findings.
+This page provides steps to run [http://code.google.com/p/red5phone/ Red5Phone], the workarounds, as well as observations/findings.
 
-= Details =
+= Steps =
+
+ # Checkout bigbluebutton-server
+ # Create a distribution
+{{{
+ > ant dist
+}}}
