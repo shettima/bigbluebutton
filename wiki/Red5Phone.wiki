@@ -51,7 +51,7 @@ This page provides steps to run [http://code.google.com/p/red5phone/ Red5Phone],
       Exception in thread "main" java.lang.ClassNotFoundException: org.mortbay.jetty.Server
    }}}
     You can get the jetty libs from http://red5.googlecode.com/svn/repository/jetty/ 
- # Edit webapps/sip/WEB-INF/classes/logback.xml changing the <File> with
+ # Edit webapps/sip/WEB-INF/classes/logback.xml with this change
    {{{
      <File>webapps/sip/logs/sip.log</File>
    }}}
