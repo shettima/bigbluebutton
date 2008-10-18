@@ -11,11 +11,13 @@ This page provides steps to run [http://code.google.com/p/red5phone/ Red5Phone],
    {{{
      > ant dist
    }}}
+ # Replace dist/red5.jar with the one in http://code.google.com/p/red5phone/
+ # Extract sip.zip in http://code.google.com/p/red5phone/ in dist/webapps
  # Copy dist directory to another directory
    {{{
      > cp dist c:/temp
    }}}
- # Rename dist to wrapper. SIPUser.java assumes a "/wrapper" directory where red5 is ran.
+ # Rename c:/temp/dist to c:/temp/wrapper. SIPUser.java assumes a "/wrapper" directory where red5 is ran.
    {{{
        SIPUser.java
 
@@ -43,10 +45,19 @@ This page provides steps to run [http://code.google.com/p/red5phone/ Red5Phone],
 		}
 	}
    }}}
+ # Edit red5.bat. Replace "-Dred5.root=dist" with "-Dred5.root=."
+ # Replace jetty (see http://osflash.org/red5/070hotfix). Otherwise, you'll see this 
+   {{{
+      Exception in thread "main" java.lang.ClassNotFoundException: org.mortbay.jetty.Server
+   }}}
+    You can get the jetty libs from http://red5.googlecode.com/svn/repository/jetty/ 
+ # Edit webapps/sip/WEB-INF/classes/logback.xml changing the <File> with
+   {{{
+     <File>webapps/sip/logs/sip.log</File>
+   }}}
+ # Run wrapper/red5.bat
+ # Connect to http://localhost:5080/sip and click on the Flex Phone Template link
+ # Enter relevant information and click Login. Make sure that your SIP user (in Asterisk) does not have a "secret" (password) entry. Otherwise, registration will fail (http://code.google.com/p/red5phone/issues/detail?id=4). If it does not work, take a look at webapps/sip/logs/sip.log for clues. You can also use WireShark (http://www.wireshark.org/) to capture packets and determine why your client won't register.
 
- # Replace jetty (hotfix)
-    * http://osflash.org/red5/070hotfix
-    * http://red5.googlecode.com/svn/repository/jetty/
- # Edit red5.bat
- # Edit logback.xml
- # Port 5070
+
+ 
