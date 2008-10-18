@@ -1,0 +1,7 @@
+#summary How to install Red5Phone
+
+= Introduction =
+
+This page steps to run Red5Phone, the workarounds, and observations/findings.
+
+= Details =
