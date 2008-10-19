@@ -24,3 +24,7 @@
  * http://algorithmist.wordpress.com/category/papervision-3d/
  * http://www.google.ca/search?client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&channel=s&hl=en&q=papervision+flex&meta=&btnG=Google+Search
  * http://www.papervision3dblog.com/
+
+ * http://www.adobe.com/devnet/flash/articles/flv_encoding.html
+ * http://fms.startpagina.be/
+ * http://88.152.22.77/Serendipity/
