@@ -11,7 +11,7 @@
  * http://www.orbited.org/
  * http://jira.red5.org/confluence/display/docs/FAQ
 
-= SOme links =
+= Some links =
  * http://code.google.com/p/smartypants-ioc/
  * http://www.pranaframework.org/
  * http://code.google.com/p/swizframework/
