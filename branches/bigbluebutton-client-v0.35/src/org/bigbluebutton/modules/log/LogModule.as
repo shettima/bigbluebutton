@@ -58,9 +58,9 @@ package org.bigbluebutton.modules.log
 		 * @param shell:MAinApplicationShell
 		 * 
 		 */        
-		override public function acceptRouter(router : Router, shell : MainApplicationShell) : void
+		override public function acceptRouter(router : Router) : void
 		{
-			super.acceptRouter(router, shell);
+			super.acceptRouter(router);
 			trace('In LogModule');
 			facade.startup(this);			
 			trace('In LogModule 3');

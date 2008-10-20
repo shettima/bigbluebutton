@@ -31,7 +31,6 @@ package org.bigbluebutton.modules.presentation.view
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
-	import org.bigbluebutton.modules.log.LogModuleFacade;
 
 	/**
 	 * This is the Mediator class for the FileUploadWindow component
@@ -47,7 +46,6 @@ package org.bigbluebutton.modules.presentation.view
 		public static const START_UPLOAD:String = "Start Upload";
 		public static const CLOSE_UPLOAD_WINDOW:String = "Close File Upload Window";
 		public static const SELECT_FILE:String = "Select File";
-		private var log : LogModuleFacade = LogModuleFacade.getInstance("LogModule");
 		
 		private var fileToUpload:FileReference = new FileReference();
 		// Var to determine how to handle okCancelBtn click
@@ -83,10 +81,10 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function startUpload(e:Event):void{
-			log.presentation("In startUpload()...")
+			trace("In startUpload()...")
 			PresentationFacade.getInstance().presentationApp.uploadPresentation(fileToUpload);
 			fileUploadWindow.progBarLbl.visible = true;
-			fileUploadWindow.progressBar.visible = true;
+//			fileUploadWindow.progressBar.visible = true;
 			
 			//fileUploadWindow.okCancelBtn.visible = false;
 			fileUploadWindow.selectBtn.enabled = false;
@@ -206,9 +204,9 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleUploadCompleteEvent(note:INotification):void{
 			fileUploadWindow.progressLbl.text = "Upload completed. Please wait while we convert the document."
-			fileUploadWindow.progressBar.label = "Upload successful.";
-			fileUploadWindow.progressBar.setProgress(0, 100);
-			fileUploadWindow.progressBar.validateNow();
+//			fileUploadWindow.progressBar.label = "Upload successful.";
+//			fileUploadWindow.progressBar.setProgress(0, 100);
+//			fileUploadWindow.progressBar.validateNow();
 
 			fileUploadWindow.fileLbl.visible = false;
 			fileUploadWindow.selectBtn.visible = false;
@@ -223,10 +221,10 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleUploadProgressEvent(note:INotification):void{
 			var progress:Number = note.getBody() as Number;
-			
-			fileUploadWindow.progressBar.label = progress + "% uploaded.";
-			fileUploadWindow.progressBar.setProgress(progress, 100);
-			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.text = progress + "% uploaded.";
+//			fileUploadWindow.progressBar.label = progress + "% uploaded.";
+//			fileUploadWindow.progressBar.setProgress(progress, 100);
+//			fileUploadWindow.progressBar.validateNow();
 		}
 		
 		/**
@@ -256,11 +254,11 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleConvertProgressEvent(note:INotification):void{
 			var convertEvt:ProgressNotifier = note.getBody() as ProgressNotifier;
-
-			fileUploadWindow.progressBar.label = "Converting slide " + convertEvt.completedSlides + " of " 
-					+ convertEvt.totalSlides + " slides.";
-			fileUploadWindow.progressBar.setProgress(convertEvt.completedSlides, convertEvt.totalSlides);
-			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.text = "Converting slide " + convertEvt.completedSlides + " of " + convertEvt.totalSlides + " slides.";
+//			fileUploadWindow.progressBar.label = "Converting slide " + convertEvt.completedSlides + " of " 
+//					+ convertEvt.totalSlides + " slides.";
+//			fileUploadWindow.progressBar.setProgress(convertEvt.completedSlides, convertEvt.totalSlides);
+//			fileUploadWindow.progressBar.validateNow();
 		}
 		
 		/**
@@ -270,11 +268,11 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleExtractProgressEvent(note:INotification):void{
 			var extractEvt:ProgressNotifier = note.getBody() as ProgressNotifier;
-
-			fileUploadWindow.progressBar.label = "Extracting slide " + extractEvt.completedSlides + " of " 
-					+ extractEvt.totalSlides + " slides.";
-			fileUploadWindow.progressBar.setProgress(extractEvt.completedSlides, extractEvt.totalSlides);
-			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.text = "Extracting slide " + extractEvt.completedSlides + " of " + extractEvt.totalSlides + " slides.";
+//			fileUploadWindow.progressBar.label = "Extracting slide " + extractEvt.completedSlides + " of " 
+//					+ extractEvt.totalSlides + " slides.";
+//			fileUploadWindow.progressBar.setProgress(extractEvt.completedSlides, extractEvt.totalSlides);
+//			fileUploadWindow.progressBar.validateNow();
 		}
 		
 		/**

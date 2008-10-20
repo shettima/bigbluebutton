@@ -23,6 +23,6 @@ package org.bigbluebutton.common.messaging
 	
 	public interface IRouterAware
 	{
-		function acceptRouter(router : Router, shell : MainApplicationShell) : void;
+		function acceptRouter(router : Router) : void;
 	}
 }

@@ -1,4 +1,5 @@
 <modules>
+	<module name="ViewersModule" swfpath="org/bigbluebutton/modules/viewers/ViewersModule.swf" />
 	<module name="ChatModule" swfpath="org/bigbluebutton/modules/chat/ChatModule.swf" />
 	<module name="PresentationModule" swfpath="org/bigbluebutton/modules/presentation/PresentationModule.swf" />
 	<module name="VideoModule" swfpath="org/bigbluebutton/modules/video/VideoModule.swf" />

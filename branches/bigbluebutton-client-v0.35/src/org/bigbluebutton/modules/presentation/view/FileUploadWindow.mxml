@@ -13,7 +13,7 @@
 	
 	<mx:Label id="progBarLbl" text="Progress:" x="21" y="67" visible="false"/>
 	
-	<mx:ProgressBar id="progressBar" mode="manual" label="" labelPlacement="center" width="360" y="67" x="87" visible="false"/>
+	<!--mx:ProgressBar id="progressBar" mode="manual" label="" labelPlacement="center" width="360" y="67" x="87" visible="false"/-->
 	
 	<mx:ControlBar horizontalAlign="center" verticalAlign="middle" x="0" y="106">
 		<mx:Label id="progressLbl" text="" width="100%"/>

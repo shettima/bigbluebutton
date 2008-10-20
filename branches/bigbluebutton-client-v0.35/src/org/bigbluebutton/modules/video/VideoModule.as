@@ -84,8 +84,8 @@ package org.bigbluebutton.modules.video
 		 * @param shell
 		 * 
 		 */		
-		override public function acceptRouter(router:Router, shell:MainApplicationShell):void{
-			super.acceptRouter(router, shell);
+		override public function acceptRouter(router:Router):void{
+			super.acceptRouter(router);
 			facade.startup(this);
 		}
 		

@@ -68,9 +68,9 @@ package org.bigbluebutton.modules.chat
 		 * @param shell
 		 * 
 		 */		
-		override public function acceptRouter(router : Router, shell : MainApplicationShell) : void
+		override public function acceptRouter(router : Router) : void
 		{
-			super.acceptRouter(router, shell);
+			super.acceptRouter(router);
 			trace("Setting Router for Chat Module...");
 			ChatFacade(facade).startup(this);
 			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;

@@ -35,6 +35,7 @@ package org.bigbluebutton.main
 					break;
 				case MainApplicationConstants.MODULES_LOADED:
 					trace("Received MODULES_LOADED");
+					facade.sendNotification(MainApplicationConstants.MODULES_START);
 					break;
 			}
 		}

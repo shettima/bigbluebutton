@@ -27,7 +27,6 @@ package org.bigbluebutton.common
 	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.common.red5.Connection;
 	import org.bigbluebutton.common.red5.ConnectionEvent;
-	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	/**
 	 * This is an abstract-like class which is a base for a BigBlueButton Module. Extends this class if you
 	 * wish to dynamicaly add your module to the MainApplicationShell.
@@ -48,7 +47,6 @@ package org.bigbluebutton.common
 		//This is the name of your module
 		protected var moduleName:String;
 		public var _router:Router;
-		public var mshell:MainApplicationShell;
 		
 		private var conn:Connection;
 		private var connE:ConnectionEvent;
@@ -118,8 +116,7 @@ package org.bigbluebutton.common
 		 * @param shell
 		 * 
 		 */		
-		public function acceptRouter(router:Router, shell:MainApplicationShell):void{
-			mshell = shell;
+		public function acceptRouter(router:Router):void{
 			_router = router;
 		}
 		

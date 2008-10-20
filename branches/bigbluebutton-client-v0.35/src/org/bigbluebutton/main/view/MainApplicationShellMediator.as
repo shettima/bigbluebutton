@@ -31,6 +31,7 @@ package org.bigbluebutton.main.view
 	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.main.MainApplicationFacade;
+	import org.bigbluebutton.main.model.ModulesProxy;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.bigbluebutton.modules.log.LogModule;
 	import org.bigbluebutton.modules.video.VideoModule;
@@ -95,10 +96,7 @@ package org.bigbluebutton.main.view
 			
 			trace("red5:" + Constants.red5Host);
 			trace("present:" + Constants.presentationHost);
-			trace("url:" + Constants.TEST_URL);
-			
-			//runModule(new ViewersModule());
-		
+			trace("url:" + Constants.TEST_URL);		
 		}
 		
 		/**
@@ -133,7 +131,7 @@ package org.bigbluebutton.main.view
 		}
 		
 		public function acceptRouter(module:BigBlueButtonModule):void{
-			module.acceptRouter(router, mshell);
+			module.acceptRouter(router);
 		}
 		
 		private function sendLogout(e:Event):void{
@@ -228,7 +226,13 @@ package org.bigbluebutton.main.view
 					break;					
 				case MainApplicationConstants.LOGIN_COMPLETE:
 					trace("Got message LOGIN_COMPLETE");
-					sendNotification(MainApplicationFacade.START_ALL_MODULES);
+					var p:ModulesProxy = facade.retrieveProxy(ModulesProxy.NAME) as ModulesProxy;
+					var modules:Array = ['ChatModule', 'PresentationModule', 'VoiceModule', 'VideoModule'];
+					
+					for (var i:int=0; i<modules.length; i++) {
+						p.startModule(modules[i], router);						
+					}
+
 					shell.toolbar.enabled = true;
 					break;	
 				case MainApplicationConstants.CONNECTION_LOST:
@@ -271,7 +275,9 @@ package org.bigbluebutton.main.view
 					if (moduleNote.hasButton()) addButton(moduleNote);
 					break;
 				case MainApplicationConstants.MODULES_START:
-					runAddedModules(BigBlueButtonModule.START_ON_LOGIN);
+					trace('Received MODULES_START');
+					var p:ModulesProxy = facade.retrieveProxy(ModulesProxy.NAME) as ModulesProxy;
+					p.startModule('ViewersModule', router);
 					break;
 			}
 		}

@@ -69,8 +69,8 @@ package org.bigbluebutton.modules.presentation
 		 * @param shell - the main application shell of the bigbluebutton project
 		 * 
 		 */		
-		override public function acceptRouter(router:Router, shell:MainApplicationShell):void{
-			super.acceptRouter(router, shell);
+		override public function acceptRouter(router:Router):void{
+			super.acceptRouter(router);
 			facade.startup(this);
 			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
 			facade.setPresentationApp(conf.me.userid, conf.room, DEFAULT_RED5_URL, DEFAULT_PRES_URL);

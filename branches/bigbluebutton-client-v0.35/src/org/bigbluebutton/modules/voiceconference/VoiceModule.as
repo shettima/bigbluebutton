@@ -62,9 +62,9 @@ package org.bigbluebutton.modules.voiceconference
 		 * @param shell
 		 * 
 		 */		
-		override public function acceptRouter(router:Router, shell:MainApplicationShell):void{
+		override public function acceptRouter(router:Router):void{
 			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-			super.acceptRouter(router, shell);
+			super.acceptRouter(router);
 			facade.startup(this, URI + conf.room);
 			facade.connectToMeetMe();
 		}

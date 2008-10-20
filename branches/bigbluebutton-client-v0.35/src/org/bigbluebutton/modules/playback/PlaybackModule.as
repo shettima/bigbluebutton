@@ -24,8 +24,8 @@ package org.bigbluebutton.modules.playback
 			this.startTime = BigBlueButtonModule.START_ON_LOGIN;
 		}
 		
-		override public function acceptRouter(router:Router, shell:MainApplicationShell):void{
-			super.acceptRouter(router, shell);
+		override public function acceptRouter(router:Router):void{
+			super.acceptRouter(router);
 			facade.startup(this);
 		}
 		

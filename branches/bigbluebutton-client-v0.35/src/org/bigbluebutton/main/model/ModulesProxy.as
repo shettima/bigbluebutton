@@ -2,6 +2,8 @@ package org.bigbluebutton.main.model
 {
 	import flash.utils.Dictionary;
 	
+	import org.bigbluebutton.common.BigBlueButtonModule;
+	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.puremvc.as3.multicore.interfaces.IProxy;
 	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
@@ -40,6 +42,30 @@ package org.bigbluebutton.main.model
 				trace(key, _modules[key].url);
 				loadModule(key, loadModuleResultHandler);
 			}
+		}
+		
+		public function startModules(router:Router):void {
+			trace('Starting all modules');
+			for (var key:Object in _modules) {
+				trace('Starting ' + _modules[key].name);
+				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
+				var bbb:BigBlueButtonModule = m.module as BigBlueButtonModule;
+				if (m.name == 'ViewersModule') {
+					bbb.acceptRouter(router);	
+				}
+			}		
+		}
+
+		public function startModule(name:String, router:Router):void {
+			trace('Request to start module ' + name);
+			for (var key:Object in _modules) {				
+				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
+				if (m.name == name) {
+					trace('Starting ' + _modules[key].name);
+					var bbb:BigBlueButtonModule = m.module as BigBlueButtonModule;
+					bbb.acceptRouter(router);	
+				}
+			}		
 		}
 		
 		private function loadModule(name:Object,resultHandler:Function):void {
