@@ -40,7 +40,7 @@ package org.bigbluebutton.modules.voiceconference
 		public static const NAME:String = "VoiceModule";
 		public static const URI:String = "rtmp://" + Constants.red5Host + "/astmeetme/"; 
 		
-		private var facade:VoiceConferenceFacade;
+		public var facade:VoiceConferenceFacade;
 		public var activeWindow:MDIWindow;
 		
 		/**

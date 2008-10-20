@@ -168,7 +168,7 @@ package org.bigbluebutton.modules.log.view
 			logWindow.height = 220;
 			logWindow.title = LogWindow.TITLE;
 			
-			//logWindow.visible = false;
+			logWindow.visible = false;
 			
 			msg.setBody(viewComponent as LogModule);
 			//viewComponent.mshell.debugLog.text = "in logmodule mediator: addWindow()";

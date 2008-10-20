@@ -85,6 +85,7 @@ package org.bigbluebutton.modules.voiceconference
 	   	 * 
 	   	 */	   	
 	   	public function startup(app:VoiceModule, uri:String):void{
+	   		trace('Starting VoiceModule ' + uri);
 	   		meetMeRoom = new VoiceConferenceRoom(uri);
 	   		sendNotification(STARTUP, app);
 	   		//meetMeRoom.getConnection().connect();

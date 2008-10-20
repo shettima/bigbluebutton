@@ -154,9 +154,11 @@ package org.bigbluebutton.main.view
 				ViewersFacade.getInstance().retrieveProxy(SharedObjectConferenceDelegate.NAME) 
 					as SharedObjectConferenceDelegate;
 			delegate.leave();
+			mshell.toolbar.removeButtons();
 		}
 		
 		private function logout():void{
+			trace('Logging out');
 			shell.mdiCanvas.windowManager.removeAll();
 			
 			var c:Number;
@@ -165,10 +167,10 @@ package org.bigbluebutton.main.view
 				module.logout();
 			}
 			
-			modules = new Array();
-			logModule = new LogModule();
-			runModule(logModule);
-			logModule.mediator.logWindow.visible = false;
+//			modules = new Array();
+//			logModule = new LogModule();
+//			runModule(logModule);
+//			logModule.mediator.logWindow.visible = false;
 			runModule(new ViewersModule());
 			shell.toolbar.enabled = false;	
 		}

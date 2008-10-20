@@ -47,7 +47,8 @@ package org.bigbluebutton.modules.voiceconference.control
 			var app:VoiceModule = notification.getBody() as VoiceModule;
 			facade.registerMediator(new VoiceModuleMediator(app));
 			
-			facade.registerProxy(new NetConnectionDelegate(VoiceConferenceFacade.getInstance().meetMeRoom.getUri()));
+			facade.registerProxy(new NetConnectionDelegate(app.facade.meetMeRoom.getUri()));
+			//facade.registerProxy(new NetConnectionDelegate("rtmp://present.carleton.ca/astmeetme/85115"));
 			facade.registerMediator(new VoiceConfConnectResponder(VoiceConferenceFacade.getInstance().meetMeRoom));
 			//facade.registerMediator(new MeetMeUserItemMediator(new MeetMeUserItem()));
 		}
