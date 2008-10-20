@@ -3,13 +3,14 @@ package org.bigbluebutton.main.model
 	import flash.events.Event;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
+	import flash.utils.Dictionary;
 	
 	public class BbbModuleManager
 	{
 		public static const FILE_PATH:String = "org/bigbluebutton/common/modules.xml";
 		private var urlLoader:URLLoader;
 		private var callbackHandler:Function;
-		public var  modules:Array = new Array();
+		public var  modules:Dictionary = new Dictionary();
 		
 		public function BbbModuleManager()
 		{
@@ -32,7 +33,7 @@ package org.bigbluebutton.main.model
 				trace("parsing xml file " + FILE_PATH);
 				parse(new XML(e.target.data));				
 			} catch(error:TypeError){
-				trace('Error loading XML modules file.');
+				trace('Error loading XML modules file.' + error.message);
 			}
 		}
 		
@@ -45,6 +46,10 @@ package org.bigbluebutton.main.model
 				var mod:ModuleDescriptor = new ModuleDescriptor(item.@name, item.@swfpath);
 				modules[item.@name] = mod;
 			}			
+			trace('Listing all modules');
+			for (var key:Object in modules) {
+				trace(key, modules[key].url);
+			}
 			callbackHandler(modules);
 		}
 

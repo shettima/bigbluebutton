@@ -16,15 +16,25 @@ package org.bigbluebutton.main
 		override public function listNotificationInterests():Array
 		{
 			return [
-					MainApplicationConstants.APP_MODEL_INITIALIZED
+					MainApplicationConstants.APP_STARTED,
+					MainApplicationConstants.APP_MODEL_INITIALIZED,
+					MainApplicationConstants.MODULES_LOADED
 					];
 		}
 		
 		override public function handleNotification(notification:INotification):void
 		{
 			switch(notification.getName()){
+				case MainApplicationConstants.APP_STARTED:
+					trace("Received APP_STARTED");
+					facade.sendNotification(MainApplicationConstants.APP_MODEL_INITIALIZE);
+					break;
 				case MainApplicationConstants.APP_MODEL_INITIALIZED:
-
+					trace("Received APP_MODEL_INITIALIZED");
+					facade.sendNotification(MainApplicationConstants.MODULES_LOAD);
+					break;
+				case MainApplicationConstants.MODULES_LOADED:
+					trace("Received MODULES_LOADED");
 					break;
 			}
 		}

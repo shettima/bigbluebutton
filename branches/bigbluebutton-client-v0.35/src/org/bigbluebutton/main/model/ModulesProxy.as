@@ -1,34 +1,75 @@
 package org.bigbluebutton.main.model
 {
-	import mx.utils.ObjectUtil;
+	import flash.utils.Dictionary;
 	
+	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.puremvc.as3.multicore.interfaces.IProxy;
 	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
 
 	public class ModulesProxy extends Proxy implements IProxy
 	{
+		public static const NAME:String = 'ModulesProxy';
+		
 		private var modulesManager:BbbModuleManager;
-		private var modules:Array;
+		private var _modules:Dictionary;
 		
 		public function ModulesProxy(proxyName:String=null, data:Object=null)
 		{
-			super(proxyName, data);
+			super(NAME, data);
 			modulesManager = new BbbModuleManager();
+			modulesManager.initialize(onInitializeComplete);
 		}
 
-		private function onInitializeComplete(modules:Array):void {
-			this.modules = ObjectUtil.copy(modules) as Array;
+		private function onInitializeComplete(modules:Dictionary):void {
+			//_modules = ObjectUtil.copy(modules) as Dictionary;
+			_modules = modules;
+			trace('Listing all modules2');
+			for (var key:Object in _modules) {
+				trace(key, _modules[key].url);
+			}
+			facade.sendNotification(MainApplicationConstants.APP_MODEL_INITIALIZED);
 		}
 		
-		private function loadModule(name:String,resultHandler:Function):void{
-			var m:ModuleDescriptor = modules[name];
+		public function initialize():void {
+			modulesManager.initialize(onInitializeComplete);			
+		}
+		
+		public function loadModules():void {
+			trace('Loading all modules');
+			for (var key:Object in _modules) {
+				trace(key, _modules[key].url);
+				loadModule(key, loadModuleResultHandler);
+			}
+		}
+		
+		private function loadModule(name:Object,resultHandler:Function):void {
+			trace('Loading ' + name);
+			var m:ModuleDescriptor = _modules[name] as ModuleDescriptor;
 			if (m != null) {
+				trace('Found module ' + m.name);
 				m.load(resultHandler);
+			} else {
+				trace(name + " not found.");
 			}
 		}
 				
+		private function loadModuleResultHandler(moduleName:Object):void {
+			var allLoaded:Boolean = true;			
+			for (var key:Object in _modules) {
+				if (! _modules[key].loaded) allLoaded = false;
+			}			
+			if (allLoaded) {
+				trace('All modules have been loaded');
+				facade.sendNotification(MainApplicationConstants.MODULES_LOADED);
+			}
+		}
+		
 		private function start(name:String):void {
-			modules[name].module.start();
+			_modules[name].module.start();
+		}
+		
+		public function get modules():Dictionary {
+			return _modules;
 		}
 	}
 }

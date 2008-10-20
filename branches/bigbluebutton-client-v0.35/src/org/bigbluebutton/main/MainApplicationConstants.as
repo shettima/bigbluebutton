@@ -36,6 +36,11 @@ package org.bigbluebutton.main
 		public static const CONNECTION_LOST:String = "CONNECTION_LOST"
 		
 		// Try to maintain naming convention (NOUN_VERB)
+		public static const MODULES_LOAD:String = 'load all modules';
+		public static const MODULES_LOADED:String = 'all modules loaded';
+		public static const MODULES_START:String = 'start all modules';
+		public static const MODULES_STARTED:String = 'modules have started';
+		
 		public static const MODULE_LOAD:String = 'load the module';
 		public static const MODULE_LOADED:String = 'module has loaded';
 		public static const MODULE_UNLOAD:String = 'unload the module';
@@ -45,7 +50,9 @@ package org.bigbluebutton.main
 		public static const MODULE_STOPPED:String = 'module has stopped';
 		public static const APP_START:String = 'start main application';
 		public static const APP_STARTED:String = 'app has started';
+		public static const APP_MODEL_INITIALIZE:String = 'initialize app model';
 		public static const APP_MODEL_INITIALIZED:String = 'app model initialized';
+		public static const APP_VIEW_INITIALIZED:String = 'app view initialized';
 		public static const USER_LOGIN:String = 'user logging in';
 		public static const USER_LOGGED_IN:String = 'user logged in'
 		public static const USER_LOGOUT:String = 'user logging out';

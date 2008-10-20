@@ -22,7 +22,6 @@ package org.bigbluebutton.main.view
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
-	import mx.controls.Alert;
 	import mx.controls.Button;
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
@@ -34,7 +33,6 @@ package org.bigbluebutton.main.view
 	import org.bigbluebutton.main.MainApplicationFacade;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.bigbluebutton.modules.log.LogModule;
-	import org.bigbluebutton.modules.log.LogModuleFacade;
 	import org.bigbluebutton.modules.video.VideoModule;
 	import org.bigbluebutton.modules.viewers.ViewersConstants;
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
@@ -99,7 +97,7 @@ package org.bigbluebutton.main.view
 			trace("present:" + Constants.presentationHost);
 			trace("url:" + Constants.TEST_URL);
 			
-			runModule(new ViewersModule());
+			//runModule(new ViewersModule());
 		
 		}
 		
@@ -111,16 +109,15 @@ package org.bigbluebutton.main.view
 		public function showLogWindow(event:Event) : void
 		{
 			//logModule.openLogWindow();
-//			if (logModule.mediator.logWindow.visible == true)
-//			logModule.mediator.logWindow.visible = false;
-//			else
-//			logModule.mediator.logWindow.visible = true;
+			if (logModule.mediator.logWindow.visible == true)
+			logModule.mediator.logWindow.visible = false;
+			else
+			logModule.mediator.logWindow.visible = true;
 		}
 		
 		/**
 		 * Adds a module to this application 
 		 * @param module
-		 * 
 		 */		
 		public function runModule(module:BigBlueButtonModule):void{
 			this.modules.push(module);
@@ -130,7 +127,6 @@ package org.bigbluebutton.main.view
 		/**
 		 * Adds a module to this application to be ran at another time 
 		 * @param module
-		 * 
 		 */		
 		public function addModule(module:BigBlueButtonModule):void{
 			this.modules.push(module);
@@ -261,6 +257,7 @@ package org.bigbluebutton.main.view
 		
 		override public function listNotificationInterests():Array{
 			return [
+					MainApplicationConstants.MODULES_START,
 					MainApplicationFacade.ADD_MODULE,
 					MainApplicationFacade.MODULES_STARTED
 					];
@@ -273,7 +270,7 @@ package org.bigbluebutton.main.view
 					addModule(moduleNote);
 					if (moduleNote.hasButton()) addButton(moduleNote);
 					break;
-				case MainApplicationFacade.MODULES_STARTED:
+				case MainApplicationConstants.MODULES_START:
 					runAddedModules(BigBlueButtonModule.START_ON_LOGIN);
 					break;
 			}

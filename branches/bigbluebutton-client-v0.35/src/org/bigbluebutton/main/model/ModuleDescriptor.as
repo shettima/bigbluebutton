@@ -12,6 +12,7 @@ package org.bigbluebutton.main.model
 		public var url:String;
 		public var loader:ModuleLoader;
 		public var module:BigBlueButtonModule;
+		public var loaded:Boolean = false;
 		
 		private var callbackHandler:Function;
 		
@@ -26,13 +27,13 @@ package org.bigbluebutton.main.model
 
 		public function load(resultHandler:Function):void {
 			callbackHandler = resultHandler;
-			loader.addEventListener("urlChanged", resultHandler);
-			loader.addEventListener("loading", resultHandler);
-			loader.addEventListener("progress", resultHandler);
-			loader.addEventListener("setup", resultHandler);
-			loader.addEventListener("ready", resultHandler);
-			loader.addEventListener("error", resultHandler);
-			loader.addEventListener("unload", resultHandler);
+//			loader.addEventListener("urlChanged", resultHandler);
+//			loader.addEventListener("loading", resultHandler);
+//			loader.addEventListener("progress", resultHandler);
+//			loader.addEventListener("setup", resultHandler);
+			loader.addEventListener("ready", onReady);
+//			loader.addEventListener("error", resultHandler);
+//			loader.addEventListener("unload", resultHandler);
 			loader.url = url;
 			loader.loadModule();
 		}
@@ -41,6 +42,18 @@ package org.bigbluebutton.main.model
 			loader.url = "";
 		}
 
+		private function onReady(event:Event):void {
+			trace("Module onReady Event");
+			var loader:ModuleLoader = event.target as ModuleLoader;
+			module = loader.child as BigBlueButtonModule;
+			if (module != null) {
+				trace("Module " + name + " has been loaded");
+				loaded = true;
+			}
+			callbackHandler(name);
+		}	
+
+/*
 		private function onUrlChanged(event:Event):void {
 			trace("Module onUrlChanged Event");
 			callbackHandler(event);
@@ -61,11 +74,7 @@ package org.bigbluebutton.main.model
 			callbackHandler(event);
 		}	
 
-		private function onReady(event:Event):void {
-			trace("Module onReady Event");
-			var loader:ModuleLoader = event.target as ModuleLoader;
-			module = loader.child as BigBlueButtonModule;
-		}	
+
 
 		private function onError(event:Event):void {
 			trace("Module onError Event");
@@ -76,5 +85,6 @@ package org.bigbluebutton.main.model
 			trace("Module onUnload Event");
 			callbackHandler(event);
 		}		
+*/
 	}
 }
