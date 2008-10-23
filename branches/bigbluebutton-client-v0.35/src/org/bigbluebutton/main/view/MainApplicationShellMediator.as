@@ -190,7 +190,7 @@ package org.bigbluebutton.main.view
 		 * 
 		 */		
 		private function addButton(module:BigBlueButtonModule):void{
-			var button:Button = mshell.toolbar.addButton(module.getDisplayName());
+			var button:Button = mshell.toolbar.addButton(module.moduleName);
 			button.addEventListener(MouseEvent.CLICK, openModule);
 		}
 		
@@ -213,13 +213,13 @@ package org.bigbluebutton.main.view
 				case MainApplicationConstants.ADD_WINDOW_MSG:
 					module = message.getBody() as BigBlueButtonModule;
 //					shell.mdiCanvas.windowManager.add(window);
-					trace("Got message ADD_WINDOW_MSG from " + module.getID());
+					trace("Got message ADD_WINDOW_MSG from " + module.moduleId);
 					setLayout(module);
 					break;
 				case MainApplicationConstants.REMOVE_WINDOW_MSG:
 					module = message.getBody() as BigBlueButtonModule;
-					trace("Got message REMOVE_WINDOW_MSG from " + module.getID());
-					if(module.getID() == LogModule.NAME) {
+					trace("Got message REMOVE_WINDOW_MSG from " + module.moduleId);
+					if(module.moduleId == LogModule.NAME) {
 						//shell.toolbar.LogBtn.enabled = true;
 						module.getMDIComponent().visible = false;
 					} else removeWindow(module);

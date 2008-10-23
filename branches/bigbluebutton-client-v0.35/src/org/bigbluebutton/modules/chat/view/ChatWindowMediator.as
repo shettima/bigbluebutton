@@ -21,7 +21,7 @@ package org.bigbluebutton.modules.chat.view
 {
 	import flash.events.Event;
 	
-	import org.bigbluebutton.modules.chat.ChatFacade;
+	import org.bigbluebutton.modules.chat.ChatModuleConstants;
 	import org.bigbluebutton.modules.chat.model.business.ChatProxy;
 	import org.bigbluebutton.modules.chat.model.vo.*;
 	import org.bigbluebutton.modules.chat.view.components.ChatWindow;
@@ -58,6 +58,7 @@ package org.bigbluebutton.modules.chat.view
 		{
 			return viewComponent as ChatWindow;
 		}
+		
 		/**
 		 * handler for the event of sending new message
 		 * @param e
@@ -65,7 +66,7 @@ package org.bigbluebutton.modules.chat.view
 		 */		
 		public function sendNewMessage(e:Event):void
 		{
-			proxy.sendMessageToSharedObject(chatWindow.m);
+			proxy.sendMessage("test message");
 		}
 		
 		/**
@@ -76,9 +77,10 @@ package org.bigbluebutton.modules.chat.view
 		override public function listNotificationInterests():Array
 		{
 			return [
-					ChatFacade.NEW_MESSAGE
+					ChatModuleConstants.NEW_MESSAGE
 				   ];
 		}
+		
 		/**
 		 * Handlers for notification(s) this class is listening to 
 		 * @param notification
@@ -88,16 +90,12 @@ package org.bigbluebutton.modules.chat.view
 		{
 			switch(notification.getName())
 			{
-				case ChatFacade.NEW_MESSAGE:
-					this.chatWindow.showNewMessage(notification.getBody() as MessageObject);
+				case ChatModuleConstants.NEW_MESSAGE:
+					this.chatWindow.showNewMessage(notification.getBody() as String);
 					break;	
 			}
 		}
-		/**
-		 * 
-		 * @return proxy
-		 * 
-		 */		
+			
 		public function get proxy():ChatProxy
 		{
 			return facade.retrieveProxy(ChatProxy.NAME) as ChatProxy;

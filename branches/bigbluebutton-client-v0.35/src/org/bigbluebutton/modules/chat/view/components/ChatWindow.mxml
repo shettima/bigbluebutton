@@ -21,6 +21,8 @@
 			public static const TITLE:String = "Public Chat";
 			private var sizeM:Menu;		
 			public var m:MessageObject;
+			public var username:String = "unknown";
+			
 			[Bindable]
 			public var messageVO:MessageVO = new MessageVO();
 			
@@ -50,13 +52,11 @@
 				}
 			}
 			
-			public function showNewMessage(rm : MessageObject):void
+			public function showNewMessage(message:String):void
 			{
-			var newMessage:String;
-			newMessage = "<font color=\"#" + rm.color.toString(16) + "\"><b>[" + 
-						rm.getUserid() +" @ "+ time()+ "]</b> " + rm.message + "</font>";
-			txtChatBox.htmlText += newMessage + "\n";
+				txtChatBox.htmlText += message + "\n";
 			}
+			
 			public function setFocusOn(component:UIComponent):void
 			{
 				if (component.id == "txtMsg") {
@@ -70,6 +70,7 @@
     			}
 				//this.txtMsg.focusManager.showFocusIndicator = true;
 			}
+			
 			public function setFocusOff():void
 			{
 				//this.txtMsg.setFocus();
@@ -81,29 +82,30 @@
 
 		    public function sendMessages():void
 		    {
-		   	if (txtMsg.text.length > 4000)
-		   	{
-		   		txtChatBox.htmlText += "Your message is too long!" + 
-		   			" There is a limit of maximum 4000 character per message." + "\n";
-		   		return;
-		   	} 
-		   			
-		   	else if (txtMsg.text != ""){
-		   	this.m = new MessageObject(txtMsg.text, cmpColorPicker.selectedColor);
-		   	dispatchEvent(new Event(ChatWindowMediator.NEW_MESSAGE));}
-		   	txtMsg.text = "";
-		    }
+			   	if (txtMsg.text.length > 1000)
+			   	{
+			   		txtChatBox.htmlText += "Your message is too long!" + 
+			   			" There is a limit of maximum 1000 character per message." + "\n";
+			   		return;
+			   	}  	else if (txtMsg.text != ""){
+					var newMessage:String;
+					newMessage = "<font color=\"#" + cmpColorPicker.selectedColor + "\"><b>[" + 
+							username +" - "+ time()+ "]</b> " + txtMsg.text + "</font>";
+			   		dispatchEvent(new Event(ChatWindowMediator.NEW_MESSAGE));
+			   		txtMsg.text = "";
+			   	}
+			}
 		   
             private function updateScroll():void
             {
             	txtChatBox.verticalScrollPosition = txtChatBox.maxVerticalScrollPosition;
             }
+            
             private function time() : String
 			{
-			var date:Date = new Date();
-			var t:String = date.toLocaleTimeString();
-			//var d:String = date.toLocaleDateString();
-			return t;
+				var date:Date = new Date();
+				var t:String = date.toLocaleTimeString();
+				return t;
 			}
 		]]>
 	</mx:Script>

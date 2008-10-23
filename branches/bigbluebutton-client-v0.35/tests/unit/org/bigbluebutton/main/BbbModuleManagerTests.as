@@ -11,7 +11,6 @@ package org.bigbluebutton.main
 	
 	import org.bigbluebutton.common.BigBlueButtonModule;
 	import org.bigbluebutton.main.model.BbbModuleManager;
-	import org.bigbluebutton.modules.chat.ChatModule;
 	import org.bigbluebutton.modules.video.VideoModule;
 
 	public class BbbModuleManagerTests extends TestCase

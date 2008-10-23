@@ -19,26 +19,18 @@
 */
 package org.bigbluebutton.common
 {
-	import flexlib.mdi.containers.MDIWindow;
-	
-	import mx.controls.Button;
-	import mx.modules.Module;
-	
 	import org.bigbluebutton.common.messaging.Router;
 
 	public interface IBigBlueButtonModule
 	{
-		function getXPosition():Number;	
-		function getYPosition():Number;	
-		function getMDIComponent():MDIWindow;	
-		function logout():void;	
 		function acceptRouter(router:Router):void;		
 		function get router():Router;		
-		function set router(router:Router):void;
-		function hasButton():Boolean;
-		function getID():String;			
-		function getDisplayName():String;			
-		function getStartTime():String;
+		function get moduleId():String;			
+		function get moduleName():String;	
+		function set username(user:String):void;
+		function set uri(uri:String):void;
+		function get username():String;
+		function get uri():String;		
 		function start():void;
 		function stop():void;
 	}

@@ -115,8 +115,8 @@ package org.bigbluebutton.modules.presentation.view
 		 * Handles a received Ready notification 
 		 * 
 		 */		
-		private function handleReadyEvent():void{
-			
+		private function handleReadyEvent():void
+		{			
 			presentationWindow.thumbnailView.visible = false;
 			//sharePresentation(new Event("share"));
 		}

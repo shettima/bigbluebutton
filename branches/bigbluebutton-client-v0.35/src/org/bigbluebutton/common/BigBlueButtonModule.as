@@ -45,7 +45,7 @@ package org.bigbluebutton.common
 		private var MDIComponent:MDIWindow;
 		
 		//This is the name of your module
-		protected var moduleName:String;
+		protected var _moduleName:String;
 		public var _router:Router;
 		
 		private var conn:Connection;
@@ -66,7 +66,7 @@ package org.bigbluebutton.common
 		public function BigBlueButtonModule(name:String)
 		{
 			super();
-			this.moduleName = name;
+			_moduleName = name;
 		}
 		
 		/**
@@ -124,10 +124,6 @@ package org.bigbluebutton.common
 			return _router;
 		}
 		
-		public function set router(router:Router):void{
-			this._router = router;
-		}
-		
 		
 		/**
 		 * Called from the main program. Tells the program whether you'd like a button added to the main toolbar 
@@ -143,8 +139,8 @@ package org.bigbluebutton.common
 		 * @return 
 		 * 
 		 */		
-		public function getID():String{
-			return this.moduleName;
+		public function get moduleId():String{
+			return _moduleName;
 		}
 		
 		/**
@@ -152,7 +148,7 @@ package org.bigbluebutton.common
 		 * @return 
 		 * 
 		 */		
-		public function getDisplayName():String{
+		public function get moduleName():String{
 			return this.displayName;
 		}
 		
@@ -169,5 +165,14 @@ package org.bigbluebutton.common
 		}
 		
 		public function stop():void {}
+		
+		public function set uri(uri:String):void {}
+		public function set username(name:String):void {}
+		public function get uri():String {
+			return "not implemented yet";
+		}
+		public function get username():String {
+			return "not implemented yet";
+		}
 	}
 }
