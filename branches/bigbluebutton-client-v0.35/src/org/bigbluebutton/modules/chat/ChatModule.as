@@ -38,7 +38,7 @@ package org.bigbluebutton.modules.chat
 	 * Class ChatModule acts as view component for Chat Application
 	 * 
 	 */	
-	public class ChatModule extends BigBlueButtonModule implements IRouterAware
+	public class ChatModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = 'ChatModule';
 		public var chatWindow : ChatWindow;

@@ -40,7 +40,7 @@ package org.bigbluebutton.modules.presentation
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class PresentationModule extends BigBlueButtonModule implements IRouterAware
+	public class PresentationModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = "Presentation Module";
 		

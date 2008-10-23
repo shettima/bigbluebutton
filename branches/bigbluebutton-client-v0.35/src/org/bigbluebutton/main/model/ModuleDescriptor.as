@@ -4,14 +4,14 @@ package org.bigbluebutton.main.model
 	
 	import mx.modules.ModuleLoader;
 	
-	import org.bigbluebutton.common.BigBlueButtonModule;
+	import org.bigbluebutton.common.IBigBlueButtonModule;
 	
 	public class ModuleDescriptor
 	{
 		public var name:String;
 		public var url:String;
 		public var loader:ModuleLoader;
-		public var module:BigBlueButtonModule;
+		public var module:IBigBlueButtonModule;
 		public var loaded:Boolean = false;
 		
 		private var callbackHandler:Function;
@@ -45,7 +45,7 @@ package org.bigbluebutton.main.model
 		private function onReady(event:Event):void {
 			trace("Module onReady Event");
 			var loader:ModuleLoader = event.target as ModuleLoader;
-			module = loader.child as BigBlueButtonModule;
+			module = loader.child as IBigBlueButtonModule;
 			if (module != null) {
 				trace("Module " + name + " has been loaded");
 				loaded = true;

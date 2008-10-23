@@ -13,7 +13,7 @@ package org.bigbluebutton.modules.sample_module
 	 * @author Denis
 	 * 
 	 */	
-	public class SampleModule extends BigBlueButtonModule implements IRouterAware
+	public class SampleModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = "SampleModule";
 		private var window:SampleWindow;

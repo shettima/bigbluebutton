@@ -36,7 +36,7 @@ package org.bigbluebutton.modules.video
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class VideoModule extends BigBlueButtonModule implements IRouterAware
+	public class VideoModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = "Share Webcam";
 		public static const RECORDER:String = "Recording Module";

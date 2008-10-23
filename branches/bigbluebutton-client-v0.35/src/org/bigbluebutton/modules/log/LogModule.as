@@ -34,7 +34,7 @@ package org.bigbluebutton.modules.log
 	 * view component class for LogModuleMediator
 	 * 
 	 */	
-	public class LogModule extends BigBlueButtonModule implements IRouterAware
+	public class LogModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = 'LogModule';
 		

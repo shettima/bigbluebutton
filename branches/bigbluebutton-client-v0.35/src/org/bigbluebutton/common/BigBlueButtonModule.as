@@ -34,7 +34,7 @@ package org.bigbluebutton.common
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class BigBlueButtonModule extends Module
+	public class BigBlueButtonModule extends Module implements IBigBlueButtonModule
 	{
 		//This is the X position on the screen where you would like your module to appear
 		public var preferedX:Number;
@@ -165,8 +165,9 @@ package org.bigbluebutton.common
 			return this.startTime;
 		}
 
-		public function start():void {
-			
+		public function start():void {			
 		}
+		
+		public function stop():void {}
 	}
 }

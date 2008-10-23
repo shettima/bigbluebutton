@@ -11,12 +11,12 @@
 		click="dispatchEvent(new Event(FileUploadWindowMediator.START_UPLOAD))" enabled="false"
 		icon="@Embed('assets/bullet_go.png')" x="366" y="26"/>
 	
-	<mx:Label id="progBarLbl" text="Progress:" x="21" y="67" visible="false"/>
-	
+	<!--mx:Label id="progBarLbl" text="Progress:" x="21" y="67" visible="false"/-->
+	<mx:Label id="progressLbl" text="" x="21" y="67" width="100%"/>
 	<!--mx:ProgressBar id="progressBar" mode="manual" label="" labelPlacement="center" width="360" y="67" x="87" visible="false"/-->
 	
 	<mx:ControlBar horizontalAlign="center" verticalAlign="middle" x="0" y="106">
-		<mx:Label id="progressLbl" text="" width="100%"/>
+		<!--mx:Label id="progressLbl" text="" width="100%"/-->
 		<mx:Spacer width="100%"/>
 		<mx:Button id="okCancelBtn" label="Cancel" click="dispatchEvent(new Event(FileUploadWindowMediator.CLOSE_UPLOAD_WINDOW))"/>
 	</mx:ControlBar>	

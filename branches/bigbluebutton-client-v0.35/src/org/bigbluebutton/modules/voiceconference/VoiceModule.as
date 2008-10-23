@@ -35,7 +35,7 @@ package org.bigbluebutton.modules.voiceconference
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class VoiceModule extends BigBlueButtonModule implements IRouterAware
+	public class VoiceModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = "VoiceModule";
 		public static const URI:String = "rtmp://" + Constants.red5Host + "/astmeetme/"; 

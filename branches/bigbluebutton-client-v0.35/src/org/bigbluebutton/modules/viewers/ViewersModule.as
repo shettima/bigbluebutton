@@ -34,7 +34,7 @@ package org.bigbluebutton.modules.viewers
 	 * @author dzgonjan
 	 * 
 	 */	
-	public class ViewersModule extends BigBlueButtonModule implements IRouterAware
+	public class ViewersModule extends BigBlueButtonModule
 	{
 		public static const NAME:String = "ViewersModule";
 		

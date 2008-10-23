@@ -2,7 +2,7 @@ package org.bigbluebutton.main.model
 {
 	import flash.utils.Dictionary;
 	
-	import org.bigbluebutton.common.BigBlueButtonModule;
+	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.puremvc.as3.multicore.interfaces.IProxy;
@@ -23,7 +23,6 @@ package org.bigbluebutton.main.model
 		}
 
 		private function onInitializeComplete(modules:Dictionary):void {
-			//_modules = ObjectUtil.copy(modules) as Dictionary;
 			_modules = modules;
 			trace('Listing all modules2');
 			for (var key:Object in _modules) {
@@ -49,7 +48,7 @@ package org.bigbluebutton.main.model
 			for (var key:Object in _modules) {
 				trace('Starting ' + _modules[key].name);
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
-				var bbb:BigBlueButtonModule = m.module as BigBlueButtonModule;
+				var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
 				if (m.name == 'ViewersModule') {
 					bbb.acceptRouter(router);	
 				}
@@ -62,7 +61,7 @@ package org.bigbluebutton.main.model
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
 				if (m.name == name) {
 					trace('Starting ' + _modules[key].name);
-					var bbb:BigBlueButtonModule = m.module as BigBlueButtonModule;
+					var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
 					bbb.acceptRouter(router);	
 				}
 			}		

@@ -83,7 +83,7 @@ package org.bigbluebutton.modules.presentation.view
 		private function startUpload(e:Event):void{
 			trace("In startUpload()...")
 			PresentationFacade.getInstance().presentationApp.uploadPresentation(fileToUpload);
-			fileUploadWindow.progBarLbl.visible = true;
+//			fileUploadWindow.progBarLbl.visible = true;
 //			fileUploadWindow.progressBar.visible = true;
 			
 			//fileUploadWindow.okCancelBtn.visible = false;
@@ -207,6 +207,7 @@ package org.bigbluebutton.modules.presentation.view
 //			fileUploadWindow.progressBar.label = "Upload successful.";
 //			fileUploadWindow.progressBar.setProgress(0, 100);
 //			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.validateNow();
 
 			fileUploadWindow.fileLbl.visible = false;
 			fileUploadWindow.selectBtn.visible = false;
@@ -225,6 +226,7 @@ package org.bigbluebutton.modules.presentation.view
 //			fileUploadWindow.progressBar.label = progress + "% uploaded.";
 //			fileUploadWindow.progressBar.setProgress(progress, 100);
 //			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.validateNow();
 		}
 		
 		/**
@@ -259,6 +261,7 @@ package org.bigbluebutton.modules.presentation.view
 //					+ convertEvt.totalSlides + " slides.";
 //			fileUploadWindow.progressBar.setProgress(convertEvt.completedSlides, convertEvt.totalSlides);
 //			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.validateNow();
 		}
 		
 		/**
@@ -273,6 +276,7 @@ package org.bigbluebutton.modules.presentation.view
 //					+ extractEvt.totalSlides + " slides.";
 //			fileUploadWindow.progressBar.setProgress(extractEvt.completedSlides, extractEvt.totalSlides);
 //			fileUploadWindow.progressBar.validateNow();
+			fileUploadWindow.progressLbl.validateNow();
 		}
 		
 		/**
@@ -282,6 +286,7 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleUpdateProgressEvent(note:INotification):void{
 			fileUploadWindow.progressLbl.text = note.getBody() as String;
+			fileUploadWindow.progressLbl.validateNow();
 		}
 		
 		/**
