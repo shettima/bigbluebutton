@@ -63,6 +63,7 @@ package org.bigbluebutton.main.model
 					trace('Starting ' + _modules[key].name);
 					var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
 					bbb.acceptRouter(router);	
+					bbb.start();
 				}
 			}		
 		}

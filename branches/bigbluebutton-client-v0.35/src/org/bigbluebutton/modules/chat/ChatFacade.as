@@ -55,9 +55,6 @@ package org.bigbluebutton.modules.chat
 	
 		public function startup(app:IBigBlueButtonModule):void {
 			sendNotification(ChatFacade.STARTUP, app);
-		}
-		
-		
-		
+		}		
 	}
 }

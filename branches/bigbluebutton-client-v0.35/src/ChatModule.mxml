@@ -12,8 +12,8 @@
 			private var _moduleId:String = "ChatModule";
 			private var _moduleName:String = "Chat Module";
 			
-			private var _uri:String;
-			private var _username:String;
+			private var _uri:String = "rtmp://localhost/chatServer/85115";
+			private var _username:String = "ralam";
 			
 			private var facade:ChatFacade;
 			

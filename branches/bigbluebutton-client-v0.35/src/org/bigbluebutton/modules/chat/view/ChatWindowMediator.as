@@ -80,7 +80,7 @@ package org.bigbluebutton.modules.chat.view
 					ChatModuleConstants.NEW_MESSAGE
 				   ];
 		}
-		
+				
 		/**
 		 * Handlers for notification(s) this class is listening to 
 		 * @param notification

@@ -25,7 +25,7 @@ package org.bigbluebutton.modules.chat.model.business
 		
 	public class NetConnectionDelegate
 	{
-		public static const ID : String = "ChatConnectionDelegate";
+		public static const NAME : String = "NetConnectionDelegate";
 
 		private var _netConnection : NetConnection;	
 		private var _uri : String;
@@ -86,6 +86,7 @@ package org.bigbluebutton.modules.chat.model.business
 			switch ( statusCode ) 
 			{
 				case "NetConnection.Connect.Success" :
+					trace("Connection to chat server succeeded.");
 					_connectionListener(true);					
 					break;
 			
