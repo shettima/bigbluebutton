@@ -28,6 +28,11 @@ package org.bigbluebutton.modules.chat.view
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
+	import org.puremvc.as3.multicore.utilities.pipes.messages.Message;
+	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
+	import org.puremvc.as3.multicore.utilities.pipes.messages.Message;
+	import org.puremvc.as3.multicore.utilities.pipes.plumbing.PipeListener;
+	
 	/**
 	 * 
 	 * Mediator Class for ChatWindow view component
@@ -80,7 +85,11 @@ package org.bigbluebutton.modules.chat.view
 					ChatModuleConstants.NEW_MESSAGE
 				   ];
 		}
-				
+
+		private function addWindow():void{
+
+		}
+						
 		/**
 		 * Handlers for notification(s) this class is listening to 
 		 * @param notification

@@ -6,5 +6,6 @@ package org.bigbluebutton.modules.chat.model.business
 		function disconnect():void;
 		function sendMessage(message:String):void;
 		function addMessageListener(msgListener:Function):void;
+		function addConnectionStatusListener(connectionListener:Function):void;
 	}
 }

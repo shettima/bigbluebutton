@@ -13,6 +13,7 @@ package org.bigbluebutton.main.model
 		public var loader:ModuleLoader;
 		public var module:IBigBlueButtonModule;
 		public var loaded:Boolean = false;
+		public var started:Boolean = false;
 		
 		private var callbackHandler:Function;
 		
@@ -22,7 +23,6 @@ package org.bigbluebutton.main.model
 			this.url = url;
 			
 			loader = new ModuleLoader();
-
 		}
 
 		public function load(resultHandler:Function):void {

@@ -37,7 +37,7 @@ package org.bigbluebutton.common.messaging
 		// Listens from messages from the core and routes messages.
 		private var inputMessageRouter : PipeListener;
 		
-		// Mergers all OutputPipes from the modules so that the Router
+		// Merges all OutputPipes from the modules so that the Router
 		// will have only one listener.
 		//    outpipe --->|
 		//    outpipe --->|---> listener ---> inputpipe

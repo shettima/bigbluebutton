@@ -19,8 +19,8 @@
 */
 package org.bigbluebutton.main.controller
 {
-	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.main.MainApplicationMediator;
+	import org.bigbluebutton.main.MainEndpointMediator;
 	import org.bigbluebutton.main.model.ModulesProxy;
 	import org.bigbluebutton.main.view.MainApplicationShellMediator;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
@@ -39,8 +39,8 @@ package org.bigbluebutton.main.controller
 			var app:MainApplicationShell = note.getBody() as MainApplicationShell;
 			facade.registerMediator( new MainApplicationShellMediator( app ) );			
 			facade.registerMediator(new MainApplicationMediator());
+			facade.registerMediator(new MainEndpointMediator());
 			facade.registerProxy(new ModulesProxy());
-			//facade.sendNotification(MainApplicationConstants.APP_STARTED);
 		}		
 	}
 }

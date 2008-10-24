@@ -26,8 +26,8 @@ package org.bigbluebutton.main
 	 */	
 	public class MainApplicationConstants
 	{
-		public static const FROM_MAIN:String = 'MAIN_SRC_ADDR';
-		public static const TO_MAIN:String = 'MAIN_DST_ADDR';
+		public static const FROM_MAIN:String = 'FROM_MAIN_APP';
+		public static const TO_MAIN:String = 'TO_MAIN_APP';
 
 		public static const ADD_WINDOW_MSG:String = 'ADD_WINDOW_MSG';
 		public static const REMOVE_WINDOW_MSG:String = 'REMOVE_WINDOW_MSG';
@@ -40,14 +40,11 @@ package org.bigbluebutton.main
 		public static const MODULES_LOADED:String = 'all modules loaded';
 		public static const MODULES_START:String = 'start all modules';
 		public static const MODULES_STARTED:String = 'modules have started';
-		
+		public static const MODULE_STOP:String = 'MODULE_STOP';
+		public static const MODULE_START:String = 'MODULE_START';		
 		public static const MODULE_LOAD:String = 'load the module';
 		public static const MODULE_LOADED:String = 'module has loaded';
 		public static const MODULE_UNLOAD:String = 'unload the module';
-		public static const MODULE_START:String = 'start the module';
-		public static const MODULE_STARTED:String = 'module has started';
-		public static const MODULE_STOP:String = 'stop the module';
-		public static const MODULE_STOPPED:String = 'module has stopped';
 		public static const APP_START:String = 'start main application';
 		public static const APP_STARTED:String = 'app has started';
 		public static const APP_MODEL_INITIALIZE:String = 'initialize app model';
@@ -57,6 +54,6 @@ package org.bigbluebutton.main
 		public static const USER_LOGGED_IN:String = 'user logged in'
 		public static const USER_LOGOUT:String = 'user logging out';
 		public static const USER_LOGGED_OUT:String = 'user logged out';
-		
+				
 	}
 }

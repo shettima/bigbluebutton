@@ -20,6 +20,7 @@
 package org.bigbluebutton.modules.chat.controller
 {
 	import org.bigbluebutton.common.IBigBlueButtonModule;
+	import org.bigbluebutton.modules.chat.ChatEndpointMediator;
 	import org.bigbluebutton.modules.chat.ChatModuleMediator;
 	import org.bigbluebutton.modules.chat.model.business.ChatProxy;
 	import org.bigbluebutton.modules.chat.view.ChatWindowMediator;
@@ -34,6 +35,7 @@ package org.bigbluebutton.modules.chat.controller
 			var m:IBigBlueButtonModule = notification.getBody() as IBigBlueButtonModule;
 			
 			facade.registerMediator(new ChatModuleMediator(m));
+			facade.registerMediator(new ChatEndpointMediator(m));
 			var win:ChatWindow = new ChatWindow();
 			win.username = m.username;
 			facade.registerMediator( new ChatWindowMediator(new ChatWindow()) );

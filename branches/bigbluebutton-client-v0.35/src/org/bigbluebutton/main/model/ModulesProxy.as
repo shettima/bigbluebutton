@@ -15,7 +15,7 @@ package org.bigbluebutton.main.model
 		private var modulesManager:BbbModuleManager;
 		private var _modules:Dictionary;
 		
-		public function ModulesProxy(proxyName:String=null, data:Object=null)
+		public function ModulesProxy(data:Object=null)
 		{
 			super(NAME, data);
 			modulesManager = new BbbModuleManager();
@@ -57,17 +57,33 @@ package org.bigbluebutton.main.model
 
 		public function startModule(name:String, router:Router):void {
 			trace('Request to start module ' + name);
+			var bbb:IBigBlueButtonModule = findModule(name);
+			if (bbb != null) {
+				trace('Starting ' + name);
+				bbb.acceptRouter(router);
+				bbb.start();		
+			}	
+		}
+
+		public function stopModule(name:String):void {
+			trace('Request to stop module ' + name);
+			var bbb:IBigBlueButtonModule = findModule(name);
+			if (bbb != null) {
+				trace('Stopping ' + name);
+				bbb.stop();		
+			}
+		}
+		
+		private function findModule(name:String):IBigBlueButtonModule {
 			for (var key:Object in _modules) {				
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
 				if (m.name == name) {
-					trace('Starting ' + _modules[key].name);
-					var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
-					bbb.acceptRouter(router);	
-					bbb.start();
+					return m.module as IBigBlueButtonModule;
 				}
 			}		
+			return null;	
 		}
-		
+				
 		private function loadModule(name:Object,resultHandler:Function):void {
 			trace('Loading ' + name);
 			var m:ModuleDescriptor = _modules[name] as ModuleDescriptor;
@@ -90,9 +106,17 @@ package org.bigbluebutton.main.model
 			}
 		}
 		
-		private function start(name:String):void {
-			_modules[name].module.start();
+		public function moduleStarted(name:String, started:Boolean):void {
+			for (var key:Object in _modules) {
+				trace('Starting ' + _modules[key].name);
+				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
+				if (m != null) {
+					m.started = started;
+				}
+			}		
 		}
+		
+		
 		
 		public function get modules():Dictionary {
 			return _modules;

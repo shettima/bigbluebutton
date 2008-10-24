@@ -15,10 +15,8 @@
 			private var _uri:String = "rtmp://localhost/chatServer/85115";
 			private var _username:String = "ralam";
 			
-			private var facade:ChatFacade;
-			
 			private function onCreationComplete():void {
-				facade = ChatFacade.getInstance();				
+				trace("ChatModule Initialized");			
 			}
 			
 			public function acceptRouter(router:Router):void{
@@ -54,7 +52,7 @@
 			}
 			
 			public function start():void {		
-				facade.startup(this);	
+				ChatFacade.getInstance().startup(this);	
 			}
 		
 			public function stop():void {}

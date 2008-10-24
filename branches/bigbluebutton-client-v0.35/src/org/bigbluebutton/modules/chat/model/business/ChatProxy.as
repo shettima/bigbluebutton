@@ -36,6 +36,15 @@ package org.bigbluebutton.modules.chat.model.business
 			chatService = new ChatSOService(uri);
 			chatService.connect(uri);
 			chatService.addMessageListener(newMessageHandler);
+			chatService.addConnectionStatusListener(connectionStatusListener);
+		}
+		
+		private function connectionStatusListener(connected:Boolean):void {
+			if (connected) {
+				sendNotification(ChatModuleConstants.CONNECTED);
+			} else {
+				sendNotification(ChatModuleConstants.DISCONNECTED);
+			}
 		}
 		
 		private function newMessageHandler(message:String):void {

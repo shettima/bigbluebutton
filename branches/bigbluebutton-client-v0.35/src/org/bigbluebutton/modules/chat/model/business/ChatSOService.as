@@ -22,8 +22,6 @@ package org.bigbluebutton.modules.chat.model.business
 	import flash.events.AsyncErrorEvent;
 	import flash.events.NetStatusEvent;
 	import flash.net.SharedObject;
-	
-	import org.bigbluebutton.modules.chat.ChatModuleConstants;
 
 	public class ChatSOService implements IChatService
 	{
@@ -33,6 +31,7 @@ package org.bigbluebutton.modules.chat.model.business
 		private var netConnectionDelegate: NetConnectionDelegate;
 		private var _uri:String;
 		private var _msgListener:Function;
+		private var _connectionListener:Function;
 		
 		public function ChatSOService(uri:String)
 		{			
@@ -67,7 +66,8 @@ package org.bigbluebutton.modules.chat.model.business
 			chatSO.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
 			chatSO.client = this;
 			chatSO.connect(netConnectionDelegate.connection);
-			trace(NAME + ":Chat is connected to Shared object");			
+			trace(NAME + ":Chat is connected to Shared object");
+			notifyConnectionStatusListener(true);			
 		}
 		
 	    private function leave():void
@@ -79,20 +79,28 @@ package org.bigbluebutton.modules.chat.model.business
 			_msgListener = messageListener;
 		}
 		
+		public function addConnectionStatusListener(connectionListener:Function):void {
+			_connectionListener = connectionListener;
+		}
+		
 		public function sendMessage(message:String):void
 		{
 			chatSO.send("receiveNewMessage", message);
 		}
 			
 		public function receiveNewMessage(message:String):void{
-			_msgListener( message);		   
+			if (_msgListener != null) {
+				_msgListener( message);
+			}		   
 		}
 
-		/**
-		 * Method is called when a new NetStatusEvent is received 
-		 * @param event
-		 * 
-		 */		
+
+		private function notifyConnectionStatusListener(connected:Boolean):void {
+			if (_connectionListener != null) {
+				_connectionListener(connected);
+			}
+		}
+
 		private function netStatusHandler ( event : NetStatusEvent ) : void
 		{
 			var statusCode : String = event.info.code;
@@ -100,31 +108,38 @@ package org.bigbluebutton.modules.chat.model.business
 			switch ( statusCode ) 
 			{
 				case "NetConnection.Connect.Success" :
-					trace(NAME + ":Connection Success");					
+					trace(NAME + ":Connection Success");		
+					notifyConnectionStatusListener(true);			
 					break;
 			
 				case "NetConnection.Connect.Failed" :			
 					trace(NAME + ":Connection to chat server failed");
+					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.Closed" :									
 					trace(NAME + ":Connection to chat server closed");
+					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.InvalidApp" :				
 					trace(NAME + ":Chat application not found on server");
+					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.AppShutDown" :
 					trace(NAME + ":Chat application has been shutdown");
+					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.Rejected" :
 					trace(NAME + ":No permissions to connect to the chat application" );
+					notifyConnectionStatusListener(false);
 					break;
 					
 				default :
 				   trace(NAME + ":default - " + event.info.code );
+				   notifyConnectionStatusListener(false);
 				   break;
 			}
 		}
@@ -132,6 +147,7 @@ package org.bigbluebutton.modules.chat.model.business
 		private function asyncErrorHandler ( event : AsyncErrorEvent ) : void
 		{
 			trace( "ChatSO asyncErrorHandler " + event.error);
+			notifyConnectionStatusListener(false);
 		}
 	}
 }
