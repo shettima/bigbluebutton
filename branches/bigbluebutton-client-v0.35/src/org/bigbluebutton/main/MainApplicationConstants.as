@@ -31,7 +31,9 @@ package org.bigbluebutton.main
 
 		public static const ADD_WINDOW_MSG:String = 'ADD_WINDOW_MSG';
 		public static const REMOVE_WINDOW_MSG:String = 'REMOVE_WINDOW_MSG';
-		
+		public static const OPEN_WINDOW:String = 'ADD_WINDOW_MSG';
+		public static const CLOSE_WINDOW:String = 'REMOVE_WINDOW_MSG';
+				
 		public static const LOGIN_COMPLETE:String = "LOGIN_COMPLETE";
 		public static const CONNECTION_LOST:String = "CONNECTION_LOST"
 		
@@ -42,6 +44,8 @@ package org.bigbluebutton.main
 		public static const MODULES_STARTED:String = 'modules have started';
 		public static const MODULE_STOP:String = 'MODULE_STOP';
 		public static const MODULE_START:String = 'MODULE_START';		
+		public static const MODULE_STOPPED:String = 'MODULE_STOPPED';
+		public static const MODULE_STARTED:String = 'MODULE_STARTED'
 		public static const MODULE_LOAD:String = 'load the module';
 		public static const MODULE_LOADED:String = 'module has loaded';
 		public static const MODULE_UNLOAD:String = 'unload the module';

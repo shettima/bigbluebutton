@@ -32,13 +32,11 @@ package org.bigbluebutton.modules.chat.controller
 	public class StartupCommand extends SimpleCommand implements ICommand
 	{	
 		override public function execute(notification:INotification):void {
-			var m:IBigBlueButtonModule = notification.getBody() as IBigBlueButtonModule;
+			var m:ChatModule = notification.getBody() as ChatModule;
 			
 			facade.registerMediator(new ChatModuleMediator(m));
 			facade.registerMediator(new ChatEndpointMediator(m));
-			var win:ChatWindow = new ChatWindow();
-			win.username = m.username;
-			facade.registerMediator( new ChatWindowMediator(new ChatWindow()) );
+			facade.registerMediator( new ChatWindowMediator(m) );
 			facade.registerProxy(new ChatProxy(m.uri));
 		}
 	}

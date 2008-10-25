@@ -31,10 +31,6 @@ package org.bigbluebutton.modules.chat
 			_endpoint = new Endpoint(_router, FROM_CHAT_MODULE, TO_CHAT_MODULE, messageReceiver);	
 		}
 		
-		override public function sendNotification(notificationName:String, body:Object=null, type:String=null):void
-		{
-		}
-		
 		override public function getMediatorName():String
 		{
 			return NAME;
@@ -44,7 +40,8 @@ package org.bigbluebutton.modules.chat
 		{
 			return [
 				ChatModuleConstants.CONNECTED,
-				ChatModuleConstants.DISCONNECTED
+				ChatModuleConstants.DISCONNECTED,
+				ChatModuleConstants.ADD_WINDOW
 			];
 		}
 		
@@ -61,6 +58,11 @@ package org.bigbluebutton.modules.chat
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STOPPED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
 					break;
+				case ChatModuleConstants.ADD_WINDOW:
+					trace('Sending Chat ADD_WINDOW message to main');
+					_endpoint.sendMessage(EndpointMessageConstants.ADD_WINDOW, 
+							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
+					break;
 			}
 		}
 	
@@ -69,8 +71,11 @@ package org.bigbluebutton.modules.chat
 			var msg : String = message.getHeader().MSG as String;
 			switch(msg){
 				case EndpointMessageConstants.CLOSE_WINDOW:
+					facade.sendNotification(ChatModuleConstants.CLOSE_WINDOW);
 					break;
 				case EndpointMessageConstants.OPEN_WINDOW:
+					trace('Received OPEN_WINDOW message from ' + message.getHeader().SRC);
+					facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
 					break;
 			}
 		}

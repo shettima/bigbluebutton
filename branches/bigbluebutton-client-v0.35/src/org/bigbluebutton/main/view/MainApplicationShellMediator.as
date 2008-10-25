@@ -19,31 +19,12 @@
 */
 package org.bigbluebutton.main.view 
 {
-	import flash.events.Event;
-	import flash.events.MouseEvent;
-	
-	import mx.controls.Button;
-	
-	import org.bigbluebutton.common.BigBlueButtonModule;
 	import org.bigbluebutton.common.Constants;
-	import org.bigbluebutton.common.messaging.InputPipe;
-	import org.bigbluebutton.common.messaging.OutputPipe;
-	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.main.MainApplicationFacade;
-	import org.bigbluebutton.main.model.ModulesProxy;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
-	import org.bigbluebutton.modules.log.LogModule;
-	import org.bigbluebutton.modules.video.VideoModule;
-	import org.bigbluebutton.modules.viewers.ViewersConstants;
-	import org.bigbluebutton.modules.viewers.ViewersFacade;
-	import org.bigbluebutton.modules.viewers.ViewersModule;
-	import org.bigbluebutton.modules.viewers.model.services.SharedObjectConferenceDelegate;
-	import org.bigbluebutton.modules.viewers.model.vo.User;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
-	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
-	import org.puremvc.as3.multicore.utilities.pipes.plumbing.PipeListener;
 	
 /**
 *   This is the Mediator class for MainApplicationShell view compom\nent
@@ -74,21 +55,20 @@ package org.bigbluebutton.main.view
 		override public function listNotificationInterests():Array{
 			return [
 					MainApplicationConstants.MODULES_START,
-					MainApplicationFacade.ADD_MODULE,
-					MainApplicationFacade.MODULES_STARTED
+					MainApplicationConstants.MODULE_STARTED
 					];
 		}
 		
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
-				case MainApplicationFacade.ADD_MODULE:
-					break;
 				case MainApplicationConstants.MODULES_START:
-					trace('Received MODULES_START');
-					//var p:ModulesProxy = facade.retrieveProxy(ModulesProxy.NAME) as ModulesProxy;
-					//p.startModule('ViewersModule', router);
+					trace('Received MODULES_START xxxx');
 					sendNotification(MainApplicationConstants.MODULE_START, "ChatModule");
 					break;
+				case MainApplicationConstants.MODULE_STARTED:
+					trace('Received MODULE_STARTED for ' + notification.getBody() as String);
+					sendNotification(MainApplicationConstants.OPEN_WINDOW, "ChatModule");
+					break;					
 			}
 		}
 	}

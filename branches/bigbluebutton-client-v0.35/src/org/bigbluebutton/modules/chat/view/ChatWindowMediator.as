@@ -21,6 +21,7 @@ package org.bigbluebutton.modules.chat.view
 {
 	import flash.events.Event;
 	
+	import org.bigbluebutton.modules.chat.ChatEndpointMediator;
 	import org.bigbluebutton.modules.chat.ChatModuleConstants;
 	import org.bigbluebutton.modules.chat.model.business.ChatProxy;
 	import org.bigbluebutton.modules.chat.model.vo.*;
@@ -30,11 +31,6 @@ package org.bigbluebutton.modules.chat.view
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
 
 	
-	/**
-	 * 
-	 * Mediator Class for ChatWindow view component
-	 * 
-	 */    
 	public class ChatWindowMediator extends Mediator implements IMediator
 	{
 		public static const NAME:String = "ChatMediator";
@@ -69,12 +65,7 @@ package org.bigbluebutton.modules.chat.view
 			proxy.sendMessage(newMessage);
 			_chatWindow.txtMsg.text = "";
 		}
-		
-		/**
-		 * notification(s) that should be taken care off
-		 * @return 
-		 * 
-		 */		
+			
 		override public function listNotificationInterests():Array
 		{
 			return [
@@ -104,6 +95,11 @@ package org.bigbluebutton.modules.chat.view
 					break;
 					
 				case ChatModuleConstants.OPEN_WINDOW:
+		   			_chatWindow.width = 210;
+		   			_chatWindow.height = 220;
+		   			_chatWindow.title = "Group Chat";
+		   			_chatWindow.showCloseButton = false;
+		   			facade.sendNotification(ChatModuleConstants.ADD_WINDOW, _chatWindow); 
 					break;
 			}
 		}

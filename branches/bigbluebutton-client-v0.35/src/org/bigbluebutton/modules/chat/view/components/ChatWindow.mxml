@@ -5,12 +5,10 @@
 	       click="setFocusOn(this.txtMsg || this.txtChatBox)"
 	       focusEnd="setFocusOff()"
 	       creationComplete="init()">
-	<mx:MetaData>
-		[Event('sendMessageEvent')];
-	</mx:MetaData>
 
 	<mx:Script>
 		<![CDATA[
+			import org.bigbluebutton.modules.chat.view.SendMessageEvent;
 			import mx.core.Application;
 			import mx.events.MenuEvent;
 			import mx.controls.Menu;
@@ -89,7 +87,7 @@
 					var newMessage:String;
 					newMessage = "<font color=\"#" + cmpColorPicker.selectedColor + "\"><b>[" + 
 							username +" - "+ time()+ "]</b> " + txtMsg.text + "</font>";
-			   		dispatchEvent(new Event(SEND_MESSAGE));
+			   		dispatchEvent(new SendMessageEvent(SEND_MESSAGE));
 			   		txtMsg.text = "";
 			   	}
 			}

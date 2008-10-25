@@ -107,10 +107,10 @@ package org.bigbluebutton.main.model
 		}
 		
 		public function moduleStarted(name:String, started:Boolean):void {
-			for (var key:Object in _modules) {
-				trace('Starting ' + _modules[key].name);
+			for (var key:Object in _modules) {				
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
 				if (m != null) {
+					trace('Setting ' + _modules[key].name + ' started to ' + started);
 					m.started = started;
 				}
 			}		
