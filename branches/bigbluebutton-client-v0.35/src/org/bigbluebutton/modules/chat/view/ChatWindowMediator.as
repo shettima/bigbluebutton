@@ -28,10 +28,7 @@ package org.bigbluebutton.modules.chat.view
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
-	import org.puremvc.as3.multicore.utilities.pipes.messages.Message;
-	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
-	import org.puremvc.as3.multicore.utilities.pipes.messages.Message;
-	import org.puremvc.as3.multicore.utilities.pipes.plumbing.PipeListener;
+
 	
 	/**
 	 * 
@@ -43,35 +40,34 @@ package org.bigbluebutton.modules.chat.view
 		public static const NAME:String = "ChatMediator";
 		public static const NEW_MESSAGE:String = "newMessage";
 		
-		/**
-		 * Constructor for class ChatWindowMediator 
-		 * @param viewComponent
-		 * 
-		 */		
-		public function ChatWindowMediator(viewComponent:ChatWindow)
-		{
-			super(NAME, viewComponent);
-			viewComponent.addEventListener(ChatWindowMediator.NEW_MESSAGE, sendNewMessage);
-		}
+		private var _module:ChatModule;
+		private var _chatWindow:ChatWindow;
 		
-		/**
-		 * 
-		 * @return chatWindow, the view component
-		 * 
-		 */		
-		public function get chatWindow():ChatWindow
+		public function ChatWindowMediator(module:ChatModule)
 		{
-			return viewComponent as ChatWindow;
+			super(NAME, module);
+			_module = module;
+			_chatWindow = new ChatWindow();
+			_chatWindow.name = _module.username;
+			_chatWindow.addEventListener(ChatWindow.SEND_MESSAGE, onSendChatMessage);
 		}
-		
-		/**
-		 * handler for the event of sending new message
-		 * @param e
-		 * 
-		 */		
-		public function sendNewMessage(e:Event):void
+
+        private function time() : String
 		{
-			proxy.sendMessage("test message");
+			var date:Date = new Date();
+			var t:String = date.toLocaleTimeString();
+			return t;
+		}		
+
+		public function onSendChatMessage(e:Event):void
+		{
+			var newMessage:String;
+			
+			newMessage = "<font color=\"#" + _chatWindow.cmpColorPicker.selectedColor + "\"><b>[" + 
+					_module.username +" - "+ time()+ "]</b> " + _chatWindow.txtMsg.text + "</font>";
+			
+			proxy.sendMessage(newMessage);
+			_chatWindow.txtMsg.text = "";
 		}
 		
 		/**
@@ -82,7 +78,9 @@ package org.bigbluebutton.modules.chat.view
 		override public function listNotificationInterests():Array
 		{
 			return [
-					ChatModuleConstants.NEW_MESSAGE
+					ChatModuleConstants.NEW_MESSAGE,
+					ChatModuleConstants.CLOSE_WINDOW,
+					ChatModuleConstants.OPEN_WINDOW
 				   ];
 		}
 
@@ -100,8 +98,13 @@ package org.bigbluebutton.modules.chat.view
 			switch(notification.getName())
 			{
 				case ChatModuleConstants.NEW_MESSAGE:
-					this.chatWindow.showNewMessage(notification.getBody() as String);
+					_chatWindow.showNewMessage(notification.getBody() as String);
 					break;	
+				case ChatModuleConstants.CLOSE_WINDOW:
+					break;
+					
+				case ChatModuleConstants.OPEN_WINDOW:
+					break;
 			}
 		}
 			

@@ -68,10 +68,9 @@ package org.bigbluebutton.modules.chat
 		{
 			var msg : String = message.getHeader().MSG as String;
 			switch(msg){
-				case PLAYBACK_MODE:
+				case EndpointMessageConstants.CLOSE_WINDOW:
 					break;
-				case PLAYBACK_MESSAGE:
-					playMessage(message.getBody() as XML);					
+				case EndpointMessageConstants.OPEN_WINDOW:
 					break;
 			}
 		}

@@ -5,6 +5,9 @@
 	       click="setFocusOn(this.txtMsg || this.txtChatBox)"
 	       focusEnd="setFocusOff()"
 	       creationComplete="init()">
+	<mx:MetaData>
+		[Event('sendMessageEvent')];
+	</mx:MetaData>
 
 	<mx:Script>
 		<![CDATA[
@@ -19,6 +22,7 @@
 			private var sizeM:Menu;		
 			public var username:String = "unknown";
 			
+			public static const SEND_MESSAGE:String = 'sendMessageEvent';
 			
 			//Full screen?
 			private var dispState:String;
@@ -85,7 +89,7 @@
 					var newMessage:String;
 					newMessage = "<font color=\"#" + cmpColorPicker.selectedColor + "\"><b>[" + 
 							username +" - "+ time()+ "]</b> " + txtMsg.text + "</font>";
-			   		dispatchEvent(new Event(ChatWindowMediator.NEW_MESSAGE));
+			   		dispatchEvent(new Event(SEND_MESSAGE));
 			   		txtMsg.text = "";
 			   	}
 			}

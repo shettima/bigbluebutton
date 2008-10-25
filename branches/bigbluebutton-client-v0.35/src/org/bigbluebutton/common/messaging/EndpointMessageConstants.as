@@ -6,8 +6,8 @@ package org.bigbluebutton.common.messaging
 		public static const MODULE_STARTED:String = 'MODULE_STARTED';
 		public static const MODULE_STOPPED:String = 'MODULE_STOPPED';
 		
-		public static const CONFERENCE_DESCRIPTOR_QUERY:String = 'CONFERENCE_DESCRIPTOR_QUERY';
-		public static const CONFERENCE_DESCRIPTOR_QUERY_REPLY:String = 'CONFERENCE_DESCRIPTOR_QUERY_REPLY';
+		public static const CONF_INFO_QUERY:String = 'CONF_INFO_QUERY';
+		public static const CONF_INFO_QUERY_REPLY:String = 'CONF_INFO_QUERY_REPLY';
 
 		public static const FROM_MAIN_APP:String = 'FROM_MAIN_APP';
 		public static const TO_MAIN_APP:String = 'TO_MAIN_APP';
@@ -17,5 +17,10 @@ package org.bigbluebutton.common.messaging
 		
 		public static const FROM_VIEWERS_MODULE:String = 'FROM_VIEWERS_MODULE';
 		public static const TO_VIEWERS_MODULE:String = 'TO_VIEWERS_MODULE';
+		
+		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
+		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';
+		public static const ADD_WINDOW:String = 'ADD_WINDOW';
+		public static const REMOVE_WINDOW:String = 'REMOVE_WINDOW';
 	}
 }
