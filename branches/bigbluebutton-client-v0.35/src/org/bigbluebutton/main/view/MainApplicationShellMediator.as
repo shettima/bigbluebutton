@@ -19,9 +19,11 @@
 */
 package org.bigbluebutton.main.view 
 {
+	import flexlib.mdi.containers.MDIWindow;
+	
 	import org.bigbluebutton.common.Constants;
+	import org.bigbluebutton.common.IBbbModuleWindow;
 	import org.bigbluebutton.main.MainApplicationConstants;
-	import org.bigbluebutton.main.MainApplicationFacade;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -55,7 +57,8 @@ package org.bigbluebutton.main.view
 		override public function listNotificationInterests():Array{
 			return [
 					MainApplicationConstants.MODULES_START,
-					MainApplicationConstants.MODULE_STARTED
+					MainApplicationConstants.MODULE_STARTED,
+					MainApplicationConstants.ADD_WINDOW_MSG
 					];
 		}
 		
@@ -68,7 +71,13 @@ package org.bigbluebutton.main.view
 				case MainApplicationConstants.MODULE_STARTED:
 					trace('Received MODULE_STARTED for ' + notification.getBody() as String);
 					sendNotification(MainApplicationConstants.OPEN_WINDOW, "ChatModule");
-					break;					
+					break;		
+				case MainApplicationConstants.ADD_WINDOW_MSG:
+					var win:IBbbModuleWindow = notification.getBody() as IBbbModuleWindow;
+					trace("putting window in " + win.xPosition + " " + win.yPosition);
+					shell.mdiCanvas.windowManager.add(win as MDIWindow);
+					shell.mdiCanvas.windowManager.absPos(win as MDIWindow, win.xPosition, win.yPosition);						
+					break;			
 			}
 		}
 	}

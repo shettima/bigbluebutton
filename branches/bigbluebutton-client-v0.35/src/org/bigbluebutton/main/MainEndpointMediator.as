@@ -77,8 +77,6 @@ package org.bigbluebutton.main
 				case EndpointMessageConstants.MODULE_STARTED:
 					trace("Got MODULE_STARTED from " + message.getBody() as String);
 					modulesProxy.moduleStarted(message.getBody() as String, true);
-					trace("Sending MODULE_STARTED from " + message.getBody() as String);
-					sendNotification(MainApplicationConstants.MODULE_STARTED, message.getBody());
 					break;
 				case EndpointMessageConstants.MODULE_STOPPED:
 					trace("Got MODULE_STOPPED from " + message.getBody() as String);
@@ -86,7 +84,7 @@ package org.bigbluebutton.main
 					break;
 				case EndpointMessageConstants.ADD_WINDOW:
 					trace("Got ADD_WINDOW from " + message.getHeader().SRC as String);
-					sendNotification(MainApplicationConstants.ADD_WINDOW_MSG, message.getBody() as MDIWindow);
+					sendNotification(MainApplicationConstants.ADD_WINDOW_MSG, message.getBody());
 					break;
 					
 			}

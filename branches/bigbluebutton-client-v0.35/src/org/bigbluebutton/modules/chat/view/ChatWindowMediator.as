@@ -59,9 +59,8 @@ package org.bigbluebutton.modules.chat.view
 		{
 			var newMessage:String;
 			
-			newMessage = "<font color=\"#" + _chatWindow.cmpColorPicker.selectedColor + "\"><b>[" + 
+			newMessage = "<font color=\"#" + _chatWindow.cmpColorPicker.selectedColor.toString(16) + "\"><b>[" + 
 					_module.username +" - "+ time()+ "]</b> " + _chatWindow.txtMsg.text + "</font>";
-			
 			proxy.sendMessage(newMessage);
 			_chatWindow.txtMsg.text = "";
 		}
@@ -95,10 +94,12 @@ package org.bigbluebutton.modules.chat.view
 					break;
 					
 				case ChatModuleConstants.OPEN_WINDOW:
-		   			_chatWindow.width = 210;
+		   			_chatWindow.width = 250;
 		   			_chatWindow.height = 220;
 		   			_chatWindow.title = "Group Chat";
 		   			_chatWindow.showCloseButton = false;
+		   			_chatWindow.xPosition = 700;
+		   			_chatWindow.yPosition = 20;
 		   			facade.sendNotification(ChatModuleConstants.ADD_WINDOW, _chatWindow); 
 					break;
 			}

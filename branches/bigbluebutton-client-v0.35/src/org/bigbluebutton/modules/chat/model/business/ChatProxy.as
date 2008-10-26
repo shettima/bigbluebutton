@@ -26,13 +26,14 @@ package org.bigbluebutton.modules.chat.model.business
 		
 	public class ChatProxy extends Proxy implements IProxy
 	{
-		public static const NAME:String = "Chat Proxy";
+		public static const NAME:String = "ChatProxy";
 		
 		private var uri:String;		
 		private var chatService:IChatService;
 
 		public function ChatProxy(uri:String)
 		{
+			super(NAME);
 			chatService = new ChatSOService(uri);
 			chatService.connect(uri);
 			chatService.addMessageListener(newMessageHandler);

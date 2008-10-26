@@ -52,6 +52,7 @@ package org.bigbluebutton.modules.chat
 					trace("Sending Chat MODULE_STARTED message to main");
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STARTED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
+					facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
 					break;
 				case ChatModuleConstants.DISCONNECTED:
 					trace('Sending Chat MODULE_STOPPED message to main');
@@ -74,8 +75,8 @@ package org.bigbluebutton.modules.chat
 					facade.sendNotification(ChatModuleConstants.CLOSE_WINDOW);
 					break;
 				case EndpointMessageConstants.OPEN_WINDOW:
-					trace('Received OPEN_WINDOW message from ' + message.getHeader().SRC);
-					facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
+					//trace('Received OPEN_WINDOW message from ' + message.getHeader().SRC);
+					//facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
 					break;
 			}
 		}

@@ -4,7 +4,8 @@
 	       width="300" height="300" showCloseButton="false"
 	       click="setFocusOn(this.txtMsg || this.txtChatBox)"
 	       focusEnd="setFocusOff()"
-	       creationComplete="init()">
+	       creationComplete="init()"
+	       implements="org.bigbluebutton.common.IBbbModuleWindow">
 
 	<mx:Script>
 		<![CDATA[
@@ -13,18 +14,17 @@
 			import mx.events.MenuEvent;
 			import mx.controls.Menu;
 			import mx.utils.ColorUtil;
-			import org.bigbluebutton.modules.chat.view.ChatWindowMediator;
 			import mx.core.UIComponent;
 					
-			public static const TITLE:String = "Public Chat";
-			private var sizeM:Menu;		
-			public var username:String = "unknown";
-			
+			private var sizeM:Menu;					
 			public static const SEND_MESSAGE:String = 'sendMessageEvent';
 			
 			//Full screen?
 			private var dispState:String;
 			
+			private var _xPosition:int;
+			private var _yPosition:int;
+						
 			private function init():void{
 				//Initialize full screen handler
 				Application.application.stage.addEventListener(FullScreenEvent.FULL_SCREEN, fullScreenHandler);
@@ -47,7 +47,7 @@
 					this.maximizeRestoreBtn.visible = true;
 				}
 			}
-			
+						
 			public function showNewMessage(message:String):void
 			{
 				txtChatBox.htmlText += message + "\n";
@@ -75,7 +75,7 @@
 				
 				//this.txtMsg.cursorManager.removeAllCursors();
 			}
-
+			
 		    public function sendMessages():void
 		    {
 			   	if (txtMsg.text.length > 1000)
@@ -84,11 +84,7 @@
 			   			" There is a limit of maximum 1000 character per message." + "\n";
 			   		return;
 			   	}  	else if (txtMsg.text != ""){
-					var newMessage:String;
-					newMessage = "<font color=\"#" + cmpColorPicker.selectedColor + "\"><b>[" + 
-							username +" - "+ time()+ "]</b> " + txtMsg.text + "</font>";
 			   		dispatchEvent(new SendMessageEvent(SEND_MESSAGE));
-			   		txtMsg.text = "";
 			   	}
 			}
 		   
@@ -96,13 +92,24 @@
             {
             	txtChatBox.verticalScrollPosition = txtChatBox.maxVerticalScrollPosition;
             }
-            
-            private function time() : String
-			{
-				var date:Date = new Date();
-				var t:String = date.toLocaleTimeString();
-				return t;
+
+
+			public function get xPosition():int {
+				return _xPosition;
 			}
+			
+			public function get yPosition():int {
+				return _yPosition;
+			}
+			
+			public function set xPosition(x:int):void {
+				_xPosition = x;
+			}
+			
+			public function set yPosition(y:int):void {
+				_yPosition = y;
+			}
+            
 		]]>
 	</mx:Script>
 	
