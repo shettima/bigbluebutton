@@ -21,8 +21,8 @@ package org.bigbluebutton.modules.viewers.controller
 {
 	import org.bigbluebutton.modules.viewers.ViewersEndpointMediator;
 	import org.bigbluebutton.modules.viewers.ViewersModuleMediator;
+	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
 	import org.bigbluebutton.modules.viewers.model.business.Conference;
-	import org.bigbluebutton.modules.viewers.model.services.SharedObjectConferenceDelegate;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
@@ -35,13 +35,14 @@ package org.bigbluebutton.modules.viewers.controller
 	public class StartupCommand extends SimpleCommand
 	{
 		override public function execute(notification:INotification):void{
-			var app:ViewersModule = notification.getBody() as ViewersModule;
+			var m:ViewersModule = notification.getBody() as ViewersModule;
 			
-			facade.registerMediator(new ViewersModuleMediator(app));
-			facade.registerMediator(new ViewersEndpointMediator(app));
-			var conf:Conference = new Conference()
-			facade.registerMediator(conf);
-			facade.registerProxy(new SharedObjectConferenceDelegate(conf));
+			facade.registerMediator(new ViewersModuleMediator(m));
+			facade.registerMediator(new ViewersEndpointMediator(m));
+//			var conf:Conference = new Conference()
+//			facade.registerMediator(conf);
+//			facade.registerProxy(new SharedObjectConferenceDelegate(conf));
+			facade.registerProxy(new ViewersProxy(m.uri));
 		}
 
 	}

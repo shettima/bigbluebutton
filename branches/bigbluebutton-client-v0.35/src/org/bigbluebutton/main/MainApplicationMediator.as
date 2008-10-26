@@ -38,7 +38,6 @@ package org.bigbluebutton.main
 					facade.sendNotification(MainApplicationConstants.MODULES_START);
 					break;
 			}
-		}
-				
+		}				
 	}
 }

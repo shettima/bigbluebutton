@@ -51,11 +51,11 @@ package org.bigbluebutton.modules.chat.model.business
 		
 		private function connectionListener(connected:Boolean):void {
 			if (connected) {
-				trace(NAME + ":Connected to the Chat server");
+				trace(NAME + ":Connected to the Chat application");
 				join();
 			} else {
 				leave();
-				trace(NAME + ":Disconnected from the Chat server");
+				trace(NAME + ":Disconnected from the Chat application");
 			}
 		}
 		
@@ -93,7 +93,6 @@ package org.bigbluebutton.modules.chat.model.business
 				_msgListener( message);
 			}		   
 		}
-
 
 		private function notifyConnectionStatusListener(connected:Boolean):void {
 			if (_connectionListener != null) {

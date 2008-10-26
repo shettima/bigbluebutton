@@ -82,35 +82,5 @@ package org.bigbluebutton.main
         {
         	sendNotification( STARTUP, app );
         }	
-        
-         /**
-         *  
-         * @return - The local client User object
-         * 
-         */        
-        public function getClientUser():User{
-        	var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-        	return conf.me;
-        }	
-        
-        /**
-         * 
-         * @return - The User objects of all people in the conference
-         * 
-         */        
-        public function getAllUsers():ArrayCollection{
-        	var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-        	return conf.users;
-        }
-        
-        /**
-         * 
-         * @return - The Conference object of the conference the client is conencted to
-         * 
-         */        
-        public function getConference():Conference{
-        	var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-        	return conf;
-        }
 	}
 }

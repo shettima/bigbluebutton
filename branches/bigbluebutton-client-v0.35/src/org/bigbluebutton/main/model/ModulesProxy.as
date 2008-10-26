@@ -98,7 +98,10 @@ package org.bigbluebutton.main.model
 		private function loadModuleResultHandler(moduleName:Object):void {
 			var allLoaded:Boolean = true;			
 			for (var key:Object in _modules) {
-				if (! _modules[key].loaded) allLoaded = false;
+				if (! _modules[key].loaded) {
+					trace("Module " + key + " not loaded yet");
+					allLoaded = false;
+				}
 			}			
 			if (allLoaded) {
 				trace('All modules have been loaded');

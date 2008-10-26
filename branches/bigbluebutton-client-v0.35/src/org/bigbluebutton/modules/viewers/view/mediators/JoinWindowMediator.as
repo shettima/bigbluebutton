@@ -26,7 +26,7 @@ package org.bigbluebutton.modules.viewers.view.mediators
 	import org.bigbluebutton.modules.log.LogModule;
 	import org.bigbluebutton.modules.log.LogModuleFacade;
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
-	import org.bigbluebutton.modules.viewers.model.services.SharedObjectConferenceDelegate;
+	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
 	import org.bigbluebutton.modules.viewers.view.JoinWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
@@ -126,12 +126,12 @@ package org.bigbluebutton.modules.viewers.view.mediators
 			var completeHost:String = "rtmp://" + Constants.red5Host + "/conference/" + room;
 			sendNotification(ViewersFacade.DEBUG, "connecting: " + completeHost);
 			LogModuleFacade.getInstance(LogModule.NAME).debug("Connecting");
-			proxy.join(completeHost,name,password,room);
+			proxy.connect(completeHost,name,password,room);
 		}
 		
 		
-		private function get proxy():SharedObjectConferenceDelegate{
-			return facade.retrieveProxy(SharedObjectConferenceDelegate.NAME) as SharedObjectConferenceDelegate;
+		private function get proxy():ViewersProxy {
+			return facade.retrieveProxy(ViewersProxy.NAME) as ViewersProxy;
 		}
 		
 		/**

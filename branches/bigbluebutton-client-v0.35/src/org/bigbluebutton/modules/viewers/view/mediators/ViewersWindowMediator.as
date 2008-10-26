@@ -22,7 +22,7 @@ package org.bigbluebutton.modules.viewers.view.mediators
 	import flash.events.Event;
 	
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
-	import org.bigbluebutton.modules.viewers.model.services.SharedObjectConferenceDelegate;
+	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
 	import org.bigbluebutton.modules.viewers.view.ViewersWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
@@ -90,21 +90,21 @@ package org.bigbluebutton.modules.viewers.view.mediators
 		private function changeStatus(e:Event):void{
 		var newStatus : String;
 		
-			if (viewersWindow.conference.me.status == "raisehand") {
-				newStatus = "lowerhand";	
-				viewersWindow.toggleTooltip = "Click to raise hand.";
-				viewersWindow.toggleIcon = viewersWindow.images.raisehand;
-			} else {
-				newStatus = "raisehand";
-				viewersWindow.toggleTooltip = "Click to lower hand.";
-				viewersWindow.toggleIcon = viewersWindow.images.participant;
-			}
-
-			proxy.sendNewStatus(newStatus);
+//			if (viewersWindow.conference.me.status == "raisehand") {
+//				newStatus = "lowerhand";	
+//				viewersWindow.toggleTooltip = "Click to raise hand.";
+//				viewersWindow.toggleIcon = viewersWindow.images.raisehand;
+//			} else {
+//				newStatus = "raisehand";
+//				viewersWindow.toggleTooltip = "Click to lower hand.";
+//				viewersWindow.toggleIcon = viewersWindow.images.participant;
+//			}
+//
+//			proxy.sendNewStatus(newStatus);
 		}
 		
-		private function get proxy():SharedObjectConferenceDelegate{
-			return facade.retrieveProxy(SharedObjectConferenceDelegate.NAME) as SharedObjectConferenceDelegate;
+		private function get proxy():ViewersProxy {
+			return facade.retrieveProxy(ViewersProxy.NAME) as ViewersProxy;
 		}
 
 	}

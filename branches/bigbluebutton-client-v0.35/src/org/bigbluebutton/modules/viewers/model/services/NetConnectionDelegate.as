@@ -19,68 +19,50 @@
 */
 package org.bigbluebutton.modules.viewers.model.services
 {
-	import mx.rpc.IResponder;
-	import flash.net.NetConnection;
 	import flash.events.*;
-	import org.bigbluebutton.modules.log.LogModuleFacade;
-	import org.bigbluebutton.modules.viewers.ViewersFacade;
-	
-	/**
-	 * The NetConnectionDelegate class has the job of communicating with the server on behalf
-	 * of the viewers module
-	 * @author 
-	 * 
-	 */	
+	import flash.net.NetConnection;
+
+		
 	public class NetConnectionDelegate
 	{
-		public static const ID : String = "CONFERENCE::NetConnectionDelegate";
-		
-		private var _confDelegate : SharedObjectConferenceDelegate;
-				
-		private var _netConnection : NetConnection;	
-		private var log:LogModuleFacade = LogModuleFacade.getInstance("LogModule");
-		
+		public static const NAME : String = "NetConnectionDelegate";
 
-					
-		/**
-		 * The constructor. Received a SharedObjectConferenceDelegate Object 
-		 * @param confDelegate
-		 * 
-		 */		
-		public function NetConnectionDelegate(confDelegate : SharedObjectConferenceDelegate) : void
+		private var _netConnection : NetConnection;	
+		private var _uri : String;
+		private var connectionId : Number;
+		private var connected : Boolean = false;
+		private var _connectionListener:Function;
+				
+		public function NetConnectionDelegate(uri:String, connectionListener:Function) : void
 		{
-			_confDelegate = confDelegate;
+			_netConnection = new NetConnection();
+			_uri = uri;
+			_connectionListener = connectionListener;
 		}
 		
-		/**
-		 * Connect to the server using the specified parameters 
-		 * @param host
-		 * @param room
-		 * @param username
-		 * @param password
-		 * 
-		 */		
-		public function connect(host : String , room : String, 
-					username : String, password : String) : void
-		{		
-			_netConnection = _confDelegate.netConnection;
-			
+		public function get connection():NetConnection {
+			return _netConnection;
+		}
+		
+		public function connect(uri:String, room:String, 
+					username:String, password:String) : void
+		{					
+			_netConnection.client = this;
 			_netConnection.addEventListener( NetStatusEvent.NET_STATUS, netStatus );
 			_netConnection.addEventListener( AsyncErrorEvent.ASYNC_ERROR, netASyncError );
 			_netConnection.addEventListener( SecurityErrorEvent.SECURITY_ERROR, netSecurityError );
 			_netConnection.addEventListener( IOErrorEvent.IO_ERROR, netIOError );
 			
 			try {
-				log.viewer( "Connecting to <b>" + host + "</b>");
-				
-				_netConnection.connect(host, room, username, password );
+				trace( "Connecting to " + _uri);								
+				_netConnection.connect(_uri, room, username, password );				
 				
 			} catch( e : ArgumentError ) {
 				// Invalid parameters.
 				switch ( e.errorID ) 
 				{
 					case 2004 :						
-						log.viewer( "Invalid server location: <b>" + host + "</b>");											   
+						trace("Error! Invalid server location: " + _uri);											   
 						break;						
 					default :
 					   break;
@@ -88,30 +70,16 @@ package org.bigbluebutton.modules.viewers.model.services
 			}	
 		}
 			
-		/**
-		 * Disconnect from the server 
-		 * 
-		 */		
 		public function disconnect() : void
 		{
 			_netConnection.close();
 		}
 					
-		/**
-		 * Method is called when a net_status_event is received 
-		 * @param event
-		 * 
-		 */		
 		protected function netStatus( event : NetStatusEvent ) : void 
 		{
 			handleResult( event );
 		}
 		
-		/**
-		 * Method is called when a result is received from the server 
-		 * @param event
-		 * 
-		 */		
 		public function handleResult(  event : Object  ) : void {
 			var info : Object = event.info;
 			var statusCode : String = info.code;
@@ -119,41 +87,33 @@ package org.bigbluebutton.modules.viewers.model.services
 			switch ( statusCode ) 
 			{
 				case "NetConnection.Connect.Success" :
-					_confDelegate.connected();
-					
-					// find out if it's a secure (HTTPS/TLS) connection
-					if ( event.target.connectedProxyType == "HTTPS" || event.target.usingTLS ) {
-						log.viewer( 	"Connected to secure server");
-					} else {
-						log.viewer(	"Connected to server");
-					}
+					trace("Connection to chat server succeeded.");
+					_connectionListener(true);					
 					break;
 			
 				case "NetConnection.Connect.Failed" :
-					_confDelegate.disconnected("The connection to the server failed.");
-					
-					log.viewer("Connection to server failed");
+					_connectionListener(false);					
+					trace("Connection to chat server failed");
 					break;
 					
 				case "NetConnection.Connect.Closed" :					
-					_confDelegate.disconnected("The connection to the server closed.");					
-					log.viewer("Connection to server closed");
+					_connectionListener(false);					
+					trace("Connection to chat server closed");
 					break;
 					
 				case "NetConnection.Connect.InvalidApp" :				
-					_confDelegate.disconnected("The application was not found on the server.")
-					log.viewer("Application not found on server");
+					_connectionListener(false);
+					trace("Chat application not found on server");
 					break;
 					
-				case "NetConnection.Connect.AppShutDown" :				
-					_confDelegate.disconnected("The application has been shutdown.");
-					log.viewer("Application has been shutdown");
+				case "NetConnection.Connect.AppShutDown" :
+					_connectionListener(false);
+					trace("Chat application has been shutdown");
 					break;
 					
 				case "NetConnection.Connect.Rejected" :
-					_confDelegate.disconnected("No permission to connect to the application.");
-					log.viewer("No permissions to connect to the application" );
-					_confDelegate.sendNotification(ViewersFacade.LOGIN_FAILED);
+					_connectionListener(false);
+					trace("No permissions to connect to the chat application" );
 					break;
 					
 				default :
@@ -163,44 +123,22 @@ package org.bigbluebutton.modules.viewers.model.services
 		}
 		
 			
-		/**
-		 * Method is called when a net_security_error is received 
-		 * @param event
-		 * 
-		 */		
 		protected function netSecurityError( event : SecurityErrorEvent ) : void 
 		{
-		    handleFault( "Security error - " + event.text );
+			trace("Security error - " + event.text);
+			_connectionListener(false);
 		}
 		
-		/**
-		 * Method is called when a net_io_error is received 
-		 * @param event
-		 * 
-		 */		
 		protected function netIOError( event : IOErrorEvent ) : void 
 		{
-			handleFault( "Input/output error - " + event.text );
+			trace("Input/output error - " + event.text);
+			_connectionListener(false);
 		}
 			
-		/**
-		 * Method is called when a net_async_error is received 
-		 * @param event
-		 * 
-		 */		
 		protected function netASyncError( event : AsyncErrorEvent ) : void 
 		{
-			handleFault( "Asynchronous code error - " + event.error );
-		}
-	
-		/**
-		 * Method is called when a fault is received from the server 
-		 * @param reason
-		 * 
-		 */		
-		public function handleFault(  reason : String  ) : void 
-		{			
-			_confDelegate.disconnected(reason);
-		}
+			trace("Asynchronous code error - " + event.error );
+			_connectionListener(false);
+		}	
 	}
 }

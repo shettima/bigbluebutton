@@ -22,35 +22,18 @@ package org.bigbluebutton.modules.viewers.model.business
 	import mx.collections.ArrayCollection;
 	
 	import org.bigbluebutton.modules.viewers.model.vo.User;
-	import org.puremvc.as3.multicore.interfaces.IMediator;
-	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
 	
-	/**
-	 * 
-	 * @author
-	 * 
-	 */	
-	public class Conference extends Mediator implements IMediator
-	{
-		public static const NAME:String = "Conference";
-		
+
+	public class Conference implements IViewers
+	{		
 		private var _myUserid : Number;
 		
 		[Bindable] public var me:User = null;		
 		[Bindable] public var users : ArrayCollection = null;				
 		[Bindable] public var connected : Boolean = false;
-		
-		public var connectFailReason : String;		
-		public var host : String;
-		public var room : String;
-		
-		/**
-		 * The default constructor. Creates a new Conference object 
-		 * 
-		 */		
+						
 		public function Conference() : void
 		{
-			super(NAME);
 			me = new User();
 			users = new ArrayCollection();
 		}
@@ -111,10 +94,10 @@ package org.bigbluebutton.modules.viewers.model.business
 		{
 			var index : int = getParticipantIndex(userid);
 			
-			//log.debug( "removing user[" + userid + " at index=" + index + "]")
+			trace( "removing user[" + userid + " at index=" + index + "]")
 			
 			if (index > -1) {
-				//log.debug( "remove user[" + userid + " at index=" + index + "]");
+				trace( "remove user[" + userid + " at index=" + index + "]");
 				
 				users.removeItemAt(index);
 				sort();
