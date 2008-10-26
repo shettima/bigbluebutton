@@ -1,3 +1,4 @@
 <modules>
 	<module name="ChatModule" swfpath="ChatModule.swf" />
+	<module name="ViewersModule" swfpath="ViewersModule.swf" />
 </modules>

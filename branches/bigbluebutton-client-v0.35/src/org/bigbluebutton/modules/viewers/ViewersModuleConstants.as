@@ -24,18 +24,17 @@ package org.bigbluebutton.modules.viewers
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class ViewersConstants
+	public class ViewersModuleConstants
 	{
-		public static const FROM_VIEWERS_MODULE:String = "From Viewers Module";
-		public static const TO_VIEWERS_MODULE:String = "To Viewers Module";
+		public static const START:String       = "start module";
+		public static const STOP:String       = "stop module";
+		public static const CONNECTED:String = "connected to server";
+		public static const DISCONNECTED:String = "disconnected from server";
 		
-		public static const OPEN_WINDOW_MESSAGE:String = "Open Window Message";
-		public static const CLOSE_WINDOW_MESSAGE:String = "Close Window Messsage";
-		
-		public static const ERROR:int = 1;
-		public static const WARN:int  = 2;
-		public static const INFO:int  = 3;
-		public static const DEBUG:int = 4;
+		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
+		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';	
+		public static const ADD_WINDOW:String = 'ADD_WINDOW';
+		public static const REMOVE_WINDOW:String = 'OPEN_WINDOW';
 		
 		public static const OPEN_VIEW_CAMERA:String = "Open View Camera";
 	}

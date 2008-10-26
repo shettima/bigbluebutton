@@ -25,8 +25,6 @@ package org.bigbluebutton.modules.viewers
 	import org.bigbluebutton.common.messaging.OutputPipe;
 	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
-	import org.bigbluebutton.modules.log.LogModule;
-	import org.bigbluebutton.modules.log.LogModuleFacade;
 	import org.bigbluebutton.modules.viewers.model.vo.User;
 	import org.bigbluebutton.modules.viewers.view.JoinWindow;
 	import org.bigbluebutton.modules.viewers.view.ViewersWindow;
@@ -55,8 +53,6 @@ package org.bigbluebutton.modules.viewers
 		private var joinWindow:JoinWindow;
 		private var viewersWindow:ViewersWindow;
 		
-		private var log:LogModuleFacade = LogModuleFacade.getInstance(LogModule.NAME);
-		
 		/**
 		 * The constructor. registers this mediator with the ViewersModuel 
 		 * @param module
@@ -66,12 +62,6 @@ package org.bigbluebutton.modules.viewers
 		{
 			super(NAME, module);
 			this.module = module;
-			router = module.router;
-			inpipe = new InputPipe(ViewersConstants.TO_VIEWERS_MODULE);
-			outpipe = new OutputPipe(ViewersConstants.FROM_VIEWERS_MODULE);
-			inpipeListener = new PipeListener(this, messageReceiver);
-			router.registerOutputPipe(outpipe.name, outpipe);
-			router.registerInputPipe(inpipe.name, inpipe);
 			addJoinWindow();
 		}
 		
@@ -84,21 +74,15 @@ package org.bigbluebutton.modules.viewers
 		 * 
 		 */		
 		private function addJoinWindow():void{
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:MainApplicationConstants.ADD_WINDOW_MSG, SRC: ViewersConstants.FROM_VIEWERS_MODULE,
-   						TO: MainApplicationConstants.TO_MAIN });
-   			msg.setPriority(Message.PRIORITY_HIGH);
-   			
+
    			joinWindow = new JoinWindow();
    			joinWindow.showCloseButton = false;
    			joinWindow.title = JoinWindow.TITLE;
    			
-   			module.preferedX = Capabilities.screenResolutionX/2 - 328/2;
-			module.preferedY = Capabilities.screenResolutionY/2 - 265;
-   			module.activeWindow = joinWindow;
+//   			module.preferedX = Capabilities.screenResolutionX/2 - 328/2;
+//			module.preferedY = Capabilities.screenResolutionY/2 - 265;
+//   			module.activeWindow = joinWindow;
    			
-   			msg.setBody(viewComponent as ViewersModule);
-   			outpipe.write(msg);
 		}
 		
 		/**
@@ -106,24 +90,19 @@ package org.bigbluebutton.modules.viewers
 		 * 
 		 */		
 		private function addViewersWindow():void{
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:MainApplicationConstants.ADD_WINDOW_MSG, SRC: ViewersConstants.FROM_VIEWERS_MODULE,
-   						TO: MainApplicationConstants.TO_MAIN });
-   			msg.setPriority(Message.PRIORITY_HIGH);
-   			
+
    			viewersWindow = new ViewersWindow();
    			
-   			module.preferedX = 20;
-   			module.preferedY = 20;
-   			module.activeWindow = viewersWindow;
+//   			module.preferedX = 20;
+//   			module.preferedY = 20;
+//   			module.activeWindow = viewersWindow;
    			
    			viewersWindow.width = 210;
    			viewersWindow.height = 220;
    			viewersWindow.title = ViewersWindow.TITLE;
    			viewersWindow.showCloseButton = false;
    			sendNotification(ViewersFacade.START_VIEWER_WINDOW, viewersWindow);
-   			msg.setBody(viewComponent as ViewersModule);
-   			outpipe.write(msg);
+
 		}
 		
 		/**
@@ -131,14 +110,8 @@ package org.bigbluebutton.modules.viewers
 		 * 
 		 */		
 		private function removeJoinWindow():void{
-			module.activeWindow = joinWindow;
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:MainApplicationConstants.REMOVE_WINDOW_MSG, SRC: ViewersConstants.FROM_VIEWERS_MODULE,
-   						TO: MainApplicationConstants.TO_MAIN });
-   			msg.setPriority(Message.PRIORITY_HIGH);
-   			
-   			msg.setBody(viewComponent as ViewersModule);
-   			outpipe.write(msg);
+//			module.activeWindow = joinWindow;
+
 		}
 		
 		/**
@@ -147,22 +120,11 @@ package org.bigbluebutton.modules.viewers
 		 */		
 		private function sendLoginCompleteNotice():void{
 			trace("Sending LOGIN_COMPLETE");
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:MainApplicationConstants.LOGIN_COMPLETE, SRC: ViewersConstants.FROM_VIEWERS_MODULE,
-   						TO: MainApplicationConstants.TO_MAIN });
-   			msg.setPriority(Message.PRIORITY_HIGH);
-   			
-   			outpipe.write(msg);
+
 		}
 		
 		private function sendLogoutCommand(reason:String):void{
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:MainApplicationConstants.CONNECTION_LOST, SRC: ViewersConstants.FROM_VIEWERS_MODULE,
-   						TO: MainApplicationConstants.TO_MAIN });
-   			msg.setPriority(Message.PRIORITY_HIGH);
-   			
-   			msg.setBody(reason);
-   			outpipe.write(msg);
+
 		}
 		
 		override public function initializeNotifier(key:String):void{
@@ -185,13 +147,7 @@ package org.bigbluebutton.modules.viewers
 		}
 		
 		private function openViewCamera(usr:User):void{
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:ViewersConstants.OPEN_VIEW_CAMERA, SRC:ViewersConstants.FROM_VIEWERS_MODULE,
-					TO: MainApplicationConstants.TO_MAIN});
-			msg.setPriority(Message.PRIORITY_HIGH);
-			
-			msg.setBody(usr);
-			outpipe.write(msg);
+
 		}
 		
 		/**
@@ -207,7 +163,6 @@ package org.bigbluebutton.modules.viewers
 					sendLoginCompleteNotice();
 					break;
 				case ViewersFacade.DEBUG:
-					log.debug(notification.getBody() as String);
 					break;
 				case ViewersFacade.SERVER_DISCONNECTED:
 					sendLogoutCommand(notification.getBody() as String);

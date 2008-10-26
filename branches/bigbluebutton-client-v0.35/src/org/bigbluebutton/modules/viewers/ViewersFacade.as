@@ -20,7 +20,7 @@
 package org.bigbluebutton.modules.viewers
 {
 	import org.bigbluebutton.modules.viewers.controller.StartLoginCommand;
-	import org.bigbluebutton.modules.viewers.controller.StartViewersCommand;
+	import org.bigbluebutton.modules.viewers.controller.StartupCommand;
 	import org.bigbluebutton.modules.viewers.controller.StartWindowCommand;
 	import org.bigbluebutton.modules.viewers.model.vo.User;
 	import org.puremvc.as3.multicore.interfaces.IFacade;
@@ -72,7 +72,7 @@ package org.bigbluebutton.modules.viewers
 		 */		
 		override protected function initializeController():void{
 			super.initializeController();
-			registerCommand(STARTUP, StartViewersCommand);
+			registerCommand(STARTUP, StartupCommand);
 			registerCommand(START_VIEWER_WINDOW, StartWindowCommand);
 			registerCommand(START_LOGIN_WINDOW, StartLoginCommand);
 		}

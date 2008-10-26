@@ -19,7 +19,7 @@
 */
 package org.bigbluebutton.modules.viewers.controller
 {
-	import org.bigbluebutton.modules.viewers.ViewersModule;
+	import org.bigbluebutton.modules.viewers.ViewersEndpointMediator;
 	import org.bigbluebutton.modules.viewers.ViewersModuleMediator;
 	import org.bigbluebutton.modules.viewers.model.business.Conference;
 	import org.bigbluebutton.modules.viewers.model.services.SharedObjectConferenceDelegate;
@@ -27,17 +27,18 @@ package org.bigbluebutton.modules.viewers.controller
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
 	/**
-	 * The StartViewersCommand registers the ViewersModuleMediator with the ViewersModule
+	 * The StartupCommand registers the ViewersModuleMediator with the ViewersModule
 	 * It also registers a Conference object as a mediator in the facade 
 	 * @author dzgonjan
 	 * 
 	 */	
-	public class StartViewersCommand extends SimpleCommand
+	public class StartupCommand extends SimpleCommand
 	{
 		override public function execute(notification:INotification):void{
 			var app:ViewersModule = notification.getBody() as ViewersModule;
 			
 			facade.registerMediator(new ViewersModuleMediator(app));
+			facade.registerMediator(new ViewersEndpointMediator(app));
 			var conf:Conference = new Conference()
 			facade.registerMediator(conf);
 			facade.registerProxy(new SharedObjectConferenceDelegate(conf));
