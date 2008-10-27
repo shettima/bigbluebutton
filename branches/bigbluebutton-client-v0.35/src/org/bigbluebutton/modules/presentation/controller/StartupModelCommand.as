@@ -24,7 +24,7 @@ package org.bigbluebutton.modules.presentation.controller
 	import org.bigbluebutton.modules.presentation.model.PresentationApplication;
 	import org.bigbluebutton.modules.presentation.model.PresentationModel;
 	import org.bigbluebutton.modules.presentation.model.business.PresentationDelegate;
-	import org.bigbluebutton.modules.presentation.view.PresentationWindow;
+	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	

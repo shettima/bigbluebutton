@@ -25,9 +25,9 @@ package org.bigbluebutton.modules.presentation
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.modules.presentation.model.business.PresentationDelegate;
 	import org.bigbluebutton.modules.presentation.model.business.PresentationPlaybackProxy;
-	import org.bigbluebutton.modules.presentation.view.PresentationWindow;
+	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
 	import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
-	import org.bigbluebutton.modules.presentation.view.ThumbnailView;
+	import org.bigbluebutton.modules.presentation.view.components.ThumbnailView;
 	import org.bigbluebutton.modules.presentation.view.ThumbnailViewMediator;
 	import org.bigbluebutton.modules.presentation.view.playback.PresentationPlaybackMediator;
 	import org.bigbluebutton.modules.presentation.view.playback.ThumbnailPlaybackMediator;
@@ -167,7 +167,7 @@ package org.bigbluebutton.modules.presentation
    			presentationWindow.width = 430;
    			presentationWindow.title = PresentationWindow.TITLE;
    			presentationWindow.showCloseButton = false;
-   			module.activeWindow = presentationWindow;
+//   			module.activeWindow = presentationWindow;
    			msg.setBody(viewComponent as PresentationModule);
    			outpipe.write(msg);
 		}

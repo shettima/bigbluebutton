@@ -25,6 +25,7 @@ package org.bigbluebutton.modules.presentation.view
 	import org.bigbluebutton.modules.presentation.controller.notifiers.MoveNotifier;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ZoomNotifier;
 	import org.bigbluebutton.modules.presentation.model.business.PresentationDelegate;
+	import org.bigbluebutton.modules.presentation.view.components.ThumbnailView;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;

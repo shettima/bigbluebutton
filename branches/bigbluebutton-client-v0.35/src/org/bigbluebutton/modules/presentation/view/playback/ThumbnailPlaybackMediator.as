@@ -6,7 +6,7 @@ package org.bigbluebutton.modules.presentation.view.playback
 	
 	import org.bigbluebutton.modules.presentation.model.business.PresentationPlaybackProxy;
 	import org.bigbluebutton.modules.presentation.model.vo.Slide;
-	import org.bigbluebutton.modules.presentation.view.ThumbnailView;
+	import org.bigbluebutton.modules.presentation.view.components.ThumbnailView;
 	import org.bigbluebutton.modules.presentation.view.ThumbnailViewMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	

@@ -19,9 +19,8 @@
 */
 package org.bigbluebutton.modules.presentation.controller
 {
-	import org.bigbluebutton.modules.presentation.PresentationModule;
 	import org.bigbluebutton.modules.presentation.PresentationModuleMediator;
-	import org.bigbluebutton.modules.presentation.view.PresentationWindow;
+	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
 	import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
 	import org.bigbluebutton.modules.presentation.view.ThumbnailViewMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;

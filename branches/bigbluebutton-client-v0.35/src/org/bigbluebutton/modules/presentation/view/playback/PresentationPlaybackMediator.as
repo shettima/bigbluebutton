@@ -2,11 +2,9 @@ package org.bigbluebutton.modules.presentation.view.playback
 {
 	import flash.events.Event;
 	
-	import mx.controls.Alert;
-	
 	import org.bigbluebutton.modules.presentation.model.business.PresentationPlaybackProxy;
-	import org.bigbluebutton.modules.presentation.view.PresentationWindow;
 	import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
+	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	
 	public class PresentationPlaybackMediator extends PresentationWindowMediator

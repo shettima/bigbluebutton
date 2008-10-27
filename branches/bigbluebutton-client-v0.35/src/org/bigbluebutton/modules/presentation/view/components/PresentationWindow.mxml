@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <pres:MDIWindow xmlns:mx="http://www.adobe.com/2006/mxml"  
-	xmlns:thumb="org.bigbluebutton.modules.presentation.view.*"
+	xmlns:thumb="org.bigbluebutton.modules.presentation.view.components.*"
 	xmlns:pres="flexlib.mdi.containers.*"
 	paddingBottom="0" paddingTop="0" 
 	paddingLeft="0" paddingRight="0" 
@@ -10,6 +10,7 @@
 
 	<mx:Script>
 		<![CDATA[
+			import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
 			import mx.core.Application;
 			import org.bigbluebutton.common.Images;
 			import org.bigbluebutton.modules.presentation.model.vo.SlidesDeck;

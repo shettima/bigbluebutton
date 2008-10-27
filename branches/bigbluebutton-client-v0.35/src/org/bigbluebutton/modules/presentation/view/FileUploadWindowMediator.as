@@ -28,6 +28,7 @@ package org.bigbluebutton.modules.presentation.view
 	
 	import org.bigbluebutton.modules.presentation.PresentationFacade;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ProgressNotifier;
+	import org.bigbluebutton.modules.presentation.view.components.FileUploadWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
