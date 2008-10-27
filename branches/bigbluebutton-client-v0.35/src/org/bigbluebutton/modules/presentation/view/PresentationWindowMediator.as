@@ -24,9 +24,8 @@ package org.bigbluebutton.modules.presentation.view
 	
 	import mx.managers.PopUpManager;
 	
-	import org.bigbluebutton.modules.presentation.PresentationFacade;
-	import org.bigbluebutton.modules.presentation.model.PresentationApplication;
-	import org.bigbluebutton.modules.presentation.model.business.PresentationDelegate;
+	import org.bigbluebutton.common.IBigBlueButtonModule;
+	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.view.components.FileUploadWindow;
 	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
@@ -49,31 +48,27 @@ package org.bigbluebutton.modules.presentation.view
 		public static const MAXIMIZE:String = "Maximize Presentation";
 		public static const RESTORE:String = "Restore Presentation";
 		
+		private var _module:IBigBlueButtonModule;
+		private var _presWin:PresentationWindow = new PresentationWindow();
+		
 		/**
 		 * The constructor. Registers the view component with this mediator 
 		 * @param view
 		 * 
 		 */		
-		public function PresentationWindowMediator(view:PresentationWindow)
+		public function PresentationWindowMediator(module:IBigBlueButtonModule)
 		{
-			super(NAME, view);
-			view.addEventListener(CONNECT, connectToPresentation);
-			view.addEventListener(SHARE, sharePresentation);
-			view.addEventListener(OPEN_UPLOAD, openFileUploadWindow);
-			view.addEventListener(UNSHARE, unsharePresentation);
-			view.addEventListener(MAXIMIZE, maximize);
-			view.addEventListener(RESTORE, restore);
+			super(NAME);
+			_module = module;
+			
+			_presWin.addEventListener(SHARE, sharePresentation);
+			_presWin.addEventListener(OPEN_UPLOAD, openFileUploadWindow);
+			_presWin.addEventListener(UNSHARE, unsharePresentation);
+			_presWin.addEventListener(MAXIMIZE, maximize);
+			_presWin.addEventListener(RESTORE, restore);
 		}
 		
-		/**
-		 *  
-		 * @return - the gui component contained in this mediator
-		 * 
-		 */		
-		public function get presentationWindow():PresentationWindow{
-			return viewComponent as PresentationWindow;
-		}
-		
+
 		/**
 		 *  
 		 * @return A list of the notifications this class listens to
@@ -84,10 +79,10 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		override public function listNotificationInterests():Array{
 			return [
-					PresentationFacade.READY_EVENT,
-					PresentationFacade.VIEW_EVENT,
-					PresentationFacade.MAXIMIZE_PRESENTATION,
-					PresentationFacade.RESTORE_PRESENTATION
+					PresentModuleConstants.READY_EVENT,
+					PresentModuleConstants.VIEW_EVENT,
+					PresentModuleConstants.MAXIMIZE_PRESENTATION,
+					PresentModuleConstants.RESTORE_PRESENTATION
 					];
 		}
 		
@@ -98,16 +93,16 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
-				case PresentationFacade.READY_EVENT:
+				case PresentModuleConstants.READY_EVENT:
 					handleReadyEvent();
 					break;
-				case PresentationFacade.VIEW_EVENT:
+				case PresentModuleConstants.VIEW_EVENT:
 					handleViewEvent();
 					break;
-				case PresentationFacade.MAXIMIZE_PRESENTATION:
+				case PresentModuleConstants.MAXIMIZE_PRESENTATION:
 					handleMaximizeEvent();
 					break;
-				case PresentationFacade.RESTORE_PRESENTATION:
+				case PresentModuleConstants.RESTORE_PRESENTATION:
 					handleRestorePresentation();
 					break;
 			}
@@ -119,7 +114,7 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleReadyEvent():void
 		{			
-			presentationWindow.thumbnailView.visible = false;
+			_presWin.thumbnailView.visible = false;
 			//sharePresentation(new Event("share"));
 		}
 		
@@ -128,7 +123,7 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function handleViewEvent():void{			
-			presentationWindow.thumbnailView.visible = true;
+			_presWin.thumbnailView.visible = true;
 		}
 		
 		/**
@@ -136,41 +131,29 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function handleMaximizeEvent():void{
-			if (!presentationWindow.model.presentation.isPresenter){
-				presentationWindow.maximize();	
-			}
+//			if (!presentationWindow.model.presentation.isPresenter){
+//				presentationWindow.maximize();	
+//			}
 		}
 		
 		private function handleRestorePresentation():void{
-			if (!presentationWindow.model.presentation.isPresenter){
-				presentationWindow.restore();
-			}
+//			if (!presentationWindow.model.presentation.isPresenter){
+//				presentationWindow.restore();
+//			}
 		}
 		
-		/**
-		 * Attemps to conenct to the presentation on the server 
-		 * @param e
-		 * 
-		 */		
-		private function connectToPresentation(e:Event) : void{
-			if (presentationWindow.model.presentation.isConnected) {
-				sendNotification(PresentationApplication.LEAVE);
-			} else {
-				sendNotification(PresentationApplication.JOIN);				
-			}
-		}
-		
+
 		/**
 		 * Share a presentation with the rest of the room on the server 
 		 * @param e
 		 * 
 		 */		
 		private function sharePresentation(e:Event) : void{
-			if (!presentationWindow.model.presentation.isSharing){
-				sendNotification(PresentationApplication.SHARE, true);
-				presentationWindow.uploadPres.enabled = false;	
+//			if (!presentationWindow.model.presentation.isSharing){
+///				sendNotification(PresentationApplication.SHARE, true);
+//				presentationWindow.uploadPres.enabled = false;	
 				//proxy.gotoPage(1);
-			}		
+//			}		
 		}
 		
 		/**
@@ -179,10 +162,10 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function unsharePresentation(e:Event):void{
-			if (presentationWindow.model.presentation.isSharing) {
-				sendNotification(PresentationApplication.SHARE, false);
-				presentationWindow.uploadPres.enabled = true;
-			}
+//			if (presentationWindow.model.presentation.isSharing) {
+//				sendNotification(PresentationApplication.SHARE, false);
+//				presentationWindow.uploadPres.enabled = true;
+//			}
 		}
 		
 		/**
@@ -191,30 +174,26 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		protected function openFileUploadWindow(e:Event) : void{
-            presentationWindow.uploadWindow = FileUploadWindow(PopUpManager.createPopUp( presentationWindow, FileUploadWindow, false));
+            _presWin.uploadWindow = FileUploadWindow(PopUpManager.createPopUp( _presWin, FileUploadWindow, false));
 			
 			var point1:Point = new Point();
             // Calculate position of TitleWindow in Application's coordinates. 
-            point1.x = presentationWindow.thumbnailView.x;
-            point1.y = presentationWindow.thumbnailView.y;                
-            point1 = presentationWindow.thumbnailView.localToGlobal(point1);
-            presentationWindow.uploadWindow.x = point1.x + 25;
-            presentationWindow.uploadWindow.y = point1.y + 25;
+            point1.x = _presWin.thumbnailView.x;
+            point1.y = _presWin.thumbnailView.y;                
+            point1 = _presWin.thumbnailView.localToGlobal(point1);
+            _presWin.uploadWindow.x = point1.x + 25;
+            _presWin.uploadWindow.y = point1.y + 25;
             
             unsharePresentation(new Event("unshare"));
-            sendNotification(PresentationFacade.STARTUPLOADWINDOW, presentationWindow.uploadWindow);
+//            sendNotification(PresentModuleConstants.STARTUPLOADWINDOW, presentationWindow.uploadWindow);
         }
-        
-        public function get proxy():PresentationDelegate{
-        	return facade.retrieveProxy(PresentationDelegate.ID) as PresentationDelegate;
-        }	
-        
+               
         protected function maximize(e:Event):void{
-        	proxy.maximize();
+//        	proxy.maximize();
         }
         
         protected function restore(e:Event):void{
-        	proxy.restore();
+ //       	proxy.restore();
         }
 
 	}

@@ -27,23 +27,21 @@ package org.bigbluebutton.modules.presentation.model.services
 	import flash.net.URLRequest;
 	import flash.net.URLVariables;
 	
-	import org.bigbluebutton.modules.presentation.PresentationFacade;
-	import org.puremvc.as3.multicore.interfaces.IProxy;
-	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
+	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	
-	/**
-	 * The FileUploadService receives and responds to events related to uploading files
-	 * <p>
-	 * This class extends the Proxy class of the pureMVC framework
-	 * @author dev_team@bigbluebutton.org
-	 * 
-	 */	
-	public class FileUploadService extends Proxy implements IProxy
+	public class FileUploadService
 	{
 		public static const ID:String = "FileUploadService";
+
+		public static const UPLOAD_PROGRESS:String = "UPLOAD_PROGRESS";
+		public static const UPLOAD_COMPLETED:String = "UPLOAD_COMPLETED";
+		public static const UPLOAD_IO_ERROR:String = "UPLOAD_IO_ERROR";
+		public static const UPLOAD_SECURITY_ERROR:String = "UPLOAD_SECURITY_ERROR";
 		
 		private var request : URLRequest = new URLRequest();
 		private var sendVars : URLVariables = new URLVariables();
+		
+		private var _progressListener:Function;
 		
 		/**
 		 * The default constructor 
@@ -51,12 +49,15 @@ package org.bigbluebutton.modules.presentation.model.services
 		 * @param room - a room in the server we're connecting to
 		 * 
 		 */		
-		public function FileUploadService(url : String, room : String) : void
+		public function FileUploadService(url:String, room:String) : void
 		{
-			super(ID);
 			sendVars.room = room;	
 			request.url = url;
 			request.data = sendVars;
+		}
+		
+		public function addProgressListener(listener:Function):void {
+			_progressListener = listener;
 		}
 		
 		/**
@@ -86,7 +87,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		private function onUploadProgress(event : ProgressEvent) : void
 		{
 			var percentage : Number = Math.round((event.bytesLoaded / event.bytesTotal) * 100);
-			sendNotification(PresentationFacade.UPLOAD_PROGRESS_EVENT, percentage);
+			_progressListener(UPLOAD_PROGRESS, percentage);
 		}
 		
 		/**
@@ -96,7 +97,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */		
 		private function onUploadComplete(event : Event) : void
 		{
-			sendNotification(PresentationFacade.UPLOAD_COMPLETED_EVENT);
+			_progressListener(UPLOAD_COMPLETED);
 		}
 
 		/**
@@ -106,7 +107,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */
 		private function onUploadIoError(event : IOErrorEvent) : void
 		{
-			sendNotification(PresentationFacade.UPLOAD_IO_ERROR_EVENT, event.text);
+			_progressListener(UPLOAD_IO_ERROR, "IOError while uploading file.");
 		}
 		
 		/**
@@ -116,7 +117,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */		
 		private function onUploadSecurityError(event : SecurityErrorEvent) : void
 		{
-			sendNotification(PresentationFacade.UPLOAD_SECURITY_ERROR_EVENT, event.text);
+			_progressListener(UPLOAD_SECURITY_ERROR, "Security Error while uploading file.");
 		}		
 	}
 }

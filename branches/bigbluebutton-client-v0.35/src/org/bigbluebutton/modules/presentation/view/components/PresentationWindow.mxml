@@ -38,9 +38,9 @@
 			[Bindable] private var fullscreen_icon:Class = images.full_screen;
 			private var shareLabel : String;
 			
-			[Bindable] public var model:PresentationFacade = PresentationFacade.getInstance(); 
+//			[Bindable] public var model:PresentationFacade = PresentationFacade.getInstance(); 
 						
-			[Bindable] private var deck:SlidesDeck = model.presentation.decks;
+//			[Bindable] private var deck:SlidesDeck = model.presentation.decks;
 			
 			public var uploadWindow : FileUploadWindow;
 			private var dispState:String;
@@ -72,19 +72,19 @@
 			}
 			
 			private function sendMaximize():void{
-				if (this.maximized && this.model.presentation.isPresenter){
-					dispatchEvent(new Event(PresentationWindowMediator.MAXIMIZE));
-				}
+//				if (this.maximized && this.model.presentation.isPresenter){
+//					dispatchEvent(new Event(PresentationWindowMediator.MAXIMIZE));
+//				}
 			}
 						
 			private function init():void 
 			{		
 				//PresentationFacade.getInstance().startup(this);			
-				BindingUtils.bindSetter(handleConnected, model.presentation, "isConnected");
-				BindingUtils.bindSetter(handleSharing, model.presentation, "isSharing");
-				BindingUtils.bindSetter(handlePresenterControl, model.presentation, "isPresenter");
-				BindingUtils.bindSetter(handlePresenterName, model.presentation, "presenterName");
-				BindingUtils.bindSetter(handlePresentationLoaded, model.presentation, "presentationLoaded");
+//				BindingUtils.bindSetter(handleConnected, model.presentation, "isConnected");
+//				BindingUtils.bindSetter(handleSharing, model.presentation, "isSharing");
+//				BindingUtils.bindSetter(handlePresenterControl, model.presentation, "isPresenter");
+//				BindingUtils.bindSetter(handlePresenterName, model.presentation, "presenterName");
+//				BindingUtils.bindSetter(handlePresentationLoaded, model.presentation, "presentationLoaded");
 				
 				/* Set up full screen handler. */
 				Application.application.stage.addEventListener(FullScreenEvent.FULL_SCREEN, fullScreenHandler);
@@ -104,18 +104,18 @@
 			public function handlePresentationLoaded(loaded : Boolean) : void
 			{				
 				if (loaded) {
-					if (model.presentation.isPresenter) {
+//					if (model.presentation.isPresenter) {
 						//sharePres.visible = true;
-						dispatchEvent(new Event(PresentationWindowMediator.SHARE));
-					}
+//						dispatchEvent(new Event(PresentationWindowMediator.SHARE));
+//					}
 					thumbnailView.visible = true;
 				} else {
 					//Alert.show("AAA");
 					thumbnailView.visible = false;
-					if (model.presentation.isPresenter) {
+//					if (model.presentation.isPresenter) {
 						//sharePres.visible = false;
-						uploadPres.enabled = true;
-					}
+//						uploadPres.enabled = true;
+//					}
 				}
 			}
 
@@ -129,21 +129,6 @@
 				}
 			}
 
-			public function dragEnterHandler(event:DragEvent):void
-	   		{
-	   			var dropTarget : Button = event.currentTarget as Button;
-	   			if (event.dragSource.hasFormat('presenterUserid'))
-	   		
-	   			DragManager.acceptDragDrop(dropTarget);
-	   		}
-	   	
-	   		public function dragDropHandler(event:DragEvent):void
-	   		{	
-	   			var presenterid : Number = Number(event.dragSource.dataForFormat('presenterUserid'));
-	   			var presentername : String = event.dragSource.dataForFormat('presenterUsername').toString();
-
-	   			PresentationFacade.getInstance().presentationApp.assignPresenter(presenterid, presentername);		  		
-	   		}	
 	   		
 	   		private function toggleFullScreen():void{
 	   			trace("Toggling fullscreen");
@@ -193,8 +178,7 @@
     	   			toolTip="Upload PDF Document" click="dispatchEvent(new Event(PresentationWindowMediator.OPEN_UPLOAD))"/>    
     	  <mx:Label id="presenterLbl" text="Presenter:" />
     	  <mx:Button id="presenterName" icon="{presenterIcon}" toolTip="Presenter" label="Presenter's Name"
-                 labelPlacement="right" color="#993300" 
-                 dragEnter="dragEnterHandler(event)" dragDrop="dragDropHandler(event)"/>
+                 labelPlacement="right" color="#993300"/>
     	  <mx:Spacer width="100%"/>					
     	  <mx:Button width="20" height="20" toolTip="Toggle Full-Screen" id="fullScreen" icon="{fullscreen_icon}" click="toggleFullScreen()" />
     </mx:ControlBar>

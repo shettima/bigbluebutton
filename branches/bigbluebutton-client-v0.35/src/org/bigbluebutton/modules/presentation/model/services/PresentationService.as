@@ -5,9 +5,7 @@ package org.bigbluebutton.modules.presentation.model.services
 	import mx.rpc.IResponder;
 	import mx.rpc.http.HTTPService;
 	
-	import org.bigbluebutton.modules.presentation.PresentationFacade;
-	import org.puremvc.as3.multicore.interfaces.IProxy;
-	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
+	import org.bigbluebutton.modules.presentation.model.business.IPresentationSlides;
 	        	
 	/**
 	 * This class directly communicates with an HTTP service in order to send and recives files (slides
@@ -17,26 +15,14 @@ package org.bigbluebutton.modules.presentation.model.services
 	 * @author dev_team@bigbluebutton.org
 	 * 
 	 */	        	
-	public class PresentationService extends Proxy implements IProxy
-	{
-		public static const ID:String = "PresentationService";
-		    
+	public class PresentationService implements IResponder
+	{  
 		private var service : HTTPService;
+		private var _slides:IPresentationSlides;
 		
-		private var responder : IResponder;
-		
-		/**
-		 * The default constructor 
-		 * @param url - the address of the HTTP service
-		 * @param responder - A responer, in this case a PresentationApplication class
-		 * 
-		 */		
-		public function PresentationService(url:String, responder : IResponder)
+		public function PresentationService()
 		{
-			super(ID);
 			service = new HTTPService();
-			this.responder = responder;
-			load(url);
 		}
 		
 		/**
@@ -44,13 +30,36 @@ package org.bigbluebutton.modules.presentation.model.services
 		 * @param url
 		 * 
 		 */		
-		public function load(url : String) : void
+		public function load(url:String, slides:IPresentationSlides) : void
 		{
-			service.url = url;
-			
+			_slides = slides;
+			service.url = url;			
 			var call : Object = service.send();
-			call.addResponder(responder);
+			call.addResponder(this);
 			
 		}
+
+		/**
+		 * This is the response event. It is called when the PresentationService class sends a request to
+		 * the server. This class then responds with this event 
+		 * @param event
+		 * 
+		 */		
+		public function result(event : Object):void
+		{
+			trace("Got result [" + event.result.toString() + "]");
+
+		}
+
+		/**
+		 * Event is called in case the call the to server wasn't successful. This method then gets called
+		 * instead of the result() method above 
+		 * @param event
+		 * 
+		 */
+		public function fault(event : Object):void
+		{
+			trace("Got fault [" + event.fault.toString() + "]");		
+		}		
 	}
 }

@@ -21,7 +21,6 @@ package org.bigbluebutton.modules.chat.model.business
 {
 	import flash.events.*;
 	import flash.net.NetConnection;
-
 		
 	public class NetConnectionDelegate
 	{

@@ -56,7 +56,7 @@
 		}
 		
 		private function zoom(e:MouseEvent):void{
-			if (!model.presentation.isPresenter) return;
+//			if (!model.presentation.isPresenter) return;
 			
 			var wid:Number = myLoader.width + e.delta * 10;
 			var hei:Number = myLoader.height + e.delta *10;
@@ -70,7 +70,7 @@
 		}
 		
 		private function mouseDown(e:MouseEvent):void{
-			if (!model.presentation.isPresenter) return;
+//			if (!model.presentation.isPresenter) return;
 			
 			startDragX = myLoader.x;
 			startDragY = myLoader.y;
@@ -80,7 +80,7 @@
 		}
 		
 		private function mouseMove(e:MouseEvent):void{
-			if (!model.presentation.isPresenter) return;
+//			if (!model.presentation.isPresenter) return;
 			
 			myLoader.x = startDragX + (imageCanvas.mouseX - startDragMouseX);
 			myLoader.y = startDragY + (imageCanvas.mouseY - startDragMouseY);
@@ -88,23 +88,23 @@
 		}
 		
 		private function mouseUp(e:MouseEvent):void{
-			if (!model.presentation.isPresenter) return;
+//			if (!model.presentation.isPresenter) return;
 			
 			removeEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
 		}
 		
 		private function mouseOut(e:MouseEvent):void{
-			if (!model.presentation.isPresenter) return;
+//			if (!model.presentation.isPresenter) return;
 			
 			removeEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
 		}
 		]]>
 	</mx:Script>
 
-	<mx:Binding source="model.presentation.decks as SlidesDeck" destination="deck" />
+	<!--mx:Binding source="model.presentation.decks as SlidesDeck" destination="deck" />
 	<mx:Binding source="deck.selected" destination="slideList.selectedIndex" />	
 	<mx:Binding source="slideList.selectedIndex" destination="deck.selected" />
-	<mx:Binding source="deck.slides.getItemAt(deck.selected) as Slide" destination="selectedSlide" />
+	<mx:Binding source="deck.slides.getItemAt(deck.selected) as Slide" destination="selectedSlide" /-->
 	
 	<mx:Canvas id="imageCanvas" width="100%" height="100%" verticalScrollPolicy="off" horizontalScrollPolicy="off">
 		<mx:Image id="myLoader" width="100%" height="100%"

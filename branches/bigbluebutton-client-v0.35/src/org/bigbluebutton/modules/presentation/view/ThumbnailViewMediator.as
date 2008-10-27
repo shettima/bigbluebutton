@@ -21,10 +21,10 @@ package org.bigbluebutton.modules.presentation.view
 {
 	import flash.events.Event;
 	
-	import org.bigbluebutton.modules.presentation.PresentationFacade;
+	import org.bigbluebutton.common.IBigBlueButtonModule;
+	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.MoveNotifier;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ZoomNotifier;
-	import org.bigbluebutton.modules.presentation.model.business.PresentationDelegate;
 	import org.bigbluebutton.modules.presentation.view.components.ThumbnailView;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
@@ -50,9 +50,9 @@ package org.bigbluebutton.modules.presentation.view
 		 * @param view
 		 * 
 		 */		
-		public function ThumbnailViewMediator(view:ThumbnailView)
+		public function ThumbnailViewMediator(module:IBigBlueButtonModule)
 		{
-			super(NAME, view);
+			super(NAME);
 			thumbnailView.addEventListener(SEND_PAGE_NUM, sendPageNumber);
 			thumbnailView.addEventListener(ZOOM, zoom);
 			thumbnailView.addEventListener(MOVE, move);
@@ -78,61 +78,52 @@ package org.bigbluebutton.modules.presentation.view
 			thumbnailView.myLoader.x = 1;
 			thumbnailView.myLoader.y = 1;
 			
-			if ((thumbnailView.model.presentation.isPresenter) && (thumbnailView.model.presentation.isSharing)) {
-				var pageNum : uint = thumbnailView.slideList.selectedIndex;
-			
-				proxy.gotoPage(pageNum);
-			}
-		}
-		
-		/**
-		 *  
-		 * @return - the PresentationDelegate proxy of the Presentation Module
-		 * 
-		 */		
-		protected function get proxy():PresentationDelegate{
-			return facade.retrieveProxy(PresentationDelegate.ID) as PresentationDelegate;
+//			if ((thumbnailView.model.presentation.isPresenter) && (thumbnailView.model.presentation.isSharing)) {
+//				var pageNum : uint = thumbnailView.slideList.selectedIndex;
+//			
+//				proxy.gotoPage(pageNum);
+//			}
 		}
 		
 		protected function zoom(e:Event):void{
 			var xPercent:Number = thumbnailView.myLoader.width / thumbnailView.imageCanvas.width;
 			var yPercent:Number = thumbnailView.myLoader.height / thumbnailView.imageCanvas.height;
 			
-			proxy.zoom(xPercent, yPercent);
+//			proxy.zoom(xPercent, yPercent);
 		}
 		
 		protected function move(e:Event):void{
 			var xOfset:Number = thumbnailView.myLoader.x / thumbnailView.imageCanvas.width;
 			var yOfset:Number = thumbnailView.myLoader.y / thumbnailView.imageCanvas.height;
 			
-			proxy.move(xOfset, yOfset);
+//			proxy.move(xOfset, yOfset);
 		}
 		
 		override public function listNotificationInterests():Array{
 			return [
-					PresentationFacade.ZOOM_SLIDE,
-					PresentationFacade.MOVE_SLIDE,
-					PresentationFacade.MAXIMIZE_PRESENTATION
+					PresentModuleConstants.ZOOM_SLIDE,
+					PresentModuleConstants.MOVE_SLIDE,
+					PresentModuleConstants.MAXIMIZE_PRESENTATION
 					];
 		}
 		
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
-				case PresentationFacade.ZOOM_SLIDE:
+				case PresentModuleConstants.ZOOM_SLIDE:
 					var zoomNote:ZoomNotifier = notification.getBody() as ZoomNotifier;
-					if (!thumbnailView.model.presentation.isPresenter){
-						thumbnailView.myLoader.width = zoomNote.newWidth * thumbnailView.imageCanvas.width;
-						thumbnailView.myLoader.height = zoomNote.newHeight * thumbnailView.imageCanvas.height;
-					}
+//					if (!thumbnailView.model.presentation.isPresenter){
+//						thumbnailView.myLoader.width = zoomNote.newWidth * thumbnailView.imageCanvas.width;
+//						thumbnailView.myLoader.height = zoomNote.newHeight * thumbnailView.imageCanvas.height;
+//					}
 					break;
-				case PresentationFacade.MOVE_SLIDE:
+				case PresentModuleConstants.MOVE_SLIDE:
 					var moveNote:MoveNotifier = notification.getBody() as MoveNotifier;
-					if (!thumbnailView.model.presentation.isPresenter){
-						thumbnailView.myLoader.x = moveNote.newXPosition * thumbnailView.imageCanvas.width;
-						thumbnailView.myLoader.y = moveNote.newYPosition * thumbnailView.imageCanvas.height;
-					}
+//					if (!thumbnailView.model.presentation.isPresenter){
+//						thumbnailView.myLoader.x = moveNote.newXPosition * thumbnailView.imageCanvas.width;
+//						thumbnailView.myLoader.y = moveNote.newYPosition * thumbnailView.imageCanvas.height;
+//					}
 					break;
-				case PresentationFacade.MAXIMIZE_PRESENTATION:
+				case PresentModuleConstants.MAXIMIZE_PRESENTATION:
 					thumbnailView.myLoader.percentHeight = 100;
 					thumbnailView.myLoader.percentWidth = 100;
 					break;

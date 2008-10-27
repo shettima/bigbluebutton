@@ -1,50 +1,16 @@
-/**
-* BigBlueButton open source conferencing system - http://www.bigbluebutton.org/
-*
-* Copyright (c) 2008 by respective authors (see below).
-*
-* This program is free software; you can redistribute it and/or modify it under the
-* terms of the GNU Lesser General Public License as published by the Free Software
-* Foundation; either version 2.1 of the License, or (at your option) any later
-* version.
-*
-* This program is distributed in the hope that it will be useful, but WITHOUT ANY
-* WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-* PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public License along
-* with this program; if not, write to the Free Software Foundation, Inc.,
-* 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-* 
-*/
-package org.bigbluebutton.modules.presentation.model.business
+package org.bigbluebutton.modules.chat.model.business
 {
 	import flash.events.AsyncErrorEvent;
 	import flash.events.NetStatusEvent;
 	import flash.events.SyncEvent;
-	import flash.net.NetConnection;
 	import flash.net.SharedObject;
 	
-	import org.bigbluebutton.modules.presentation.PresentationFacade;
-	import org.bigbluebutton.modules.presentation.controller.notifiers.MoveNotifier;
-	import org.bigbluebutton.modules.presentation.controller.notifiers.ProgressNotifier;
-	import org.bigbluebutton.modules.presentation.controller.notifiers.ZoomNotifier;
-	import org.bigbluebutton.modules.presentation.model.PresentationModel;
-	import org.puremvc.as3.multicore.interfaces.IProxy;
-	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
-					
-	/**
-	 * The PresentationDelegate class handles calls to and from the server 
-	 * In most cases the communication with the Red5 server is handles using a shared object
-	 * <p>
-	 * This class extends the Proxy class of the PureMVC framework
-	 * @author dev_team@bigbluebutton.org
-	 * 
-	 */					
-	public class PresentationDelegate extends Proxy implements IProxy
+	import org.bigbluebutton.modules.presentation.model.business.IPresentationSlides;
+	
+	public class PresentSOService implements IPresentService
 	{
-		public static const ID : String = "PresentationDelegate";
-		
+		public static const NAME:String = "PresentSOService";
+
 		private static const SHAREDOBJECT : String = "presentationSO";
 		private static const PRESENTER : String = "presenter";
 		private static const SHARING : String = "sharing";
@@ -57,75 +23,58 @@ package org.bigbluebutton.modules.presentation.model.business
 		private static const EXTRACT_RC : String = "EXTRACT";
 		private static const CONVERT_RC : String = "CONVERT";
 		
-		private var presentationSO : SharedObject;
-		private var connDelegate : NetConnectionDelegate;
-				
-		/**
-		 * The default constructor. Creates a new NetConnectionDelegate
-		 * 
-		 */				
-		public function PresentationDelegate(nc:NetConnection)
-		{
-			super(ID);
-			connDelegate = new NetConnectionDelegate(this);
-			connDelegate.setNetConnection(nc);
-		}	
+		private var _presentationSO : SharedObject;
+		private var netConnectionDelegate: NetConnectionDelegate;
 		
-		private function get presentation():PresentationModel{
-			return facade.retrieveMediator(PresentationModel.NAME) as PresentationModel;
-		}
-				
-		/**
-		 * The event is called when a successful connection is established
-		 * 
-		 */				
-		public function connectionSuccess() : void
-		{
-			presentation.isConnected = true;
-			
-			joinConference();
-		}
+		private var _slides:IPresentationSlides;
+		private var _uri:String;
+		private var _connectionListener:Function;
 		
-		/**
-		 * The event is called when a connection could not be established 
-		 * @param message - the reason the connection was not established
-		 * 
-		 */			
-		public function connectionFailed(message : String) : void 
-		{
-			if (presentationSO != null) presentationSO.close();
-			
-			presentation.isConnected = false;
-		}		
-		
-		/**
-		 * Attempt to join a room on the server 
-		 * @param userid - Our userid
-		 * @param host - The host we're trying to connect to 
-		 * @param room - The room on the host we're trying to connect to
-		 * 
-		 */		
-		public function join(userid: Number, host : String, room : String) : void
+		public function PresentSOService(uri:String, slides:IPresentationSlides)
 		{			
-			presentation.userid = userid;
-			presentation.host = host;
-			presentation.room = room;
-						
-			connDelegate.connect(host, room);
-			sendNotification(PresentationFacade.LOAD_COMMAND);
+			_uri = uri;
+			_slides = slides;
+			netConnectionDelegate = new NetConnectionDelegate(uri, connectionListener);			
 		}
 		
-		/**
-		 * Leave the server, close the connection 
-		 * 
-		 */		
-		public function leave() : void
-		{
-			givePresenterControl(0, PresentationModel.DEFAULT_PRESENTER);
-			presentationSO.close();
-			connDelegate.disconnect();
+		public function connect():void {
+			netConnectionDelegate.connect(_uri);
 		}
-				
+			
+		public function disconnect():void {
+			leave();
+			netConnectionDelegate.disconnect();
+		}
+		
+		private function connectionListener(connected:Boolean):void {
+			if (connected) {
+				join();
+			} else {
+				leave();
+			}
+		}
+		
+	    private function join() : void
+		{
+			_presentationSO = SharedObject.getRemote(SHAREDOBJECT, _uri, false);			
+			_presentationSO.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
+			_presentationSO.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
+			_presentationSO.addEventListener(SyncEvent.SYNC, sharedObjectSyncHandler);			
+			_presentationSO.client = this;
+			_presentationSO.connect(netConnectionDelegate.connection);
+			trace(NAME + ": PresentationModule is connected to Shared object");
+			notifyConnectionStatusListener(true);			
+		}
+		
+	    private function leave():void
+	    {
+	    	if (_presentationSO != null) _presentationSO.close();
+	    }
+
+		public function addConnectionStatusListener(connectionListener:Function):void {
+			_connectionListener = connectionListener;
+		}
+		
 		/**
 		 * Send an event to the server to update the clients with a new slide zoom ratio
 		 * @param slideHeight
@@ -209,20 +158,6 @@ package org.bigbluebutton.modules.presentation.model.business
 			presentationSO.setProperty(SHARING, false);
 			sendNotification(PresentationFacade.CLEAR_EVENT);
 		}
-		
-		/**
-		 * Calls the server in order to give the presentation control to someone else
-		 * @param userid
-		 * @param name
-		 * 
-		 */		
-		public function givePresenterControl(userid : Number, name : String) : void
-		{
-			// Force unshare of presentation
-			share(false);			
-			presentationSO.setProperty(PRESENTER, {userid : userid, name : name});
-			trace("Assign presenter control to [" + name + "]");
-		}
 
 		/**
 		 * Send an event out to the server to go to a new page in the SlidesDeck 
@@ -247,55 +182,7 @@ package org.bigbluebutton.modules.presentation.model.business
 			presentation.decks.selected = page;
 			sendNotification(PresentationFacade.UPDATE_PAGE, page);
 		}
-				
-		/**
-		 * Stop sharing the presentation 
-		 * 
-		 */		
-		public function stopSharing() : void
-		{
-			presentationSO.setProperty(SHARING, false);
-		}
-		
-		/**
-		 * Start sharing the presentation 
-		 * @param sharing
-		 * 
-		 */		
-		public function share(sharing : Boolean) : void
-		{
-				presentationSO.setProperty(SHARING, {share : sharing});		
-		}
-				
-		/**
-		 * Joins a conference on the server 
-		 * 
-		 */				
-		private function joinConference() : void
-		{
-			presentationSO = SharedObject.getRemote(SHAREDOBJECT, connDelegate.connUri, false);
-			
-			presentationSO.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
-			presentationSO.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
-			presentationSO.addEventListener(SyncEvent.SYNC, sharedObjectSyncHandler);
-			
-			presentationSO.client = this;
 
-			presentationSO.connect(connDelegate.getConnection());
-			trace( "PresentationDelegate::joinConference");
-		}
-
-		/**
-		 * Remove the events that the presentationSO:SharedObject of this class listens to 
-		 * 
-		 */
-		private function removeListeners() : void
-		{
-			presentationSO.removeEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
-			presentationSO.removeEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
-			presentationSO.removeEventListener(SyncEvent.SYNC, sharedObjectSyncHandler);
-		}		
-								
 		/**
 		 * Event called automatically once a SharedObject Sync method is received 
 		 * @param event
@@ -327,28 +214,7 @@ package org.bigbluebutton.modules.presentation.model.business
 					}
 					
 					break;
-										
-				case PRESENTER :
-					trace("Giving presenter control to [" + presentationSO.data.presenter.name + "]");
-					if (presentation.isSharing) presentation.isSharing = false;
-					
-					if (presentation.presentationLoaded) {
-						presentation.presentationLoaded = false;
-						sendNotification(PresentationFacade.CLEAR_EVENT);					
-					}
-												
-					if (presentation.userid == presentationSO.data.presenter.userid) {
-						// The user has been given presenter role
-						presentation.isPresenter = true;						
-					} else {
-						if (presentation.isPresenter) {
-							// Someone else has become the presenter
-							presentation.isPresenter = false;	
-						}
-					}
-					presentation.presenterName = presentationSO.data.presenter.name;
-					break;
-					
+															
 				case SHARING :
 					presentation.isSharing = presentationSO.data.sharing.share;
 				
@@ -372,19 +238,6 @@ package org.bigbluebutton.modules.presentation.model.business
 					break;
 			}
 		}
-		
-		/**
-		 * Processes a new SlideDeck
-		 * @param pres - an Object representing a SlideDeck
-		 * 
-		 */		
-		//private function processSharedPresentation(pres : Object) : void
-		//{
-		//	var deck:SlidesDeck = new SlidesDeck(pres);
-		//	
-		//	presentation.newDeckOfSlides(deck);		
-		//	presentation.decks.selected = pres.page;	
-		//}
 		
 		/**
 		 *  Called when there is an update from the server
@@ -435,26 +288,61 @@ package org.bigbluebutton.modules.presentation.model.business
 			
 					break;	
 			}															
+		}		
+
+		private function notifyConnectionStatusListener(connected:Boolean):void {
+			if (_connectionListener != null) {
+				_connectionListener(connected);
+			}
 		}
-		
-		/**
-		 * Method is called when a new NetStatusEvent is received 
-		 * @param event
-		 * 
-		 */		
+
 		private function netStatusHandler ( event : NetStatusEvent ) : void
 		{
-			//log.debug( "netStatusHandler " + event.info.code );
+			var statusCode : String = event.info.code;
+			
+			switch ( statusCode ) 
+			{
+				case "NetConnection.Connect.Success" :
+					trace(NAME + ":Connection Success");		
+					notifyConnectionStatusListener(true);			
+					break;
+			
+				case "NetConnection.Connect.Failed" :			
+					trace(NAME + ":Connection to viewers application failed");
+					notifyConnectionStatusListener(false);
+					break;
+					
+				case "NetConnection.Connect.Closed" :									
+					trace(NAME + ":Connection to viewers application closed");
+					notifyConnectionStatusListener(false);
+					break;
+					
+				case "NetConnection.Connect.InvalidApp" :				
+					trace(NAME + ":Viewers application not found on server");
+					notifyConnectionStatusListener(false);
+					break;
+					
+				case "NetConnection.Connect.AppShutDown" :
+					trace(NAME + ":Viewers application has been shutdown");
+					notifyConnectionStatusListener(false);
+					break;
+					
+				case "NetConnection.Connect.Rejected" :
+					trace(NAME + ":No permissions to connect to the viewers application" );
+					notifyConnectionStatusListener(false);
+					break;
+					
+				default :
+				   trace(NAME + ":default - " + event.info.code );
+				   notifyConnectionStatusListener(false);
+				   break;
+			}
 		}
-		
-		/**
-		 * Method is called when a new AsyncErrorEvent is received 
-		 * @param event
-		 * 
-		 */		
+			
 		private function asyncErrorHandler ( event : AsyncErrorEvent ) : void
 		{
-			//log.debug( "asyncErrorHandler " + event.error);
+			trace( "participantsSO asyncErrorHandler " + event.error);
+			notifyConnectionStatusListener(false);
 		}
 	}
 }

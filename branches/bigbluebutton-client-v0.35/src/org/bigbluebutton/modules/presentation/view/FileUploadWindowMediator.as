@@ -26,6 +26,8 @@ package org.bigbluebutton.modules.presentation.view
 	import mx.controls.Alert;
 	import mx.managers.PopUpManager;
 	
+	import org.bigbluebutton.common.IBigBlueButtonModule;
+	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.PresentationFacade;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ProgressNotifier;
 	import org.bigbluebutton.modules.presentation.view.components.FileUploadWindow;
@@ -59,9 +61,9 @@ package org.bigbluebutton.modules.presentation.view
 		 * @param view The GUI component which this class serves as a mediator for.
 		 * 
 		 */		
-		public function FileUploadWindowMediator(view:FileUploadWindow)
+		public function FileUploadWindowMediator(module:IBigBlueButtonModule)
 		{
-			super(NAME,view);
+			super(NAME);
 			fileUploadWindow.addEventListener(START_UPLOAD, startUpload);
 			fileUploadWindow.addEventListener(CLOSE_UPLOAD_WINDOW, closeFileUploadWindow);
 			fileUploadWindow.addEventListener(SELECT_FILE, selectFile);
@@ -83,7 +85,7 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function startUpload(e:Event):void{
 			trace("In startUpload()...")
-			PresentationFacade.getInstance().presentationApp.uploadPresentation(fileToUpload);
+//			PresentationFacade.getInstance().presentationApp.uploadPresentation(fileToUpload);
 //			fileUploadWindow.progBarLbl.visible = true;
 //			fileUploadWindow.progressBar.visible = true;
 			
@@ -105,7 +107,7 @@ package org.bigbluebutton.modules.presentation.view
 		
 		private function closeWindow():void{
 			if (okState) {
-				sendNotification(PresentationFacade.READY_EVENT);
+//				sendNotification(PresentationFacade.READY_EVENT);
 			}
 			enableControls();
 			removeWindow();
@@ -126,73 +128,51 @@ package org.bigbluebutton.modules.presentation.view
 			fileUploadWindow.uploadBtn.enabled = true;
 		}
 		
-		/**
-		 * Opens a file browser window 
-		 * @param e
-		 * 
-		 */		
+	
 		private function selectFile(e:Event):void{
 			fileToUpload.addEventListener(Event.SELECT, onSelectFile);	
 			fileToUpload.browse([new FileFilter("PDF", "*.pdf")]);
 		}
-		
-		/**
-		 * Lists the notifications in which this class is interested. 
-		 * @return An array of Strings representing notifications
-		 * This class listens to:
-		 * 	PresentationFacade.UPLOAD_COMPLETED_EVENT,
-		 *	PresentationFacade.UPLOAD_PROGRESS_EVENT,
-		 *	PresentationFacade.UPLOAD_IO_ERROR_EVENT,
-		 *  PresentationFacade.UPLOAD_SECURITY_ERROR_EVENT,
-		 *	PresentationFacade.CONVERT_PROGRESS_EVENT,
-		 *	PresentationFacade.EXTRACT_PROGRESS_EVENT,
-		 *	PresentationFacade.UPDATE_PROGRESS_EVENT,
-		 *	PresentationFacade.CONVERT_SUCCESS_EVENT
-		 * 
-		 */		
+			
 		override public function listNotificationInterests():Array{
 			return [
-					PresentationFacade.UPLOAD_COMPLETED_EVENT,
-					PresentationFacade.UPLOAD_PROGRESS_EVENT,
-					PresentationFacade.UPLOAD_IO_ERROR_EVENT,
-					PresentationFacade.UPLOAD_SECURITY_ERROR_EVENT,
-					PresentationFacade.CONVERT_PROGRESS_EVENT,
-					PresentationFacade.EXTRACT_PROGRESS_EVENT,
-					PresentationFacade.UPDATE_PROGRESS_EVENT,
-					PresentationFacade.CONVERT_SUCCESS_EVENT
+					PresentModuleConstants.UPLOAD_COMPLETED_EVENT,
+					PresentModuleConstants.UPLOAD_PROGRESS_EVENT,
+					PresentModuleConstants.UPLOAD_IO_ERROR_EVENT,
+					PresentModuleConstants.UPLOAD_SECURITY_ERROR_EVENT,
+					PresentModuleConstants.CONVERT_PROGRESS_EVENT,
+					PresentModuleConstants.EXTRACT_PROGRESS_EVENT,
+					PresentModuleConstants.UPDATE_PROGRESS_EVENT,
+					PresentModuleConstants.CONVERT_SUCCESS_EVENT
 					];
 		}
 		
-		/**
-		 * Method is executed when the class receives one of the notifications it is interested in 
-		 * @param notification The received notification
-		 * 
-		 */		
+	
 		override public function handleNotification(notification:INotification):void{
 			//if (isListening == false) return;
 			switch(notification.getName()){
-				case PresentationFacade.UPLOAD_COMPLETED_EVENT:
+				case PresentModuleConstants.UPLOAD_COMPLETED_EVENT:
 					handleUploadCompleteEvent(notification);
 					break;
-				case PresentationFacade.UPLOAD_PROGRESS_EVENT:
+				case PresentModuleConstants.UPLOAD_PROGRESS_EVENT:
 					handleUploadProgressEvent(notification);
 					break;
-				case PresentationFacade.CONVERT_SUCCESS_EVENT:
+				case PresentModuleConstants.CONVERT_SUCCESS_EVENT:
 					handleConvertSuccessEvent(notification);
 					break;
-				case PresentationFacade.UPLOAD_IO_ERROR_EVENT:
+				case PresentModuleConstants.UPLOAD_IO_ERROR_EVENT:
 					handleUploadIOErrorEvent(notification);
 					break;
-				case PresentationFacade.UPLOAD_SECURITY_ERROR_EVENT:
+				case PresentModuleConstants.UPLOAD_SECURITY_ERROR_EVENT:
 					handleUploadSecurityErrorEvent(notification);
 					break;
-				case PresentationFacade.CONVERT_PROGRESS_EVENT:
+				case PresentModuleConstants.CONVERT_PROGRESS_EVENT:
 					handleConvertProgressEvent(notification);
 					break;
-				case PresentationFacade.EXTRACT_PROGRESS_EVENT:
+				case PresentModuleConstants.EXTRACT_PROGRESS_EVENT:
 					handleExtractProgressEvent(notification);
 					break;
-				case PresentationFacade.UPDATE_PROGRESS_EVENT:
+				case PresentModuleConstants.UPDATE_PROGRESS_EVENT:
 					handleUpdateProgressEvent(notification);
 					break;
 			}

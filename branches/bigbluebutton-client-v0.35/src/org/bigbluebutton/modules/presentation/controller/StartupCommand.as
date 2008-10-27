@@ -19,7 +19,14 @@
 */
 package org.bigbluebutton.modules.presentation.controller
 {
-	import org.puremvc.as3.multicore.patterns.command.MacroCommand;
+	import org.bigbluebutton.modules.presentation.PresentationEndpointMediator;
+	import org.bigbluebutton.modules.presentation.PresentationModuleMediator;
+	import org.bigbluebutton.modules.presentation.model.business.PresentProxy;
+	import org.bigbluebutton.modules.presentation.view.FileUploadWindowMediator;
+	import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
+	import org.bigbluebutton.modules.presentation.view.ThumbnailViewMediator;
+	import org.puremvc.as3.multicore.interfaces.INotification;
+	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
 	/**
 	 * This MacroCommand is called at startup. It calls two other sub-commands: StartupModelCommand and
@@ -27,11 +34,16 @@ package org.bigbluebutton.modules.presentation.controller
 	 * @author Denis Zgonjanin
 	 * 
 	 */	
-	public class StartupCommand extends MacroCommand
-	{
-		override protected function initializeMacroCommand():void{
-			addSubCommand(StartupModelCommand);
-			addSubCommand(StartupViewCommand);
+	public class StartupCommand extends SimpleCommand
+	{		
+		override public function execute(notification:INotification):void{
+			var m:PresentationModule = notification.getBody() as PresentationModule;
+			facade.registerProxy(new PresentProxy(m));
+			facade.registerMediator(new PresentationEndpointMediator(m));
+			facade.registerMediator(new PresentationModuleMediator(m));
+			facade.registerMediator(new PresentationWindowMediator(m));
+			facade.registerMediator(new FileUploadWindowMediator(m));
+			facade.registerMediator(new ThumbnailViewMediator(m));
 		}
 
 	}
