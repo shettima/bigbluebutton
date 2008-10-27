@@ -68,8 +68,8 @@ package org.bigbluebutton.main.view
 				case MainApplicationConstants.MODULES_START:
 					trace('Received MODULES_START xxxx');
 					//sendNotification(MainApplicationConstants.MODULE_START, "ChatModule");
-					sendNotification(MainApplicationConstants.MODULE_START, "ViewersModule");
-					
+					//sendNotification(MainApplicationConstants.MODULE_START, "ViewersModule");
+					sendNotification(MainApplicationConstants.MODULE_START, "PresentationModule");
 					break;
 				case MainApplicationConstants.MODULE_STARTED:
 					trace('Received MODULE_STARTED for ' + notification.getBody() as String);

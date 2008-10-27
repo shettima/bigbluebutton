@@ -28,7 +28,6 @@ package org.bigbluebutton.modules.presentation.view
 	
 	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
-	import org.bigbluebutton.modules.presentation.PresentationFacade;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ProgressNotifier;
 	import org.bigbluebutton.modules.presentation.view.components.FileUploadWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
@@ -51,6 +50,9 @@ package org.bigbluebutton.modules.presentation.view
 		public static const SELECT_FILE:String = "Select File";
 		
 		private var fileToUpload:FileReference = new FileReference();
+		
+		private var _fileWin:FileUploadWindow = new FileUploadWindow();
+		
 		// Var to determine how to handle okCancelBtn click
 		private var okState : Boolean = false;
 		
@@ -64,18 +66,9 @@ package org.bigbluebutton.modules.presentation.view
 		public function FileUploadWindowMediator(module:IBigBlueButtonModule)
 		{
 			super(NAME);
-			fileUploadWindow.addEventListener(START_UPLOAD, startUpload);
-			fileUploadWindow.addEventListener(CLOSE_UPLOAD_WINDOW, closeFileUploadWindow);
-			fileUploadWindow.addEventListener(SELECT_FILE, selectFile);
-		}
-		
-		/**
-		 * Returns the FileUploadWindow GUI component that is registered to this Mediator object 
-		 * @return 
-		 * 
-		 */		
-		protected function get fileUploadWindow():FileUploadWindow{
-			return viewComponent as FileUploadWindow;
+			_fileWin.addEventListener(START_UPLOAD, startUpload);
+			_fileWin.addEventListener(CLOSE_UPLOAD_WINDOW, closeFileUploadWindow);
+			_fileWin.addEventListener(SELECT_FILE, selectFile);
 		}
 		
 		/**
@@ -86,13 +79,13 @@ package org.bigbluebutton.modules.presentation.view
 		private function startUpload(e:Event):void{
 			trace("In startUpload()...")
 //			PresentationFacade.getInstance().presentationApp.uploadPresentation(fileToUpload);
-//			fileUploadWindow.progBarLbl.visible = true;
-//			fileUploadWindow.progressBar.visible = true;
+			_fileWin.progBarLbl.visible = true;
+			_fileWin.progressBar.visible = true;
 			
-			//fileUploadWindow.okCancelBtn.visible = false;
-			fileUploadWindow.selectBtn.enabled = false;
-			fileUploadWindow.uploadBtn.enabled = false;
-			fileUploadWindow.fileTxtInput.enabled = false;
+			_fileWin.okCancelBtn.visible = false;
+			_fileWin.selectBtn.enabled = false;
+			_fileWin.uploadBtn.enabled = false;
+			_fileWin.fileTxtInput.enabled = false;
 		}
 		
 		/**
@@ -114,7 +107,7 @@ package org.bigbluebutton.modules.presentation.view
 		}
 		
 		public function removeWindow():void{
-			PopUpManager.removePopUp(fileUploadWindow);
+			PopUpManager.removePopUp(_fileWin);
 		}
 		
 		/**
@@ -124,8 +117,8 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function onSelectFile(e:Event):void
 		{
-			fileUploadWindow.fileTxtInput.text = fileToUpload.name;
-			fileUploadWindow.uploadBtn.enabled = true;
+			_fileWin.fileTxtInput.text = fileToUpload.name;
+			_fileWin.uploadBtn.enabled = true;
 		}
 		
 	
@@ -184,16 +177,16 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function handleUploadCompleteEvent(note:INotification):void{
-			fileUploadWindow.progressLbl.text = "Upload completed. Please wait while we convert the document."
-//			fileUploadWindow.progressBar.label = "Upload successful.";
-//			fileUploadWindow.progressBar.setProgress(0, 100);
-//			fileUploadWindow.progressBar.validateNow();
-			fileUploadWindow.progressLbl.validateNow();
+			_fileWin.progressLbl.text = "Upload completed. Please wait while we convert the document."
+			_fileWin.progressBar.label = "Upload successful.";
+			_fileWin.progressBar.setProgress(0, 100);
+			_fileWin.progressBar.validateNow();
+			_fileWin.progressLbl.validateNow();
 
-			fileUploadWindow.fileLbl.visible = false;
-			fileUploadWindow.selectBtn.visible = false;
-			fileUploadWindow.uploadBtn.visible = false;
-			fileUploadWindow.fileTxtInput.visible = false;
+			_fileWin.fileLbl.visible = false;
+			_fileWin.selectBtn.visible = false;
+			_fileWin.uploadBtn.visible = false;
+			_fileWin.fileTxtInput.visible = false;
 		}
 		
 		/**
@@ -203,11 +196,11 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleUploadProgressEvent(note:INotification):void{
 			var progress:Number = note.getBody() as Number;
-			fileUploadWindow.progressLbl.text = progress + "% uploaded.";
-//			fileUploadWindow.progressBar.label = progress + "% uploaded.";
-//			fileUploadWindow.progressBar.setProgress(progress, 100);
-//			fileUploadWindow.progressBar.validateNow();
-			fileUploadWindow.progressLbl.validateNow();
+			_fileWin.progressLbl.text = progress + "% uploaded.";
+			_fileWin.progressBar.label = progress + "% uploaded.";
+			_fileWin.progressBar.setProgress(progress, 100);
+			_fileWin.progressBar.validateNow();
+			_fileWin.progressLbl.validateNow();
 		}
 		
 		/**
@@ -237,12 +230,12 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleConvertProgressEvent(note:INotification):void{
 			var convertEvt:ProgressNotifier = note.getBody() as ProgressNotifier;
-			fileUploadWindow.progressLbl.text = "Converting slide " + convertEvt.completedSlides + " of " + convertEvt.totalSlides + " slides.";
-//			fileUploadWindow.progressBar.label = "Converting slide " + convertEvt.completedSlides + " of " 
-//					+ convertEvt.totalSlides + " slides.";
-//			fileUploadWindow.progressBar.setProgress(convertEvt.completedSlides, convertEvt.totalSlides);
-//			fileUploadWindow.progressBar.validateNow();
-			fileUploadWindow.progressLbl.validateNow();
+			_fileWin.progressLbl.text = "Converting slide " + convertEvt.completedSlides + " of " + convertEvt.totalSlides + " slides.";
+			_fileWin.progressBar.label = "Converting slide " + convertEvt.completedSlides + " of " 
+					+ convertEvt.totalSlides + " slides.";
+			_fileWin.progressBar.setProgress(convertEvt.completedSlides, convertEvt.totalSlides);
+			_fileWin.progressBar.validateNow();
+			_fileWin.progressLbl.validateNow();
 		}
 		
 		/**
@@ -252,12 +245,12 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleExtractProgressEvent(note:INotification):void{
 			var extractEvt:ProgressNotifier = note.getBody() as ProgressNotifier;
-			fileUploadWindow.progressLbl.text = "Extracting slide " + extractEvt.completedSlides + " of " + extractEvt.totalSlides + " slides.";
-//			fileUploadWindow.progressBar.label = "Extracting slide " + extractEvt.completedSlides + " of " 
-//					+ extractEvt.totalSlides + " slides.";
-//			fileUploadWindow.progressBar.setProgress(extractEvt.completedSlides, extractEvt.totalSlides);
-//			fileUploadWindow.progressBar.validateNow();
-			fileUploadWindow.progressLbl.validateNow();
+			_fileWin.progressLbl.text = "Extracting slide " + extractEvt.completedSlides + " of " + extractEvt.totalSlides + " slides.";
+			_fileWin.progressBar.label = "Extracting slide " + extractEvt.completedSlides + " of " 
+					+ extractEvt.totalSlides + " slides.";
+			_fileWin.progressBar.setProgress(extractEvt.completedSlides, extractEvt.totalSlides);
+			_fileWin.progressBar.validateNow();
+			_fileWin.progressLbl.validateNow();
 		}
 		
 		/**
@@ -266,8 +259,8 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function handleUpdateProgressEvent(note:INotification):void{
-			fileUploadWindow.progressLbl.text = note.getBody() as String;
-			fileUploadWindow.progressLbl.validateNow();
+			_fileWin.progressLbl.text = note.getBody() as String;
+			_fileWin.progressLbl.validateNow();
 		}
 		
 		/**
@@ -276,8 +269,8 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function handleConvertSuccessEvent(note:INotification):void{
-			fileUploadWindow.okCancelBtn.label = "Ok";
-			fileUploadWindow.okCancelBtn.visible = true;
+			_fileWin.okCancelBtn.label = "Ok";
+			_fileWin.okCancelBtn.visible = true;
 			okState = true;
 			closeWindow();
 		}
@@ -290,11 +283,11 @@ package org.bigbluebutton.modules.presentation.view
 		{
 			//First, remove this class from listening
 			this.isListening = false;
-			fileUploadWindow.okCancelBtn.visible = false;
+			_fileWin.okCancelBtn.visible = false;
 			
-			fileUploadWindow.selectBtn.enabled = true;
-			fileUploadWindow.uploadBtn.enabled = true;
-			fileUploadWindow.fileTxtInput.enabled = true;			
+			_fileWin.selectBtn.enabled = true;
+			_fileWin.uploadBtn.enabled = true;
+			_fileWin.fileTxtInput.enabled = true;			
 		}
 
 	}

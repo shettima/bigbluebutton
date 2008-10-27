@@ -91,6 +91,7 @@ package org.bigbluebutton.modules.viewers
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
 				case ViewersModuleConstants.LOGGED_OUT:
+					sendNotification(ViewersModuleConstants.CLOSE_VIEWERS_WINDOW);
 					sendNotification(ViewersModuleConstants.OPEN_JOIN_WINDOW);
 					break;
 				case ViewersModuleConstants.LOGGED_IN:

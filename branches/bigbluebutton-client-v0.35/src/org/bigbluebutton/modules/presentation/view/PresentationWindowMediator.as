@@ -82,7 +82,8 @@ package org.bigbluebutton.modules.presentation.view
 					PresentModuleConstants.READY_EVENT,
 					PresentModuleConstants.VIEW_EVENT,
 					PresentModuleConstants.MAXIMIZE_PRESENTATION,
-					PresentModuleConstants.RESTORE_PRESENTATION
+					PresentModuleConstants.RESTORE_PRESENTATION,
+					PresentModuleConstants.OPEN_PRESENT_WINDOW
 					];
 		}
 		
@@ -105,6 +106,15 @@ package org.bigbluebutton.modules.presentation.view
 				case PresentModuleConstants.RESTORE_PRESENTATION:
 					handleRestorePresentation();
 					break;
+				case PresentModuleConstants.OPEN_PRESENT_WINDOW:
+		   			_presWin.height = 440;
+		   			_presWin.width = 430;
+		   			_presWin.title = PresentationWindow.TITLE;
+		   			_presWin.showCloseButton = false;	
+		   			_presWin.xPosition = 200;
+		   			_presWin.yPosition = 20;
+		   			facade.sendNotification(PresentModuleConstants.ADD_WINDOW, _presWin);		   							
+					break;
 			}
 		}
 		
@@ -114,7 +124,7 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleReadyEvent():void
 		{			
-			_presWin.thumbnailView.visible = false;
+//			_presWin.thumbnailView.visible = false;
 			//sharePresentation(new Event("share"));
 		}
 		
@@ -123,7 +133,7 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		private function handleViewEvent():void{			
-			_presWin.thumbnailView.visible = true;
+//			_presWin.thumbnailView.visible = true;
 		}
 		
 		/**
@@ -178,9 +188,9 @@ package org.bigbluebutton.modules.presentation.view
 			
 			var point1:Point = new Point();
             // Calculate position of TitleWindow in Application's coordinates. 
-            point1.x = _presWin.thumbnailView.x;
-            point1.y = _presWin.thumbnailView.y;                
-            point1 = _presWin.thumbnailView.localToGlobal(point1);
+            point1.x = _presWin.slideView.x;
+            point1.y = _presWin.slideView.y;                
+            point1 = _presWin.slideView.localToGlobal(point1);
             _presWin.uploadWindow.x = point1.x + 25;
             _presWin.uploadWindow.y = point1.y + 25;
             

@@ -6,7 +6,8 @@
 	paddingBottom="0" paddingTop="0" 
 	paddingLeft="0" paddingRight="0" 
     layout="vertical" verticalScrollPolicy="off" horizontalScrollPolicy="off"
-	creationComplete="init()" focusStart="focusThumbnail()">
+	creationComplete="init()" focusStart="focusThumbnail()"
+	implements="org.bigbluebutton.common.IBbbModuleWindow">
 
 	<mx:Script>
 		<![CDATA[
@@ -44,6 +45,24 @@
 			
 			public var uploadWindow : FileUploadWindow;
 			private var dispState:String;
+			private var _xPosition:int;
+			private var _yPosition:int;
+			
+			public function get xPosition():int {
+				return _xPosition;
+			}
+			
+			public function get yPosition():int {
+				return _yPosition;
+			}
+			
+			public function set xPosition(x:int):void {
+				_xPosition = x;
+			}
+			
+			public function set yPosition(y:int):void {
+				_yPosition = y;
+			}
 
 			public function handleConnected(connected : Boolean) : void
 			{
@@ -93,12 +112,12 @@
 			
 			private function focusThumbnail():void{
 				
-				this.thumbnailView.slideList.setFocus();
+				this.slideView.slideList.setFocus();
 			}
 
 			public function handlePresenterName(name : String) : void
 			{
-				presenterName.label = name;
+//				presenterName.label = name;
 			}
 
 			public function handlePresentationLoaded(loaded : Boolean) : void
@@ -108,10 +127,10 @@
 						//sharePres.visible = true;
 //						dispatchEvent(new Event(PresentationWindowMediator.SHARE));
 //					}
-					thumbnailView.visible = true;
+					slideView.visible = true;
 				} else {
 					//Alert.show("AAA");
-					thumbnailView.visible = false;
+					slideView.visible = false;
 //					if (model.presentation.isPresenter) {
 						//sharePres.visible = false;
 //						uploadPres.enabled = true;
@@ -122,10 +141,10 @@
 			public function handlePresenterControl(isPresenter : Boolean) : void
 			{
 				if (isPresenter) {
-					uploadPres.visible = true;
+//					uploadPres.visible = true;
 				} else {
 					dispatchEvent(new Event(PresentationWindowMediator.UNSHARE));
-					uploadPres.visible = false;
+//					uploadPres.visible = false;
 				}
 			}
 
@@ -170,9 +189,9 @@
 		]]>
 	</mx:Script>
 	
-	<thumb:ThumbnailView id="thumbnailView" width="100%" height="100%" visible="false"/>
+	<thumb:SlideView id="slideView" width="100%" height="100%" visible="false"/>
 
-    <mx:ControlBar width="100%">
+    <!--mx:ControlBar width="100%">
     	  <mx:Button id="uploadPres" icon="{uploadIcon}" visible="false"
     	   			width="20" height="20"
     	   			toolTip="Upload PDF Document" click="dispatchEvent(new Event(PresentationWindowMediator.OPEN_UPLOAD))"/>    
@@ -181,6 +200,6 @@
                  labelPlacement="right" color="#993300"/>
     	  <mx:Spacer width="100%"/>					
     	  <mx:Button width="20" height="20" toolTip="Toggle Full-Screen" id="fullScreen" icon="{fullscreen_icon}" click="toggleFullScreen()" />
-    </mx:ControlBar>
+    </mx:ControlBar-->
 			
 </pres:MDIWindow>

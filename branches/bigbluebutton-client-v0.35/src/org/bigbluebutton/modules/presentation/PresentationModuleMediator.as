@@ -19,14 +19,6 @@
 */
 package org.bigbluebutton.modules.presentation
 {
-	import org.bigbluebutton.common.messaging.InputPipe;
-	import org.bigbluebutton.common.messaging.OutputPipe;
-	import org.bigbluebutton.common.messaging.Router;
-	import org.bigbluebutton.main.MainApplicationConstants;
-	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
-	import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
-	import org.bigbluebutton.modules.presentation.view.components.ThumbnailView;
-	import org.bigbluebutton.modules.presentation.view.ThumbnailViewMediator;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
 	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
@@ -42,81 +34,11 @@ package org.bigbluebutton.modules.presentation
 	 */	
 	public class PresentationModuleMediator extends Mediator implements IMediator
 	{
-		public static const NAME:String = "Presentation Module Mediator";
-		
-		private var outpipe : OutputPipe;
-		private var inpipe : InputPipe;
-		private var router : Router;
-		private var inpipeListener : PipeListener;
-		
-		private var presentationWindow:PresentationWindow = new PresentationWindow();
-		private var module:PresentationModule;
-		
-		private static const TO_PRESENTATION_MODULE:String = "TO_PRESENTATION_MODULE";
-		private static const FROM_PRESENTATION_MODULE:String = "FROM_PRESENTATION_MODULE";
-		
-		private static const PLAYBACK_MODE:String = "PLAYBACK_MODE";
-		private static const PLAYBACK_MESSAGE:String = "PLAYBACK_MESSAGE";
-		
-		/**
-		 * The constructor. Associates this mediator with the PresentationModule class
-		 * The constructor does the work of registering the PresentationModule with input/output pipes
-		 * of the MainApplicationShell within BigBlueButton
-		 * @param view
-		 * 
-		 */		
+		public static const NAME:String = "PresentationModuleMediator";
+	
 		public function PresentationModuleMediator(view:PresentationModule)
 		{
 			super(NAME, view);
-			module = view;
-			router = view.router;
-			inpipe = new InputPipe(TO_PRESENTATION_MODULE);
-			outpipe = new OutputPipe(FROM_PRESENTATION_MODULE);
-			inpipeListener = new PipeListener(this, messageReceiver);
-			inpipe.connect(inpipeListener);
-			router.registerOutputPipe(outpipe.name, outpipe);
-			router.registerInputPipe(inpipe.name, inpipe);
-			addWindow();
-		}
-		
-		/**
-		 * Receives a message from the puremvc piping 
-		 * @param message
-		 * 
-		 */		
-		private function messageReceiver(message : IPipeMessage) : void
-		{
-			var msg : String = message.getHeader().MSG as String;
-			switch(msg){
-				case PLAYBACK_MODE:
-//					switchToPlayback();
-					break;
-				case PLAYBACK_MESSAGE:
-//					playMessage(message.getBody() as XML);
-					break;
-			}
-		}
-		
-
-		
-		/**
-		 * Adds the GUI component of the Presentation Module to the MainApplicationShell
-		 * The component is sent through the piping
-		 * 
-		 */		
-		private function addWindow():void{
-			var msg:IPipeMessage = new Message(Message.NORMAL);
-			msg.setHeader({MSG:MainApplicationConstants.ADD_WINDOW_MSG, SRC: FROM_PRESENTATION_MODULE,
-   						TO: MainApplicationConstants.TO_MAIN });
-   			msg.setPriority(Message.PRIORITY_HIGH);
-   			   			
-   			presentationWindow.height = 440;
-   			presentationWindow.width = 430;
-   			presentationWindow.title = PresentationWindow.TITLE;
-   			presentationWindow.showCloseButton = false;
-//   			module.activeWindow = presentationWindow;
-   			msg.setBody(viewComponent as PresentationModule);
-   			outpipe.write(msg);
 		}
 	}
 }

@@ -25,7 +25,7 @@ package org.bigbluebutton.modules.presentation.view
 	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.MoveNotifier;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ZoomNotifier;
-	import org.bigbluebutton.modules.presentation.view.components.ThumbnailView;
+	import org.bigbluebutton.modules.presentation.view.components.SlideView;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -63,8 +63,8 @@ package org.bigbluebutton.modules.presentation.view
 		 * @return - the GUI component registered to this mediator
 		 * 
 		 */		
-		public function get thumbnailView():ThumbnailView{
-			return viewComponent as ThumbnailView;
+		public function get thumbnailView():SlideView{
+			return viewComponent as SlideView;
 		}
 		
 		/**

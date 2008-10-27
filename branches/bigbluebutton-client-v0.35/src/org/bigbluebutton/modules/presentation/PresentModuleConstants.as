@@ -5,7 +5,14 @@ package org.bigbluebutton.modules.presentation
 		
 		public static const PRESENTER_MODE:String = "PRESENTER_MODE";
 		public static const VIEWER_MODE:String = "VIEWER_MODE";
-		
+
+		public static const START:String       = "start module";
+		public static const STOP:String       = "stop module";
+		public static const STARTED:String       = "start module";
+		public static const STOPPED:String       = "stop module";
+		public static const CONNECTED:String = "connected to server";
+		public static const DISCONNECTED:String = "disconnected from server";
+				
 		public static const STARTUPLOADWINDOW:String = "start upload";
 		public static const START_PRESENTATION_APPLICATION:String = "start presentation app";
 		
@@ -41,5 +48,12 @@ package org.bigbluebutton.modules.presentation
 		public static const EXTRACT_PROGRESS_EVENT:String = "EXTRACT_PROGRESS_EVENT";
 		public static const CONVERT_PROGRESS_EVENT:String = "CONVERT_PROGRESS_EVENT";
 
+		public static const OPEN_PRESENT_WINDOW:String = 'OPEN_PRESENT_WINDOW';
+		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
+		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';	
+		public static const ADD_WINDOW:String = 'ADD_WINDOW';
+		public static const REMOVE_WINDOW:String = 'REMOVE_WINDOW';
+		
+		
 	}
 }

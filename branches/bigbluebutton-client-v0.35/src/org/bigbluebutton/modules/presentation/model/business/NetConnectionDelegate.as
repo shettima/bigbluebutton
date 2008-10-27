@@ -24,7 +24,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		
 	public class NetConnectionDelegate
 	{
-		public static const NAME : String = "NetConnectionDelegate";
+		public static const NAME : String = "Presentation:NetConnectionDelegate";
 
 		private var _netConnection : NetConnection;	
 		private var _uri : String;
@@ -115,7 +115,7 @@ package org.bigbluebutton.modules.presentation.model.business
 					break;
 					
 				default :
-				   // statements
+				   trace(NAME + " Default");
 				   break;
 			}
 		}

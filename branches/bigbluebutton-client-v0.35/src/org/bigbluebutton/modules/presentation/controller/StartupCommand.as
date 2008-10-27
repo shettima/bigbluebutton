@@ -19,12 +19,11 @@
 */
 package org.bigbluebutton.modules.presentation.controller
 {
+	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.PresentationEndpointMediator;
 	import org.bigbluebutton.modules.presentation.PresentationModuleMediator;
 	import org.bigbluebutton.modules.presentation.model.business.PresentProxy;
-	import org.bigbluebutton.modules.presentation.view.FileUploadWindowMediator;
 	import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
-	import org.bigbluebutton.modules.presentation.view.ThumbnailViewMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
@@ -42,8 +41,9 @@ package org.bigbluebutton.modules.presentation.controller
 			facade.registerMediator(new PresentationEndpointMediator(m));
 			facade.registerMediator(new PresentationModuleMediator(m));
 			facade.registerMediator(new PresentationWindowMediator(m));
-			facade.registerMediator(new FileUploadWindowMediator(m));
-			facade.registerMediator(new ThumbnailViewMediator(m));
+//			facade.registerMediator(new FileUploadWindowMediator(m));
+//			facade.registerMediator(new ThumbnailViewMediator(m));
+			sendNotification(PresentModuleConstants.STARTED);
 		}
 
 	}
