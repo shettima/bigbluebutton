@@ -17,7 +17,7 @@
 * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 * 
 */
-package org.bigbluebutton.modules.viewers.view.mediators
+package org.bigbluebutton.modules.viewers.view
 {
 	import flash.events.Event;
 	
@@ -76,8 +76,8 @@ package org.bigbluebutton.modules.viewers.view.mediators
 					trace('Received request to OPEN_VIEWERS_WINDOW');
 					var p:ViewersProxy = facade.retrieveProxy(ViewersProxy.NAME) as ViewersProxy;
 					_viewersWindow.participants = p.participants;
-					_viewersWindow.width = 350;
-		   			_viewersWindow.height = 270;
+					_viewersWindow.width = 210;
+		   			_viewersWindow.height = 220;
 		   			_viewersWindow.title = "Viewers";
 		   			_viewersWindow.showCloseButton = false;
 		   			_viewersWindow.xPosition = 400;

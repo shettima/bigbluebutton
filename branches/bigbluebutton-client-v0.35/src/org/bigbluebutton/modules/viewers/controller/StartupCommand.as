@@ -23,8 +23,8 @@ package org.bigbluebutton.modules.viewers.controller
 	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.ViewersModuleMediator;
 	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
-	import org.bigbluebutton.modules.viewers.view.mediators.JoinWindowMediator;
-	import org.bigbluebutton.modules.viewers.view.mediators.ViewersWindowMediator;
+	import org.bigbluebutton.modules.viewers.view.JoinWindowMediator;
+	import org.bigbluebutton.modules.viewers.view.ViewersWindowMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
