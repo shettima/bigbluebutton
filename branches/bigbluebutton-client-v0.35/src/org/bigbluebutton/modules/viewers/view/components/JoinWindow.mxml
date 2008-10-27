@@ -6,7 +6,7 @@
 	
 	<mx:Script>
 		<![CDATA[
-			import org.bigbluebutton.modules.viewers.view.mediators.JoinWindowMediator;
+			import org.bigbluebutton.modules.viewers.view.JoinWindowMediator;
 			import mx.managers.PopUpManager;
 			
 			public static const TITLE:String = "Join Conference";

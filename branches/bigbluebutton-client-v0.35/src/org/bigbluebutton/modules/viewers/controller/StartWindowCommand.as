@@ -20,7 +20,7 @@
 package org.bigbluebutton.modules.viewers.controller
 {
 	import org.bigbluebutton.modules.viewers.view.components.ViewersWindow;
-	import org.bigbluebutton.modules.viewers.view.mediators.ViewersWindowMediator;
+	import org.bigbluebutton.modules.viewers.view.ViewersWindowMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
