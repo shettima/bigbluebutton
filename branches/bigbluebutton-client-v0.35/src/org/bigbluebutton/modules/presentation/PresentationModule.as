@@ -72,9 +72,9 @@ package org.bigbluebutton.modules.presentation
 		override public function acceptRouter(router:Router):void{
 			super.acceptRouter(router);
 			facade.startup(this);
-			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-			facade.setPresentationApp(conf.me.userid, conf.room, DEFAULT_RED5_URL, DEFAULT_PRES_URL);
-			facade.presApp.join();
+//			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
+//			facade.setPresentationApp(conf.me.userid, conf.room, DEFAULT_RED5_URL, DEFAULT_PRES_URL);
+//			facade.presApp.join();
 		}
 		
 		override public function getMDIComponent():MDIWindow{

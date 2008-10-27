@@ -21,6 +21,7 @@ package org.bigbluebutton.modules.viewers.view
 {
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
+	import flash.system.Capabilities;
 	
 	import org.bigbluebutton.common.Constants;
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
@@ -87,14 +88,14 @@ package org.bigbluebutton.modules.viewers.view
 		   			_joinWindow.height = 270;
 		   			_joinWindow.title = "Login";
 		   			_joinWindow.showCloseButton = false;
-		   			_joinWindow.xPosition = 400;
-		   			_joinWindow.yPosition = 50;
+		   			_joinWindow.xPosition = 450;
+		   			_joinWindow.yPosition = 150;
 		   			facade.sendNotification(ViewersModuleConstants.ADD_WINDOW, _joinWindow); 
 					break;
 					
 				case ViewersModuleConstants.CLOSE_JOIN_WINDOW:
 					trace('Received request to CLOSE_JOIN_WINDOW');
-					_joinWindow.close();
+					facade.sendNotification(ViewersModuleConstants.REMOVE_WINDOW, _joinWindow);
 					break;
 					
 				case ViewersFacade.LOGIN_FAILED:

@@ -80,9 +80,12 @@ package org.bigbluebutton.modules.viewers.view
 		   			_viewersWindow.height = 220;
 		   			_viewersWindow.title = "Viewers";
 		   			_viewersWindow.showCloseButton = false;
-		   			_viewersWindow.xPosition = 400;
-		   			_viewersWindow.yPosition = 50;
+		   			_viewersWindow.xPosition = 30;
+		   			_viewersWindow.yPosition = 30;
 		   			facade.sendNotification(ViewersModuleConstants.ADD_WINDOW, _viewersWindow); 				
+					break;
+				case ViewersModuleConstants.CLOSE_VIEWERS_WINDOW:
+					facade.sendNotification(ViewersModuleConstants.REMOVE_WINDOW, _viewersWindow);
 					break;
 			}
 		}

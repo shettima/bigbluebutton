@@ -63,10 +63,10 @@ package org.bigbluebutton.modules.voiceconference
 		 * 
 		 */		
 		override public function acceptRouter(router:Router):void{
-			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-			super.acceptRouter(router);
-			facade.startup(this, URI + conf.room);
-			facade.connectToMeetMe();
+//			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
+//			super.acceptRouter(router);
+///			facade.startup(this, URI + conf.room);
+//			facade.connectToMeetMe();
 		}
 		
 		override public function getMDIComponent():MDIWindow{

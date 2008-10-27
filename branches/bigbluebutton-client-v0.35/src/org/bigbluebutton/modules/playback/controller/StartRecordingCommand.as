@@ -10,10 +10,10 @@ package org.bigbluebutton.modules.playback.controller
 	public class StartRecordingCommand extends SimpleCommand
 	{
 		override public function execute(notification:INotification):void{
-			var conf:Conference = MainApplicationFacade.getInstance().getConference();
-			var uri:String ='rtmp://' + Constants.red5Host + '/vcr/';
+//			var conf:Conference = MainApplicationFacade.getInstance().getConference();
+//			var uri:String ='rtmp://' + Constants.red5Host + '/vcr/';
 			
-			facade.registerProxy(new RecordingProxy(uri));
+//			facade.registerProxy(new RecordingProxy(uri));
 		}
 
 	}

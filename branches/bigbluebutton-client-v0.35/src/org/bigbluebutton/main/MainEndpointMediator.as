@@ -86,7 +86,10 @@ package org.bigbluebutton.main
 					trace("Got ADD_WINDOW from " + message.getHeader().SRC as String);
 					sendNotification(MainApplicationConstants.ADD_WINDOW_MSG, message.getBody());
 					break;
-					
+				case EndpointMessageConstants.REMOVE_WINDOW:
+					trace("Got REMOVE_WINDOW from " + message.getHeader().SRC as String);
+					sendNotification(MainApplicationConstants.REMOVE_WINDOW_MSG, message.getBody());
+					break;					
 			}
 		}	
 	}

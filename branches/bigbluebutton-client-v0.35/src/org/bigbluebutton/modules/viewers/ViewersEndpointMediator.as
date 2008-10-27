@@ -42,7 +42,8 @@ package org.bigbluebutton.modules.viewers
 				ViewersModuleConstants.STARTED,
 				ViewersModuleConstants.CONNECTED,
 				ViewersModuleConstants.DISCONNECTED,
-				ViewersModuleConstants.ADD_WINDOW
+				ViewersModuleConstants.ADD_WINDOW,
+				ViewersModuleConstants.REMOVE_WINDOW
 			];
 		}
 		
@@ -63,6 +64,11 @@ package org.bigbluebutton.modules.viewers
 				case ViewersModuleConstants.ADD_WINDOW:
 					trace('Sending Viewers ADD_WINDOW message to main');
 					_endpoint.sendMessage(EndpointMessageConstants.ADD_WINDOW, 
+							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
+					break;
+				case ViewersModuleConstants.REMOVE_WINDOW:
+					trace('Sending Viewers REMOVE_WINDOW message to main');
+					_endpoint.sendMessage(EndpointMessageConstants.REMOVE_WINDOW, 
 							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;
 			}

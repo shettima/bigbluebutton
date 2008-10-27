@@ -50,8 +50,8 @@ package org.bigbluebutton.modules.playback.model
 		}
 		
 		public function startRecording():void{
-			var room:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-			nc.call("VCRStart", new Responder(gotStart, gotFault), Constants.red5Host, room.room );
+//			var room:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
+//			nc.call("VCRStart", new Responder(gotStart, gotFault), Constants.red5Host, room.room );
 		}
 		
 		public function stopRecording():void{

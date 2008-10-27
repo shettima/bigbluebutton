@@ -58,7 +58,8 @@ package org.bigbluebutton.main.view
 			return [
 					MainApplicationConstants.MODULES_START,
 					MainApplicationConstants.MODULE_STARTED,
-					MainApplicationConstants.ADD_WINDOW_MSG
+					MainApplicationConstants.ADD_WINDOW_MSG,
+					MainApplicationConstants.REMOVE_WINDOW_MSG
 					];
 		}
 		
@@ -80,6 +81,11 @@ package org.bigbluebutton.main.view
 					shell.mdiCanvas.windowManager.add(win as MDIWindow);
 					shell.mdiCanvas.windowManager.absPos(win as MDIWindow, win.xPosition, win.yPosition);						
 					break;			
+				case MainApplicationConstants.REMOVE_WINDOW_MSG:
+					var rwin:IBbbModuleWindow = notification.getBody() as IBbbModuleWindow;
+					trace("removing window " + (rwin as MDIWindow).name);
+					shell.mdiCanvas.windowManager.remove(rwin as MDIWindow);						
+					break;
 			}
 		}
 	}

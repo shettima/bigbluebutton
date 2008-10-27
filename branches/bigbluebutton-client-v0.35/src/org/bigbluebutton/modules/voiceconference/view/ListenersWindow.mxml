@@ -36,8 +36,8 @@
 			private var dispState:String;
 			
 			private function init():void{
-				var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-				role = conf.me.role;
+//				var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
+//				role = conf.me.role;
 				
 				//Initialize full screen handler
 				Application.application.stage.addEventListener(FullScreenEvent.FULL_SCREEN, fullScreenHandler);
