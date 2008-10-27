@@ -12,7 +12,7 @@
 			private var _moduleId:String = "ViewersModule";
 			private var _moduleName:String = "Viewers Module";
 			
-			private var _uri:String = "rtmp://localhost/chatServer/85115";
+			private var _uri:String = "rtmp://localhost/conference/85115";
 			private var _username:String = "ralam";
 			
 			private function onCreationComplete():void {

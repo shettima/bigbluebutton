@@ -19,21 +19,12 @@
 */
 package org.bigbluebutton.modules.viewers
 {  
-	import flash.system.Capabilities;
-	
-	import org.bigbluebutton.common.messaging.InputPipe;
-	import org.bigbluebutton.common.messaging.OutputPipe;
-	import org.bigbluebutton.common.messaging.Router;
-	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.bigbluebutton.modules.viewers.model.vo.User;
-	import org.bigbluebutton.modules.viewers.view.JoinWindow;
-	import org.bigbluebutton.modules.viewers.view.ViewersWindow;
+	import org.bigbluebutton.modules.viewers.view.components.ViewersWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
-	import org.puremvc.as3.multicore.utilities.pipes.interfaces.IPipeMessage;
-	import org.puremvc.as3.multicore.utilities.pipes.messages.Message;
-	import org.puremvc.as3.multicore.utilities.pipes.plumbing.PipeListener;
+
 	
 	/**
 	 * This is the mediator class for the ViewersModule class
@@ -44,13 +35,7 @@ package org.bigbluebutton.modules.viewers
 	{
 		public static const NAME:String = "ViewersModuleMediator";
 		
-		private var outpipe : OutputPipe;
-		private var inpipe : InputPipe;
-		private var router : Router;
-		private var inpipeListener : PipeListener;
-		
 		private var module:ViewersModule;
-		private var joinWindow:JoinWindow;
 		private var viewersWindow:ViewersWindow;
 		
 		/**
@@ -62,58 +47,9 @@ package org.bigbluebutton.modules.viewers
 		{
 			super(NAME, module);
 			this.module = module;
-			addJoinWindow();
 		}
-		
-		private function messageReceiver(message:IPipeMessage):void{
-			var msg:String = message.getHeader().MSG;
-		}
-		
-		/**
-		 * Adds the login gui part of this module to the main application shell 
-		 * 
-		 */		
-		private function addJoinWindow():void{
+				
 
-   			joinWindow = new JoinWindow();
-   			joinWindow.showCloseButton = false;
-   			joinWindow.title = JoinWindow.TITLE;
-   			
-//   			module.preferedX = Capabilities.screenResolutionX/2 - 328/2;
-//			module.preferedY = Capabilities.screenResolutionY/2 - 265;
-//   			module.activeWindow = joinWindow;
-   			
-		}
-		
-		/**
-		 *  Adds the viewers gui part of this module to the main application shell
-		 * 
-		 */		
-		private function addViewersWindow():void{
-
-   			viewersWindow = new ViewersWindow();
-   			
-//   			module.preferedX = 20;
-//   			module.preferedY = 20;
-//   			module.activeWindow = viewersWindow;
-   			
-   			viewersWindow.width = 210;
-   			viewersWindow.height = 220;
-   			viewersWindow.title = ViewersWindow.TITLE;
-   			viewersWindow.showCloseButton = false;
-   			sendNotification(ViewersFacade.START_VIEWER_WINDOW, viewersWindow);
-
-		}
-		
-		/**
-		 * Removes the login window from the main application shell once login is completed 
-		 * 
-		 */		
-		private function removeJoinWindow():void{
-//			module.activeWindow = joinWindow;
-
-		}
-		
 		/**
 		 * Send a login complete notice 
 		 * 
@@ -129,7 +65,6 @@ package org.bigbluebutton.modules.viewers
 		
 		override public function initializeNotifier(key:String):void{
 			super.initializeNotifier(key);
-			sendNotification(ViewersFacade.START_LOGIN_WINDOW, joinWindow);
 		}
 		
 		/**
@@ -139,10 +74,8 @@ package org.bigbluebutton.modules.viewers
 		 */		
 		override public function listNotificationInterests():Array{
 			return [
-					ViewersFacade.CONNECT_SUCCESS,
-					ViewersFacade.DEBUG,
-					ViewersFacade.SERVER_DISCONNECTED,
-					ViewersFacade.VIEW_CAMERA
+					ViewersModuleConstants.LOGGED_IN,
+					ViewersModuleConstants.LOGGED_OUT
 					];
 		}
 		
@@ -157,19 +90,21 @@ package org.bigbluebutton.modules.viewers
 		 */		
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
-				case ViewersFacade.CONNECT_SUCCESS:
-					removeJoinWindow();
-					addViewersWindow();
-					sendLoginCompleteNotice();
+				case ViewersModuleConstants.LOGGED_OUT:
+					sendNotification(ViewersModuleConstants.OPEN_JOIN_WINDOW);
 					break;
-				case ViewersFacade.DEBUG:
+				case ViewersModuleConstants.LOGGED_IN:
+					sendNotification(ViewersModuleConstants.CLOSE_JOIN_WINDOW);
+					sendNotification(ViewersModuleConstants.OPEN_VIEWERS_WINDOW);
 					break;
-				case ViewersFacade.SERVER_DISCONNECTED:
-					sendLogoutCommand(notification.getBody() as String);
-					break;
-				case ViewersFacade.VIEW_CAMERA:
-					openViewCamera(notification.getBody() as User);
-					break;
+//				case ViewersFacade.DEBUG:
+//					break;
+//				case ViewersFacade.SERVER_DISCONNECTED:
+//					sendLogoutCommand(notification.getBody() as String);
+//					break;
+////				case ViewersFacade.VIEW_CAMERA:
+//					openViewCamera(notification.getBody() as User);
+//					break;
 			}
 		}
 

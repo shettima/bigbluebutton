@@ -1,5 +1,7 @@
 package org.bigbluebutton.modules.viewers.model
 {
+	import mx.collections.ArrayCollection;
+	
 	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.model.business.Conference;
 	import org.bigbluebutton.modules.viewers.model.business.IViewers;
@@ -29,17 +31,21 @@ package org.bigbluebutton.modules.viewers.model
 			return NAME;
 		}
 		
-		public function connect(uri:String, username:String, password:String, room:String):void {
+		public function connect(uri:String, room:String, username:String, password:String ):void {
 			_uri = uri
 			_participants.me.name = username;	
 			_viewersService.connect(_uri, room, username, password);		
 		}
 		
+		public function get participants():ArrayCollection {
+			return _participants.users;
+		}
+		
 		private function connectionStatusListener(connected:Boolean):void {
 			if (connected) {
-				sendNotification(ViewersModuleConstants.CONNECTED);
+				sendNotification(ViewersModuleConstants.LOGGED_IN);
 			} else {
-				sendNotification(ViewersModuleConstants.DISCONNECTED);
+				sendNotification(ViewersModuleConstants.LOGGED_OUT);
 			}
 		}		
 	}

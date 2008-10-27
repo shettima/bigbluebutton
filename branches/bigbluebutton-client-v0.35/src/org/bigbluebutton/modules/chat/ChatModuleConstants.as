@@ -12,6 +12,6 @@ package org.bigbluebutton.modules.chat
 		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
 		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';	
 		public static const ADD_WINDOW:String = 'ADD_WINDOW';
-		public static const REMOVE_WINDOW:String = 'OPEN_WINDOW';	
+		public static const REMOVE_WINDOW:String = 'REMOVE_WINDOW';	
 	}
 }

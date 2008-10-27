@@ -32,6 +32,9 @@ package org.bigbluebutton.modules.viewers.model.services
 		private var connectionId : Number;
 		private var connected : Boolean = false;
 		private var _connectionListener:Function;
+		
+		private var _userid:Number = -1;
+		private var _role:String = "unknown";
 				
 		public function NetConnectionDelegate(uri:String, connectionListener:Function) : void
 		{
@@ -54,7 +57,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			_netConnection.addEventListener( IOErrorEvent.IO_ERROR, netIOError );
 			
 			try {
-				trace( "Connecting to " + _uri);								
+				trace( "Connecting to " + _uri + " " + room + " " + username + " " + password);								
 				_netConnection.connect(_uri, room, username, password );				
 				
 			} catch( e : ArgumentError ) {
@@ -87,37 +90,40 @@ package org.bigbluebutton.modules.viewers.model.services
 			switch ( statusCode ) 
 			{
 				case "NetConnection.Connect.Success" :
-					trace("Connection to chat server succeeded.");
-					_connectionListener(true);					
+					trace("Connection to viewers application succeeded.");
+					if ((_userid > 0) && (_role != "unknown")) {
+						_connectionListener(true, _userid, _role);	
+					}				
 					break;
 			
 				case "NetConnection.Connect.Failed" :
-					_connectionListener(false);					
-					trace("Connection to chat server failed");
+					trace("Connection to viewers application failed");
+					_connectionListener(false);										
 					break;
 					
-				case "NetConnection.Connect.Closed" :					
-					_connectionListener(false);					
-					trace("Connection to chat server closed");
+				case "NetConnection.Connect.Closed" :	
+					trace("Connection to viewers application closed");				
+					_connectionListener(false);										
 					break;
 					
-				case "NetConnection.Connect.InvalidApp" :				
-					_connectionListener(false);
-					trace("Chat application not found on server");
+				case "NetConnection.Connect.InvalidApp" :	
+					trace("viewers application not found on server");			
+					_connectionListener(false);					
 					break;
 					
 				case "NetConnection.Connect.AppShutDown" :
-					_connectionListener(false);
-					trace("Chat application has been shutdown");
+					trace("viewers application has been shutdown");
+					_connectionListener(false);					
 					break;
 					
 				case "NetConnection.Connect.Rejected" :
-					_connectionListener(false);
-					trace("No permissions to connect to the chat application" );
+					trace("No permissions to connect to the viewers application" );
+					_connectionListener(false);					
 					break;
 					
 				default :
-				   // statements
+				   trace("Default status to the viewers application" );
+					_connectionListener(false);
 				   break;
 			}
 		}
@@ -140,5 +146,19 @@ package org.bigbluebutton.modules.viewers.model.services
 			trace("Asynchronous code error - " + event.error );
 			_connectionListener(false);
 		}	
+
+		/**
+	 	*  Callback from server
+	 	*/
+		public function setUserIdAndRole(id:Number, role:String ):String
+		{
+			trace( "ViewersNetDelegate::setConnectionId: id=[" + id + ", " + role + "]");
+			if (isNaN(id)) return "FAILED";
+			
+			_userid = id;
+			_role = role;
+								
+			return "OK";
+		}
 	}
 }

@@ -15,23 +15,23 @@
 	    	import mx.managers.DragManager;
 	    			
 			private var images:Images = new Images();
-			private var conference:Conference =
-				ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference
+//			private var conference:Conference =
+//				ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference
 			
     	public function dragPresenterUser(event:MouseEvent, userid:Number):void
 	   	{
-	   		if (conference.me.role == Role.MODERATOR) {
-	   			var dragInitiator:Label = event.currentTarget as Label;
-	   			var dragSource:DragSource = new DragSource();
-	   			dragSource.addData(data.userid , 'presenterUserid');
-				dragSource.addData(data.name , 'presenterUsername');
-			
-	   			var dragProxy:Image = new Image();
-
-	   			dragProxy.source = images.user_gray;
-	   			dragProxy.alpha = 1;
-	   			DragManager.doDrag(dragInitiator, dragSource , event, dragProxy, 0, 0, 1, true);
-	   		}
+//	   		if (conference.me.role == Role.MODERATOR) {
+//	   			var dragInitiator:Label = event.currentTarget as Label;
+//	   			var dragSource:DragSource = new DragSource();
+//	   			dragSource.addData(data.userid , 'presenterUserid');
+//				dragSource.addData(data.name , 'presenterUsername');
+//			
+//	   			var dragProxy:Image = new Image();
+//
+//	   			dragProxy.source = images.user_gray;
+////	   			dragProxy.alpha = 1;
+//	   			DragManager.doDrag(dragInitiator, dragSource , event, dragProxy, 0, 0, 1, true);
+//	   		}
 	   	}			
 			
 		]]>

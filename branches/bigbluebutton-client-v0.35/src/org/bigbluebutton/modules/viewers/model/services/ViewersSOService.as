@@ -27,7 +27,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			netConnectionDelegate = new NetConnectionDelegate(uri, connectionListener);			
 		}
 		
-		public function connect(uri:String, username:String, password:String, room:String):void {
+		public function connect(uri:String, room:String, username:String, password:String ):void {
 			netConnectionDelegate.connect(_uri, room, username, password);
 		}
 			
@@ -36,9 +36,11 @@ package org.bigbluebutton.modules.viewers.model.services
 			netConnectionDelegate.disconnect();
 		}
 		
-		private function connectionListener(connected:Boolean):void {
+		private function connectionListener(connected:Boolean, userid:Number=0, role:String=""):void {
 			if (connected) {
-				trace(NAME + ":Connected to the Viewers application");
+				trace(NAME + ":Connected to the Viewers application " + userid + " " + role);
+				_participants.me.role = role;
+				_participants.me.userid = userid;
 				join();
 			} else {
 				leave();
@@ -51,6 +53,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			_participantsSO = SharedObject.getRemote(SO_NAME, _uri, false);
 			_participantsSO.addEventListener(NetStatusEvent.NET_STATUS, netStatusHandler);
 			_participantsSO.addEventListener(AsyncErrorEvent.ASYNC_ERROR, asyncErrorHandler);
+			_participantsSO.addEventListener(SyncEvent.SYNC, sharedObjectSyncHandler);
 			_participantsSO.client = this;
 			_participantsSO.connect(netConnectionDelegate.connection);
 			trace(NAME + ":ViewersModules is connected to Shared object");
@@ -66,7 +69,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			_connectionListener = connectionListener;
 		}
 		
-				/**
+		/**
 		 * Updates the user status in the conference object, and sends the update to the server shared object 
 		 * @param newStatus
 		 * 
@@ -154,7 +157,7 @@ package org.bigbluebutton.modules.viewers.model.services
 					 * with the server object. In the latter case, SyncEvent.SYNC is dispatched 
 					 * and the "code" value is set to "change". 
 					 */
-					 
+					 trace("Got clear sync event for participants");
 					_participants.removeAllParticipants();
 													
 					break;	
@@ -239,20 +242,6 @@ package org.bigbluebutton.modules.viewers.model.services
 			}
 		}
 
-		/**
-	 	*  Callback from server
-	 	*/
-		public function setUserIdAndRole(id : Number, role : String ) : String
-		{
-			trace( "SOConferenceDelegate::setConnectionId: id=[" + id + "]");
-			if( isNaN( id ) ) return "FAILED";
-			
-//			_conference.me.userid = id;
-//			_conference.me.role = role;
-									
-			return "OK";
-		}
-
 		private function notifyConnectionStatusListener(connected:Boolean):void {
 			if (_connectionListener != null) {
 				_connectionListener(connected);
@@ -271,27 +260,27 @@ package org.bigbluebutton.modules.viewers.model.services
 					break;
 			
 				case "NetConnection.Connect.Failed" :			
-					trace(NAME + ":Connection to chat server failed");
+					trace(NAME + ":Connection to viewers application failed");
 					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.Closed" :									
-					trace(NAME + ":Connection to chat server closed");
+					trace(NAME + ":Connection to viewers application closed");
 					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.InvalidApp" :				
-					trace(NAME + ":Chat application not found on server");
+					trace(NAME + ":Viewers application not found on server");
 					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.AppShutDown" :
-					trace(NAME + ":Chat application has been shutdown");
+					trace(NAME + ":Viewers application has been shutdown");
 					notifyConnectionStatusListener(false);
 					break;
 					
 				case "NetConnection.Connect.Rejected" :
-					trace(NAME + ":No permissions to connect to the chat application" );
+					trace(NAME + ":No permissions to connect to the viewers application" );
 					notifyConnectionStatusListener(false);
 					break;
 					
@@ -304,7 +293,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			
 		private function asyncErrorHandler ( event : AsyncErrorEvent ) : void
 		{
-			trace( "ChatSO asyncErrorHandler " + event.error);
+			trace( "participantsSO asyncErrorHandler " + event.error);
 			notifyConnectionStatusListener(false);
 		}
 	}

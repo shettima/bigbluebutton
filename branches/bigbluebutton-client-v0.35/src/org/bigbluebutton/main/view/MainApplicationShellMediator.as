@@ -69,12 +69,10 @@ package org.bigbluebutton.main.view
 					//sendNotification(MainApplicationConstants.MODULE_START, "ChatModule");
 					sendNotification(MainApplicationConstants.MODULE_START, "ViewersModule");
 					
-//					var v:ViewersModule = new ViewersModule();
-					
 					break;
 				case MainApplicationConstants.MODULE_STARTED:
 					trace('Received MODULE_STARTED for ' + notification.getBody() as String);
-					sendNotification(MainApplicationConstants.OPEN_WINDOW, "ChatModule");
+					//sendNotification(MainApplicationConstants.OPEN_WINDOW, "ChatModule");
 					break;		
 				case MainApplicationConstants.ADD_WINDOW_MSG:
 					var win:IBbbModuleWindow = notification.getBody() as IBbbModuleWindow;

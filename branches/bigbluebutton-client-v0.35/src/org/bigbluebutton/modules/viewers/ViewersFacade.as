@@ -38,7 +38,7 @@ package org.bigbluebutton.modules.viewers
 		public static const STARTUP:String = "Startup Command";
 		public static const START_VIEWER_WINDOW:String = "Start Viewer Window";
 		public static const CHANGE_STATUS:String = "Change Status Event";
-		public static const START_LOGIN_WINDOW:String = "Start Login Window";
+//		public static const START_LOGIN_WINDOW:String = "Start Login Window";
 		public static const CONNECT_SUCCESS:String = "Connection Successful";
 		public static const SERVER_DISCONNECTED:String = "Connection to Server Lost";
 		public static const LOGIN_FAILED:String = "Login Failed";
@@ -74,7 +74,6 @@ package org.bigbluebutton.modules.viewers
 			super.initializeController();
 			registerCommand(STARTUP, StartupCommand);
 			registerCommand(START_VIEWER_WINDOW, StartWindowCommand);
-			registerCommand(START_LOGIN_WINDOW, StartLoginCommand);
 		}
 		
 		/**

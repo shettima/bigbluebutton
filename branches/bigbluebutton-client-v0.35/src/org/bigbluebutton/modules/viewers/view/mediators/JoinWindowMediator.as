@@ -23,11 +23,10 @@ package org.bigbluebutton.modules.viewers.view.mediators
 	import flash.events.KeyboardEvent;
 	
 	import org.bigbluebutton.common.Constants;
-	import org.bigbluebutton.modules.log.LogModule;
-	import org.bigbluebutton.modules.log.LogModuleFacade;
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
+	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
-	import org.bigbluebutton.modules.viewers.view.JoinWindow;
+	import org.bigbluebutton.modules.viewers.view.components.JoinWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -40,21 +39,20 @@ package org.bigbluebutton.modules.viewers.view.mediators
 	public class JoinWindowMediator extends Mediator implements IMediator
 	{
 		public static const NAME:String = "JoinWindowMediator";
-		private var v:JoinWindow;
+		
+		private var _joinWindow:JoinWindow = new JoinWindow();
 		public static const LOGIN:String = "Attempt Login";
-		//public static const
 
 		/**
 		 * the constructor. registers this mediator with the JoinWindow gui component 
 		 * @param view
 		 * 
 		 */		
-		public function JoinWindowMediator(view:JoinWindow)
+		public function JoinWindowMediator()
 		{
 			super(NAME);
-			v = view;
-			view.addEventListener(LOGIN, login);
-			view.addEventListener(KeyboardEvent.KEY_DOWN, keyPressed);
+			_joinWindow.addEventListener(LOGIN, login);
+			_joinWindow.addEventListener(KeyboardEvent.KEY_DOWN, keyPressed);
 		}
 		
 		/**
@@ -65,8 +63,10 @@ package org.bigbluebutton.modules.viewers.view.mediators
 		override public function listNotificationInterests():Array{
 
 			return [
-			        ViewersFacade.LOGIN_FAILED,
-			        ViewersFacade.CONNECT_UNSUCCESSFUL
+					ViewersModuleConstants.OPEN_JOIN_WINDOW,
+					ViewersModuleConstants.CLOSE_JOIN_WINDOW
+//			        ViewersFacade.LOGIN_FAILED,
+//			        ViewersFacade.CONNECT_UNSUCCESSFUL
 			];
 
 		
@@ -81,16 +81,32 @@ package org.bigbluebutton.modules.viewers.view.mediators
 
 			switch(notification.getName())
 			{
+				case ViewersModuleConstants.OPEN_JOIN_WINDOW:
+					trace('Received request to OPEN_JOIN_WINDOW');
+					_joinWindow.width = 350;
+		   			_joinWindow.height = 270;
+		   			_joinWindow.title = "Login";
+		   			_joinWindow.showCloseButton = false;
+		   			_joinWindow.xPosition = 400;
+		   			_joinWindow.yPosition = 50;
+		   			facade.sendNotification(ViewersModuleConstants.ADD_WINDOW, _joinWindow); 
+					break;
+					
+				case ViewersModuleConstants.CLOSE_JOIN_WINDOW:
+					trace('Received request to CLOSE_JOIN_WINDOW');
+					_joinWindow.close();
+					break;
+					
 				case ViewersFacade.LOGIN_FAILED:
-					this.v.showError();
+					_joinWindow.showError();
 					break;	
 			}
 
-			switch(notification.getName()){
-				case ViewersFacade.CONNECT_UNSUCCESSFUL:
-					v.lblNote.text = "Login Failed";
-					break;
-			}
+//			switch(notification.getName()){
+//				case ViewersFacade.CONNECT_UNSUCCESSFUL:
+//					_joinWindow.lblNote.text = "Login Failed";
+//					break;
+//			}
 
 		}
 		
@@ -113,20 +129,19 @@ package org.bigbluebutton.modules.viewers.view.mediators
 		 * 
 		 */		
 		private function login(e:Event):void{
-			var name : String = v.nameField.text; 
-		    var room : String = v.confField.text;
-		    var password : String = v.passwdField.text
+			var name : String = _joinWindow.nameField.text; 
+		    var room : String = _joinWindow.confField.text;
+		    var password : String = _joinWindow.passwdField.text
 		    
 		    if ((name.length < 1) || (room.length < 1) || (password.length < 1)) {
-		    	v.lblNote.text = "Please enter all the information";
+		    	_joinWindow.lblNote.text = "Please enter all the information";
 		    	return;
 		    } 
-			v.lblNote.text = "Attempting to Login";
+			_joinWindow.lblNote.text = "Attempting to Login";
 			
 			var completeHost:String = "rtmp://" + Constants.red5Host + "/conference/" + room;
-			sendNotification(ViewersFacade.DEBUG, "connecting: " + completeHost);
-			LogModuleFacade.getInstance(LogModule.NAME).debug("Connecting");
-			proxy.connect(completeHost,name,password,room);
+			trace("loggin in: " + completeHost + " " + name + " " + password + " " + room);
+			proxy.connect(completeHost, room, name, password);
 		}
 		
 		

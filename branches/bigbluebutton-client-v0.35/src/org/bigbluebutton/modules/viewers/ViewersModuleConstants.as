@@ -28,13 +28,27 @@ package org.bigbluebutton.modules.viewers
 	{
 		public static const START:String       = "start module";
 		public static const STOP:String       = "stop module";
+		public static const STARTED:String       = "start module";
+		public static const STOPPED:String       = "stop module";
 		public static const CONNECTED:String = "connected to server";
 		public static const DISCONNECTED:String = "disconnected from server";
+		
+		public static const LOGIN_FAILED:String = 'LOGIN_FAILED';
+		public static const LOGGED_IN:String = 'LOGGED_IN';
+		public static const LOGGED_OUT:String = 'LOGGED_OUT';
 		
 		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
 		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';	
 		public static const ADD_WINDOW:String = 'ADD_WINDOW';
-		public static const REMOVE_WINDOW:String = 'OPEN_WINDOW';
+		public static const REMOVE_WINDOW:String = 'REMOVE_WINDOW';
+		
+		public static const OPEN_JOIN_WINDOW:String = 'OPEN_JOIN_WINDOW';
+		public static const CLOSE_JOIN_WINDOW:String = 'CLOSE_JOIN_WINDOW';
+		
+		public static const OPEN_VIEWERS_WINDOW:String = 'OPEN_VIEWERS_WINDOW';
+		public static const CLOSE_VIEWERS_WINDOW:String = 'CLOSE_VIEWERS_WINDOW';
+		
+		public static const MODULE_STARTED:String = 'MODULE_STARTED';
 		
 		public static const OPEN_VIEW_CAMERA:String = "Open View Camera";
 	}

@@ -19,10 +19,13 @@
 */
 package org.bigbluebutton.modules.viewers.model.business
 {
+	import mx.collections.ArrayCollection;
+	
 	import org.bigbluebutton.modules.viewers.model.vo.User;
 	
 	public interface IViewers {
 		function get me():User;
+		function get users():ArrayCollection;
 		function addUser(newuser : User):void;
 		function hasParticipant(id : Number):Boolean;
 		function getParticipant(id : Number):User;

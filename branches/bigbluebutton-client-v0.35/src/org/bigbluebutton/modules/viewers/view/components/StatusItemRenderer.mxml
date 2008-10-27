@@ -15,12 +15,12 @@
 		
 		private function viewCamera() : void
    		{
-   			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-   			var usr:User = data as User;
-   			if (usr.name != conf.me.name){
-   				//MainApplicationFacade.getInstance().openViewCamera(data as User);
-   				ViewersFacade.getInstance().sendViewCamera(usr);
-   			}
+//   			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
+//   			var usr:User = data as User;
+////   			if (usr.name != conf.me.name){
+//   				//MainApplicationFacade.getInstance().openViewCamera(data as User);
+ //  				ViewersFacade.getInstance().sendViewCamera(usr);
+ //  			}
    		}			
 		
    		[Bindable] private var webcamIcon : Object = images.webcam;

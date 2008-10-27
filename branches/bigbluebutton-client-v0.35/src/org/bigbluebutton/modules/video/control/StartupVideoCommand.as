@@ -47,8 +47,8 @@ package org.bigbluebutton.modules.video.control
 			publisher.createBroadcastMedia(app.streamName);
 			publisher.setupStream(app.streamName);
 			publisher.setupConnection();
-			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
-			publisher.connect("rtmp://" + Constants.red5Host + "/oflaDemo/" + conf.room);
+//			var conf:Conference = ViewersFacade.getInstance().retrieveMediator(Conference.NAME) as Conference;
+//			publisher.connect("rtmp://" + Constants.red5Host + "/oflaDemo/" + conf.room);
 			
 			facade.registerMediator(new VideoModuleMediator(app));
 			

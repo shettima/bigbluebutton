@@ -7,7 +7,6 @@
 					  resizable="false" width="326" height="312" >
 	<mx:Script>
 		<![CDATA[
-			import org.bigbluebutton.modules.viewers.model.services.SharedObjectConferenceDelegate;
 			import org.bigbluebutton.modules.viewers.model.business.Conference;
 			import org.bigbluebutton.modules.viewers.ViewersFacade;
 			import org.bigbluebutton.modules.video.view.mediators.MyCameraWindowMediator;
@@ -69,9 +68,9 @@
             
 			public function handleBroadcasting(broadcasting : Boolean) : void
 			{
-				var delegate:SharedObjectConferenceDelegate = 
-				 	ViewersFacade.getInstance().retrieveProxy(SharedObjectConferenceDelegate.NAME) as SharedObjectConferenceDelegate;
-				delegate.sendBroadcastStream(broadcasting, media.streamName);
+//				var delegate:SharedObjectConferenceDelegate = 
+//				 	ViewersFacade.getInstance().retrieveProxy(SharedObjectConferenceDelegate.NAME) as SharedObjectConferenceDelegate;
+//				delegate.sendBroadcastStream(broadcasting, media.streamName);
 				if (broadcasting) {
 					transmitBtn.toolTip = "Stop broadcasting";
 				} else {

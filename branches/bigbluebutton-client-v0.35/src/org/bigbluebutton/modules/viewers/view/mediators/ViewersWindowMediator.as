@@ -21,9 +21,9 @@ package org.bigbluebutton.modules.viewers.view.mediators
 {
 	import flash.events.Event;
 	
-	import org.bigbluebutton.modules.viewers.ViewersFacade;
+	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
-	import org.bigbluebutton.modules.viewers.view.ViewersWindow;
+	import org.bigbluebutton.modules.viewers.view.components.ViewersWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -36,17 +36,21 @@ package org.bigbluebutton.modules.viewers.view.mediators
 	public class ViewersWindowMediator extends Mediator implements IMediator
 	{
 		public static const NAME:String = "ViewersWindowMediator";
+		
 		public static const CHANGE_STATUS:String = "Change Status";
+		
+		private var _viewersWindow:ViewersWindow;
 		
 		/**
 		 * The constructor. Registers this mediator with the gui component 
 		 * @param view
 		 * 
 		 */		
-		public function ViewersWindowMediator(view:ViewersWindow)
+		public function ViewersWindowMediator()
 		{
 			super(NAME);
-			view.addEventListener(CHANGE_STATUS, changeStatus);
+			_viewersWindow = new ViewersWindow();
+			_viewersWindow.addEventListener(CHANGE_STATUS, changeStatus);
 		}
 		
 		/**
@@ -56,7 +60,8 @@ package org.bigbluebutton.modules.viewers.view.mediators
 		 */		
 		override public function listNotificationInterests():Array{
 			return [
-					ViewersFacade.CONNECT_UNSUCCESSFUL
+					ViewersModuleConstants.OPEN_VIEWERS_WINDOW,
+					ViewersModuleConstants.CLOSE_VIEWERS_WINDOW
 					];
 		}
 		
@@ -67,21 +72,21 @@ package org.bigbluebutton.modules.viewers.view.mediators
 		 */		
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
-				case ViewersFacade.CONNECT_UNSUCCESSFUL:
-					sendNotification(ViewersFacade.SERVER_DISCONNECTED, notification.getBody() as String)
+				case ViewersModuleConstants.OPEN_VIEWERS_WINDOW:
+					trace('Received request to OPEN_VIEWERS_WINDOW');
+					var p:ViewersProxy = facade.retrieveProxy(ViewersProxy.NAME) as ViewersProxy;
+					_viewersWindow.participants = p.participants;
+					_viewersWindow.width = 350;
+		   			_viewersWindow.height = 270;
+		   			_viewersWindow.title = "Viewers";
+		   			_viewersWindow.showCloseButton = false;
+		   			_viewersWindow.xPosition = 400;
+		   			_viewersWindow.yPosition = 50;
+		   			facade.sendNotification(ViewersModuleConstants.ADD_WINDOW, _viewersWindow); 				
 					break;
 			}
 		}
-		
-		/**
-		 * Return the ViewersWindow which this class is a mediator to 
-		 * @return 
-		 * 
-		 */		
-		public function get viewersWindow():ViewersWindow{
-			return viewComponent as ViewersWindow;
-		}
-		
+				
 		/**
 		 * Change the raisehand/lowerhand status 
 		 * @param e

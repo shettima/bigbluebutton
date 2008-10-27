@@ -20,9 +20,11 @@
 package org.bigbluebutton.modules.viewers.controller
 {
 	import org.bigbluebutton.modules.viewers.ViewersEndpointMediator;
+	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.ViewersModuleMediator;
 	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
-	import org.bigbluebutton.modules.viewers.model.business.Conference;
+	import org.bigbluebutton.modules.viewers.view.mediators.JoinWindowMediator;
+	import org.bigbluebutton.modules.viewers.view.mediators.ViewersWindowMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;
 	
@@ -39,10 +41,11 @@ package org.bigbluebutton.modules.viewers.controller
 			
 			facade.registerMediator(new ViewersModuleMediator(m));
 			facade.registerMediator(new ViewersEndpointMediator(m));
-//			var conf:Conference = new Conference()
-//			facade.registerMediator(conf);
-//			facade.registerProxy(new SharedObjectConferenceDelegate(conf));
+			facade.registerMediator(new JoinWindowMediator());
+			facade.registerMediator(new ViewersWindowMediator());
 			facade.registerProxy(new ViewersProxy(m.uri));
+			trace('Sending MODULE_STARTED for ViewersModule');
+			sendNotification(ViewersModuleConstants.STARTED);
 		}
 
 	}

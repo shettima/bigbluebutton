@@ -39,6 +39,7 @@ package org.bigbluebutton.modules.viewers
 		override public function listNotificationInterests():Array
 		{
 			return [
+				ViewersModuleConstants.STARTED,
 				ViewersModuleConstants.CONNECTED,
 				ViewersModuleConstants.DISCONNECTED,
 				ViewersModuleConstants.ADD_WINDOW
@@ -48,11 +49,11 @@ package org.bigbluebutton.modules.viewers
 		override public function handleNotification(notification:INotification):void
 		{
 			switch(notification.getName()){
-				case ViewersModuleConstants.CONNECTED:
-					trace("Sending Chat MODULE_STARTED message to main");
+				case ViewersModuleConstants.STARTED:
+					trace("Sending Viewers MODULE_STARTED message to main");
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STARTED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
-					facade.sendNotification(ViewersModuleConstants.OPEN_WINDOW);
+					facade.sendNotification(ViewersModuleConstants.OPEN_JOIN_WINDOW);
 					break;
 				case ViewersModuleConstants.DISCONNECTED:
 					trace('Sending Chat MODULE_STOPPED message to main');
@@ -60,7 +61,7 @@ package org.bigbluebutton.modules.viewers
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
 					break;
 				case ViewersModuleConstants.ADD_WINDOW:
-					trace('Sending Chat ADD_WINDOW message to main');
+					trace('Sending Viewers ADD_WINDOW message to main');
 					_endpoint.sendMessage(EndpointMessageConstants.ADD_WINDOW, 
 							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;
