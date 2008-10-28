@@ -37,6 +37,10 @@ package org.bigbluebutton.modules.presentation.model.business
 			return _mode;
 		}
 		
+		public function get slides():IPresentationSlides {
+			return _slides;
+		}
+		
 		private function connectionStatusListener(connected:Boolean):void {
 			if (connected) {
 				sendNotification(PresentModuleConstants.CONNECTED);
@@ -73,12 +77,21 @@ package org.bigbluebutton.modules.presentation.model.business
 		{
 			var fullUri : String = _module.host + "/bigbluebutton/file/xmlslides?room=" + _module.room;	
 			trace("PresentationApplication::loadPresentation()... " + fullUri);
-//			model.presentationLoaded = false;
-//			
+
 			var service:PresentationService = new PresentationService();
+			service.addLoadPresentationListener(loadPresentationListener);
 			service.load(fullUri, _slides);
 			trace('number of slides=' + _slides.size());
 		}	
+		
+		private function loadPresentationListener(loaded:Boolean):void {
+			if (loaded) {
+				trace('presentation has been loaded');
+				sendNotification(PresentModuleConstants.PRESENTATION_LOADED);
+			} else {
+				trace('failed to load presentation');
+			}
+		}
 		
 		private function uploadProgressListener(code:String, message:String=""):void {
 			trace('Fileupload progress ' + code + ":" + message);

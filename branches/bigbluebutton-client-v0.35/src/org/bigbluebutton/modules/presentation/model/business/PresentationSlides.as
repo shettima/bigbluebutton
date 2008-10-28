@@ -4,7 +4,8 @@ package org.bigbluebutton.modules.presentation.model.business
 	
 	public class PresentationSlides implements IPresentationSlides
 	{
-		public var _slides:ArrayCollection = new ArrayCollection();
+		private var _slides:ArrayCollection = new ArrayCollection();
+		private var _selected:int;
 		
 		public function PresentationSlides()
 		{
@@ -12,6 +13,18 @@ package org.bigbluebutton.modules.presentation.model.business
 
 		public function get slides():ArrayCollection {
 			return _slides;
+		}
+		
+		public function get selected():int {
+			return _selected;
+		}
+		
+		public function set selected(num:int):void {
+			_selected = num;
+		}
+		
+		public function getSlideAt(num:int):String {
+			return _slides.getItemAt(num) as String;
 		}
 		
 		public function clear():void {

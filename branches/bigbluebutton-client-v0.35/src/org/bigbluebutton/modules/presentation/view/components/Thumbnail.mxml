@@ -73,7 +73,7 @@
     <mx:Canvas id="imageBox" width="95%" height="100%" borderStyle="solid">     	
     	<mx:SWFLoader id="thumbLoader" width="95%" height="95%" scaleContent="true"
         	horizontalCenter="0" verticalCenter="0"
-        	showBusyCursor="true" source="{data.source}"/>    
+        	showBusyCursor="true" source="{data}"/>    
     </mx:Canvas>	
     
     <mx:states>

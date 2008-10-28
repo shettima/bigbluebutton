@@ -84,7 +84,8 @@ package org.bigbluebutton.modules.presentation.view
 					PresentModuleConstants.VIEW_EVENT,
 					PresentModuleConstants.MAXIMIZE_PRESENTATION,
 					PresentModuleConstants.RESTORE_PRESENTATION,
-					PresentModuleConstants.OPEN_PRESENT_WINDOW
+					PresentModuleConstants.OPEN_PRESENT_WINDOW,
+					PresentModuleConstants.PRESENTATION_LOADED
 					];
 		}
 		
@@ -97,6 +98,9 @@ package org.bigbluebutton.modules.presentation.view
 			switch(notification.getName()){
 				case PresentModuleConstants.READY_EVENT:
 					handleReadyEvent();
+					break;
+				case PresentModuleConstants.PRESENTATION_LOADED:
+					handlePresentationLoadedEvent();
 					break;
 				case PresentModuleConstants.VIEW_EVENT:
 					handleViewEvent();
@@ -131,7 +135,14 @@ package org.bigbluebutton.modules.presentation.view
 //			_presWin.thumbnailView.visible = false;
 			//sharePresentation(new Event("share"));
 		}
-		
+
+		private function handlePresentationLoadedEvent():void
+		{			
+			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
+			_presWin.slideView.slides = p.slides;
+			_presWin.slideView.visible = true;		
+		}
+				
 		/**
 		 * Handles a received View notification 
 		 * 

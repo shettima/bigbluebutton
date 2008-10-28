@@ -54,6 +54,8 @@ package org.bigbluebutton.modules.presentation
 		public static const ADD_WINDOW:String = 'ADD_WINDOW';
 		public static const REMOVE_WINDOW:String = 'REMOVE_WINDOW';
 		
+		public static const PRESENTATION_LOADED:String = 'PRESENTATION_LOADED';
+		
 		
 	}
 }

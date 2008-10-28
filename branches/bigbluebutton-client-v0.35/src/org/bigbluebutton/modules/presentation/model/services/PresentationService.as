@@ -22,6 +22,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		private var service : HTTPService;
 		private var _slides:IPresentationSlides;
 		private var urlLoader:URLLoader;
+		private var _loadListener:Function;
 		
 		public function PresentationService()
 		{
@@ -45,13 +46,13 @@ package org.bigbluebutton.modules.presentation.model.services
 			
 		}
 
+		public function addLoadPresentationListener(listener:Function):void {
+			_loadListener = listener;
+		}
+		
 		private function handleComplete(e:Event):void{
 			trace("Loading complete");
-			try{
 				parse(new XML(e.target.data));				
-			} catch(error:TypeError){
-				trace('Error loading XML modules file.' + error.message);
-			}
 		}
 		
 		public function parse(xml:XML):void{
@@ -67,6 +68,13 @@ package org.bigbluebutton.modules.presentation.model.services
 				_slides.add(item.source);
 			}		
 			
+			if (_slides.size() > 0) {
+				if (_loadListener != null) {
+					_loadListener(true);
+				}
+			} else {
+				_loadListener(false);
+			}
 			trace("number of slide=" + _slides.size());	
 		}
 
@@ -79,8 +87,6 @@ package org.bigbluebutton.modules.presentation.model.services
 		public function result(event : Object):void
 		{
 			var xml:XML = new XML(event.result);
-//			var list:XMLList = xml.presentations;
-//			trace("Got result [" + list.toXMLString() + "]");
 			var list:XMLList = xml.presentations;
 			var item:XML;
 						
