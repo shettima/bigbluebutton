@@ -1,7 +1,10 @@
-package org.bigbluebutton.modules.chat.model.business
+package org.bigbluebutton.modules.presentation.model.business
 {
 	public interface IPresentService
 	{
-		
+		function connect():void;
+		function disconnect():void;
+		function addMessageSender(msgSender:Function):void;
+		function addConnectionStatusListener(connectionListener:Function):void;		
 	}
 }

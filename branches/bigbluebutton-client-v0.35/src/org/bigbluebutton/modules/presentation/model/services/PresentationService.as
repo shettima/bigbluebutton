@@ -1,6 +1,8 @@
 package org.bigbluebutton.modules.presentation.model.services
 {
 	import flash.events.*;
+	import flash.net.URLLoader;
+	import flash.net.URLRequest;
 	
 	import mx.rpc.IResponder;
 	import mx.rpc.http.HTTPService;
@@ -19,6 +21,7 @@ package org.bigbluebutton.modules.presentation.model.services
 	{  
 		private var service : HTTPService;
 		private var _slides:IPresentationSlides;
+		private var urlLoader:URLLoader;
 		
 		public function PresentationService()
 		{
@@ -34,9 +37,37 @@ package org.bigbluebutton.modules.presentation.model.services
 		{
 			_slides = slides;
 			service.url = url;			
-			var call : Object = service.send();
-			call.addResponder(this);
+			urlLoader = new URLLoader();
+			urlLoader.addEventListener(Event.COMPLETE, handleComplete);	
+			urlLoader.load(new URLRequest(url));
+//			var call : Object = service.send();
+//			call.addResponder(this);
 			
+		}
+
+		private function handleComplete(e:Event):void{
+			trace("Loading complete");
+			try{
+				parse(new XML(e.target.data));				
+			} catch(error:TypeError){
+				trace('Error loading XML modules file.' + error.message);
+			}
+		}
+		
+		public function parse(xml:XML):void{
+			trace("XML = " + xml.children());
+			var list:XMLList = xml.presentation.slide;
+			var item:XML;
+			
+			// Make sure we start with a clean set.
+			_slides.clear();			
+			
+			for each(item in list){
+				trace("Available Modules: " + item.name + " at ");
+				_slides.add(item.source);
+			}		
+			
+			trace("number of slide=" + _slides.size());	
 		}
 
 		/**
@@ -47,8 +78,16 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */		
 		public function result(event : Object):void
 		{
-			trace("Got result [" + event.result.toString() + "]");
-
+			var xml:XML = new XML(event.result);
+//			var list:XMLList = xml.presentations;
+//			trace("Got result [" + list.toXMLString() + "]");
+			var list:XMLList = xml.presentations;
+			var item:XML;
+						
+			for each(item in list){
+				trace("Available Modules: " + item.toXMLString() + " at " + item.text());
+				
+			}	
 		}
 
 		/**

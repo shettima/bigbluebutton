@@ -1,11 +1,14 @@
-package org.bigbluebutton.modules.chat.model.business
+package org.bigbluebutton.modules.presentation.model.business
 {
 	import flash.events.AsyncErrorEvent;
 	import flash.events.NetStatusEvent;
 	import flash.events.SyncEvent;
 	import flash.net.SharedObject;
 	
-	import org.bigbluebutton.modules.presentation.model.business.IPresentationSlides;
+	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
+	import org.bigbluebutton.modules.presentation.controller.notifiers.MoveNotifier;
+	import org.bigbluebutton.modules.presentation.controller.notifiers.ProgressNotifier;
+	import org.bigbluebutton.modules.presentation.controller.notifiers.ZoomNotifier;
 	
 	public class PresentSOService implements IPresentService
 	{
@@ -29,6 +32,7 @@ package org.bigbluebutton.modules.chat.model.business
 		private var _slides:IPresentationSlides;
 		private var _uri:String;
 		private var _connectionListener:Function;
+		private var _messageSender:Function;
 		
 		public function PresentSOService(uri:String, slides:IPresentationSlides)
 		{			
@@ -38,7 +42,7 @@ package org.bigbluebutton.modules.chat.model.business
 		}
 		
 		public function connect():void {
-			netConnectionDelegate.connect(_uri);
+			netConnectionDelegate.connect();
 		}
 			
 		public function disconnect():void {
@@ -75,6 +79,14 @@ package org.bigbluebutton.modules.chat.model.business
 			_connectionListener = connectionListener;
 		}
 		
+		public function addMessageSender(msgSender:Function):void {
+			_messageSender = msgSender;
+		}
+		
+		private function sendMessage(msg:String, body:Object=null):void {
+			if (_messageSender != null) _messageSender(msg, body);
+		}
+		
 		/**
 		 * Send an event to the server to update the clients with a new slide zoom ratio
 		 * @param slideHeight
@@ -82,7 +94,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 * 
 		 */		
 		public function zoom(slideHeight:Number, slideWidth:Number):void{
-			presentationSO.send("zoomCallback", slideHeight, slideWidth);
+			_presentationSO.send("zoomCallback", slideHeight, slideWidth);
 		}
 		
 		/**
@@ -92,7 +104,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 * 
 		 */		
 		public function zoomCallback(slideHeight:Number, slideWidth:Number):void{
-			sendNotification(PresentationFacade.ZOOM_SLIDE, new ZoomNotifier(slideHeight, slideWidth));
+			sendMessage(PresentModuleConstants.ZOOM_SLIDE, new ZoomNotifier(slideHeight, slideWidth));
 		}
 		
 		/**
@@ -102,7 +114,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 * 
 		 */		
 		public function move(slideXPosition:Number, slideYPosition:Number):void{
-			presentationSO.send("moveCallback", slideXPosition, slideYPosition);
+			_presentationSO.send("moveCallback", slideXPosition, slideYPosition);
 		}
 		
 		/**
@@ -112,7 +124,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 * 
 		 */		
 		public function moveCallback(slideXPosition:Number, slideYPosition:Number):void{
-		   sendNotification(PresentationFacade.MOVE_SLIDE, new MoveNotifier(slideXPosition, slideYPosition));
+		   sendMessage(PresentModuleConstants.MOVE_SLIDE, new MoveNotifier(slideXPosition, slideYPosition));
 		}
 		
 		/**
@@ -120,7 +132,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 * 
 		 */		
 		public function maximize():void{
-			presentationSO.send("maximizeCallback");
+			_presentationSO.send("maximizeCallback");
 		}
 		
 		/**
@@ -128,15 +140,15 @@ package org.bigbluebutton.modules.chat.model.business
 		 * 
 		 */		
 		public function maximizeCallback():void{
-			sendNotification(PresentationFacade.MAXIMIZE_PRESENTATION);
+			sendMessage(PresentModuleConstants.MAXIMIZE_PRESENTATION);
 		}
 		
 		public function restore():void{
-			presentationSO.send("restoreCallback");
+			_presentationSO.send("restoreCallback");
 		}
 		
 		public function restoreCallback():void{
-			sendNotification(PresentationFacade.RESTORE_PRESENTATION);
+			sendMessage(PresentModuleConstants.RESTORE_PRESENTATION);
 		}
 		
 		/**
@@ -145,7 +157,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 */		
 		public function clear() : void
 		{
-			presentationSO.send("clearCallback");			
+			_presentationSO.send("clearCallback");			
 		}
 		
 		/**
@@ -155,8 +167,8 @@ package org.bigbluebutton.modules.chat.model.business
 		 */		
 		public function clearCallback() : void
 		{
-			presentationSO.setProperty(SHARING, false);
-			sendNotification(PresentationFacade.CLEAR_EVENT);
+			_presentationSO.setProperty(SHARING, false);
+			sendMessage(PresentModuleConstants.CLEAR_EVENT);
 		}
 
 		/**
@@ -166,7 +178,7 @@ package org.bigbluebutton.modules.chat.model.business
 		 */		
 		public function gotoPage(page : Number) : void
 		{
-			presentationSO.send("gotoPageCallback", page);
+			_presentationSO.send("gotoPageCallback", page);
 			trace("Going to page " + page);
 //			presentationSO.setProperty(CURRENT_PAGE, {pagenumber : page});
 		}
@@ -179,8 +191,8 @@ package org.bigbluebutton.modules.chat.model.business
 		 */		
 		public function gotoPageCallback(page : Number) : void
 		{
-			presentation.decks.selected = page;
-			sendNotification(PresentationFacade.UPDATE_PAGE, page);
+//			_presentation.decks.selected = page;
+//			sendNotification(PresentationFacade.UPDATE_PAGE, page);
 		}
 
 		/**
@@ -208,29 +220,29 @@ package org.bigbluebutton.modules.chat.model.business
 			switch (name)
 			{
 				case UPDATE_MESSAGE:
-					if (presentation.isPresenter) {
-						trace( UPDATE_MESSAGE + " = [" + presentationSO.data.updateMessage.returnCode + "]");
-						processUpdateMessage(presentationSO.data.updateMessage.returnCode);
-					}
+//					if (presentation.isPresenter) {
+						trace( UPDATE_MESSAGE + " = [" + _presentationSO.data.updateMessage.returnCode + "]");
+						processUpdateMessage(_presentationSO.data.updateMessage.returnCode);
+//					}
 					
 					break;
 															
 				case SHARING :
-					presentation.isSharing = presentationSO.data.sharing.share;
-				
-					if (presentationSO.data.sharing.share) {
-						trace( "SHARING =[" + presentationSO.data.sharing.share + "]");
-						sendNotification(PresentationFacade.READY_EVENT);					
-					} else {
-						trace( "SHARING =[" + presentationSO.data.sharing.share + "]");
-						sendNotification(PresentationFacade.CLEAR_EVENT);
-					}
+//					presentation.isSharing = presentationSO.data.sharing.share;
+//				
+//					if (presentationSO.data.sharing.share) {
+//						trace( "SHARING =[" + presentationSO.data.sharing.share + "]");
+//						sendNotification(PresentationFacade.READY_EVENT);					
+//					} else {
+//						trace( "SHARING =[" + presentationSO.data.sharing.share + "]");
+//						sendNotification(PresentationFacade.CLEAR_EVENT);
+//					}
 					break;
 
 				case CURRENT_PAGE :
-						presentation.decks.selected = presentationSO.data.currentPage.pagenumber;
-						trace("Current page is " + presentationSO.data.currentPage.pagenumber);
-						sendNotification(PresentationFacade.UPDATE_PAGE, presentationSO.data.currentPage.pagenumber);
+//						presentation.decks.selected = presentationSO.data.currentPage.pagenumber;
+//						trace("Current page is " + presentationSO.data.currentPage.pagenumber);
+//						sendNotification(PresentationFacade.UPDATE_PAGE, presentationSO.data.currentPage.pagenumber);
 					break;
 							
 				default:
@@ -253,35 +265,35 @@ package org.bigbluebutton.modules.chat.model.business
 			switch (returnCode)
 			{
 				case SUCCESS_RC:
-					message = presentationSO.data.updateMessage.message;
-					sendNotification(PresentationFacade.CONVERT_SUCCESS_EVENT, message);
-					trace("PresentationDelegate - Success Note sent");
+					message = _presentationSO.data.updateMessage.message;
+					sendMessage(PresentModuleConstants.CONVERT_SUCCESS_EVENT, message);
+					trace("PresentationDelegate - SUCCESS_RC");
 					break;
 					
 				case UPDATE_RC:
-					message = presentationSO.data.updateMessage.message;
-					sendNotification(PresentationFacade.UPDATE_PROGRESS_EVENT, message);
-					
+					message = _presentationSO.data.updateMessage.message;
+					sendMessage(PresentModuleConstants.UPDATE_PROGRESS_EVENT, message);
+					trace("PresentationDelegate - UPDATE_RC");
 					break;
 										
 				case FAILED_RC:
-			
+					trace("PresentationDelegate - FAILED_RC");
 					break;
 				case EXTRACT_RC:
-					totalSlides = presentationSO.data.updateMessage.totalSlides;
-					completedSlides = presentationSO.data.updateMessage.completedSlides;
+					totalSlides = _presentationSO.data.updateMessage.totalSlides;
+					completedSlides = _presentationSO.data.updateMessage.completedSlides;
 					trace( "EXTRACTING = [" + completedSlides + " of " + totalSlides + "]");
 					
-					sendNotification(PresentationFacade.EXTRACT_PROGRESS_EVENT,
+					sendMessage(PresentModuleConstants.EXTRACT_PROGRESS_EVENT,
 										new ProgressNotifier(totalSlides,completedSlides));
 					
 					break;
 				case CONVERT_RC:
-					totalSlides = presentationSO.data.updateMessage.totalSlides;
-					completedSlides = presentationSO.data.updateMessage.completedSlides;
+					totalSlides = _presentationSO.data.updateMessage.totalSlides;
+					completedSlides = _presentationSO.data.updateMessage.completedSlides;
 					trace( "CONVERTING = [" + completedSlides + " of " + totalSlides + "]");
 					
-					sendNotification(PresentationFacade.CONVERT_PROGRESS_EVENT,
+					sendMessage(PresentModuleConstants.CONVERT_PROGRESS_EVENT,
 										new ProgressNotifier(totalSlides, completedSlides));							
 					break;			
 				default:

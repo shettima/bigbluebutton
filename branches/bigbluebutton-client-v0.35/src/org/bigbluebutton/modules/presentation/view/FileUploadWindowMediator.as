@@ -26,9 +26,9 @@ package org.bigbluebutton.modules.presentation.view
 	import mx.controls.Alert;
 	import mx.managers.PopUpManager;
 	
-	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ProgressNotifier;
+	import org.bigbluebutton.modules.presentation.model.business.PresentProxy;
 	import org.bigbluebutton.modules.presentation.view.components.FileUploadWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
@@ -51,7 +51,7 @@ package org.bigbluebutton.modules.presentation.view
 		
 		private var fileToUpload:FileReference = new FileReference();
 		
-		private var _fileWin:FileUploadWindow = new FileUploadWindow();
+		private var _fileWin:FileUploadWindow;
 		
 		// Var to determine how to handle okCancelBtn click
 		private var okState : Boolean = false;
@@ -63,9 +63,10 @@ package org.bigbluebutton.modules.presentation.view
 		 * @param view The GUI component which this class serves as a mediator for.
 		 * 
 		 */		
-		public function FileUploadWindowMediator(module:IBigBlueButtonModule)
+		public function FileUploadWindowMediator(fileWin:FileUploadWindow)
 		{
-			super(NAME);
+			super(NAME, fileWin);
+			_fileWin = fileWin;
 			_fileWin.addEventListener(START_UPLOAD, startUpload);
 			_fileWin.addEventListener(CLOSE_UPLOAD_WINDOW, closeFileUploadWindow);
 			_fileWin.addEventListener(SELECT_FILE, selectFile);
@@ -78,7 +79,8 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function startUpload(e:Event):void{
 			trace("In startUpload()...")
-//			PresentationFacade.getInstance().presentationApp.uploadPresentation(fileToUpload);
+			var proxy:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
+			proxy.uploadPresentation(fileToUpload);
 			_fileWin.progBarLbl.visible = true;
 			_fileWin.progressBar.visible = true;
 			
@@ -100,7 +102,7 @@ package org.bigbluebutton.modules.presentation.view
 		
 		private function closeWindow():void{
 			if (okState) {
-//				sendNotification(PresentationFacade.READY_EVENT);
+				sendNotification(PresentModuleConstants.READY_EVENT);
 			}
 			enableControls();
 			removeWindow();

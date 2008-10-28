@@ -26,6 +26,7 @@ package org.bigbluebutton.modules.presentation.view
 	
 	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
+	import org.bigbluebutton.modules.presentation.model.business.PresentProxy;
 	import org.bigbluebutton.modules.presentation.view.components.FileUploadWindow;
 	import org.bigbluebutton.modules.presentation.view.components.PresentationWindow;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
@@ -124,6 +125,9 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		private function handleReadyEvent():void
 		{			
+			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
+			p.loadPresentation();
+			
 //			_presWin.thumbnailView.visible = false;
 			//sharePresentation(new Event("share"));
 		}
@@ -194,7 +198,11 @@ package org.bigbluebutton.modules.presentation.view
             _presWin.uploadWindow.x = point1.x + 25;
             _presWin.uploadWindow.y = point1.y + 25;
             
-            unsharePresentation(new Event("unshare"));
+            if ( ! facade.hasMediator( FileUploadWindowMediator.NAME ) )
+				         facade.registerMediator(new FileUploadWindowMediator( _presWin.uploadWindow ));
+
+            
+//            unsharePresentation(new Event("unshare"));
 //            sendNotification(PresentModuleConstants.STARTUPLOADWINDOW, presentationWindow.uploadWindow);
         }
                

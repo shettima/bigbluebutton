@@ -65,7 +65,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 * @param file - The FileReference class of the file we wish to send
 		 * 
 		 */		
-		public function upload(file : FileReference) : void
+		public function upload(file:FileReference) : void
 		{
 			var fileToUpload : FileReference = new FileReference();
 			fileToUpload = file;

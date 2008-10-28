@@ -13,6 +13,9 @@
 			private var _moduleName:String = "Presentation Module";
 			
 			private var _uri:String = "rtmp://localhost/presentation/85115";
+			private var _host:String = "http://localhost";
+			private var _room:String = "85115";
+			
 			private var _username:String = "ralam";
 			
 			private function onCreationComplete():void {
@@ -49,6 +52,14 @@
 			
 			public function get username():String {
 				return _username;
+			}
+			
+			public function get host():String {
+				return _host;
+			}
+			
+			public function get room():String {
+				return _room;
 			}
 			
 			public function start():void {		
