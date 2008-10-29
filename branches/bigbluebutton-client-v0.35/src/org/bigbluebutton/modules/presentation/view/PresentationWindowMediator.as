@@ -125,7 +125,7 @@ package org.bigbluebutton.modules.presentation.view
 					var slidenum:int = notification.getBody() as int;
 					if ((slidenum > 0) && (slidenum <= _presWin.slideView.slides.length)) {
 					//	var source:String = _presWin.slideView.slides.getItemAt(slidenum - 1) as String;
-					//	_presWin.slideView.myLoader.source = source;
+						_presWin.slideView.selectedSlide = slidenum - 1;
 					}
 					break;
 			}
@@ -159,8 +159,7 @@ package org.bigbluebutton.modules.presentation.view
             	facade.registerMediator(new ThumbnailViewMediator(_presWin.slideView ));
             } else {
             	trace("ThumbnailViewMediator already registered");
-            }
-            			
+            }            			
 			_presWin.slideView.visible = true;		
 		}
 				
@@ -236,11 +235,6 @@ package org.bigbluebutton.modules.presentation.view
             } else {
             	trace("FileuploadMediator already registered");
             }
-				         
-
-            
-//            unsharePresentation(new Event("unshare"));
-//            sendNotification(PresentModuleConstants.STARTUPLOADWINDOW, presentationWindow.uploadWindow);
         }
                
         protected function maximize(e:Event):void{

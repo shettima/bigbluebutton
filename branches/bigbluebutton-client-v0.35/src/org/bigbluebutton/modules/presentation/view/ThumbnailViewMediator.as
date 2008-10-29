@@ -72,7 +72,7 @@ package org.bigbluebutton.modules.presentation.view
 			_slideView.myLoader.x = 1;
 			_slideView.myLoader.y = 1;
 			
-			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, _slideView.slideList.selectedIndex);
+			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, _slideView.slideList.selectedIndex + 1);
 		}
 		
 		protected function zoom(e:Event):void{
