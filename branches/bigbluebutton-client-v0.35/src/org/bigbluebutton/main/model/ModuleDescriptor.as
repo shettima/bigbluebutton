@@ -14,6 +14,7 @@ package org.bigbluebutton.main.model
 		public var module:IBigBlueButtonModule;
 		public var loaded:Boolean = false;
 		public var started:Boolean = false;
+		public var connected:Boolean = false;
 		
 		private var callbackHandler:Function;
 		

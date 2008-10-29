@@ -18,7 +18,9 @@ package org.bigbluebutton.main
 			return [
 					MainApplicationConstants.APP_STARTED,
 					MainApplicationConstants.APP_MODEL_INITIALIZED,
-					MainApplicationConstants.MODULES_LOADED
+					MainApplicationConstants.MODULES_LOADED,
+					MainApplicationConstants.MODULES_START,
+					MainApplicationConstants.MODULE_STARTED
 					];
 		}
 		
@@ -37,6 +39,16 @@ package org.bigbluebutton.main
 					trace("Received MODULES_LOADED");
 					facade.sendNotification(MainApplicationConstants.MODULES_START);
 					break;
+				case MainApplicationConstants.MODULES_START:
+					trace('Received MODULES_START');
+					//sendNotification(MainApplicationConstants.MODULE_START, "ChatModule");
+					//sendNotification(MainApplicationConstants.MODULE_START, "ViewersModule");
+					sendNotification(MainApplicationConstants.MODULE_START, "PresentationModule");
+					break;
+				case MainApplicationConstants.MODULE_STARTED:
+					trace('Received MODULE_STARTED for ' + notification.getBody() as String);
+					//sendNotification(MainApplicationConstants.OPEN_WINDOW, "ChatModule");
+					break;	
 			}
 		}				
 	}

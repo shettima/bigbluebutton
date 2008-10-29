@@ -56,25 +56,13 @@ package org.bigbluebutton.main.view
 		
 		override public function listNotificationInterests():Array{
 			return [
-					MainApplicationConstants.MODULES_START,
-					MainApplicationConstants.MODULE_STARTED,
 					MainApplicationConstants.ADD_WINDOW_MSG,
 					MainApplicationConstants.REMOVE_WINDOW_MSG
 					];
 		}
 		
 		override public function handleNotification(notification:INotification):void{
-			switch(notification.getName()){
-				case MainApplicationConstants.MODULES_START:
-					trace('Received MODULES_START xxxx');
-					//sendNotification(MainApplicationConstants.MODULE_START, "ChatModule");
-					//sendNotification(MainApplicationConstants.MODULE_START, "ViewersModule");
-					sendNotification(MainApplicationConstants.MODULE_START, "PresentationModule");
-					break;
-				case MainApplicationConstants.MODULE_STARTED:
-					trace('Received MODULE_STARTED for ' + notification.getBody() as String);
-					//sendNotification(MainApplicationConstants.OPEN_WINDOW, "ChatModule");
-					break;		
+			switch(notification.getName()){	
 				case MainApplicationConstants.ADD_WINDOW_MSG:
 					var win:IBbbModuleWindow = notification.getBody() as IBbbModuleWindow;
 					trace("putting window in " + win.xPosition + " " + win.yPosition);

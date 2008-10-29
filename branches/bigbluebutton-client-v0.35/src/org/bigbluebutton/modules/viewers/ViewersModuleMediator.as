@@ -98,14 +98,6 @@ package org.bigbluebutton.modules.viewers
 					sendNotification(ViewersModuleConstants.CLOSE_JOIN_WINDOW);
 					sendNotification(ViewersModuleConstants.OPEN_VIEWERS_WINDOW);
 					break;
-//				case ViewersFacade.DEBUG:
-//					break;
-//				case ViewersFacade.SERVER_DISCONNECTED:
-//					sendLogoutCommand(notification.getBody() as String);
-//					break;
-////				case ViewersFacade.VIEW_CAMERA:
-//					openViewCamera(notification.getBody() as User);
-//					break;
 			}
 		}
 
