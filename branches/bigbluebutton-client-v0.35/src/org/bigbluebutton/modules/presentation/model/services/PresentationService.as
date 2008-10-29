@@ -56,7 +56,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		}
 		
 		public function parse(xml:XML):void{
-			trace("XML = " + xml.children());
+			//trace("XML = " + xml.children());
 			var list:XMLList = xml.presentation.slide;
 			var item:XML;
 			
@@ -64,10 +64,11 @@ package org.bigbluebutton.modules.presentation.model.services
 			_slides.clear();			
 			
 			for each(item in list){
-				trace("Available Modules: " + item.name + " at ");
+				//trace("Available Modules: " + item.name + " at ");
 				_slides.add(item.source);
 			}		
 			
+			trace("number of slide=" + _slides.size());
 			if (_slides.size() > 0) {
 				if (_loadListener != null) {
 					_loadListener(true);
@@ -75,7 +76,7 @@ package org.bigbluebutton.modules.presentation.model.services
 			} else {
 				_loadListener(false);
 			}
-			trace("number of slide=" + _slides.size());	
+				
 		}
 
 		/**

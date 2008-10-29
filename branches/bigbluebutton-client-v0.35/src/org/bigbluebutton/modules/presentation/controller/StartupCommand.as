@@ -41,8 +41,6 @@ package org.bigbluebutton.modules.presentation.controller
 			facade.registerMediator(new PresentationEndpointMediator(m));
 			facade.registerMediator(new PresentationModuleMediator(m));
 			facade.registerMediator(new PresentationWindowMediator(m));
-//			facade.registerMediator(new FileUploadWindowMediator(m));
-//			facade.registerMediator(new ThumbnailViewMediator(m));
 			sendNotification(PresentModuleConstants.STARTED);
 		}
 

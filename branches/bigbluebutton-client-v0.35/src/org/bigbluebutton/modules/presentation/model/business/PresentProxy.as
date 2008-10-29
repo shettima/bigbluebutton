@@ -2,6 +2,8 @@ package org.bigbluebutton.modules.presentation.model.business
 {
 	import flash.net.FileReference;
 	
+	import mx.collections.ArrayCollection;
+	
 	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.model.services.FileUploadService;
@@ -37,8 +39,12 @@ package org.bigbluebutton.modules.presentation.model.business
 			return _mode;
 		}
 		
-		public function get slides():IPresentationSlides {
-			return _slides;
+		public function get slides():ArrayCollection {
+			return _slides.slides;
+		}
+		
+		public function isPresenter():Boolean {
+			return _mode == PresentModuleConstants.PRESENTER_MODE;
 		}
 		
 		private function connectionStatusListener(connected:Boolean):void {
@@ -84,10 +90,18 @@ package org.bigbluebutton.modules.presentation.model.business
 			trace('number of slides=' + _slides.size());
 		}	
 		
+		public function gotoSlide(num:int):void {
+			sendNotification(PresentModuleConstants.DISPLAY_SLIDE,num);
+			if (isPresenter()) {
+				_presentService.gotoSlide(num);
+			}
+		}
+		
 		private function loadPresentationListener(loaded:Boolean):void {
 			if (loaded) {
 				trace('presentation has been loaded');
 				sendNotification(PresentModuleConstants.PRESENTATION_LOADED);
+				sendNotification(PresentModuleConstants.DISPLAY_SLIDE,10);
 			} else {
 				trace('failed to load presentation');
 			}

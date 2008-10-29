@@ -176,10 +176,10 @@ package org.bigbluebutton.modules.presentation.model.business
 		 * @param page
 		 * 
 		 */		
-		public function gotoPage(page : Number) : void
+		public function gotoSlide(num:int) : void
 		{
-			_presentationSO.send("gotoPageCallback", page);
-			trace("Going to page " + page);
+			_presentationSO.send("gotoPageCallback", num);
+			trace("Going to slide " + num);
 //			presentationSO.setProperty(CURRENT_PAGE, {pagenumber : page});
 		}
 		

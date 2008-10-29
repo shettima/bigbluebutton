@@ -32,7 +32,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		}
 		
 		public function add(slide:String):void {
-			trace('Adding slide ' + slide);
+			//trace('Adding slide ' + slide);
 			_slides.addItem(slide);
 		}
 		

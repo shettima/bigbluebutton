@@ -85,7 +85,8 @@ package org.bigbluebutton.modules.presentation.view
 					PresentModuleConstants.MAXIMIZE_PRESENTATION,
 					PresentModuleConstants.RESTORE_PRESENTATION,
 					PresentModuleConstants.OPEN_PRESENT_WINDOW,
-					PresentModuleConstants.PRESENTATION_LOADED
+					PresentModuleConstants.PRESENTATION_LOADED,
+					PresentModuleConstants.DISPLAY_SLIDE
 					];
 		}
 		
@@ -120,6 +121,13 @@ package org.bigbluebutton.modules.presentation.view
 		   			_presWin.yPosition = 20;
 		   			facade.sendNotification(PresentModuleConstants.ADD_WINDOW, _presWin);		   							
 					break;
+				case PresentModuleConstants.DISPLAY_SLIDE:
+					var slidenum:int = notification.getBody() as int;
+					if ((slidenum > 0) && (slidenum <= _presWin.slideView.slides.length)) {
+					//	var source:String = _presWin.slideView.slides.getItemAt(slidenum - 1) as String;
+					//	_presWin.slideView.myLoader.source = source;
+					}
+					break;
 			}
 		}
 		
@@ -137,9 +145,22 @@ package org.bigbluebutton.modules.presentation.view
 		}
 
 		private function handlePresentationLoadedEvent():void
-		{			
+		{	
+			// Remove the uploadWindow
+			PopUpManager.removePopUp(_presWin.uploadWindow);
+			// Remove the mediator	
+			facade.removeMediator(FileUploadWindowMediator.NAME);
+			
 			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
 			_presWin.slideView.slides = p.slides;
+			
+            if ( ! facade.hasMediator( ThumbnailViewMediator.NAME ) ) {
+            	trace("Registering ThumbnailViewMediator");
+            	facade.registerMediator(new ThumbnailViewMediator(_presWin.slideView ));
+            } else {
+            	trace("ThumbnailViewMediator already registered");
+            }
+            			
 			_presWin.slideView.visible = true;		
 		}
 				
@@ -209,8 +230,13 @@ package org.bigbluebutton.modules.presentation.view
             _presWin.uploadWindow.x = point1.x + 25;
             _presWin.uploadWindow.y = point1.y + 25;
             
-            if ( ! facade.hasMediator( FileUploadWindowMediator.NAME ) )
-				         facade.registerMediator(new FileUploadWindowMediator( _presWin.uploadWindow ));
+            if ( ! facade.hasMediator( FileUploadWindowMediator.NAME ) ) {
+            	trace("Registering FileUploadMediator");
+            	facade.registerMediator(new FileUploadWindowMediator( _presWin.uploadWindow ));
+            } else {
+            	trace("FileuploadMediator already registered");
+            }
+				         
 
             
 //            unsharePresentation(new Event("unshare"));

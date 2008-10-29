@@ -105,13 +105,8 @@ package org.bigbluebutton.modules.presentation.view
 				sendNotification(PresentModuleConstants.READY_EVENT);
 			}
 			enableControls();
-			removeWindow();
 		}
-		
-		public function removeWindow():void{
-			PopUpManager.removePopUp(_fileWin);
-		}
-		
+				
 		/**
 		 * Called when a file is selected from the file system 
 		 * @param e

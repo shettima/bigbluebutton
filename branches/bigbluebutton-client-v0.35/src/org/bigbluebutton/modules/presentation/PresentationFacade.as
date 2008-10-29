@@ -19,10 +19,8 @@
 */
 package org.bigbluebutton.modules.presentation
 {	
-	import org.bigbluebutton.modules.presentation.controller.StartPresentationAppCommand;
-	import org.bigbluebutton.modules.presentation.controller.StartUploadWindowCommand;
+	import org.bigbluebutton.modules.presentation.controller.GotoSlideCommand;
 	import org.bigbluebutton.modules.presentation.controller.StartupCommand;
-	import org.bigbluebutton.modules.presentation.model.PresentationModel;
 	import org.puremvc.as3.multicore.interfaces.IFacade;
 	import org.puremvc.as3.multicore.patterns.facade.Facade;
 
@@ -70,6 +68,7 @@ package org.bigbluebutton.modules.presentation
 	   	override protected function initializeController():void{
 	   		super.initializeController();
 	   		registerCommand(STARTUP, StartupCommand);
+	   		registerCommand(PresentModuleConstants.GOTO_SLIDE, GotoSlideCommand);
 	   	}	   	
 	   	
 	   	

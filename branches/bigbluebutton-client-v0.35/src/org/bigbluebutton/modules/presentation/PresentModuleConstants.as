@@ -24,7 +24,8 @@ package org.bigbluebutton.modules.presentation
 		public static const RESTORE_PRESENTATION:String = "Restore Presentation";
 		
 		// List of Commands
-		public static const GOTO_PAGE_COMMAND : String = "PRESENTATION_GOTO_PAGE_COMMAND";	
+		public static const GOTO_SLIDE : String = "GOTO_SLIDE";	
+		public static const DISPLAY_SLIDE : String = "DISPLAY_SLIDE";
 		public static const JOIN_COMMAND : String = "PRESENTATION_JOIN_COMMAND";
 		public static const LEAVE_COMMAND : String = "PRESENTATION_LEAVE_COMMAND";
 		public static const CLEAR_COMMAND : String = "PRESENTATION_CLEAR_COMMAND";

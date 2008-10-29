@@ -21,7 +21,6 @@ package org.bigbluebutton.modules.presentation.view
 {
 	import flash.events.Event;
 	
-	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.modules.presentation.PresentModuleConstants;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.MoveNotifier;
 	import org.bigbluebutton.modules.presentation.controller.notifiers.ZoomNotifier;
@@ -45,27 +44,22 @@ package org.bigbluebutton.modules.presentation.view
 		public static const ZOOM:String = "zooming in/out";
 		public static const MOVE:String = "moving slide";
 		
+		private var _slideView:SlideView;
+		
 		/**
 		 * The defauklt constructor. registers the gui component with this mediator 
 		 * @param view
 		 * 
 		 */		
-		public function ThumbnailViewMediator(module:IBigBlueButtonModule)
+		public function ThumbnailViewMediator(viewComponent:SlideView)
 		{
 			super(NAME);
-			thumbnailView.addEventListener(SEND_PAGE_NUM, sendPageNumber);
-			thumbnailView.addEventListener(ZOOM, zoom);
-			thumbnailView.addEventListener(MOVE, move);
+			_slideView = viewComponent;
+			_slideView.addEventListener(SEND_PAGE_NUM, sendPageNumber);
+			_slideView.addEventListener(ZOOM, zoom);
+			_slideView.addEventListener(MOVE, move);
 		}
 		
-		/**
-		 *  
-		 * @return - the GUI component registered to this mediator
-		 * 
-		 */		
-		public function get thumbnailView():SlideView{
-			return viewComponent as SlideView;
-		}
 		
 		/**
 		 * Sends out a sendPageNumber notification 
@@ -73,28 +67,24 @@ package org.bigbluebutton.modules.presentation.view
 		 * 
 		 */		
 		protected function sendPageNumber(e:Event) : void {
-			thumbnailView.myLoader.percentHeight = 100;
-			thumbnailView.myLoader.percentWidth = 100;
-			thumbnailView.myLoader.x = 1;
-			thumbnailView.myLoader.y = 1;
+			_slideView.myLoader.percentHeight = 100;
+			_slideView.myLoader.percentWidth = 100;
+			_slideView.myLoader.x = 1;
+			_slideView.myLoader.y = 1;
 			
-//			if ((thumbnailView.model.presentation.isPresenter) && (thumbnailView.model.presentation.isSharing)) {
-//				var pageNum : uint = thumbnailView.slideList.selectedIndex;
-//			
-//				proxy.gotoPage(pageNum);
-//			}
+			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, _slideView.slideList.selectedIndex);
 		}
 		
 		protected function zoom(e:Event):void{
-			var xPercent:Number = thumbnailView.myLoader.width / thumbnailView.imageCanvas.width;
-			var yPercent:Number = thumbnailView.myLoader.height / thumbnailView.imageCanvas.height;
+			var xPercent:Number = _slideView.myLoader.width / _slideView.imageCanvas.width;
+			var yPercent:Number = _slideView.myLoader.height / _slideView.imageCanvas.height;
 			
 //			proxy.zoom(xPercent, yPercent);
 		}
 		
 		protected function move(e:Event):void{
-			var xOfset:Number = thumbnailView.myLoader.x / thumbnailView.imageCanvas.width;
-			var yOfset:Number = thumbnailView.myLoader.y / thumbnailView.imageCanvas.height;
+			var xOfset:Number = _slideView.myLoader.x / _slideView.imageCanvas.width;
+			var yOfset:Number = _slideView.myLoader.y / _slideView.imageCanvas.height;
 			
 //			proxy.move(xOfset, yOfset);
 		}
@@ -103,7 +93,8 @@ package org.bigbluebutton.modules.presentation.view
 			return [
 					PresentModuleConstants.ZOOM_SLIDE,
 					PresentModuleConstants.MOVE_SLIDE,
-					PresentModuleConstants.MAXIMIZE_PRESENTATION
+					PresentModuleConstants.MAXIMIZE_PRESENTATION,
+					PresentModuleConstants.DISPLAY_SLIDE
 					];
 		}
 		
@@ -123,9 +114,21 @@ package org.bigbluebutton.modules.presentation.view
 //						thumbnailView.myLoader.y = moveNote.newYPosition * thumbnailView.imageCanvas.height;
 //					}
 					break;
+				case PresentModuleConstants.DISPLAY_SLIDE:
+					
+					var slidenum:int = notification.getBody() as int;
+					trace('DISPLAY_SLIDE in ThumbnailMediator ' + slidenum);
+					if ((slidenum > 0) && (slidenum <= _slideView.slides.length)) {
+						if (_slideView.slideList.selectedIndex != slidenum) {
+							_slideView.slideList.selectedIndex = slidenum - 1;
+						}	
+					} else {
+						trace('Cannot DISPLAY_SLIDE in ThumbnailMediator ' + slidenum + " " + _slideView.slides.length);
+					}
+					break;
 				case PresentModuleConstants.MAXIMIZE_PRESENTATION:
-					thumbnailView.myLoader.percentHeight = 100;
-					thumbnailView.myLoader.percentWidth = 100;
+					viewComponent.myLoader.percentHeight = 100;
+					viewComponent.myLoader.percentWidth = 100;
 					break;
 			}
 		}
