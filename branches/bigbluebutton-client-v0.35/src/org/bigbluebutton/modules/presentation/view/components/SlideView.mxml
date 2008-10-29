@@ -32,7 +32,6 @@
 				
 		private function init() : void
 		{
-//			BindingUtils.bindSetter(handleChangedSlides, deck, "slides");
 			addEventListener(MouseEvent.MOUSE_WHEEL, zoom);
 			myLoader.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
 			myLoader.addEventListener(MouseEvent.MOUSE_UP, mouseUp);
@@ -97,11 +96,6 @@
 		}
 		]]>
 	</mx:Script>
-
-	<!--mx:Binding source="model.presentation.decks as SlidesDeck" destination="deck" />
-	<mx:Binding source="slides.selected" destination="slideList.selectedIndex" />	
-	<mx:Binding source="slideList.selectedIndex" destination="slides.selected" /-->
-	<!--mx:Binding source="slideList.selectedIndex" destination="selectedSlide" /-->
 	
 	<mx:Canvas id="imageCanvas" width="100%" height="100%" verticalScrollPolicy="off" horizontalScrollPolicy="off">
 		<mx:Image id="myLoader" width="100%" height="100%"

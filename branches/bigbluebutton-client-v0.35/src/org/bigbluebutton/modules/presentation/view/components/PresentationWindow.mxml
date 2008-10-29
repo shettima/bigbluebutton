@@ -192,9 +192,9 @@
     	  <mx:Button id="uploadPres" icon="{uploadIcon}" visible="true"
     	   			width="20" height="20"
     	   			toolTip="Upload PDF Document" click="dispatchEvent(new Event(PresentationWindowMediator.OPEN_UPLOAD))"/>    
-    	  <mx:Label id="presenterLbl" text="Presenter:" />
+    	  <!--mx:Label id="presenterLbl" text="Presenter:" />
     	  <mx:Button id="presenterName" icon="{presenterIcon}" toolTip="Presenter" label="Presenter's Name"
-                 labelPlacement="right" color="#993300"/>
+                 labelPlacement="right" color="#993300"/-->
     	  <mx:Spacer width="100%"/>					
     	  <mx:Button width="20" height="20" toolTip="Toggle Full-Screen" id="fullScreen" icon="{fullscreen_icon}" click="toggleFullScreen()" />
     </mx:ControlBar>

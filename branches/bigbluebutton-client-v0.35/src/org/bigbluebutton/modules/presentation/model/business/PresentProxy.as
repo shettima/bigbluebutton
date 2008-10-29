@@ -16,7 +16,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		public static const NAME:String = "PresentProxy";
 		
 		private var _module:PresentationModule;
-		private var _mode:String = PresentModuleConstants.PRESENTER_MODE;
+		private var _mode:String = PresentModuleConstants.VIEWER_MODE;
 		
 		private var _slides:IPresentationSlides = new PresentationSlides();
 		private var _presentService:IPresentService;
@@ -90,6 +90,10 @@ package org.bigbluebutton.modules.presentation.model.business
 			trace('number of slides=' + _slides.size());
 		}	
 		
+		public function sharePresentation(share:Boolean):void {
+			_presentService.sharePresentation(share);
+		}
+		
 		public function gotoSlide(num:int):void {
 			sendNotification(PresentModuleConstants.DISPLAY_SLIDE,num);
 			if (isPresenter()) {
@@ -109,6 +113,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		
 		private function uploadProgressListener(code:String, message:String=""):void {
 			trace('Fileupload progress ' + code + ":" + message);
+			sendNotification(code, message);
 		}			
 	}
 }

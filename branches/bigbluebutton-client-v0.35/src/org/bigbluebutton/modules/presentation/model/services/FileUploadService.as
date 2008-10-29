@@ -87,7 +87,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		private function onUploadProgress(event : ProgressEvent) : void
 		{
 			var percentage : Number = Math.round((event.bytesLoaded / event.bytesTotal) * 100);
-			_progressListener(UPLOAD_PROGRESS, percentage);
+			_progressListener(PresentModuleConstants.UPDATE_PROGRESS_EVENT, percentage);
 		}
 		
 		/**
@@ -97,7 +97,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */		
 		private function onUploadComplete(event : Event) : void
 		{
-			_progressListener(UPLOAD_COMPLETED);
+			_progressListener(PresentModuleConstants.UPLOAD_COMPLETED_EVENT);
 		}
 
 		/**
@@ -107,7 +107,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */
 		private function onUploadIoError(event : IOErrorEvent) : void
 		{
-			_progressListener(UPLOAD_IO_ERROR, "IOError while uploading file.");
+			_progressListener(PresentModuleConstants.UPLOAD_IO_ERROR_EVENT, "IOError while uploading file.");
 		}
 		
 		/**
@@ -117,7 +117,7 @@ package org.bigbluebutton.modules.presentation.model.services
 		 */		
 		private function onUploadSecurityError(event : SecurityErrorEvent) : void
 		{
-			_progressListener(UPLOAD_SECURITY_ERROR, "Security Error while uploading file.");
+			_progressListener(PresentModuleConstants.UPLOAD_SECURITY_ERROR_EVENT, "Security Error while uploading file.");
 		}		
 	}
 }

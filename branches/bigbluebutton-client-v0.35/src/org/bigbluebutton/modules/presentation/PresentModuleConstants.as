@@ -31,7 +31,7 @@ package org.bigbluebutton.modules.presentation
 		public static const CLEAR_COMMAND : String = "PRESENTATION_CLEAR_COMMAND";
 		public static const ASSIGN_COMMAND : String = "PRESENTATION_ASSIGN_COMMAND";
 		public static const LOAD_COMMAND : String = "PRESENTATION_LOAD_COMMAND";
-		public static const START_SHARE_COMMAND : String = "PRESENTATION_START_SHARE_COMMAND";
+		public static const START_SHARE : String = "START_SHARE";
 		public static const STOP_SHARE_COMMAND : String = "PRESENTATION_STOP_SHARE_COMMAND";
 		public static const UPLOAD_COMMAND : String = "PRESENTATION_UPLOAD_COMMAND";
 		

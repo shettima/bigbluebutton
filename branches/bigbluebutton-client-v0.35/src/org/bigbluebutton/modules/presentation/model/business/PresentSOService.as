@@ -195,6 +195,12 @@ package org.bigbluebutton.modules.presentation.model.business
 //			sendNotification(PresentationFacade.UPDATE_PAGE, page);
 		}
 
+		public function sharePresentation(share:Boolean):void {
+			trace('SO Sharing presentation = ' + share);
+			_presentationSO.data[SHARING] = share;
+			_presentationSO.setDirty(SHARING);
+		}
+		
 		/**
 		 * Event called automatically once a SharedObject Sync method is received 
 		 * @param event
@@ -230,13 +236,13 @@ package org.bigbluebutton.modules.presentation.model.business
 				case SHARING :
 //					presentation.isSharing = presentationSO.data.sharing.share;
 //				
-//					if (presentationSO.data.sharing.share) {
-//						trace( "SHARING =[" + presentationSO.data.sharing.share + "]");
-//						sendNotification(PresentationFacade.READY_EVENT);					
-//					} else {
-//						trace( "SHARING =[" + presentationSO.data.sharing.share + "]");
+					if (_presentationSO.data[SHARING]) {
+						trace( "SHARING =[" + _presentationSO.data[SHARING] + "]");
+						sendMessage(PresentModuleConstants.START_SHARE);					
+					} else {
+						trace( "SHARING =[" + _presentationSO.data[SHARING] + "]");
 //						sendNotification(PresentationFacade.CLEAR_EVENT);
-//					}
+					}
 					break;
 
 				case CURRENT_PAGE :

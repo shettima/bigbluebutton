@@ -97,6 +97,9 @@ package org.bigbluebutton.modules.presentation.view
 		 */		
 		override public function handleNotification(notification:INotification):void{
 			switch(notification.getName()){
+				case PresentModuleConstants.START_SHARE:
+					handleStartShareEvent();
+					break;
 				case PresentModuleConstants.READY_EVENT:
 					handleReadyEvent();
 					break;
@@ -130,7 +133,14 @@ package org.bigbluebutton.modules.presentation.view
 					break;
 			}
 		}
-		
+	
+		private function handleStartShareEvent():void
+		{			
+			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
+			if (! p.isPresenter())
+				p.loadPresentation();
+		}
+				
 		/**
 		 * Handles a received Ready notification 
 		 * 
@@ -161,6 +171,10 @@ package org.bigbluebutton.modules.presentation.view
             	trace("ThumbnailViewMediator already registered");
             }            			
 			_presWin.slideView.visible = true;		
+			
+			if (p.isPresenter()) {
+				p.sharePresentation(true);
+			}
 		}
 				
 		/**
