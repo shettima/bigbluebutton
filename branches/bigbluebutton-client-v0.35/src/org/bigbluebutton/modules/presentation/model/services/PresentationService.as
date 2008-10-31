@@ -41,8 +41,6 @@ package org.bigbluebutton.modules.presentation.model.services
 			urlLoader = new URLLoader();
 			urlLoader.addEventListener(Event.COMPLETE, handleComplete);	
 			urlLoader.load(new URLRequest(url));
-//			var call : Object = service.send();
-//			call.addResponder(this);
 			
 		}
 
@@ -56,7 +54,6 @@ package org.bigbluebutton.modules.presentation.model.services
 		}
 		
 		public function parse(xml:XML):void{
-			//trace("XML = " + xml.children());
 			var list:XMLList = xml.presentation.slide;
 			var item:XML;
 			

@@ -6,22 +6,20 @@
 	paddingBottom="0" paddingTop="0" 
 	paddingLeft="0" paddingRight="0" 
     layout="vertical" verticalScrollPolicy="off" horizontalScrollPolicy="off"
-	creationComplete="init()" focusStart="focusThumbnail()"
+	focusStart="focusThumbnail()"
 	implements="org.bigbluebutton.common.IBbbModuleWindow">
 
 	<mx:Script>
 		<![CDATA[
 			import org.bigbluebutton.modules.presentation.view.PresentationWindowMediator;
 			import mx.core.Application;
-			import org.bigbluebutton.common.Images;
+			import org.bigbluebutton.modules.presentation.view.components.Images;
 			import org.bigbluebutton.modules.presentation.PresentationFacade;
 			import mx.binding.utils.BindingUtils;
 
 			import mx.collections.ArrayCollection;
 			import mx.rpc.events.*;
 			import mx.controls.Alert;
-			import mx.events.DragEvent;
-			import mx.managers.DragManager;
             import mx.managers.PopUpManager;
             import mx.containers.TitleWindow;
             import flash.geom.Point;
@@ -30,18 +28,10 @@
 			private var images:Images = new Images();
 
 			[Bindable] private var uploadIcon : Class = images.pdf;
-			[Bindable] private var connectIcon : Class = images.disconnect;
-			[Bindable] private var connectTooltip : String = "Disconnected";
-			[Bindable] private var sharingIcon : Class = images.link_break;	
-			[Bindable] private var sharingTooltip : String = "Share presentation";		
-			[Bindable] public var presenterIcon : Class = images.user_gray;
-			[Bindable] private var fullscreen_icon:Class = images.full_screen;
-			private var shareLabel : String;
-			
-//			[Bindable] public var model:PresentationFacade = PresentationFacade.getInstance(); 
-									
+			[Bindable] private var forwardIcon : Class = images.forward;
+			[Bindable] private var backwardIcon : Class = images.backward;
+											
 			public var uploadWindow : FileUploadWindow;
-			private var dispState:String;
 			private var _xPosition:int;
 			private var _yPosition:int;
 			
@@ -61,142 +51,26 @@
 				_yPosition = y;
 			}
 
-			public function handleConnected(connected : Boolean) : void
-			{
-				if (connected) {
-					connectIcon = images.connect;
-					connectTooltip = "Connected";
-				} else {
-					connectIcon = images.disconnect;
-					connectTooltip = "Disconnected";
-				}
-			}
-
-			public function handleSharing(sharing : Boolean) : void
-			{	
-				if (sharing) {
-					//sharingIcon = images.link;
-					//sharePres.label = "Unshare Presentation";
-					sharingTooltip = "Unshare presentation";
-				} else {
-					//sharingIcon = images.link_break;
-					//sharePres.label = "Share Presentation";
-					sharingTooltip = "Share presentation";
-				}
-				
-				//if (! model.presentation.isPresenter) sharePres.visible = false;
-			}
-			
-			private function sendMaximize():void{
-//				if (this.maximized && this.model.presentation.isPresenter){
-//					dispatchEvent(new Event(PresentationWindowMediator.MAXIMIZE));
-//				}
-			}
-						
-			private function init():void 
-			{		
-				//PresentationFacade.getInstance().startup(this);			
-//				BindingUtils.bindSetter(handleConnected, model.presentation, "isConnected");
-//				BindingUtils.bindSetter(handleSharing, model.presentation, "isSharing");
-//				BindingUtils.bindSetter(handlePresenterControl, model.presentation, "isPresenter");
-//				BindingUtils.bindSetter(handlePresenterName, model.presentation, "presenterName");
-//				BindingUtils.bindSetter(handlePresentationLoaded, model.presentation, "presentationLoaded");
-				
-				/* Set up full screen handler. */
-				Application.application.stage.addEventListener(FullScreenEvent.FULL_SCREEN, fullScreenHandler);
-				dispState = Application.application.stage.displayState;
-			}
-			
 			private function focusThumbnail():void{
 				
-				this.slideView.slideList.setFocus();
-			}
-
-			public function handlePresenterName(name : String) : void
-			{
-//				presenterName.label = name;
-			}
-
-			public function handlePresentationLoaded(loaded : Boolean) : void
-			{				
-				if (loaded) {
-//					if (model.presentation.isPresenter) {
-						//sharePres.visible = true;
-//						dispatchEvent(new Event(PresentationWindowMediator.SHARE));
-//					}
-					slideView.visible = true;
-				} else {
-					//Alert.show("AAA");
-					slideView.visible = false;
-//					if (model.presentation.isPresenter) {
-						//sharePres.visible = false;
-//						uploadPres.enabled = true;
-//					}
-				}
-			}
-
-			public function handlePresenterControl(isPresenter : Boolean) : void
-			{
-				if (isPresenter) {
-//					uploadPres.visible = true;
-				} else {
-					dispatchEvent(new Event(PresentationWindowMediator.UNSHARE));
-//					uploadPres.visible = false;
-				}
-			}
-
-	   		
-	   		private function toggleFullScreen():void{
-	   			trace("Toggling fullscreen");
-	   			try {
-					switch (Application.application.stage.displayState) {
-						case StageDisplayState.FULL_SCREEN:
-							trace("full screen mode");
-							/* If already in full screen mode, switch to normal mode. */
-							Application.application.stage.displayState = StageDisplayState.NORMAL;
-							break;
-						default:
-							trace("Normal screen mode");
-							/* If not in full screen mode, switch to full screen mode. */
-							Application.application.stage.displayState = StageDisplayState.FULL_SCREEN;
-							break;
-					}
-				} catch (err:SecurityError) {
-					// ignore
-				}
-	   		}
-	   		
-	   		private function fullScreenHandler(evt:FullScreenEvent):void {
-				dispState = Application.application.stage.displayState + " (fullScreen=" + evt.fullScreen.toString() + ")";
-				if (evt.fullScreen) {
-					trace("Switching to full screen");
-					/* Do something specific here if we switched to full screen mode. */
-					this.maximizeRestoreBtn.visible = false;
-					if (this.maximized){
-						this.restore();
-					}
-				
-				} else {
-					trace("Switching to normal screen");
-					/* Do something specific here if we switched to normal mode. */
-					this.maximizeRestoreBtn.visible = true;
-				}
-			}			
-				
+//				this.slideView.slideList.setFocus();
+			}										
 		]]>
 	</mx:Script>
 	
 	<thumb:SlideView id="slideView" width="100%" height="100%" visible="false"/>
 
     <mx:ControlBar width="100%">
-    	  <mx:Button id="uploadPres" icon="{uploadIcon}" visible="true"
-    	   			width="20" height="20"
-    	   			toolTip="Upload PDF Document" click="dispatchEvent(new Event(PresentationWindowMediator.OPEN_UPLOAD))"/>    
-    	  <!--mx:Label id="presenterLbl" text="Presenter:" />
-    	  <mx:Button id="presenterName" icon="{presenterIcon}" toolTip="Presenter" label="Presenter's Name"
-                 labelPlacement="right" color="#993300"/-->
-    	  <mx:Spacer width="100%"/>					
-    	  <mx:Button width="20" height="20" toolTip="Toggle Full-Screen" id="fullScreen" icon="{fullscreen_icon}" click="toggleFullScreen()" />
+    	  <mx:Button id="uploadPres" icon="{uploadIcon}" visible="true" width="20" height="20"
+    	   		toolTip="Upload PDF Document" click="dispatchEvent(new Event(PresentationWindowMediator.OPEN_UPLOAD))"/>    
+    	  <mx:Spacer width="50%"/>	
+    	  <mx:Button id="backButton" icon="{backwardIcon}" visible="true" width="20" height="20"
+    	   		toolTip="Previous slide." click="dispatchEvent(new Event(PresentationWindowMediator.PREVIOUS_SLIDE))"/>
+    	  <mx:TextInput id="curSlideNum" width="40" text="1"/>
+    	  <mx:Label id="slideNumLbl" text="of 20"/>    
+    	  <mx:Button id="forwardButton" icon="{forwardIcon}" visible="true" width="20" height="20"
+    	   		toolTip="Next slide" click="dispatchEvent(new Event(PresentationWindowMediator.NEXT_SLIDE))"/>    				
+    	<mx:Spacer width="50%"/>
     </mx:ControlBar>
 			
 </pres:MDIWindow>

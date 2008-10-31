@@ -42,6 +42,9 @@ package org.bigbluebutton.modules.presentation.view
 	{
 		public static const NAME:String = "PresentationWindowMediator";
 		
+		public static const PREVIOUS_SLIDE:String = "PREVIOUS_SLIDE";
+		public static const NEXT_SLIDE:String = "NEXT_SLIDE";
+		
 		public static const CONNECT:String = "Connect to Presentation";
 		public static const SHARE:String = "Share Presentation";
 		public static const OPEN_UPLOAD:String = "Open File Upload Window"
@@ -67,9 +70,21 @@ package org.bigbluebutton.modules.presentation.view
 			_presWin.addEventListener(UNSHARE, unsharePresentation);
 			_presWin.addEventListener(MAXIMIZE, maximize);
 			_presWin.addEventListener(RESTORE, restore);
+			_presWin.addEventListener(PREVIOUS_SLIDE, onPreviousSlide);
+			_presWin.addEventListener(NEXT_SLIDE, onNextSlide);
 		}
 		
 
+		private function onPreviousSlide(e:Event) : void{
+			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, 
+					_presWin.slideView.selectedSlide - 1);
+		}
+		
+		private function onNextSlide(e:Event) : void{
+			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, 
+					_presWin.slideView.selectedSlide + 1);			
+		}
+				
 		/**
 		 *  
 		 * @return A list of the notifications this class listens to
@@ -126,9 +141,11 @@ package org.bigbluebutton.modules.presentation.view
 					break;
 				case PresentModuleConstants.DISPLAY_SLIDE:
 					var slidenum:int = notification.getBody() as int;
+					trace('DISPLAY_SLIDE in PresentationWindowMediator ' + slidenum);
 					if ((slidenum > 0) && (slidenum <= _presWin.slideView.slides.length)) {
-					//	var source:String = _presWin.slideView.slides.getItemAt(slidenum - 1) as String;
-						_presWin.slideView.selectedSlide = slidenum - 1;
+						_presWin.slideView.selectedSlide = slidenum;
+						_presWin.curSlideNum.text = _presWin.slideView.selectedSlide as String;
+						_presWin.slideNumLbl.text = "of " + _presWin.slideView.slides.length;
 					}
 					break;
 			}
@@ -141,17 +158,11 @@ package org.bigbluebutton.modules.presentation.view
 				p.loadPresentation();
 		}
 				
-		/**
-		 * Handles a received Ready notification 
-		 * 
-		 */		
+
 		private function handleReadyEvent():void
 		{			
 			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
 			p.loadPresentation();
-			
-//			_presWin.thumbnailView.visible = false;
-			//sharePresentation(new Event("share"));
 		}
 
 		private function handlePresentationLoadedEvent():void

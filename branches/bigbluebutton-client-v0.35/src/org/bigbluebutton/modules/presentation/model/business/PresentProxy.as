@@ -105,7 +105,6 @@ package org.bigbluebutton.modules.presentation.model.business
 			if (loaded) {
 				trace('presentation has been loaded');
 				sendNotification(PresentModuleConstants.PRESENTATION_LOADED);
-				sendNotification(PresentModuleConstants.DISPLAY_SLIDE,10);
 			} else {
 				trace('failed to load presentation');
 			}

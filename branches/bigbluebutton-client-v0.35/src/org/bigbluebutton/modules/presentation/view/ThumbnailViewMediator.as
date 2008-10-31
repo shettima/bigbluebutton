@@ -72,7 +72,7 @@ package org.bigbluebutton.modules.presentation.view
 			_slideView.myLoader.x = 1;
 			_slideView.myLoader.y = 1;
 			
-			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, _slideView.slideList.selectedIndex + 1);
+//			facade.sendNotification(PresentModuleConstants.GOTO_SLIDE, _slideView.slideList.selectedIndex + 1);
 		}
 		
 		protected function zoom(e:Event):void{
@@ -93,8 +93,7 @@ package org.bigbluebutton.modules.presentation.view
 			return [
 					PresentModuleConstants.ZOOM_SLIDE,
 					PresentModuleConstants.MOVE_SLIDE,
-					PresentModuleConstants.MAXIMIZE_PRESENTATION,
-					PresentModuleConstants.DISPLAY_SLIDE
+					PresentModuleConstants.MAXIMIZE_PRESENTATION
 					];
 		}
 		
@@ -119,9 +118,9 @@ package org.bigbluebutton.modules.presentation.view
 					var slidenum:int = notification.getBody() as int;
 					trace('DISPLAY_SLIDE in ThumbnailMediator ' + slidenum);
 					if ((slidenum > 0) && (slidenum <= _slideView.slides.length)) {
-						if (_slideView.slideList.selectedIndex != slidenum) {
-							_slideView.slideList.selectedIndex = slidenum - 1;
-						}	
+//						if (_slideView.slideList.selectedIndex != slidenum) {
+//							_slideView.slideList.selectedIndex = slidenum - 1;
+//						}	
 					} else {
 						trace('Cannot DISPLAY_SLIDE in ThumbnailMediator ' + slidenum + " " + _slideView.slides.length);
 					}
