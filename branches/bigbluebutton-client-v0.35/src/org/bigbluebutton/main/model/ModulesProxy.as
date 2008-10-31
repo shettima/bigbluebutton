@@ -2,7 +2,6 @@ package org.bigbluebutton.main.model
 {
 	import flash.utils.Dictionary;
 	
-	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.common.messaging.Router;
 	import org.bigbluebutton.main.MainApplicationConstants;
 	import org.puremvc.as3.multicore.interfaces.IProxy;
@@ -13,32 +12,38 @@ package org.bigbluebutton.main.model
 		public static const NAME:String = 'ModulesProxy';
 		
 		private var modulesManager:BbbModuleManager;
-		private var _modules:Dictionary;
+		
+		private var _user:Object;
 		
 		public function ModulesProxy(data:Object=null)
 		{
 			super(NAME, data);
 			modulesManager = new BbbModuleManager();
-			modulesManager.initialize(onInitializeComplete);
+			modulesManager.addInitializedListener(onInitializeComplete);
+			modulesManager.addModuleLoadedListener(onModuleLoadedListener);
+			modulesManager.initialize();
 		}
 
-		private function onInitializeComplete(modules:Dictionary):void {
-			_modules = modules;
-			trace('Listing all modules2');
-			for (var key:Object in _modules) {
-				trace(key, _modules[key].url);
-			}
+		private function onInitializeComplete(initialized:Boolean):void {
+			if (initialized)
 			facade.sendNotification(MainApplicationConstants.APP_MODEL_INITIALIZED);
 		}
 		
 		public function initialize():void {
-			modulesManager.initialize(onInitializeComplete);			
+			modulesManager.initialize();			
 		}
 		
+		public function set user(loggedInUser:Object):void {
+			_user = loggedInUser;
+			// Add this into the attributes of the module
+			modulesManager.addUserIntoAttributes(_user);
+		}
+
+/*		
 		public function loadModules():void {
 			trace('Loading all modules');
 			for (var key:Object in _modules) {
-				trace(key, _modules[key].url);
+				trace(key, _modules[key].attributes.url);
 				loadModule(key, loadModuleResultHandler);
 			}
 		}
@@ -49,80 +54,51 @@ package org.bigbluebutton.main.model
 				trace('Starting ' + _modules[key].name);
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
 				var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
-				if (m.name == 'ViewersModule') {
+				if (m.attributes.name == 'ViewersModule') {
 					bbb.acceptRouter(router);	
 				}
 			}		
 		}
+*/
 
 		public function startModule(name:String, router:Router):void {
 			trace('Request to start module ' + name);
-			var bbb:IBigBlueButtonModule = findModule(name);
-			if (bbb != null) {
-				trace('Starting ' + name);
-				bbb.acceptRouter(router);
-				bbb.start();		
-			}	
+			modulesManager.startModule(name, router);
 		}
 
 		public function stopModule(name:String):void {
-			trace('Request to stop module ' + name);
+/*			trace('Request to stop module ' + name);
 			var bbb:IBigBlueButtonModule = findModule(name);
 			if (bbb != null) {
 				trace('Stopping ' + name);
 				bbb.stop();		
 			}
-		}
-		
-		private function findModule(name:String):IBigBlueButtonModule {
-			for (var key:Object in _modules) {				
-				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
-				if (m.name == name) {
-					return m.module as IBigBlueButtonModule;
-				}
-			}		
-			return null;	
-		}
-				
-		private function loadModule(name:Object,resultHandler:Function):void {
+*/		}
+						
+		public function loadModule(name:String):void {
 			trace('Loading ' + name);
-			var m:ModuleDescriptor = _modules[name] as ModuleDescriptor;
-			if (m != null) {
-				trace('Found module ' + m.name);
-				m.load(resultHandler);
-			} else {
-				trace(name + " not found.");
-			}
+			modulesManager.loadModule(name);
 		}
 				
-		private function loadModuleResultHandler(moduleName:Object):void {
-			var allLoaded:Boolean = true;			
-			for (var key:Object in _modules) {
-				if (! _modules[key].loaded) {
-					trace("Module " + key + " not loaded yet");
-					allLoaded = false;
-				}
-			}			
-			if (allLoaded) {
-				trace('All modules have been loaded');
-				facade.sendNotification(MainApplicationConstants.MODULES_LOADED);
-			}
+		private function onModuleLoadedListener(name:String):void {
+			trace('Sending module loaded for ' + name);
+			facade.sendNotification(MainApplicationConstants.MODULE_LOADED, name);
 		}
 		
 		public function moduleStarted(name:String, started:Boolean):void {
-			for (var key:Object in _modules) {				
+/*			for (var key:Object in _modules) {				
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
 				if (m != null) {
 					trace('Setting ' + _modules[key].name + ' started to ' + started);
 					m.started = started;
 				}
 			}		
-		}
-		
-		
-		
+*/		}
+				
 		public function get modules():Dictionary {
-			return _modules;
+			return null;
+//			return _modules;
 		}
+
 	}
 }

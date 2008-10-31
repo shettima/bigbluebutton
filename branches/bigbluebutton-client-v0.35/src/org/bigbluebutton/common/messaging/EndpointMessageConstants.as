@@ -22,5 +22,10 @@ package org.bigbluebutton.common.messaging
 		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';
 		public static const ADD_WINDOW:String = 'ADD_WINDOW';
 		public static const REMOVE_WINDOW:String = 'REMOVE_WINDOW';
+
+		public static const USER_LOGIN:String = 'USER_LOGIN';
+		public static const USER_LOGGED_IN:String = 'USER_LOGGED_IN'
+		public static const USER_LOGOUT:String = 'USER_LOGOUT';
+		public static const USER_LOGGED_OUT:String = 'USER_LOGGED_OUT';
 	}
 }

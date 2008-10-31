@@ -31,7 +31,7 @@ package org.bigbluebutton.common
 		function set uri(uri:String):void;
 		function get username():String;
 		function get uri():String;		
-		function start():void;
+		function start(attributes:Object):void;
 		function stop():void;
 	}
 }

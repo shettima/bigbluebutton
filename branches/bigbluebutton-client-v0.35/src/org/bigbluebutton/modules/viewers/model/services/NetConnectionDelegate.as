@@ -35,6 +35,11 @@ package org.bigbluebutton.modules.viewers.model.services
 		
 		private var _userid:Number = -1;
 		private var _role:String = "unknown";
+		
+		// These two are just placeholders. We'll get this from the server later and
+		// then pass to other modules.
+		private var _authToken:String = "AUTHORIZED";
+		private var _room:String;
 				
 		public function NetConnectionDelegate(uri:String, connectionListener:Function) : void
 		{
@@ -49,7 +54,11 @@ package org.bigbluebutton.modules.viewers.model.services
 		
 		public function connect(uri:String, room:String, 
 					username:String, password:String) : void
-		{					
+		{	
+			// Just store the room temporarily...later this will be returned by the server
+			// together with the authToken. (ralam - oct. 30, 2008)
+			_room = room;
+							
 			_netConnection.client = this;
 			_netConnection.addEventListener( NetStatusEvent.NET_STATUS, netStatus );
 			_netConnection.addEventListener( AsyncErrorEvent.ASYNC_ERROR, netASyncError );
@@ -92,7 +101,7 @@ package org.bigbluebutton.modules.viewers.model.services
 				case "NetConnection.Connect.Success" :
 					trace("Connection to viewers application succeeded.");
 					if ((_userid > 0) && (_role != "unknown")) {
-						_connectionListener(true, _userid, _role);	
+						_connectionListener(true, _userid, _role, _room, _authToken);	
 					}				
 					break;
 			
@@ -155,6 +164,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			trace( "ViewersNetDelegate::setConnectionId: id=[" + id + ", " + role + "]");
 			if (isNaN(id)) return "FAILED";
 			
+			// We should be receiving authToken and room from the server here.
 			_userid = id;
 			_role = role;
 								

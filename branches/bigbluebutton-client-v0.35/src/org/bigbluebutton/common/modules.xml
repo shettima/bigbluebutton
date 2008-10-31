@@ -1,5 +1,5 @@
 <modules>
-	<!--module name="ChatModule" swfpath="ChatModule.swf" /-->
-	<!--module name="ViewersModule" swfpath="ViewersModule.swf" /-->
-	<module name="PresentationModule" swfpath="PresentationModule.swf" />
+	<module name="ChatModule" url="ChatModule.swf" />
+	<module name="ViewersModule" url="ViewersModule.swf" />
+	<module name="PresentationModule" url="PresentationModule.swf" />
 </modules>

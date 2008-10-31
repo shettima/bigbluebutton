@@ -161,7 +161,7 @@ package org.bigbluebutton.common
 			return this.startTime;
 		}
 
-		public function start():void {			
+		public function start(atts:Object):void {			
 		}
 		
 		public function stop():void {}

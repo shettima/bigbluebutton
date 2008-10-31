@@ -51,7 +51,7 @@
 				return _username;
 			}
 			
-			public function start():void {		
+			public function start(attributes:Object):void {		
 				ViewersFacade.getInstance().startup(this);	
 			}
 		

@@ -1,7 +1,5 @@
 package org.bigbluebutton.main
 {
-	import flexlib.mdi.containers.MDIWindow;
-	
 	import org.bigbluebutton.common.messaging.Endpoint;
 	import org.bigbluebutton.common.messaging.EndpointMessageConstants;
 	import org.bigbluebutton.common.messaging.Router;
@@ -54,18 +52,14 @@ package org.bigbluebutton.main
 			switch(notification.getName()){
 				case MainApplicationConstants.MODULE_START:
 					var startModule:String = notification.getBody() as String;
-					trace("Request to start module " + startModule);
+					trace(NAME + "::Request to start module " + startModule);
 					modulesProxy.startModule(startModule, _router);						
 					break;
 				case MainApplicationConstants.MODULE_STOP:
 					var stopModule:String = notification.getBody() as String;
-					trace("Request to stop module " + stopModule);
+					trace(NAME + "::Request to stop module " + stopModule);
 					modulesProxy.stopModule(stopModule);						
-					break;
-				case MainApplicationConstants.OPEN_WINDOW:
-					trace('Sending OPEN_WINDOW message to chatmodule');
-					_endpoint.sendMessage(EndpointMessageConstants.OPEN_WINDOW, 
-							EndpointMessageConstants.TO_CHAT_MODULE, EndpointMessageConstants.OPEN_WINDOW);					
+					break;				
 			}
 		}
 
@@ -74,20 +68,25 @@ package org.bigbluebutton.main
 			var msg : String = message.getHeader().MSG as String;						
 			switch (msg)
 			{
+				case EndpointMessageConstants.USER_LOGGED_IN:
+					trace(NAME + "::Got USER_LOGGED_IN from " + message.getHeader().SRC as String);
+					modulesProxy.user = message.getBody();
+					sendNotification(MainApplicationConstants.USER_LOGGED_IN);
+					break;
 				case EndpointMessageConstants.MODULE_STARTED:
-					trace("Got MODULE_STARTED from " + message.getBody() as String);
+					trace(NAME + "::Got MODULE_STARTED from " + message.getBody() as String);
 					modulesProxy.moduleStarted(message.getBody() as String, true);
 					break;
 				case EndpointMessageConstants.MODULE_STOPPED:
-					trace("Got MODULE_STOPPED from " + message.getBody() as String);
+					trace(NAME + "::Got MODULE_STOPPED from " + message.getBody() as String);
 					modulesProxy.moduleStarted(message.getBody() as String, false);
 					break;
 				case EndpointMessageConstants.ADD_WINDOW:
-					trace("Got ADD_WINDOW from " + message.getHeader().SRC as String);
+					trace(NAME + "::Got ADD_WINDOW from " + message.getHeader().SRC as String);
 					sendNotification(MainApplicationConstants.ADD_WINDOW_MSG, message.getBody());
 					break;
 				case EndpointMessageConstants.REMOVE_WINDOW:
-					trace("Got REMOVE_WINDOW from " + message.getHeader().SRC as String);
+					trace(NAME + "::Got REMOVE_WINDOW from " + message.getHeader().SRC as String);
 					sendNotification(MainApplicationConstants.REMOVE_WINDOW_MSG, message.getBody());
 					break;					
 			}

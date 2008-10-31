@@ -33,6 +33,8 @@ package org.bigbluebutton.modules.viewers.model.vo
 		public var name : String;
 		public var status : String = "lowerhand";
 		public var role : String = Role.VIEWER;	
+		public var room:String = "";
+		public var authToken:String = "";
 		
 		/**
 		 * If the user is broadcasting a stream (video and/or audio)

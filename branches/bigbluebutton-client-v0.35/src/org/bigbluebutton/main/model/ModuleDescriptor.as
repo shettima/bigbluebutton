@@ -8,8 +8,7 @@ package org.bigbluebutton.main.model
 	
 	public class ModuleDescriptor
 	{
-		public var name:String;
-		public var url:String;
+		public var attributes:Object;
 		public var loader:ModuleLoader;
 		public var module:IBigBlueButtonModule;
 		public var loaded:Boolean = false;
@@ -18,10 +17,9 @@ package org.bigbluebutton.main.model
 		
 		private var callbackHandler:Function;
 		
-		public function ModuleDescriptor(name:String, url:String)
+		public function ModuleDescriptor(attributes:Object)
 		{
-			this.name = name;
-			this.url = url;
+			this.attributes = attributes;
 			
 			loader = new ModuleLoader();
 		}
@@ -35,7 +33,7 @@ package org.bigbluebutton.main.model
 			loader.addEventListener("ready", onReady);
 //			loader.addEventListener("error", resultHandler);
 //			loader.addEventListener("unload", resultHandler);
-			loader.url = url;
+			loader.url = attributes.url;
 			loader.loadModule();
 		}
 		
@@ -48,10 +46,10 @@ package org.bigbluebutton.main.model
 			var loader:ModuleLoader = event.target as ModuleLoader;
 			module = loader.child as IBigBlueButtonModule;
 			if (module != null) {
-				trace("Module " + name + " has been loaded");
+				trace("Module " + attributes.name + " has been loaded");
 				loaded = true;
 			}
-			callbackHandler(name);
+			callbackHandler(attributes.name);
 		}	
 
 /*

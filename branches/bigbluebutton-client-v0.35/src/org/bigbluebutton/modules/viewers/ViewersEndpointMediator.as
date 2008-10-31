@@ -4,6 +4,7 @@ package org.bigbluebutton.modules.viewers
 	import org.bigbluebutton.common.messaging.Endpoint;
 	import org.bigbluebutton.common.messaging.EndpointMessageConstants;
 	import org.bigbluebutton.common.messaging.Router;
+	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -39,6 +40,8 @@ package org.bigbluebutton.modules.viewers
 		override public function listNotificationInterests():Array
 		{
 			return [
+				ViewersModuleConstants.LOGGED_OUT,
+				ViewersModuleConstants.LOGGED_IN,
 				ViewersModuleConstants.STARTED,
 				ViewersModuleConstants.CONNECTED,
 				ViewersModuleConstants.DISCONNECTED,
@@ -50,6 +53,16 @@ package org.bigbluebutton.modules.viewers
 		override public function handleNotification(notification:INotification):void
 		{
 			switch(notification.getName()){
+				case ViewersModuleConstants.LOGGED_OUT:
+					_endpoint.sendMessage(EndpointMessageConstants.USER_LOGGED_OUT,
+							EndpointMessageConstants.TO_MAIN_APP, proxy.me.userid);
+					break;
+				case ViewersModuleConstants.LOGGED_IN:
+					var user:Object = {userid:proxy.me.userid, username:proxy.me.name, 
+										role:proxy.me.role, room:proxy.me.room, authToken:proxy.me.authToken};					
+					_endpoint.sendMessage(EndpointMessageConstants.USER_LOGGED_IN,
+							EndpointMessageConstants.TO_MAIN_APP, user);
+					break;
 				case ViewersModuleConstants.STARTED:
 					trace("Sending Viewers MODULE_STARTED message to main");
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STARTED, 
@@ -57,7 +70,7 @@ package org.bigbluebutton.modules.viewers
 					facade.sendNotification(ViewersModuleConstants.OPEN_JOIN_WINDOW);
 					break;
 				case ViewersModuleConstants.DISCONNECTED:
-					trace('Sending Chat MODULE_STOPPED message to main');
+					trace('Sending Viewers MODULE_STOPPED message to main');
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STOPPED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
 					break;
@@ -88,8 +101,8 @@ package org.bigbluebutton.modules.viewers
 			}
 		}
 		
-		private function playMessage(message:XML):void{
-
+		private function get proxy():ViewersProxy {
+			return facade.retrieveProxy(ViewersProxy.NAME) as ViewersProxy;
 		}				
 	}
 }

@@ -7,6 +7,7 @@ package org.bigbluebutton.modules.viewers.model
 	import org.bigbluebutton.modules.viewers.model.business.IViewers;
 	import org.bigbluebutton.modules.viewers.model.services.IViewersService;
 	import org.bigbluebutton.modules.viewers.model.services.ViewersSOService;
+	import org.bigbluebutton.modules.viewers.model.vo.User;
 	import org.puremvc.as3.multicore.interfaces.IProxy;
 	import org.puremvc.as3.multicore.patterns.proxy.Proxy;
 
@@ -35,6 +36,10 @@ package org.bigbluebutton.modules.viewers.model
 			_uri = uri
 			_participants.me.name = username;	
 			_viewersService.connect(_uri, room, username, password);		
+		}
+		
+		public function get me():User {
+			return _participants.me;
 		}
 		
 		public function get participants():ArrayCollection {

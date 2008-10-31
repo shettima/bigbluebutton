@@ -36,11 +36,13 @@ package org.bigbluebutton.modules.viewers.model.services
 			netConnectionDelegate.disconnect();
 		}
 		
-		private function connectionListener(connected:Boolean, userid:Number=0, role:String=""):void {
+		private function connectionListener(connected:Boolean, userid:Number=0, role:String="", room:String="", authToken:String=""):void {
 			if (connected) {
 				trace(NAME + ":Connected to the Viewers application " + userid + " " + role);
 				_participants.me.role = role;
 				_participants.me.userid = userid;
+				_participants.me.room = room;
+				_participants.me.authToken = authToken;
 				join();
 			} else {
 				leave();

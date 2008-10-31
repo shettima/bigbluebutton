@@ -31,8 +31,8 @@ package org.bigbluebutton.main
 
 		public static const ADD_WINDOW_MSG:String = 'ADD_WINDOW_MSG';
 		public static const REMOVE_WINDOW_MSG:String = 'REMOVE_WINDOW_MSG';
-		public static const OPEN_WINDOW:String = 'ADD_WINDOW_MSG';
-		public static const CLOSE_WINDOW:String = 'REMOVE_WINDOW_MSG';
+		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
+		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';
 				
 		public static const LOGIN_COMPLETE:String = "LOGIN_COMPLETE";
 		public static const CONNECTION_LOST:String = "CONNECTION_LOST"

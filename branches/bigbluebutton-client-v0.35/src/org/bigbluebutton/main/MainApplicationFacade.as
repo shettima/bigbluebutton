@@ -22,7 +22,6 @@ package org.bigbluebutton.main
 	import mx.collections.ArrayCollection;
 	
 	import org.bigbluebutton.main.controller.InitializeModelCommand;
-	import org.bigbluebutton.main.controller.LoadModulesCommand;
 	import org.bigbluebutton.main.controller.StartupCommand;
 	import org.bigbluebutton.main.view.components.MainApplicationShell;
 	import org.bigbluebutton.modules.viewers.ViewersFacade;
@@ -69,7 +68,6 @@ package org.bigbluebutton.main
         {
             super.initializeController();            
             registerCommand( STARTUP, StartupCommand );
-            registerCommand(MainApplicationConstants.MODULES_LOAD, LoadModulesCommand);
             registerCommand(MainApplicationConstants.APP_MODEL_INITIALIZE, InitializeModelCommand);
         }
         

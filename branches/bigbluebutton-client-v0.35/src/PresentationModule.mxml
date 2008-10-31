@@ -62,7 +62,7 @@
 				return _room;
 			}
 			
-			public function start():void {		
+			public function start(attributes:Object):void {		
 				PresentationFacade.getInstance().startup(this);	
 			}
 		
