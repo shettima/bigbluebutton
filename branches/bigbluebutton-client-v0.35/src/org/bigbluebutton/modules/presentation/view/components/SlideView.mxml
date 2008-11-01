@@ -28,7 +28,7 @@
         public var slides:ArrayCollection;
         		
 		[Bindable]
-		public var selectedSlide:int=1;
+		public var selectedSlide:int=0;
 				
 		private function init() : void
 		{

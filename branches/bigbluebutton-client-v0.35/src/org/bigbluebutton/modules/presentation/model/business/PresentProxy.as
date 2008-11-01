@@ -16,7 +16,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		public static const NAME:String = "PresentProxy";
 		
 		private var _module:PresentationModule;
-		private var _mode:String = PresentModuleConstants.VIEWER_MODE;
+		private var _mode:String = PresentModuleConstants.PRESENTER_MODE;
 		
 		private var _slides:IPresentationSlides = new PresentationSlides();
 		private var _presentService:IPresentService;

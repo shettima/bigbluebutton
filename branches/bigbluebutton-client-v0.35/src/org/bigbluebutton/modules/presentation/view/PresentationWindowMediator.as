@@ -142,10 +142,11 @@ package org.bigbluebutton.modules.presentation.view
 				case PresentModuleConstants.DISPLAY_SLIDE:
 					var slidenum:int = notification.getBody() as int;
 					trace('DISPLAY_SLIDE in PresentationWindowMediator ' + slidenum);
-					if ((slidenum > 0) && (slidenum <= _presWin.slideView.slides.length)) {
+					if ((slidenum >= 0) && (slidenum < _presWin.slideView.slides.length)) {
 						_presWin.slideView.selectedSlide = slidenum;
-						_presWin.curSlideNum.text = _presWin.slideView.selectedSlide as String;
-						_presWin.slideNumLbl.text = "of " + _presWin.slideView.slides.length;
+//						_presWin.curSlideNum.text = (slidenum + 1) as String;
+//						_presWin.curSlideNum.validateNow();
+						_presWin.slideNumLbl.text = (slidenum + 1) + " of " + _presWin.slideView.slides.length;
 					}
 					break;
 			}
@@ -180,10 +181,13 @@ package org.bigbluebutton.modules.presentation.view
             	facade.registerMediator(new ThumbnailViewMediator(_presWin.slideView ));
             } else {
             	trace("ThumbnailViewMediator already registered");
-            }            			
+            }            	
+            _presWin.slideNumLbl.text = (_presWin.slideView.selectedSlide + 1) + " of " + _presWin.slideView.slides.length;		
 			_presWin.slideView.visible = true;		
 			
 			if (p.isPresenter()) {
+				_presWin.backButton.visible = true;
+				_presWin.forwardButton.visible = true;
 				p.sharePresentation(true);
 			}
 		}
