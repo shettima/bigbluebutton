@@ -57,7 +57,7 @@ package org.bigbluebutton.modules.viewers
 			switch(notification.getName()){
 				case ViewersModuleConstants.LOGGED_OUT:
 					_endpoint.sendMessage(EndpointMessageConstants.USER_LOGGED_OUT,
-							EndpointMessageConstants.TO_MAIN_APP, proxy.me.userid);
+							EndpointMessageConstants.TO_MAIN_APP, "LOGGED_OUT"); // just send a string
 					break;
 				case ViewersModuleConstants.LOGGED_IN:
 					var user:Object = {userid:proxy.me.userid, username:proxy.me.name, 

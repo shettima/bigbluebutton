@@ -48,6 +48,7 @@ package org.bigbluebutton.main
 					trace(NAME + '::Received LOGOUT');
 					proxy.stopModule("ChatModule");
 					proxy.stopModule("PresentationModule");
+					proxy.stopModule("ViewersModule");
 					break;
 				case MainApplicationConstants.MODULE_STARTED:
 					trace(NAME + '::Received MODULE_STARTED for ' + notification.getBody() as String);

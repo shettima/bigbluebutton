@@ -55,7 +55,9 @@
 				ViewersFacade.getInstance().startup(this);	
 			}
 		
-			public function stop():void {}
+			public function stop():void {
+				ViewersFacade.getInstance().stop(this);
+			}
 		]]>
 	</mx:Script>
 </mx:Module>

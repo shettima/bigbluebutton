@@ -57,6 +57,7 @@ package org.bigbluebutton.modules.viewers.model.services
 			} else {
 				leave();
 				trace(NAME + ":Disconnected from the Viewers application");
+				notifyConnectionStatusListener(false);
 			}
 		}
 		

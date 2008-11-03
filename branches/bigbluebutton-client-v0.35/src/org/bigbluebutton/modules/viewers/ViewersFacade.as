@@ -19,9 +19,9 @@
 */
 package org.bigbluebutton.modules.viewers
 {
-	import org.bigbluebutton.modules.viewers.controller.StartLoginCommand;
-	import org.bigbluebutton.modules.viewers.controller.StartupCommand;
 	import org.bigbluebutton.modules.viewers.controller.StartWindowCommand;
+	import org.bigbluebutton.modules.viewers.controller.StartupCommand;
+	import org.bigbluebutton.modules.viewers.controller.StopCommand;
 	import org.bigbluebutton.modules.viewers.model.vo.User;
 	import org.puremvc.as3.multicore.interfaces.IFacade;
 	import org.puremvc.as3.multicore.patterns.facade.Facade;
@@ -36,6 +36,8 @@ package org.bigbluebutton.modules.viewers
 		public static const NAME:String = "ViewersFacade";
 		
 		public static const STARTUP:String = "Startup Command";
+		public static const STOP:String = "STOP";
+		
 		public static const START_VIEWER_WINDOW:String = "Start Viewer Window";
 		public static const CHANGE_STATUS:String = "Change Status Event";
 //		public static const START_LOGIN_WINDOW:String = "Start Login Window";
@@ -73,6 +75,7 @@ package org.bigbluebutton.modules.viewers
 		override protected function initializeController():void{
 			super.initializeController();
 			registerCommand(STARTUP, StartupCommand);
+			registerCommand(STOP, StopCommand);
 			registerCommand(START_VIEWER_WINDOW, StartWindowCommand);
 		}
 		
@@ -83,6 +86,10 @@ package org.bigbluebutton.modules.viewers
 		 */		
 		public function startup(app:ViewersModule):void{
 			sendNotification(STARTUP, app);
+		}
+		
+		public function stop(app:ViewersModule):void{
+			sendNotification(STOP, app);
 		}
 		
 		public function sendViewCamera(usr:User):void{
