@@ -101,7 +101,9 @@ package org.bigbluebutton.modules.presentation.view
 					PresentModuleConstants.RESTORE_PRESENTATION,
 					PresentModuleConstants.OPEN_PRESENT_WINDOW,
 					PresentModuleConstants.PRESENTATION_LOADED,
-					PresentModuleConstants.DISPLAY_SLIDE
+					PresentModuleConstants.DISPLAY_SLIDE,
+					PresentModuleConstants.PRESENTER_MODE,
+					PresentModuleConstants.VIEWER_MODE
 					];
 		}
 		
@@ -130,6 +132,12 @@ package org.bigbluebutton.modules.presentation.view
 				case PresentModuleConstants.RESTORE_PRESENTATION:
 					handleRestorePresentation();
 					break;
+				case PresentModuleConstants.PRESENTER_MODE:
+					handlePresenterMode();
+					break;
+				case PresentModuleConstants.VIEWER_MODE:
+					handleViewerMode();
+					break;
 				case PresentModuleConstants.OPEN_PRESENT_WINDOW:
 		   			_presWin.height = 440;
 		   			_presWin.width = 430;
@@ -144,14 +152,22 @@ package org.bigbluebutton.modules.presentation.view
 					trace('DISPLAY_SLIDE in PresentationWindowMediator ' + slidenum);
 					if ((slidenum >= 0) && (slidenum < _presWin.slideView.slides.length)) {
 						_presWin.slideView.selectedSlide = slidenum;
-//						_presWin.curSlideNum.text = (slidenum + 1) as String;
-//						_presWin.curSlideNum.validateNow();
 						_presWin.slideNumLbl.text = (slidenum + 1) + " of " + _presWin.slideView.slides.length;
 					}
 					break;
 			}
 		}
 	
+		private function handlePresenterMode():void
+		{			
+			_presWin.uploadPres.visible = true;
+		}
+
+		private function handleViewerMode():void
+		{			
+			_presWin.uploadPres.visible = false;
+		}
+				
 		private function handleStartShareEvent():void
 		{			
 			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;

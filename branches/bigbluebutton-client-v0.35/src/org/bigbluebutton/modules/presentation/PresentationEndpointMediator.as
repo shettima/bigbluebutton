@@ -85,6 +85,14 @@ package org.bigbluebutton.modules.presentation
 					//trace('Received OPEN_WINDOW message from ' + message.getHeader().SRC);
 					//facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
 					break;
+				case EndpointMessageConstants.ASSIGN_PRESENTER:
+					trace('Received ASSIGN_PRESENTER message from ' + message.getHeader().SRC);
+					facade.sendNotification(PresentModuleConstants.PRESENTER_MODE);
+					break;
+				case EndpointMessageConstants.BECOME_VIEWER:
+					trace('Received BECOME_VIEWER message from ' + message.getHeader().SRC);
+					facade.sendNotification(PresentModuleConstants.VIEWER_MODE);
+					break;
 			}
 		}
 	}

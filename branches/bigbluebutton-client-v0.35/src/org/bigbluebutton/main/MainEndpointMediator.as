@@ -88,7 +88,17 @@ package org.bigbluebutton.main
 				case EndpointMessageConstants.REMOVE_WINDOW:
 					trace(NAME + "::Got REMOVE_WINDOW from " + message.getHeader().SRC as String);
 					sendNotification(MainApplicationConstants.REMOVE_WINDOW_MSG, message.getBody());
-					break;					
+					break;		
+				case EndpointMessageConstants.ASSIGN_PRESENTER:
+					trace(NAME + "::Got ASSIGN_PRESENTER from " + message.getHeader().SRC as String);
+					_endpoint.sendMessage(EndpointMessageConstants.ASSIGN_PRESENTER, 
+							EndpointMessageConstants.TO_PRESENTATION_MODULE, message.getBody());
+					break;			
+				case EndpointMessageConstants.BECOME_VIEWER:
+					trace(NAME + "::Got BECOME_VIEWER from " + message.getHeader().SRC as String);
+					_endpoint.sendMessage(EndpointMessageConstants.BECOME_VIEWER, 
+							EndpointMessageConstants.TO_PRESENTATION_MODULE, message.getBody());
+					break;
 			}
 		}	
 	}

@@ -4,6 +4,7 @@
 	
 	<mx:Script>
 		<![CDATA[
+			import org.bigbluebutton.modules.viewers.view.events.AssignPresenterEvent;
 			import org.bigbluebutton.common.Images;
 			import org.bigbluebutton.common.Role;
 			
@@ -12,9 +13,13 @@
 			[Bindable] private var adminIcon : Object = images.admin;
    			[Bindable] private var viewerIcon : Object = images.participant;
    		
+   			private function assignClicked():void {
+   				trace('assign presenter clicked');
+   				dispatchEvent(new AssignPresenterEvent(data.userid));
+   			}
 		]]>
 	</mx:Script>	
 	<mx:Image id="roleImage" source="{data.role == Role.MODERATOR ? adminIcon : viewerIcon}"
-		doubleClick="viewCamera()"
+		doubleClick="assignClicked()"
 		/>
 </mx:HBox>

@@ -17,7 +17,10 @@ package org.bigbluebutton.common.messaging
 		
 		public static const FROM_VIEWERS_MODULE:String = 'FROM_VIEWERS_MODULE';
 		public static const TO_VIEWERS_MODULE:String = 'TO_VIEWERS_MODULE';
-		
+
+		public static const TO_PRESENTATION_MODULE:String = "TO_PRESENTATION_MODULE";
+		public static const FROM_PRESENTATION_MODULE:String = "FROM_PRESENTATION_MODULE";
+				
 		public static const OPEN_WINDOW:String = 'OPEN_WINDOW';
 		public static const CLOSE_WINDOW:String = 'CLOSE_WINDOW';
 		public static const ADD_WINDOW:String = 'ADD_WINDOW';
@@ -31,5 +34,6 @@ package org.bigbluebutton.common.messaging
 		// Set mode as PRESENTER, VIEWER, or PLAYBACK
 		public static const MODE_SET:String = "MODE_SET";
 		public static const ASSIGN_PRESENTER:String = "ASSIGN_PRESENTER";
+		public static const BECOME_VIEWER:String = "BECOME_VIEWER";
 	}
 }

@@ -24,6 +24,7 @@ package org.bigbluebutton.modules.viewers.view
 	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.model.ViewersProxy;
 	import org.bigbluebutton.modules.viewers.view.components.ViewersWindow;
+	import org.bigbluebutton.modules.viewers.view.events.AssignPresenterEvent;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -52,6 +53,12 @@ package org.bigbluebutton.modules.viewers.view
 			super(NAME);
 			_viewersWindow = new ViewersWindow();
 			_viewersWindow.addEventListener(CHANGE_STATUS, changeStatus);
+			_viewersWindow.addEventListener(ASSIGN_PRESENTER_EVENT, onAssignPresenter);
+		}
+		
+		private function onAssignPresenter(e:AssignPresenterEvent):void {
+			trace('Assigning presenter to ' + e.assignTo);
+			proxy.assignPresenter(e.assignTo);
 		}
 		
 		/**

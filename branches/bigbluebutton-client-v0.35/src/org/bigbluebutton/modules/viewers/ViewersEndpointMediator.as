@@ -47,7 +47,8 @@ package org.bigbluebutton.modules.viewers
 				ViewersModuleConstants.DISCONNECTED,
 				ViewersModuleConstants.ADD_WINDOW,
 				ViewersModuleConstants.REMOVE_WINDOW,
-				ViewersModuleConstants.ASSIGN_PRESENTER
+				ViewersModuleConstants.ASSIGN_PRESENTER,
+				ViewersModuleConstants.BECOME_VIEWER
 			];
 		}
 		
@@ -87,6 +88,13 @@ package org.bigbluebutton.modules.viewers
 					break;
 				case ViewersModuleConstants.ASSIGN_PRESENTER:
 					trace('Sending ASSIGN_PRESENTER to main');
+					_endpoint.sendMessage(EndpointMessageConstants.ASSIGN_PRESENTER, 
+							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
+					break;
+				case ViewersModuleConstants.BECOME_VIEWER:
+					trace('Sending BECOME_VIEWER to main');
+					_endpoint.sendMessage(EndpointMessageConstants.BECOME_VIEWER, 
+							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;
 			}
 		}

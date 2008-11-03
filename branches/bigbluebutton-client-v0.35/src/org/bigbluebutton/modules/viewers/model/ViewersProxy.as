@@ -18,6 +18,8 @@ package org.bigbluebutton.modules.viewers.model
 		private var _uri:String;		
 		private var _viewersService:IViewersService;
 		private var _participants:IViewers = new Conference();
+		
+		private var isPresenter:Boolean = false;
 				
 		public function ViewersProxy(uri:String)
 		{
@@ -47,6 +49,10 @@ package org.bigbluebutton.modules.viewers.model
 			return _participants.users;
 		}
 		
+		public function assignPresenter(assignTo:Number):void {
+			_viewersService.assignPresenter(assignTo, me.userid);
+		}
+		
 		private function connectionStatusListener(connected:Boolean):void {
 			if (connected) {
 				sendNotification(ViewersModuleConstants.LOGGED_IN);
@@ -56,7 +62,23 @@ package org.bigbluebutton.modules.viewers.model
 		}
 		
 		private function messageSender(msg:String, body:Object=null):void {
-			sendNotification(msg, body);
+			if (msg == ViewersModuleConstants.ASSIGN_PRESENTER) {
+				if (me.userid == body.assignedTo) {
+					// I've been assigned as presenter.
+					trace('I have become presenter');
+					isPresenter = true;
+					sendNotification(msg, body);
+				} else {
+					// Somebody else has become presenter.
+					if (isPresenter) {
+						trace('Somebody else has become presenter.');
+						isPresenter = false;
+						sendNotification(ViewersModuleConstants.BECOME_VIEWER);
+					}
+				}
+			} else {
+				sendNotification(msg, body);
+			}
 		}		
 	}
 }
