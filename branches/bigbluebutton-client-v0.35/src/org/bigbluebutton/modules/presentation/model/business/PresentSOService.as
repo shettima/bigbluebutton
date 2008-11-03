@@ -180,7 +180,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		{
 			_presentationSO.send("gotoPageCallback", num);
 			trace("Going to slide " + num);
-//			presentationSO.setProperty(CURRENT_PAGE, {pagenumber : page});
+			_presentationSO.setProperty(CURRENT_PAGE, num);
 		}
 		
 		/**
@@ -191,15 +191,22 @@ package org.bigbluebutton.modules.presentation.model.business
 		 */		
 		public function gotoPageCallback(page : Number) : void
 		{
-//			_presentation.decks.selected = page;
 			sendMessage(PresentModuleConstants.DISPLAY_SLIDE, page);
 		}
 
+		public function getCurrentSlideNumber():void {
+			if (_presentationSO.data[CURRENT_PAGE] != null) {
+				sendMessage(PresentModuleConstants.DISPLAY_SLIDE, _presentationSO.data[CURRENT_PAGE]);
+			}				
+		}
+		
 		public function sharePresentation(share:Boolean):void {
 			trace('SO Sharing presentation = ' + share);
 			_presentationSO.data[SHARING] = share;
 			_presentationSO.setDirty(SHARING);
 		}
+
+	
 		
 		/**
 		 * Event called automatically once a SharedObject Sync method is received 
@@ -233,15 +240,13 @@ package org.bigbluebutton.modules.presentation.model.business
 					
 					break;
 															
-				case SHARING :
-//					presentation.isSharing = presentationSO.data.sharing.share;
-//				
+				case SHARING :			
 					if (_presentationSO.data[SHARING]) {
 						trace( "SHARING =[" + _presentationSO.data[SHARING] + "]");
-						sendMessage(PresentModuleConstants.START_SHARE);					
+						sendMessage(PresentModuleConstants.START_SHARE);	
+			
 					} else {
 						trace( "SHARING =[" + _presentationSO.data[SHARING] + "]");
-//						sendNotification(PresentationFacade.CLEAR_EVENT);
 					}
 					break;
 

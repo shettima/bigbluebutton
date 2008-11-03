@@ -10,5 +10,6 @@ package org.bigbluebutton.modules.presentation.model.business
 		function sharePresentation(share:Boolean):void;	
 		function zoom(slideHeight:Number, slideWidth:Number):void;
 		function move(slideXPosition:Number, slideYPosition:Number):void;
+		function getCurrentSlideNumber():void;
 	}
 }

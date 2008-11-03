@@ -203,8 +203,7 @@ package org.bigbluebutton.modules.presentation.view
 
 		private function handleReadyEvent():void
 		{			
-			var p:PresentProxy = facade.retrieveProxy(PresentProxy.NAME) as PresentProxy;
-			p.loadPresentation();
+			proxy.loadPresentation();
 		}
 
 		private function handlePresentationLoadedEvent():void
@@ -229,6 +228,9 @@ package org.bigbluebutton.modules.presentation.view
 				_presWin.backButton.visible = true;
 				_presWin.forwardButton.visible = true;
 				proxy.sharePresentation(true);
+				proxy.gotoSlide(0);
+			} else {
+				proxy.getCurrentSlideNumber();
 			}
 		}
 				

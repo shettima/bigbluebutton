@@ -114,6 +114,10 @@ package org.bigbluebutton.modules.presentation.model.business
 			return _presentationLoaded;
 		}
 		
+		public function getCurrentSlideNumber():void {
+			_presentService.getCurrentSlideNumber();
+		}
+		
 		public function zoom(xPercent:Number, yPercent:Number):void {
 			_presentService.zoom(xPercent, yPercent);
 		}
