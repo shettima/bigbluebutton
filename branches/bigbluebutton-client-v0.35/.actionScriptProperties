@@ -25,11 +25,10 @@
 </sourceAttachmentPath>
 </compiler>
 <applications>
-<application path="BbbUnitTests.mxml"/>
 <application path="src/main.mxml"/>
-<application path="PresentationUnitTest.mxml"/>
 <application path="MessagingUnitTests.mxml"/>
-<application path="TestModuleApplication.mxml"/>
+<application path="PresentationUnitTest.mxml"/>
+<application path="BbbUnitTests.mxml"/>
 <application path="src/TestRunners.mxml"/>
 <application path="BigBlueButton.mxml"/>
 </applications>
