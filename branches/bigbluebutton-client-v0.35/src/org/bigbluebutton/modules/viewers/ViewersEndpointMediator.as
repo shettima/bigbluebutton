@@ -46,7 +46,8 @@ package org.bigbluebutton.modules.viewers
 				ViewersModuleConstants.CONNECTED,
 				ViewersModuleConstants.DISCONNECTED,
 				ViewersModuleConstants.ADD_WINDOW,
-				ViewersModuleConstants.REMOVE_WINDOW
+				ViewersModuleConstants.REMOVE_WINDOW,
+				ViewersModuleConstants.ASSIGN_PRESENTER
 			];
 		}
 		
@@ -84,6 +85,9 @@ package org.bigbluebutton.modules.viewers
 					_endpoint.sendMessage(EndpointMessageConstants.REMOVE_WINDOW, 
 							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;
+				case ViewersModuleConstants.ASSIGN_PRESENTER:
+					trace('Sending ASSIGN_PRESENTER to main');
+					break;
 			}
 		}
 	
@@ -96,6 +100,10 @@ package org.bigbluebutton.modules.viewers
 					break;
 				case EndpointMessageConstants.OPEN_WINDOW:
 					//trace('Received OPEN_WINDOW message from ' + message.getHeader().SRC);
+					//facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
+					break;
+				case EndpointMessageConstants.ASSIGN_PRESENTER:
+					trace('Received OPEN_WINDOW message from ' + message.getHeader().SRC);
 					//facade.sendNotification(ChatModuleConstants.OPEN_WINDOW);
 					break;
 			}

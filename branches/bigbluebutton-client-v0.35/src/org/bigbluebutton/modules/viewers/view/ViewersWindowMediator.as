@@ -38,6 +38,7 @@ package org.bigbluebutton.modules.viewers.view
 		public static const NAME:String = "ViewersWindowMediator";
 		
 		public static const CHANGE_STATUS:String = "Change Status";
+		public static const ASSIGN_PRESENTER_EVENT:String = "ASSIGN_PRESENTER_EVENT";
 		
 		private var _viewersWindow:ViewersWindow;
 		

@@ -5,6 +5,7 @@ package org.bigbluebutton.modules.viewers.model.services
 	import flash.events.SyncEvent;
 	import flash.net.SharedObject;
 	
+	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
 	import org.bigbluebutton.modules.viewers.model.business.IViewers;
 	import org.bigbluebutton.modules.viewers.model.vo.User;
 
@@ -19,7 +20,8 @@ package org.bigbluebutton.modules.viewers.model.services
 		private var _participants:IViewers;
 		private var _uri:String;
 		private var _connectionListener:Function;
-		
+		private var _messageSender:Function;
+				
 		public function ViewersSOService(uri:String, participants:IViewers)
 		{			
 			_uri = uri;
@@ -34,6 +36,14 @@ package org.bigbluebutton.modules.viewers.model.services
 		public function disconnect():void {
 			leave();
 			netConnectionDelegate.disconnect();
+		}
+
+		public function addMessageSender(msgSender:Function):void {
+			_messageSender = msgSender;
+		}
+		
+		private function sendMessage(msg:String, body:Object=null):void {
+			if (_messageSender != null) _messageSender(msg, body);
 		}
 		
 		private function connectionListener(connected:Boolean, userid:Number=0, role:String="", room:String="", authToken:String=""):void {
@@ -89,6 +99,13 @@ package org.bigbluebutton.modules.viewers.model.services
 			}
 		}
 
+		public function assignPresenter(userid:Number, assignedBy:Number):void {
+			_participantsSO.send("assignPresenterCallback", userid, assignedBy);
+		}
+		
+		public function assignPresenterCallback(userid:Number, assignedBy:Number):void {
+			sendMessage(ViewersModuleConstants.ASSIGN_PRESENTER, {assignedTo:userid, assignedBy:assignedBy});
+		}
 
 		/**
 		 * Sends the broadcast stream to the server 

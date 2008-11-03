@@ -7,6 +7,7 @@ package org.bigbluebutton.modules.viewers.model.services
 		function addConnectionStatusListener(connectionListener:Function):void;	
 		function sendNewStatus(userid:Number, newStatus:String):void;
 		function sendBroadcastStream(userid:Number, hasStream:Boolean, streamName:String):void;
-		 	
+		function addMessageSender(msgSender:Function):void;
+		function assignPresenter(userid:Number, assignedBy:Number):void; 	
 	}
 }

@@ -14,5 +14,7 @@
    		
 		]]>
 	</mx:Script>	
-	<mx:Image id="roleImage" source="{data.role == Role.MODERATOR ? adminIcon : viewerIcon}"/>
+	<mx:Image id="roleImage" source="{data.role == Role.MODERATOR ? adminIcon : viewerIcon}"
+		doubleClick="viewCamera()"
+		/>
 </mx:HBox>

@@ -27,5 +27,9 @@ package org.bigbluebutton.common.messaging
 		public static const USER_LOGGED_IN:String = 'USER_LOGGED_IN'
 		public static const USER_LOGOUT:String = 'USER_LOGOUT';
 		public static const USER_LOGGED_OUT:String = 'USER_LOGGED_OUT';
+		
+		// Set mode as PRESENTER, VIEWER, or PLAYBACK
+		public static const MODE_SET:String = "MODE_SET";
+		public static const ASSIGN_PRESENTER:String = "ASSIGN_PRESENTER";
 	}
 }

@@ -25,6 +25,7 @@ package org.bigbluebutton.modules.viewers.model
 			_uri = uri;
 			_viewersService = new ViewersSOService(_uri, _participants);
 			_viewersService.addConnectionStatusListener(connectionStatusListener);
+			_viewersService.addMessageSender(messageSender);
 		}
 		
 		override public function getProxyName():String
@@ -52,6 +53,10 @@ package org.bigbluebutton.modules.viewers.model
 			} else {
 				sendNotification(ViewersModuleConstants.LOGGED_OUT);
 			}
+		}
+		
+		private function messageSender(msg:String, body:Object=null):void {
+			sendNotification(msg, body);
 		}		
 	}
 }
