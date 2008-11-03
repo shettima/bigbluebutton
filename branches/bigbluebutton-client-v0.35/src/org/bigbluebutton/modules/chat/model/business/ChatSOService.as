@@ -56,6 +56,7 @@ package org.bigbluebutton.modules.chat.model.business
 			} else {
 				leave();
 				trace(NAME + ":Disconnected from the Chat application");
+				notifyConnectionStatusListener(false);
 			}
 		}
 		
@@ -96,7 +97,10 @@ package org.bigbluebutton.modules.chat.model.business
 
 		private function notifyConnectionStatusListener(connected:Boolean):void {
 			if (_connectionListener != null) {
+				trace('notifying connectionListener for CHat');
 				_connectionListener(connected);
+			} else {
+				trace("_connectionListener is null");
 			}
 		}
 

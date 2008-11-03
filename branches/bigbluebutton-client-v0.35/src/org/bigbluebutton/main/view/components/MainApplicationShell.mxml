@@ -24,44 +24,19 @@
 				trace("before startup in initShell");
 				facade.startup(this);
 				trace("After startup in initShell");
-				this.LogBtn.addEventListener(MouseEvent.CLICK , openLogModule);
-				toolbar.btnLogout.addEventListener(MouseEvent.CLICK, logout);
-				//toolbar.webcamBtn.addEventListener(MouseEvent.CLICK, openWebcam);
-			}
-			
-			public function openLogModule(event:MouseEvent) : void
-			{
-				dispatchEvent(new Event(MainApplicationShellMediator.OPEN_LOG_MODULE));
-			}
-			
-			private function logout(e:MouseEvent):void{
-				dispatchEvent(new Event(MainApplicationShellMediator.LOGOUT));
-			}
-			
-			private function openWebcam(e:MouseEvent) : void
-			{
-				dispatchEvent(new Event(MainApplicationShellMediator.START_WEBCAM));
-			}
-			
+			}			
 		]]>
 	</mx:Script>
-	
-		
-		<main:MainToolbar id="toolbar" dock="true" width="100%" height="30" visible="true" verticalAlign="middle"/>
+			
+		<main:MainToolbar id="toolbar" dock="true" width="100%" height="30" visible="false" verticalAlign="middle"/>
 		<flexmdi:MDICanvas id="mdiCanvas" horizontalScrollPolicy="off" verticalScrollPolicy="off"
 			effectsLib="{flexlib.mdi.effects.effectsLib.MDIVistaEffects}"
 			width="100%" height="100%">			
 		</flexmdi:MDICanvas>	
 		
 	 	<mx:ControlBar width="100%" height="20" paddingTop="0">		
-		  <mx:Label text="(c) 2008, BigBlueButton Project" id="copyrightLabel2"/>
+		  <mx:Label text="(c) 2008, BigBlueButton version {Constants.VERSION} - For more information see http://www.bigbluebutton.org/." id="copyrightLabel2"/>
 		  <mx:Spacer width="20"/>
-
-		  <mx:Label id="lblVersion" text="{Constants.VERSION}" /> 
 		  <mx:Spacer width="100%"/> 
-		  <mx:LinkButton id="LogBtn" label="Log" width="25" height="16"
-		  	             paddingBottom="0" paddingLeft="0" paddingRight="0"
-		  	             paddingTop="0" toolTip="Show/Hide Log Window" right="0"/>
-
 		</mx:ControlBar>
 </mx:VBox>

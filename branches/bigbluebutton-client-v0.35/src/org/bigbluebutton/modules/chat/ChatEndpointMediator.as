@@ -41,7 +41,8 @@ package org.bigbluebutton.modules.chat
 			return [
 				ChatModuleConstants.CONNECTED,
 				ChatModuleConstants.DISCONNECTED,
-				ChatModuleConstants.ADD_WINDOW
+				ChatModuleConstants.ADD_WINDOW,
+				ChatModuleConstants.REMOVE_WINDOW
 			];
 		}
 		
@@ -56,12 +57,18 @@ package org.bigbluebutton.modules.chat
 					break;
 				case ChatModuleConstants.DISCONNECTED:
 					trace('Sending Chat MODULE_STOPPED message to main');
+					facade.sendNotification(ChatModuleConstants.CLOSE_WINDOW);
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STOPPED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
 					break;
 				case ChatModuleConstants.ADD_WINDOW:
 					trace('Sending Chat ADD_WINDOW message to main');
 					_endpoint.sendMessage(EndpointMessageConstants.ADD_WINDOW, 
+							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
+					break;
+				case ChatModuleConstants.REMOVE_WINDOW:
+					trace('Sending Chat REMOVE_WINDOW message to main');
+					_endpoint.sendMessage(EndpointMessageConstants.REMOVE_WINDOW, 
 							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;
 			}

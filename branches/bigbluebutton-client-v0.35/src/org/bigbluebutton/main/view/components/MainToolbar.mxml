@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mx:ApplicationControlBar xmlns:mx="http://www.adobe.com/2006/mxml" 
-						  enabled="false">   
+						  enabled="true">   
 	<mx:Script>
 		<![CDATA[
+			import org.bigbluebutton.main.MainApplicationConstants;
 			import mx.controls.Alert;
 			import org.bigbluebutton.common.Images;
 			import org.bigbluebutton.main.view.MainApplicationShellMediator;
@@ -18,10 +19,14 @@
 				return btn;
 			}
 			
+			private function doLogout():void {
+				trace('logout button clicked.');
+				dispatchEvent(new Event(MainApplicationConstants.LOGOUT_EVENT));
+			}
 		]]>
 	</mx:Script>
 	<!--<mx:Button id="webcamBtn" label="Open Webcam" visible="true" height="20" toolTip="Click to open webcam"/> -->				
 	<mx:Spacer width="100%"/>
-	<mx:Button label="Logout" id="btnLogout" toolTip="Log out" right="10"/>		
+	<mx:Button label="Logout" id="btnLogout" toolTip="Log out" right="10" click="doLogout()"/>		
 	
 </mx:ApplicationControlBar>

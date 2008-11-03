@@ -91,8 +91,8 @@ package org.bigbluebutton.modules.chat.view
 					_chatWindow.showNewMessage(notification.getBody() as String);
 					break;	
 				case ChatModuleConstants.CLOSE_WINDOW:
-					break;
-					
+					facade.sendNotification(ChatModuleConstants.REMOVE_WINDOW, _chatWindow);
+					break;					
 				case ChatModuleConstants.OPEN_WINDOW:
 		   			_chatWindow.width = 250;
 		   			_chatWindow.height = 220;

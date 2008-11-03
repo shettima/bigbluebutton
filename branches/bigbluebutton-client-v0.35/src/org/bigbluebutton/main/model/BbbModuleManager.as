@@ -151,7 +151,7 @@ package org.bigbluebutton.main.model
 			trace('Request to stop module ' + name);
 			var m:ModuleDescriptor = getModule(name);
 			if (m != null) {
-				trace('Starting ' + name);
+				trace('Stopping ' + name);
 				var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
 				bbb.stop();		
 			}	

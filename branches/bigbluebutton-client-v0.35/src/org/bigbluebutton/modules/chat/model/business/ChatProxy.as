@@ -40,10 +40,16 @@ package org.bigbluebutton.modules.chat.model.business
 			chatService.addConnectionStatusListener(connectionStatusListener);
 		}
 		
+		public function stop():void {
+			chatService.disconnect();
+		}
+		
 		private function connectionStatusListener(connected:Boolean):void {
 			if (connected) {
+				trace('Sending ChatModuleConstants.CONNECTED');
 				sendNotification(ChatModuleConstants.CONNECTED);
 			} else {
+				trace('Sending ChatModuleConstants.DISCONNECTED');
 				sendNotification(ChatModuleConstants.DISCONNECTED);
 			}
 		}

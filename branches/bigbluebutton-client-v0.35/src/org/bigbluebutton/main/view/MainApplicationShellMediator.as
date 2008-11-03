@@ -19,6 +19,8 @@
 */
 package org.bigbluebutton.main.view 
 {
+	import flash.events.Event;
+	
 	import flexlib.mdi.containers.MDIWindow;
 	
 	import org.bigbluebutton.common.Constants;
@@ -47,6 +49,7 @@ package org.bigbluebutton.main.view
 			trace("red5:" + Constants.red5Host);
 			trace("present:" + Constants.presentationHost);
 			trace("url:" + Constants.TEST_URL);		
+			viewComponent.toolbar.addEventListener(MainApplicationConstants.LOGOUT_EVENT, onLogoutEventHandler);
 		}
 							
 		protected function get shell():MainApplicationShell
@@ -54,10 +57,16 @@ package org.bigbluebutton.main.view
 			return viewComponent as MainApplicationShell;
 		}
 		
+		
+		private function onLogoutEventHandler(e:Event):void {
+			sendNotification(MainApplicationConstants.LOGOUT);			
+		}
+		
 		override public function listNotificationInterests():Array{
 			return [
 					MainApplicationConstants.ADD_WINDOW_MSG,
-					MainApplicationConstants.REMOVE_WINDOW_MSG
+					MainApplicationConstants.REMOVE_WINDOW_MSG,
+					MainApplicationConstants.USER_LOGGED_IN
 					];
 		}
 		
@@ -73,6 +82,9 @@ package org.bigbluebutton.main.view
 					var rwin:IBbbModuleWindow = notification.getBody() as IBbbModuleWindow;
 					trace(NAME + "::removing window " + (rwin as MDIWindow).name);
 					shell.mdiCanvas.windowManager.remove(rwin as MDIWindow);						
+					break;
+				case MainApplicationConstants.USER_LOGGED_IN:
+					shell.toolbar.visible = true;
 					break;
 			}
 		}

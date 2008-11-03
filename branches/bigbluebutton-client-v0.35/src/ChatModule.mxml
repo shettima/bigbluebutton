@@ -55,7 +55,9 @@
 				ChatFacade.getInstance().startup(this);	
 			}
 		
-			public function stop():void {}
+			public function stop():void {
+				ChatFacade.getInstance().stop(this);
+			}
 		]]>
 	</mx:Script>
 </mx:Module>

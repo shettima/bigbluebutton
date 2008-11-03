@@ -22,7 +22,8 @@ package org.bigbluebutton.main
 					MainApplicationConstants.MODULE_LOADED,
 					MainApplicationConstants.MODULES_START,
 					MainApplicationConstants.MODULE_STARTED,
-					MainApplicationConstants.USER_LOGGED_IN
+					MainApplicationConstants.USER_LOGGED_IN,
+					MainApplicationConstants.LOGOUT
 					];
 		}
 		
@@ -43,11 +44,9 @@ package org.bigbluebutton.main
 					facade.sendNotification(MainApplicationConstants.MODULE_START, notification.getBody() as String);
 					//proxy.startModule(notification.getBody() as String);
 					break;
-				case MainApplicationConstants.MODULES_START:
-					trace(NAME + '::Received MODULES_START');
-					//sendNotification(MainApplicationConstants.MODULE_START, "ChatModule");
-					//sendNotification(MainApplicationConstants.MODULE_START, "ViewersModule");
-					//sendNotification(MainApplicationConstants.MODULE_START, "PresentationModule");
+				case MainApplicationConstants.LOGOUT:
+					trace(NAME + '::Received LOGOUT');
+					proxy.stopModule("ChatModule");
 					break;
 				case MainApplicationConstants.MODULE_STARTED:
 					trace(NAME + '::Received MODULE_STARTED for ' + notification.getBody() as String);

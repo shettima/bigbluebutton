@@ -58,6 +58,8 @@ package org.bigbluebutton.main
 		public static const USER_LOGGED_IN:String = 'user logged in'
 		public static const USER_LOGOUT:String = 'user logging out';
 		public static const USER_LOGGED_OUT:String = 'user logged out';
-				
+		
+		public static const LOGOUT_EVENT:String = "LOGOUT_EVENT"; 
+		public static const LOGOUT:String = "LOGOUT";		
 	}
 }

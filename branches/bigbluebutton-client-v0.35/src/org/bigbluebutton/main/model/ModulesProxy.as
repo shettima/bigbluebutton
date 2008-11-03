@@ -67,13 +67,8 @@ package org.bigbluebutton.main.model
 		}
 
 		public function stopModule(name:String):void {
-/*			trace('Request to stop module ' + name);
-			var bbb:IBigBlueButtonModule = findModule(name);
-			if (bbb != null) {
-				trace('Stopping ' + name);
-				bbb.stop();		
-			}
-*/		}
+			modulesManager.stopModule(name);
+		}
 						
 		public function loadModule(name:String):void {
 			trace('Loading ' + name);

@@ -21,6 +21,7 @@ package org.bigbluebutton.modules.chat
 {
 	import org.bigbluebutton.common.IBigBlueButtonModule;
 	import org.bigbluebutton.modules.chat.controller.StartupCommand;
+	import org.bigbluebutton.modules.chat.controller.StopCommand;
 	import org.puremvc.as3.multicore.interfaces.IFacade;
 	import org.puremvc.as3.multicore.patterns.facade.Facade;
 
@@ -33,6 +34,7 @@ package org.bigbluebutton.modules.chat
 	{		
 		public static const NAME:String = "ChatFacade";
 		public static const STARTUP:String     = "startup";
+		public static const STOP:String     = "STOP";
 				
 		public function ChatFacade()
 		{
@@ -50,11 +52,16 @@ package org.bigbluebutton.modules.chat
 		override protected function initializeController():void{
 			super.initializeController();
 			registerCommand(STARTUP, StartupCommand);
+			registerCommand(STOP, StopCommand);
 			
 		}
 	
 		public function startup(app:IBigBlueButtonModule):void {
 			sendNotification(ChatFacade.STARTUP, app);
-		}		
+		}	
+		
+		public function stop(app:IBigBlueButtonModule):void {
+			sendNotification(STOP, app);
+		}	
 	}
 }
