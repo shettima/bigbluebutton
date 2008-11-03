@@ -16,7 +16,8 @@ package org.bigbluebutton.modules.presentation.model.business
 		public static const NAME:String = "PresentProxy";
 		
 		private var _module:PresentationModule;
-		private var _mode:String = PresentModuleConstants.PRESENTER_MODE;
+		private var _mode:String = PresentModuleConstants.VIEWER_MODE;
+		private var _presentationLoaded:Boolean = false;
 		
 		private var _slides:IPresentationSlides = new PresentationSlides();
 		private var _presentService:IPresentService;
@@ -37,6 +38,14 @@ package org.bigbluebutton.modules.presentation.model.business
 		
 		public function get mode():String {
 			return _mode;
+		}
+		
+		public function presenterMode(presenterMode:Boolean):void {
+			if (presenterMode) {
+				_mode = PresentModuleConstants.PRESENTER_MODE;
+			} else {
+				_mode = PresentModuleConstants.VIEWER_MODE;
+			}
 		}
 		
 		public function get slides():ArrayCollection {
@@ -101,12 +110,26 @@ package org.bigbluebutton.modules.presentation.model.business
 			}
 		}
 		
+		public function get presentationLoaded():Boolean {
+			return _presentationLoaded;
+		}
+		
+		public function zoom(xPercent:Number, yPercent:Number):void {
+			_presentService.zoom(xPercent, yPercent);
+		}
+		
+		public function move(xOffset:Number, yOffset:Number):void {
+			_presentService.move(xOffset, yOffset);
+		}
+		
 		private function loadPresentationListener(loaded:Boolean):void {
 			if (loaded) {
 				trace('presentation has been loaded');
+				_presentationLoaded = true;
 				sendNotification(PresentModuleConstants.PRESENTATION_LOADED);
 			} else {
 				trace('failed to load presentation');
+				_presentationLoaded = false;
 			}
 		}
 		

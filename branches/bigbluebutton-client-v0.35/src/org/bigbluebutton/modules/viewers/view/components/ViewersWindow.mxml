@@ -6,8 +6,11 @@
 
     <mx:Script>
         <![CDATA[
+        	import org.bigbluebutton.modules.viewers.ViewersModuleConstants;
+        	import mx.events.ListEvent;
+        	import org.bigbluebutton.modules.viewers.view.events.AssignPresenterEvent;
         	import mx.core.Application;
-        	import org.bigbluebutton.common.Images;
+        	import org.bigbluebutton.modules.viewers.view.components.Images;
         	import org.bigbluebutton.modules.viewers.view.ViewersWindowMediator;
         	import mx.collections.ArrayCollection;
 		
@@ -19,7 +22,7 @@
           	public var images:Images = new Images();
                       
    			[Bindable]
-   			public var toggleIcon : Class = images.raisehand;
+   			public var presenterIcon : Class = images.presenter;
    			
    			[Bindable]
    			public var toggleTooltip : String = "Click to raise hand.";
@@ -46,9 +49,12 @@
 				_yPosition = y;
 			}
 						
-			public function showError():void
-			{
-//				this.loginMessage.visible = true;
+			public function becomeViewer():void {
+				dispatchEvent(new Event(ViewersModuleConstants.BECOME_VIEWER_EVENT));
+			}
+			
+			public function becomePresenter():void {
+				dispatchEvent(new Event(ViewersModuleConstants.BECOME_PRESENTER_EVENT));
 			}
 			
 			private function init():void{
@@ -69,19 +75,17 @@
 					this.maximizeRestoreBtn.visible = true;
 				}
 			}
-           
+
+			private function viewerSelectEvent(event:ListEvent):void {
+	            dispatchEvent(new Event(ViewersModuleConstants.VIEWER_SELECTED_EVENT));
+        	}           
         ]]>
     </mx:Script>
-
-    <!--mx:TileList id="participantsList" height="100%" width="100%" 
-        	itemRenderer="org.blindsideproject.views.conference.UserItem"
-            maxColumns="1" rowHeight="25" columnWidth="200" dataProvider="{conference.users}">
-    </mx:TileList-->
-    
+   
     <mx:DataGrid id="viewersGrid" dataProvider="{participants}" editable="false" 
-    	dragEnabled="false" width="100%" height="100%">
+    	dragEnabled="false" itemClick="viewerSelectEvent(event);" width="100%" height="100%">
     	<mx:columns>
-    		<mx:DataGridColumn dataField="role" headerText="" dataTipField="Role" editable="false" width="20"
+    		<mx:DataGridColumn dataField="role" headerText="Role" dataTipField="Role" editable="false" width="20"
     			itemRenderer="org.bigbluebutton.modules.viewers.view.components.RoleItemRenderer"/>
     		<mx:DataGridColumn dataField="name" headerText="Name" editable="true" width="100"
     			itemRenderer="org.bigbluebutton.modules.viewers.view.components.NameItemRenderer"/>
@@ -90,10 +94,13 @@
     	</mx:columns>
     </mx:DataGrid>
     
-   <!-- <mx:ControlBar width="100%">
-     	 <mx:Spacer width="100%"/>
-    	 <mx:Button id="raiseHandImage" icon="{toggleIcon}" toggle="true" 
+   <mx:ControlBar width="100%">
+   		 <mx:Button id="presentBtn" icon="{presenterIcon}" visible="false"
     	   			width="20" height="20"
-    	   			toolTip="{toggleTooltip}" click="dispatchEvent(new Event(ViewersWindowMediator.CHANGE_STATUS))"/>   			
-    </mx:ControlBar>  -->  
+    	   			toolTip="Click to make {viewersGrid.selectedItem.name} as presenter." click="dispatchEvent(new AssignPresenterEvent(viewersGrid.selectedItem.userid))"/>
+     	 <mx:Spacer width="100%"/>
+    	 <!--mx:Button id="raiseHandImage" icon="{toggleIcon}" toggle="true" 
+    	   			width="20" height="20"
+    	   			toolTip="{toggleTooltip}" click="dispatchEvent(new Event(ViewersWindowMediator.CHANGE_STATUS))"/-->   			
+    </mx:ControlBar>  
 </viewer:MDIWindow>

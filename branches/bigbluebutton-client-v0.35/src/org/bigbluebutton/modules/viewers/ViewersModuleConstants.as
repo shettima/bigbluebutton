@@ -54,5 +54,9 @@ package org.bigbluebutton.modules.viewers
 		
 		public static const ASSIGN_PRESENTER:String = "ASSIGN_PRESENTER";
 		public static const BECOME_VIEWER:String = "BECOME_VIEWER";
+		
+		public static const VIEWER_SELECTED_EVENT:String = "VIEWER_SELECTED_EVENT";
+		public static const BECOME_VIEWER_EVENT:String = "BECOME_VIEWER_EVENT";
+		public static const BECOME_PRESENTER_EVENT:String = "BECOME_PRESENTER_EVENT";
 	}
 }

@@ -45,6 +45,14 @@ package org.bigbluebutton.modules.viewers.model
 			return _participants.me;
 		}
 		
+		public function isModerator():Boolean {
+			if (me.role == "MODERATOR") {
+				return true;
+			}
+			
+			return false;
+		}
+		
 		public function get participants():ArrayCollection {
 			return _participants.users;
 		}

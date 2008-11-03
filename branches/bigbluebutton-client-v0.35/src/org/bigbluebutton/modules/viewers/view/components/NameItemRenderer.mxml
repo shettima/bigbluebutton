@@ -4,11 +4,7 @@
 	
 	<mx:Script>
 		<![CDATA[
-			import org.bigbluebutton.common.Images;
-	    	import mx.controls.Image;
-	    			
-			private var images:Images = new Images();
-		
+
 			
 		]]>
 	</mx:Script>

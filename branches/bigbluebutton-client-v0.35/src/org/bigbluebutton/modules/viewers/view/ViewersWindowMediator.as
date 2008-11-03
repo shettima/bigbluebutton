@@ -54,6 +54,12 @@ package org.bigbluebutton.modules.viewers.view
 			_viewersWindow = new ViewersWindow();
 			_viewersWindow.addEventListener(CHANGE_STATUS, changeStatus);
 			_viewersWindow.addEventListener(ASSIGN_PRESENTER_EVENT, onAssignPresenter);
+			_viewersWindow.addEventListener(ViewersModuleConstants.VIEWER_SELECTED_EVENT, onViewerSelectedEvent);
+		}
+		
+		private function onViewerSelectedEvent(e:Event):void {
+			if (proxy.isModerator())
+				_viewersWindow.presentBtn.visible = true;
 		}
 		
 		private function onAssignPresenter(e:AssignPresenterEvent):void {
@@ -69,7 +75,9 @@ package org.bigbluebutton.modules.viewers.view
 		override public function listNotificationInterests():Array{
 			return [
 					ViewersModuleConstants.OPEN_VIEWERS_WINDOW,
-					ViewersModuleConstants.CLOSE_VIEWERS_WINDOW
+					ViewersModuleConstants.CLOSE_VIEWERS_WINDOW,
+					ViewersModuleConstants.BECOME_VIEWER,
+					ViewersModuleConstants.ASSIGN_PRESENTER
 					];
 		}
 		
@@ -94,6 +102,14 @@ package org.bigbluebutton.modules.viewers.view
 					break;
 				case ViewersModuleConstants.CLOSE_VIEWERS_WINDOW:
 					facade.sendNotification(ViewersModuleConstants.REMOVE_WINDOW, _viewersWindow);
+					break;
+				case ViewersModuleConstants.BECOME_VIEWER:
+					trace('Sending BECOME_VIEWER_EVENT');
+					_viewersWindow.becomeViewer();
+					break;
+				case ViewersModuleConstants.ASSIGN_PRESENTER:
+					trace('Sending ASSIGN_PRESENTER_EVENT');
+					_viewersWindow.becomePresenter();
 					break;
 			}
 		}

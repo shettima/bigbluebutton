@@ -192,7 +192,7 @@ package org.bigbluebutton.modules.presentation.model.business
 		public function gotoPageCallback(page : Number) : void
 		{
 //			_presentation.decks.selected = page;
-//			sendNotification(PresentationFacade.UPDATE_PAGE, page);
+			sendMessage(PresentModuleConstants.DISPLAY_SLIDE, page);
 		}
 
 		public function sharePresentation(share:Boolean):void {
