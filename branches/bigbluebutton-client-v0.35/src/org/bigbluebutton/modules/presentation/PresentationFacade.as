@@ -21,6 +21,7 @@ package org.bigbluebutton.modules.presentation
 {	
 	import org.bigbluebutton.modules.presentation.controller.GotoSlideCommand;
 	import org.bigbluebutton.modules.presentation.controller.StartupCommand;
+	import org.bigbluebutton.modules.presentation.controller.StopCommand;
 	import org.puremvc.as3.multicore.interfaces.IFacade;
 	import org.puremvc.as3.multicore.patterns.facade.Facade;
 
@@ -37,6 +38,7 @@ package org.bigbluebutton.modules.presentation
 		public static const NAME : String = "PresentationFacade";
 
 		public static const STARTUP:String = "startup";
+		public static const STOP:String = "STOP";
 				
 		/**
 		 * The default constructor. Should never be called directly as this class is a singleton, however
@@ -68,6 +70,7 @@ package org.bigbluebutton.modules.presentation
 	   	override protected function initializeController():void{
 	   		super.initializeController();
 	   		registerCommand(STARTUP, StartupCommand);
+	   		registerCommand(STOP, StopCommand);
 	   		registerCommand(PresentModuleConstants.GOTO_SLIDE, GotoSlideCommand);
 	   	}	   	
 	   	
@@ -79,6 +82,10 @@ package org.bigbluebutton.modules.presentation
 	   	 */	   	
 	   	public function startup(app:PresentationModule):void{
 	 		  sendNotification(STARTUP, app);
+	   	}
+	   	
+	   	public function stop(app:PresentationModule):void{
+	 		  sendNotification(STOP, app);
 	   	}
 	}
 }

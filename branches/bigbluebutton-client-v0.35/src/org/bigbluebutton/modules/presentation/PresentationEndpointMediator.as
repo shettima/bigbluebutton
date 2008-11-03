@@ -51,23 +51,24 @@ package org.bigbluebutton.modules.presentation
 		{
 			switch(notification.getName()){
 				case PresentModuleConstants.STARTED:
-					trace("Sending Viewers MODULE_STARTED message to main");
+					trace("Sending Present MODULE_STARTED message to main");
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STARTED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
 					facade.sendNotification(PresentModuleConstants.OPEN_PRESENT_WINDOW);
 					break;
 				case PresentModuleConstants.DISCONNECTED:
-					trace('Sending Chat MODULE_STOPPED message to main');
+					trace('Sending Present MODULE_STOPPED message to main');
+					facade.sendNotification(PresentModuleConstants.CLOSE_PRESENT_WINDOW);
 					_endpoint.sendMessage(EndpointMessageConstants.MODULE_STOPPED, 
 							EndpointMessageConstants.TO_MAIN_APP, _module.moduleId);
 					break;
 				case PresentModuleConstants.ADD_WINDOW:
-					trace('Sending Viewers ADD_WINDOW message to main');
+					trace('Sending Present ADD_WINDOW message to main');
 					_endpoint.sendMessage(EndpointMessageConstants.ADD_WINDOW, 
 							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;
 				case PresentModuleConstants.REMOVE_WINDOW:
-					trace('Sending Viewers REMOVE_WINDOW message to main');
+					trace('Sending Present REMOVE_WINDOW message to main');
 					_endpoint.sendMessage(EndpointMessageConstants.REMOVE_WINDOW, 
 							EndpointMessageConstants.TO_MAIN_APP, notification.getBody());
 					break;

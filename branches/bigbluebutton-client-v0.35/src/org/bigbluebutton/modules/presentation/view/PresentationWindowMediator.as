@@ -108,6 +108,7 @@ package org.bigbluebutton.modules.presentation.view
 					PresentModuleConstants.MAXIMIZE_PRESENTATION,
 					PresentModuleConstants.RESTORE_PRESENTATION,
 					PresentModuleConstants.OPEN_PRESENT_WINDOW,
+					PresentModuleConstants.CLOSE_PRESENT_WINDOW,
 					PresentModuleConstants.PRESENTATION_LOADED,
 					PresentModuleConstants.START_SHARE,
 					PresentModuleConstants.DISPLAY_SLIDE,
@@ -155,6 +156,9 @@ package org.bigbluebutton.modules.presentation.view
 		   			_presWin.xPosition = 200;
 		   			_presWin.yPosition = 20;
 		   			facade.sendNotification(PresentModuleConstants.ADD_WINDOW, _presWin);		   							
+					break;
+				case PresentModuleConstants.CLOSE_PRESENT_WINDOW:
+					facade.sendNotification(PresentModuleConstants.REMOVE_WINDOW, _presWin);
 					break;
 				case PresentModuleConstants.DISPLAY_SLIDE:
 					var slidenum:int = notification.getBody() as int;

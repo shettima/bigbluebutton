@@ -36,6 +36,10 @@ package org.bigbluebutton.modules.presentation.model.business
 			_presentService.connect();
 		}
 		
+		public function stop():void {
+			_presentService.disconnect();
+		}
+		
 		public function get mode():String {
 			return _mode;
 		}

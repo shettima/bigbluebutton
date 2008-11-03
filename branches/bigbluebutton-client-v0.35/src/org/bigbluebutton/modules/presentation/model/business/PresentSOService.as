@@ -55,6 +55,7 @@ package org.bigbluebutton.modules.presentation.model.business
 				join();
 			} else {
 				leave();
+				notifyConnectionStatusListener(false);
 			}
 		}
 		
