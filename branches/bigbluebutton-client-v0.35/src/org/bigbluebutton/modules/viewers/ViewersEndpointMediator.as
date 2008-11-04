@@ -61,7 +61,7 @@ package org.bigbluebutton.modules.viewers
 					break;
 				case ViewersModuleConstants.LOGGED_IN:
 					var user:Object = {userid:proxy.me.userid, username:proxy.me.name, 
-										role:proxy.me.role, room:proxy.me.room, authToken:proxy.me.authToken};					
+										userrole:proxy.me.role, room:proxy.me.room, authToken:proxy.me.authToken};					
 					_endpoint.sendMessage(EndpointMessageConstants.USER_LOGGED_IN,
 							EndpointMessageConstants.TO_MAIN_APP, user);
 					break;

@@ -7,13 +7,10 @@
 			import org.bigbluebutton.modules.chat.ChatFacade;
 			import org.bigbluebutton.common.messaging.Router;
 			
-			private var _router:Router;
-			
+			private var _router:Router;			
 			private var _moduleId:String = "ChatModule";
-			private var _moduleName:String = "Chat Module";
-			
-			private var _uri:String = "rtmp://localhost/chatServer/85115";
-			private var _username:String = "ralam";
+			private var _moduleName:String = "Chat Module";			
+			private var _attributes:Object;
 			
 			private function onCreationComplete():void {
 				trace("ChatModule Initialized");			
@@ -35,23 +32,17 @@
 				return _moduleName;
 			}
 		
-			public function set uri(uri:String):void {
-				_uri = uri;
-			}
-			
 			public function get uri():String {
-				return _uri;
-			}
-			
-			public function set username(name:String):void {
-				_username = name;
+				return _attributes.uri + "/" + _attributes.room;
 			}
 			
 			public function get username():String {
-				return _username;
+				return _attributes.username;
 			}
 			
-			public function start(attributes:Object):void {		
+			public function start(attributes:Object):void {	
+				trace("chat attr: " + attributes.username);
+				_attributes = attributes;	
 				ChatFacade.getInstance().startup(this);	
 			}
 		

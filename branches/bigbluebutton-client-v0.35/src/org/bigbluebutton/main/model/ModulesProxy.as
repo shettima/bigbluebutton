@@ -35,8 +35,9 @@ package org.bigbluebutton.main.model
 		
 		public function set user(loggedInUser:Object):void {
 			_user = loggedInUser;
+			modulesManager.loggedInUser(_user);
 			// Add this into the attributes of the module
-			modulesManager.addUserIntoAttributes(_user);
+			//modulesManager.addUserIntoAttributes(_user);
 		}
 
 /*		

@@ -27,8 +27,6 @@ package org.bigbluebutton.common
 		function get router():Router;		
 		function get moduleId():String;			
 		function get moduleName():String;	
-		function set username(user:String):void;
-		function set uri(uri:String):void;
 		function get username():String;
 		function get uri():String;		
 		function start(attributes:Object):void;

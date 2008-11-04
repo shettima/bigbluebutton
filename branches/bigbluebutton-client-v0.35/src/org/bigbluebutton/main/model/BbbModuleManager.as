@@ -19,6 +19,7 @@ package org.bigbluebutton.main.model
 		
 		private var _numModules:int = 0;		
 		public var  _modules:Dictionary = new Dictionary();
+		private var _user:Object;
 		
 		public function BbbModuleManager()
 		{
@@ -90,6 +91,16 @@ package org.bigbluebutton.main.model
 			return atts;
 		}
 		
+		public function loggedInUser(user:Object):void {
+			trace('loggedin user ' + user.username);
+			_user = new Object();
+			_user.userid = user.userid;
+			_user.username = user.username;
+			_user.userrole = user.userrole;
+			_user.room = user.room;
+			_user.authToken = user.authToken;
+		}
+		
 		public function addUserIntoAttributes(user:Object):void {
 			for (var key:Object in _modules) {				
 				var m:ModuleDescriptor = _modules[key] as ModuleDescriptor;
@@ -143,6 +154,15 @@ package org.bigbluebutton.main.model
 				trace('Starting ' + name);
 				var bbb:IBigBlueButtonModule = m.module as IBigBlueButtonModule;
 				bbb.acceptRouter(router);
+				if (_user != null) {
+					m.attributes.userid = _user.userid;
+					m.attributes.username = _user.username;
+					m.attributes.userrole = _user.userrole;
+					m.attributes.room = _user.room;
+					m.attributes.authToken = _user.authToken;
+					trace(m.attributes.username + " _user.username=" + _user.username);
+				}		
+				
 				bbb.start(m.attributes);		
 			}	
 		}
@@ -175,7 +195,7 @@ package org.bigbluebutton.main.model
 		private function loadModuleResultHandler(name:String):void {
 			var m:ModuleDescriptor = getModule(name);
 			if (m != null) {
-				trace('Loaded module ' + m.attributes.name);
+				trace('Loaded module ' + m.attributes.name);		
 				notifyModuleLoadedListeners(name);
 			} else {
 				trace(name + " not found.");
