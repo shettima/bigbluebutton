@@ -66,7 +66,8 @@ package org.bigbluebutton.main.view
 			return [
 					MainApplicationConstants.ADD_WINDOW_MSG,
 					MainApplicationConstants.REMOVE_WINDOW_MSG,
-					MainApplicationConstants.USER_LOGGED_IN
+					MainApplicationConstants.USER_LOGGED_IN,
+					MainApplicationConstants.USER_LOGGED_OUT
 					];
 		}
 		
@@ -85,6 +86,9 @@ package org.bigbluebutton.main.view
 					break;
 				case MainApplicationConstants.USER_LOGGED_IN:
 					shell.toolbar.visible = true;
+					break;
+				case MainApplicationConstants.USER_LOGGED_OUT:
+					shell.toolbar.visible = false;
 					break;
 			}
 		}

@@ -86,6 +86,7 @@ package org.bigbluebutton.modules.presentation
 	   	
 	   	public function stop(app:PresentationModule):void{
 	 		  sendNotification(STOP, app);
+	 		  removeCore(NAME);
 	   	}
 	}
 }

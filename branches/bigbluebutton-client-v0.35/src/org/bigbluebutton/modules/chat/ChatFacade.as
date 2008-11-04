@@ -62,6 +62,7 @@ package org.bigbluebutton.modules.chat
 		
 		public function stop(app:IBigBlueButtonModule):void {
 			sendNotification(STOP, app);
+			removeCore(NAME);
 		}	
 	}
 }

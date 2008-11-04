@@ -161,8 +161,12 @@ package org.bigbluebutton.main.model
 			trace('BBBManager Loading ' + name);
 			var m:ModuleDescriptor = getModule(name);
 			if (m != null) {
-				trace('Found module ' + m.attributes.name);
-				m.load(loadModuleResultHandler);
+				if (m.loaded) {
+					loadModuleResultHandler(name);
+				} else {
+					trace('Found module ' + m.attributes.name);
+					m.load(loadModuleResultHandler);
+				}
 			} else {
 				trace(name + " not found.");
 			}
