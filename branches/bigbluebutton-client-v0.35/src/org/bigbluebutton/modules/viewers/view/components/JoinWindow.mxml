@@ -36,9 +36,17 @@
 			{
 				this.loginMessage.visible = true;
 			}
+			
+			public function clear():void {
+				nameField.text = "";
+				confField.text = "";
+				passwdField.text = "";
+				loginMessage.text = "";
+			}
 					
 		]]>
 	</mx:Script>
+	
 		<mx:Label x="41" y="52" text="Name" id="nameLabel"/> 
 		<mx:TextInput id="nameField" x="98" y="50" tabIndex="1"/>
 		<mx:Label x="10" y="91" text="Conference" id="confLabel"/>
