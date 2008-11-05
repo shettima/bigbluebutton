@@ -166,6 +166,7 @@ package org.bigbluebutton.modules.presentation.view
 					if ((_presWin.slideView.slides != null) && (slidenum >= 0) && (slidenum < _presWin.slideView.slides.length)) {
 						_presWin.slideView.selectedSlide = slidenum;
 						_presWin.slideNumLbl.text = (slidenum + 1) + " of " + _presWin.slideView.slides.length;
+						_presWin.slideView.myLoader.source = _presWin.slideView.slides.getItemAt(slidenum);
 					}
 					break;
 			}
@@ -213,7 +214,14 @@ package org.bigbluebutton.modules.presentation.view
 			_presWin.slideView.slides = proxy.slides;         	
             _presWin.slideNumLbl.text = (_presWin.slideView.selectedSlide + 1) + " of " + _presWin.slideView.slides.length;		
 			_presWin.slideView.visible = true;		
-			
+        	
+        	if ( ! facade.hasMediator( ThumbnailViewMediator.NAME ) ) {
+            	trace("Registering ThumbnailViewMediator");
+            	facade.registerMediator(new ThumbnailViewMediator(_presWin.slideView ));
+            } else {
+            	trace("ThumbnailViewMediator already registered");
+            }      
+            			
 			if (proxy.isPresenter()) {
 				// Remove the uploadWindow
 				PopUpManager.removePopUp(_presWin.uploadWindow);
@@ -225,6 +233,7 @@ package org.bigbluebutton.modules.presentation.view
 				proxy.sharePresentation(true);
 				proxy.gotoSlide(0);
 			} else {
+				proxy.gotoSlide(0);
 				proxy.getCurrentSlideNumber();
 			}
 		}

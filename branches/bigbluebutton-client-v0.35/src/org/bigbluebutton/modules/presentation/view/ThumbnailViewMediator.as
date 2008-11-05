@@ -79,15 +79,16 @@ package org.bigbluebutton.modules.presentation.view
 		protected function zoom(e:Event):void{
 			var xPercent:Number = _slideView.myLoader.width / _slideView.imageCanvas.width;
 			var yPercent:Number = _slideView.myLoader.height / _slideView.imageCanvas.height;
-			
-			proxy.zoom(xPercent, yPercent);
+			if (proxy.isPresenter())
+				proxy.zoom(xPercent, yPercent);
 		}
 		
 		protected function move(e:Event):void{
 			var xOffset:Number = _slideView.myLoader.x / _slideView.imageCanvas.width;
 			var yOffset:Number = _slideView.myLoader.y / _slideView.imageCanvas.height;
 			
-			proxy.move(xOffset, yOffset);
+			if (proxy.isPresenter())
+				proxy.move(xOffset, yOffset);
 		}
 		
 		override public function listNotificationInterests():Array{
@@ -112,18 +113,6 @@ package org.bigbluebutton.modules.presentation.view
 					if (! proxy.isPresenter()){
 						_slideView.myLoader.x = moveNote.newXPosition * _slideView.imageCanvas.width;
 						_slideView.myLoader.y = moveNote.newYPosition * _slideView.imageCanvas.height;
-					}
-					break;
-				case PresentModuleConstants.DISPLAY_SLIDE:
-					
-					var slidenum:int = notification.getBody() as int;
-					trace('DISPLAY_SLIDE in ThumbnailMediator ' + slidenum);
-					if ((slidenum > 0) && (slidenum <= _slideView.slides.length)) {
-//						if (_slideView.slideList.selectedIndex != slidenum) {
-//							_slideView.slideList.selectedIndex = slidenum - 1;
-//						}	
-					} else {
-						trace('Cannot DISPLAY_SLIDE in ThumbnailMediator ' + slidenum + " " + _slideView.slides.length);
 					}
 					break;
 				case PresentModuleConstants.MAXIMIZE_PRESENTATION:
