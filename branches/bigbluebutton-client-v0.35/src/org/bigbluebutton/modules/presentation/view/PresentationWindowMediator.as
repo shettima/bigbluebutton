@@ -197,9 +197,7 @@ package org.bigbluebutton.modules.presentation.view
 				
 		private function handleStartShareEvent():void
 		{	
-			trace('Handle start share event');		
 			if (! proxy.isPresenter()) {
-				trace('loading presentation as viewer');
 				proxy.loadPresentation();
 			}
 		}
@@ -212,16 +210,16 @@ package org.bigbluebutton.modules.presentation.view
 
 		private function handlePresentationLoadedEvent():void
 		{	
-			// Remove the uploadWindow
-			PopUpManager.removePopUp(_presWin.uploadWindow);
-			// Remove the mediator	
-			facade.removeMediator(FileUploadWindowMediator.NAME);
-			
 			_presWin.slideView.slides = proxy.slides;         	
             _presWin.slideNumLbl.text = (_presWin.slideView.selectedSlide + 1) + " of " + _presWin.slideView.slides.length;		
 			_presWin.slideView.visible = true;		
 			
 			if (proxy.isPresenter()) {
+				// Remove the uploadWindow
+				PopUpManager.removePopUp(_presWin.uploadWindow);
+				// Remove the mediator	
+				facade.removeMediator(FileUploadWindowMediator.NAME);
+				
 				_presWin.backButton.visible = true;
 				_presWin.forwardButton.visible = true;
 				proxy.sharePresentation(true);
