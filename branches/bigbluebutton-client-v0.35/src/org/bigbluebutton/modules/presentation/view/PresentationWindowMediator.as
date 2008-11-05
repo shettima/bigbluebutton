@@ -217,14 +217,7 @@ package org.bigbluebutton.modules.presentation.view
 			// Remove the mediator	
 			facade.removeMediator(FileUploadWindowMediator.NAME);
 			
-			_presWin.slideView.slides = proxy.slides;
-			
-            if ( ! facade.hasMediator( ThumbnailViewMediator.NAME ) ) {
-            	trace("Registering ThumbnailViewMediator");
-            	facade.registerMediator(new ThumbnailViewMediator(_presWin.slideView ));
-            } else {
-            	trace("ThumbnailViewMediator already registered");
-            }            	
+			_presWin.slideView.slides = proxy.slides;         	
             _presWin.slideNumLbl.text = (_presWin.slideView.selectedSlide + 1) + " of " + _presWin.slideView.slides.length;		
 			_presWin.slideView.visible = true;		
 			
@@ -305,11 +298,8 @@ package org.bigbluebutton.modules.presentation.view
             _presWin.uploadWindow.y = point1.y + 25;
             
             if ( ! facade.hasMediator( FileUploadWindowMediator.NAME ) ) {
-            	trace("Registering FileUploadMediator");
             	facade.registerMediator(new FileUploadWindowMediator( _presWin.uploadWindow ));
-            } else {
-            	trace("FileuploadMediator already registered");
-            }
+            } 
         }
 
 		private function get proxy():PresentProxy {
