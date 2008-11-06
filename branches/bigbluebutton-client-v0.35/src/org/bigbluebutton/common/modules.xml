@@ -1,6 +1,6 @@
 <modules>
-	<module name="ChatModule" url="ChatModule.swf" uri="rtmp://localhost/chatServer" />
+	<module name="ChatModule" url="ChatModule.swf" uri="rtmp://192.168.0.191/chatServer" />
 	<module name="ViewersModule" url="ViewersModule.swf" />
 	<module name="PresentationModule" url="PresentationModule.swf" 
-		uri="rtmp://localhost/presentation" host="http://localhost" />
+		uri="rtmp://192.168.0.191/presentation" host="http://192.168.0.191:8180" />
 </modules>
