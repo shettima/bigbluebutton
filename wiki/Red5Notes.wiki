@@ -32,3 +32,5 @@
 = Flash =
  * http://blog.flexcommunity.net/?m=200802
  * http://www.gotoandlearn.com/
+
+ * [http://www.pathf.com/blogs/2008/08/custom-flex-3-lightweight-preloader-with-source-code/ Preloader]
