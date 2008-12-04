@@ -11,6 +11,7 @@
  * http://www.orbited.org/
  * http://jira.red5.org/confluence/display/docs/FAQ
  * [http://dl.fancycode.com/red5/api/ API]
+ * http://jira.red5.org/confluence/display/docs/Red5+Developer+Tips
 
 = Some links =
  * http://code.google.com/p/smartypants-ioc/
