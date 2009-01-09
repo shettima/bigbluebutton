@@ -9,7 +9,7 @@ First, be sure to check out the [http://www.bigbluebutton.org/support BigBlueBut
     * 85115, modpass, viewpass
  
 You can login at
-    http://present.carleton.ca/client/
+    http://present.carleton.ca/
 
 You can call into the Asterisk conference bridge using the local number 613-520-7610.
 
