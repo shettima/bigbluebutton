@@ -4,3 +4,11 @@
   * [http://www.adobe.com/cfusion/communityengine/index.cfm?event=showDetails&loc=en_US&postId=2001&productId=2 Retrieving browser and server "State" information in Flex]
   * [http://docs.codehaus.org/display/GRAILS/JSecurity+Plugin JSecurity Plugin]
   * [http://docs.codehaus.org/display/GRAILS/JSecurity+Plugin+-+Quick+Start JSecurity Plugin - Quick Start]
+  * [http://bandaidprogramming.blogspot.com/2008/05/rest-in-spring-without-using-spring.html REST in Spring without using Spring Webservices]
+  * [http://www.javapractices.com/topic/TopicAction.do?Id=56 Generating unique IDs]
+  * [http://code.google.com/p/zipwire-rest/wiki/HighriseWalkthrough]
+  * [http://code.google.com/p/flex-iframe/ An IFrame which you can embed into Flex applications to show an html page (flex-iframe)]
+
+== S5 ==
+ * [http://www.netzgesta.de/S5/ to S5 • Reloaded]
+ * [http://slideshow.rubyforge.org/ Slide Show (S9)]
