@@ -1,0 +1,6 @@
+#summary Some useful bookmarks.
+
+
+  * [http://www.adobe.com/cfusion/communityengine/index.cfm?event=showDetails&loc=en_US&postId=2001&productId=2 Retrieving browser and server "State" information in Flex]
+  * [http://docs.codehaus.org/display/GRAILS/JSecurity+Plugin JSecurity Plugin]
+  * [http://docs.codehaus.org/display/GRAILS/JSecurity+Plugin+-+Quick+Start JSecurity Plugin - Quick Start]
