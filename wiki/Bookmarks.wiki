@@ -7,8 +7,14 @@
   * [http://bandaidprogramming.blogspot.com/2008/05/rest-in-spring-without-using-spring.html REST in Spring without using Spring Webservices]
   * [http://www.javapractices.com/topic/TopicAction.do?Id=56 Generating unique IDs]
   * [http://code.google.com/p/zipwire-rest/wiki/HighriseWalkthrough]
-  * [http://code.google.com/p/flex-iframe/ An IFrame which you can embed into Flex applications to show an html page (flex-iframe)]
+  
 
 == S5 ==
  * [http://www.netzgesta.de/S5/ to S5 • Reloaded]
  * [http://slideshow.rubyforge.org/ Slide Show (S9)]
+ * [http://golem.ph.utexas.edu/instiki/show/S5+Test+(flower)]
+ * [http://www.instiki.org]
+ * [http://lawver.net/archive/2005/03/18/h15_s5_instiki_happy_geek.php]
+ * [http://code.google.com/p/flex-iframe/]
+ * [http://code.google.com/p/flex-iframe/ An IFrame which you can embed into Flex applications to show an html page (flex-iframe)]
+ * [http://www.deitte.com/IFrameDemo3/IFrameDemo.html Embedding browser in Flex]
