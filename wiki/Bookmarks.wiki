@@ -18,3 +18,6 @@
  * [http://code.google.com/p/flex-iframe/]
  * [http://code.google.com/p/flex-iframe/ An IFrame which you can embed into Flex applications to show an html page (flex-iframe)]
  * [http://www.deitte.com/IFrameDemo3/IFrameDemo.html Embedding browser in Flex]
+
+== Signing Java Applet ==
+ * http://forums.sun.com/thread.jspa?threadID=174214
