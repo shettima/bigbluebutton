@@ -66,3 +66,6 @@
 = TESTING =
  * [http://www.blackpepper.co.uk/black-pepper-blog/Flex-unit-testing-and-continuous-integration.html Flex unit testing and continuous integration: Part 1 of 2]
  * [https://hudson.dev.java.net/ Hudson]
+
+= Thumbnails =
+ * [http://www.quietlyscheming.com/blog/components/fisheye-component/]
