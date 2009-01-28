@@ -1,6 +1,5 @@
 #summary Some useful bookmarks.
 
-
   * [http://www.adobe.com/cfusion/communityengine/index.cfm?event=showDetails&loc=en_US&postId=2001&productId=2 Retrieving browser and server "State" information in Flex]
   * [http://docs.codehaus.org/display/GRAILS/JSecurity+Plugin JSecurity Plugin]
   * [http://docs.codehaus.org/display/GRAILS/JSecurity+Plugin+-+Quick+Start JSecurity Plugin - Quick Start]
@@ -69,3 +68,5 @@
 
 = Thumbnails =
  * [http://www.quietlyscheming.com/blog/components/fisheye-component/]
+
+ * [http://www.darronschall.com/weblog/2006/12/batch-convert-pdf-files-to-flashpaper-2.cfm Converting PDF to Flashpaper]
