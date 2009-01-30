@@ -70,3 +70,6 @@
  * [http://www.quietlyscheming.com/blog/components/fisheye-component/]
 
  * [http://www.darronschall.com/weblog/2006/12/batch-convert-pdf-files-to-flashpaper-2.cfm Converting PDF to Flashpaper]
+
+= Wikis =
+ * http://www.xwiki.org/xwiki/bin/view/Main/
