@@ -22,6 +22,7 @@
  * [http://forums.sun.com/thread.jspa?threadID=174214 Signing Java Applet]
  * [http://www.mexuar.com/files/corraleta_sdk.rar Corraleta SDK]
  * [http://www.jguru.com/faq/view.jsp?EID=272810 netscape.javascript.JSObject]
+ * http://www.yosd.at/corraleta/
 
 == Red5 ==
  * http://jira.red5.org/confluence/display/docs/Scopes+and+Contexts
