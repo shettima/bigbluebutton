@@ -24,6 +24,9 @@
  * [http://attacklab.net/showdown/ Showdown - a JavaScript port of Markdown]
  * [http://rghosh.free.fr/essays/txttopdf.html Generate a PDF book with groovy and iText]
 
+== textile ==
+ * https://textile-j.dev.java.net/usage.html
+
 
 == Phone Applet ==
  * [http://forums.sun.com/thread.jspa?threadID=174214 Signing Java Applet]
