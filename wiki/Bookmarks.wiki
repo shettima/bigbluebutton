@@ -22,6 +22,7 @@
  * http://code.google.com/p/markdownj/
  * [http://babelmark.bobtfish.net/ Markdown Testbed]
  * [http://attacklab.net/showdown/ Showdown - a JavaScript port of Markdown]
+ * [http://rghosh.free.fr/essays/txttopdf.html Generate a PDF book with groovy and iText]
 
 
 == Phone Applet ==
