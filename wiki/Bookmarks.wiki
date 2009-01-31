@@ -17,7 +17,11 @@
  * [http://code.google.com/p/flex-iframe/]
  * [http://code.google.com/p/flex-iframe/ An IFrame which you can embed into Flex applications to show an html page (flex-iframe)]
  * [http://www.deitte.com/IFrameDemo3/IFrameDemo.html Embedding browser in Flex]
+
+== Markdown ==
  * http://code.google.com/p/markdownj/
+ * [http://babelmark.bobtfish.net/ Markdown Testbed]
+ * [http://attacklab.net/showdown/ Showdown - a JavaScript port of Markdown]
 
 
 == Phone Applet ==
