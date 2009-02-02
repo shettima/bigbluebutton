@@ -9,7 +9,7 @@ There are four servers to run for BigBlueButton:
   * activeMQ server
   * tomcat server
 
-Note: These instructions don’t go into details on setting up an Asterisk server.  For now, you don't an Asterisk server running to setup and use BigBlueButton; however, if you want an integrated voice conference server, you'll need to setup Asterisk as well.
+Note: These instructions don’t go into details on setting up an Asterisk server.  For now, you don't need an Asterisk server running to setup and use BigBlueButton; however, if you want an integrated voice conference server, you'll need to setup Asterisk as well.
 
 For the tomcat server, there are two additional components to install:
   * bigbluebutton.war (which handles the upload of slies) 
