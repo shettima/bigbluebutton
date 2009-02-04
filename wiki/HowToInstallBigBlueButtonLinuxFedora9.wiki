@@ -1,4 +1,5 @@
 #summary How to setup your own BigBlueButton Server (Linux Fedora 9)
+#labels Deprecated
 
 ----
 Here is the link:
