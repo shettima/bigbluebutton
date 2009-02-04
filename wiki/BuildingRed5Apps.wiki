@@ -1,5 +1,5 @@
 #summary A brief explanation on how to create new red5 apps.
-#labels Phase-Implementation
+#labels Phase-Implementation,Deprecated
 
 = Introduction =
 
