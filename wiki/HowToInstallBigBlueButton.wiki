@@ -92,7 +92,7 @@ If you’ve left the tomcat server running, you should be able to open http://HO
 You'll need to setup an asterisk server (though not required if you don't want voice conferencing).  We'll refer to the host name for the asterisk server as {{{ASTERISK_HOSTNAME}}}.
 
   1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
-  1. Configure Asterisk using the [http://bigbluebutton.googlecode.com/svn/trunk/asterisk/ sample extensions.conf and meetme.conf] files on the BigblueButton repository
+
 
 = Configure Components =
 
