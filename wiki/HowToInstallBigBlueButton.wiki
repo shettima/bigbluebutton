@@ -83,7 +83,7 @@ If you’ve left the tomcat server running, you should be able to open http://HO
   1. Put into {{{TOOLS_DIR\tomcat\webapps}}}
 
 === BigBlueButton Server ===
-  1. Download bbb-server from the latest [http://code.google.com/p/bigbluebutton/downloads/list] and put in {{{TOOLS_DIR\bbb-server}}}
+  1. Download bbb-server from the latest [http://code.google.com/p/bigbluebutton/downloads/list] and put in {{{TOOLS_DIR\bbb-server}}}. You can use [http://www.7-zip.org/ 7-zip] to extract it.
 
 
 = Setting up the Asterisk Server =
