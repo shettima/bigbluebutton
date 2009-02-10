@@ -7,7 +7,7 @@
   * [http://bandaidprogramming.blogspot.com/2008/05/rest-in-spring-without-using-spring.html REST in Spring without using Spring Webservices]
   * [http://www.javapractices.com/topic/TopicAction.do?Id=56 Generating unique IDs]
   * [http://code.google.com/p/zipwire-rest/wiki/HighriseWalkthrough]
-  
+  * [http://www.avchat.net/blog/?p=19 Screen sharing in Flash video chat applications] 
 
 == S5 ==
  * [http://www.netzgesta.de/S5/ to S5 • Reloaded]
