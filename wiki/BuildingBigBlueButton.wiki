@@ -4,7 +4,7 @@
 This page will contain instructions on how to build BigBlueButton from source.
 
 
-= BigBlueButton Server =
+= !BigBlueButton Server =
 
  1. Instal Ant 1.7.0 or higher
  1. Create {{{RED5_HOME}}} environment variable.
@@ -14,10 +14,10 @@ This page will contain instructions on how to build BigBlueButton from source.
  1. Run "{{{ant deploy}}}" which will build bigbluebutton-apps and deploy it to RED5_HOME.
  1. In your RED5_HOME, run red5.bat to start bigbluebutton.
 
-= BigBlueButton Server =
+= !BigBlueButton Server =
  1. Checkout bigbluebutton-client and build using FlexBuilder.
 
 TODO: How to build using ant and Flex SDK.
 
-= BigBlueButton Servlet =
+= !BigBlueButton Servlet =
  1. Checkout bigbluebutton-servlet and run {{{ant warfile}}}
