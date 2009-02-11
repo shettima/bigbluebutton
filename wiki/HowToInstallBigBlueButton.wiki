@@ -39,6 +39,7 @@ For the downloads below, just grab the latest version of each open source compon
 
 
 === Java Development Kit ===
+
   1. Download the [http://java.sun.com/javase/downloads/index.jsp JDK 6] installer
   1. Install the JDK to {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\jdk}}}
   1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer.
@@ -47,6 +48,7 @@ For the downloads below, just grab the latest version of each open source compon
 
 
 === ActiveMQ ===
+
   1. Download [http://activemq.apache.org ActiveMQ] version 5.1.0
   1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq}}}
   1. Open a command prompt and {{{cd}}} to {{{TOOLS_DIR\activemq\bin\win32}}}
@@ -73,18 +75,19 @@ Note: Tomcat installs on port 8080 by default.  You can, of course, change tomca
 == Download BBB ==
 
 === BigBlueButton Client ===
-  1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list bigbluebutton-client] ZIP file
-  1. Unzip the client into {{{TOOLS_DIR\tomcat\webapps\ROOT\client}}}.  
+  1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list client-0.35u.zip] ZIP file
+  1. Unzip the client into {{{TOOLS_DIR\tomcat\webapps\ROOT}}}.  
+  1. Rename the ROOT\bin directory to ROOT\client
  
-If you’ve left the tomcat server running, you should be able to open http://HOSTNAME:8080/client and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
+If you’ve left the tomcat server running, you should be able to open http://HOSTNAME:8080/client/BigBlueButton.html and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
 
 === BigBlueButton Servlet ===
-  1. Download bigbluebutton.war from [http://code.google.com/p/bigbluebutton/downloads/list]
+  1. Download bigbluebutton.war from[http://code.google.com/p/bigbluebutton/downloads/list]
   1. Put into {{{TOOLS_DIR\tomcat\webapps}}}
 
 === BigBlueButton Server ===
-  1. Download bbb-server from the latest [http://code.google.com/p/bigbluebutton/downloads/list] and put in {{{TOOLS_DIR\bbb-server}}}. You can use [http://www.7-zip.org/ 7-zip] to extract it.
-  1. Download bigbluebutton-apps and extract it in {{{TOOLS_DIR\bbb-server\webapps}}}. 
+  1. Download bbb-server-0.35u.tar.gz from the latest [http://code.google.com/p/bigbluebutton/downloads/list] and put in {{{TOOLS_DIR\bbb-server}}}. You can use [http://www.7-zip.org/ 7-zip] to extract it.
+  1. Download bigbluebutton-apps-0.35u.zip and extract it in {{{TOOLS_DIR\bbb-server\webapps}}}. 
 
 = Setting up the Asterisk Server =
 
