@@ -28,7 +28,7 @@ http://present.carleton.ca:8080/files/docs/images/bbb-overview.png
 
 Before you begin, you'll need to create some directories.  Note: The instructions use the {{{c:}}} drive, but you can use any drive for installation.
 
-  1. Create {{{c:\tools}}} - referred to as {{{TOOLS_DIR}}} for the rest of these instructions.  For example, if you wanted to set the environment variable ANT_HOME to point to {{{TOOLS_DIR\pdftk}}},  set it to {{{c:\tools\pdftk}}}.
+  1. Create {{{c:\tools}}} - referred to as {{{TOOLS_DIR}}} for the rest of these instructions.  For example, if you wanted to set the environment variable PDFTK_HOME to point to {{{TOOLS_DIR\pdftk}}},  set it to {{{c:\tools\pdftk}}}.
   1. Create {{{c:\temp}}} - referred to as {{{TEMP_DIR}}}.  
  
 You will also need to know the host name (or IP address) of your server, referred to as {{{HOSTNAME}}}.  Note: This could be a fully qualified domain name, such as mycomputer.network.com, or an IP address.
@@ -156,3 +156,7 @@ Login with
 }}}
 
 Try uploading a PDF file for conversion or opening multiple clients and chatting between them.
+
+= Setup =
+ 1. Download and install Java SE SDK (JDK 6) from http://java.sun.com
+ 1. Add JAVA_HOME variable pointing to your JDK installation in your environment
