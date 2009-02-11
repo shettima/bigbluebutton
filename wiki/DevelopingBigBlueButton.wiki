@@ -2,6 +2,9 @@
 
 = Introduction =
 
-Add your content here.
+First, make sure you can run !BigBlueButton by following the instructions [HowToInstallBigBlueButton here].
 
-First, make sure you follow the instructions [HowToInstallBigBlueButton here].
+Once you got that working, let's configure your development environment.
+
+ 1. Download eclipse from [http://www.eclipse.org]
+ 1. Install subclipse from [http://subclipse.tigris.org/]
