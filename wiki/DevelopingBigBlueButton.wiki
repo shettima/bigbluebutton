@@ -45,6 +45,8 @@ Take a look at the chat module on bigbluebutton-client and chatServer on bigblue
 *Exercise 2:*
 Modify chat module so that the client sends a message by setting an attribute on the shared object instead of calling a method which is how the current module sends a message to others.
 
+The SharedObject [http://livedocs.adobe.com/flex/3/langref/flash/net/SharedObject.html doc] explains how SharedObject works.
+
 *Exercise 3:* 
 Modify chat module on the client so that when the message begins with "HANDLER", the message is sent to a handler on chatServer which converts the message to UPPERCASE and sets the shared object attribute (you defined on Exercise 2) with the message on the server.
 
