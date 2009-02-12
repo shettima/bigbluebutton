@@ -17,8 +17,22 @@ Once you got that working, let's configure your development environment.
 
 = Building !BigBlueButton =
 == !BigBlueButton Server ==
- 1. Switch Eclipse to Java perspective. Open build.xml inside bigbluebutton-server within eclipse. On the Outline Window, right-click on {{{resolve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-server.
+ 1. Switch Eclipse to Java perspective. Open build.xml under bigbluebutton-server within eclipse. On the Outline Window, right-click on {{{retrieve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-server.
  1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-server into the {{{RED5_HOME}}} directory you created above.
- 1. When successful, right-click on {{{publish-local}}} and choose {{{Run As -> Ant Build}}}.  This will publish the red5.jar into your local ivy library so that bigbluebutton-apps will be able to get the jar file as dependency.
+ 1. When successful, right-click on {{{publish}}} and choose {{{Run As -> Ant Build}}}.  This will publish the red5.jar into your local ivy library so that bigbluebutton-apps will be able to get the jar file as dependency.
 
-== !BigBlueButton Apps}}}
+== !BigBlueButton Apps
+ 1. Open build.xml under bigbluebutton-apps within eclipse. On the Outline Window, right-click on {{{resolve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-apps.
+ 1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-apps into the {{{RED5_HOME}}} directory you created above.
+
+== !BigBlueButton Servlet ==
+ 1. Open build.xml under bigbluebutton-servlet within eclipse. On the Outline Window, right-click on {{{create-warfile}}} and choose {{{Run As -> Ant Build}}}. This will create {{{bigbluebutton.war}}} inside bigbluebutton-servlet/dist.
+
+== Starting !BigBlueButton ==
+ 1. Open a command window, cd to your ActiveMQ install from instruction [HowToInstallBigBlueButton here].
+ 1. Open another command window, cd to Tomcat and deploy {{{bigbluebutton.war}}} that was generated when you compiled {{{bigbluebutton-servlet }}} above following instruction [HowToInstallBigBlueButton here].
+ 1. Open a command window and cd to your {{{RED5_HOME}}} directory. Run {{{red5.bat}}} to start bigbluebutton-server.
+
+== Starting the Client ==
+ 1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference.
+
