@@ -21,7 +21,7 @@ Once you got that working, let's configure your development environment.
  1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-server into the {{{RED5_HOME}}} directory you created above.
  1. When successful, right-click on {{{publish}}} and choose {{{Run As -> Ant Build}}}.  This will publish the red5.jar into your local ivy library so that bigbluebutton-apps will be able to get the jar file as dependency.
 
-== !BigBlueButton Apps
+== !BigBlueButton Apps ==
  1. Open build.xml under bigbluebutton-apps within eclipse. On the Outline Window, right-click on {{{resolve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-apps.
  1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-apps into the {{{RED5_HOME}}} directory you created above.
 
@@ -39,16 +39,19 @@ Once you got that working, let's configure your development environment.
 = Learning Red5 =
 Below are some exercises you can do to learn how to develop Red5 applications.
 
-*Exercise 1*
+*Exercise 1:*
 Take a look at the chat module on bigbluebutton-client and chatServer on bigbluebutton-server and understand how it works. You can learn about Shared Objects by searching on Google for examples. Or you can click Help->Help Contents and Search "Shared Object" from Eclipse.
 
-*Exercise 2*
+*Exercise 2:*
 Modify chat module so that the client sends a message by setting an attribute on the shared object instead of calling a method which is how the current module sends a message to others.
 
-*Exercise 3* 
-Modify chat module on the client so that when the message begins with "HANDLER", the messages is send using a handler on chatServer which sets the shared object attribute (you defined on Exercise 2) on the server.
+*Exercise 3:* 
+Modify chat module on the client so that when the message begins with "HANDLER", the message is sent to a handler on chatServer which converts the message to UPPERCASE and sets the shared object attribute (you defined on Exercise 2) with the message on the server.
 
-*Exercise 4*
+*Exercise 4:*
 Use a job in the server to send the server time every minute to the client.
 
-Read [http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Guide this] to be able to do the above exercises.
+Read this [http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Guide Migration Guide] to be able to do the above exercises.
+
+ 1. When testing your changes on chatServer, stop the server under {{{RED5_HOME}}}. Compile and deploy {{{bigbluebutton-apps}}} by right-clicking "deploy" on build.xml as mentioned in !BigBlueButton Apps instruction above.
+ 1. To test the client, just follow the "Starting the Client" instruction above.
