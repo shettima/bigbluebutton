@@ -38,6 +38,9 @@
 
 == Red5 ==
  * http://jira.red5.org/confluence/display/docs/Scopes+and+Contexts
+ * http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Guide
+ * http://jira.red5.org/confluence/display/docs/Chapter+11.+Create+new+applications+in+Red5
+ * http://jira.red5.org/confluence/display/docs/Table+Of+Contents
  * http://jira.red5.org/confluence/display/docs/Home
  * http://jira.red5.org/confluence/dashboard.action
  * http://osflash.org/red5/help
