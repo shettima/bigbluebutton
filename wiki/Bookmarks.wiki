@@ -99,7 +99,9 @@
  * http://flashcommander.org/remotefilelist
  * http://examples.adobe.com/flex3/componentexplorer/explorer.html
  * http://examples.adobe.com/flex3/consulting/styleexplorer/Flex3StyleExplorer.html#
-
+ * http://www.insideria.com/2008/12/the-design-of-a-rich-spatial-f.html
+ * [http://danorlando.com/?p=106 Flex and the Enterprise: Making Architectural Decisions]
+ 
 = Grails =
  * [http://thevirtualmachine.wordpress.com/2008/11/07/glassfish-v3-and-grails-support/]
  * [http://www.grailstutorials.com/tagging/list/deploy?selectedTag=deploy]
