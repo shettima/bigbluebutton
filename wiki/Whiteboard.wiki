@@ -9,15 +9,16 @@ The white board module for the purpose of BigBlueButton is defined as the abilit
 
 Nowadays presentations are not just limited to slides, therefore the main idea behind creating the Whiteboard module is to allow remote users to obtain the full experience as if they were attending the event in person. When the module is complete, the remote user will see a new window being updated in real-time to display what the presenter has written/drawn to the board. 
 
-The events (presenter writing on the white board) will be captured using a Wii controller which will generate a bluetooth signal that the computer will then take and convert to the desired format. 
+The events (presenter writing on the white board) will be captured using a Wii controller which will generate a Bluetooth signal that the computer will then take and convert to the desired format. 
 
-There are many approaches to developing such a module. The two being considered are
+There are many approaches to developing such a module. The three being considered are
 
- # When the blue tooth signal is received it will be converted to Java then sent to the Red5 server.  
- # When the blue tooth signal is received it will be converted to Java, then converted to flash then sent to the Red5 server. 
+ # When the Bluetooth signal is received it will be converted to Flash then sent to the Red5 server.  
+ # When the Bluetooth signal is received it will be converted to Java then sent to the Red5 server. 
+ # When the Bluetooth signal is received it will be converted to Java, then converted to flash then sent to the Red5 server. 
 
 == Bluetooth2JAVA ==
 
-The conversion from Bluetooh to JAVA is currently being researched. Several API have been found
+The conversion from Bluetooh to Java is currently being researched. Several API have been found
 
  * http://code.google.com/p/bluecove/
