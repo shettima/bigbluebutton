@@ -17,13 +17,11 @@ There are many approaches to developing such a module. The three being considere
  # When the Bluetooth signal is received it will be converted to Java then sent to the Red5 server. 
  # When the Bluetooth signal is received it will be converted to Java, then converted to flash then sent to the Red5 server. 
 
-
 == Bluetooth2Flash ==
 
 The conversion from Bluetooh to Flash is currently being researched. An API has been found
 
  * http://wiiflash.bytearray.org/
-
 
 == Bluetooth2JAVA ==
 
