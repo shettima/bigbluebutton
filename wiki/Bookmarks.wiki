@@ -114,6 +114,9 @@
  * [https://help.ubuntu.com/community/ApacheTomcat5]
  * [http://www.klawitter.de/tomcat80.html]
  * [http://www.owasp.org/index.php/Securing_tomcat#Using_Port_80]
+ * [http://www.mkyong.com/tomcat/tomcat-javasecurityaccesscontrolexception-access-denied-loggingproperties-read/]
+ * [http://tomcat.apache.org/tomcat-5.5-doc/logging.html]
+
  
 == Asterisk ==
  * http://godson.in/how-to-install-asterisk-on-ubuntu
