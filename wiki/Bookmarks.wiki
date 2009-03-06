@@ -110,4 +110,9 @@
  * [http://drawlogic.com/2008/11/17/as3-augmented-reality-in-flash-and-papervision-3d-flartoolkit/]
  * [http://www.boffswana.com/news/?p=392 Papervision - Augmented Reality]
 
+== TOmcat ==
+ * [https://help.ubuntu.com/community/ApacheTomcat5]
+ 
+== Asterisk ==
+ * http://godson.in/how-to-install-asterisk-on-ubuntu
  
