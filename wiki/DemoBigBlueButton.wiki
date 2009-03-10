@@ -4,7 +4,7 @@
 
 First, be sure to check out the [http://www.bigbluebutton.org/support BigBlueButton Intro Videos].  To try out the demo, we have create a couple of conference rooms:
 
-    (Conference, Moderator Password, Viewer Password) 
+    (Conference ID, Moderator Password, Viewer Password) 
 
     * 85115, modpass, viewpass
  
