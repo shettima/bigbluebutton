@@ -1,14 +1,14 @@
 #summary How to setup your own BigBlueButton Server (Windows)
 
 = Overview =
-These instructions show how to setup BigBlueButton server for Windows.  While there is no specific OS requirement for BigBlueButton, BigBlueButton runs on Mac and Windows as well (hey, it's open source!).  If you are running Windows XP (or above) with at least 1GB of memory and 8GB free disk space, you're good to go.
+These instructions show you how to install BigBlueButton on a Windows XP/Vista computer.  BigBlueButton can be installed on a Mac or Unix computer as well (we'll be adding instructions for installing on Unix shortly).  If you computer is running XP/Vista with at least 1GB of memory and 8GB free disk space, you're good to go.
 
-There are three core servers needed run for BigBlueButton:
+There are three core servers needed to run BigBlueButton:
   * bigbluebutton server (built on red5)
   * asterisk server
   * tomcat server
 
-You'll also need to install an Asterisk server for integrated voice conference.  However, we'll just cover the above servers.  That's enough to get you running with sharing of slides, video, and chat.
+You'll also need to install an Asterisk server for integrated voice conference.  However, for the moment, we'll just cover the above servers.  That's enough to get you running with sharing of slides, video, and chat.
 
 For the tomcat server, there are two additional components to install:
   * bigbluebutton.war -- a Java application that handles the upload of slides
@@ -18,29 +18,26 @@ For bigbluebutton.war, it uses two supporting command-line applications  to conv
   * pdftk (breaks up PDF files into individual pages)
   * pdf2swf (converts a PDF file to SWF)
 
-Here's a diagram that gives an overview of how these components work together.
+Here's an overview of how these components work together.
 
 http://present.carleton.ca:8080/files/docs/images/bbb-overview.png
 
-Enough intro -- let's get installing.
+= Before you begin =
 
-
-= Installing Components =
-
-First, you'll need to create some directories.  Note: The instructions use the {{{c:}}} drive, but you can use any drive for installation.
+First, you'll need to create some directories.  These instructions use the {{{c:}}} drive, but you can use any drive for installation.
 
   1. Create {{{c:\tools}}} (referred as {{{TOOLS_DIR}}})
  
   1. Create {{{c:\temp}}}  (referred as {{{TEMP_DIR}}})  
 
-We'll use terms later on when referring to environment variables.  For example, to point the variable PDFTK_HOME to {{{TOOLS_DIR\pdftk}}}, you would define it as {{{c:\tools\pdftk}}}.
+We'll use {{{TOOLS_DIR}}}) and {{{TEMP_DIR}}}) through these instructions.  For example, to point the variable {{{JAVA_HOME}}} to {{{TOOLS_DIR\jdk}}}, you would define it as {{{c:\tools\jdk}}}.
  
-Second, you will also need to know the host name (or IP address) of your server (referred to as {{{HOSTNAME}}}).  This could be a fully qualified domain name, such as mycomputer.network.com, or an IP address, as 192.168.0.150.
+Also, you will need to know the host name (or IP address) of your computer (referred to as {{{HOSTNAME}}}).  This could be a fully qualified domain name, such as mycomputer.network.com, or an IP address, as 192.168.0.150.
 
+Enough intro -- let's get installing.
 
-
-== Install Base Open Source Components ==
-For the downloads below, just grab the latest version of each open source component.  If your server already has a component, such as pdftk, you can skip that step.
+== Install Base Open Source Applications ==
+For the downloads below, just grab the latest version of each open source application.  If your computer already has the application installed, such as tomcat, you can skip that step.
 
 
 === Java Development Kit ===
@@ -83,13 +80,13 @@ If you've been following step-by-step, at this point your TOOLS_DIR looks like
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/folders_layout.png
 
 
-OK, that gets us going with the open source packages necessary to run BigBlueButton.  
+OK, let's start installing the BigBlueButton specific components.
 
 
 
 == Install BigBlueButton Client ==
 
-First, let's download the BigBlueButton Client by grabbing the latest version from the Google Code downloads.
+First, let's download the BigBlueButton client by grabbing the latest version from the Google Code downloads.
 
   1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list client-0.35u.zip] ZIP file
   1. Unzip the client into {{{TOOLS_DIR\tomcat\webapps\ROOT}}} (place the {{{bin}}} directory containing the client here). 
@@ -172,6 +169,7 @@ If not already running, start the tomcat server.
   1. type {{{catalina.bat start}}}
 
 == Start BigBlueButton server ==
+If not already running, start the BigBlueButton server.
   1. Open a new command window.
   1. Change directory to {{{TOOLS_DIR\bbb-server}}} 
   1. type {{{red5.bat}}}
@@ -245,4 +243,3 @@ then check the value for {{{host}}} in {{{TOOLS_DIR\tomcat\webapps\ROOT\client\c
 === Upload is successful, but there are no converting 1 of N, 2 of N messages ===
 
 Try shutting down the activeMQ, tomcat, and BigBlueButton servers.  Then start activeMQ first, then tomcat and BigBlueButton servers.  Try again.
-
