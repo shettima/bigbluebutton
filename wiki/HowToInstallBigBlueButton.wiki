@@ -1,21 +1,20 @@
 #summary How to setup your own BigBlueButton Server (Windows)
 
 = Overview =
-These instructions show how to setup BigBlueButton server for Windows.  While there is no specific OS requirement for BigBlueButton, BigBlueButton runs on Mac and Windows as well (hey, its open source!), if you are running Windows XP (or above) with at least 1GB of memory, you're good to go.
+These instructions show how to setup BigBlueButton server for Windows.  While there is no specific OS requirement for BigBlueButton, BigBlueButton runs on Mac and Windows as well (hey, it's open source!).  If you are running Windows XP (or above) with at least 1GB of memory and 8GB free disk space, you're good to go.
 
-There are four servers to run for BigBlueButton:
+There are three core servers needed run for BigBlueButton:
   * bigbluebutton server (built on red5)
   * asterisk server
-  * activeMQ server
   * tomcat server
 
-Note: These instructions don’t go into details on setting up an Asterisk server.  For now, you don't need an Asterisk server running to setup and use BigBlueButton; however, if you want an integrated voice conference server, you'll need to setup Asterisk as well.
+You'll also need to install an Asterisk server for integrated voice conference.  However, we'll just cover the above servers.  That's enough to get you running with sharing of slides, video, and chat.
 
 For the tomcat server, there are two additional components to install:
-  * bigbluebutton.war (which handles the upload of slies) 
-  * client.zip (a ZIP file containing the client)
+  * bigbluebutton.war -- a Java application that handles the upload of slides
+  * client -- the HTML files (including the flash SWF) files for the BigBlueButton client
   
-For bigbluebutton.war, there are two supporting command-line applications used to convert PDF slides to SWF images:
+For bigbluebutton.war, it uses two supporting command-line applications  to convert PDF slides to SWF images:
   * pdftk (breaks up PDF files into individual pages)
   * pdf2swf (converts a PDF file to SWF)
 
@@ -23,110 +22,142 @@ Here's a diagram that gives an overview of how these components work together.
 
 http://present.carleton.ca:8080/files/docs/images/bbb-overview.png
 
+Enough intro -- let's get installing.
+
 
 = Installing Components =
 
-Before you begin, you'll need to create some directories.  Note: The instructions use the {{{c:}}} drive, but you can use any drive for installation.
+First, you'll need to create some directories.  Note: The instructions use the {{{c:}}} drive, but you can use any drive for installation.
 
-  1. Create {{{c:\tools}}} - referred to as {{{TOOLS_DIR}}} for the rest of these instructions.  For example, if you wanted to set the environment variable PDFTK_HOME to point to {{{TOOLS_DIR\pdftk}}},  set it to {{{c:\tools\pdftk}}}.
-  1. Create {{{c:\temp}}} - referred to as {{{TEMP_DIR}}}.  
+  1. Create {{{c:\tools}}} (referred as {{{TOOLS_DIR}}})
  
-You will also need to know the host name (or IP address) of your server, referred to as {{{HOSTNAME}}}.  Note: This could be a fully qualified domain name, such as mycomputer.network.com, or an IP address.
+  1. Create {{{c:\temp}}}  (referred as {{{TEMP_DIR}}})  
+
+We'll use terms later on when referring to environment variables.  For example, to point the variable PDFTK_HOME to {{{TOOLS_DIR\pdftk}}}, you would define it as {{{c:\tools\pdftk}}}.
+ 
+Second, you will also need to know the host name (or IP address) of your server (referred to as {{{HOSTNAME}}}).  This could be a fully qualified domain name, such as mycomputer.network.com, or an IP address, as 192.168.0.150.
 
 
-== Install Software ==
+
+== Install Base Open Source Components ==
 For the downloads below, just grab the latest version of each open source component.  If your server already has a component, such as pdftk, you can skip that step.
 
 
 === Java Development Kit ===
 
-  1. Download the [http://java.sun.com/javase/downloads/index.jsp JDK 6] installer
+  1. Download the [http://java.sun.com/javase/downloads/index.jsp JDK 6] (not the JRE) installer
   1. Install the JDK to {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\jdk}}}
   1. Click {{{Start -> Control Panel -> System -> Advanced tab -> Environment Variables}}} on your computer.
-  1. Add a system variable {{{JAVA_HOME}}} pointing to {{{JAVA_HOME = TOOLS_DIR\jdk}}}
+  1. Add a system variable {{{JAVA_HOME}}} pointing to {{{JAVA_HOME = TOOLS_DIR\jdk}}} (i.e. {{{c:\tools\jdk}}})
   1. Open a command prompt and run {{{java -version}}}. You should see the java version (JDK 1.6 or above) displayed.
 
 
 === ActiveMQ ===
 
-  1. Download [http://activemq.apache.org ActiveMQ] version 5.1.0
-  1. Install activeMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq}}}
+  1. Download [http://activemq.apache.org ActiveMQ] version 5.2.0
+  1. Install ActiveMQ in {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\activemq}}}
   1. Open a command prompt and {{{cd}}} to {{{TOOLS_DIR\activemq\bin\win32}}}
   1. Run {{{activemq.bat}}}
   1. You should set the AcitveMQ startup messages with no errors.
 
+
 === Tomcat ===
-  1. Download [http://tomcat.apache.org Tomcat] version 5.5.27 ZIP file
+  1. Download [http://tomcat.apache.org Tomcat] version 6 ZIP file
   1. Uncompress the ZIP file into {{{TOOLS_DIR}}} - e.g. {{{TOOLS_DIR\tomcat}}}
   1. Open a command prompt and {{{cd}}} to {{{TOOLS_DIR\tomcat\bin}}}
   1. Run {{{catalina.bat start}}}
   1. Open your browser and go to {{{http://HOSTNAME:8080}}}
   1. You should see the Tomcat welcome page displayed.
 
-Note: Tomcat installs on port 8080 by default.  You can, of course, change tomcat's settings to listen on port 80.  If you change the settings, you can omit the port 8080 qualifer from the rest of these instructions.
+Note: Tomcat installs on port 8080 by default.  You can, of course, change tomcat's settings to listen on port 80.  If you change the settings, you can omit the port 8080 qualifier from the rest of these instructions.
 
 
 === SWF Tools and PDF Toolkit ===
-  1. Download [http://www.swftools.org SWF Tools] version 0.8.1
+  1. Download the latest version of [http://www.swftools.org SWF Tools]
   1. Install in {{{TOOLS_DIR\swftools}}}
-  1. Download [http://www.accesspdf.com/pdftk PDF Toolkit] version 1.12
+  1. Download the latest version of [http://www.accesspdf.com/pdftk PDF Toolkit]
   1. Install in {{{TOOLS_DIR\pdftk}}}
 
-== Download BBB ==
+If you've been following step-by-step, at this point your TOOLS_DIR looks like
 
-=== BigBlueButton Client ===
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/folders_layout.png
+
+
+OK, that gets us going with the open source packages necessary to run BigBlueButton.  
+
+
+
+== Install BigBlueButton Client ==
+
+First, let's download the BigBlueButton Client by grabbing the latest version from the Google Code downloads.
+
   1. Download the latest [http://code.google.com/p/bigbluebutton/downloads/list client-0.35u.zip] ZIP file
-  1. Unzip the client into {{{TOOLS_DIR\tomcat\webapps\ROOT}}}.  
+  1. Unzip the client into {{{TOOLS_DIR\tomcat\webapps\ROOT}}} (place the {{{bin}}} directory containing the client here). 
   1. Rename the ROOT\bin directory to ROOT\client
  
-If you’ve left the tomcat server running, you should be able to open http://HOSTNAME:8080/client/BigBlueButton.html and see the login screen.  Note, you won't be able to login yet -- we need to get a few more components going.
+If you’ve left the tomcat server running, you should be able to open http://HOSTNAME:8080/client/BigBlueButton.html and see the login screen.  
 
-=== BigBlueButton Servlet ===
-  1. Download bigbluebutton.war from[http://code.google.com/p/bigbluebutton/downloads/list]
-  1. Put into {{{TOOLS_DIR\tomcat\webapps}}}
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/first_login_prompt.png
 
-=== BigBlueButton Server ===
-  1. Download bbb-server-0.35u.tar.gz from the latest [http://code.google.com/p/bigbluebutton/downloads/list] and put in {{{TOOLS_DIR\bbb-server}}}. You can use [http://www.7-zip.org/ 7-zip] to extract it.
-  1. Download bigbluebutton-apps-0.35u.zip and extract it in {{{TOOLS_DIR\bbb-server\webapps}}}. 
-
-= Setting up the Asterisk Server =
-
-== Asterisk ==
-You'll need to setup an asterisk server (though not required if you don't want voice conferencing).  We'll refer to the host name for the asterisk server as {{{ASTERISK_HOSTNAME}}}.
-
-  1. Download and install the latest version of Asterisk from [http://www.asterisk.org/downloads Asterisk website].
+Note, you won't be able to login yet -- there's no Red5 server running yet for the Flash client to connect.
 
 
-= Configure Components =
+== Install BigBlueButton Server ==
 
-== Configure bigbluebutton.war ==
-  1. Edit {{{TOOLS_DIR\tomcat/webapps\bigbluebutton\WEB-INF\bigbluebutton.properties}}}.
+The BigBlueButton server is the Red5 server with some additional applications. 
+
+We've packaged up a slimmed-down version of the Red5 server.  
+  1. Download bbb-server-0.35u.zip from  [http://code.google.com/p/bigbluebutton/downloads/list] and put in {{{TOOLS_DIR\bbb-server}}}. 
+  1. Download bigbluebutton-apps-0.35u.zip from from  [http://code.google.com/p/bigbluebutton/downloads/list] and extract it in {{{TOOLS_DIR\bbb-server\webapps}}}. 
+
+At this point, your {{{bbb-server}}} directory should look like
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/bbb-server_layout.png
+
+
+Before we start the server, let's ensure we have defined a conference room (ID) for that a user can join.
+
+  1. Edit {{{TOOLS_DIR\bbb-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. 
+  
+Note: This file was created under UNIX, so it's missing the carriage returns.  You can edit it by using a programmer's editor (such as [http://www.textpad.com/ textpad]), or use Notepad to copy and replace it with the following:
+
 {{{
-    swftoolLocation=c:/tools/swftools/pdf2swf (Edit to point to your pdf2swf executable)
-    pdfExtractor=c:/tools/pdftk/pdftk (Edit to point to your pdftk executable)
-    presBaseDirectory=c:/temp/upload (directory where uploaded slides are extracted)
-    extractedFolder=extracted
-}}}
+<?xml version="1.0" encoding="UTF-8" ?>
+<conference-rooms>
+    <conference-room>
+        <name>85115</name>
+        <mod-password>modpass</mod-password>
+        <view-password>viewpass</view-password>
+    </conference-room>
 
-== Configure BigBlueButton server ==
-  1. Edit {{{TOOLS_DIR\bbbb-server\webapps\astmeetme\WEB-INF\astmeetme.properties}}} with your Asterisk Management Interface (AMI) values.  (Note: If you don’t have asterisk running you can skip this step.)  These properties are for Asterisk Management Interface (AMI)
-{{{
-    ami.host=ASTERISK_HOSTNAME
-    ami.port=5038
-    ami.username=<your_ami_username>
-    ami.password=<your_ami_password>
-}}}
-  1. Edit {{{TOOLS_DIR\bbb-server\webapps\conference\conferences\conferences.xml}}} to create conference rooms. Make sure <name> has an equivalent entry in your Asterisk's {{{meetme.conf}}} file.  You can use the default settings for now.
-{{{
     <conference-room>
         <name>85101</name>
         <mod-password>modpass</mod-password>
         <view-password>viewpass</view-password>
     </conference-room>
+</conference-rooms> 	
+}}}
+
+Next, we need to edit {{{modules.xml}}}.  This XML specifies for the BigBlueButton client the host name for the Red5 server and the URL to upload slides to the tomcat server.
+
+  1. Open {{{TOOLS_DIR\tomcat\webapps\ROOT\client\conf\modules.xml}}} with an editor.
+  1. Change the value of {{{localhost}}} in the attribute {{{uri}}} point to {{{HOSTNAME}}}.  
+  1. Change the value of {{{localhost}}} in the attribute {{{host}}} to point to {{{HOSTNAME:8080}}} (you need to specify {{{8080}}} if you have tomcat running on its default port).  For example, if {{{HOSTNAME}}} for your machine is 192.168.0.150, this file should contain the following values:
+{{{
+<modules>
+	<module name="VideoModule" url="VideoModule.swf" uri="rtmp://localhost/oflaDemo" />
+	<module name="ChatModule" url="ChatModule.swf" uri="rtmp://localhost/chatServer" />
+	<module name="ViewersModule" url="ViewersModule.swf" uri="rtmp://localhost/conference" />
+	<module name="ListenersModule" url="ListenersModule.swf" uri="rtmp://localhost/astmeetme" />
+	<module name="PresentationModule" url="PresentationModule.swf" 
+		uri="rtmp://92.168.0.150/presentation" host="http://92.168.0.150:8080" />
+</modules>
 }}}
 
 
-= Start Servers =
+== Login Check ==
+
+At this point we have installed enough components to login.  First, let's make sure all the servers are running.
 
 == Start activeMQ server ==
 If not already running, start the activeMQ server.
@@ -144,15 +175,74 @@ If not already running, start the tomcat server.
   1. Open a new command window.
   1. Change directory to {{{TOOLS_DIR\bbb-server}}} 
   1. type {{{red5.bat}}}
- 
-This will start the red5 server.  
 
-= Launch BigBlueButton client. =
-  1. Using a web browser, open the URL {{{http://HOSTNAMEL8080/client/BigBlueButton.html}}} (tomcat is case sensitive).  You should see the BigBlueButton client login.
+Note: the BigBlueButton server (Red5 server) takes about 10 seconds to startup (depending on the speed of your machine).  Now, open http://HOSTNAME:8080/client/BigBlueButton.html (tomcat is case sensitive) and login with your name, conference ID {{{85115}}}, and password {{{modpass}}}.
 
-Login with
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/real_login.png
+
+You should see the main screen.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/first_login_success.png
+
+At this point, you can start multiple clients from multiple browser and chat.  You can also share your web cams.  However, before you can upload slides, you'll need to configure the {{{bigbluebutton.war}}} servlet.
+
+
+== Configure bigbluebutton.war ==
+
+This servlet accepts the upload of PDF slides from the client.  It uses pdftk and pdf2swf to convert the uploaded PDF file into individual SWF images that the BigBlueButton client can display to users.
+
+  1. Download bigbluebutton.war from [http://code.google.com/p/bigbluebutton/downloads/list]
+  1. Put into {{{TOOLS_DIR\tomcat\webapps}}}.
+  1. Start the tomcat server (no need to restart if it's already running).  You'll see in the tomcat server console that it's unpacking the WAR file into the webapps directory).
+  1. After the unpacking is finished, edit {{{TOOLS_DIR\tomcat\webapps\bigbluebutton\WEB-INF\bigbluebutton.properties}}} to point to the location of pdf2swf, pdftk, and the upload directory.  If you've been using the suggested defaults in this guide, you can copy and paste the following configuration:
 {{{
-    name: <your name>
-    Conference ID: 85101
-    password: modpass
+# Define these to prevent warning messages   
+openoffice.host=localhost
+openoffice.port=8100
+
+# Edit to point to your pdf2swf executable
+swftoolLocation=c:/tools/swftools/pdf2swf
+
+# Edit to point to your pdftk executable
+pdfExtractor=c:/tools/pdftk/pdftk
+
+# The base directory where uploaded slides are extracted
+presBaseDirectory=c:/temp/uploads
+extractedFolder=extracted
 }}}
+
+
+== Try uploading a PDF file ==
+
+To upload a PDF, you need to make yourself presenter.  First, click on your name to highligh it, then click the Make Presenter button.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/make_presenter_step1.png
+
+Next, click the Upload PDF button.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/make_presenter_step2.png
+
+Next, click the '+' button to select a PDF file to upload.  If you don't have one ready, there's one installed with Tomcat in {{{TOOLS_DIR\tomcat\webapps\docs\architecture\requestProcess\requestProcess.pdf}}}.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/make_presenter_step3.png
+
+Click Upload button. 
+
+You should see the slides converting, then displayed.
+
+
+
+== Troubleshooting ===
+
+=== Security Error on Upload of slides ===
+
+If you get a security error when trying to upload slides 
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/security_error.png
+
+then check the value for {{{host}}} in {{{TOOLS_DIR\tomcat\webapps\ROOT\client\conf\modules.xml}}}.  For example, if this value is {{{http://92.168.0.150:8080}}}, then try entering that URL into your browser.  You should get the welcome page for the tomcat server.
+
+=== Upload is successful, but there are no converting 1 of N, 2 of N messages ===
+
+Try shutting down the activeMQ, tomcat, and BigBlueButton servers.  Then start activeMQ first, then tomcat and BigBlueButton servers.  Try again.
+
