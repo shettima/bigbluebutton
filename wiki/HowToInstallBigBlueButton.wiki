@@ -142,12 +142,12 @@ Next, we need to edit {{{modules.xml}}}.  This XML specifies for the BigBlueButt
   1. Change the value of {{{localhost}}} in the attribute {{{host}}} to point to {{{HOSTNAME:8080}}} (you need to specify {{{8080}}} if you have tomcat running on its default port).  For example, if {{{HOSTNAME}}} for your machine is 192.168.0.150, this file should contain the following values:
 {{{
 <modules>
-	<module name="VideoModule" url="VideoModule.swf" uri="rtmp://localhost/oflaDemo" />
-	<module name="ChatModule" url="ChatModule.swf" uri="rtmp://localhost/chatServer" />
-	<module name="ViewersModule" url="ViewersModule.swf" uri="rtmp://localhost/conference" />
-	<module name="ListenersModule" url="ListenersModule.swf" uri="rtmp://localhost/astmeetme" />
+	<module name="VideoModule" url="VideoModule.swf" uri="rtmp://192.168.0.150/oflaDemo" />
+	<module name="ChatModule" url="ChatModule.swf" uri="rtmp://192.168.0.150/chatServer" />
+	<module name="ViewersModule" url="ViewersModule.swf" uri="rtmp://192.168.0.150/conference" />
+	<module name="ListenersModule" url="ListenersModule.swf" uri="rtmp://192.168.0.150/astmeetme" />
 	<module name="PresentationModule" url="PresentationModule.swf" 
-		uri="rtmp://92.168.0.150/presentation" host="http://92.168.0.150:8080" />
+		uri="rtmp://192.168.0.150/presentation" host="http://192.168.0.150:8080" />
 </modules>
 }}}
 
