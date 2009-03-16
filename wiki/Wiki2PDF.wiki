@@ -1,8 +1,48 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= Objective=
 
-Add your content here.
+This aspect of BBB is to be designed to make it seamless to convert wiki pages or for that matter any html page to pdf presentation style slides. 
+
+=Background=
+
+There has always been a need to for a more interactive lecture experience. Part of this experience giving the students a chance to make additions and corrections to lecture slides. The introduction of wiki pages made al this possible. But just before a lecture comes the issue where the professor has to edit his current slide set to conform to the content and alterations of the wiki page. Wouldn't it be nice if all this could be done the mere click of a button.
+
+In a fast technologically advancing world like ours, going online for information now becoming the choice over looking through books. In such professors and other lectures now hold information online about their research. Wouldn't it be great to extend this web content to include lecture notes without having to draft lecture slides before a lecture.
+
+This aspect of BBB makes all this possible.
+
+=Introduction=
+
+
+=Features and Requirements=
+
+
+=Design=
+
+
+=Design Decisions=
+
+*Why PDF?*
+ - The BBB's Red5 server already had a scheme for taking PDF files and converting them to SWF for display.
+
+*Converting from HTML*
+- It was initially wanted for the conversion to be from wiki markups. The problems associated with this would be vast variety of wiki mark ups out there, and the ever increasing tags associated with them. being that wiki markups are displayed as Hypertext in web pages anyway it was better to just convert from hypertext. 
+An upside to this decision is now we can convert any webpage not just wiki pages.
+
+*Breaking up the conversion process*
+
+
+*Why iText?*
+
+
+*Why convert to an intermediary format?*
+
+
+*Why not use HTML Tags in intermediary format?*
+
+
+*Why a log file?*
 
 
 = Details =
