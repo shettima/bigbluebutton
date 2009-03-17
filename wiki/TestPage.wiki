@@ -82,9 +82,9 @@ ava:51)
 
 ==*Plan for next week*==
 
-  #Solve the problem with running grails apps and get more familiar with grails.
-  #Download the BBB_web source codes.
-  #Write some basic unit test cases for the BBB-source code
+  # Solve the problem with running grails apps and get more familiar with grails.
+  # Download the BBB_web source codes.
+  # Write some basic unit test cases for the BBB-source code
   
 
 Add your content here.  Format your content with:
