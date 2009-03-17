@@ -25,6 +25,66 @@ Add your content here.
   ==_Details_==
   
   ===*Installing Grails:*===
+  # Note: you have to have JDK 1.5.0.x installed and you JAVA_HOME is pointing to it.
+  #1- You can download Grails from the following location http://grails.org/Download
+  #2- Unzip the files to the location where you want Grails to be installed
+  #3- Go to Control Panel->System->Advanced settings-> Environment variables and add a GRAILS_HOME to your system environment variables. Set the variables pointing to where grails is installed.
+  #4- Add GRAILS_HOME\bin to your path.
+
+  ===*Problems*===
+  # Whenever I try to run the application I created with grails I get this error:
+Base Directory: C:\Users\Hishamo\gTunes
+Running script C:\tools\Grails\grails-1.1\scripts\RunApp.groovy
+Environment set to development
+  [groovyc] Compiling 1 source file to C:\Users\Hishamo\.grails\1.1\projects\gTunes\classes
+[native2ascii] Converting 11 files from C:\Users\Hishamo\gTunes\grails-app\i18n to C:\Users\Hishamo\
+.grails\1.1\projects\gTunes\resources\grails-app\i18n
+Error executing script RunApp: : Error starting Sun's native2ascii:
+gant.TargetExecutionException: : Error starting Sun's native2ascii:
+        at gant.Gant$_dispatch_closure4.doCall(Gant.groovy:331)
+        at gant.Gant$_dispatch_closure6.doCall(Gant.groovy:334)
+        at gant.Gant$_dispatch_closure6.doCall(Gant.groovy)
+        at gant.Gant.withBuildListeners(Gant.groovy:344)
+        at gant.Gant.this$2$withBuildListeners(Gant.groovy)
+        at gant.Gant$this$2$withBuildListeners.callCurrent(Unknown Source)
+        at gant.Gant.dispatch(Gant.groovy:334)
+        at gant.Gant.this$2$dispatch(Gant.groovy)
+        at gant.Gant.invokeMethod(Gant.groovy)
+        at gant.Gant.processTargets(Gant.groovy:495)
+        at gant.Gant.processTargets(Gant.groovy:480)
+Caused by: : Error starting Sun's native2ascii:
+        at org.apache.tools.ant.taskdefs.optional.native2ascii.SunNative2Ascii.run(SunNative2Ascii.j
+ava:67)
+        at org.apache.tools.ant.taskdefs.optional.native2ascii.DefaultNative2Ascii.convert(DefaultNa
+tive2Ascii.java:54)
+        at org.apache.tools.ant.taskdefs.optional.Native2Ascii.convert(Native2Ascii.java:268)
+        at org.apache.tools.ant.taskdefs.optional.Native2Ascii.execute(Native2Ascii.java:227)
+        at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:105)
+        at org.apache.tools.ant.Task.perform(Task.java:348)
+        at _GrailsPackage_groovy$_run_closure2_closure13.doCall(_GrailsPackage_groovy:108)
+        at _GrailsPackage_groovy$_run_closure2_closure13.doCall(_GrailsPackage_groovy)
+        at _GrailsSettings_groovy$_run_closure10.doCall(_GrailsSettings_groovy:269)
+        at _GrailsPackage_groovy$_run_closure2.doCall(_GrailsPackage_groovy:107)
+        at RunApp$_run_closure1.doCall(RunApp.groovy:28)
+        at gant.Gant$_dispatch_closure4.doCall(Gant.groovy:324)
+        ... 10 more
+Caused by: java.lang.ClassNotFoundException: sun.tools.native2ascii.Main
+        at org.codehaus.groovy.tools.RootLoader.findClass(RootLoader.java:156)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        at org.codehaus.groovy.tools.RootLoader.loadClass(RootLoader.java:128)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Unknown Source)
+        at org.apache.tools.ant.taskdefs.optional.native2ascii.SunNative2Ascii.run(SunNative2Ascii.j
+ava:51)
+        ... 21 more
+
+==*Plan for next week*==
+
+  #Solve the problem with running grails apps and get more familiar with grails.
+  #Download the BBB_web source codes.
+  #Write some basic unit test cases for the BBB-source code
   
 
 Add your content here.  Format your content with:
