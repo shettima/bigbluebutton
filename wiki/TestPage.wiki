@@ -13,10 +13,10 @@ Add your content here.
 = Details =
 *Using Grails web-development framework for unit test development*
 
-  _Work achieved this week:_
-  > Installed Grails into the development enviroment
-  > Wrote a simple application in grails.
-  > Wrote a basic unit test case to test the application wrote
+  *_Work achieved this week:_
+  *> Installed Grails into the development enviroment
+  *> Wrote a simple application in grails.
+  *> Wrote a basic unit test case to test the application wrote
 
   _Roadblocks_
   > Was not able to run the grails application.
