@@ -33,6 +33,8 @@ The conversion from Bluetooh to Java is currently being researched. Several API 
 
 == To do ==
 
+- Making a sensor bar and LED pen
+
 - Test Bluetooth communication with avialable flash based programs
 
 - Write Actionscript for basic interface with Wiimote
@@ -48,3 +50,9 @@ The conversion from Bluetooh to Java is currently being researched. Several API 
 This particular Bluetooth adapter comes with a cd of drivers. These drivers have proven to not work with the Wiimote. Research into these drivers has revealed that they do not allow the Wiimote to 'pair' to the user's PC, although the Wiimote is found using the scan feature. 
 
 The current solution has been to simply plug in the USB adapter and (if using Windows XP /2000) to allow Windows to find and install the drivers automatically. Once the drivers are installed, the Wiimote can be turned on by pressing the 1 & 2 buttons at the same time. By selecting the Bluetooth symbol that appears in the task bar the user can now select pairing options and scan for Bluetooth devices. The Wiimote should appear and once selected, it should pair to the PC.
+
+== WiiFlash ==
+
+Achieving a connection with the WiiFlash server software from the link noted above requires that the user hold continuously press the 1 & 2 buttons on the Wiimote while opening the server .exe, even after a Bluetooth connection to the PC has been achieved.
+
+This is necessary due to the fact that after a short time the Wiimote goes into hibernation and WiiFlash does not see it.
