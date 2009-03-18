@@ -56,7 +56,7 @@ The reason for this is that SIPUser.java assumes red5 was started under a "wrapp
  
  1. Edit webapps/sip/WEB-INF/classes/logback.xml with this change
    {{{
-     <File>logs/sip.log</File>
+     <File>log/sip.log</File>
    }}}
  1. Create {{{RED5_HOME/wrapper/log}}} folder.
  1. Run wrapper/red5.bat
