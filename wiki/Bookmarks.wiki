@@ -123,4 +123,6 @@
 
 == Fitnesse ==
  * http://hartsock.blogspot.com/2007/08/getting-fit-and-groovy.html
+ * http://www.grails-exchange.com/files/Heritier-Robini-GrailsInAgileEntrepriseEnvironment.pdf
+
  
