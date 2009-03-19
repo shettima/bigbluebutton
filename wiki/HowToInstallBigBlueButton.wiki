@@ -80,7 +80,7 @@ If you've been following step-by-step, at this point your TOOLS_DIR looks like t
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_win/folders_layout.png
 
 
-OK, let's start installing the BigBlueButton specific components.
+(The JRE is automatically installed by the JDK, but we'll be using the JDK.)  OK, let's start installing the BigBlueButton specific components.
 
 
 
