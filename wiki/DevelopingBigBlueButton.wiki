@@ -97,10 +97,13 @@ beans.presentationService.imageMagick=C:/ImageMagick-6.4.8-Q16
 beans.presentationService.presentationDir=c:/temp/bigbluebutton
 }}}
  1. The open a shell/command window and type {{{grails run-app}} to run the application.
+ 1. Open your browser and go to http://localhost:8080/bigbluebutton
+ 1. Login using default accounts in grails-app/conf/Bootstrap.groovy
+ 1. Create and schedule a conference
 
 == Starting !BigBlueButton ==
  1. Open a command window, cd to your ActiveMQ install from instruction [HowToInstallBigBlueButton here].
  1. Open a command window and cd to your {{{RED5_HOME/wrapper}}} directory. Run {{{red5.bat}}}.
 
 == Starting the Client ==
- 1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference.
+ 1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference using information you created when scheduling.
