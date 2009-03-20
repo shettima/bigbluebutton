@@ -58,7 +58,7 @@ Read this [http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Gui
  1. When testing your changes on chatServer, stop the server under {{{RED5_HOME}}}. Compile and deploy {{{bigbluebutton-apps}}} by right-clicking "deploy" on build.xml as mentioned in !BigBlueButton Apps instruction above.
  1. To test the client, just follow the "Starting the Client" instruction above.
 
-= Developing the NEW BigBlueButton =
+= Developing the NEW !BigBlueButton =
 *NOTE:* These are instructions to build and develop BigBlueButton in branches/developers/ritzalam. The plan is to merge this into trunk in the next couple of weeks.
 
 = Introduction =
@@ -100,9 +100,7 @@ beans.presentationService.presentationDir=c:/temp/bigbluebutton
 
 == Starting !BigBlueButton ==
  1. Open a command window, cd to your ActiveMQ install from instruction [HowToInstallBigBlueButton here].
- 1. Open another command window, cd to Tomcat and deploy {{{bigbluebutton.war}}} that was generated when you compiled {{{bigbluebutton-servlet }}} above following instruction [HowToInstallBigBlueButton here].
- 1. Open a command window and cd to your {{{RED5_HOME}}} directory. Run {{{red5.bat}}} to start bigbluebutton-server.
+ 1. Open a command window and cd to your {{{RED5_HOME/wrapper}}} directory. Run {{{red5.bat}}}.
 
 == Starting the Client ==
  1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference.
-
