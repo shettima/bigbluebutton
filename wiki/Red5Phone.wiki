@@ -14,9 +14,8 @@ This page provides steps to run [http://code.google.com/p/red5phone/ Red5Phone],
     You can get the jetty libs from http://red5.googlecode.com/svn/repository/jetty/ Remove the old jetty jar versions. Ignore the update jar files from hotfix link as we are only interested in the jetty jars.
  1. Download the red5.jar from the red5phone site (http://red5.4ng.net/red5.jar). Put it in {{{RED5_HOME}}} and name it red5-sip-0.7.jar so as not to overwrite the original red5.jar
  1. Download the sip app (http://red5.4ng.net/sip.zip) and extract it into {{{RED5_HOME/webapps}}}
- 1. Check if there is a {{{RED5_HOME/wrapper}}} folder. If not, create it.
- 1. Copy {{{RED5_HOME/red5.bat}}} to {{{RED5_HOME/wrapper}}}.
- 1. Edit the {{{RED5_HOME/wrapper/red5.bat}}} and change 
+ 1. Check if there is a {{{RED5_HOME/wrapper}}} folder. If not, create it. Delete everything inside the wrapper folder.
+ 1. Copy {{{RED5_HOME/red5.bat}}} to {{{RED5_HOME/wrapper}}}.  1. Edit the {{{RED5_HOME/wrapper/red5.bat}}} and change 
   {{{
     "%JAVA_HOME%/bin/java" -Djava.security.manager -Djava.security.policy=conf/red5.policy -cp red5.jar;conf;bin org.red5.server.Standalone
   }}}
