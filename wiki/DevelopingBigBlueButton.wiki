@@ -7,7 +7,6 @@ First, make sure you can run !BigBlueButton by following the instructions [HowTo
 Once you got that working, let's configure your development environment.
 
  1. Make sure you have created JAVA_HOME environment variable.
- 1. Create a directory where you want the built Red5/!BigBlueButton will be deployed. For example, {{{c:\red5}}} and create and environment variable called RED5_HOME pointing to this directory.
  1. Install Ant [http://ant.apache.org] and create an ANT_HOME environment variable.
  1. Download Eclipse IDE for Java Developers from [http://www.eclipse.org/downloads/]
  1. Download Flex Builder Eclipse Plugin from [https://www.adobe.com/cfusion/tdrc/index.cfm?product=flex]. You need to create an account if you don't have one. You may also install the standalone Flex Builder available at the Adobe website.
