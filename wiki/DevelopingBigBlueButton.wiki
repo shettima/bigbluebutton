@@ -85,6 +85,7 @@ Once you got that working, let's configure your development environment.
 == !BigBlueButton Web ==
  1. Install MySQL and create database using commands in INSTALL file.
  1. Install [http://www.swftools.org SWFTOOLS] in e.g. swftools directory and [www.imagemagick.org ImageMagick] in e.g. imagemagick and [http://www.ghostscript.com GhostScript] 
+ 1. Install GRAILS 1.0.4 (http://www.grails.org/1.0.4+Release+Notes) and create GRAILS_HOME env variable as well as add it to your PATH
  1. Copy grails-app/bigbluebutton.properties to your home directory {{{${USER_HOME}/.bigbluebutton/bigbluebutton.properties}}} and edit these properties with the correct values
 
 {{{
