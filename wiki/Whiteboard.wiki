@@ -35,9 +35,11 @@ The conversion from Bluetooh to Java is currently being researched. Several API 
 
 - Making a sensor bar and LED pen
 
+- Integration of this standalone application with the BBB project.
+
 == Current Items ==
 
-- Currently, we are writing the code that which will capture the presenter's interaction through the Wiimote on a whiteboard. There are 3 aspects considered so far are
+Currently, we are writing the code that which will capture the presenter's interaction through the Wiimote on a whiteboard. There are 3 aspects considered so far are
 
 Calibration:
 This is needed to specify the area of the whiteboard and is necessary for scaling and boundary issues. The current protocol for this is to have the user touch the LED pen to the four corners of the board in a specific order. This has been completed but needs testing and bulletproofing as we are waiting on the hardware.
@@ -48,8 +50,6 @@ Once the area of the whiteboard has been determined, the flash application will 
 Displaying
 Once the previous two items are completed the flash application will be able to accurately represent the lecturers intentions. Now that information has been scaled down and is within the boundaries they will appear in the window. 
 
-
-- Write Actionscript for basic interface with Wiimote
 
 == Done ==
 
