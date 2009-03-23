@@ -35,13 +35,28 @@ The conversion from Bluetooh to Java is currently being researched. Several API 
 
 - Making a sensor bar and LED pen
 
-- Test Bluetooth communication with avialable flash based programs
+== Current Items ==
+
+- Currently, we are writing the code that which will capture the presenter's interaction through the Wiimote on a whiteboard. There are 3 aspects considered so far are
+
+Calibration:
+This is needed to specify the area of the whiteboard and is necessary for scaling and boundary issues. The current protocol for this is to have the user touch the LED pen to the four corners of the board in a specific order. This has been completed but needs testing and bulletproofing as we are waiting on the hardware.
+
+Scaling:
+Once the area of the whiteboard has been determined, the flash application will display the contents at an equivalent ratio to the board. Therefore appropriate scaling algorithms need to be written. This is were our attention is directed towards at the moment.
+
+Displaying
+Once the previous two items are completed the flash application will be able to accurately represent the lecturers intentions. Now that information has been scaled down and is within the boundaries they will appear in the window. 
+
 
 - Write Actionscript for basic interface with Wiimote
 
 == Done ==
 
-- Achieve connection between PC and Wiimote
+=== Achieve connection between PC and Wiimote ===
+
+We are now able to get the Wiimote talking to the computer and register button events coming from the Wiimote in a .swf file. 
+
 
 = Connecting and Troubleshooting the Wiimote =
 
@@ -56,3 +71,5 @@ The current solution has been to simply plug in the USB adapter and (if using Wi
 Achieving a connection with the WiiFlash server software from the link noted above requires that the user hold continuously press the 1 & 2 buttons on the Wiimote while opening the server .exe, even after a Bluetooth connection to the PC has been achieved.
 
 This is necessary due to the fact that after a short time the Wiimote goes into hibernation and WiiFlash does not see it.
+
+It should also be noted that each time you close the Wiiflash server, it is necessary to remove the Wiimote from the list of Bluetooth devices and add it again before restarting the server.
