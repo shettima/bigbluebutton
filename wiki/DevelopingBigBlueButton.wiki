@@ -77,7 +77,7 @@ Once you got that working, let's configure your development environment.
  1. Checkout bigbluebutton-apps, bigbluebutton-web, and bigbluebutton-client from branches/developers/ritzalam using this [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=rr1TIx instruction] from subclipse.
 
 == !BigBlueButton Apps ==
- 1. Install groovy 1.5.6 (http://groovy.codehaus.org/Download), add GROOVY_HOME env variable and GROOVY_HOME\bin in your PATH
+ 1. Install groovy 1.5.6 (http://groovy.codehaus.org/Download), add GROOVY_HOME env variable and %GROOVY_HOME%\bin in your PATH
  1. Copy build.properties to your home directory and edit red5_home of your copy to point to {{{RED5_HOME}}}.
  1. Open build.xml under bigbluebutton-apps within eclipse. On the Outline Window, right-click on {{{resolve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-apps.
  1. Configure your build path to include the jar files in the lib folder.
