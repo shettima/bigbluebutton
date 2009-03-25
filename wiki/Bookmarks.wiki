@@ -126,4 +126,8 @@
  * http://hartsock.blogspot.com/2007/08/getting-fit-and-groovy.html
  * http://www.grails-exchange.com/files/Heritier-Robini-GrailsInAgileEntrepriseEnvironment.pdf
 
+== Agile ==
+ * http://www.infoq.com/minibooks/domain-driven-design-quickly
+ * http://www.domaindrivendesign.org/books/index.html
+ * http://www.versionone.com/Resources/AgileDevelopment.asp
  
