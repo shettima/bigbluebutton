@@ -122,6 +122,7 @@
  
 == Asterisk ==
  * http://godson.in/how-to-install-asterisk-on-ubuntu
+ * [http://www.orecx.com/web/ Recording]
 
 == Fitnesse ==
  * http://hartsock.blogspot.com/2007/08/getting-fit-and-groovy.html
