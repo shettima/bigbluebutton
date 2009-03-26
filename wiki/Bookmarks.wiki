@@ -55,6 +55,7 @@
  * http://jira.red5.org/confluence/display/docs/Chapter+20.+Testing+Red5
  * http://jira.red5.org/confluence/display/codecs/Data+Type+Mappings
  * http://jira.red5.org/confluence/display/appserver/Benchmark+Profiler
+ * http://jira.red5.org/confluence/display/docs/Logging+Setup
 
 = Some links =
  * http://code.google.com/p/smartypants-ioc/
