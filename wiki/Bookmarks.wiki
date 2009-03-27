@@ -9,6 +9,8 @@
   * [http://code.google.com/p/zipwire-rest/wiki/HighriseWalkthrough]
   * [http://www.avchat.net/blog/?p=19 Screen sharing in Flash video chat applications] 
   * http://www.wizhelp.com/flashlight-vnc/features.html
+  * http://www.ioncannon.net/php/110/using-flash-video-metadata-to-display-annotations/
+
 
 == S5 ==
  * [http://www.netzgesta.de/S5/ to S5 • Reloaded]
