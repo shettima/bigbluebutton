@@ -135,3 +135,8 @@
  * http://www.domaindrivendesign.org/books/index.html
  * http://www.versionone.com/Resources/AgileDevelopment.asp
  
+== Tools ==
+ * http://mmonit.com/
+ * http://reductivelabs.com/products/puppet/
+ * http://wiki.smartfrog.org/wiki/display/sf/SmartFrog+Home
+ * http://www.opennms.org/index.php/Main_Page
