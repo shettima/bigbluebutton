@@ -130,6 +130,7 @@
  * http://hartsock.blogspot.com/2007/08/getting-fit-and-groovy.html
  * http://www.grails-exchange.com/files/Heritier-Robini-GrailsInAgileEntrepriseEnvironment.pdf
  * [http://forge.octo.com/confluence/display/ATG/Tutorial Tutorial showing how to test Grails application with FitNesse]
+ * http://www.fitnesse.info/fixturegallery
 
 == Agile ==
  * http://www.infoq.com/minibooks/domain-driven-design-quickly
