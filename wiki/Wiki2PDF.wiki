@@ -44,6 +44,23 @@ An upside to this decision is now we can convert any webpage not just wiki pages
 
 *Why a log file?*
 
+= March 3, 2004 =
+Here are some findings when taking a closer look at the wiki syntax.
+
+== Experimentation with Wiki Syntax ==
+
+The question is should we convert text from wiki markup to slides, or from HTML to slides?
+
+=== Google Code ===
+To experiment, let's look at a very simple wiki markup (this is the sample Wiki text given in Google Code).
+
+{{{
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
 
 = Details =
 
@@ -51,3 +68,126 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+}}}
+
+Here's the HTML output (after running through tidy -i) from Google Code:
+
+{{{
+  <h1><a name="Introduction">Introduction</h1>
+
+  <p>Add your content here.</p>
+
+  <h1><a name="Details">Details</h1>
+
+  <p>Add your content here. Format your content with:</p>
+
+  <ul>
+    <li>Text in <strong>bold</strong> or <i>italic</i></li>
+
+    <li>Headings, paragraphs, and lists</li>
+
+    <li>Automatic links to other wiki pages</li>
+  </ul>
+
+}}}
+
+=== TikiWiki ===
+
+The output from Google Code looks OK; however, if we try pasting the same wiki markup into TikiWiki, the markup is not recognized:
+
+{{{
+  <div class="wikitext">
+    <ol>
+      <li>summary One-sentence summary of this page.</li>
+    </ol><br>
+    = Introduction =<br>
+    <br>
+    Add your content here.<br>
+    <br>
+    <br>
+    = Details =<br>
+    <br>
+    Add your content here. Format your content with:<br>
+    * Text in *bold* or _italic_<br>
+    * Headings, paragraphs, and lists<br>
+    * Automatic links to other wiki pages<br>
+  </div>
+
+}}}
+
+The problem is most of the Google Code's Wiki markup is not being recognized by TikiWiki.  So, if we first convert the markup into TikiWiki's syntax, here's how it looks:
+
+{{{
+#summary One-sentence summary of this page.
+
+! Introduction 
+
+Add your content here.
+
+
+! Details 
+
+Add your content here.  Format your content with:
+* Text in __bold__ or ''italic''
+* Headings, paragraphs, and lists
+* Automatic links to other wiki pages
+}}}
+
+Now, pasting this converted markup into TikiWiki, we get the following similar HTML output (again cleaned up a bit with tidy -i).
+
+{{{
+  <div class="wikitext">
+    <ol>
+      <li>summary One-sentence summary of this page.</li>
+    </ol><br>
+
+    <h2 class="showhide_heading" id="_Introduction">
+    Introduction</h2><br>
+    Add your content here.<br>
+    <br>
+    <br>
+
+    <h2 class="showhide_heading" id="_Details">Details</h2><br>
+    Add your content here. Format your content with:<br>
+
+    <ul>
+      <li>Text in <b>bold</b> or <i>italic</i></li>
+
+      <li>Headings, paragraphs, and lists</li>
+
+      <li>Automatic links to other wiki pages</li>
+    </ul>
+  </div>
+}}}
+
+This output from TikiWiki is similar to the output from Google Code's wiki.
+
+== Comments ==
+One problem is the diversity of wiki syntax: there is no common standard between the multitude of wiki engines.
+
+Another problem is the HTML output, which is a bit more standard but, as show above, has variations.
+
+=== Next steps ===
+The HTML outputs may have more in common than the source wiki syntax.
+
+To explore this, do the following:
+ # Create an account on the TalentFirst Wiki and Wikipedia
+ # Look at slides 1-7, 18, 30 (nine pages all together) from Tony's presentation http://www.talentfirstnetwork.org/wiki/images/7/73/Ecosystem_approach_to_commercialization_March_28v10.pdf
+
+Using these nine pages as a baseline:
+ # encode them into TikiWiki Format (you can create a sample page on Talent First Network wiki)
+ # encode them into Google Code Wiki
+ # encode them into MediaWiki (use wikipedia)
+
+Once you've encoded them:
+ # Compare the output HTML from each of the wiki engines
+ # Comment on your approach to parsing the HTML output.
+ 
+Put your finds at the bottom of this page.
+
+=== Links ===
+
+ * TikiWiki syntax: [http://tikiwiki.org/tiki-index.php?page=RFCWiki]
+ * Wikipedia markup: [http://en.wikipedia.org/wiki/Wikipedia:Cheatsheet]
+ * HTML2Wiki converter: [http://search.cpan.org/~diberri/HTML-WikiConverter-0.68/lib/HTML/WikiConverter.pm]
+ * HTML tidy: http://tidy.sourceforge.net/
