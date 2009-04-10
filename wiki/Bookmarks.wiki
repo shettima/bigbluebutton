@@ -144,3 +144,6 @@
  * http://reductivelabs.com/products/puppet/
  * http://wiki.smartfrog.org/wiki/display/sf/SmartFrog+Home
  * http://www.opennms.org/index.php/Main_Page
+
+== JMX ==
+ * http://marxsoftware.blogspot.com/2008/06/remote-jmx-with-and-without-spring-and.html
