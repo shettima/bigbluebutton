@@ -60,6 +60,7 @@
  * http://jira.red5.org/confluence/display/docs/Logging+Setup
  * http://red5wiki.com/wiki/SteamStream
  * http://www.technogumbo.com/projects/red5-tuning-application/index.php
+ * http://gregoire.org/2009/04/07/on-demand-room-scope-creation/ 
 
 = Some links =
  * http://code.google.com/p/smartypants-ioc/
