@@ -74,7 +74,7 @@ Once you got that working, let's configure your development environment.
  1. Download Flex Builder Eclipse Plugin from [https://www.adobe.com/cfusion/tdrc/index.cfm?product=flex]. You need to create an account if you don't have one. You may also install the standalone Flex Builder available at the Adobe website.
  1. Install subclipse from [http://subclipse.tigris.org/ Subclipse] website. The instruction to install can be found [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA here].
  1. Switch to Subclipse Perspective in Eclipse. Click anywhere inside the SVN Repository window to create a new repository location. Enter {{{http://bigbluebutton.googlecode.com/svn/}}} as the repository location.
- 1. Checkout bigbluebutton-apps, bigbluebutton-web, and bigbluebutton-client from branches/developers/ritzalam using this [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=rr1TIx instruction] from subclipse.
+ 1. Checkout bigbluebutton-apps, bigbluebutton-web, and bigbluebutton-client from trunk using this [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=rr1TIx instruction] from subclipse.
 
 == !BigBlueButton Apps ==
  1. Install groovy 1.5.6 (http://groovy.codehaus.org/Download), add GROOVY_HOME env variable and %GROOVY_HOME%\bin in your PATH
