@@ -86,59 +86,9 @@ ava:51)
   # Download the BBB_web source codes.
   # Write some basic unit test cases for the BBB-source code
   
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
-<head>
-<title>[slide show title]</title>
-<meta name="version" content="S5 1.1" />
-<meta name="generator" content="[generating program]" />
-<meta name="presdate" content="[presentation date]" />
-<meta name="author" content="[author's name]" />
-<meta name="company" content="[author's employer]" />
-<meta http-equiv="Content-Type" content="[content-type]" />
-<meta name="defaultView" content="[value]" />
-<meta name="controlVis" content="[value]" />
-<link rel="stylesheet" href="v11b1/slides.css" type="text/css" media="projection" id="slideProj" />
-<link rel="stylesheet" href="v11b1/outline.css" type="text/css" media="screen" id="outlineStyle" />
-<link rel="stylesheet" href="v11b1/print.css" type="text/css" media="print" id="slidePrint" />
-<link rel="stylesheet" href="v11b1/opera.css" type="text/css" media="projection" id="operaFix" />
-<script src="ui/slides.js" type="text/javascript"></script>
-</head>
-<body>
-
-<div class="layout">
-
-  <div id="controls"></div>
-  <div id="currentSlide"></div>
-  <div id="header">[any header content]</div>
-  <div id="footer">[any footer content]</div>
-  <div class="topleft">[top left layout bit]</div>
-  <div class="topright">[top right layout bit]</div>
-  <div class="bottomleft">[bottom left layout bit]</div>
-  <div class="bottomright">[bottom right layout bit]</div>
-
-</div>
-<div class="presentation">
-
-  <div class="slide">
-  <h1>[slide show title]</h1>
-  <h2>[slide show subtitle]</h2>
-  <h3>[author's name]</h3>
-  <h4>[author's employer]</h4>
-  </div>
-  
-  <div class="slide">
-  <h1>[slide title]</h1>
-  <div class="slidecontent">
-  [slide content]
-  </div>
-  <div class="handout">
-  [extra content not displayed in slide show]
-  </div>
-  </div>
-
-</div>
+== TO DO ==
+  # Upgrad to Grails 1.1?
+  # Create and demo a test for login and logout. This will test AuthController [signIn and SignOut].
+  # Create and demo test for creating a conference. THis will test ConferenceController [create, show]
+  # Create and demo a test for scheduling a conference. This will test ScheduleController [create, show]
+  # Create and demo a test for a user joing the schedule conference. This will test JoinController [signIn, enter]
