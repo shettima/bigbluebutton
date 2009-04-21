@@ -73,3 +73,11 @@ Achieving a connection with the WiiFlash server software from the link noted abo
 This is necessary due to the fact that after a short time the Wiimote goes into hibernation and WiiFlash does not see it.
 
 It should also be noted that each time you close the Wiiflash server, it is necessary to remove the Wiimote from the list of Bluetooth devices and add it again before restarting the server.
+
+== Coding ==
+
+We have tackled the calibration, scaling, and displaying items. However we have found that when it was scaled and calibrated it does not utilize the full window, instead the whiteboard is just limited to the upper left corner. So currently we are working on figuring out why this is so, and as well we are working on resizing the window to fit the appropriate scale, so as to avoid stretching or compressing the content being displayed.
+
+== Pen ==
+
+We have two choices when designing a pen, we can either come up with one that is used right on the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the chalk holder, as we need a working prototype by April 1st.
