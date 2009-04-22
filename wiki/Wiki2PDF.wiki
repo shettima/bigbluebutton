@@ -183,6 +183,7 @@ Once you've encoded them:
  # Compare the output HTML from each of the wiki engines
  # Comment on your approach to parsing the HTML output.
  # Take a look at subversion and check in your code to a branch
+ # Check out lynx (or curl) to download all components of a web page
 
 Put your finds at the bottom of this page.
 
