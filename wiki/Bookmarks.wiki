@@ -115,6 +115,7 @@
  * [http://thevirtualmachine.wordpress.com/2008/11/07/glassfish-v3-and-grails-support/]
  * [http://www.grailstutorials.com/tagging/list/deploy?selectedTag=deploy]
  * [https://addons.mozilla.org/en-US/firefox/addon/2691 Poster]
+ * [http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=mastering+grails]
 
 = Augmented Reality = 
  * [http://drawlogic.com/2008/11/17/as3-augmented-reality-in-flash-and-papervision-3d-flartoolkit/]
