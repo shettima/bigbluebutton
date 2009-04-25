@@ -116,6 +116,9 @@
  * [http://www.grailstutorials.com/tagging/list/deploy?selectedTag=deploy]
  * [https://addons.mozilla.org/en-US/firefox/addon/2691 Poster]
  * [http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=mastering+grails]
+ * [http://www.infoq.com/articles/grails-acegi-integration Securing a Grails Application with Acegi Security]
+ * http://grails.org/AcegiSecurity+Plugin
+
 
 = Augmented Reality = 
  * [http://drawlogic.com/2008/11/17/as3-augmented-reality-in-flash-and-papervision-3d-flartoolkit/]
