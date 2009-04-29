@@ -57,23 +57,6 @@ Once the previous two items are completed the flash application will be able to 
 
 We are now able to get the Wiimote talking to the computer and register button events coming from the Wiimote in a .swf file. 
 
-
-= Connecting and Troubleshooting the Wiimote =
-
-== Rocketfish Bluetooth 2.0 EDR USB Adapter,  Model Number : RF-FLBTAD ==
-
-This particular Bluetooth adapter comes with a cd of drivers. These drivers have proven to not work with the Wiimote. Research into these drivers has revealed that they do not allow the Wiimote to 'pair' to the user's PC, although the Wiimote is found using the scan feature. 
-
-The current solution has been to simply plug in the USB adapter and (if using Windows XP /2000) to allow Windows to find and install the drivers automatically. Once the drivers are installed, the Wiimote can be turned on by pressing the 1 & 2 buttons at the same time. By selecting the Bluetooth symbol that appears in the task bar the user can now select pairing options and scan for Bluetooth devices. The Wiimote should appear and once selected, it should pair to the PC.
-
-== WiiFlash ==
-
-Achieving a connection with the WiiFlash server software from the link noted above requires that the user hold continuously press the 1 & 2 buttons on the Wiimote while opening the server .exe, even after a Bluetooth connection to the PC has been achieved.
-
-This is necessary due to the fact that after a short time the Wiimote goes into hibernation and WiiFlash does not see it.
-
-It should also be noted that each time you close the Wiiflash server, it is necessary to remove the Wiimote from the list of Bluetooth devices and add it again before restarting the server.
-
 == Coding ==
 
 We have tackled the calibration, scaling, and displaying items. However we have found that when it was scaled and calibrated it does not utilize the full window, instead the whiteboard is just limited to the upper left corner. So currently we are working on figuring out why this is so, and as well we are working on resizing the window to fit the appropriate scale, so as to avoid stretching or compressing the content being displayed.
@@ -81,3 +64,43 @@ We have tackled the calibration, scaling, and displaying items. However we have 
 == Pen ==
 
 We have two choices when designing a pen, we can either come up with one that is used right on the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the chalk holder, as we need a working prototype by April 1st.
+
+
+
+
+
+
+= Establishing a Connection between the wiiFlash Server and Wiimote =
+
+These instructions are based on Rocketfish Bluetooth 2.0 EDR USB Adapter,  Model Number : RF-FLBTAD
+
+* 1. Connect the Bluettooth Adapter to the PC.  *
+
+This particular Bluetooth adapter comes with a cd of drivers. These drivers have proven to not work with the Wiimote. Research into these drivers has revealed that they do not allow the Wiimote to 'pair' to the user's PC, although the Wiimote is found using the scan feature. 
+
+The current solution has been to simply plug in the USB adapter and (if using Windows XP /2000) to allow Windows to find and install the drivers automatically. Once the drivers are installed, the Wiimote can be turned on by pressing the 1 & 2 buttons at the same time. 
+
+* 2. Right Click on the the Bluetooth symbol that appears in the task bar and select "Add a Bluetooth Device" *
+
+* 3. Ensure that the Wiimote is ready to be found by pressing the 1 & 2 buttons at the same time on the Wiimote and then click on the checkbox my device is setup and ready to be found. Then click Next. *
+
+* 4. Select the icon titled Nintendo RVL-CNT-01, then click Next. If that icon is unavailable click SearchAgain and make sure you are pressing the 1 & 2 buttons on the Wiimote simultaneously. *
+
+* 5. Select the Option "Don't Use a passkey" and then click Next. *
+
+* 6.It should state that the Bluetooth device was successfully connected to your computer. If so click Finish otherwise repeat these steps starting from 1. *
+
+* 7. Run the "WiiFlashServer 0.4.5.exe" and the Wiimote should rumble indicating a connection has been established, but make sure that you press the 1 & 2 buttons of the Wimote *
+
+
+=== Notes ===
+
+After a short time of inactivity the Wiimote goes into hibernation, therefore when a connection needs to be established it is important that the Wiimote gets woken up and this is done by pressing the 1 & 2 buttons simulatenously. ***
+
+Each time you close the Wiiflash server, it is necessary to remove the Wiimote from the list of Bluetooth devices and add it again before restarting the server. Therefore you can disconnect the Bluetooth adapter and start from step 1 of Establishing a Connection between the wiiFlash Server and Wiimote or you can follow these steps:
+
+* 1. Right click on the bluetooth icon and select Show Bluetooth Devices.*
+
+* 2. Select the icon titled Nintendo RVL-CNT-01 and click Remove.*
+
+* 3. Click Add and continue at Step 3 of Establishing a Connection between the wiiFlash Server and Wiimote *
