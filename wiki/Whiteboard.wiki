@@ -9,65 +9,48 @@ The white board module for the purpose of BigBlueButton is defined as the abilit
 
 Nowadays presentations are not just limited to slides, therefore the main idea behind creating the Whiteboard module is to allow remote users to obtain the full experience as if they were attending the event in person. When the module is complete, the remote user will see a new window being updated in real-time to display what the presenter has written/drawn to the board. 
 
-The events (presenter writing on the white board) will be captured using a Wii controller which will generate a Bluetooth signal that the computer will then take and convert to the desired format. 
+The events (presenter writing on the white board) will be captured using a Wii controller which will generate a Bluetooth signal that the computer will then take and convert to the desired format, which in this case is flash.
 
-There are many approaches to developing such a module. The three being considered are
-
- # When the Bluetooth signal is received it will be converted to Flash then sent to the Red5 server.  
- # When the Bluetooth signal is received it will be converted to Java then sent to the Red5 server. 
- # When the Bluetooth signal is received it will be converted to Java, then converted to flash then sent to the Red5 server. 
 
 == Bluetooth2Flash ==
 
-The conversion from Bluetooh to Flash is currently being researched. An API has been found
+The conversion from Bluetooh to Flash is currently being researched. An API has been found _ http://wiiflash.bytearray.org/ _
 
- * http://wiiflash.bytearray.org/
-
-== Bluetooth2JAVA ==
-
-The conversion from Bluetooh to Java is currently being researched. Several API have been found
-
- * http://code.google.com/p/bluecove/
 
 = Tasks =
 
-== To do ==
+== Current ==
 
-- Making a sensor bar and LED pen
+=== Making a and LED pen/chalkholder ===
 
-- Integration of this standalone application with the BBB project.
+This device is what transmites an infrared signal which is captured by the Wiimote and sent to the PC in bluetooth. We have two choices when designing a pen, we can either come up with one that is used right on the projected image of the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the chalk holder.
 
-== Current Items ==
+=== Integration the BigBlueButton system ===
 
-Currently, we are writing the code that which will capture the presenter's interaction through the Wiimote on a whiteboard. There are 3 aspects considered so far are
+We still need to integrate this standalone application with the already existing BigBlueButton system. The first step is to get our .swf running from a web browser. We are now trying to figure out the security issues regarding accessing ports on the PC. 
 
-Calibration:
-This is needed to specify the area of the whiteboard and is necessary for scaling and boundary issues. The current protocol for this is to have the user touch the LED pen to the four corners of the board in a specific order. This has been completed but needs testing and bulletproofing as we are waiting on the hardware.
+=== Fixing Scaling and Calibration Bugs ===
 
-Scaling:
-Once the area of the whiteboard has been determined, the flash application will display the contents at an equivalent ratio to the board. Therefore appropriate scaling algorithms need to be written. This is were our attention is directed towards at the moment.
-
-Displaying
-Once the previous two items are completed the flash application will be able to accurately represent the lecturers intentions. Now that information has been scaled down and is within the boundaries they will appear in the window. 
+We found that when the input was scaled and calibrated it does not utilize the full window, instead the whiteboard is just limited to the upper left corner. So currently we are working on figuring out why this is so, and as well we are working on resizing the window to fit the appropriate scale, so as to avoid stretching or compressing the content being displayed.
 
 
-== Done ==
+
+== Completed Items ==
 
 === Achieve connection between PC and Wiimote ===
 
-We are now able to get the Wiimote talking to the computer and register button events coming from the Wiimote in a .swf file. 
-
-== Coding ==
-
-We have tackled the calibration, scaling, and displaying items. However we have found that when it was scaled and calibrated it does not utilize the full window, instead the whiteboard is just limited to the upper left corner. So currently we are working on figuring out why this is so, and as well we are working on resizing the window to fit the appropriate scale, so as to avoid stretching or compressing the content being displayed.
-
-== Pen ==
-
-We have two choices when designing a pen, we can either come up with one that is used right on the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the chalk holder, as we need a working prototype by April 1st.
+We are able to get the Wiimote talking to the computer and register button events coming from the Wiimote in a .swf file. 
 
 
+=== Capturing and Displaying using the LED Coordinates == 
 
+We have written the code that captures the presenter's interaction through the Wiimote on a whiteboard. There are 3 aspects we have considered so far 
 
+  * *Calibration:* This is needed to specify the area of the whiteboard and is necessary for scaling and boundary issues. The current protocol for this is to have the user touch the LED pen to the four corners of the board in a specific order.
+
+  * *Scaling:* Once the area of the whiteboard has been determined, the flash application will display the contents at an equivalent ratio to the board. Therefore appropriate scaling algorithms need to be written. 
+
+  * *Displaying:* Once the previous two items are completed the flash application will be able to accurately represent the lecturers intentions. Now that information has been scaled down and is within the boundaries they will appear in the window. 
 
 
 = Establishing a Connection between the wiiFlash Server and Wiimote =
