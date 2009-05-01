@@ -14,12 +14,15 @@ This aspect of BBB makes all this possible.
 
 =Introduction=
 
+This application converts any HTMLpage to pdf slides.
 
 =Features and Requirements=
 
 
-=Design=
+=Issues=
+#cannot convert encripted pages
 
+#
 
 =Design Decisions=
 
