@@ -27,6 +27,8 @@
  * [http://babelmark.bobtfish.net/ Markdown Testbed]
  * [http://attacklab.net/showdown/ Showdown - a JavaScript port of Markdown]
  * [http://rghosh.free.fr/essays/txttopdf.html Generate a PDF book with groovy and iText]
+ * [http://livedocs.adobe.com/flex/3/html/help.html?content=12_Using_Regular_Expressions_12.html Example: A Wiki parser]
+ * [http://code.google.com/p/java-wikipedia-parser/wiki/Introduction java-wikipedia-parser]
 
 == textile ==
  * https://textile-j.dev.java.net/usage.html
