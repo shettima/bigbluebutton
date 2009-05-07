@@ -22,7 +22,33 @@ This application converts any HTMLpage to pdf slides.
 =Issues=
 #cannot convert encripted pages
 
-#
+possible solution:-
+In WTPClient class, after getting the url from the user, do a system run of LYNX or any other command line text web browser, giving it the URL as an argument. this will download the page as a html file and all pictures associated with the page onto the server in a constant folder. 
+After this the html file should be completely read in as a string or string from the file.
+This way we would eliminate the need to build a tcp connection with the url's server and will also solve the next problem of downloading images.
+
+NOTE:- the biggest fallback to this solution is scalability.
+
+#having trouble getting images from web pages
+
+possible solution:- same as above
+
+#cannot extract tables because some web developers use table tags to divide pages instead of using <div>
+
+possible solution:-
+In String preGeneratePres(String html) method in the HTMLtoPDF class, before doing anything count the number of tokens or characters within the body tag and record it. when a table tag is found, count how many tokens or characters within the table tag. if the two counts are very similar then the table tag was just use to divide the screen otherwise its a proper table and should be displayed in the slides.
+
+=instructions=
+
+- download bbb.zip from the downloads tab.
+- unzip it
+*must* - open the WTPClient class and change the port from 1026 to 80 or 8080.
+- run WTPClient from command line giving a url as a single argument.
+
+=editing=
+
+eclipse
+- add iText-2.1.5.jar found in the bbb folder as an external build path.
 
 =Design Decisions=
 
