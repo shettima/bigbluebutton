@@ -148,7 +148,10 @@
  * http://www.infoq.com/minibooks/domain-driven-design-quickly
  * http://www.domaindrivendesign.org/books/index.html
  * http://www.versionone.com/Resources/AgileDevelopment.asp
- 
+ * http://agilesoftwaredevelopment.com/blog/vaibhav/good-user-story-invest
+ * http://pmstudent.com/scrum-in-under-10-minutes/
+ * http://www.mountaingoatsoftware.com/presentations/42-effective-user-stories-for-agile-requirements
+
 == Tools ==
  * http://mmonit.com/
  * http://reductivelabs.com/products/puppet/
