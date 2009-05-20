@@ -33,12 +33,6 @@ Once you got that working, let's configure your development environment.
  1. Login using default accounts in grails-app/conf/Bootstrap.groovy
  1. Create and schedule a conference
 
-== Starting !BigBlueButton ==
- 1. Open a command window, cd to your ActiveMQ install from instruction [HowToInstallBigBlueButton here].
- 1. Open a command window and cd to your {{{RED5_HOME/wrapper}}} directory. Run {{{red5.bat}}}.
-
-== Starting the Client ==
- 1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference using information you created when scheduling.
 
 = Learning Red5 =
 Below are some exercises you can do to learn how to develop Red5 applications.
