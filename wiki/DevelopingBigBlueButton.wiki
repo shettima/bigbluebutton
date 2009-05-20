@@ -20,6 +20,7 @@ Once you got that working, let's configure your development environment.
  1. Copy build.properties to your home directory and edit red5_home of your copy to point to {{{RED5_HOME}}}.  If you are on windows, you'll need to user forward slashes, as in {{{red5_home = c:/tools/Red5-2}}}.
  1. Open build.xml under bigbluebutton-apps within eclipse. On the Outline Window, right-click on {{{resolve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-apps.
  1. Configure your build path to include the jar files in the lib folder.
+ 1. Edit recordingsDirectory=c:/temp/bigbluebutton of {{{webapps/bigbluebutton/WEB-INF/bigblluebutton.properties}}}. This is where the recordings will be saved.
  1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-apps into the {{{RED5_HOME}}} directory you created above.
 
 == !BigBlueButton Web ==
