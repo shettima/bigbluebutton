@@ -2,68 +2,6 @@
 
 = Introduction =
 
-First, make sure you can run !BigBlueButton by following the instructions [HowToInstallBigBlueButton here].
-
-Once you got that working, let's configure your development environment.
-
- 1. Make sure you have created {{{JAVA_HOME}}} environment variable and {{{%JAVA_HOME%\bin}}} is added to your {{{PATH}}}.
- 1. Create a directory where you want the built Red5/!BigBlueButton will be deployed. For example, {{{c:\red5}}} and create and environment variable called RED5_HOME pointing to this directory.
- 1. Install Ant [http://ant.apache.org] and create an ANT_HOME environment variable.
- 1. Download Eclipse IDE for Java Developers from [http://www.eclipse.org/downloads/]
- 1. Download Flex Builder Eclipse Plugin from [https://www.adobe.com/cfusion/tdrc/index.cfm?product=flex]. You need to create an account if you don't have one. You may also install the standalone Flex Builder available at the Adobe website.
- 1. Install subclipse from [http://subclipse.tigris.org/ Subclipse] website. The instruction to install can be found [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA here].
- 1. Switch to Subclipse Perspective in Eclipse. Click anywhere inside the SVN Repository window to create a new repository location. Enter {{{http://bigbluebutton.googlecode.com/svn/trunk/}}} as the repository location.
- 1. Checkout bigbluebutton-apps, bigbluebutton-server, bigbluebutton-client, and bigbluebutton-servlet using this [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=rr1TIx instruction] from subclipse.
-
-= Building !BigBlueButton =
-== !BigBlueButton Server ==
- 1. Switch Eclipse to Java perspective. Open build.xml under bigbluebutton-server within eclipse. On the Outline Window, right-click on {{{retrieve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-server.
- 1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-server into the {{{RED5_HOME}}} directory you created above.
- 1. When successful, right-click on {{{publish}}} and choose {{{Run As -> Ant Build}}}.  This will publish the red5.jar into your local ivy library so that bigbluebutton-apps will be able to get the jar file as dependency.
-
-== !BigBlueButton Apps ==
- 1. Open build.xml under bigbluebutton-apps within eclipse. On the Outline Window, right-click on {{{resolve}}} and choose {{{Run As -> Ant Build}}}. This will resolve all library dependencies for bigbluebutton-apps.
- 1. When successful, right-click on {{{deploy}}} and choose {{{Run As -> Ant Build}}}. This will compile and deploy bigbluebutton-apps into the {{{RED5_HOME}}} directory you created above.
-
-== !BigBlueButton Servlet ==
- 1. Open build.xml under bigbluebutton-servlet within eclipse. On the Outline Window, right-click on {{{create-warfile}}} and choose {{{Run As -> Ant Build}}}. This will create {{{bigbluebutton.war}}} inside bigbluebutton-servlet/dist.
-
-== Starting !BigBlueButton ==
- 1. Open a command window, cd to your ActiveMQ install from instruction [HowToInstallBigBlueButton here].
- 1. Open another command window, cd to Tomcat and deploy {{{bigbluebutton.war}}} that was generated when you compiled {{{bigbluebutton-servlet }}} above following instruction [HowToInstallBigBlueButton here].
- 1. Open a command window and cd to your {{{RED5_HOME}}} directory. Run {{{red5.bat}}} to start bigbluebutton-server.
-
-== Starting the Client ==
- 1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference.
-
-= Learning Red5 =
-Below are some exercises you can do to learn how to develop Red5 applications.
-
-*Exercise 1:*
-Take a look at the chat module on bigbluebutton-client and chatServer on bigbluebutton-server and understand how it works. You can learn about Shared Objects by searching on Google for examples. Or you can click Help->Help Contents and Search "Shared Object" from Eclipse.
-
-*Exercise 2:*
-Modify chat module so that the client sends a message by setting an attribute on the shared object instead of calling a method which is how the current module sends a message to others.
-
-The SharedObject [http://livedocs.adobe.com/flex/3/langref/flash/net/SharedObject.html doc] explains how SharedObject works.
-
-*Exercise 3:* 
-Modify chat module on the client so that when the message begins with "HANDLER", the message is sent to a handler on chatServer which converts the message to UPPERCASE and sets the shared object attribute (you defined on Exercise 2) with the message on the server.
-
-*Exercise 4:*
-Use a job in the server to send the server time every minute to the client.
-
-Read this [http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Guide Migration Guide] to be able to do the above exercises.
-
- 1. When testing your changes on chatServer, stop the server under {{{RED5_HOME}}}. Compile and deploy {{{bigbluebutton-apps}}} by right-clicking "deploy" on build.xml as mentioned in !BigBlueButton Apps instruction above.
- 1. To test the client, just follow the "Starting the Client" instruction above.
-
-----
-= Developing the NEW !BigBlueButton =
-*NOTE:* These are instructions to build and develop BigBlueButton in branches/developers/ritzalam. The plan is to merge this into trunk in the next couple of weeks.
-
-= Introduction =
-
 First, make sure you can run !Red5Phone by following the instructions [Red5Phone here]. We've commented out Red5Phone by default but in case you want to use it, you are already set. However, there is still more work to be done with Red5Phone.
 
 Once you got that working, let's configure your development environment.
@@ -109,3 +47,25 @@ beans.presentationService.presentationDir=c:/temp/bigbluebutton
 
 == Starting the Client ==
  1. From Eclipse, right-click on {{{bigbluebutton-client}}} and choose {{{Run As -> Flex Application}}}. This will start the client where you can login into a conference using information you created when scheduling.
+
+= Learning Red5 =
+Below are some exercises you can do to learn how to develop Red5 applications.
+
+*Exercise 1:*
+Take a look at the chat module on bigbluebutton-client and chatServer on bigbluebutton-server and understand how it works. You can learn about Shared Objects by searching on Google for examples. Or you can click Help->Help Contents and Search "Shared Object" from Eclipse.
+
+*Exercise 2:*
+Modify chat module so that the client sends a message by setting an attribute on the shared object instead of calling a method which is how the current module sends a message to others.
+
+The SharedObject [http://livedocs.adobe.com/flex/3/langref/flash/net/SharedObject.html doc] explains how SharedObject works.
+
+*Exercise 3:* 
+Modify chat module on the client so that when the message begins with "HANDLER", the message is sent to a handler on chatServer which converts the message to UPPERCASE and sets the shared object attribute (you defined on Exercise 2) with the message on the server.
+
+*Exercise 4:*
+Use a job in the server to send the server time every minute to the client.
+
+Read this [http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Guide Migration Guide] to be able to do the above exercises.
+
+ 1. When testing your changes on chatServer, stop the server under {{{RED5_HOME}}}. Compile and deploy {{{bigbluebutton-apps}}} by right-clicking "deploy" on build.xml as mentioned in !BigBlueButton Apps instruction above.
+ 1. To test the client, just follow the "Starting the Client" instruction above.
