@@ -160,3 +160,6 @@
 
 == JMX ==
  * http://marxsoftware.blogspot.com/2008/06/remote-jmx-with-and-without-spring-and.html
+
+== Virtualized Dev Environment == 
+ * http://tomasvarsavsky.com/2008/02/25/virtualised-ruby-on-rails-development-environment-for-dummies/
