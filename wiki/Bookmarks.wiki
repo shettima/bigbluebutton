@@ -163,3 +163,6 @@
 
 == Virtualized Dev Environment == 
  * http://tomasvarsavsky.com/2008/02/25/virtualised-ruby-on-rails-development-environment-for-dummies/
+
+== LDAP ==
+ * http://www.zytrax.com/books/ldap/
