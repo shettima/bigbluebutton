@@ -23,7 +23,11 @@ The conversion from Bluetooh to Flash is currently being researched. An API has 
 
 === Making a and LED pen/chalkholder ===
 
-This device is what transmites an infrared signal which is captured by the Wiimote and sent to the PC in bluetooth. We have two choices when designing a pen, we can either come up with one that is used right on the projected image of the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the chalk holder.
+This device is what transmits an infrared signal which is captured by the Wiimote and sent to the PC in bluetooth. We have two choices when designing a pen, we can either come up with one that is used right on the projected image of the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the pen to be used right on the projected image of the screen.
+
+We used the following tutorial which teaches how to build an IR pen.
+http://www.youtube.com/watch?v=ZAEUalT6mfU
+
 
 === Integration the BigBlueButton system ===
 
