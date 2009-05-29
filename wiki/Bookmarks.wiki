@@ -166,3 +166,7 @@
 
 == LDAP ==
  * http://www.zytrax.com/books/ldap/
+
+== REST ==
+ * http://www.onjava.com/pub/a/onjava/2007/11/07/introduction-to-amazon-s3-with-java-and-rest.html
+ 
