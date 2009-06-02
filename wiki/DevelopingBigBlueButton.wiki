@@ -56,17 +56,18 @@ Read this [http://jira.red5.org/confluence/display/docs/Chapter+5.+Migration+Gui
  1. When testing your changes on chatServer, stop the server under {{{RED5_HOME}}}. Compile and deploy {{{bigbluebutton-apps}}} by right-clicking "deploy" on build.xml as mentioned in !BigBlueButton Apps instruction above.
  1. To test the client, just follow the "Starting the Client" instruction above.
 
-== Virtualized BigBlueButton Development Environment ==
+-------
+== Virtualized !BigBlueButton Development Environment ==
 NOTE: This is still in draft and will be fleshed out.
 
-We have packaged BigBlueButton into a VMWare image so you will be able to try out and start developing as soon as possible.
+We have packaged !BigBlueButton into a VMWare image so you will be able to try out and start developing as soon as possible.
 
 === Downloads ===
  1. Download VMWare player from http://www.vmware.com
- 1. Download BigBlueButton VMWare image.
+ 1. Download !BigBlueButton VMWare image.
  1. Bootup the image inside your VMWare.
 
-=== Try out BigBlueButton ===
+=== Try out !BigBlueButton ===
 
 === Setup your Development Tools ===
  1. Setup Samba
