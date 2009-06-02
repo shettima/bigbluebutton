@@ -173,4 +173,7 @@
 
 == Content Repository ==
  * http://www.infoq.com/articles/spring-modules-jcr
+ * http://www.ibm.com/developerworks/java/library/j-jcr/
+ * http://www.onjava.com/pub/a/onjava/2006/10/04/what-is-java-content-repository.html
+ * 
  
