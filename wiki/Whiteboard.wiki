@@ -21,14 +21,6 @@ The conversion from Bluetooh to Flash is currently being researched. An API has 
 
 == Current ==
 
-=== Making a and LED pen/chalkholder ===
-
-This device is what transmits an infrared signal which is captured by the Wiimote and sent to the PC in bluetooth. We have two choices when designing a pen, we can either come up with one that is used right on the projected image of the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the pen to be used right on the projected image of the screen.
-
-We used the following tutorial which teaches how to build an IR pen.
-http://www.youtube.com/watch?v=ZAEUalT6mfU
-
-
 === Integration the BigBlueButton system ===
 
 We still need to integrate this standalone application with the already existing BigBlueButton system. The first step is to get our .swf running from a web browser. We are now trying to figure out the security issues regarding accessing ports on the PC. 
@@ -55,6 +47,13 @@ We have written the code that captures the presenter's interaction through the W
   * *Scaling:* Once the area of the whiteboard has been determined, the flash application will display the contents at an equivalent ratio to the board. Therefore appropriate scaling algorithms need to be written. 
 
   * *Displaying:* Once the previous two items are completed the flash application will be able to accurately represent the lecturers intentions. Now that information has been scaled down and is within the boundaries they will appear in the window. 
+
+=== Making a and LED pen/chalkholder ===
+
+This device is what transmits an infrared signal which is captured by the Wiimote and sent to the PC in bluetooth. We have two choices when designing a pen, we can either come up with one that is used right on the projected image of the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the pen to be used right on the projected image of the screen.
+
+We used the following tutorial which teaches how to build an IR pen.
+http://www.youtube.com/watch?v=ZAEUalT6mfU
 
 
 = Establishing a Connection between the wiiFlash Server and Wiimote =
