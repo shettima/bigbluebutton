@@ -5,9 +5,9 @@ DRAFT - DRAFT
 
 == Running BigBlueButton as a VM ==
 
-We know that many users want to download and run BigBlueButton behind their firewall.  We've also heard from developers who want to start modifying BigBlueButton quickly.  
+Many users have said they wanted download and run BigBlueButton behind their firewall.  We've also heard from developers who want to setup a BigBlueButton development environment quickly.  
 
-To make easy to run and develop your own BigBlueButton server, we've created a Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows.  This machine is a full BigBlueButton server and development environment.
+To make easy to run and develop BigBlueButton, we've created a Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows.  This machine is a full BigBlueButton server and development environment.
 
 Prerequisitis:
   * VMWare Player (or VMWare Workstation)
@@ -17,7 +17,7 @@ Prerequisitis:
 
   # Download and uncompress the latest [http://bigbluebutton.org/sites/default/files/vm/bigbluebutton-vm.zip latest BigBlueButton VM ]
 
-  # Open the bigbluebutton-vm folder. 
+  # Open the ubuntu-vmw6 folder. 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
