@@ -1,0 +1,88 @@
+#How to run BigBlueButton in a Virtual Machine
+
+DRAFT - DRAFT 
+= Introduction =
+
+== Running BigBlueButton as a VM ==
+
+We've made it easy to run your own BigBlueButton server for trying out the software and developing your own extensions.  BigBlueButton consists of about 12 open source packages, which we've combined together into a single Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows. 
+
+Prerequisitis:
+  * VMWare Player (or VMWare Workstation)
+  * Ability for the VM to acquire an IP address through DHCP on boot
+
+=== Instructions ===
+
+  # Download and uncompress the latest BigBlueButton VM from <link>
+
+  # Open the bigbluebutton-vm folder. 
+
+  # Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
+
+The BigBlueButton VM takes about 10 minutes to initialize.  Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script, which 
+
+  * Installs a software timer for Asterisk (this allows you to use a VoIP phone to connect)
+  * Updates all the installed packages
+  * Configures BigBlueButton to use the VM's current IP address
+  * Installing OpenSSH
+
+When its finished you'll see a welcome message.
+
+
+This message that tells you the IP address of the VM.  The VM has a default account called 'firstuser', with password 'default' (no quotes).  This message will also appear each time you login as first user.
+
+== Resetting the password ==
+
+You should login as first user and change the password.  After you login, you'll be asked to enter the old password again and provide a new password.  Take a moment and do this as it will make your VM secure.
+
+Note: If you use putty to access the VM, the terminal window will close after you reset the password.  Don't worry, just open a new session and login with the new password.
+
+
+== Running BigblueButton ==
+
+Now the easy part.  Open a web browser to the URL provided in the login message for first user.  For example
+
+    http://192.168.0.101/
+
+You should see a welcome screen showing two options: login using account 'admin@test.com' and password 'admin'.
+  
+
+== Updating the BigBlueButton VM == 
+
+Updating is also easy.  All the BigBlueButton components are installed as Ubuntu packages that are automatically built
+using the latest trunk.  To update the VM with the latest components, do the following.
+
+Login as first user.  Enter the following commands:
+{{{
+  # apt-get update
+  # apt-get upgrade
+}}}
+
+
+== How to use the BigBlueButton VM to develop == 
+
+Login as firstuser and change to the dev directory.  You'll see the setup
+
+Where to go for help
+
+Submit your questions and feedback to the bigbluebutton-dev mailing list.  This way, we can quickly fix any errors and improve the VM based on your feedback.
+
+
+
+FAQ
+
+Q: Something is not working in the VM ... where can I go for help.
+
+A: The best source is to post to the bigbluebutton-dev mailing list.
+
+Q: Which log files should I check for errors?
+
+A: Check in the following files
+
+  # /var/lib/tomcat6/logs/localhost*
+  # /usr/share/red5/logs
+
+Run asterisk with -vrrrrrrrrrrrrrrr
+
+
+
