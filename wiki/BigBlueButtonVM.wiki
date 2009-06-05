@@ -5,7 +5,9 @@ DRAFT - DRAFT
 
 == Running BigBlueButton as a VM ==
 
-We've made it easy to run your own BigBlueButton server for trying out the software and developing your own extensions.  BigBlueButton consists of about 12 open source packages, which we've combined together into a single Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows. 
+We know that many users want to download and run BigBlueButton behind their firewall.  We've also heard from developers who want to start modifying BigBlueButton quickly.  
+
+To make easy to run and develop your own BigBlueButton server, we've created a Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows.  This machine is a full BigBlueButton server and development environment.
 
 Prerequisitis:
   * VMWare Player (or VMWare Workstation)
@@ -17,9 +19,15 @@ Prerequisitis:
 
   # Open the bigbluebutton-vm folder. 
 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
+
   # Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
 
-The BigBlueButton VM takes about 10 minutes to initialize.  Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script, which 
+The BigBlueButton VM takes about 10 minutes to initialize.  
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
+
+Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script, which 
 
   * Installs a software timer for Asterisk (this allows you to use a VoIP phone to connect)
   * Updates all the installed packages
@@ -83,4 +91,3 @@ A: Check in the following files
   # /usr/share/red5/logs
 
 Run asterisk with -vrrrrrrrrrrrrrrr
-
