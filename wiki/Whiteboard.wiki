@@ -21,14 +21,27 @@ The conversion from Bluetooh to Flash is currently being researched. An API has 
 
 == Current ==
 
-=== Integration the BigBlueButton system ===
+=== Integration with the BigBlueButton system ===
 
 We still need to integrate this standalone application with the already existing BigBlueButton system. The first step is to get our .swf running from a web browser. We are now trying to figure out the security issues regarding accessing ports on the PC. 
 
-=== Fixing Scaling and Calibration Bugs ===
+=== Adding Features ===
 
-We found that when the input was scaled and calibrated it does not utilize the full window, instead the whiteboard is just limited to the upper left corner. So currently we are working on figuring out why this is so, and as well we are working on resizing the window to fit the appropriate scale, so as to avoid stretching or compressing the content being displayed.
+So far we have added a variety of features such as:
 
+  * Changing the color of the pen to either black, red, green, blue or yellow.
+
+  * Increasing / decreasing the thickness of the pen. 
+
+  * A clearing function which erases the whiteboard.
+
+These features are definetly not sufficient. I would like to add more features like:
+
+  * An eraser function so that the user can erase parts of the current whiteboard, instead of having to clear the entire whiteboard.
+ 
+  * A new page function so it clears the whiteboard but not before it saves the current drawings on the whiteboard.
+
+  * A feature which enables the user to draw on other programs. A user scenario, the presenter would be able to circle something they found useful in a web browser. 
 
 
 == Completed Items ==
