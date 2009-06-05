@@ -1,8 +1,8 @@
-#summary This page contains information about displaying the content on a white board over public internet for the BigBlueButton system
+#summary This page contains information about displaying the content on a white board.
 
 = Introduction =
 
-The white board module for the purpose of BigBlueButton is defined as the ability to show in real-time the content written/drawn on a particular white board to a remote user. A customized component designed specifically for BigBlueButton with strict guidelines such as pure mobility is what makes this unique.
+The white board module for the purpose of BigBlueButton is defined as the ability to show in real-time the content written/drawn on a particular white board to a remote user. 
 
 
 = Details =
@@ -14,7 +14,7 @@ The events (presenter writing on the white board) will be captured using a Wii c
 
 == Bluetooth2Flash ==
 
-The conversion from Bluetooh to Flash is currently being researched. An API has been found _ http://wiiflash.bytearray.org/ _
+The conversion from Bluetooh to Flash is done through an API found at _ http://wiiflash.bytearray.org/ _
 
 
 = Tasks =
