@@ -7,7 +7,7 @@ DRAFT - DRAFT
 
 Many users have said they wanted download and run BigBlueButton behind their firewall.  We've also heard from developers who want to setup a BigBlueButton development environment quickly.  
 
-To make easy to run and develop BigBlueButton, we've created a Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows.  This machine is a full BigBlueButton server and development environment.
+In response to these requests, we've created a Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows.  This virtual machine provides a full BigBlueButton server and development environment.
 
 Prerequisitis:
   * VMWare Player (or VMWare Workstation)
@@ -23,19 +23,18 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   # Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
 
-The BigBlueButton VM takes about 10 minutes to initialize.  
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
-
-Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script, which 
+The BigBlueButton VM takes about 10 minutes to initialize.  Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script, which 
 
   * Installs a software timer for Asterisk (this allows you to use a VoIP phone to connect)
   * Updates all the installed packages
   * Configures BigBlueButton to use the VM's current IP address
   * Installing OpenSSH
 
-When its finished you'll see a welcome message.
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
+
+
+When its finished you'll see a welcome message.
 
 This message that tells you the IP address of the VM.  The VM has a default account called 'firstuser', with password 'default' (no quotes).  This message will also appear each time you login as first user.
 
@@ -48,11 +47,11 @@ Note: If you use putty to access the VM, the terminal window will close after yo
 
 == Running BigblueButton ==
 
-Now the easy part.  Open a web browser to the URL provided in the login message for first user.  For example
+Now the easy part.  Open a web browser to the URL provided in the login message for first user.  For example, if your IP for the BigBlueButton VM is 192.168.0.125, then open the following URL
 
-    http://192.168.0.101/
+    http://192.168.0.125/bigbluebutton/conference-session/joinIn/85115
 
-You should see a welcome screen showing two options: login using account 'admin@test.com' and password 'admin'.
+This will join you into a default session.
   
 
 == Updating the BigBlueButton VM == 
@@ -67,9 +66,41 @@ Login as first user.  Enter the following commands:
 }}}
 
 
-== How to use the BigBlueButton VM to develop == 
+== Modifying BigBlueButton == 
 
-Login as firstuser and change to the dev directory.  You'll see the setup
+We've included all the development tools in this VM to compile and deploy the source for BigBlueButton's client, web, and applications (which run in red5).
+
+To setup your development environment, do the following
+
+#  Login as firstuser (you'll be prompted to change the password if you haven't done so already).
+
+If you are on windows and want to use an editor (such as Eclipse) to modify the source on the VM, then we've included a tool to share the dev folder:
+
+#  Type
+
+{{{
+
+  $ sudo bbb-setupdev -s
+
+}}}
+
+This will share your dev folder via samba.
+
+=== Setup Development Environment ===
+
+To checkout the code and setup your development environment, do the following
+
+#  Type
+
+{{{
+   $ bbb-setupdev -d
+}}}
+
+This will checkout 
+
+# bigbluebutton-dev
+# bigbluebutton-client
+# bigbluebutton-apps
 
 Where to go for help
 
