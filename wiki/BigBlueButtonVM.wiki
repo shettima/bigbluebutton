@@ -13,7 +13,7 @@ Prerequisitis:
 
 === Instructions ===
 
-  # Download and uncompress the latest BigBlueButton VM from <link>
+  # Download and uncompress the latest [http://bigbluebutton.org/sites/default/files/vm/bigbluebutton-vm.zip latest BigBlueButton VM ]
 
   # Open the bigbluebutton-vm folder. 
 
@@ -83,6 +83,4 @@ A: Check in the following files
   # /usr/share/red5/logs
 
 Run asterisk with -vrrrrrrrrrrrrrrr
-
-
 
