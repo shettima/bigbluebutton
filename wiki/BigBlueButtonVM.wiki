@@ -5,9 +5,9 @@ DRAFT - DRAFT
 
 == Running BigBlueButton as a VM ==
 
-Many users have said they wanted download and run BigBlueButton behind their firewall.  We've also heard from developers who want to setup a BigBlueButton development environment quickly.  
+Many users have said they wanted to setup and run their own version BigBlueButton.  Some are behind a firewall and want to run their own server, others are developers who want to setup a BigBlueButton development environment for developing extensions.  
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that runs under VMWare Player on Unix or Windows.  This virtual machine provides a full BigBlueButton server and development environment.
+In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy to download and run your own BigBlueButton server.  The VM runs under VMWare Player on Unix or Windows.  This virtual machine fully working version of BigBlueButton and a development environment for checking out code from the Google Code repository and building your own modules.
 
 Prerequisitis:
   * VMWare Player (or VMWare Workstation)
@@ -49,9 +49,9 @@ Note: If you use putty to access the VM, the terminal window will close after yo
 
 Now the easy part.  Open a web browser to the URL provided in the login message for first user.  For example, if your IP for the BigBlueButton VM is 192.168.0.125, then open the following URL
 
-    http://192.168.0.125/bigbluebutton/conference-session/joinIn/85115
+    http://192.168.0.125/
 
-This will join you into a default session.
+You'll see a welcome screen that lets you join a default session.
   
 
 == Updating the BigBlueButton VM == 
@@ -69,6 +69,29 @@ Login as first user.  Enter the following commands:
 == Modifying BigBlueButton == 
 
 We've included all the development tools in this VM to compile and deploy the source for BigBlueButton's client, web, and applications (which run in red5).
+
+
+=== Change IP address of BigBlueButton Server ===
+
+The VM will automatically setup BigBlueButton components to use the IP address on first boot.  If you need to change the IP address of the server, we've provided a utility to let you change the configuration files for BigBlueButton to use the new IP address.
+
+For example, to change the IP address for BigBlueButton configuration files to use 192.168.0.125, do the following
+
+{{{
+
+  $ sudo bbb-setip -h 192.168.0.125
+
+}}}
+
+If you want to change the default port as well, for example to have BigBlueButton listen on port 8000 (instead of 80), do the following
+
+{{{
+
+  $ sudo bbb-setip -h 192.168.0.125 -p 8000
+
+}}}
+
+=== Setup Development Environment ===
 
 To setup your development environment, do the following
 
