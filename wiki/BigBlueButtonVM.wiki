@@ -40,27 +40,30 @@ The VM has a default account called *firstuser*, with password *default*.  To se
 
 After resetting the default password, you'll get the following welcome message each time you login as firstuser.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_welcome.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
 == Running BigblueButton ==
 
-Now the easy part.  Open a web browser to the URL provided in the login message for first user.  For example, if your IP for the BigBlueButton VM is 192.168.0.125, then open the following URL
-
-    http://192.168.0.125/
-
-You'll see a welcome screen that lets you join a default session.
+At this point, you've got a full BigBlueButton server up and running.  Open a web browser to the URL provided in the login message for first user.  
   
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
+
+Click the Join button and you'll be prompted to join the default conference 85115.  Enter whatever name you like and then *mp* for moderator password, or *ap* for attendee password.
 
 == Updating the BigBlueButton VM == 
 
-Updating is also easy.  All the BigBlueButton components are installed as Ubuntu packages that are automatically built
-using the latest trunk.  To update the VM with the latest components, do the following.
+All the BigBlueButton components are installed as Ubuntu packages that are automatically built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the BigBlueButton Google Code repository.
 
-Login as first user.  Enter the following commands:
+When this VM was assembled, it was using the latest packages.  However, BigBlueButton is under active development and these packages are updating frequently. 
+
+To update the VM with the latest components, do the following.
+
+Login as firstuser (using your password of course!) and enter the following commands:
 {{{
   # apt-get update
   # apt-get upgrade
 }}}
+
 
 
 == Modifying BigBlueButton == 
