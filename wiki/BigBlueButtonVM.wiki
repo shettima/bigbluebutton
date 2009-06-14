@@ -1,16 +1,17 @@
-#How to run BigBlueButton in a Virtual Machine
+#summary How to run the BigBlueButton Virtual Machine
 
 DRAFT - DRAFT 
 = Introduction =
 
 == Running BigBlueButton as a VM ==
 
-Many users have said they wanted to setup and run their own version BigBlueButton.  Some are behind a firewall and want to run their own server, others are developers who want to setup a BigBlueButton development environment for developing extensions.  
+Many users have told us they wanted to setup their own version BigBlueButton, either to test and trial BigBlueButton on their own servers.  Developers have asked us for ways to simplify the setup of a BigBlueButton development environment, making it easy for them to start modifying and adding extensions to the product.
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy to download and run your own BigBlueButton server.  The VM runs under VMWare Player on Unix or Windows.  This virtual machine fully working version of BigBlueButton and a development environment for checking out code from the Google Code repository and building your own modules.
+In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy to download and run your own BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac (on the Mac its called VM Fusion). This VM is a fully working version of the BigBlueButton Server. It has a full development environment pre-setup so you to check out code from BigBlueButton Google Code repository and, with a single script, re-compile the code and run it in your VM.
 
 Prerequisitis:
-  * VMWare Player (or VMWare Workstation)
+  * VMWare Player (or VMWare Workstation) for Windows or Unix
+  * VMWare Fusion for Mac
   * Ability for the VM to acquire an IP address through DHCP on boot
 
 === Instructions ===
