@@ -3,6 +3,8 @@
 DRAFT - DRAFT 
 = Introduction =
 
+
+
 == Running BigBlueButton as a VM ==
 
 Many users have told us they wanted to run their own version BigBlueButton.  Developers have asked us for ways to shorten the edit-compile-check cycle when making changes to the BigBlueButton source.
@@ -32,20 +34,13 @@ The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, rela
 
 When it's done, you'll see a message that asks you to login and change the password.
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-boot.png">
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
+The VM has a default account called *firstuser*, with password *default*.  To secure your server, take a moment to login as firstuser.  After you enter the password, you'll be be immediately asked to enter the the password again and then enter a new password.  
 
+After resetting the default password, you'll get the following welcome message each time you login as firstuser.
 
-When its finished you'll see a welcome message.
-
-This message that tells you the IP address of the VM.  The VM has a default account called 'firstuser', with password 'default' (no quotes).  This message will also appear each time you login as first user.
-
-== Resetting the password ==
-
-You should login as first user and change the password.  After you login, you'll be asked to enter the old password again and provide a new password.  Take a moment and do this as it will make your VM secure.
-
-Note: If you use putty to access the VM, the terminal window will close after you reset the password.  Don't worry, just open a new session and login with the new password.
-
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_welcome.png
 
 == Running BigblueButton ==
 
