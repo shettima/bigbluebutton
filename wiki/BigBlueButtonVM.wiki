@@ -32,7 +32,7 @@ The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, rela
 
 When it's done, you'll see a message that asks you to login and change the password.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-boot.png
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-boot.png">
 
 
 
