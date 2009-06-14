@@ -134,7 +134,7 @@ this script will uninstall the package bbb-apps, compile the local copy of BigBl
 
 Q: Something is not working in the VM ... where can I go for help.
 
-A: The best source is to post to the bigbluebutton-dev mailing list.
+A: The best source is to post to the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.  We all hang out there and help each other.
 
 Q: Which log files should I check for errors?
 
