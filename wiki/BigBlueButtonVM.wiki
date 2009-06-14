@@ -16,7 +16,7 @@ Prerequisitis:
 
 === Instructions ===
 
-  # Download and uncompress the latest (link coming soon)
+  # Download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip BigBlueButton VM]
 
   # Open the ubuntu-vmw6 folder. 
 
