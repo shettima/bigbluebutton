@@ -93,45 +93,42 @@ If you want to change the default port as well, for example to have BigBlueButto
 
 === Setup Development Environment ===
 
-To setup your development environment, do the following
-
-#  Login as firstuser (you'll be prompted to change the password if you haven't done so already).
-
-If you are on windows and want to use an editor (such as Eclipse) to modify the source on the VM, then we've included a tool to share the dev folder:
-
-#  Type
+To setup your development environment we've included some helper scripts.  If you type
 
 {{{
 
-  $ sudo bbb-setupdev -s
+  $ bbb-setupdev -s
 
 }}}
 
-This will share your dev folder via samba.
+This script will setup samba (Unix implementation of windows file sharing) to let you access files in firstuser from within Windows or Mac.
 
-=== Setup Development Environment ===
-
-To checkout the code and setup your development environment, do the following
-
-#  Type
+Next, type
 
 {{{
    $ bbb-setupdev -d
 }}}
 
-This will checkout 
+This will checkout the main components of BigBlueButton into a corresponding directory.
 
 # bigbluebutton-dev
 # bigbluebutton-client
 # bigbluebutton-apps
 
-Where to go for help
+You're now ready to starting editing, compiling, and deploying your own versions of these components to the virtual machine.  All the necessary development tools have been installed.
 
-Submit your questions and feedback to the bigbluebutton-dev mailing list.  This way, we can quickly fix any errors and improve the VM based on your feedback.
+To make it easy to compile and deploy, each directory has a script called `build.sh` that will first un-install the associated component's Ubuntu package (so you can run your own version of that component), then recompile the component, copy it to the appropriate directory, and restart the associated servers.  
+
+For example, if you go into the bigbluebutton-apps directory and type
+
+{{{
+   $ ./build.sh
+}}}
+
+this script will uninstall the package bbb-apps, compile the local copy of BigBlueButton-apps using groovy and grails, then deploy the resulting war file to the tomcat server.
 
 
-
-FAQ
+== FAQ ==
 
 Q: Something is not working in the VM ... where can I go for help.
 
@@ -143,5 +140,3 @@ A: Check in the following files
 
   # /var/lib/tomcat6/logs/localhost*
   # /usr/share/red5/logs
-
-Run asterisk with -vrrrrrrrrrrrrrrr
