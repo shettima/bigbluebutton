@@ -8,8 +8,8 @@ DRAFT - DRAFT
 Many users have told us they wanted to run their own version BigBlueButton.  Developers have asked us for ways to shorten the edit-compile-check cycle when making changes to the BigBlueButton source.
 
 In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac. This VM is a fully working version of the BigBlueButton Server. It has a full development environment preconfigured so you to check out code from BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.
-
-Prerequisitis:
+  
+Prerequisites:
   * VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
   * VMWare Fusion for Mac
   * Ability for the VM to acquire an IP address through DHCP on boot
