@@ -3,7 +3,7 @@
 
 = Introduction =
 
-What a quick overview, check out the [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM] video. 
+What a quick overview?   Watch this video on [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM] video. 
 
 == Running BigBlueButton as a VM ==
 
