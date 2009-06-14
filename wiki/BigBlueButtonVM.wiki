@@ -16,21 +16,23 @@ Prerequisites:
 
 === Instructions ===
 
-  # Download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip]
-  # Uncompress bigbluebutton-vm.zip and open the enclosed *ubuntu-vmw6* folder. 
+  1.  Download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip]
+  2.  Uncompress bigbluebutton-vm.zip and open the enclosed *ubuntu-vmw6* folder.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
-  # Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
+  3.  Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
 
-The BigBlueButton VM takes about 10 minutes to initialize.  Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script, which 
+The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script that 
 
   * Installs a software timer for Asterisk (this allows you to use a VoIP phone to connect)
-  * Updates all the installed packages
+  * Installs the BigBlueButton packages
   * Configures BigBlueButton to use the VM's current IP address
-  * Installing OpenSSH
+  * Installs OpenSSH
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
+When it's done, you'll see a welcome message.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_welcome.png
 
 
 
