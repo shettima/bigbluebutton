@@ -128,17 +128,3 @@ For example, if you go into the bigbluebutton-apps directory and type
 }}}
 
 this script will uninstall the package bbb-apps, compile the local copy of BigBlueButton-apps using groovy and grails, then deploy the resulting war file to the tomcat server.
-
-
-== FAQ ==
-
-Q: Something is not working in the VM ... where can I go for help.
-
-A: The best source is to post to the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.  We all hang out there and help each other.
-
-Q: Which log files should I check for errors?
-
-A: Check in the following files
-
-  # /var/lib/tomcat6/logs/localhost*
-  # /usr/share/red5/logs
