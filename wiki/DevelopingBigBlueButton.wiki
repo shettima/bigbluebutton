@@ -2,6 +2,9 @@
 
 = Introduction =
 
+Note: Real Developers like to setup their own development environment.  However, if you want to use a pre-built development environment, check out the [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM | BigBlueButton Virtual Machine].
+
+
  1. Download Red5 from http://build.xuggle.com/ . Choose red5_jdk5_stable ot red5_jdk6_stable depending on what version of Java you have installed on your machine.
  1. Start Red5 and then go to http://localhost:5080 and install the oflaDemo application. You should see a video instruction on how to do this when you go to http://localhost:5080
 
