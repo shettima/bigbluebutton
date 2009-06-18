@@ -25,10 +25,23 @@ We've written the real-time client in Flash.  Since Flash 10, Flash is now avail
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_client_overview.png
 
+----
+
+== Joining a Voice Conference ==
+
+The following diagram shows the steps that occur when a new client joins a voice conference.
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_voice_conference.png
+
+----
+
+== Uploading a Presentation ==
+
+The following diagram shows the steps that occur when a presenter uploads a presentation to the server.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
 
+= More Information =
 
   * [BigBlueButtonVM Download Virtual Machine]
   * [HowToInstallBigBlueButton Installing BigBlueButton from source]
