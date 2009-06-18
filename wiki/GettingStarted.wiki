@@ -1,5 +1,26 @@
 #summary A quick guide to getting started with Developing in BigBlueButton.
 
 = Overview =
+We've put a lot of thought into the architecture of BigBlueButton.  Our goal was to make it easy for other developers to use BigBlueButton as a platform to build other collaborative applications.
+
+== Architecture Overview ==
+
+The following diagram shows the major pieces of the BigBlueButton architecture.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram.png
+
+== BigBlueButton Red5 Apps ==
+
+We think Red5 rocks, and we use it as the core server for handling all the real-time interaction with the client.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_overview.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_client_overview.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_voice_conference.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
+
+
   * [BigBlueButtonVM Download Virtual Machine]
   * [HowToInstallBigBlueButton Installing BigBlueButton from source]
