@@ -6,7 +6,7 @@
     * [BigBlueButtonVM Download Virtual Machine]
     * [HowToInstallBigBlueButton Installing BigBlueButton from source]
   * [BigBlueButtonLabs BigBlueButton Labs]
-    * [Witheboard Whiteboard]   
+    * [Whiteboard Whiteboard]   
     * [Red5Phone Red 5 Phone]
     * [DesktopSharingPart2 Desktop Sharing II]
     * [PerformanceTesting Performance Testing]
