@@ -6,11 +6,9 @@ First, be sure to check out the [http://www.bigbluebutton.org/support BigBlueBut
 
     (Conference ID, Moderator Password, Viewer Password) 
 
-    * 85115, modpass, viewpass
+    * 85115, mp, vp
  
 You can login at
-    http://present.carleton.ca/
+    http://demo.bigbluebutton.org/
 
-You can call into the Asterisk conference bridge using the local number 613-520-7610.
-
-Please provide us with suggestions, comments, and bug reports to improve Blindside. 
+You can call into the Asterisk conference bridge using the local number 613-366-1985.
