@@ -2,13 +2,10 @@
 
 = Introduction =
 
-First, be sure to check out the [http://www.bigbluebutton.org/support BigBlueButton Intro Videos].  To try out the demo, we have create a couple of conference rooms:
+First, be sure to check out the [http://www.bigbluebutton.org/support BigBlueButton Intro Videos].  To try out the demo, 
 
-    (Conference ID, Moderator Password, Viewer Password) 
+  * host: http://demo.bigbluebutton.org/ 
+  * moderator password: *mp* 
+  * attendee password: *ap
 
-    * 85115, mp, vp
- 
-You can login at
-    http://demo.bigbluebutton.org/
-
-You can call into the Asterisk conference bridge using the local number 613-366-1985.
+You can call into the Asterisk conference bridge using the local number *613-366-1985*.
