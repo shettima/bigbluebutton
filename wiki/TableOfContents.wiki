@@ -3,7 +3,7 @@
     * [FAQ Frequently Asked Questions]
     * [RoadMap Product Road Map]
   * [GettingStarted Getting Started]
-    * [BigBlueButtonVM Download Virtual Machine]
+    * [BigBlueButtonVM Virtual Machine]
     * [HowToInstallBigBlueButton Installing BigBlueButton from source]
   * [BigBlueButtonLabs BigBlueButton Labs]
     * [Whiteboard Whiteboard]   
