@@ -2,7 +2,7 @@
     * [ReleaseNotes Release Notes]
     * [FAQ Frequently Asked Questions]
     * [RoadMap Product Road Map]
-  * [Developer Getting Started Quickly]
+  * [GettingStartedQuickly Getting Started Quickly]
     * [BigBlueButtonVM Download Virtual Machine]
     * [BigBlueButtonVM Installing from source]
   * [BigBlueButtonLabs BigBlueButton Labs]
