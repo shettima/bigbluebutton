@@ -1,6 +1,6 @@
   * [Support Support]
     * [ReleaseNotes Release Notes]
-    * [FAQ Frequently Asked Questions]
+    * [FAQ FAQ]
     * [RoadMap Product Road Map]
   * [GettingStarted Getting Started]
     * [BigBlueButtonVM Virtual Machine]
