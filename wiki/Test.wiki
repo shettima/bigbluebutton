@@ -1,10 +1,18 @@
 #summary One-sentence summary of this page.
-#labels Deprecated
 
 = Introduction =
 
-Add your content here. And here. And here. And here. And Here.
+Add your content here.
 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_overview.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_client_overview.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_voice_conference.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
 
 = Details =
 
