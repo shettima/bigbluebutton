@@ -1,8 +1,14 @@
 #summary BigBlueButton Frequently Asked Questions
 
-= Introduction =
+<wiki:toc max_depth="2"/>
+
+----
+== Overview ==
 
 If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
+
+
+== Virtual Machine ==
 
 === Something is not working in the VM ... where can I go for help. ===
 
