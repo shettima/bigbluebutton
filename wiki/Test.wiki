@@ -1,5 +1,13 @@
 #summary One-sentence summary of this page.
 
+<table>
+<tr><td>
+<a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png</a></td><td><p>June 12, 2009</p><p>To help new developers understand the architecture of BigBlueButton, we've added a video overview that walks through the architecture for the server, client, and web components.</p>Check it out at <a href="http://bigbluebutton.org/content/videos">http://bigbluebutton.org/content/videos</a></td></tr></table>
+
+<table>
+<tr><td>
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/hudson.png</td><td><p>June 12, 2009</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></td></tr></table>
+
 = Introduction =
 
 Add your content here.
