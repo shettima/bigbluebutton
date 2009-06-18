@@ -1,5 +1,13 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-=== Release 0.32M ===
+=== Release 0.4 ===
+Much of the effort in this release was on creating individual packages for the components, creating a [http://bigbluebutton.org/hudson/ Hudson Continuous Integration Server], and distributing the entire package as a [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM downloadable virtual machine].
+
+Other updates include:
+  * BigBlueButton client now supports tunneling through a firewall via port 80
+  * Uploading of multiple slides
+  
+
+=== Release 0.32 ===
 Added
   * Pan and zoom around the slide with the mouse and mouse-wheel
