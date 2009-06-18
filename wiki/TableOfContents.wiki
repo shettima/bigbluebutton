@@ -4,7 +4,7 @@
     * [RoadMap Product Road Map]
   * [GettingStarted Getting Started]
     * [BigBlueButtonVM Virtual Machine]
-    * [HowToInstallBigBlueButton Installing BigBlueButton from source]
+    * [HowToInstallBigBlueButton Installing from source]
   * [BigBlueButtonLabs BigBlueButton Labs]
     * [Whiteboard Whiteboard]   
     * [Red5Phone Red 5 Phone]
