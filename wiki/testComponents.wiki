@@ -1,17 +1,22 @@
-= Open Source Components of BigBlueButton =
+    = Open Source Components of BigBluebutton =
 
         <table>
         <tr>
             <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/vmware.png</a></td>
             <td><p>To make it easy to develop and run BigBlueButton, we completed the packaging of all the open source components of BigBlueButton into a single virtual machine (VM).  This VM also has a full BigBlueButton development environment, making it easy for you to modify and extend BigBlueButton to develop your own collaborative applications.   For more information see [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM How to Setup your own BigBlueButton VM].</p></td>
+            <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+            <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
         </tr>
         <tr>
             <td><a href="http://bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/arch_video.png</a></td>
             <td><p>To help new developers understand the architecture of BigBlueButton, we've added a video overview that walks through the architecture for the server, client, and web components.</p><p>Check it out at <a href="http://bigbluebutton.org/content/videos">http://bigbluebutton.org/content/videos</a></p></td>
+            <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+            <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
         </tr>
         <tr>
             <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-            <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p>
-            </td>
+            <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+            <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+            <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
         </tr>
         </table>
