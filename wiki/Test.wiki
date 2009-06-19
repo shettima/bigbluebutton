@@ -23,3 +23,8 @@
         </td>
     </tr>
     </table>
+
+== Project Goals ==
+BigBlueButton is a clean implementation of web conferencing that focuses on offering a *simple user interface* and an *extensible platform* for distance education.
+
+For extensibility, we used the [http://puremvc.org/ PureMVC] library to organize the client code.  It's possible to add/remove modules at runtime in the client, making it much easier for other developers to add their own client modules to BigBlueButton.
