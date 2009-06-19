@@ -1,4 +1,4 @@
-    = Open Source Components of BigBlueButton =
+ = Open Source Components of BigBlueButton =
 
         <table>
             <tr>
@@ -10,6 +10,8 @@
             <tr>
                 <td><a href="http://asterisk-java.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*Asterisk Java*</p><p>The Asterisk-Java package consists of a set of Java classes that allow you to easily build Java applications that interact with an Asterisk PBX Server.</p><p><a href="http://asterisk-java.org/">http://asterisk-java.org/</a></p></td>
+                <td><a href="http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Flex SDK*</p><p>Flex is a highly productive, open source framework for building and maintaining expressive web applications that deploy consistently on all major browsers, desktops and operating systems.</p><p><a href="http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK">http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://www.ghostscript.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
