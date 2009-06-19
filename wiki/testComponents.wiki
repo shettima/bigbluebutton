@@ -1,47 +1,47 @@
-= Open Source Components of BigBlueButton =
+    = Open Source Components of BigBlueButton =
 
         <table>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
             
         </table>
