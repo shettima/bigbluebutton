@@ -1,4 +1,4 @@
-       = Welcome to BigBlueButton Google Code =
+= Welcome to BigBlueButton Google Code =
         <table>
             <tr>
                 <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
