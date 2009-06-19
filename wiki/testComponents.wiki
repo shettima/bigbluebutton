@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td><a href="http://www.imagemagick.org/script/index.php">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*ImageMagick*</p><p>ImageMagick is a collection of tools designed to view, modify, and manipulate images in nearly 70 different image formats. It also allows you to create images dynamically, making it suitable for Web applications.</p><p><a href="http://www.imagemagick.org/script/index.php">http://www.imagemagick.org/script/index.php</a></p></td>
+                <td><p>*Image Magick*</p><p>Image Magick is a collection of tools designed to view, modify, and manipulate images in nearly 70 different image formats. It also allows you to create images dynamically, making it suitable for Web applications.</p><p><a href="http://www.imagemagick.org/script/index.php">http://www.imagemagick.org/script/index.php</a></p></td>
                 <td><a href="http://www.mysql.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*MySQL*</p><p>MySQL is an open source database</p><p><a href="http://www.mysql.com/">http://www.mysql.com/</a></p></td>
             </tr>
