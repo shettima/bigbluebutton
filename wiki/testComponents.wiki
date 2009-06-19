@@ -3,13 +3,13 @@
         <table>
             <tr>
                 <td><a href="http://activemq.apache.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*ActiveMQ*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://activemq.apache.org/">http://activemq.apache.org/</a></p></td>
+                <td><p>*ActiveMQ*</p><p>Apache ActiveMQ is an open source enterprise messaging and integration patterns provider.</p><p><a href="http://activemq.apache.org/">http://activemq.apache.org/</a></p></td>
                 <td><a href="http://www.asterisk.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*Asterisk*</p><p>Asterisk is an open source PBX, telephony engine, and telephony applications toolkit.</p><p><a href="http://www.asterisk.org/">http://www.asterisk.org/</a></p></td>
             </tr>
             <tr>
-                <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><a href="http://asterisk-java.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Asterisk Java*</p><p>The Asterisk-Java package consists of a set of Java classes that allow you to easily build Java applications that interact with an Asterisk PBX Server.</p><p><a href="http://asterisk-java.org/">http://asterisk-java.org/</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
             </tr>
