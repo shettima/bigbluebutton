@@ -47,15 +47,3 @@
     <p>*Planned:*
     || application/desktop sharing || scheduling || whiteboard ||
     || recording and archiving ||
-
-    == Current Activities ==
-    <p>Here are some of the current activities on the project:</p>
-            <li>DesktopSharing - How we are approaching implementing Desktop Sharing</li>
-            <li>PerformanceTesting - How we are doing performance testing</li>
-
-
-    == Screencasts ==
-    <p>To see tutorial videos of BigBlueButton in action, check out [http://bigbluebutton.org/support videos].</p>
-
-    == Demo ==
-    <p>To try out a demo, click [http://code.google.com/p/bigbluebutton/wiki/DemoBigBlueButton BigBlueButtonDemo] and follow the instructions to login.</p>
