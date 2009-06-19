@@ -2,10 +2,10 @@
 
         <table>
             <tr>
-                <td><a href="http://www.asterisk.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Asterisk*</p><p>Asterisk is an open source PBX, telephony engine, and telephony applications toolkit.</p><p><a href="http://www.asterisk.org/">http://www.asterisk.org/</a></p></td>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><a href="http://www.asterisk.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Asterisk*</p><p>Asterisk is an open source PBX, telephony engine, and telephony applications toolkit.</p><p><a href="http://www.asterisk.org/">http://www.asterisk.org/</a></p></td>
             </tr>
             <tr>
                 <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
@@ -45,4 +45,3 @@
             </tr>
             
         </table>
-    
