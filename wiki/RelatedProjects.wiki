@@ -1,0 +1,11 @@
+#summary Related projects on BigBlueButton
+
+= Introduction =
+
+We've had other groups develop extensions to BigBlueButton.  Here's a list of the open source project that have contributed to BigBlueButton. 
+
+There are other Google Code projects that are working on parts of BigBlueButton.  
+  * [http://code.google.com/p/sipstream/ Sip Stream] is a Flash-based SIP phone 
+  * [http://code.google.com/p/wiizap/ WiiZap] is project to control parts of BigBlueButton using a wireless Wii controler.
+  * [http://code.google.com/p/ossched/ OsSched] is a project to integrate BigBlueButton with other calendars and scheduling software.
+  * [http://readytopresent.wordpress.com/ ReadyToPresent] is an project to simplify the capture and presentation of a lecture.
