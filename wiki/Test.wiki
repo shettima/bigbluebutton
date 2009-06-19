@@ -1,4 +1,6 @@
-  <table>
+= Welcome to BigBlueButton Google Code =
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada fringilla feugiat. Mauris ac diam at erat tincidunt volutpat non quis lectus. Etiam ac fermentum lectus. Vivamus venenatis metus non turpis condimentum sed placerat orci auctor. Nulla risus justo, hendrerit eu pretium quis, lacinia at sapien. Pellentesque mi nisi, cursus ut imperdiet nec, ornare eu nisl. Nulla nec tempor velit. Proin feugiat, libero sit amet convallis lacinia, felis est consectetur nulla, in rutrum mi risus quis neque. Aliquam tempor, nibh vitae rhoncus congue, arcu urna luctus ante, sed blandit quam elit eget libero. Donec nec odio purus, quis iaculis lectus. Sed rutrum vehicula nunc, at volutpat ipsum fermentum a. Nulla facilisi. Fusce quis elit vel enim elementum imperdiet. </p>
+    <table>
     <tr>
         <td><a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png</a></td>
         <td><p>June 12, 2009</p><p>To help new developers understand the architecture of BigBlueButton, we've added a video overview that walks through the architecture for the server, client, and web components.</p><p>Check it out at <a href="http://bigbluebutton.org/content/videos">http://bigbluebutton.org/content/videos</a></p></td>
@@ -9,24 +11,3 @@
         </td>
     </tr>
     </table>
-
-    = Introduction =
-
-    Add your content here.
-
-    http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram.png
-
-    http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_overview.png
-
-    http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_client_overview.png
-
-    http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_voice_conference.png
-
-    http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
