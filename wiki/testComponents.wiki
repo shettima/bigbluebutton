@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td><a href="http://www.ghostscript.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Ghostscript is an interpreter for the PostScript language and for PDF. *</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a></p></td>
+                <td><p>*Ghostscript*</p><p>Ghostscript is an interpreter for the PostScript language and for PDF.</p><p><a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a></p></td>
                 <td><a href="http://grails.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*Grails*</p><p>Grails is an open-source web application framework that leverages the Groovy language and complements Java Web development.</p><p><a href="http://grails.org/">http://grails.org/</a></p></td>
             </tr>
