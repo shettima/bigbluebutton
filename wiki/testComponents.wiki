@@ -1,4 +1,4 @@
-= Open Source Components of BigBluebutton =
+= Open Source Components of BigBlueButton =
 
         <table>
         <tr>
