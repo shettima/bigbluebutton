@@ -1,53 +1,53 @@
 = Welcome to BigBlueButton Google Code =
-    <table>
+        <table>
+            <tr>
+                <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
+                <td><a href="http://demo.bigbluebutton.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tryIt_box.png</a></td>
+                <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
+            </tr>
+        </table>
+
+        == About ==    
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada fringilla feugiat. Mauris ac diam at erat tincidunt volutpat non quis lectus. Etiam ac fermentum lectus. Vivamus venenatis metus non turpis condimentum sed placerat orci auctor. Nulla risus justo, hendrerit eu pretium quis, lacinia at sapien. Pellentesque mi nisi, cursus ut imperdiet nec, ornare eu nisl. Nulla nec tempor velit. Proin feugiat, libero sit amet convallis lacinia, felis est consectetur nulla, in rutrum mi risus quis neque. Aliquam tempor, nibh vitae rhoncus congue, arcu urna luctus ante, sed blandit quam elit eget libero. Donec nec odio purus, quis iaculis lectus. Sed rutrum vehicula nunc, at volutpat ipsum fermentum a. Nulla facilisi. Fusce quis elit vel enim elementum imperdiet. </p>
+
+        == News ==
+        <p>*June 12, 2009*</p>
+        <table>
         <tr>
-            <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
-            <td><a href="http://demo.bigbluebutton.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tryIt_box.png</a></td>
-            <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
+            <td><a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/vmware.png</a></td>
+            <td><p>To make it easy to develop and run BigBlueButton, we completed the packaging of all the open source components of BigBlueButton into a single virtual machine (VM).  This VM also has a full BigBlueButton development environment, making it easy for you to modify and extend BigBlueButton to develop your own collaborative applications.   For more information see [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM How to Setup your own BigBlueButton VM].</p></td>
         </tr>
-    </table>
-        
-    == About ==    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada fringilla feugiat. Mauris ac diam at erat tincidunt volutpat non quis lectus. Etiam ac fermentum lectus. Vivamus venenatis metus non turpis condimentum sed placerat orci auctor. Nulla risus justo, hendrerit eu pretium quis, lacinia at sapien. Pellentesque mi nisi, cursus ut imperdiet nec, ornare eu nisl. Nulla nec tempor velit. Proin feugiat, libero sit amet convallis lacinia, felis est consectetur nulla, in rutrum mi risus quis neque. Aliquam tempor, nibh vitae rhoncus congue, arcu urna luctus ante, sed blandit quam elit eget libero. Donec nec odio purus, quis iaculis lectus. Sed rutrum vehicula nunc, at volutpat ipsum fermentum a. Nulla facilisi. Fusce quis elit vel enim elementum imperdiet. </p>
-    
-    == News ==
-    <p>*June 12, 2009*</p>
-    <table>
-    <tr>
-        <td><a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png</a></td>
-        <td><p>To make it easy to develop and run BigBlueButton, we completed the packaging of all the open source components of BigBlueButton into a single virtual machine (VM).  This VM also has a full BigBlueButton development environment, making it easy for you to modify and extend BigBlueButton to develop your own collaborative applications.   For more information see [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM How to Setup your own BigBlueButton VM].</p></td>
-    </tr>
-    <tr>
-        <td><a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png</a></td>
-        <td><p>To help new developers understand the architecture of BigBlueButton, we've added a video overview that walks through the architecture for the server, client, and web components.</p><p>Check it out at <a href="http://bigbluebutton.org/content/videos">http://bigbluebutton.org/content/videos</a></p></td>
-    </tr>
-    <tr>
-        <td>http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/hudson.png</td>
-        <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p>
-        </td>
-    </tr>
-    </table>
-    
-    == Project Goals ==
-    <p>BigBlueButton is a clean implementation of web conferencing that focuses on offering a *simple user interface* and an *extensible platform* for distance education.</p>
-    <p>For extensibility, we used the [http://puremvc.org/ PureMVC] library to organize the client code.  It's possible to add/remove modules at runtime in the client, making it much easier for other developers to add their own client modules to BigBlueButton.</p>
+        <tr>
+            <td><a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/arch_video.png</a></td>
+            <td><p>To help new developers understand the architecture of BigBlueButton, we've added a video overview that walks through the architecture for the server, client, and web components.</p><p>Check it out at <a href="http://bigbluebutton.org/content/videos">http://bigbluebutton.org/content/videos</a></p></td>
+        </tr>
+        <tr>
+            <td>http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</td>
+            <td><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p>Check it out at <a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p>
+            </td>
+        </tr>
+        </table>
 
-    == Site Contents ==
-      <li>HowToInstallBigBlueButton - Step-by-step instructions</li>
+        == Project Goals ==
+        <p>BigBlueButton is a clean implementation of web conferencing that focuses on offering a *simple user interface* and an *extensible platform* for distance education.</p>
+        <p>For extensibility, we used the [http://puremvc.org/ PureMVC] library to organize the client code.  It's possible to add/remove modules at runtime in the client, making it much easier for other developers to add their own client modules to BigBlueButton.</p>
 
-    == Related Projects ==
-    <p>There are other Google Code projects that are working on parts of BigBlueButton.</p>
-          <li>[http://code.google.com/p/sipstream/ Sip Stream] is a Flash-based SIP phone </li>
-          <li>[http://code.google.com/p/wiizap/ WiiZap] is project to control parts of BigBlueButton using a wireless Wii controler.</li>
-          <li>[http://code.google.com/p/ossched/ OsSched] is a project to integrate BigBlueButton with other calendars and scheduling software.</li>
-          <li>[http://readytopresent.wordpress.com/ ReadyToPresent] is an project to simplify the capture and presentation of a lecture.</li>
+        == Site Contents ==
+          <li>HowToInstallBigBlueButton - Step-by-step instructions</li>
+
+        == Related Projects ==
+        <p>There are other Google Code projects that are working on parts of BigBlueButton.</p>
+              <li>[http://code.google.com/p/sipstream/ Sip Stream] is a Flash-based SIP phone </li>
+              <li>[http://code.google.com/p/wiizap/ WiiZap] is project to control parts of BigBlueButton using a wireless Wii controler.</li>
+              <li>[http://code.google.com/p/ossched/ OsSched] is a project to integrate BigBlueButton with other calendars and scheduling software.</li>
+              <li>[http://readytopresent.wordpress.com/ ReadyToPresent] is an project to simplify the capture and presentation of a lecture.</li>
 
 
-    == Features ==
-    <p> *Implemented:*</p>
-    || voice conferencing || video conferencing  || group chat ||
-    || manage participants || slide presentation ||
+        == Features ==
+        <p> *Implemented:*</p>
+        || voice conferencing || video conferencing  || group chat ||
+        || manage participants || slide presentation ||
 
-    <p>*Planned:*
-    || application/desktop sharing || scheduling || whiteboard ||
-    || recording and archiving ||
+        <p>*Planned:*
+        || application/desktop sharing || scheduling || whiteboard ||
+        || recording and archiving ||
