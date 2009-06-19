@@ -1,13 +1,17 @@
     = Welcome to BigBlueButton Google Code =
     <table>
         <tr>
-            <td>http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</td>
-            <td>http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tryIt_box.png</td>
-            <td>http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</td>
+            <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
+            <td><a href="http://demo.bigbluebutton.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tryIt_box.png</a></td>
+            <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVMv">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
         </tr>
     </table>
         
+    == About ==    
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras malesuada fringilla feugiat. Mauris ac diam at erat tincidunt volutpat non quis lectus. Etiam ac fermentum lectus. Vivamus venenatis metus non turpis condimentum sed placerat orci auctor. Nulla risus justo, hendrerit eu pretium quis, lacinia at sapien. Pellentesque mi nisi, cursus ut imperdiet nec, ornare eu nisl. Nulla nec tempor velit. Proin feugiat, libero sit amet convallis lacinia, felis est consectetur nulla, in rutrum mi risus quis neque. Aliquam tempor, nibh vitae rhoncus congue, arcu urna luctus ante, sed blandit quam elit eget libero. Donec nec odio purus, quis iaculis lectus. Sed rutrum vehicula nunc, at volutpat ipsum fermentum a. Nulla facilisi. Fusce quis elit vel enim elementum imperdiet. </p>
+    
+    == News ==
+    <p>To make it easy to develop and run BigBlueButton, we completed the packaging of all the open source components of BigBlueButton into a single virtual machine (VM).  This VM also has a full BigBlueButton development environment, making it easy for you to modify and extend BigBlueButton to develop your own collaborative applications.   For more information see [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM How to Setup your own BigBlueButton VM].</p>
     <table>
     <tr>
         <td><a href="http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png">http://www.bigbluebutton.org/sites/default/files/images/arch_diagrams.png</a></td>
