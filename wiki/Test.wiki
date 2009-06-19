@@ -1,4 +1,4 @@
-     = Welcome to BigBlueButton Google Code =
+ = Welcome to BigBlueButton Google Code =
     <table>
         <tr>
             <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
@@ -29,34 +29,29 @@
     <p>For extensibility, we used the [http://puremvc.org/ PureMVC] library to organize the client code.  It's possible to add/remove modules at runtime in the client, making it much easier for other developers to add their own client modules to BigBlueButton.</p>
 
     == Site Contents ==
-    <ol>
       <li>HowToInstallBigBlueButton - Step-by-step instructions</li>
-    </ol>
 
     == Related Projects ==
     <p>There are other Google Code projects that are working on parts of BigBlueButton.</p>
-      <ol>
           <li>[http://code.google.com/p/sipstream/ Sip Stream] is a Flash-based SIP phone </li>
           <li>[http://code.google.com/p/wiizap/ WiiZap] is project to control parts of BigBlueButton using a wireless Wii controler.</li>
           <li>[http://code.google.com/p/ossched/ OsSched] is a project to integrate BigBlueButton with other calendars and scheduling software.</li>
           <li>[http://readytopresent.wordpress.com/ ReadyToPresent] is an project to simplify the capture and presentation of a lecture.</li>
-      </ol>
+
 
     == Features ==
-    *Implemented:*
+    <p> *Implemented:*</p>
     || voice conferencing || video conferencing  || group chat ||
     || manage participants || slide presentation ||
 
-    *Planned:*
+    <p>*Planned:*
     || application/desktop sharing || scheduling || whiteboard ||
     || recording and archiving ||
 
     == Current Activities ==
     <p>Here are some of the current activities on the project:</p>
-        <ol>
             <li>DesktopSharing - How we are approaching implementing Desktop Sharing</li>
             <li>PerformanceTesting - How we are doing performance testing</li>
-        </ol>
 
 
     == Screencasts ==
