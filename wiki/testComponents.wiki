@@ -1,4 +1,4 @@
-    = Open Source Components of BigBlueButton =
+= Open Source Components of BigBlueButton =
 
         <table>
             <tr>
@@ -28,20 +28,20 @@
             <tr>
                 <td><a href="http://nginx.net/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
                 <td><p>*nginx*</p><p>nginx "engine x" is a HTTP server and mail proxy server. </p><p><a href="http://nginx.net/">http://nginx.net/</a></p></td>
-                <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><a href="http://osflash.org/red5">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Red5*</p><p>Red5 is an Open Source Flash Server written in Java.</p><p><a href="http://osflash.org/red5">http://osflash.org/red5</a></p></td>
             </tr>
             <tr>
-                <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
-                <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><a href="http://www.swftools.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*swf Tools*</p><p>SWFTools is a collection of utilities for working with Adobe Flash files (SWF files).</p><p><a href="http://www.swftools.org/">http://www.swftools.org/</a></p></td>
+                <td><a href="http://tomcat.apache.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Tomcat*</p><p>Apache Tomcat is an implementation of the Java Servlet and JavaServer Pages technologies. The Java Servlet and JavaServer Pages specifications are developed under the Java Community Process.</p><p><a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></p></td>
             </tr>
             <tr>
-                <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
-                <td><a href="http://bigbluebutton.org/hudson/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
-                <td><p>*Name*</p><p>We now have a Continuous Integration Server running to build the main components of BigBlueButton.</p><p><a href="http://bigbluebutton.org/hudson">http://bigbluebutton.org/hudson</a></p></td>
+                <td><a href="http://www.ubuntu.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Ubuntu*</p><p>Ubuntu is a distribution of the Linux Operating system, focused on user friendly Graphical User Interfaces.</p><p><a href="http://www.ubuntu.com/">http://www.ubuntu.com/</a></p></td>
+                <td><a href="http://www.xuggle.com/xuggler/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/hudson_icon.png</a></td>
+                <td><p>*Xuggler*</p><p>Xuggler is a library for Java or C++ developers that allows you to decode, manipulate, and encode (almost) any type of video file in near real time.</p><p><a href="http://www.xuggle.com/xuggler/">http://www.xuggle.com/xuggler/</a></p></td>
             </tr>
             
         </table>
