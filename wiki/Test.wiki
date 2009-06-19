@@ -1,9 +1,9 @@
-    = Welcome to BigBlueButton Google Code =
+      = Welcome to BigBlueButton Google Code =
     <table>
         <tr>
             <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
             <td><a href="http://demo.bigbluebutton.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tryIt_box.png</a></td>
-            <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
+            <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVMv">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
         </tr>
     </table>
         
@@ -23,8 +23,7 @@
         </td>
     </tr>
     </table>
-
-== Project Goals ==
-BigBlueButton is a clean implementation of web conferencing that focuses on offering a *simple user interface* and an *extensible platform* for distance education.
-
-For extensibility, we used the [http://puremvc.org/ PureMVC] library to organize the client code.  It's possible to add/remove modules at runtime in the client, making it much easier for other developers to add their own client modules to BigBlueButton.
+    
+    == Project Goals ==
+    <p>BigBlueButton is a clean implementation of web conferencing that focuses on offering a *simple user interface* and an *extensible platform* for distance education.</p>
+    <p>For extensibility, we used the [http://puremvc.org/ PureMVC] library to organize the client code.  It's possible to add/remove modules at runtime in the client, making it much easier for other developers to add their own client modules to BigBlueButton.</p>
