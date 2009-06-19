@@ -1,9 +1,9 @@
-     = Welcome to BigBlueButton Google Code =
+  = Welcome to BigBlueButton Google Code =
     <table>
         <tr>
             <td><a href="http://www.bigbluebutton.org/content/videos">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/watchIt_box.png</a></td>
             <td><a href="http://demo.bigbluebutton.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tryIt_box.png</a></td>
-            <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVMv">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
+            <td><a href="http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/downloadIt_box.png</a></td>
         </tr>
     </table>
         
