@@ -3,6 +3,20 @@
 = Overview =
 We've put a lot of thought into the architecture of BigBlueButton.  Our goal was to make it easy for other developers to use BigBlueButton as a platform to build other collaborative applications.
 
+----
+
+== Trunk Overview ==
+
+The trunk of the SVN repository contains the following important parts:
+
+* bigbluebutton-apps - The server side red5 web-apps of BigBlueButton
+* bigbluebutton-client - The Flex/Flash client of BigBlueButton
+* bigbluebutton-web - The Grails application for scheduling conferences and logging in/out
+* deskshare-app - The Desktop Sharing server side red5 web-app
+* deskshare-applet - The Applet program used to capture the screen on the client 
+
+----
+
 == Architecture Overview ==
 
 The following diagram shows the major pieces of the BigBlueButton architecture.
