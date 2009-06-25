@@ -41,6 +41,16 @@ The following diagram shows the steps that occur when a presenter uploads a pres
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
 
+----
+
+== Desktop Sharing ==
+
+The diagram bellow shows the main components of our screen sharing solution.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share overview.png
+
+----
+
 = More Information =
 
   * [BigBlueButtonVM Download Virtual Machine]
