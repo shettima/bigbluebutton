@@ -67,5 +67,5 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_
 
 = More Information =
 
-  * [BigBlueButtonVM Download Virtual Machine]
+  * [BigBlueButtonVM Installing the Virtual Machine]
   * [HowToInstallBigBlueButton Installing BigBlueButton from source]
