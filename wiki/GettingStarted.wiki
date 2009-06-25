@@ -47,7 +47,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading
 
 The diagram bellow shows the main components of our screen sharing solution.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share overview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share_overview.png
 
 ----
 
