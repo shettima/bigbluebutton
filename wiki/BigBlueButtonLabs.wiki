@@ -3,9 +3,8 @@
 = Introduction =
 
 We have a number of projects that are related to BigBlueButton.  
-
+    * [http://readytopresent.wordpress.com/ Ready To Present enclosure]
     * [Witheboard]   
     * [Red5Phone Red 5 Phone]
     * [DesktopSharingPart2 Desktop Sharing II]
     * [PerformanceTesting Performance Testing]
-    * [http://readytopresent.wordpress.com/ Portable Ready To Present hardware unit]
