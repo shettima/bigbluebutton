@@ -1,5 +1,5 @@
   * [GettingStarted Getting Started]
-    * [BigBlueButtonVM Installing the Virtual Machine]
+    * [BigBlueButtonVM BigBlueButton Virtual Machine]
     * [HowToInstallBigBlueButton Installing from source]
   * [Support Support]
     * [ReleaseNotes Release Notes]
