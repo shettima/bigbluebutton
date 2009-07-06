@@ -7,20 +7,20 @@
   # Watch this installation video: [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM].
   # Read the instructions below.
 
-== Running BigBlueButton as a VM ==
+== Setup ==
 
-Many users have told us they wanted to run their own version BigBlueButton.  Developers have asked us for ways to shorten the edit-compile-check cycle when making changes to the BigBlueButton source.
+Many universities and colleges have told us they wanted to run their own version BigBlueButton behind their firewall.  In addition, our developers have asked to shorten the edit-compile-check cycle when extending BigBlueButton.
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac. This VM is a fully working version of the BigBlueButton Server. It has a full development environment preconfigured so you to check out code from BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.
+In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac. This VM is also a full command-line development environment -- it's preconfigured to check out code from BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.
   
 Prerequisites:
   * VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
   * VMWare Fusion for Mac
   * Ability for the VM to acquire an IP address through DHCP on boot
 
-=== Instructions ===
+== Instructions ==
 
-  1.  Download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip]
+  1.  If you haven't already done so, download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip]
   2.  Uncompress bigbluebutton-vm.zip and open the enclosed *ubuntu-vmw6* folder.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
