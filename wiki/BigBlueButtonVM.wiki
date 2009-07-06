@@ -4,10 +4,10 @@
 
 = Quick Start =
   # Download the latest VM: [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip].
-  # Watch this installation video: [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM].
-  # Read the instructions below.
+  # While it's downloading, watch this installation video: [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM].
+  # Follow the instructions below.
 
-== Setup ==
+== Background ==
 
 Many universities and colleges have told us they wanted to run their own version BigBlueButton behind their firewall.  In addition, our developers have asked to shorten the edit-compile-check cycle when extending BigBlueButton.
 
@@ -18,9 +18,10 @@ Prerequisites:
   * VMWare Fusion for Mac
   * Ability for the VM to acquire an IP address through DHCP on boot
 
-== Instructions ==
+== Setup ==
 
   1.  If you haven't already done so, download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip]
+
   2.  Uncompress bigbluebutton-vm.zip and open the enclosed *ubuntu-vmw6* folder.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
