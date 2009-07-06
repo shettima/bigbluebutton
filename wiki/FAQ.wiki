@@ -4,7 +4,7 @@
 <wiki:toc max_depth="2"/>
 
 ----
-== Overview ==
+= Overview =
 
 If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
 
