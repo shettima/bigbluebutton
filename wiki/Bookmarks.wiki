@@ -176,4 +176,8 @@
  * http://www.ibm.com/developerworks/java/library/j-jcr/
  * http://www.onjava.com/pub/a/onjava/2006/10/04/what-is-java-content-repository.html
  * http://lorand.somogyi.name/2008/11/jackrabbit-with-spring/
+
+== Tunneling ==
+ * http://www.devx.com/Java/Article/17679/1954
+
  
