@@ -1,5 +1,7 @@
 #summary How to setup your own BigBlueButton Server (Windows)
 
+Note: These instructions are for version 0.3 and will soon be updated for version 0.4.
+
 = Overview =
 These instructions show you how to install BigBlueButton on a Windows XP/Vista computer.  If you computer is running XP/Vista with at least 1GB of memory and 8GB of free disk space, you're good to go.
 
