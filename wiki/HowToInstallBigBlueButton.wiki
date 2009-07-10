@@ -6,7 +6,7 @@ These instructions show you how to install BigBlueButton on a Windows XP/Vista c
 There are three core servers needed to run BigBlueButton:
   * bigbluebutton server (built on red5)
   * activeMQ server
-  * tomcat server
+  * tomcat server  
 
 You'll also need to install an Asterisk server for voice conferencing.  However, for these instructions, we'll just cover the above servers.  That's enough to get you running with sharing of slides, video, and chat.
 
@@ -18,9 +18,7 @@ For bigbluebutton.war, it uses two supporting command-line applications  to conv
   * pdftk -- breaks up PDF files into individual pages
   * pdf2swf -- converts a PDF file to SWF
 
-Here's an overview of how these components work together.
-
-http://present.carleton.ca:8080/files/docs/images/bbb-overview.png
+For an overview of how the files work together, see [ http://code.google.com/p/bigbluebutton/wiki/GettingStarted | Getting Started]
 
 = Before you begin =
 
