@@ -2,7 +2,7 @@
 
 = New Features and Fixed Issues =
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=85 Issue 85] Added a zoom slide to presentation module, for users without mousewheel
-  * Added Desktop Sharing. The presenter can now do a screen-cast
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=78 Issue 78] Added Desktop Sharing. The presenter can now do a screen-cast
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=5 Issue 5] Added Private Chat. Participants can now chat privately with any other participant in the conference
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=96 Issue 96] Fixed the thumbnail view in presentation module to be more responsive and user friendly
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=84 Issue 84] Only one instance of the upload window can now be opened.
