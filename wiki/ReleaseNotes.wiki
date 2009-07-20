@@ -3,22 +3,22 @@
 = 0.5 Release =
 === Fixed Issues ===
 Here are the list of issues we fixed on this release:
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=109 Issue 109] Cannot upload twice a file
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=101 Issue 101] Red5 video app has significant delay
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=96 Issue 96] Fixed the thumbnail view in presentation module to be more responsive and user friendly
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=94 Issue 94] Change applet certificate
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=93 Issue 93] deskshare-client should tunnel through port 80
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=109 Issue 109] Cannot upload twice a file
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=101 Issue 101] Red5 video app has significant delay
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=96 Issue 96] Fixed the thumbnail view in presentation module to be more responsive and user friendly
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=94 Issue 94] Change applet certificate
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=93 Issue 93] deskshare-client should tunnel through port 80
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=87 Issue 87] Logout should close the deskshare module
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=85 Issue 85] Added a zoom slide to presentation module, for users without mousewheel
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=84 Issue 84] Only one instance of the upload window can now be opened.
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=78 Issue 78] Added Desktop Sharing. The presenter can now do a screen-cast
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=75 Issue 75] bbb-setupdev -s (setup samba) now gives the correct path
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=5 Issue 5] Added Private Chat. Participants can now chat privately with any other participant in the conference
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=84 Issue 84] Only one instance of the upload window can now be opened.
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=78 Issue 78] Added Desktop Sharing. The presenter can now do a screen-cast
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=75 Issue 75] bbb-setupdev -s (setup samba) now gives the correct path
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=5 Issue 5] Added Private Chat. Participants can now chat privately with any other participant in the conference
 
-=== Know Issues ===
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting
+=== Known Issues ===
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting
 
 === New Features ===
 * Desktop Sharing *
