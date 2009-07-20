@@ -1,4 +1,4 @@
-#summary Release Notes for version 0.5 of BigBlueButton
+#summary Release Notes
 
 = New Features and Fixed Issues =
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=85 Issue 85] Added a zoom slide to presentation module, for users without mousewheel
