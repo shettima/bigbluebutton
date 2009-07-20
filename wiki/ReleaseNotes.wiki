@@ -1,6 +1,7 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 = 0.5 Release =
+=== Fixed Issues ===
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=109 Issue 109] Cant't upload twice a file
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=101 Issue 101] Red5 video app has significant delay
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=96 Issue 96] Fixed the thumbnail view in presentation module to be more responsive and user friendly
