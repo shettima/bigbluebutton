@@ -7,7 +7,7 @@ _Code named in honor of the 40th anniversary of the moon landing_
 === New Features ===
 * Desktop Sharing *
 
-Desktop Sharing has been in development for a long time.  We wanted a solution that would work on all three platforms (Mac, Unix, and PC).  This lead us to using a Java Applet to grab the screen and send it back to the server.  The next challenge was to broadcast the desktop to the clients.  We decided to use Xuggler from within Red5 to create a live stream from the incoming images from the applet.
+Desktop Sharing has been in development for a long time.  We wanted a solution that would work on all three platforms (Mac, Unix, and PC), so we decided to use a Java Applet to grab to send screen updates to the Red5 server.  We then used Xuggler from within Red5 to create a live stream from the incoming images from the applet.
 
 From the presenter's perspective, there is a new screen icon on the top toolbar. Once clicked, the presenter can choose the area of their screen to share.  Clicking on Start Sharing causes this area of their screen to appear on all the clients.  While sharing the presenter can still drag around the window to determine which portion of the screen gets shared.
 
@@ -32,6 +32,8 @@ Here are the list of issues we fixed on this release:
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=5 Issue 5] Added Private Chat. Participants can now chat privately with any other participant in the conference
 
 === Known Issues ===
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=112 Issue 112] DeskShare video shows the final frame when presenter logs out
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=111 Issue 111] DeskShare video has narrow yellow stripe at the top
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting
