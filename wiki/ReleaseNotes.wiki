@@ -15,6 +15,8 @@ Here are the list of issues we fixed on this release:
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=75 Issue 75] bbb-setupdev -s (setup samba) now gives the correct path
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=5 Issue 5] Added Private Chat. Participants can now chat privately with any other participant in the conference
 === Known Issues ===
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=112 Issue 112] DeskShare video hangs at final frame
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=111 Issue 111] DeskShare video has narrow yellow stripe at the top
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting
