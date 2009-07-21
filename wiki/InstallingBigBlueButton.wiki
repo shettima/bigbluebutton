@@ -38,5 +38,9 @@ root@ubuntu904server:~# which gs
 
 > /opt/apache-activemq-5.2.0/bin/activemq
 
-> apt-get install asterisk
-> apt-get install zaptel
+> cd /usr/local/src
+> wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
+
+> wget http://downloads.asterisk.org/pub/telephony/zaptel/zaptel-1.4.12.1.tar.gz
+
+> wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-addons-1.4.8.tar.gz
