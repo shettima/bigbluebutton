@@ -68,3 +68,36 @@ http://godson.in/how-to-install-asterisk-on-ubuntu
 > make config
 
 > apt-get install chkconfig
+
+/etc/asterisk/meetme.conf
+conf => 85115
+
+/etc/asterisk/extensions.conf
+; BigBlueButton: Setup sample conference
+[bigbluebutton]
+
+exten => 85115,1,,Meetme(85115|csT)
+exten => 85115,n,Hangup()
+
+;
+; Create an extension, 600, for evaluating echo latency.
+;
+exten => 600,1,Answer                   ; Do the echo test
+exten => 600,n,Playback(demo-echotest)  ; Let them know what's going on
+exten => 600,n,Echo                     ; Do the echo test
+exten => 600,n,Playback(demo-echodone)  ; Let them know it's over
+exten => 600,n,Hangup()
+
+
+/etc/asterisk/sip.conf
+[user1]
+type=friend
+username=user1
+insecure=very
+secret=letmein
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bigbluebutton
+allow=all
