@@ -1,0 +1,30 @@
+#summary One-sentence summary of this page.
+
+1. Install Java 6
+ > apt-get install openjdk-6-jre-headless
+
+
+root@ubuntu-vm:~# java -version
+java version "1.6.0_0"
+OpenJDK  Runtime Environment (build 1.6.0_0-b11)
+OpenJDK Client VM (build 1.6.0_0-b11, mixed mode, sharing)
+
+> apt-get install mysql-server
+
+> apt-cache search tomcat
+
+> apt-get install tomcat5.5
+
+> apt-get install swftools
+
+> apt-get install imagemagick
+> apt-get install nginx
+
+> cd opt
+> wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
+
+
+> /opt/apache-activemq-5.2.0/bin/activemq
+
+> apt-get install asterisk
+> apt-get install zaptel
