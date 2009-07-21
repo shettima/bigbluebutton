@@ -49,6 +49,13 @@ http://godson.in/how-to-install-asterisk-on-ubuntu
 #apt-get install bison
 
 
+> wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+> make all
+> make install
+> make config
+
+> apt-get install chkconfig
+
 > cd /usr/local/src
 > wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
 
@@ -62,12 +69,7 @@ http://godson.in/how-to-install-asterisk-on-ubuntu
 > make config
 
 
-> wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
-> make all
-> make install
-> make config
 
-> apt-get install chkconfig
 
 /etc/asterisk/meetme.conf
 conf => 85115
