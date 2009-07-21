@@ -1,5 +1,6 @@
 #summary One-sentence summary of this page.
 
+{{{
 http://www.vmware.com/appliances/directory/va/147323/download
 
 http://ubuntuforums.org/showthread.php?t=221768
@@ -113,3 +114,5 @@ secret = secret
 permit = 0.0.0.0/0.0.0.0
 read = system,call,log,verbose,command,agent,user
 write = system,call,log,verbose,command,agent,user
+
+}}}
