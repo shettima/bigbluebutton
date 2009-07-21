@@ -44,3 +44,34 @@ root@ubuntu904server:~# which gs
 > wget http://downloads.asterisk.org/pub/telephony/zaptel/zaptel-1.4.12.1.tar.gz
 
 > wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-addons-1.4.8.tar.gz
+
+> tar zxvf asterisk-1.4.25.tar.gz
+> cd asterisk-1.4.25
+> more README
+> ./configure
+> make 
+> make install
+> make samples
+> make config
+
+
+
+http://godson.in/how-to-install-asterisk-on-ubuntu
+
+#apt-get install build-essential
+#apt-get install linux-headers-`uname -r`
+#apt-get install libssl-dev
+#apt-get install ncurses-dev
+#apt-get install libnewt-dev
+#apt-get install zlib1g-dev
+#apt-get install bison
+
+
+
+> wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+> make all
+> make install
+> make config
+
+> apt-get install chkconfig
+
