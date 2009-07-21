@@ -1,4 +1,5 @@
 #summary How to setup your own BigBlueButton Server (Windows)
+#labels Deprecated
 
 Note: These instructions are for version 0.3 and will soon be updated for version 0.4.
 
