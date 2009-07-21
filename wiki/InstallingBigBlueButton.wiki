@@ -39,6 +39,8 @@ root@ubuntu904server:~# which gs
 
 > /opt/apache-activemq-5.2.0/bin/activemq
 
+wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+
 http://godson.in/how-to-install-asterisk-on-ubuntu
 
 #apt-get install build-essential
@@ -201,3 +203,12 @@ server {
 }}}
 
 > ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+
+
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
+
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
+
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
+
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
