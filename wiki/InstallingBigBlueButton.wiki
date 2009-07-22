@@ -249,7 +249,6 @@ mysql>
 root@ubuntu904server:/var/lib/tomcat6/webapps# cp /home/user/temp/bigbluebutton-0.1.war ./bigbluebutton.war
 
 {{{
-root@bbb-vm-20090629:/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes# more bigbluebutton.properties
 #
 # These are the default properites for BigBlueButton Web application
 
@@ -257,7 +256,7 @@ dataSource.url=jdbc:mysql://localhost/bigbluebutton_dev
 dataSource.username=bbb
 dataSource.password=secret
 
-swfToolsDir=/bin
+swfToolsDir=/usr/bin
 imageMagickDir=/usr/bin
 presentationDir=/var/bigbluebutton
 ghostScriptExec=/usr/bin/gs
@@ -272,15 +271,28 @@ beans.presentationService.ghostScriptExec=${ghostScriptExec}
 
 #
 # This URL needs to reference the host running the tomcat server
-bigbluebutton.web.serverURL=http://192.168.0.136
+bigbluebutton.web.serverURL=http://localhost
 
 # This is a workaround for a problem converting PDF files, referenced at
 # http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
 noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
 beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
 
+
 }}}
 
+
+Set the following
+{{{
+dataSource.url=jdbc:mysql://localhost/bigbluebutton_dev^M
+dataSource.username=bbb^M
+dataSource.password=secret^M
+^M
+swfToolsDir=/usr/bin^M
+imageMagickDir=/usr/bin^M
+presentationDir=/var/bigbluebutton^M
+ghostScriptExec=/usr/bin/gs^M
+}}}
 
 {{{
 root@bbb-vm-20090629:/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes# mysql -u root -p
