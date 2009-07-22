@@ -8,7 +8,9 @@
  > ping www.google.com
 
 If you get an error saying yout eth0 is not connected, then fix it by:
+
   Check if it is using eth1 
+
 root@ubuntu904server:/usr/local# ifconfig -a
 eth1      Link encap:Ethernet  HWaddr 00:0c:29:dd:b4:51
           inet addr:192.168.0.154  Bcast:192.168.0.255  Mask:255.255.255.0
@@ -44,50 +46,63 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   > sudo apt-get upgrade
 }}}
 
+ * Install Java 6
 {{{
-root@ubuntu904server:/usr/local# ifconfig -a
-
+ > apt-get install openjdk-6-jre-headless
 
 }}}
 
+ * Install MySQL
 {{{
-1. Install Java 6
- > apt-get install openjdk-6-jre-headless
-
-2. Install MySQL
  > apt-get install mysql-server
+}}}
 
-3. Install Tomcat
+ * Install Tomcat
+{{{
   > apt-cache search tomcat
 
   > apt-get install tomcat6
+}}}
 
-4. Confirm that tomcat is running
+ * Confirm that tomcat is running
+{{{
   http://<YOUR IP>:8080/
+}}}
 
-5. Install swftools
+ * Install swftools
+{{{
   > apt-get install swftools
 
-6. Make a note of where pdf2swf is installed
+ Make a note of where pdf2swf is installed
   > which pdf2swf
   
   You should see something like
   /usr/bin/pdf2swf
 
-7. Install ImageMagick
+}}}
+
+ * Install ImageMagick
+{{{
   > apt-get install imagemagick
 
-8. Make a note of where the convert application is installed
+  Make a note of where the convert application is installed
   > which convert
 
   You shoud see something like.
   /usr/bin/convert
 
-root@ubuntu904server:~# which gs
-/usr/bin/gs
+  Note where GhostScript is installed
+  > which gs
 
+  You shoud see something like.
+  /usr/bin/gs
+}}}
 
-> apt-get install nginx
+ * Install Nginx
+{{{
+  > apt-get install nginx
+}}}
+
 
 > cd opt
 > wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
