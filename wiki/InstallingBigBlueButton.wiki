@@ -420,5 +420,74 @@ export XUGGLE_HOME=/usr/local/xuggler
 export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
 export PATH=$XUGGLE_HOME/bin:$PATH
 
+}}}
 
+{{{
+  351  cp /home/user/temp/deskshare.tar.gz ./
+  352  ls
+  353  tar zxvf deskshare.tar.gz
+  354  ls
+  355  rm deskshare.tar.gz
+}}}
+
+{{{
+  357  cd /var/www
+  358  ls
+  359  cp /home/user/temp/client.tar.gz ./
+  360  ls
+  361  tar zxvf client.tar.gz
+  362  ls
+  363  mkdir bigbluebutton
+  364  mv client bigbluebutton
+  365  rm client.tar.gz
+}}}
+
+{{{
+<?xml version="1.0" ?>
+<config>
+    <version>0.4</version>
+    <porttest host="192.168.0.124" application="oflaDemo"/>
+        <modules>
+                <module name="VideoModule" url="VideoModule.swf"
+                        uri="rtmp://192.168.0.124/oflaDemo"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                        loadNextModule="DeskShareModule"
+                />
+                <module name="ChatModule" url="ChatModule.swf"
+                        uri="rtmp://192.168.0.124/bigbluebutton"
+                        loadNextModule="PresentationModule"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="ViewersModule" url="ViewersModule.swf"
+                        uri="rtmp://192.168.0.124/bigbluebutton"
+                        host="conf/join-mock.xml"
+                        onAppInitEvent="LOAD" loadNextModule="ChatModule"
+                        onAppStartEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="ListenersModule" url="ListenersModule.swf"
+                        uri="rtmp://192.168.0.124/bigbluebutton"
+                        recordingHost="http://192.168.0.124"
+                        loadNextModule="VideoModule"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="PresentationModule" url="PresentationModule.swf"
+                        uri="rtmp://192.168.0.124/bigbluebutton"
+                        host="http://192.168.0.124"
+                        loadNextModule="ListenersModule"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+
+                <module name="DeskShareModule" url="DeskShareModule.swf"
+                        uri="rtmp://192.168.0.124/deskShare"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+
+        </modules>
+</config>
 }}}
