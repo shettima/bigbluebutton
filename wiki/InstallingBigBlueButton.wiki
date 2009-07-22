@@ -400,3 +400,25 @@ Uncommet RTMPT section of /opt/red5-0.8/conf/red5-core.xml
 
 }}}
 
+
+{{{
+http://www.xuggle.com/xuggler/downloads/
+
+  331  cd /usr/local
+  332  l
+  333  pwd
+  334  ls
+  335  wget http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.1.FINAL/xuggle-xuggler.3.1.818-x86_64-unknown-linux-gnu.sh
+  336  ls
+  337  chmod a+x ./xuggle-xuggler.3.1.818-x86_64-unknown-linux-gnu.sh
+  338  ls
+  339  ./xuggle-xuggler.3.1.818-x86_64-unknown-linux-gnu.sh
+  340  vi /etc/profile
+
+
+export XUGGLE_HOME=/usr/local/xuggler
+export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
+export PATH=$XUGGLE_HOME/bin:$PATH
+
+
+}}}
