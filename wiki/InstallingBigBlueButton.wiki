@@ -4,28 +4,40 @@
 http://www.vmware.com/appliances/directory/va/147323/download
 
 http://ubuntuforums.org/showthread.php?t=221768
+}}}
 
-
-
-
+{{{
 1. Install Java 6
  > apt-get install openjdk-6-jre-headless
 
+2. Install MySQL
+ > apt-get install mysql-server
 
-> apt-get install mysql-server
+3. Install Tomcat
+  > apt-cache search tomcat
 
-> apt-cache search tomcat
+  > apt-get install tomcat6
 
-> apt-get install tomcat6
-http://192.168.0.154:8080/
+4. Confirm that tomcat is running
+  http://<YOUR IP>:8080/
 
-> apt-get install swftools
-root@ubuntu904server:~# which pdf2swf
-/usr/bin/pdf2swf
+5. Install swftools
+  > apt-get install swftools
 
-> apt-get install imagemagick
-root@ubuntu904server:~# which convert
-/usr/bin/convert
+6. Make a note of where pdf2swf is installed
+  > which pdf2swf
+  
+  You should see something like
+  /usr/bin/pdf2swf
+
+7. Install ImageMagick
+  > apt-get install imagemagick
+
+8. Make a note of where the convert application is installed
+  > which convert
+
+  You shoud see something like.
+  /usr/bin/convert
 
 root@ubuntu904server:~# which gs
 /usr/bin/gs
