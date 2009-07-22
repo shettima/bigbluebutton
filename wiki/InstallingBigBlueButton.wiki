@@ -73,29 +73,12 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 {{{
   > apt-get install swftools
 
- Make a note of where pdf2swf is installed
-  > which pdf2swf
-  
-  You should see something like
-  /usr/bin/pdf2swf
-
 }}}
 
  * Install ImageMagick
 {{{
   > apt-get install imagemagick
 
-  Make a note of where the convert application is installed
-  > which convert
-
-  You shoud see something like.
-  /usr/bin/convert
-
-  Note where GhostScript is installed
-  > which gs
-
-  You shoud see something like.
-  /usr/bin/gs
 }}}
 
  * Install Nginx
@@ -113,6 +96,16 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   > /opt/apache-activemq-5.2.0/bin/activemq
 }}}
 
+ * Modify tomcat6 account
+{{{
+ > vi /etc/passwd
+
+ Modify tomcat6 entry to this
+  tomcat6:x:106:113::/usr/share/tomcat6:/bin/bash
+
+}}}
+
+
  * Install red5
 {{{
   > cd opt
@@ -120,7 +113,8 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   > tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   > mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 red5-0.8
   
-  Start red5 
+  Start red5 as tomcat6 user
+  > sudo su -l tomcat6
   > red5.sh
 }}}
 
@@ -352,24 +346,29 @@ server {
 
 }}}
 
-
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
-
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
-
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
-
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
-
+ * Download BigBlueButton
 {{{
-> vi /etc/default/tomcat6
-
-TOMCAT6_SECURITY=no
+ > mkdir /home/user/temp
+ > cd /home/user/temp
+ > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
+ > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
+ > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
+ > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
+ > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
 }}}
 
-
+ * Disable Security settings for TOMCAT6
 {{{
-root@ubuntu904server:/home/user/temp# mysql -u root -p
+  > vi /etc/default/tomcat6
+
+  Edit TOMCAT6_SECURITY=yes to
+
+  TOMCAT6_SECURITY=no
+}}}
+
+ * setup the database
+{{{
+ > mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 33
@@ -389,9 +388,45 @@ Query OK, 0 rows affected (0.00 sec)
 mysql>
 }}}
 
-root@ubuntu904server:/var/lib/tomcat6/webapps# cp /home/user/temp/bigbluebutton-0.1.war ./bigbluebutton.war
-
+ * Install BigBlueButton Web
 {{{
+ > cd /var/lib/tomcat6/webapps
+ > cp /home/user/temp/bigbluebutton-0.1.war ./bigbluebutton.war
+}}}
+
+ * Determine PDF2SWF, CONVERT and GS applications
+{{{
+  Make a note of where pdf2swf is installed
+  > which pdf2swf
+  
+  You should see something like
+  /usr/bin/pdf2swf
+  
+  Make a note of where the convert application is installed
+  > which convert
+
+  You shoud see something like.
+  /usr/bin/convert
+
+  Note where GhostScript is installed
+  > which gs
+
+  You shoud see something like.
+  /usr/bin/gs
+}}}
+
+ * Edit bbb-web properties
+{{{
+ > vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+
+Change the following:
+ - swfToolsDir to the directory where pdf2swf is located
+ - imageMagickDir to the directory where convert is located
+ - ghostScriptExec to point to the gs application
+ - change bigbluebutton.web.serverURL=http://<YOUR IP>
+
+Your bigbluebutton.properties should resemble something like this
+
 #
 # These are the default properites for BigBlueButton Web application
 
@@ -414,31 +449,22 @@ beans.presentationService.ghostScriptExec=${ghostScriptExec}
 
 #
 # This URL needs to reference the host running the tomcat server
-bigbluebutton.web.serverURL=http://localhost
+bigbluebutton.web.serverURL=http://192.168.0.154
 
 # This is a workaround for a problem converting PDF files, referenced at
 # http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
 noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
 beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
-
-
 }}}
 
-
-Set the following
+ * Restart Tomcat6
 {{{
-dataSource.url=jdbc:mysql://localhost/bigbluebutton_dev^M
-dataSource.username=bbb^M
-dataSource.password=secret^M
-^M
-swfToolsDir=/usr/bin^M
-imageMagickDir=/usr/bin^M
-presentationDir=/var/bigbluebutton^M
-ghostScriptExec=/usr/bin/gs^M
+ > /etc/init.d/tomcat6 restart
 }}}
 
+ * Check if database tables were created
 {{{
-root@bbb-vm-20090629:/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes# mysql -u root -p
+ > mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 56
@@ -481,33 +507,26 @@ mysql> select * from user;
 mysql>
 }}}
 
+ * Create the Presentation Upload directory
 {{{
-root@ubuntu904server:/var# mkdir /var/bigbluebutton
-root@ubuntu904server:/var# chown -R tomcat6:adm /var/bigbluebutton
-  427  cd /var/bigbluebutton/
-  428  ls
-  429  ls -l
-  430  cd ..
-  431  ls
-  432  ls -l
-  433  chmod -R 777 bigbluebutton
-
+ > mkdir /var/bigbluebutton
+ > chown -R tomcat6:adm /var/bigbluebutton
+ > chmod -R 777 /var/bigbluebutton
 }}}
 
-
-
+ * Install bbb-apps
 {{{
-Install bbb-apps
-  305  cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
-  306  ls
-  307  tar zxvf bigbluebutton-apps-0.5.tar.gz
-  308  ls
-  309  mv webapps/bigbluebutton ./
-  310  ls
-  311  rm -rf bigbluebutton-apps-0.5.tar.gz webapps/
+ > cd /opt/red5-0.8/webapps
+ > cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
+ 
+ > tar zxvf bigbluebutton-apps-0.5.tar.gz
+ >  mv webapps/bigbluebutton ./
+ > rm -rf bigbluebutton-apps-0.5.tar.gz webapps/
+}}}
 
-Edit 
-vi /opt/red5-0.8/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+ * Edit BigBlueButton Apps properties
+{{{
+ > vi /opt/red5-0.8/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
 
 # Location for recordings
 recordingsDirectory=/var/bigbluebutton
@@ -518,30 +537,26 @@ ami.host=127.0.0.1
 ami.port=5038
 ami.username=bbb
 ami.password=secret
-
-
 }}}
 
+ * Uncommet RTMPT section of /opt/red5-0.8/conf/red5-core.xml
+
+ * Install Xuggler
 {{{
-Uncommet RTMPT section of /opt/red5-0.8/conf/red5-core.xml
+ Goto http://www.xuggle.com/xuggler/downloads/
 
-
+  > cd /usr/local
+  >  wget http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.1.FINAL/xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
+  
+  > chmod a+x xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
+  > ./xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
 }}}
 
-
+ * Put Xuggler into PATH
 {{{
-http://www.xuggle.com/xuggler/downloads/
+  >  vi /etc/profile
 
-  331  cd /usr/local
-  473  wget http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.1.FINAL/xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-  474  ls
-  475  chmow a+x xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-  476  chmod a+x xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-  477  ls
-  478  ./xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-
-  340  vi /etc/profile
-
+ Add the following at the bottom of the file
 
 export XUGGLE_HOME=/usr/local/xuggler
 export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
@@ -549,12 +564,12 @@ export PATH=$XUGGLE_HOME/bin:$PATH
 
 }}}
 
+ * Install Desk Share App
 {{{
-  351  cp /home/user/temp/deskshare.tar.gz ./
-  352  ls
-  353  tar zxvf deskshare.tar.gz
-  354  ls
-  355  rm deskshare.tar.gz
+ > cd /opt/red5-0.8/webapps
+ > cp /home/user/temp/deskshare.tar.gz ./
+ > tar zxvf deskshare.tar.gz
+ >  rm deskshare.tar.gz
 }}}
 
 {{{
@@ -622,8 +637,7 @@ export PATH=$XUGGLE_HOME/bin:$PATH
 {{{
   436  cd /var/www/
   437  ls
-  438  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
-  439  ls
+ 439  ls
   440  unzip -dc web.zip
   441  apt-get install unzip
   442  unzip -dc web.zip
