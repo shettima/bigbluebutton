@@ -226,6 +226,13 @@ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
 
 {{{
+> vi /etc/default/tomcat6
+
+TOMCAT6_SECURITY=no
+}}}
+
+
+{{{
 root@ubuntu904server:/home/user/temp# mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
