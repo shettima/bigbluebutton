@@ -502,3 +502,17 @@ export PATH=$XUGGLE_HOME/bin:$PATH
         </modules>
 </config>
 }}}
+
+{{{
+  436  cd /var/www/
+  437  ls
+  438  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
+  439  ls
+  440  unzip -dc web.zip
+  441  apt-get install unzip
+  442  unzip -dc web.zip
+  443  ls
+  444  mv c/web ./bigbluebutton-default
+  445  ls
+  446  rm -rf c
+}}}
