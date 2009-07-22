@@ -140,44 +140,58 @@ You would see a list of available videos. Select one to play.
 
 }}}
 
+ * Prepare to install Asterisk
+{{{
+Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
 
-http://godson.in/how-to-install-asterisk-on-ubuntu
+ > apt-get install build-essential
+ > apt-get install linux-headers-`uname -r`
+ > apt-get install libssl-dev
+ > apt-get install ncurses-dev
+ > apt-get install libnewt-dev
+ > apt-get install zlib1g-dev
+ > apt-get install bison
+}}}
 
-#apt-get install build-essential
-#apt-get install linux-headers-`uname -r`
-#apt-get install libssl-dev
-#apt-get install ncurses-dev
-#apt-get install libnewt-dev
-#apt-get install zlib1g-dev
-#apt-get install bison
+ * Install Dahdi
+{{{
+ > cd /usr/local/src
+ > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+ > tar zxvf dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+ > cd dahdi-linux-complete-2.2.0.1+2.2.0
+ > make all
+ > make install
+ > make config
+}}}
 
+ * Install Asterisk
+{{{
+  > cd /usr/local/src 
+  > wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
+  > tar zxvf asterisk-1.4.25.tar.gz
+  > cd asterisk-1.4.25
+  > more README
+  > ./configure
+  > make 
+  > make install
+  > make samples
+  > make config
+}}}
 
-> wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
-> make all
-> make install
-> make config
+ * Create conference room
+{{{
+  > vi /etc/asterisk/meetme.conf
 
-> apt-get install chkconfig
+  Add this line
+     conf => 85115
+}}}
 
-> cd /usr/local/src
-> wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
+ * Modify Extensions
+{{{
+  > vi /etc/asterisk/extensions.conf
 
-> tar zxvf asterisk-1.4.25.tar.gz
-> cd asterisk-1.4.25
-> more README
-> ./configure
-> make 
-> make install
-> make samples
-> make config
+  Add the following at the bottom of the file
 
-
-
-
-/etc/asterisk/meetme.conf
-conf => 85115
-
-/etc/asterisk/extensions.conf
 ; BigBlueButton: Setup sample conference
 [bigbluebutton]
 
@@ -192,9 +206,14 @@ exten => 600,n,Playback(demo-echotest)  ; Let them know what's going on
 exten => 600,n,Echo                     ; Do the echo test
 exten => 600,n,Playback(demo-echodone)  ; Let them know it's over
 exten => 600,n,Hangup()
+}}}
 
+ * Create SIP account
+{{{
+  > vi /etc/asterisk/sip.conf
 
-/etc/asterisk/sip.conf
+  Add the following at the bottom of the file
+
 [user1]
 type=friend
 username=user1
@@ -207,12 +226,19 @@ canreinvite=no
 context=bigbluebutton
 allow=all
 
-vi manager.conf
+}}}
+
+ * Create AMI account
+{{{
+ > vi /etc/asterisk/manager.conf
+
+ Modify "enabled" to yes
+
 [general]
-displaysystemname = yes
+
 enabled = yes
-;webenabled = yes
-port = 5038
+
+  Add the following at the bottom of the file
 
 ; BigBlueButton: Enable Red5 to connect
 [bbb]
@@ -222,6 +248,7 @@ read = system,call,log,verbose,command,agent,user
 write = system,call,log,verbose,command,agent,user
 
 }}}
+
 
 /etc/nginx/sites-available/bigbluebutton
 {{{
