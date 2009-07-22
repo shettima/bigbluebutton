@@ -228,6 +228,16 @@ allow=all
 
 }}}
 
+ * Test your SIP account
+{{{
+ Download Zoiper from here http://www.zoiper.com/zwin.php
+
+ After installing Zoiper, start it and create a SIP account using the above information.
+
+ Then dial 600. You should be connected to the "Echo" application.
+
+}}}
+
  * Create AMI account
 {{{
  > vi /etc/asterisk/manager.conf
@@ -249,9 +259,12 @@ write = system,call,log,verbose,command,agent,user
 
 }}}
 
-
-/etc/nginx/sites-available/bigbluebutton
+ * Configure Nginx
 {{{
+ > vi /etc/nginx/sites-available/bigbluebutton
+
+ Paste the following into the file and edit server_name with you IP.
+
 server {
      listen   80;
      server_name  192.168.0.136;
@@ -333,7 +346,11 @@ server {
 
 }}}
 
+ * Enable the bigbluebutton nginx config
+{{{
 > ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+
+}}}
 
 
 wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
