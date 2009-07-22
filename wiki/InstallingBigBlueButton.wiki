@@ -1,7 +1,13 @@
-#summary One-sentence summary of this page.
+#summary How to install BigBlueButton manually.
 
+
+ * Download a Ubuntu VM image.
 {{{
 http://www.vmware.com/appliances/directory/va/147323/download
+}}}
+
+{{{
+root@ubuntu904server:/usr/local# ifconfig -a
 
 http://ubuntuforums.org/showthread.php?t=221768
 }}}
