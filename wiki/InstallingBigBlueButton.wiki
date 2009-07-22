@@ -367,3 +367,36 @@ You would see a list of available videos. Select one to play.
 
 
 }}}
+
+{{{
+Install bbb-apps
+  305  cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
+  306  ls
+  307  tar zxvf bigbluebutton-apps-0.5.tar.gz
+  308  ls
+  309  mv webapps/bigbluebutton ./
+  310  ls
+  311  rm -rf bigbluebutton-apps-0.5.tar.gz webapps/
+
+Edit 
+vi /opt/red5-0.8/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+
+# Location for recordings
+recordingsDirectory=/var/bigbluebutton
+
+
+# These properties are for Asterisk Management Interface (AMI)
+ami.host=127.0.0.1
+ami.port=5038
+ami.username=bbb
+ami.password=secret
+
+
+}}}
+
+{{{
+Uncommet RTMPT section of /opt/red5-0.8/conf/red5-core.xml
+
+
+}}}
+
