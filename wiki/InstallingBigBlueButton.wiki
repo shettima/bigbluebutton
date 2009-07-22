@@ -572,19 +572,24 @@ export PATH=$XUGGLE_HOME/bin:$PATH
  >  rm deskshare.tar.gz
 }}}
 
+ * Install BigBlueButton Client
 {{{
-  357  cd /var/www
-  358  ls
-  359  cp /home/user/temp/client.tar.gz ./
-  360  ls
-  361  tar zxvf client.tar.gz
-  362  ls
-  363  mkdir bigbluebutton
-  364  mv client bigbluebutton
-  365  rm client.tar.gz
+  > cd /var/www
+  > mkdir bigbluebutton
+  > cd bigbluebutton 
+  > cp /home/user/temp/client.tar.gz ./
+  > tar zxvf client.tar.gz
+  > rm client.tar.gz
 }}}
 
+ * Modify BBB client config
 {{{
+
+ - Change the uri to your IP address
+ - Change host="conf/join-mock.xml" to host="http://<YOUR IP:PORT>/bigbluebutton/conference-session/enter"
+
+
+
 <?xml version="1.0" ?>
 <config>
     <version>0.4</version>
@@ -634,15 +639,36 @@ export PATH=$XUGGLE_HOME/bin:$PATH
 </config>
 }}}
 
+ * Install bbb-default pages
 {{{
-  436  cd /var/www/
-  437  ls
- 439  ls
-  440  unzip -dc web.zip
-  441  apt-get install unzip
-  442  unzip -dc web.zip
-  443  ls
-  444  mv c/web ./bigbluebutton-default
-  445  ls
-  446  rm -rf c
+  > cd /var/www/
+  > cp /home/user/temp/web.zip ./
+  > apt-get install unzip
+  > unzip -dc web.zip
+  > mv c/web ./bigbluebutton-default
+  > rm -rf c
+}}}
+
+ * Restart server apps 
+{{{
+ * Start ActiveMQ
+ * Start Red5 as tomcat6 user
+ * Restart Tomcat
+ * Restart Asterisk 
+}}}
+
+ * Try out BigBlueButton
+{{{
+ Go to http://<YOUR-IP> which should display the bbb web page.
+ 
+}}}
+
+== When things go wrong ==
+ Look for logs in the following
+{{{
+ /var/log/syslog
+ /var/log/tomcat6
+ /opt/red5-0.8/logs
+ /var/log/asterisk
+
 }}}
