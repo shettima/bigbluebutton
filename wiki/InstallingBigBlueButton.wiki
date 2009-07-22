@@ -352,6 +352,13 @@ mysql>
 {{{
 root@ubuntu904server:/var# mkdir /var/bigbluebutton
 root@ubuntu904server:/var# chown -R tomcat6:adm /var/bigbluebutton
+  427  cd /var/bigbluebutton/
+  428  ls
+  429  ls -l
+  430  cd ..
+  431  ls
+  432  ls -l
+  433  chmod -R 777 bigbluebutton
 
 }}}
 
