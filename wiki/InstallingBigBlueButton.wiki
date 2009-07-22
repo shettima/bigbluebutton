@@ -344,3 +344,9 @@ mysql> select * from user;
 
 mysql>
 }}}
+
+{{{
+root@ubuntu904server:/var# mkdir /var/bigbluebutton
+root@ubuntu904server:/var# chown -R tomcat6:adm /var/bigbluebutton
+
+}}}
