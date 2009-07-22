@@ -103,14 +103,43 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   > apt-get install nginx
 }}}
 
+ * Install ActiveMQ
+{{{
+  > cd opt
+  > wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
+  > tar zxvf apache-activemq-5.2.0-bin.tar.gz
 
-> cd opt
-> wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
+  Start ActiveMQ
+  > /opt/apache-activemq-5.2.0/bin/activemq
+}}}
 
+ * Install red5
+{{{
+  > cd opt
+  > wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+  > tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+  > mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 red5-0.8
+  
+  Start red5 
+  > red5.sh
+}}}
 
-> /opt/apache-activemq-5.2.0/bin/activemq
+ * Install oflaDemo
+{{{
+http://192.168.0.154:5080/
 
-wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+Click on "Click here to install demos" and then choose oflaDemo java 6.
+
+http://192.168.0.154:5080/demos/
+
+http://192.168.0.154:5080/demos/ofla_demo.html
+
+Edit rtmp://192.168.0.154/oflaDemo and click connect
+
+You would see a list of available videos. Select one to play.
+
+}}}
+
 
 http://godson.in/how-to-install-asterisk-on-ubuntu
 
@@ -421,22 +450,7 @@ root@ubuntu904server:/var# chown -R tomcat6:adm /var/bigbluebutton
 
 }}}
 
-{{{
-Install oflaDemo
-http://192.168.0.154:5080/
 
-Click on "Click here to install demos" and then choose oflaDemo java 6.
-
-http://192.168.0.154:5080/demos/
-
-http://192.168.0.154:5080/demos/ofla_demo.html
-
-Edit rtmp://192.168.0.154/oflaDemo and click connect
-
-You would see a list of available videos. Select one to play.
-
-
-}}}
 
 {{{
 Install bbb-apps
