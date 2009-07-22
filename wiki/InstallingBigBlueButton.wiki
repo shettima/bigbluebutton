@@ -119,9 +119,13 @@ canreinvite=no
 context=bigbluebutton
 allow=all
 
-/etc/asterisk/manager.d/bigbluebutton.conf
+vi manager.conf
+[general]
+displaysystemname = yes
+enabled = yes
+;webenabled = yes
+port = 5038
 
-;
 ; BigBlueButton: Enable Red5 to connect
 [bbb]
 secret = secret
