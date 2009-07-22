@@ -1,15 +1,53 @@
 #summary How to install BigBlueButton manually.
 
 
- * Download a Ubuntu VM image.
+ * Download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download
+ * Boot it up in your VMWare Player
+ * Check if you have a network connection
 {{{
-http://www.vmware.com/appliances/directory/va/147323/download
+ > ping www.google.com
+
+If you get an error saying yout eth0 is not connected, then fix it by:
+  Check if it is using eth1 
+root@ubuntu904server:/usr/local# ifconfig -a
+eth1      Link encap:Ethernet  HWaddr 00:0c:29:dd:b4:51
+          inet addr:192.168.0.154  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::20c:29ff:fedd:b451/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4080349 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3932137 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:1216680270 (1.2 GB)  TX bytes:822963271 (822.9 MB)
+          Interrupt:19 Base address:0x2000
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:12938 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:12938 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:40299608 (40.2 MB)  TX bytes:40299608 (40.2 MB)
+
+root@ubuntu904server:/usr/local# vi /etc/udev/rules.d/70-persistent-net.rules
+Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
+
+Reboot your machine. Check if you manage to connect to the internet.
+
+More info can be found here http://ubuntuforums.org/showthread.php?t=221768
+
+}}}
+
+ * Once you have interner connection, update and upgrade.
+{{{
+  > sudo apt-get update
+  > sudo apt-get upgrade
 }}}
 
 {{{
 root@ubuntu904server:/usr/local# ifconfig -a
 
-http://ubuntuforums.org/showthread.php?t=221768
+
 }}}
 
 {{{
