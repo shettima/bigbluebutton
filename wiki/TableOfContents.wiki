@@ -1,4 +1,5 @@
   * [GettingStarted Getting Started]
+    * [ArchitectureOverview Overview of Architecture]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
     * [InstallingBigBlueButton Installing from source]
   * [Support Support]
