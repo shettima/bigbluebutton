@@ -703,3 +703,6 @@ export PATH=$XUGGLE_HOME/bin:$PATH
  /var/log/asterisk
 
 }}}
+
+== If you make it successfully through the installation ==
+Good stuff!  Post a message to BigBlueButton-dev letting everyone know that you are a real developer and you have installed BigBlueButton from source.
