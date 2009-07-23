@@ -172,13 +172,6 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
   > make config
 }}}
 
- * Create conference room
-{{{
-  > vi /etc/asterisk/meetme.conf
-
-  Add this line
-     conf => 85115
-}}}
 
  * Modify Extensions
 {{{
@@ -188,9 +181,6 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
 
 ; BigBlueButton: Setup sample conference
 [bigbluebutton]
-
-exten => 85115,1,,Meetme(85115|csT)
-exten => 85115,n,Hangup()
 
 ;
 ; Create an extension, 600, for evaluating echo latency.
@@ -208,17 +198,55 @@ exten => 600,n,Hangup()
 
   Add the following at the bottom of the file
 
+; BigBlueButton: Setup sample user to connect over VoIP
 [user1]
 type=friend
 username=user1
 insecure=very
-secret=letmein
+secret=secret
 qualify=yes
 nat=yes
 host=dynamic
 canreinvite=no
 context=bigbluebutton
 allow=all
+
+[user2]
+type=friend
+username=user2
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bigbluebutton
+allow=all
+
+[user3]
+type=friend
+username=user3
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bigbluebutton
+allow=all
+
+[user4]
+type=friend
+username=user4
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bigbluebutton
+allow=all
+
 
 }}}
 
@@ -661,6 +689,8 @@ export PATH=$XUGGLE_HOME/bin:$PATH
 {{{
  Go to http://<YOUR-IP> which should display the bbb web page.
  
+ To use voice conference, using your zoiper, dial 1500 which will prompt you for the conference number.
+
 }}}
 
 == When things go wrong ==
