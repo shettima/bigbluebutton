@@ -3,7 +3,6 @@
 = Overview =
 We've put a lot of thought into the architecture of BigBlueButton.  Our goal was to make it easy for other developers to use BigBlueButton as a platform to build other collaborative applications.
 
-----
 
 == Trunk Overview ==
 
@@ -15,57 +14,12 @@ The trunk of the SVN repository contains the following important parts:
   * deskshare-app - The Desktop Sharing server side red5 web-app
   * deskshare-applet - The Applet program used to capture the screen on the client 
 
-----
+== Getting Started ==
 
-== Architecture Overview ==
+The following links will get you going with setting up BigBlueButton.  For most developers, we recommend using the VM.  But if you want to see all the components, go for [InstallingBigBlueButton Installing from source].
 
-The following diagram shows the major pieces of the BigBlueButton architecture.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram.png
-
-----
-
-== BigBlueButton Red5 Apps ==
-
-We think Red5 rocks, and we use it as the core server for handling all the real-time interaction with the client.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_overview.png
+    * [ArchitectureOverview Overview of Architecture]
+    * [BigBlueButtonVM BigBlueButton Virtual Machine]
+    * [InstallingBigBlueButton Installing from source]
 
 ----
-
-== BigBlueButton Client ==
-
-We've written the real-time client in Flash.  Since Flash 10, Flash is now available on Mac, Unix, and PCs, and it provides the interface for collaboration with other users.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_client_overview.png
-
-----
-
-== Joining a Voice Conference ==
-
-The following diagram shows the steps that occur when a new client joins a voice conference.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_voice_conference.png
-
-----
-
-== Uploading a Presentation ==
-
-The following diagram shows the steps that occur when a presenter uploads a presentation to the server.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
-
-----
-
-== Desktop Sharing ==
-
-The diagram bellow shows the main components of our screen sharing solution.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share_overview.png
-
-----
-
-= More Information =
-
-  * [BigBlueButtonVM Installing the Virtual Machine]
-  * [HowToInstallBigBlueButton Installing BigBlueButton from source]
