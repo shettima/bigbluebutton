@@ -1,9 +1,11 @@
 #summary Development Road Map for BigBlueButton
 
-= Release 0.35 (UI updates) =
+= Release 0.4 (Record and Playback) =
 
-  * Fix issues tagged for [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone:Release0.35&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary Release 0.35] in Issues tracker
-
+  * Have a "pre-flight check" module that will check 
+    # Flash plug-in version
+    # connectivity to red5 server (should the client use HTTP tunneling)
+    # sufficient bandwidth
 
 Documentation:
   * How to add a new client module to BigBlueButton
@@ -12,9 +14,9 @@ Documentation:
 
   * Add support for record and playback
 
-= Release 0.4 (Record and Playback) =
+= Release 0.35 (UI updates) =
 
-  * Have a "pre-flight check" module that will check 
-    # Flash plug-in version
-    # connectivity to red5 server (should the client use HTTP tunneling)
-    # sufficient bandwidth
+  * Fix issues tagged for [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone:Release0.35&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary Release 0.35] in Issues tracker
+
+
+
