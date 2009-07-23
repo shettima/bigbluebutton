@@ -1,9 +1,10 @@
 #summary How to install BigBlueButton manually.
 
+These instructions will walk through installing on Ubuntu from source.  You can start with either a physical machine running Ubuntu or a VM with Ubuntu installed -- both are fine.
 
- * Download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download
- * Boot it up in your VMWare Player
- * Check if you have a network connection
+The only prerequisite is that your Ubuntu machine has a network connection.
+
+ * To start, check if you have a network connection
 {{{
  > ping www.google.com
 
