@@ -1,6 +1,6 @@
   * [GettingStarted Getting Started]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
-    * [HowToInstallBigBlueButton Installing from source]
+    * [InstallingBigBlueButton Installing from source]
   * [Support Support]
     * [ReleaseNotes Release Notes]
     * [FAQ FAQ]
