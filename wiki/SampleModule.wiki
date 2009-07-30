@@ -1,0 +1,73 @@
+#summary Creating a simple BigBlueButton module using Mate
+
+== Getting Started ==
+This is a brief summary of how to create a new BigBlueButton module.
+Before you start creating a new module, you will need to:
+  * Download the BBB Virtual Machine, or have access to a BBB server you can test on.
+  * Download Flex Builder if you don't already have it.
+  * Check out BigBlueButton-Client from the SVN repository. You can do this right from Flex with the Subclipse plugin.
+  * Once you've checked out the client, edit the file src/conf/config.xml. In it, change all instances of an IP address to the IP address of your BBB server. For example:
+
+{{{
+<module name="VideoModule" url="VideoModule.swf" 
+			uri="rtmp://192.168.0.124/oflaDemo"
+			onUserJoinedEvent="START"
+			onUserLogoutEvent="STOP"	
+			loadNextModule="DeskShareModule"/>
+}}}
+
+change this to:
+
+{{{
+<module name="VideoModule" url="VideoModule.swf" 
+			uri="rtmp://Your-BBB-IP/oflaDemo"
+			onUserJoinedEvent="START"
+			onUserLogoutEvent="STOP"	
+			loadNextModule="DeskShareModule"
+}}}
+
+Do this for the whole document.
+
+  * In the same config.xml file, you will need to edit the ViewersModule entry to tell it to use a mock sign-in file. This is so you don't have to deploy your client to the server every time you want to test, and can test it instead right from Flex Builder. Change the 'host' entry of the ViewersModule entry to
+{{{
+host="conf/join-mock.xml"
+}}}
+
+  * If you haven't done it already, run your BBB server.
+  * Run the client and make sure it logs in properly.
+  * Congratulations, you've successfully set up your BBB-Client dev environment
+
+== Creating a new BigBlueButton Module ==
+To make a new BBB module, you need 2 things:
+  * A new module, just right click on the bigbluebutton-client project, go to new>MXML Module.
+  * Your module needs to implements the "org.bigbluebutton.common.IBigBlueButtonModule" interface. This tells the main BBB application that the module you're trying to add to it at runtime is a proper BigBlueButton Module, and what to do with it. The interface defines several methods you will need to implement. These methods are largely the same across different modules, which means you can copy them from another BBB module with minor changes.
+
+After you've created the module and implemented the methods, you might want a UI for your module. To create a simple Window-based module, such as the Chat Module, you'll again need to do 2 things:
+  * Create a new MXML Component, extending the MDIWindow component of the flexlib library. 
+  * In this component, implement the org.bigbluebutton.common.IBbbModuleWindow interface. Again, implement the methods defined by the interface, which simply tell the main application where exactely to place the module on the screen once it's loaded.
+
+Having done this, in the start() method of your Module.mxml, first create a new Window for your Module and then dispatch an event of type org.bigbluebutton.main.events.OpenWindowEvent. This will tell the main application to add your window to the main application screen. The following code does this:
+
+Here the Dispatcher class refers to com.asfusion.mate.events.Dispatcher; the OpenWindowEvent is in org.bigbluebutton.main.events.OpenWindowEvent;
+{{{
+window = new SampleModuleWindow();
+window.xPosition = 500;
+window.yPosition = 500;
+window.title = "This is my new Module!"
+				
+var event:OpenWindowEvent = new OpenWindowEvent(OpenWindowEvent.OPEN_WINDOW_EVENT);
+event.window = window;
+var dispatcher:Dispatcher = new Dispatcher();
+dispatcher.dispatchEvent(event);
+}}}
+
+Before you run your module, go back to the config.xml file and create a new entry for your module, based on the other entries. This file is a manifest of all the modules you wish to load.
+   *NOTE: You will also need to find the module that currently gets added last, and add to it a parameter 'loadNextModule="MyModule"'. Right now this is necessary but in the future you won't need to do this.
+Once you've done this, run your module, and see if your window pops up.
+
+== Using the Mate Framework with BBB ==
+Because your module is decoupled from the rest of the application, you can use whichever framework you want inside your module. We prefer using the Mate Framework, although modules for BBB have been built using both PureMVC and Cairngorm. Both Mate and PureMVC are in the lib directory of BigBlueButton.
+If you are unfamiliar with Mate, take a look at their [http://mate.asfusion.com/page/documentation/getting-started tutorial] for creating new applications.
+The following diagram shows the architecture of a BBB module built using Mate, in this case the Notes Module, the source code of which could be a good place to start with if you're just learning.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SampleModuleNotesArchDiagram.png
