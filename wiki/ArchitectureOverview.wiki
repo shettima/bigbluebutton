@@ -60,3 +60,10 @@ The diagram bellow shows the main components of our screen sharing solution.
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share_overview.png
 
 ----
+
+== Sample Notes Module ==
+The following is an overview of the inside architecture of a simple BigBlueButton module build using the Mate Framework
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SampleModuleNotesArchDiagram.png
+
+----
