@@ -66,6 +66,8 @@ and viola, instant BigBlueButton gratification.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
 
+There you have it.  A BigBlueButton server (sans voice conferencing) up in running in about 5 minutes.
+
 === Handling long host names in nginx ===
 If you apply a long host name using bbb-setip, such as when installing this on an Amazon EC2 instance and use the public DNS host name (which is something linke ec2-75-101-208-128.compute-1.amazonaws.com), you'll need to increase the allowable host name size for nginx.  
 
