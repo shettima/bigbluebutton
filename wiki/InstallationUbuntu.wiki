@@ -46,7 +46,7 @@ Once apt-get installs everything, your done.  Near the end of the installation, 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-url.png
 
-Enter this URL in your web browser and you should have BigBlueButton home page.  
+Enter this URL in your web browser and you should have BigBlueButton home page.  (I used Amazon EC2 for the screen shots, which has an internal URL and an external DNS host name, so the URL below differs from the one above).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
 
