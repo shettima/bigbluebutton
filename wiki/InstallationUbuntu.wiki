@@ -15,11 +15,12 @@ First, you need to add the BigBlueButton key and repository URL to apt-get, then
    sudo apt-key add bigbluebutton.asc 
    sudo echo "deb http://archive.bigbluebutton.org/ bigbluebutton main" > /etc/apt/sources.list.d/bigbluebutton.list 
    sudo apt-get update 
-}}
+}}}
 
 Next, enter the following command
-{{
+
+{{{
    sudo apt-get install bigbluebutton 
-}}
+}}}
 
 You'll be presented with a list of packages to install.  Enter 'Y' and apt-get will download and install everything you need.
