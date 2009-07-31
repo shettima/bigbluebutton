@@ -52,14 +52,14 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-scre
 
 There you have it.  A BigBlueButton server (sans voice conferencing) up in running in about 5 minutes.
 
-Want to keep your machine up-to-date with the latest BigBlueButton release?  Just enter
+Want to keep your machine up-to-date with the latest BigBlueButton release?  No problem, just enter
 
 {{{
   # apt-get update
   # apt-get upgrade
 }}}
 
-and apt-get will automatically install any updates to BigBlueButton.
+and apt-get will download and install any updates to BigBlueButton.  Don't you just love the power of packages.
 
 === Changing the host (or IP) address for BigBlueButton ===
 If you need to change the hostname (or IP address), you can use `bbb-setip`, a utility shell script included in the BigBlueButton install, to make the global changes necessary to BigBlueButton's configuration files.
