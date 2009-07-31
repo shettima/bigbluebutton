@@ -34,3 +34,62 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_my
 One of the BigBlueButton components is bbb-web, which provides the web-based interface for scheduling conferences.  It needs to create a database, so it needs to know the mysql password (provide the same password if you were just prompted for it by mysql).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
+
+== Trying out your server ==
+
+Near the end, you'll see bbb-client installed, and you'll see the URL for BigBlueButton.  
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-url.png
+
+Enter this URL in your web browser and you should have BigBlueButton home page.
+
+If you need to change the hostname (or IP address), you can use `bbb-setip`, a utility shell script included in the BigBlueButton install, to make the global changes necessary to BigBlueButton's configuration files.
+
+For example, to switch the BigBlueButton server to use IP address 192.168.0.100, enter the follwoing
+
+{{{
+sudo bbb-setip -h 192.168.0.100
+}}}
+
+Then open 
+
+{{{
+http://192.168.0.100/
+}}}
+
+and viola, instant BigBlueButton gratification. 
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
+
+Note: If you apply a host name using bbb-setip that is long, such as when installing this on an Amazon EC2 instance and use the public DNS host name (which is something linke ec2-75-101-208-128.compute-1.amazonaws.com), you'll need to increase the allowable host name size for nginx.  
+
+To do this, edit `/etc/nginx/nginx.conf` and insert `server_names_hash_bucket_size 64;` as shown below.
+
+{{{
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    access_log  /var/log/nginx/access.log;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    tcp_nodelay        on;
+
+    gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+
+    server_names_hash_bucket_size 64;  
+}
+}}}
+
+Run bbb-setip again, which will restart nginx, and you should be ready to go.
+
+
+
+
