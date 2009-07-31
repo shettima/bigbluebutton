@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Need help?  If you don't find an answer below, please post a question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev].  We all hang out there and welcome any feedback.
+Need help?  If you don't find an answer below, please post a question to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].  We all hang out there and welcome any feedback.
 
   * ReleaseNotes
   * FrequentlyAskedQuestions
