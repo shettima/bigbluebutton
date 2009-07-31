@@ -1,6 +1,6 @@
   * [GettingStarted Getting Started]
     * [ArchitectureOverview Overview of Architecture]
-    * [BigBlueButtonVM BigBlueButton Virtual Machine]
+    * [BigBlueButtonVM Download BigBlueButton VM]
     * [InstallingBigBlueButton Installing from source]
     * [InstallationUbuntu Installing on Ubuntu (5 minutes)]
   * [Support Support]
