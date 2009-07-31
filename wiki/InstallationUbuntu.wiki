@@ -1,12 +1,14 @@
-#How to install BigBlueButton on Ubuntu 
+#summary How to install BigBlueButton on Ubuntu in under 5 minutes
 
 = Introduction =
 
-Using Ubuntu/Debian packages, it's very easy to get a server up and running on Ubuntu.  The following instructions will install and configure all the components except Asterisk, which provides the voice conference.
+Using Ubuntu/Debian packages, it's very easy to get a server up and running on Ubuntu.  The following instructions will install and configure all the components except Asterisk, which provides the voice conference (see InstallingBigBlueButton for how to install Asterisk).
 
 == Prerequisites ==
 
-You'll need root access to the server.  The following instructions assume you are using sudo to execute commands as root.
+You'll need root access to the server.  
+
+== Let's go == 
 
 First, you need to add the BigBlueButton key and repository URL to apt-get, then update the list of available packages.
 
@@ -35,7 +37,7 @@ One of the BigBlueButton components is bbb-web, which provides the web-based int
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
 
-== Trying out your server ==
+== Trying out your server ( 4:42 minutes later) ==
 
 Near the end, you'll see bbb-client installed, and you'll see the URL for BigBlueButton.  
 
@@ -61,7 +63,8 @@ and viola, instant BigBlueButton gratification.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
 
-Note: If you apply a host name using bbb-setip that is long, such as when installing this on an Amazon EC2 instance and use the public DNS host name (which is something linke ec2-75-101-208-128.compute-1.amazonaws.com), you'll need to increase the allowable host name size for nginx.  
+=== Long host names in nginx ===
+If you apply a long host name using bbb-setip, such as when installing this on an Amazon EC2 instance and use the public DNS host name (which is something linke ec2-75-101-208-128.compute-1.amazonaws.com), you'll need to increase the allowable host name size for nginx.  
 
 To do this, edit `/etc/nginx/nginx.conf` and insert `server_names_hash_bucket_size 64;` as shown below.
 
@@ -89,7 +92,5 @@ http {
 }}}
 
 Run bbb-setip again, which will restart nginx, and you should be ready to go.
-
-
 
 
