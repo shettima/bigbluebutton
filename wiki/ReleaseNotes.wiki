@@ -41,7 +41,7 @@ Here are the list of issues we fixed on this release:
 
 
 = Release 0.4 =
-Much of the effort in this release was on creating individual packages for the components, creating a [http://bigbluebutton.org/hudson/ Hudson Continuous Integration Server], and distributing the entire package as a [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM downloadable virtual machine].
+Much of the effort in this release was on creating individual packages for the components, creating a [http://bigbluebutton.org/hudson/ Continuous Integration Server] using Hudson, and distributing the entire package as a [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM downloadable virtual machine].
 
 Other updates include:
   * BigBlueButton client now supports tunneling through a firewall via port 80
