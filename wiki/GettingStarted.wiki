@@ -20,7 +20,8 @@ The following links will get you going with setting up BigBlueButton.  For most 
 
     * [ArchitectureOverview Overview of Architecture]
     * [BigBlueButtonVM Download BigBlueButton VM]
-    * [InstallingBigBlueButton Installing from source]
     * [InstallationUbuntu Installing on Ubuntu (5 minutes)]
+    * [InstallingBigBlueButton Installing from source]
+
 
 ----
