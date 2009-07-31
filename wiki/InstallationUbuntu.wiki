@@ -70,8 +70,6 @@ For example, to switch the BigBlueButton server to use IP address 192.168.0.100,
 sudo bbb-setip -h 192.168.0.100
 }}}
 
-Then open 
-
 === Handling long host names in nginx ===
 If you apply a long host name using bbb-setip, such as when installing this on an Amazon EC2 instance and use the public DNS host name (which is something linke ec2-75-101-208-128.compute-1.amazonaws.com), you'll get an error from nginx that the host name is too long.
 
