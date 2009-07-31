@@ -4,9 +4,7 @@
 
 The upcoming release (August, 2009) will include
 
-* A fully documented sample module
-* VoIP (using the Red5 phone module)
-
-
+  * A fully documented sample module
+  * VoIP (using the Red5 phone module)
 
 
