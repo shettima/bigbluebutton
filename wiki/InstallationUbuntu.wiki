@@ -43,8 +43,11 @@ Near the end, you'll see bbb-client installed, and you'll see the URL for BigBlu
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-url.png
 
-Enter this URL in your web browser and you should have BigBlueButton home page.
+Enter this URL in your web browser and you should have BigBlueButton home page.  
 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
+
+=== Changing the host (or IP) address for BigBluebutton ===
 If you need to change the hostname (or IP address), you can use `bbb-setip`, a utility shell script included in the BigBlueButton install, to make the global changes necessary to BigBlueButton's configuration files.
 
 For example, to switch the BigBlueButton server to use IP address 192.168.0.100, enter the follwoing
@@ -63,7 +66,7 @@ and viola, instant BigBlueButton gratification.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
 
-=== Long host names in nginx ===
+=== Handling long host names in nginx ===
 If you apply a long host name using bbb-setip, such as when installing this on an Amazon EC2 instance and use the public DNS host name (which is something linke ec2-75-101-208-128.compute-1.amazonaws.com), you'll need to increase the allowable host name size for nginx.  
 
 To do this, edit `/etc/nginx/nginx.conf` and insert `server_names_hash_bucket_size 64;` as shown below.
@@ -92,5 +95,3 @@ http {
 }}}
 
 Run bbb-setip again, which will restart nginx, and you should be ready to go.
-
-
