@@ -51,4 +51,7 @@
         <p>*Planned:*
         || application/desktop sharing || scheduling || whiteboard ||
         || recording and archiving ||
+
+<iframe name="FRAME1" src="http://www.bigbluebutton.org/hudson/" width="730" height="360" frameborder="0" ></iframe>
+
     
