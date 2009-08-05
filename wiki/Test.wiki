@@ -52,4 +52,4 @@
         || application/desktop sharing || scheduling || whiteboard ||
         || recording and archiving ||
 
-<iframe> </iframe>
+<iframe src="www.site.com/banner.hmtl" width="728" height="90" frameborder="0" scrolling="no" name="top" marginheight="0" marginwidth="0" noresize></iframe>
