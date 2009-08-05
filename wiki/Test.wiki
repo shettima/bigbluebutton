@@ -52,5 +52,4 @@
         || application/desktop sharing || scheduling || whiteboard ||
         || recording and archiving ||
 
-<wiki:gadget url="http://example.com/gadget.xml"
-<script src="http://www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/103029429785519833710/iframe.xml&amp;up_src=http%3A%2F%2Fwww.bigbluebutton.org%2Fhudson%2F&amp;up_scrolling=no&amp;up_width=700&amp;up_height=500&amp;up_frameborder=0&amp;up_marginheight=0&amp;up_marginwidth=0&amp;up_align=center&amp;synd=open&amp;w=320&amp;h=300&amp;title=&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script> />
+<iframe> </iframe>
