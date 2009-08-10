@@ -9,7 +9,13 @@
 
 === Fixed Issues ===
 Here are the list of issues we fixed on this release:
-
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=130 Issue 130] Hearing voices after logging out 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=117 Issue 117] Log window is hard to read 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=114 Issue 114] Client is trying to load history.js and history.htm 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=108 Issue 108] Logout should provide a message saying you've logged out 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=106 Issue 106] Unable to start desktop sharing
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=104 Issue 104] Add Desktop Sharing to BigBlueButton  
+ * 
 
 === Known Issues ===
 
