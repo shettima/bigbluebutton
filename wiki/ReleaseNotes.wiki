@@ -5,7 +5,7 @@
 
 === New Features ===
 * Integrated VOIP *
-
+Participants who do not wish to use their phone to dial into the conference can now click a button on the client to join the voice conference. This feature uses the [http://code.google.com/p/red5phone Red5Phone] project to connect Asterisk and Red5.
 
 === Fixed Issues ===
 Here are the list of issues we fixed on this release:
