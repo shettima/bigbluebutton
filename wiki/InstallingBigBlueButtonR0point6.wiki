@@ -182,9 +182,40 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
 
   Add the following at the bottom of the file
 
+;
 ; BigBlueButton: Setup sample conference
 [bigbluebutton]
+exten => s,1,Goto(start-dialplan,s,1)
+exten => s,n,Hangup
 
+[start-dialplan]
+exten => s,1,Set(TRIES=1)
+exten => s,n,Wait(2)
+exten => s,n,Answer
+exten => s,n,Goto(prompt,s,1)
+
+[prompt]
+exten => s,1,Read(CONF_NUM,conf-getconfno,6,,3,10)
+exten => s,n,Goto(bbb-conference,s,1)
+
+[bbb-voip]
+exten => _XXXX.,1,MeetMe(${EXTEN},cdMsT)
+
+[bbb-conference]
+exten => _XXXX.,1,Agi(agi://localhost/findConference?conference=${EXTEN})
+exten => _XXXX.,n,GotoIf($[${EXTEN} = ${CONFERENCE_FOUND}]?valid:invalid)
+exten => _XXXX.,n(valid),Playback(conf-placeintoconf)
+exten => _XXXX.,n,MeetMe(${CONFERENCE_FOUND},cdMsT)
+exten => _XXXX.,n(invalid),Goto(handle-invalid-conference,s,1)
+
+[handle-invalid-conference]
+exten => s,1,Playback(conf-invalid)
+exten => s,n,GotoIf($[${TRIES} < 3]?try-again:do-not-try-again)
+exten => s,n(try-again),Set(TRIES=$[${TRIES} + 1])
+exten => s,n,Goto(prompt,s,1)
+exten => s,n(do-not-try-again),Hangup
+
+[echo-test]
 ;
 ; Create an extension, 600, for evaluating echo latency.
 ;
@@ -192,7 +223,8 @@ exten => 600,1,Answer                   ; Do the echo test
 exten => 600,n,Playback(demo-echotest)  ; Let them know what's going on
 exten => 600,n,Echo                     ; Do the echo test
 exten => 600,n,Playback(demo-echodone)  ; Let them know it's over
-exten => 600,n,Hangup()
+exten => 600,n,Goto(s,6)                ; Start over
+
 }}}
 
  * Create SIP account
@@ -201,6 +233,21 @@ exten => 600,n,Hangup()
 
   Add the following at the bottom of the file
 
+;
+; BigBlueButton: Echo test sample user
+[echotest]
+type=friend
+username=echotest
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=echo-test
+allow=all
+
+;
 ; BigBlueButton: Setup sample user to connect over VoIP
 [user1]
 type=friend
@@ -250,8 +297,36 @@ canreinvite=no
 context=bigbluebutton
 allow=all
 
+}}}
+
+ * Create SIP Accounts to be used by Red5Phone
+{{{
+ Create a script with the following contents
+
+#!/bin/bash
+
+for i in {3000..3029}
+do
+   echo "
+[$i]
+type=friend
+username=$i
+insecure=very
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bbb-voip
+disallow=all
+allow=ulaw
+
+   " >>  /etc/asterisk/sip.conf 
+done
 
 }}}
+
+
+
 
  * Test your SIP account
 {{{
