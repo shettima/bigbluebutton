@@ -1,5 +1,19 @@
 #summary Release Notes for new versions of BigBlueButton.
 
+= 0.6 Release: =
+
+
+=== New Features ===
+* Integrated VOIP *
+
+
+=== Fixed Issues ===
+Here are the list of issues we fixed on this release:
+
+
+=== Known Issues ===
+
+
 = 0.5 Release: Apollo 11 =
 
 _Code named in honor of the 40th anniversary of the moon landing_
