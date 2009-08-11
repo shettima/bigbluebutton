@@ -39,7 +39,7 @@ lo        Link encap:Local Loopback
 root@ubuntu904server:/usr/local# vi /etc/udev/rules.d/70-persistent-net.rules
 Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
 
-Reboot your machine. Check if you manage to connect to the internet.
+Reboot your machine. Check if you manage to connect to the internet. If you are running on a Virtual Machine, make sure the VM's network adapter is using a Bridged connection instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
 
 More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
@@ -69,7 +69,7 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   > apt-get install tomcat6
 }}}
 
- * Confirm that tomcat is running
+ * Confirm that tomcat is running.
 {{{
   http://<YOUR IP>:8080/
 }}}
