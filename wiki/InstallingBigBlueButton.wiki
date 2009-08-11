@@ -390,11 +390,11 @@ server {
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
 }}}
 
- * Disable Security settings for TOMCAT6
+ * Disable Security settings for TOMCAT6. Make sure to un-comment the line 
 {{{
   > vi /etc/default/tomcat6
 
-  Edit TOMCAT6_SECURITY=yes to
+  Edit #TOMCAT6_SECURITY=yes to
 
   TOMCAT6_SECURITY=no
 }}}
