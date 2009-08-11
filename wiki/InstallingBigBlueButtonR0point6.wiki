@@ -4,6 +4,10 @@
 
 These instructions will walk through installing on Ubuntu from source.  You can start with either a physical machine running Ubuntu or a VM with Ubuntu installed -- both are fine.
 
+If you want to try it out using a VM image:
+  * Download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download  
+  * Boot it up in your VMWare Player 
+
 The only prerequisite is that your Ubuntu machine has a network connection.
 
  * To start, check if you have a network connection
