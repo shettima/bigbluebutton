@@ -615,7 +615,7 @@ export PATH=$XUGGLE_HOME/bin:$PATH
   > rm client.tar.gz
 }}}
 
- * Modify BBB client config
+ * Modify BBB client config.xml, located in /var/www/bigbluebutton/client/conf/
 {{{
 
  - Change the uri to your IP address
