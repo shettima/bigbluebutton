@@ -336,7 +336,7 @@ done
 {{{
  Download Zoiper from here http://www.zoiper.com/zwin.php
 
- After installing Zoiper, start it and create a SIP account using the above information.
+ After installing Zoiper, start it and create a SIP account using the echotest user above.
 
  Then dial 600. You should be connected to the "Echo" application.
 
