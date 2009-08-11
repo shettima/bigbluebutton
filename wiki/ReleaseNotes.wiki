@@ -1,6 +1,6 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= 0.6 Release: =
+= 0.6 Release (draft notes): =
 
 
 === New Features ===
