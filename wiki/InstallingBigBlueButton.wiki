@@ -152,10 +152,10 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
  > apt-get install bison
 }}}
 
- * Install Dahdi
+ * Install Dahdi. You may have to find out what the newest version is. Go [http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/ here]
 {{{
  > cd /usr/local/src
- > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+ > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
  > tar zxvf dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
  > cd dahdi-linux-complete-2.2.0.1+2.2.0
  > make all
