@@ -465,6 +465,8 @@ server {
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
+ > wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
+ > wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
 }}}
 
  * Disable Security settings for TOMCAT6
@@ -680,6 +682,29 @@ export PATH=$XUGGLE_HOME/bin:$PATH
  > cp /home/user/temp/deskshare.tar.gz ./
  > tar zxvf deskshare.tar.gz
  >  rm deskshare.tar.gz
+}}}
+
+ * Install Video App
+{{{
+ > cd /opt/red5-0.8/webapps
+ > cp /home/user/temp/video.tar.gz ./
+ > tar zxvf video.tar.gz
+ >  rm video.tar.gz
+}}}
+
+ * Install Voice App
+{{{
+ > cd /opt/red5-0.8/webapps
+ > cp /home/user/temp/sip.tar.gz ./
+ > tar zxvf sip.tar.gz
+ >  rm sip.tar.gz
+
+ Edit /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+ 
+ Point sip.server.host to the IP of your Asterisk installation
+
+ sip.server.host=192.168.0.177
+
 }}}
 
  * Install BigBlueButton Client
