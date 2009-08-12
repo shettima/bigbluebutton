@@ -88,6 +88,7 @@ Other updates include:
   * BigBlueButton client now supports tunneling through a firewall via port 80
   * Uploading of multiple slides
   
+Released: June 12, 2009
 
 = Release 0.32 =
 Added
