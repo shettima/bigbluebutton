@@ -12,14 +12,23 @@ This feature uses the [http://code.google.com/p/red5phone Red5Phone] project to 
 
 === Fixed Issues ===
 Here are the list of issues we fixed on this release:
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=130 Issue 130] Hearing voices after logging out 
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=117 Issue 117] Log window is hard to read 
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=114 Issue 114] Client is trying to load history.js and history.htm 
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=108 Issue 108] Logout should provide a message saying you've logged out 
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=106 Issue 106] Unable to start desktop sharing
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=67 Issue 67] Red5 Phone Module
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=69 Issue 69] Users do not see slides from presenter
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=98 Issue 98] Left and Right arrow keys not working
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=99 Issue 99] Update Reset Zoom icon
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=104 Issue 104] Add Desktop Sharing to BigBlueButton  
- * 
-
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=106 Issue 106] Unable to start desktop sharing
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=108 Issue 108] Client does not provide proper feedback when logging out
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=114 Issue 114] Client trying to load history.js and history.htm
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=117 Issue 117] Log window is hard to read 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=118 Issue 118] Limitation of conference session does not work.
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=121 Issue 121] Can't input chat text in full screen mode
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=125 Issue 125] Build bbb-apps from VM
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=130 Issue 130] Hearing voices after logging out 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=135 Issue 135] Participant entry sound plays when user icon is clicked
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=136 Issue 136] Phone Logout null pointer exception
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=138 Issue 138] Unmute-all icon mis-aligned
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=139 Issue 139] bbb-setip not detecting rtmp port
 === Known Issues ===
 
 
