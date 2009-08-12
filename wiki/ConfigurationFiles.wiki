@@ -98,12 +98,12 @@ server {
 }
 }}}
 Notes:
-  ## 1 ## The server IP/host and port 80 that nginx binds on
-  ## 2 ## All RTMPT are forwarded to Red5 listening on port 8088
-  ## 3 ## The deskshare servlet (for tunneling) on Red5 listening on port 5080
-  ## 4 ## /bigbluebutton requests (presentation upload, scheduling, login, etc.) gets forwarded to Tomcat listening on port 8080. 
-  ## 5 ## Document root for requests to BigBlueButton web application (Grails app served by tomcat6)
-  ## 6 ## Document root for requests to load BigBlueButton client (Flash application served by nginx)
+  # The server IP/host and port 80 that nginx binds on
+  # All RTMPT are forwarded to Red5 listening on port 8088
+  # The deskshare servlet (for tunneling) on Red5 listening on port 5080
+  # /bigbluebutton requests (presentation upload, scheduling, login, etc.) gets forwarded to Tomcat listening on port 8080. 
+  # Document root for requests to BigBlueButton web application (Grails app served by tomcat6)
+  # Document root for requests to load BigBlueButton client (Flash application served by nginx)
 
 == Log files ==
 
