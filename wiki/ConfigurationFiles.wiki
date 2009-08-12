@@ -8,6 +8,7 @@ BigBlueButton is comprised of a about [http://www.bigbluebutton.org/content/comp
 
 But like any project, when you break it down into its components, it becomes less complicated.  Here's our attempt to carefully walk through each of the configuration and log files to help you understand how to modify and extend BigBlueButton yourself.
 
+The configuration files show an IP address of `192.168.0.100` -- you'll need to change it to match your local IP address when setting up BigBlueButton.
 
 = nginx =
 
@@ -20,7 +21,7 @@ This sets up the BigBlueButton web site.
 {{{
 server {
      listen   80;
-     server_name  134.117.226.252;  ## 1 ##
+     server_name  192.168.0.100;  ## 1 ##
 
      access_log  /var/log/nginx/bigbluebutton.access.log;
 
