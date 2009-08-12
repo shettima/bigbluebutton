@@ -197,6 +197,9 @@ General log information from startup of tomcat6
 === localhost.yyyy-mm-dd.log ===
 General log information from startup of tomcat applications
 
+=== /var/log/syslog ===
+Also contains output from tomcat6.
+
 = Asterisk =
 == Configuration files ===
 === /etc/asterisk/extensions.conf ===
