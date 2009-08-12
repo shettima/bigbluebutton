@@ -41,7 +41,7 @@ lo        Link encap:Local Loopback
 root@ubuntu904server:/usr/local# vi /etc/udev/rules.d/70-persistent-net.rules
 Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
 
-Reboot your machine. Check if you manage to connect to the internet.
+Reboot your machine. Check if you manage to connect to the internet. If you are running on a Virtual Machine, make sure the VM's network adapter is using a Bridged connection instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
 
 More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
@@ -155,9 +155,10 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
 }}}
 
  * Install Dahdi
+You may have to find out what the newest version is. Go [http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/ here]
 {{{
  > cd /usr/local/src
- > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+ > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
  > tar zxvf dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
  > cd dahdi-linux-complete-2.2.0.1+2.2.0
  > make all
@@ -473,7 +474,7 @@ server {
 {{{
   > vi /etc/default/tomcat6
 
-  Edit TOMCAT6_SECURITY=yes to
+  Edit and uncomment #TOMCAT6_SECURITY=yes to
 
   TOMCAT6_SECURITY=no
 }}}
@@ -717,7 +718,7 @@ export PATH=$XUGGLE_HOME/bin:$PATH
   > rm client.tar.gz
 }}}
 
- * Modify BBB client config
+ * Modify BBB client config in /var/www/bigbluebutton/client/conf/config.xml
 {{{
 
  - Change the uri to your IP address
