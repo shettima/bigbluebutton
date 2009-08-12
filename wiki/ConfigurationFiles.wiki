@@ -131,7 +131,7 @@ Debug output from the BigBlueButton red5 applications.
 Debug output from the deskshare red5 application, which is the red5 server component  for supporting desktop sharing in the BigBlueButton client.
 
 === /usr/share/red5/log/sip.log ===
-Debug output from the sip red5 application, which is the red5 server component (based on red5 phone) for supporting voice over IP in the BigBlueButton client.
+Debug output from the sip red5 application, which is the red5 server component (based on Red5Phone) for supporting voice over IP in the BigBlueButton client.
 
 === /usr/share/red5/log/video.log ===
 Debug output from the video red5 application, which is the red5 server component for supporting video in the BigBlueButton client.
@@ -156,31 +156,35 @@ dataSource.password=secret                                    ##  3 ##
 swfToolsDir=/bin                                              ##  4 ##
 imageMagickDir=/usr/bin                                       ##  5 ##
 presentationDir=/var/bigbluebutton                            ##  6 ##
-ghostScriptExec=/usr/bin/gs                                   ##  7 ##
-
-beans.presentationService.swfToolsDir=${swfToolsDir}          ##  8 ##
-beans.presentationService.imageMagickDir=${imageMagickDir}    ##  9 ##
-beans.presentationService.presentationDir=${presentationDir}  ## 10 ##
 
 # Use fullpath to ghostscript executable since the exec names are different
 # for each platform.
-beans.presentationService.ghostScriptExec=${ghostScriptExec}  ## 11 ##
+ghostScriptExec=/usr/bin/gs                                   ##  7 ##
+
+# This is a workaround for a problem converting PDF files, referenced at
+# http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
+noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
+
+# Inject the above values into our Grails beans
+beans.presentationService.swfToolsDir=${swfToolsDir}          
+beans.presentationService.imageMagickDir=${imageMagickDir}    
+beans.presentationService.presentationDir=${presentationDir}  
+beans.presentationService.ghostScriptExec=${ghostScriptExec}  
+beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
 
 #
 # This URL needs to reference the host running the tomcat server
 bigbluebutton.web.serverURL=http://134.117.226.252            ## 12 ##
 
-# This is a workaround for a problem converting PDF files, referenced at
-# http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
-noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
-beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
 }}}
 
 Notes:
   # JDBC connector for mysql
   # username for mysql account for BigBlueButton web apps
   # password for mysql account for BigBlueButton web apps
-  # path to swfToolsDir, used to access pdf2swf binary
+  # path to SWFTOOLS directory, used to access pdf2swf binary
+  # path to ImageMagick directory to access the convert binary
+  # path to directory where uploaded presentations are stored
 
 Here's a link to the [http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties latest version].
   
