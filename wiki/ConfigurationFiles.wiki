@@ -90,7 +90,7 @@ server {
                 root   /var/www/nginx-default;
         }
 }
-
+}}}
 Notes:
   # The server listens on port 80
   # This is the IP address it binds to
@@ -98,4 +98,24 @@ Notes:
   # Tunnel request to the deskshare module
   # Document root for requests to BigBlueButton web application (Grails app served by tomcat6)
   # Document root for requests to load BigBlueButton client (Flash application served by nginx)
-}}}
+
+
+= Log Files =
+
+== /var/log/syslog ==
+
+This is a good place to watch to see if tomcat6 has any errors.
+
+== /usr/share/red5/log ==
+
+=== /bigbluebutton.log ===
+Debug output from the BigBlueButton red5 applications.
+
+=== /deskshare.log ===
+Debug output from the deskshare red5 application, which is the red5 server component  for supporting desktop sharing in the BigBlueButton client.
+
+=== /sip.log ===
+Debug output from the sip red5 application, which is the red5 server component (based on red5 phone) for supporting voice over IP in the BigBlueButton client.
+
+=== /video.log ===
+Debug output from the video red5 application, which is the red5 server component for supporting video in the BigBlueButton client.
