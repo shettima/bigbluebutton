@@ -17,7 +17,7 @@ The trunk of the SVN repository contains the following important parts:
 
 The following diagram shows the major pieces of the BigBlueButton architecture.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/architecture_diagram.png
 
 ----
 
@@ -25,7 +25,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architect
 
 We think Red5 rocks, and we use it as the core server for handling all the real-time interaction with the client.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_overview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/bbb_appsOverview.png
 
 ----
 
@@ -33,7 +33,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_
 
 We've written the real-time client in Flash.  Since Flash 10, Flash is now available on Mac, Unix, and PCs, and it provides the interface for collaboration with other users.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_client_overview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/bbb_clientOverview.png
 
 ----
 
@@ -41,7 +41,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_clien
 
 The following diagram shows the steps that occur when a new client joins a voice conference.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_voice_conference.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/joining_voiceConference.png
 
 ----
 
@@ -49,7 +49,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/joining_v
 
 The following diagram shows the steps that occur when a presenter uploads a presentation to the server.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading_presentation.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/uploading_presentation.png
 
 ----
 
@@ -58,6 +58,14 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/uploading
 The diagram bellow shows the main components of our screen sharing solution.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share_overview.png
+
+----
+
+== Integrated VOIP (red5 Phone) ==
+
+The diagram bellow shows the main components of our integrated VOIP(red5 Phone) solution.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/bbb_voip.png
 
 ----
 
