@@ -11,7 +11,6 @@
     * [RoadMap Product Road Map]
   * [BigBlueButtonLabs BigBlueButton Labs]
     * [Red5Phone Red 5 Phone]
-    * [DesktopSharingPart2 Desktop Sharing II]
     * [http://readytopresent.wordpress.com/ Ready To Present]
     * [Whiteboard Whiteboard]   
     * [PerformanceTesting Performance Testing]
