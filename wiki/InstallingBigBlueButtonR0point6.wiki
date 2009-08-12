@@ -1,6 +1,5 @@
 #summary How to install BigBlueButton manually like a real developer.  :-)
 
-*NOTE: This document is still a DRAFT.*
 
 These instructions will walk through installing on Ubuntu from source.  You can start with either a physical machine running Ubuntu or a VM with Ubuntu installed -- both are fine.
 
