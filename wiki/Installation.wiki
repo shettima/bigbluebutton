@@ -1,0 +1,13 @@
+#summary Overview of installation options
+
+= Introduction =
+
+There are three ways you can install BigBlueButton
+
+   * [BigBlueButtonVM Download BigBlueButton VM] (white belt)
+   * [InstallationUbuntu Installing on Ubuntu (5 minutes)] (yellow belt)
+   * [InstallingBigBlueButton Installing from source] (brown belt)
+
+Regardless of the way you choose, there following page shows the configuration files:
+
+   * [ConfigurationFiles Configuration Files]
