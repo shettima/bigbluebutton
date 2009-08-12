@@ -36,7 +36,7 @@ Here are the list of issues we fixed on this release:
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=129 Issue 129] Client takes too long to test port 1935 and start tunneling
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=127 Issue 127] Video stream not properly closing in client
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=107 Issue 107] Cut-and-paste url should give a login error
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=88 Issue 88] PDF slide with many simbols causing long delay
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=88 Issue 88] PDF slide with many symbols causing long delay
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=72 Issue 72] Upon uploading a presentation the first slide does not show
 
 = 0.5 Release: Apollo 11 =
