@@ -159,7 +159,7 @@ presentationDir=/var/bigbluebutton                            ##  6 ##
 
 # Use fullpath to ghostscript executable since the exec names are different
 # for each platform.
-ghostScriptExec=/usr/bin/gs                                   ##  7 ##
+ghostScriptExec=/usr/bin/gs                                   
 
 # This is a workaround for a problem converting PDF files, referenced at
 # http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
@@ -174,7 +174,7 @@ beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
 
 #
 # This URL needs to reference the host running the tomcat server
-bigbluebutton.web.serverURL=http://134.117.226.252            ## 12 ##
+bigbluebutton.web.serverURL=http://134.117.226.252            
 
 }}}
 
