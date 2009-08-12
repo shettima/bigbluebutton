@@ -1,5 +1,0 @@
-#summary Notes and details of the new Desktop Sharing module.
-#labels Phase-Implementation,Phase-Design
-
-== Converting Images to Flash Video ==
-For this task we are using [http://www.xuggle.com/xuggler/ Xuggler], which is a Java ffmpeg wrapper. The client java applet sends images to the server, where they are encoded into flash video. To get a better understanding of how this is done, see my [http://wiki.xuggle.com/Encoding_Video_from_a_sequence_of_Images tutorial], and for sample source code see the [http://flexingineer.blogspot.com/ blog]
