@@ -140,9 +140,6 @@ Debug output from the video red5 application, which is the red5 server component
 === /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ===
 This is one of the main configuration file for BigBlueButton applications.
 
-[http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties sample file]
-[http://apple.com apple]
-
 {{{
 #
 # These are the default properites for BigBlueButton Web application
@@ -180,6 +177,7 @@ Notes:
   # password for mysql account for BigBlueButton web apps
   # path to swfToolsDir, used to access pdf2swf binary
 
+Here's a link to the [http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties latest version].
   
 == /var/lib/tomcat6/logs ==
 
