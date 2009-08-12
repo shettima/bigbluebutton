@@ -1,5 +1,7 @@
 #summary An overview of the BigBlueButton configuration
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 Here's a list of all the configuration files and log files that are used and created by BigBlueButton.
@@ -138,6 +140,9 @@ Debug output from the video red5 application, which is the red5 server component
 === /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ===
 This is one of the main configuration file for BigBlueButton applications.
 
+[http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties sample file]
+[http://apple.com apple]
+
 {{{
 #
 # These are the default properites for BigBlueButton Web application
@@ -176,7 +181,6 @@ Notes:
   # path to swfToolsDir, used to access pdf2swf binary
 
   
-  
 == /var/lib/tomcat6/logs ==
 
 === catalina.yyyy-mm-dd.log ===
@@ -184,3 +188,7 @@ General log information from startup of tomcat6
 
 === localhost.yyyy-mm-dd.log ===
 General log information from startup of tomcat applications
+
+= Asterisk =
+== Configuration files ===
+=== /etc/asterisk/extensions.conf ===
