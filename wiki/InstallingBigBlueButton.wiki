@@ -1,5 +1,6 @@
 #summary How to install BigBlueButton manually like a real developer.  :-)
 
+
 These instructions will walk through installing on Ubuntu from source.  You can start with either a physical machine running Ubuntu or a VM with Ubuntu installed -- both are fine.
 
 If you want to try it out using a VM image:
@@ -69,7 +70,7 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   > apt-get install tomcat6
 }}}
 
- * Confirm that tomcat is running.
+ * Confirm that tomcat is running
 {{{
   http://<YOUR IP>:8080/
 }}}
@@ -152,7 +153,8 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
  > apt-get install bison
 }}}
 
- * Install Dahdi. You may have to find out what the newest version is. Go [http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/ here]
+ * Install Dahdi
+You may have to find out what the newest version is. Go [http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/ here]
 {{{
  > cd /usr/local/src
  > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
@@ -184,9 +186,40 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
 
   Add the following at the bottom of the file
 
+;
 ; BigBlueButton: Setup sample conference
 [bigbluebutton]
+exten => s,1,Goto(start-dialplan,s,1)
+exten => s,n,Hangup
 
+[start-dialplan]
+exten => s,1,Set(TRIES=1)
+exten => s,n,Wait(2)
+exten => s,n,Answer
+exten => s,n,Goto(prompt,s,1)
+
+[prompt]
+exten => s,1,Read(CONF_NUM,conf-getconfno,6,,3,10)
+exten => s,n,Goto(bbb-conference,s,1)
+
+[bbb-voip]
+exten => _XXXX.,1,MeetMe(${EXTEN},cdMsT)
+
+[bbb-conference]
+exten => _XXXX.,1,Agi(agi://localhost/findConference?conference=${EXTEN})
+exten => _XXXX.,n,GotoIf($[${EXTEN} = ${CONFERENCE_FOUND}]?valid:invalid)
+exten => _XXXX.,n(valid),Playback(conf-placeintoconf)
+exten => _XXXX.,n,MeetMe(${CONFERENCE_FOUND},cdMsT)
+exten => _XXXX.,n(invalid),Goto(handle-invalid-conference,s,1)
+
+[handle-invalid-conference]
+exten => s,1,Playback(conf-invalid)
+exten => s,n,GotoIf($[${TRIES} < 3]?try-again:do-not-try-again)
+exten => s,n(try-again),Set(TRIES=$[${TRIES} + 1])
+exten => s,n,Goto(prompt,s,1)
+exten => s,n(do-not-try-again),Hangup
+
+[echo-test]
 ;
 ; Create an extension, 600, for evaluating echo latency.
 ;
@@ -194,7 +227,8 @@ exten => 600,1,Answer                   ; Do the echo test
 exten => 600,n,Playback(demo-echotest)  ; Let them know what's going on
 exten => 600,n,Echo                     ; Do the echo test
 exten => 600,n,Playback(demo-echodone)  ; Let them know it's over
-exten => 600,n,Hangup()
+exten => 600,n,Goto(s,6)                ; Start over
+
 }}}
 
  * Create SIP account
@@ -203,6 +237,21 @@ exten => 600,n,Hangup()
 
   Add the following at the bottom of the file
 
+;
+; BigBlueButton: Echo test sample user
+[echotest]
+type=friend
+username=echotest
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=echo-test
+allow=all
+
+;
 ; BigBlueButton: Setup sample user to connect over VoIP
 [user1]
 type=friend
@@ -252,14 +301,42 @@ canreinvite=no
 context=bigbluebutton
 allow=all
 
+}}}
+
+ * Create SIP Accounts to be used by Red5Phone
+{{{
+ Create a script with the following contents
+
+#!/bin/bash
+
+for i in {3000..3029}
+do
+   echo "
+[$i]
+type=friend
+username=$i
+insecure=very
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bbb-voip
+disallow=all
+allow=ulaw
+
+   " >>  /etc/asterisk/sip.conf 
+done
 
 }}}
+
+
+
 
  * Test your SIP account
 {{{
  Download Zoiper from here http://www.zoiper.com/zwin.php
 
- After installing Zoiper, start it and create a SIP account using the above information.
+ After installing Zoiper, start it and create a SIP account using the echotest user above.
 
  Then dial 600. You should be connected to the "Echo" application.
 
@@ -388,13 +465,15 @@ server {
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
  > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
+ > wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
+ > wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
 }}}
 
- * Disable Security settings for TOMCAT6. Make sure to un-comment the line 
+ * Disable Security settings for TOMCAT6
 {{{
   > vi /etc/default/tomcat6
 
-  Edit #TOMCAT6_SECURITY=yes to
+  Edit and uncomment #TOMCAT6_SECURITY=yes to
 
   TOMCAT6_SECURITY=no
 }}}
@@ -605,6 +684,29 @@ export PATH=$XUGGLE_HOME/bin:$PATH
  >  rm deskshare.tar.gz
 }}}
 
+ * Install Video App
+{{{
+ > cd /opt/red5-0.8/webapps
+ > cp /home/user/temp/video.tar.gz ./
+ > tar zxvf video.tar.gz
+ >  rm video.tar.gz
+}}}
+
+ * Install Voice App
+{{{
+ > cd /opt/red5-0.8/webapps
+ > cp /home/user/temp/sip.tar.gz ./
+ > tar zxvf sip.tar.gz
+ >  rm sip.tar.gz
+
+ Edit /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+ 
+ Point sip.server.host to the IP of your Asterisk installation
+
+ sip.server.host=192.168.0.177
+
+}}}
+
  * Install BigBlueButton Client
 {{{
   > cd /var/www
@@ -615,7 +717,7 @@ export PATH=$XUGGLE_HOME/bin:$PATH
   > rm client.tar.gz
 }}}
 
- * Modify BBB client config.xml, located in /var/www/bigbluebutton/client/conf/
+ * Modify BBB client config in /var/www/bigbluebutton/client/conf/config.xml
 {{{
 
  - Change the uri to your IP address
@@ -626,49 +728,56 @@ export PATH=$XUGGLE_HOME/bin:$PATH
 <?xml version="1.0" ?>
 <config>
     <version>0.4</version>
-    <porttest host="192.168.0.124" application="oflaDemo"/>
-        <modules>
-                <module name="VideoModule" url="VideoModule.swf"
-                        uri="rtmp://192.168.0.124/oflaDemo"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"
-                        loadNextModule="DeskShareModule"
-                />
-                <module name="ChatModule" url="ChatModule.swf"
-                        uri="rtmp://192.168.0.124/bigbluebutton"
-                        loadNextModule="PresentationModule"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"
-                />
-                <module name="ViewersModule" url="ViewersModule.swf"
-                        uri="rtmp://192.168.0.124/bigbluebutton"
-                        host="conf/join-mock.xml"
-                        onAppInitEvent="LOAD" loadNextModule="ChatModule"
-                        onAppStartEvent="START"
-                        onUserLogoutEvent="STOP"
-                />
-                <module name="ListenersModule" url="ListenersModule.swf"
-                        uri="rtmp://192.168.0.124/bigbluebutton"
-                        recordingHost="http://192.168.0.124"
-                        loadNextModule="VideoModule"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"
-                />
-                <module name="PresentationModule" url="PresentationModule.swf"
-                        uri="rtmp://192.168.0.124/bigbluebutton"
-                        host="http://192.168.0.124"
-                        loadNextModule="ListenersModule"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"
-                />
+    <porttest host="192.168.0.136" application="video"/>    
+	<modules>
 
-                <module name="DeskShareModule" url="DeskShareModule.swf"
-                        uri="rtmp://192.168.0.124/deskShare"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"
-                />
-
-        </modules>
+		<module name="VideoModule" url="VideoModule.swf" 
+			uri="rtmp://192.168.0.136/video"
+			onUserJoinedEvent="START"
+			onUserLogoutEvent="STOP"	
+		/>
+		<module name="ChatModule" url="ChatModule.swf" 
+			uri="rtmp://192.168.0.136/bigbluebutton" 
+			loadNextModule="PresentationModule"	
+			onUserJoinedEvent="START"
+			onUserLogoutEvent="STOP"		 
+		/>
+		<module name="ViewersModule" url="ViewersModule.swf" 
+			uri="rtmp://192.168.0.136/bigbluebutton" 
+			host="conf/join-mock.xml"
+			onAppInitEvent="LOAD" loadNextModule="ChatModule"
+			onAppStartEvent="START"
+			onUserLogoutEvent="STOP"
+		/>	
+		<module name="ListenersModule" url="ListenersModule.swf" 
+			uri="rtmp://192.168.0.136/bigbluebutton" 
+			recordingHost="http://192.168.0.136"
+			loadNextModule="DeskShareModule"
+			onUserJoinedEvent="START"
+			onUserLogoutEvent="STOP"
+		/>
+		<module name="PresentationModule" url="PresentationModule.swf" 
+			uri="rtmp://192.168.0.136/bigbluebutton" 
+			host="http://192.168.0.136" 
+			loadNextModule="ListenersModule"
+			onUserJoinedEvent="START" 
+			onUserLogoutEvent="STOP"
+		/>
+		
+		<module name="DeskShareModule" url="DeskShareModule.swf" 
+			uri="rtmp://192.168.0.136/deskShare" 
+			onUserJoinedEvent="START" 
+			onUserLogoutEvent="STOP"
+			loadNextModule="PhoneModule"
+		/>
+		
+		<module name="PhoneModule" url="PhoneModule.swf" 
+			uri="rtmp://192.168.0.136/sip" 
+			onUserJoinedEvent="START" 
+			onUserLogoutEvent="STOP"
+			loadNextModule="VideoModule"
+		/>
+	</modules>
 </config>
 }}}
 
