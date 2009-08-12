@@ -22,6 +22,8 @@ The following links will get you going with setting up BigBlueButton.  For most 
     * [BigBlueButtonVM Download BigBlueButton VM]
     * [InstallationUbuntu Installing on Ubuntu (5 minutes)]
     * [InstallingBigBlueButton Installing from source]
+    * [ConfigurationFiles Configuration Files]
+
 
 
 ----
