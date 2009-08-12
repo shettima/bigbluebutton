@@ -291,3 +291,66 @@ allow=all
 ;
 ; more ...
 }}}
+
+= BigBlueButton Client =
+== Configuration File ==
+=== /var/www/bigbluebutton/client/conf/config.xml ===
+
+{{{
+<?xml version="1.0" ?>
+<config>
+    <version>2169-2009-08-11</version>
+    <porttest host="192.168.0.100" application="video"/>
+        <modules>
+
+                <module name="VideoModule" url="VideoModule.swf"
+                        uri="rtmp://192.168.0.100/video"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="ChatModule" url="ChatModule.swf"
+                        uri="rtmp://192.168.0.100/bigbluebutton"
+                        loadNextModule="PresentationModule"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="ViewersModule" url="ViewersModule.swf"
+                        uri="rtmp://192.168.0.100/bigbluebutton"
+                        host="http://192.168.0.100/bigbluebutton/conference-session/enter"
+                        onAppInitEvent="LOAD" loadNextModule="ChatModule"
+                        onAppStartEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="ListenersModule" url="ListenersModule.swf"
+                        uri="rtmp://192.168.0.100/bigbluebutton"
+                        recordingHost="http://192.168.0.100"
+                        loadNextModule="DeskShareModule"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+                <module name="PresentationModule" url="PresentationModule.swf"
+                        uri="rtmp://192.168.0.100/bigbluebutton"
+                        host="http://192.168.0.100"
+                        loadNextModule="ListenersModule"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                />
+
+                <module name="DeskShareModule" url="DeskShareModule.swf"
+                        uri="rtmp://192.168.0.100/deskShare"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                        loadNextModule="PhoneModule"
+                />
+
+                <module name="PhoneModule" url="PhoneModule.swf"
+                        uri="rtmp://192.168.0.100/sip"
+                        onUserJoinedEvent="START"
+                        onUserLogoutEvent="STOP"
+                        loadNextModule="VideoModule"
+                />
+        </modules>
+</config>
+}}}
+
+[http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/src/conf/config.xml Click here to view the latest version]
