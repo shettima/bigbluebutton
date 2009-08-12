@@ -254,3 +254,40 @@ permit = 0.0.0.0/0.0.0.0
 read = system,call,log,verbose,command,agent,user
 write = system,call,log,verbose,command,agent,user
 }}}
+
+=== /etc/asterisk/sip.conf ===
+
+Entries for sample users for voice over IP.
+
+{{{
+;
+; BigBlueButton: Echo test sample user
+[echotest]
+type=friend
+username=echotest
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=echo-test
+allow=all
+
+;
+; BigBlueButton: Setup sample user to connect over VoIP
+[user1]
+type=friend
+username=user1
+insecure=very
+secret=secret
+qualify=yes
+nat=yes
+host=dynamic
+canreinvite=no
+context=bigbluebutton
+allow=all
+
+;
+; more ...
+}}}
