@@ -59,7 +59,9 @@ Want to keep your machine up-to-date with the latest BigBlueButton release?  No 
   # apt-get upgrade
 }}}
 
-and apt-get will download and install any updates to BigBlueButton.  Don't you just love the power of packages.
+and apt-get will download and install any updates to BigBlueButton.  Don't you just love the power of Ubuntu/Debian packages.
+
+One more note for EC2: you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
 
 === Changing the host (or IP) address for BigBlueButton ===
 If you need to change the hostname (or IP address), you can use `bbb-setip`, a utility shell script included in the BigBlueButton install, to make the global changes necessary to BigBlueButton's configuration files.
