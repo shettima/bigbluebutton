@@ -6,7 +6,7 @@ Using Ubuntu/Debian packages, it's very easy to get a BigBlueButton server up an
 
 == Prerequisites ==
 
-You'll need root access to your Ubuntu machine.  
+You'll need root access to your Ubuntu machine (it can be server or workstation).  
 
 Also, BigBlueButton uses nginx, which listens on port 80 for http access and tunneling, so if you have apache running, you'll need to tell apache to listen to a different port by editing /etc/apache2/ports.conf and changing the entry for 80 to another number, such as 8081.  Avoid setting apache2 to port 8080 as BigBlueButton uses tomcat6 which listens on that port.
 
