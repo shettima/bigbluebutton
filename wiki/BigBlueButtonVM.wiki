@@ -28,9 +28,9 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   3.  Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
 
-The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the BigBlueButton VM goes through an initial startup script that 
+The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos (or watch [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM]).  During this time, the BigBlueButton VM goes through an initial startup script that 
 
-  * Installs a software timer for Asterisk (this allows you to use a VoIP phone to connect)
+  * Installs a software timer for Asterisk (this allows to connect using the VoIP phone built into the BigBlueButton client)
   * Installs the BigBlueButton packages
   * Configures BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
@@ -39,9 +39,9 @@ When it's done, you'll see a message that asks you to login and change the passw
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
-The VM has a default account called *firstuser*, with password *default*.  To secure your server, take a moment to login as firstuser.  After you enter the password, you'll be be immediately asked to enter the the password again and then enter a new password.  
+The VM has a default account called *firstuser*, with password *default*.  To secure your server, take a moment to login as firstuser (you'll need to enter the password twice -- once to login, and immediately again to reset it to a different password.  Do this as it will secure your server.  
 
-After resetting the default password, you'll get the following welcome message each time you login as firstuser.
+After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser)..
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
