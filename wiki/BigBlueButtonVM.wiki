@@ -59,19 +59,37 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
 == Updating the BigBlueButton VM == 
 
-All the BigBlueButton components are installed as Ubuntu packages that are automatically built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the BigBlueButton Google Code repository.
+All the BigBlueButton components are installed as Ubuntu packages.  These packages are available from the remote repository http://archive.bigbluebutton.org.  We updated these packages with every release.
 
-When this VM was assembled, it was using the latest packages.  However, BigBlueButton is under active development and these packages are updating frequently. 
-
-To update the VM with the latest components, do the following.
+When a release occurs, to update the VM with the latest components, do the following.
 
 Login as firstuser (using your password of course!) and enter the following commands:
 {{{
   # apt-get update
-  # apt-get upgrade
+  # apt-get dist-upgrade
 }}}
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
+
+Note: If you want to live on the edge and use the latest packages built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the BigBlueButton Google Code repository, then edit /etc/apt/sources.list.d/bigbluebutton.list
+ and change
+
+{{{
+#
+# Repository for BigBlueButton
+#
+deb http://archive.bigbluebutton.org/ bigbluebutton main
+}}}
+
+to
+{{{
+#
+# Repository for BigBlueButton
+#
+deb http://archive.bigbluebutton.org/dev bigbluebutton main
+}}}
+
+Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
 
 == Modifying BigBlueButton == 
 
