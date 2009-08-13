@@ -9,7 +9,7 @@
 
 == Background ==
 
-Many universities and colleges have told us they wanted to run their own version BigBlueButton behind their firewall.  In addition, our developers have asked to shorten the edit-compile-check cycle when extending BigBlueButton.
+Many universities and colleges have told us they wanted to run their own version BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending BigBlueButton.
 
 In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac. This VM is also a full command-line development environment -- it's preconfigured to check out code from BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.
   
