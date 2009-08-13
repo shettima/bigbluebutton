@@ -28,6 +28,8 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   3.  Double-click on the bigbluebutton-vm.vmx icon.  This will start VMWare Player (or VMWare Workstation).
 
+In VMWare, make sure the networking is set to Bridged, not NAT.  
+
 The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos (or watch [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM]).  During this time, the BigBlueButton VM goes through an initial startup script that 
 
   * Installs a software timer for Asterisk (this allows to connect using the VoIP phone built into the BigBlueButton client)
