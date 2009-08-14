@@ -11,6 +11,8 @@ The trunk of the SVN repository contains the following important parts:
   * deskshare-app - The Desktop Sharing server side red5 web-app
   * deskshare-applet - The Applet program used to capture the screen on the client 
 
+There are over a dozen [OpenSourceComponents open source components] that comprise BigBlueButton, along with the above parts.  The following diagrams describe how they all work together.
+
 ----
 
 == Architecture Overview ==
