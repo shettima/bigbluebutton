@@ -1,0 +1,47 @@
+= Open Source Components of BigBlueButton =
+
+        <table>
+            <tr>
+                <td><a href="http://activemq.apache.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/activeMQ.png</a></td>
+                <td><p>*ActiveMQ*</p><p>Apache ActiveMQ is an open source enterprise messaging and integration patterns provider.</p><p><a href="http://activemq.apache.org/">http://activemq.apache.org/</a></p></td>
+                <td><a href="http://www.asterisk.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/asterisk.png</a></td>
+                <td><p>*Asterisk*</p><p>Asterisk is an open source PBX, telephony engine, and telephony applications toolkit.</p><p><a href="http://www.asterisk.org/">http://www.asterisk.org/</a></p></td>
+            </tr>
+            <tr>
+                <td><a href="http://asterisk-java.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/asterisk_java.png</a></td>
+                <td><p>*Asterisk Java*</p><p>The Asterisk-Java package consists of a set of Java classes that allow you to easily build Java applications that interact with an Asterisk PBX Server.</p><p><a href="http://asterisk-java.org/">http://asterisk-java.org/</a></p></td>
+                <td><a href="http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/flex.png</a></td>
+                <td><p>*Flex SDK*</p><p>Flex is a highly productive, open source framework for building and maintaining expressive web applications that deploy consistently on all major browsers, desktops and operating systems.</p><p><a href="http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK">http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK</a></p></td>
+            </tr>
+            <tr>
+                <td><a href="http://www.ghostscript.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/ghost_script.png</a></td>
+                <td><p>*Ghostscript*</p><p>Ghostscript is an interpreter for the Post Script language and for PDF.</p><p><a href="http://www.ghostscript.com/">http://www.ghostscript.com/</a></p></td>
+                <td><a href="http://grails.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/grails.png</a></td>
+                <td><p>*Grails*</p><p>Grails is an open-source web application framework that leverages the Groovy language and complements Java Web development.</p><p><a href="http://grails.org/">http://grails.org/</a></p></td>
+            </tr>
+            <tr>
+                <td><a href="http://www.imagemagick.org/script/index.php">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/image_magick.png</a></td>
+                <td><p>*Image Magick*</p><p>Image Magick is a collection of tools designed to view, modify, and manipulate images in nearly 70 different image formats. It also allows you to create images dynamically, making it suitable for Web applications.</p><p><a href="http://www.imagemagick.org/script/index.php">http://www.imagemagick.org/script/index.php</a></p></td>
+                <td><a href="http://www.mysql.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/mySQL.png</a></td>
+                <td><p>*MySQL*</p><p>MySQL is an open source database</p><p><a href="http://www.mysql.com/">http://www.mysql.com/</a></p></td>
+            </tr>
+            <tr>
+                <td><a href="http://nginx.net/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/nginx.png</a></td>
+                <td><p>*nginx*</p><p>nginx "engine x" is a HTTP server and mail proxy server. </p><p><a href="http://nginx.net/">http://nginx.net/</a></p></td>
+                <td><a href="http://osflash.org/red5">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/red5.png</a></td>
+                <td><p>*Red5*</p><p>Red5 is an Open Source Flash Server written in Java.</p><p><a href="http://osflash.org/red5">http://osflash.org/red5</a></p></td>
+            </tr>
+            <tr>
+                <td><a href="http://www.swftools.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/swftools.png</a></td>
+                <td><p>*swf Tools*</p><p>SWFTools is a collection of utilities for working with Adobe Flash files (SWF files).</p><p><a href="http://www.swftools.org/">http://www.swftools.org/</a></p></td>
+                <td><a href="http://tomcat.apache.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/tomcat.png</a></td>
+                <td><p>*Tomcat*</p><p>Apache Tomcat is an implementation of the Java Servlet and JavaServer Pages technologies. The Java Servlet and JavaServer Pages specifications are developed under the Java Community Process.</p><p><a href="http://tomcat.apache.org/">http://tomcat.apache.org/</a></p></td>
+            </tr>
+            <tr>
+                <td><a href="http://www.ubuntu.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/ubuntu.png</a></td>
+                <td><p>*Ubuntu*</p><p>Ubuntu is a distribution of the Linux Operating system, focused on user friendly Graphical User Interfaces.</p><p><a href="http://www.ubuntu.com/">http://www.ubuntu.com/</a></p></td>
+                <td><a href="http://www.xuggle.com/xuggler/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/xuggler.png</a></td>
+                <td><p>*Xuggler*</p><p>Xuggler is a library for Java or C++ developers that allows you to decode, manipulate, and encode (almost) any type of video file in near real time.</p><p><a href="http://www.xuggle.com/xuggler/">http://www.xuggle.com/xuggler/</a></p></td>
+            </tr>
+            
+        </table>
