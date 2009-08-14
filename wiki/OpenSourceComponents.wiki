@@ -1,5 +1,7 @@
 = Open Source Components of BigBlueButton =
 
+See the diagrams in ArchitectureOverview for how these components interact.
+
         <table>
             <tr>
                 <td valign="top" width="150" align="center"><a href="http://activemq.apache.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/activeMQ.png</a></td>
