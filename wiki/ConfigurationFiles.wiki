@@ -1,4 +1,4 @@
-#summary An overview of the BigBlueButton configuration
+#summary An overview of the BigBlueButton configuration and log files.
 
 <wiki:toc max_depth="3" />
 
