@@ -1,3 +1,4 @@
+#labels Deprecated
 = Welcome to BigBlueButton Google Code =
         <table>
             <tr>
