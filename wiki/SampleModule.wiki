@@ -3,7 +3,7 @@
 == Getting Started ==
 This is a brief summary of how to create a new BigBlueButton module.
 Before you start creating a new module, you will need to:
-  * Download the BBB Virtual Machine, or have access to a BBB server you can test on.
+  * Download the [BigBlueButtonVM BBB Virtual Machine], or have access to a BBB server you can test on.
   * Download Flex Builder if you don't already have it.
   * Check out BigBlueButton-Client from the SVN repository. You can do this right from Flex with the Subclipse plugin.
   * Once you've checked out the client, edit the file src/conf/config.xml. In it, change all instances of an IP address to the IP address of your BBB server. For example:
