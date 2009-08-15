@@ -1,6 +1,7 @@
   * [GettingStarted Getting Started]
     * [ArchitectureOverview Overview of Architecture]
     * [OpenSourceComponents Open Source Components]
+    * [SampleModule Creating a sample module]
   * [Installation Installation]
     * [BigBlueButtonVM Download BigBlueButton VM]
     * [InstallationUbuntu Installing on Ubuntu (5 minutes)]
