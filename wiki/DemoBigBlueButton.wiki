@@ -1,4 +1,5 @@
 #summary Demo of BigBlueButton
+#labels Deprecated
 
 = Introduction =
 
