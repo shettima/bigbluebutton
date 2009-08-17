@@ -1,10 +1,8 @@
 #summary Development Road Map for BigBlueButton
 
-= Release 0.5 =
+= Release 0.61 =
 
 The upcoming release (August, 2009) will include
 
-  * A fully documented sample module
-  * VoIP (using the Red5 phone module)
-
-
+  * Optimized desktop sharing
+  * more bug fixes
