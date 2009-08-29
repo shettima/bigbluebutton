@@ -10,7 +10,7 @@ Phidget Servo Motor was using for receiving a response from BigBlueButton when t
 = Details =
 
 == Setting Up Environment ==
-For using Phidgets, you have to install the drive for your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget WebService
+For using Phidgets, you have to install the drive for your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget Webservice
 
 Phidgets supports development in Flash for all types of Phidgets using ActionScript3. You will need the Phidgets Actionscript Libraries to program with the widgets. The Library can be found in PhidgetsDemo package from BigBlueButton download page.
 
@@ -22,7 +22,8 @@ The following steps will tell you how Phidget InfaceKit works:
 2. Afterwards, the phidgets object will need to be declared and the initialized. For example, a start function is set to execute on initialization, and then an instance of a PhidgetInterfaceKit is declared and then set inside with:
 
 	public var phid:com.phidgets.PhidgetInterfaceKit;
-	public function start():void{
+	
+        public function start():void{
 		phid = new PhidgetInterfaceKit();
 		//More code goes here
 		}
