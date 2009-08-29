@@ -17,6 +17,7 @@ Phidgets supports development in Flash for all types of Phidgets using ActionScr
 
 == Coding For Your Widgets ==
 The following steps will tell you how Phidget InfaceKit works:
+
 1. Before you can use the phidgets, you must import references from the library to the device.
 
 2. Afterwards, the phidgets object will need to be declared and the initialized. For example, a start function is set to execute on initialization, and then an instance of a PhidgetInterfaceKit is declared and then set inside with:
@@ -36,7 +37,7 @@ The following steps will tell you how Phidget InfaceKit works:
    {{{
 	phid.addEventListener(PhidgetDataEvent.SENSOR_CHANGE, onSensorChange);
    }}}
-   The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object.
+The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object.
    {{{
 	private function onSensorChange(evt:PhidgetDataEvent):void{
 		//Insert your code here
