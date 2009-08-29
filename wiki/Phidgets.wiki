@@ -10,9 +10,9 @@ Phidget Servo Motor was using for receiving a response from BigBlueButton when t
 = Details =
 
 == Setting Up Environment ==
-For using Phidgets, you have to install the drive for your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget Webservice
+For using Phidgets, you have to install the drive for your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget WebService.
 
-Phidgets supports development in Flash for all types of Phidgets using ActionScript3. You will need the Phidgets Actionscript Libraries to program with the widgets. The Library can be found in PhidgetsDemo package from BigBlueButton download page.
+Phidgets supports development in Flash for all types of Phidgets using ActionScript 3. You will need the Phidgets Actionscript Libraries to program with the widgets. The Library can be found in PhidgetsDemo package from BigBlueButton download page.
 
 
 == Coding For Your Widgets ==
@@ -20,27 +20,28 @@ The following steps will tell you how Phidget InfaceKit works:
 1. Before you can use the phidgets, you must import references from the library to the device.
 
 2. Afterwards, the phidgets object will need to be declared and the initialized. For example, a start function is set to execute on initialization, and then an instance of a PhidgetInterfaceKit is declared and then set inside with:
-
+   {{{
 	public var phid:com.phidgets.PhidgetInterfaceKit;
-	
-        public function start():void{
+	public function start():void{
 		phid = new PhidgetInterfaceKit();
 		//More code goes here
-		}
+	}
+   }}}	
 
 3. Next, the program needs to try and connect to the Phidget through an open call. We can handle this by using event driven programming and tracking the AttachEvents and DetachEvents, or checking the isAttached property.		
-
+   {{{
 	phid.open("localhost", 5001);
-	
+   }}}	
 4. You can program event driven for phidgets by using hooking an event handler with the code:
-
+   {{{
 	phid.addEventListener(PhidgetDataEvent.SENSOR_CHANGE, onSensorChange);
-
+   }}}
    The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object.
-
+   {{{
 	private function onSensorChange(evt:PhidgetDataEvent):void{
 		//Insert your code here
 	}
+   }}}	
    Some events such as Attach and Detach belong to the base Phidget object and thus are common to all types of Phidgets.
 
 == Working With Multiple Phidgets ==
