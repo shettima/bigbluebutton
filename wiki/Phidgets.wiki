@@ -10,9 +10,9 @@ Phidget Servo Motor was using for receiving a response from BigBlueButton when t
 = Details =
 
 == Setting Up Environment ==
-For using Phidgets, you have to install the drive for your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget WebService.
+For using Phidgets, you have to install the drive for your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget WebService
 
-Phidgets supports development in Flash for all types of Phidgets using ActionScript 3. You will need the Phidgets Actionscript Libraries to program with the widgets. The Library can be found in PhidgetsDemo package from BigBlueButton download page.
+Phidgets supports development in Flash for all types of Phidgets using ActionScript3. You will need the Phidgets Actionscript Libraries to program with the widgets. The Library can be found in PhidgetsDemo package from BigBlueButton download page.
 
 
 == Coding For Your Widgets ==
