@@ -21,26 +21,33 @@ The following steps will tell you how Phidget InfaceKit works:
 1. Before you can use the phidgets, you must import references from the library to the device.
 
 2. Afterwards, the phidgets object will need to be declared and the initialized. For example, a start function is set to execute on initialization, and then an instance of a PhidgetInterfaceKit is declared and then set inside with:
-   {{{
-	public var phid:com.phidgets.PhidgetInterfaceKit;
-	public function start():void{
-		phid = new PhidgetInterfaceKit();
-		//More code goes here
-	}
-   }}}	
 
 3. Next, the program needs to try and connect to the Phidget through an open call. We can handle this by using event driven programming and tracking the AttachEvents and DetachEvents, or checking the isAttached property.		
-   {{{
-	phid.open("localhost", 5001);
-   }}}	
+
 4. You can program event driven for phidgets by using hooking an event handler with the code:
    {{{
-	phid.addEventListener(PhidgetDataEvent.SENSOR_CHANGE, onSensorChange);
+	public function phidConnect1():void{ 
+		phid1 = new PhidgetInterfaceKit();
+		
+		phid1.addEventListener(PhidgetEvent.CONNECT,	onConnect1);
+		phid1.addEventListener(PhidgetEvent.DETACH,	onDetach1);
+		phid1.addEventListener(PhidgetEvent.ATTACH,	onAttach1);
+		phid1.addEventListener(PhidgetEvent.DISCONNECT, onDisconnect1);
+		phid1.addEventListener(PhidgetDataEvent.SENSOR_CHANGE, onSensorChange);
+		
+		phid1.open("localhost", 5001, "pass");
+	}
    }}}
-The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object.
+
+5. The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object.
    {{{
 	private function onSensorChange(evt:PhidgetDataEvent):void{
-		//Insert your code here
+		switch(evt.Index){
+		case 2: 
+		if (evt.Data == 0) {
+			gotoNextSlide();
+		}
+		break;
 	}
    }}}	
    Some events such as Attach and Detach belong to the base Phidget object and thus are common to all types of Phidgets.
