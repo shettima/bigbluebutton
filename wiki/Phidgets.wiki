@@ -38,19 +38,21 @@ The following steps will tell you how Phidget InfaceKit works:
 	phid.addEventListener(PhidgetDataEvent.SENSOR_CHANGE, onSensorChange);
    }}}
 
-5. The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object.
+5. The onSensorChange method will get executed every time the InterfaceKit reports a change on one of its analog inputs. The values from the report can be accessed from the PhidgetDataEvent object. You can execute more BigBlueButton functions within this method.
    {{{
 	private function onSensorChange(evt:PhidgetDataEvent):void{
 		//Insert your code here
+                //Merge BigBluueButton functions
 	}
    }}}	
+
    Some events such as Attach and Detach belong to the base Phidget object and thus are common to all types of Phidgets.
 
 == Working With Multiple Phidgets ==
 Multiple Phidgets of the same type can easily be run inside the same program. If you were using a PhidgetRFID instead of an Interfacekit, you would declare a PhidgetRFID instead of a PhidgetInterfaceKit. In our demo, it requires PhidgetInterfaceKit/PhidgetServo/PhidgetRFID instances to be defined and initialized together. The new instance can then be set up, opened and used in the same process as the previous one.
 
 == Notes ==
-1. The effects of demo can be observed by simply replacing three Actionscript files and adding one library file. You can download the modified source files from the following (PhidgetDemo.zip) and accommodate the changes into your Flex project.
+1. The effects of demo can be observed by simply replacing three Actionscript files and adding one library file. You can get the PhidgetsDemo.zip files from download page and accommodate the changes into your Flex project.
 http://code.google.com/p/bigbluebutton/downloads/list
 
 2. The source code in PhidgetsDemo.zip is based on BigBlueButton-client at reversion 2341
