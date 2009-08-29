@@ -49,7 +49,7 @@ The onSensorChange method will get executed every time the InterfaceKit reports 
 Multiple Phidgets of the same type can easily be run inside the same program. If you were using a PhidgetRFID instead of an Interfacekit, you would declare a PhidgetRFID instead of a PhidgetInterfaceKit. In our demo, it requires PhidgetInterfaceKit/PhidgetServo/PhidgetRFID instances to be defined and initialized together. The new instance can then be set up, opened and used in the same process as the previous one.
 
 == Notes ==
-1. The effects of demo can be observed by simply replacing three Actionscript files and adding one library file. You can download the modified source files from the following (PhidgetDemo.zip) and accommodate the changes into your Flex project.
+1. The effects of demo can be observed by simply replacing three Actionscript files and adding one library file. You can download PhidgetDemo.zip files from download page and accommodate the changes into your Flex project.
 http://code.google.com/p/bigbluebutton/downloads/list
 
 2. The source code in PhidgetsDemo.zip is based on BigBlueButton-client at reversion 2341
