@@ -5,7 +5,7 @@
 = Quick Start =
   # Download the latest VM: [http://bigbluebutton.org/downloads/bigbluebutton-vm.zip bigbluebutton-vm.zip].
   # While it's downloading, grab some popcorn and watch this installation video: [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html how-to video for setting up a BigBluebutton VM]. (10 minutes)
-  # The video will walk you through the following instructions below.
+  # Follow the instructions below.
 
 == Background ==
 
