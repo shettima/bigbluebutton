@@ -73,8 +73,7 @@ Login as firstuser (using your password of course!) and enter the following comm
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
 
-Note: If you want to live on the edge and use the latest packages built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the BigBlueButton Google Code repository, then edit /etc/apt/sources.list.d/bigbluebutton.list
- and change
+Note: If you want to live on the edge and use the latest packages built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the BigBlueButton Google Code repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
 
 {{{
 #
