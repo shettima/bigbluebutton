@@ -1,6 +1,6 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= 0.61 Sepetember 11 2009 =
+= 0.61 Sepetember XX 2009 (Draft) =
 
 == New Features ==
  * Larger resolution video *
