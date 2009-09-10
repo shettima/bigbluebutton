@@ -138,9 +138,9 @@ chown -R red5.red5 /opt/red5-0.8
 #### AND PASTE IT ALL IN AS ONE COMMAND
 echo '#!/bin/bash
 #
-# Startup script for Red5 flash streaming server
-# Author: Ruben Waitz - www.amtex.nl
-# Version 0.9 - 06/09/2006
+# red5  Starts Red5.
+# chkconfig: 345 88 12
+# description: Red5 flash streaming server
 #
 # processname: java (unfortunately)
 # pidfile: /var/run/red5.pid
