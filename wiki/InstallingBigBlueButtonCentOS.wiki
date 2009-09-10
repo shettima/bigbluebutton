@@ -4,6 +4,8 @@ These instructions will walk through how to install BigBlueButton from source on
 
 Before starting, make sure you have a network connection (especially if you are doing this on a new VM you just set up).
 
+*NOTE THAT THIS IS INCOMPLETE AS OF THIS TIME*
+
 {{{
 
 # running this will tell you what version of CentOS you have:
