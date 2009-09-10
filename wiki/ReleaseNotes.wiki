@@ -1,6 +1,36 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= 0.6 Release: Mir Space Station=
+= 0.61 Sepetember 11 2009 =
+
+== New Features ==
+ * Larger resolution video *
+It is now possible to share video using your webcam in 640x480 resolution as well as the old 320x240.
+
+* Desktop Sharing optimization *
+Desktop sharing using tiling optimization to improve bandwidth usage and performance. The capture applet now only sends the differences between captured images to the server, instead of sending the entire screen image
+
+* Desktop Sharing UI *
+There have been changes to the UI of the DeskShare Module. Sharing the desktop is now easier, and the module itself is cleaner
+
+
+== Fixed Issues ==
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=25 Issue 25] Windows can get hidden or off-screen
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=52 Issue 52] First moderator should become default presenter
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=66 Issue 66] Progress should include generating thumbnails
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=71 Issue 71] Reload after login doesn't load the person back into the session
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=72 Issue 72] Upon uploading a presentation the first slide does not show
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=115 Issue 115] Windows respond very poorly when maximized
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=128 Issue 128] Unable to drag desktop sharing window while sharing fullscreen
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=129 Issue 129] BigBlueButton client will hang for ~ 1 minute while it waits for direct connection to 1935 to timeout
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=146 Issue 146] User can log in without entering a username
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=149 Issue 149] Session not invalidated after logout
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=157 Issue 157] Red5 ip is lost after upgrading
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=166 Issue 166] Video screen not resized according to the window resize
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=168 Issue 168] One one deskshare usage per session
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=169 Issue 169] Make "USB Video Class Video" default choice for Mac
+
+
+= 0.6 Release: Mir Space Station. August 12 2009=
 
 
 === New Features ===
