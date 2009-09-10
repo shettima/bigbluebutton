@@ -9,7 +9,7 @@ Phidget Servo Motor was using for receiving a response from BigBlueButton when t
 
 = Details =
 
-== Setting Up Environment ==
+== Setting Up the Environment ==
 For using Phidgets, you have to install the drive into your own OS, which can be downloaded from phidgets website. http://www.phidgets.com/drivers.php You can start/trace devices by using the Phidget WebService.
 
 Phidgets supports development in Flash for all types of Phidgets using ActionScript 3. You will need the Phidgets Actionscript Libraries to program with the widgets. The Library can be found in PhidgetsDemo package from BigBlueButton download page.
@@ -50,6 +50,9 @@ The following steps will tell you how Phidget InfaceKit works:
 
 == Working With Multiple Phidgets ==
 Multiple Phidgets of the same type can easily be run inside the same program. If you were using a PhidgetRFID instead of an Interfacekit, you would declare a PhidgetRFID instead of a PhidgetInterfaceKit. In our demo, it requires PhidgetInterfaceKit/PhidgetServo/PhidgetRFID instances to be defined and initialized together. The new instance can then be set up, opened and used in the same process as the previous one.
+
+== Uses of Phidgets ==
+See the discussion on UsesOfPhidgets.
 
 == Notes ==
 1. The effects of demo can be observed by simply replacing three Actionscript files and adding one library file. You can get the PhidgetsDemo.zip files from download page and accommodate the changes into your Flex project.
