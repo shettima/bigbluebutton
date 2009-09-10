@@ -101,5 +101,28 @@ chmod a+x /etc/init.d/red5
 service red5 start
 chkconfig red5 on
 
+}}}
+
+
+ * Now you need to install the oflaDemo that comes with Red5.  This is a manual process.
+
+{{{
+
+Go to:
+http://<YOURIP-OR-DOMAIN>:5080/
+
+Click on "Click here to install demos" and then choose oflaDemo java 6.
+
+Go to:
+http://192.168.0.154:5080/demos/
+
+Click "View demo" under "OFLA DEMO", which should take you to:
+http://192.168.0.154:5080/demos/ofla_demo.html
+
+In the upper right corner, change localhost to your domain or IP, like:
+rtmp://<YOURIP-OR-DOMAIN/oflaDemo 
+Click connect
+
+You would see a list of available videos. Select one to play.
 
 }}}
