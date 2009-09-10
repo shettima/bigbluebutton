@@ -3,14 +3,17 @@
 = 0.61 Sepetember XX 2009 (Draft) =
 
 == New Features ==
- * Larger resolution video *
-It is now possible to share video using your webcam in 640x480 resolution as well as the old 320x240.
+ * Larger Resolution Video *
+ * Desktop Sharing Optimization *
 
-* Desktop Sharing optimization *
-Desktop sharing using tiling optimization to improve bandwidth usage and performance. The capture applet now only sends the differences between captured images to the server, instead of sending the entire screen image
+* Larger Resolution Video *
+As presenter, if you have the bandwidth, it's now possible to share video using your webcam at 640x480 high resolution or 320x240 standard resolution.  We've refactored the video module itself so the code is much cleaner and better organized.
+
+* Desktop Sharing Optimization *
+To optimize desktop sharing, the desktop sharing capture applet now divides the presenter's screen into distinct tiles and only sends the tiles that have changed, as opposed to sending the entire screen image for each frame.
 
 * Desktop Sharing UI *
-There have been changes to the UI of the DeskShare Module. Sharing the desktop is now easier, and the module itself is cleaner
+We've simplified the user experiences for initiating desktop sharing.  It now shares the entire desktop by default.  We've also refactored the desktop sharing module.
 
 
 == Fixed Issues ==
