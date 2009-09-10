@@ -20,3 +20,7 @@ Notify moderator or in-class users in a hybrid class room (with both local and r
 == Beeper (or We Can't Hear You Indicator) ==
 
 Indicate that remote users cannot hear the audio. For instance, the moderator may have forgotten to unmute a participant. There is no way of user informing the moderator through the audio link. The chat window may also be covered. Could use a blinking [http://www.phidgets.com/products.php?category=0&product_id=1012 LED], or some play to play a sound (don't know which phidget to use).
+
+== Clicker ==
+
+Build a clicker from [http://www.phidgets.com/products.php?product_id=1110 touch sensors] or [http://www.phidgets.com/products.php?category=3&product_id=1106 force sensors]. Use [http://www.phidgets.com/products.php?category=0&product_id=1012 LEDs] to show the result, or show it on the screen.
