@@ -1,7 +1,7 @@
 #summary How to install BigBlueButton like a real developer.  :-)
 
 
-These instructions will walk through how to install BigBlueButton from source onto Ubuntu.    If you are using CentOS, see InstallingBigBlueButtonCentOS (draft).  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how BigBlueButton is setup, the following steps will show you how to install each component.  
+These instructions will walk through how to install BigBlueButton from source onto Ubuntu.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS ](draft).  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how BigBlueButton is setup, the following steps will show you how to install each component.  
 
 To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  The easiest way to start with a VM images is to download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player 
 
