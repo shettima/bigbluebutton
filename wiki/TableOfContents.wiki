@@ -2,7 +2,7 @@
     * [BigBlueButtonVM Download Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu (5 minutes)]
     * [InstallingBigBlueButton Install from source (Ubuntu)]
-    * [InstallingBigBlueButtonCentOS53 Install from source (CentOS)]
+    * [InstallingBigBlueButtonCentOS Install from source (CentOS)]
     * [ConfigurationFiles Configuration Files]
   * [GettingStarted Getting Started]
     * [ArchitectureOverview Overview of Architecture]
