@@ -1,13 +1,231 @@
 #summary How to install BigBlueButton on CentOS
 
-= Introduction =
+These instructions will walk through how to install BigBlueButton from source onto CentOS 5.3.  Installing on CentOS is NOT easy - mostly because there are so many packages for which there are no RPMs, or the only RPMs are in alternative repos.  If you have a choice of OS, use Ubuntu and save yourself a load of time.
 
-Add your content here.
+Before starting, make sure you have a network connection (especially if you are doing this on a new VM you just set up).
+
+{{{
+
+# running this will tell you what version of CentOS you have:
+cat /etc/issue
+# this tutorial is based on
+# CentOS release 5.3 (Final)
 
 
-= Details =
+# we'll work mostly from the /tmp/ directory:
+cd /tmp
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+# install JDK 6
+yum install java-1.6.0-openjdk
+
+# install MySQL server
+yum install mysql-server
+
+# Tomcat6 is not available in the main repos, so we will
+# use the jpackage repos:
+yum install jpackage-utils
+wget http://www.jpackage.org/jpackage17.repo
+cat jpackage17.repo | sed 's/1\.7/5.0/' > /etc/yum.repos.d/jpackage5.repo
+mv jpackage17.repo /etc/yum.repos.d/
+yum makecache
+
+# now you should be able to install tomcat6 easily:
+yum install tomcat6
+
+# start tomcat and configure it to automatically start on boot:
+service tomcat6 start
+chkconfig tomcat6 on
+
+# for compiling your own packages, you will need the development tools
+# NOTE: this installs a ton of things - and I'm not exactly sure which
+#   one or more were actually needed.  and there's no way i'm uninstalling
+#   them all to find out.  so, if you do find out, please comment on this article
+yum -y groupinstall "Development Tools"
+
+# some more requirements for packages that we will soon install:
+yum install zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
+
+# install swftools:
+wget http://www.swftools.org/swftools-0.8.1.tar.gz
+tar xzf swftools-0.8.1.tar.gz 
+cd swftools-0.8.1
+./configure 
+make
+make install
+cd ..
+
+# install ImageMagick:
+yum install ImageMagick
+
+# nginx also needs an alternative repo - using EPEL
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
+yum makecache
+
+# now install nginx:
+yum install nginx
+
+# install activemq from source:
+useradd activemq
+wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
+tar xzf apache-activemq-5.2.0-bin.tar.gz 
+mv apache-activemq-5.2.0 /opt/
+ln -s /opt/apache-activemq-5.2.0 /opt/activemq
+chown -R activemq.activemq /opt/apache-activemq-5.2.0
+chown -R activemq.activemq /opt/activemq
+
+#### NOW WE WILL CREATE THE INIT.D FILE
+#### NOTE TO COPY ALL THE WAY TO ESAC LINE
+#### AND PASTE IT ALL IN AS ONE COMMAND
+echo '#!/bin/bash
+#
+# activemq       Starts ActiveMQ.
+#
+#
+# chkconfig: 345 88 12
+# description: ActiveMQ is a JMS Messaging Queue Server.
+### BEGIN INIT INFO
+# Provides: $activemq
+### END INIT INFO
+
+# the base directory
+AMQ_DIR="/opt/activemq"
+
+# run the instance as user
+AMQ_USER=activemq
+
+CMD="nohup $AMQ_DIR/bin/activemq-admin"
+
+case "$1" in
+    start)
+        echo "Starting ActiveMQ "
+        /bin/su - $AMQ_USER -c "$CMD $1 >/dev/null 2>&1 &"
+        ;;
+     stop)
+        echo "Shutting down ActiveMQ"
+        /bin/su - $AMQ_USER -c "kill -9 `ps -u activemq -o pid=`"
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    status)
+        echo "you wish - not yet implemented"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+ ;;
+esac' > /etc/init.d/activemq
+#### COPY TO THIS LINE
+
+# now make that file executable, start the service and configure it to auto-start
+chmod a+x /etc/init.d/activemq
+service activemq start
+chkconfig activemq on
+
+
+# now we will install Red5 from source
+useradd red5
+wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+tar xzf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz 
+mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /opt/red5-0.8
+chown -R red5.red5 /opt/red5-0.8
+
+#### NOW WE WILL CREATE THE INIT.D FILE
+#### NOTE: COPY ALL THE WAY TO EXIT LINE
+#### AND PASTE IT ALL IN AS ONE COMMAND
+echo '#!/bin/bash
+#
+# Startup script for Red5 flash streaming server
+# Author: Ruben Waitz - www.amtex.nl
+# Version 0.9 - 06/09/2006
+#
+# processname: java (unfortunately)
+# pidfile: /var/run/red5.pid
+# config: /etc/red5.conf
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+RED5_HOME=/opt/red5-0.8/
+RUNTIME_USER=red5
+JAVACMD=/usr/bin/java
+DESCR="Red5 flash streaming server"
+PID_FILE=/var/run/red5.pid
+PID=`ps ax |grep java|grep red5|sed "s/\([0-9]\) .*/\1/"`
+RETVAL=0
+
+# JAVA options
+# You can set JAVA_OPTS to add additional options if you want
+# Set up logging options
+LOGGING_OPTS="-Dlogback.ContextSelector=org.red5.logging.LoggingContextSelector -Dcatalina.useNaming=true"
+# Set up security options
+SECURITY_OPTS="-Djava.security.debug=failure"
+export JAVA_OPTS="$LOGGING_OPTS $SECURITY_OPTS $JAVA_OPTS"
+
+if [ -z "$RED5_MAINCLASS" ]; then
+  export RED5_MAINCLASS=org.red5.server.Bootstrap
+fi
+
+# Jython options
+JYTHON="-Dpython.home=lib"
+
+export RED5_CLASSPATH="${RED5_HOME}/boot.jar:${RED5_HOME}/conf:${CLASSPATH}"
+
+# Gracefully exit if the package has been removed.
+test -x $DAEMON || exit 0
+
+# Read config file if it is present.
+if [ -r /etc/red5.conf ]
+then
+. /etc/red5.conf
+fi
+
+
+start() {
+echo -n $"Starting $DESCR: "
+# daemon $JAVACMD $OPTIONS > /dev/null 2>&1 &
+su -p -s /bin/sh $RUNTIME_USER -c "\"$JAVACMD\" \"$JYTHON\" -Dred5.root=\"${RED5_HOME}\" $JAVA_OPTS -cp \"${RED5_CLASSPATH}\" \"$RED5_MAINCLASS\" $RED5_OPTS" > /dev/null 2>&1 &
+RETVAL=$?
+[ $RETVAL = 0 ] && touch /var/lock/subsys/red5 && echo $!>$PID_FILE && echo_success
+echo
+return $RETVAL
+}
+stop() {
+echo -n $"Stopping $DESCR: "
+#killproc $PID_FILE
+[[ $PID != "" ]] && success && kill $PID || failure
+RETVAL=$?
+echo
+[ $RETVAL = 0 ] && rm -f /var/lock/subsys/red5 $PID_FILE
+}
+
+
+# See how we were called.
+case "$1" in
+start)
+start
+;;
+stop)
+stop
+;;
+restart)
+stop
+sleep 3
+start
+;;
+*)
+echo $"Usage: $DESCR {start|stop|restart"
+exit 1
+esac
+
+exit $RETVAL' > /etc/init.d/red5
+#### COPY TO THIS LINE
+
+# now chmod the file, start and config auto-start:
+chmod a+x /etc/init.d/red5
+service red5 start
+chkconfig red5 on
+
+
+}}}
