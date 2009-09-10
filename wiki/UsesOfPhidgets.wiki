@@ -1,0 +1,14 @@
+#summary Discuss uses of phidgets.
+
+= Introduction =
+
+Please contribute your ideas on using phidgets in BigBlueButton.
+
+
+= Details =
+
+The following user stories describe opportunities for using phidgets. They are the results of a number of brainstorming sessions as well as contributions from the community.
+
+== Red/Green/Yellow ==
+
+A feedback mechanism for remote users to indicate their level of confusion. Red - high level of confusion (something needs to be done). Green - low level of confusion. Yellow - changing from green to red. Colored LEDs can be used to indicate the confusion level. Uses: [http://www.phidgets.com/products.php?category=0&product_id=1012 Phidget Interface Kit].
