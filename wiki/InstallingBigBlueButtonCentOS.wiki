@@ -4,8 +4,6 @@ These instructions will walk through how to install BigBlueButton from source on
 
 Before starting, make sure you have a network connection (especially if you are doing this on a new VM you just set up).
 
-*NOTE THAT THIS IS INCOMPLETE AS OF THIS TIME*
-
 {{{
 
 # running this will tell you what version of CentOS you have:
@@ -347,5 +345,51 @@ rm -f sip.tar.gz
 cat /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties | sed "s/127.0.0.1/`hostname`/" > /tmp/bbb-sip.properties
 mv -f /tmp/bbb-sip.properties /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties 
 
+# install bbb-client:
+mkdir -p /var/www/bigbluebutton
+cd /var/www/bigbluebutton
+cp /tmp/bbb-install/client.tar.gz ./
+tar zxvf client.tar.gz
+rm -f client.tar.gz
+
+# now replace the hostname in config.xml
+# and replace conf/join-mock.xml with:
+# http://<YOURIP-OR-DOMAIN>/bigbluebutton/conference-session/enter
+cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.124/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
+mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml 
+
+# install bbb-default pages
+cd /var/www/
+cp /tmp/bbb-install/web.zip ./
+yum install unzip
+unzip -dc web.zip
+mv c/web ./bigbluebutton-default
+rm -rf c web.zip 
+
+# restart things:
+service activemq restart
+service red5 restart
+service tomcat6 restart
+service asterisk restart
 
 }}}
+
+
+ * Try out BigBlueButton
+  * Go to http://<YOURIP-OR-DOMAIN> which should display the bbb web page.
+  * To use voice conference, using your zoiper, dial 1500 which will prompt you for the conference number.
+
+
+== When things go wrong ==
+ Look for logs in the following
+{{{
+tail -n 20 /var/log/syslog
+tail -n 20 /var/log/tomcat6
+tail -n 20 /opt/red5-0.8/logs
+tail -n 20 /var/log/asterisk
+}}}
+
+Also ensure that port 1935 (RTMP) and port 9123 (desktop sharing) are open on your server.
+
+== If you make it successfully through the installation ==
+Good stuff!  Post a message to BigBlueButton-dev letting everyone know that you are a real developer and you have installed BigBlueButton from source ON CENTOS.  :-)
