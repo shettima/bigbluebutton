@@ -13,6 +13,10 @@ cat /etc/issue
 # this tutorial is based on
 # CentOS release 5.3 (Final)
 
+#### NOTE: If your "hostname" command does not return the proper (working)
+#### IP or domain - YOU MUST REPLACE `hostname` with the proper domain or IP
+#### manually - it appears several times in this documentation
+#### or, you can run "hostname <your-correct-hostname> to make this script work
 
 # we'll work mostly from the /tmp/ directory:
 cd /tmp
@@ -203,9 +207,6 @@ wget http://bigbluebutton.googlecode.com/files/nginx-bigbluebutton.conf
 wget http://bigbluebutton.googlecode.com/files/nginx.conf
 mv -f nginx.conf /etc/nginx/
 
-#### NOTE: If your "hostname" command does not return the proper (working)
-#### IP or domain - YOU MUST REPLACE `hostname` with the proper domain or IP
-#### manually
 cat nginx-bigbluebutton.conf | sed "s/127.0.0.1/`hostname`/" > /etc/nginx/sites-available/bigbluebutton
 
 ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
@@ -298,9 +299,53 @@ rm -rf webapps
 
 {{{
 
-nano 
+vi /opt/red5-0.8/conf/red5-core.xml
 # remove the comment BEFORE AND AFTER the 1936 port definition
 # you should see something like:
 # <!-- You can now add additional ports and ip addresses
+
+}}}
+
+ * some more automated tasks: 
+
+{{{
+
+# install xuggler
+# NOTE THAT BY INSTALLING XUGGLER (FOR SCREEN SHARING) YOU MUST ACCEPT THE
+# AGPL LICENSE, WHICH REQUIRES THAT YOU OPEN SOURCE ALL CUSTOMIZATIONS YOU
+# MAKE TO THE ASSOCIATED SOFTWARE, EVEN IF YOU DO NOT DISTRIBUTE THE SOFT-
+# WARE AND ONLY RUN IT AS A NETWORK SERVICE (AS THIS WILL BE)
+cd /tmp/
+wget http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.1.FINAL/xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
+chmod a+x xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
+# accept all defaults
+
+# add xuggler to the path
+echo "
+export XUGGLE_HOME=/usr/local/xuggler
+export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
+export PATH=$XUGGLE_HOME/bin:$PATH
+" >> /etc/profile
+
+# install deskshare app
+cp /tmp/bbb-install/deskshare.tar.gz /opt/red5-0.8/webapps/
+cd /opt/red5-0.8/webapps
+tar zxvf deskshare.tar.gz
+rm -f deskshare.tar.gz
+
+# install video app
+cp /tmp/bbb-install/video.tar.gz .
+tar zxvf video.tar.gz
+rm -f video.tar.gz
+
+# install voice app
+cp /tmp/bbb-install/sip.tar.gz ./
+tar zxvf sip.tar.gz
+rm -f sip.tar.gz
+
+# edit bigbluebutton-sip.properties to insert your hostname
+cat /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties | sed "s/127.0.0.1/`hostname`/" > /tmp/bbb-sip.properties
+mv -f /tmp/bbb-sip.properties /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties 
+
 
 }}}
