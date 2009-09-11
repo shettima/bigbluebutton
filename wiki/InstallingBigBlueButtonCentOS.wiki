@@ -22,6 +22,8 @@ yum install java-1.6.0-openjdk
 
 # install MySQL server
 yum install mysql-server
+service mysqld start
+chkconfig mysqld on
 
 # Tomcat6 is not available in the main repos, so we will
 # use the jpackage repos:
@@ -211,4 +213,67 @@ ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigblueb
 service nginx start
 chkconfig nginx on
 
+# download BBB apps
+cd /tmp/
+mkdir bbb-install
+cd bbb-install
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
+wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
+wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
+wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
+
+###### TODO: HERE TOMCAT SECURITY (not necessary on CentOS?)
+
+# configure MySQL database
+echo "create database bigbluebutton_dev;" | mysql -u root
+echo "grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret';" | mysql -u root
+echo "commit;" | mysql -u root
+
+# now install the webapp
+cp /tmp/bbb-install/bigbluebutton-0.1.war /var/lib/tomcat6/webapps/bigbluebutton.war
+
+}}}
+
+ * Determine PDF2SWF, CONVERT and GS applications (manual step)
+{{{
+# Make a note of where pdf2swf is installed
+which pdf2swf
+ 
+# You should see something like
+# /usr/bin/pdf2swf
+  
+# Make a note of where the convert application is installed
+which convert
+
+# You shoud see something like.
+# /usr/bin/convert
+
+# Note where GhostScript is installed
+which gs
+
+# You should see something like.
+# /usr/bin/gs
+}}}
+
+ * Edit bbb-web properties
+{{{
+vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+
+# Change the following:
+#  - swfToolsDir to the directory where pdf2swf is located
+#  - imageMagickDir to the directory where convert is located
+#  - ghostScriptExec to point to the gs application
+#  - change bigbluebutton.web.serverURL=http://<YOUR IP>
+
+}}}
+
+* back to the automated tasks:
+
+{{{
+
+# restart tomcat
+service tomcat6 restart
 }}}
