@@ -114,15 +114,98 @@ http://<YOURIP-OR-DOMAIN>:5080/
 Click on "Click here to install demos" and then choose oflaDemo java 6.
 
 Go to:
-http://192.168.0.154:5080/demos/
+http://<YOURIP-OR-DOMAIN>:5080/demos/
 
 Click "View demo" under "OFLA DEMO", which should take you to:
-http://192.168.0.154:5080/demos/ofla_demo.html
+http://<YOURIP-OR-DOMAIN>:5080/demos/ofla_demo.html
 
 In the upper right corner, change localhost to your domain or IP, like:
 rtmp://<YOURIP-OR-DOMAIN/oflaDemo 
 Click connect
 
 You would see a list of available videos. Select one to play.
+
+}}}
+
+
+ * Now prepare for Asterisk build:
+
+{{{
+
+yum install kernel-devel
+
+# On Xen VM you need:
+# yum install kernel-xen-devel
+
+yum install ncurses-devel openssl-devel newt-devel zlib-devel bison
+
+# install dahdi
+wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
+tar xzf dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
+cd dahdi-linux-complete-2.2.0.2+2.2.0
+
+# if you get an error about the kernel sources not being installed
+#  (and you installed kernel-devel like above says to)
+#  try rebooting your machine - you may have run a yum update that
+#  updated the kernel version but you are still running on the old
+#  version
+make all
+make install
+make config
+cd ..
+
+# install asterisk
+wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
+tar zxvf asterisk-1.4.25.tar.gz
+cd asterisk-1.4.25
+./configure
+make 
+make install
+make samples
+make config
+cd ..
+
+# configure asterisk
+wget http://bigbluebutton.googlecode.com/files/asterisk-extensions.conf
+cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf 
+
+wget http://bigbluebutton.googlecode.com/files/asterisk-sip.conf
+cat asterisk-sip.conf >> /etc/asterisk/sip.conf
+
+wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
+chmod a+x asterisk-create-sip-accounts.sh
+./asterisk-create-sip-accounts.sh
+
+
+# set enabled to yes in manager.conf
+cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
+mv /tmp/manager.conf /etc/asterisk/
+
+# add account to manager.conf
+echo "
+
+; BigBlueButton: Enable Red5 to connect
+[bbb]
+secret = secret
+permit = 0.0.0.0/0.0.0.0
+read = system,call,log,verbose,command,agent,user
+write = system,call,log,verbose,command,agent,user
+" >> /etc/asterisk/manager.conf
+
+
+# configure nginx
+mkdir -p /etc/nginx/sites-available
+mkdir -p /etc/nginx/sites-enabled
+
+wget http://bigbluebutton.googlecode.com/files/nginx-bigbluebutton.conf
+wget http://bigbluebutton.googlecode.com/files/nginx.conf
+mv -f nginx.conf /etc/nginx/
+
+#### NOTE: If your "hostname" command does not return the proper (working)
+#### IP or domain - YOU MUST REPLACE `hostname` with the proper domain or IP
+#### manually
+cat nginx-bigbluebutton.conf | sed "s/127.0.0.1/`hostname`/" > /etc/nginx/sites-available/bigbluebutton
+
+ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 
 }}}
