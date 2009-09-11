@@ -4,9 +4,9 @@
 
 = Overview =
 
-BigBlueButton is comprised of a about [http://www.bigbluebutton.org/content/components 14 open source projects] along with a significant amount of additional components for web conferencing.  
+BigBlueButton is comprised of a about [http://www.bigbluebutton.org/content/components 14 open source projects] along with a significant amount of additional code written by the BigBlueButton team to implement the client and server functionality for web conferencing.  
 
-But like any project, when you break it down into its components, it becomes less complicated.  Here's our attempt to carefully walk through each of the configuration and log files to help you understand how to modify and extend BigBlueButton yourself.
+Like any large open source project, this may seem complicated at first, but when you break everything down to its components, it becomes much less complex.  Here's our attempt to carefully walk you through each of the configuration and log files to help you understand how to modify and extend BigBlueButton yourself.
 
 The configuration files show an IP address of `192.168.0.100` -- you'll need to change it to match your local IP address when setting up BigBlueButton.
 
