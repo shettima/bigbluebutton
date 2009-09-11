@@ -270,10 +270,37 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 
 }}}
 
-* back to the automated tasks:
+ * back to the automated tasks:
 
 {{{
 
 # restart tomcat
 service tomcat6 restart
+
+# make sure that your database was created:
+echo "show tables" | mysql -u root bigbluebutton_dev
+echo "select * from user" | mysql -u root bigbluebutton_dev
+
+# setup the slide upload folder
+mkdir /var/bigbluebutton
+chown -R tomcat:adm /var/bigbluebutton
+chmod -R 777 /var/bigbluebutton
+
+# setup the red5 apps
+tar xzf bigbluebutton-apps-0.5.tar.gz
+rsync -a webapps/* /opt/red5-0.8/webapps/
+rm -rf webapps
+
+}}}
+
+
+ * manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port
+
+{{{
+
+nano 
+# remove the comment BEFORE AND AFTER the 1936 port definition
+# you should see something like:
+# <!-- You can now add additional ports and ip addresses
+
 }}}
