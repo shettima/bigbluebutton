@@ -86,14 +86,14 @@ A sample definition looks like this:
 </bean>
 }}}
 
-You can move the values for `contextPath` and `virtualHosts` to a separate properties file and
-use parameters. In that case you need another bean:
+You can move the values for `contextPath` and `virtualHosts` to a separate properties file and use parameters. In that case you need another bean:
 
 {{{
 <bean id="placeholderConfig" 
     class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
     <property name="location" value="/WEB-INF/red5-web.properties" /> 
 </bean>
+}}}
 
 Assuming a `red5-web.properties` containing the following data:
 
