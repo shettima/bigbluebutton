@@ -208,4 +208,7 @@ cat nginx-bigbluebutton.conf | sed "s/127.0.0.1/`hostname`/" > /etc/nginx/sites-
 
 ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 
+service nginx start
+chkconfig nginx on
+
 }}}
