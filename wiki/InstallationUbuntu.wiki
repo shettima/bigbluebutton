@@ -32,11 +32,11 @@ This is where all the work is done.  Through figuring out dependencies, apt-get 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/add_packages.png
 
-Enter 'Y'.  After a few moments, if you don't have mysql installed, the mysql setup script will ask to provide a password for it to assign to the root mysql user.
+Enter 'Y'.  After a few moments, if you don't have mysql installed, the mysql setup script will ask to provide a password for the mysql user 'root'.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_mysql.png
 
-Next, you'll be asked again for the root password.  Of the BigBlueButton components is bbb-web, which provides the web-based interface for scheduling conferences.  It needs to create a database, so you need to give it the mysql root password (provide the same password if you were just prompted for it by mysql setup script).
+Next, bbb-web, the scheduling component for a BigBlueButton conference, needs to access the mysql database, so just give it the same password your did a moment ago.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
 
