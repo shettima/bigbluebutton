@@ -5,5 +5,5 @@
 We have a number of projects that are related to BigBlueButton.  
     * [Red5Phone Red 5 Phone]
     * [http://readytopresent.wordpress.com/ Ready To Present]
-    * [Whiteboard Whiteboard]   
+    * [Whiteboard Whiteboard using Wiimote]   
     * [PerformanceTesting Performance Testing]
