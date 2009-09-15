@@ -1,0 +1,37 @@
+#summary Installing Desktop Sharing
+
+= Introduction =
+
+The desktop sharing module for BigBlueButton (bbb-apps-deskshare) now uses Xuggler, a Java wrapper to ffmpeg, for encoding the images it receives from the client.  We think pretty highly of the [http://www.xuggle.com/xuggler/ Xuggler] team and their work has saved us a lot of effort.
+
+The use of Xuggler brings a change to BigBlueButton.  Xuggler is licensed under the [http://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License] (AGPL).  Because bbb-apps-deskshare links with Xuggler, bbb-apps-deskshare is licensed under AGPL. 
+
+To keep BigBlueButton under LGPL, we've removed it from the default install from the virtual machine.  Don't worry, you can install it with a single command
+
+{{{
+apt-get install bbb-apps-deskshare
+}}}
+
+However, if you choose to install and link in bbb-apps-deskshare, because BigBlueButton now incorporates an AGPL module, BigBlueButton itself now becomes licensed under AGPL, and any extensions or enhancements you create must also be licensed under AGPL. 
+
+For the vast majority of our users, especially in the education market, this is no problem.  They live in an open source world.
+
+However, if you don't want agree to the terms of the AGPL license for BigBlueButton, you have options:
+
+
+1. Remove the deskshare component using the following command 
+
+{{{
+sudo apt-get remove bbb-apps-deskshare
+}}} and BigBlueButton reverts to the GNU Limited General Public License (LGPL)
+
+2. [http://bigbluebutton.org/license E-mail us] for informaiton on obtaining a commerical license for bbb-apps-deskshare and Xuggler that is not AGPL.
+ 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
