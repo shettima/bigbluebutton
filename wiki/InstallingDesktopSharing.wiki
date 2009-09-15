@@ -25,7 +25,7 @@ However, if you don't want agree to the terms of the AGPL license for !BigBlueBu
 sudo apt-get remove bbb-apps-deskshare
 }}} 
 
-and BigBlueButton reverts to the GNU Limited General Public License (LGPL)
+and !BigBlueButton reverts to the GNU Limited General Public License (LGPL)
 
 2. [http://bigbluebutton.org/license E-mail us] for informaiton on obtaining a commerical license for bbb-apps-deskshare and Xuggler that is not AGPL.
  
