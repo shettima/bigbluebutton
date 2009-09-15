@@ -1,8 +1,10 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.61: Hubble. September 15, 2009 =
+= Release 0.61: Titan. September 15, 2009 =
 
 == New Features ==
+
+In preparation for schools and universities that are using BigBlueButton for the fall term, this month saw a lot of bug fixes, hardening, and a few new features.  Our goal was (and continues to be) to make the BigBlueButton code base as solid as possible.
 
 * Support for High Res Web Cameras* - As presenter, if you have the bandwidth, it's now possible to share video using your webcam at 640x480 high resolution or 320x240 standard resolution.  We've refactored the video module itself so the code is much cleaner and better organized.
 
@@ -34,6 +36,12 @@
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=176 Issue 176] Share web cam icon allows multiple clicks
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=178 Issue 178] Reset layout should reset sizes of windows
 
+== Known Issues ==
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=181 Issue 181] Stopping deskshare crashes Safari
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=180 Issue 180] Deskshare can leave a stream open
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=179 Issue 179] Zooming can cause a slide to disapper when clicking next
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=170 Issue 170] Switching presenter while screensharing results in old presenter seeing screenshare viewer window 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=153 Issue 153]  The Show button on the Upload Window doesn't work
 
 = 0.6 Release: Mir Space Station. August 12 2009=
 
