@@ -8,7 +8,7 @@ In preparation for schools and universities that are using BigBlueButton for the
 
 * Support for High Res Web Cameras* - As presenter, if you have the bandwidth, it's now possible to share video using your webcam at 640x480 high resolution or 320x240 standard resolution.  We've refactored the video module itself so the code is much cleaner and better organized.
 
-* Desktop Sharing Optimization* - The sharing capture applet now divides the presenter's screen into distinct tiles and only sends to the server the tiles that have changed since the last frame.  The desktop sharing also uses Xuggler on the server to dynamically compress large screens.  Note: Xuggler is licensed under AGPL.  To see how to install desktop sharing and how the installation affects BigBlueButton's, see [InstallingDesktopSharing Installing Desktop Sharing].
+* Desktop Sharing Optimization* - The sharing capture applet now divides the presenter's screen into distinct tiles and only sends to the server the tiles that have changed since the last frame.  The desktop sharing also uses Xuggler on the server to dynamically compress large screens.  *Note:* Xuggler is licensed under AGPL.  To see how to install desktop sharing and how the installation affects !BigBlueButton's, see [InstallingDesktopSharing Installing Desktop Sharing].
 
 * Simplified Desktop Sharing User Interface* - We've simplified the user experiences for initiating desktop sharing.  It now shares the entire desktop by default.  We've also refactored the desktop sharing module.
 
