@@ -14,13 +14,13 @@ In preparation for schools and universities that are using !BigBlueButton for th
 
 * Refactored slide conversion* - We went deep into the slide conversion process and fixed a number of bugs. 
 
-== How to upgrade ==
+== If you are running a BigBlueButton VM or had installed BigBlueButton using packages, you can upgrade to this release with the following two commands ==
 {{{
  > sudo apt-get update
  > sudo apt-get upgrade
 }}}
 
-*Note:* If you are using an old VM and run into an error, you may need to run the above command twice. We are re-arranging and cleaning up the package installation process.
+*Note:* If you get an error during upgrade, just run `sudo apt-get upgrade` again.  We refactored the install scripts and a previous install script and new install scrip both reference the same configuration file.  Running the upgrade command a second time will solve the problem as the first time upgrades all the install script.
 
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=25 Issue 25] Windows can get hidden or off-screen
