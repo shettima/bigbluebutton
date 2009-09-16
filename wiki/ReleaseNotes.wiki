@@ -16,8 +16,8 @@ In preparation for schools and universities that are using !BigBlueButton for th
 
 == If you are running a BigBlueButton VM or had installed BigBlueButton using packages, you can upgrade to this release with the following two commands ==
 {{{
- > sudo apt-get update
- > sudo apt-get upgrade
+  sudo apt-get update
+  sudo apt-get upgrade
 }}}
 
 *Note:* If you get an error during upgrade, just run `sudo apt-get upgrade` again.  We refactored the install scripts and a previous install script and new install scrip both reference the same configuration file.  Running the upgrade command a second time will solve the problem as the first time upgrades all the install script.
