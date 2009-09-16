@@ -14,7 +14,7 @@ In preparation for schools and universities that are using !BigBlueButton for th
 
 * Refactored slide conversion* - We went deep into the slide conversion process and fixed a number of bugs. 
 
-== To upgrade your installation to BigBlueButton 0.61 ==
+== To upgrade your installatio ==
 
 If you are running a BigBlueButton VM or had installed BigBlueButton using packages, you can upgrade to this release with the following two commands
 
