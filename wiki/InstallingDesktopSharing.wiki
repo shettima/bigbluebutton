@@ -19,7 +19,7 @@ By incorporating bbb-apps-deskshare into BigBlueButton, !BigBlueButton itself no
 
 For the vast majority of our users, especially in the education market, this is a non-issue.  We all live and benefit from an open source world.
 
-However, if you don't want agree to the terms of the AGPL license for !BigBlueButton and any application that you incorporate BigBlueButton into, you have two options:
+However, if you don't want agree to the terms of the AGPL license for !BigBlueButton and the web applications that incorporate it, you can:
 
 1. Remove the deskshare component using the following command 
 
