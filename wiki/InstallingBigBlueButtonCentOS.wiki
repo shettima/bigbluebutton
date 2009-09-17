@@ -326,10 +326,18 @@ export PATH=$XUGGLE_HOME/bin:$PATH
 " >> /etc/profile
 
 # install deskshare app
+#
+# Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
+# please read how this changes the licensing of BigBlueButton from LGPL to AGPL.
+#
+#     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
+#
+
 cp /tmp/bbb-install/deskshare.tar.gz /opt/red5-0.8/webapps/
 cd /opt/red5-0.8/webapps
 tar zxvf deskshare.tar.gz
 rm -f deskshare.tar.gz
+
 
 # install video app
 cp /tmp/bbb-install/video.tar.gz .
