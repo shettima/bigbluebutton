@@ -1,4 +1,4 @@
-#summary Release Notes for new versions of BigBlueButton.
+#summary Release Notes for new versions of !BigBlueButton.
 
 = Release 0.61: Titan. September 15, 2009 =
 
@@ -13,13 +13,13 @@ In preparation for schools and universities that are using !BigBlueButton for th
 * Refactored slide conversion* - We went deep into the slide conversion process and fixed a number of bugs. 
 
 * Desktop Sharing and Xuggler * - The sharing capture applet now divides the presenter's screen into distinct tiles and only sends to the server the tiles that have changed since the last frame.  The desktop sharing also uses Xuggler re-assemble the tiles and compress the images into a flash video stream.  Because desktop sharing incorporates Xuggler, which is licensed under the AGPL, we've had to make desktop sharing a separate module (don't worry, you can install it with a single command). 
-However, if you choose to incorporate desktop sharing into BigBlueButton, you must accept the AGPL license for BigBlueButton. This has similar implications for any web application that, in turn, incorporates BigBlueButton.
-For information on installing desktop sharing in BigBlueButton and how the licensing changes, please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing].
+However, if you choose to incorporate desktop sharing into !BigBlueButton, you must accept the AGPL license for !BigBlueButton. This has similar implications for any web application that, in turn, incorporates !BigBlueButton.
+For information on installing desktop sharing in !BigBlueButton and how the licensing changes, please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing].
 
 
 == To upgrade your installation ==
 
-If you are running a BigBlueButton VM or had installed BigBlueButton using packages, you can upgrade to this release with the following two commands
+If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to this release with the following two commands
 
 {{{
   sudo apt-get update
@@ -63,7 +63,7 @@ If you are running a BigBlueButton VM or had installed BigBlueButton using packa
 === New Features ===
 * Integrated VOIP *
 
-Participants can now use their headset to join a voice conference using voice over IP (VoIP).  For sites that setup BigBlueButton to connect to the phone system, both VoIP and dial-in participants can share the same voice conference.
+Participants can now use their headset to join a voice conference using voice over IP (VoIP).  For sites that setup !BigBlueButton to connect to the phone system, both VoIP and dial-in participants can share the same voice conference.
 
 The VoIP capability is based on the [http://code.google.com/p/red5phone Red5Phone] project to connect Asterisk and Red5.
 
@@ -73,7 +73,7 @@ Here are the list of issues we fixed on this release:
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=69 Issue 69] Users do not see slides from presenter
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=98 Issue 98] Left and Right arrow keys not working
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=99 Issue 99] Update Reset Zoom icon
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=104 Issue 104] Add Desktop Sharing to BigBlueButton  
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=104 Issue 104] Add Desktop Sharing to !BigBlueButton  
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=106 Issue 106] Unable to start desktop sharing
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=108 Issue 108] Client does not provide proper feedback when logging out
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=114 Issue 114] Client trying to load history.js and history.htm
@@ -142,7 +142,7 @@ Released: July 21, 2009
 Much of the effort in this release was on creating individual packages for the components, creating a [http://bigbluebutton.org/hudson/ Continuous Integration Server] using Hudson, and distributing the entire package as a [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM downloadable virtual machine].
 
 Other updates include:
-  * BigBlueButton client now supports tunneling through a firewall via port 80
+  * !BigBlueButton client now supports tunneling through a firewall via port 80
   * Uploading of multiple slides
   
 Released: June 12, 2009
