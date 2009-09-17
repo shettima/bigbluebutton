@@ -5,7 +5,7 @@ As of !BigBlueButton 0.61, the desktop sharing module for !BigBlueButton (bbb-ap
 
 However, use of Xuggler brings a change to !BigBlueButton.  Xuggler is licensed under the [http://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License] (AGPL).  Because bbb-apps-deskshare links with Xuggler, bbb-apps-deskshare is licensed under AGPL. 
 
-To keep !BigBlueButton licensed under LGPL, we've removed it from the [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu install scripts for Ubuntu] and from the [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM !BigBlueButton virtual machine].  Don't worry, you can install it with a single command
+To keep !BigBlueButton licensed under LGPL, we've removed it from the [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu install scripts for Ubuntu] and from the [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM BigBlueButton virtual machine].  Don't worry, you can install it with a single command
 
 {{{
 apt-get install bbb-apps-deskshare
@@ -15,7 +15,7 @@ but before you do, please read the following.
 
 == !BigBlueButton becomes licensed under AGPL when incorporating desktop sharing (Xuggler) ==
 
-By incorporating bbb-apps-deskshare into !BigBlueButton, !BigBlueButton itself now becomes licensed under AGPL. Furthermore, this means that if you incorporate BigBlueButton into it another web application, the you must make the source for that application available under the AGPL license, even if that application is running on a hosted environment and is not distributed.
+By incorporating bbb-apps-deskshare into !BigBlueButton, !BigBlueButton itself now becomes licensed under AGPL. Furthermore, this means that if you incorporate !BigBlueButton into it another web application, the you must make the source for that application available under the AGPL license, even if that application is running on a hosted environment and is not distributed.
 
 For the vast majority of our users, especially in the education market, this is a non-issue.  We all live and benefit from an open source world.
 
