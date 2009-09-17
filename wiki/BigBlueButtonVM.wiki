@@ -1,4 +1,4 @@
-#summary How to setup your own BigBlueButton Virtual Machine
+#summary How to setup your own  !BigBlueButton Virtual Machine
 
 <wiki:toc max_depth="2" />
 
@@ -9,9 +9,9 @@
 
 == Background ==
 
-Many universities and colleges have told us they wanted to run their own version BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending BigBlueButton.
+Many universities and colleges have told us they wanted to run their own version  !BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending  !BigBlueButton.
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac. This VM is also a full command-line development environment -- it's preconfigured to check out code from BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.
+In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a  !BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac. This VM is also a full command-line development environment -- it's preconfigured to check out code from  !BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.
   
 Prerequisites:
   * VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
@@ -32,11 +32,11 @@ This will start VMWare Player (or VMWare Workstation) and boot the VM.
 
 In VMWare, make sure the networking is set to Bridged, not NAT.  
 
-The BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos (or watch [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM]).  During this time, the BigBlueButton VM goes through an initial startup script that 
+The  !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos (or watch [http://bigbluebutton.org/sites/all/videos/bbb-vm/index.html Setting up a BigBluebutton VM]).  During this time, the  !BigBlueButton VM goes through an initial startup script that 
 
-  * Installs a software timer for Asterisk (this allows to connect using the VoIP phone built into the BigBlueButton client)
-  * Installs the BigBlueButton packages
-  * Configures BigBlueButton to use the VM's current IP address
+  * Installs a software timer for Asterisk (this allows to connect using the VoIP phone built into the  !BigBlueButton client)
+  * Installs the  !BigBlueButton packages
+  * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
 
 When it's done, you'll see a message that asks you to login and change the password.
@@ -51,7 +51,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
 == Running BigblueButton ==
 
-At this point, you've got a full BigBlueButton server up and running.  Open a web browser to the URL provided in the login message for first user.  
+At this point, you've got a full  !BigBlueButton server up and running.  Open a web browser to the URL provided in the login message for first user.  
   
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
 
@@ -59,9 +59,9 @@ Click the Join button and you'll be prompted to join the default conference 8511
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
-== Updating the BigBlueButton VM == 
+== Updating the  !BigBlueButton VM == 
 
-All the BigBlueButton components are installed as Ubuntu packages.  These packages are available from the remote repository http://archive.bigbluebutton.org.  We updated these packages with every release.
+All the  !BigBlueButton components are installed as Ubuntu packages.  These packages are available from the remote repository http://archive.bigbluebutton.org.  We updated these packages with every release.
 
 When a release occurs, to update the VM with the latest components, do the following.
 
@@ -73,11 +73,11 @@ Login as firstuser (using your password of course!) and enter the following comm
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
 
-Note: If you want to live on the edge and use the latest packages built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the BigBlueButton Google Code repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
+Note: If you want to live on the edge and use the latest packages built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the  !BigBlueButton Google Code repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
 
 {{{
 #
-# Repository for BigBlueButton
+# Repository for  !BigBlueButton
 #
 deb http://archive.bigbluebutton.org/ bigbluebutton main
 }}}
@@ -85,7 +85,7 @@ deb http://archive.bigbluebutton.org/ bigbluebutton main
 to
 {{{
 #
-# Repository for BigBlueButton
+# Repository for  !BigBlueButton
 #
 deb http://archive.bigbluebutton.org/dev bigbluebutton main
 }}}
@@ -93,18 +93,18 @@ deb http://archive.bigbluebutton.org/dev bigbluebutton main
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
 
 == Installing desktop sharing ==
-Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and how doing so changes the licensing of !BigBlueButton.
+Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and how doing so changes the licensing of ! !BigBlueButton.
 
-== Modifying BigBlueButton == 
+== Modifying  !BigBlueButton == 
 
-We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. What are these components?  Take a moment and watch the [http://bigbluebutton.org/sites/all/videos/arch_overview/index.html BigBlueButton overview video].
+We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. What are these components?  Take a moment and watch the [http://bigbluebutton.org/sites/all/videos/arch_overview/index.html  !BigBlueButton overview video].
 
 
-=== Change IP address of BigBlueButton Server ===
+=== Change IP address of  !BigBlueButton Server ===
 
-The VM will automatically setup BigBlueButton components to use the IP address on first boot.  If you need to change the IP address of the server, we've provided a utility to let you change the configuration files for BigBlueButton to use the new IP address.
+The VM will automatically setup  !BigBlueButton components to use the IP address on first boot.  If you need to change the IP address of the server, we've provided a utility to let you change the configuration files for  !BigBlueButton to use the new IP address.
 
-For example, to change the IP address for BigBlueButton configuration files to use 192.168.0.125, do the following
+For example, to change the IP address for  !BigBlueButton configuration files to use 192.168.0.125, do the following
 
 {{{
 
@@ -112,7 +112,7 @@ For example, to change the IP address for BigBlueButton configuration files to u
 
 }}}
 
-If you want to change the default port as well, for example to have BigBlueButton listen on port 8000 (instead of 80), do the following
+If you want to change the default port as well, for example to have  !BigBlueButton listen on port 8000 (instead of 80), do the following
 
 {{{
 
@@ -138,11 +138,13 @@ Next, type
    $ bbb-setupdev -d
 }}}
 
-This will checkout the main components of BigBlueButton into a corresponding directory.
+This will checkout the main components of  !BigBlueButton into a corresponding directory.
 
-# bigbluebutton-dev
-# bigbluebutton-client
-# bigbluebutton-apps
+{{{
+~/dev/bigbluebutton-dev
+~/dev/bigbluebutton-client
+~/dev/bigbluebutton-apps
+}}}
 
 You're now ready to starting editing, compiling, and deploying your own versions of these components to the virtual machine.  All the necessary development tools have been installed.
 
@@ -154,4 +156,4 @@ For example, if you go into the bigbluebutton-apps directory and type
    $ ./build.sh
 }}}
 
-this script will uninstall the package bbb-apps, compile the local copy of BigBlueButton-apps using groovy and grails, then deploy the resulting war file to the tomcat server.
+this script will uninstall the package bbb-apps, compile the local copy of  !BigBlueButton-apps using groovy and grails, then deploy the resulting war file to the tomcat server.
