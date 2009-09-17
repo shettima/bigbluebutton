@@ -63,6 +63,11 @@ and apt-get will download and install any updates to BigBlueButton.  Don't you j
 
 One more note for EC2: you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
 
+== Installing desktop sharing ==
+Desktop sharing is now a separate component (installable with a single apt-get command). 
+
+Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing instructions for installing desktop sharing] and how it changes the licensing of BigBlueButton.
+
 === Changing the host (or IP) address for BigBlueButton ===
 If you need to change the hostname (or IP address), you can use `bbb-setip`, a utility shell script included in the BigBlueButton install, to make the global changes necessary to BigBlueButton's configuration files.
 
