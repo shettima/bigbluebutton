@@ -14,7 +14,12 @@ In preparation for schools and universities that are using !BigBlueButton for th
 
 * Refactored slide conversion* - We went deep into the slide conversion process and fixed a number of bugs. 
 
-== To upgrade your installatio ==
+* Use of Xuggler in desktop sharing and how it affects the BigBlueButton* - Because desktop sharing incorporates Xuggler, which is licensed under the AGPL, we've had to make desktop sharing a separate module (don't worry, you can install it with a single command). 
+However, if you choose to incorporate desktop sharing into BigBlueButton, you must accept the AGPL license for BigBlueButton. This has similar implications for any web application that, in turn, incorporates BigBlueButton.
+For information on installing desktop sharing in BigBlueButton and how the licensing changes, please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing].
+
+
+== To upgrade your installation ==
 
 If you are running a BigBlueButton VM or had installed BigBlueButton using packages, you can upgrade to this release with the following two commands
 
