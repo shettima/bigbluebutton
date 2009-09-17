@@ -29,7 +29,7 @@ sudo apt-get remove bbb-apps-deskshare
 
 and !BigBlueButton reverts to the GNU Limited General Public License (LGPL)
 
-2. Alternatively, e-mail us (ffdixon at bigbluebutton dot org) for information on how to obtain a commerical license for bbb-apps-deskshare and Xuggler that removes the requirements for you to share the code to any application that incorporates BigBlueButton.
+2. Alternatively, e-mail us (ffdixon at bigbluebutton dot org) for information on how to obtain a commercial license for bbb-apps-deskshare and Xuggler that removes the requirements for you to share the code to any application that incorporates BigBlueButton.
 
 By purchasing a commercial license for desktop sharing, and you will also be supporting the improvements in two open source projects -- BigBlueButton and Xuggler -- that continue to provide your users with many benefits for years to come.
  
