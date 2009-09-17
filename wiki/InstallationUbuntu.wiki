@@ -1,4 +1,4 @@
-#summary How to install  !BigBlueButton on Ubuntu in under 5 minutes
+#summary How to install  BigBlueButton on Ubuntu in under 5 minutes
 
 = Introduction =
 
