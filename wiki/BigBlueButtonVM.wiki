@@ -93,7 +93,7 @@ deb http://archive.bigbluebutton.org/dev bigbluebutton main
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
 
 == How to install desktop sharing ==
-Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and how doing so changes the licensing of !BigBlueButton.
+Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
 
 == Modifying  !BigBlueButton == 
 
