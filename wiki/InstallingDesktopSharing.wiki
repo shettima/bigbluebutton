@@ -34,7 +34,7 @@ and !BigBlueButton reverts to the GNU Limited General Public License (LGPL)
 By purchasing a commercial license for desktop sharing, and you will also be supporting the improvements in two open source projects -- BigBlueButton and Xuggler -- that continue to provide your users with many benefits for years to come.
  
 == Obtaining the source for desktop sharing ==
-Because Google Code does not allow hosting of applications that use AGPL, we have moved the desktop sharing source to a separate server.  You can access using the following command in subversion.
+Because Google Code does not allow hosting of applications that use AGPL, we have moved the desktop sharing source to a separate server.  You can access the source using the following command in subversion.
 
 {{{
 svn co http://svn.bigbluebutton.org/project-bbb/trunk/bbb-apps-deskshare/ .
