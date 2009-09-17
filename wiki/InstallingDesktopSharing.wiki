@@ -11,7 +11,7 @@ To keep !BigBlueButton licensed under LGPL, we've removed it from the [http://co
 apt-get install bbb-apps-deskshare
 }}}
 
-= Please ready before you install desktop sharing =
+= Please read before you install desktop sharing =
 HOWEVER, if you choose to incorporate bbb-apps-deskshare into BigBlueButton using the above command, !BigBlueButton itself now becomes licensed under AGPL.  This means you must make available the source for any application that, in turn,  that incorporates BigBlueButton, even if that application is running on a hosted environment and is not distributed.   The AGPL is designed to ensure that all users of a web application would be able to receive its source.
 
 For the vast majority of our users, especially in the education market, this is a non-issue.  We all live and benefit from an open source world.
