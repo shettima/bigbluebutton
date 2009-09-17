@@ -1,7 +1,7 @@
 #summary Installing Desktop Sharing
 
 = Desktop sharing is now a separate component =
-As of !BigBlueButton 0.61, the desktop sharing module for !BigBlueButton (bbb-apps-deskshare) now uses Xuggler, an excellent Java wrapper to ffmpeg.  We think pretty highly of the [http://www.xuggle.com/xuggler/ Xuggler] team and their work has helped us offer a great desktop sharing module for BigBlueButton.
+As of !BigBlueButton 0.61, the desktop sharing module for !BigBlueButton (bbb-apps-deskshare) now uses Xuggler, an excellent Java wrapper to ffmpeg.  We think pretty highly of the [http://www.xuggle.com/xuggler/ Xuggler] team and their work has helped us offer a great open source desktop sharing module for BigBlueButton.
 
 However, use of Xuggler brings a change to !BigBlueButton.  Xuggler is licensed under the [http://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License] (AGPL).  Because bbb-apps-deskshare links with Xuggler, bbb-apps-deskshare is licensed under AGPL. 
 
