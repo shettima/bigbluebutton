@@ -14,7 +14,7 @@ In preparation for schools and universities that are using !BigBlueButton for th
 
 * Desktop Sharing and Xuggler * - The sharing capture applet now divides the presenter's screen into distinct tiles and only sends to the server the tiles that have changed since the last frame.  The desktop sharing also uses Xuggler re-assemble the tiles and compress the images into a flash video stream.  Because desktop sharing incorporates Xuggler, which is licensed under the AGPL, we've had to make desktop sharing a separate module (don't worry, you can install it with a single command). 
 However, if you choose to incorporate desktop sharing into !BigBlueButton, you must accept the AGPL license for !BigBlueButton. This has similar implications for any web application that, in turn, incorporates !BigBlueButton.
-For information on installing desktop sharing in !BigBlueButton and how the licensing changes, please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing].
+For information on installing desktop sharing in !BigBlueButton and how it changes the licensing, please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing].
 
 
 == To upgrade your installation ==
