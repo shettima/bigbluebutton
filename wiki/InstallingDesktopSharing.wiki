@@ -11,12 +11,11 @@ To keep !BigBlueButton licensed under LGPL, we've removed it from the [http://co
 apt-get install bbb-apps-deskshare
 }}}
 
-= Please read before you install desktop sharing =
-HOWEVER, if you choose to incorporate bbb-apps-deskshare into BigBlueButton using the above command, !BigBlueButton itself now becomes licensed under AGPL.  This means you must make available the source for any application that, in turn,  that incorporates BigBlueButton, even if that application is running on a hosted environment and is not distributed.   The AGPL is designed to ensure that all users of a web application would be able to receive its source.
+HOWEVER, if you choose to install bbb-apps-deskshare into BigBlueButton, !BigBlueButton itself now becomes licensed under AGPL.  This means you must make available the source for any web application that, in turn, incorporates BigBlueButton into it, even if that application is running on a hosted environment and is not distributed.   
 
 For the vast majority of our users, especially in the education market, this is a non-issue.  We all live and benefit from an open source world.
 
-However, if you don't want agree to the terms of the AGPL license for !BigBlueButton, and any application that incorporates it, you have options:
+However, if you don't want agree to the terms of the AGPL license for !BigBlueButton and any application that you incorporate BigBlueButton into, you have two options:
 
 1. Remove the deskshare component using the following command 
 
@@ -26,5 +25,7 @@ sudo apt-get remove bbb-apps-deskshare
 
 and !BigBlueButton reverts to the GNU Limited General Public License (LGPL)
 
-2. <a href="mailto:ffdixon@bigbluebutton.org">E-mail us</a> for informaiton on obtaining a commerical license for bbb-apps-deskshare and Xuggler that is not AGPL.  By purchasing a commercial license, you remove the requirement to share the code to any application that incorporates these products, and you will also be supporting the improvements in two open source projects -- BigBlueButton and Xuggler -- that continue to provide your users with many benefits for years to come.
+2. <a href="mailto:ffdixon@bigbluebutton.org">E-mail us</a> for informaiton on obtaining a commerical license for bbb-apps-deskshare and Xuggler that is not AGPL.  
+
+By purchasing a commercial license, you remove the requirement to share the code to any application that incorporates these products, and you will also be supporting the improvements in two open source projects -- BigBlueButton and Xuggler -- that continue to provide your users with many benefits for years to come.
  
