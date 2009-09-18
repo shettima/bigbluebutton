@@ -36,4 +36,3 @@ To listen to your event, create a <Mate:Listener /> tag anywhere in the applicat
 
 == Possible Issues ==
 As of the time of this writing (September 18 2009), there is an issue with the Mate framework which does not properly handle events dispatched across modules. If your Listener throws an error when trying to handle the dispatched event, you will need to register the event with the Main application in the class org.bigbluebutton.main.maps.CrossModuleEventMap.mxml. Just follow the examples there on how to do it. Unfortunately this means you need to change the code of the Main so that it knows about your custom Event, which is a bad practise what with too much coupling and all, but that's the way it is until someone gets around to fixing that bug.
-In addition to this, you will also need 
