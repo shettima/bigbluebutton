@@ -1,0 +1,39 @@
+#summary How to send events between modules
+#labels Phase-Implementation
+
+With BigBlueButton using the Mate Framework, communicating between modules is done using events.
+
+== Creating Events ==
+For each event you wish to send, you will need to create a new class extending the Event class. Since you want the Event to be heard by modules other than your own, you will need to call the super() constructor with the bubblling property set to true. This tells Flex that your event should 'bubble up' the hierarchy so it can be heard anywhere in the application. Here's an example Event class from the Viewers Module:
+
+{{{
+public class ViewCameraEvent extends Event
+	{
+		public static const VIEW_CAMERA_EVENT:String = "VIEW_CAMERA_EVENT";
+		
+		public var stream:String;
+		public var viewedName:String;
+		
+		public function ViewCameraEvent(stream:String, viewedName:String)
+		{
+			super(VIEW_CAMERA_EVENT,true);
+			this.stream = stream;
+			this.viewedName = viewedName;
+		}
+}}}
+
+== Dispatching Events ==
+Events are most reliably dispatched to other modules using a Mate Dispatcher. You can also do it using the dispatcher object of any UI component, however with a Mate Dispatcher object you need not worry about the UI hierarchy, and as well you can send events from non-UI classes. Here's a code snippet of how to dispatch the above Event:
+
+{{{
+var dispatcher:Dispatcher = new Dispatcher();
+var e:ViewCameraEvent = new ViewCameraEvent("streamName", "streamPublisher");
+dispatcher.dispatch(e);
+}}}
+
+== Listening to Events ==
+To listen to your event, create a <Mate:Listener /> tag anywhere in the application, including the Main application and any other Modules. Refer to the Mate framework documentation for proper use of the [http://mate.asfusion.com/page/documentation/tags/listener Listener] tag. 
+
+== Possible Issues ==
+As of the time of this writing (September 18 2009), there is an issue with the Mate framework which does not properly handle events dispatched across modules. If your Listener throws an error when trying to handle the dispatched event, you will need to register the event with the Main application in the class org.bigbluebutton.main.maps.CrossModuleEventMap.mxml. Just follow the examples there on how to do it. Unfortunately this means you need to change the code of the Main so that it knows about your custom Event, which is a bad practise what with too much coupling and all, but that's the way it is until someone gets around to fixing that bug.
+In addition to this, you will also need 
