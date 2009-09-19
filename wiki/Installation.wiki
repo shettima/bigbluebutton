@@ -11,3 +11,5 @@ There are three ways you can install BigBlueButton
 Regardless of the way you choose, there following page shows the configuration files:
 
    * [ConfigurationFiles Configuration Files]
+
+Finally, if you are upgrading from a previous release, please see [ReleaseNotes Release Notes] on how to upgrade.
