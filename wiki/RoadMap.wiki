@@ -1,8 +1,9 @@
 #summary Development Road Map for BigBlueButton
 
-= Release 0.61 =
+= Release 0.62 =
 
-The upcoming release (August, 2009) will include
-
-  * Optimized desktop sharing
+The upcoming release will include
+  * A first cut at an API for integrating with 3rd party products
+  * Annotations (whiteboard) in the presentation window
+  * Third iteration of optimizing desktop sharing
   * more bug fixes
