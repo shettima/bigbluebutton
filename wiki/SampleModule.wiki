@@ -1,7 +1,7 @@
-#summary Creating a simple BigBlueButton module using Mate
+#summary Creating a simple !BigBlueButton module using Mate
 
 == Getting Started ==
-This is a brief summary of how to create a new BigBlueButton module.
+This is a brief summary of how to create a new !BigBlueButton module.
 Before you start creating a new module, you will need to:
   * Download the [BigBlueButtonVM BBB Virtual Machine], or have access to a BBB server you can test on.
   * Download Flex Builder if you don't already have it.
@@ -66,7 +66,7 @@ Before you run your module, go back to the config.xml file and create a new entr
 Once you've done this, run your module, and see if your window pops up.
 
 == Using the Mate Framework with BBB ==
-Because your module is decoupled from the rest of the application, you can use whichever framework you want inside your module. We prefer using the Mate Framework, although modules for BBB have been built using both PureMVC and Cairngorm. Both Mate and PureMVC are in the lib directory of BigBlueButton.
+Because your module is decoupled from the rest of the application, you can use whichever framework you want inside your module. We prefer using the Mate Framework, although modules for !BigBlueButton have been built using both PureMVC and Cairngorm. Both Mate and PureMVC are in the lib directory of BigBlueButton.
 If you are unfamiliar with Mate, take a look at their [http://mate.asfusion.com/page/documentation/getting-started tutorial] for creating new applications.
 The following diagram shows the architecture of a BBB module built using Mate, in this case the Notes Module, the source code of which could be a good place to start with if you're just learning.
 
