@@ -1,4 +1,4 @@
-#summary !BigBlueButton Third-Party Integration API.
+#summary BigBlueButton Third-Party Integration API.
 
 = WARNING: This page is a DRAFT. =
 
@@ -79,20 +79,19 @@ json:
   		); 
 
 }}}
-Response:
-{{{
-xml,form:
 
-  <response>
-    <returncode>SUCCESS</returncode>
-    <voiceBridge>85115</voiceBridge>
-    <moderatorToken>57c05fcb-1005-454c-b5f0-ccdf6b8fd501</moderatorToken>
-    <viewerToken>ede35174-bf99-433d-af68-fc64fd325dd6</viewerToken>
-  </response>
 
-}}}
 
-Example:
+
+
+== Example of creating a conference and joining that conference ==
+*How it works*
+
+ 1. When the page gets loaded, a request (json) is sent to create the conference.
+ 1. When the response comes in, the values of the authToken hidden fields are changed with values for moderator and viewer tokens.
+ 1. The user enter's there name in the field for moderator or viewer then click Join.
+ 1. The user is then logged in and redirected into the BBB client to start up.
+
 {{{
  <html>                                                                  
  <head>                                                                  
