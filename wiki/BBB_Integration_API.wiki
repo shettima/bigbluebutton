@@ -9,11 +9,14 @@ This wiki outlines the API for integrating !BigBlueButton with other application
 
 == Creating a Conference ==
 Method: POST
+
 Required Parameter: voiceBridge
-Request Format: 
-text/xml, application/x-www-form-urlencoded, text/json
-{{{
+
+Request Format: text/xml, application/x-www-form-urlencoded, text/json
+
 xml:
+{{{
+
       POST http://<host>/bigbluebutton/api/conference.xml
 
    Param: 
@@ -21,15 +24,53 @@ xml:
           <conference>
 	      <voiceBridge>85115</voiceBridge>
           </conference>
+Example:
+Create file called create-conference.xml with following contents:
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<conference>
+  <voiceBridge>85115</voiceBridge>
+</conference>
+
+prompt> curl --verbose --request POST --header "Content-Type: text/xml" --data @create-conference.xml http://192.168.0.182/bigbluebutton/api/conference
+
+Response:
+
+  <response>
+    <returncode>SUCCESS</returncode>
+    <voiceBridge>85115</voiceBridge>
+    <moderatorToken>57c05fcb-1005-454c-b5f0-ccdf6b8fd501</moderatorToken>
+    <viewerToken>ede35174-bf99-433d-af68-fc64fd325dd6</viewerToken>
+  </response>
+
+}}}
 
 url-encoded:
+{{{
       POST http://<host>/bigbluebutton/api/conference.form
 
     Param: voiceBridge=85115
 
     POST http://<host>/bigbluebutton/api/conference.form?voiceBridge=85115
 
+Example:
+
+prompt> curl --verbose --request POST --header "content-type application/x-www-form-urlencoded" --data voiceBridge=85115 http://192.168.0.182/bigbluebutton/api/conference
+
+Response:
+
+  <response>
+    <returncode>SUCCESS</returncode>
+    <voiceBridge>85115</voiceBridge>
+    <moderatorToken>57c05fcb-1005-454c-b5f0-ccdf6b8fd501</moderatorToken>
+    <viewerToken>ede35174-bf99-433d-af68-fc64fd325dd6</viewerToken>
+  </response>
+
+}}}
+
+
 json:
+{{{
       POST http://<host>/bigbluebutton/api/conference.json
    	 	$.post("/bigbluebutton/api/conference.json", { voiceBridge: "85115"},
   			function(data){
