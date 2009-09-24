@@ -12,38 +12,7 @@ Method: POST
 
 Required Parameter: voiceBridge
 
-Request Format: text/xml, application/x-www-form-urlencoded, text/json
-
-xml:
-{{{
-
-      POST http://<host>/bigbluebutton/api/conference.xml
-
-   Param: 
-          <?xml version="1.0" encoding="ISO-8859-1"?>
-          <conference>
-	      <voiceBridge>85115</voiceBridge>
-          </conference>
-Example:
-Create file called create-conference.xml with following contents:
-
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<conference>
-  <voiceBridge>85115</voiceBridge>
-</conference>
-
-prompt> curl --verbose --request POST --header "Content-Type: text/xml" --data @create-conference.xml http://192.168.0.182/bigbluebutton/api/conference
-
-Response:
-
-  <response>
-    <returncode>SUCCESS</returncode>
-    <voiceBridge>85115</voiceBridge>
-    <moderatorToken>57c05fcb-1005-454c-b5f0-ccdf6b8fd501</moderatorToken>
-    <viewerToken>ede35174-bf99-433d-af68-fc64fd325dd6</viewerToken>
-  </response>
-
-}}}
+Request Format: application/x-www-form-urlencoded, text/json
 
 url-encoded:
 {{{
