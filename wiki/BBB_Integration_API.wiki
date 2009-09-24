@@ -72,16 +72,21 @@ Response:
 json:
 {{{
       POST http://<host>/bigbluebutton/api/conference.json
-   	 	$.post("/bigbluebutton/api/conference.json", { voiceBridge: "85115"},
-  			function(data){
-    			alert("Data Loaded: " + data.voiceBridge + " " + data.moderatorToken + " " + data.viewerToken);
-  			}, "json"
-  		); 
+   	
+Example: See below
 
 }}}
 
 
+== Join a conference ==
+{{{
+  POST http://<host>/bigbluebutton/api/conference/session?fullname=Richard&authToken=57c05fcb-1005-454c-b5f0-ccdf6b8fd501
 
+Params:
+  fullname: Participant's display name
+  authToken: moderator or viewer token
+
+}}}
 
 
 == Example of creating a conference and joining that conference ==
