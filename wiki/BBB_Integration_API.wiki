@@ -128,3 +128,23 @@ Params:
  </html>
 
 }}}
+
+
+
+
+=== NOTES ===
+Perhaps we can use this format
+
+{{{
+/api/conference/<security>/<confid>/<token>/<fullname>
+}}}
+
+So, creating a conference will be:
+{{{
+  POST /api/conference/<security>/<confid>
+}}}
+
+Joining a conference will be:
+{{{
+  POST /api/conference/session/<security>/<confid>/<token>/<fullname>
+}}}
