@@ -65,7 +65,7 @@ http://192.168.0.182/bigbluebutton/api/conference/join?fullname=Richard%20Alam&a
 = Sample Code =
 == Example of creating a conference and joining that conference ==
 
-If you checkout the latest version of BigBlueButton from trunk, there is a page that demonstrates this API.
+If you checkout the latest developer version of BigBlueButton from trunk (see [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/b8d4a240e24a89b3# how to use the developer archive], this version has a sample page that demonstrates the above API.
 
 Open the URL:
 {{{
