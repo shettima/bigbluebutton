@@ -1,4 +1,5 @@
 #summary BigBlueButton Third-Party Integration API.
+#labels Deprecated
 
 = NOTE: This page is a DRAFT. =
 
