@@ -76,6 +76,8 @@ Here's what the page looks like
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb-api-example1.png
 
+You can enter your name for moderator, for example, and click the button 'Join as Moderator'.
+
 *How it works*
 
  1. When the page gets loaded, a request (json) is sent to create the conference.
@@ -149,19 +151,5 @@ viewerToken:<div></div>
 }}}
 
 
-=== NOTES ===
-Perhaps we can use this format
-
-{{{
-/api/conference/<security>/<confid>/<token>/<fullname>
-}}}
-
-So, creating a conference will be:
-{{{
-  POST /api/conference/<security>/<confid>
-}}}
-
-Joining a conference will be:
-{{{
-  POST /api/conference/session/<security>/<confid>/<token>/<fullname>
-}}}
+=== Feedback welcome ===
+Note (2009-09-25): This API is under active development, so your feedback is welcome.
