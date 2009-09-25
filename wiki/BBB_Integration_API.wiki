@@ -8,22 +8,18 @@ This wiki gives a sample implementation of the API for integrating !BigBlueButto
 
 
 == Creating a Conference ==
-Required Parameter: id
+Request BigBlueButton to create a conference with a given ID.
 
-=== Example ===
-{{{
-GET http://<host>/bigbluebutton/api/conference.form?id=85115
-}}}
+Params:
+  id: Numeric ID of a conference to create
 
-BigBlueButton will dynamically create a conference with this id.  You can try this on the command line using curl.
+Response: 
+  This request returns back an XML file that contains security tokens that can be used to join the session.
 
-{{{
-curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference?id=85115
-}}}
+  * moderatorToken - Use this token to join as moderator
+  * viewerToken - Use this token to join as viewer
 
-=== Response ===
-
-This request returns back an XML file.  
+The following is a sample response:
 
 {{{
   <response>
@@ -33,6 +29,21 @@ This request returns back an XML file.
     <viewerToken>ede35174-bf99-433d-af68-fc64fd325dd6</viewerToken>
   </response>
 }}}
+
+Example:
+{{{
+http://<host>/bigbluebutton/api/conference.form?id=85115
+}}}
+
+Note: You can try this on the command line using curl.
+
+{{{
+curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference?id=85115
+}}}
+
+=== Response ===
+
+
 
 
 You'll use the parameters from this XML to create a URL that will enable users to join a conference.
