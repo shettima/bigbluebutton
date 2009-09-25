@@ -6,6 +6,7 @@
 
 This wiki gives a sample implementation of the API for integrating !BigBlueButton with other application. The intent is to create a simple API that enables external applications to use GET requests to  implement common integration scenarios, such as joining a conference.
 
+= API =
 
 == Creating a Conference ==
 Request BigBlueButton to create a conference with a given ID.
@@ -55,7 +56,7 @@ http://<host>/bigbluebutton/api/conference/session?fullname=Richard&authToken=57
 }}}
 
 
-
+= Sample Code =
 == Example of creating a conference and joining that conference ==
 *How it works*
 
