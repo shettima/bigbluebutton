@@ -19,13 +19,6 @@ Example:
 http://192.168.0.182/bigbluebutton/api/conference/create?id=85115
 }}}
 
-(returns XML)
-
-Example:
-{{{
-http://192.168.0.182/bigbluebutton/api/conference/create.json?id=85115
-}}}
-
 Response: 
 
 This request returns back an XML file that contains security tokens that can be used to join the session.
