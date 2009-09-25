@@ -12,15 +12,16 @@ This wiki gives a sample implementation of the API for integrating !BigBlueButto
 Request BigBlueButton to create a conference with a given ID.
 
 Params:
-  id: Numeric ID of a conference to create
+  * id: Numeric ID of a conference to create
 
 Example:
 {{{
-http://<host>/bigbluebutton/api/conference.form?id=85115
+http://192.168.0.182/bigbluebutton/api/conference.form?id=85115
 }}}
 
 Response: 
-  This request returns back an XML file that contains security tokens that can be used to join the session.
+
+This request returns back an XML file that contains security tokens that can be used to join the session.
 
   * moderatorToken - Use this token to join as moderator
   * viewerToken - Use this token to join as viewer
@@ -44,15 +45,18 @@ curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference/c
 
 
 == Join a conference ==
-Using a security token from the above request (which references the associated conference ID), this API call will join a conference.
+This GET request from within a browser will automatically join join the user into the conference ID associated with the given token.
 
 Params:
-  fullname: Participant's display name
-  authToken: moderator or viewer token
+  * fullname: Participant's display name
+  * authToken: moderator or viewer token
 
-Example:
+Example.
+
+Suppose you obtained a security token from 182.168.0.192 of `ede35174-bf99-433d-af68-fc64fd325dd6` for viewer.  Then pasting the following URL should join you into coference 851156 as viewer.
+
 {{{
-http://<host>/bigbluebutton/api/conference/join?fullname=Richard&authToken=57c05fcb-1005-454c-b5f0-ccdf6b8fd501
+http://192.168.0.182/bigbluebutton/api/conference/join?fullname=Richard%20Alam&authToken=f5ef7abd-b4ef-4ac2-94e8-21ece247d30e
 }}}
 
 
@@ -63,7 +67,7 @@ If you checkout the latest version of BigBlueButton from trunk, there is a page 
 
 Open the URL:
 {{{
-http://<host>/bigbluebutton/demo.html
+http://192.168.0.182/bigbluebutton/demo.html
 }}}
 
 *How it works*
