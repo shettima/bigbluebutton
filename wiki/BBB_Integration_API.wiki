@@ -12,13 +12,13 @@ Required Parameter: id
 
 Example:
 {{{
-    GET http://<host>/bigbluebutton/api/conference.form?id=85115
+GET http://<host>/bigbluebutton/api/conference.form?id=85115
 }}}
 
 BigBlueButton will dynamically create a conference with this id.  You can try this on the command line using curl.
 
 {{{
-    curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference?id=85115
+curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference?id=85115
 }}}
 
 Response:
