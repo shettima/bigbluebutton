@@ -16,7 +16,14 @@ Params:
 
 Example:
 {{{
-http://192.168.0.182/bigbluebutton/api/conference.form?id=85115
+http://192.168.0.182/bigbluebutton/api/conference/create?id=85115
+}}}
+
+(returns XML)
+
+Example:
+{{{
+http://192.168.0.182/bigbluebutton/api/conference/create.json?id=85115
 }}}
 
 Response: 
@@ -36,13 +43,17 @@ Example:
   </response>
 }}}
 
-Note: You can try this on the command line using curl.
+Note: You can try this on the command line using curl.  To return XML
 
 {{{
 curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference/create?id=85115
 }}}
 
+To return JSON
 
+{{{
+curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference/create.json?id=85115
+}}}
 
 == Join a conference ==
 This GET request from within a browser will automatically join join the user into the conference ID associated with the given token.
@@ -69,6 +80,10 @@ Open the URL:
 {{{
 http://<host>/bigbluebutton/demo.html
 }}}
+
+Here's what the page looks like
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb-api-example1.png
 
 *How it works*
 
@@ -141,8 +156,6 @@ viewerToken:<div></div>
  </body>                                                                 
  </html> 
 }}}
-
-
 
 
 === NOTES ===
