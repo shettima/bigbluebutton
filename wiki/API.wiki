@@ -1,7 +1,7 @@
 #summary BigBlueButton Third-Party Integration API.
 
 = NOTE = 
-This is a sample API.  This API will evolve quickly and will evolve as we create a proper API for integration with third-party applications.
+This is a sample API to try out integration BigBlueButton with third-party applications.  Consider it a 'sandbox' in which you can experiment.  This API will evolve as we work with others in the community who are integrating BigBlueButton into their applications. See  [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/7c15211548e6da7c this thread].
 
 = Introduction =
 
