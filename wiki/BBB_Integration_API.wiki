@@ -53,9 +53,9 @@ Params:
   * fullname: Participant's display name
   * authToken: moderator or viewer token
 
-Example.
+Example:
 
-Suppose you obtained a security token from 182.168.0.192 of `ede35174-bf99-433d-af68-fc64fd325dd6` for viewer.  Then pasting the following URL should join you into coference 851156 as viewer.
+Suppose you obtained a security token from 182.168.0.192 of `ede35174-bf99-433d-af68-fc64fd325dd6` for viewer using the above API.  Then pasting the following URL into your browser (or returning it as a redirect to a browser request) will log the user into the conference 85115 as viewer.
 
 {{{
 http://192.168.0.182/bigbluebutton/api/conference/join?fullname=Richard%20Alam&authToken=f5ef7abd-b4ef-4ac2-94e8-21ece247d30e
