@@ -38,7 +38,7 @@ Example:
 Note: You can try this on the command line using curl.
 
 {{{
-curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference?id=85115
+curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference/create?id=85115
 }}}
 
 
