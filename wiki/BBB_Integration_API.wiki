@@ -4,58 +4,49 @@
 
 = Introduction =
 
-This wiki outlines the API for integrating !BigBlueButton with other application.
+This wiki outlines the API for integrating !BigBlueButton with other application. The intent is to create a simple API that enables external applications to use GET requests to  implement common integration scenarios, such as joining a conference.
 
 
 == Creating a Conference ==
-Method: POST
-
-Required Parameter: voiceBridge
-
-Request Format: application/x-www-form-urlencoded, text/json
-
-url-encoded:
-{{{
-      POST http://<host>/bigbluebutton/api/conference.form
-
-    Param: voiceBridge=85115
-
-    POST http://<host>/bigbluebutton/api/conference.form?voiceBridge=85115
+Required Parameter: id
 
 Example:
+{{{
+    GET http://<host>/bigbluebutton/api/conference.form?id=85115
+}}}
 
-prompt> curl --verbose --request POST --header "content-type application/x-www-form-urlencoded" --data voiceBridge=85115 http://192.168.0.182/bigbluebutton/api/conference
+BigBlueButton will dynamically create a conference with this id.  You can try this on the command line using curl.
+
+{{{
+curl --verbose --request GET http://192.168.0.182/bigbluebutton/api/conference?id=85115
+}}}
 
 Response:
 
+This request returns back an XML file.  
+
+{{{
   <response>
     <returncode>SUCCESS</returncode>
     <voiceBridge>85115</voiceBridge>
     <moderatorToken>57c05fcb-1005-454c-b5f0-ccdf6b8fd501</moderatorToken>
     <viewerToken>ede35174-bf99-433d-af68-fc64fd325dd6</viewerToken>
   </response>
-
 }}}
 
 
-json:
-{{{
-      POST http://<host>/bigbluebutton/api/conference.json
-   	
-Example: See below
-
-}}}
-
+You'll use the parameters from this XML to create a URL that will enable users to join a conference.
 
 == Join a conference ==
-{{{
-  POST http://<host>/bigbluebutton/api/conference/session?fullname=Richard&authToken=57c05fcb-1005-454c-b5f0-ccdf6b8fd501
-
 Params:
   fullname: Participant's display name
   authToken: moderator or viewer token
 
+Example:
+{{{
+    GET http://<host>/bigbluebutton/api/conference/session?fullname=Richard&authToken=57c05fcb-1005-454c-b5f0-ccdf6b8fd501
 }}}
+
 
 
 == Example of creating a conference and joining that conference ==
