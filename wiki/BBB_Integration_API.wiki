@@ -52,12 +52,20 @@ Params:
 
 Example:
 {{{
-http://<host>/bigbluebutton/api/conference/session?fullname=Richard&authToken=57c05fcb-1005-454c-b5f0-ccdf6b8fd501
+http://<host>/bigbluebutton/api/conference/join?fullname=Richard&authToken=57c05fcb-1005-454c-b5f0-ccdf6b8fd501
 }}}
 
 
 = Sample Code =
 == Example of creating a conference and joining that conference ==
+
+If you checkout the latest version of BigBlueButton from trunk, there is a page that demonstrates this API.
+
+Open the URL:
+{{{
+http://<host>/bigbluebutton/demo.html
+}}}
+
 *How it works*
 
  1. When the page gets loaded, a request (json) is sent to create the conference.
