@@ -1,10 +1,10 @@
 #summary BigBlueButton Third-Party Integration API.
 
-= WARNING: This page is a DRAFT. =
+= NOTE: This page is a DRAFT. =
 
 = Introduction =
 
-This wiki outlines the API for integrating !BigBlueButton with other application. The intent is to create a simple API that enables external applications to use GET requests to  implement common integration scenarios, such as joining a conference.
+This wiki gives a sample implementation of the API for integrating !BigBlueButton with other application. The intent is to create a simple API that enables external applications to use GET requests to  implement common integration scenarios, such as joining a conference.
 
 
 == Creating a Conference ==
