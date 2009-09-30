@@ -3,7 +3,8 @@
 = Introduction =
 
 We have a number of projects that are related to BigBlueButton.  
-   * [API API for Integration with Third-Party Applications (draft)]    * [Phidgets Physical Widgets for External Notification]
+    * [API API for Integration with Third-Party Applications (draft)]    
+    * [Phidgets Physical Widgets for External Notification]
     * [Red5Phone Red 5 Phone]
     * [http://readytopresent.wordpress.com/ Ready To Present]
     * [Whiteboard Whiteboard using Wiimote]   
