@@ -7,3 +7,5 @@ The upcoming release will include
   * Annotations (whiteboard) in the presentation window
   * Third iteration of optimizing desktop sharing
   * more bug fixes
+
+For a full list of what's planned see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.62 issues tagged for 0.62 release].
