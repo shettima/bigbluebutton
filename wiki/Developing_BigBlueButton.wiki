@@ -1,5 +1,8 @@
 #summary How to develop BigBlueButton.
 
+*NOTE*
+This is still a draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
+
 We primarily develop on Windows with BBB running on VMWare. This page will describe how we setup our development environment for !BigBlueButton.
 
 = Get BBB VM running =
@@ -12,6 +15,7 @@ We primarily develop on Windows with BBB running on VMWare. This page will descr
 {{{
   $ bbb-setupdev -s
 }}}
+
 This script will setup samba (Unix implementation of windows file sharing) to let you access files in firstuser from within Windows or Mac.
 
  * Map /home/firstuser into a windows drive (e.g. Z:)
@@ -51,5 +55,32 @@ ii  bbb-config                        0.4.0-1ubuntu63                           
                 index  index.html index.htm;
         }
 }}}
- * Now your development client will be picked up when you point your browser to http://<yourhost>/client/BigBlueButton.html
+ * Now your development client will be picked up when you point your browser to 
+{{{
+http://<yourhost>/client/BigBlueButton.html
+}}}
 
+= Developing bbb-apps, bbb-sip, bbb-video, bbb-deskshare =
+ * Edit the build.properties for each project modify red5.home to point to the red5 install directory
+{{{
+  red5.home = /usr/share/red5
+}}}
+ * For each project, run {{{ant resolve}}} to download all dependencies.
+ * For each project, run {{{ant deploy}}} to deploy the apps to Red5
+ * Start Red5
+ * If everything goes well, you should be able to join the default conference.
+
+= Developing bbb-web =
+ * Check out bbb-web into /home/firstuser/dev
+ * Stop tomcat 
+{{{
+ /etc/init.d/tomcat6 stop
+}}}
+ * in {{{/home/firstuser/dev/bbb-web}}}, run 
+{{{
+ grails run-app
+}}}
+ * You should now be using bbb-web when you point your browser to
+{{{
+ http://<yourip>/bigbluebutton
+}}}
