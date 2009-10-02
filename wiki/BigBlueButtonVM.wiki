@@ -121,39 +121,4 @@ If you want to change the default port as well, for example to have  !BigBlueBut
 }}}
 
 === Setup Development Environment ===
-
-To setup your development environment we've included some helper scripts.  If you type
-
-{{{
-
-  $ bbb-setupdev -s
-
-}}}
-
-This script will setup samba (Unix implementation of windows file sharing) to let you access files in firstuser from within Windows or Mac.
-
-Next, type
-
-{{{
-   $ bbb-setupdev -d
-}}}
-
-This will checkout the main components of  !BigBlueButton into a corresponding directory.
-
-{{{
-~/dev/bigbluebutton-dev
-~/dev/bigbluebutton-client
-~/dev/bigbluebutton-apps
-}}}
-
-You're now ready to starting editing, compiling, and deploying your own versions of these components to the virtual machine.  All the necessary development tools have been installed.
-
-To make it easy to compile and deploy, each directory has a script called `build.sh` that will first un-install the associated component's Ubuntu package (so you can run your own version of that component), then recompile the component, copy it to the appropriate directory, and restart the associated servers.  
-
-For example, if you go into the bigbluebutton-apps directory and type
-
-{{{
-   $ ./build.sh
-}}}
-
-this script will uninstall the package bbb-apps, compile the local copy of  !BigBlueButton-apps using groovy and grails, then deploy the resulting war file to the tomcat server.
+If you want to develop !BigBlueButton, head over to http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton
