@@ -9,7 +9,7 @@ The only prerequisite is that your Ubuntu machine has a network connection.
 
  * To start, check if you have a network connection
 {{{
- > ping www.google.com
+  ping www.google.com
 
 If you get an error saying yout eth0 is not connected, then fix it by:
 
@@ -46,26 +46,25 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
  * Once you have interner connection, update and upgrade.
 {{{
-  > sudo apt-get update
-  > sudo apt-get upgrade
+   sudo apt-get update
+   sudo apt-get upgrade
 }}}
 
  * Install Java 6
 {{{
- > apt-get install openjdk-6-jre-headless
+  apt-get install openjdk-6-jre-headless
 
 }}}
 
  * Install MySQL
 {{{
- > apt-get install mysql-server
+  apt-get install mysql-server
 }}}
 
  * Install Tomcat
 {{{
-  > apt-cache search tomcat
-
-  > apt-get install tomcat6
+   apt-cache search tomcat
+   apt-get install tomcat6
 }}}
 
  * Confirm that tomcat is running
@@ -75,36 +74,36 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
  * Install swftools
 {{{
-  > apt-get install swftools
+   apt-get install swftools
 
 }}}
 
  * Install ImageMagick
 {{{
-  > apt-get install imagemagick
+   apt-get install imagemagick
 
 }}}
 
  * Install Nginx
 {{{
-  > apt-get install nginx
+   apt-get install nginx
 }}}
 
  * Install ActiveMQ
 {{{
-  > cd opt
-  > wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
-  > tar zxvf apache-activemq-5.2.0-bin.tar.gz
+   cd opt
+   wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
+   tar zxvf apache-activemq-5.2.0-bin.tar.gz
 
-  Start ActiveMQ
-  > /opt/apache-activemq-5.2.0/bin/activemq
+  # Start ActiveMQ
+   /opt/apache-activemq-5.2.0/bin/activemq
 }}}
 
  * Modify tomcat6 account
 {{{
- > vi /etc/passwd
+  vi /etc/passwd
 
- Modify tomcat6 entry to this
+  # Modify tomcat6 entry to this
   tomcat6:x:106:113::/usr/share/tomcat6:/bin/bash
 
 }}}
@@ -112,14 +111,14 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
  * Install red5
 {{{
-  > cd opt
-  > wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  > tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  > mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 red5-0.8
+  cd opt
+  wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+  tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+  mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 red5-0.8
   
-  Start red5 as tomcat6 user
-  > sudo su -l tomcat6
-  > red5.sh
+  # Start red5 as tomcat6 user
+  sudo su -l tomcat6
+  red5.sh
 }}}
 
  * Install oflaDemo
@@ -142,39 +141,39 @@ You would see a list of available videos. Select one to play.
 {{{
 Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
 
- > apt-get install build-essential
- > apt-get install linux-headers-`uname -r`
- > apt-get install libssl-dev
- > apt-get install ncurses-dev
- > apt-get install libnewt-dev
- > apt-get install zlib1g-dev
- > apt-get install bison
+ apt-get install build-essential
+ apt-get install linux-headers-`uname -r`
+ apt-get install libssl-dev
+ apt-get install ncurses-dev
+ apt-get install libnewt-dev
+ apt-get install zlib1g-dev
+ apt-get install bison
 }}}
 
  * Install Dahdi
 You may have to find out what the newest version is. Go [http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/ here]
 {{{
- > cd /usr/local/src
- > wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
- > tar zxvf dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
- > cd dahdi-linux-complete-2.2.0.1+2.2.0
- > make all
- > make install
- > make config
+ cd /usr/local/src
+ wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
+ tar zxvf dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
+ cd dahdi-linux-complete-2.2.0.1+2.2.0
+ make all
+ make install
+ make config
 }}}
 
  * Install Asterisk
 {{{
-  > cd /usr/local/src 
-  > wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
-  > tar zxvf asterisk-1.4.25.tar.gz
-  > cd asterisk-1.4.25
-  > more README
-  > ./configure
-  > make 
-  > make install
-  > make samples
-  > make config
+  cd /usr/local/src 
+  wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
+  tar zxvf asterisk-1.4.25.tar.gz
+  cd asterisk-1.4.25
+  more README
+  ./configure
+  make 
+  make install
+  make samples
+  make config
 }}}
 
 
@@ -240,9 +239,9 @@ write = system,call,log,verbose,command,agent,user
 
  * Configure Nginx
 {{{
- > vi /etc/nginx/sites-available/bigbluebutton
+  vi /etc/nginx/sites-available/bigbluebutton
 
- Paste the following into the file and edit server_name with you IP.
+ # Paste the following into the file and edit server_name with you IP.
 
 server {
      listen   80;
@@ -333,20 +332,20 @@ server {
 
  * Download BigBlueButton
 {{{
- > mkdir /home/user/temp
- > cd /home/user/temp
- > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
- > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
- > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
- > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
- > wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
- > wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
- > wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
+ mkdir /home/user/temp
+ cd /home/user/temp
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
+ wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
+ wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
 }}}
 
  * Disable Security settings for TOMCAT6
 {{{
-  > vi /etc/default/tomcat6
+  vi /etc/default/tomcat6
 
   Edit and uncomment #TOMCAT6_SECURITY=yes to
 
