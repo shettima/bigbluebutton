@@ -17,7 +17,7 @@ First, you need to add the  !BigBlueButton key and repository URL to apt-get, th
 {{{
    wget http://archive.bigbluebutton.org/bigbluebutton.asc 
    sudo apt-key add bigbluebutton.asc 
-   sudo echo "deb http://archive.bigbluebutton.org/ bigbluebutton main" > /etc/apt/sources.list.d/bigbluebutton.list 
+   echo "deb http://archive.bigbluebutton.org/ bigbluebutton main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
    sudo apt-get update 
 }}}
 
