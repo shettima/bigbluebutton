@@ -100,6 +100,8 @@ Released: August 12, 2009
 
 = 0.5 Release: Apollo 11 =
 
+Released: July 21, 2009
+
 _Code named in honor of the 40th anniversary of the moon landing_
 
 === New Features ===
@@ -136,16 +138,15 @@ Here are the list of issues we fixed on this release:
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting
 
-Released: July 21, 2009
-
 = Release 0.4 =
+
+Released: June 12, 2009
+
 Much of the effort in this release was on creating individual packages for the components, creating a [http://bigbluebutton.org/hudson/ Continuous Integration Server] using Hudson, and distributing the entire package as a [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM downloadable virtual machine].
 
 Other updates include:
   * !BigBlueButton client now supports tunneling through a firewall via port 80
   * Uploading of multiple slides
-  
-Released: June 12, 2009
 
 = Release 0.32 =
 Added
