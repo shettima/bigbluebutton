@@ -90,10 +90,10 @@ Here are the list of issues we fixed on this release:
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=136 Issue 136] Phone Logout null pointer exception
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=138 Issue 138] Unmute-all icon mis-aligned
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=139 Issue 139] bbb-setip not detecting rtmp port
+
 === Known Issues ===
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=141 Issue 141] Impossible to disconnect from voice-conference w/o logging out
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=134 Issue 134] Multiple windows when viewing webcam
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=133 Issue 133] Webcam window still visible to other participants after logging out
+ * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=133 Issue 133] Webcam window still visible to other participants after logging out~~
  * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=129 Issue 129] Client takes too long to test port 1935 and start tunneling~~
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=127 Issue 127] Video stream not properly closing in client
  * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=107 Issue 107] Cut-and-paste url should give a login error~~
@@ -137,7 +137,7 @@ Here are the list of issues we fixed on this release:
 
 === Known Issues ===
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=112 Issue 112] Desk share video shows the final frame when presenter logs out
-  * [http://code.google.com/p/bigbluebutton/issues/detail?id=111 Issue 111] Desk share video has narrow yellow stripe at the top
+  * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=111 Issue 111] Desk share video has narrow yellow stripe at the top~~
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
   * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting~~
