@@ -8,15 +8,15 @@ _Code named in honor of Saturn's largest moon_
 
 == New Features ==
 
-In preparation for schools and universities that are using !BigBlueButton for the fall term, this month saw a lot of bug fixes, hardening, and a few new features.  Our goal was (and continues to be) to make the !BigBlueButton code base as solid as possible.
+In preparation for schools and universities that are using !BigBlueButton for the fall term, this month saw a lot of bug fixes, hardening, and a few new features.  Our goal was (and continues to be) to make the !BigBlueButton code base as solid as possible.  Notable additions to this release include:
 
-* Support for High Res Web Cameras* - As presenter, if you have the bandwidth, it's now possible to share video using your webcam at 640x480 high resolution or 320x240 standard resolution.  We've refactored the video module itself so the code is much cleaner and better organized.
+  * *Support for High Res Web Cameras* - As presenter, if you have the bandwidth, it's now possible to share video using your webcam at 640x480 high resolution or 320x240 standard resolution.  We've refactored the video module itself so the code is much cleaner and better organized.
 
-* Simplified Desktop Sharing User Interface* - We've simplified the user experiences for initiating desktop sharing.  It now shares the entire desktop by default.  We've also refactored the desktop sharing module.
+  * *Simplified Desktop Sharing User Interface* - We've simplified the user experiences for initiating desktop sharing.  It now shares the entire desktop by default.  We've also refactored the desktop sharing module.
 
-* Refactored slide conversion* - We went deep into the slide conversion process and fixed a number of bugs. 
+  * *Refactored slide conversion* - We went deep into the slide conversion process and fixed a number of bugs. 
 
-* Desktop Sharing and Xuggler * - The sharing capture applet now divides the presenter's screen into distinct tiles and only sends to the server the tiles that have changed since the last frame.  The desktop sharing also uses Xuggler re-assemble the tiles and compress the images into a flash video stream.  Because desktop sharing incorporates Xuggler, which is licensed under the AGPL, we've had to make desktop sharing a separate module (don't worry, you can install it with a single command). 
+  * *Desktop Sharing and Xuggler * - The sharing capture applet now divides the presenter's screen into distinct tiles and only sends to the server the tiles that have changed since the last frame.  The desktop sharing also uses Xuggler re-assemble the tiles and compress the images into a flash video stream.  Because desktop sharing incorporates Xuggler, which is licensed under the AGPL, we've had to make desktop sharing a separate module (don't worry, you can install it with a single command). 
 However, if you choose to incorporate desktop sharing into !BigBlueButton, you must accept the AGPL license for !BigBlueButton. This has similar implications for any web application that, in turn, incorporates !BigBlueButton.
 For information on installing desktop sharing in !BigBlueButton and how it changes the licensing, please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing].
 
