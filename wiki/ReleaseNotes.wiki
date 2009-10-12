@@ -1,6 +1,10 @@
 #summary Release Notes for new versions of !BigBlueButton.
 
-= Release 0.61: Titan. September 15, 2009 =
+= Release 0.61: Titan =
+
+Released: September 15, 2009
+
+_Code named in honor of Saturn's largest moon_
 
 == New Features ==
 
