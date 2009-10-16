@@ -1,4 +1,4 @@
-#summary How to setup your own  !BigBlueButton Virtual Machine
+#summary How to setup your own BigBlueButton Virtual Machine
 
 <wiki:toc max_depth="2" />
 
