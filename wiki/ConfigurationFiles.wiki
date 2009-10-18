@@ -324,7 +324,7 @@ allow=all
 ; more ...
 }}}
 
-= Flash Client =
+= BigBlueButton Client (Flash) =
 == Configuration File ==
 === /var/www/bigbluebutton/client/conf/config.xml ===
 
