@@ -208,7 +208,7 @@ Notes:
 
 Here's a link to the [http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties latest version].
   
-== /var/lib/tomcat6/logs ==
+== Log files ==
 
 === catalina.yyyy-mm-dd.log ===
 General log information from startup of tomcat6
