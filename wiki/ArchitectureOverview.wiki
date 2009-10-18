@@ -3,21 +3,21 @@
 
 == Trunk Overview ==
 
-The trunk of the [http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk SVN repository] contains the following components of BigBlueButton:
+The trunk of the [http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk SVN repository] contains the following components of !BigBlueButton:
 
-  * bigbluebutton-apps - The server side red5 web-apps of BigBlueButton
-  * bigbluebutton-client - The Flex/Flash client of BigBlueButton
+  * bigbluebutton-apps - The server side red5 web-apps of !BigBlueButton
+  * bigbluebutton-client - The Flex/Flash client of !BigBlueButton
   * bigbluebutton-web - The Grails application for scheduling conferences and logging in/out
   * deskshare-app - The Desktop Sharing server side red5 web-app
   * deskshare-applet - The Applet program used to capture the screen on the client 
 
-There are over a dozen [OpenSourceComponents open source components] that comprise BigBlueButton, along with the above parts.  The following diagrams describe how they all work together.
+There are over a dozen [OpenSourceComponents open source components] that comprise !BigBlueButton, along with the above parts.  The following diagrams describe how they all work together.
 
 ----
 
 == Architecture Overview ==
 
-The following diagram shows the major pieces of the BigBlueButton architecture.
+The following diagram shows the major pieces of the !BigBlueButton architecture.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/architecture_diagram.png
 
@@ -72,7 +72,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/bbb_
 ----
 
 == Sample Notes Module ==
-The following is an overview of the inside architecture of a simple BigBlueButton module build using the Mate Framework
+The following is an overview of the inside architecture of a simple !BigBlueButton module build using the Mate Framework
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SampleModuleNotesArchDiagram.png
 
