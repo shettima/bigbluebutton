@@ -36,3 +36,7 @@ In /usr/share/red5
 
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
+
+= Overview =
+== How to setup your development environment ==
+== How to compile the components of BigBlueButton ==
