@@ -39,4 +39,4 @@ In /home/firstuser/dev
 
 = Overview =
 == How to setup your development environment ==
-== How to compile the components of BigBlueButton ==
+== How to compile the components of !BigBlueButton ==
