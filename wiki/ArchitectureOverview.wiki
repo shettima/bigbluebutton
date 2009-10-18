@@ -3,7 +3,7 @@
 
 == Trunk Overview ==
 
-The trunk of the SVN repository contains the following important parts:
+The trunk of the [http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk SVN repository] contains the following important parts:
 
   * bigbluebutton-apps - The server side red5 web-apps of BigBlueButton
   * bigbluebutton-client - The Flex/Flash client of BigBlueButton
