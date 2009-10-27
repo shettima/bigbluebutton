@@ -38,6 +38,12 @@ yum makecache
 # now you should be able to install tomcat6 easily:
 yum install tomcat6
 
+## NOTE: if installing tomcat fails because the "rebuild-security-providers"
+##   dependency is missing, you may need to do the following before installing
+##   tomcat: 
+## wget http://dev.centos.org/centos/5/testing/i386/RPMS/jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm
+## yum install jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm  --nogpgcheck
+
 # start tomcat and configure it to automatically start on boot:
 service tomcat6 start
 chkconfig tomcat6 on
