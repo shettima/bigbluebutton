@@ -31,7 +31,7 @@ chkconfig mysqld on
 # use the jpackage repos:
 yum install jpackage-utils
 wget http://www.jpackage.org/jpackage17.repo
-cat jpackage17.repo | sed 's/1\.7/5.0/' > /etc/yum.repos.d/jpackage5.repo
+cat jpackage17.repo | sed 's/1\.7/5.0/' | sed 's/\[jpack/\[5jpack/' > /etc/yum.repos.d/jpackage5.repo
 mv jpackage17.repo /etc/yum.repos.d/
 yum makecache
 
