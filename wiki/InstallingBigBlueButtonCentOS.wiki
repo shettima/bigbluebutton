@@ -64,6 +64,7 @@ cd swftools-0.8.1
 ./configure 
 make
 make install
+ln /usr/local/bin/pdf2swf /usr/bin/pdf2swf
 cd ..
 
 # install ImageMagick:
