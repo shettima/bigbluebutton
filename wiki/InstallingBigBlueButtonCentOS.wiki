@@ -86,7 +86,7 @@ chown -R activemq.activemq /opt/apache-activemq-5.2.0
 chown -R activemq.activemq /opt/activemq
 
 # Now get the init.d file that we created for you
-wget http://bigbluebutton.googlecode.com/files/activemq
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/activemq
 mv activemq /etc/init.d/
 
 # now make that file executable, start the service and configure it to auto-start
@@ -103,7 +103,7 @@ mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /opt/red5-0.8
 chown -R red5.red5 /opt/red5-0.8
 
 # Now get the init.d file that we created for you
-wget http://bigbluebutton.googlecode.com/files/red5
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/red5
 mv red5 /etc/init.d/
 
 # now chmod the file, start and config auto-start:
@@ -176,13 +176,13 @@ make config
 cd ..
 
 # configure asterisk
-wget http://bigbluebutton.googlecode.com/files/asterisk-extensions.conf
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-extensions.conf
 cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf 
 
-wget http://bigbluebutton.googlecode.com/files/asterisk-sip.conf
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-sip.conf
 cat asterisk-sip.conf >> /etc/asterisk/sip.conf
 
-wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-create-sip-accounts.sh
 chmod a+x asterisk-create-sip-accounts.sh
 ./asterisk-create-sip-accounts.sh
 
@@ -207,8 +207,8 @@ write = system,call,log,verbose,command,agent,user
 mkdir -p /etc/nginx/sites-available
 mkdir -p /etc/nginx/sites-enabled
 
-wget http://bigbluebutton.googlecode.com/files/nginx-bigbluebutton.conf
-wget http://bigbluebutton.googlecode.com/files/nginx.conf
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/nginx-bigbluebutton.conf
+wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/nginx.conf
 mv -f nginx.conf /etc/nginx/
 
 cat nginx-bigbluebutton.conf | sed "s/127.0.0.1/`hostname`/" > /etc/nginx/sites-available/bigbluebutton
