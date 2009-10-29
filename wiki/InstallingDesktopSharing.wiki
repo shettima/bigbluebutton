@@ -37,5 +37,5 @@ By purchasing a commercial license for desktop sharing, and you will also be sup
 Because Google Code does not allow hosting of applications that use AGPL, we have moved the source code for desktop sharing to a separate server.  You can access the source code using the following svn command.
 
 {{{
-svn co http://svn.bigbluebutton.org/project-bbb/trunk/bbb-apps-deskshare/ .
+svn co http://svn.bigbluebutton.org/project-bbb/trunk/deskshare/ .
 }}}
