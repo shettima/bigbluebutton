@@ -37,7 +37,9 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
-== How to setup your development environment ==
+== Developing for BigBlueButton ==
+=== Setting up the Dev environment ===
+Refer to [Developing_BigBlueButton this].
 == How to compile the components of !BigBlueButton ==
 
 == Other Questions ==
