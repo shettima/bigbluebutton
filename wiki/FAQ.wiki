@@ -15,7 +15,7 @@ If you are running a !BigBlueButton VM or had installed !BigBlueButton using pac
 }}}
 
 === Something is not working in the VM ... where can I go for help. ===
-The best source is to post to the bigbluebutton-dev mailing list. We all hang out there and help each other.
+The best source is to post to the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list. We all hang out there and help each other.
 
 === Which log files should I check for errors?  ===
 Check in the following files
