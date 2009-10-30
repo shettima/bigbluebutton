@@ -4,10 +4,6 @@
 <wiki:toc max_depth="2"/>
 
 ----
-= Overview =
-If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
-
-
 == Virtual Machine ==
 
 === How do I update my VM to the newest version? ===
@@ -41,6 +37,8 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
-= Overview =
 == How to setup your development environment ==
 == How to compile the components of !BigBlueButton ==
+
+== Other Questions ==
+If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
