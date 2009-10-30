@@ -1,5 +1,0 @@
-#summary An open source web conferencing system.
-
-= Introduction =
-
-For an overview see [http://code.google.com/p/bigbluebutton/ Project Home]
