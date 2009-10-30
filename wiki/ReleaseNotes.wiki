@@ -1,12 +1,14 @@
 #summary Release Notes for new versions of !BigBlueButton.
 
-= Release 0.62 (draft) =
+= Release 0.62 Nebula NGC604 =
+
+In honor of Nubula NGC604.
 
 Released: November XX, 2009
 
 == New Features ==
 
-  * Better Desktop Sharing! We've made our Desktop Sharing much better than it was before. We've implemented the Adobe Screen Codec and optimized for bandwidth. We now have the best desktop sharing on the block. Still platform independent, still no install required. Even friendlier user interface than before.
+  * Better Desktop Sharing! We've made our Desktop Sharing much better than it was before. We've implemented the Adobe Screen Codec and optimized the bandwidth. It's still platform independent, and requires no install (the presenter must have the Java enabled to run the screen sharing applet).   We've also simplified the user interface for both presenter and viewer.
   
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=11 Issue 11]   	 Listeners window not getting updates
