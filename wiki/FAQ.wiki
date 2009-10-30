@@ -46,7 +46,7 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
-== Developing for BigBlueButton ==
+== Developing for !BigBlueButton ==
 === Setting up the Dev environment ===
 Refer to [Developing_BigBlueButton this].
 === I want to develop from Windows! ===
@@ -57,4 +57,7 @@ For most components of BBB, the source on the VM includes ant scripts which you 
 If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of BigBlueButton.
 
 == Other Questions ==
+=== When will feature X be supported? ===
+Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
+=== Other ===
 If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
