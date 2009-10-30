@@ -1,5 +1,35 @@
 #summary Release Notes for new versions of !BigBlueButton.
 
+= Release 0.62 =
+
+Released: November XX, 2009
+
+== New Features ==
+
+  * Better Desktop Sharing! We've made our Desktop Sharing much better than it was before. We've implemented the Adobe Screen Codec and optimized for bandwidth. We now have the best desktop sharing on the block. Still platform independent, still no install required. Even friendlier user interface than before.
+  
+== Fixed Issues ==
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=11 Issue 11]   	 Listeners window not getting updates
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=150 Issue 150] Deskshare applet should test port to check if it should tunnel
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=168 Issue 168] One one deskshare usage per session
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=170 Issue 170] Switching presenter while screensharing results in old presenter seeing screenshare viewer window
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=177 Issue 177] When selecting a slide from the fisheye control, the cursor becomes an i-beam
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=179 Issue 179] Zooming can cause a slide to disapper when clicking next
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=180 Issue 180] Deskshare can leave a stream open
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=187 Issue 187] Improve slide navigation from keyboard
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=189 Issue 189] Improve speed of Desktop Sharing
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=200 Issue 200] Update build.sh scripts with Virtual Machine
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=201 Issue 201] Update desktop sharing video
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=203 Issue 203] Create wiki on how to setup development environment
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=204 Issue 204] Update Installing BBB from source wiki
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=208 Issue 208] Port 9123 could still be in use on restart of red5
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=220 Issue 220] Not all viewers automatically seeing the shared desktop
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=221 Issue 221] Tooltips for all icons
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=226 Issue 226] Desktop sharing window remains open when sharer closes connection / crashes
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=229 Issue 229] Last frame of desktop sharing is visible to viewers
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=230 Issue 230] Flash debug client shows messages
+
 = Release 0.61: Titan =
 
 Released: September 15, 2009
