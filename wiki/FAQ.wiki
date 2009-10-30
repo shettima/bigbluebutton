@@ -5,18 +5,23 @@
 
 ----
 = Overview =
-
 If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
 
 
 == Virtual Machine ==
 
-=== Something is not working in the VM ... where can I go for help. ===
+=== How do I update my VM to the newest version? ===
+If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to this release with the following two commands
 
+{{{
+  sudo apt-get update
+  sudo apt-get upgrade
+}}}
+
+=== Something is not working in the VM ... where can I go for help. ===
 The best source is to post to the bigbluebutton-dev mailing list. We all hang out there and help each other.
 
 === Which log files should I check for errors?  ===
-
 Check in the following files
 
    1. /var/lib/tomcat6/logs/localhost
@@ -27,7 +32,6 @@ If you would like to view the log dynamically, you can tail it in Linux by goind
 tail -f red.log
 
 === How to access the red5 directory on the VM ===
-
 You might want access to the red5 directory on the Virtual Machine. The following commands will share a shortcut to the red5 folder into your dev directory.
 
 In /usr/share/red5
