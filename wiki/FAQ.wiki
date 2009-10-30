@@ -23,6 +23,9 @@ If you are running a !BigBlueButton VM or had installed !BigBlueButton using pac
   sudo apt-get upgrade
 }}}
 
+=== My VM won't let me log in!%@^$! ===
+When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
+
 === Something is not working in the VM ... where can I go for help. ===
 The best source is to post to the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list. We all hang out there and help each other.
 
