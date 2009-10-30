@@ -1,6 +1,6 @@
 #summary Release Notes for new versions of !BigBlueButton.
 
-= Release 0.62 (draf) =
+= Release 0.62 (draft) =
 
 Released: November XX, 2009
 
