@@ -40,7 +40,12 @@ In /home/firstuser/dev
 == Developing for BigBlueButton ==
 === Setting up the Dev environment ===
 Refer to [Developing_BigBlueButton this].
-== How to compile the components of !BigBlueButton ==
+=== I want to develop from Windows! ===
+Even though the VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
+=== How to compile and deploy the components of !BigBlueButton? ===
+For most components of BBB, the source on the VM includes ant scripts which you can use to compile and deploy that particular component. If you have questions about compiling a specific component, write to the mailing list.
+=== What if I want to develop for the Client only? ===
+If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of BigBlueButton.
 
 == Other Questions ==
 If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
