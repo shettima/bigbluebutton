@@ -1,5 +1,6 @@
 #summary How to install BigBlueButton like a real developer.  :-)
 
+= NOTE: This wiki is currently being edited for 0.62 release =
 
 These instructions will walk through how to install BigBlueButton from source onto Ubuntu.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how BigBlueButton is setup, the following steps will show you how to install each component.  
 
@@ -38,13 +39,15 @@ lo        Link encap:Local Loopback
 root@ubuntu904server:/usr/local# vi /etc/udev/rules.d/70-persistent-net.rules
 Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
 
-Reboot your machine. Check if you manage to connect to the internet. If you are running on a Virtual Machine, make sure the VM's network adapter is using a Bridged connection instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
+Reboot your machine. Check if you manage to connect to the internet. If you are running 
+on a Virtual Machine, make sure the VM's network adapter is using a Bridged connection
+instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
 
 More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 }}}
 
- * Once you have interner connection, update and upgrade.
+ * Once you have internet connection, update and upgrade.
 {{{
    sudo apt-get update
    sudo apt-get upgrade
