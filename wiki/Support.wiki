@@ -1,9 +1,12 @@
 #summary Community support for BigBlueButton
 
-= Introduction =
+= Mailing Lists=
 
 Need help?  If you don't find an answer below, please post a question to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].  We all hang out there and welcome any feedback.
 
   * ReleaseNotes
   * FrequentlyAskedQuestions
   * RoadMap
+
+= Commercial Support =
+[http://www.blindsidenetworks.com/ Blindside Networks] provides commercial support for BigBlueButton.
