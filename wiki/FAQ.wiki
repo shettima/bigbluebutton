@@ -4,7 +4,16 @@
 <wiki:toc max_depth="3"/>
 
 ----
-== Virtual Machine ==
+
+== Installation ==
+=== Can I install BigBlueButton on CentOS? ===
+Yes, you can! [InstallingBigBlueButtonCentOS CentOS instructions]
+=== Can I install on Windows? ===
+Short answer: no. While it may be possible to install most components needed to run BBB on Windows, we haven't tested this and it would be a pain. Consider downloading the Virtual Machine and running it from Windows instead.
+=== Can I install on Debian? ===
+Installing on Debian should be similar to the Ubuntu installation. Let us know if you run into problems and we'll help you set it up.
+=== Can I install on RedHat, Fedora? ===
+This should be similar to CentOS, but we haven't tried it. Again, let us know if you run into problems.
 
 === How do I update my VM to the newest version? ===
 If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to this release with the following two commands
