@@ -9,4 +9,4 @@ Need help?  If you don't find an answer below, please post a question to [http:/
   * RoadMap
 
 = Commercial Support =
-[http://www.blindsidenetworks.com/ Blindside Networks] provides commercial support for BigBlueButton.
+[http://www.blindsidenetworks.com/ Blindside Networks] provides commercial support for !BigBlueButton.
