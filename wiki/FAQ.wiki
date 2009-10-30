@@ -26,6 +26,9 @@ If you are running a !BigBlueButton VM or had installed !BigBlueButton using pac
 === My VM won't let me log in!%@^$! ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
+=== BBB is running inside the VM, but I can't access it from a browser ===
+Make sure your VMWave Player network settings are set to Bridged, not NAT. Go to Devices>Network Adapter, and select 'Bridged'
+
 === Something is not working in the VM ... where can I go for help. ===
 The best source is to post to the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list. We all hang out there and help each other.
 
