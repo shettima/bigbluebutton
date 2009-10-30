@@ -2,7 +2,7 @@
 
 = Release 0.62: Nebula NGC604 =
 
-In honor of Nubula NGC604.
+_Code named in honor of Nubula NGC604_
 
 Released: November XX, 2009
 
