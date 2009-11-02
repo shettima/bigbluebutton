@@ -8,7 +8,7 @@ To start, you'll need a computer running Ubuntu -- either a physical machine or 
 
 The only prerequisite is that your Ubuntu machine has a network connection. The instructions below assumes you have downloaded the VM image above and running it on WMWare.
 
- * To start, check if you have a network connection
+== check if you have a network connection ==
 {{{
   ping www.google.com
 }}}
@@ -16,7 +16,12 @@ The only prerequisite is that your Ubuntu machine has a network connection. The 
 If you get an error saying yout eth0 is not connected, check if the VM is using eth1:
 
 {{{
-root@ubuntu904server:/usr/local# ifconfig -a
+ ifconfig -a
+}}}
+
+If it shows the following:
+
+{{{
 eth1      Link encap:Ethernet  HWaddr 00:0c:29:dd:b4:51
           inet addr:192.168.0.154  Bcast:192.168.0.255  Mask:255.255.255.0
           inet6 addr: fe80::20c:29ff:fedd:b451/64 Scope:Link
@@ -35,8 +40,12 @@ lo        Link encap:Local Loopback
           TX packets:12938 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:0
           RX bytes:40299608 (40.2 MB)  TX bytes:40299608 (40.2 MB)
+}}}
 
-root@ubuntu904server:/usr/local# vi /etc/udev/rules.d/70-persistent-net.rules
+Make it use eth0 instead
+{{{
+ vi /etc/udev/rules.d/70-persistent-net.rules
+}}}
 
 Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
 
@@ -44,7 +53,6 @@ Reboot your machine. Check if you manage to connect to the internet. Make sure t
 
 More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
-}}}
 
  * Once you have internet connection, update and upgrade your VM.
 {{{
