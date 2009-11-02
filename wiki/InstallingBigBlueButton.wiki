@@ -441,10 +441,10 @@ On the {{{mysql>}}} prompt, type
 }}}
 
 Change the following:
- - swfToolsDir to the directory where pdf2swf is located
- - imageMagickDir to the directory where convert is located
- - ghostScriptExec to point to the gs application
- - change bigbluebutton.web.serverURL=http://<YOUR IP>
+ * swfToolsDir to the directory where pdf2swf is located
+ * imageMagickDir to the directory where convert is located
+ * ghostScriptExec to point to the gs application
+ * change bigbluebutton.web.serverURL=http://<YOUR IP>
 
 Your bigbluebutton.properties should resemble something like this
 
