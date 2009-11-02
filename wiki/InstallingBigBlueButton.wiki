@@ -148,10 +148,9 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   ln -s /opt/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /opt/red5
-  
-  # Start as red5 user
+    
   cd /opt/red5
-  sudo -u red5 ./red5.sh
+  ./red5.sh
 }}}
 
 == Install oflaDemo to test if Red5 works ==
@@ -159,12 +158,14 @@ From your browser, visit
 
 {{{
 http://192.168.0.154:5080/
+}}}
 
 Click on "Click here to install demos" and then choose oflaDemo java 6.
 
-http://192.168.0.154:5080/demos/
-
+Once the demo has been installed, visit
+{{{
 http://192.168.0.154:5080/demos/ofla_demo.html
+}}}
 
 Edit rtmp://192.168.0.154/oflaDemo and click connect
 
