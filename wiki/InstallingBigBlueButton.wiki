@@ -229,7 +229,7 @@ cat asterisk-sip.conf >> /etc/asterisk/sip.conf
 
 }}}
 
-== Create SIP Accounts to be used by Red5Phone ==
+== Create SIP Accounts to be used by !Red5Phone ==
 {{{
 
 wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
@@ -366,7 +366,7 @@ server {
 
 }}}
 
-== Download BigBlueButton ==
+== Download !BigBlueButton ==
 * NOTE: These links will download the latest (trunk) packages. We will be creating a folder for 0.62 release. *
 
 {{{
@@ -392,7 +392,7 @@ server {
 
 == Setup the database ==
 {{{
-> mysql -u root -p
+  mysql -u root -p
 }}}
 
 Just hit "Enter" when prompted for a password.
@@ -414,30 +414,31 @@ On the {{{mysql>}}} prompt, type
   cp /home/user/temp/bigbluebutton-0.1.war ./bigbluebutton.war
 }}}
 
- * Determine PDF2SWF, CONVERT and GS applications
+== Determine PDF2SWF, CONVERT and GS applications ==
 {{{
   Make a note of where pdf2swf is installed
-  > which pdf2swf
+   which pdf2swf
   
   You should see something like
   /usr/bin/pdf2swf
   
   Make a note of where the convert application is installed
-  > which convert
+   which convert
 
   You shoud see something like.
   /usr/bin/convert
 
   Note where GhostScript is installed
-  > which gs
+   which gs
 
   You shoud see something like.
   /usr/bin/gs
 }}}
 
- * Edit bbb-web properties
+== Edit bbb-web properties ==
 {{{
- > vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+  vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+}}}
 
 Change the following:
  - swfToolsDir to the directory where pdf2swf is located
@@ -447,6 +448,7 @@ Change the following:
 
 Your bigbluebutton.properties should resemble something like this
 
+{{{
 #
 # These are the default properites for BigBlueButton Web application
 
@@ -454,35 +456,55 @@ dataSource.url=jdbc:mysql://localhost/bigbluebutton_dev
 dataSource.username=bbb
 dataSource.password=secret
 
-swfToolsDir=/usr/bin
-imageMagickDir=/usr/bin
+# Directory where BigBlueButton stores uploaded slides
 presentationDir=/var/bigbluebutton
-ghostScriptExec=/usr/bin/gs
 
-beans.presentationService.swfToolsDir=${swfToolsDir}
-beans.presentationService.imageMagickDir=${imageMagickDir}
-beans.presentationService.presentationDir=${presentationDir}
+# Directory where SWFTOOLS (pdf2swf, jpeg2swf, png2swf) are located
+swfToolsDir=/bin
+
+# Directory where ImageMagick's convert executable is located
+imageMagickDir=/usr/bin
 
 # Use fullpath to ghostscript executable since the exec names are different
 # for each platform.
-beans.presentationService.ghostScriptExec=${ghostScriptExec}
+ghostScriptExec=/usr/bin/gs
 
-#
-# This URL needs to reference the host running the tomcat server
-bigbluebutton.web.serverURL=http://192.168.0.154
-
-# This is a workaround for a problem converting PDF files, referenced at
+# This is a workaround for a problem converting PDF files, referenced at 
 # http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
 noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
+
+# These will be copied in cases where the conversion process
+# fails to generate a slide from the uploaded presentation
+BLANK_SLIDE = /var/bigbluebutton/blank/blank-slide.swf
+BLANK_THUMBNAIL = /var/bigbluebutton/blank/blank-thumb.png
+
+# Inject the above properties into the PresentationService bean	
+beans.presentationService.swfToolsDir=${swfToolsDir}
+beans.presentationService.imageMagickDir=${imageMagickDir}
+beans.presentationService.presentationDir=${presentationDir}
+beans.presentationService.ghostScriptExec=${ghostScriptExec}
 beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
+beans.presentationService.BLANK_THUMBNAIL=${BLANK_THUMBNAIL}
+beans.presentationService.BLANK_SLIDE=${BLANK_SLIDE}
+
+beans.adhocConferenceService.serviceEnabled = true
+beans.dynamicConferenceService.serviceEnabled = true
+
+#
+# This URL is where the BBB client is accessible. When a user sucessfully
+# enters a name and password, she is redirected here to load the client.
+bigbluebutton.web.serverURL=http://192.168.0.182
+
+# URL where the logged-out participant will be redirected after sign-out
+bigbluebutton.web.loggedOutUrl=http://www.bigbluebutton.org
 }}}
 
- * Restart Tomcat6
+== Restart Tomcat6 ==
 {{{
- > /etc/init.d/tomcat6 restart
+  /etc/init.d/tomcat6 restart
 }}}
 
- * Check if database tables were created
+== Check if database tables were created ==
 {{{
  > mysql -u root -p
 Enter password:
@@ -527,14 +549,14 @@ mysql> select * from user;
 mysql>
 }}}
 
- * Create the Presentation Upload directory
+== Create the Presentation Upload directory ==
 {{{
- > mkdir /var/bigbluebutton
- > chown -R tomcat6:adm /var/bigbluebutton
- > chmod -R 777 /var/bigbluebutton
+  mkdir /var/bigbluebutton
+  chown -R tomcat6:adm /var/bigbluebutton
+  chmod -R 777 /var/bigbluebutton
 }}}
 
- * Install bbb-apps
+== Install bbb-apps ==
 {{{
  > cd /opt/red5-0.8/webapps
  > cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
