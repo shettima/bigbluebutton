@@ -499,6 +499,14 @@ bigbluebutton.web.serverURL=http://192.168.0.182
 bigbluebutton.web.loggedOutUrl=http://www.bigbluebutton.org
 }}}
 
+== Create noPdfMarkWorkaround.ps ==
+Create {{{/etc/bigbluebutton/nopdfmark.ps}}} with the following content:
+
+{{{
+%!
+/pdfmark {cleartomark} bind def
+}}}
+
 == Restart Tomcat6 ==
 {{{
   /etc/init.d/tomcat6 restart
