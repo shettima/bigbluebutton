@@ -190,8 +190,8 @@ You may have to find out what the newest version is. Go to http://downloads.aste
 {{{
  cd /usr/local/src
  wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
- tar zxvf dahdi-linux-complete-2.2.0.1+2.2.0.tar.gz
- cd dahdi-linux-complete-2.2.0.1+2.2.0
+ tar zxvf dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
+ cd dahdi-linux-complete-2.2.0.2+2.2.0
  make all
  make install
  make config
@@ -212,7 +212,7 @@ You may have to find out what the newest version is. Go to http://downloads.aste
 }}}
 
 
- * Modify Extensions
+== Modify Extensions ==
 {{{
 
 cd /tmp/
@@ -221,7 +221,7 @@ cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf
 
 }}}
 
- * Create SIP account
+== Create SIP accounts ==
 {{{
 
 wget http://bigbluebutton.googlecode.com/files/asterisk-sip.conf
@@ -229,7 +229,7 @@ cat asterisk-sip.conf >> /etc/asterisk/sip.conf
 
 }}}
 
- * Create SIP Accounts to be used by Red5Phone
+== Create SIP Accounts to be used by Red5Phone ==
 {{{
 
 wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
@@ -239,9 +239,7 @@ chmod a+x asterisk-create-sip-accounts.sh
 }}}
 
 
-
-
- * Test your SIP account
+== Test your SIP account ==
 {{{
  Download Zoiper from here http://www.zoiper.com/zwin.php
 
@@ -251,18 +249,20 @@ chmod a+x asterisk-create-sip-accounts.sh
 
 }}}
 
- * Create AMI account
+== Create AMI account ==
 {{{
  > vi /etc/asterisk/manager.conf
+}}}
 
  Modify "enabled" to yes
-
+{{{
 [general]
 
 enabled = yes
+}}}
 
-  Add the following at the bottom of the file
-
+Add the following at the bottom of the file
+{{{
 ; BigBlueButton: Enable Red5 to connect
 [bbb]
 secret = secret
@@ -272,12 +272,13 @@ write = system,call,log,verbose,command,agent,user
 
 }}}
 
- * Configure Nginx
+== Configure Nginx ==
 {{{
   vi /etc/nginx/sites-available/bigbluebutton
+}}}
 
- # Paste the following into the file and edit server_name with you IP.
-
+Paste the following into the file and edit server_name with you IP.
+{{{
 server {
      listen   80;
      server_name  192.168.0.136;
@@ -359,13 +360,15 @@ server {
 
 }}}
 
- * Enable the bigbluebutton nginx config
+== Enable the bigbluebutton nginx config ==
 {{{
-> ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+ ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 
 }}}
 
- * Download BigBlueButton
+== Download BigBlueButton ==
+* NOTE: These links will download the latest (trunk) packages. We will be creating a folder for 0.62 release. *
+
 {{{
  mkdir /home/user/temp
  cd /home/user/temp
