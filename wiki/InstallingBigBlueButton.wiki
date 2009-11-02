@@ -6,14 +6,14 @@ These instructions will walk through how to install !BigBlueButton from source o
 
 To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  The easiest way to start with a VM images is to download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player 
 
-The only prerequisite is that your Ubuntu machine has a network connection. The instructions below assumes you have downloaded the VM image above and running it on WMWare.
+The only prerequisite is that your Ubuntu machine has a network connection. *The instructions below assumes you have downloaded the VM image above and running it on WMWare.*
 
-== check if you have a network connection ==
+== Check if you have a internet connection ==
 {{{
   ping www.google.com
 }}}
 
-If you get an error saying yout eth0 is not connected, check if the VM is using eth1:
+If you get an error saying your eth0 is not connected, check if the VM is using eth1:
 
 {{{
  ifconfig -a
@@ -94,29 +94,34 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
    apt-get install tomcat6
 }}}
 
- * Confirm that tomcat is running
+ Confirm that tomcat is running
 {{{
   http://<YOUR IP>:8080/
+
+  To determine your ip:
+  ifconfig
+
+  see "ifconfig -a" command above for output. Your ip should be the value of "inet addr:"  which from above is "192.168.0.154"
 }}}
 
- * Install swftools
+== Install swftools ==
 {{{
    apt-get install swftools
 
 }}}
 
- * Install ImageMagick
+== Install ImageMagick ==
 {{{
    apt-get install imagemagick
 
 }}}
 
- * Install Nginx
+== Install Nginx ==
 {{{
    apt-get install nginx
 }}}
 
- * Install ActiveMQ
+== Install ActiveMQ ==
 {{{
    cd opt
    wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
@@ -137,7 +142,7 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 }}}
 
 
- * Install red5
+== Install red5 ==
 {{{
   cd opt
   wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
@@ -149,7 +154,7 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   sudo -u red5 ./red5.sh
 }}}
 
- * Install oflaDemo
+== Install oflaDemo ==
 {{{
 http://192.168.0.154:5080/
 
