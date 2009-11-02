@@ -408,7 +408,7 @@ On the {{{mysql>}}} prompt, type
  quit
 }}}
 
-== Install BigBlueButton Web ==
+== Install bbb-web ==
 {{{
   cd /var/lib/tomcat6/webapps
   cp /home/user/temp/bigbluebutton-0.1.war ./bigbluebutton.war
@@ -586,45 +586,65 @@ ami.password=secret
 == Enable RTMP Tunneling ==
  Uncommet RTMPT section of /opt/red5/conf/red5-core.xml
 
- * Install Desk Share App
+== Install bbb-deskshare-app ==
 {{{
- > cd /opt/red5-0.8/webapps
- > cp /home/user/temp/deskshare.tar.gz ./
- > tar zxvf deskshare.tar.gz
- >  rm deskshare.tar.gz
+  cd /opt/red5/webapps
+  cp /home/user/temp/deskshare.tar.gz ./
+  tar zxvf deskshare.tar.gz
+  rm deskshare.tar.gz
 }}}
 
- * Install Video App
+== Install bbb-video-app ==
 {{{
- > cd /opt/red5-0.8/webapps
- > cp /home/user/temp/video.tar.gz ./
- > tar zxvf video.tar.gz
- >  rm video.tar.gz
+  cd /opt/red5/webapps
+  cp /home/user/temp/video.tar.gz ./
+  tar zxvf video.tar.gz
+  rm video.tar.gz
 }}}
 
- * Install Voice App
+== Install bbb-voice-app ==
 {{{
- > cd /opt/red5-0.8/webapps
- > cp /home/user/temp/sip.tar.gz ./
- > tar zxvf sip.tar.gz
- >  rm sip.tar.gz
+ cd /opt/red5/webapps
+ cp /home/user/temp/sip.tar.gz ./
+ tar zxvf sip.tar.gz
+ rm sip.tar.gz
+}}}
 
- Edit /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties
- 
- Point sip.server.host to the IP of your Asterisk installation
+Edit properties
+{{{
+ vi /opt/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+}}}
 
- sip.server.host=192.168.0.177
+Your properties file should look like this.
+{{{
+# The address of your asterisk server
+sip.server.host=127.0.0.1
+
+# The start/stop SIP ports that the application is going
+# to use to connect to the asterisk server
+startSIPPort=5070
+stopSIPPort=5099
+
+# The start/stop RTP port the application is going to use
+# for the media stream.
+startRTPPort=3000
+stopRTPPort=3099
+
+# An extension pattern, in case your asterisk extensions.conf
+# uses a naming convetion for your meeting rooms
+# e.g. conf-85115 instead of just 85115		
+callExtensionPattern={0}
 
 }}}
 
- * Install BigBlueButton Client
+== Install bbb-client ==
 {{{
-  > cd /var/www
-  > mkdir bigbluebutton
-  > cd bigbluebutton 
-  > cp /home/user/temp/client.tar.gz ./
-  > tar zxvf client.tar.gz
-  > rm client.tar.gz
+  cd /var/www
+  mkdir bigbluebutton
+  cd bigbluebutton 
+  cp /home/user/temp/client.tar.gz ./
+  tar zxvf client.tar.gz
+  rm client.tar.gz
 }}}
 
  * Modify BBB client config in /var/www/bigbluebutton/client/conf/config.xml
