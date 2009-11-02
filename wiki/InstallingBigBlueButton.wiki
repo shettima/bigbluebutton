@@ -2,20 +2,20 @@
 
 = NOTE: This wiki is currently being edited for 0.62 release =
 
-These instructions will walk through how to install BigBlueButton from source onto Ubuntu.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how BigBlueButton is setup, the following steps will show you how to install each component.  
+These instructions will walk through how to install !BigBlueButton from source onto Ubuntu.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, the following steps will show you how to install each component.  
 
 To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  The easiest way to start with a VM images is to download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player 
 
-The only prerequisite is that your Ubuntu machine has a network connection.
+The only prerequisite is that your Ubuntu machine has a network connection. The instructions below assumes you have downloaded the VM image above and running it on WMWare.
 
  * To start, check if you have a network connection
 {{{
   ping www.google.com
+}}}
 
-If you get an error saying yout eth0 is not connected, then fix it by:
+If you get an error saying yout eth0 is not connected, check if the VM is using eth1:
 
-  Check if it is using eth1 
-
+{{{
 root@ubuntu904server:/usr/local# ifconfig -a
 eth1      Link encap:Ethernet  HWaddr 00:0c:29:dd:b4:51
           inet addr:192.168.0.154  Bcast:192.168.0.255  Mask:255.255.255.0
@@ -37,17 +37,16 @@ lo        Link encap:Local Loopback
           RX bytes:40299608 (40.2 MB)  TX bytes:40299608 (40.2 MB)
 
 root@ubuntu904server:/usr/local# vi /etc/udev/rules.d/70-persistent-net.rules
+
 Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
 
-Reboot your machine. Check if you manage to connect to the internet. If you are running 
-on a Virtual Machine, make sure the VM's network adapter is using a Bridged connection
-instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
+Reboot your machine. Check if you manage to connect to the internet. Make sure the VM's network adapter is using a Bridged connection instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
 
 More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 }}}
 
- * Once you have internet connection, update and upgrade.
+ * Once you have internet connection, update and upgrade your VM.
 {{{
    sudo apt-get update
    sudo apt-get upgrade
