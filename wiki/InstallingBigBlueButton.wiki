@@ -171,7 +171,6 @@ Edit rtmp://192.168.0.154/oflaDemo and click connect
 
 You would see a list of available videos. Select one to play.
 
-}}}
 
 == Prepare to install Asterisk ==
 Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
