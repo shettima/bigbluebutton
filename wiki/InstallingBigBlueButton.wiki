@@ -154,7 +154,9 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   sudo -u red5 ./red5.sh
 }}}
 
-== Install oflaDemo ==
+== Install oflaDemo to test if Red5 works ==
+From your browser, visit
+
 {{{
 http://192.168.0.154:5080/
 
@@ -170,10 +172,9 @@ You would see a list of available videos. Select one to play.
 
 }}}
 
- * Prepare to install Asterisk
-{{{
+== Prepare to install Asterisk ==
 Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
-
+{{{
  apt-get install build-essential
  apt-get install linux-headers-`uname -r`
  apt-get install libssl-dev
@@ -183,8 +184,9 @@ Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
  apt-get install bison
 }}}
 
- * Install Dahdi
-You may have to find out what the newest version is. Go [http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/ here]
+== Install Dahdi ==
+You may have to find out what the newest version is. Go to http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete
+
 {{{
  cd /usr/local/src
  wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
@@ -195,7 +197,7 @@ You may have to find out what the newest version is. Go [http://downloads.asteri
  make config
 }}}
 
- * Install Asterisk
+== Install Asterisk ==
 {{{
   cd /usr/local/src 
   wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
