@@ -97,9 +97,10 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
    cd opt
    wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
    tar zxvf apache-activemq-5.2.0-bin.tar.gz
+   ln -s /opt/apache-activemq-5.2.0 /opt/activemq
 
   # Start ActiveMQ
-   /opt/apache-activemq-5.2.0/bin/activemq
+   /opt/activemq/bin/activemq
 }}}
 
  * Modify tomcat6 account
@@ -117,11 +118,11 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   cd opt
   wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 red5-0.8
+  ln -s /opt/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /opt/red5
   
-  # Start red5 as tomcat6 user
-  sudo su -l tomcat6
-  red5.sh
+  # Start as red5 user
+  cd /opt/red5
+  sudo -u red5 ./red5.sh
 }}}
 
  * Install oflaDemo
