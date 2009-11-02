@@ -558,21 +558,23 @@ mysql>
 
 == Install bbb-apps ==
 {{{
- > cd /opt/red5-0.8/webapps
- > cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
+ cd /opt/red5/webapps
+ cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
  
- > tar zxvf bigbluebutton-apps-0.5.tar.gz
- >  mv webapps/bigbluebutton ./
- > rm -rf bigbluebutton-apps-0.5.tar.gz webapps/
+ tar zxvf bigbluebutton-apps-0.5.tar.gz
+ mv webapps/bigbluebutton ./
+ rm -rf bigbluebutton-apps-0.5.tar.gz webapps/
 }}}
 
- * Edit BigBlueButton Apps properties
+== Edit bbb-apps properties ==
 {{{
- > vi /opt/red5-0.8/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+ vi /opt/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+}}}
 
+Your properties file should look like this.
+{{{
 # Location for recordings
 recordingsDirectory=/var/bigbluebutton
-
 
 # These properties are for Asterisk Management Interface (AMI)
 ami.host=127.0.0.1
@@ -581,30 +583,8 @@ ami.username=bbb
 ami.password=secret
 }}}
 
- * Uncommet RTMPT section of /opt/red5-0.8/conf/red5-core.xml
-
- * Install Xuggler
-{{{
- Goto http://www.xuggle.com/xuggler/downloads/
-
-  > cd /usr/local
-  >  wget http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.1.FINAL/xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-  
-  > chmod a+x xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-  > ./xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-}}}
-
- * Put Xuggler into PATH
-{{{
-  >  vi /etc/profile
-
- Add the following at the bottom of the file
-
-export XUGGLE_HOME=/usr/local/xuggler
-export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
-export PATH=$XUGGLE_HOME/bin:$PATH
-
-}}}
+== Enable RTMP Tunneling ==
+ Uncommet RTMPT section of /opt/red5/conf/red5-core.xml
 
  * Install Desk Share App
 {{{
