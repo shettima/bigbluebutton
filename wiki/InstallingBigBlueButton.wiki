@@ -123,24 +123,35 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 == Install ActiveMQ ==
 {{{
-   cd opt
+   mkdir /home/user/temp
+   cd /home/user/temp
    wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
    tar zxvf apache-activemq-5.2.0-bin.tar.gz
-   ln -s /opt/apache-activemq-5.2.0 /opt/activemq
-
-  # Start ActiveMQ
-   /opt/activemq/bin/activemq
+   mv /home/user/temp/apache-activemq-5.2.0 /usr/share/activemq
+   chown -R root.root /usr/share/activemq
 }}}
 
 == Install red5 ==
 {{{
-  cd opt
+  cd /home/user/temp
   wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  ln -s /opt/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /opt/red5
-    
-  cd /opt/red5
-  ./red5.sh
+  mv /home/user/temp/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /usr/share/red5
+  chown -R root.root /usr/share/red5
+}}}
+
+== Auto-start ActiveMQ and Red5 on reboot ==
+{{{
+  cd /home/user/temp/
+  wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
+  wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu
+  cd /etc/init.d/
+  cp /home/user/temp/activemq-ubuntu ./activemq
+  cp /home/user/temp/red5-ubuntu ./red5
+
+  apt-get install chkconfig
+  chkconfig red5 on
+  chkconfig activemq on
 }}}
 
 == Install oflaDemo to test if Red5 works ==
@@ -369,13 +380,12 @@ server {
 * NOTE: These links will download the latest (trunk) packages. We will be creating a folder for 0.62 release. *
 
 {{{
- mkdir /home/user/temp
+ 
  cd /home/user/temp
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/bbb-deskshare-trunk/ws/app/build/deskshare.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/bbb-default.tar.gz
@@ -732,16 +742,6 @@ Your config.xml should look something like:
 </config>
 }}}
 
-== Install bbb-default pages ==
-{{{
-  cd /var/www/
-  cp /home/user/temp/web.zip ./
-  apt-get install unzip
-  unzip -dc web.zip
-  mv c/web ./bigbluebutton-default
-  rm -rf c
-}}}
-
 == Restart server ==
 
  * Start ActiveMQ
@@ -752,11 +752,9 @@ Your config.xml should look something like:
 
 == Try out !BigBlueButton ==
 
- Go to http://<YOUR-IP> which should display the bbb web page.
+ Go to http://<YOUR-IP> which should display the bbb web page. Login into the default conference 85115.
  
- To use voice conference, using your zoiper, dial 1500 which will prompt you for the conference number.
-
-
+ To use voice conference, using your zoiper, dial 85115 which will prompt you for the conference number.
 
 == When things go wrong ==
  Look for logs in the following
