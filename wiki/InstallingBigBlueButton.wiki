@@ -131,13 +131,29 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
    chown -R root.root /usr/share/activemq
 }}}
 
+
 == Install red5 ==
+Create red5 user
+{{{
+   adduser --system --home /usr/share/red5 --no-create-home --group --disabled-password --shell /bin/false red5
+}}}
+
 {{{
   cd /home/user/temp
   wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   mv /home/user/temp/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /usr/share/red5
+}}}
+
+Assign proper permissions
+{{{
   chown -R root.root /usr/share/red5
+  chown -R red5:adm /usr/share/red5/log
+  chmod 755 /usr/share/red5/log
+  chown -R red5:adm /usr/share/red5/work
+  chmod 755 /usr/share/red5/work
+  chgrp red5 /usr/share/red5/webapps
+  chmod 775 /usr/share/red5/webapps
 }}}
 
 == Auto-start ActiveMQ and Red5 on reboot ==
