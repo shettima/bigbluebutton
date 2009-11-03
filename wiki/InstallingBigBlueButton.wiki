@@ -380,6 +380,16 @@ server {
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
 }}}
 
+		
+== Disable Security settings for TOMCAT6 ==
+{{{		
+  vi /etc/default/tomcat6		
+
+  Edit and uncomment #TOMCAT6_SECURITY=yes to		
+			
+  TOMCAT6_SECURITY=no		
+}}}
+
 == Setup the database ==
 {{{
   mysql -u root -p
