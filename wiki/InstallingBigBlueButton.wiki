@@ -378,6 +378,7 @@ server {
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
+ wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/bbb-default.tar.gz
 }}}
 
 		
@@ -643,6 +644,15 @@ stopRTPPort=3029
 # e.g. conf-85115 instead of just 85115		
 callExtensionPattern={0}
 
+}}}
+
+== Install bbb-default ==
+{{{
+ cd /var/www
+ cp /home/user/temp/bbb-default.tar.gz ./
+ tar zxvf bbb-default.tar.gz
+ mv web bigbluebutton-default
+ rm bbb-default.tar.gz
 }}}
 
 == Install bbb-client ==
