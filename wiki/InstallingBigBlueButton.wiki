@@ -783,3 +783,11 @@ Also ensure that port 1935 (RTMP) and port 9123 (desktop sharing) are open on yo
 
 == If you make it successfully through the installation ==
 Good stuff!  Post a message to BigBlueButton-dev letting everyone know that you are a real developer and you have installed BigBlueButton from source.  :-)
+
+== Issues ==
+There is a problem after reboot where the apps are not started properly. You need to restart the services manually.
+{{{
+ /etc/init.d/activemq restart
+ /etc/init.d/red5 restart
+ /etc/init.d/tomcat6 restart
+}}}
