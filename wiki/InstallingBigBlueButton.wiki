@@ -6,9 +6,12 @@ These instructions will walk through how to install !BigBlueButton from source o
 
 To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  The easiest way to start with a VM images is to download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player 
 
-The only prerequisite is that your Ubuntu machine has a network connection. *The instructions below assumes you have downloaded the VM image above and running it on WMWare.*
+The only prerequisite is that your Ubuntu machine has a network connection. 
+
+*The instructions below assumes you have downloaded the VM image above and running it on WMWare.*
 
 == Check if you have a internet connection ==
+
 {{{
   ping www.google.com
 }}}
@@ -80,7 +83,6 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 == Install Java 6 ==
 {{{
   apt-get install openjdk-6-jre-headless
-
 }}}
 
 == Install MySQL ==
@@ -107,13 +109,11 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 == Install swftools ==
 {{{
    apt-get install swftools
-
 }}}
 
 == Install ImageMagick ==
 {{{
    apt-get install imagemagick
-
 }}}
 
 == Install Nginx ==
@@ -131,16 +131,6 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
   # Start ActiveMQ
    /opt/activemq/bin/activemq
 }}}
-
- * Modify tomcat6 account
-{{{
-  vi /etc/passwd
-
-  # Modify tomcat6 entry to this
-  tomcat6:x:106:113::/usr/share/tomcat6:/bin/bash
-
-}}}
-
 
 == Install red5 ==
 {{{
@@ -266,7 +256,8 @@ Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
 enabled = yes
 }}}
 
-Add the following at the bottom of the file
+Add the following at the bottom of the file. This entry will be used when you
+edit {{{bigbluebutton.properties}}} below.
 {{{
 ; BigBlueButton: Enable Red5 to connect
 [bbb]
@@ -274,7 +265,6 @@ secret = secret
 permit = 0.0.0.0/0.0.0.0
 read = system,call,log,verbose,command,agent,user
 write = system,call,log,verbose,command,agent,user
-
 }}}
 
 == Configure Nginx ==
@@ -286,11 +276,13 @@ Paste the following into the file and edit server_name with you IP.
 {{{
 server {
      listen   80;
+     # Change to your ip address.
      server_name  192.168.0.136;
 
      access_log  /var/log/nginx/bigbluebutton.access.log;
 
-      location ~ (/open/|/close/|/idle/|/send/) {
+     # Commands used by Flash client for RTMPT.
+     location ~ (/open/|/close/|/idle/|/send/) {
           proxy_pass         http://127.0.0.1:8088;
           proxy_redirect     off;
           proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
@@ -306,7 +298,8 @@ server {
       }
 
 
-       location /deskshare {
+      # Used by the deskshare applet for HTTP Tunneling.
+      location /deskshare {
            proxy_pass         http://127.0.0.1:5080;
            proxy_redirect     default;
            proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
@@ -322,7 +315,7 @@ server {
            include    fastcgi_params;
        }
 
-
+       # Connection to bbb-web
        location /bigbluebutton {
            proxy_pass         http://127.0.0.1:8080;
            proxy_redirect     default;
@@ -343,12 +336,14 @@ server {
            include    fastcgi_params;
        }
 
-        location / {
+       # Main page for BBB
+       location / {
           root   /var/www/bigbluebutton-default;
           index  index.html index.htm;
-        }
+       }
 
-        location /client {
+       # How to server bbb-client.
+       location /client {
                 root    /var/www/bigbluebutton;
                 index  index.html index.htm;
         }
@@ -368,7 +363,6 @@ server {
 == Enable the bigbluebutton nginx config ==
 {{{
  ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
-
 }}}
 
 == Download !BigBlueButton ==
@@ -384,15 +378,6 @@ server {
  wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
  wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
-}}}
-
- * Disable Security settings for TOMCAT6
-{{{
-  vi /etc/default/tomcat6
-
-  Edit and uncomment #TOMCAT6_SECURITY=yes to
-
-  TOMCAT6_SECURITY=no
 }}}
 
 == Setup the database ==
