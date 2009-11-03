@@ -265,7 +265,8 @@ Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
 {{{
  Download Zoiper from here http://www.zoiper.com/zwin.php
 
- After installing Zoiper, start it and create a SIP account using the echotest user created when you ran the {{{cat asterisk-sip.conf >> /etc/asterisk/sip.conf}}} command above.
+ After installing Zoiper, start it and create a SIP account using the echotest user 
+created when you ran the {{{cat asterisk-sip.conf >> /etc/asterisk/sip.conf}}} command above.
 
  Then dial 600. You should be connected to the "Echo" application.
 
