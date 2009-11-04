@@ -17,7 +17,7 @@ First, if you are using Windows, you'll want to share your development directory
   bbb-conf --setup-samba
 }}}
 
-== To develop on BigBlueButton Web (grails application) ==
+== To develop on !BigBlueButton Web (grails application) ==
 
 To setup a development environment for bbb-web, enter the following command
 
@@ -31,12 +31,36 @@ This won't replace the existing bbb-web package; rather, it will let you run bbb
   sudo /etc/init.d/tomcat6 stop
 }}}
 
-To run bbb-web, do the following
+To compile and run bbb-web, do the following
 
 {{{
   cd ~/dev/bbb-web
   ant
 }}}
+
+== To develop on !BigBlueButton Client (Flex application) ==
+
+To setup a development environment for bbb-web, enter the following command
+
+{{{
+  bbb-conf --setup-dev bbb-client
+}}}
+
+Like bbb-web, this won't overwrite the existing bbb-client package; rather, it will let you develop in the `~/dev/bbb-client` directory.
+
+To compile bbb-client, do the following
+
+{{{
+  cd ~/dev/bbb-client
+  ant
+}}}
+
+This will create a folder called `~/dev/bbb-client/bin` which contains the latest client.
+
+Now, to run the client, you can just open your web browser, enter the URL for your computer (or VM), and when you load the web client, you'll be loading the client from `~/dev/bbb-client/bin`.
+
+This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
+
 
 
 = Setup Development Environment =
