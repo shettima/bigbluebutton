@@ -61,16 +61,10 @@ Now, to run the client, you can just open your web browser, enter the URL for yo
 
 This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
 
----
+----
 
 = Setup a Full Development Environment =
 
- * To setup your development environment we've included some helper scripts. Type
-{{{
-  $ bbb-setupdev -s
-}}}
-
-This script will setup samba (Unix implementation of windows file sharing) to let you access files in firstuser from within Windows or Mac.
 
  * Map /home/firstuser into a windows drive (e.g. Z:)
  * Now you'll have access to the directory from your windows machine.
