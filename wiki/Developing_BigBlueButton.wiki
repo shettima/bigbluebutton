@@ -61,9 +61,9 @@ Now, to run the client, you can just open your web browser, enter the URL for yo
 
 This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
 
+---
 
-
-= Setup Development Environment =
+= Setup a Full Development Environment =
 
  * To setup your development environment we've included some helper scripts. Type
 {{{
