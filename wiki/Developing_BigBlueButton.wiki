@@ -11,6 +11,36 @@ We primarily develop on Windows with BBB running on VMWare. This page will descr
 
 = Setup Development Environment =
 
+First, if you are using Windows, you'll want to share your development directory.
+
+{{{
+  bbb-conf --setup-samba
+}}}
+
+== To develop on BigBlueButton Web (grails application) ==
+
+To setup a development environment for bbb-web, enter the following command
+
+{{{
+  bbb-conf --setup-dev bbb-web
+}}}
+
+This won't replace the existing bbb-web package; rather, it will let you run bbb-web as a stand alone grails application.  Before your run bbb-web standalone, you need to stop tomcat.  
+
+{{{
+  sudo /etc/init.d/tomcat6 stop
+}}}
+
+To run bbb-web, do the following
+
+{{{
+  cd ~/dev/bbb-web
+  ant
+}}}
+
+
+= Setup Development Environment =
+
  * To setup your development environment we've included some helper scripts. Type
 {{{
   $ bbb-setupdev -s
