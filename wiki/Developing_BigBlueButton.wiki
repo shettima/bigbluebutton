@@ -9,13 +9,18 @@ We primarily develop on Windows with BBB running on VMWare. This page will descr
  * Follow the instructions to download and start BBB here http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM
  * Make sure you can join to the default conference (85115) and everything works.
 
-= Setup Development Environment =
-
+= Setup Samba =
 First, if you are using Windows, you'll want to share your development directory.
 
 {{{
   bbb-conf --setup-samba
 }}}
+
+ * Map /home/firstuser into a windows drive (e.g. Z:)
+ * Now you'll have access to the directory from your windows machine.
+
+= Setup Development Environment =
+The instructions here allow you to make minor changes to !BigBlueButton. If you want to do more, you should refer to the instructions below under "Setup a Full Development Environment"
 
 == To develop on !BigBlueButton Web (grails application) ==
 
@@ -64,16 +69,16 @@ This works because `bbb-conf --setup-dev bbb-client` changed the location for `/
 ----
 
 = Setup a Full Development Environment =
+The instructions below assumes you have FlexBuilder and Eclipse installed with the Subclipse plugin.
 
+== Remove BBB packages ==
 
- * Map /home/firstuser into a windows drive (e.g. Z:)
- * Now you'll have access to the directory from your windows machine.
- * From a shell, remove all BBB pacakges. You can list them by yping
+List the BBB packages by typing
 {{{
 dpkg -l | grep bbb
 }}}
 
-which will list the bbb packages
+which results:
 {{{
 rc  bbb-apps                          0.35.0-1ubuntu113                         Red5 applications for BigBlueButton
 ii  bbb-apps-deskshare                0.4.0-1ubuntu53                           Red5 applications for BigBlueButton deskshar
@@ -85,25 +90,45 @@ ii  bbb-config                        0.4.0-1ubuntu63                           
 
  * To remove, type e.g. {{{apt-get remove bbb-apps}}}
  * Create a dev directory in /home/firstuser/dev
- * Check out bbb-client, bbb-apps, bbb-sip, bbb-video, bbb-deskshare
- * Import bbb-client int !FlexBuilder
- * Import the other projects into Eclipse
  
-= Developing the Client =
- * The generated files for bbb-client will be in bbb-client/bin
- * Create a directory /var/www/client-dev
- * Create a softlink under /var/www/client-dev/client to point to /home/firstuser/dev/client/bin
+== Developing the Client ==
+Create a client dev directory
 {{{
- ln -s /home/firstuser/dev/client/bin /var/www/client-dev/client 
+ cd ~/dev
+ mkdir ~/dev/source
+ mkdir ~/dev/source/client
 }}}
- * Edit {{{/etc/nginx/sites-available/bigbluebutton}}} to use the dev bbb-client
+
+From your FlexBuilder, checkout bbb-client from trunk. Make sure you checkout into the `~/dev/source/client` directory through your mapped network drive.
+
+Copy over the packaged `config.xml` over your dev `config.xml`
+{{{
+  cp /var/www/bigbluebutton/client/conf/config.xml ~/dev/source/client/bigbluebutton-client/conf/
+}}}
+
+Make Nginx serve the dev client. The generated files for bbb-client will be in bbb-client/bin folder.
+
+Create a directory `/var/www/client-dev`
+
+{{{
+  sudo mkdir /var/www/client-dev
+  sudo ln -s /home/firstuser/dev/source/client/bigbluebutton-client/bin /var/www/client-dev/client 
+}}}
+
+Edit Nginx config
+{{{
+ sudo vi /etc/nginx/sites-available/bigbluebutton
+}}}
+
+Modify the `/client` section to point to `/var/www/client-dev`
 {{{
         location /client {
                 root    /var/www/client-dev;
                 index  index.html index.htm;
         }
 }}}
- * Now your development client will be picked up when you point your browser to 
+
+Now your development client will be picked up when you point your browser to 
 {{{
 http://<yourhost>/client/BigBlueButton.html
 }}}
