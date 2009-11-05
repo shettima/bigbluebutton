@@ -6,9 +6,9 @@ This is still a draft. We will finalize this when we release 0.62. If you run in
 = Becoming a !BigBlueButton Developer =
 Most developers find it challenging to modify other open source projects for their own needs.  For !BigBlueButton, we didn't want to just write software and throw it over the wall; instead, we wanted achieve the following goals:
 
-# Make it easy to implement small changes
-# Provide good documentation on how to setup a development environment for build-test-deploy
-# Support other developers so they could become contributors to the project
+  # Make it easy to implement small changes
+  # Provide good documentation on how to setup a development environment for build-test-deploy
+  # Support other developers so they could become contributors to the project
 
 If you just want to run !BigBlueButton, the BigBlueButtonVM makes it very easy to setup your own serer.  You may not realize that the VM is also a full !BigBlueButton development environment.  We've pre-configured it with all the tools needed to build, test, and deploy updates to BigBlueButton.   This is how we develop !BigBlueButton internally: we use Windows for the development to run Flex Builder and Eclipse, and run the VM under VMWare Workstation to test changes. 
 
