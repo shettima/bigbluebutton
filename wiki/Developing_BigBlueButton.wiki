@@ -40,7 +40,7 @@ Once you've mapped it as your V drive, you can edit the files from within window
 = Setup Development Environment =
 The instructions here allow you to make minor changes to !BigBlueButton. If you want to do more, skip to the next section on "Setup a Full Development Environment"
 
-== To make changes to the web interface ==
+== bbb-web: Making changes to the BigBlueButton web interface ==
 
 To setup a development environment for bbb-web, enter the following command
 
@@ -69,7 +69,7 @@ If you want to revert back to the web interface installed by the package bbb-web
 }}}
 
 
-== To make changes to the Flex client ==
+== bbb-client: Making changes to the BigBlueButton Flex client ==
 
 To setup a development environment for bbb-web, enter the following command
 
@@ -92,23 +92,26 @@ Now, to run the client, you can just open your web browser, enter the URL for yo
 
 This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
 
-== To make changes to the BigBlueButton Red5 application (bbb-apps) ==
+== bbb-apps: Making changes ==
 
-To setup a development environment for bbb-web, enter the following command
+To setup a development environment for bbb-apps, enter the following command
 
 {{{
   bbb-conf --setup-dev bbb-apps
 }}}
 
-This will checkout bbb-apps to `~/dev/bbb-apps`.  Stop red5 and change into that new directory.
+This will checkout bbb-apps to `~/dev/bbb-apps`.  The easiest way to run your own version of bbb-apps is to run red5 from the command line.  This way, you can immediately see any errors on the console.  To do this
 
 {{{
     sudo /etc/init.d/red5 stop
-    cd ~/dev/bbb-apps
 }}}
 
 Now, to test your own local copy, do the following.
 {{{
+    cd ~/dev/bbb-apps
+
+    # Make changes to source
+
     ant deploy
     sudo -u red5 /usr/share/red5/red5.sh
 }}}
