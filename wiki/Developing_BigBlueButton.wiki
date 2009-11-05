@@ -6,11 +6,11 @@
 This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
 = Welcome to !BigBlueButton Development =
-!BigBlueButton contains quite a few OpenSourceComponents, that that doesn't mean is has to be hard to modify.  As part of every release cycle, we're constantly trying to make it easier for outside developers to modify and update !BigBlueButton from source.  Instead of just writing software and throwing a big tar file over the wall, we wanted achieve the following goals:
+In looking at other successful open source projects, one consistent theme is they try to make it easy for other developers to make changes to the code.  When creating BigBlueButton, instead of just writing software and throwing a tarball over the wall, we had the following goals:
 
-  # Make it easy to implement small changes
-  # Provide good documentation on how to setup a development environment for build-test-deploy
-  # Support other developers so they could become contributors to the project
+  # Make it easy for a developer to implement small changes
+  # Make it easy for a developer to setup a full development environment
+  # Support other developers so that some may become contributors to the project
 
 If you just want to run !BigBlueButton, the BigBlueButtonVM makes it very easy to setup your own serer.  What you may not realize is that the VM is also a full !BigBlueButton development environment.  We've pre-configured it with all the tools needed to build, test, and deploy updates to BigBlueButton.   This is how we develop !BigBlueButton internally: we use Windows for the development to run Flex Builder and Eclipse, and run the VM under VMWare Workstation to test changes. 
 
