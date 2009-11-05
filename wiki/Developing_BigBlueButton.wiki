@@ -4,27 +4,28 @@
 This is still a draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
 = Becoming a !BigBlueButton Developer =
-Want to make changes to !BigBlueButton?  Great, we're always looking for a few good developers.  :-)
+Most developers find it challenging to modify other open source projects for their own needs.  For !BigBlueButton, we didn't want to just write software and throw it over the wall; instead, we wanted achieve the following goals:
 
-In this project, we're not just throwing software over the wall; instead, we've invested a portion of our development efforts to make it easier for other developers to modify and contribute to BigBlueButton.  
+# Make it easy to implement small changes
+# Provide good documentation on how to setup a development environment for build-test-deploy
+# Support other developers so they could become contributors to the project
 
-If you just want to run !BigBlueButton, the BigBlueButtonVM makes it really easy (you'll have your own server running in about 10 minutes).  If you've downloaded the VM, you may not realize that you've downloaded the full !BigBlueButton development environment.  To show how this works, we present approaches on how you can make changes to BigBlueButton.  The first approach is within the Unix environment.  Nothing fancy, but with only a few commands, you can modify the !BigBlueButton Flex client or update the text on the !BigBlueButton web interface.
+If you just want to run !BigBlueButton, the BigBlueButtonVM makes it very easy to setup your own serer.  You may not realize that the VM is also a full !BigBlueButton development environment.  We've pre-configured it with all the tools needed to build, test, and deploy updates to BigBlueButton.   This is how we develop !BigBlueButton internally: we use Windows for the development to run Flex Builder and Eclipse, and run the VM under VMWare Workstation to test changes. 
+
+To show you how this works, this document presents two approaches.  Following our first goal (make it easy to implement small changes), we show how with a few commands at the Unix terminal, you can modify components of !BigBluebutton.
 
 After you've made a few quick changes, you'll quickly want to start using some Real Development Tools (TM).  The second approach show you how to setup Flex Builder for editing the BigBlueButton client, and how to setup Eclipse to edit the other components.
 
-This is how we develop !BigBlueButton internally: we use Windows for the development environment and the !BigBlueButton VM to build and test.
-
-We primarily develop on Windows with BBB running on VMWare. This page will describe how we setup our development environment for !BigBlueButton.
 
 = Before you begin =
 First, follow the instructions on [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM  how to setup the BigBlueButton VM].
 
 Make sure the VM has an IP address and you can open your web browser to the IP address and  join the default conference 85115.
 
-These instructions assume you are running the BigBlueButton VM within VMWare and your on a Windows machine.  If you are developing from Unix, everything is pretty similar and you can skip the step to setup samba.
+You should also review the ArchitectureOverview to understand the main components of !BigBluebutton.
 
-= Setup Samba =
-First you'll want to share your development directory so you can access it from with Windows.
+= Setup Samba (Windows only) =
+Setting up Samba allows you to edit source files in the VM from your Windows environment.
 
 From within the VM, enter the command
 
@@ -32,13 +33,14 @@ From within the VM, enter the command
   bbb-conf --setup-samba
 }}}
 
- * Map /home/firstuser into a windows drive (e.g. Z:)
- * Now you'll have access to the directory from your windows machine.
+Next, map /home/firstuser into a windows drive (e.g. V:).  To do this, open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
+ 
+Once you've mapped it as your V drive, you can edit the files from within windows. 
 
 = Setup Development Environment =
-The instructions here allow you to make minor changes to !BigBlueButton. If you want to do more, you should refer to the instructions below under "Setup a Full Development Environment"
+The instructions here allow you to make minor changes to !BigBlueButton. If you want to do more, skip to the next section on "Setup a Full Development Environment"
 
-== To develop on !BigBlueButton Web (grails application) ==
+== To make changes to the web interface ==
 
 To setup a development environment for bbb-web, enter the following command
 
@@ -59,7 +61,15 @@ To compile and run bbb-web, do the following
   ant
 }}}
 
-== To develop on !BigBlueButton Client (Flex application) ==
+If you want to revert back to the web interface installed by the package bbb-web, do the following
+
+{{{
+  # Make sure grails isn't running
+  sudo /etc/init.d/tomcat6 start
+}}}
+
+
+== To make changes to the Flex client ==
 
 To setup a development environment for bbb-web, enter the following command
 
