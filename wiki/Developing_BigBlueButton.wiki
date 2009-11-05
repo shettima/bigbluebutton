@@ -1,10 +1,12 @@
 #summary How to develop BigBlueButton.
 
+<wiki:toc max_depth="2" />
+
 *NOTE*
 This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
-= Developing !BigBlueButton =
-Most developers find it challenging to modify other open source project.  Between getting all the components, .  For !BigBlueButton, we didn't want to just write software and throw it over the wall; instead, we wanted achieve the following goals:
+= Welcome to !BigBlueButton Development =
+!BigBlueButton contains quite a few OpenSourceComponents, that that doesn't mean is has to be hard to modify.  As part of every release cycle, we're constantly trying to make it easier for outside developers to modify and update !BigBlueButton from source.  Instead of just writing software and throwing a big tar file over the wall, we wanted achieve the following goals:
 
   # Make it easy to implement small changes
   # Provide good documentation on how to setup a development environment for build-test-deploy
@@ -17,17 +19,15 @@ To show you how this works, this document presents two approaches.  Following ou
 After you've made a few quick changes, you'll quickly want to start using some Real Development Tools (TM).  The second approach show you how to setup Flex Builder for editing the BigBlueButton client, and how to setup Eclipse to edit the other components.
 
 
-= Before you begin =
+== Getting setup ==
 First, follow the instructions on [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM  how to setup the BigBlueButton VM].
 
 Make sure the VM has an IP address and you can open your web browser to the IP address and  join the default conference 85115.
 
 You should also review the ArchitectureOverview to understand the main components of !BigBluebutton.
 
-= Setup Samba (Windows only) =
-Setting up Samba allows you to edit source files in the VM from your Windows environment.
-
-From within the VM, enter the command
+== If you develop on Windows ==
+No worries, you can run !BigBlueButton   You can use toolall the BigBlueButton tools in the VM with the following command.
 
 {{{
   bbb-conf --setup-samba
