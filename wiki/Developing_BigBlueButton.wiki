@@ -1,10 +1,10 @@
 #summary How to develop BigBlueButton.
 
 *NOTE*
-This is still a draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
+This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
 = Developing !BigBlueButton =
-Most developers find it challenging to modify other open source projects for their own needs.  For !BigBlueButton, we didn't want to just write software and throw it over the wall; instead, we wanted achieve the following goals:
+Most developers find it challenging to modify other open source project.  Between getting all the components, .  For !BigBlueButton, we didn't want to just write software and throw it over the wall; instead, we wanted achieve the following goals:
 
   # Make it easy to implement small changes
   # Provide good documentation on how to setup a development environment for build-test-deploy
@@ -92,6 +92,34 @@ Now, to run the client, you can just open your web browser, enter the URL for yo
 
 This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
 
+== To make changes to the BigBlueButton Red5 application (bbb-apps) ==
+
+To setup a development environment for bbb-web, enter the following command
+
+{{{
+  bbb-conf --setup-dev bbb-apps
+}}}
+
+This will checkout bbb-apps to `~/dev/bbb-apps`.  Stop red5 and change into that new directory.
+
+{{{
+    sudo /etc/init.d/red5 stop
+    cd ~/dev/bbb-apps
+}}}
+
+Now, to test your own local copy, do the following.
+{{{
+    ant deploy
+    sudo -u red5 /usr/share/red5/red5.sh
+}}}
+
+If you want to revert back to the packaged version of BigBlueButton apps, do the following
+
+{{{
+    rm -rf /usr/share/red5/webapps/bigbluebutton
+    sudo apt-get install bbb-apps
+    sudo /etc/init.d/red5 start
+}}}
 ----
 
 = Setup a Full Development Environment =
