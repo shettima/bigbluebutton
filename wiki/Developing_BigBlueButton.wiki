@@ -3,6 +3,15 @@
 *NOTE*
 This is still a draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
+= Our Goal =
+We are developers, and we want to make it easy for others to help out in the BigBlueButton project.  Because BigBlueButton incorporates a lot of OpenSourceComponents (over 14), there's a fair bit of work to setup all the components from source.  
+
+The BigBlueButton VM contains everything needed to run BigBlueButton.  We've extended the VM with scripts to let you also use it as a development engine.  We present below two ways to let you easily make changes to BigBlueButton.  The first approach is within the Unix environment.  With only a few commands, you can modify the BigBlueButton Flex client or update the text on the BigBlueButton web interface.
+
+After you've made a few quick changes, you'll quickly want to start using some Real Development Tools.  The second approach is to use Flex Builder for editing the BigBlueButton client and Eclipse to edit the other components.
+
+This is how we develop BigBlueButton internally: we use Windows for the development environment and the BigBlueButton VM to build and test.
+
 We primarily develop on Windows with BBB running on VMWare. This page will describe how we setup our development environment for !BigBlueButton.
 
 = Get BBB VM running =
