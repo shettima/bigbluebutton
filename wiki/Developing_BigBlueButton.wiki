@@ -8,11 +8,11 @@ Want to make changes to !BigBlueButton?  Great, we're always looking for a few g
 
 In this project, we're not just throwing software over the wall; instead, we've invested a portion of our development efforts to make it easier for other developers to modify and contribute to BigBlueButton.  
 
-If you just want to run BigBlueButton, the BigBlueButtonVM makes it really easy (you'll have your own server running in about 10 minutes).  If you've downloaded the VM, you may not realize that you've downloaded the full !BigBlueButton development environment.  To show how this works, we present approaches on how you can make changes to BigBlueButton.  The first approach is within the Unix environment.  Nothing fancy, but with only a few commands, you can modify the BigBlueButton Flex client or update the text on the BigBlueButton web interface.
+If you just want to run !BigBlueButton, the BigBlueButtonVM makes it really easy (you'll have your own server running in about 10 minutes).  If you've downloaded the VM, you may not realize that you've downloaded the full !BigBlueButton development environment.  To show how this works, we present approaches on how you can make changes to BigBlueButton.  The first approach is within the Unix environment.  Nothing fancy, but with only a few commands, you can modify the !BigBlueButton Flex client or update the text on the !BigBlueButton web interface.
 
 After you've made a few quick changes, you'll quickly want to start using some Real Development Tools (TM).  The second approach show you how to setup Flex Builder for editing the BigBlueButton client, and how to setup Eclipse to edit the other components.
 
-This is how we develop BigBlueButton internally: we use Windows for the development environment and the BigBlueButton VM to build and test.
+This is how we develop !BigBlueButton internally: we use Windows for the development environment and the !BigBlueButton VM to build and test.
 
 We primarily develop on Windows with BBB running on VMWare. This page will describe how we setup our development environment for !BigBlueButton.
 
