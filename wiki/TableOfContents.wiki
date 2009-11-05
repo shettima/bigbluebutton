@@ -1,5 +1,5 @@
   * [Installation Installation of Version 0.61]
-    * [BigBlueButtonVM Download Virtual Machine]
+    * [BigBlueButtonVM Run the Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu (5 minutes)]
     * [InstallingBigBlueButton Install from source (Ubuntu)]
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)]
