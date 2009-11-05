@@ -3,7 +3,7 @@
 = Introduction =
 
 There are four ways you can install BigBlueButton
-    * [BigBlueButtonVM Download Virtual Machine] (white belt)
+    * [BigBlueButtonVM Run the Virtual Machine] (white belt)
     * [InstallationUbuntu Install on Ubuntu (5 minutes)] (yellow belt)
     * [InstallingBigBlueButton Install from source (Ubuntu)] (brown belt)
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)] (brown belt, two black stripes) 
