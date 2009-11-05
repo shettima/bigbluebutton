@@ -3,7 +3,7 @@
 *NOTE*
 This is still a draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
-= Our Goal =
+= Becoming a BigBlueButton Developer =
 We are developers, and we want to make it easy for others to help out in the BigBlueButton project.  Because BigBlueButton incorporates a lot of OpenSourceComponents (over 14), there's a fair bit of work to setup all the components from source.  
 
 The BigBlueButton VM contains everything needed to run BigBlueButton.  We've extended the VM with scripts to let you also use it as a development engine.  We present below two ways to let you easily make changes to BigBlueButton.  The first approach is within the Unix environment.  With only a few commands, you can modify the BigBlueButton Flex client or update the text on the BigBlueButton web interface.
@@ -14,12 +14,17 @@ This is how we develop BigBlueButton internally: we use Windows for the developm
 
 We primarily develop on Windows with BBB running on VMWare. This page will describe how we setup our development environment for !BigBlueButton.
 
-= Get BBB VM running =
- * Follow the instructions to download and start BBB here http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM
- * Make sure you can join to the default conference (85115) and everything works.
+= Before you begin =
+First, follow the instructions on [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM  how to setup the BigBlueButton VM].
+
+Make sure the VM has an IP address and you can open your web browser to the IP address and  join the default conference 85115.
+
+These instructions assume you are running the BigBlueButton VM within VMWare and your on a Windows machine.  If you are developing from Unix, everything is pretty similar and you can skip the step to setup samba.
 
 = Setup Samba =
-First, if you are using Windows, you'll want to share your development directory.
+First you'll want to share your development directory so you can access it from with Windows.
+
+From within the VM, enter the command
 
 {{{
   bbb-conf --setup-samba
