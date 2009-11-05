@@ -125,6 +125,8 @@ If you want to revert back to the packaged version of BigBlueButton apps, do the
 }}}
 ----
 
+_Older content -- to be updated__
+
 = Setup a Full Development Environment =
 The instructions below assumes you have FlexBuilder and Eclipse installed with the Subclipse plugin.
 
