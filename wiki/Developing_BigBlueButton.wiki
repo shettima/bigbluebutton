@@ -19,20 +19,20 @@ To show you how this works, this document presents two approaches.  Following ou
 After you've made a few quick changes, you'll quickly want to start using some Real Development Tools (TM).  The second approach show you how to setup Flex Builder for editing the BigBlueButton client, and how to setup Eclipse to edit the other components.
 
 
-== Getting setup ==
+== Getting Started ==
 First, follow the instructions on [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM  how to setup the BigBlueButton VM].
 
 Make sure the VM has an IP address and you can open your web browser to the IP address and  join the default conference 85115.
 
 You should also review the ArchitectureOverview to understand the main components of !BigBluebutton.
 
-== If you develop on Windows ==
-No worries, you can run !BigBlueButton   You can use toolall the BigBlueButton tools in the VM with the following command.
+If you are developing on Windows, run the following command
 
 {{{
   bbb-conf --setup-samba
 }}}
 
+This will share the /home/firstuser/dev folder so you can easily access your source from any windows editor.  Some editors (such as Eclipses) need you to map a network drive to a 
 Next, map /home/firstuser into a windows drive (e.g. V:).  To do this, open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
  
 Once you've mapped it as your V drive, you can edit the files from within windows. 
