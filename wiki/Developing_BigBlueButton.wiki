@@ -77,7 +77,7 @@ This ant script runs the default task (cleanandmake) and uses the mxmlc compiler
 
 Okay, at this point it looks the same.  (Actually, it may look different because you are build from trunk, which likely will have changes from the version in a release).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
 
-Let dive in and make a change.  Notice at the top of the client it says "You are logged in as <yourname> ...".  To find where this string is specified in the code, enter the following command.
+Let dive in and make a change.  Notice at the top of the client it says "You are logged in as ...".  To find where this string is specified in the code, enter the following command.
 
 {{{
 $ find . -exec grep -H "You are logged" '{}' \;
