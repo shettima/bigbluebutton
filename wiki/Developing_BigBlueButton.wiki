@@ -191,6 +191,13 @@ _Draft content -- to be updated!_
 = Setup a Full Development Environment =
 The instructions below assumes you have FlexBuilder and Eclipse installed with the Subclipse plugin.
 
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html !BigBlueButton Apps]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html]
+
 == Remove BBB packages ==
 
 List the BBB packages by typing
