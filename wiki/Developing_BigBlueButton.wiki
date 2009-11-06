@@ -10,9 +10,9 @@ We want to make it easy for you develop and extend BigBlueButton.  To achieve th
 
 One of the tools is the BigBlueButton VM.  There are over fourteen OpenSourceComponents in BigBlueButton, and it's no small feat to set everything up.  In the beginning, we developed everything on Windows, and then manually installed all the components on a server.  That was a pain.  Next we created packages so InstallationUbuntu would only take a few minutes.  The pain reduces, but we were still developing and testing in Windows, but releasing and supporting on Unix.  Any difference between the two platforms caused lots of headaches in bug fixing.
 
-We've evolved our process to use the BigBlueButton VM both as a fully functional implementation of BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  Internally, we still use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share).
+We've evolved our process to use the BigBlueButton VM both as a fully functional implementation of !BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  Internally, we still use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share).
 
-The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, no may you want to run the VM.  In that case, it can provide you a reference implementation that includes a properly setup BigBlueButton server along with all the tools to make changes to the code.  By looking through the configuration (and using the docs below), you should be able to setup your own environment.
+The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, no may you want to run the VM.  In that case, it can provide you a reference implementation that includes a properly setup !BigBlueButton server along with all the tools to make changes to the code.  By looking through the configuration (and using the docs below), you should be able to setup your own environment.
 
 We'll start by showing you how with issuing a few commands in a terminal window you can make changes to !BigBlueButton and immediately see the updates in the VM.  The second part of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.
 
@@ -26,12 +26,9 @@ There are basically three main components to BigBlueButton, each has it's own co
   * bigbluebutton-client (referred to as bbb-client) is the real-time Flash client written in Flex.
   * bigbluebutton-apps (referred to as bbb-apps) is the red5 module that provides the synchronization logic for the bbb-client.
 
+== Setting up the BigBlueButton VM ==
 
-Make sure the VM has an IP address and you can open your web browser to the IP address and  join the default conference 85115.
-
-You should also review the 
-
-If you are developing on Windows, run the following command
+If you are developing on Windows, you'll want to access the !BigBlueButton source tree checked out on the VM.  To do this, issue the following command
 
 {{{
   bbb-conf --setup-samba
@@ -39,11 +36,61 @@ If you are developing on Windows, run the following command
 
 This will share the /home/firstuser/dev folder so you can easily access your source from any windows editor.  Some editors (such as Eclipses) need you to map a network drive to a 
 Next, map /home/firstuser into a windows drive (e.g. V:).  To do this, open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
- 
+
 Once you've mapped it as your V drive, you can edit the files from within windows. 
 
-= Setup Development Environment =
-The instructions here allow you to make minor changes to !BigBlueButton. If you want to do more, skip to the next section on "Setup a Full Development Environment"
+Note: `bbb-conf` is the !BigBlueButton configuration utility.  It's a bash shell script that lives in `/usr/local/bin/bbb-conf`.   If you are following through the instructions below and want to see what happens when you invoke bbb-conf, just crack open the scrip and you'll see the sequent of commands.  You can use those commands as a basis for setting up your own environment.  
+
+
+= How to make changes to BigBlueButton =
+We will start by showing you how to make quick and easy changes to !BigBlueButton.  To do this, we'll use `bbb-conf` to setup a development environment for bbb-web, bbb-client, nd bbb-apps.  
+
+If you want to jump right into setting up a complete environment, we recommend going through one of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
+
+Let's start with making a change to the Flex client.
+
+== bbb-client: Making changes to the BigBlueButton Flex client ==
+
+To setup a development environment for bbb-web, enter the following command
+
+{{{
+  bbb-conf --setup-dev bbb-client
+}}}
+
+When we build the client, the output will go into `/home/firstuser/dev/bbb-client`.  This command does the following steps:
+
+  # run `svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-client bbb-client`
+  # Modify the root for '/client' in nginx to point to `/home/firstuser/dev/bbb-client`
+  # Restart nginx 
+  # Copy the `config.xml` from `/var/www/bigbluebutton/client/conf` into `~/dev/bbb-client/bin/conf/config.xml`
+
+The first step anonymously checks out the code.  The next step points request to the load the client to your local build.  This leaves the current BigBlueButton client installed and untouched if you want to revert back.  To revert back, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
+
+{{{
+        location /client {
+                root    /var/www/bigbluebutton;
+                index  index.html index.htm;
+        }
+}}}
+
+The last steps copies the current settings for `config.xml` into your local development directory.  This way, the local !BigBlueButton client has the same configuration.
+
+Okay.  There's a few steps there, but what about compiling the client. To compile the local version of bbb-client, do the following
+
+{{{
+  cd ~/dev/bbb-client
+  ant
+}}}
+
+This ant script will call the Flex mxmlc compiler to rebuild the client from source and store the results into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse, login, and see your client.  
+
+Okay, at this point it looks the same.  Let's make a change.  
+
+
+
+Now, to run the client, you can just open your web browser, enter the URL for your computer (or VM), and when you load the web client, you'll be loading the client from `~/dev/bbb-client/bin`.
+
+This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
 
 == bbb-web: Making changes to the BigBlueButton web interface ==
 
@@ -74,28 +121,6 @@ If you want to revert back to the web interface installed by the package bbb-web
 }}}
 
 
-== bbb-client: Making changes to the BigBlueButton Flex client ==
-
-To setup a development environment for bbb-web, enter the following command
-
-{{{
-  bbb-conf --setup-dev bbb-client
-}}}
-
-Like bbb-web, this won't overwrite the existing bbb-client package; rather, it will let you develop in the `~/dev/bbb-client` directory.
-
-To compile bbb-client, do the following
-
-{{{
-  cd ~/dev/bbb-client
-  ant
-}}}
-
-This will create a folder called `~/dev/bbb-client/bin` which contains the latest client.
-
-Now, to run the client, you can just open your web browser, enter the URL for your computer (or VM), and when you load the web client, you'll be loading the client from `~/dev/bbb-client/bin`.
-
-This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
 
 == bbb-apps: Making changes ==
 
