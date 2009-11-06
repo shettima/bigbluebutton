@@ -6,29 +6,30 @@
 This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
 = Welcome =
-We want to make it easy for you develop and extend !BigBlueButton.  To achieve this, rather than just throw a tarball over the wall, we've tried to provide you tools and documentation to quickly setup a development environment, make a change, and see that change deployed to your own !BigBlueButton server.
+Our goal is to make it easy for you develop and extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup a development environment, make a change, and see that change deployed to your own !BigBlueButton server.
 
-One of the tools is the !BigBlueButton VM.  There are over fourteen OpenSourceComponents in BigBlueButton, and it's no small feat to set everything up.  In the beginning, we developed everything on Windows, and then manually installed all the components on a server.  That was a pain.  Next we created packages so InstallationUbuntu would only take a few minutes.  The pain reduces, but we were still developing and testing in Windows, but releasing and supporting on Unix.  Any difference between the two platforms caused lots of headaches in bug fixing.
+One of the tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain.  Next we created packages so InstallationUbuntu would only take a few minutes, and build a [http://bigbluebutton.org/hudson/ hudson server] to automatically compile and build the packages from source in Google Code.  The pain reduced, but we were still developing and testing in Windows.  And there differences in Linux that caused lots of support headaches.
 
-We've evolved our process to use the !BigBlueButton VM both as a fully functional implementation of !BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  Internally, we still use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share).
+We make more improvements: we moved our building and testing to a Linux environment running under VMWare.  In parallel, we were shipping a BigBlueButton VM.  (You can see where this is heading).  We soon evolved our process to use the !BigBlueButton VM both as a fully functional implementation of !BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  By doing this, we can provide you the same environment we build and test with !BigBlueButton.  
 
-The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, no may you want to run the VM.  In that case, it can provide you a reference implementation that includes a properly setup !BigBlueButton server along with all the tools to make changes to the code.  By looking through the configuration (and using the docs below), you should be able to setup your own environment.
+The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM can provide you a working, reference implementation of the !BigBlueButton server and !BigBlueButton development environment.  By looking through the configuration (and using the docs below), you should be able to setup your own environment.  
 
-We'll start by showing you how with issuing a few commands in a terminal window you can make changes to !BigBlueButton and immediately see the updates in the VM.  The second part of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.
+
+We'll start by showing you how to make quick changes to !BigBlueButton and immediately see the updates in the your VM.  The second part of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.  Our approach is to use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share). 
 
 
 == Getting Started ==
-First setup a !BigBlueButtonVM.  Next, read the ArchitectureOverview to understand the main components of !BigBluebutton.
+First, setup a BigBlueButtonVM if you have not already done so.  If you are totally new to !BigBlueButton, you should read over the ArchitectureOverview.  Doing so will make the following instructions much easier to understand.
 
-There are basically three main components to BigBlueButton, each has it's own configuration for development.
+As a brief summary, there are basically three main components to BigBlueButton, and each component has it's own runtime (and therefore its own way of building from source).
 
-  * bigbluebutton-web (referred as bbb-web) is the scheduling and login web interface written in Grails.
-  * bigbluebutton-client (referred to as bbb-client) is the real-time Flash client written in Flex.
-  * bigbluebutton-apps (referred to as bbb-apps) is the red5 module that provides the synchronization logic for the bbb-client.
+  * bigbluebutton-web, referred as _bbb-web_, is the scheduling and web interface for !BigBlueButton.  This component is written in Grails.
+  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript V3 using Flex.
+  * bigbluebutton-apps, referred to as _bbb-apps_, is the red5 module that provides the synchronization logic for the bbb-client.  This component is straight up Java.
 
-== Setting up the BigBlueButton VM ==
+== Setting up access to the VM from windows ==
 
-If you are developing on Windows, you'll want to access the !BigBlueButton source tree checked out on the VM.  To do this, issue the following command
+(Skip this if you are developing on Unix and pure of heart.)  If you are developing on Windows, you'll want to access the !BigBlueButton source tree checked on the VM.  Login to the VM and issue the following command
 
 {{{
   bbb-conf --setup-samba
