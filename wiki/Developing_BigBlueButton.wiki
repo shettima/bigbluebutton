@@ -146,7 +146,7 @@ If you want to revert back to the web interface installed by the package bbb-web
 }}}
 
 
-== bbb-apps: Making changes to the !BigBlueButton red5 module ==
+== Making changes to the !BigBlueButton red5 module: bbb-apps ==
 
 The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as show at the end of this section).
 
