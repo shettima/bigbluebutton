@@ -131,7 +131,6 @@ Next, let's compile and run bbb-web
 
 The default task for ant is to do make sure all the libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easy to see any exceptions as you interact with the web interface.
 
-
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 
 {{{
@@ -139,9 +138,9 @@ If you want to revert back to the web interface installed by the package bbb-web
 }}}
 
 
-== bbb-apps: Making changes ==
+== bbb-apps: Making changes to the !BigBlueButton red5 module ==
 
-The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, with bbb-apps we need to remove the existing bbb-web.
+The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, with bbb-apps we need to first remove the existing bbb-web package.  
 
 To setup a development environment for bbb-apps, enter the following command
 
@@ -151,21 +150,32 @@ To setup a development environment for bbb-apps, enter the following command
 
 This will 
 
-  # checkout bbb-apps to `~/dev/bbb-apps`.  The easiest way to run your own version of bbb-apps is to run red5 from the command line.  This way, you can immediately see any errors on the console.  To do this
+  # checkout bbb-apps to `~/dev/bbb-apps`.  
+  # Enable write access to `/usr/share/red5/webapps`
+  # Uninstall the existing `bbb-apps` package
+  # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
+
+Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restarts red5.
+
+At this point red5 is still running.  When we deploy the local build of bbb-apps to `/usr/share/red5` we can check the `/usr/share/red5/log` files for errors, but you'll find it easier to open a new terminal window and to the following commands
 
 {{{
     sudo /etc/init.d/red5 stop
 }}}
 
-Now, to test your own local copy, do the following.
+We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
 {{{
     cd ~/dev/bbb-apps
-
-    # Make changes to source
-
     ant deploy
+}}}
+
+At this point, `/usr/share/red5/webapps/bigbluebutton` is the local copy.  Now switch back to the second terminal window.
+
+{{{
     sudo -u red5 /usr/share/red5/red5.sh
 }}}
+
+You'll now see all the output from red5 at the console.  
 
 If you want to revert back to the packaged version of BigBlueButton apps, do the following
 
