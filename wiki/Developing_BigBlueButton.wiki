@@ -86,7 +86,9 @@ $ find . -exec grep -H "You are logged" '{}' \;
 You should get a few matches, including the following:
 
 {{{
-./src/org/bigbluebutton/main/view/components/MainToolbar.mxml: loggedInUserLbl.text = "You are logged in as " + name + " to " + room + " as role " + role + ".";
+./src/org/bigbluebutton/main/view/components/MainToolbar.mxml: \ 
+loggedInUserLbl.text = "You are logged in as " + name + " to " + \
+room + " as role " + role + ".";
 }}}
 
 Edit `./src/org/bigbluebutton/main/view/components/MainToolbar.mxml` and change the text "You are logged in as" to "You are NOW logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change at the top.
