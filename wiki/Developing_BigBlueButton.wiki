@@ -34,7 +34,7 @@ If you are developing on Windows, you'll want to access the !BigBlueButton sourc
   bbb-conf --setup-samba
 }}}
 
-This will share the /home/firstuser/dev folder so you can easily access your source from any windows editor.  Some editors (such as Eclipses) need you to map a network drive to a 
+This will share the `/home/firstuser/dev` folder so you can easily access your source from any windows editor.  Some editors (such as Eclipses) need you to map a network drive to a 
 Next, map /home/firstuser into a windows drive (e.g. V:).  To do this, open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
 
 Once you've mapped it as your V drive, you can edit the files from within windows. 
@@ -51,13 +51,14 @@ Let's start with making a change to the Flex client.
 
 == bbb-client: Making changes to the BigBlueButton Flex client ==
 
-To setup a development environment for bbb-web, enter the following command
+When we build the client, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-web, enter the following command
 
 {{{
   bbb-conf --setup-dev bbb-client
 }}}
 
-When we build the client, the output will go into `/home/firstuser/dev/bbb-client`.  This command does the following steps:
+
+You may be prompted to enter your password for `firstuser` -- this is because the script is running some commands as root using sudo.   This script does the following:
 
   # run `svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-client bbb-client`
   # Modify the root for '/client' in nginx to point to `/home/firstuser/dev/bbb-client`
@@ -75,22 +76,29 @@ The first step anonymously checks out the code.  The next step points request to
 
 The last steps copies the current settings for `config.xml` into your local development directory.  This way, the local !BigBlueButton client has the same configuration.
 
-Okay.  There's a few steps there, but what about compiling the client. To compile the local version of bbb-client, do the following
+Everything is now setup to compile the local version of bbb-client.
 
 {{{
   cd ~/dev/bbb-client
   ant
 }}}
 
-This ant script will call the Flex mxmlc compiler to rebuild the client from source and store the results into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse, login, and see your client.  
+This ant script runs the default task (cleanandmake) to use the Flex mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse, login, and see your client.  
 
-Okay, at this point it looks the same.  Let's make a change.  
+Okay, at this point it looks the same.  Again, behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  Let's make a change.  Notice at the top of the client it says "You are logged in as <yourname> ...".  Let's find where that is in the code, change it, and rebuild.
 
+{{{
+$ find . -exec grep -H "You are logged" '{}' \;
+}}}
 
+You'll get some point, and one line in particular
 
-Now, to run the client, you can just open your web browser, enter the URL for your computer (or VM), and when you load the web client, you'll be loading the client from `~/dev/bbb-client/bin`.
+{{{
+./src/org/bigbluebutton/main/view/components/MainToolbar.mxml:                          loggedInUserLbl.text = "You are logged in as " + name + " to " + room + " as role " + role + ".";
+}}}
 
-This works because `bbb-conf --setup-dev bbb-client` changed the location for `/client` from `/var/www/bigbluebutton-client` to `/home/firstuser/dev/bbb-client/`.
+Edit this line and change the text to "You are NOW are logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change.
+
 
 == bbb-web: Making changes to the BigBlueButton web interface ==
 
