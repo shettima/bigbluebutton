@@ -29,18 +29,17 @@ As a brief summary, there are basically three main components to BigBlueButton, 
 
 == Setting up access to the VM from windows ==
 
-(Skip this if you are developing on Unix and pure of heart.)  If you are developing on Windows, you'll want to access the !BigBlueButton source tree checked on the VM.  Login to the VM and issue the following command
+(Skip this if you are developing on Unix and pure of heart.)  If you are developing on Windows, you'll want to access the !BigBlueButton source tree checked on the VM.  Login to the VM as `firstuser` and issue the following command
 
 {{{
   bbb-conf --setup-samba
 }}}
 
-This will share the `/home/firstuser/dev` folder so you can easily access your source from any windows editor.  Some editors (such as Eclipses) need you to map a network drive to a 
-Next, map /home/firstuser into a windows drive (e.g. V:).  To do this, open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
+This script will share the `/home/firstuser/dev` on your VM so you can access it as `\\<ip\firstuser` from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To setup windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
 
-Once you've mapped it as your V drive, you can edit the files from within windows. 
+Once you've mapped the VM to a local drive, you can edit the files from within any Windows IDE.
 
-Note: `bbb-conf` is the !BigBlueButton configuration utility.  It's a bash shell script that lives in `/usr/local/bin/bbb-conf`.   If you are following through the instructions below and want to see what happens when you invoke bbb-conf, just crack open the scrip and you'll see the sequent of commands.  You can use those commands as a basis for setting up your own environment.  
+Note: `bbb-conf` is the !BigBlueButton configuration utility.  It does a lot of things to make it easy to develop and test !BigBlueButton.  It's a bash shell script that lives in `/usr/local/bin/bbb-conf`.   If you want to see what happens when you invoke `bbb-conf`, just crack open the script and you can see all the commands it executes.  You can use those commands as a basis for setting up your own development environment if you are not using the VM itself. 
 
 
 = How to make changes to BigBlueButton client =
