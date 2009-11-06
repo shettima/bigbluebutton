@@ -8,27 +8,27 @@ This is still draft. We will finalize this when we release 0.62. If you run into
 = Welcome =
 Our goal is to make it easy for you to extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup your own !BigBlueButton development environment, giving you the ability to edit, test, and deploy changes to your !BigBlueButton server.
 
-One of the tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain.  The differences between running BigBlueButton on Windows and Linux caused lots of support headaches.  Next, we created Ubuntu packages so InstallationUbuntu would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ hudson server] to automatically compile and build the packages when developers check in updates to our Google Code SVN.  The pain reduced, but we were still developing and testing in Windows.  
+One of the tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain.  The differences between running !BigBlueButton on Windows and Linux caused lots of support headaches.  Next, we created Ubuntu packages so [InstallationUbuntu installation] would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ Hudson server] to automatically compile and build the packages when developers check in updates to our Google Code SVN.  The pain reduced, but we were still developing and testing in Windows.  
 
-The last step was to move the development environment itself to a Linux install running under VMWare.  In parallel, we were shipping a !BigBlueButton VM.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to build and test !BigBlueButton.  
+The last step was to move the development environment itself to a Linux install running under VMWare.  In parallel, we were shipping a !BigBlueButton VM.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
 
-The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM provides you with a working, reference implementation; by looking through the configuration (and using the docs below), you should be able to configure own development environment on the Unix OS of your choice.
+The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM provides you with a working, reference implementation; by looking through the configuration (and using the docs below), you should be able to configure your own development environment on the Unix OS of your choice.
 
 The first half of this document begins by showing you how to make quick changes to !BigBlueButton's and immediately see the updates in the your VM.  The second half of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.  Our approach is to use Windows for running Eclipse and Flex Builder, but the files are written to a !BigBlueButton VM (via a Samba network share). 
 
 
 == Getting Started ==
-First, setup a BigBlueButtonVM if you have not already done so.  If you are totally new to !BigBlueButton, you should read over the ArchitectureOverview.  Doing so will make the following instructions much easier to understand.
+First, setup a BigBlueButtonVM if you have not already done so.  If you are totally new to !BigBlueButton, you should read the [ArchitectureOverview Architecture Overview].  Doing so will make the following instructions much easier to understand.
 
 Briefly, there are three main components to !BigBlueButton and each component has it's own runtime environment and, correspondingly, they are built using different tools.
 
   * bigbluebutton-web, referred as _bbb-web_, is the scheduling and web interface for !BigBlueButton.  This component is written in grails and is built using goovy.
-  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript V3 using the Flex framework.
-  * bigbluebutton-apps, referred to as _bbb-apps_, is the red5 module that provides the synchronization logic for the bbb-client.  This component is written in straight up Java.
+  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript v3 using the Flex framework.
+  * bigbluebutton-apps, referred to as _bbb-apps_, is the red5 webapp that provides the synchronization logic for the bbb-client.  This component is written in straight up Java.
 
 == Setting up access to the VM from windows ==
 
-(Skip this if you are developing completely on Unix and pure of heart.)  On Windows, you'll want to access the !BigBlueButton source tree on your VM.  To do this, login to the VM as `firstuser` and issue the following command
+(Skip this if you are developing completely on Unix and are pure of heart.)  On Windows, you'll want to access the !BigBlueButton source tree on your VM.  To do this, login to the VM as `firstuser` and issue the following command
 
 {{{
   bbb-conf --setup-samba
@@ -42,11 +42,11 @@ Note: `bbb-conf` is a bash utility script included in the !BigBlueButton VM. It'
 = How to make simple changes to !BigBlueButton =
 We will start by making a simple change to the !BigBlueButton Flash client (bbb-client).  
 
-Note: If you want to jump right into setting up a complete environment, we recommend going through at least of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
+Note: If you want to jump right into setting up a complete environment, we recommend going through at least one of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
 
 Let's begin.  
 
-== Making changes to the BigBlueButton Flex client: bbb-client ==
+== Making changes to the !BigBlueButton Flex client: bbb-client ==
 
 When building the client locally on the VM, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-web, enter the following command
 
@@ -62,7 +62,7 @@ You will be prompted to enter your password for `firstuser` as the script needs 
   # Restart nginx 
   # Copy the `config.xml` from `/var/www/bigbluebutton/client/conf` into `~/dev/bbb-client/bin/conf/config.xml`
 
-The first step anonymously checks out the source for bbb-client.  The next tells nginx to load your client (instead of the client in `/var/www/bigbluebutton`.  
+The first step anonymously checks out the source for bbb-client.  The next tells nginx to load your client (instead of the client in `/var/www/bigbluebutton`).  
 
 The last steps copies the current settings for `config.xml` into your local development directory.  This way, the local !BigBlueButton client has the same configuration.
 
@@ -75,9 +75,9 @@ Everything is now setup to compile the local version of bbb-client.
 
 This ant script runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
 
-Okay, at this point it looks the same.  (Actually, it may look different because you are build from trunk, which likely will have changes from the version in a release).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
+Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
 
-Let dive in and make a change.  Notice at the top of the client it says "You are logged in as ...".  To find where this string is specified in the code, enter the following command.
+Let's dive in and make a change.  Notice at the top of the client it says "You are logged in as ...".  To find where this string is specified in the code, enter the following command.
 
 {{{
 $ find . -exec grep -H "You are logged" '{}' \;
@@ -137,7 +137,7 @@ Next, let's compile and run bbb-web
   ant
 }}}
 
-The default task for ant is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions through by grails.  To stop the grails server, just hit CTRL-C.
+The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions through by grails.  To stop the grails server, just hit CTRL-C.
 
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 
@@ -146,9 +146,9 @@ If you want to revert back to the web interface installed by the package bbb-web
 }}}
 
 
-== Making changes to the !BigBlueButton red5 module: bbb-apps ==
+== Making changes to the !BigBlueButton red5 webapp: bbb-apps ==
 
-The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as show at the end of this section).
+The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as shown at the end of this section).
 
 To setup a development environment for bbb-apps, enter the following command
 
@@ -163,9 +163,9 @@ This will
   # Uninstall the existing `bbb-apps` package
   # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
 
-Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restarts red5.
+Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
 
-At this point red5 is still running.  Before we deploy the local version of bbb-apps, let's stop the red5 server.  Open a new terminal window and enter the command. 
+At this point red5 is still running.  Before we deploy the local version of bbb-apps, let's stop the red5 server.  Open a new terminal window (if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty]) and enter the command. 
 
 {{{
     sudo /etc/init.d/red5 stop
@@ -186,7 +186,7 @@ At this point, the ant script has copied the local build of bbb-apps to `/usr/sh
 
 You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility to any errors or exceptions.
 
-If you want to revert back to the packaged version of BigBlueButton apps, do the following
+If you want to revert back to the packaged version of !BigBlueButton apps, do the following
 
 {{{
     rm -rf /usr/share/red5/webapps/bigbluebutton
