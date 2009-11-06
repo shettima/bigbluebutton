@@ -34,19 +34,17 @@ Briefly, there are three main components to !BigBlueButton and each component ha
   bbb-conf --setup-samba
 }}}
 
-This script will share the `/home/firstuser/dev` on your VM so you can access it as `\\<ip\firstuser` from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To setup windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
+This script will share the `/home/firstuser/dev` on your VM so you can access it as `\\<ip>\firstuser` from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
 
-Once you've mapped the VM to a local drive, you can edit the files from within any Windows IDE.
-
-Note: `bbb-conf` is the !BigBlueButton configuration utility.  It does a lot of things to make it easy to develop and test !BigBlueButton.  It's a bash shell script that lives in `/usr/local/bin/bbb-conf`.   If you want to see what happens when you invoke `bbb-conf`, just crack open the script and you can see all the commands it executes.  You can use those commands as a basis for setting up your own development environment if you are not using the VM itself. 
+Note: `bbb-conf` is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. 
 
 
-= How to make simple changes to BigBlueButton =
-We will start by showing you how to make quick and easy changes to the !BigBlueButton Flash client (bbb-client).  To do this, we'll use `bbb-conf` to setup a development environment for bbb-client.  We'll repeat the procedure for bbb-web and bbb-apps.
+= How to make simple changes to !BigBlueButton =
+We will start by making a simple change to the !BigBlueButton Flash client (bbb-client).  
 
-If you want to jump right into setting up a complete environment, we recommend going through at least of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
+Note: If you want to jump right into setting up a complete environment, we recommend going through at least of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
 
-Let's begin.
+Let's begin.  
 
 == Making changes to the BigBlueButton Flex client: bbb-client ==
 
@@ -57,21 +55,14 @@ When building the client locally on the VM, the output will go into `/home/first
 }}}
 
 
-You may be prompted to enter your password for `firstuser` -- this is because the script is running some commands as root using sudo.   This script does the following:
+You will be prompted to enter your password for `firstuser` as the script needs root access to run.   This script does the following:
 
   # run `svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-client bbb-client`
-  # Modify the root for '/client' in nginx to point to `/home/firstuser/dev/bbb-client`
+  # Modify the root for '/client' in the nginx configuration for !BigBlueButton to point to `/home/firstuser/dev/bbb-client`
   # Restart nginx 
   # Copy the `config.xml` from `/var/www/bigbluebutton/client/conf` into `~/dev/bbb-client/bin/conf/config.xml`
 
-The first step anonymously checks out the code.  The next step points request to the load the client to your local build.  This leaves the current !BigBlueButton client installed and untouched if you want to revert back.  To revert back, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
-
-{{{
-        location /client {
-                root    /var/www/bigbluebutton;
-                index  index.html index.htm;
-        }
-}}}
+The first step anonymously checks out the source for bbb-client.  The next tells nginx to load your client (instead of the client in `/var/www/bigbluebutton`.  
 
 The last steps copies the current settings for `config.xml` into your local development directory.  This way, the local !BigBlueButton client has the same configuration.
 
@@ -82,26 +73,42 @@ Everything is now setup to compile the local version of bbb-client.
   ant
 }}}
 
-This ant script runs the default task (cleanandmake) to use the Flex mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse, login, and see your client.  
+This ant script runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
 
-Okay, at this point it looks the same.  Again, behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  Let's make a change.  Notice at the top of the client it says "You are logged in as <yourname> ...".  Let's find where that is in the code, change it, and rebuild.
+Okay, at this point it looks the same.  (Actually, it may look different because you are build from trunk, which likely will have changes from the version in a release).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
+
+Let dive in and make a change.  Notice at the top of the client it says "You are logged in as <yourname> ...".  To find where this string is specified in the code, enter the following command.
 
 {{{
 $ find . -exec grep -H "You are logged" '{}' \;
 }}}
 
-You'll get some point, and one line in particular
+You should get a few matches, including the following:
 
 {{{
 ./src/org/bigbluebutton/main/view/components/MainToolbar.mxml: loggedInUserLbl.text = "You are logged in as " + name + " to " + room + " as role " + role + ".";
 }}}
 
-Edit `./src/org/bigbluebutton/main/view/components/MainToolbar.mxml` and change the text "You are logged in as" to "You are NOW logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change.
+Edit `./src/org/bigbluebutton/main/view/components/MainToolbar.mxml` and change the text "You are logged in as" to "You are NOW logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change at the top.
 
+To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
 
-== bbb-web: Making changes to the !BigBlueButton web interface ==
+{{{
+        location /client {
+                root    /var/www/bigbluebutton;
+                index  index.html index.htm;
+        }
+}}}
 
-The BigBlueButton web interface is written in grails, so the development environment is going to setup for building a grails application.  The first step is to setup a development environment for bbb-web.
+Then restart nginx.
+
+{{{
+   /etc/init.d/nginx restart
+}}}
+
+== Making changes to the !BigBlueButton web interface: bbb-web ==
+
+The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
 
 {{{
   bbb-conf --setup-dev bbb-web
@@ -109,13 +116,15 @@ The BigBlueButton web interface is written in grails, so the development environ
 
 This script does the following steps:
 
-# svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web
-# Sets your local IP address into  `~/.grails/bigbluebutton-config.properties`
-# makes all files in `/var/bigbluebutton` writable by everyone
+  # svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web
+  # set your local IP address into  `~/.grails/bigbluebutton-config.properties`
+  # make all files in `/var/bigbluebutton` writable by everyone
 
-The second step sets up a global property for grails so it knows the IP address of your server.  We're going to run the grails application in the `firstuser` account, so the third step opens the permissions to the director where the presenter uploads slides.
+The second step sets up a global property for grails so it knows the IP address of your server when it runs.  The third step opens the permissions to slides directory so `firstuser` can upload a presentation.
 
-Again, like bbb-client, we replace the existing bbb-web package; rather, it will let you run bbb-web as a stand alone grails application.  First, before your run bbb-web standalone, you need to stop tomcat.  
+Note: If you get an error upload slides when running bbb-web as `first user`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
+
+Before you can compile and run your version of bbb-web, you need to stop tomcat.  
 
 {{{
   sudo /etc/init.d/tomcat6 stop
@@ -128,7 +137,7 @@ Next, let's compile and run bbb-web
   ant
 }}}
 
-The default task for ant is to do make sure all the libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easy to see any exceptions as you interact with the web interface.
+The default task for ant is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions through by grails.  To stop the grails server, just hit CTRL-C.
 
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 
@@ -139,7 +148,7 @@ If you want to revert back to the web interface installed by the package bbb-web
 
 == bbb-apps: Making changes to the !BigBlueButton red5 module ==
 
-The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, with bbb-apps we need to first remove the existing bbb-web package.  
+The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as show at the end of this section).
 
 To setup a development environment for bbb-apps, enter the following command
 
@@ -156,25 +165,26 @@ This will
 
 Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restarts red5.
 
-At this point red5 is still running.  When we deploy the local build of bbb-apps to `/usr/share/red5` we can check the `/usr/share/red5/log` files for errors, but you'll find it easier to open a new terminal window and to the following commands
+At this point red5 is still running.  Before we deploy the local version of bbb-apps, let's stop the red5 server.  Open a new terminal window and enter the command. 
 
 {{{
     sudo /etc/init.d/red5 stop
 }}}
 
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
+
 {{{
     cd ~/dev/bbb-apps
     ant deploy
 }}}
 
-At this point, `/usr/share/red5/webapps/bigbluebutton` is the local copy.  Now switch back to the second terminal window.
+At this point, the ant script has copied the local build of bbb-apps to `/usr/share/red5/webapps/bigbluebutton`.  Now switch back to the second terminal window and enter the following command:
 
 {{{
     sudo -u red5 /usr/share/red5/red5.sh
 }}}
 
-You'll now see all the output from red5 at the console.  
+You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility to any errors or exceptions.
 
 If you want to revert back to the packaged version of BigBlueButton apps, do the following
 
