@@ -217,7 +217,9 @@ On Windows:
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html bbb-deskshare]
 
 == TIPS ==
+
 *Remove BBB packages*
+
 List the BBB packages by typing
 {{{
 dpkg -l | grep bbb
@@ -234,5 +236,6 @@ ii  bbb-config                        0.4.0-1ubuntu63                           
 }}}
 
  * To remove, type e.g. {{{apt-get remove bbb-apps}}}
- * Create a dev directory in /home/firstuser/dev
+
+
  
