@@ -29,7 +29,7 @@ As a brief summary, there are basically three main components to BigBlueButton, 
 
 == Setting up access to the VM from windows ==
 
-(Skip this if you are developing on Unix and pure of heart.)  If you are developing on Windows, you'll want to access the !BigBlueButton source tree checked on the VM.  Login to the VM as `firstuser` and issue the following command
+(Skip this if you are developing completely on Unix and pure of heart.)  On Windows, you'll want to access the !BigBlueButton source tree checked on the VM.  Login to the VM as `firstuser` and issue the following command
 
 {{{
   bbb-conf --setup-samba
@@ -42,16 +42,16 @@ Once you've mapped the VM to a local drive, you can edit the files from within a
 Note: `bbb-conf` is the !BigBlueButton configuration utility.  It does a lot of things to make it easy to develop and test !BigBlueButton.  It's a bash shell script that lives in `/usr/local/bin/bbb-conf`.   If you want to see what happens when you invoke `bbb-conf`, just crack open the script and you can see all the commands it executes.  You can use those commands as a basis for setting up your own development environment if you are not using the VM itself. 
 
 
-= How to make changes to BigBlueButton client =
-We will start by showing you how to make quick and easy changes to !BigBlueButton.  To do this, we'll use `bbb-conf` to setup a development environment for bbb-web, bbb-client, nd bbb-apps.  
+= How to make simple changes to BigBlueButton =
+We will start by showing you how to make quick and easy changes to the !BigBlueButton Flash client (bbb-client).  To do this, we'll use `bbb-conf` to setup a development environment for bbb-client.  We'll repeat the procedure for bbb-web and bbb-apps.
 
-If you want to jump right into setting up a complete environment, we recommend going through one of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
+If you want to jump right into setting up a complete environment, we recommend going through at least of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
 
-Let's start with making a change to the Flex client.
+Let's begin.
 
-== bbb-client: Making changes to the BigBlueButton Flex client ==
+== Making changes to the BigBlueButton Flex client: bbb-client ==
 
-When we build the client, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-web, enter the following command
+When building the client locally on the VM, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-web, enter the following command
 
 {{{
   bbb-conf --setup-dev bbb-client
