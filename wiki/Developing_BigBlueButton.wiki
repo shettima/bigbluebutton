@@ -6,30 +6,29 @@
 This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
 = Welcome =
-Our goal is to make it easy for you develop and extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup a development environment, make a change, and see that change deployed to your own !BigBlueButton server.
+Our goal is to make it easy for you to extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup your own !BigBlueButton development environment, giving you the ability to edit, test, and deploy changes to your !BigBlueButton server.
 
-One of the tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain.  Next we created packages so InstallationUbuntu would only take a few minutes, and build a [http://bigbluebutton.org/hudson/ hudson server] to automatically compile and build the packages from source in Google Code.  The pain reduced, but we were still developing and testing in Windows.  And there differences in Linux that caused lots of support headaches.
+One of the tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain.  The differences between running BigBlueButton on Windows and Linux caused lots of support headaches.  Next, we created Ubuntu packages so InstallationUbuntu would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ hudson server] to automatically compile and build the packages when developers check in updates to our Google Code SVN.  The pain reduced, but we were still developing and testing in Windows.  
 
-We make more improvements: we moved our building and testing to a Linux environment running under VMWare.  In parallel, we were shipping a BigBlueButton VM.  (You can see where this is heading).  We soon evolved our process to use the !BigBlueButton VM both as a fully functional implementation of !BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  By doing this, we can provide you the same environment we build and test with !BigBlueButton.  
+The last step was to move the development environment itself to a Linux install running under VMWare.  In parallel, we were shipping a !BigBlueButton VM.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to build and test !BigBlueButton.  
 
-The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM can provide you a working, reference implementation of the !BigBlueButton server and !BigBlueButton development environment.  By looking through the configuration (and using the docs below), you should be able to setup your own environment.  
+The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM provides you with a working, reference implementation; by looking through the configuration (and using the docs below), you should be able to configure own development environment on the Unix OS of your choice.
 
-
-We'll start by showing you how to make quick changes to !BigBlueButton and immediately see the updates in the your VM.  The second part of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.  Our approach is to use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share). 
+The first half of this document begins by showing you how to make quick changes to !BigBlueButton's and immediately see the updates in the your VM.  The second half of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.  Our approach is to use Windows for running Eclipse and Flex Builder, but the files are written to a !BigBlueButton VM (via a Samba network share). 
 
 
 == Getting Started ==
 First, setup a BigBlueButtonVM if you have not already done so.  If you are totally new to !BigBlueButton, you should read over the ArchitectureOverview.  Doing so will make the following instructions much easier to understand.
 
-As a brief summary, there are basically three main components to BigBlueButton, and each component has it's own runtime (and therefore its own way of building from source).
+Briefly, there are three main components to !BigBlueButton and each component has it's own runtime environment and, correspondingly, they are built using different tools.
 
-  * bigbluebutton-web, referred as _bbb-web_, is the scheduling and web interface for !BigBlueButton.  This component is written in Grails.
-  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript V3 using Flex.
-  * bigbluebutton-apps, referred to as _bbb-apps_, is the red5 module that provides the synchronization logic for the bbb-client.  This component is straight up Java.
+  * bigbluebutton-web, referred as _bbb-web_, is the scheduling and web interface for !BigBlueButton.  This component is written in grails and is built using goovy.
+  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript V3 using the Flex framework.
+  * bigbluebutton-apps, referred to as _bbb-apps_, is the red5 module that provides the synchronization logic for the bbb-client.  This component is written in straight up Java.
 
 == Setting up access to the VM from windows ==
 
-(Skip this if you are developing completely on Unix and pure of heart.)  On Windows, you'll want to access the !BigBlueButton source tree checked on the VM.  Login to the VM as `firstuser` and issue the following command
+(Skip this if you are developing completely on Unix and pure of heart.)  On Windows, you'll want to access the !BigBlueButton source tree on your VM.  To do this, login to the VM as `firstuser` and issue the following command
 
 {{{
   bbb-conf --setup-samba
@@ -190,13 +189,6 @@ _Draft content -- to be updated!_
 
 = Setup a Full Development Environment =
 The instructions below assumes you have FlexBuilder and Eclipse installed with the Subclipse plugin.
-
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html !BigBlueButton Apps]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html]
 
 == Remove BBB packages ==
 
