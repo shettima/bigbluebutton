@@ -94,10 +94,10 @@ $ find . -exec grep -H "You are logged" '{}' \;
 You'll get some point, and one line in particular
 
 {{{
-./src/org/bigbluebutton/main/view/components/MainToolbar.mxml:                          loggedInUserLbl.text = "You are logged in as " + name + " to " + room + " as role " + role + ".";
+./src/org/bigbluebutton/main/view/components/MainToolbar.mxml: loggedInUserLbl.text = "You are logged in as " + name + " to " + room + " as role " + role + ".";
 }}}
 
-Edit this line and change the text to "You are NOW are logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change.
+Edit `./src/org/bigbluebutton/main/view/components/MainToolbar.mxml` and change the text "You are logged in as" to "You are NOW logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change.
 
 
 == bbb-web: Making changes to the BigBlueButton web interface ==
@@ -132,16 +132,16 @@ Next, let's compile and run bbb-web
 The default task for ant is to do make sure all the libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easy to see any exceptions as you interact with the web interface.
 
 
-If you want to revert back to the web interface installed by the package bbb-web, do the following
+If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 
 {{{
-  # Make sure grails isn't running
   sudo /etc/init.d/tomcat6 start
 }}}
 
 
-
 == bbb-apps: Making changes ==
+
+The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, with bbb-apps we need to remove the existing bbb-web.
 
 To setup a development environment for bbb-apps, enter the following command
 
@@ -149,7 +149,9 @@ To setup a development environment for bbb-apps, enter the following command
   bbb-conf --setup-dev bbb-apps
 }}}
 
-This will checkout bbb-apps to `~/dev/bbb-apps`.  The easiest way to run your own version of bbb-apps is to run red5 from the command line.  This way, you can immediately see any errors on the console.  To do this
+This will 
+
+  # checkout bbb-apps to `~/dev/bbb-apps`.  The easiest way to run your own version of bbb-apps is to run red5 from the command line.  This way, you can immediately see any errors on the console.  To do this
 
 {{{
     sudo /etc/init.d/red5 stop
