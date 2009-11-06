@@ -6,11 +6,11 @@
 This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
 
 = Welcome =
-We want to make it easy for you develop and extend BigBlueButton.  To achieve this, rather than just throw a tarball over the wall, we've tried to provide you tools and documentation to quickly setup a development environment, make a change, and see that change deployed to your own BigBlueButton server.
+We want to make it easy for you develop and extend !BigBlueButton.  To achieve this, rather than just throw a tarball over the wall, we've tried to provide you tools and documentation to quickly setup a development environment, make a change, and see that change deployed to your own !BigBlueButton server.
 
-One of the tools is the BigBlueButton VM.  There are over fourteen OpenSourceComponents in BigBlueButton, and it's no small feat to set everything up.  In the beginning, we developed everything on Windows, and then manually installed all the components on a server.  That was a pain.  Next we created packages so InstallationUbuntu would only take a few minutes.  The pain reduces, but we were still developing and testing in Windows, but releasing and supporting on Unix.  Any difference between the two platforms caused lots of headaches in bug fixing.
+One of the tools is the !BigBlueButton VM.  There are over fourteen OpenSourceComponents in BigBlueButton, and it's no small feat to set everything up.  In the beginning, we developed everything on Windows, and then manually installed all the components on a server.  That was a pain.  Next we created packages so InstallationUbuntu would only take a few minutes.  The pain reduces, but we were still developing and testing in Windows, but releasing and supporting on Unix.  Any difference between the two platforms caused lots of headaches in bug fixing.
 
-We've evolved our process to use the BigBlueButton VM both as a fully functional implementation of !BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  Internally, we still use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share).
+We've evolved our process to use the !BigBlueButton VM both as a fully functional implementation of !BigBlueButton _and_ as a complete development environment for edit-build-test-deploy.  Internally, we still use Windows for running Eclipse and Flex Builder, but the files are written to a BigBlueButton VM (via a Samba network share).
 
 The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, no may you want to run the VM.  In that case, it can provide you a reference implementation that includes a properly setup !BigBlueButton server along with all the tools to make changes to the code.  By looking through the configuration (and using the docs below), you should be able to setup your own environment.
 
@@ -18,7 +18,7 @@ We'll start by showing you how with issuing a few commands in a terminal window 
 
 
 == Getting Started ==
-First setup a BigBlueButtonVM.  Next, read the ArchitectureOverview to understand the main components of !BigBluebutton.
+First setup a !BigBlueButtonVM.  Next, read the ArchitectureOverview to understand the main components of !BigBluebutton.
 
 There are basically three main components to BigBlueButton, each has it's own configuration for development.
 
@@ -65,7 +65,7 @@ You may be prompted to enter your password for `firstuser` -- this is because th
   # Restart nginx 
   # Copy the `config.xml` from `/var/www/bigbluebutton/client/conf` into `~/dev/bbb-client/bin/conf/config.xml`
 
-The first step anonymously checks out the code.  The next step points request to the load the client to your local build.  This leaves the current BigBlueButton client installed and untouched if you want to revert back.  To revert back, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
+The first step anonymously checks out the code.  The next step points request to the load the client to your local build.  This leaves the current !BigBlueButton client installed and untouched if you want to revert back.  To revert back, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
 
 {{{
         location /client {
@@ -100,7 +100,7 @@ You'll get some point, and one line in particular
 Edit `./src/org/bigbluebutton/main/view/components/MainToolbar.mxml` and change the text "You are logged in as" to "You are NOW logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change.
 
 
-== bbb-web: Making changes to the BigBlueButton web interface ==
+== bbb-web: Making changes to the !BigBlueButton web interface ==
 
 The BigBlueButton web interface is written in grails, so the development environment is going to setup for building a grails application.  The first step is to setup a development environment for bbb-web.
 
@@ -186,7 +186,7 @@ If you want to revert back to the packaged version of BigBlueButton apps, do the
 }}}
 ----
 
-_Older content -- to be updated__
+_Draft content -- to be updated!_
 
 = Setup a Full Development Environment =
 The instructions below assumes you have FlexBuilder and Eclipse installed with the Subclipse plugin.
