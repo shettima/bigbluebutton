@@ -195,17 +195,24 @@ If you want to revert back to the packaged version of BigBlueButton apps, do the
 }}}
 ----
 
-_Draft content -- to be updated!_
-
 = Setup a Full Development Environment =
-The instructions below assumes you have FlexBuilder and Eclipse installed with the Subclipse plugin.
 
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html !BigBlueButton Apps]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html]
+== Pre-requisites ==
+On Windows:
+ * Install Eclipse
+ * Install FlexBuilder
+ * Install Subclipse plugin for both Eclipse and FlexBuilder
+ * Install JDK 6 and add JAVA_HOME in your environment variables
+ * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
+
+
+== Videos on how to develop the difference bbb components ==
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html bbb-video]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html bbb-voice]
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html bbb-deskshare]
 
 == Remove BBB packages ==
 
