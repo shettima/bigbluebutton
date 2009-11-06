@@ -42,7 +42,7 @@ Once you've mapped it as your V drive, you can edit the files from within window
 Note: `bbb-conf` is the !BigBlueButton configuration utility.  It's a bash shell script that lives in `/usr/local/bin/bbb-conf`.   If you are following through the instructions below and want to see what happens when you invoke bbb-conf, just crack open the scrip and you'll see the sequent of commands.  You can use those commands as a basis for setting up your own environment.  
 
 
-= How to make changes to BigBlueButton =
+= How to make changes to BigBlueButton client =
 We will start by showing you how to make quick and easy changes to !BigBlueButton.  To do this, we'll use `bbb-conf` to setup a development environment for bbb-web, bbb-client, nd bbb-apps.  
 
 If you want to jump right into setting up a complete environment, we recommend going through one of the examples below before skipping ahead to the next section on "Setup a Full Development Environment"
@@ -102,24 +102,35 @@ Edit this line and change the text to "You are NOW are logged in as".  Type `ant
 
 == bbb-web: Making changes to the BigBlueButton web interface ==
 
-To setup a development environment for bbb-web, enter the following command
+The BigBlueButton web interface is written in grails, so the development environment is going to setup for building a grails application.  The first step is to setup a development environment for bbb-web.
 
 {{{
   bbb-conf --setup-dev bbb-web
 }}}
 
-This won't replace the existing bbb-web package; rather, it will let you run bbb-web as a stand alone grails application.  Before your run bbb-web standalone, you need to stop tomcat.  
+This script does the following steps:
+
+# svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web
+# Sets your local IP address into  `~/.grails/bigbluebutton-config.properties`
+# makes all files in `/var/bigbluebutton` writable by everyone
+
+The second step sets up a global property for grails so it knows the IP address of your server.  We're going to run the grails application in the `firstuser` account, so the third step opens the permissions to the director where the presenter uploads slides.
+
+Again, like bbb-client, we replace the existing bbb-web package; rather, it will let you run bbb-web as a stand alone grails application.  First, before your run bbb-web standalone, you need to stop tomcat.  
 
 {{{
   sudo /etc/init.d/tomcat6 stop
 }}}
 
-To compile and run bbb-web, do the following
+Next, let's compile and run bbb-web
 
 {{{
   cd ~/dev/bbb-web
   ant
 }}}
+
+The default task for ant is to do make sure all the libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easy to see any exceptions as you interact with the web interface.
+
 
 If you want to revert back to the web interface installed by the package bbb-web, do the following
 
