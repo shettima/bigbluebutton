@@ -210,7 +210,7 @@ On Windows:
  * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
 
-== Videos on how to develop the difference bbb components ==
+== Videos on how to develop the different bbb components ==
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client]
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web]
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps]
