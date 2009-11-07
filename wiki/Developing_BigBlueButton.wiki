@@ -139,6 +139,8 @@ Next, let's compile and run bbb-web
   ant
 }}}
 
+Note: The first time you do this you'll connection errors on `com.mysql.jdbc.Driver`. Just run `ant` again and it will each time afterwards.
+
 The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions through by grails.  To stop the grails server, just hit CTRL-C.
 
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
