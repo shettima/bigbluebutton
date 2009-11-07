@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 *NOTE*
-This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list.
+_This is still draft. We will finalize this when we release 0.62. If you run into problems, please post to the mailing list._
 
 = Welcome =
 Our goal is to make it easy for you to extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup your own !BigBlueButton development environment, giving you the ability to edit, test, and deploy changes to your !BigBlueButton server.
