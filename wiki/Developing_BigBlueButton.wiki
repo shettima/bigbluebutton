@@ -20,7 +20,7 @@ The first half of this document begins by showing you how to make quick changes 
 == Getting Started ==
 First, setup a BigBlueButtonVM if you have not already done so.  If you are totally new to !BigBlueButton, you should read the [ArchitectureOverview Architecture Overview].  Doing so will make the following instructions much easier to understand.
 
-Briefly, there are three main components to !BigBlueButton and each component has it's own runtime environment and, correspondingly, they are built using different tools.
+Briefly, there are three main components to !BigBlueButton.  Each component has it's own runtime environment and, correspondingly, each is built using different tools.
 
   * bigbluebutton-web, referred as _bbb-web_, is the scheduling and web interface for !BigBlueButton.  This component is written in grails and is built using goovy.
   * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript v3 using the Flex framework.
