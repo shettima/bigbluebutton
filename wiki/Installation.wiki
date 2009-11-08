@@ -9,7 +9,7 @@ There are four ways you can install BigBlueButton
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)] (brown belt, two black stripes) 
     * Port !BigBlueButton to another OS and contribute the steps to the community (black belt!)
 
-Regardless of the way you choose, there following page shows the configuration files:
+Regardless of the way you choose, the following page shows the configuration files:
 
    * [ConfigurationFiles Configuration Files]
 
