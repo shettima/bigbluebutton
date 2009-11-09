@@ -224,13 +224,13 @@ chkconfig nginx on
 cd /tmp/
 mkdir bbb-install
 cd bbb-install
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps-Deskshare/ws/dist/webapps/deskshare.tar.gz
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
-wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/web//*zip*/web.zip
-wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
-wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton-apps.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton.war
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/sip.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/video.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bbb-default.tar.gz
 
 ###### TODO: HERE TOMCAT SECURITY (not necessary on CentOS?)
 
