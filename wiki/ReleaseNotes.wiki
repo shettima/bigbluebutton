@@ -95,9 +95,9 @@ If you are running a !BigBlueButton VM or had installed !BigBlueButton using pac
 
 == Known Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=181 Issue 181] Stopping deskshare crashes Safari
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=180 Issue 180] Deskshare can leave a stream open
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=179 Issue 179] Zooming can cause a slide to disapper when clicking next
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=170 Issue 170] Switching presenter while screensharing results in old presenter seeing screenshare viewer window 
+ * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=180 Issue 180] Deskshare can leave a stream open ~~
+ * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=179 Issue 179] Zooming can cause a slide to disapper when clicking next~~ 
+ * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=170 Issue 170] Switching presenter while screensharing results in old presenter seeing screenshare viewer window~~ 
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=153 Issue 153]  The Show button on the Upload Window doesn't work
 
 = 0.6 Release: Mir Space Station. August 12 2009=
@@ -177,7 +177,7 @@ Here are the list of issues we fixed on this release:
 === Known Issues ===
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=112 Issue 112] Desk share video shows the final frame when presenter logs out
   * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=111 Issue 111] Desk share video has narrow yellow stripe at the top~~
-  * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
+  * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X ~~
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=95 Issue 95] Deskshare app sometimes crashes
   * ~~[http://code.google.com/p/bigbluebutton/issues/detail?id=90 Issue 90] deskshare-app blocks red5 from restarting~~
 
