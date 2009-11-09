@@ -7,6 +7,7 @@
   * [GettingStarted Getting Started]
     * [ArchitectureOverview Overview of Architecture]
     * [OpenSourceComponents Open Source Components]
+    * [Developing_BigBlueButton Setting up a Development Environment]
     * [SampleModule Tutorial on Creating a New Module]
   * [Support Support]
     * [ReleaseNotes Release Notes]
