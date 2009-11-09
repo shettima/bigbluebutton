@@ -294,7 +294,7 @@ chown -R tomcat:adm /var/bigbluebutton
 chmod -R 777 /var/bigbluebutton
 
 # setup the red5 apps
-tar xzf bigbluebutton-apps-0.5.tar.gz
+tar xzf bigbluebutton-apps.tar.gz
 rsync -a webapps/* /opt/red5-0.8/webapps/
 rm -rf webapps
 
