@@ -393,7 +393,7 @@ server {
 == Download !BigBlueButton ==
 {{{ 
  cd /home/user/temp
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-apps-0.5.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-apps.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/deskshare.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/client.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton.war
