@@ -16,7 +16,7 @@ Released: November 11, 2009
 
 == To upgrade your !BigBlueButton 0.61 installation to 0.62 ==
 
-If you are running a !BigBlueButton VM 0.61, or have installed !BigBlueButton 0.61 from [InstallationUbuntu packages], you can upgrade your installation to 0.62 with the following commands.
+If you are running a !BigBlueButton VM 0.61, or have installed !BigBlueButton 0.61 on Ubuntu 9.04 from [InstallationUbuntu apt-get packages], you can upgrade your installation to 0.62 with the following commands.
 
 {{{
   sudo apt-get update
