@@ -19,6 +19,7 @@ The trunk of the SVN repository contains the following important parts:
 The following links will get you going with setting up BigBlueButton.  For most developers, we recommend using the VM.  But if you want to see all the components, go for [InstallingBigBlueButton Installing from source].
 
     * [ArchitectureOverview Overview of Architecture]
+    * [Developing_BigBlueButton Setting up a Development Environment]
     * [SampleModule Tutorial on Creating a New Module]
 
 See also instructions for installing BigBlueButton:
