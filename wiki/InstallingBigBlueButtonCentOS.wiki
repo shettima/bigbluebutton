@@ -377,11 +377,10 @@ mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
 
 # install bbb-default pages
 cd /var/www/
-cp /tmp/bbb-install/web.zip ./
-yum install -y unzip
-unzip -dc web.zip
-mv c/web ./bigbluebutton-default
-rm -rf c web.zip 
+cp /tmp/bbb-install/bbb-default.tar.gz .
+tar xzf bbb-default.tar.gz
+mv web ./bigbluebutton-default
+rm -rf bbb-default.tar.gz
 
 # restart things:
 service activemq restart
