@@ -72,7 +72,7 @@ If you need to change the hostname (or IP address), you can use `bbb-setip`, a u
 For example, to switch the  !BigBlueButton server to use IP address 192.168.0.100, enter the follwoing
 
 {{{
-sudo bbb-setip -h 192.168.0.100
+sudo bbb-conf --setip 192.168.0.100
 }}}
 
 === Handling long host names in nginx ===
