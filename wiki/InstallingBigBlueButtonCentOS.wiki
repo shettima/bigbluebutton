@@ -240,7 +240,7 @@ echo "grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secre
 echo "commit;" | mysql -u root
 
 # now install the webapp
-cp /tmp/bbb-install/bigbluebutton-0.1.war /var/lib/tomcat6/webapps/bigbluebutton.war
+cp /tmp/bbb-install/bigbluebutton.war /var/lib/tomcat6/webapps/bigbluebutton.war
 
 }}}
 
