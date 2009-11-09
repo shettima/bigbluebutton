@@ -393,13 +393,13 @@ server {
 == Download !BigBlueButton ==
 {{{ 
  cd /home/user/temp
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-apps.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/deskshare.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/client.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton.war
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/sip.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/video.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/bbb-default.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton-apps.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton.war
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/sip.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/video.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bbb-default.tar.gz
 }}}
 
 		
