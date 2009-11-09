@@ -59,7 +59,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/uplo
 
 The diagram bellow shows the main components of our screen sharing solution.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_desk_share_overview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb-deskshare.png
 
 ----
 
