@@ -4,7 +4,7 @@
 
 _Code named in honor of Nubula NGC604_
 
-Released: November XX, 2009
+Released: November 11, 2009
 
 == New Features ==
 
