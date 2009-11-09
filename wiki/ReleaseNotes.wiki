@@ -24,7 +24,7 @@ If you are running  !BigBlueButton VM 0.61 -- either from VM or from [Installati
   sudo apt-get dist-upgrade
 }}}
 
-*Note*: Be sure to do `upgrade` before `dist-upgrade`.  We've moved out a lot of configuration files into a new package called `bbb-common`.  If you skip doing an `upgrade` and go directly to `dist-upgrade`, the package manager will complain that `bbb-common` is trying to overwrite files owned by another package.  
+*Note*: Be sure to do `sudo apt-get update` _before_ `sudo apt-get dist-upgrade`.  We've moved out a lot of configuration files into a new package called `bbb-common`.  If you skip doing an `upgrade` and go directly to `dist-upgrade`, the package manager will complain that `bbb-common` is trying to overwrite files owned by another package.  
 
 If you had desktop sharing installed, you can upgrade the apt-get install command described in InstallingDesktopSharing.
 
