@@ -1,0 +1,495 @@
+#!/bin/bash
+#
+# Copyright (c) 2008-2009 by BigBlueButton
+#
+# This file is part of BigBlueButton - http://www.bigbluebutton.org
+#
+# BigBlueButton is free software; you can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License as published by the Free Software
+# Foundation; either version 3 of the License, or (at your option) any later
+# version.
+#
+# BigBlueButton is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License along
+# with BigBlueButton; if not, If not, see <http://www.gnu.org/licenses/>.
+#
+# Author(s):
+#       Fred Dixon <ffdixon@bigbluebutton.org>
+#
+# Changelog:
+#       2009-10-18      Inital Version          FFD
+#       2009-11-05      Updated for 0.62        FFD
+
+
+# set -x
+
+print_header() {
+	if [ ! $HEADER ]; then
+		echo 		
+		echo "** Potential Problems **"
+		HEADER=1
+	fi
+}
+
+check_root() {
+	if [ $EUID == 0 ]; then
+		echo "This opearation should not be run as root."
+		echo 
+		echo "If this operation needs to execute an operation as root, you'll be asked for"
+		echo "your password to execute the operation using sudo."
+		exit 1
+	fi
+}
+
+usage () {
+	echo "$0 [options] [<file>]"
+	echo
+	echo "Options:"
+	echo "   --help                           This message"
+	echo "   --version                        Display BigBlueButton version"
+	echo "   --check                          Check current setup"
+	echo
+	echo "   --setip <host>                   Set IP/Hostname for BigBlueButton's configuration"
+	echo
+	echo "   --setup-samba                    Setup samba share (VM only)"
+	echo "   --setup-dev [bbb-web|bbb-client|bbb-apps] "
+	echo "                                    Setup dev environment (VM only)"
+	echo
+}
+
+# utility function to make a copy of the conf file
+check_and_backup () {
+	# can we write to the configuration file?
+	if [ ! -w $1 ]; then
+		echo "Cannot write to $1!"
+		exit 1
+	fi
+
+	# let's see if we need a copy
+	if [ "$TO_BACKUP" = "Y" ]; then
+		cp $1 $1.bak
+		TO_BACKUP="N"
+	fi
+}
+
+# 3 paramenter: the file, the variable name, the new value
+change_var_value () {
+	check_and_backup $1
+	sed -i "s<^[[:blank:]#]*\(${2}\).*<\1=\"${3}\"<" $1
+}
+# comment lines matching $2 ($1 is the file)
+comment () {
+	check_and_backup $1
+	sed -i "s<^[[:blank:]]*\(${2}.*\)<#\1<" $1
+}
+# comment lines matching $2 ($1 is the file)
+uncomment () {
+	check_and_backup $1
+	sed -i "s<^[#[:blank:]]*\(${2}.*\)<\1<" $1
+}
+
+if [ $# -eq 0 ]; then
+	usage
+	exit 1
+fi
+
+# Parse the parameters
+while [ $# -gt 0 ]; do
+	if [ "$1" = "-h" -o "$1" = "-help" -o "$1" = "?" -o "$1" = "--help" ]; then
+		usage
+		exit 1
+	fi
+
+	if [ "$1" = "-check" -o "$1" = "--check" -o "$1" = "-c" ]; then
+		CHECK=1
+		shift 
+		continue
+	fi
+
+	if [ "$1" = "--setup-samba" -o "$1" = "-setup-samba" ]; then
+		SAMBA=1
+		shift
+		continue
+	fi		
+
+	if [ "$1" = "--version" -o "$1" = "-version" -o "$1" = "-v" ]; then
+		VERSION=1
+		shift
+		continue
+	fi		
+
+	#
+	# all other parameters requires at least 1 argument
+	#
+	
+	if [ $# -lt 2 ]; then
+		usage
+		exit 1
+	fi
+
+	if [ "$1" = "-setip" -o "$1" = "--setip" ]; then
+		HOST="${2}"
+		shift; shift
+		continue
+	fi		
+
+	if [ "$1" = "--setup-dev" -o "$1" = "-setup-dev" ]; then
+		SETUPDEV="${2}"
+		shift; shift
+		continue
+	fi		
+
+	usage 
+	exit 1
+done
+
+
+#
+# Version 
+#
+if [ $VERSION ]; then
+
+	echo 
+	dpkg -l | grep bbb
+
+	exit 0
+fi
+
+
+#
+# Setup samba
+#
+
+if [ $SAMBA ]; then
+        #
+        # Instal Samba
+        #
+        if ! dpkg-query -s samba > /dev/null 2>&1; then
+                sudo apt-get install -y --force-yes samba ant
+        fi
+
+        #
+        # Add a share to samba
+        #
+        if ! grep -q $USER /etc/samba/smb.conf; then
+
+                echo ";
+; BigBlueButton: Share the development directory
+[$USER]
+   comment = BigBlueButton Development share
+   path = /home/$USER
+   browseable = yes
+   read only = no
+   create mask = 0755
+   directory mask = 0775
+   guest ok = yes
+   force user = $USER
+" | sudo tee -a /etc/samba/smb.conf > /dev/null 2>&1
+
+                sudo /etc/init.d/samba restart
+
+        echo "
+You can now access your development folder through:
+
+        \\\\$(hostname)\\$USER
+
+If you are running a development environment on Windows (such as using Eclipse or FlexBuilder),
+you can map the above path to a drive letter.
+"
+        else
+                echo "Already detected a definition for $USER in /etc/samba/smb.conf"
+                echo "No changes were made to /etc/samba/smb.conf"
+        fi
+fi
+
+
+#
+# Setup the development environemnt.
+#
+
+if [ $SETUPDEV ]; then
+	check_root
+
+        if [ ! -d ~/dev ]; then
+		mkdir ~/dev
+	fi
+
+	if [ $SETUPDEV == "bbb-web" ]; then
+            if [ ! -d ~/dev/bbb-web ]; then
+
+		echo "# Setting up ~/dev/bbb-web"
+                echo "  svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web"
+		
+                cd ~/dev
+                svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web
+
+		IP="$(ifconfig eth0 | sed -n '/inet /{s/.*addr://;s/ .*//;p}')"
+
+		echo "# Setting IP address $IP in ~/.grails/bigbluebutton-config.properties"
+		mkdir -p ~/.grails
+		echo "bigbluebutton.web.serverURL=http://$IP" > ~/.grails/bigbluebutton-config.properties
+
+		echo "# Enabling $USER to write to /var/bigbluebutton to upload slides"
+		sudo chmod -R ugo+rwx /var/bigbluebutton
+
+		echo "
+# Done.  To run your local build of bbb-web:
+
+	sudo /etc/init.d/tomcat6 stop
+	cd ~/dev/bbb-web
+	ant
+"
+            fi
+	fi
+
+	if [ $SETUPDEV == "bbb-client" ]; then
+            if [ ! -d ~/dev/bbb-client ]; then
+
+		echo "# Setting up ~/dev/bbb-client"
+                echo "  svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-client bbb-client"
+
+                cd ~/dev
+                svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-client bbb-client
+
+		#
+		# Setup the directories so we can point /etc/nginx/sites-available/bigbluebutton to this
+		# local copy of the client
+		#
+        	if [ ! -d ~/dev/bbb-client/bin ]; then
+			mkdir -p ~/dev/bbb-client/bin
+		fi
+
+        	if [ ! -d ~/dev/bbb-client/bin/conf ]; then
+			mkdir -p ~/dev/bbb-client/bin/conf
+		fi
+
+		if [ ! -h ~/dev/bbb-client/client ]; then
+			ln -s ~/dev/bbb-client/bin ~/dev/bbb-client/client
+		fi
+
+		echo "Modifying /etc/nginx/sites-available/bigbluebutton to point to your local copy of bbb-client"
+		sudo sed -i "s/\/var\/www\/bigbluebutton;/\/home\/firstuser\/dev\/bbb-client;/g" \
+			/etc/nginx/sites-available/bigbluebutton
+		sudo /etc/init.d/nginx restart	
+
+		echo "# Copying /var/www/bigbluebutton/client/conf/config.xml to ~/dev/bbb-client/bin/conf/config.xml"
+		cp /var/www/bigbluebutton/client/conf/config.xml ~/dev/bbb-client/bin/conf/config.xml
+
+		echo "
+# Done.  To build your local build of bbb-client:
+
+	cd ~/dev/bbb-client
+	ant
+
+# The nginx server now loads the BigBlueButton Flash client from 
+# /home/firstuser/dev/bbb-client.
+"
+	    fi
+	fi
+
+	if [ $SETUPDEV == "bbb-apps" ]; then
+            if [ ! -d ~/dev/bbb-apps ]; then
+
+		echo "# Setting up ~/dev/bbb-apps:"
+  		echo "  svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-apps bbb-apps"
+           
+                cd ~/dev
+                svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-apps bbb-apps
+            
+             fi 
+
+		#
+		# We're going to make it easier to deploy by giving write access to others to 
+		# /usr/share/red5/webapps
+		#
+		sudo chmod o+w /usr/share/red5/webapps
+
+		#
+		# Let's remove the existing bbb-apps
+		#
+		if dpkg-query -s bbb-apps | grep "install ok installed" > /dev/null 2>&1; then
+        		sudo apt-get purge --yes bbb-apps
+		fi
+
+		if [ ! -f ~/.bbb-apps-build.properties ]; then
+			echo "#
+# Override the default properties for bbb-apps
+#
+red5.home = /usr/share/red5
+" > ~/.bbb-apps-build.properties
+		fi
+
+		#
+		# Setup the directories so we can point /etc/nginx/sites-available/bigbluebutton to this
+		# local copy of the client
+		#
+		echo "
+# Done.  To run your local build of bbb-apps:
+
+    sudo /etc/init.d/red5 stop
+    cd ~/dev/bbb-apps
+    ant deploy					
+    sudo -u red5 /usr/share/red5/red5.sh		
+
+# To restore the packaged version of bbb-apps:
+
+    rm -rf /usr/share/red5/webapps/bigbluebutton
+    sudo apt-get install bbb-apps
+    sudo /etc/init.d/red5 start
+"
+
+	fi
+fi
+
+
+#
+# Check current setup
+#
+if [ $CHECK ]; then
+
+        echo "Current Configuration:"
+
+        IP=$(cat /var/www/bigbluebutton/client/conf/config.xml | sed -n '/porttest /{s/.*host="//;s/".*//;p}')
+        echo
+        echo "/var/www/bigbluebutton/client/conf/config.xml (bbb-client)"
+        echo "                 IP for tunnel check: $IP"
+
+        IP=$(cat /var/www/bigbluebutton/client/conf/config.xml | sed -n '/uri.*video/{s/.*rtmp:\/\///;s/\/.*//;p}')
+        echo "                  IP for rtmp (red5): $IP"
+
+        HOST=$(cat /var/www/bigbluebutton/client/conf/config.xml | sed -n '/recordingHost/{s/.*recordingHost="http:\/\///;s/"//;p}')
+        echo "          host for bbb-web interface: $HOST"
+
+        IP=$(cat /etc/nginx/sites-available/bigbluebutton | sed -n '/server_name/{s/.*name[ ]*//;s/;//;p}')
+        echo
+        echo "/etc/nginx/sites-available/bigbluebutton (configuration file nginx)"
+        echo "                         server_name: $IP"
+
+        PORT=$(cat /etc/nginx/sites-available/bigbluebutton | sed -n '/listen/{s/.*listen[ ]*//;s/;//;p}')
+        echo "                                port: $PORT"
+
+	BBB_CLINET_DOC_ROOT=$(cat /etc/nginx/sites-available/bigbluebutton | grep \/client -A 1 | grep root  | sed -n '{s/[ ]*root[ ]*//;s/;//;p}') 
+        echo "                client document root: $BBB_CLINET_DOC_ROOT"
+
+        HOST=$(cat /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties | sed -n '/bigbluebutton.web.serverURL/{s/.*\///;p}')
+        echo
+        echo "/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties (for bbb-web)"
+        echo "                                host: $HOST"
+
+	#
+	# Check for potential problems
+	#
+
+	if ! ps aux | grep '[/]usr/share/activemq' > /dev/null; then
+		print_header
+        	echo "                            activeMQ: -- not running --"
+	fi	
+
+	if ! ps aux | grep 'org.red5.server.Bootstrap' > /dev/null; then
+		print_header
+        	echo "                                red5: -- not running --"
+	fi	
+
+	if ! ps aux | grep '[/]usr/sbin/asterisk' > /dev/null; then
+		print_header
+        	echo "                            asterisk: -- not running --"
+	fi	
+
+	if ! ps aux | grep '[/]usr/sbin/nginx' > /dev/null; then
+		print_header
+        	echo "                              ngingx: -- not running --"
+	fi	
+
+	if ! netstat -ant | grep '8080' > /dev/null; then
+		print_header
+        	echo "                             tomcat6: -- not running --"
+	fi	
+
+	if [ ! -L /etc/nginx/sites-enabled/bigbluebutton ]; then
+		print_header
+        	echo "                        nginx (conf): no symbolic link in /etc/nginx/sites-enabled for bigbluebutton"
+	fi	
+
+	DIRECTORIES="bigbluebutton sip video"
+	for dir in $DIRECTORIES ; do
+		if [ ! -d /usr/share/red5/webapps/$dir ]; then
+        		echo "                   missing red5 app: /usr/share/red5/webapps/$dir "
+		fi
+	done
+
+	RED5_LOG_FILES="bigbluebutton oflademo red5 sip video"
+	for file in $RED5_LOG_FILES ; do
+		if [ ! -f /usr/share/red5/log/$file.log ]; then
+        		echo "                   missing red5 log: /usr/share/red5/log/$file.demo"
+		fi
+	done
+
+	echo
+
+	echo
+	exit 0
+fi
+
+
+
+# if asked to print the version that's all we do
+if [ -n "$HOST" ]; then
+
+	#
+	# Just use the IP for port test in /var/www/bigbluebutton/client/conf/config.xml
+	#
+	echo "Assigning $HOST for testing for firewall in /var/www/bigbluebutton/client/conf/config.xml"
+	sudo sed -i "s/porttest host=\(\"[^\"]*\"\)/porttest host=\"$HOST\"/g" /var/www/bigbluebutton/client/conf/config.xml
+	echo "Assigning $HOST for rtmp:// in /var/www/bigbluebutton/client/conf/config.xml"
+	sudo sed -i "s/rtmp:\/\/\([^\"\/]*\)\([\"\/]\)/rtmp:\/\/$HOST\2/g" /var/www/bigbluebutton/client/conf/config.xml
+
+	echo "Assigning $HOST for servername in /etc/nginx/sites-available/bigbluebutton"
+	sudo sed -i "s/server_name  .*/server_name  $HOST;/g" /etc/nginx/sites-available/bigbluebutton
+
+	#
+	# Use port for remaining substitutions
+	#
+	if [ $PORT ]; then
+		HOST="$HOST:$PORT"
+	fi
+
+	#
+	# Update configuration for BigBlueButton client
+	#
+	echo "Assigning $HOST for http:// in /var/www/bigbluebutton/client/conf/config.xml"
+	sudo sed -i "s/http:\/\/\([^\"\/]*\)\([\"\/]\)/http:\/\/$HOST\2/g" /var/www/bigbluebutton/client/conf/config.xml
+
+
+	#
+	# Update configuration for BigBlueButton web app
+	#
+	echo "Assigning $HOST for web application URL in /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties"
+
+	sudo sed -i "s/bigbluebutton.web.serverURL=http:\/\/.*/bigbluebutton.web.serverURL=http:\/\/$HOST/g" \
+				/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+
+	# cat /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+
+	#
+	# Update nginx
+	#
+
+	if [ $PORT ]; then
+		echo "Assigning $PORT for listen in /etc/nginx/sites-available/bigbluebutton"
+		sudo sed -i "s/listen  .*/listen  $PORT;/g" /etc/nginx/sites-available/bigbluebutton
+	fi
+
+	if ! grep -q server_names_hash_bucket_size /etc/nginx/nginx.conf; then
+		sudo sed -i "s/gzip  on;/gzip  on;\n    server_names_hash_bucket_size  64;/g" /etc/nginx/nginx.conf
+	fi
+
+	echo "Restarting tomcat6 and nginx ..."
+	sudo /etc/init.d/tomcat6 restart  > /tmp/result 2>&1;cat /tmp/result;rm /tmp/result
+	sudo /etc/init.d/nginx restart
+
+	exit 0
+fi
+
