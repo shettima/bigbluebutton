@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-= Running BigBlueButton 0.62 in a few minutes =
+= Running !BigBlueButton 0.62 in a few minutes =
 
 Many universities and colleges have told us they wanted to run their own version  !BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending  !BigBlueButton.
 
