@@ -396,13 +396,13 @@ server {
 {{{
  
  cd /home/user/temp
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Apps/ws/dist/bigbluebutton-apps-0.5.tar.gz
- wget http://www.bigbluebutton.org/hudson/job/bbb-deskshare-trunk/ws/app/build/deskshare.tar.gz
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Client/ws/client.tar.gz
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Web/ws/bigbluebutton-0.1.war
- wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-sip/ws/dist/webapps/sip.tar.gz
- wget http://www.bigbluebutton.org/hudson/job/bbb-trunk-apps-video/ws/dist/webapps/video.tar.gz
- wget http://www.bigbluebutton.org/hudson/job/BBB-Trunk-Config/ws/bbb-default.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-apps-0.5.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/build/deskshare.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/client.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-0.1.war
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/sip.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/video.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/bbb-default.tar.gz
 }}}
 
 		
