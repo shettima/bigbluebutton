@@ -391,15 +391,12 @@ server {
 }}}
 
 == Download !BigBlueButton ==
-* NOTE: These links will download the latest (trunk) packages. We will be creating a folder for 0.62 release. *
-
-{{{
- 
+{{{ 
  cd /home/user/temp
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-apps-0.5.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/build/deskshare.tar.gz
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/deskshare.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/client.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton-0.1.war
+ wget http://www.bigbluebutton.org/sites/all/releases/0.62/bigbluebutton.war
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/sip.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/video.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/0.62/bbb-default.tar.gz
@@ -436,7 +433,7 @@ On the {{{mysql>}}} prompt, type
 == Install bbb-web ==
 {{{
   cd /var/lib/tomcat6/webapps
-  cp /home/user/temp/bigbluebutton-0.1.war ./bigbluebutton.war
+  cp /home/user/temp/bigbluebutton.war ./bigbluebutton.war
 }}}
 
 == Determine PDF2SWF, CONVERT and GS applications ==
@@ -592,11 +589,11 @@ mysql>
 == Install bbb-apps ==
 {{{
  cd /opt/red5/webapps
- cp /home/user/temp/bigbluebutton-apps-0.5.tar.gz ./
+ cp /home/user/temp/bigbluebutton-apps.tar.gz ./
  
- tar zxvf bigbluebutton-apps-0.5.tar.gz
+ tar zxvf bigbluebutton-apps.tar.gz
  mv webapps/bigbluebutton ./
- rm -rf bigbluebutton-apps-0.5.tar.gz webapps/
+ rm -rf bigbluebutton-apps.tar.gz webapps/
 }}}
 
 == Edit bbb-apps properties ==
