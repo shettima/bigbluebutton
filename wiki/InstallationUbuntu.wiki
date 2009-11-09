@@ -1,8 +1,8 @@
 #summary How to install  BigBlueButton on Ubuntu in under 5 minutes
 
-= Introduction =
+= Installing !BigBlueButton using Ubuntu Packages =
 
-Using Ubuntu/Debian packages, it's very easy to get a  !BigBlueButton server up and running on Ubuntu in about five minutes.  The following instructions will install and configure all the components except Asterisk (see Installing !BigBlueButton for how to install Asterisk, which provides the voice conferencing).
+Using Ubuntu packages, it's very easy to get a  !BigBlueButton server up and running on Ubuntu in about five minutes.  The following instructions will install and configure all the components except Asterisk (see Installing !BigBlueButton for how to install Asterisk, which provides the voice conferencing).
 
 == Prerequisites ==
 
