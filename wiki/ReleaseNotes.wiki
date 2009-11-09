@@ -10,7 +10,7 @@ Released: November 11, 2009
 
   * *Better Desktop Sharing!* - We've made our Desktop Sharing much better by reverse engineering the Adobe Screen Codec from specs.  The result is much faster, platform independent implementation for desktop sharing.   To share their desktop, the presenter must have Java (1.6) installed to run a Java applet.   There is no changes required for the viewers to view the presenter's desktop.  We've also simplified the user interface for both presenter and viewer
 
-  * *Full build-in development environment* - The !BigBlueButton VM makes it easier to modify and build your own versions of !BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton developing in BigBlueButton].  
+  * *Full built-in development environment* - The !BigBlueButton VM makes it easier to modify and build your own versions of !BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton developing in BigBlueButton].  
 
   * *Updated command-line tools* - The command-line tools `bbb-setip` and `bbb-setupdev` have been consolidated into a single script `bbb-conf`. If you modify your setup, typing `bbb-conf --check` will perform some checks on your setup to look for common configuration problems with running !BigBlueButton
 
