@@ -3,7 +3,7 @@
 = Desktop sharing is now a separate component =
 As of !BigBlueButton 0.61 (and later), the desktop sharing module for !BigBlueButton (bbb-apps-deskshare) is licensed under the [http://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License] (AGPL).  
 
-To keep !BigBlueButton licensed under LGPL, we've removed deskshare from the [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu install scripts for Ubuntu] and from the [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM BigBlueButton virtual machine].  Don't worry, you can install it with a single command
+To keep !BigBlueButton licensed under LGPL, we've removed deskshare from the [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu install scripts for Ubuntu] and from the [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM BigBlueButton virtual machine].  Don't worry, you can install/upgrade it with a single command
 
 {{{
 apt-get install bbb-apps-deskshare
