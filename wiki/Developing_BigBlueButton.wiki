@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 
-= Welcome =
+= Setting up a BigBlueButton Development Environment =
 We want it to be easy for others to develop and extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup your own !BigBlueButton development environment, giving you the ability to edit, test, and deploy changes to your !BigBlueButton server.
 
 One of these tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain as the differences between running !BigBlueButton on Windows and Linux caused us lots of support headaches.  Next, we created Ubuntu packages so [InstallationUbuntu installation] on Unix would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ Hudson server] to automatically compile and build the packages when developers check in updates to our Google Code SVN.  The pain reduced, but we were still building and running !BigBlueButton in Windows, then running it on Unix.  
