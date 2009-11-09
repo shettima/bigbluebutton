@@ -33,6 +33,12 @@ Released: November 11, 2009
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=229 Issue 229] Last frame of desktop sharing is visible to viewers
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=230 Issue 230] Flash debug client shows messages
 
+== Known Issues ==
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=233 Issue 233] 	java.io.IOException: Too many open files
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=227 Issue 227] BBB apps (Red5) should reconnect to ActiveMQ when connection drops
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=214 Issue 214] VoIP stops working
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=198 Issue 198] Mozilla crashes uploading PDF
+
 = Release 0.61: Titan =
 
 Released: September 15, 2009
