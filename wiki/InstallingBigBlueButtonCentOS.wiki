@@ -22,29 +22,29 @@ cat /etc/issue
 cd /tmp
 
 # install JDK 6
-yum install java-1.6.0-openjdk
+yum install -y java-1.6.0-openjdk
 
 # install MySQL server
-yum install mysql-server
+yum install -y mysql-server
 service mysqld start
 chkconfig mysqld on
 
 # Tomcat6 is not available in the main repos, so we will
 # use the jpackage repos:
-yum install jpackage-utils
+yum install -y jpackage-utils
 wget http://www.jpackage.org/jpackage17.repo
 cat jpackage17.repo | sed 's/1\.7/5.0/' | sed 's/\[jpack/\[5jpack/' > /etc/yum.repos.d/jpackage5.repo
 mv jpackage17.repo /etc/yum.repos.d/
 yum makecache
 
 # now you should be able to install tomcat6 easily:
-yum install tomcat6
+yum install -y tomcat6
 
 ## NOTE: if installing tomcat fails because the "rebuild-security-providers"
 ##   dependency is missing, you may need to do the following before installing
 ##   tomcat: 
 ## wget http://dev.centos.org/centos/5/testing/i386/RPMS/jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm
-## yum install jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm  --nogpgcheck
+## yum install -y jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm  --nogpgcheck
 
 # start tomcat and configure it to automatically start on boot:
 service tomcat6 start
@@ -57,7 +57,7 @@ chkconfig tomcat6 on
 yum -y groupinstall "Development Tools"
 
 # some more requirements for packages that we will soon install:
-yum install zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
+yum install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
 
 # install swftools:
 wget http://www.swftools.org/swftools-0.8.1.tar.gz
@@ -69,14 +69,14 @@ make install
 cd ..
 
 # install ImageMagick:
-yum install ImageMagick
+yum install -y ImageMagick
 
 # nginx also needs an alternative repo - using EPEL
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
 yum makecache
 
 # now install nginx:
-yum install nginx
+yum install -y nginx
 
 # install activemq from source:
 useradd activemq
@@ -144,12 +144,12 @@ You would see a list of available videos. Select one to play.
 
 {{{
 
-yum install kernel-devel
+yum install -y kernel-devel
 
 # On Xen VM you need:
-# yum install kernel-xen-devel
+# yum install -y kernel-xen-devel
 
-yum install ncurses-devel openssl-devel newt-devel zlib-devel bison
+yum install -y ncurses-devel openssl-devel newt-devel zlib-devel bison
 
 # install dahdi
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
@@ -378,7 +378,7 @@ mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
 # install bbb-default pages
 cd /var/www/
 cp /tmp/bbb-install/web.zip ./
-yum install unzip
+yum install -y unzip
 unzip -dc web.zip
 mv c/web ./bigbluebutton-default
 rm -rf c web.zip 
