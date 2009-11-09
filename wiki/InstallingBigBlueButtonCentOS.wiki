@@ -2,7 +2,7 @@
 
 *Note*: _These instructions are in progress of being updated for the !BigBlueButton 0.62 release._
 
-These instructions will walk through how to install BigBlueButton from source onto CentOS 5.3.  Installing on CentOS is NOT easy - mostly because there are so many packages for which there are no RPMs, or the only RPMs are in alternative repos.  If you have a choice of OS, use Ubuntu and save yourself a load of time.
+These instructions will walk through how to install !BigBlueButton from source onto CentOS 5.3.  Installing on CentOS is NOT easy - mostly because there are so many packages for which there are no RPMs, or the only RPMs are in alternative repos.  If you have a choice of OS, use Ubuntu and save yourself a load of time.
 
 Before starting, make sure you have a network connection (especially if you are doing this on a new VM you just set up).
 
