@@ -10,7 +10,24 @@ Released: November 11, 2009
 
   * Better Desktop Sharing! We've made our Desktop Sharing much better than it was before. We've implemented the Adobe Screen Codec and optimized the bandwidth. It's still platform independent, and requires no install (the presenter must have the Java enabled to run the screen sharing applet).   We've also simplified the user interface for both presenter and viewer.
   * The !BigBlueButton VM makes it easier to modify and build your own versions of BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton developing in BigBlueButton].  
-  
+  * The command-line tools `bbb-setip` and `bbb-setupdev` have been consolidated into a single script `bbb-conf`
+  * If you modify your setup, typing `bbb-conf --check` will perform some checks on your setup to look for common configuration problems with running !BigBlueButton
+
+== To upgrade your !BigBlueButton 0.61 installation to 0.62 ==
+
+If you are running a !BigBlueButton VM 0.61, or have installed !BigBlueButton 0.61 from [InstallationUbuntu packages], you can upgrade your installation to 0.62 with the following commands.
+
+{{{
+  sudo apt-get update
+  sudo apt-get upgrade
+  sudo apt-get dist-upgrade
+}}}
+
+*Note*: Be sure to do `upgrade` before `dist-upgrade`.  We've moved out a lot of configuration files into a new package called `bbb-common`.  If you skip doing an `upgrade` and go directly to `dist-upgrade`, the package manager will complain that `bbb-common` is trying to overwrite files owned by another package.  
+
+If you had desktop sharing installed, you can upgrade the apt-get install command described in InstallingDesktopSharing.
+
+
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=11 Issue 11]   	 Listeners window not getting updates
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=110 Issue 110] Deskshare works only when tunneling on Mac OS X
