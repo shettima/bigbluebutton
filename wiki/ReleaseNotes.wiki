@@ -1,4 +1,4 @@
-#summary Release Notes for new versions of !BigBlueButton.
+#summary Release Notes for new versions of BigBlueButton.
 
 = Release 0.62: Nebula NGC604 =
 
