@@ -2,15 +2,15 @@ usePlugin 'java'
 usePlugin 'war'
 usePlugin 'eclipse'
 
+version = '0.0.04'
+jar.enabled = true
+archivesBaseName = 'sip' 
+
 task copyToLib(dependsOn: configurations.default.buildArtifacts, type: Copy) {
     into('lib')
     from configurations.default
     from configurations.default.allArtifacts*.file
 }
-
-jar.enabled = true
-
-archivesBaseName = 'sip' 
 
 repositories {
    	add(new org.apache.ivy.plugins.resolver.ChainResolver()) {
@@ -40,35 +40,15 @@ repositories {
 		}  
    	}
 }
-    
-    	<!-- Documentation -->
-<!--
-    	<dependency org="net.jcip" name="jcip-annotations" rev="1.0" />
--->    	
-    	<!-- Testing support -->
-<!--
-        <dependency org="org.testng" name="testng" rev="5.8"/>
-        <dependency org="commons" name="commons-lang" rev="2.4" />
--->        
-        <!-- Logging -->
-<!--         
-        <dependency name="log4j-over-slf4j" rev="1.5.6" />
-        <dependency name="jcl-over-slf4j" rev="1.5.6" />
--->        
-<!--
-        <dependency org="mina" name="mina-core" rev="2.0.0-M5" />
-        <dependency org="mina" name="mina-integration-jmx" rev="2.0.0-M5" />
-        <dependency org="mina" name="mina-core" rev="1.1.7" />
-        <dependency org="mina" name="mina-integration-jmx" rev="1.1.7" />
--->
+
 
 dependencies {	  
     providedCompile ':log4j-over-slf4j:1.5.6@jar', 'spring:spring-web:2.5.6@jar', 'javax.servlet:servlet-api:2.5@jar', 'org.apache.mina:mina-core:2.0.0-M6@jar'
     providedCompile 'spring:spring-aop:2.5.6@jar', 'spring:spring-beans:2.5.6@jar', 'spring:spring-context:2.5.6@jar', 'spring:spring-core:2.5.6@jar'
 	providedCompile 'org/red5:red5:0.8@jar'
     compile ':logback-core:0.9.14@jar', ':logback-classic:0.9.14@jar', ':slf4j-api:1.5.6@jar'
-    compile 'spring:spring-webmvc:2.5.6@jar', 'org.apache.mina:mina-integration-spring:1.1.7@jar'
-    compile 'java/media:jmf:2.1.1e@jar', 
+    compile 'org.apache.mina:mina-integration-spring:1.1.7@jar'
+    compile 'javax/media:jmf:2.1.1e@jar'
 }
 
 war.doLast {
