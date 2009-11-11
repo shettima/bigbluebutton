@@ -35,9 +35,9 @@ and !BigBlueButton reverts to the GNU Limited General Public License (LGPL), or 
 
 
 
-By incorporating bbb-apps-deskshare into !BigBlueButton, !BigBlueButton becomes licensed under AGPL.  This means you must make the source BigBlueButton, and any derivative works, available under the AGPL license, even if BigBlueButton is running on a hosted environment and is not distributed.
+By incorporating bbb-apps-deskshare into !BigBlueButton, !BigBlueButton becomes licensed under AGPL.  This means you must make the source !BigBlueButton, and any derivative works, available under the AGPL license, even if !BigBlueButton is running on a hosted environment and is not distributed.
 
-In a similar manner, if you build your web application on BigBlueButton and incorporate it into your code, you must adhere to the terms of the AGPL license.
+In a similar manner, if you build your web application on !BigBlueButton and incorporate it into your code, you must adhere to the terms of the AGPL license.
 
 For the vast majority of our users, especially in the education market, this is a non-issue.  We all live and benefit from an open source world, and the AGPL license ensures that everyone continues to benefit regardless of the distribution model.
 
