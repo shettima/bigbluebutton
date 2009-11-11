@@ -7,7 +7,7 @@
 = Known bugs/issue/fixme =
   * In bbb-web/grails-app/conf/bigbluebutton.properties, a fullpath for jodconverter lib is set. (to the VM dev dir for now...)
   * When uploading a same filename in a presentation, the new file does not overwrite the old one : org.codehaus.groovy.runtime.InvokerInvocationException: java.io.IOException: Destination file [/var/bigbluebutton/cb57644a-b5c9-40fa-9172-4f93a4643307/d6e942a5-1873-4528-b74f-8d3e34dcbebe/testme/testme.pdf] already exists and could not be deleted
-  * When uploading a file, a "debug" IO Error alertbox shows up on each upload. 
+  * When uploading a file, a "debug" IO Error alertbox shows up on each upload. Cf. http://code.google.com/p/bigbluebutton/issues/detail?id=242
 
 = Requirement =
 == OpenOffice ==
