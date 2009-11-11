@@ -6,6 +6,7 @@
 
 = Known bugs/issue/fixme =
   * In bbb-web/grails-app/conf/bigbluebutton.properties, a fullpath for jodconverter lib is set. (to the VM dev dir for now...)
+  * Try using Jodconverter beans instead of using a binary to convert file... :x
 
 = Requirement =
 == OpenOffice ==
