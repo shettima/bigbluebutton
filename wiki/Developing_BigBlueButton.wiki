@@ -213,6 +213,8 @@ On Windows:
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client video]
 === Web-app ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web video]
+NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
+
 === Server apps ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps video]
 === Video app ===
