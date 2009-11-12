@@ -208,13 +208,19 @@ On Windows:
  * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
 
-== Videos on how to develop the different bbb components ==
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html bbb-video]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html bbb-voice]
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html bbb-deskshare]
+== Videos on how to develop with different bbb components ==
+=== Client ===
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client video]
+=== Web-app ===
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web video]
+=== Server apps ===
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps video]
+=== Video app ===
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html bbb-video video]
+=== Voice app ===
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html bbb-voice video]
+=== Desktop Sharing app ===
+ * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html bbb-deskshare video]
 
 == TIPS ==
 
