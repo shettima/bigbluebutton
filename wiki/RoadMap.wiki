@@ -2,11 +2,11 @@
 
 = Release 0.63 =
 This upcoming release will include
-  * Fixed to the VoIP
-  * Annotations (whiteboard) in the presentation window
-  * Support for multiple file formats in slide uploads
+  * Improve stability of VoIP
+  * Refactor presentation module (client) to use Mate
+  * Add annotations (whiteboard) to the presentation module
+  * Support for multiple file formats in slide uploads (.doc, .xls, .ppt, .txt, etc.)
   * Localization
   * API for interfacing with 3rd party applications
 
 For a full list of what's planned see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.63 issues tagged for 0.63 release].
-
