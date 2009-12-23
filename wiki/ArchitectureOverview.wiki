@@ -19,7 +19,7 @@ There are over a dozen [OpenSourceComponents open source components] that compri
 
 The following diagram shows the major pieces of the !BigBlueButton architecture.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/architecture_diagram.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram.png
 
 ----
 
@@ -27,7 +27,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/arch
 
 We think Red5 rocks, and we use it as the core server for handling all the real-time interaction with the client.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/bbb_appsOverview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_appsOverview.png
 
 ----
 
