@@ -23,15 +23,15 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architect
 
 ----
 
-== BigBlueButton Red5 Apps ==
+== !BigBlueButton Red5 Apps ==
 
 We think Red5 rocks, and we use it as the core server for handling all the real-time interaction with the client.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_0verview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_overview.png
 
 ----
 
-== BigBlueButton Client ==
+== !BigBlueButton Client ==
 
 We've written the real-time client in Flash.  Since Flash 10, Flash is now available on Mac, Unix, and PCs, and it provides the interface for collaboration with other users.
 
