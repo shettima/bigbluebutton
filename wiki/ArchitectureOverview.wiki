@@ -27,7 +27,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architect
 
 We think Red5 rocks, and we use it as the core server for handling all the real-time interaction with the client.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_appsOverview.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/bbb_apps_0verview.png
 
 ----
 
