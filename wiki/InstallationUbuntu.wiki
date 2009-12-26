@@ -2,7 +2,7 @@
 
 = Installing !BigBlueButton using Ubuntu Packages =
 
-Using Ubuntu packages, it's very easy to get a  !BigBlueButton server up and running on Ubuntu 9.04 in about five minutes.  The following instructions will install and configure all the components except Asterisk (see Installing !BigBlueButton for how to install Asterisk, which provides the voice conferencing).
+Using Ubuntu packages, it's very easy to get a  !BigBlueButton server up and running on Ubuntu 9.04 in about ten minutes (depending on your download speed).  The following instructions will install and configure all the components except Asterisk (see Installing !BigBlueButton for how to install Asterisk, which provides the voice conferencing).
 
 == Prerequisites ==
 
