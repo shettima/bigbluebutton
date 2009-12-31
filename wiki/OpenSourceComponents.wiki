@@ -1,6 +1,6 @@
 #summary Overview of the open source components in BigBlueButton
 
-= Open Source Components of BigBlueButton =
+= Open Source Components of !BigBlueButton =
 
 See the diagrams in ArchitectureOverview for how these components interact.
 
