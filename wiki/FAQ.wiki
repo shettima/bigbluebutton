@@ -24,6 +24,13 @@ If you are running a !BigBlueButton VM or had installed !BigBlueButton using pac
   sudo apt-get upgrade
 }}}
 
+=== VM won't resolve packages when updating, or is not connected to the internet ===
+If you're using VM player, please go to VM>Settings>Network Adapter and make sure it is set to Bridged, with the box underneath left unchecked. 
+Also restart the networking on the VM by running the following command:
+{{{
+  sudo /etc/init.d/networking restart
+}}}
+
 === My VM won't let me log in!%@^$! ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
