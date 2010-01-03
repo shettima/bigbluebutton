@@ -68,10 +68,13 @@ Everything is now setup to compile the local version of bbb-client.
 
 {{{
   cd ~/dev/bbb-client
+  ant localization
   ant
 }}}
 
-This ant script runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
+The first ant task runs the localization of the client, which builds language swf files from provided txt files.
+
+The next line runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
 
 Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
 
