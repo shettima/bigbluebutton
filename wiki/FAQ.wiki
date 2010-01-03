@@ -15,6 +15,7 @@ Installing on Debian should be similar to the Ubuntu installation. Let us know i
 === Can I install on !RedHat, Fedora? ===
 This should be similar to CentOS, but we haven't tried it. Again, let us know if you run into problems.
 
+== Admin
 === How do I update my VM to the newest version? ===
 If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to this release with the following two commands
 
