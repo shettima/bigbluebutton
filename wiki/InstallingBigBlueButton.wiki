@@ -168,6 +168,9 @@ Assign proper permissions
   apt-get install chkconfig
   chkconfig red5 on
   chkconfig activemq on
+
+  sudo chmod +x red5
+  sudo ./red5 start
 }}}
 
 == Install oflaDemo to test if Red5 works ==
