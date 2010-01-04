@@ -66,7 +66,7 @@ SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:0c:29:dd:b4:5
 
 }}}
 
-Swap the two entries by eidting "NAME=eth1" to "NAME=eth0" and vice versa.
+Swap the two entries by editing "NAME=eth1" to "NAME=eth0" and vice versa.
 
 Reboot your machine. Check if you manage to connect to the internet. Make sure the VM's network adapter is using a Bridged connection instead of NAT. On the VMWare player this is enabled in the Devices menu at the top.
 
