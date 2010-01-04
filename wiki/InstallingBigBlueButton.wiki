@@ -156,7 +156,7 @@ Assign proper permissions
   chmod 775 /usr/share/red5/webapps
 }}}
 
-== Auto-start ActiveMQ and Red5 on reboot ==
+Run red5
 {{{
   cd /home/user/temp/
   wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
