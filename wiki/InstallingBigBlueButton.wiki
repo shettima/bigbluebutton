@@ -168,7 +168,11 @@ Assign proper permissions
   apt-get install chkconfig
   chkconfig red5 on
   chkconfig activemq on
+}}}
 
+== Now run add executable privilege and run red5 start script ==
+
+{{{
   sudo chmod +x red5
   sudo ./red5 start
 }}}
