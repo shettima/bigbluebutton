@@ -242,7 +242,7 @@ You may have to find out what the newest version is. Go to http://downloads.aste
 
 cd /tmp/
 wget http://bigbluebutton.googlecode.com/files/asterisk-extensions.conf
-cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf 
+sudo sh -c "cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf"
 
 }}}
 
@@ -252,7 +252,7 @@ Please take a peek at {{{asterisk-extensions.conf}}} to see what it does.
 {{{
 
 wget http://bigbluebutton.googlecode.com/files/asterisk-sip.conf
-cat asterisk-sip.conf >> /etc/asterisk/sip.conf
+sudo sh -c "cat asterisk-sip.conf >> /etc/asterisk/sip.conf"
 
 }}}
 
