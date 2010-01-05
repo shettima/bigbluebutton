@@ -606,7 +606,7 @@ mysql>
 
 == Edit bbb-apps properties ==
 {{{
- vi /opt/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+ vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
 }}}
 
 Your properties file should look like this.
@@ -626,7 +626,7 @@ ami.password=secret
 
 == Install bbb-deskshare-app ==
 {{{
-  cd /opt/red5/webapps
+  cd /usr/share/red5/webapps
   cp /home/user/temp/deskshare.tar.gz ./
   tar zxvf deskshare.tar.gz
   rm deskshare.tar.gz
@@ -634,7 +634,7 @@ ami.password=secret
 
 == Install bbb-video-app ==
 {{{
-  cd /opt/red5/webapps
+  cd /usr/share/red5/webapps
   cp /home/user/temp/video.tar.gz ./
   tar zxvf video.tar.gz
   rm video.tar.gz
@@ -642,7 +642,7 @@ ami.password=secret
 
 == Install bbb-voice-app ==
 {{{
- cd /opt/red5/webapps
+ cd /usr/share/red5/webapps
  cp /home/user/temp/sip.tar.gz ./
  tar zxvf sip.tar.gz
  rm sip.tar.gz
@@ -650,7 +650,7 @@ ami.password=secret
 
 Edit properties
 {{{
- vi /opt/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+ vi /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
 }}}
 
 Your properties file should look like this.
