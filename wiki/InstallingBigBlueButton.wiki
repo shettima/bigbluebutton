@@ -213,7 +213,7 @@ You may have to find out what the newest version is. Go to http://downloads.aste
 
 {{{
  cd /usr/local/src
- wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
+ wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
  tar zxvf dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
  cd dahdi-linux-complete-2.2.0.2+2.2.0
  sudo apt-get install linux-headers-2.6.28-11-server
