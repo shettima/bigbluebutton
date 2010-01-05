@@ -229,7 +229,7 @@ You may have to find out what the newest version is. Go to http://downloads.aste
  make config
 }}}
 
-This command will change based on what version of kernel you are using
+This command will change based on what version of kernel you are using, if you get an error when doing "make all" asking for missing linux headers then you have to changed this command to appropriate.  You can use {{{apt-cache search linux-headers}}} to find the available linux-headers
 {{{
 sudo apt-get install linux-headers-2.6.28-17-server
 }}}
