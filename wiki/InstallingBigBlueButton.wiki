@@ -772,7 +772,7 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 
 == Try out !BigBlueButton ==
 
- Go to http://<YOUR-IP> which should display the bbb web page. Login into the default conference 85115.
+ Go to *http://<YOUR-IP> which should display the bbb web page. Login into the default conference 85115.
  
  To use voice conference, using your zoiper, dial 85115 which will prompt you for the conference number.
 
