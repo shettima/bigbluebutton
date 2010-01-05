@@ -10,6 +10,13 @@ The only prerequisite is that your Ubuntu machine has a network connection.
 
 *The instructions below assumes you have downloaded the VM image above and running it on WMWare.*
 
+== Log in as root ==
+
+Log in as root to avoid having to type sudo in front of most of the commands required to install BigBlueButton.
+{{{
+sudo su - root
+}}}
+
 == Check if you have a internet connection ==
 
 {{{
