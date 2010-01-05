@@ -790,10 +790,12 @@ Also ensure that port 1935 (RTMP) and port 9123 (desktop sharing) are open on yo
 == If you make it successfully through the installation ==
 Good stuff!  Post a message to BigBlueButton-dev letting everyone know that you are a real developer and you have installed BigBlueButton from source.  :-)
 
-== Issues ==
-There is a problem after reboot where the apps are not started properly. You need to restart the services manually.
+== Startup execution of scripts ==
+
+Use this command in /etc/init.d/ on the scripts activemq and red5 to setup the startup execution of these scripts.  The 99 is priority, so to make red5 start after activemq, use 98 for the priority of red5.
+
 {{{
- /etc/init.d/activemq restart
- /etc/init.d/red5 restart
- /etc/init.d/tomcat6 restart
+update-rc.d -f script_name start 99 2 3 4 5 .
 }}}
+
+You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
