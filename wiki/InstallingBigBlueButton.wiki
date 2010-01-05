@@ -596,7 +596,7 @@ mysql>
 
 == Install bbb-apps ==
 {{{
- cd /opt/red5/webapps
+ cd /usr/share/red5/webapps
  cp /home/user/temp/bigbluebutton-apps.tar.gz ./
  
  tar zxvf bigbluebutton-apps.tar.gz
