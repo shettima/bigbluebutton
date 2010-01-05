@@ -761,6 +761,8 @@ Your config.xml should look something like:
 </config>
 }}}
 
+Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.124/192.168.0.149/g
+
 == Restart server ==
 
  * Start ActiveMQ
