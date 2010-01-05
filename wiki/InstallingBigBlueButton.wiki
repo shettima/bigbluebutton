@@ -701,7 +701,6 @@ callExtensionPattern={0}
 }}}
 
  * Change the uri to your IP address
- * Change host="conf/join-mock.xml" to host="http://<YOUR IP:PORT>/bigbluebutton/conference-session/enter"
 
 Your config.xml should look something like:
 {{{
@@ -724,7 +723,7 @@ Your config.xml should look something like:
 		/>
 		<module name="ViewersModule" url="ViewersModule.swf" 
 			uri="rtmp://192.168.0.136/bigbluebutton" 
-			host="conf/join-mock.xml"
+			host="http://192.168.0.136/bigbluebutton/conference-session/enter"
 			onAppInitEvent="LOAD" loadNextModule="ChatModule"
 			onAppStartEvent="START"
 			onUserLogoutEvent="STOP"
