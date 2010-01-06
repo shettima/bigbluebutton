@@ -21,7 +21,7 @@ If you are running a !BigBlueButton VM or had installed !BigBlueButton using pac
 
 {{{
   sudo apt-get update
-  sudo apt-get upgrade
+  sudo apt-get dist-upgrade
 }}}
 
 If you would like to instead upgrade to the version currently under development, you can do that too. Note that the development version is often unstable, and nobody guarantees that it will work correctly. Here's how to do it:
