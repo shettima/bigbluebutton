@@ -17,12 +17,32 @@ This should be similar to CentOS, but we haven't tried it. Again, let us know if
 
 == Administration of your BBB System ==
 === How do I update my VM to the newest version? ===
-If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to this release with the following two commands
+If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to the newest stable release with the following two commands
 
 {{{
   sudo apt-get update
   sudo apt-get upgrade
 }}}
+
+If you would like to instead upgrade to the version currently under development, you can do that too. Note that the development version is often unstable, and nobody guarantees that it will work correctly. Here's how to do it:
+Log into your VM, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
+
+{{{
+#
+# Repository for BigBlueButton
+#
+deb http://archive.bigbluebutton.org/ bigbluebutton main
+}}}
+
+to
+{{{
+#
+# Repository for BigBlueButton
+#
+deb http://archive.bigbluebutton.org/dev bigbluebutton main
+}}}
+
+Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current iteration.
 
 === VM won't resolve packages when updating, or is not connected to the internet ===
 If you're using VM player, please go to VM>Settings>Network Adapter and make sure it is set to Bridged, with the box underneath left unchecked. 
