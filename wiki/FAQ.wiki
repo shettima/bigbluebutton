@@ -82,8 +82,15 @@ In /home/firstuser/dev
 
 == Using BigBlueButton !BigBlueButton ==
 === Desktop Sharing ===
+==== What platforms are supported for desktop sharing? ====
+!BigBlueButton uses a Java applet to capture screen updates.   This means desktop sharing works for Mac, Unix, and PC platforms.  
+
+The presenter must have Java installed to share their desktop.  If you can view [http://java.sun.com/applets/jdk/1.4/index.html Sun's sample applets] through your browser, you should be able to share your desktop with !BigBlueButton.  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
+
+There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
+  
 ==== How can I make desktop sharing faster? ====
-BigBlueButton uses a lossless codec to capture the presenter's desktop.  If the presenter has a 32-bit background image, then the desktop sharing will send that image as well whenever it's visible.  This can slow down desktop sharing.
+!BigBlueButton uses a lossless codec to capture the presenter's desktop.  If the presenter has a 32-bit background image, then the desktop sharing will send that image as well whenever it's visible.  This can slow down desktop sharing.
 
 One easy way to speed up desktop sharing as a presenter is choose a solid color for your background image.  If you do, you'll notice that whenever the desktop is visible, the viewer's images will update relatively quickly as the algorithm is very efficient at sending solid colors.
 
