@@ -80,6 +80,12 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
+== Using BigBlueButton !BigBlueButton ==
+=== How can I make desktop sharing faster? ===
+BigBlueButton uses a lossless codec to capture the presenter's desktop.  If the presenter has a 32-bit background image, then the desktop sharing will send that image as well whenever it's visible.  This can slow down desktop sharing.
+
+One easy way to speed up desktop sharing as a presenter is choose a solid color for your background image.  If you do, you'll notice that whenever the desktop is visible, the viewer's images will update relatively quickly as the algorithm is very efficient at sending solid colors.
+
 == Developing for !BigBlueButton ==
 === Setting up the Dev environment ===
 Refer to [Developing_BigBlueButton this].
