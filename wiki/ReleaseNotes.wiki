@@ -1,5 +1,76 @@
 #summary Release Notes for new versions of BigBlueButton.
 
+= Release 0.63 =
+
+== New Features ==
+
+ * * API for creating conferences* - 
+ * * Localization Support* -
+ * * Support for other file formats* -
+ * * Improved Presentation Module* -
+ * * VoIP stability* -
+
+== Fixed Issues ==
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=105 Issue 105]   	   	 Track the presenter's mouse movements
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=144 Issue 144]   	   	 Phone Module drops connection and automatically reconnects periodically
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=152 Issue 152]   	   	 Add support for appkonference
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=184 Issue 184]   	   	 Headset icon should give an error message if bbb-apps-voice was unable to connect
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=194 Issue 194]   	   	 Built-in VoIP will automatically reconnect if you eject yourself from a voice conference.
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=214 Issue 214]   	   	 VoIP stops working
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=219 Issue 219]   	   	 Webcam not closing on clicking logout
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=233 Issue 233]   	   	 java.io.IOException: Too many open files 
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=237 Issue 237]   	   	 problem with phone component
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=241 Issue 241]   	   	 VM needs to detect when unable to connect to network
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=242 Issue 242]   	   	 Can't upload 3 different file in a row
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=244 Issue 244]   	   	 bigbluebutton-sip.properties not properly updated by the bbb-apps-sip Ubuntu package
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=246 Issue 246]   	   	 How to reset username for voice Conferrence?
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=250 Issue 250]   	   	 Widen window to upload presentation
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=251 Issue 251]   	   	 How to Improve Voice Conference.?
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=257 Issue 257]   	   	 Is full path required for officeToolsDir?
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=260 Issue 260]   	   	 Reset layout button reverts to old layout settings
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=262 Issue 262]   	   	 Better error checking on VM startup scripts
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=270 Issue 270]   	   	 Change filter on File/Open dialog box to select other file types when uploading a presentation
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=275 Issue 275]   	   	 Fisheyes + view doesn't update in new presentation module
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=278 Issue 278]   	   	 Error popup on client double each time an error is thrown
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=279 Issue 279]   	   	 Fisheyes bug when clicking outside of a slide
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=281 Issue 281]   	   	 Reset zoom in presentation module doesn't work
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=282 Issue 282]   	   	 Deskshare not coming up on devbuild server
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=286 Issue 286]   	   	 change ACL for /var/bigbluebutton
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=299 Issue 299]   	   	 Presentation display element does not resize with change in presentation window.
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=301 Issue 301]   	   	 Installation - sed: -e expression #1, char 90: unterminated 's' command
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=302 Issue 302]   	   	 NullPointerException status 500
+
+=== Issues yet to fix for 0.63. Please update ===
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=68 Issue 68]   	   	 Video connection will disconnect after a period of inactivity
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=123 Issue 123]   	   	 Add annotation to presentation module
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=143 Issue 143]   	   	 unable to mute a particular voice participant.
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=151 Issue 151]   	   	 bbb voice leaks memory
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=188 Issue 188]   	   	 First Code review request from Yuntao
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=190 Issue 190]   	   	 Create an API to enable third-party applications to easily integrate BigBlueButton
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=202 Issue 202]   	   	 meetmeID in create conference api
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=211 Issue 211]   	   	 Ability to share and present PowerPoint documents (enhancement)
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=232 Issue 232]   	   	 Red5Phone module needs to show more useful information
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=238 Issue 238]   	   	 Can't send message in chat anymore
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=245 Issue 245]   	   	 Two suggestions for bbb-conf
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=254 Issue 254]   	   	 Camera sharing button disappeared
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=256 Issue 256]   	   	 Post login page doesn't show ip address/hostname
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=258 Issue 258]   	   	 Ensure that 0.63 uses Red5 8.0, not Red5 8.0 RC2
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=261 Issue 261]   	   	 Add option to bbb-conf to reduce logging in BigBlueButton
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=263 Issue 263]   	   	 Red5 log files are not rotating
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=264 Issue 264]   	   	 bbb links to 192.168.0.136
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=265 Issue 265]   	   	 Fit presentation window to slides when maximizing
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=266 Issue 266]   	   	 Need a way to reduce logging levels for VoIP
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=267 Issue 267]   	   	 Need to modify the version code for each release
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=269 Issue 269]   	   	 Frozen File Conversion Process
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=273 Issue 273]   	   	 Localization support
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=274 Issue 274]   	   	 If not default localization is set, client shows null null null
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=277 Issue 277]   	   	 Prevent presentation module to have more than XXX slides to load
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=280 Issue 280]   	   	 Presentation module bug when entering a conference without any presentation file loaded
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=284 Issue 284]   	   	 ip address failure causes packages to not be installed
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=289 Issue 289]   	   	 Dynamic conferences not recognized by AGI findConference request
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=291 Issue 291]   	   	 Fit to zoom isn't enabled by default in Presentation
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=300 Issue 300]   	   	 Uploaded presentations not available to alternate presenters.
+
 = Release 0.62: Nebula NGC604 =
 
 _Code named in honor of Nubula NGC604_
