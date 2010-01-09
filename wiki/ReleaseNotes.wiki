@@ -4,11 +4,17 @@
 
 == New Features ==
 
- * * API for third-party integration * - Thanks to Jeremy Thomerson, We now have an API that makes it easy to create and join meetings, and integrate !BigBlueButton with third-party applications. You can find the detailed manual [http://code.google.com/p/bigbluebutton/wiki/API here].
- * * Localization Support* - Another big contribution to this release is work done by Xie Yan Qing and Chen Guangtao from China, who made localization of the BBB Client possible. You can find more details, including how to translate !BigBlueButton to your own language, [http://code.google.com/p/bigbluebutton/wiki/Localization_of_BBB here].
- * * Support for other file formats* - Jean-Philippe Guiot, a contributor from France, submitted a patch months ago that allows uploading of different file formats for the presentation module. Now, we've finally integrated his work into BBB, so from version 0.63 you will be able to upload not only .pdf, but also .ppt, doc, txt, and other file formats!
- * * Improved Presentation Module* - The presentation module has been refactored to use the Mate Framework for Flex. It is now more robust, and has several new features, such as the ability for the viewers in a conference to see where the presenter is pointing his mouse of the current slide. The stability of the file upload and conversion process has also been greatly improved.
- * * VoIP stability* - VoIP is now more stable, with fewer dropped calls than ever, and better voice quality. And no system-access fee either!
+  * * API for Third-Party Integration * - Thanks to Jeremy Thomerson, we now have an API that makes it easy to create and join meetings, and integrate !BigBlueButton with third-party applications. You can find the detailed overview of the API [http://code.google.com/p/bigbluebutton/wiki/API here].
+
+  * * Localization Support* - Another big contribution to this release is work done by Xie Yan Qing and Chen Guangtao from China, who made localization of the BBB Client possible. You can find more details, including how to translate !BigBlueButton to your own language, [http://code.google.com/p/bigbluebutton/wiki/Localization_of_BBB here].
+
+  * * Support for other file formats* - Jean-Philippe Guiot, a contributor from France, submitted a patch months ago that allows uploading of different file formats for the presentation module.  Now, we've finally integrated his work into BBB, so from version 0.63 you will be able to upload not only .pdf, but also .ppt, doc, txt, and other file formats!
+
+  * * Improved Presentation Module* - The presentation module has been refactored to use the Mate Framework for Flex. It is now more robust, and has several new features, such as the ability for the viewers in a conference to see where the presenter is pointing his mouse of the current slide. The stability of the file upload and conversion process has also been greatly improved.
+
+  * * VoIP stability* - VoIP is now more stable, with fewer dropped calls than ever, and better voice quality. And no system-access fee either!
+
+  * * Distribution* - You now longer need to compile a kernel module for VoIP.  This means that you can now install BigBlueButton 0.63 on any Ubuntu 9.04 desktop or server with just five commands.  
 
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=105 Issue 105]   	   	 Track the presenter's mouse movements
