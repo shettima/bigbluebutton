@@ -13,11 +13,11 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/I18N.png
   * French, fr_FR
   * Simplified Chinese, zh_CN
 
-= Translating BigBlueButton into your language =
+= Translating !BigBlueButton into your language =
 If you would like to translate BigBlueButton to another language, the first thing you need to do is download the template [http://bigbluebutton.googlecode.com/files/bbbResources.properties file]. Open this file with a text editor, and translate the english text into your language.
 
 == Contributing the new language back to !BigBlueButton ==
-After you're done translating, you can contribute your language back to BigBlueButton, and we will include it into the project. Send the translated language file to the BigBlueButton [http://groups.google.com/group/bigbluebutton-dev developers mailing list].
+After you're done translating, you can contribute your language back to !BigBlueButton, and we will include it into the project. Send the translated language file to the BigBlueButton [http://groups.google.com/group/bigbluebutton-dev developers mailing list].
 
 == Compiling your own language files into your client ==
 If you created a custom language file but do not wish to contribute back to the project, here are the instructions on how to compile the language files yourself:
