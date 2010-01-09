@@ -4,8 +4,6 @@
 
 = Introduction =
 
-{{{copylocale en_US fr_FR}}}
 
-{{{copylocale en_US zh_CN}}}
 
-https://bigbluebutton.googlecode.com/svn/trunk/bbb-images/I18N.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/I18N.png
