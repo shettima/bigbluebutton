@@ -27,4 +27,4 @@ Next you will need to edit the build.xml file in the bigbluebutton-client root d
 {{{
    ant localization
 }}}
-Refer to the [http://code.google.com/p/bigbluebutton/wiki/FAQ FAQ] if you have problems with Ant and Flex
+Refer to the [http://code.google.com/p/bigbluebutton/wiki/FAQ#My_client_fails_at_startup_with_RSL_error;_Error_2035:URL_Not_Fo FAQ] if you have problems with Ant and Flex
