@@ -9,9 +9,9 @@ BigBlueButton localization follows the i18n standard. BigBlueButton Client will 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/I18N.png
 
 = Supported Language =
-English, en_US
-French, fr_FR
-Simplified Chinese, zh_CN
+  * English, en_US
+  * French, fr_FR
+  * Simplified Chinese, zh_CN
 
 = Translating BigBlueButton into your language =
 If you would like to translate BigBlueButton to another language, the first thing you need to do is download the template [http://bigbluebutton.googlecode.com/files/bbbResources.properties file]. Open this file with a text editor, and translate the english text into your language.
