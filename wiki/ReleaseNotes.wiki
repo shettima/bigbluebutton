@@ -1,6 +1,6 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.63 =
+= Release 0.63 _Draft_=
 
 == New Features ==
 
@@ -40,7 +40,7 @@
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=301 Issue 301]   	   	 Installation - sed: -e expression #1, char 90: unterminated 's' command
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=302 Issue 302]   	   	 NullPointerException status 500
 
-=== Issues yet to fix for 0.63. Please update ===
+=== Issues yet to fix for 0.63. _Please update_ ===
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=68 Issue 68]   	   	 Video connection will disconnect after a period of inactivity
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=123 Issue 123]   	   	 Add annotation to presentation module
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=143 Issue 143]   	   	 unable to mute a particular voice participant.
