@@ -49,6 +49,6 @@ See the diagrams in ArchitectureOverview for how these components interact.
             </tr>
             <tr>
                 <td valign="top" width="150" align="center"><a href="http://www.openoffice.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/openoffice-logo.png</a></td>
-                <td valign="top" width="300"><p>*Xuggler*</p><p>OpenOffice.org is the leading open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more</p><p><a href="http://www.openoffice.org/">http://www.openoffice.org/</a></p></td>
+                <td valign="top" width="300"><p>*Xuggler*</p><p>!OpenOffice.org is the leading open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more</p><p><a href="http://www.openoffice.org/">http://www.openoffice.org/</a></p></td>
             </tr>
         </table>
