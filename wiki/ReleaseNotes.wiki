@@ -19,6 +19,7 @@
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=86 Issue 86]   	   	 Improve the chat text color selector; remove duplication, enhance defaults
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=105 Issue 105]   	   	 Track the presenter's mouse movements
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=119 Issue 119]   	   	 BBB Client not supported for non-english languages
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=144 Issue 144]   	   	 Phone Module drops connection and automatically reconnects periodically
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=152 Issue 152]   	   	 Add support for appkonference
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=184 Issue 184]   	   	 Headset icon should give an error message if bbb-apps-voice was unable to connect
