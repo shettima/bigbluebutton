@@ -17,6 +17,7 @@
   * * Distribution* - You now longer need to compile a kernel module for VoIP.  This means that you can now install BigBlueButton 0.63 on any Ubuntu 9.04 desktop or server with just five commands.  
 
 == Fixed Issues ==
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=86 Issue 86]   	   	 Improve the chat text color selector; remove duplication, enhance defaults
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=105 Issue 105]   	   	 Track the presenter's mouse movements
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=144 Issue 144]   	   	 Phone Module drops connection and automatically reconnects periodically
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=152 Issue 152]   	   	 Add support for appkonference
