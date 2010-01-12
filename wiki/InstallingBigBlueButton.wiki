@@ -99,7 +99,6 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 == Install Tomcat ==
 {{{
-   apt-cache search tomcat
    apt-get install tomcat6
 }}}
 
