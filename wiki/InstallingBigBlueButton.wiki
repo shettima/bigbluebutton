@@ -149,6 +149,7 @@ Create red5 user
   wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
   mv /home/user/temp/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /usr/share/red5
+  mkdir /usr/share/red5/work
 }}}
 
 Assign proper permissions
