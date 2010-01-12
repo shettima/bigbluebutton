@@ -289,6 +289,8 @@ After installing Zoiper, start it and create a SIP account using the echotest us
 
 Then dial 600. You should be connected to the "Echo" application.
 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/zoiper-running.png
+
 == Create AMI account ==
 {{{
   vi /etc/asterisk/manager.conf
