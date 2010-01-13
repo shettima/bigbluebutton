@@ -832,7 +832,7 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 {{{
  /var/log/syslog
  /var/log/tomcat6
- /opt/red5/logs
+ /usr/share/red5/log
  /var/log/asterisk
 }}}
 
