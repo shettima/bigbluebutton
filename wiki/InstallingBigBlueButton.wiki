@@ -818,7 +818,7 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
  * Start ActiveMQ
  * Start Red5
  * Start nginx
-* Restart dahdi
+ * Restart dahdi
  * Restart Tomcat
  * Restart Asterisk 
 
