@@ -636,7 +636,44 @@ ami.password=secret
 }}}
 
 == Enable RTMP Tunneling ==
- Uncommet RTMPT section of /opt/red5/conf/red5-core.xml
+ Uncomment the RTMPT section (seen below) of /usr/share/red5/conf/red5-core.xml.
+
+{{{
+<!-- RTMPT -->
+        <bean id="rtmpt.server" class="org.red5.server.net.rtmpt.TomcatRTMPTLoader" init-method="init" lazy-init="true">
+
+                <property name="webappFolder" value="${red5.root}/webapps" />
+
+                <property name="connector">
+                        <bean class="org.apache.catalina.connector.Connector">
+                                <constructor-arg type="java.lang.String" value="org.apache.coyote.http11.Http11NioProtocol" />
+                                <property name="port"><value>${rtmpt.port}</value></property>
+                                <property name="enableLookups"><value>false</value></property>
+                        </bean>
+                </property>
+
+                <property name="connectionProperties">
+                        <map>
+                                <entry key="maxKeepAliveRequests" value="${rtmpt.max_keep_alive_requests}"/>
+                                <entry key="useExecutor" value="true"/>
+                                <entry key="maxThreads" value="${rtmpt.max_threads}"/>
+                                <entry key="acceptorThreadCount" value="${rtmpt.acceptor_thread_count}"/>
+                                <entry key="processorCache" value="${rtmpt.processor_cache}"/>
+                        </map>
+                </property>
+
+                <property name="host">
+                        <bean class="org.apache.catalina.core.StandardHost">
+                                <property name="name" value="${rtmpt.host}" />
+                                <property name="unpackWARs" value="false" />
+                                <property name="autoDeploy" value="false" />
+                                <property name="xmlValidation" value="false" />
+                                <property name="xmlNamespaceAware" value="false" />
+                        </bean>
+                </property>
+
+        </bean>
+}}}
 
 == Install bbb-deskshare-app ==
 {{{
