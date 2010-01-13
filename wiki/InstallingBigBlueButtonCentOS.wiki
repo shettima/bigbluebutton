@@ -152,9 +152,9 @@ yum install -y kernel-devel
 yum install -y ncurses-devel openssl-devel newt-devel zlib-devel bison
 
 # install dahdi
-wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
-tar xzf dahdi-linux-complete-2.2.0.2+2.2.0.tar.gz
-cd dahdi-linux-complete-2.2.0.2+2.2.0
+wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-current.tar.gz
+tar xzf dahdi-linux-complete-current.tar.gz
+cd dahdi-linux-complete-current.tar.gz
 
 # if you get an error about the kernel sources not being installed
 #  (and you installed kernel-devel like above says to)
