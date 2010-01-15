@@ -1,7 +1,7 @@
 #summary How to send events between modules
 #labels Phase-Implementation
 
-With BigBlueButton using the Mate Framework, communicating between modules is done using events.
+With !BigBlueButton using the Mate Framework, communicating between modules is done using events.
 
 == Creating Events ==
 For each event you wish to send, you will need to create a new class extending the Event class. Since you want the Event to be heard by modules other than your own, you will need to call the super() constructor with the bubblling property set to true. This tells Flex that your event should 'bubble up' the hierarchy so it can be heard anywhere in the application. Here's an example Event class from the Viewers Module:
