@@ -1,4 +1,4 @@
-#summary Installing Big Blue Button 0.63 on Fedora
+#summary Installing BigBlueButton 0.63 on Fedora
 
 *NOTE: This article is still a draft*
 
