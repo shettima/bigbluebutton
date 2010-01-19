@@ -2,7 +2,7 @@
 
 *NOTE: This article is still a draft*
 
-The following instructions will guide you to install Big Blue Button on Fedora. So far the instructions have been tested on Fedora 12.
+The following instructions will guide you to install BigBlueButton on Fedora. So far the instructions have been tested on Fedora 12.
 
 == Instructions ==
 {{{
