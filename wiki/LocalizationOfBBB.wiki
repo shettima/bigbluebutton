@@ -1,3 +1,5 @@
+#summary How to localize BBB
+
 = Localization of BBB =
 
 = DRAFT =
