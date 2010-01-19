@@ -1,4 +1,4 @@
-= Installing Big Blue Button on Fedora =
+= Installing Big Blue Button 0.63 on Fedora =
 
 The following instructions will guide you to install Big Blue Button on Fedora. So far the instructions have been tested on Fedora 12.
 
