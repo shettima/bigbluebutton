@@ -187,6 +187,7 @@ At this point red5 is still running.  Before we deploy the local version of bbb-
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
 
 {{{
+cd ~/dev/bbb-apps/
     gradle war
 }}}
 
