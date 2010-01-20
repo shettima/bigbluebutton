@@ -187,14 +187,14 @@ At this point red5 is still running.  Before we deploy the local version of bbb-
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
 
 {{{
-    cd ~/dev/bbb-apps
-    ant deploy
+    gradle war
 }}}
 
 At this point, the ant script has copied the local build of bbb-apps to `/usr/share/red5/webapps/bigbluebutton`.  Now switch back to the second terminal window and enter the following command:
 
 {{{
-    sudo -u red5 /usr/share/red5/red5.sh
+    cd /usr/share/red5
+    sudo -u red5 ./red5.sh
 }}}
 
 You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility to any errors or exceptions.
