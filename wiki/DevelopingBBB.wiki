@@ -100,6 +100,8 @@ ant
 
 Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change in the default position of the presentation window, as in the following screenshot.
 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/presentation-offset.png
+
 To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
 
 {{{
