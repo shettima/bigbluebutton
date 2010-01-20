@@ -43,7 +43,7 @@ In some cases the IP of the VM maybe change while initializing for the first tim
 bbb-conf -c
 }}}
 
-If the IP in BigBluButton's config files don't match the IP of your VM, you will see something like the following.
+If the IP in BigBlueButton's config files don't match the IP of your VM, you will see something like the following.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbbconf-wrongip.png
 
