@@ -4,7 +4,6 @@
 This upcoming release will include
   * Improve stability of VoIP
   * Refactor presentation module (client) to use Mate
-  * Add annotations (whiteboard) to the presentation module
   * Support for multiple file formats in slide uploads (.doc, .xls, .ppt, .txt, etc.)
   * Localization
   * API for interfacing with 3rd party applications
