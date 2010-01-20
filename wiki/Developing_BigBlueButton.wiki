@@ -1,4 +1,5 @@
 #summary How to develop BigBlueButton.
+note: being edited for 0.63 release
 
 <wiki:toc max_depth="2" />
 
@@ -179,8 +180,7 @@ At this point red5 is still running.  Before we deploy the local version of bbb-
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
 
 {{{
-    cd ~/dev/bbb-apps
-    ant deploy
+    gradle war
 }}}
 
 At this point, the ant script has copied the local build of bbb-apps to `/usr/share/red5/webapps/bigbluebutton`.  Now switch back to the second terminal window and enter the following command:
