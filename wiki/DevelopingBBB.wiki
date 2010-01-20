@@ -247,11 +247,13 @@ dpkg -l | grep bbb
 
 which results:
 {{{
-rc  bbb-apps                          0.35.0-1ubuntu113                         Red5 applications for BigBlueButton
-ii  bbb-apps-deskshare                0.4.0-1ubuntu53                           Red5 applications for BigBlueButton deskshar
-ii  bbb-apps-sip                      0.5.0-1ubuntu14                           Red5 applications for BigBlueButton SIP modu
-ii  bbb-apps-video                    0.5.0-1ubuntu8                            Red5 applications for BigBlueButton Video mo
-ii  bbb-config                        0.4.0-1ubuntu63                           Configuration setup for BigBlueButton
+ii  bbb-apps-sip                      0.63.0ubuntu27                      BigBlueButton SIP module for Red5
+ii  bbb-apps-video                    0.63.0ubuntu2                       BigBlueButton video module for Red5
+ii  bbb-client                        0.63.0ubuntu228                     BigBlueButton Flash client
+ii  bbb-common                        0.63.0ubuntu105                     BigBlueButton common files
+ii  bbb-voice-conference              0.63.0ubuntu30                      BigBlueButton voice conference files
+ii  bbb-web                           0.63.0ubuntu120                     BigBlueButton web interface
+ii  openoffice-headless               0.63.0ubuntu8                       BigBlueButton wrapper for openoffice (bbb)
 
 }}}
 
