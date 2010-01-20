@@ -83,35 +83,22 @@ Let's dive in and make a change. We'll change the default position of the presen
 {{{
 find . -name "PresentationWindow.mxml"
 }}}
- # *Change the window position:* For this example, we'll change the default value of the y-position of the presentation window from 0 to 150.
-
-
-
-
-
-
-Notice at the top of the client it says "You are logged in as ...".  To find where this string is specified in the code, enter the following command.
-
+ # *Change the window position:* For this example, we'll change the default value of the y-position of the presentation window.
 {{{
-$ find . -exec grep -H "You are logged" '{}' \;
+# On line 92, the value of yPosition is set to 0
+private var _yPosition:int = 0;
+
+# Change it to 150, like so
+private var _yPosition:int = 150;
 }}}
 
-You should get a few matches, including the following:
-
+When you're done making you changes, go to the bbb-client directory and rebuild it.
 {{{
-./src/org/bigbluebutton/main/view/components/MainToolbar.mxml: \ 
-loggedInUserLbl.text = "You are logged in as " + name + " to " + \
-room + " as role " + role + ".";
+cd ~/dev/bbb-client
+ant
 }}}
 
-Edit `./src/org/bigbluebutton/main/view/components/MainToolbar.mxml` and change the text "You are logged in as" to "You are NOW logged in as".  Type `ant` to rebuild the client.  Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change at the top.
-
-
-
-
-
-
-
+Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change in the default position of the presentation window, as in the following screenshot.
 
 To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
 
