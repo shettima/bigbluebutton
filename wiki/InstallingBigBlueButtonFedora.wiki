@@ -182,12 +182,12 @@ chkconfig nginx on
 cd /tmp/
 mkdir bbb-install
 cd bbb-install
-wget http://devbuild.bigbluebutton.org/bbb-install/bbb-default.tar.gz
-wget http://devbuild.bigbluebutton.org/bbb-install/bigbluebutton.war
-wget http://devbuild.bigbluebutton.org/bbb-install/video.tar.gz
-wget http://devbuild.bigbluebutton.org/bbb-install/bigbluebutton-apps.tar.gz
-wget http://devbuild.bigbluebutton.org/bbb-install/client.tar.gz
-wget http://devbuild.bigbluebutton.org/bbb-install/sip.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/bbb-default.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/bigbluebutton.war
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/video.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/bigbluebutton-apps.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/client.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/sip.tar.gz
 
 # configure MySQL database
 echo "create database bigbluebutton_dev;" | mysql -u root
