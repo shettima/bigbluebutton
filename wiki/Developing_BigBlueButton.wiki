@@ -225,8 +225,11 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 Use these commands instead of the ant commands for 0.63:
 
 gradle copyToLib
+
 gradle war
+
 gradle deploy
+
 
 then restart red5
 
