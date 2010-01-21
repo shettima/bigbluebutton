@@ -200,50 +200,9 @@ Edit rtmp://< IP >/oflaDemo and click connect
 
 You would see a list of available videos. Select one to play.
 
-
-== Prepare to install Asterisk ==
-Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
-{{{
- apt-get install build-essential
- apt-get install linux-headers-`uname -r`
- apt-get install libssl-dev
- apt-get install ncurses-dev
- apt-get install libnewt-dev
- apt-get install zlib1g-dev
- apt-get install bison
-}}}
-
-== Install Dahdi ==
-You may have to find out what the newest version is. Go to http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete
-
-{{{
- cd /usr/local/src
- wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
- tar zxvf dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
- cd dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2
- sudo apt-get install linux-headers-2.6.28-17-server
- make all
- make install
- make config
-}}}
-
-This command will change based on what version of kernel you are using, if you get an error when doing "make all" asking for missing linux headers then you have to changed this command to appropriate.  You can use {{{apt-cache search linux-headers}}} to find the available linux-headers
-{{{
-sudo apt-get install linux-headers-2.6.28-17-server
-}}}
-
 == Install Asterisk ==
 {{{
-  cd /usr/local/src 
-  wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
-  tar zxvf asterisk-1.4.25.tar.gz
-  cd asterisk-1.4.25
-  more README
-  ./configure
-  make 
-  make install
-  make samples
-  make config
+  apt-get -y install asterisk
 }}}
 
 
@@ -260,9 +219,9 @@ Please take a peek at {{{asterisk-extensions.conf}}} to see what it does.
 
 == Create SIP accounts ==
 {{{
-
-wget http://bigbluebutton.googlecode.com/files/asterisk-sip.conf
-sudo sh -c "cat asterisk-sip.conf >> /etc/asterisk/sip.conf"
+cd /etc/asterisk
+wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 
 }}}
 
@@ -279,26 +238,25 @@ chmod a+x asterisk-create-sip-accounts.sh
 
 Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
 
-== Test your SIP account ==
-
-Download Zoiper from here http://www.zoiper.com/zwin.php
-
-After installing Zoiper, start it and create a SIP account using the echotest user created when you ran the {{{cat asterisk-sip.conf >> /etc/asterisk/sip.conf}}} command above.
-
-Then dial 600. You should be connected to the "Echo" application.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/zoiper-running.png
-
 == Create AMI account ==
+Set enabled to yes in manager.conf
 {{{
-  vi /etc/asterisk/manager.conf
+  cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
+mv -f /tmp/manager.conf /etc/asterisk/
 }}}
 
- Modify "enabled" to yes
+Add account to manager.conf
 {{{
-[general]
+echo "
+; BigBlueButton: Enable Red5 to connect
+[bbb]
+secret = secret
+permit = 0.0.0.0/0.0.0.0
+read = system,call,log,verbose,command,agent,user
+write = system,call,log,verbose,command,agent,user
+" >> /etc/asterisk/manager.d/bigbluebutton.conf
 
-enabled = yes
+echo "#include \"manager.d/*.conf\"" >> /etc/asterisk/manager.conf
 }}}
 
 Add the following at the bottom of the file. This entry will be used when you
@@ -850,3 +808,23 @@ update-rc.d -f script_name start 99 2 3 4 5 .
 }}}
 
 You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
+
+
+== Install Dahdi ==
+You may have to find out what the newest version is. Go to http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete
+
+{{{
+ cd /usr/local/src
+ wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
+ tar zxvf dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
+ cd dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2
+ sudo apt-get install linux-headers-2.6.28-17-server
+ make all
+ make install
+ make config
+}}}
+
+This command will change based on what version of kernel you are using, if you get an error when doing "make all" asking for missing linux headers then you have to changed this command to appropriate.  You can use {{{apt-cache search linux-headers}}} to find the available linux-headers
+{{{
+sudo apt-get install linux-headers-2.6.28-17-server
+}}}
