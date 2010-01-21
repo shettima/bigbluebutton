@@ -260,6 +260,7 @@ echo "#include \"manager.d/*.conf\"" >> /etc/asterisk/manager.conf
 }}}
 
 == Configure Nginx ==
+Be sure to replace <YOUR-IP> with your IP or domain.
 {{{
   wget http://bigbluebutton.org/downloads/0.63/nginx-bigbluebutton.conf
   cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
