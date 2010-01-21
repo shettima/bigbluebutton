@@ -162,14 +162,16 @@ Assign proper permissions
 
 == Auto-start ActiveMQ and Red5 on reboot ==
 {{{
-  cd /home/user/temp/
+  cd /tmp/
   wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
   wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu
   cd /etc/init.d/
-  cp /home/user/temp/activemq-ubuntu ./activemq
-  cp /home/user/temp/red5-ubuntu ./red5
+  cp /tmp/activemq-ubuntu ./activemq
+  cp /tmp/red5-ubuntu ./red5
+  sudo chmod +x red5
+  sudo chmod +x activemq
 
-  apt-get install chkconfig
+  apt-get -y install chkconfig
   chkconfig red5 on
   chkconfig activemq on
 }}}
@@ -177,7 +179,6 @@ Assign proper permissions
 Run red5
 
 {{{
-  sudo chmod +x red5
   sudo ./red5 start
 }}}
 
