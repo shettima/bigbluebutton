@@ -41,11 +41,22 @@ chkconfig tomcat6 on
 yum -y groupinstall "Development Tools"
 
 # some more requirements for packages that we will soon install:
-yum install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
+yum -y install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
 
 # install openoffice
-yum groupinstall 'Office/Productivity'
-yum install openoffice.org-headless
+yum -y groupinstall 'Office/Productivity'
+yum -y install openoffice.org-headless
+
+# download openoffice server initializing script
+cd /etc/init.d
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/bbb-openoffice-headless
+
+# start the openoffice server
+chmod +x /etc/init.d/bbb-openoffice-headless
+chkconfig --add bbb-openoffice-headless
+chkconfig bbb-openoffice-headlesson
+service bbb-openoffice-headlessstart
+
 
 # install swftools:
 wget http://www.swftools.org/swftools-0.8.1.tar.gz
