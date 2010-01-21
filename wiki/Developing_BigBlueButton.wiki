@@ -235,6 +235,15 @@ then restart red5
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html bbb-video video]
 === Voice app ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html bbb-voice video]
+{{{
+Use these commands instead of the ant commands for 0.63:
+
+gradle copyToLib
+gradle war
+gradle deploy
+
+then restart red5
+}}}
 === Desktop Sharing app ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html bbb-deskshare video]
 
