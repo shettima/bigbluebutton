@@ -274,7 +274,7 @@ Be sure to replace < YOUR-IP > with your IP or domain.
 
 == Download !BigBlueButton ==
 {{{ 
- cd /home/user/temp
+ cd /tmp
  wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton-apps.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
@@ -315,7 +315,7 @@ On the {{{mysql>}}} prompt, type
 == Install bbb-web ==
 {{{
   cd /var/lib/tomcat6/webapps
-  cp /home/user/temp/bigbluebutton.war ./bigbluebutton.war
+  cp /tmp/bigbluebutton.war ./bigbluebutton.war
 }}}
 
 == Determine PDF2SWF, CONVERT and GS applications ==
@@ -397,7 +397,7 @@ beans.dynamicConferenceService.serviceEnabled = true
 #
 # This URL is where the BBB client is accessible. When a user sucessfully
 # enters a name and password, she is redirected here to load the client.
-bigbluebutton.web.serverURL=http://192.168.0.182
+bigbluebutton.web.serverURL=http://< YOUR-IP>
 
 # URL where the logged-out participant will be redirected after sign-out
 bigbluebutton.web.loggedOutUrl=http://www.bigbluebutton.org
