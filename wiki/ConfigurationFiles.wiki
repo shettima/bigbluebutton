@@ -8,7 +8,7 @@ BigBlueButton is comprised of over [http://www.bigbluebutton.org/components 14 o
 
 Like any large open source project, this may seem complicated at first, but when you break everything down to its components, it becomes much less complex.  Here's our attempt to carefully walk you through each of the configuration and log files to help you understand how to modify and extend BigBlueButton yourself.
 
-The configuration files show an IP address of `192.168.0.100` -- you'll need to change it to match your local IP address when setting up BigBlueButton.
+The configuration files show an IP address of `192.168.0.100` -- you'll need to change it to match your local IP address when setting up !BigBlueButton.
 
 = nginx =
 
@@ -17,14 +17,6 @@ The configuration files show an IP address of `192.168.0.100` -- you'll need to 
 Located in {{{/etc/nginx/sites-enabled/bigbluebutton}}}
 
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/config/bigbluebutton.nginx
-
-Notes:
-  # The server IP/host and port 80 that nginx binds on
-  # All RTMPT are forwarded to Red5 listening on port 8088
-  # The deskshare servlet (for tunneling) on Red5 listening on port 5080
-  # /bigbluebutton requests (presentation upload, scheduling, login, etc.) gets forwarded to Tomcat listening on port 8080. 
-  # Document root for requests to BigBlueButton web application (Grails app served by tomcat6)
-  # Document root for requests to load BigBlueButton client (Flash application served by nginx)
 
 == Log files ==
 
