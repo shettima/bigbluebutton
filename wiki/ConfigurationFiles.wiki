@@ -61,15 +61,20 @@ This is one of the main configuration file for BigBlueButton applications.
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
   
 == Log files ==
-
-=== catalina.yyyy-mm-dd.log ===
+=== /var/log/tomcat6===
+{{{catalina.yyyy-mm-dd.log}}}
 General log information from startup of tomcat6
 
-=== localhost.yyyy-mm-dd.log ===
+{{{localhost.yyyy-mm-dd.log}}}
 General log information from startup of tomcat applications
 
 === /var/log/syslog ===
 Also contains output from tomcat6.
+
+=== /var/log/bigbluebutton ===
+{{{bbb-web.log}}}
+Contains bigbluebutton grails app logs.
+
 
 = Asterisk =
 == Configuration files ===
