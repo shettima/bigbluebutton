@@ -161,8 +161,8 @@ mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 
 wget http://bigbluebutton.org/downloads/0.63/app_konference.so
-mv appkonference.so /usr/lib/asterisk/modules/
-chmod 755 /usr/lib/asterisk/modules/appkonference.so
+mv app_konference.so /usr/lib/asterisk/modules/
+chmod 755 /usr/lib/asterisk/modules/app_konference.so
 
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-create-sip-accounts.sh
 chmod a+x asterisk-create-sip-accounts.sh
