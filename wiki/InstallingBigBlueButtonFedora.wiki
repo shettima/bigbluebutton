@@ -160,7 +160,7 @@ wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
 mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 
-wget http://bigbluebutton.org/downloads/0.63/appkonference.so
+wget http://bigbluebutton.org/downloads/0.63/app_konference.so
 mv appkonference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/appkonference.so
 
