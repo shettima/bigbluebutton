@@ -54,8 +54,8 @@ wget http://bigbluebutton.org/downloads/0.63/fedora-install/bbb-openoffice-headl
 # start the openoffice server
 chmod +x /etc/init.d/bbb-openoffice-headless
 chkconfig --add bbb-openoffice-headless
-chkconfig bbb-openoffice-headlesson
-service bbb-openoffice-headlessstart
+chkconfig bbb-openoffice-headless on
+service bbb-openoffice-headless start
 
 
 # install swftools:
