@@ -154,7 +154,7 @@ cd ..
 # configure asterisk
 wget http://bigbluebutton.org/downloads/0.63/bbb_extensions.conf
 mv bbb_extensions.conf /etc/asterisk/
-echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/sip.conf
+echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 
 wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
 mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
