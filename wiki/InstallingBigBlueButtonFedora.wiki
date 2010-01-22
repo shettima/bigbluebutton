@@ -312,6 +312,9 @@ cat /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp | sed "s/192.168.0.1
 
 mv -f /tmp/bbb_api.jsp /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp
 
+# create directory for log files
+mkdir /var/log/bigbluebutton
+
 # restart things:
 service activemq restart
 service red5 restart
