@@ -152,16 +152,21 @@ make config
 cd ..
 
 # configure asterisk
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-extensions.conf
-cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf 
+wget http://bigbluebutton.org/downloads/0.63/redhat-install/voice/bbb_extensions.conf
+mv bbb_extensions.conf /etc/asterisk/
+echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/sip.conf
 
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-sip.conf
-cat asterisk-sip.conf >> /etc/asterisk/sip.conf
+wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
+echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
+
+wget http://bigbluebutton.org/downloads/0.63/appkonference.so
+mv appkonference.so /usr/lib/asterisk/modules/
+chmod 755 /usr/lib/asterisk/modules/appkonference.so
 
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-create-sip-accounts.sh
 chmod a+x asterisk-create-sip-accounts.sh
 ./asterisk-create-sip-accounts.sh
-
 
 # set enabled to yes in manager.conf
 cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
