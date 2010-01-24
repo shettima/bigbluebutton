@@ -84,17 +84,7 @@ http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/
 
 === /etc/asterisk/manager.d/bigbluebutton.conf ===
 
-Setup permissions for Asterisk-Java to connect.
-
-{{{
-;
-; BigBlueButton: Enable Red5 to connect
-[bbb]
-secret = secret
-permit = 0.0.0.0/0.0.0.0
-read = system,call,log,verbose,command,agent,user
-write = system,call,log,verbose,command,agent,user
-}}}
+http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bigbluebutton.conf
 
 === /etc/asterisk/sip.conf ===
 
