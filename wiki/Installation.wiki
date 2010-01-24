@@ -2,7 +2,7 @@
 
 = Introduction =
 
-There are four ways you can install BigBlueButton
+There are four ways you can install !BigBlueButton
     * [BigBlueButtonVM Download the Virtual Machine] (white belt)
     * [InstallationUbuntu Install on Ubuntu (5 minutes)] (yellow belt)
     * [InstallingBigBlueButton Install from source (Ubuntu)] (brown belt)
