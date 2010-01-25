@@ -119,7 +119,7 @@ Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest bui
 
 = Troubleshooting =
 
-== Use bbb-conf -c ===
+== Use bbb-conf ==
 
 Starting with BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent BigBlueButton from running.  
 
