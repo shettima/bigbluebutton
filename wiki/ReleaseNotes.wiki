@@ -16,9 +16,9 @@ _Code named for the red dot that's now visible in the presentation module_
 
   * * VoIP stability* - VoIP is now more stable, with fewer dropped calls than ever, and better voice quality. And no system-access fee either!
 
-  * * Distribution* - You now longer need to compile a kernel module for VoIP.  This means that you can now install BigBlueButton 0.63 on any Ubuntu 9.04 32-bit (server or desktop) with just five commands.  
+  * * Distribution* - You now longer need to compile a kernel module for VoIP.  This means that you can now install !BigBlueButton 0.63 on any Ubuntu 9.04 32-bit (server or desktop) with just five commands.  
 
-  * * Updated Install instructions* - If you want to install BigBlueButton's components, we've provided step-by-step instructions for [InstallingBigBlueButton Ubuntu 9.04], [InstallingBigBlueButtonCentOS CentOS 5.03], and [InstallingBigBlueButtonFedora Fedora 12].  
+  * * Updated Install instructions* - If you want to install !BigBlueButton's components, we've provided step-by-step instructions for [InstallingBigBlueButton Ubuntu 9.04], [InstallingBigBlueButtonCentOS CentOS 5.03], and [InstallingBigBlueButtonFedora Fedora 12].  
 
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.63&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issue Tracker]
