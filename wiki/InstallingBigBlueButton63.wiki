@@ -676,20 +676,18 @@ Your config.xml should look something like:
 Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
 
 == Restart server ==
-
- * Start ActiveMQ
- * Start Red5
- * Start nginx
- * Restart dahdi
- * Restart Tomcat
- * Restart Asterisk 
+{{{
+service activemq restart
+service red5 restart
+service nginx restart
+service tomcat6 restart
+service asterisk restart
+}}}
 
 
 == Try out !BigBlueButton ==
 
- Go to {{{http://<YOUR-IP>}}} which should display the bbb web page. Login into the default conference 85115.
- 
- To use voice conference, using your zoiper, dial 85115 which will prompt you for the conference number.
+ Go to {{{http://<YOUR-IP>}}} which should display the bbb web page and join the conference!
 
 == When things go wrong ==
  Look for logs in the following
