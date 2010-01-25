@@ -131,7 +131,7 @@ Click connect
 
 You would see a list of available videos. Select one to play.
 
-* Now prepare for Asterisk build: 
+  * Now prepare for Asterisk build: 
 {{{
 yum install -y kernel-devel
 
@@ -233,7 +233,7 @@ wget http://bigbluebutton.org/downloads/0.63/blank/blank-thumb.png
 
 For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
 
-* Determine PDF2SWF, CONVERT and GS applications (manual step)
+  * Determine PDF2SWF, CONVERT and GS applications (manual step)
 {{{
       # Make a note of where pdf2swf is installed
       which pdf2swf
@@ -253,7 +253,7 @@ For security, you need to generate a GUID. You can use an online GUID generator,
       # You should see something like.
       # /usr/bin/gs
 }}}
-* Edit bbb-web properties
+  * Edit bbb-web properties
 {{{
 vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
@@ -266,7 +266,7 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 #  - change BLANK_THUMBNAIL= to "BLANK_THUMBNAIL=/var/bigbluebutton/blank/blank-thumb.png"
 #  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
-* back to the automated tasks: 
+  * Back to the automated tasks: 
 {{{
 # restart tomcat
 service tomcat6 restart
@@ -285,7 +285,7 @@ tar xvf bigbluebutton-apps.tar.gz
 rsync -a webapps/* /opt/red5-0.8/webapps/
 rm -rf webapps
 }}}
-* manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port 
+  * Manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port 
 {{{
 vi /opt/red5-0.8/conf/red5-core.xml
 # remove the comment BEFORE AND AFTER the 1936 port definition
@@ -325,7 +325,7 @@ cat /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp | sed "s/192.168.0.1
 mv -f /tmp/bbb_api.jsp /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp
 }}}
 
-Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Make sure you replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
 {{{
 echo "<%!
 // This is the security salt that must match the value set in the BigBlueButton server
@@ -335,6 +335,18 @@ String salt = \"<YOUR-GUID>\";
 String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
 %>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
 
+# create directory for log files
+mkdir /var/log/bigbluebutton
+
+# restart things:
+service activemq restart
+service red5 restart
+service tomcat6 restart
+service asterisk restart
+}}}
+
+=== Installing Desktop Sharing ===
+{{{
 # install deskshare app
 #
 # Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
@@ -348,12 +360,9 @@ cd /opt/red5-0.8/webapps
 tar zxvf deskshare.tar.gz
 rm -f deskshare.tar.gz
 
-# create directory for log files
-mkdir /var/log/bigbluebutton
+}}}
 
-# restart things:
-service activemq restart
-service red5 restart
-service tomcat6 restart
-service asterisk restart
+Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
+{{{
+ <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
 }}}
