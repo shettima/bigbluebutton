@@ -343,9 +343,9 @@ On the {{{mysql>}}} prompt, type
 }}}
 
 Change the following:
- * swfToolsDir to the directory where pdf2swf is located
- * imageMagickDir to the directory where convert is located
- * ghostScriptExec to point to the gs application
+ * swfToolsDir to the *directory* where pdf2swf is located
+ * imageMagickDir to the *directory* where convert is located
+ * ghostScriptExec to point to the gs *executable*
  * change bigbluebutton.web.serverURL=http://<YOUR IP>
 
 Your bigbluebutton.properties should resemble something like this
@@ -469,7 +469,7 @@ mysql>
 == Install bbb-apps ==
 {{{
  cd /usr/share/red5/webapps
- cp /home/user/temp/bigbluebutton-apps.tar.gz ./
+ cp /tmp/bigbluebutton-apps.tar.gz ./
  
  tar zxvf bigbluebutton-apps.tar.gz
  mv webapps/bigbluebutton ./
@@ -536,7 +536,7 @@ ami.password=secret
 == Install bbb-deskshare-app ==
 {{{
   cd /usr/share/red5/webapps
-  cp /home/user/temp/deskshare.tar.gz ./
+  cp /tmp/deskshare.tar.gz ./
   tar zxvf deskshare.tar.gz
   rm deskshare.tar.gz
 }}}
@@ -544,7 +544,7 @@ ami.password=secret
 == Install bbb-video-app ==
 {{{
   cd /usr/share/red5/webapps
-  cp /home/user/temp/video.tar.gz ./
+  cp /tmp/video.tar.gz ./
   tar zxvf video.tar.gz
   rm video.tar.gz
 }}}
@@ -552,7 +552,7 @@ ami.password=secret
 == Install bbb-voice-app ==
 {{{
  cd /usr/share/red5/webapps
- cp /home/user/temp/sip.tar.gz ./
+ cp /tmp/sip.tar.gz ./
  tar zxvf sip.tar.gz
  rm sip.tar.gz
 }}}
@@ -587,7 +587,7 @@ callExtensionPattern={0}
 == Install bbb-default ==
 {{{
  cd /var/www
- cp /home/user/temp/bbb-default.tar.gz ./
+ cp /tmp/bbb-default.tar.gz ./
  tar zxvf bbb-default.tar.gz
  mv web bigbluebutton-default
  rm bbb-default.tar.gz
@@ -598,7 +598,7 @@ callExtensionPattern={0}
   cd /var/www
   mkdir bigbluebutton
   cd bigbluebutton 
-  cp /home/user/temp/client.tar.gz ./
+  cp /tmp/client.tar.gz ./
   tar zxvf client.tar.gz
   rm client.tar.gz
 }}}
