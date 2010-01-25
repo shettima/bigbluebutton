@@ -228,6 +228,11 @@ cd /var/bigbluebutton/blank
 wget http://bigbluebutton.org/downloads/0.63/blank/blank-slide.swf
 wget http://bigbluebutton.org/downloads/0.63/blank/blank-thumb.png
 }}}
+
+  * Generate a GUID (manual step)
+
+For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
+
 * Determine PDF2SWF, CONVERT and GS applications (manual step)
 {{{
       # Make a note of where pdf2swf is installed
@@ -250,16 +255,16 @@ wget http://bigbluebutton.org/downloads/0.63/blank/blank-thumb.png
 }}}
 * Edit bbb-web properties
 {{{
-      vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
-      # Change the following:
-      #  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin/)
-      #  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin/)
-      #  - ghostScriptExec to point to the gs application (in this example, it is /usr/bin/gs)
-      #  - change bigbluebutton.web.serverURL=http://<YOUR IP>
-      #  - change BLANK_SLIDE= to "BLANK_SLIDE=/var/bigbluebutton/blank/blank-slide.swf"
-      #  - change BLANK_THUMBNAIL= to "BLANK_THUMBNAIL=/var/bigbluebutton/blank/blank-thumb.png"
-
+# Change the following:
+#  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin/)
+#  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin/)
+#  - ghostScriptExec to point to the gs application (in this example, it is /usr/bin/gs)
+#  - change bigbluebutton.web.serverURL=http://<YOUR IP>
+#  - change BLANK_SLIDE= to "BLANK_SLIDE=/var/bigbluebutton/blank/blank-slide.swf"
+#  - change BLANK_THUMBNAIL= to "BLANK_THUMBNAIL=/var/bigbluebutton/blank/blank-thumb.png"
+#  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
 * back to the automated tasks: 
 {{{
@@ -318,6 +323,17 @@ rm -rf bbb-default.tar.gz
 cat /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp | sed "s/192.168.0.177/`hostname`/" > /tmp/bbb_api.jsp
 
 mv -f /tmp/bbb_api.jsp /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp
+}}}
+
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Make sure you replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
+{{{
+echo "<%!
+// This is the security salt that must match the value set in the BigBlueButton server
+String salt = \"<YOUR-GUID>\";
+
+// This is the URL for the BigBlueButton server
+String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
+%>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
 
 # install deskshare app
 #
