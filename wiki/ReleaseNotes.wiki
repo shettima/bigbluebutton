@@ -17,7 +17,7 @@
   * * Distribution* - You now longer need to compile a kernel module for VoIP.  This means that you can now install BigBlueButton 0.63 on any Ubuntu 9.04 desktop or server with just five commands.  
 
 == Fixed Issues ==
- * http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.63&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary
+ * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.63&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issue Tracker]
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=302 Issue 302]   	   	 NullPointerException status 500
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=301 Issue 301]   	   	 Installation - sed: -e expression #1, char 90: unterminated 's' command
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=300 Issue 300]   	   	 Uploaded presentations not available to alternate presenters.
