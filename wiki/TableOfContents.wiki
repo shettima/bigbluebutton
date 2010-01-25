@@ -3,7 +3,7 @@
     * [InstallationUbuntu Install on Ubuntu (10 minutes)]
     * [InstallingBigBlueButton Install from source (Ubuntu)]
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)]
-    * [InstallingBigBlueButtonFedoraInstall from source (Fedora)]
+    * [InstallingBigBlueButtonFedoraInstall Install from source (Fedora)]
     * [ConfigurationFiles Configuration Files]
   * [GettingStarted Getting Started]
     * [ArchitectureOverview Overview of Architecture]
