@@ -273,6 +273,23 @@ Be sure to replace < YOUR-IP > with your IP or domain.
  ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 }}}
 
+== Install OpenOffice ==
+{{{
+apt-get install openoffice.org
+}}}
+
+== Configure OpenOffice to start as a service ==
+{{{
+cd /etc/init.d
+wget http://www.bigbluebutton.org/downloads/0.63/ubuntu-install/bbb-openoffice-headless
+
+# start the openoffice server
+chmod +x /etc/init.d/bbb-openoffice-headless
+chkconfig --add bbb-openoffice-headless
+chkconfig bbb-openoffice-headless on
+service bbb-openoffice-headless start
+}}
+
 == Download !BigBlueButton ==
 {{{ 
  cd /tmp
@@ -316,6 +333,10 @@ On the {{{mysql>}}} prompt, type
   cp /tmp/bigbluebutton.war ./bigbluebutton.war
 }}}
 
+== Generate a GUID ==
+
+For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
+
 == Determine PDF2SWF, CONVERT and GS applications ==
 {{{
   Make a note of where pdf2swf is installed
@@ -347,6 +368,7 @@ Change the following:
  * imageMagickDir to the *directory* where convert is located
  * ghostScriptExec to point to the gs *executable*
  * change bigbluebutton.web.serverURL=http://<YOUR IP>
+ * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 
 Your bigbluebutton.properties should resemble something like this
 
