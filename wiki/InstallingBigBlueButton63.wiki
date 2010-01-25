@@ -213,12 +213,6 @@ mv bbb_extensions.conf /etc/asterisk/
 echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 }}}
 
-{{{
-# set enabled to yes in manager.conf
-cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
-mv -f /tmp/manager.conf /etc/asterisk/
-}}}
-
 == Create SIP accounts ==
 {{{
 wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
@@ -230,11 +224,9 @@ Please take a peek at {{{asterisk-sip.conf}}} to see what it does.
 
 == Create SIP Accounts to be used by !Red5Phone ==
 {{{
-
 wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
 chmod a+x asterisk-create-sip-accounts.sh
 ./asterisk-create-sip-accounts.sh
-
 }}}
 
 Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
