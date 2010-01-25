@@ -2,17 +2,17 @@
 
 = Installing !BigBlueButton using Ubuntu Packages =
 
-Using Ubuntu packages, it's very easy to get a  !BigBlueButton server up and running on Ubuntu 9.04 in about ten minutes (depending on your download speed).  The following instructions will install and configure all the components except Asterisk (see Installing !BigBlueButton for how to install Asterisk, which provides the voice conferencing).
+Using Ubuntu packages, it's very easy to get a  !BigBlueButton server up and running on any Ubuntu 9.04 x32 (desktop or server) in about ten minutes (depending on your download speed).
 
 == Prerequisites ==
 
-You'll need root access to your Ubuntu 9.04 machine (it can be server or workstation).  
+You'll need root access to your Ubuntu 9.04 machine.  
 
 Also,  !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling, so if you have apache running, you'll need to tell apache to listen to a different port by editing /etc/apache2/ports.conf and changing the entry for 80 to another number, such as 8081.  Avoid setting apache2 to port 8080 as  !BigBlueButton uses tomcat6 which listens on that port.
 
 == Let's go == 
 
-First, you need to add the  !BigBlueButton key and repository URL to apt-get, then instruct apt-get to update the list of available packages.
+First, you need to add the !BigBlueButton key and repository URL to apt-get, then instruct apt-get to update the list of available packages.
 
 {{{
    wget http://archive.bigbluebutton.org/bigbluebutton.asc 
@@ -27,8 +27,7 @@ Next, enter the following command
    sudo apt-get install bigbluebutton 
 }}}
 
-This is where all the work is done.  Through figuring out dependencies, apt-get will present you a list of all the packages that need to be installed on your machine.  
-  
+This is where all the magic happens.  This one command will install all of BigBlueButton along with all its dependencies.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/add_packages.png
 
@@ -40,37 +39,39 @@ Next, bbb-web, the scheduling component for a  !BigBlueButton conference, needs 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
 
-== Trying out your server ( 4:42 minutes later) ==
+== Trying out your server ( 8:42 minutes later) ==
 
-Once apt-get installs everything, your done.  Near the end of the installation, you'll see the install script for bbb-web output the URL to load  !BigBlueButton. 
+Once apt-get installs everything, your done.  Type
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-url.png
+{{{
+   bbb-conf -c
+}}}
 
-Enter this URL in your web browser and you should have  !BigBlueButton home page.  (Note: I used Amazon EC2 for the screen shots, which has an internal IP address of 10... and an external DNS host name, so you'll need to tell  !BigBlueButton to use the external DNS name, as described in the next section).
+to check your setup.  If you need to change your IP address type
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/bbb-screen-shot.png
+{{{
+   bbb-conf --setip <ip_address>
+}}}
 
-There you have it.  A  !BigBlueButton server (sans voice conferencing) up in running in about 5 minutes.
+There you have it. At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided using the IP address of the VM.  
+  
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
 
-Want to keep your machine up-to-date with the latest  !BigBlueButton release?  No problem, just enter
+Enter whatever name you like and then click Join.  You'll join the default meeting.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
+
+
+Want to keep your BigBlueButton server up-to-date with the latest !BigBlueButton release?  No problem, just enter
 
 {{{
   # apt-get update
-  # apt-get upgrade
+  # apt-get dist-upgrade
 }}}
 
 and apt-get will download and install any updates to  !BigBlueButton.  Don't you just love the power of Ubuntu/Debian packages.
 
-One more note for EC2: you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
+Note: If you install BigBlueButton on EC2, you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
 
 == How to install desktop sharing ==
 Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
-
-=== Changing the host (or IP) address for  !BigBlueButton ===
-If you need to change the hostname (or IP address), you can use `bbb-setip`, a utility shell script included in the  !BigBlueButton install, to make the global changes necessary to  !BigBlueButton's configuration files.
-
-For example, to switch the  !BigBlueButton server to use IP address 192.168.0.100, enter the follwoing
-
-{{{
-sudo bbb-conf --setip 192.168.0.100
-}}}
