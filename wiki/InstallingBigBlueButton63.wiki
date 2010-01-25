@@ -234,7 +234,7 @@ Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
 == Install AppKonference ==
 
 {{{
-wget http://bigbluebutton.org/downloads/0.63/app_konference.so
+wget http://bigbluebutton.org/downloads/0.63/ubuntu-install/app_konference.so
 mv app_konference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/app_konference.so
 }}}
@@ -370,60 +370,7 @@ Change the following:
  * imageMagickDir to the *directory* where convert is located
  * ghostScriptExec to point to the gs *executable*
  * change bigbluebutton.web.serverURL=http://<YOUR IP>
- * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
-
-Your bigbluebutton.properties should resemble something like this
-
-{{{
-#
-# These are the default properites for BigBlueButton Web application
-
-dataSource.url=jdbc:mysql://localhost/bigbluebutton_dev
-dataSource.username=bbb
-dataSource.password=secret
-
-# Directory where BigBlueButton stores uploaded slides
-presentationDir=/var/bigbluebutton
-
-# Directory where SWFTOOLS (pdf2swf, jpeg2swf, png2swf) are located
-swfToolsDir=/bin
-
-# Directory where ImageMagick's convert executable is located
-imageMagickDir=/usr/bin
-
-# Use fullpath to ghostscript executable since the exec names are different
-# for each platform.
-ghostScriptExec=/usr/bin/gs
-
-# This is a workaround for a problem converting PDF files, referenced at 
-# http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
-noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
-
-# These will be copied in cases where the conversion process
-# fails to generate a slide from the uploaded presentation
-BLANK_SLIDE = /var/bigbluebutton/blank/blank-slide.swf
-BLANK_THUMBNAIL = /var/bigbluebutton/blank/blank-thumb.png
-
-# Inject the above properties into the PresentationService bean	
-beans.presentationService.swfToolsDir=${swfToolsDir}
-beans.presentationService.imageMagickDir=${imageMagickDir}
-beans.presentationService.presentationDir=${presentationDir}
-beans.presentationService.ghostScriptExec=${ghostScriptExec}
-beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
-beans.presentationService.BLANK_THUMBNAIL=${BLANK_THUMBNAIL}
-beans.presentationService.BLANK_SLIDE=${BLANK_SLIDE}
-
-beans.adhocConferenceService.serviceEnabled = true
-beans.dynamicConferenceService.serviceEnabled = true
-
-#
-# This URL is where the BBB client is accessible. When a user sucessfully
-# enters a name and password, she is redirected here to load the client.
-bigbluebutton.web.serverURL=http://< YOUR-IP>
-
-# URL where the logged-out participant will be redirected after sign-out
-bigbluebutton.web.loggedOutUrl=http://www.bigbluebutton.org
-}}}
+ * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=< YOUR-GUID >)
 
 == Create noPdfMarkWorkaround.ps ==
 Create {{{/etc/bigbluebutton/nopdfmark.ps}}} with the following content:
@@ -780,8 +727,11 @@ update-rc.d -f script_name start 99 2 3 4 5 .
 
 You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
 
+== Using MeetMe ==
+By default, BigBlueButton uses AppKonference for voice conferencing. If you wish to use MeetMe instead, you need to install dahdi and enable MeetMe in BigBlueButton's configuration.
 
-== Install Dahdi ==
+=== Install Dahdi ===
+
 You may have to find out what the newest version is. Go to http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete
 
 {{{
@@ -798,4 +748,26 @@ You may have to find out what the newest version is. Go to http://downloads.aste
 This command will change based on what version of kernel you are using, if you get an error when doing "make all" asking for missing linux headers then you have to changed this command to appropriate.  You can use {{{apt-cache search linux-headers}}} to find the available linux-headers
 {{{
 sudo apt-get install linux-headers-2.6.28-17-server
+}}}
+
+=== Enable MeetMe ===
+
+You can change the BigBlueButton's configuration to use MeetMe by executing the following commands.
+{{{
+ sed -i "s/asterisk.application[ ]*=.*/asterisk.application=meetme/g" \
+                        /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+
+# update /etc/asterisk/bbb_extensions.conf
+ sed -i "s/^exten => _XXXX.,n,Konference(\${EXTEN},H)/# exten => _XXXX.,n,Konference(\${EXTEN},H)/g" \
+ /etc/asterisk/bbb_extensions.conf
+
+ sed -i "s/#[ ]*exten => _XXXX.,n,MeetMe(\${EXTEN},cdMsT)/exten => _XXXX.,n,MeetMe(\${EXTEN},cdMsT)/g" \
+ /etc/asterisk/bbb_extensions.conf
+
+# update /etc/asterisk/bbb_extensions.conf
+ sudo sed -i "s/# exten => _XXXX.,n,MeetMe(\${CONFERENCE_FOUND},cdMsT)/exten => _XXXX.,n,MeetMe(\${CONFERENCE_FOUND},cdMsT)/g" \
+ /etc/asterisk/bbb_extensions.conf
+
+ sudo sed -i "s/^exten => _XXXX.,n,Konference(\${CONFERENCE_FOUND},H)/# exten => _XXXX.,n,Konference(\${CONFERENCE_FOUND},H)/g" \
+ /etc/asterisk/bbb_extensions.conf
 }}}
