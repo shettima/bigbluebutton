@@ -229,11 +229,11 @@ wget http://bigbluebutton.org/downloads/0.63/blank/blank-slide.swf
 wget http://bigbluebutton.org/downloads/0.63/blank/blank-thumb.png
 }}}
 
-  * Generate a GUID (manual step)
+* Generate a GUID (manual step)
 
 For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
 
-  * Determine PDF2SWF, CONVERT and GS applications (manual step)
+Determine PDF2SWF, CONVERT and GS applications (manual step)
 {{{
       # Make a note of where pdf2swf is installed
       which pdf2swf
@@ -253,7 +253,7 @@ For security, you need to generate a GUID. You can use an online GUID generator,
       # You should see something like.
       # /usr/bin/gs
 }}}
-  * Edit bbb-web properties
+Edit bbb-web properties
 {{{
 vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
@@ -266,7 +266,7 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 #  - change BLANK_THUMBNAIL= to "BLANK_THUMBNAIL=/var/bigbluebutton/blank/blank-thumb.png"
 #  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
-  * Back to the automated tasks: 
+Back to the automated tasks: 
 {{{
 # restart tomcat
 service tomcat6 restart
@@ -285,7 +285,7 @@ tar xvf bigbluebutton-apps.tar.gz
 rsync -a webapps/* /opt/red5-0.8/webapps/
 rm -rf webapps
 }}}
-  * Manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port 
+Manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port 
 {{{
 vi /opt/red5-0.8/conf/red5-core.xml
 # remove the comment BEFORE AND AFTER the 1936 port definition
@@ -337,7 +337,7 @@ String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
 
 }}}
 
- * Installing Desktop Sharing 
+Installing Desktop Sharing (optional)
 {{{
 # install deskshare app
 #
@@ -359,7 +359,7 @@ Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutt
  <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
 }}}
 
- * Finish the installation
+Finish the installation
 {{{
 # create directory for log files
 mkdir /var/log/bigbluebutton
