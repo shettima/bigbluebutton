@@ -208,39 +208,22 @@ You would see a list of available videos. Select one to play.
 
 == Modify Extensions ==
 {{{
-
-# configure asterisk
 wget http://bigbluebutton.org/downloads/0.63/bbb_extensions.conf
 mv bbb_extensions.conf /etc/asterisk/
 echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
+}}}
 
-wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
-mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
-echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
-
-wget http://bigbluebutton.org/downloads/0.63/app_konference.so
-mv app_konference.so /usr/lib/asterisk/modules/
-chmod 755 /usr/lib/asterisk/modules/app_konference.so
-
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-create-sip-accounts.sh
-chmod a+x asterisk-create-sip-accounts.sh
-./asterisk-create-sip-accounts.sh
-
+{{{
 # set enabled to yes in manager.conf
 cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
 mv -f /tmp/manager.conf /etc/asterisk/
-
-
 }}}
-
-Please take a peek at {{{asterisk-extensions.conf}}} to see what it does.
 
 == Create SIP accounts ==
 {{{
-cd /etc/asterisk
 wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
-
 }}}
 
 Please take a peek at {{{asterisk-sip.conf}}} to see what it does.
@@ -255,6 +238,14 @@ chmod a+x asterisk-create-sip-accounts.sh
 }}}
 
 Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
+
+== Install AppKonference ==
+
+{{{
+wget http://bigbluebutton.org/downloads/0.63/app_konference.so
+mv app_konference.so /usr/lib/asterisk/modules/
+chmod 755 /usr/lib/asterisk/modules/app_konference.so
+}}}
 
 == Create AMI account ==
 Set enabled to yes in manager.conf
