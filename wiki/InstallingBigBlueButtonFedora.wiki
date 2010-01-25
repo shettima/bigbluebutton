@@ -131,7 +131,7 @@ Click connect
 
 You would see a list of available videos. Select one to play.
 
-  * Now prepare for Asterisk build: 
+Now prepare for Asterisk build: 
 {{{
 yum install -y kernel-devel
 
