@@ -97,7 +97,7 @@ chkconfig activemq on
 
 # now we will install Red5 from source
 useradd red5
-wget http://devbuild.bigbluebutton.org/bbb-install/red5-0.8.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/red5-0.8.tar.gz
 tar xvf red5-0.8.tar.gz 
 mv red5-0.8 /opt/red5-0.8
 chown -R red5.red5 /opt/red5-0.8
