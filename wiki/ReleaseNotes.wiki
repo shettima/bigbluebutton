@@ -8,7 +8,7 @@ _Code named for the red dot that's now visible in the presentation module_
 
   * * API for Third-Party Integration * - Thanks to Jeremy Thomerson, we now have an API that makes it easy to create and join meetings, and integrate !BigBlueButton with third-party applications. You can find the detailed overview of the API [http://code.google.com/p/bigbluebutton/wiki/API here].
 
-  * * Localization Support* - Another big contribution to this release is work done by Xie Yan Qing and Chen Guangtao from China, who made localization of the BBB Client possible. You can find more details, including how to translate !BigBlueButton to your own language, [http://code.google.com/p/bigbluebutton/wiki/Localization_of_BBB here].
+  * * Localization Support* - Another big contribution to this release is work done by Xie Yan Qing and Chen Guangtao from China, who made localization of the BBB Client possible. You can find more details, including how to translate !BigBlueButton to your own language, [LocalizationOfBBB here].
 
   * * Support for other file formats* - Jean-Philippe Guiot, a contributor from France, submitted a patch months ago that allows uploading of different file formats for the presentation module.  Now, we've finally integrated his work into BBB, so from version 0.63 you will be able to upload not only .pdf, but also .ppt, doc, txt, and other file formats!
 
