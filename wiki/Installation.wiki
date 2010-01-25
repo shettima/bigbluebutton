@@ -6,6 +6,7 @@ There are four ways you can install !BigBlueButton
     * [BigBlueButtonVM Download the Virtual Machine] (white belt)
     * [InstallationUbuntu Install on Ubuntu (5 minutes)] (yellow belt)
     * [InstallingBigBlueButton Install from source (Ubuntu)] (brown belt)
+    * [InstallingBigBlueButtonFedora Install from source (Fedora)] (brown belt)
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)] (brown belt, two black stripes) 
     * Port !BigBlueButton to another OS and contribute the steps to the community (black belt!)
 
