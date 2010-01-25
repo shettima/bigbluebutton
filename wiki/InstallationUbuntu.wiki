@@ -27,7 +27,7 @@ Next, enter the following command
    sudo apt-get install bigbluebutton 
 }}}
 
-This is where all the magic happens.  This one command will install all of BigBlueButton along with all its dependencies.  
+This is where all the magic happens.  This one command will install all of !BigBlueButton along with all its dependencies.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/add_packages.png
 
@@ -65,7 +65,7 @@ Enter whatever name you like and then click Join.  You'll join the default meeti
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
 
-Want to keep your BigBlueButton server up-to-date with the latest !BigBlueButton release?  No problem, just enter
+Want to keep your !BigBlueButton server up-to-date with the latest !BigBlueButton release?  No problem, just enter
 
 {{{
   # apt-get update
@@ -74,7 +74,7 @@ Want to keep your BigBlueButton server up-to-date with the latest !BigBlueButton
 
 and apt-get will download and install any updates to  !BigBlueButton.  Don't you just love the power of Ubuntu/Debian packages.
 
-Note: If you install BigBlueButton on EC2, you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
+Note: If you install !BigBlueButton on EC2, you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
 
 == How to install desktop sharing ==
 Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
