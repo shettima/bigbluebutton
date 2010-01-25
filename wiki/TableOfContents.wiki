@@ -1,4 +1,4 @@
-  * [Installation Installation of Version 0.62]
+  * [Installation Installation of Version 0.63]
     * [BigBlueButtonVM Download the Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu (10 minutes)]
     * [InstallingBigBlueButton Install from source (Ubuntu)]
