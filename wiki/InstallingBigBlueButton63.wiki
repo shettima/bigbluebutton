@@ -242,7 +242,7 @@ chmod 755 /usr/lib/asterisk/modules/app_konference.so
 == Create AMI account ==
 Set enabled to yes in manager.conf
 {{{
-  cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
+cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
 mv -f /tmp/manager.conf /etc/asterisk/
 }}}
 
@@ -288,11 +288,8 @@ Be sure to replace < YOUR-IP > with your IP or domain.
 		
 == Disable Security settings for TOMCAT6 ==
 {{{		
-  vi /etc/default/tomcat6		
-
-  Edit and uncomment #TOMCAT6_SECURITY=yes to		
-			
-  TOMCAT6_SECURITY=no		
+cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=yes/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
+mv -f /tmp/tomcat6 /etc/default/tomcat6		
 }}}
 
 == Setup the database ==
