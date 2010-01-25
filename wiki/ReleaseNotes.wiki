@@ -73,14 +73,9 @@
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=86 Issue 86]   	   	 Improve the chat text color selector; remove duplication, enhance defaults
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=68 Issue 68]   	   	 Video connection will disconnect after a period of inactivity
 
-
-
-
-
-
-
 === Known Issues ===
-
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=324 Issue 324] List of uploaded presentation doesn't get transferred when changing presenters
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=322 Issue 322] Odd issue with presentation getting out of sync
 
 
 
