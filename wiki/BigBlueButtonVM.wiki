@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-= Running !BigBlueButton 0.63 in a few minutes (Draft)=
+= Running a full !BigBlueButton 0.63 Server in a few minutes (Draft)=
 
 Many universities and colleges have told us they wanted to run their own version  !BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending  !BigBlueButton.
 
@@ -12,8 +12,8 @@ Let's get a !BigBlueButton VM going.
 
 Prerequisites:
   * VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
-  * VMWare Fusion for Mac
-  * Ability for the VM to acquire an IP address through DHCP on boot
+  * A DHCP Server for the VM to acquire an IP address on boot
+  * The VM must be able to connect to the internet to update packages
 
 == Installing !BigBlueButton VM  ==
 
@@ -27,18 +27,20 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
 This will start VMWare Player (or VMWare Workstation) and boot the VM. Note: In VMWare, make sure the networking is set to *Bridged*, not NAT.  
 
-The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the  !BigBlueButton VM goes through an initial startup script that 
+The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the !BigBlueButton VM goes through its initial startup script that 
 
   * Sets up the networking (acquire an IP address from a DHCP server)
   * Installs the  !BigBlueButton packages
   * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
 
-When it's done, you'll see a message that asks you to login and change the password.
+When it's done, you'll see a welcome message that asks you to login and change the password.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
-The VM has a default account called *firstuser*, with password *default*.  To secure your server, after the first boot, login as firstuser.  You'll need to enter the password _twice_ -- once to login, and immediately again to reset it to a different password.  Do this as it will secure your server.  
+The VM is setup to have a default account called *firstuser* with password *default*.  To secure your server, take a moment to login and change this password.
+
+To change the password, login as firstuser and provide the default password.  You'll immediately be asked to enter the password again, then to provide a new password.  Again, do this now as it will secure your server.  
 
 After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser).
 
@@ -46,31 +48,38 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
 == Running the !BigBlueButton VM ==
 
-At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided in the login message for first user.  
+At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided using the IP address of the VM.  
   
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
 
-Click the Join button and you'll be prompted to join the default conference 85115.  Enter whatever name you like and then *mp* for moderator password, or *ap* for attendee password.
+Enter whatever name you like and then click Join.  You'll join the default meeting.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
 == Updating the  !BigBlueButton VM == 
 
-All the  !BigBlueButton components are installed as Ubuntu packages.  These packages are available from the remote repository http://archive.bigbluebutton.org.  We updated these packages with every release.
+The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship BigBlueButton 0.64 (for example), you'll be able to upgrade your server with two commands.
 
-When a release occurs, to update the VM with the latest components, do the following.
-
-Login as firstuser (using your password of course!) and enter the following commands:
 {{{
-  # apt-get update
-  # apt-get upgrade
+  # sudo apt-get update
+  # sudo apt-get dist-upgrade
 }}}
+
+When you run these commands, you'll see BigBlueButton download a packages for the new release.  You may be prompted to update an existing configuration file.
 
 *Note*: Best to always check the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes release notes] for specific instructions to upgrade to a new release.
 
+When updating, you'll see the upgrade messages.
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
 
-Note: If you want to live on the edge and use the latest packages built by our [http://bigbluebutton.org/hudson continuous integration server] from the head of the  !BigBlueButton Google Code repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
+== Updating the !BigBlueButton VM: Living on the Edge == 
+
+We upgrade the repository http://archive.bigbluebutton.org with every release.  In addition, during each iteration of BigBlueButton, we have our [http://bigbluebutton.org/hudson continuous integration server Hudson] automatically updating packages off of the SVN tree in Google Code.
+
+These packages are used to update our [http://devbuild.bigbluebutton.org devbuild server], so you can always try out the latest version.  Keep in mind that trunk isn't always going to be stable, so devbuild will be as stable as trunk.
+
+However, if you want to live on the edge and use the latest packages built by our from the trunk of the !BigBlueButton Google Code repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
 
 {{{
 #
@@ -95,6 +104,11 @@ Desktop sharing is now a separate component.  Don't worry, you can install it wi
 == Modifying  !BigBlueButton == 
 
 We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. See [http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton developing BigBlueButton] for more information.
+
+
+== Troubleshooting ==
+
+If BigBlueButton server is not working, the script bbb-conf is your friend.  As of BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent BigBlueButton from running.  
 
 
 === Change IP address of  !BigBlueButton Server ===
