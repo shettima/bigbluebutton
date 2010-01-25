@@ -288,7 +288,7 @@ chmod +x /etc/init.d/bbb-openoffice-headless
 chkconfig --add bbb-openoffice-headless
 chkconfig bbb-openoffice-headless on
 service bbb-openoffice-headless start
-}}
+}}}
 
 
 
