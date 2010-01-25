@@ -491,6 +491,10 @@ ami.host=127.0.0.1
 ami.port=5038
 ami.username=bbb
 ami.password=secret
+
+# The conference application to use. Valid values[meetme, konference]
+asterisk.application=konference
+version=0.63
 }}}
 
 == Enable RTMP Tunneling ==
