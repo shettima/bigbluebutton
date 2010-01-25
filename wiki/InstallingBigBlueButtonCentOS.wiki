@@ -1,18 +1,9 @@
 #summary How to install BigBlueButton on CentOS
 
-*Note*: _These instructions are in progress of being updated for the !BigBlueButton 0.62 release._
+The following instructions will guide you to install BigBlueButton on CentOS. So far the instructions have been tested on CentOS 5.3
 
-These instructions will walk through how to install !BigBlueButton from source onto CentOS 5.3.  Installing on CentOS is NOT easy - mostly because there are so many packages for which there are no RPMs, or the only RPMs are in alternative repos.  If you have a choice of OS, use Ubuntu and save yourself a load of time.
-
-Before starting, make sure you have a network connection (especially if you are doing this on a new VM you just set up).
-
+== Instructions ==
 {{{
-
-# running this will tell you what version of CentOS you have:
-cat /etc/issue
-# this tutorial is based on
-# CentOS release 5.3 (Final)
-
 #### NOTE: If your "hostname" command does not return the proper (working)
 #### IP or domain - YOU MUST REPLACE `hostname` with the proper domain or IP
 #### manually - it appears several times in this documentation
@@ -40,24 +31,30 @@ yum makecache
 # now you should be able to install tomcat6 easily:
 yum install -y tomcat6
 
-## NOTE: if installing tomcat fails because the "rebuild-security-providers"
-##   dependency is missing, you may need to do the following before installing
-##   tomcat: 
-## wget http://dev.centos.org/centos/5/testing/i386/RPMS/jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm
-## yum install -y jpackage-utils-1.7.5-1jpp.1.el5.centos.noarch.rpm  --nogpgcheck
-
 # start tomcat and configure it to automatically start on boot:
 service tomcat6 start
 chkconfig tomcat6 on
 
-# for compiling your own packages, you will need the development tools
-# NOTE: this installs a ton of things - and I'm not exactly sure which
-#   one or more were actually needed.  and there's no way i'm uninstalling
-#   them all to find out.  so, if you do find out, please comment on this article
-yum -y groupinstall "Development Tools"
+# for compiling your own packages, you will need some development tools
+yum -y install gcc gcc-c++ compat-gcc-32 compat-gcc-32-c++
 
 # some more requirements for packages that we will soon install:
-yum install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
+yum -y install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
+
+# install openoffice
+yum -y groupinstall 'Office/Productivity'
+yum -y install openoffice.org-headless
+
+# download openoffice server initializing script
+cd /etc/init.d
+wget http://bigbluebutton.org/downloads/0.63/centos-install/bbb-openoffice-headless
+
+# start the openoffice server
+chmod +x /etc/init.d/bbb-openoffice-headless
+chkconfig --add bbb-openoffice-headless
+chkconfig bbb-openoffice-headless on
+service bbb-openoffice-headless start
+
 
 # install swftools:
 wget http://www.swftools.org/swftools-0.8.1.tar.gz
@@ -96,13 +93,13 @@ chmod a+x /etc/init.d/activemq
 service activemq start
 chkconfig activemq on
 
-
 # now we will install Red5 from source
 useradd red5
-wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-tar xzf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz 
-mv red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /opt/red5-0.8
+wget http://bigbluebutton.org/downloads/0.63/fedora-install/red5-0.8.tar.gz
+tar xvf red5-0.8.tar.gz 
+mv red5-0.8 /opt/red5-0.8
 chown -R red5.red5 /opt/red5-0.8
+
 
 # Now get the init.d file that we created for you
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/red5
@@ -112,59 +109,34 @@ mv red5 /etc/init.d/
 chmod a+x /etc/init.d/red5
 service red5 start
 chkconfig red5 on
-
 }}}
-
-
- * Now you need to install the oflaDemo that comes with Red5.  This is a manual process.
-
-{{{
+    * Now you need to install the oflaDemo that comes with Red5. This is a manual process. 
 
 Go to:
-http://<YOURIP-OR-DOMAIN>:5080/
+http://< YOURIP-OR-DOMAIN >:5080/
 
 Click on "Click here to install demos" and then choose oflaDemo java 6.
 
 Go to:
-http://<YOURIP-OR-DOMAIN>:5080/demos/
+http://< YOURIP-OR-DOMAIN >:5080/demos/
 
 Click "View demo" under "OFLA DEMO", which should take you to:
-http://<YOURIP-OR-DOMAIN>:5080/demos/ofla_demo.html
+http://< YOURIP-OR-DOMAIN >:5080/demos/ofla_demo.html
 
 In the upper right corner, change localhost to your domain or IP, like:
-rtmp://<YOURIP-OR-DOMAIN/oflaDemo 
+rtmp://< YOURIP-OR-DOMAIN >/oflaDemo 
 Click connect
 
 You would see a list of available videos. Select one to play.
 
-}}}
-
-
- * Now prepare for Asterisk build:
-
+Now prepare for Asterisk build: 
 {{{
-
 yum install -y kernel-devel
 
 # On Xen VM you need:
 # yum install -y kernel-xen-devel
 
 yum install -y ncurses-devel openssl-devel newt-devel zlib-devel bison
-
-# install dahdi
-wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
-tar xzf dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
-cd dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2
-
-# if you get an error about the kernel sources not being installed
-#  (and you installed kernel-devel like above says to)
-#  try rebooting your machine - you may have run a yum update that
-#  updated the kernel version but you are still running on the old
-#  version
-make all
-make install
-make config
-cd ..
 
 # install asterisk
 wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
@@ -178,20 +150,25 @@ make config
 cd ..
 
 # configure asterisk
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-extensions.conf
-cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf 
+wget http://bigbluebutton.org/downloads/0.63/bbb_extensions.conf
+mv bbb_extensions.conf /etc/asterisk/
+echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-sip.conf
-cat asterisk-sip.conf >> /etc/asterisk/sip.conf
+wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
+echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
+
+wget http://bigbluebutton.org/downloads/0.63/app_konference.so
+mv app_konference.so /usr/lib/asterisk/modules/
+chmod 755 /usr/lib/asterisk/modules/app_konference.so
 
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/asterisk-create-sip-accounts.sh
 chmod a+x asterisk-create-sip-accounts.sh
 ./asterisk-create-sip-accounts.sh
 
-
 # set enabled to yes in manager.conf
 cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
-mv /tmp/manager.conf /etc/asterisk/
+mv -f /tmp/manager.conf /etc/asterisk/
 
 # add account to manager.conf
 echo "
@@ -212,27 +189,25 @@ mkdir -p /etc/nginx/sites-enabled
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/nginx-bigbluebutton.conf
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/nginx.conf
 mv -f nginx.conf /etc/nginx/
-
-cat nginx-bigbluebutton.conf | sed "s/127.0.0.1/`hostname`/" > /etc/nginx/sites-available/bigbluebutton
-
+cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/`hostname`/" > /etc/nginx/sites-available/bigbluebutton
+rm nginx-bigbluebutton.conf
 ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
-
 service nginx start
 chkconfig nginx on
+
 
 # download BBB apps
 cd /tmp/
 mkdir bbb-install
 cd bbb-install
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton-apps.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton.war
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/sip.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/video.tar.gz
- wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bbb-default.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/packages/bbb-default.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton.war
+wget http://bigbluebutton.org/downloads/0.63/packages/video.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton-apps.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/packages/client.tar.gz
+wget http://bigbluebutton.org/downloads/0.63/packages/sip.tar.gz
+wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
 
-###### TODO: HERE TOMCAT SECURITY (not necessary on CentOS?)
 
 # configure MySQL database
 echo "create database bigbluebutton_dev;" | mysql -u root
@@ -242,45 +217,52 @@ echo "commit;" | mysql -u root
 # now install the webapp
 cp /tmp/bbb-install/bigbluebutton.war /var/lib/tomcat6/webapps/bigbluebutton.war
 
+# download blank slide and thumbnail dummies
+mkdir -p /var/bigbluebutton/blank
+cd /var/bigbluebutton/blank
+wget http://bigbluebutton.org/downloads/0.63/blank/blank-slide.swf
+wget http://bigbluebutton.org/downloads/0.63/blank/blank-thumb.png
 }}}
 
- * Determine PDF2SWF, CONVERT and GS applications (manual step)
+* Generate a GUID (manual step)
+
+For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
+
+Determine PDF2SWF, CONVERT and GS applications (manual step)
 {{{
-# Make a note of where pdf2swf is installed
-which pdf2swf
- 
-# You should see something like
-# /usr/bin/pdf2swf
-  
-# Make a note of where the convert application is installed
-which convert
+      # Make a note of where pdf2swf is installed
+      which pdf2swf
+       
+      # You should see something like
+      # /usr/local/bin/pdf2swf
+        
+      # Make a note of where the convert application is installed
+      which convert
 
-# You shoud see something like.
-# /usr/bin/convert
+      # You shoud see something like.
+      # /usr/bin/convert
 
-# Note where GhostScript is installed
-which gs
+      # Note where GhostScript is installed
+      which gs
 
-# You should see something like.
-# /usr/bin/gs
+      # You should see something like.
+      # /usr/bin/gs
 }}}
-
- * Edit bbb-web properties
+Edit bbb-web properties
 {{{
 vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
 # Change the following:
-#  - swfToolsDir to the directory where pdf2swf is located
-#  - imageMagickDir to the directory where convert is located
-#  - ghostScriptExec to point to the gs application
+#  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin/)
+#  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin/)
+#  - ghostScriptExec to point to the gs application (in this example, it is /usr/bin/gs)
 #  - change bigbluebutton.web.serverURL=http://<YOUR IP>
-
+#  - change BLANK_SLIDE= to "BLANK_SLIDE=/var/bigbluebutton/blank/blank-slide.swf"
+#  - change BLANK_THUMBNAIL= to "BLANK_THUMBNAIL=/var/bigbluebutton/blank/blank-thumb.png"
+#  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
-
- * back to the automated tasks:
-
+Back to the automated tasks: 
 {{{
-
 # restart tomcat
 service tomcat6 restart
 
@@ -294,46 +276,64 @@ chown -R tomcat:adm /var/bigbluebutton
 chmod -R 777 /var/bigbluebutton
 
 # setup the red5 apps
-tar xzf bigbluebutton-apps.tar.gz
+tar xvf bigbluebutton-apps.tar.gz
 rsync -a webapps/* /opt/red5-0.8/webapps/
 rm -rf webapps
-
 }}}
-
-
- * manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port
-
+Manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port 
 {{{
-
 vi /opt/red5-0.8/conf/red5-core.xml
 # remove the comment BEFORE AND AFTER the 1936 port definition
 # you should see something like:
 # <!-- You can now add additional ports and ip addresses
 
+# install video app
+cd /opt/red5-0.8/webapps
+cp /tmp/bbb-install/video.tar.gz .
+tar xvf video.tar.gz
+rm -f video.tar.gz
+
+# install voice app
+cp /tmp/bbb-install/sip.tar.gz ./
+tar xvf sip.tar.gz
+rm -f sip.tar.gz
+
+# install bbb-client:
+mkdir -p /var/www/bigbluebutton
+cd /var/www/bigbluebutton
+cp /tmp/bbb-install/client.tar.gz ./
+tar xvf client.tar.gz
+rm -f client.tar.gz
+
+cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.177/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
+mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
+
+# install bbb-default pages
+cd /var/www/
+cp /tmp/bbb-install/bbb-default.tar.gz .
+tar xvf bbb-default.tar.gz
+mv web ./bigbluebutton-default
+rm -rf bbb-default.tar.gz
+
+cat /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp | sed "s/192.168.0.177/`hostname`/" > /tmp/bbb_api.jsp
+
+mv -f /tmp/bbb_api.jsp /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp
 }}}
 
- * some more automated tasks: 
-
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
 {{{
+echo "<%!
+// This is the security salt that must match the value set in the BigBlueButton server
+String salt = \"<YOUR-GUID>\";
 
-# install xuggler
-# NOTE THAT BY INSTALLING XUGGLER (FOR SCREEN SHARING) YOU MUST ACCEPT THE
-# AGPL LICENSE, WHICH REQUIRES THAT YOU OPEN SOURCE ALL CUSTOMIZATIONS YOU
-# MAKE TO THE ASSOCIATED SOFTWARE, EVEN IF YOU DO NOT DISTRIBUTE THE SOFT-
-# WARE AND ONLY RUN IT AS A NETWORK SERVICE (AS THIS WILL BE)
-cd /tmp/
-wget http://com.xuggle.s3.amazonaws.com/xuggler/xuggler-3.1.FINAL/xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-chmod a+x xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-./xuggle-xuggler.3.1.818-i686-pc-linux-gnu.sh
-# accept all defaults
+// This is the URL for the BigBlueButton server
+String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
+%>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
 
-# add xuggler to the path
-echo "
-export XUGGLE_HOME=/usr/local/xuggler
-export LD_LIBRARY_PATH=$XUGGLE_HOME/lib:$LD_LIBRARY_PATH
-export PATH=$XUGGLE_HOME/bin:$PATH
-" >> /etc/profile
+}}}
 
+Installing Desktop Sharing (optional)
+{{{
 # install deskshare app
 #
 # Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
@@ -347,65 +347,25 @@ cd /opt/red5-0.8/webapps
 tar zxvf deskshare.tar.gz
 rm -f deskshare.tar.gz
 
+}}}
 
-# install video app
-cp /tmp/bbb-install/video.tar.gz .
-tar zxvf video.tar.gz
-rm -f video.tar.gz
+Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
+{{{
+ <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
+}}}
 
-# install voice app
-cp /tmp/bbb-install/sip.tar.gz ./
-tar zxvf sip.tar.gz
-rm -f sip.tar.gz
+Finish the installation
+{{{
+# create directory for log files
+mkdir /var/log/bigbluebutton
 
-# edit bigbluebutton-sip.properties to insert your hostname
-cat /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties | sed "s/127.0.0.1/`hostname`/" > /tmp/bbb-sip.properties
-mv -f /tmp/bbb-sip.properties /opt/red5-0.8/webapps/sip/WEB-INF/bigbluebutton-sip.properties 
-
-# install bbb-client:
-mkdir -p /var/www/bigbluebutton
-cd /var/www/bigbluebutton
-cp /tmp/bbb-install/client.tar.gz ./
-tar zxvf client.tar.gz
-rm -f client.tar.gz
-
-# now replace the hostname in config.xml
-# and replace conf/join-mock.xml with:
-# http://<YOURIP-OR-DOMAIN>/bigbluebutton/conference-session/enter
-cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.124/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
-mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml 
-
-# install bbb-default pages
-cd /var/www/
-cp /tmp/bbb-install/bbb-default.tar.gz .
-tar xzf bbb-default.tar.gz
-mv web ./bigbluebutton-default
-rm -rf bbb-default.tar.gz
+# create an empty log file
+echo "" /var/log/bigbluebutton/bbb-web.log
+chmod 777 /var/log/bigbluebutton/bbb-web.log
 
 # restart things:
 service activemq restart
 service red5 restart
 service tomcat6 restart
 service asterisk restart
-
 }}}
-
-
- * Try out BigBlueButton
-  * Go to http://<YOURIP-OR-DOMAIN> which should display the bbb web page.
-  * To use voice conference, using your zoiper, dial 1500 which will prompt you for the conference number.
-
-
-== When things go wrong ==
- Look for logs in the following
-{{{
-tail -n 20 /var/log/syslog
-tail -n 20 /var/log/tomcat6
-tail -n 20 /opt/red5-0.8/logs
-tail -n 20 /var/log/asterisk
-}}}
-
-Also ensure that port 1935 (RTMP) and port 9123 (desktop sharing) are open on your server.
-
-== If you make it successfully through the installation ==
-Good stuff!  Post a message to BigBlueButton-dev letting everyone know that you are a real developer and you have installed BigBlueButton from source ON CENTOS.  :-)
