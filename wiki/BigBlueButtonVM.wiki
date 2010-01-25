@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-= Running !BigBlueButton 0.62 in a few minutes =
+= Running !BigBlueButton 0.63 in a few minutes (Draft)=
 
 Many universities and colleges have told us they wanted to run their own version  !BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending  !BigBlueButton.
 
@@ -17,7 +17,7 @@ Prerequisites:
 
 == Installing !BigBlueButton VM  ==
 
-  1.  Download and uncompress the latest [http://bigbluebutton.org/downloads/bigbluebutton-vm-2009-11-09.zip bigbluebutton-vm-2009-11-09.zip]
+  1.  Download and uncompress the latest (0.63 link to be added shortly) 
 
   2.  Uncompress bigbluebutton-vm.zip and open the enclosed *ubuntu-vmw6* folder.
 
@@ -31,7 +31,7 @@ In VMWare, make sure the networking is set to Bridged, not NAT.
 
 The  !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the  !BigBlueButton VM goes through an initial startup script that 
 
-  * Installs a software timer for Asterisk (this allows to connect using the VoIP phone built into the  !BigBlueButton client)
+  * Sets up the networking (acquire an IP address from a DHCP server)
   * Installs the  !BigBlueButton packages
   * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
@@ -65,7 +65,7 @@ When a release occurs, to update the VM with the latest components, do the follo
 Login as firstuser (using your password of course!) and enter the following commands:
 {{{
   # apt-get update
-  # apt-get dist-upgrade
+  # apt-get upgrade
 }}}
 
 *Note*: Best to always check the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes release notes] for specific instructions to upgrade to a new release.
