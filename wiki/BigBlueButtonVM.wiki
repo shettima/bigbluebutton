@@ -46,6 +46,7 @@ After resetting the default password, you'll get the following welcome message (
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
+
 == Running the !BigBlueButton VM ==
 
 At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided using the IP address of the VM.  
@@ -56,7 +57,22 @@ Enter whatever name you like and then click Join.  You'll join the default meeti
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
-== Updating the  !BigBlueButton VM == 
+== Developing !BigBlueButton == 
+
+We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. See [http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton developing BigBlueButton] for more information.
+
+
+== How to install desktop sharing ==
+Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
+
+
+= Upgrading the BigBlueButton VM =
+
+
+
+== How to upgrade to the next release == 
+
+This is where packages make life easy.
 
 The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship BigBlueButton 0.64 (for example), you'll be able to upgrade your server with two commands.
 
@@ -73,7 +89,7 @@ When updating, you'll see the upgrade messages.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
 
-== Updating the !BigBlueButton VM: Living on the Edge == 
+== Updating the !BigBlueButton VM to packages on trunk (aka Living on the Edge) == 
 
 We upgrade the repository http://archive.bigbluebutton.org with every release.  In addition, during each iteration of BigBlueButton, we have our [http://bigbluebutton.org/hudson continuous integration server Hudson] automatically updating packages off of the SVN tree in Google Code.
 
@@ -98,20 +114,63 @@ deb http://archive.bigbluebutton.org/dev bigbluebutton main
 
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
 
-== How to install desktop sharing ==
-Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
-
-== Modifying  !BigBlueButton == 
-
-We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. See [http://code.google.com/p/bigbluebutton/wiki/Developing_BigBlueButton developing BigBlueButton] for more information.
 
 
-== Troubleshooting ==
 
-If BigBlueButton server is not working, the script bbb-conf is your friend.  As of BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent BigBlueButton from running.  
+= Troubleshooting =
 
+== Use bbb-conf -c ===
 
-=== Change IP address of  !BigBlueButton Server ===
+Starting with BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent BigBlueButton from running.  
+
+Type 
+
+{{{
+
+   bbb-conf -c
+
+}}}
+
+You should see output such as 
+
+{{{ 
+root@bbb-vm-20100102:/etc/asterisk# bbb-conf -c
+Current Configuration:
+
+/var/www/bigbluebutton/client/conf/config.xml (bbb-client)
+                 IP for tunnel check: 192.168.0.163
+                  IP for rtmp (red5): 192.168.0.163
+          host for bbb-web interface: 192.168.0.163
+
+/etc/nginx/sites-available/bigbluebutton (configuration file nginx)
+                         server_name: 192.168.0.163
+                                port: 80
+                client document root: /var/www/bigbluebutton
+
+/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties (bbb-web)
+                                host: 192.168.0.163
+
+/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp (API demos)
+                                host: 192.168.0.163
+
+/etc/asterisk/bbb_extensions.conf (asterisk)
+                   conference module: konference
+
+}}}
+
+If there are any problems (i.e. if bbb-conf detects that red5 isn't running), you'll see a warning message at the bottom.
+
+If you need to restart BigBlueButton, do the command
+
+{{{
+
+   bbb-conf --clean
+
+}}}
+
+and this will do a clean restart.  If you've tried both the above commands and your BigBlueButton server is not working, please post to our [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 forums].  
+
+== Change IP address of  !BigBlueButton Server ==
 
 The VM will automatically setup  !BigBlueButton components to use the IP address on first boot.  If you need to change the IP address of the server, we've provided a utility to let you change the configuration files for  !BigBlueButton to use the new IP address.
 
