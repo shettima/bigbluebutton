@@ -66,7 +66,7 @@ We've included all the development tools in this VM to compile and deploy the so
 Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
 
 
-= Upgrading the BigBlueButton VM =
+= Upgrading the !BigBlueButton VM =
 
 
 
@@ -74,7 +74,7 @@ Desktop sharing is now a separate component.  Don't worry, you can install it wi
 
 This is where packages make life easy.
 
-The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship BigBlueButton 0.64 (for example), you'll be able to upgrade your server with two commands.
+The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship !BigBlueButton 0.64 (for example), you'll be able to upgrade your server with two commands.
 
 {{{
   # sudo apt-get update
@@ -121,7 +121,7 @@ Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest bui
 
 == Use bbb-conf ==
 
-Starting with BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent BigBlueButton from running.  
+Starting with !BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent !BigBlueButton from running.  
 
 Type 
 
