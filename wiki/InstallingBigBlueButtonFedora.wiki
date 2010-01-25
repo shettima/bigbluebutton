@@ -364,6 +364,10 @@ Finish the installation
 # create directory for log files
 mkdir /var/log/bigbluebutton
 
+# create an empty log file
+echo "" /var/log/bigbluebutton/bbb-web.log
+chmod 777 /var/log/bigbluebutton/bbb-web.log
+
 # restart things:
 service activemq restart
 service red5 restart
