@@ -68,12 +68,15 @@
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=289 Issue 289]   	   	 Dynamic conferences not recognized by AGI findConference request
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=291 Issue 291]   	   	 Fit to zoom isn't enabled by default in Presentation
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=300 Issue 300]   	   	 Uploaded presentations not available to alternate presenters.
-
-=== Issues yet to fix for 0.63. _Please update_ ===
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=245 Issue 245]   	   	 Two suggestions for bbb-conf
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=256 Issue 256]   	   	 Post login page doesn't show ip address/hostname
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=258 Issue 258]   	   	 Ensure that 0.63 uses Red5 8.0, not Red5 8.0 RC2
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=261 Issue 261]   	   	 Add option to bbb-conf to reduce logging in BigBlueButton
+
+=== Known Issues ===
+
+
+
 
 = Release 0.62: Nebula NGC604 =
 
