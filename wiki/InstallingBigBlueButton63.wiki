@@ -573,8 +573,8 @@ sip.server.host=127.0.0.1
 
 # The start/stop SIP ports that the application is going
 # to use to connect to the asterisk server
-startSIPPort=5070
-stopSIPPort=5099
+startSIPPort=6070
+stopSIPPort=6099
 
 # The start/stop RTP port the application is going to use
 # for the media stream.
@@ -620,51 +620,51 @@ Your config.xml should look something like:
 <?xml version="1.0" ?>
 <config>
     <version>0.4</version>
-    <porttest host="192.168.0.136" application="video"/>    
+    <porttest host="192.168.0.120" application="video"/>    
 	<modules>
 
 		<module name="VideoModule" url="VideoModule.swf" 
-			uri="rtmp://192.168.0.136/video"
+			uri="rtmp://192.168.0.120/video"
 			onUserJoinedEvent="START"
 			onUserLogoutEvent="STOP"	
 		/>
 		<module name="ChatModule" url="ChatModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
+			uri="rtmp://192.168.0.120/bigbluebutton" 
 			loadNextModule="PresentationModule"	
 			onUserJoinedEvent="START"
 			onUserLogoutEvent="STOP"		 
 		/>
 		<module name="ViewersModule" url="ViewersModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
-			host="http://192.168.0.136/bigbluebutton/conference-session/enter"
+			uri="rtmp://192.168.0.120/bigbluebutton" 
+			host="http://192.168.0.120/bigbluebutton/conference-session/enter"
 			onAppInitEvent="LOAD" loadNextModule="ChatModule"
 			onAppStartEvent="START"
 			onUserLogoutEvent="STOP"
 		/>	
 		<module name="ListenersModule" url="ListenersModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
-			recordingHost="http://192.168.0.136"
+			uri="rtmp://192.168.0.120/bigbluebutton" 
+			recordingHost="http://192.168.0.120"
 			loadNextModule="DeskShareModule"
 			onUserJoinedEvent="START"
 			onUserLogoutEvent="STOP"
 		/>
 		<module name="PresentationModule" url="PresentationModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
-			host="http://192.168.0.136" 
+			uri="rtmp://192.168.0.120/bigbluebutton" 
+			host="http://192.168.0.120" 
 			loadNextModule="ListenersModule"
 			onUserJoinedEvent="START" 
 			onUserLogoutEvent="STOP"
 		/>
 		
 		<module name="DeskShareModule" url="DeskShareModule.swf" 
-			uri="rtmp://192.168.0.136/deskShare" 
+			uri="rtmp://192.168.0.120/deskShare" 
 			onUserJoinedEvent="START" 
 			onUserLogoutEvent="STOP"
 			loadNextModule="PhoneModule"
 		/>
 		
 		<module name="PhoneModule" url="PhoneModule.swf" 
-			uri="rtmp://192.168.0.136/sip" 
+			uri="rtmp://192.168.0.120/sip" 
 			onUserJoinedEvent="START" 
 			onUserLogoutEvent="STOP"
 			loadNextModule="VideoModule"
@@ -673,7 +673,7 @@ Your config.xml should look something like:
 </config>
 }}}
 
-Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.124/192.168.0.149/g
+Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
 
 == Restart server ==
 
