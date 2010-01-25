@@ -17,19 +17,17 @@ Prerequisites:
 
 == Installing !BigBlueButton VM  ==
 
-  1.  Download and uncompress the latest (0.63 link to be added shortly) 
+  1.  Download and uncompress the [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-01-25.zip BigBlueButton 0.63 VM] 
 
-  2.  Uncompress bigbluebutton-vm.zip and open the enclosed *ubuntu-vmw6* folder.
+  2.  Open the enclosed *ubuntu-vmw6* folder.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   3.  Double-click on the bigbluebutton-vm.vmx icon.  
 
-This will start VMWare Player (or VMWare Workstation) and boot the VM. 
+This will start VMWare Player (or VMWare Workstation) and boot the VM. Note: In VMWare, make sure the networking is set to *Bridged*, not NAT.  
 
-In VMWare, make sure the networking is set to Bridged, not NAT.  
-
-The  !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the  !BigBlueButton VM goes through an initial startup script that 
+The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the  !BigBlueButton VM goes through an initial startup script that 
 
   * Sets up the networking (acquire an IP address from a DHCP server)
   * Installs the  !BigBlueButton packages
@@ -40,15 +38,15 @@ When it's done, you'll see a message that asks you to login and change the passw
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
-The VM has a default account called *firstuser*, with password *default*.  To secure your server, take a moment to login as firstuser.  You'll need to enter the password _twice_ -- once to login, and immediately again to reset it to a different password.  Do this as it will secure your server.  
+The VM has a default account called *firstuser*, with password *default*.  To secure your server, after the first boot, login as firstuser.  You'll need to enter the password _twice_ -- once to login, and immediately again to reset it to a different password.  Do this as it will secure your server.  
 
-After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser)..
+After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
 == Running the !BigBlueButton VM ==
 
-At this point, you've got a full  !BigBlueButton server up and running.  Open a web browser to the URL provided in the login message for first user.  
+At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided in the login message for first user.  
   
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
 
