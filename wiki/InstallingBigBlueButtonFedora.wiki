@@ -335,17 +335,9 @@ String salt = \"<YOUR-GUID>\";
 String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
 %>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
 
-# create directory for log files
-mkdir /var/log/bigbluebutton
-
-# restart things:
-service activemq restart
-service red5 restart
-service tomcat6 restart
-service asterisk restart
 }}}
 
-=== Installing Desktop Sharing ===
+ * Installing Desktop Sharing 
 {{{
 # install deskshare app
 #
@@ -365,4 +357,16 @@ rm -f deskshare.tar.gz
 Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
 {{{
  <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
+}}}
+
+ * Finish the installation
+{{{
+# create directory for log files
+mkdir /var/log/bigbluebutton
+
+# restart things:
+service activemq restart
+service red5 restart
+service tomcat6 restart
+service asterisk restart
 }}}
