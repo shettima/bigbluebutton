@@ -290,6 +290,8 @@ chkconfig bbb-openoffice-headless on
 service bbb-openoffice-headless start
 }}
 
+
+
 == Download !BigBlueButton ==
 {{{ 
  cd /tmp
@@ -619,6 +621,18 @@ callExtensionPattern={0}
  rm bbb-default.tar.gz
 }}}
 
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
+{{{
+echo "<%!
+// This is the security salt that must match the value set in the BigBlueButton server
+String salt = \"<YOUR-GUID>\";
+
+// This is the URL for the BigBlueButton server
+String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
+%>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
+
+}}}
+
 == Install bbb-client ==
 {{{
   cd /var/www
@@ -697,8 +711,39 @@ Your config.xml should look something like:
 
 Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
 
-== Restart server ==
+== Installing Desktop Sharing (optional) ==
 {{{
+# install deskshare app
+#
+# Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
+# please read how this changes the licensing of BigBlueButton from LGPL to AGPL.
+#
+#     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
+#
+
+cp /tmp/bbb-install/deskshare.tar.gz /opt/red5-0.8/webapps/
+cd /opt/red5-0.8/webapps
+tar zxvf deskshare.tar.gz
+rm -f deskshare.tar.gz
+
+}}}
+
+Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
+{{{
+ <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
+}}}
+
+== Finish the installation ==
+{{{
+# create directory for log files
+mkdir /var/log/bigbluebutton
+
+# create an empty log file
+echo "" /var/log/bigbluebutton/bbb-web.log
+chmod 777 /var/log/bigbluebutton/bbb-web.log
+
+# restart server
+
 service activemq restart
 service red5 restart
 service nginx restart
