@@ -1,8 +1,8 @@
-#summary Installing BigBlueButton 0.63 on Fedora
+#summary Installing BigBlueButton 0.63 on CentOS
 
 *NOTE: This article is still a draft*
 
-The following instructions will guide you to install BigBlueButton on Fedora. So far the instructions have been tested on Fedora 12.
+The following instructions will guide you to install BigBlueButton on CentOS. So far the instructions have been tested on CentOS 5.3
 
 == Instructions ==
 {{{
@@ -49,7 +49,7 @@ yum -y install openoffice.org-headless
 
 # download openoffice server initializing script
 cd /etc/init.d
-wget http://bigbluebutton.org/downloads/0.63/fedora-install/bbb-openoffice-headless
+wget http://bigbluebutton.org/downloads/0.63/centos-install/bbb-openoffice-headless
 
 # start the openoffice server
 chmod +x /etc/init.d/bbb-openoffice-headless
