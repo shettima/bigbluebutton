@@ -1,7 +1,5 @@
 #summary Installing BigBlueButton 0.63 on Fedora
 
-*NOTE: This article is still a draft*
-
 The following instructions will guide you to install BigBlueButton on Fedora. So far the instructions have been tested on Fedora 12.
 
 == Instructions ==
