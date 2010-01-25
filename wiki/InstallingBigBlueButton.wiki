@@ -1,12 +1,10 @@
 #summary How to install BigBlueButton like a real developer.  :-)
 
-*Note*: _These instructions are in progress of being updated for the !BigBlueButton 0.62 release._
+This guide shows you how to  install !BigBlueButton from source on Ubuntu.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, go through the step-by-step instructions below and you'll become familiar with each component.  
 
-These instructions will walk through how to install !BigBlueButton from source onto Ubuntu.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, the following steps will show you how to install each component.  
+To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  If you are on Windows, the easiest way to start is to download a Ubuntu 9.04 Server VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player.  You don't have to use VMWare Player, Virtual Box is another excellent tool for running VMs.
 
-To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  The easiest way to start with a VM images is to download a Ubuntu VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player 
-
-The only prerequisite is that your Ubuntu machine has a network connection. 
+When you boot your Ubuntu VM, it needs to have a network IP that you can access from another computer (such as the host computer running the VM).
 
 *The instructions below assumes you have downloaded the VM image above and running it on WMWare.*
 
@@ -129,27 +127,26 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 == Install ActiveMQ ==
 {{{
-   mkdir /home/user/temp
-   cd /home/user/temp
+   cd /tmp
    wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
    tar zxvf apache-activemq-5.2.0-bin.tar.gz
-   mv /home/user/temp/apache-activemq-5.2.0 /usr/share/activemq
+   mv /tmp/apache-activemq-5.2.0 /usr/share/activemq
    chown -R root.root /usr/share/activemq
 }}}
 
 
 == Install red5 ==
+{{{
+  cd /tmp
+  wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+  tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
+  mv /tmp/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /usr/share/red5
+  mkdir /usr/share/red5/work
+}}}
+
 Create red5 user
 {{{
    adduser --system --home /usr/share/red5 --no-create-home --group --disabled-password --shell /bin/false red5
-}}}
-
-{{{
-  cd /home/user/temp
-  wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  mv /home/user/temp/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /usr/share/red5
-  mkdir /usr/share/red5/work
 }}}
 
 Assign proper permissions
@@ -165,14 +162,16 @@ Assign proper permissions
 
 == Auto-start ActiveMQ and Red5 on reboot ==
 {{{
-  cd /home/user/temp/
+  cd /tmp/
   wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
   wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu
   cd /etc/init.d/
-  cp /home/user/temp/activemq-ubuntu ./activemq
-  cp /home/user/temp/red5-ubuntu ./red5
+  cp /tmp/activemq-ubuntu ./activemq
+  cp /tmp/red5-ubuntu ./red5
+  sudo chmod +x red5
+  sudo chmod +x activemq
 
-  apt-get install chkconfig
+  apt-get -y install chkconfig
   chkconfig red5 on
   chkconfig activemq on
 }}}
@@ -180,7 +179,6 @@ Assign proper permissions
 Run red5
 
 {{{
-  sudo chmod +x red5
   sudo ./red5 start
 }}}
 
@@ -202,209 +200,72 @@ Edit rtmp://< IP >/oflaDemo and click connect
 
 You would see a list of available videos. Select one to play.
 
-
-== Prepare to install Asterisk ==
-Some info found here http://godson.in/how-to-install-asterisk-on-ubuntu
-{{{
- apt-get install build-essential
- apt-get install linux-headers-`uname -r`
- apt-get install libssl-dev
- apt-get install ncurses-dev
- apt-get install libnewt-dev
- apt-get install zlib1g-dev
- apt-get install bison
-}}}
-
-== Install Dahdi ==
-You may have to find out what the newest version is. Go to http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete
-
-{{{
- cd /usr/local/src
- wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
- tar zxvf dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
- cd dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2
- sudo apt-get install linux-headers-2.6.28-17-server
- make all
- make install
- make config
-}}}
-
-This command will change based on what version of kernel you are using, if you get an error when doing "make all" asking for missing linux headers then you have to changed this command to appropriate.  You can use {{{apt-cache search linux-headers}}} to find the available linux-headers
-{{{
-sudo apt-get install linux-headers-2.6.28-17-server
-}}}
-
 == Install Asterisk ==
 {{{
-  cd /usr/local/src 
-  wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.4.25.tar.gz
-  tar zxvf asterisk-1.4.25.tar.gz
-  cd asterisk-1.4.25
-  more README
-  ./configure
-  make 
-  make install
-  make samples
-  make config
+  apt-get -y install asterisk
 }}}
 
 
 == Modify Extensions ==
 {{{
-
-cd /tmp/
-wget http://bigbluebutton.googlecode.com/files/asterisk-extensions.conf
-sudo sh -c "cat asterisk-extensions.conf >> /etc/asterisk/extensions.conf"
-
+wget http://bigbluebutton.org/downloads/0.63/bbb_extensions.conf
+mv bbb_extensions.conf /etc/asterisk/
+echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 }}}
-
-Please take a peek at {{{asterisk-extensions.conf}}} to see what it does.
 
 == Create SIP accounts ==
 {{{
-
-wget http://bigbluebutton.googlecode.com/files/asterisk-sip.conf
-sudo sh -c "cat asterisk-sip.conf >> /etc/asterisk/sip.conf"
-
+wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
+echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 }}}
 
 Please take a peek at {{{asterisk-sip.conf}}} to see what it does.
 
 == Create SIP Accounts to be used by !Red5Phone ==
 {{{
-
 wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
 chmod a+x asterisk-create-sip-accounts.sh
 ./asterisk-create-sip-accounts.sh
-
 }}}
 
 Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
 
-== Test your SIP account ==
+== Install AppKonference ==
 
-Download Zoiper from here http://www.zoiper.com/zwin.php
-
-After installing Zoiper, start it and create a SIP account using the echotest user created when you ran the {{{cat asterisk-sip.conf >> /etc/asterisk/sip.conf}}} command above.
-
-Then dial 600. You should be connected to the "Echo" application.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/zoiper-running.png
+{{{
+wget http://bigbluebutton.org/downloads/0.63/ubuntu-install/app_konference.so
+mv app_konference.so /usr/lib/asterisk/modules/
+chmod 755 /usr/lib/asterisk/modules/app_konference.so
+}}}
 
 == Create AMI account ==
+Set enabled to yes in manager.conf
 {{{
-  vi /etc/asterisk/manager.conf
+cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
+mv -f /tmp/manager.conf /etc/asterisk/
 }}}
 
- Modify "enabled" to yes
+Add account to manager.conf
 {{{
-[general]
-
-enabled = yes
-}}}
-
-Add the following at the bottom of the file. This entry will be used when you
-edit {{{bigbluebutton.properties}}} below.
-{{{
+echo "
 ; BigBlueButton: Enable Red5 to connect
 [bbb]
 secret = secret
 permit = 0.0.0.0/0.0.0.0
 read = system,call,log,verbose,command,agent,user
 write = system,call,log,verbose,command,agent,user
+" >> /etc/asterisk/manager.d/bigbluebutton.conf
+
+echo "#include \"manager.d/*.conf\"" >> /etc/asterisk/manager.conf
 }}}
 
 == Configure Nginx ==
+Be sure to replace < YOUR-IP > with your IP or domain.
 {{{
-  vi /etc/nginx/sites-available/bigbluebutton
-}}}
-
-Paste the following into the file and edit server_name with you IP.
-{{{
-server {
-     listen   80;
-     # Change to your ip address.
-     server_name  192.168.0.136;
-
-     access_log  /var/log/nginx/bigbluebutton.access.log;
-
-     # Commands used by Flash client for RTMPT.
-     location ~ (/open/|/close/|/idle/|/send/) {
-          proxy_pass         http://127.0.0.1:8088;
-          proxy_redirect     off;
-          proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
-
-          client_max_body_size       10m;
-          client_body_buffer_size    128k;
-
-          proxy_connect_timeout      90;
-          proxy_send_timeout         90;
-          proxy_read_timeout         90;
-
-          proxy_buffering            off;
-      }
-
-
-      # Used by the deskshare applet for HTTP Tunneling.
-      location /deskshare {
-           proxy_pass         http://127.0.0.1:5080;
-           proxy_redirect     default;
-           proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
-           client_max_body_size       10m;
-           client_body_buffer_size    128k;
-           proxy_connect_timeout      90;
-           proxy_send_timeout         90;
-           proxy_read_timeout         90;
-           proxy_buffer_size          4k;
-           proxy_buffers              4 32k;
-           proxy_busy_buffers_size    64k;
-           proxy_temp_file_write_size 64k;
-           include    fastcgi_params;
-       }
-
-       # Connection to bbb-web
-       location /bigbluebutton {
-           proxy_pass         http://127.0.0.1:8080;
-           proxy_redirect     default;
-           proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
-
-           client_max_body_size       10m;
-           client_body_buffer_size    128k;
-
-           proxy_connect_timeout      90;
-           proxy_send_timeout         90;
-           proxy_read_timeout         90;
-
-           proxy_buffer_size          4k;
-           proxy_buffers              4 32k;
-           proxy_busy_buffers_size    64k;
-           proxy_temp_file_write_size 64k;
-
-           include    fastcgi_params;
-       }
-
-       # Main page for BBB
-       location / {
-          root   /var/www/bigbluebutton-default;
-          index  index.html index.htm;
-       }
-
-       # How to server bbb-client.
-       location /client {
-                root    /var/www/bigbluebutton;
-                index  index.html index.htm;
-        }
-
-        #error_page  404  /404.html;
-
-        # redirect server error pages to the static page /50x.html
-        #
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-                root   /var/www/nginx-default;
-        }
-}
-
+  wget http://bigbluebutton.org/downloads/0.63/nginx-bigbluebutton.conf
+  cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
+  rm nginx-bigbluebutton.conf
 }}}
 
 == Enable the bigbluebutton nginx config ==
@@ -412,9 +273,28 @@ server {
  ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 }}}
 
+== Install OpenOffice ==
+{{{
+apt-get install openoffice.org
+}}}
+
+== Configure OpenOffice to start as a service ==
+{{{
+cd /etc/init.d
+wget http://www.bigbluebutton.org/downloads/0.63/ubuntu-install/bbb-openoffice-headless
+
+# start the openoffice server
+chmod +x /etc/init.d/bbb-openoffice-headless
+chkconfig --add bbb-openoffice-headless
+chkconfig bbb-openoffice-headless on
+service bbb-openoffice-headless start
+}}}
+
+
+
 == Download !BigBlueButton ==
 {{{ 
- cd /home/user/temp
+ cd /tmp
  wget http://www.bigbluebutton.org/sites/all/releases/latest-release/bigbluebutton-apps.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
  wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
@@ -427,11 +307,8 @@ server {
 		
 == Disable Security settings for TOMCAT6 ==
 {{{		
-  vi /etc/default/tomcat6		
-
-  Edit and uncomment #TOMCAT6_SECURITY=yes to		
-			
-  TOMCAT6_SECURITY=no		
+cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=yes/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
+mv -f /tmp/tomcat6 /etc/default/tomcat6		
 }}}
 
 == Setup the database ==
@@ -455,8 +332,12 @@ On the {{{mysql>}}} prompt, type
 == Install bbb-web ==
 {{{
   cd /var/lib/tomcat6/webapps
-  cp /home/user/temp/bigbluebutton.war ./bigbluebutton.war
+  cp /tmp/bigbluebutton.war ./bigbluebutton.war
 }}}
+
+== Generate a GUID ==
+
+For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
 
 == Determine PDF2SWF, CONVERT and GS applications ==
 {{{
@@ -485,63 +366,11 @@ On the {{{mysql>}}} prompt, type
 }}}
 
 Change the following:
- * swfToolsDir to the directory where pdf2swf is located
- * imageMagickDir to the directory where convert is located
- * ghostScriptExec to point to the gs application
+ * swfToolsDir to the *directory* where pdf2swf is located
+ * imageMagickDir to the *directory* where convert is located
+ * ghostScriptExec to point to the gs *executable*
  * change bigbluebutton.web.serverURL=http://<YOUR IP>
-
-Your bigbluebutton.properties should resemble something like this
-
-{{{
-#
-# These are the default properites for BigBlueButton Web application
-
-dataSource.url=jdbc:mysql://localhost/bigbluebutton_dev
-dataSource.username=bbb
-dataSource.password=secret
-
-# Directory where BigBlueButton stores uploaded slides
-presentationDir=/var/bigbluebutton
-
-# Directory where SWFTOOLS (pdf2swf, jpeg2swf, png2swf) are located
-swfToolsDir=/bin
-
-# Directory where ImageMagick's convert executable is located
-imageMagickDir=/usr/bin
-
-# Use fullpath to ghostscript executable since the exec names are different
-# for each platform.
-ghostScriptExec=/usr/bin/gs
-
-# This is a workaround for a problem converting PDF files, referenced at 
-# http://groups.google.com/group/comp.lang.postscript/browse_thread/thread/c2e264ca76534ce0?pli=1
-noPdfMarkWorkaround=/etc/bigbluebutton/nopdfmark.ps
-
-# These will be copied in cases where the conversion process
-# fails to generate a slide from the uploaded presentation
-BLANK_SLIDE = /var/bigbluebutton/blank/blank-slide.swf
-BLANK_THUMBNAIL = /var/bigbluebutton/blank/blank-thumb.png
-
-# Inject the above properties into the PresentationService bean	
-beans.presentationService.swfToolsDir=${swfToolsDir}
-beans.presentationService.imageMagickDir=${imageMagickDir}
-beans.presentationService.presentationDir=${presentationDir}
-beans.presentationService.ghostScriptExec=${ghostScriptExec}
-beans.presentationService.noPdfMarkWorkaround=${noPdfMarkWorkaround}
-beans.presentationService.BLANK_THUMBNAIL=${BLANK_THUMBNAIL}
-beans.presentationService.BLANK_SLIDE=${BLANK_SLIDE}
-
-beans.adhocConferenceService.serviceEnabled = true
-beans.dynamicConferenceService.serviceEnabled = true
-
-#
-# This URL is where the BBB client is accessible. When a user sucessfully
-# enters a name and password, she is redirected here to load the client.
-bigbluebutton.web.serverURL=http://192.168.0.182
-
-# URL where the logged-out participant will be redirected after sign-out
-bigbluebutton.web.loggedOutUrl=http://www.bigbluebutton.org
-}}}
+ * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=< YOUR-GUID >)
 
 == Create noPdfMarkWorkaround.ps ==
 Create {{{/etc/bigbluebutton/nopdfmark.ps}}} with the following content:
@@ -611,7 +440,7 @@ mysql>
 == Install bbb-apps ==
 {{{
  cd /usr/share/red5/webapps
- cp /home/user/temp/bigbluebutton-apps.tar.gz ./
+ cp /tmp/bigbluebutton-apps.tar.gz ./
  
  tar zxvf bigbluebutton-apps.tar.gz
  mv webapps/bigbluebutton ./
@@ -633,6 +462,10 @@ ami.host=127.0.0.1
 ami.port=5038
 ami.username=bbb
 ami.password=secret
+
+# The conference application to use. Valid values[meetme, konference]
+asterisk.application=konference
+version=0.63
 }}}
 
 == Enable RTMP Tunneling ==
@@ -678,7 +511,7 @@ ami.password=secret
 == Install bbb-deskshare-app ==
 {{{
   cd /usr/share/red5/webapps
-  cp /home/user/temp/deskshare.tar.gz ./
+  cp /tmp/deskshare.tar.gz ./
   tar zxvf deskshare.tar.gz
   rm deskshare.tar.gz
 }}}
@@ -686,7 +519,7 @@ ami.password=secret
 == Install bbb-video-app ==
 {{{
   cd /usr/share/red5/webapps
-  cp /home/user/temp/video.tar.gz ./
+  cp /tmp/video.tar.gz ./
   tar zxvf video.tar.gz
   rm video.tar.gz
 }}}
@@ -694,7 +527,7 @@ ami.password=secret
 == Install bbb-voice-app ==
 {{{
  cd /usr/share/red5/webapps
- cp /home/user/temp/sip.tar.gz ./
+ cp /tmp/sip.tar.gz ./
  tar zxvf sip.tar.gz
  rm sip.tar.gz
 }}}
@@ -711,8 +544,8 @@ sip.server.host=127.0.0.1
 
 # The start/stop SIP ports that the application is going
 # to use to connect to the asterisk server
-startSIPPort=5070
-stopSIPPort=5099
+startSIPPort=6070
+stopSIPPort=6099
 
 # The start/stop RTP port the application is going to use
 # for the media stream.
@@ -729,10 +562,22 @@ callExtensionPattern={0}
 == Install bbb-default ==
 {{{
  cd /var/www
- cp /home/user/temp/bbb-default.tar.gz ./
+ cp /tmp/bbb-default.tar.gz ./
  tar zxvf bbb-default.tar.gz
  mv web bigbluebutton-default
  rm bbb-default.tar.gz
+}}}
+
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
+{{{
+echo "<%!
+// This is the security salt that must match the value set in the BigBlueButton server
+String salt = \"<YOUR-GUID>\";
+
+// This is the URL for the BigBlueButton server
+String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
+%>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
+
 }}}
 
 == Install bbb-client ==
@@ -740,7 +585,7 @@ callExtensionPattern={0}
   cd /var/www
   mkdir bigbluebutton
   cd bigbluebutton 
-  cp /home/user/temp/client.tar.gz ./
+  cp /tmp/client.tar.gz ./
   tar zxvf client.tar.gz
   rm client.tar.gz
 }}}
@@ -758,51 +603,51 @@ Your config.xml should look something like:
 <?xml version="1.0" ?>
 <config>
     <version>0.4</version>
-    <porttest host="192.168.0.136" application="video"/>    
+    <porttest host="192.168.0.120" application="video"/>    
 	<modules>
 
 		<module name="VideoModule" url="VideoModule.swf" 
-			uri="rtmp://192.168.0.136/video"
+			uri="rtmp://192.168.0.120/video"
 			onUserJoinedEvent="START"
 			onUserLogoutEvent="STOP"	
 		/>
 		<module name="ChatModule" url="ChatModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
+			uri="rtmp://192.168.0.120/bigbluebutton" 
 			loadNextModule="PresentationModule"	
 			onUserJoinedEvent="START"
 			onUserLogoutEvent="STOP"		 
 		/>
 		<module name="ViewersModule" url="ViewersModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
-			host="http://192.168.0.136/bigbluebutton/conference-session/enter"
+			uri="rtmp://192.168.0.120/bigbluebutton" 
+			host="http://192.168.0.120/bigbluebutton/conference-session/enter"
 			onAppInitEvent="LOAD" loadNextModule="ChatModule"
 			onAppStartEvent="START"
 			onUserLogoutEvent="STOP"
 		/>	
 		<module name="ListenersModule" url="ListenersModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
-			recordingHost="http://192.168.0.136"
+			uri="rtmp://192.168.0.120/bigbluebutton" 
+			recordingHost="http://192.168.0.120"
 			loadNextModule="DeskShareModule"
 			onUserJoinedEvent="START"
 			onUserLogoutEvent="STOP"
 		/>
 		<module name="PresentationModule" url="PresentationModule.swf" 
-			uri="rtmp://192.168.0.136/bigbluebutton" 
-			host="http://192.168.0.136" 
+			uri="rtmp://192.168.0.120/bigbluebutton" 
+			host="http://192.168.0.120" 
 			loadNextModule="ListenersModule"
 			onUserJoinedEvent="START" 
 			onUserLogoutEvent="STOP"
 		/>
 		
 		<module name="DeskShareModule" url="DeskShareModule.swf" 
-			uri="rtmp://192.168.0.136/deskShare" 
+			uri="rtmp://192.168.0.120/deskShare" 
 			onUserJoinedEvent="START" 
 			onUserLogoutEvent="STOP"
 			loadNextModule="PhoneModule"
 		/>
 		
 		<module name="PhoneModule" url="PhoneModule.swf" 
-			uri="rtmp://192.168.0.136/sip" 
+			uri="rtmp://192.168.0.120/sip" 
 			onUserJoinedEvent="START" 
 			onUserLogoutEvent="STOP"
 			loadNextModule="VideoModule"
@@ -811,23 +656,52 @@ Your config.xml should look something like:
 </config>
 }}}
 
-Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.124/192.168.0.149/g
+Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
 
-== Restart server ==
+== Installing Desktop Sharing (optional) ==
+{{{
+# install deskshare app
+#
+# Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
+# please read how this changes the licensing of BigBlueButton from LGPL to AGPL.
+#
+#     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
+#
 
- * Start ActiveMQ
- * Start Red5
- * Start nginx
- * Restart dahdi
- * Restart Tomcat
- * Restart Asterisk 
+cp /tmp/bbb-install/deskshare.tar.gz /opt/red5-0.8/webapps/
+cd /opt/red5-0.8/webapps
+tar zxvf deskshare.tar.gz
+rm -f deskshare.tar.gz
+
+}}}
+
+Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
+{{{
+ <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
+}}}
+
+== Finish the installation ==
+{{{
+# create directory for log files
+mkdir /var/log/bigbluebutton
+
+# create an empty log file
+echo "" /var/log/bigbluebutton/bbb-web.log
+chmod 777 /var/log/bigbluebutton/bbb-web.log
+
+# restart server
+
+service activemq restart
+service red5 restart
+service nginx restart
+service tomcat6 restart
+service asterisk restart
+}}}
 
 
 == Try out !BigBlueButton ==
 
- Go to {{{http://<YOUR-IP>}}} which should display the bbb web page. Login into the default conference 85115.
- 
- To use voice conference, using your zoiper, dial 85115 which will prompt you for the conference number.
+ Go to {{{http://<YOUR-IP>}}} which should display the bbb web page and join the conference!
 
 == When things go wrong ==
  Look for logs in the following
@@ -852,3 +726,48 @@ update-rc.d -f script_name start 99 2 3 4 5 .
 }}}
 
 You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
+
+== Using MeetMe ==
+By default, BigBlueButton uses AppKonference for voice conferencing. If you wish to use MeetMe instead, you need to install dahdi and enable MeetMe in BigBlueButton's configuration.
+
+=== Install Dahdi ===
+
+You may have to find out what the newest version is. Go to http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete
+
+{{{
+ cd /usr/local/src
+ wget http://downloads.asterisk.org/pub/telephony/dahdi-linux-complete/dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
+ tar zxvf dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2.tar.gz
+ cd dahdi-linux-complete-2.2.1-rc2+2.2.1-rc2
+ sudo apt-get install linux-headers-2.6.28-17-server
+ make all
+ make install
+ make config
+}}}
+
+This command will change based on what version of kernel you are using, if you get an error when doing "make all" asking for missing linux headers then you have to changed this command to appropriate.  You can use {{{apt-cache search linux-headers}}} to find the available linux-headers
+{{{
+sudo apt-get install linux-headers-2.6.28-17-server
+}}}
+
+=== Enable MeetMe ===
+
+You can change the BigBlueButton's configuration to use MeetMe by executing the following commands.
+{{{
+ sed -i "s/asterisk.application[ ]*=.*/asterisk.application=meetme/g" \
+                        /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
+
+# update /etc/asterisk/bbb_extensions.conf
+ sed -i "s/^exten => _XXXX.,n,Konference(\${EXTEN},H)/# exten => _XXXX.,n,Konference(\${EXTEN},H)/g" \
+ /etc/asterisk/bbb_extensions.conf
+
+ sed -i "s/#[ ]*exten => _XXXX.,n,MeetMe(\${EXTEN},cdMsT)/exten => _XXXX.,n,MeetMe(\${EXTEN},cdMsT)/g" \
+ /etc/asterisk/bbb_extensions.conf
+
+# update /etc/asterisk/bbb_extensions.conf
+ sudo sed -i "s/# exten => _XXXX.,n,MeetMe(\${CONFERENCE_FOUND},cdMsT)/exten => _XXXX.,n,MeetMe(\${CONFERENCE_FOUND},cdMsT)/g" \
+ /etc/asterisk/bbb_extensions.conf
+
+ sudo sed -i "s/^exten => _XXXX.,n,Konference(\${CONFERENCE_FOUND},H)/# exten => _XXXX.,n,Konference(\${CONFERENCE_FOUND},H)/g" \
+ /etc/asterisk/bbb_extensions.conf
+}}}
