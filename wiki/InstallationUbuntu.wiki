@@ -54,10 +54,13 @@ to check your setup.  If you need to change your IP address type
 }}}
 
 There you have it. At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided using the IP address of the VM.  
-  
+
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
 
+
 Enter whatever name you like and then click Join.  You'll join the default meeting.
+
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
