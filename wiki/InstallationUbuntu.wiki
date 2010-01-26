@@ -39,19 +39,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bb
 
 == Trying out your server ( 8:42 minutes later) ==
 
-After a few moments, everything will be installed --- including the voice conference server using Asterisk.  To see a summary your setup, type the following command.
-
-{{{
-   bbb-conf -c
-}}}
-
-If you need to change your IP address for BigBlueButton, the following command will update all the configuration files and restart the needed processes.
-
-{{{
-   bbb-conf --setip <ip_address>
-}}}
-
-There you have it. At this point, you've got a full !BigBlueButton server up and running that you can use.  Open a web browser to the URL provided using the IP address of the VM.  
+After a few moments, everything will be installed --- including the voice conference server using Asterisk.  You've got a full !BigBlueButton server up and running that you can use.  Open a web browser to the URL provided using the IP address of the VM.  
 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
@@ -62,6 +50,57 @@ Enter whatever name you like and then click Join.  You'll join the default meeti
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
+= Troubleshooting =
+
+== Wait!  It didn't work! ==
+If you can't login to the server, enter the following command.
+
+{{{
+   bbb-conf -c
+}}}
+
+The script bbb-conf is the BigBlueButton configuration script.  The -c will check your setup to ensure everything is working properly.  For example, here's the output on our demo server
+
+{{{
+Current Configuration:
+
+/var/www/bigbluebutton/client/conf/config.xml (bbb-client)
+                 IP for tunnel check: demo.bigbluebutton.org
+                  IP for rtmp (red5): demo.bigbluebutton.org
+          host for bbb-web interface: demo.bigbluebutton.org
+
+/etc/nginx/sites-available/bigbluebutton (configuration file nginx)
+                         server_name: demo.bigbluebutton.org
+                                port: 80
+                client document root: /var/www/bigbluebutton
+
+/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties (bbb-web)
+                                host: demo.bigbluebutton.org
+
+/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp (API demos)
+                                host: demo.bigbluebutton.org
+
+/etc/asterisk/bbb_extensions.conf (asterisk)
+                   conference module: konference
+}}}
+
+One common problem is that not all the processes are running.  You can do a clean restart of BigBluebutton with the command.
+
+{{{
+   bbb-conf --clean
+}}}
+
+
+If you are accessing the server via an IP address, then another common problem is the IP address in BigBlueButton's configuration files is different than the IP address of the host server.  To change all of BigBlueButton's configuration files to use a different IP address, enter
+
+If you need to change your IP address for BigBlueButton, the following command will update all the configuration files and restart the needed processes.
+
+{{{
+   bbb-conf --setip <ip_address>
+}}}
+
+
+== Keeping your server up-to-date with a new release ==
 
 Want to keep your !BigBlueButton server up-to-date with the latest !BigBlueButton release?  No problem, just enter
 
@@ -71,8 +110,6 @@ Want to keep your !BigBlueButton server up-to-date with the latest !BigBlueButto
 }}}
 
 and apt-get will download and install the released !BigBlueButton.  Don't you just love the power of Ubuntu/Debian packages.
-
-Note: If you install !BigBlueButton on EC2, you'll need to open two ports: 1935 (for RTMP) and 9123 (for desktop sharing) on your EC2 instance. 
 
 == How to install desktop sharing ==
 Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
