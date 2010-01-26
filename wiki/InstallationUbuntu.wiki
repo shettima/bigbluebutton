@@ -10,7 +10,7 @@ You'll need root access to your Ubuntu 9.04 machine.
 
 Also,  !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling, so if you have apache running, you'll need to tell apache to listen to a different port by editing /etc/apache2/ports.conf and changing the entry for 80 to another number, such as 8081.  Avoid setting apache2 to port 8080 as  !BigBlueButton uses tomcat6 which listens on that port.
 
-== There are five commands between you and running your own BigBlueButton Server == 
+== There are five commands to setup your own !BigBlueButton Server == 
 
 There are five commands you need (cut and paste below).  The first four commands download the !BigBlueButton repository key, add the key and repository URL to apt-get's list of sources, then instruct apt-get to update the list of available packages.
 
