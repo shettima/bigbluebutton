@@ -1,5 +1,7 @@
 #summary How to install  BigBlueButton on Ubuntu in under 10 minutes
 
+<wiki:toc max_depth="2" />
+
 = Installing !BigBlueButton using Ubuntu Packages =
 
 Using Ubuntu packages, it's very easy to get a  !BigBlueButton server up and running on any Ubuntu 9.04 x32 (desktop or server) in about ten minutes (depending on your download speed).
