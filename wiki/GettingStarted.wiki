@@ -1,28 +1,29 @@
 #summary A quick guide to getting started with Developing in BigBlueButton.
 
 = Overview =
-We've put a lot of thought into the architecture of BigBlueButton.  Our goal was to make it easy for other developers to use BigBlueButton as a platform to build other collaborative applications.
+We've put a lot of thought into the architecture of !BigBlueButton.  Our goal was to make it easy for other developers to use !BigBlueButton as a platform to build other collaborative applications.
 
 
 == Trunk Overview ==
 
 The trunk of the SVN repository contains the following important parts:
 
-  * bigbluebutton-apps - The server side red5 web-apps of BigBlueButton
-  * bigbluebutton-client - The Flex/Flash client of BigBlueButton
+  * bigbluebutton-apps - The server side red5 web-apps of !BigBlueButton
+  * bigbluebutton-client - The Flex/Flash client of !BigBlueButton
   * bigbluebutton-web - The Grails application for scheduling conferences and logging in/out
   * deskshare-app - The Desktop Sharing server side red5 web-app
   * deskshare-applet - The Applet program used to capture the screen on the client 
 
 == Getting Started ==
 
-The following links will get you going with setting up BigBlueButton.  For most developers, we recommend using the VM.  But if you want to see all the components, go for [InstallingBigBlueButton Installing from source].
+The following links will get you going with setting up !BigBlueButton.  For most developers, we recommend using the VM.  But if you want to see all the components, go for [InstallingBigBlueButton Installing from source].
 
     * [ArchitectureOverview Overview of Architecture]
     * [Developing_BigBlueButton Setting up a Development Environment]
     * [SampleModule Tutorial on Creating a New Module]
+    * [API API for Integration with Third-Party Applications]  
 
-See also instructions for installing BigBlueButton:
+See also instructions for installing !BigBlueButton:
     * [BigBlueButtonVM Download BigBlueButton VM]
     * [InstallationUbuntu Installing on Ubuntu (5 minutes)]
     * [InstallingBigBlueButton Installing from source]
