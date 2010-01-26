@@ -23,7 +23,7 @@ _Code named for the red dot that's now visible in the presentation module_
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.63%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issue Tracker]
 
-=== Known Issues ===
+== Known Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=324 Issue 324] List of uploaded presentation doesn't get transferred when changing presenters
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=322 Issue 322] Odd issue with presentation getting out of sync
 
