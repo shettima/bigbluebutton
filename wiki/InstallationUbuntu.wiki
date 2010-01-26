@@ -113,5 +113,5 @@ Want to keep your !BigBlueButton server up-to-date with the latest !BigBlueButto
 
 and apt-get will download and install the released !BigBlueButton.  Don't you just love the power of Ubuntu/Debian packages.
 
-= How to install desktop sharing =
+== How to install desktop sharing ==
 Desktop sharing is now a separate component.  Don't worry, you can install it with a single apt-get command. Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing how to install desktop sharing] and why doing so changes the licensing of !BigBlueButton.
