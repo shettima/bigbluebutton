@@ -11,6 +11,7 @@
     * [Developing_BigBlueButton Setting up a Development Environment]
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
+    * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
   * [Support Support]
     * [ReleaseNotes Release Notes]
     * [FAQ FAQ]
