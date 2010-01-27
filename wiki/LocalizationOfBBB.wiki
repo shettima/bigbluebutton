@@ -1,9 +1,5 @@
 #summary How to localize BBB
 
-= DRAFT =
-*NOTE: This is still a draft *
-
-
 = Contributing the new language translation to !BigBlueButton =
 If you would like to translate !BigBlueButton to another language, here are the steps you can follow:
 
