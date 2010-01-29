@@ -206,7 +206,7 @@ wget http://bigbluebutton.org/downloads/0.63/packages/video.tar.gz
 wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton-apps.tar.gz
 wget http://bigbluebutton.org/downloads/0.63/packages/client.tar.gz
 wget http://bigbluebutton.org/downloads/0.63/packages/sip.tar.gz
-wget http://www.bigbluebutton.org/sites/all/releases/latest-release/client.tar.gz
+wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
 
 
 # configure MySQL database
@@ -363,7 +363,7 @@ Finish the installation
 mkdir /var/log/bigbluebutton
 
 # create an empty log file
-echo "" /var/log/bigbluebutton/bbb-web.log
+touch /var/log/bigbluebutton/bbb-web.log
 chmod 777 /var/log/bigbluebutton/bbb-web.log
 
 # restart things:
