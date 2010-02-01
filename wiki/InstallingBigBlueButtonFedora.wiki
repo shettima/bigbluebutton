@@ -308,7 +308,7 @@ cp /tmp/bbb-install/client.tar.gz ./
 tar xvf client.tar.gz
 rm -f client.tar.gz
 
-cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.177/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
+cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.159/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
 mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
 
 # install bbb-default pages
