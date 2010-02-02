@@ -78,7 +78,7 @@ Contains bigbluebutton grails app logs.
 
 = Asterisk =
 == Configuration files ===
-=== /etc/asterisk/extensions.conf ===
+=== /etc/asterisk/bbb_extensions.conf ===
 
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf
 
@@ -86,7 +86,7 @@ http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/
 
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bigbluebutton.conf
 
-=== /etc/asterisk/sip.conf ===
+=== /etc/asterisk/bbb_sip.conf ===
 
 [http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/src/conf/config.xml Click here to view the latest version]
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf
