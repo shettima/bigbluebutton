@@ -260,8 +260,6 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 #  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin/)
 #  - ghostScriptExec to point to the gs application (in this example, it is /usr/bin/gs)
 #  - change bigbluebutton.web.serverURL=http://<YOUR IP>
-#  - change BLANK_SLIDE= to "BLANK_SLIDE=/var/bigbluebutton/blank/blank-slide.swf"
-#  - change BLANK_THUMBNAIL= to "BLANK_THUMBNAIL=/var/bigbluebutton/blank/blank-thumb.png"
 #  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
 Back to the automated tasks: 
