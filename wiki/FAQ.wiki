@@ -99,6 +99,7 @@ If you are just working on the client side, you need to edit the file config.xml
 === My client fails at startup with RSL error; Error 2035:URL Not Found ===
 This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here]
 
+== Troubleshooting ==
 === I join the voice conference but nothing appears on the Voice participant's window? ===
 To figure out what the problem is:
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log]
