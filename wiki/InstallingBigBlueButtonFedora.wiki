@@ -282,13 +282,6 @@ chmod -R 777 /var/bigbluebutton
 tar xvf bigbluebutton-apps.tar.gz
 rsync -a webapps/* /opt/red5-0.8/webapps/
 rm -rf webapps
-}}}
-Manually edit nano /opt/red5-0.8/conf/red5-core.xml to open the 1936 port 
-{{{
-vi /opt/red5-0.8/conf/red5-core.xml
-# remove the comment BEFORE AND AFTER the 1936 port definition
-# you should see something like:
-# <!-- You can now add additional ports and ip addresses
 
 # install video app
 cd /opt/red5-0.8/webapps
