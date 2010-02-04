@@ -689,7 +689,7 @@ Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutt
 mkdir /var/log/bigbluebutton
 
 # create an empty log file
-echo "" /var/log/bigbluebutton/bbb-web.log
+touch /var/log/bigbluebutton/bbb-web.log
 chmod 777 /var/log/bigbluebutton/bbb-web.log
 
 # restart server
