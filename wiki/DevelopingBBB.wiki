@@ -173,6 +173,7 @@ If you want to revert back to the web interface installed by the package bbb-web
   sudo /etc/init.d/tomcat6 start
 }}}
 
+*Note:* In !BigBlueButton 0.63, we are depreciating the grails interface.  If you want to create a front-end to BigBlueButton, use the BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
 
 == Making changes to the !BigBlueButton red5 webapp: bbb-apps ==
 
