@@ -1,6 +1,6 @@
 #summary How to develop BigBlueButton.
 
-note: This page is out of date.  Please see DevelopingBBB.
+note: This page is out of date.  Please see [DevelopingBBB Developing BigBlueButton].
 
 <wiki:toc max_depth="2" />
 
