@@ -8,7 +8,7 @@
   * [GettingStarted Getting Started]
     * [ArchitectureOverview Overview of Architecture]
     * [OpenSourceComponents Open Source Components]
-    * [Developing_BigBlueButton Setting up a Development Environment]
+    * [DevelopingBBB Setting up a Development Environment]
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
     * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
