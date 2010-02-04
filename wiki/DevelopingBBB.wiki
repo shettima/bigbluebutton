@@ -37,13 +37,13 @@ This script will share the `/home/firstuser/dev` on your VM so you can access it
 Note: `bbb-conf` is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. 
 
 == Troubleshooting ==
-In some cases the IP of the VM maybe change while initializing for the first time and, consequently, the BigBlueButton config files would be setup with the wrong IP address. If you're running into problems, execute the following command. 
+In some cases the IP of the VM maybe change while initializing for the first time and, consequently, the !BigBlueButton config files would be setup with the wrong IP address. If you're running into problems, execute the following command. 
 
 {{{
 bbb-conf -c
 }}}
 
-If the IP in BigBlueButton's config files don't match the IP of your VM, you will see something like the following.
+If the IP in !BigBlueButton's config files don't match the IP of your VM, you will see something like the following.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbbconf-wrongip.png
 
@@ -173,7 +173,7 @@ If you want to revert back to the web interface installed by the package bbb-web
   sudo /etc/init.d/tomcat6 start
 }}}
 
-*Note:* In !BigBlueButton 0.63, we are depreciating the grails interface.  If you want to create a front-end to BigBlueButton, use the BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
+*Note:* In !BigBlueButton 0.63, we are depreciating the grails interface.  If you want to create a front-end to !BigBlueButton, use the !BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
 
 == Making changes to the !BigBlueButton red5 webapp: bbb-apps ==
 
