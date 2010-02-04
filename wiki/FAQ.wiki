@@ -6,7 +6,8 @@
 ----
 
 == Installation ==
-=== What is the minimum requirements to run BigBlueButton ===
+
+=== What is the minimum requirements to run !BigBlueButton? ===
 We recommend you run BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
 
 === Can I install !BigBlueButton on CentOS? ===
@@ -19,7 +20,7 @@ Short answer: no. While it may be possible to install most components needed to 
 Installing on Debian should be similar to the Ubuntu installation. Let us know if you run into problems and we'll help you set it up.
 
 === Can I install on !RedHat, Fedora? ===
-This should be similar to CentOS, but we haven't tried it. Again, let us know if you run into problems.
+This should be similar to CentOS, but we haven't tried it.  Again, let us know if you run into problems.
 
 == Administration of your BBB System ==
 === How do I update my VM to the newest version? ===
