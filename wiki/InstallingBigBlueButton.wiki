@@ -85,11 +85,6 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
    sudo apt-get upgrade
 }}}
 
-== Install Java 6 ==
-{{{
-  apt-get install openjdk-6-jre-headless
-}}}
-
 == Install MySQL ==
 {{{
   apt-get install mysql-server
@@ -138,10 +133,9 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 == Install red5 ==
 {{{
   cd /tmp
-  wget http://build.xuggle.com/job/red5_jdk6_stable/131/artifact/workingcopy/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  tar zxvf red5-0.8.RC3-build-hudson-red5_jdk6_stable-131.tar.gz
-  mv /tmp/red5-0.8.RC3-build-hudson-red5_jdk6_stable-131 /usr/share/red5
-  mkdir /usr/share/red5/work
+  wget http://bigbluebutton.org/downloads/0.63/fedora-install/red5-0.8.tar.gz
+  tar zxvf red5-0.8.tar.gz
+  mv /tmp/red5-0.8 /usr/share/red5
 }}}
 
 Create red5 user
@@ -221,15 +215,6 @@ echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 }}}
 
 Please take a peek at {{{asterisk-sip.conf}}} to see what it does.
-
-== Create SIP Accounts to be used by !Red5Phone ==
-{{{
-wget http://bigbluebutton.googlecode.com/files/asterisk-create-sip-accounts.sh
-chmod a+x asterisk-create-sip-accounts.sh
-./asterisk-create-sip-accounts.sh
-}}}
-
-Please take a peek at {{{asterisk-create-sip-accounts.sh}}} to see what it does.
 
 == Install AppKonference ==
 
@@ -468,46 +453,6 @@ asterisk.application=konference
 version=0.63
 }}}
 
-== Enable RTMP Tunneling ==
- Uncomment the RTMPT section (seen below) of /usr/share/red5/conf/red5-core.xml.
-
-{{{
-<!-- RTMPT -->
-        <bean id="rtmpt.server" class="org.red5.server.net.rtmpt.TomcatRTMPTLoader" init-method="init" lazy-init="true">
-
-                <property name="webappFolder" value="${red5.root}/webapps" />
-
-                <property name="connector">
-                        <bean class="org.apache.catalina.connector.Connector">
-                                <constructor-arg type="java.lang.String" value="org.apache.coyote.http11.Http11NioProtocol" />
-                                <property name="port"><value>${rtmpt.port}</value></property>
-                                <property name="enableLookups"><value>false</value></property>
-                        </bean>
-                </property>
-
-                <property name="connectionProperties">
-                        <map>
-                                <entry key="maxKeepAliveRequests" value="${rtmpt.max_keep_alive_requests}"/>
-                                <entry key="useExecutor" value="true"/>
-                                <entry key="maxThreads" value="${rtmpt.max_threads}"/>
-                                <entry key="acceptorThreadCount" value="${rtmpt.acceptor_thread_count}"/>
-                                <entry key="processorCache" value="${rtmpt.processor_cache}"/>
-                        </map>
-                </property>
-
-                <property name="host">
-                        <bean class="org.apache.catalina.core.StandardHost">
-                                <property name="name" value="${rtmpt.host}" />
-                                <property name="unpackWARs" value="false" />
-                                <property name="autoDeploy" value="false" />
-                                <property name="xmlValidation" value="false" />
-                                <property name="xmlNamespaceAware" value="false" />
-                        </bean>
-                </property>
-
-        </bean>
-}}}
-
 == Install bbb-deskshare-app ==
 {{{
   cd /usr/share/red5/webapps
@@ -695,10 +640,9 @@ chmod 777 /var/log/bigbluebutton/bbb-web.log
 # restart server
 
 service activemq restart
-service red5 restart
-service nginx restart
-service tomcat6 restart
 service asterisk restart
+service red5 restart
+service tomcat6 restart
 }}}
 
 
