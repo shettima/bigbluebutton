@@ -88,16 +88,28 @@ There are no additional requirements (beyond having Flash installed) for viewers
 One easy way to speed up desktop sharing as a presenter is choose a solid color for your background image.  If you do, you'll notice that whenever the desktop is visible, the viewer's images will update relatively quickly as the algorithm is very efficient at sending solid colors.
 
 == Developing for !BigBlueButton ==
+
 === Setting up the Dev environment ===
-Refer to [Developing_BigBlueButton this].
+See [DevelopingBBB Developing BigBlueButton] for full instructions.
+
 === I want to develop from Windows! ===
-Even though the VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
+Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
+
 === How to compile and deploy the components of !BigBlueButton? ===
-For most components of BBB, the source on the VM includes ant scripts which you can use to compile and deploy that particular component. If you have questions about compiling a specific component, write to the mailing list.
+For most components of BBB, the source on the !BigBlueButton VM includes ant scripts which you can use to compile and deploy that particular component. If you have questions about compiling a specific component, post to the mailing list.
+
 === What if I want to develop for the Client only? ===
 If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of BigBlueButton.
+
 === My client fails at startup with RSL error; Error 2035:URL Not Found ===
 This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here]
+
+=== Where is the !BigBlueButton scheduling interface in 0.63 ===
+
+In BigBlueButton 0.63, we are depreciating the grails web 
+interface to schedule meetings in favor of using the BigBlueButton 
+API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided examples] of using the BigBlueButton API to show you how to use it.  
+   
 
 == Troubleshooting ==
 === I join the voice conference but nothing appears on the Voice participant's window? ===
