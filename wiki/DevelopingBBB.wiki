@@ -95,8 +95,8 @@ The next line runs the default task (cleanandmake) and uses the mxmlc compiler t
 
 Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
 
-Let's dive in and make a change. We'll change the default position of the presentation window. This property is stored in the file "PresentationWindow.mxml". To make the change, we'll do the following:
- # *Locate the file:* The 'find' command should return the path of PresentationWindow.mxml. If you're using the development VM, the path should be './src/org/bigbluebutton/modules/present/views/PresentationWindow.mxml'
+Let's dive in and make a change. We'll change the default position of the presentation window. This property is stored in the file "!PresentationWindow.mxml". To make the change, we'll do the following:
+ # *Locate the file:* The 'find' command should return the path of !PresentationWindow.mxml. If you're using the development VM, the path should be './src/org/bigbluebutton/modules/present/views/PresentationWindow.mxml'
 {{{
 find . -name "PresentationWindow.mxml"
 }}}
