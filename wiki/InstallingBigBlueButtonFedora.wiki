@@ -359,7 +359,7 @@ chmod 777 /var/log/bigbluebutton/bbb-web.log
 
 # restart things:
 service activemq restart
+service asterisk restart
 service red5 restart
 service tomcat6 restart
-service asterisk restart
 }}}
