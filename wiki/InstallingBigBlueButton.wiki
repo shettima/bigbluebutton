@@ -659,7 +659,7 @@ Your config.xml should look something like:
 </config>
 }}}
 
-Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
+Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.159/< YOUR-IP >/g
 
 == Installing Desktop Sharing (optional) ==
 {{{
