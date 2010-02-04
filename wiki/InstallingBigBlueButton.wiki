@@ -623,9 +623,15 @@ rm -f deskshare.tar.gz
 
 }}}
 
-Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
+Desktop sharing is disabled by default. To enable it, we need to specify this in the "/var/www/bigbluebutton/client/conf/config.xml". The commands below should enable desksharing. 
+
+<b>Remember to replace < YOUR-IP > with your server's IP.</b>
+
 {{{
- <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
+cat /var/www/bigbluebutton/client/conf/config.xml |
+sed "s/loadNextModule=\"PhoneModule\"/loadNextModule=\"DeskShareModule\"/" |
+sed "s/<\!-- module name=\"DeskShare.*/<module name=\"DeskShareModule\" url=\"DeskShareModule.swf\" uri=\"rtmp:\/\/< YOUR-IP >\/deskShare\" onUserJoinedEvent=\"START\" onUserLogoutEvent=\"STOP\" loadNextModule=\"PhoneModule\" \/>/" > /tmp/config.xml
+mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
 }}}
 
 == Finish the installation ==
