@@ -24,7 +24,7 @@ This should be similar to CentOS, but we haven't tried it.  Again, let us know i
 
 == Installation: Networking ==
 
-=== Can I run BigBlueButton behind my firewall? ===
+=== How can I provide external access to a BigBlueButton server behind my firewall? ===
 
 Yes.  A typical scenario is you have BigBlueButton running on an internal computer behind a firewall.
 
