@@ -1,8 +1,10 @@
 #summary Support for Additional FileType support in presentation module
+#labels Deprecated
 
 = Introduction =
 
-*This file is a draft* on how to use the additional filetype support for presentation module.
+*Note:* This page is now obsolete as support for additional file types was merged into BigBlueButton 0.63.
+
 
 = Known bugs/issue/fixme =
   * In bbb-web/grails-app/conf/bigbluebutton.properties, a fullpath for jodconverter lib is set. (to the VM dev dir for now...)
