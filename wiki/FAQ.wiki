@@ -7,7 +7,7 @@
 
 == Installation: General ==
 
-=== What is the minimum requirements to run !BigBlueButton? ===
+=== What are the minimum requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
 
 === Can I install !BigBlueButton on CentOS? ===
