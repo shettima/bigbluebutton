@@ -5,7 +5,7 @@
 
 ----
 
-== Installation ==
+== Installation: General ==
 
 === What is the minimum requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
@@ -21,6 +21,23 @@ Installing on Debian should be similar to the Ubuntu installation. Let us know i
 
 === Can I install on !RedHat, Fedora? ===
 This should be similar to CentOS, but we haven't tried it.  Again, let us know if you run into problems.
+
+== Installation: Networking ==
+
+=== Can I run BigBlueButton behind my firewall? ===
+
+Yes.  A typical scenario is you have BigBlueButton running on an internal computer behind a firewall.
+
+First, on your firewall, you need to forward three ports to the IP address of the internal computer (the !BigBlueButton server).  These are ports 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
+
+Next, tell !BigBlueButton it's external IP address or hostname, whichever you are using to enable users to access !BigBlueButton from outside the firewall.  Do this using the `bbb-conf` command.
+
+{{{
+   bbb-conf --setip <ip_or_hostname>
+}}}
+
+If you are using an external hostname, you will need to setup the /etc/hosts file on the BigBlueButton server to know about that name.  Edit `/etc/hosts` and add the following line
+
 
 == Administration of your BBB System ==
 === How do I update my VM to the newest version? ===
