@@ -1,4 +1,5 @@
 #summary How to develop BigBlueButton.
+#labels Deprecated
 
 note: *This page is out of date.  Please see [DevelopingBBB Developing BigBlueButton]*.
 
