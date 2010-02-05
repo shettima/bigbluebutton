@@ -8,7 +8,7 @@
 == Installation ==
 
 === What is the minimum requirements to run !BigBlueButton? ===
-We recommend you run BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
+We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
 
 === Can I install !BigBlueButton on CentOS? ===
 Yes, you can! [InstallingBigBlueButtonCentOS CentOS instructions]
@@ -106,7 +106,7 @@ Even though the !BigBlueButton VM makes your life much easier, some people prefe
 For most components of BBB, the source on the !BigBlueButton VM includes ant scripts which you can use to compile and deploy that particular component. If you have questions about compiling a specific component, post to the mailing list.
 
 === What if I want to develop for the Client only? ===
-If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of BigBlueButton.
+If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of !BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of !BigBlueButton.
 
 === My client fails at startup with RSL error; Error 2035:URL Not Found ===
 This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here]
@@ -114,8 +114,8 @@ This is related to localization. Before you launch your client, you need to firs
 === Where is the !BigBlueButton scheduling interface in 0.63 ===
 
 In BigBlueButton 0.63, we are depreciating the grails web 
-interface to schedule meetings in favor of using the BigBlueButton 
-API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided examples] of using the BigBlueButton API to show you how to use it.  
+interface to schedule meetings in favor of using the !BigBlueButton 
+API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided examples] of using the !BigBlueButton API to show you how to use it.  
    
 
 == Troubleshooting ==
@@ -130,7 +130,7 @@ To figure out what the problem is:
  * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
 
 === When I try to join the conference, I get logged out after loading the modules ===
-* Check if bigbluebutton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
+* Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
 
 
