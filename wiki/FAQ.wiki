@@ -5,7 +5,7 @@
 
 ----
 
-== Installation: General ==
+== General ==
 
 === What are the minimum requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
@@ -21,6 +21,24 @@ Installing on Debian should be similar to the Ubuntu installation. Let us know i
 
 === Can I install on !RedHat, Fedora? ===
 This should be similar to CentOS, but we haven't tried it.  Again, let us know if you run into problems.
+
+=== What are the bandwidth requirements for running a BigBlueButton server? ===
+
+For video streaming, each video connection takes 50 kilobytes/second. For example, if the presenter shares their video, and nine students are viewing it, then the server needs 10 * 50 k/s = 500 k/s bandwidth.  
+
+Each voice stream takes two 8 KHZ channels and is much less bandwidth than video.  
+
+Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size.  The desktop sharing sends a complete refresh of the screen every 20 seconds.  
+
+Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  As the presenter moves to the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and their client's loads the next slide from cache.  
+
+If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and desktop sharing will all throttle back within that constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still update, just at a slower rate.
+
+
+
+
+
+
 
 == Installation: Networking ==
 
