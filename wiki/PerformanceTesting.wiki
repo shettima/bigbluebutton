@@ -1,4 +1,5 @@
 #summary Performance measurement on BigBlueButton server (server on Linux, clients on Windows or Linux) and a Web Tool
+#labels Deprecated
 
 = Introduction =
 
