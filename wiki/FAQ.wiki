@@ -33,11 +33,14 @@ First, on your firewall, you need to forward three ports to the IP address of th
 Next, tell !BigBlueButton it's external IP address or hostname, whichever you are using to enable users to access !BigBlueButton from outside the firewall.  Do this using the `bbb-conf` command.
 
 {{{
-   bbb-conf --setip <ip_or_hostname>
+bbb-conf --setip <ip_or_hostname>
 }}}
 
-If you are using an external hostname, you will need to setup the /etc/hosts file on the BigBlueButton server to know about that name.  Edit `/etc/hosts` and add the following line
+If you are using an external hostname, you will need to setup the /etc/hosts file on the BigBlueButton server to know about that name.  For example, if your BigBlueButton server has the internal IP address of 19.168.0.10 and you are using a fully qualified hostname of host.domain.org, add the following line to /etc/hosts.
 
+{{{
+192.168.1.10 host.domain.org
+}}}
 
 == Administration of your BBB System ==
 === How do I update my VM to the newest version? ===
@@ -74,9 +77,6 @@ Also restart the networking on the VM by running the following command:
 {{{
   sudo /etc/init.d/networking restart
 }}}
-
-=== My VM won't let me log in!%@^$! ===
-When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
 === BBB is running inside the VM, but I can't access it from a browser ===
 Make sure your VMWave Player network settings are set to Bridged, not NAT. Go to Devices>Network Adapter, and select 'Bridged'
@@ -136,6 +136,9 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
    
 
 == Troubleshooting ==
+
+=== I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
+When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
 === I join the voice conference but nothing appears on the Voice participant's window? ===
 To figure out what the problem is:
