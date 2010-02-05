@@ -113,7 +113,7 @@ This is related to localization. Before you launch your client, you need to firs
 
 === Where is the !BigBlueButton scheduling interface in 0.63 ===
 
-In BigBlueButton 0.63, we are depreciating the grails web 
+In !BigBlueButton 0.63, we are depreciating the grails web 
 interface to schedule meetings in favor of using the !BigBlueButton 
 API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided examples] of using the !BigBlueButton API to show you how to use it.  
    
