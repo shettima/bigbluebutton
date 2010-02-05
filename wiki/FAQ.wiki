@@ -119,6 +119,7 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
    
 
 == Troubleshooting ==
+
 === I join the voice conference but nothing appears on the Voice participant's window? ===
 To figure out what the problem is:
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log]
@@ -132,6 +133,10 @@ To figure out what the problem is:
 === When I try to join the conference, I get logged out after loading the modules ===
 * Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
+
+=== bbb-conf --check reports Host IP does not match BigBlueButton ===
+
+In BigBlueButton 0.63, this is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to BigBlueButton, you can safely ignore the warning.
 
 
 
