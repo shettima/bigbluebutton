@@ -1,4 +1,5 @@
 #summary How to install  BigBlueButton on Ubuntu in under 10 minutes
+#labels Deprecated
 
 * NOTE: This article is still a draft *
 
