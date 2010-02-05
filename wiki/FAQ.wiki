@@ -125,9 +125,26 @@ The presenter must have Java installed to share their desktop.  If you can view 
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
 ==== How can I make desktop sharing faster? ====
-!BigBlueButton uses a lossless codec to capture the presenter's desktop.  If the presenter has a 32-bit background image, then the desktop sharing will send that image as well whenever it's visible.  This can slow down desktop sharing.
+!BigBlueButton uses the Adobe Screen Codec to capture and transmit the desktop.  Kudos to Adobe, this is a high-quality lossless codec that gives you pixel-for-pixel view of the presenter's desktop.  If the presenter has a 32-bit background image, then the desktop sharing will send that image as well whenever it's visible.  This can slow down desktop sharing.
 
 One easy way to speed up desktop sharing as a presenter is choose a solid color for your background image.  If you do, you'll notice that whenever the desktop is visible, the viewer's images will update relatively quickly as the algorithm is very efficient at sending solid colors.
+
+==== Can I share a specific window when sharing my desktop ====
+
+Unfortunately no.  Most commercial web conferencing systems download a binary file (i.e. DLL) on windows or Mac to hook into the Windows Mirror 
+Driver (to get screen event updates) and to use the Windows API calls 
+to find the current window.  
+
+Most commercial applications support binaries (native code) 
+for Windows and Mac and then call it.  Unix users are encourage to use 
+a Mac or PC if they want to share their desktops. 
+
+By using a Java applet, we can equally support Mac, Unix, and PC users, but it restricts us to looking at the screen, not the underlying OS.
+
+A Java applet could, in theory, use JNI to connect into the Windows 
+subsystem to make API calls, but we're back to downloading a binary 
+file (DLL) to enable it.  We haven't tried this yet.
+
 
 == Developing for !BigBlueButton ==
 
