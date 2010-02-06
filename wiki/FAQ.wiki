@@ -14,7 +14,7 @@ We recommend you run !BigBlueButton on dual core machine with at least one Gig o
 Yes, you can! [InstallingBigBlueButtonCentOS CentOS instructions]
 
 === Can I install on Windows? ===
-Short answer: no. While it's possible to manually install each of the individual OpenSourceComponents needed to run BBB on Windows, we haven't tested it. If you only have a Windows hosts, you can have a full BigBlueButton server running in a few minutes using [http://www.vmware.com/products/player/ VMWare Player] and the BigBlueButtonVM.
+Short answer: no. While it's possible to manually install each of the individual OpenSourceComponents needed to run BBB on Windows, we haven't tested it. If you only have a Windows hosts, you can have a full !BigBlueButton server running in a few minutes using [http://www.vmware.com/products/player/ VMWare Player] and the BigBlueButtonVM.
 
 === Can I install on Debian? ===
 Installing on Debian should be similar to the Ubuntu installation. Let us know if you run into problems and we'll help you set it up.
@@ -22,7 +22,7 @@ Installing on Debian should be similar to the Ubuntu installation. Let us know i
 === Can I install on !RedHat, Fedora? ===
 This should be similar to CentOS, but we haven't tried it.  Again, let us know if you run into problems.
 
-=== What are the bandwidth requirements for running a BigBlueButton server? ===
+=== What are the bandwidth requirements for running a !BigBlueButton server? ===
 
 For video streaming, each video connection takes 50 kilobytes/second. For example, if the presenter shares their video, and nine students are viewing it, then the server needs 10 * 50 k/s = 500 k/s bandwidth.  
 
@@ -42,9 +42,9 @@ If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and d
 
 == Installation: Networking ==
 
-=== How can I provide external access to a BigBlueButton server behind my firewall? ===
+=== How can I provide external access to a !BigBlueButton server behind my firewall? ===
 
-Yes.  A typical scenario is you have BigBlueButton running on an internal computer behind a firewall.
+Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.
 
 First, on your firewall, you need to forward three ports to the IP address of the internal computer (the !BigBlueButton server).  These are ports 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
 
@@ -54,7 +54,7 @@ Next, tell !BigBlueButton it's external IP address or hostname, whichever you ar
 bbb-conf --setip <ip_or_hostname>
 }}}
 
-If you are using an external hostname, you will need to setup the /etc/hosts file on the BigBlueButton server to know about that name.  For example, if your BigBlueButton server has the internal IP address of 19.168.0.10 and you are using a fully qualified hostname of host.domain.org, add the following line to /etc/hosts.
+If you are using an external hostname, you will need to setup the /etc/hosts file on the !BigBlueButton server to know about that name.  For example, if your !BigBlueButton server has the internal IP address of 19.168.0.10 and your firewall has a fully qualified hostname of host.domain.org, add the following line to /etc/hosts.
 
 {{{
 192.168.1.10 host.domain.org
@@ -189,9 +189,9 @@ To figure out what the problem is:
 * Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
 
-=== bbb-conf --check reports Host IP does not match BigBlueButton ===
+=== bbb-conf --check reports Host IP does not match !BigBlueButton ===
 
-In BigBlueButton 0.63, this is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to BigBlueButton, you can safely ignore the warning.
+In !BigBlueButton 0.63, this is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to !BigBlueButton, you can safely ignore the warning.
 
 
 
