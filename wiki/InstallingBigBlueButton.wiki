@@ -10,7 +10,7 @@ When you boot your Ubuntu VM, it needs to have a network IP that you can access 
 
 == Log in as root ==
 
-Log in as root to avoid having to type sudo in front of most of the commands required to install BigBlueButton.
+Log in as root to avoid having to type sudo in front of most of the commands required to install !BigBlueButton.
 {{{
 sudo su - root
 }}}
@@ -516,7 +516,7 @@ sipStackDebugLevel=3
  rm bbb-default.tar.gz
 }}}
 
-Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the !BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
 {{{
 echo "<%!
 // This is the security salt that must match the value set in the BigBlueButton server
@@ -668,7 +668,7 @@ service tomcat6 restart
 Also ensure that port 1935 (RTMP) and port 9123 (desktop sharing) are open on your server.
 
 == If you make it successfully through the installation ==
-Good stuff!  Post a message to BigBlueButton-dev letting everyone know that you are a real developer and you have installed BigBlueButton from source.  :-)
+Good stuff!  Post a message to !BigBlueButton-dev letting everyone know that you are a real developer and you have installed !BigBlueButton from source.  :-)
 
 == Startup execution of scripts ==
 
@@ -681,7 +681,7 @@ update-rc.d -f script_name start 99 2 3 4 5 .
 You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
 
 == Using MeetMe ==
-By default, BigBlueButton uses AppKonference for voice conferencing. If you wish to use MeetMe instead, you need to install dahdi and enable MeetMe in BigBlueButton's configuration.
+By default, !BigBlueButton uses AppKonference for voice conferencing. If you wish to use MeetMe instead, you need to install dahdi and enable MeetMe in !BigBlueButton's configuration.
 
 === Install Dahdi ===
 
@@ -705,7 +705,7 @@ sudo apt-get install linux-headers-2.6.28-17-server
 
 === Enable MeetMe ===
 
-You can change the BigBlueButton's configuration to use MeetMe by executing the following commands.
+You can change !BigBlueButton's configuration to use MeetMe by executing the following commands.
 {{{
  sed -i "s/asterisk.application[ ]*=.*/asterisk.application=meetme/g" \
                         /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
