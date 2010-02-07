@@ -58,13 +58,15 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 = Troubleshooting =
 
 == Wait!  It didn't work! ==
-If you can't login to the server, enter the following command.
+We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
+
+If you think something isn't working correctly, the first step is enter the following command.
 
 {{{
-   bbb-conf -c
+   bbb-conf --check
 }}}
 
-The script bbb-conf is the !BigBlueButton configuration script.  The -c will check your setup to ensure everything is working properly.  For example, here's the output on our demo server
+The `--check` will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on our demo server
 
 {{{
 Current Configuration:
