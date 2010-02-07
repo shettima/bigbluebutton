@@ -117,7 +117,7 @@ In /home/firstuser/dev
 
 == Using !BigBlueButton ==
 === Desktop Sharing ===
-==== What platforms are supported for desktop sharing? ====
+==== What is needed to run desktop sharing? ====
 !BigBlueButton uses a Java applet to capture screen updates.   This means desktop sharing works for Mac, Unix, and PC platforms.  
 
 The presenter must have Java installed to share their desktop.  If you can view [http://java.sun.com/applets/jdk/1.4/index.html Sun's sample applets] through your browser, you should be able to share your desktop with !BigBlueButton.  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
