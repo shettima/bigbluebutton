@@ -50,7 +50,7 @@ After a few moments, everything will be installed --- including the voice confer
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
 
 
-Enter whatever name you like and then click Join.  You'll join the default meeting.
+You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  (We setup our demo server using these packages.).  To start using your !BigBlueButton server, enter your and then click Join.  You'll join the default meeting.
 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
