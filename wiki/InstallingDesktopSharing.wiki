@@ -9,15 +9,15 @@ To keep !BigBlueButton licensed under LGPL, we've removed deskshare from the [ht
 apt-get install bbb-apps-deskshare
 }}}
 
-before you do this, however, you need to understand that it changes the licensing of BigBlueButton.
+Before you do this, however, you need to understand that it changes the licensing of !BigBlueButton.
 
 == !BigBlueButton becomes licensed under AGPL when incorporating desktop sharing ==
 
 The desktop sharing module is licensed under the GNU Affero General Public License (AGPL).  Incorporating the desktop sharing module changes the licensing of !BigBlueButton to AGPL.
 
-In a similar manner, by incorporating !BigBlueButton into your web-based applications -- specifically, creating a derivative work that is based on or a modification of !BigBlueButton -- becomes part of the covered work and must also be released under the AGPL, even if that covered work is not distributed and only runs in a hosted environment. In this way, the AGPL is designed to ensure that all users of the application are able to receive its source.
+In a similar manner, by incorporating !BigBlueButton into your web-based applications -- specifically, creating a derivative work that is based on or a modification of !BigBlueButton -- requires that your application must also be released under the AGPL, even if that covered work is not distributed and only runs in a hosted environment. In this way, the AGPL is designed to ensure that all users of the application are able to receive its source.
 
-For many of the users of !BigBlueButton -- especially our target market of educational institutions -- the requirements of the AGPL license are a non-issue. Releasing their source is a way of accelerating their growth and results in cooperation and collaboration with the community that yields higher quality software that benefits everyone.
+For many of the users of !BigBlueButton -- especially our target market of educational institutions -- the requirements of the AGPL license are a non-issue. Releasing their source is a way of accelerating adoption and results in cooperation and collaboration with the open source community that yields higher quality software that benefits everyone.
 
 However, if you do not with accept the requirements of the AGPL license for your software when incorporating desktop sharing, you can either (1) remove the desktop sharing component using the following command
 
@@ -25,36 +25,9 @@ However, if you do not with accept the requirements of the AGPL license for your
 sudo apt-get remove bbb-apps-deskshare
 }}}
 
-and !BigBlueButton reverts to the GNU Limited General Public License (LGPL), or (2) e-mail us (ffdixon at bigbluebutton dot org) for information on obtaining a commerical non-AGPL license for desktop sharing.  By purchasing a commercial license, you remove the requirement to share the code to any application that incorporates these products, and you will also be supporting the efforts to improve !BigBlueButton and to provide your users with many benefits for years to come.
+and !BigBlueButton reverts to the GNU Limited General Public License (LGPL), or (2) e-mail us (ffdixon at bigbluebutton dot org) for information on obtaining a commerical non-AGPL license for desktop sharing.  By purchasing a commercial license, you remove the requirement to share the code to any application that incorporates these products, and you will also be supporting the efforts to improve !BigBlueButton for the benefit of your users for years to come.
 
 
-
-
-
-
-
-
-
-By incorporating bbb-apps-deskshare into !BigBlueButton, !BigBlueButton becomes licensed under AGPL.  This means you must make the source !BigBlueButton, and any derivative works, available under the AGPL license, even if !BigBlueButton is running on a hosted environment and is not distributed.
-
-In a similar manner, if you build your web application on !BigBlueButton and incorporate it into your code, you must adhere to the terms of the AGPL license.
-
-For the vast majority of our users, especially in the education market, this is a non-issue.  We all live and benefit from an open source world, and the AGPL license ensures that everyone continues to benefit regardless of the distribution model.
-
-However, if you don't want agree to the terms of the AGPL license for !BigBlueButton and the web applications that create derivative works from it, you can:
-
-1. Remove the deskshare component using the following command 
-
-{{{
-sudo apt-get remove bbb-apps-deskshare
-}}} 
-
-and !BigBlueButton reverts to the GNU Limited General Public License (LGPL)
-
-2. Alternatively, e-mail us (ffdixon at bigbluebutton dot org) for information on how to obtain a commercial license for bbb-apps-deskshare that removes the requirements for you to share the code for any derivative works.
-
-
- 
 == Obtaining the source for desktop sharing ==
 Because Google Code does not allow hosting of applications that use AGPL, we have moved the source code for desktop sharing to a separate server.  You can access the source code using the following svn command.
 
