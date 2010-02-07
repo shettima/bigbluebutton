@@ -3,8 +3,10 @@
 <wiki:toc max_depth="2" />
 
 = Installing !BigBlueButton using Ubuntu Packages =
-=== NOTE: These instructions were tested on Ubuntu 9.04 ===
-It's very easy to get a  !BigBlueButton server up and running on any ***Ubuntu 9.04***.  All you need is five commands and about ten minutes (depending on your download speed).
+
+*NOTE:* These instructions are written and tested on Ubuntu 9.04 32-bit.
+
+It's very easy to get a  !BigBlueButton server up and running on any ***Ubuntu 9.04 32-bit***.  All you need is five commands and about ten minutes (depending on your download speed).
 
 == Prerequisites ==
 
