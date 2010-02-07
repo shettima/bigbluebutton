@@ -35,7 +35,7 @@ After a few moments, if you don't have mysql installed, the mysql setup script w
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_mysql.png
 
-Next, the setup script for the scheduling component of !BigBlueButton needs to access the mysql database to create the database for BigBlueButton.  You need to provide it the same password your did a moment ago.  
+Next, the setup script for the scheduling component of !BigBlueButton needs to access the mysql database to create the database for !BigBlueButton.  You need to provide it the same password your did a moment ago.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
 
@@ -61,7 +61,7 @@ If you can't login to the server, enter the following command.
    bbb-conf -c
 }}}
 
-The script bbb-conf is the BigBlueButton configuration script.  The -c will check your setup to ensure everything is working properly.  For example, here's the output on our demo server
+The script bbb-conf is the !BigBlueButton configuration script.  The -c will check your setup to ensure everything is working properly.  For example, here's the output on our demo server
 
 {{{
 Current Configuration:
@@ -86,16 +86,16 @@ Current Configuration:
                    conference module: konference
 }}}
 
-One common problem is that not all the processes are running.  You can do a clean restart of BigBluebutton with the command.
+One common problem is that not all the processes are running.  You can do a clean restart of !BigBluebutton with the command.
 
 {{{
    bbb-conf --clean
 }}}
 
 
-If you are accessing the server via an IP address, then another common problem is the IP address in BigBlueButton's configuration files is different than the IP address of the host server.  To change all of BigBlueButton's configuration files to use a different IP address, enter
+If you are accessing the server via an IP address, then another common problem is the IP address in !BigBlueButton's configuration files is different than the IP address of the host server.  To change all of !BigBlueButton's configuration files to use a different IP address, enter
 
-If you need to change your IP address for BigBlueButton, the following command will update all the configuration files and restart the needed processes.
+If you need to change your IP address for !BigBlueButton, the following command will update all the configuration files and restart the needed processes.
 
 {{{
    bbb-conf --setip <ip_address>
