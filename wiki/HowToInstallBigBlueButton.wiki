@@ -1,6 +1,8 @@
 #summary How to setup your own BigBlueButton Server (Windows)
 #labels Deprecated
 
+*Note:* These instructions are depreciated.  We no longer support installation of BigBlueBtton on Windows.  For up-to-date installation instructions, please see the [http://code.google.com/p/bigbluebutton/wiki/Installation Installation of BigBlueButton] wiki page.
+
 Note: These instructions are for version 0.3 and will soon be updated for version 0.4.
 
 = Overview =
