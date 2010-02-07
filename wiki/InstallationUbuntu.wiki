@@ -34,11 +34,11 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/add_pack
 
 Enter 'Y'.  Then sit back.
 
-After a few moments, if you don't have mysql installed, the mysql setup script will ask to provide a password for the mysql user 'root'.
+After a few moments, if you don't have mysql installed, the mysql setup script will ask to specify a password for the mysql 'root' user.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_mysql.png
 
-Next, the setup script for the scheduling component of !BigBlueButton needs to access the mysql database to create the database for !BigBlueButton.  You need to provide it the same password your did a moment ago.  
+Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the setup script for bbb-web will then ask you for that mysql root password; bbb-web needs to access the mysql to create the database for !BigBlueButton.  Give the the same password your did a moment ago.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
 
