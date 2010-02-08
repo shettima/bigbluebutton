@@ -222,6 +222,8 @@ Please take a peek at {{{asterisk-sip.conf}}} to see what it does.
 wget http://bigbluebutton.org/downloads/0.63/ubuntu-install/app_konference.so
 mv app_konference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/app_konference.so
+# set autoload module BigBlueButton conference
+echo "load => app_konference.so" >> /etc/asterisk/modules.conf
 }}}
 
 == Create AMI account ==
