@@ -175,13 +175,14 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
-=== I join the voice conference but nothing appears on the Voice participant's window? ===
+=== I can join the voice conference but nothing appears on the Voice participant's window? ===
+ * Make sure /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties values matches those with /etc/asterisk/manager.d/bigbluebutton.conf
+
+=== I can't join the voice conference? When I click on the headset icon, nothing happens?
 To figure out what the problem is:
- * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log]
+ * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
  * Open up asterisk console {{{sudo asterisk -vvvvvvr}}} and then try clicking on the headset icon on the client again. Look at the logs on the asterisk console for clues.
 
-
- * Make sure /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties values matches those with /etc/asterisk/manager.d/bigbluebutton.conf
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
  * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
 
