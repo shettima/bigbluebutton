@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-= Running a full !BigBlueButton 0.63 Server in a few minutes =
+= How to setup your own !BigBlueButton Server in a few minutes =
 
 Many universities and colleges have told us they wanted to run their own version  !BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending  !BigBlueButton.
 
