@@ -16,7 +16,7 @@ The first half of this document begins by showing you how to make quick changes 
 
 
 == Getting Started ==
-First, setup a BigBlueButtonVM if you have not already done so.  If you are totally new to !BigBlueButton, you should read the [ArchitectureOverview Architecture Overview].  Doing so will make the following instructions much easier to understand.
+First, [BigBlueButtonVM setup a BigBlueButtonVM] if you have not already done so.  If you are totally new to !BigBlueButton, you should read the [ArchitectureOverview Architecture Overview].  Doing so will make the following instructions much easier to understand.
 
 Briefly, there are three main components to !BigBlueButton.  Each component has it's own runtime environment and, correspondingly, each is built using different tools.
 
