@@ -9,6 +9,19 @@ If you would like to translate !BigBlueButton to another language, here are the 
 
 We'll incorporate the language file into the latest build. Once it's checked into the repository, you'll be able to test it on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
 
+== Current translation available ==
+|| *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
+|| Azerbaijani || az_AZ || Emin Hasanov || eminach@gmail.com || 0.93 ||
+|| Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom@gmail.com || 0.93 ||
+|| Chinese (Traditional) || zh_TW || Alan Yu || secret1029@gmail.com || 0.93 ||
+|| English || en_US || BigBlueButton Team || || 0.93 ||
+|| French || fr_FR || Jean-Philippe Guiot || DJP@architectes.org ||0.93 ||
+|| Greek || el_GR || Andreas Botsikas || andreasbotsikas@gmail.com || 0.93 ||
+|| Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas@gmail.com || 0.93 ||
+|| Netherland || nl_NL || Walter Tak || walter@waltertak.com ||0.93 ||
+|| Spanish || es_ES || Néstor || n3storm@gmail.com || 0.93 ||
+|| Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung@gmail.com || 0.93 ||
+
 == Technical Background  ==
 
 !BigBlueButton localization follows the i18n standard. !BigBlueButton Client will detect the locale of the language of the browser running it and attempt to load that language file. 
