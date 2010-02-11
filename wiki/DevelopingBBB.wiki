@@ -297,6 +297,6 @@ ii  openoffice-headless               0.63.0ubuntu8                       BigBlu
 
 <br>
 <br>
-== Check-In Process ==
+= Check-In Process =
 <p> The following diagram shows the check-in process </p>
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/checkin_diagram.png
