@@ -294,3 +294,5 @@ ii  openoffice-headless               0.63.0ubuntu8                       BigBlu
 }}}
 
  * To remove, type e.g. {{{apt-get remove bbb-apps}}}
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/checkin_diagram.png
