@@ -200,7 +200,7 @@ In !BigBlueButton 0.63, this is really more of a warning than an error.  If you 
 === When will feature X be supported? ===
 Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
 
-=== How do I change the brand of BigBlueButton? ===
+=== How do I change the brand of !BigBlueButton? ===
 There have been a number of companies (or individuals) posting to the
 mailing list asking for help in branding !BigBlueButton.  
 
