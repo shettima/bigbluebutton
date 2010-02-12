@@ -201,7 +201,7 @@ In !BigBlueButton 0.63, this is really more of a warning than an error.  If you 
 Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
 
 === How do I change the brand of !BigBlueButton? ===
-There have been a number of companies (or individuals) posting to the
+There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton.  
 
 However, there are lot of places in the code that need to be manually changed (and
@@ -214,7 +214,7 @@ core development efforts continue to grow.
 
 There is work underway to make
 it easier for people to brand !BigBlueButton by offering a commercially
-supported branding tool (from Blindside Networks).  This tool would enable companies/individualsto configure their brand and brand elements in !BigBlueButton, and the tool would be updated with each release so branding a new
+supported branding tool (from Blindside Networks).  This tool would enable companies/individuals to configure their brand and brand elements in !BigBlueButton, and the tool would be updated with each release so branding a new
 version of BigBlueButton would take almost no effort.  
 
 For the community, this would remove the inevitable problems that are going to arise when manual
