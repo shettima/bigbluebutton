@@ -209,16 +209,14 @@ tested) to get everything right, and these manual changes would need
 to be updated (and tested anew) for each new version of !BigBlueButton that
 is released every 6-8 weeks.
 
-The (increasing) effort to support everyone's branding efforts is starting to take resources away from working on the core of !BigBlueButton's development.  We think everyone would like to see the
-core development efforts continue to grow.
+The (increasing) effort to support everyone's branding efforts taking resources away from working on the core of !BigBlueButton's development.  We think everyone would like to see the core development efforts continue to grow.
 
 There is work underway to make
 it easier for people to brand !BigBlueButton by offering a commercially
 supported branding tool (from Blindside Networks).  This tool would enable companies/individuals to configure their brand and brand elements in !BigBlueButton, and the tool would be updated with each release so branding a new
 version of BigBlueButton would take almost no effort.  
 
-For the community, this would remove the inevitable problems that are going to arise when manual
-code changes break and flood of forum posts ensue with the title "My
+For the community, this would remove the inevitable problems that are going to arise when manual code changes break and flood of forum posts ensue with the title "My
 branding changes no longer work -- please help me!!"
 
 Most importantly for everyone, the efforts to provide a commercially
