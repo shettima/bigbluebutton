@@ -145,6 +145,13 @@ A Java applet could, in theory, use JNI to connect into the Windows
 subsystem to make API calls, but we're back to downloading a binary 
 file (DLL) to enable it.  We haven't tried this yet.
 
+=== Is the scheduling interface in bbb-web still supported? ===
+
+As of !BigBlueButton 0.63, we started transitioning away from the grails-based interface for scheduling conferences, located at http://ip/bigbluebutton.  We've found that most of our developers want to integrate !BigBlueButton into their application, so we've shifted focus to the !BigBlueButton API.
+
+There are also some legacy stuff in the bbb-web interface, such as limiting the number of users, that is not implemented yet and we'll be properly implementing in the API.  
+
+It may be in the future that the bbb-web interface is reborn and becomes a reference implementation of how to use the API, but we're currently focusing on providing examples through .jsp pages, which are much more portable and brandable for our users. 
 
 == Developing for !BigBlueButton ==
 
