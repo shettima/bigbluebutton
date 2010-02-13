@@ -24,9 +24,43 @@ This should be similar to CentOS, but we haven't tried it.  Again, let us know i
 
 === What are the bandwidth requirements for running a !BigBlueButton server? ===
 
-For video streaming, each video connection takes 50 kilobytes/second. For example, if the presenter shares their video, and nine students are viewing it, then the server needs 10 * 50 k/s = 500 k/s bandwidth.  
+When sharing a webcam, as a moderator !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream. 
 
-Each voice stream takes two 8 KHZ channels and is much less bandwidth than video.  
+For example, if you have a room with 5 people in it with 5 webcams then the fomula is: 
+
+  * Y = 30-50 Kbytes/sec ; let's assume 40 Kbytes/sec on average 
+  * W = amount of webcams that are streaming 
+  * U = amount of users that are watching 
+
+For calculations:
+  * server incoming bandwidth: W`*`Y 
+  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not has to subscrive to his own stream) 
+
+So with 5 ppl in a room with 5 webcams streaming you'll have; 
+
+  * in: 5`*`40 = 200 Kbytes/sec incoming bandwidth needed to the server (e.g. 1.6 Mbit) 
+  * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec incoming bandwidth needed from the server (e.g. 6.4 Mbit) 
+  * Total traffic used after one our: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
+
+If you'd have a typical classroom situation with 1 stream going to 30 
+students in a remote learning environment: 
+
+  * in: 1`*`40 = 40 Kbytes/sec incoming (e.g. 0.32 Mbit/sec) 
+  * out: 1`*`(30-1)*40 = 1160 Kbytes/sec outgoing (e.g. 9.3 Mbit/sec) 
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 40 + 1160) = 4.3 
+Gbyte traffic per hour 
+
+If you'd have 10 of those classes then you server need to be able to output 
+93 Mbit/sec; that's not much in a LAN but it's pretty much if you need to 
+hire a server. 
+Large "cafe-style chatroom" : 20 viewers, 8 people broadcasting with a 
+webcam:  
+
+  * in: 8`*`40 = 320 kbyte/sec ( 2.5 Mbit ) 
+  * out: 8`*`(20-1)`*`40 = 6080 kbytes/sec ( 48.6 Mbit ) 
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 320 + 6080 ) = 23 
+Gbyte traffic per hour 
+
 
 Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size.  The desktop sharing sends a complete refresh of the screen every 20 seconds.  
 
