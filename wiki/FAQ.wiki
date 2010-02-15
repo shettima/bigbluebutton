@@ -231,6 +231,21 @@ To figure out what the problem is:
 * Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
 
+=== There is an echo in the voice conference ===
+
+When users the built-in VoIP in BigBlueButton you want to ensure they are using headphones  or they are muted.
+
+A common problem with echo occurs when a remote student is using a laptop.  They have activated the built-in VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
+
+To solve this problem, if you have logged in as a moderator, you can mute the student. Here's how:
+
+  # click on the student's name in the Voice window, then 
+  # click the speaker icon to the left of their name.  
+
+This will mute the student.   If they want to speak, they can click the raise hand button to get your attention.
+
+The best solution is ask all students to use a headset -- this will give them the best audio with no feedback.
+
 === bbb-conf --check reports Host IP does not match !BigBlueButton ===
 
 In !BigBlueButton 0.63, this is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to !BigBlueButton, you can safely ignore the warning.
