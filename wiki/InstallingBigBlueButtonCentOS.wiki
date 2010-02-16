@@ -55,7 +55,6 @@ chkconfig --add bbb-openoffice-headless
 chkconfig bbb-openoffice-headless on
 service bbb-openoffice-headless start
 
-
 # install swftools:
 wget http://www.swftools.org/swftools-0.8.1.tar.gz
 tar xzf swftools-0.8.1.tar.gz 
@@ -265,7 +264,7 @@ Back to the automated tasks:
 {{{
 # create nopdfworkaround file
 mkdir /etc/bigbluebutton
-echo "%!
+echo '%!
 /pdfmark {cleartomark} bind def'
 
 # restart tomcat
