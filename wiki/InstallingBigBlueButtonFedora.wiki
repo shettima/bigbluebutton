@@ -266,6 +266,11 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 }}}
 Back to the automated tasks: 
 {{{
+# create nopdfworkaround file
+mkdir /etc/bigbluebutton
+echo '%!
+/pdfmark {cleartomark} bind def' > /etc/bigbluebutton/nopdfmark.ps
+
 # restart tomcat
 service tomcat6 restart
 
