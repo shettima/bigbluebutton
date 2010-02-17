@@ -1,4 +1,4 @@
-#summary Adding whiteboard functionality to !BigBlueButton
+#summary Adding whiteboard functionality to BigBlueButton
 
 == Current state ==
 There is a prototype whiteboard in the client code, under package org.bigbluebutton.modules.highlighter
