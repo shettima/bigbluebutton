@@ -227,6 +227,15 @@ To figure out what the problem is:
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
  * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
 
+=== When I make BigBlueButton full screen I can't enter any information in to chat ===
+
+By design, Adobe disables keyboard input of Flash applications when they go full-screen.  
+
+This prevents the scenario where a malicious Flash application tries to 
+masquerade as your desktop showing a web browser, for example, with a login 
+screen to your bank account.  
+
+
 === When I try to join the conference, I get logged out after loading the modules ===
 * Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
