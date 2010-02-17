@@ -1,105 +1,15 @@
-#summary This page contains information about displaying the content on a white board.
+#summary Adding whiteboard functionality to !BigBlueButton
 
-= Introduction =
+== Current state ==
+There is a prototype whiteboard in the client code, under package org.bigbluebutton.modules.highlighter
+To enable it for testing, add the module to the conf/config.xml file in the client using standard parameters.
 
-The white board module for the purpose of BigBlueButton is defined as the ability to show in real-time the content written/drawn on a particular white board to a remote user. 
+== Work to be done ==
+The whiteboard will eventually be integrated into the presentation module as an overlay. To do this, the window the whiteboard is currently embedded in will be removed, and the drawing canvas itself added to the presentation module. Some work needs to be done on the presentation module to accommodate adding an overlay canvas, as well as to the whiteboard itself:
 
-
-= Details =
-
-Nowadays presentations are not just limited to slides, therefore the main idea behind creating the Whiteboard module is to allow remote users to obtain the full experience as if they were attending the event in person. When the module is complete, the remote user will see a new window being updated in real-time to display what the presenter has written/drawn to the board. 
-
-The events (presenter writing on the white board) will be captured using a Wii controller which will generate a Bluetooth signal that the computer will then take and convert to the desired format, which in this case is flash.
-
-
-== Bluetooth2Flash ==
-
-The conversion from Bluetooh to Flash is done through an API found at _ http://wiiflash.bytearray.org/ _
-
-
-= Tasks =
-
-== Current ==
-
-=== Integration with the BigBlueButton system ===
-
-We still need to integrate this standalone application with the already existing BigBlueButton system. The first step is to get our .swf running from a web browser. We are now trying to figure out the security issues regarding accessing ports on the PC. 
-
-=== Adding Features ===
-
-So far we have added a variety of features such as:
-
-  * Changing the color of the pen to either black, red, green, blue or yellow.
-
-  * Increasing / decreasing the thickness of the pen. 
-
-  * A clearing function which erases the whiteboard.
-
-These features are definetly not sufficient. I would like to add more features like:
-
-  * An eraser function so that the user can erase parts of the current whiteboard, instead of having to clear the entire whiteboard.
- 
-  * A new page function so it clears the whiteboard but not before it saves the current drawings on the whiteboard.
-
-  * A feature which enables the user to draw on other programs. A user scenario, the presenter would be able to circle something they found useful in a web browser. 
-
-
-== Completed Items ==
-
-=== Achieve connection between PC and Wiimote ===
-
-We are able to get the Wiimote talking to the computer and register button events coming from the Wiimote in a .swf file. 
-
-
-=== Capturing and Displaying using the LED Coordinates == 
-
-We have written the code that captures the presenter's interaction through the Wiimote on a whiteboard. There are 3 aspects we have considered so far 
-
-  * *Calibration:* This is needed to specify the area of the whiteboard and is necessary for scaling and boundary issues. The current protocol for this is to have the user touch the LED pen to the four corners of the board in a specific order.
-
-  * *Scaling:* Once the area of the whiteboard has been determined, the flash application will display the contents at an equivalent ratio to the board. Therefore appropriate scaling algorithms need to be written. 
-
-  * *Displaying:* Once the previous two items are completed the flash application will be able to accurately represent the lecturers intentions. Now that information has been scaled down and is within the boundaries they will appear in the window. 
-
-=== Making a and LED pen/chalkholder ===
-
-This device is what transmits an infrared signal which is captured by the Wiimote and sent to the PC in bluetooth. We have two choices when designing a pen, we can either come up with one that is used right on the projected image of the screen, or in larger classrooms when the projection of the screen is way out of the presenters reach, we use a modified chalk holder. Our first priority is the pen to be used right on the projected image of the screen.
-
-We used the following tutorial which teaches how to build an IR pen.
-http://www.youtube.com/watch?v=ZAEUalT6mfU
-
-
-= Establishing a Connection between the wiiFlash Server and Wiimote =
-
-These instructions are based on Rocketfish Bluetooth 2.0 EDR USB Adapter,  Model Number : RF-FLBTAD
-
-* 1. Connect the Bluettooth Adapter to the PC.  *
-
-This particular Bluetooth adapter comes with a cd of drivers. These drivers have proven to not work with the Wiimote. Research into these drivers has revealed that they do not allow the Wiimote to 'pair' to the user's PC, although the Wiimote is found using the scan feature. 
-
-The current solution has been to simply plug in the USB adapter and (if using Windows XP /2000) to allow Windows to find and install the drivers automatically. Once the drivers are installed, the Wiimote can be turned on by pressing the 1 & 2 buttons at the same time. 
-
-* 2. Right Click on the the Bluetooth symbol that appears in the task bar and select "Add a Bluetooth Device" *
-
-* 3. Ensure that the Wiimote is ready to be found by pressing the 1 & 2 buttons at the same time on the Wiimote and then click on the checkbox my device is setup and ready to be found. Then click Next. *
-
-* 4. Select the icon titled Nintendo RVL-CNT-01, then click Next. If that icon is unavailable click SearchAgain and make sure you are pressing the 1 & 2 buttons on the Wiimote simultaneously. *
-
-* 5. Select the Option "Don't Use a passkey" and then click Next. *
-
-* 6.It should state that the Bluetooth device was successfully connected to your computer. If so click Finish otherwise repeat these steps starting from 1. *
-
-* 7. Run the "WiiFlashServer 0.4.5.exe" and the Wiimote should rumble indicating a connection has been established, but make sure that you press the 1 & 2 buttons of the Wimote *
-
-
-=== Notes ===
-
-After a short time of inactivity the Wiimote goes into hibernation, therefore when a connection needs to be established it is important that the Wiimote gets woken up and this is done by pressing the 1 & 2 buttons simulatenously. ***
-
-Each time you close the Wiiflash server, it is necessary to remove the Wiimote from the list of Bluetooth devices and add it again before restarting the server. Therefore you can disconnect the Bluetooth adapter and start from step 1 of Establishing a Connection between the wiiFlash Server and Wiimote or you can follow these steps:
-
-* 1. Right click on the bluetooth icon and select Show Bluetooth Devices.*
-
-* 2. Select the icon titled Nintendo RVL-CNT-01 and click Remove.*
-
-* 3. Click Add and continue at Step 3 of Establishing a Connection between the wiiFlash Server and Wiimote *
+  * The presentation module should ideally expose a simple API so that overlays and extra controls can be added. This would allow the whiteboard to be added without having to couple the modules together.
+  * A way to distinguish between slides, so that each slide will have it's own whiteboard overlay. The whiteboard could in this case listen to page change events from the presentation.
+  * Whiteboard 'pages' should persist between page views, so that if the presenter goes back to a previous slide anything previously drawn on the overlay will still be there
+  * Whiteboard shapes should be stored on the server instead of just being pushed to clients at creation time. This allows latecomers to the presentation to see what has been drawn already.
+  * Whiteboard shapes need to be scaled to the size of the presentation slides when zooming in and out.
+  * The whiteboard needs to work without disrupting the existing cursor pointer functionality.
