@@ -199,3 +199,18 @@ Those examples are clearly abuses of the system, and therefore must be protected
 == Get Meeting Info (getMeetingInfo) ==
 <p>This call will return all of a meeting's information, including the list of attendees as well as start and end times.</p>
 <p><font color="#FF0000">TODO: this call is not yet implemented.</font></p>
+
+= Sample API Examples (JSP, PHP, Python ...) = 
+== Overview ==
+BBB provides API Examples so you can integrate BBB easily with your application. For now, only PHP and JSP examples are available. Please check out : http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk/bbb-api-examples
+and
+http://code.google.com/p/bigbluebutton/source/browse/trunk/#trunk/bigbluebutton-web/web-app/demo
+
+Feel free to contribute and post your implementation of the API in other language code.
+
+== Language code ==
+  * JSP : Done - http://code.google.com/p/bigbluebutton/source/browse/trunk/#trunk/bigbluebutton-web/web-app/demo
+  * PHP : Done - http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk/bbb-api-examples/PHP/
+  * Python : Planned
+  * ASP : To do / Feel free to contribute
+  * ...
