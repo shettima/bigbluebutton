@@ -4,6 +4,8 @@
 
 _Code named for the red dot that's now visible in the presentation module_
 
+Released: January 25, 2010
+
 == New Features ==
 
   * * API for Third-Party Integration * - Thanks to Jeremy Thomerson, we now have a [http://code.google.com/p/bigbluebutton/wiki/API BigBlueButton API] that makes it easy to create and join meetings, and integrate !BigBlueButton with third-party applications. 
