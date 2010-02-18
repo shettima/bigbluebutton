@@ -214,3 +214,8 @@ Feel free to contribute and post your implementation of the API in other languag
   * Python : Planned
   * ASP : To do / Feel free to contribute
   * ...
+
+== PHP Requirement ==
+You need to enable the "allow_url_fopen" to "On" in your php.ini file so this example can work. Simply add/replace to your php.ini file :
+
+`allow_url_fopen = On`
