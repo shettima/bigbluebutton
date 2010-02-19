@@ -311,8 +311,6 @@ cp /tmp/bbb-install/bbb-default.tar.gz .
 tar xvf bbb-default.tar.gz
 mv web ./bigbluebutton-default
 rm -rf bbb-default.tar.gz
-
-mv -f /tmp/bbb_api.jsp /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api.jsp
 }}}
 
 Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
