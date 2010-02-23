@@ -62,7 +62,7 @@ dispatcher.dispatchEvent(event);
 }}}
 
 Before you run your module, go back to the config.xml file and create a new entry for your module, based on the other entries. This file is a manifest of all the modules you wish to load.
-   *NOTE: You will also need to find the module that currently gets added last, and add to it a parameter 'loadNextModule="MyModule"'. Right now this is necessary but in the future you won't need to do this.
+   * NOTE: You will also need to find the module that currently gets added last, and add to it a parameter 'loadNextModule="MyModule"'. Right now this is necessary but in the future you won't need to do this.
 Once you've done this, run your module, and see if your window pops up.
 
 == Using the Mate Framework with BBB ==
