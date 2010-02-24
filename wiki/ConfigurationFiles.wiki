@@ -93,6 +93,13 @@ http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/
 [http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/src/conf/config.xml Click here to view the latest version]
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf
 
+== Aditional Steps ==
+
+You must to edit the file: /etc/asterisk/extensions.conf and add the following line on the bottom of the file:
+
+#include "bbb_extensions.conf"
+
+
 = !BigBlueButton Client (Flash) =
 == Configuration File ==
 === /var/www/bigbluebutton/client/conf/config.xml ===
