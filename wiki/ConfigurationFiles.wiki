@@ -95,9 +95,17 @@ http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/
 
 == Aditional Steps ==
 
+=== extensions.conf ===
 You must to edit the file: /etc/asterisk/extensions.conf and add the following line on the bottom of the file:
 
 #include "bbb_extensions.conf"
+
+=== sip.conf ===
+
+You must to edit the file: /etc/asterisk/sip.conf and add the following line on the bottom of the file:
+
+#include "bbb_sip.conf"
+
 
 
 = !BigBlueButton Client (Flash) =
