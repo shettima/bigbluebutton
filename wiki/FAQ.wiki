@@ -82,6 +82,10 @@ Yes.  A typical scenario is you have !BigBlueButton running on an internal compu
 
 First, on your firewall, you need to forward three ports to the IP address of the internal computer (the !BigBlueButton server).  These are ports 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
 
+Here is an example of forwarded ports on the D-Link DIR-665 router:
+
+[http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/ports_example.jpg]
+
 Next, tell !BigBlueButton it's external IP address or hostname, whichever you are using to enable users to access !BigBlueButton from outside the firewall.  Do this using the `bbb-conf` command.
 
 {{{
