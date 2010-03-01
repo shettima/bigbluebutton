@@ -82,7 +82,7 @@ Yes.  A typical scenario is you have !BigBlueButton running on an internal compu
 
 First, on your firewall, you need to forward three ports to the IP address of the internal computer (the !BigBlueButton server).  These are ports 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
 
-Here is an example of forwarded ports on the D-Link DIR-665 router (the internal ip address of the bigbluebutton server in this case is 192.168.10.198):
+Here is an example of forwarded ports on the D-Link DIR-665 router (the internal ip address of the !BigBlueButton server in this case is 192.168.10.198):
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/ports_example.jpg]
 
@@ -194,7 +194,7 @@ It may be in the future that the bbb-web interface is reborn and becomes a refer
 == Developing for !BigBlueButton ==
 
 === Setting up the Dev environment ===
-See [DevelopingBBB Developing BigBlueButton] for full instructions.
+See [DevelopingBBB Developing !BigBlueButton] for full instructions.
 
 === I want to develop from Windows! ===
 Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
@@ -223,7 +223,7 @@ When the VM first asks you to change the password, you will need to enter the pa
 === I can join the voice conference but nothing appears on the Voice participant's window? ===
  * Make sure /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties values matches those with /etc/asterisk/manager.d/bigbluebutton.conf
 
-=== I can't join the voice conference? When I click on the headset icon, nothing happens?
+=== I can't join the voice conference? When I click on the headset icon, nothing happens? ===
 To figure out what the problem is:
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
  * Open up asterisk console {{{sudo asterisk -vvvvvvr}}} and then try clicking on the headset icon on the client again. Look at the logs on the asterisk console for clues.
@@ -231,7 +231,7 @@ To figure out what the problem is:
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
  * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
 
-=== When I make BigBlueButton full screen I can't enter any information in to chat ===
+=== When I make !BigBlueButton full screen I can't enter any information in to chat ===
 
 By design, Adobe disables keyboard input of Flash applications when they go full-screen.  
 
@@ -246,7 +246,7 @@ screen to your bank account.
 
 === There is an echo in the voice conference ===
 
-When users the built-in VoIP in BigBlueButton you want to ensure they are using headphones  or they are muted.
+When users the built-in VoIP in !BigBlueButton you want to ensure they are using headphones  or they are muted.
 
 A common problem with echo occurs when a remote student is using a laptop.  They have activated the built-in VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
 
@@ -283,7 +283,7 @@ The (increasing) effort to support everyone's branding efforts taking resources 
 There is work underway to make
 it easier for people to brand !BigBlueButton by offering a commercially
 supported branding tool (from Blindside Networks).  This tool would enable companies/individuals to configure their brand and brand elements in !BigBlueButton, and the tool would be updated with each release so branding a new
-version of BigBlueButton would take almost no effort.  
+version of !BigBlueButton would take almost no effort.  
 
 For the community, this would remove the inevitable problems that are going to arise when manual code changes break and flood of forum posts ensue with the title "My
 branding changes no longer work -- please help me!!"
