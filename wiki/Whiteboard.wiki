@@ -2,7 +2,7 @@
 
 == Current state ==
 There is a prototype whiteboard in the client code, under package org.bigbluebutton.modules.highlighter
-To enable it for testing, add the module to the conf/config.xml file in the client using standard parameters.
+To enable it for testing, add the module to the conf/config.xml file in the client using standard parameters. You need to add the module to the client's build.xml as well. If you're using Flex Builder you also need to right click > project > flex modules and add it there.  
 
 == Work to be done ==
 The whiteboard will eventually be integrated into the presentation module as an overlay. To do this, the window the whiteboard is currently embedded in will be removed, and the drawing canvas itself added to the presentation module. Some work needs to be done on the presentation module to accommodate adding an overlay canvas, as well as to the whiteboard itself:
