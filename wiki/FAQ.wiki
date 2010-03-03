@@ -196,6 +196,9 @@ It may be in the future that the bbb-web interface is reborn and becomes a refer
 === Setting up the Dev environment ===
 See [DevelopingBBB Developing !BigBlueButton] for full instructions.
 
+=== Where can I download the latest build? ===
+You can checkout the latest code from SVN.  If you want to install the latest build from packages, see how to [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM#Updating_the_BigBlueButton_VM_to_packages_on_trunk_(aka_Living_o Install from latest build].
+
 === I want to develop from Windows! ===
 Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
 
