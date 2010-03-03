@@ -242,6 +242,8 @@ This prevents the scenario where a malicious Flash application tries to
 masquerade as your desktop showing a web browser, for example, with a login 
 screen to your bank account.  
 
+=== I have 2 microphones and want to choose with which to join the voice conference ===
+When you're inside the client, righclick, go to settings > microphone icon > select microphone, and talk to see if it works by checking the volume bar.
 
 === When I try to join the conference, I get logged out after loading the modules ===
 * Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
