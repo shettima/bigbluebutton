@@ -204,7 +204,7 @@ We'll come back to this separate terminal window in a moment.  Now, let's build 
 
 {{{
     cd ~/dev/bbb-apps/
-    gradle war
+    gradle war deploy
 }}}
 
 At this point, the ant script has copied the local build of bbb-apps to `/usr/share/red5/webapps/bigbluebutton`.  Now switch back to the second terminal window and enter the following command:
