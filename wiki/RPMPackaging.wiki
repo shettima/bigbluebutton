@@ -30,6 +30,105 @@ chmod u+x bbb-install.sh
 ./bbb-install.sh
 }}}
 
+== What does bbb-install do? ==
+
+The script bbb-install contains the following contents:
+
+{{{
+
+# Ensure that root is running
+need_root() {
+        if [ $EUID != 0 ]; then
+                echo "Need to be root to run this option"
+                exit 1
+        fi
+}
+
+addRepositories()
+{
+
+# Adding repository from nginx
+if [ ! "$(yum list installed | grep epel-release)" ]; then
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5Server/x86_64/epel-release-5-3.noarch.rpm > /dev/null
+fi
+
+# Adding repository for tomcat6
+if [ ! -f /etc/yum.repos.d/jpackage17.repo ]; then
+yum install -y jpackage-utils > /dev/null
+wget http://www.jpackage.org/jpackage17.repo > /dev/null
+cat jpackage17.repo | sed 's/1\.7/5.0/' | sed 's/\[jpack/\[5jpack/' > /etc/yum.repos.d/jpackage5.repo
+mv jpackage17.repo /etc/yum.repos.d/
+fi
+
+# Add BigBlueButton RPM respository
+if [ ! -f /etc/yum.repos.d/bigbluebutton.repo ]; then
+echo "
+[bigbluebutton]
+name=BigBluebutton
+baseurl=http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/{stable | dev }/stable
+enabled=1
+gpgcheck=0
+metadata_expire=1m" > /etc/yum.repos.d/bigbluebutton.repo
+fi
+
+# Add asterisk repository (to install asterisk)
+if [ ! -f /etc/yum.repos.d/asterisk.repo ]; then
+echo "
+[asterisk-current]
+name=CentOS-\$releasever - Asterisk - Current
+baseurl=http://packages.asterisk.org/centos/\$releasever/current/\$basearch/
+enabled=1
+gpgcheck=0
+#gpgkey=http://packages.asterisk.org/RPM-GPG-KEY-Digium
+" > /etc/yum.repos.d/asterisk.repo
+fi
+}
+
+isMySQLInstalled()
+{
+	x=$(yum list installed | grep mysql-server)
+
+	if [ "$x" == "" ]; then
+		echo false
+	else
+		echo true
+	fi
+}
+
+deletePreexistingMySQLCredentials()
+{
+	rm -rf /tmp/bigbluebutton-cred.install
+}
+
+promptMySQLCredentials()
+{
+	echo "Setup has detected that you have MySQL installed. Please enter your MySQL username and password to be used during installation."
+
+	echo -n "Enter MySQL username (default is root): "
+	read user
+
+	echo -n "Enter MySQL password (default is blank): "
+
+	stty -echo
+	read password
+	stty echo
+
+	echo ""
+	echo "$user $password" > /tmp/bigbluebutton-cred.install
+}
+
+need_root
+
+echo "Adding required repositories..."
+addRepositories
+
+if [ $(isMySQLInstalled) == "true" ]; then
+	promptMySQLCredentials
+fi
+
+yum -y install bigbluebutto
+}}}
+
 = Installing Desktop Sharing =
 Desktop sharing is not installed by default. To install desktop sharing, run the following commands:
 
