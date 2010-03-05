@@ -2,8 +2,9 @@
 
 = Introduction =
 
-We have been experimenting recently with packaging !BigBlueButton RPMs. The packages have been developed with and tested for CentOS 5.4 i386.
+For the past months have been developing RPM-based packages for !BigBlueButton for *CentOS 5.4 i386 (32-bit)*.  This document describes how to use these packages to do a complete !BigtBlueButton install BigBlueButton with three commands.
 
+*Note:* While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing *CentOS 5.4 i386 (32-bit)*.
 
 = Installation =
 
@@ -12,7 +13,7 @@ To install from RPMs, you can use one of two repositories:
  # *Stable Repository:* contains the latest stable release.
  # *Development Repository:* contains the latest build from trunk.
 
-We have provided a script that you can run and it would take care of the installation for you, including adding required repositories.
+To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs BigBlueButton.
 
 == Installation from Stable Repository ==
 The following commands will install !BigBlueButton from the stable repository.
@@ -140,7 +141,7 @@ bbb-conf -clean
 }}}
 
 = Issues =
-If you run BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
+If you run !BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
 {{{
 bbb-conf -clean
 }}}
