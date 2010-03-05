@@ -193,7 +193,50 @@ Those examples are clearly abuses of the system, and therefore must be protected
 
 == Get Meeting Info (getMeetingInfo) ==
 <p>This call will return all of a meeting's information, including the list of attendees as well as start and end times.</p>
-<p><font color="#FF0000">TODO: this call is not yet implemented.</font></p>
+
+<p>*Parameters:*</p> 
+|| *Param Name* || *Required/Optional* || *Type* || *Description* ||
+|| meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created. Note that _either_ the meetingToken or the meetingID along with one of the passwords _must_ be passed into this call in order to determine which meeting to find.</p>||
+|| meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use either the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p>||
+|| password || Required || String || <p>The moderator password for this meeting. You can not get the meeting information using the attendee password.</p>||
+
+
+<p>*Example Response:*</p> 
+<p>
+If the returncode is "SUCCESS", all of the following elements are returned.  If the returncode is "FAILED", only the message and messageKey elements will be returned along with the returncode.
+</p>
+<p>
+<font color="#FF0000">TODO: add participant join / disconnect times to each attendee node.</font>
+</p>
+{{{
+<response>
+    <returncode>SUCCESS</returncode>
+    <meetingToken>b141f4ac-14a8-448d-b690-816c9bcc1b6e</meetingToken>
+    <meetingID>123456</meetingID>
+    <attendeePW>abc</attendeePW>
+    <moderatorPW>qwe</moderatorPW>
+    <running>true</running>
+    <startTime>Thu Mar 04 14:05:56 UTC 2010</startTime>
+    <endTime>null</endTime>
+    <participantCount>2</participantCount>
+    <moderatorCount>1</moderatorCount>
+    <attendees>
+        <attendee>
+            <userID>40</userID>
+            <fullName>JT Attendee</fullName>
+            <role>VIEWER</role>
+        </attendee>
+        <attendee>
+            <userID>37</userID>
+            <fullName>JT Moderator</fullName>
+            <role>MODERATOR</role>
+        </attendee>
+    </attendees>
+    <messageKey/>
+    <message/>
+</response>
+}}}
+
 
 = Sample API Examples (JSP, PHP, Python ...) = 
 == Overview ==
