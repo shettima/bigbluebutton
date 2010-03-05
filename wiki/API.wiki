@@ -191,11 +191,6 @@ Those examples are clearly abuses of the system, and therefore must be protected
 || ended || Always || String || <p>A string of either “true” or “false” that signals whether the meeting was successfully ended.</p>||
 
 
-== List Meeting Attendees (listAttendees) ==
-<p>This call will list all current attendees of a meeting.</p>
-<p><font color="#FF0000">TODO: this call is not yet implemented.</font></p>
-
-
 == Get Meeting Info (getMeetingInfo) ==
 <p>This call will return all of a meeting's information, including the list of attendees as well as start and end times.</p>
 <p><font color="#FF0000">TODO: this call is not yet implemented.</font></p>
