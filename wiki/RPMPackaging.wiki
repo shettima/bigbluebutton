@@ -127,7 +127,7 @@ if [ $(isMySQLInstalled) == "true" ]; then
 	promptMySQLCredentials
 fi
 
-yum -y install bigbluebutto
+yum -y install bigbluebutton
 }}}
 
 = Installing Desktop Sharing =
