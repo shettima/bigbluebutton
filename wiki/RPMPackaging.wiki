@@ -21,7 +21,10 @@ The following commands will install !BigBlueButton from the stable repository.
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/stable/bbb-install.sh
 chmod u+x bbb-install.sh
 ./bbb-install.sh
+bbb-conf --clean
 }}}
+
+The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
 
 == Installation from Development Repository ==
 The following commands will install !BigBlueButton from the development repository.
@@ -29,6 +32,7 @@ The following commands will install !BigBlueButton from the development reposito
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/bbb-install.sh
 chmod u+x bbb-install.sh
 ./bbb-install.sh
+bbb-conf --clean
 }}}
 
 == What does bbb-install do? ==
