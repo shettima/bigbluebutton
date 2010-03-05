@@ -2,7 +2,7 @@
 
 = Introduction =
 
-For the past months we have been developing RPM-based packages for !BigBlueButton for *CentOS 5.4 i386 (32-bit)*.  This document describes how to use these packages to do a complete !BigtBlueButton install BigBlueButton with three commands.
+For the past months we have been developing RPM-based packages for !BigBlueButton for *CentOS 5.4 i386 (32-bit)*.  This document describes how to use these packages to do a complete !BigBlueButton install !BigBlueButton with three commands.
 
 *Note:* While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing *CentOS 5.4 i386 (32-bit)*.
 
