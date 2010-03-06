@@ -1,9 +1,13 @@
 #summary Development Road Map for BigBlueButton
 
 = Release 0.64 =
-This upcoming release will include
-  * This will be short release cycle that focus on stability and Bug Fixes
+This upcoming 0.64 iteration will include stability and bug fixes, along with the following new features:
+   * Mute/unmute controls for the voice conference
+   * Speed improvements to desktop sharing
+   * [API API enhancements]
 
-See [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.64 issues tagged for 0.64 release].
+See [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.64 for all issues tagged for 0.64 release].
 
 Also see [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/dc3c08f9fa29dad7# Minutes from the BigBlueButton 0.64 developer's meeting].
+
+To see the progress in previous iterations, see [ReleaseNotes BigBlueButton Release Notes].
