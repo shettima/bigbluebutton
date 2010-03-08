@@ -248,6 +248,9 @@ Feel free to contribute and post your implementation of the API in other languag
   * JSP : Done - http://code.google.com/p/bigbluebutton/source/browse/trunk/#trunk/bigbluebutton-web/web-app/demo
   * PHP : Done - http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk/bbb-api-examples/PHP/
   * Python : Planned
+  * JavaScript: see the Chrome extension that allows for API testing: http://github.com/jthomerson/BigBlueButton-api-chrome-extension
+  ** Obviously implementing your entire integration in JavaScript is risky because you must expose your security salt.  This is not recommended.
+  ** Also note that if you integrate using JavaScript and you are calling the API on a different domain than the one that your JavaScript is being served from, you will have cross-site scripting issues.
   * ASP : To do / Feel free to contribute
   * ...
 
