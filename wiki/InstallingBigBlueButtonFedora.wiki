@@ -350,6 +350,7 @@ Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutt
 {{{
  <!-- module name="DeskShareModule" url="DeskShareModule.swf" uri="rtmp://192.168.0.132/deskShare" onUserJoinedEvent="START" onUserLogoutEvent="STOP" loadNextModule="PhoneModule" /-->
 }}}
+In the same file, for the ListenersModule change the loadNextModule="PhoneModule" to loadNextModule="DeskShareModule" 
 
 Finish the installation
 {{{
