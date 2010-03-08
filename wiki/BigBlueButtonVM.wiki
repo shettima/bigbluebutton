@@ -46,6 +46,7 @@ After resetting the default password, you'll get the following welcome message (
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
 
+Note: Due to an upgrade to OpenOffice 3.2, you'll need to restart the VM after this first boot sequence to have OpenOffice properly running for document conversation.  The next time the VM starts everything will be working properly.
 
 == Running the !BigBlueButton VM ==
 
