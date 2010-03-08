@@ -70,7 +70,7 @@ if [ ! -f /etc/yum.repos.d/bigbluebutton.repo ]; then
 echo "
 [bigbluebutton]
 name=BigBluebutton
-baseurl=http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/{stable | dev }/stable
+baseurl=http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/{stable | dev }
 enabled=1
 gpgcheck=0
 metadata_expire=1m" > /etc/yum.repos.d/bigbluebutton.repo
