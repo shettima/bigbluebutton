@@ -158,7 +158,7 @@ Those examples are clearly abuses of the system, and therefore must be protected
 || *Param Name* || *When Returned* || *Type* || *Description* ||
 || entryURL || Always || String || <p>The URL that the user can be sent to in order to join the meeting. When they go to this URL, BBB will setup their client session and redirect them into the conference.</p>||
 
-== _Back-office administration calls_ ==
+= _Back-office administration calls_ =
 <p>These calls may be used by the back-office applications to handle meeting management, etc.</p>
 
 == Is meeting running (isMeetingRunning) ==
