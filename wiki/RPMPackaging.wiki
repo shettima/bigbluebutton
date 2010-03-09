@@ -8,11 +8,11 @@ This document describes how to use RPM packages to install BigBlueButton on *Cen
 
 *Note:* While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing *CentOS 5.4 i386 (32-bit)*.
 
-= How to Install BigBlueButton on CentOS 5.4 32-bit =
+= How to Install !BigBlueButton on CentOS 5.4 32-bit =
 
 To install from RPMs, you can use our development repository, which contains the latest build from trunk.
 
-To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs BigBlueButton.
+To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs !BigBlueButton.
 
 The following commands will install !BigBlueButton from the development repository.
 {{{
