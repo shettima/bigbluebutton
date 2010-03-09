@@ -44,7 +44,7 @@ yum update bbb*
 }}}
 
 
-== What does bbb-install do? ==
+= What does bbb-install do? =
 
 The script bbb-install contains the following contents:
 
