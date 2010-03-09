@@ -8,23 +8,9 @@ For the past months we have been developing RPM-based packages for !BigBlueButto
 
 = Installation =
 
-To install from RPMs, you can use one of two repositories:
-
- # *Stable Repository:* contains the latest stable release.
- # *Development Repository:* contains the latest build from trunk.
+To install from RPMs, you can use our development repository, which contains the latest build from trunk.
 
 To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs BigBlueButton.
-
-== Installation from Stable Repository ==
-The following commands will install !BigBlueButton from the stable repository.
-{{{
-wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/stable/bbb-install.sh
-chmod u+x bbb-install.sh
-./bbb-install.sh
-bbb-conf --clean
-}}}
-
-The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
 
 == Installation from Development Repository ==
 The following commands will install !BigBlueButton from the development repository.
@@ -33,6 +19,15 @@ wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/bbb-ins
 chmod u+x bbb-install.sh
 ./bbb-install.sh
 bbb-conf --clean
+}}}
+
+The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
+
+= Installing Desktop Sharing =
+Desktop sharing is not installed by default. To install desktop sharing, run the following commands:
+
+{{{
+yum install bbb-apps-deskshare
 }}}
 
 == What does bbb-install do? ==
@@ -70,7 +65,7 @@ if [ ! -f /etc/yum.repos.d/bigbluebutton.repo ]; then
 echo "
 [bigbluebutton]
 name=BigBluebutton
-baseurl=http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/{stable | dev }
+baseurl=http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev
 enabled=1
 gpgcheck=0
 metadata_expire=1m" > /etc/yum.repos.d/bigbluebutton.repo
@@ -132,16 +127,6 @@ if [ $(isMySQLInstalled) == "true" ]; then
 fi
 
 yum -y install bigbluebutton
-}}}
-
-= Installing Desktop Sharing =
-Desktop sharing is not installed by default. To install desktop sharing, run the following commands:
-
-{{{
-yum install bbb-deskshare
-
-# restart BigBlueButton
-bbb-conf -clean
 }}}
 
 = Issues =
