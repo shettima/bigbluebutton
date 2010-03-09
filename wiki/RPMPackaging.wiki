@@ -35,6 +35,15 @@ yum install bbb-apps-deskshare
 
 Please see [http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing installing desktop sharing] and why doing so changes the licensing of !BigBlueButton (the text on this page uses apt-get to install but the same applies to yum).
 
+
+== Staying Up to Date ==
+The development repository is continuously being updated as new changes are committed to trunk. To update your server, use the following command:
+
+{{{
+yum update bbb*
+}}}
+
+
 == What does bbb-install do? ==
 
 The script bbb-install contains the following contents:
