@@ -22,6 +22,15 @@ chmod u+x bbb-install.sh
 bbb-conf --clean
 }}}
 
+== How to install Desktop Sharing ==
+Desktop sharing is not installed by default. To install desktop sharing, run the following command:
+
+{{{
+yum install bbb-apps-deskshare
+}}}
+
+Before you do, you need to read [http://bigbluebutton.org/license BigBlueButton License].
+
 The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
 
 == What does bbb-install do? ==
@@ -122,16 +131,6 @@ fi
 
 yum -y install bigbluebutton
 }}}
-
-== How to install Desktop Sharing ==
-Desktop sharing is not installed by default. To install desktop sharing, run the following command:
-
-{{{
-yum install bbb-apps-deskshare
-}}}
-
-Before you do, you need to read [http://bigbluebutton.org/license BigBlueButton License].
-
 
 == Troubleshooting ==
 If you run !BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
