@@ -136,6 +136,15 @@ Here's a screen shot of the script running.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/rpm_install.png
 
+After installation, open a web browser to the URL provided using the IP address of the VM.    You should have a full !BigBlueButton server running -- including voice conferencing.  
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
+
+ To start using your !BigBlueButton server, enter your and then click Join.  You'll join the default meeting.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
+
+
 == Troubleshooting ==
 If you run !BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
 {{{
