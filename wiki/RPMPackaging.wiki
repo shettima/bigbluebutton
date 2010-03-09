@@ -1,5 +1,7 @@
 #summary Installing BigBlueButton from RPMs
 
+<wiki:toc max_depth="2" />
+
 = Introduction =
 
 This document describes how to use RPM packages to install BigBlueButton on *CentOS 5.4 i386 (32-bit)*.  The installation takes about fifteen minutes (depending on your internet connection).
