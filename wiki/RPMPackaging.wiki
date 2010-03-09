@@ -26,7 +26,7 @@ bbb-conf --clean
 
 The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
 
-== How to install Desktop Sharing ==
+= How to install Desktop Sharing =
 Desktop sharing is not installed by default. To install desktop sharing, run the following command:
 
 {{{
