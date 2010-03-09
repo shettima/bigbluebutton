@@ -12,7 +12,6 @@ To install from RPMs, you can use our development repository, which contains the
 
 To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs BigBlueButton.
 
-== Installation from Development Repository ==
 The following commands will install !BigBlueButton from the development repository.
 {{{
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/bbb-install.sh
@@ -24,7 +23,7 @@ bbb-conf --clean
 The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
 
 = Installing Desktop Sharing =
-Desktop sharing is not installed by default. To install desktop sharing, run the following commands:
+Desktop sharing is not installed by default. To install desktop sharing, run the following command:
 
 {{{
 yum install bbb-apps-deskshare
