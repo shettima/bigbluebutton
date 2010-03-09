@@ -134,7 +134,7 @@ yum -y install bigbluebutton
 
 Here's a screen shot of the script running.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/rpm-install.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/rpm_install.png
 
 == Troubleshooting ==
 If you run !BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
