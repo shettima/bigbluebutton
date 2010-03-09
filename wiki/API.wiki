@@ -173,7 +173,7 @@ Those examples are clearly abuses of the system, and therefore must be protected
 || *Param Name* || *When Returned* || *Type* || *Description* ||
 || running || Always || String || <p>A string of either “true” or “false” that signals whether a meeting with this ID or token is currently running.</p>||
 
-== End Meeting (endMeeting) ==
+== End Meeting (end) ==
 <p>Use this to forcibly end a meeting and kick all participants out of the meeting.</p>
 <p><font color="#FF0000">TODO: this call is not yet implemented.</font></p>
 
