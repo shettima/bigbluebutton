@@ -118,6 +118,7 @@ Click on "Click here to install demos" and then choose oflaDemo java 6.
 
 Go to:
 http://< YOURIP-OR-DOMAIN >:5080/demos/
+If the page doesn't show up, restart the red5 server before trying again. 
 
 Click "View demo" under "OFLA DEMO", which should take you to:
 http://< YOURIP-OR-DOMAIN >:5080/demos/ofla_demo.html
