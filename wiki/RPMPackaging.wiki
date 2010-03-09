@@ -2,11 +2,11 @@
 
 = Introduction =
 
-For the past months we have been developing RPM-based packages for !BigBlueButton for *CentOS 5.4 i386 (32-bit)*.  This document describes how to use these packages to do a complete !BigBlueButton install !BigBlueButton with three commands.  
+This document describes how to use RPM packages to install BigBlueButton on *CentOS 5.4 i386 (32-bit)*.  The installation takes about fifteen minutes (depending on your internet connection).
 
 *Note:* While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing *CentOS 5.4 i386 (32-bit)*.
 
-= Installation =
+= How to Install BigBlueButton on CentOS 5.4 32-bit =
 
 To install from RPMs, you can use our development repository, which contains the latest build from trunk.
 
@@ -21,13 +21,6 @@ bbb-conf --clean
 }}}
 
 The last command `bbb-conf --clean` does a clean restart of !BigBlueButton so all the processes get started in the right order.  !BigBlueButton will properly startup upon restart of the machine.
-
-= Installing Desktop Sharing =
-Desktop sharing is not installed by default. To install desktop sharing, run the following command:
-
-{{{
-yum install bbb-apps-deskshare
-}}}
 
 == What does bbb-install do? ==
 
@@ -128,7 +121,17 @@ fi
 yum -y install bigbluebutton
 }}}
 
-= Issues =
+== How to install Desktop Sharing ==
+Desktop sharing is not installed by default. To install desktop sharing, run the following command:
+
+{{{
+yum install bbb-apps-deskshare
+}}}
+
+Before you do, you need to read [http://bigbluebutton.org/license BigBlueButton License].
+
+
+== Troubleshooting ==
 If you run !BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
 {{{
 bbb-conf -clean
