@@ -16,7 +16,7 @@ Also,  !BigBlueButton uses nginx, which listens on port 80 for http access and t
 
 == There are five commands to setup your own !BigBlueButton Server == 
 
-There are just five commands you need to setup BigBlueButton.  Cut and paste the following commands into a terminal window.  
+There are just five commands you need to setup !BigBlueButton.  Cut and paste the following commands into a terminal window.  
 {{{
    wget http://archive.bigbluebutton.org/bigbluebutton.asc 
    sudo apt-key add bigbluebutton.asc 
