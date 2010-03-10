@@ -175,7 +175,6 @@ Those examples are clearly abuses of the system, and therefore must be protected
 
 == End Meeting (end) ==
 <p>Use this to forcibly end a meeting and kick all participants out of the meeting.</p>
-<p><font color="#FF0000">TODO: this call is not yet implemented.</font></p>
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
@@ -195,6 +194,8 @@ This call returns no additional information other than the standard returncode p
 
 == Get Meeting Info (getMeetingInfo) ==
 <p>This call will return all of a meeting's information, including the list of attendees as well as start and end times.</p>
+
+<font style="color: #FF0000; font-weight: bold">NOTE: This call is currently in-development.  The mentioned functionality below is working, but there may be slight changes to the return parameters in upcoming releases.  For instance, the userID that is returned will be modified (see note below).  Also, additional parameters may be added.  If necessary, some parameters may change.  Feel free to use it - but do so at your own risk.</font>
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
