@@ -16,7 +16,7 @@ This document describes how to use RPM packages to install !BigBlueButton on *Ce
 
 To install from RPMs, you can use our development repository, which contains the latest build from trunk.  To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs !BigBlueButton.
 
-The following four commands will install !BigBlueButton from the development repository.
+The following four commands will install !BigBlueButton from the development repository.  You need to be root to run these commands.
 {{{
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/bbb-install.sh
 chmod u+x bbb-install.sh
