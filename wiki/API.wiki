@@ -1,4 +1,4 @@
-#summary BigBlueButton Third-Party Integration API.
+e#summary BigBlueButton Third-Party Integration API.
 <wiki:toc max_depth="3" />
 = Overview = 
 This document outlines the API that is available for integrating !BigBlueButton with other applications. It is currently in draft stage as not all features are available. Features which are not currently implemented will be clearly marked as such.
@@ -185,8 +185,12 @@ Those examples are clearly abuses of the system, and therefore must be protected
 
 
 <p>*Response:*</p> 
-|| *Param Name* || *When Returned* || *Type* || *Description* ||
-|| ended || Always || String || <p>A string of either “true” or “false” that signals whether the meeting was successfully ended.</p>||
+
+This call returns no additional information other than the standard returncode parameter of "SUCCESS" or "FAILED".  It will return a messageKey and message for additional information.
+
+<font color="#FF0000">IMPORTANT NOTE:</font>  You should note that when you call end meeting, it is simply sending a request to the backend (Red5) server that is handling all the conference traffic.  That backend server will immediately attempt to send every connected client a logout event, kicking them from the meeting.  It will then disconnect them, and the meeting will be ended.  However, this may take several seconds, depending on network conditions.  Therefore, the end meeting call will return a success as soon as the request is sent.  But to be sure that it completed, you should then check back a few seconds later by using the getMeetingInfo or isMeetingRunning calls to verify that all participants have left the meeting and that it successfully ended.
+
+<font color="#FF0000">TODO: in future iterations, this call will also mark a meeting that has ended so that it can not be immediately restarted with the same join meeting URLs that initially dropped users into the meeting.  This will protect against devious users restarting a meeting that you just kicked them from.</font>
 
 
 == Get Meeting Info (getMeetingInfo) ==
