@@ -14,7 +14,7 @@ We'll incorporate the language file into the latest build. Once it's checked int
 || Azerbaijani || az_AZ || Emin Hasanov || eminach@gmail.com || 0.93 ||
 || Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom@gmail.com || 0.93 ||
 || Chinese (Traditional) || zh_TW || Alan Yu || secret1029@gmail.com || 0.93 ||
-|| English || en_US || BigBlueButton Team || || 0.93 ||
+|| English || en_US || !BigBlueButton Team || || 0.93 ||
 || French || fr_FR || Jean-Philippe Guiot || DJP@architectes.org ||0.93 ||
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas@gmail.com || 0.93 ||
 || Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas@gmail.com || 0.93 ||
