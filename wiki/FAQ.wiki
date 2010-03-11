@@ -227,7 +227,26 @@ When the VM first asks you to change the password, you will need to enter the pa
  * Make sure {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}} values matches those with {{{/etc/asterisk/manager.d/bigbluebutton.conf}}}
  * Make sure {{{enabled = yes}}} in {{{/etc/asterisk/manager.conf}}}
  * See if changing {{{bindaddr = 0.0.0.0}}} to {{{bindaddr = 127.0.0.1}}} works.
+{{{
+firstuser@bbb-vm-20091109:$ more /etc/asterisk/manager.conf
+;
+; Asterisk Call Management support
+;
 
+; By default asterisk will listen on localhost only.
+[general]
+enabled = yes
+port = 5038
+bindaddr = 127.0.0.1
+;bindaddr = 0.0.0.0
+
+; No access is allowed by default.
+; To set a password, create a file in /etc/asterisk/manager.d
+; use creative permission games to allow other serivces to create their own
+; files
+#include "manager.d/*.conf"
+
+}}}
 === I can't join the voice conference? When I click on the headset icon, nothing happens? ===
 To figure out what the problem is:
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
