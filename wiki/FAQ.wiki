@@ -224,7 +224,9 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
 === I can join the voice conference but nothing appears on the Voice participant's window? ===
- * Make sure /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties values matches those with /etc/asterisk/manager.d/bigbluebutton.conf
+ * Make sure {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}} values matches those with {{{/etc/asterisk/manager.d/bigbluebutton.conf}}}
+ * Make sure {{{enabled = yes}}} in {{{/etc/asterisk/manager.conf}}}
+ * See if changing {{{bindaddr = 0.0.0.0}}} to {{{bindaddr = 127.0.0.1}}} works.
 
 === I can't join the voice conference? When I click on the headset icon, nothing happens? ===
 To figure out what the problem is:
