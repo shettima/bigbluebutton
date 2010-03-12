@@ -220,7 +220,7 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
 
 == Troubleshooting ==
 
-=== Can I uploaded Microsoft Office documents to !BigBlueButton ? ===
+=== Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
 
 !BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
 
