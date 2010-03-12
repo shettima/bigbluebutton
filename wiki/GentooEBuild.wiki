@@ -2,8 +2,21 @@
 
 = Introduction =
 
-Add your content here.
+This document describes how to install BigBlueButton from a gentoo ebuild on a 32bit install. The installation time required depends on how many dependencies you have installed and on the speed on your computer.
 
+This wiki page is still under development and incomplete.
+
+= How to install Gentoo on your computer =
+
+To install BigBlueButton you need to download and install Apache-ActiveMQ and Red5 first. 
+Let's start with Apache-ActiveMQ.
+Go to your local repository such as {{{ /usr/portage }}} or create a local repository on your own in {{{ /usr/local/portage }}}
+Create a new directory structure as following {{{ net-im/apache-activemq }}} and inside this folder create a files folder. If you are still unsure about the folder structure, look in {{{ /usr/portage }}} and choose any of the other directories and look up their structures.
+
+* *Apache-ActiveMQ* files {{{
+http://bigbluebutton.org/downloads/dist-gentoo/apache-activemq/apache-activemq-5.3.0.ebuild
+http://bigbluebutton.org/downloads/dist-gentoo/apache-activemq/files/activemq-q
+}}}
 
 = Details =
 
