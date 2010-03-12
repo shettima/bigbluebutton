@@ -19,7 +19,7 @@ Users from many different countries speaking different languages may be in the s
 Right now !BigBlueButton supports VoIP. It is also integrated with Asterisk to enable users to call into a conference directly from a regular phone line. Google Voice integration is just another step to further expand the voice capabilities of the system. This project includes investigating ways of integrating and building a working prototype.
 
 == Android Client ==
-Exploring ways BigBlueButton client could be ported to Android, and creating an Android prototype. Challenges include interface issues when working with a small screen on a mobile platform, as well getting the Java RTMP Client to work on the Android JVM.
+Exploring ways !BigBlueButton client could be ported to Android, and creating an Android prototype. Challenges include interface issues when working with a small screen on a mobile platform, as well getting the Java RTMP Client to work on the Android JVM.
 
 == File Upload Module ==
 Create a module for uploading files into a conference that other participants can click to download. The uploading would work in a similar way to the way the presentation upload works now. The file is then stored on a server and can be downloaded. Also includes building a simple and usable UI for the module itself.
