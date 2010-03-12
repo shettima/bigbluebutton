@@ -220,6 +220,14 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
 
 == Troubleshooting ==
 
+=== Can I uploaded Microsoft Office documents to BigBlueButton ? ===
+
+BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
+
+We recommend Office 2007 uses use Microsoft's free download to enable an Office 2007 user to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
+
+You'll always get the best results with PDF.
+ 
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
