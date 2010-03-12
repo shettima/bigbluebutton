@@ -1,4 +1,4 @@
-#summary Thank you for considering applying to BigBlueButton for your Summer of Code project! Here are some points to get you started on your application, but your are by no means limited to these. Add whatever you think is important.
+#summary Thank you for considering applying to BigBlueButton for your Summer of Code project! Here are some points to get you started on your application, but add whatever you think is important!
 
   * Have you worked on an open source project before? Which ones? Describe your participation.
   * What are your other plans for the summer, other than GSoC - Are you working, taking classes, working on another project?
