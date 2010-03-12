@@ -10,28 +10,40 @@ Have an idea already? Don't even bother reading the bellow, we want to hear it. 
 
 == HTML5 Interface ==
 The current client is written in Flash. With recent development of the HTML5 spec, it will soon be possible to achieve in HTML5 everything the Flash client does now. One of the first steps to implementing an HTML5 Client will be creating an HTML GUI which is as simple and usable as the one we have today.
-  * Difficulty: Medium. 
-  ** Browsers don't fully support HTML5 yet, so you're on the bleeding edge of technology here.
-  * Useful Skills: HTML, javascript
+  * Difficulty: *Medium*. Browsers don't fully support HTML5 yet, so you're on the bleeding edge of technology here.
+  * Useful Skills: HTML, JavaScript
 
 == HTML5 RTMP Client ==
 One of the reasons for using Flash on the client side was that Flash supports client/server two-way communication using the RTMP protocol. With HTTP unfortunately only one way client-server communication is possible. However this will change with the HTML5 Websockets. The project involves implementing an RTMP Client in javascript using HTML5 Websockets. This will allow the eventual !BigBlueButton HTML Client to communicate with the !BigBlueButton server, and will be backwards compatible with the current Flash client.
-  * Difficulty: Medium-Hard.
+  * Difficulty: *Hard*. Nothing like this has been done before. There is OS RTMP Client code available in Java and Python, but you will need to convert it to javasctipt. You'll be also working with a non fully implemented HTML5.
+  * Useful Skills: Java/Python, JavaScript, basic knowledge of internet protocols
 
 == Real Time Chat Translation ==
 Users from many different countries speaking different languages may be in the same conference. This presents a problem with understanding each other. Using the Google Language API, upon receiving chat messages the !BigBlueButton client could translate the chat messages automatically to a desired language of a conference participant. This allows everyone to chat in whatever language they like while everyone else in the conference receives the message in their own language.
+  * Difficulty: *Easy*. Good, fun project using proven technologies
+  * Useful Skills: ActionScript, AJAX
 
 == Google Voice Integration ==
 Right now !BigBlueButton supports VoIP. It is also integrated with Asterisk to enable users to call into a conference directly from a regular phone line. Google Voice integration is just another step to further expand the voice capabilities of the system. This project includes investigating ways of integrating and building a working prototype.
+  * Difficulty: *Medium* Very open ended and good research project
+  * Useful Skills: basic knowledge of VoIP, Asterisk
 
 == Android Client ==
-Exploring ways !BigBlueButton client could be ported to Android, and creating an Android prototype. Challenges include interface issues when working with a small screen on a mobile platform, as well getting the Java RTMP Client to work on the Android JVM.
+Exploring ways !BigBlueButton client could be ported to Android, and creating an Android prototype. Challenges include interface issues when working with a small screen on a mobile platform, as well getting the Java RTMP Client to work on the Android JVM. Might be easier if you decide to go with the Android Flash Player plugin. It's up to you.
+  * Difficulty: *Hard* A fair deal of work might be involved.
+  * Useful Skills: Android development knowledge.
 
 == File Upload Module ==
 Create a module for uploading files into a conference that other participants can click to download. The uploading would work in a similar way to the way the presentation upload works now. The file is then stored on a server and can be downloaded. Also includes building a simple and usable UI for the module itself.
+  * Difficulty: *Easy* A very good project for a lower year student to get their feet wet
+  * Useful Skills: ActionScript, Java
 
 == Video Co-Viewing Module ==
 Right now the conference attendees can share their webcams, but what if you want to share a !YouTube video? The project includes developing a Client module for downloading and playing a !YouTube video inside the Flash environment. The hard part? Making sure the video is synchronized across all the conference attendees. You don't want everybody's video to end while yours is still loading.
+  * Difficulty: *Medium*. ActionScript library for Youtube exists, but some technical challenges remain.
+  * Useful Skills: ActionScript
 
 == Video/Audio improvements ==
 !BigBlueButton streams a lot of audio and video. If you're interested in audio and video transcoding, optimization, or have worked with ffmpeg, Asterisk, freeswitch, Xuggler, etc.. then tell us how you would improve the system we have now. 
+  * Difficulty: As hard as you want to make it
+  * Useful Skills: C, ffmpeg, Asterisk, freeswitch, Scala, Xuggler, lti-civil...
