@@ -4,21 +4,32 @@
 
 = Introduction =
 
-This document describes how to use RPM packages to install !BigBlueButton on *CentOS 5.4 i386 (32-bit)*.  The installation takes about fifteen minutes (depending on your internet connection).
+This document describes how to use RPM packages to install !BigBlueButton on *CentOS 5.4 (32-bit and 64-bit)*.  The installation takes about fifteen minutes (depending on your internet connection).
 
 *Notes:* 
-  * While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing on *CentOS 5.4 i386 (32-bit)*.
+  * While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing on *CentOS 5.4 i386 (32-bit and 64-bit)*.
   * These RPMs are under development as part of !BigBlueButton 0.64.  While we've tested them ourselves to ensure they work, we recommend you install them on a test machine. 
   * The final URL for the RPM repository is likely to change before the 0.64 release.
   * These RPMs are kept up-to-date with the latest in !BigBlueButton 0.64 trunk.
 
-= How to Install !BigBlueButton on CentOS 5.4 32-bit =
+= How to Install !BigBlueButton on CentOS 5.4 =
 
-To install from RPMs, you can use our development repository, which contains the latest build from trunk.  To make it easy to install, we created a shell script that first adds all the required repositiories on CentOS, then installs !BigBlueButton.
+To install from RPMs, you can use our development repository, which contains the latest build from trunk.  To make it easy to install, we created a shell script that first adds all the required repositories on CentOS, then installs !BigBlueButton.
 
-The following four commands will install !BigBlueButton from the development repository.  You need to be root to run these commands.
+First, download the script corresponding to your architecture. 
+ * *CentOS 5.4 32-bit:* use the following command to download the install script:
 {{{
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/bbb-install.sh
+}}}
+
+ * *CentOS 5.4 64-bit:* use the following command to download the install script:
+{{{
+wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/x86_64/dev/bbb-install.sh
+}}}
+
+The following three commands will install !BigBlueButton.  You need to be root to run these commands.
+{{{
+
 chmod u+x bbb-install.sh
 ./bbb-install.sh
 bbb-conf --clean
