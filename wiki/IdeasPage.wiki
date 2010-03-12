@@ -7,7 +7,7 @@ All the projects are open ended and subject to your interpretation. Let the [htt
 Have an idea already? Don't even bother reading the bellow, we want to hear it. Write to the [http://groups.google.com/group/bigbluebutton-dev mailing list] and tell us what it is.
 
 == HTML5 Interface ==
-The current client is written in Flash. With recent development of the HTML5 spec, it will soon be possible to achieve everything the Flash client does now in HTML5. One of the first steps to implementing an HTML5 Client will be creating an HTML GUI for the client which is as simple and usable as the one we have today.
+The current client is written in Flash. With recent development of the HTML5 spec, it will soon be possible to achieve in HTML5 everything the Flash client does now. One of the first steps to implementing an HTML5 Client will be creating an HTML GUI which is as simple and usable as the one we have today.
 
 == HTML5 RTMP Client ==
 One of the reasons for using Flash on the client side was that Flash supports client/server two-way communication using the RTMP protocol. With HTTP unfortunately only one was client-server communication is possible. However this will change with the HTML5 Websockets. The project involves implementing an RTMP Client in javascript using HTML5 Websockets. This will allow the eventual !BigBlueButton HTML Client to communicate with the !BigBlueButton server, and will be backwards compatible with the current Flash client.
