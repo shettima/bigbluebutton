@@ -2,7 +2,7 @@
 
 = Introduction =
 
-There are four ways you can install !BigBlueButton
+The !BigBlueButton server runs under Linux.  Here are some install options:
     * [BigBlueButtonVM Download the Virtual Machine] (white belt)
     * [InstallationUbuntu Install on Ubuntu (5 minutes)] (yellow belt)
     * [InstallingBigBlueButton Install from source (Ubuntu)] (brown belt)
@@ -15,3 +15,7 @@ Regardless of the way you choose, the following page shows the configuration fil
    * [ConfigurationFiles Configuration Files]
 
 Finally, if you are upgrading from a previous release, please see [ReleaseNotes Release Notes] on how to upgrade.
+
+== Support for packages on CentOS 5.4 32-bit (in development) ==
+
+       * [RPMPackaging Install BigBlueButton 0.64-dev on CentOS 5.4 (15 minutes)]   
