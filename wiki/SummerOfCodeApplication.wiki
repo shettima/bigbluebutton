@@ -1,0 +1,10 @@
+#summary Thank you for considering applying to !BigBlueButton for your Summer of Code project! Here are some points to get you started on your application, but your are by no means limited to these. Add whatever you think is important.
+
+  * Have you worked on an open source project before? Which ones? Describe your participation.
+  * What are your other plans for the summer, other than GSoC - Are you working, taking classes, working on another project?
+  * What are your programming interests? Are you a C guy - do you like to get down and dirty with the linux kernel. Or are you more of a python/ruby person? You know, what's your style?
+  * How much programming have you done overall. What are your strong points. We want to fit you with a project that matches or exceeds your skill level so you are challenged and learn something but are not lost or bored. So be as specific as you can.
+  * Describe the project you want to work on in detail. Why do you want to do this project?
+  * Before you submit you application, feel free to discuss your project idea on our developers [http://groups.google.com/group/bigbluebutton-dev mailing list]. People there are very friendly and will provide you with feedback. If you've done this, please include a link to the discussion in your application. You can get a link by browsing the list archive online.
+  * Feeling ambitious? Try to build !BigBlueButton from source. It's by no means an easy task! And we don't mean use the provided scripts/packages. We mean [http://code.google.com/p/bigbluebutton/wiki/InstallingBigBlueButton source]. It's like a rite of passage around here. Let us know how your journey went.
+  * Feeling really ambitious? Go through our [http://code.google.com/p/bigbluebutton/issues/list issue tracker] and fix a bug, try submitting a patch.
