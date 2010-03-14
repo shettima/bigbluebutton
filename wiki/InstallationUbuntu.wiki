@@ -1,4 +1,4 @@
-#summary How to install  BigBlueButton on Ubuntu in under 10 minutes
+#summary How to install  BigBlueButton on Ubuntu in under 15 minutes
 
 <wiki:toc max_depth="2" />
 
