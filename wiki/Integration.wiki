@@ -4,7 +4,7 @@
 If you don't see your System bellow, feel free to request an integration on our [http://groups.google.com/group/bigbluebutton-dev/ mailing list].
 
 == Sakai ==
-Sakai is a free and open source Learning Management System [http://confluence.sakaiproject.org/display/BBB/Home Sakai Integration]
+Sakai is a free and open source Learning Management System. [http://confluence.sakaiproject.org/display/BBB/Home Sakai Integration]
 
 == Drupal ==
 Is an open source Content Management System. Find the dupal module for BBB [http://drupal.org/project/bbb here]
