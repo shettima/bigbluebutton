@@ -158,12 +158,13 @@ Those examples are clearly abuses of the system, and therefore must be protected
 || meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created. Note that _either_ the meetingToken or the meetingID along with one of the passwords _must_ be passed into this call in order to determine which meeting to find.</p> ||
 || meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use either the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p> ||
 || password || Optional || String || <p>The password that this attendee is using. If the moderator password is supplied, he will be given moderator status (and the same for attendee password, etc)</p> ||
-|| redirectImmediately || Optional || Boolean || <p>If this is passed as true, then BBB will not return a URL for you to redirect the user to, but will instead treat this as an entry URL and will immediately set up the client session and redirect the user into the conference. Values can be either a 1 (one) or a 0 (zero), indicating true or false respectively. Defaults to false.</p> ||
 
 
 <p>*Response:*</p> 
-|| *Param Name* || *When Returned* || *Type* || *Description* ||
-|| entryURL || Always || String || <p>The URL that the user can be sent to in order to join the meeting. When they go to this URL, BBB will setup their client session and redirect them into the conference.</p>||
+
+There is no XML response for this call if it is properly formatted.  You should simply redirect the user to the call URL, and they will be entered into the meeting.
+
+<p style="color: red; font-weight: bold;">NOTE: there is the possibility that a user is sent to a join URL that is invalid right now.  For instance, if the client application forms the URL incorrectly, or sends the user to join a meeting that hasn't been created, then the user will end up seeing the XML that would be returned as an error.  We need to figure out a better way of handling this.</p>
 
 = _Back-office administration calls_ =
 <p>These calls may be used by the back-office applications to handle meeting management, etc.</p>
