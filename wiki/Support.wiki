@@ -9,4 +9,4 @@ Need help?  If you don't find an answer below, please post a question to [http:/
   * RoadMap
 
 = Commercial Support =
-[http://blindsidenetworks.com/ Blindside Networks] provides commercial support and custom development for !BigBlueButton.
+[http://bigbluebutton.org/support Here] is a list of companies who provide hosting and commercial support for !BigBlueButton
