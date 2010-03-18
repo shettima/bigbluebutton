@@ -7,7 +7,7 @@ If you would like to translate !BigBlueButton to another language, here are the 
   # Open this file with a text editor, and translate the english text into your language.
   # Post the translated text to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List]
 
-DJP, one of the BigBlueButton developers, will incorporate the language file into the latest build on your behalf. Once it's checked into the repository, you'll be able to test it on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
+DJP, one of the !BigBlueButton developers, will download and incorporate the language file into the latest build on your behalf. Once it's checked into the repository, you'll be able to test it on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
 
 == Current translation available ==
 || *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
