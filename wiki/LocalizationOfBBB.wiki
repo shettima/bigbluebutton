@@ -24,6 +24,7 @@ We'll incorporate the language file into the latest build. Once it's checked int
 || Polish || pl_PL || Piotr Anusiewicz || niedakh@gmail.com || 0.93 ||
 || Spanish || es_ES || Néstor || n3storm@gmail.com || 0.93 ||
 || Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33@gmail.com || 0.93 ||
+|| Russian || ru_RU || Mike Ozornin || mike.ozornin@gmail.com || 0.93 ||
 || Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung@gmail.com || 0.93 ||
 
 == Technical Background  ==
