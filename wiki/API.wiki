@@ -248,6 +248,42 @@ If the returncode is "SUCCESS", all of the following elements are returned.  If 
 </response>
 }}}
 
+== Get Meetings (getMeetings) ==
+<p>This call will return a list of all the meetings found on this server.</p>
+
+<p style="color: #FF0000; font-weight: bold">NOTE: At this time, meetings live on the server as long as it is running, so over time, this call will start returning more and more meetings.  In an upcoming release, we will prune out old meetings that have not been running for over thirty minutes, an hour, or similar timeframe.</p>
+
+<p>*Parameters:*</p> 
+|| *Param Name* || *Required/Optional* || *Type* || *Description* ||
+|| random || Required || String || This can be <b>any</b> value.  It must be supplied so that we can use your security salt and do a checksum verification that you are the server's owner.  This is for security purposes.  If you do not supply the random parameter, the call will fail immediately. ||
+
+<p>*Example Response:*</p> 
+<p>
+If the returncode is "SUCCESS", all of the following elements are returned.  If the returncode is "FAILED", only the message and messageKey elements will be returned along with the returncode.
+</p>
+
+{{{
+<response>
+    <returncode>SUCCESS</returncode>
+    <meetings>
+        <meeting>
+            <meetingToken>47b3ea20-ae5a-47ae-aa87-8eb9b5d058c9</meetingToken>
+            <meetingID>test123</meetingID>
+            <attendeePW>234567</attendeePW>
+            <moderatorPW>123456</moderatorPW>
+            <running>true</running>
+        </meeting>
+        <meeting>
+            <meetingToken>ba619a84-873a-4539-aee6-c24a49772554</meetingToken>
+            <meetingID>testAgain</meetingID>
+            <attendeePW>def456</attendeePW>
+            <moderatorPW>abc123</moderatorPW>
+            <running>false</running>
+        </meeting>
+    </meetings>
+</response>
+}}}
+
 
 = Sample API Examples (JSP, PHP, Python ...) = 
 == Overview ==
