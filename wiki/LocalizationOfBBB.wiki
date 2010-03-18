@@ -41,11 +41,8 @@ If you created a custom language file but do not wish to contribute back to the 
 
 
   #  Put the template file into a new folder. The folder name should follow the language code convention stated above for the language/country the language file is written for. Put the folder under bigbluebutton-client/locale.
-
   # The file will be loaded whenever the user's broswer is set to that language/country code. Optionally, you could overwrite the english language files if you think that most of your users are running english language broswers, but would still like them to load a specific language.
-
   # Next, on the client you need to edit the class org.bigbluebutton.util.i18n.ResourceUtil . There you will find an array containing the language codes for supported languages. Add your language here.
-
   # Finally you will need to edit the build.xml file in the bigbluebutton-client root directory. Edit the _localization_ task to include your language files. Just follow the examples already there. For example, the to compile french the tag 
 
 {{{
