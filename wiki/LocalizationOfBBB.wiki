@@ -11,21 +11,21 @@ We'll incorporate the language file into the latest build. Once it's checked int
 
 == Current translation available ==
 || *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
-|| Azerbaijani || az_AZ || Emin Hasanov || eminach@gmail.com || 0.63 ||
+|| Azerbaijani || az_AZ || Emin Hasanov || eminach@gmail.com || 0.64 ||
 || Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom@gmail.com || 0.63 ||
 || Chinese (Traditional) || zh_TW || Alan Yu || secret1029@gmail.com || 0.63 ||
 || English || en_US || !BigBlueButton Team || ffdixon@bigbluebutton.org (and many others) || 0.63 ||
 || French || fr_FR || Jean-Philippe Guiot || DJP@architectes.org ||0.63 ||
 || German || de_DE || Stefan Auditor || stefan.auditor@googlemail.com || 0.63 ||
-|| Greek || el_GR || Andreas Botsikas || andreasbotsikas@gmail.com || 0.63 ||
-|| Italian || it_IT || Federico Corradino || spiorfeus@gmail.com || 0.63 ||
-|| Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas@gmail.com || 0.63 ||
+|| Greek || el_GR || Andreas Botsikas || andreasbotsikas@gmail.com || 0.64 ||
+|| Italian || it_IT || Federico Corradino || spiorfeus@gmail.com || 0.64 ||
+|| Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas@gmail.com || 0.64 ||
 || Netherland || nl_NL || Walter Tak || walter@waltertak.com ||0.63 ||
 || Polish || pl_PL || Piotr Anusiewicz || niedakh@gmail.com || 0.63 ||
-|| Spanish || es_ES || Néstor || n3storm@gmail.com || 0.63 ||
-|| Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33@gmail.com || 0.63 ||
-|| Russian || ru_RU || Mike Ozornin || mike.ozornin@gmail.com || 0.63 ||
-|| Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung@gmail.com || 0.63 ||
+|| Spanish || es_ES || Néstor || n3storm@gmail.com || 0.64 ||
+|| Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33@gmail.com || 0.64 ||
+|| Russian || ru_RU || Mike Ozornin || mike.ozornin@gmail.com || 0.64 ||
+|| Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung@gmail.com || 0.64 ||
 
 == Technical Background  ==
 
