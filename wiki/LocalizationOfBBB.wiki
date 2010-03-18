@@ -16,10 +16,14 @@ We'll incorporate the language file into the latest build. Once it's checked int
 || Chinese (Traditional) || zh_TW || Alan Yu || secret1029@gmail.com || 0.93 ||
 || English || en_US || !BigBlueButton Team || ffdixon@bigbluebutton.org (and many others) || 0.93 ||
 || French || fr_FR || Jean-Philippe Guiot || DJP@architectes.org ||0.93 ||
+|| German || de_DE || Stefan Auditor || stefan.auditor@googlemail.com || 0.93 ||
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas@gmail.com || 0.93 ||
+|| Italian || it_IT || Federico Corradino || spiorfeus@gmail.com || 0.93 ||
 || Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas@gmail.com || 0.93 ||
 || Netherland || nl_NL || Walter Tak || walter@waltertak.com ||0.93 ||
+|| Polish || pl_PL || Piotr Anusiewicz || niedakh@gmail.com || 0.93 ||
 || Spanish || es_ES || Néstor || n3storm@gmail.com || 0.93 ||
+|| Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33@gmail.com || 0.93 ||
 || Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung@gmail.com || 0.93 ||
 
 == Technical Background  ==
