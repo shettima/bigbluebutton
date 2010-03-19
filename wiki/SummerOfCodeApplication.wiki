@@ -1,6 +1,6 @@
 #summary Thank you for considering applying to BigBlueButton for your Summer of Code project!
 
-!BigBlueButton's SoC profile can be found [http://socghop.appspot.com/gsoc/org/show/google/gsoc2010/bigbluebutton_soc here]
+!BigBlueButton's SoC profile can be found [http://socghop.appspot.com/gsoc/org/show/google/gsoc2010/bigbluebutton_soc here].
 Before you submit your application feel free to discuss your project proposal with the project by writing to our developer mailing list at http://groups.google.com/group/bigbluebutton-dev. This way we can give you feedback on your proposal, and it will give you a good idea of the overview of the project and introduce you to the !BigBlueButton community.
 
 Here are some questions to get you started on your proposal. You don't have to follow it and you're application will still be considered, but it's a good place to start. Feel free to include anything else you feel is important.
