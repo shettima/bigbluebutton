@@ -1,5 +1,4 @@
 #summary BigBlueButton ebuild installation tutorial
-#labels d
 
 = Introduction =
 
@@ -49,13 +48,21 @@ The next step is to download and install the BigBlueButton ebuild, which will do
 }}}
 
 If you have any of those tools installed and their version is lower than listed, please update the programs to a current version. 
-There are 2 use flags which you can activate, but are not supported yet. They are for deskshare and for meetme. Support will be given in the future for this ebuild. 
+There are 2 use flags which you can activate, but are not supported yet. They are for deskshare and meetme. Support will be given in the future for this ebuild. 
 
 After the ebuild installed BigBlueButton you can download following file:
- # http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf
+{{{
+ http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf
+}}}
 This script allows you to change the host ip, watch the debug output and some more. 
 
 If you want BigBlueButton to be able to run after you started your Gentoo, please put the following programs in your default runlevel
+
+After the installation, simply open a browser and put in your eth0 address. 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
+
+To start using your BigBlueButton server, enter your name and then click Join. You'll join the default meeting.
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
 ===Services to start===
 {{{
