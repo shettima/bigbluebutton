@@ -1,6 +1,6 @@
   * [Installation Installation of Version 0.63]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
-    * [InstallationUbuntu Install on Ubuntu 9.04 (10 minutes)]
+    * [InstallationUbuntu Install on Ubuntu 9.04 (15 minutes)]
     * [InstallingBigBlueButton Install from source (Ubuntu)]
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)]
     * [InstallingBigBlueButtonFedora Install from source (Fedora)]
