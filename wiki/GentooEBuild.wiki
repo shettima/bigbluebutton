@@ -2,11 +2,11 @@
 
 = Introduction =
 
-This document describes how to install BigBlueButton from a gentoo ebuild on a 32bit install. The installation time required depends on how many dependencies you have installed and on the speed on your computer.
+This document describes how to install !BigBlueButton from a gentoo ebuild on a 32bit install. The installation time required depends on how many dependencies you have installed and on the speed on your computer.
 
-=How to install BigBlueButton on your computer=
+=How to install !BigBlueButton on your computer=
 
-To install BigBlueButton you need to download and install Apache-ActiveMQ and Red5 first. 
+To install !BigBlueButton you need to download and install Apache-ActiveMQ and Red5 first. 
 Let's start with Apache-ActiveMQ.
 Go to your local repository such as {{{ /usr/portage }}} or create a local repository on your own in {{{ /usr/local/portage }}}
 Create a new directory structure as following {{{ net-im/apache-activemq }}} and inside this folder create a files folder. If you are still unsure about the folder structure, look in {{{ /usr/portage }}} and choose any of the other directories and look up their structures. Download the files afterwards and copy them into the corresponding folders.
@@ -25,7 +25,7 @@ As next Red-5 needs to be installed. For installing Red-5 please follow the same
  http://bigbluebutton.org/downloads/dist-gentoo/red5/files/red5-g
 }}}
 
-The next step is to download and install the BigBlueButton ebuild, which will download all the files needed to use the ebuild. The ebuild has a few dependencies, and I will list the versions which I have installed. 
+The next step is to download and install the !BigBlueButton ebuild, which will download all the files needed to use the ebuild. The ebuild has a few dependencies, and I will list the versions which I have installed. 
 
 *BigBlueButton files*
 {{{
@@ -48,18 +48,18 @@ The next step is to download and install the BigBlueButton ebuild, which will do
 If you have any of those tools installed and their version is lower than listed, please update the programs to a current version. 
 There are 2 use flags which you can activate, but are not supported yet. They are for deskshare and meetme. Support will be given in the future for this ebuild. 
 
-After the ebuild installed BigBlueButton you can download following file:
+After the ebuild installed !BigBlueButton you can download following file:
 {{{
  http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf
 }}}
 This script allows you to change the host ip, watch the debug output and some more. 
 
-If you want BigBlueButton to be able to run after you started your Gentoo, please put the following programs in your default runlevel
+If you want !BigBlueButton to be able to run after you started your Gentoo, please put the following programs in your default runlevel
 
 After the installation, simply open a browser and put in your eth0 address. 
 http://bigbluebutton.org/downloads/dist-gentoo/images/bbb.png
 
-To start using your BigBlueButton server, enter your name and then click Join. You'll join the default meeting.
+To start using your !BigBlueButton server, enter your name and then click Join. You'll join the default meeting.
 http://bigbluebutton.org/downloads/dist-gentoo/images/bbbuser.png
 
 ===Services to start===
@@ -87,11 +87,11 @@ As far of the ebuild stage, there is no need to edit any of the configuration fi
 ==Troubleshooting==
 It might be possible that you need to install bash-4.x and update the portage version for some commands in the ebuild to run. 
 
-I rebooted my computer and now bigbluebutton does not work anymore:
+I rebooted my computer and now !BigBlueButton does not work anymore:
 Did you check for your ip address? It should be the same as before. If not, simply run following script as root:
 {{{
  bbb-conf --setip <yourip>
 }}}
 This will update your ip address in the configuration files.
 
-*_This ebuild is in a testing stage and currently not supported_*. However, if there are any troubles with the installation of the BigBlueButton ebuild, please feel free to ask for help in the mailing list.
+*_This ebuild is in a testing stage and currently not supported_*. However, if there are any troubles with the installation of the !BigBlueButton ebuild, please feel free to ask for help in the mailing list.
