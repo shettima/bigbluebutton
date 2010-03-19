@@ -6,7 +6,7 @@ This document describes how to install BigBlueButton from a gentoo ebuild on a 3
 
 This wiki page is still under development and incomplete.
 
-= How to install BigBlueButton on your computer =
+=How to install BigBlueButton on your computer=
 
 To install BigBlueButton you need to download and install Apache-ActiveMQ and Red5 first. 
 Let's start with Apache-ActiveMQ.
