@@ -1,4 +1,5 @@
-#summary One-sentence summary of this page.
+#summary BigBlueButton ebuild installation tutorial
+#labels d
 
 = Introduction =
 
@@ -6,21 +7,85 @@ This document describes how to install BigBlueButton from a gentoo ebuild on a 3
 
 This wiki page is still under development and incomplete.
 
-= How to install Gentoo on your computer =
+= How to install BigBlueButton on your computer =
 
 To install BigBlueButton you need to download and install Apache-ActiveMQ and Red5 first. 
 Let's start with Apache-ActiveMQ.
 Go to your local repository such as {{{ /usr/portage }}} or create a local repository on your own in {{{ /usr/local/portage }}}
 Create a new directory structure as following {{{ net-im/apache-activemq }}} and inside this folder create a files folder. If you are still unsure about the folder structure, look in {{{ /usr/portage }}} and choose any of the other directories and look up their structures.
 
-* *Apache-ActiveMQ* files {{{
-http://bigbluebutton.org/downloads/dist-gentoo/apache-activemq/apache-activemq-5.3.0.ebuild
-http://bigbluebutton.org/downloads/dist-gentoo/apache-activemq/files/activemq-q
+*Apache-ActiveMQ* files to download 
+{{{
+ http://bigbluebutton.org/downloads/dist-gentoo/apache-activemq/apache-activemq-5.3.0.ebuild
+ http://bigbluebutton.org/downloads/dist-gentoo/apache-activemq/files/activemq-q 
 }}}
 
-= Details =
+As next Red-5 needs to be installed. For installing Red-5 please follow the same way we used for Apache-ActiveMQ. 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*Red-5* files to download 
+{{{
+ http://bigbluebutton.org/downloads/dist-gentoo/red5/red5-0.8.ebuild
+ http://bigbluebutton.org/downloads/dist-gentoo/red5/files/red5-g
+}}}
+
+The next step is to download and install the BigBlueButton ebuild, which will download all the files needed to use the ebuild. The ebuild has a few dependencies, and I will list the versions which I have installed. 
+
+*BigBlueButton files*
+{{{
+ http://bigbluebutton.org/downloads/dist-gentoo/bigbluebutton/bigbluebutton-0.63.ebuild
+ http://bigbluebutton.org/downloads/dist-gentoo/bigbluebutton/files/bbb-openoffice-headless
+}}}
+
+*BigBlueButton dependencies*
+{{{
+ mysql-5.0.76-r1
+ tomcat-6.0.20
+ swftools-0.9
+ imagemagick-6.5.2.9
+ nginx-0.8.33
+ asterisk-1.6.2.2-r1
+ bind-tools-9.4.3_p5
+ openoffice-bin-3.2.0
+}}}
+
+If you have any of those tools installed and their version is lower than listed, please update the programs to a current version. 
+There are 2 use flags which you can activate, but are not supported yet. They are for deskshare and for meetme. Support will be given in the future for this ebuild. 
+
+After the ebuild installed BigBlueButton you can download following file:
+ # http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf
+This script allows you to change the host ip, watch the debug output and some more. 
+
+If you want BigBlueButton to be able to run after you started your Gentoo, please put the following programs in your default runlevel
+
+===Services to start===
+{{{
+ activemq
+ asterisk
+ red5 
+ tomcat6
+ nginx
+}}}
+
+==When things go wrong==
+{{{
+You can find separate logs you can look for
+ /var/log/syslog
+ /var/log/tomcat6
+ /usr/share/red5/log
+ /var/log/asterisk
+}}}
+
+==Editing any configuration files==
+As far of the ebuild stage, there is no need to edit any of the configuration files. Several scripts run to scan some folders and the ip address from the current system and applies those to the configuration files which are being installed.
+
+==Troubleshooting==
+It might be possible that you need to install bash-4.x and update the portage version for some commands in the ebuild to run. 
+
+I rebooted my computer and now bigbluebutton does not work anymore:
+Did you check for your ip address? It should be the same as before. If not, simply run following script as root:
+{{{
+ bbb-conf --setip <yourip>
+}}}
+This will update your ip address in the configuration files.
+
+If there are any troubles with the installation of the BigBlueButton ebuild, please feel free to ask for help in the mailing list.
