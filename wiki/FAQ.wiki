@@ -327,5 +327,9 @@ supported branding tool for !BigBlueButton won't take away from core
 development, but rather it will support it.
 
 
+=== I see an inverted picture from my webcam ===
+Please check your webcam driver and update it if possible.
+
+
 === I can't find my answer in the FAQ ===
 If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
