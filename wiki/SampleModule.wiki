@@ -37,7 +37,9 @@ host="conf/join-mock.xml"
   * Run the client and make sure it logs in properly.
   * Congratulations, you've successfully set up your BBB-Client dev environment
 
-== Creating a new BigBlueButton Module ==
+== Creating a new !BigBlueButton Module ==
+_Note: There is a sample module implementation in the client code base, called Notes Module, which shows a simple way to create a BBB module, and is kept up to date. The following example is a general overview of how things work when creating a new module._
+
 To make a new BBB module, you need 2 things:
   * A new module, just right click on the bigbluebutton-client project, go to new>MXML Module.
   * Your module needs to implements the "org.bigbluebutton.common.IBigBlueButtonModule" interface. This tells the main BBB application that the module you're trying to add to it at runtime is a proper BigBlueButton Module, and what to do with it. The interface defines several methods you will need to implement. These methods are largely the same across different modules, which means you can copy them from another BBB module with minor changes.
