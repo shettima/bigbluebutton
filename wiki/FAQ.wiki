@@ -62,9 +62,9 @@ webcam:
 Gbyte traffic per hour 
 
 
-Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size.  The desktop sharing sends a complete refresh of the screen every 20 seconds.  
+Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size.  The desktop sharing sends a complete refresh only when a new participant enters a conference.  
 
-Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  As the presenter moves to the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and their client's loads the next slide from cache.  
+Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  As the presenter moves to the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and their client's loads the next slide from cache. Chat also uses up next to no bandwidth.
 
 If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and desktop sharing will all throttle back within that constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still update, just at a slower rate.
 
