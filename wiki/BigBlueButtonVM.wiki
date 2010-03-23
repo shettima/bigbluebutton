@@ -53,7 +53,7 @@ Note: Due to an upgrade to OpenOffice 3.2, you'll need to restart the VM after t
 As an alternative to using VMWare player, you can use !VirtualBox to run the VMWare images.  !VirtualBox has more features than VMWare Player including snapshots and guest OS additions which are very useful for running Ubuntu in desktop mode.
 
 What you need:
- [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-01-25.zip !BigBlueButton 0.63 VM]
+ [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-01-25.zip BigBlueButton 0.63 VM]
  [http://www.virtualbox.org/wiki/Downloads VirtualBox]
 
 1. Create a new !VirtualBox VM
