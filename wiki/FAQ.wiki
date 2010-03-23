@@ -297,7 +297,8 @@ The best solution is ask all students to use a headset -- this will give them th
 
 In !BigBlueButton 0.63, this is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to !BigBlueButton, you can safely ignore the warning.
 
-
+=== UTF characters won't display correctly in the Client ===
+If you're using Linux, UTF characters won't display correctly. This is a Flash limitation and unfortunately there's not much we can do about it.
 
 == Other Questions ==
 === When will feature X be supported? ===
