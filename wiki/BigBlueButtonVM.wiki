@@ -52,25 +52,32 @@ Note: Due to an upgrade to OpenOffice 3.2, you'll need to restart the VM after t
 
 As an alternative to using VMWare player, you can use VirtualBox to run the VMWare images.  VirtualBox has more features than VMWare Player including snapshots and guest OS additions which are very useful for running Ubuntu in desktop mode.
 
-Requirements:
--  [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-01-25.zip BigBlueButton 0.63 VM]
--  [http://www.virtualbox.org/wiki/Downloads VirtualBox]
+What you need:
+ [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-01-25.zip BigBlueButton 0.63 VM]
+ [http://www.virtualbox.org/wiki/Downloads VirtualBox]
 
-
+1. Create a new VirtualBox VM
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step01.jpg
 
+2. Name it and select Linux and Ubuntu for OS and Distribution
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step02.jpg
 
+3. Set memory size
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step03.jpg
 
+4. Use an existing disk, the one for BigBlueButton VM
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step04.jpg
 
+5. Click Add
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step05.jpg
 
+6. Select the BigBlueButton .vmdk file which you downloaded
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step06.jpg
 
+7. Click select
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step07.jpg
 
+8. Click start to run
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step08.jpg
 
 
