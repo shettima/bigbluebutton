@@ -153,6 +153,14 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
+=== How do I change the security salt? ===
+
+# Generate a new Universal Unique ID (UUID) from a UUID generator 
+such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers with dashes. 
+# Copy the string (including dashes) three places, replacing the 
+existing security salt (if any) at each location: `/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp`, and `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties`. 
+# Do a clean restart of the BigBlueButton server `sudo bbb-conf --clean`. 
+
 == Using !BigBlueButton ==
 === Desktop Sharing ===
 ==== What is needed to run desktop sharing? ====
