@@ -1,7 +1,11 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.64: DRAFT =
+= Release 0.64: DRAFT!!! =
 
+  * Refactored desktop sharing to minimize CPU usage.
+  * More APIs
+  * Upgraded to Red5 0.91
+  
 == Fixed Issues ==
  * http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary
 
