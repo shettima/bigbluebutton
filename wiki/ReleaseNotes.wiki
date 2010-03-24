@@ -5,6 +5,7 @@
   * Refactored desktop sharing to minimize CPU usage.
   * More APIs
   * Upgraded to Red5 0.91
+  * RPM packages for CentOS 5.4
   
 == Fixed Issues ==
  * http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary
