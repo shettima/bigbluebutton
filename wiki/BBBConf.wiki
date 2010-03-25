@@ -5,23 +5,34 @@ bbb-conf is a tool used to manage !BigBlueButton servers.
 == Options ==
 
 --help
+    Prints the help message.
 
 --version
+    Display the BigBlueButton version.
 
---setip <host>
+--setip host
+    Set IP/Hostname for BigBlueButton's configuration.
 
 --check
+    Check current settings.
 
---conference
+--conference [konference|meetme]
+    Switch conference module in Asterisk.
 
 --debug
+    Check the log files for errors
 
 --setup-samba
+    Setup samba share for development (VM only)
 
---setup-dev
+--setup-dev [bbb-web|bbb-client|bbb-apps]
+    Setup the development environment.
 
 --reset-dev
+    Reset the environment back to using packages
 
 --watch
+    Watch log files for error messages every 2 seconds
 
 --zip
+    Zip up log files for reporting an error
