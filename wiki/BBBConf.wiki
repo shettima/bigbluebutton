@@ -1,3 +1,27 @@
 = bbb-conf =
 
-bbb-conf is a tool used to manage BigBlueButton servers.
+bbb-conf is a tool used to manage !BigBlueButton servers.
+
+== Options ==
+
+--help
+
+--version
+
+--setip <host>
+
+--check
+
+--conference
+
+--debug
+
+--setup-samba
+
+--setup-dev
+
+--reset-dev
+
+--watch
+
+--zip
