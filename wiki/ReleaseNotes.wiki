@@ -13,7 +13,7 @@
   * Display number of users and listeners
   
 == Fixed Issues ==
- * http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary
+ * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issues Fixed in BigBlueButton 0.64]
 
 == Known Issues ==
 
