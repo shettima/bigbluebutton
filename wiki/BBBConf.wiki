@@ -10,7 +10,7 @@ bbb-conf is a tool used to manage !BigBlueButton servers.
 === --version ===
     Display the BigBlueButton version.
 
-=== --setip host ===
+=== --setip <host> ===
     Set IP/Hostname for BigBlueButton's configuration.
 
 === --check ===
