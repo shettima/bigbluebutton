@@ -126,7 +126,7 @@ allMeetings.put( "ENGL-2013: Research Methods in English", meeting );	// The tit
 Of course, if you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use a plug-in module.
 
 If you are looking for an integration module that does not exist, please post a request to 
-[http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-setup].
+[http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
 
 
