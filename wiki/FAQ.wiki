@@ -10,6 +10,9 @@
 === What are the minimum requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
 
+=== Can I install !BigBlueButton on a server without root access? ===
+Unfortunately no.  BigBlueButton requires a number of server components that must be installed with root access.  See OpenSourceComponents.
+
 === Can I install !BigBlueButton on CentOS? ===
 Yes, you can! [InstallingBigBlueButtonCentOS CentOS instructions]
 
