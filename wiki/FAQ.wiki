@@ -5,7 +5,7 @@
 
 ----
 
-== General ==
+== General Installation ==
 
 === What are the minimum requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
@@ -100,6 +100,17 @@ If you are using an external hostname, you will need to setup the /etc/hosts fil
 {{{
 192.168.1.10 host.domain.org
 }}}
+
+== General Setup of !BigBlueButton ==
+
+=== Can I run multiple virtual classrooms in a single !BigBlueButton server ===
+Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Join Courses] API example.
+
+=== How do I setup new classrooms in !BigBlueButton? === 
+The main interface for customizing !BigBlueButton is the [http://code.google.com/p/bigbluebutton/wiki/API API].  We used to have an administration interface (written in grails), but its currently depreciated and will be replaced by a new interface at some point
+
+If you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].
+
 
 == Administration of your BBB System ==
 === How do I update my VM to the newest version? ===
