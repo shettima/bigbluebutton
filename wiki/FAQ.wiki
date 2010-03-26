@@ -107,9 +107,27 @@ If you are using an external hostname, you will need to setup the /etc/hosts fil
 Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Join Courses] API example.
 
 === How do I setup new classrooms in !BigBlueButton? === 
-The main interface for customizing !BigBlueButton is the [http://code.google.com/p/bigbluebutton/wiki/API API].  We used to have an administration interface (written in grails), but its currently depreciated and will be replaced by a new interface at some point
+The main interface for customizing !BigBlueButton is the [http://code.google.com/p/bigbluebutton/wiki/API API].  We used to have an administration interface (written in grails), but its currently depreciated and will be replaced by a new interface at some point.
 
-If you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].
+At the moment, the easiest way to setup a new classroom is modify this [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
+
+You can edit the following section
+{{{
+meeting = new HashMap<String, String>();
+allMeetings.put( "ENGL-2013: Research Methods in English", meeting );	// The title that will appear in the drop-down menu
+	meeting.put("welcomeMsg", 	welcome);			// The welcome mesage
+	meeting.put("moderatorPW", 	"prof123");			// The password for moderator
+	meeting.put("viewerPW", 	"student123");			// The password for viewer
+	meeting.put("voiceBridge", 	"82013");			// The extension number for the voice bridge (use if connected to phone system)
+	meeting.put("logoutURL", 	"/bigbluebutton/demo/demo3.jsp");  // The logout URL (use if you want to return to your pages)
+
+}}}
+
+Of course, if you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use a plug-in module.
+
+If you are looking for an integration module that does not exist, please post a request to 
+[http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-setup].
+
 
 
 == Administration of your BBB System ==
