@@ -1,4 +1,4 @@
-= bbb-conf =
+#summary BBB-Conf configuration tool
 
 bbb-conf is a tool used to manage !BigBlueButton servers.
 
