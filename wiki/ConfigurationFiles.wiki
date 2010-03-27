@@ -42,6 +42,11 @@ Properties for bbb-apps, the core !BigBlueButton red5 module.
 
 http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-apps/src/main/webapp/WEB-INF/bigbluebutton.properties
 
+=== /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties ===
+Properties for bbb-apps-sip, which specifies the range of ports for connecting to the Asterisk server.  Used with bbb_sip.conf.
+
+http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties
+
 === /usr/share/red5/log/deskshare.log ===
 Debug output from the deskshare red5 application, which is the red5 server component  for supporting desktop sharing in the !BigBlueButton client.
 
