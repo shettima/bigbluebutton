@@ -11,20 +11,45 @@ yum install -y mysql-server
 service mysqld start
 chkconfig mysqld on
 
-# Tomcat6 is not available in the main repos, so we will
-# use the jpackage repos:
+# Tomcat6 is not available in the main repos, so we will use the jpackage repos
 yum install -y jpackage-utils
 wget http://www.jpackage.org/jpackage17.repo
 cat jpackage17.repo | sed 's/1\.7/5.0/' | sed 's/\[jpack/\[5jpack/' > /etc/yum.repos.d/jpackage5.repo
 mv jpackage17.repo /etc/yum.repos.d/
 yum makecache
 
-# now you should be able to install tomcat6 easily:
+# now you should be able to install tomcat6
 yum install -y tomcat6
 
 # start tomcat and configure it to automatically start on boot:
 service tomcat6 start
 chkconfig tomcat6 on
+
+# install openoffice
+
+# for 32-bit
+wget http://download.services.openoffice.org/files/stable/3.2.0/OOo_3.2.0_LinuxIntel_install_wJRE_en-US.tar.gz
+tar xzvf OOo_3.2.0_LinuxIntel_install_wJRE_en-US.tar.gz
+rpm -Uvih OOO320_m12_native_packed-1_en-US.9483/RPMS/o*.rpm
+rm -rf OOo_3.2.0_LinuxIntel_install_wJRE_en-US.tar.gz OOO320_m12_native_packed-1_en-US.9483
+
+# download openoffice server initializing script
+wget http://bigbluebutton.org/downloads/0.64/centos-install/bbb-openoffice-headless
+mv
+
+# start the openoffice server
+chmod +x /etc/init.d/bbb-openoffice-headless
+chkconfig --add bbb-openoffice-headless
+chkconfig bbb-openoffice-headless on
+service bbb-openoffice-headless start
+
+
+
+
+
+
+
+
 
 # for compiling your own packages, you will need some development tools
 yum -y install gcc gcc-c++ compat-gcc-32 compat-gcc-32-c++
@@ -32,19 +57,6 @@ yum -y install gcc gcc-c++ compat-gcc-32 compat-gcc-32-c++
 # some more requirements for packages that we will soon install:
 yum -y install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
 
-# install openoffice
-yum -y groupinstall 'Office/Productivity'
-yum -y install openoffice.org-headless
-
-# download openoffice server initializing script
-cd /etc/init.d
-wget http://bigbluebutton.org/downloads/0.63/centos-install/bbb-openoffice-headless
-
-# start the openoffice server
-chmod +x /etc/init.d/bbb-openoffice-headless
-chkconfig --add bbb-openoffice-headless
-chkconfig bbb-openoffice-headless on
-service bbb-openoffice-headless start
 
 # install swftools:
 wget http://www.swftools.org/swftools-0.8.1.tar.gz
