@@ -175,27 +175,16 @@ ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigblueb
 service nginx start
 chkconfig nginx on
 
-
-
-
-
-
-
-
-
-
 # download BBB apps
 cd /tmp/
 mkdir bbb-install
 cd bbb-install
-wget http://bigbluebutton.org/downloads/0.63/packages/bbb-default.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton.war
-wget http://bigbluebutton.org/downloads/0.63/packages/video.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton-apps.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/client.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/sip.tar.gz
-wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
-
+wget http://bigbluebutton.org/downloads/0.64/packages/bbb-default.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/bigbluebutton.war
+wget http://bigbluebutton.org/downloads/0.64/packages/video.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/bigbluebutton-apps.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/client.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/sip.tar.gz
 
 # configure MySQL database
 echo "create database bigbluebutton_dev;" | mysql -u root
@@ -208,9 +197,13 @@ cp /tmp/bbb-install/bigbluebutton.war /var/lib/tomcat6/webapps/bigbluebutton.war
 # download blank slide and thumbnail dummies
 mkdir -p /var/bigbluebutton/blank
 cd /var/bigbluebutton/blank
-wget http://bigbluebutton.org/downloads/0.63/blank/blank-slide.swf
-wget http://bigbluebutton.org/downloads/0.63/blank/blank-thumb.png
+wget http://bigbluebutton.org/downloads/0.64/blank/blank-slide.swf
+wget http://bigbluebutton.org/downloads/0.64/blank/blank-thumb.png
 }}}
+
+
+
+
 
 * Generate a GUID (manual step)
 
@@ -268,36 +261,27 @@ chmod -R 777 /var/bigbluebutton
 
 # setup the red5 apps
 tar xvf bigbluebutton-apps.tar.gz
-rsync -a webapps/* /opt/red5-0.8/webapps/
-rm -rf webapps
+mv bigbluebutton /usr/share/red5/webapps/
 
 # install video app
-cd /opt/red5-0.8/webapps
-cp /tmp/bbb-install/video.tar.gz .
 tar xvf video.tar.gz
-rm -f video.tar.gz
+mv video /usr/share/red5/webapps/
 
 # install voice app
-cp /tmp/bbb-install/sip.tar.gz ./
 tar xvf sip.tar.gz
-rm -f sip.tar.gz
+mv sip /usr/share/red5/webapps/
 
 # install bbb-client:
 mkdir -p /var/www/bigbluebutton
-cd /var/www/bigbluebutton
-cp /tmp/bbb-install/client.tar.gz ./
 tar xvf client.tar.gz
-rm -f client.tar.gz
+mv bin /var/www/bigbluebutton/client
 
-cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.159/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
+cat -i /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.120/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
 mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
 
 # install bbb-default pages
-cd /var/www/
-cp /tmp/bbb-install/bbb-default.tar.gz .
 tar xvf bbb-default.tar.gz
-mv web ./bigbluebutton-default
-rm -rf bbb-default.tar.gz
+mv web /var/www/bigbluebutton-default
 }}}
 
 Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
@@ -307,13 +291,16 @@ echo "<%!
 String salt = \"<YOUR-GUID>\";
 
 // This is the URL for the BigBlueButton server
-String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
+String BigBlueButtonURL = \"http://`hostname`/bigbluebutton/\";
 %>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
 
 }}}
 
 Installing Desktop Sharing (optional)
 {{{
+# download deskshare app
+wget http://bigbluebutton.org/downloads/0.64/packages/deskshare.tar.gz
+
 # install deskshare app
 #
 # Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
@@ -322,11 +309,8 @@ Installing Desktop Sharing (optional)
 #     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
 #
 
-cp /tmp/bbb-install/deskshare.tar.gz /opt/red5-0.8/webapps/
-cd /opt/red5-0.8/webapps
-tar zxvf deskshare.tar.gz
-rm -f deskshare.tar.gz
-
+tar xvf deskshare.tar.gz
+mv deskshare /usr/share/red5/webapps/
 }}}
 
 Desktop sharing is disabled by default. To enable it, edit "/var/www/bigbluebutton/client/conf/config.xml" and uncomment the DeskShareModule. You will find the DeskshareModule commented as follows:
