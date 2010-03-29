@@ -62,6 +62,14 @@ make
 make install
 cd ..
 
+# install ghostscript 8.64
+wget http://ghostscript.com/releases/ghostscript-8.64.tar.gz
+tar xvf ghostscript-8.64.tar.gz
+cd ghostscript-8.64
+./configure
+make
+make install
+
 # install ImageMagick:
 yum install -y ImageMagick
 
@@ -223,7 +231,7 @@ Determine PDF2SWF, CONVERT and GS applications (manual step)
       which gs
 
       # You should see something like.
-      # /usr/bin/gs
+      # /usr/local/bin/gs
 }}}
 Edit bbb-web properties
 {{{
@@ -232,7 +240,7 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 # Change the following:
 #  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin/)
 #  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin/)
-#  - ghostScriptExec to point to the gs application (in this example, it is /usr/bin/gs)
+#  - ghostScriptExec to point to the gs application (in this example, it is /usr/local/bin/gs)
 #  - change bigbluebutton.web.serverURL=http://<YOUR IP>
 #  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
