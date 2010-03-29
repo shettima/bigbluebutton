@@ -181,6 +181,9 @@ chkconfig nginx on
 
 
 
+
+
+
 # download BBB apps
 cd /tmp/
 mkdir bbb-install
