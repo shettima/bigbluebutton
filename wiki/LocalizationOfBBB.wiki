@@ -21,6 +21,7 @@ DJP, one of the !BigBlueButton developers, will download and incorporate the lan
 || Italian || it_IT || Federico Corradino || spiorfeus@gmail.com || 0.64 ||
 || Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas@gmail.com || 0.64 ||
 || Netherland || nl_NL || Walter Tak || walter@waltertak.com ||0.63 ||
+|| Portuguese (Brazilian) || pt_BR || Márcio Moraes || marciopanto@gmail.com || 0.63 ||
 || Polish || pl_PL || Piotr Anusiewicz || niedakh@gmail.com || 0.63 ||
 || Spanish || es_ES || Néstor || n3storm@gmail.com || 0.64 ||
 || Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33@gmail.com || 0.64 ||
