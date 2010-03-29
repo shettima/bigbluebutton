@@ -6,6 +6,9 @@ The following instructions will guide you to install !BigBlueButton on CentOS. S
 *NOTE:* If your 'hostname' command does not return the proper (working) IP or domain, you can run 'hostname <your-correct-hostname-or-ip>' to make these instructions work.
 
 {{{
+# we'll work mostly from the /tmp/ directory:
+cd /tmp
+
 # install MySQL server
 yum install -y mysql-server
 service mysqld start
@@ -35,21 +38,13 @@ rm -rf OOo_3.2.0_LinuxIntel_install_wJRE_en-US.tar.gz OOO320_m12_native_packed-1
 
 # download openoffice server initializing script
 wget http://bigbluebutton.org/downloads/0.64/centos-install/bbb-openoffice-headless
-mv
+mv bbb-openoffice-headless /etc/init.d/
 
 # start the openoffice server
 chmod +x /etc/init.d/bbb-openoffice-headless
 chkconfig --add bbb-openoffice-headless
 chkconfig bbb-openoffice-headless on
 service bbb-openoffice-headless start
-
-
-
-
-
-
-
-
 
 # for compiling your own packages, you will need some development tools
 yum -y install gcc gcc-c++ compat-gcc-32 compat-gcc-32-c++
@@ -59,9 +54,9 @@ yum -y install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
 
 
 # install swftools:
-wget http://www.swftools.org/swftools-0.8.1.tar.gz
-tar xzf swftools-0.8.1.tar.gz 
-cd swftools-0.8.1
+wget http://www.swftools.org/swftools-0.9.0.tar.gz
+tar xzf swftools-0.9.0.tar.gz
+cd swftools-0.9.0
 ./configure 
 make
 make install
@@ -81,10 +76,16 @@ yum install -y nginx
 useradd activemq
 wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
 tar xzf apache-activemq-5.2.0-bin.tar.gz 
-mv apache-activemq-5.2.0 /opt/
-ln -s /opt/apache-activemq-5.2.0 /opt/activemq
-chown -R activemq.activemq /opt/apache-activemq-5.2.0
-chown -R activemq.activemq /opt/activemq
+mv apache-activemq-5.2.0 /usr/share/
+ln -s /usr/share/apache-activemq-5.2.0 /usr/share/activemq
+chown -R activemq.activemq /usr/share/apache-activemq-5.2.0
+chown -R activemq.activemq /usr/share/activemq
+
+
+
+
+
+
 
 # Now get the init.d file that we created for you
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/activemq
