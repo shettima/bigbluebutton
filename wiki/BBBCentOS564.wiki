@@ -90,7 +90,6 @@ chmod a+x /etc/init.d/activemq
 service activemq start
 chkconfig activemq on
 
-
 # now we will install Red5 from source
 useradd red5
 wget http://www.red5.org/downloads/0_9/red5-0.9.1.tar.gz
@@ -98,38 +97,16 @@ tar xvf red5-0.9.1.tar.gz
 mv red5-0.9.1 /usr/share/red5
 chown -R red5.red5 /usr/share/red5
 
-
-# Now get the init.d file that we created for you
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/red5
+# now get the init.d file that we created for you
+wget http://bigbluebutton.org/downloads/0.64/centos-install/red5
 mv red5 /etc/init.d/
 
 # now chmod the file, start and config auto-start:
 chmod a+x /etc/init.d/red5
 service red5 start
 chkconfig red5 on
-}}}
-    * Now you need to install the oflaDemo that comes with Red5. This is a manual process. 
 
-Go to:
-http://< YOURIP-OR-DOMAIN >:5080/
-
-Click on "Click here to install demos" and then choose oflaDemo java 6.
-
-Go to:
-http://< YOURIP-OR-DOMAIN >:5080/demos/
-If the page doesn't show up, restart the red5 server before trying again. 
-
-Click "View demo" under "OFLA DEMO", which should take you to:
-http://< YOURIP-OR-DOMAIN >:5080/demos/ofla_demo.html
-
-In the upper right corner, change localhost to your domain or IP, like:
-rtmp://< YOURIP-OR-DOMAIN >/oflaDemo 
-Click connect
-
-You would see a list of available videos. Select one to play.
-
-Now prepare for Asterisk build: 
-{{{
+# now prepare for Asterisk build: 
 yum install -y kernel-devel
 
 # On Xen VM you need:
@@ -158,6 +135,8 @@ mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 
 wget http://bigbluebutton.org/downloads/0.63/app_konference.so
+##### TODO: add 64-bit version
+
 mv app_konference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/app_konference.so
 # set autoload module BigBlueButton conference
@@ -191,10 +170,15 @@ wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-fil
 wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/nginx.conf
 mv -f nginx.conf /etc/nginx/
 cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/`hostname`/" > /etc/nginx/sites-available/bigbluebutton
-rm nginx-bigbluebutton.conf
+rm -f nginx-bigbluebutton.conf
 ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 service nginx start
 chkconfig nginx on
+
+
+
+
+
 
 
 # download BBB apps
