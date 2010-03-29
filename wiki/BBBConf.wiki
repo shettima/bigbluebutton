@@ -1,38 +1,53 @@
-#summary BBB-Conf configuration tool
+#summary Documentation of bbb-conf
 
-bbb-conf is a tool used to manage !BigBlueButton servers.
+= Introduction =
 
-== Options ==
+`bbb-conf` is a script installed by default when you run the !BigBlueButton virtual machine or install BigBlueButton from packages. `bbb-conf` helps you modify !BigBlueButton's configuration and detect possible errors in installation.
 
-=== --help ===
-    Prints the help message.
+= Running bbb-conf =
+Ro run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
 
-=== --version ===
-    Display the !BigBlueButton version.
+= Options =
 
-=== --setip `<host`> ===
-    Set IP/Hostname for !BigBlueButton's configuration.
+`bbb-conf` accepts the following options:
 
-=== --check ===
-    Check current settings.
+== --help ==
+Displays a help message with a list of available options.
 
-=== --conference [konference|meetme] ===
-    Switch conference module in Asterisk.
+== --version ==
+Displays a help message with a list of available options.
 
-=== --debug ===
-    Check the log files for errors
+== --setip < Host > : < Port > ==
 
-=== --setup-samba ===
-    Setup samba share for development (VM only)
+Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
-=== --setup-dev [bbb-web|bbb-client|bbb-apps] ===
-    Setup the development environment.
+|| *Parameter* || *Required/Optional* || *Additional Information* ||
+|| Host || Required || Hostname or IP of the machine where !BigBlueButton ||
+|| Port || Optional || Port at which !BigBlueButton is set ||
 
-=== --reset-dev ===
-    Reset the environment back to using packages
+*Example Usage:* `bbb-conf --set-ip 192.168.0.1:80
 
-=== --watch ===
-    Watch log files for error messages every 2 seconds
+Options:
+   --help                           This message
+   --version                        Display BigBlueButton version
+   --setip <host>                   Set IP/Hostname for BigBlueButton's configuration
 
-=== --zip ===
-    Zip up log files for reporting an error
+Development:
+   --check                          Check current settings
+   --conference [konference|meetme] Switch conference module in Asterisk
+   --debug                          Check the log files for errors
+   --setup-samba                    Setup samba share for development (VM only)
+   --setup-dev [bbb-web|bbb-client|bbb-apps]
+   --reset-dev                      Reset environment back to using packages
+   --trunk                          Checkout trunk instead of last release
+   --svn-username [user]            Your Google code username if you want to
+                                      commit from the checked out code
+   --clean                        Clear all the log files and restart BigBlueButton
+   --watch                          Watch log files for error messages every 2 seconds
+   --zip                            Zip up log files for reporting an error
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
