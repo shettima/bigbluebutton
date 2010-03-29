@@ -82,7 +82,7 @@ chown -R activemq.activemq /usr/share/apache-activemq-5.2.0
 chown -R activemq.activemq /usr/share/activemq
 
 # Now get the init.d file that we created for you
-wget http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/centos-install-files/activemq
+wget http://bigbluebutton.org/downloads/0.64/centos-install/activemq
 mv activemq /etc/init.d/
 
 # now make that file executable, start the service and configure it to auto-start
@@ -200,10 +200,6 @@ cd /var/bigbluebutton/blank
 wget http://bigbluebutton.org/downloads/0.64/blank/blank-slide.swf
 wget http://bigbluebutton.org/downloads/0.64/blank/blank-thumb.png
 }}}
-
-
-
-
 
 * Generate a GUID (manual step)
 
