@@ -25,7 +25,7 @@ Sets the IP/Hostname and port for !BigBlueButton's configuration.
 || Host || Required || Hostname or IP of the machine where !BigBlueButton ||
 || Port || Optional || Port at which !BigBlueButton is set ||
 
-*Example Usage:* `bbb-conf --set-ip 192.168.0.1:80
+*Example Usage:* `bbb-conf --set-ip 192.168.0.1:80`
 
 Options:
    --help                           This message
