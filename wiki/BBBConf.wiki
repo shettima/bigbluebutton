@@ -27,27 +27,43 @@ Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
 *Example Usage:* `bbb-conf --set-ip 192.168.0.1:80`
 
-Options:
-   --help                           This message
-   --version                        Display BigBlueButton version
-   --setip <host>                   Set IP/Hostname for BigBlueButton's configuration
+== --check ==
 
-Development:
-   --check                          Check current settings
-   --conference [konference|meetme] Switch conference module in Asterisk
-   --debug                          Check the log files for errors
-   --setup-samba                    Setup samba share for development (VM only)
-   --setup-dev [bbb-web|bbb-client|bbb-apps]
-   --reset-dev                      Reset environment back to using packages
-   --trunk                          Checkout trunk instead of last release
-   --svn-username [user]            Your Google code username if you want to
+Checks current settings and outlines any potential problems.
+
+== --conference [konference|meetme] ==
+
+Switches conference module in Asterisk
+
+== --debug ==
+
+Checks the log files for errors
+
+== --setup-samba ==
+
+This command is only available if you are using the BigBlueButton virtual machine.
+
+It sets up a samba share for development.
+
+== --setup-dev [bbb-web|bbb-client|bbb-apps] ==
+
+Checks out the project from trunk.
+
+== --reset-dev ==
+
+Resets the development environment back to using packages.
+
+== --trunk ==
+Checkout trunk instead of last release
+
+== --svn-username [user] ==
+Your Google code username if you want to
                                       commit from the checked out code
-   --clean                        Clear all the log files and restart BigBlueButton
-   --watch                          Watch log files for error messages every 2 seconds
-   --zip                            Zip up log files for reporting an error
+== --clean ==
+Clear all the log files and restart BigBlueButton
 
+== --watch ==
+Watch log files for error messages every 2 seconds
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== --zip ==
+Zip up log files for reporting an error
