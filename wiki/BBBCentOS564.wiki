@@ -60,10 +60,10 @@ cd swftools-0.9.0
 }}}
 
 We need to make a slight modification to swftool's source:
-* Open src/pdf2swf.c
-* Comment out the lines 643-655
+  * Open src/pdf2swf.c
+  * Comment out the lines 643-655
 
-}}}
+{{{
 # compile swftools
 ./configure 
 make
