@@ -143,9 +143,8 @@ wget http://bigbluebutton.org/downloads/0.64/bbb_sip.conf
 mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 
-wget http://bigbluebutton.org/downloads/0.64/app_konference.so
 ##### TODO: add 64-bit version
-
+wget http://bigbluebutton.org/downloads/0.64/app_konference.so
 mv app_konference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/app_konference.so
 # set autoload module BigBlueButton conference
@@ -232,7 +231,7 @@ Determine PDF2SWF, CONVERT and GS applications (manual step)
       which gs
 
       # You should see something like.
-      # /usr/local/bin/gs
+      # /usr/bin/gs
 }}}
 Edit bbb-web properties
 {{{
@@ -241,7 +240,7 @@ vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properti
 # Change the following:
 #  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin)
 #  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin)
-#  - ghostScriptExec to point to the gs application (in this example, it is /usr/local/bin/gs)
+#  - ghostScriptExec to point to the gs application (in this example, it is /usr/bin/gs)
 #  - change bigbluebutton.web.serverURL=http://<YOUR IP>
 #  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
 }}}
@@ -265,6 +264,7 @@ chown -R tomcat:adm /var/bigbluebutton
 chmod -R 777 /var/bigbluebutton
 
 # setup the red5 apps
+cd /tmp/bbb-install
 tar xvf bigbluebutton-apps.tar.gz
 mv bigbluebutton /usr/share/red5/webapps/
 
@@ -281,7 +281,7 @@ mkdir -p /var/www/bigbluebutton
 tar xvf client.tar.gz
 mv bin /var/www/bigbluebutton/client
 
-cat -i /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.120/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
+cat /var/www/bigbluebutton/client/conf/config.xml | sed "s/192.168.0.120/`hostname`/" | sed "s|conf/join-mock.xml|http://`hostname`/bigbluebutton/conference-session/enter|" > /tmp/config.xml
 mv -f /tmp/config.xml /var/www/bigbluebutton/client/conf/config.xml
 
 # install bbb-default pages
