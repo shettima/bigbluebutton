@@ -29,8 +29,6 @@ service tomcat6 start
 chkconfig tomcat6 on
 
 # install openoffice
-
-# for 32-bit
 wget http://download.services.openoffice.org/files/stable/3.2.0/OOo_3.2.0_LinuxIntel_install_wJRE_en-US.tar.gz
 tar xzvf OOo_3.2.0_LinuxIntel_install_wJRE_en-US.tar.gz
 rpm -Uvih OOO320_m12_native_packed-1_en-US.9483/RPMS/o*.rpm
@@ -71,12 +69,7 @@ make install
 cd ..
 
 # install ghostscript 8.64
-wget http://ghostscript.com/releases/ghostscript-8.64.tar.gz
-tar xvf ghostscript-8.64.tar.gz
-cd ghostscript-8.64
-./configure
-make
-make install
+rpm -Uvh http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/util/ghostscript-8.64-9.3.el5.i386.rpm
 
 # install ImageMagick:
 yum install -y ImageMagick
@@ -142,15 +135,15 @@ make config
 cd ..
 
 # configure asterisk
-wget http://bigbluebutton.org/downloads/0.63/bbb_extensions.conf
+wget http://bigbluebutton.org/downloads/0.64/bbb_extensions.conf
 mv bbb_extensions.conf /etc/asterisk/
 echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 
-wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+wget http://bigbluebutton.org/downloads/0.64/bbb_sip.conf
 mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 
-wget http://bigbluebutton.org/downloads/0.63/app_konference.so
+wget http://bigbluebutton.org/downloads/0.64/app_konference.so
 ##### TODO: add 64-bit version
 
 mv app_konference.so /usr/lib/asterisk/modules/
