@@ -1,9 +1,9 @@
 #summary How to install BigBlueButton on CentOS
 
-The following instructions will guide you to install !BigBlueButton on CentOS. So far the instructions have been tested on CentOS 5.4
+The following instructions will guide you to install !BigBlueButton on CentOS. So far the instructions have been tested on *CentOS 5.4 32-bit*
 
 == Instructions ==
-*NOTE:* If your 'hostname' command does not return the proper (working) IP or domain, you can run 'hostname <your-correct-hostname-or-ip>' to make these instructions work.
+*NOTE:* If your 'hostname' command does not return the proper (working) IP or domain, you can run `hostname <your-correct-hostname-or-ip>` to make these instructions work.
 
 {{{
 # we'll work mostly from the /tmp/ directory:
