@@ -57,6 +57,14 @@ yum -y install -y zlib zlib-devel freetype freetype-devel libjpeg libjpeg-devel
 wget http://www.swftools.org/swftools-0.9.0.tar.gz
 tar xzf swftools-0.9.0.tar.gz
 cd swftools-0.9.0
+}}}
+
+We need to make a slight modification to swftool's source:
+* Open src/pdf2swf.c
+* Comment out the lines 643-655
+
+}}}
+# compile swftools
 ./configure 
 make
 make install
@@ -238,8 +246,8 @@ Edit bbb-web properties
 vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
 # Change the following:
-#  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin/)
-#  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin/)
+#  - swfToolsDir to the directory where pdf2swf is located (in this example, it is /usr/local/bin)
+#  - imageMagickDir to the directory where convert is located (in this example, it is /usr/bin)
 #  - ghostScriptExec to point to the gs application (in this example, it is /usr/local/bin/gs)
 #  - change bigbluebutton.web.serverURL=http://<YOUR IP>
 #  - set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=<YOUR-GUID>)
