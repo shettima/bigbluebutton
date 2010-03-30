@@ -5,7 +5,7 @@
 `bbb-conf` is a script installed by default when you run the !BigBlueButton virtual machine or install BigBlueButton from packages. `bbb-conf` helps you modify !BigBlueButton's configuration and detect possible errors in installation.
 
 = Running bbb-conf =
-Ro run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
+To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
 
 = Options =
 
