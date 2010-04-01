@@ -23,10 +23,12 @@ Users from many different countries speaking different languages may be in the s
   * Difficulty: *Easy*. Good, fun project using proven technologies
   * Useful Skills: Java, !ActionScript, AJAX
 
-== Google Voice Integration ==
+== Google Voice Integration *DEPRECATED* ==
 Right now !BigBlueButton supports VoIP. It is also integrated with Asterisk to enable users to call into a conference directly from a regular phone line. Google Voice integration is just another step to further expand the voice capabilities of the system. This project includes investigating ways of integrating and building a working prototype.
   * Difficulty: *Medium* Very open ended and good research project
   * Useful Skills: C, Java, basic knowledge of VoIP, Asterisk
+NOTE: You should no longer apply for this project. Research done by some students shows this project seems very unfeasible. We've very sorry if you had your mind set on this idea! Try choosing another one or creating your own.
+
 
 == Android Client ==
 Exploring ways !BigBlueButton client could be ported to Android, and creating an Android prototype. Challenges include interface issues when working with a small screen on a mobile platform, as well getting the Java RTMP Client to work on the Android JVM. Might be easier if you decide to go with the Android Flash Player plugin. It's up to you.
