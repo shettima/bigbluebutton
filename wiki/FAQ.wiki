@@ -389,6 +389,13 @@ When you're inside the client, righclick, go to settings > microphone icon > sel
 * Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
 
+=== My slides upload but never finish converting! ===
+Try restarting tomcat6, and then red5. On Ubuntu:
+{{{
+sudo /etc/init.d/tomcat6 restart
+sudo /etc/init.d/red5 restart
+}}}
+
 === There is an echo in the voice conference ===
 
 When users the built-in VoIP in !BigBlueButton you want to ensure they are using headphones  or they are muted.
