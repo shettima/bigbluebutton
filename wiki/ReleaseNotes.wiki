@@ -1,24 +1,25 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.64: DRAFT!!! =
-  * * Changed "web" to "users" and "voice" to "listeners" * - We're always trying to make the user interface as clear as possible. The old window names were giving a lot of confusion when trying to help people out. When we say "web window" they think we're talking about the whole browser. So we changed it, and hopefully it'll be a lot more clear.
+= Release 0.64: Lickety-split ** Draft ** =
+  * * Refactored desktop sharing * - Refactored the desktop client so it now uses less CPU.  Refactored the desktop sharing server (bbb-apps-deskshare) so its faster an no longer sends a keyframe every 30 sections. Instead, it only sends a keyframe when new users join the class.
 
-  * * Refactored desktop sharing * - The old desktop sharing was greedy. It consumes all the available CPU on the presenter's computer. It also sent keyframes (the whole screen) every 30 seconds. This generates a burst of traffic and affected performance. We have modified it so that it won't eat up all the CPU and just send parts of the screen that has changed after sending the whole screen when the desktop sharing started.
+  * * Locking of voice participants * - To make it easier to mute  voice participants when there are many of them (i.e > 30).  Muting everyone then unmuting someone is a pain. When logged in as moderator you can now "lock" a participant's state as muted or unmuted.  The benefit is locked o that when you click on mute/unmute all, it won't affect the "locked" participant. In a large meeting, you can "lock" the presenter as unmuted which allows you to freely lock/unlock the other participants without affecting the presenter.
 
-  * * Added More APIs * - Jeremy has added getMeetingInfo and endMeeting APIs. Through the API, a meeting can be ended with everyone being logged out. The getMeetingInfo allows one to query who are the participants joined to the conference.
+  * * API Additions * - Jeremy Thomerson has added new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting) to the APIs.  In particular, the getMeetingInfo allows third-party applications to query the current users in a conference.
 
-  * * Upgraded to Red5 0.9.1 * - we upgraded to the latest Red5 release. This release fixes some important bugs, one of which was the generation of wrong timestamps on video streams.
+  * * Display count of users * - In the Users and Listeners window, the title will now show the a count of users (i.e. Users: 7) when there are more than five entries in the window. 
 
-  * * RPM packages for CentOS 5.4 * - due to popular request, we have provided packages for CentOS 5.4
+  * * Upgraded to Red5 0.9.1 * - We upgraded to the latest latest red5 release. 
 
-  * * Gentoo installation (labs) * - Sebastian provides installation instructions on Gentoo. We have put this in labs area, meaning, we'll support this on a best effort basis.
+  * * RPM packages for CentOS 5.4 * - We now provide RPM packages for installation on CentOS 5.4 (32-bit and 64-bit).
 
-  * * More localization * - Thanks to members of the mailing list who are providing translations for BBB. Stefan has setup a site using Drupal (http://localize.bigbluebutton.de/) where anybody can help translating BBB. DJP has also been very active checking in language contributions. In the next iteration, we want to have everything in place so it will be a lot more easier to contribute and manage translations of BBB.
-  * * Easily manager voice participants * - We have found that it's difficult to manage the voice participants when there are many of them. Muting everyone then unmuting someone is a pain. So we added a "lock". You can now "lock" a participant so that when you click on mute/unmute all, it won't affect the "locked" participant. In a large meeting, you can "lock" the presenter as unmuted which allows you to freely lock/unlock the other participants without affecting the presenter.
+  * * Gentoo installation (labs) * - We have a labs project for installing BigBlueButton on Gentoo using ebuilds.
 
-  * * Simplify presentation window * - We have modified the thumbnails on the presentation window as the previous one interferes with the pointer. We think the new one is simpler and much more cleaner. However, the previous thumbnail was sexier but we try to be as simple as possible.
+  * * Localization * - Thanks to members of the mailing list -- and to DJP for checking in language contributions -- there are now [LocalizationOfBBB sixteen localizations] for BigBlueButton. 
 
-  * * Display number of users and listeners * - We now display the number of participants on the user and listeners window. Once you hit 10 participants, it's difficult to count how many are joined.
+  * * Film strip for selecting slides * - presenter can now select a slide using a "film strip" that appears when you click on the current page number (between the left and right arrows).  (While the "fish eye" selection in BigBlueButton 0.63 looked sexier, it got in the way when the presenter pointed near the bottom of the slides).
+
+Note: Items marked as labs are, well, labs projects.  They might break into little pieces when run.  Since both of the labs projects are related to installation, if you have questions, please post them to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
   
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issues Fixed in BigBlueButton 0.64]
