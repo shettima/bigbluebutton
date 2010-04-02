@@ -56,11 +56,11 @@ Resets the development environment back to using packages.
 == --trunk ==
 Checkout trunk instead of last release
 
-== --svn-username [user] ==
+== --svn-username [!user] ==
 Your Google code username if you want to
                                       commit from the checked out code
 == --clean ==
-Clear all the log files and restart BigBlueButton
+Clear all the log files and restart !BigBlueButton
 
 == --watch ==
 Watch log files for error messages every 2 seconds
