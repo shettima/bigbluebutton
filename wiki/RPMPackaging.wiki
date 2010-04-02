@@ -9,20 +9,30 @@ This document describes how to use RPM packages to install !BigBlueButton on *Ce
 *Notes:* 
   * While are many RPM-based linux distributions available (32-bit and 64-bit), for the moment we focused our development and testing on *CentOS 5.4 (32-bit and 64-bit)*.
   * These RPMs are under development as part of !BigBlueButton 0.64.  While we've tested them ourselves to ensure they work, we recommend you install them on a test machine. 
-  * The final URL for the RPM repository is likely to change before the 0.64 release.
-  * These RPMs are kept up-to-date with the latest in !BigBlueButton 0.64 trunk.
+  * The final URL for the RPM repository is likely to change.
+  * These RPMs are kept up-to-date with the latest in !BigBlueButton trunk.
 
 = How to Install !BigBlueButton on CentOS 5.4 =
 
-To install from RPMs, you can use our development repository, which contains the latest build from trunk.  To make it easy to install, we created a shell script that first adds all the required repositories on CentOS, then installs !BigBlueButton.
+To install from RPMs, you can use either the stable repository or the development repository. The stable repository contains the latest release of !BigBlueButton, while the development repository contains the latest build from trunk.  To make it easy to install, we created a shell script that first adds all the required repositories on CentOS, then installs !BigBlueButton.
 
-First, download the script corresponding to your architecture. 
- * *CentOS 5.4 32-bit:* use the following command to download the install script:
+First, download the script corresponding to your architecture and repository type.
+ * *CentOS 5.4 32-bit Stable:* if you are not sure, this is probably the one you need. Use the following command to download the install script:
+{{{
+wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/stable/bbb-install.sh
+}}}
+
+ * *CentOS 5.4 32-bit Development:* use the following command to download the install script:
 {{{
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev/bbb-install.sh
 }}}
 
- * *CentOS 5.4 64-bit:* use the following command to download the install script:
+ * *CentOS 5.4 64-bit Stable:* use the following command to download the install script:
+{{{
+wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/x86_64/stable/bbb-install.sh
+}}}
+
+ * *CentOS 5.4 64-bit Development:* use the following command to download the install script:
 {{{
 wget http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/x86_64/dev/bbb-install.sh
 }}}
@@ -57,102 +67,11 @@ yum update bbb*
 
 = What does bbb-install do? =
 
-The script bbb-install contains the following contents:
+The script bbb-install adds all the required repositories needed for the installation. It also checks if you have mySQL installed and, if it exists, will ask you for credentials.
 
-{{{
+Please refer to the contents of the script for more information.
 
-# Ensure that root is running
-need_root() {
-        if [ $EUID != 0 ]; then
-                echo "Need to be root to run this option"
-                exit 1
-        fi
-}
-
-addRepositories()
-{
-
-# Adding repository from nginx
-if [ ! "$(yum list installed | grep epel-release)" ]; then
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/5Server/x86_64/epel-release-5-3.noarch.rpm > /dev/null
-fi
-
-# Adding repository for tomcat6
-if [ ! -f /etc/yum.repos.d/jpackage17.repo ]; then
-yum install -y jpackage-utils > /dev/null
-wget http://www.jpackage.org/jpackage17.repo > /dev/null
-cat jpackage17.repo | sed 's/1\.7/5.0/' | sed 's/\[jpack/\[5jpack/' > /etc/yum.repos.d/jpackage5.repo
-mv jpackage17.repo /etc/yum.repos.d/
-fi
-
-# Add BigBlueButton RPM respository
-if [ ! -f /etc/yum.repos.d/bigbluebutton.repo ]; then
-echo "
-[bigbluebutton]
-name=BigBluebutton
-baseurl=http://ec2-67-202-22-38.compute-1.amazonaws.com/centos/5.4/i386/dev
-enabled=1
-gpgcheck=0
-metadata_expire=1m" > /etc/yum.repos.d/bigbluebutton.repo
-fi
-
-# Add asterisk repository (to install asterisk)
-if [ ! -f /etc/yum.repos.d/asterisk.repo ]; then
-echo "
-[asterisk-current]
-name=CentOS-\$releasever - Asterisk - Current
-baseurl=http://packages.asterisk.org/centos/\$releasever/current/\$basearch/
-enabled=1
-gpgcheck=0
-#gpgkey=http://packages.asterisk.org/RPM-GPG-KEY-Digium
-" > /etc/yum.repos.d/asterisk.repo
-fi
-}
-
-isMySQLInstalled()
-{
-	x=$(yum list installed | grep mysql-server)
-
-	if [ "$x" == "" ]; then
-		echo false
-	else
-		echo true
-	fi
-}
-
-deletePreexistingMySQLCredentials()
-{
-	rm -rf /tmp/bigbluebutton-cred.install
-}
-
-promptMySQLCredentials()
-{
-	echo "Setup has detected that you have MySQL installed. Please enter your MySQL username and password to be used during installation."
-
-	echo -n "Enter MySQL username (default is root): "
-	read user
-
-	echo -n "Enter MySQL password (default is blank): "
-
-	stty -echo
-	read password
-	stty echo
-
-	echo ""
-	echo "$user $password" > /tmp/bigbluebutton-cred.install
-}
-
-need_root
-
-echo "Adding required repositories..."
-addRepositories
-
-if [ $(isMySQLInstalled) == "true" ]; then
-	promptMySQLCredentials
-fi
-
-yum -y install bigbluebutton
-}}}
+= Screen Shots =
 
 Here's a screen shot of the script running.
 
