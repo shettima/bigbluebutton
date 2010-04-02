@@ -1,6 +1,11 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 = Release 0.64: Lickety-split ** Draft ** =
+
+_Code named for the speed improvements to desktop sharing_
+
+Released: April XX, 2010
+
   * * Refactored desktop sharing * - Refactored the desktop client so it now uses less CPU.  Refactored the desktop sharing server (bbb-apps-deskshare) so its faster an no longer sends a keyframe every 30 sections. Instead, it only sends a keyframe when new users join the class.
 
   * * Locking of voice participants * - To make it easier to mute  voice participants when there are many of them (i.e > 30).  Muting everyone then unmuting someone is a pain. When logged in as moderator you can now "lock" a participant's state as muted or unmuted.  The benefit is locked o that when you click on mute/unmute all, it won't affect the "locked" participant. In a large meeting, you can "lock" the presenter as unmuted which allows you to freely lock/unlock the other participants without affecting the presenter.
