@@ -6,7 +6,7 @@ _Code named for the speed improvements to desktop sharing_
 
 Released: April XX, 2010
 
-  * * Refactored desktop sharing * - We refactored the desktop sharing applet so it now uses less CPU on the presenter's computer.  We also refactored the desktop sharing server component (bbb-apps-deskshare) so it runs faster and only sends a keyframe when new users join, which results in much less bandwidth usage during a session.
+  * * Faster desktop sharing * - We refactored the desktop sharing applet so it now uses less CPU on the presenter's computer.  We also refactored the desktop sharing server component (bbb-apps-deskshare) so it runs faster and only sends a keyframe when new users join, which results in much less bandwidth usage during a session.
 
   * * Locking voice participants mute/unmute state * - To make it easier for the moderator to manage listeners, such as "mute everyone except the presenter", the moderator can now "lock" a participant's mute/unmuted state in the Listener's window.  When locked, a listener is unaffected by the global mute all/unmute all buttons in the lower left-hand corner of the Listener window.  This lets the moderator lock the presenter as unmuted, then click the global mute all button to mute everyone else.  In addition, after clicking the mute all button, new listeners join as muted ( this is good when a class has started and you don't want latecomers to disturb the lecture).
 
