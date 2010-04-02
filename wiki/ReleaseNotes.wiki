@@ -16,7 +16,7 @@ Released: April XX, 2010
 
   * * New method for slide selection * - The presenter can now jump to a particular slide by clicking the page number button (located between the left and right arrows) and clicking on the slide from the film strip of thumbnails.
 
-  * * Localization * - Thanks to members of the mailing list -- and to DJP for checking in language contributions -- there are now [LocalizationOfBBB sixteen localizations] for BigBlueButton. 
+  * * Localization * - Thanks to members of the mailing list -- and to DJP for checking in language contributions -- there are now [LocalizationOfBBB sixteen localizations] for !BigBlueButton. 
 
   * * RPM packages for CentOS 5.4 * - We now provide RPM packages for installation on CentOS 5.4 (32-bit and 64-bit).
 
