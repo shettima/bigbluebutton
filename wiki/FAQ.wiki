@@ -147,6 +147,10 @@ If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and d
 
 == Installation: Networking ==
 
+=== How do I change the port which !BigBlueButton is accessed from? ===
+
+You can change the port which !BigBlueButton is accessed from using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+
 === How can I provide external access to a !BigBlueButton server behind my firewall? ===
 
 Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.
