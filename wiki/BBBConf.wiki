@@ -54,7 +54,7 @@ Checks out the project from trunk.
 Resets the development environment back to using packages.
 
 == --trunk ==
-Checkout trunk instead of last release
+Checkout trunk instead of last release.  This option is used in front of a --setup-dev command.  Example of a full command: bbb-conf --trunk --setup-dev bbb-web
 
 == --svn-username [[user]] ==
 Your Google code username if you want to
