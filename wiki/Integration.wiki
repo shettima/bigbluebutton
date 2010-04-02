@@ -10,7 +10,7 @@ Sakai is a free and open source Learning Management System. [http://confluence.s
 Is an open source Content Management System. Find the dupal module for BBB [http://drupal.org/project/bbb here]
 
 === Moodle ===
-Moodle is a modular open source Learning Management System with a wide user base. A Moodle plug in is available [http://www.dualcode.com/bigbluebutton/ here]
+Moodle is a modular open source Learning Management System with a wide user base. A Moodle plug in is available [http://moodle.org/mod/data/view.php?d=13&rid=3524&filter=1 here]
 
 === Ruby Gem ===
 To help you integrate !BigBlueButton with your Ruby on Rails app, a ruby gem is [http://code.google.com/p/bigbluebuttongem/ available]
