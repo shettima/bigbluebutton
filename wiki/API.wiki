@@ -1,5 +1,14 @@
 #summary BigBlueButton Third-Party Integration API.
 <wiki:toc max_depth="3" />
+
+= What's New =
+* NOTE:* If you make changes to the API, please document it here so others will know when a certain change occurred. For example, if a parameter has changed from "optional" to "mandatory".
+
+  * * isMeetingRunning * - added in 0.64
+  * * end * - added in 0.64
+  * * getMeetingInfo * - added in 0.64
+  * * getMeetings * - added in 0.64
+
 = Overview = 
 This document outlines the API that is available for integrating !BigBlueButton with other applications. It is currently in draft stage as not all features are available. Features which are not currently implemented will be clearly marked as such.
 
