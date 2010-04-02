@@ -1,10 +1,10 @@
 #summary How to install BigBlueButton on CentOS
 
-*Note: The current document is being phased out and, in the near future, will no longer be supported.
+*Note: The current document will be updated as part of !BigBlueButton 0.64 release.  We recommend waiting until !BigBlueButton 0.64 is released before following these instructions.
 
 *To install !BigBlueButton on CentOS, you can install it using RPM packages by following the instructions available here: http://code.google.com/p/bigbluebutton/wiki/RPMPackaging
 
-The following instructions will guide you to install !BigBlueButton on CentOS. So far the instructions have been tested on CentOS 5.3
+The following instructions will guide you to install !BigBlueButton on CentOS. So far the instructions have been tested on CentOS 5.4
 
 == Instructions ==
 {{{
