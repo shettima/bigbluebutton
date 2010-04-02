@@ -41,7 +41,7 @@ Checks the log files for errors
 
 == --setup-samba ==
 
-This command is only available if you are using the BigBlueButton virtual machine.
+This command is only available if you are using the !BigBlueButton virtual machine.
 
 It sets up a samba share for development.
 
