@@ -6,11 +6,11 @@ _Code named for the speed improvements to desktop sharing_
 
 Released: April XX, 2010
 
-  * * Refactored desktop sharing * - Refactored the desktop client so it now uses less CPU.  Refactored the desktop sharing server (bbb-apps-deskshare) so its faster an no longer sends a keyframe every 30 sections. Instead, it only sends a keyframe when new users join the class.
+  * * Refactored desktop sharing * - Refactored the desktop sharing applet so it now uses less CPU on the presenter's computer.  Refactored the desktop sharing server (bbb-apps-deskshare) so requires less code, runs faster, and only sends a keyframe when new users join.  The
 
-  * * Locking of voice participants * - To make it easier to mute  voice participants when there are many of them (i.e > 30).  Muting everyone then unmuting someone is a pain. When logged in as moderator you can now "lock" a participant's state as muted or unmuted.  The benefit is locked o that when you click on mute/unmute all, it won't affect the "locked" participant. In a large meeting, you can "lock" the presenter as unmuted which allows you to freely lock/unlock the other participants without affecting the presenter.
+  * * Locking voice participants mute/unmute state * - To make it easier to do operations such as "mute everyone except the presenter", the moderator can now "lock" a participant's mute/unmuted state in the Listener's window as muted or unmuted.  A locked participant is unaffected benefit by the global mute all/unmute all buttons in the lower left-hand corner of the Listener window.  When you click mute all, new listeners join as muted (i.e. good for when class is starting and there are latecomers that you don't want disturbing the lecture).
 
-  * * API Additions * - Jeremy Thomerson has added new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting) to the APIs.  In particular, the getMeetingInfo allows third-party applications to query the current users in a conference.
+  * * API Additions * - Jeremy Thomerson has added three new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting).  In particular, the getMeetingInfo call third-party applications to query for the list of current users in a conference. You can see an example of using this call [http://demo.bigbluebutton.org/bigbluebutton/demo/demo4.jsp demo4.jsp].
 
   * * Display count of users * - In the Users and Listeners window, the title will now show the a count of users (i.e. Users: 7) when there are more than five entries in the window. 
 
