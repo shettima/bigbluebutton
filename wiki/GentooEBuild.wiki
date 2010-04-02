@@ -2,7 +2,9 @@
 
 = Introduction =
 
-This document describes how to install !BigBlueButton from a gentoo ebuild on a 32bit install. The installation time required depends on how many dependencies you have installed and on the speed on your computer.
+Note: This is a !BigBlueButton Labs project and, as such, is not part of the core release.  If you have questions, please post them to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
+
+This document describes how to install !BigBlueButton from a gentoo ebuild on a 32-bit install. The installation time required depends on how many dependencies you have installed and on the speed on your computer.
 
 =How to install !BigBlueButton on your computer=
 
