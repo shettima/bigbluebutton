@@ -53,7 +53,6 @@ To resolve this, all you need to do is run this command:
 bbb-conf --setip <YOUR-IP>
 }}}
 
-
 = How to make simple changes to !BigBlueButton =
 We will start by making a simple change to the !BigBlueButton Flash client (bbb-client).  
 
@@ -69,6 +68,11 @@ When building the client locally on the VM, the output will go into `/home/first
   bbb-conf --setup-dev bbb-client
 }}}
 
+You can also checkout from trunk by adding the --trunk option:
+
+{{{
+  bbb-conf --trunk --setup-dev bbb-client
+}}}
 
 You will be prompted to enter your password for `firstuser` as the script needs root access to run.   This script does the following:
 
@@ -142,6 +146,12 @@ The !BigBlueButton web interface is written in grails, so the development enviro
   bbb-conf --setup-dev bbb-web
 }}}
 
+You can also checkout from trunk by adding the --trunk option:
+
+{{{
+  bbb-conf --trunk --setup-dev bbb-client
+}}}
+
 This script does the following steps:
 
   # svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web
@@ -183,6 +193,12 @@ To setup a development environment for bbb-apps, enter the following command
 
 {{{
   bbb-conf --setup-dev bbb-apps
+}}}
+
+You can also checkout from trunk by adding the --trunk option:
+
+{{{
+  bbb-conf --trunk --setup-dev bbb-client
 }}}
 
 This will 
