@@ -8,21 +8,20 @@ Released: April XX, 2010
 
   * * Faster desktop sharing * - We refactored the desktop sharing applet so it now uses less CPU on the presenter's computer.  We also refactored the desktop sharing server component (bbb-apps-deskshare) so it runs faster and only sends a keyframe when new users join, which results in much less bandwidth usage during a session.
 
-  * * Locking voice participants mute/unmute state * - To make it easier for the moderator to manage listeners, such as "mute everyone except the presenter", the moderator can now "lock" a participant's mute/unmuted state in the Listener's window.  When locked, a listener is unaffected by the global mute all/unmute all buttons in the lower left-hand corner of the Listener window.  This lets the moderator lock the presenter as unmuted, then click the global mute all button to mute everyone else.  In addition, after clicking the mute all button, new listeners join as muted ( this is good when a class has started and you don't want latecomers to disturb the lecture).
+  * * Fine-grain listener management * - To make it easier for the moderator to manage listeners, such as "mute everyone except the presenter", the moderator can now "lock" a participant's mute/unmuted state in the Listener's window.  When locked, a listener is unaffected by the global mute all/unmute all buttons in the lower left-hand corner of the Listener window.  This lets the moderator lock the presenter as unmuted, then click the global mute all button to mute everyone else.  In addition, after clicking the mute all button, new listeners join as muted (this is good when a class has started and you don't want latecomers to disturb the lecture).
 
-  * * API Additions * - Jeremy Thomerson has added three new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting).  In particular, getMeetingInfo enables external applications to query the list of users in a conference. For example, see  [http://demo.bigbluebutton.org/bigbluebutton/demo/demo4.jsp demo4.jsp] for how you can use this call in your applications.
+  * * API Additions * - Jeremy Thomerson has added three new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting).  In particular, getMeetingInfo enables external applications to query the list of users in a conference. See this  [http://demo.bigbluebutton.org/bigbluebutton/demo/demo4.jsp api example] that uses getMeetingInfo.
 
-  * * Display count in Users and Listeners window* - When there are more than five participants in a window, the title will include a count of participants (i.e. Users: 7, Listeners: 9). 
+  * * Show number of participants* - When there are more than five participants in either the Users or Listeners window, the title of the window will show a count (i.e. Users: 7, Listeners: 9). 
 
-  * * Upgraded to Red5 0.9.1 * - We upgraded to the latest latest red5 release. 
+  * * New method for slide selection * - The presenter can now jump to a particular slide by clicking the page number button (located between the left and right arrows) and clicking on the slide from the film strip of thumbnails.
+
+  * * Localization * - Thanks to members of the mailing list -- and to DJP for checking in language contributions -- there are now [LocalizationOfBBB sixteen localizations] for BigBlueButton. 
 
   * * RPM packages for CentOS 5.4 * - We now provide RPM packages for installation on CentOS 5.4 (32-bit and 64-bit).
 
   * * Gentoo installation (labs) * - We have a labs project for installing BigBlueButton on Gentoo using ebuilds.
 
-  * * Localization * - Thanks to members of the mailing list -- and to DJP for checking in language contributions -- there are now [LocalizationOfBBB sixteen localizations] for BigBlueButton. 
-
-  * * Select a particular slide via film strip * - The presenter can now jump to a particular slide using a "film strip" that appears when clicking on the current page number button (located between the left and right arrows).
 
 Note: Items marked as labs are, well, labs projects.  They might break into little pieces when run.  Since both of the labs projects are related to installation, if you have questions, please post them to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
   
