@@ -18,7 +18,7 @@ Released: April 3, 2010
 
   * * Localization * - Thanks to members of the mailing list -- and to DJP for checking in language contributions -- there are now [LocalizationOfBBB sixteen localizations] for !BigBlueButton. 
 
-  * * RPM packages for CentOS 5.4 * - We now provide RPM packages for installation on CentOS 5.4 (32-bit and 64-bit).
+  * * RPM packages for CentOS 5.4 * - We now provide [RPMPackaging RPM packages] for installation on CentOS 5.4 (32-bit and 64-bit).
   
 == Fixed Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issues Fixed in BigBlueButton 0.64]
