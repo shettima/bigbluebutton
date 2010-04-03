@@ -10,7 +10,7 @@ Released: April 3, 2010
 
   * * Fine-grain listener management * - To make it easier for the moderator to manage listeners, such as "mute everyone except the presenter", the moderator can now "lock" a participant's mute/unmuted state in the Listener's window.  When locked, a listener is unaffected by the global mute all/unmute all buttons in the lower left-hand corner of the Listener window.  This lets the moderator lock the presenter as unmuted, then click the global mute all button to mute everyone else.  In addition, after clicking the mute all button, new listeners join as muted (this is good when a class has started and you don't want latecomers to disturb the lecture).
 
-  * * API Additions * - Jeremy Thomerson has added three new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting).  In particular, getMeetingInfo enables external applications to query the list of users in a conference. See this  [http://demo.bigbluebutton.org/bigbluebutton/demo/demo4.jsp api example] that uses getMeetingInfo.
+  * * API Additions * - Jeremy Thomerson has added three new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting).  In particular, getMeetingInfo enables external applications to query the list of users in a conference. See this [http://demo.bigbluebutton.org/bigbluebutton/demo/demo4.jsp api example] that uses getMeetingInfo.
 
   * * Show number of participants * - When there are more than five participants in either the Users or Listeners window, the title of the window will show a count (i.e. Users: 7, Listeners: 9). 
 
