@@ -11,9 +11,10 @@ In response to these requests, we've created a Ubuntu-based virtual machine (VM)
 Let's get a !BigBlueButton VM going.  
 
 Prerequisites:
-  * VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
-  * A DHCP Server for the VM to acquire an IP address on boot
-  * The VM must be able to connect to the internet to update packages
+  # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
+  # A DHCP Server for the VM to acquire an IP address on boot
+
+The second point is key: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of BigBlueButton.
 
 == Installing !BigBlueButton VM  ==
 
