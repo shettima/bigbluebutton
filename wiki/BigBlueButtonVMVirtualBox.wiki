@@ -1,0 +1,41 @@
+#summary Running the BigBlueButton VM in Virtual Box
+
+== Installing the !BigBlueButton VM using !VirtualBox ==
+
+As an alternative to using VMWare player, you can use !VirtualBox to run the VMWare images.  !VirtualBox has more features than VMWare Player including snapshots and guest OS additions which are very useful for running Ubuntu in desktop mode.
+
+What you need:
+ [BigBlueButtonVM Latest BigBlueButton VM]
+ [http://www.virtualbox.org/wiki/Downloads VirtualBox]
+
+1. Create a new !VirtualBox VM
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step01.jpg
+
+2. Name it and select Linux and Ubuntu for OS and Distribution
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step02.jpg
+
+3. Set memory size
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step03.jpg
+
+4. Use an existing disk, the one for !BigBlueButton VM
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step04.jpg
+
+5. Click Add
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step05.jpg
+
+6. Select the !BigBlueButton .vmdk file which you downloaded
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step06.jpg
+
+7. Click select
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step07.jpg
+
+8. Click start to run
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step08.jpg
