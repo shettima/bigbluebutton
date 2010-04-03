@@ -51,7 +51,7 @@ Note: Due to an upgrade to OpenOffice 3.2, you'll need to restart the VM after t
 
 == Installing the !BigBlueButton VM using !VirtualBox ==
 
-See BigBlueButtonVMVirtualBox.
+See [BigBlueButtonVMVirtualBox Running BigBlueButton VM in Virtual Box].
 
 == Running the !BigBlueButton VM ==
 
