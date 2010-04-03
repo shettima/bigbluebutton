@@ -12,7 +12,7 @@ Released: April 3, 2010
 
   * * API Additions * - Jeremy Thomerson has added three new API calls: getMeetings (returns an XML file listing all the active meetings), getMeetingInfo (get information on a specific meeting), and end (end a specific meeting).  In particular, getMeetingInfo enables external applications to query the list of users in a conference. See this  [http://demo.bigbluebutton.org/bigbluebutton/demo/demo4.jsp api example] that uses getMeetingInfo.
 
-  * * Show number of participants* - When there are more than five participants in either the Users or Listeners window, the title of the window will show a count (i.e. Users: 7, Listeners: 9). 
+  * * Show number of participants * - When there are more than five participants in either the Users or Listeners window, the title of the window will show a count (i.e. Users: 7, Listeners: 9). 
 
   * * New method for slide selection * - The presenter can now jump to a particular slide by clicking the page number button (located between the left and right arrows) and clicking on the slide from the film strip of thumbnails.
 
@@ -22,9 +22,10 @@ Released: April 3, 2010
   
 == Fixed Issues ==
 
-  * [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary See Issues Fixed in BigBlueButton 0.64]
+  * See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.64&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.64]
 
 == Known Issues ==
+
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=419&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 419] Viewers are unable to mute/unmute themselves
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=357&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 357] Uploading a presentation overwrites a previous presentation with the same name
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=467&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 467] Creating a meeting with a blank meetingID overrides any previous meetings with blank meetingIDs
