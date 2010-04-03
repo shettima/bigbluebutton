@@ -5,8 +5,8 @@
 As an alternative to using VMWare player, you can use !VirtualBox to run the VMWare images.  !VirtualBox has more features than VMWare Player including snapshots and guest OS additions which are very useful for running Ubuntu in desktop mode.
 
 What you need:
- [BigBlueButtonVM Latest BigBlueButton VM]
- [http://www.virtualbox.org/wiki/Downloads VirtualBox]
+  * [BigBlueButtonVM Latest BigBlueButton VM]
+  * [http://www.virtualbox.org/wiki/Downloads VirtualBox]
 
 1. Create a new !VirtualBox VM
 
