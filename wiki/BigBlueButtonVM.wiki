@@ -18,7 +18,7 @@ The second point is key: the VM must be able to connect to the internet to updat
 
 == Installing !BigBlueButton VM  ==
 
-  1.  Download and uncompress the [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-01-25.zip BigBlueButton 0.63 VM] 
+  1.  Download and uncompress the [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-04-02.zip BigBlueButton 0.64 VM] 
 
   2.  Open the enclosed *ubuntu-vmw6* folder.
 
