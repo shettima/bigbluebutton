@@ -1,10 +1,10 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.64: Lickety-split ** Draft ** =
+= Release 0.64: Lickety-split =
 
 _Code named for the speed improvements to desktop sharing_
 
-Released: April XX, 2010
+Released: April 3, 2010
 
   * * Faster desktop sharing * - We refactored the desktop sharing applet so it now uses less CPU on the presenter's computer.  We also refactored the desktop sharing server component (bbb-apps-deskshare) so it runs faster and only sends a keyframe when new users join, which results in much less bandwidth usage during a session.
 
