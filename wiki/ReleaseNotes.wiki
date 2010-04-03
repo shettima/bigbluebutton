@@ -28,7 +28,7 @@ Released: April XX, 2010
 == Known Issues ==
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=419&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 419] Viewers are unable to mute/unmute themselves
  * [http://code.google.com/p/bigbluebutton/issues/detail?id=357&sort=priority&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 357] Uploading a presentation overwrites a previous presentation with the same name
- * [http://code.google.com/p/bigbluebutton/issues/detail?id=467colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 467] Creating a meeting with a blank meetingID overrides any previous meetings with blank meetingIDs
+ * [http://code.google.com/p/bigbluebutton/issues/detail?id=467&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Issue 467] Creating a meeting with a blank meetingID overrides any previous meetings with blank meetingIDs
 
 
 = Release 0.63: Red Dot =
