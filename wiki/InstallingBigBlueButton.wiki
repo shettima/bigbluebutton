@@ -133,9 +133,9 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 == Install red5 ==
 {{{
   cd /tmp
-  wget http://bigbluebutton.org/downloads/0.63/fedora-install/red5-0.8.tar.gz
-  tar zxvf red5-0.8.tar.gz
-  mv /tmp/red5-0.8 /usr/share/red5
+  wget http://bigbluebutton.org/downloads/0.64/red5-0.9.1.tar.gz
+  tar xvf red5-0.9.1.tar.gz
+  mv /tmp/red5-0.9.1 /usr/share/red5
 }}}
 
 Create red5 user
@@ -148,8 +148,6 @@ Assign proper permissions
   chown -R root.root /usr/share/red5
   chown -R red5:adm /usr/share/red5/log
   chmod 755 /usr/share/red5/log
-  chown -R red5:adm /usr/share/red5/work
-  chmod 755 /usr/share/red5/work
   chgrp red5 /usr/share/red5/webapps
   chmod 775 /usr/share/red5/webapps
 }}}
@@ -176,24 +174,6 @@ Run red5
   sudo ./red5 start
 }}}
 
-== Install oflaDemo to test if Red5 works ==
-From your browser, visit
-
-{{{
-http://<IP>:5080/
-}}}
-
-Click on "Click here to install demos" and then choose oflaDemo java 6.
-
-Once the demo has been installed, visit
-{{{
-http://<IP>:5080/demos/ofla_demo.html
-}}}
-
-Edit rtmp://< IP >/oflaDemo and click connect
-
-You would see a list of available videos. Select one to play.
-
 == Install Asterisk ==
 {{{
   apt-get -y install asterisk
@@ -202,24 +182,22 @@ You would see a list of available videos. Select one to play.
 
 == Modify Extensions ==
 {{{
-wget http://bigbluebutton.org/downloads/0.63/bbb_extensions.conf
+wget http://bigbluebutton.org/downloads/0.64/bbb_extensions.conf
 mv bbb_extensions.conf /etc/asterisk/
 echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 }}}
 
 == Create SIP accounts ==
 {{{
-wget http://bigbluebutton.org/downloads/0.63/bbb_sip.conf
+wget http://bigbluebutton.org/downloads/0.64/bbb_sip.conf
 mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 }}}
 
-Please take a peek at {{{asterisk-sip.conf}}} to see what it does.
-
 == Install AppKonference ==
 
 {{{
-wget http://bigbluebutton.org/downloads/0.63/ubuntu-install/app_konference.so
+wget http://bigbluebutton.org/downloads/0.64/app_konference.so
 mv app_konference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/app_konference.so
 # set autoload module BigBlueButton conference
@@ -250,7 +228,7 @@ echo "#include \"manager.d/*.conf\"" >> /etc/asterisk/manager.conf
 == Configure Nginx ==
 Be sure to replace < YOUR-IP > with your IP or domain.
 {{{
-  wget http://bigbluebutton.org/downloads/0.63/nginx-bigbluebutton.conf
+  wget http://bigbluebutton.org/downloads/0.64/nginx-bigbluebutton.conf
   cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
   rm nginx-bigbluebutton.conf
 }}}
@@ -268,7 +246,7 @@ apt-get install openoffice.org
 == Configure OpenOffice to start as a service ==
 {{{
 cd /etc/init.d
-wget http://www.bigbluebutton.org/downloads/0.63/ubuntu-install/bbb-openoffice-headless
+wget http://www.bigbluebutton.org/downloads/0.64/ubuntu-install/bbb-openoffice-headless
 
 # start the openoffice server
 chmod +x /etc/init.d/bbb-openoffice-headless
@@ -282,13 +260,12 @@ service bbb-openoffice-headless start
 == Download !BigBlueButton ==
 {{{ 
 cd /tmp
-wget http://bigbluebutton.org/downloads/0.63/packages/bbb-default.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton.war
-wget http://bigbluebutton.org/downloads/0.63/packages/video.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/bigbluebutton-apps.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/client.tar.gz
-wget http://bigbluebutton.org/downloads/0.63/packages/sip.tar.gz
-wget http://www.bigbluebutton.org/sites/all/releases/latest-release/deskshare.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/bbb-default.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/bigbluebutton.war
+wget http://bigbluebutton.org/downloads/0.64/packages/video.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/bigbluebutton-apps.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/client.tar.gz
+wget http://bigbluebutton.org/downloads/0.64/packages/sip.tar.gz
 }}}
 
 		
@@ -430,29 +407,7 @@ mysql>
  cp /tmp/bigbluebutton-apps.tar.gz ./
  
  tar zxvf bigbluebutton-apps.tar.gz
- mv webapps/bigbluebutton ./
- rm -rf bigbluebutton-apps.tar.gz webapps/
-}}}
-
-== Edit bbb-apps properties ==
-{{{
- vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties
-}}}
-
-Your properties file should look like this.
-{{{
-# Location for recordings
-recordingsDirectory=/var/bigbluebutton
-
-# These properties are for Asterisk Management Interface (AMI)
-ami.host=127.0.0.1
-ami.port=5038
-ami.username=bbb
-ami.password=secret
-
-# The conference application to use. Valid values[meetme, konference]
-asterisk.application=konference
-version=0.63
+ rm -rf bigbluebutton-apps.tar.gz
 }}}
 
 == Install bbb-deskshare-app ==
@@ -477,36 +432,6 @@ version=0.63
  cp /tmp/sip.tar.gz ./
  tar zxvf sip.tar.gz
  rm sip.tar.gz
-}}}
-
-Edit properties
-{{{
- vi /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
-}}}
-
-Your properties file should look like this.
-{{{
-# The address of your asterisk server
-sip.server.host=127.0.0.1
-
-# The start/stop SIP ports that the application is going
-# to use to connect to the asterisk server
-startSIPPort=6070
-stopSIPPort=6099
-
-# The start/stop RTP port the application is going to use
-# for the media stream.
-startRTPPort=3000
-stopRTPPort=3029
-
-# An extension pattern, in case your asterisk extensions.conf
-# uses a naming convetion for your meeting rooms
-# e.g. conf-85115 instead of just 85115		
-callExtensionPattern={0}
-
-# If you want mjsip stack (red5/log/*access*.log) to minimize the amount of logs it
-# generates, set this to a lower value (e.g. 3).
-sipStackDebugLevel=3
 }}}
 
 == Install bbb-default ==
@@ -538,6 +463,7 @@ String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
   cp /tmp/client.tar.gz ./
   tar zxvf client.tar.gz
   rm client.tar.gz
+  mv bin client
 }}}
 
 == Edit client config ==
@@ -606,7 +532,7 @@ Your config.xml should look something like:
 </config>
 }}}
 
-Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.159/< YOUR-IP >/g
+Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
 
 == Installing Desktop Sharing (optional) ==
 {{{
@@ -617,9 +543,9 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 #
 #     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
 #
-
-cp /tmp/bbb-install/deskshare.tar.gz /opt/red5-0.8/webapps/
-cd /opt/red5-0.8/webapps
+wget http://bigbluebutton.org/downloads/0.64/packages/deskshare.tar.gz
+cp /tmp/deskshare.tar.gz /usr/share/red5/webapps/
+cd /usr/share/red5/webapps
 tar zxvf deskshare.tar.gz
 rm -f deskshare.tar.gz
 
@@ -647,6 +573,7 @@ chmod 777 /var/log/bigbluebutton/bbb-web.log
 
 # restart server
 
+service nginx restart
 service activemq restart
 service asterisk restart
 service red5 restart
