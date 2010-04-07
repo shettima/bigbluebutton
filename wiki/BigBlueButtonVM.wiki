@@ -4,17 +4,15 @@
 
 = How to setup your own !BigBlueButton Server in a few minutes =
 
-Many universities and colleges have told us they wanted to run their own version  !BigBlueButton behind their firewall.  In addition, our developers have asked us for ways to shorten the edit-compile-check cycle when extending  !BigBlueButton.
+Many universities and colleges have told us they want to run their own version  !BigBlueButton behind their firewall.  In addition, developers have asked how to setup a development environment to enhance and extend !BigBlueButton.
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a  !BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac.  This VM is also a full [DevelopingBBB development environment] -- it's preconfigured to check out code from !BigBlueButton Google Code repository, make local changes, and, with a single command, re-compile the code and see it run in your VM.  
-
-Let's get a !BigBlueButton VM going.  
+In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a !BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac.  We've also pre-configured the VM so it can serve as a full [DevelopingBBB development environment].  We've added scripts (using `bbb-conf`) to make it easy for a developer to checkout !BigBlueButton's source from Google Code repository, make local changes, and, with a few commands, re-compile various components of !BigBlueButton for development and testing.  
 
 Prerequisites:
   # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
   # A DHCP Server for the VM to acquire an IP address on boot
 
-The second point is key: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of BigBlueButton.
+The second point is key: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of !BigBlueButton.
 
 == Installing !BigBlueButton VM  ==
 
