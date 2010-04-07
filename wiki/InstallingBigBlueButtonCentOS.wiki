@@ -289,7 +289,7 @@ tar xvf bbb-default.tar.gz
 mv web /var/www/bigbluebutton-default
 }}}
 
-Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the BigBlueButtonURL. Be sure to replace < YOUR-GUID > with the GUID we generated earlier.
 {{{
 echo "<%!
 // This is the security salt that must match the value set in the BigBlueButton server
