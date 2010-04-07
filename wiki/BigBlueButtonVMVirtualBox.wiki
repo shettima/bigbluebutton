@@ -38,6 +38,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step07.jpg
 
 8. Click start to run
 
-NOTE: If you are using VirtualBox inside ubuntu, you have to have PAE on, and all the other System/CPU options off, the option is under the system "Processor" settings.  Called "Enable PAE/NX"
+NOTE: If you are using !VirtualBox inside ubuntu, you have to have PAE on, and all the other System/CPU options off, the option is under the system "Processor" settings.  Called "Enable PAE/NX"
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step08.jpg
