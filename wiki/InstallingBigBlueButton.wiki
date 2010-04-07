@@ -609,7 +609,9 @@ update-rc.d -f script_name start 99 2 3 4 5 .
 
 You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
 
-== Using MeetMe ==
+== Using !MeetMe ==
+*NOTE:* You only need to through the steps below if you want to use meetme instead of appKonference.
+
 By default, !BigBlueButton uses AppKonference for voice conferencing. If you wish to use MeetMe instead, you need to install dahdi and enable MeetMe in !BigBlueButton's configuration.
 
 === Install Dahdi ===
