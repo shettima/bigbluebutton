@@ -255,11 +255,33 @@ On Windows:
 == Videos on how to develop with different bbb components ==
 === Client ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client video]
-=== Web-app ===
+
+=== BBB Commons ===
+The bbb-commons contain classes that are common to bbb-web and bbb-apps.
+
+ * Checkout bbb-commons-message from trunk
+ * Compile it and upload to your local repo {{{/home/firstuser/dev/repo}}} (assuming you are using the BBB VM as dev environment)
+{{{
+  gradle jar  --- compiles the classes
+  gradle uploadArchives --- copies the jar file to /home/firstuser/dev/repo
+
+}}}
+
+=== BBB Web ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web video]
+
+BBB web depends on bbb-commons for some common classes. Once you have checked out (manually, not using bbb-conf) bbb-web from trunk, you need to issue the following
+{{{
+  gradle copyToLib --- downloads all dependencies specifically bbb-commons from local repo
+  
+  do your development
+
+  ant --- to start bbb-web
+}}}
+
 NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
-=== Server apps ===
+=== BBB apps ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps video]
 {{{
 Use these commands instead of the ant commands for 0.63:
