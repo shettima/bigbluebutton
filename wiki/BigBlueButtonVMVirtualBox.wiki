@@ -38,4 +38,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step07.jpg
 
 8. Click start to run
 
+*If you are using VirtualBox inside ubuntu, you have to have PAE on, and all the other System/CPU options off
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/FAQ/step08.jpg
