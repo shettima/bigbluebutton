@@ -2,7 +2,7 @@
 
 = Release 0.64: Lickety-split =
 
-_Code named for the speed improvements to desktop sharing_
+_Code named for the reduced bandwidth and speed improvements to desktop sharing_
 
 Released: April 3, 2010
 
