@@ -20,11 +20,14 @@ DJP, one of the !BigBlueButton developers, will download and incorporate the lan
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas AT gmail DOT com || 0.64 ||
 || Italian || it_IT || Federico Corradino || spiorfeus AT gmail DOT com || 0.64 ||
 || Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas AT gmail DOT com || 0.64 ||
+|| Netherland || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.64 ||
 || Netherland || nl_NL || Walter Tak || walter AT waltertak DOT com ||0.63 ||
+|| Portuguese || pt_PT || Dream Team || fafvaz AT gmail DOT com || 0.63 ||
 || Portuguese (Brazilian) || pt_BR || Márcio Moraes || marciopanto AT gmail DOT com || 0.63 ||
 || Polish || pl_PL || Piotr Anusiewicz || niedakh AT gmail DOT com || 0.63 ||
 || Spanish || es_ES || Néstor || n3storm AT gmail DOT com || 0.64 ||
 || Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33 AT gmail DOT com || 0.64 ||
+|| Romanian || ro_RO || Claudius Tiberiu Iacob || claudius.iacob AT gmail DOT com || 0.64 ||
 || Russian || ru_RU || Mike Ozornin || mike.ozornin AT gmail DOT com || 0.64 ||
 || Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.64 ||
 
