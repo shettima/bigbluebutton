@@ -17,7 +17,7 @@ Displays a help message with a list of available options.
 == --version ==
 Displays a help message with a list of available options.
 
-== --setip < Host > : < Port > ==
+== --setip < Host > [ : < Port > ] ==
 
 Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
