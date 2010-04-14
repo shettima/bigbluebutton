@@ -17,7 +17,7 @@ Displays a help message with a list of available options.
 == --version ==
 Displays a help message with a list of available options.
 
-== --setip < Host > [ : < Port > ] ==
+== --setip < Host > : < Port > ==
 
 Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
@@ -42,9 +42,9 @@ or
 
 Checks current settings and outlines any potential problems.
 
-== --conference [konference|meetme] ==
+== --conference _conference_module_ ==
 
-Switches conference module in Asterisk
+Switches conference module in Asterisk.  Valid choices are `konference` or `meetme`.
 
 == --debug ==
 
