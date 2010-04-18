@@ -7,10 +7,13 @@
 
 == General Installation ==
 
-=== What are the minimum requirements to run !BigBlueButton? ===
-We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.
+=== What are the minimum hardware requirements to run !BigBlueButton? ===
+We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.  You'll need good upstream and downstream bandwidth on the server. 
 
-=== Can I install !BigBlueButton on a server without root access? ===
+=== What operating system do you recomment? ===
+As of !BigBlueButton 0.64, we recommend you install and run on Ubuntu 9.04 32-bit. We have [InstallationUbuntu Ubuntu packages] available that have been in developed and tested since December 2008.  Installation time is about 15 minutes for a full !BigBlueButton server.
+
+=== I have a shared server with cPanel access.  Can I install !BigBlueButton? ===
 Unfortunately no.  BigBlueButton requires a number of server components that must be installed with root access.  See OpenSourceComponents.
 
 === Can I install !BigBlueButton on CentOS? ===
@@ -19,11 +22,6 @@ Yes, you can! [InstallingBigBlueButtonCentOS CentOS instructions]
 === Can I install on Windows? ===
 Short answer: no. While it's possible to manually install each of the individual OpenSourceComponents needed to run BBB on Windows, we haven't tested it. If you only have a Windows hosts, you can have a full !BigBlueButton server running in a few minutes using [http://www.vmware.com/products/player/ VMWare Player] and the BigBlueButtonVM.
 
-=== Can I install on Debian? ===
-Installing on Debian should be similar to the Ubuntu installation. Let us know if you run into problems and we'll help you set it up.
-
-=== Can I install on !RedHat, Fedora? ===
-This should be similar to CentOS, but we haven't tried it.  Again, let us know if you run into problems.
 
 === I install using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
 
