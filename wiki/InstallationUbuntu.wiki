@@ -4,9 +4,13 @@
 
 = Installing !BigBlueButton using Ubuntu Packages =
 
-*NOTE:* As of !BigBlueButton 0.63, we currently support installation from packages on *Ubuntu 9.04 32-bit*.  We intend to offer support for other distributions in future releases of !BigBlueButton.
+*NOTE:* As of !BigBlueButton 0.64, we currently support installation from packages on *Ubuntu 9.04 32-bit*.  If you are attempting to install on a variation of Ubuntu, these packages might work, but we recommend that you
 
-It's very easy to get a  !BigBlueButton server up and running on any ***Ubuntu 9.04 32-bit***.  All you need is five commands and about ten minutes (depending on your download speed).
+  # Search through [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] for your variation of Ubuntu.  
+  # Post any new questions to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
+
+
+Why only *Ubuntu 9.04 32-bit* for the moment?  In a word: quality.  We want to have a really good reference implementation of !BigBlueButton that we know works out-of-the-box on a given setup for Ubuntu, rather than support ten different setups that all have small problems.
 
 == Prerequisites ==
 
