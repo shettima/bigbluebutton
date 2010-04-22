@@ -138,6 +138,27 @@ Then restart nginx.
    /etc/init.d/nginx restart
 }}}
 
+=== Setting up Flex Builder to work with the client ===
+If you would like to develop the client using Flex Builder, you can follow these steps:
+  * Install Flex Builder on your Windows/Mac machine.
+  * Setup samba on the VM and mount the VM drive as described earlier in this document.
+  * In Flex, create a new project by going to New>Flex Project.
+  ** For the name of the project enter bbb-client
+  ** For project location, uncheck 'Use Default Location' and enter the location on the mounted VM drive where the client code is. For example W:\dev\bbb-client
+  ** Click next, and in the output folder, instead of 'bin-debug', put 'bin'
+  ** Click finish. It may take several minutes for this operation to complete, be patient.
+  * Once this is done, right click on the project, go to properties>Flex Modules. Add these files to the modules list:
+  ** src/ChatModule.mxml
+  ** src/DeskShareModule.mxml
+  ** src/HighlighterModule.mxml
+  ** src/ListenersModule.mxml
+  ** src/PhoneModule.mxml
+  ** src/PresentModule.mxml
+  ** src/VideoconfModule.mxml
+  ** src/ViewersModule.mxml
+  * Change all the IP addresses in src/conf/config.xml to point to your VM IP address
+  * Compile the client in Flex Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flex Builder environment.
+
 == Making changes to the !BigBlueButton web interface: bbb-web ==
 
 The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
