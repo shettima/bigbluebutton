@@ -159,6 +159,8 @@ If you would like to develop the client using Flex Builder, you can follow these
   * Change all the IP addresses in src/conf/config.xml to point to your VM IP address
   * Compile the client in Flex Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flex Builder environment.
 
+This approach is limited in the sense that you can't use the Run button within Flex to launch the client. You also can't use the Flex debugger. We're working on a way to make this possible. Instructions will be posted here when available.
+
 == Making changes to the !BigBlueButton web interface: bbb-web ==
 
 The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
