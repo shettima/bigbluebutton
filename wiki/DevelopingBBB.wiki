@@ -1,6 +1,6 @@
 #summary How to develop BigBlueButton.
 
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 
 
 = Setting up a !BigBlueButton Development Environment =
