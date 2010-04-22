@@ -148,14 +148,14 @@ If you would like to develop the client using Flex Builder, you can follow these
     * Click next, and in the output folder, instead of 'bin-debug', put 'bin'
     * Click finish. It may take several minutes for this operation to complete, be patient.
   * Once this is done, right click on the project, go to properties>Flex Modules. Add these files to the modules list:
-    * !src/ChatModule.mxml
-    * !src/DeskShareModule.mxml
-    * !src/HighlighterModule.mxml
-    * !src/ListenersModule.mxml
-    * !src/PhoneModule.mxml
-    * !src/PresentModule.mxml
-    * !src/VideoconfModule.mxml
-    * !src/ViewersModule.mxml
+    * src/!ChatModule.mxml
+    * src/!DeskShareModule.mxml
+    * src/!HighlighterModule.mxml
+    * src/!ListenersModule.mxml
+    * src/!PhoneModule.mxml
+    * src/!PresentModule.mxml
+    * src/!VideoconfModule.mxml
+    * src/!ViewersModule.mxml
   * Change all the IP addresses in src/conf/config.xml to point to your VM IP address
   * Compile the client in Flex Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flex Builder environment.
 
