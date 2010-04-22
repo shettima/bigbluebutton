@@ -276,6 +276,8 @@ On Windows:
 
 
 == Videos on how to develop with different bbb components ==
+*NOTE*: These videos were made for version 0.62 of bigbluebutton and are therefore out of date and of limited use. We will be updating them soon.
+
 === Client ===
  * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client video]
 
