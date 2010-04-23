@@ -30,6 +30,7 @@ DJP, one of the !BigBlueButton developers, will download and incorporate the lan
 || Romanian || ro_RO || Claudius Tiberiu Iacob || claudius.iacob AT gmail DOT com || 0.64 ||
 || Russian || ru_RU || Mike Ozornin || mike.ozornin AT gmail DOT com || 0.64 ||
 || Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.64 ||
+|| Turkish|| tr_TR || Ceyhun Kazel || ceyhunkazel AT gmail DOT com || 0.64 ||
 
 == Technical Background  ==
 
