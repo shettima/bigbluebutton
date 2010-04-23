@@ -1,19 +1,12 @@
-#summary List of 3rd party Systems BigBlueButton integrates with.
+#summary List of 3rd party Systems and libraries that integrate with BigBlueButton.
 
 == Introduction ==
 If you don't see your System bellow, feel free to request an integration on our [http://groups.google.com/group/bigbluebutton-dev/ mailing list].
 
-=== Sakai ===
-Sakai is a free and open source Learning Management System. [http://confluence.sakaiproject.org/display/BBB/Home Sakai Integration]
-
-=== Drupal ===
-Is an open source Content Management System. Find the dupal module for BBB [http://drupal.org/project/bbb here]
-
-=== Moodle ===
-Moodle is a modular open source Learning Management System with a wide user base. A Moodle plug in is available [http://moodle.org/mod/data/view.php?d=13&rid=3524&filter=1 here]
-
-=== Ruby Gem ===
-To help you integrate !BigBlueButton with your Ruby on Rails app, a ruby gem is [http://code.google.com/p/bigbluebuttongem/ available]
-
-=== Chrome extension ===
-To help with development and testing, or if you just want to learn quickly how the !BigBlueButton API works, download the !BigBlueButton Chrome [https://chrome.google.com/extensions/detail/ncbonhmhjnamefpmmjdpbohnkbeliehb extension].
+== List of Systems BigBlueButton integrates with ==
+  * [http://confluence.sakaiproject.org/display/BBB/Home Sakai]
+  * [http://drupal.org/project/bbb Drupal]
+  * [http://moodle.org/mod/data/view.php?d=13&rid=3524&filter=1 Moodle]
+  * [http://code.google.com/p/bigbluebuttongem/ Ruby Gem]
+  * [https://chrome.google.com/extensions/detail/ncbonhmhjnamefpmmjdpbohnkbeliehb Chrome extension] to help you test your applications with the BBB API.
+  * Salesforce.com - A commercial integration for Salesforce.com is available through [http://www.blindsidenetworks.com/ Blindside Networks]
