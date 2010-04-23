@@ -221,7 +221,7 @@ To setup a development environment for bbb-apps, enter the following command
 You can also checkout from trunk by adding the --trunk option:
 
 {{{
-  bbb-conf --trunk --setup-dev bbb-client
+  bbb-conf --trunk --setup-dev bbb-apps
 }}}
 
 This will 
