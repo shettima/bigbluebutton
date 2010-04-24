@@ -1,9 +1,18 @@
 #summary How to install BigBlueButton on CentOS
 
-The following instructions will guide you to install !BigBlueButton on CentOS. So far the instructions have been tested on *CentOS 5.4 32-bit*. In most cases, you'll want to install from [RPMPackaging packages], but if you want to really understand how BigBlueButton is setup, go through the step-by-step instructions below and you'll become familiar with each component. 
+This guide shows you how to install BigBlueButton from source on *CentOS 5.4 32-bit*.  Of course, you can try other versions for CentOS, but we've only tested these against CentOS 5.4 32-bit.
+
+If you want an easier install you can use the [RPMPackaging packages].  Of course, if you want to really understand how !BigBlueButton is setup, going through the following step-by-step instructions will show you how to install !BigBlueButton from source.
+
+== Before you Begin ==
+Before you begin these instructions, check the following
+
+  # You have root access to the server.
+  # The `hostname` command needs to return a proper domain name that resolves to your server.  If not, run hostname <your-correct-hostname>` to give your server a proper name.
+
 
 == Instructions ==
-*NOTE: If your 'hostname' command does not return the proper (working) IP or domain, you need to run `hostname <your-correct-hostname-or-ip>` to make these instructions work.*
+You can start by interactively running the following commands.  While you could cut-and-paste the entire block, we recommend you cut and paste small blocks to ensure each step is returning without errors.
 
 {{{
 # we'll work mostly from the /tmp/ directory:
