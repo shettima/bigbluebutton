@@ -10,8 +10,10 @@
 === What are the minimum hardware requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.  You'll need good upstream and downstream bandwidth on the server. 
 
-=== What operating system do you recomment? ===
-As of !BigBlueButton 0.64, we recommend you install and run on Ubuntu 9.04 32-bit. We have [InstallationUbuntu Ubuntu packages] available that have been in developed and tested since December 2008.  Installation time is about 15 minutes for a full !BigBlueButton server.
+=== What operating system do you recommend? ===
+As of !BigBlueButton 0.64, we recommend you install and run on Ubuntu 9.04 32-bit. The [InstallationUbuntu Ubuntu packages] have been available and tested since December 2008.  Installation time is about 15 minutes for a full !BigBlueButton server.
+
+We support installation on [http://code.google.com/p/bigbluebutton/wiki/RPMPackaging CentOS 5.4 32-bit] using packages as well.  
 
 === I have a shared server with cPanel access.  Can I install !BigBlueButton? ===
 Unfortunately no.  BigBlueButton requires a number of server components that must be installed with root access.  See OpenSourceComponents.
@@ -333,13 +335,31 @@ API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided ex
 
 == Troubleshooting ==
 
-=== Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
+=== Uploading Presentations ===
+
+==== Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ====
 
 !BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
 
 We recommend Office 2007 uses use Microsoft's free download to enable an Office 2007 user to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
 
 You'll always get the best results with PDF.
+
+==== I can't upload a presentation ====
+We've noticed that on some UNIX systems, such as Linux (openSUSE 11.2 x64), when you click the 'upload presentation' button (lower left-hand of Presentation window), Flash will not let you upload a presentation.
+
+If you encounter this problem, try the following
+
+  # Click 'upload presentation'
+  # Close the File Open dialog box
+  # Click the (+) button next to the file name for the presentation (the File Open dialog box reappears).
+  # Select a file to upload in the File Open dialog box
+  # Click 'Open'
+  # Click 'Upload'
+  
+These steps trigger the opening of the File Open by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
+  
+  
  
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
