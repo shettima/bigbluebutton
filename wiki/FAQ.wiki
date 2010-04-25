@@ -8,7 +8,7 @@
 == General Installation ==
 
 === What are the minimum hardware requirements to run !BigBlueButton? ===
-We recommend you run !BigBlueButton on dual core machine with at least one Gig of memory and a 2.0 Ghz processor.  You'll need good upstream and downstream bandwidth on the server. 
+We recommend you run !BigBlueButton on dual core machine with at least one (1) Gig of memory and a 2.0 Ghz processor.  You'll need good upstream and downstream bandwidth on the server. 
 
 === What operating system do you recommend? ===
 As of !BigBlueButton 0.64, we recommend you install and run on Ubuntu 9.04 32-bit. The [InstallationUbuntu Ubuntu packages] have been available and tested since December 2008.  Installation time is about 15 minutes for a full !BigBlueButton server.
