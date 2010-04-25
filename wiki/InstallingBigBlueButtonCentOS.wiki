@@ -8,7 +8,7 @@ If you want an easier install you can use the [RPMPackaging packages].  Of cours
 Before you begin these instructions, check the following
 
   # You have root access to the server.
-  # The `hostname` command needs to return a proper domain name that resolves to your server.  If not, run hostname <your-correct-hostname>` to give your server a proper name.
+  # The `hostname` command needs to return a proper domain name that resolves to your server.  If not, run hostname `<your-correct-hostname>` to give your server a proper name.
 
 
 == Instructions ==
@@ -66,7 +66,7 @@ tar xzf swftools-0.9.0.tar.gz
 cd swftools-0.9.0
 }}}
 
-We need to make a slight modification to swftool's source:
+We need to make a slight modification to swftool's source, as pointed out in this [http://code.google.com/p/bigbluebutton/issues/detail?id=376#c16 issue 376].
   * Open src/pdf2swf.c
   * Comment out the lines 643-655
 
