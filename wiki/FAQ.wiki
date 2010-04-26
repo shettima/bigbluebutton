@@ -266,6 +266,23 @@ To change the security salt, do the following:
 
 Note: If you are using a [http://bigbluebutton.org/support third-party plugin] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new salt.
 
+=== I need to change the maximum allowed presentation size ===
+Right now the maximum size is 30mb. To change it, edit the file:
+{{{
+  /etc/nginx/sites-available/bigbluebutton 
+}}}
+right here 
+{{{
+       location /bigbluebutton { 
+           proxy_pass         http://127.0.0.1:8080; 
+           proxy_redirect     default; 
+           proxy_set_header   X-Forwarded-For 
+$proxy_add_x_forwarded_for; 
+
+        # Allow 30M uploaded presentation document. 
+           client_max_body_size       30m; 
+}}}
+
 == Using !BigBlueButton ==
 === Desktop Sharing ===
 ==== What is needed to run desktop sharing? ====
