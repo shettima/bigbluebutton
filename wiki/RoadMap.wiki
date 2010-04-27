@@ -1,17 +1,15 @@
 #summary Development Road Map for BigBlueButton
 
-= Release 0.64 =
-We are currently working on !BigBlueButton 0.64.  This release will focus on stability and bug fixes, along with the following new features:
-   * Mute/unmute controls for the voice conference
-   * Speed improvements to desktop sharing
-   * [API API enhancements]
 
-See [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.64 for all issues tagged for 0.64 release].  Also see [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/dc3c08f9fa29dad7# Minutes from the BigBlueButton 0.64 developer's meeting].
+= Release 0.7 =
+We are currently working on !BigBlueButton 0.7.  This release will focus on adding a *whiteboard* to !BigBlueButton.  The whiteboad will be implemented as annotations within the presentation module.  Other features include
+   * API enhancements
+   * better UTF-16 support
+   * Lots of small fixes (see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.7 Issues tagged for BigBlueButton 0.7])
 
-You can follow the progress of this release by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 developers mailing list].
+See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/33c2080e30fb5f02# Minutes from BigBlueButton committers meeting 2010-04-27] for an overview of 0.7.  You can follow the progress of this release by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Developers mailing list].
 
-== For the release after 0.64 ==
-You can expect a white board module in the next release.  We're getting just too many request for it now!
 
-== Previous Releases ==
-To see the progress in previous iterations, see [ReleaseNotes BigBlueButton Release Notes].
+
+= Previous Releases =
+To see the results of previous releases, see [ReleaseNotes BigBlueButton Release Notes].
