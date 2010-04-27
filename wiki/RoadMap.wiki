@@ -7,7 +7,9 @@ We are currently working on !BigBlueButton 0.7.  This release will focus on addi
    * better UTF-16 support
    * Lots of small fixes (see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.7 Issues tagged for BigBlueButton 0.7])
 
-See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/33c2080e30fb5f02# Minutes from BigBlueButton committers meeting 2010-04-27] for an overview of 0.7.  You can follow the progress of this release by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Developers mailing list].
+See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/33c2080e30fb5f02# Minutes from BigBlueButton committers meeting 2010-04-27] for an overview of 0.7.  
+
+You can follow the progress of this release by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Developers mailing list].
 
 
 
