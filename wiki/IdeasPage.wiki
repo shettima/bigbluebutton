@@ -29,7 +29,7 @@ Create a small utility on the client that checks the users bandwidth just before
 Make it possible for the user to change the language of the client while inside the conference. Right now the language is chosen at startup based on the user's browser locale.
 
 === Freeswitch Java Bridge ===
-Create an equivalent of Asterisk-Java for [http://www.freeswitch.org/ Freeswitch], to facilitate being able to use BigBlueButton with Freeswitch as well as Asterisk.
+Create an equivalent of Asterisk-Java for [http://www.freeswitch.org/ Freeswitch], to facilitate being able to use !BigBlueButton with Freeswitch as well as Asterisk.
 
 === API Examples for different programming languages ===
 Create [http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk/bbb-api-examples API examples] in your favorite programming language.
