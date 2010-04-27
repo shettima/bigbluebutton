@@ -61,6 +61,9 @@ Create an Android client for !BigBlueButton.
 === iPhone/iPad Client ===
 Create a native Objective-C client for the iPhone or iPad
 
+=== Flex API Module ===
+Create a module for the client that uses the API. This would allow people to create new meetings within already running meetings. A use-case for this would be if a professor wanted to do a break-out meeting - separate groups of students and send them to their own meeting room for example. Also useful for things like webinars and conferences.
+
 === Fix issues ===
 Go to the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] and fix an issue or two.
 
