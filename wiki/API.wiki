@@ -9,6 +9,14 @@
   * * getMeetingInfo * - added in 0.64
   * * getMeetings * - added in 0.64
 
+= What's Planned =
+To see a list of the planned changes for 0.7, see: http://code.google.com/p/bigbluebutton/issues/list?q=label:API%20label:Release0.7
+
+Here are the major changes:
+
+ * * Issue 473 * - Remove "meetingToken" from the API.  It is confusing and redundant.
+ * * Issue 487 * - Add the action name to the checksum calculation.  This will be more secure.
+
 = Overview = 
 This document outlines the API that is available for integrating !BigBlueButton with other applications. It is currently in draft stage as not all features are available. Features which are not currently implemented will be clearly marked as such.
 
