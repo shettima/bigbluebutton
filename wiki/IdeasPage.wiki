@@ -63,3 +63,6 @@ Create a native Objective-C client for the iPhone or iPad
 
 === Fix issues ===
 Go to the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] and fix an issue or two.
+
+=== AIR Client ===
+Port the bbb-client to [http://www.adobe.com/products/air/ Air]. This allows for better performance for people who have slower computers, or simply like having a desktop application better. Plus it's not a lot of work. The biggest thing left to do is create an API interface in Flex that lets you join meetings straight from the Air Application.
