@@ -2,7 +2,7 @@
 
 == Introduction ==
 
-This is a wish list of some of feature request we've received, and what we developers think would be nice to have in bigbluebutton, but don't have the time to do it right now. If you want to develop any of these things write to us on the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list If you'd like to add anything to the list, post a comment bellow.
+This is a wish list of some of feature request we've received, and what we developers think would be nice to have in bigbluebutton, but don't have the time to do it right now. If you want to develop any of these things write to us on the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list. If you'd like to add anything to the list, post a comment bellow.
 
 
 == Ideas ==
