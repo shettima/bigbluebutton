@@ -9,5 +9,5 @@ If you don't see your System bellow, feel free to request an integration on our 
   * [http://moodle.org/mod/data/view.php?d=13&rid=3524&filter=1 Moodle]
   * [http://code.google.com/p/bigbluebuttongem/ Ruby Gem] - To help with developing Rails applications.
   * [https://chrome.google.com/extensions/detail/ncbonhmhjnamefpmmjdpbohnkbeliehb Chrome extension] to help you test your applications with the BBB API.
-  * [http://dev.tikiwiki.org/BigBlueButton TikiWiki]
+  * [http://doc.tikiwiki.org/BigBlueButton Tiki Wiki CMS Groupware]
   * Salesforce.com - A commercial integration for Salesforce.com is available through [http://www.blindsidenetworks.com/ Blindside Networks]
