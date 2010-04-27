@@ -8,7 +8,7 @@ This is a wish list of some of feature request we've received, and what we devel
 == Ideas ==
 
 === XMPP Integration ===
-Convert the Chat module to work with XMPP. This would enable people to log into bigbluebutton chat with their favorite XMPP compatible chat client, such as OpenFire, GTalk, Pidgin, etc...
+Convert the Chat module to work with XMPP. This would enable people to log into bigbluebutton chat with their favorite XMPP compatible chat client, such as !OpenFire, GTalk, Pidgin, etc...
 
 === IRC Bridge ===
 A bridge from Chat to IRC. This could be done in conjunction with the XMPP idea, as there are already some XMPP to IRC solutions.
