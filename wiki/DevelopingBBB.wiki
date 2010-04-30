@@ -62,7 +62,7 @@ Let's begin.
 
 == Making changes to the !BigBlueButton Flex client: bbb-client ==
 
-When building the client locally on the VM, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-web, enter the following command
+When building the client locally on the VM, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-client, enter the following command
 
 {{{
   bbb-conf --setup-dev bbb-client
@@ -183,7 +183,7 @@ The !BigBlueButton web interface is written in grails, so the development enviro
 You can also checkout from trunk by adding the --trunk option:
 
 {{{
-  bbb-conf --trunk --setup-dev bbb-client
+  bbb-conf --trunk --setup-dev bbb-web
 }}}
 
 This script does the following steps:
