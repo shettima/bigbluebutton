@@ -59,7 +59,7 @@ The code for the extension can be found at: http://github.com/jthomerson/BigBlue
 }}}
 
 == _Join meeting example:_ ==
-<a href="http://yourserver.com/bigbluebutton/api/join?fullname=Joe+User&meetingID=abcdef&password=333444">http://yourserver.com/bigbluebutton/api/join?fullname=Joe+User&meetingID=abcdef&password=333444</a>
+<a href="http://yourserver.com/bigbluebutton/api/join?fullName=Joe+User&meetingID=abcdef&password=333444">http://yourserver.com/bigbluebutton/api/join?fullName=Joe+User&meetingID=abcdef&password=333444</a>
 <p>This call sends the caller directly into the application. There is no XML response. You should redirect your user to a URL like this when you are done creating the meeting and are ready to direct them into the meeting.</p>
 
 == _Is meeting running example:_ ==
@@ -171,7 +171,7 @@ Those examples are clearly abuses of the system, and therefore must be protected
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
-|| fullname || Required || String || <p>The full name that is to be used to identify this user to other conference attendees.</p> ||
+|| fullName || Required || String || <p>The full name that is to be used to identify this user to other conference attendees.</p> ||
 || meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created. Note that _either_ the meetingToken or the meetingID along with one of the passwords _must_ be passed into this call in order to determine which meeting to find.</p> ||
 || meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use either the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p> ||
 || password || Optional || String || <p>The password that this attendee is using. If the moderator password is supplied, he will be given moderator status (and the same for attendee password, etc)</p> ||
