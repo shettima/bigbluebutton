@@ -173,6 +173,9 @@ If you are using an external hostname, you will need to setup the /etc/hosts fil
 192.168.1.10 host.domain.org
 }}}
 
+=== I have an existing system and want to put bigbluebutton as just a part of it ===
+Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
+
 == General Setup of !BigBlueButton ==
 
 === Can I run multiple virtual classrooms in a single !BigBlueButton server ===
