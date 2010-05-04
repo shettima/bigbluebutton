@@ -1,6 +1,6 @@
 #summary How to develop BigBlueButton.
 
-<wiki:toc max_depth="3" />
+<wiki:toc max_depth="2" />
 
 
 = Setting up a !BigBlueButton Development Environment =
@@ -60,7 +60,7 @@ Note: If you want to jump right into setting up a complete environment, we recom
 
 Let's begin.  
 
-== Making changes to the !BigBlueButton Flex client: bbb-client ==
+== Setting up the development environment for !BigBlueButton Flex client: bbb-client ==
 
 When building the client locally on the VM, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-client, enter the following command
 
@@ -173,7 +173,7 @@ chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default
   * On the client code, go to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml". Then open join-mock.xml and make sure the conference property is "conference-mock-default" and the room property is "room-mock-default"
   * You should now be able to launch from Flex using the Run/Debug button.
 
-== Making changes to the !BigBlueButton web interface: bbb-web ==
+== Setting up the development environment for !BigBlueButton web interface: bbb-web ==
 
 The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
 
@@ -220,7 +220,7 @@ If you want to revert back to the web interface installed by the package bbb-web
 
 *Note:* In !BigBlueButton 0.63, we are depreciating the grails interface.  If you want to create a front-end to !BigBlueButton, use the !BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
 
-== Making changes to the !BigBlueButton red5 webapp: bbb-apps ==
+== Setting up the development environment for !BigBlueButton red5 webapp: bbb-apps ==
 
 The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as shown at the end of this section).
 
@@ -276,7 +276,7 @@ If you want to revert back to the packaged version of !BigBlueButton apps, do th
 }}}
 ----
 
-= Setup a Full Development Environment =
+= Other Notes on setting up a Full Development Environment =
 
 == Pre-requisites ==
 On Windows:
