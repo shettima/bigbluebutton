@@ -291,7 +291,9 @@ $proxy_add_x_forwarded_for;
 ==== What is needed to run desktop sharing? ====
 !BigBlueButton uses a Java applet to capture screen updates.   This means desktop sharing works for Mac, Unix, and PC platforms.  
 
-The presenter must have Java installed to share their desktop.  If you can view [http://java.sun.com/applets/jdk/1.4/index.html Sun's sample applets] through your browser, you should be able to share your desktop with !BigBlueButton.  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
+The presenter must have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].
+
+To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
 
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
