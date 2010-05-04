@@ -464,6 +464,10 @@ If you're using Linux, UTF characters won't display correctly. This is a Flash l
 === When will feature X be supported? ===
 Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
 
+
+=== How can I donate or help the project ===
+The !BigblueButton project doesn't take donations. If you'd like to help, spread the word about BBB. Blog about us, follow us on [http://twitter.com/bigbluebutton twitter]. If you're a developer and want a contribute, write to the [http://groups.google.com/group/bigbluebutton-dev/ bigbluebutton-dev] mailing list.
+
 === How do I change the brand of !BigBlueButton? ===
 There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton.  
