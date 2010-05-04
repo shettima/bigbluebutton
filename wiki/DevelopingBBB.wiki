@@ -166,6 +166,7 @@ This approach is limited in the sense that you can't use the Run button within F
 sudo su root
 cd /var/bigbluebutton
 mkdir conference-mock-default
+cd conference-mock-default
 mkdir room-mock-default
 chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default
 }}}
