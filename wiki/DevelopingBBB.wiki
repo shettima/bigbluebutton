@@ -218,6 +218,26 @@ If you want to revert back to the web interface installed by the package bbb-web
   sudo /etc/init.d/tomcat6 start
 }}}
 
+*Note:* After starting the tomcat server try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
+
+{{{
+    bbb-conf -c
+}}}
+
+If the issue is listed under the Potential Problems heading then to resolve the issue enter
+
+{{{
+   ps -aef | grep grails
+}}}
+
+This will list the grails process. Determine its pid (process id) and kill it. Then start the tomcat server. If the pid was 5012, enter the following commands.
+
+{{{
+   sudo kill -9 5012
+   sudo /etc/init.d/tomcat6 start
+}}}
+
+
 *Note:* In !BigBlueButton 0.63, we are depreciating the grails interface.  If you want to create a front-end to !BigBlueButton, use the !BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
 
 == Setting up the development environment for !BigBlueButton red5 webapp: bbb-apps ==
