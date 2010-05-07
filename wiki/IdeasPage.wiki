@@ -77,5 +77,7 @@ Create a native Objective-C client for the iPhone or iPad
 === Spreadsheet Bandwidth Calculator ===
 Create an Excel spreadsheet that lets people enter parameters such as number of rooms, number of users, number of webcams shared and number of voice connections, and calculate the necessary bandwidth based on that.
 
+*WAIT* - I think better than this would be to create it as an HTML page that uses JavaScript to do the calculation.  We can throw it into our SVN repo, and it will then be "hosted" on google code.  We can link to it from the wiki. (Jeremy)
+
 === Fix issues ===
 Go to the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] and fix an issue or two.
