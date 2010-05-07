@@ -25,8 +25,11 @@ However, if you do not with accept the requirements of the AGPL license for your
 sudo apt-get remove bbb-apps-deskshare
 }}}
 
-and !BigBlueButton reverts to the GNU Limited General Public License (LGPL), or (2) e-mail us (ffdixon at bigbluebutton dot org) for information on obtaining a commerical non-AGPL license for desktop sharing.  By purchasing a commercial license, you remove the requirement to share the code to any application that incorporates these products, and you will also be supporting the efforts to improve !BigBlueButton for the benefit of your users for years to come.
+and !BigBlueButton reverts to the GNU Limited General Public License (LGPL), or (2) e-mail us (ffdixon at bigbluebutton dot org) for information on obtaining a commericial non-AGPL license for desktop sharing.  By purchasing a commercial license, you remove the requirement to share the code to any application that incorporates these products, and you will also be supporting the efforts to improve !BigBlueButton for the benefit of your users for years to come.
 
+== Installing Desktop Sharing == 
+
+<wiki:video url="http://www.youtube.com/watch?v=cne8-oVP9_s" width="853" height="505"/>
 
 == Obtaining the source for desktop sharing ==
 Because Google Code does not allow hosting of applications that use AGPL, we have moved the source code for desktop sharing to a separate server.  You can access the source code using the following svn command.
