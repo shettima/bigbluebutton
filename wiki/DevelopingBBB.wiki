@@ -169,6 +169,7 @@ mkdir conference-mock-default
 cd conference-mock-default
 mkdir room-mock-default
 chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default
+exit
 }}}
   * On the client code, go to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml". Then open join-mock.xml and make sure the conference property is "conference-mock-default" and the room property is "room-mock-default"
   * You should now be able to launch from Flex using the Run/Debug button.
