@@ -14,6 +14,8 @@ Prerequisites:
 
 The second point is key: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of !BigBlueButton.
 
+<wiki:video url="http://www.youtube.com/watch?v=--yC6LpeFqA" width="853" height="505"/>
+
 == Installing !BigBlueButton VM  ==
 
   1.  Download and uncompress the [http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-04-02.zip BigBlueButton 0.64 VM].  MD5SUM for this file is below.
