@@ -176,6 +176,9 @@ If you are using an external hostname, you will need to setup the /etc/hosts fil
 === I have an existing system and want to put bigbluebutton as just a part of it ===
 Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
 
+
+
+
 == General Setup of !BigBlueButton ==
 
 === Can I run multiple virtual classrooms in a single !BigBlueButton server ===
@@ -203,6 +206,14 @@ Of course, if you are using Sakai, Moodle, Drupal, or other content management s
 If you are looking for an integration module that does not exist, please post a request to 
 [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
+
+=== How many simultaneous users can BigBlueButton support? === 
+
+The BigBlueButton community recently did a stress test of BigBlueButton 0.64 and posted the [http://bigbluebutton.org/content/videos results] to forums bigbluebutton-dev.  
+
+The result: at the peak we had over twenty users logged into the voice conference and, through opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into the system.  
+
+There post includes a CPU usage and bandwidth usage graph of the server load. 
 
 
 == Administration of your BBB System ==
