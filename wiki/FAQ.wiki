@@ -336,6 +336,17 @@ file (DLL) to enable it.  We haven't tried this yet.
 
 When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
 
+=== Chat ===
+
+==== When I make !BigBlueButton full screen I can't enter any text into chat ====
+
+By design, Adobe disables keyboard input of Flash applications when they go full-screen.  
+
+This prevents the scenario where a malicious Flash application tries to 
+masquerade as your desktop showing a web browser, for example, with a login 
+screen to your bank account.  
+
+
 
 === Is the scheduling interface in bbb-web still supported? ===
 
@@ -449,13 +460,6 @@ sudo ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/big
 sudo /etc/init.d/nginx restart
 }}}
 
-=== When I make !BigBlueButton full screen I can't enter any information in to chat ===
-
-By design, Adobe disables keyboard input of Flash applications when they go full-screen.  
-
-This prevents the scenario where a malicious Flash application tries to 
-masquerade as your desktop showing a web browser, for example, with a login 
-screen to your bank account.  
 
 === I have 2 microphones and want to choose with which to join the voice conference ===
 When you're inside the client, righclick, go to settings > microphone icon > select microphone, and talk to see if it works by checking the volume bar.
