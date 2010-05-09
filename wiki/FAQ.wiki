@@ -295,7 +295,7 @@ If you are looking for an integration module that does not exist, please post a 
 
 == How many simultaneous users can a !BigBlueButton server support? == 
 
-The BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (read: let's try to make it crash) and posted the [http://bigbluebutton.org/content/videos results] to the bigbluebutton-dev mailing list.  The results includes a [http://groups.google.com/group/bigbluebutton-dev/attach/d34f62db6296dfbd/bbb-test-1.pdf?part=4 PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
+The !BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (read: let's try to make it crash) and posted the [http://bigbluebutton.org/content/videos results] to the bigbluebutton-dev mailing list.  The results includes a [http://groups.google.com/group/bigbluebutton-dev/attach/d34f62db6296dfbd/bbb-test-1.pdf?part=4 PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
 
 In short: At the peak we had over twenty users logged into the voice conference and, through each user opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into !BigBlueButton in a single virtual classroom.  
 
@@ -403,7 +403,7 @@ A Java applet could, in theory, use JNI to connect into the Windows  subsystem t
 == Presentations ==
 === Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
 
-!BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
+!BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
 
 We recommend Office 2007 uses use Microsoft's free download to enable an Office 2007 user to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
 
