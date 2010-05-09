@@ -5,29 +5,144 @@
 
 ----
 
-= General Installation =
 
-=== What are the minimum hardware requirements to run !BigBlueButton? ===
-We recommend you run !BigBlueButton on dual core machine with at least 1 Gig of memory and a 2.0 Ghz processor.  You'll need good upstream and downstream bandwidth on the server.. 
+= Welcome =
 
-=== What operating system do you recommend? ===
-As of !BigBlueButton 0.64, we recommend you install and run on Ubuntu 9.04 32-bit. The [InstallationUbuntu Ubuntu packages] have been available and tested since December 2008.  Installation time is about 15 minutes for a full !BigBlueButton server.
+We created this Frequently Asked Questions (FAQ) guide to help you get started installing, configuring, administrating, using, and upgrading !BigBlueButton quickly.  
 
-We support installation on [http://code.google.com/p/bigbluebutton/wiki/RPMPackaging CentOS 5.4 32-bit] using packages as well.  
+== I can't find my answer in this FAQ ==
+If you find this FAQ does not answer your question(s), please post to one of the following mailing lists
 
-=== I have a shared server with cPanel access.  Can I install !BigBlueButton? ===
-Unfortunately no.  BigBlueButton requires a number of server components that must be installed with root access.  See OpenSourceComponents.
+  * For setup, instllation, and configuration questions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup]  .
+  * For end user questions, please post to [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users].
+  * For all other questions, please post to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev].
 
-=== Can I install !BigBlueButton on CentOS? ===
-Yes, you can! [InstallingBigBlueButtonCentOS CentOS instructions]
+All of the core !BigBlueButton contributions subscribe to all three mailing lists.
 
-=== Can I install on Windows? ===
-Short answer: no. While it's possible to manually install each of the individual OpenSourceComponents needed to run BBB on Windows, we haven't tested it. If you only have a Windows hosts, you can have a full !BigBlueButton server running in a few minutes using [http://www.vmware.com/products/player/ VMWare Player] and the BigBlueButtonVM.
+Please note that [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] is a recent split from [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].  Search the archives for bigbluebutton-dev and there's a good chance someone might asked your question and shared the answer. 
+
+== Why is this project called !BigBlueButton? ==
+
+The name comes from the goal of making setting up a virtual classroom as easy as pressing a (metaphorical) big blue button.
+
+== Who are the core developers of !BigBlueButton? ==
+
+The core developers are listed on the [http://code.google.com/p/bigbluebutton/ Google Code home page] for this project.   
+
+== How do I join the !BigBlueButton development team? ==
+
+We welcome contributions from other developers!  This is a merit-based project, which means you need to contribute for a while before you'll be granted check-in rights to the core repository.
+
+To contribute, a good way to start is helping others in the mailing list solve their problems.  
+
+Next, you'll need to demonstrate you are familiar with contributing to an open source project.  A good way to start is try fixing an open issue in our [http://code.google.com/p/bigbluebutton/issues/list issue tracking system], or, if you are ambitions, try implementing one of [IdeasPage open ideas] for enhancing !BigBlueButton.
+
+Stability and usability are core to !BigBlueButton.  If you are able to help fix bugs and increase the stability and usability of the platform, we're interested in working with you 
+now and in the future. 
 
 
-=== I install using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
+= Installation =
 
-Sometimes a hosted Ubuntu distribution, the hosting provider does not enable to multivers.  Check
+== What are the minimum hardware requirements to run !BigBlueButton? ==
+We recommend you run !BigBlueButton on dual core machine with at least 1 Gig of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
+
+
+== OS Requirements ==
+
+
+=== Ubuntu ===
+As of !BigBlueButton 0.64, we recommend you install and run !BigBluebutton on *Ubuntu 9.04 32-bit* OS. The [InstallationUbuntu Ubuntu packages] have been available and tested since December 2008, and with five commands you can install a full !BigBlueButton server in about fifteen (15) minutes.  Please note, that the packages have not been tested on Ubuntu 9.04 64-bit, Ubuntu 9.10 32-bit, or Ubuntu 9.10 64-bit, however, there are [InstallingBigBlueButton step-by-step instructions] for installing !BigBlueButton that you can adapt.
+
+Work is underway in [RoadMap BigBlueButton 0.7] to support Ubuntu 10.04 32-bit and 64-bit.
+
+
+
+
+
+
+=== CentOS ===
+As of !BigBlueButton 0.64, we recommend you install !BigBluebutton using [RPMPackaging RPM packages] on *CentOS 32-bit and 64-bit*.  If you are running a different version of CentOS, try following the [InstallingBigBlueButtonCentOS step-by-step instructions] for installing on CentOS.
+
+=== Windows === 
+While technically it should be possible to manually install each of the individual OpenSourceComponents needed to run !BigBlueButton on Windows, we haven't tried it nor have we tested it.
+
+Don't worry -- using [http://www.vmware.com/products/player/ VMWare Player] you can have a full !BigBlueButton server running in under an hour using the [BigBlueButtonVM BigBlueButton Virtual Machine].  The !BigBlueButton VM is running Ubuntu 9.04 32-bit and has all the components pre-installed. 
+
+If you a brave soul and want to manually install the individual OpenSourceComponents natively on Windows and then install all the !BigBlueButton components, it should be possible. However, beware, no one who has tried this has lived to post a success message to our mailing list :-).
+
+=== OS X ===
+The easiest way to get your own !BigBlueButton server under OS X is to install VMWare Fusion and run the [BigBlueButtonVM BigBlueButton Virtual Machine].  
+
+=== Gentoo ===
+There is a !BigBlueButton Labs project (prototype and unsupported) that shows how to [GentooEBuild install BigBlueButton on Gentoo using ebuild].
+
+
+
+== Bandwidth Requirements ==
+
+
+=== What are the bandwidth requirements for running a !BigBlueButton server? ===
+
+When sharing a webcam, as a moderator !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream. 
+
+For example, if you have a room with 5 people in it with 5 webcams then the fomula is: 
+
+  * Y = 30-50 Kbytes/sec; let's assume 40 Kbytes/sec on average 
+  * W = amount of webcams that are streaming 
+  * U = amount of users that are watching 
+
+For calculations:
+  * server incoming bandwidth: W`*`Y 
+  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not has to subscrive to his own stream) 
+
+So with 5 ppl in a room with 5 webcams streaming you'll have; 
+
+  * in: 5`*`40 = 200 Kbytes/sec incoming bandwidth needed to the server (e.g. 1.6 Mbit) 
+  * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec incoming bandwidth needed from the server (e.g. 6.4 Mbit) 
+  * Total traffic used after one our: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
+
+If you'd have a typical classroom situation with 1 stream going to 30 
+students in a remote learning environment: 
+
+  * in: 1`*`40 = 40 Kbytes/sec incoming (e.g. 0.32 Mbit/sec) 
+  * out: 1`*`(30-1)`*`40 = 1160 Kbytes/sec outgoing (e.g. 9.3 Mbit/sec) 
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 40 + 1160) = 4.3 
+Gbyte traffic per hour 
+
+If you'd have 10 of those classes then you server need to be able to output 
+93 Mbit/sec; that's not much in a LAN but it's pretty much if you need to 
+hire a server. 
+Large "cafe-style chatroom" : 20 viewers, 8 people broadcasting with a 
+webcam:  
+
+  * in: 8`*`40 = 320 kbyte/sec ( 2.5 Mbit ) 
+  * out: 8`*`(20-1)`*`40 = 6080 kbytes/sec ( 48.6 Mbit ) 
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 320 + 6080 ) = 23 
+Gbyte traffic per hour 
+
+
+Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  As the presenter moves to the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and their client's loads the next slide from cache. Chat also almost no bandwidth as well.
+
+Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size and how often their screen updates.  
+
+If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and desktop sharing will all throttle back within that constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still update, just at a slower rate.
+
+
+
+
+== Troubleshooting ==
+
+=== I have an existing system and want to install BigBlueButton as a part of it ===
+
+!BigBlueButton plays well with other systems.  If you are already running apache, you can have !BigBlueButton listen to a different port (see answer above).
+
+Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
+
+=== Can I install BigBlueButton on a shared hosting server? ===
+If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  !BigBlueButton requires a number of OpenSourceComponents that must be installed with root access.
+
+=== I've installed using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
+Sometimes a hosted Ubuntu distribution, the hosting provider has removed the default access to packages in the multiverse.  Check
 
 {{{
    /etc/apt/sources.list
@@ -93,65 +208,35 @@ deb http://security.ubuntu.com/ubuntu jaunty-security multiverse
 deb-src http://security.ubuntu.com/ubuntu jaunty-security multiverse
 }}}
 
-=== What are the bandwidth requirements for running a !BigBlueButton server? ===
-
-When sharing a webcam, as a moderator !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream. 
-
-For example, if you have a room with 5 people in it with 5 webcams then the fomula is: 
-
-  * Y = 30-50 Kbytes/sec ; let's assume 40 Kbytes/sec on average 
-  * W = amount of webcams that are streaming 
-  * U = amount of users that are watching 
-
-For calculations:
-  * server incoming bandwidth: W`*`Y 
-  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not has to subscrive to his own stream) 
-
-So with 5 ppl in a room with 5 webcams streaming you'll have; 
-
-  * in: 5`*`40 = 200 Kbytes/sec incoming bandwidth needed to the server (e.g. 1.6 Mbit) 
-  * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec incoming bandwidth needed from the server (e.g. 6.4 Mbit) 
-  * Total traffic used after one our: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
-
-If you'd have a typical classroom situation with 1 stream going to 30 
-students in a remote learning environment: 
-
-  * in: 1`*`40 = 40 Kbytes/sec incoming (e.g. 0.32 Mbit/sec) 
-  * out: 1`*`(30-1)`*`40 = 1160 Kbytes/sec outgoing (e.g. 9.3 Mbit/sec) 
-  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 40 + 1160) = 4.3 
-Gbyte traffic per hour 
-
-If you'd have 10 of those classes then you server need to be able to output 
-93 Mbit/sec; that's not much in a LAN but it's pretty much if you need to 
-hire a server. 
-Large "cafe-style chatroom" : 20 viewers, 8 people broadcasting with a 
-webcam:  
-
-  * in: 8`*`40 = 320 kbyte/sec ( 2.5 Mbit ) 
-  * out: 8`*`(20-1)`*`40 = 6080 kbytes/sec ( 48.6 Mbit ) 
-  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 320 + 6080 ) = 23 
-Gbyte traffic per hour 
-
-
-Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size.  The desktop sharing sends a complete refresh only when a new participant enters a conference.  
-
-Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  As the presenter moves to the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and their client's loads the next slide from cache. Chat also uses up next to no bandwidth.
-
-If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and desktop sharing will all throttle back within that constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still update, just at a slower rate.
 
 
 
+=== I've installed BigBlueButton using the VM, but I can't access it from a browser ===
+Make sure your VMWave Player (or VMWare Fusion) network settings are set to *bridged*, not NAT.  If they were set to NAT and you changed to bridged, you'll need to tell the VM to acquire a network address.  Enter the following command
+
+{{{
+  sudo /etc/init.d/networking restart
+}}}
+
+Once you acquire an IP address, you need to change the !BigBlueButton configuration files to use this new IP address.  Don' worry, it's easy to do.   If your new IP address is 47.135.32.64, for example, enter the command
+
+{{{
+   sudo bbb-conf --setip 47.135.32.64
+}}}
 
 
 
+= Configuration =
 
-== Installation: Networking ==
 
-=== How do I change the port which !BigBlueButton is accessed from? ===
+== Networking ==
 
-You can change the port which !BigBlueButton is accessed from using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+=== How do I change the main port for !BigBlueButton? ===
 
-=== How can I provide external access to a !BigBlueButton server behind my firewall? ===
+You can change the port which !BigBlueButton is accessed  using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+
+
+=== Can I provide external access to a !BigBlueButton server behind my firewall? ===
 
 Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.
 
@@ -173,21 +258,18 @@ If you are using an external hostname, you will need to setup the /etc/hosts fil
 192.168.1.10 host.domain.org
 }}}
 
-=== I have an existing system and want to put bigbluebutton as just a part of it ===
-Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
 
-
-
-
-== General Setup of !BigBlueButton ==
+== Classrooms ==
 
 === Can I run multiple virtual classrooms in a single !BigBlueButton server ===
-Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Join Courses] API example.
+Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Join Courses] API example.  You can modify this demo page to setup your own branded landing page.
 
 === How do I setup new classrooms in !BigBlueButton? === 
-The main interface for customizing !BigBlueButton is the [http://code.google.com/p/bigbluebutton/wiki/API API].  We used to have an administration interface (written in grails), but its currently depreciated and will be replaced by a new interface at some point.
+If you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use one of these modules to setup your own classrooms.
 
-At the moment, the easiest way to setup a new classroom is modify this [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
+If you have a bit of programming skills, you create your own classrooms by modifying this [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
+
+You will find `demo3.jsp` in the directory `/var/lib/tomcat6/webapps/bigbluebutton/demo/demo3.jsp`.
 
 You can edit the following section
 {{{
@@ -201,31 +283,65 @@ allMeetings.put( "ENGL-2013: Research Methods in English", meeting );	// The tit
 
 }}}
 
-Of course, if you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use a plug-in module.
 
 If you are looking for an integration module that does not exist, please post a request to 
 [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
 
-=== How many simultaneous users can BigBlueButton support? === 
+=== How do I integrate !BigBlueButton with my own server? === 
 
-The BigBlueButton community recently did a stress test of BigBlueButton 0.64 and posted the [http://bigbluebutton.org/content/videos results] to forums bigbluebutton-dev.  
-
-The result: at the peak we had over twenty users logged into the voice conference and, through opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into the system.  
-
-There post includes a CPU usage and bandwidth usage graph of the server load. 
+!BigBlueButton provides an [http://code.google.com/p/bigbluebutton/wiki/API API] for integration with other web-based applications.  
 
 
-== Administration of your BBB System ==
-=== How do I update my VM to the newest version? ===
-If you are running a !BigBlueButton VM or had installed !BigBlueButton using packages, you can upgrade to the newest stable release with the following two commands
+== How many simultaneous users can a !BigBlueButton server support? == 
+
+The BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (read: let's try to make it crash) and posted the [http://bigbluebutton.org/content/videos results] to the bigbluebutton-dev mailing list.  The results includes a [http://groups.google.com/group/bigbluebutton-dev/attach/d34f62db6296dfbd/bbb-test-1.pdf?part=4 PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
+
+In short: At the peak we had over twenty users logged into the voice conference and, through each user opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into !BigBlueButton in a single virtual classroom.  
+
+
+
+== How do I change the security salt? ==
+
+To change the security salt, do the following: 
+  # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers with dashes that will be used to create a checksum for each API request from an external application. 
+  # Copy the string (including dashes) three places, replacing the existing security salt (if any) at each location: `/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp`, and `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties`. 
+  # Do a clean restart of the !BigBlueButton server `sudo bbb-conf --clean`.
+
+Note: If you are using a [http://bigbluebutton.org/support third-party plugin] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new salt.
+
+
+== How do I change the maximum allowed size for uploading a presentation? ==
+Right now the maximum size is 30mb. To change it, edit the file:
+{{{
+  /etc/nginx/sites-available/bigbluebutton 
+}}}
+right here 
+{{{
+       location /bigbluebutton { 
+           proxy_pass         http://127.0.0.1:8080; 
+           proxy_redirect     default; 
+           proxy_set_header   X-Forwarded-For 
+$proxy_add_x_forwarded_for; 
+
+        # Allow 30M uploaded presentation document. 
+           client_max_body_size       30m; 
+}}}
+
+
+
+= Administration =
+
+== How do I update !BigBlueButton to the newest version? ==
+If you are running a !BigBlueButton VM or had installed !BigBlueButton using Ubuntu packages, you can upgrade to the newest stable release with the following two commands
 
 {{{
   sudo apt-get update
   sudo apt-get dist-upgrade
 }}}
 
-If you would like to instead upgrade to the version currently under development, you can do that too. Note that the development version is often unstable, and nobody guarantees that it will work correctly. Here's how to do it:
+If you would like to update instead to the latest version currently under development, you can do that too, but note that the development version of !BigBlueButton is often unstable, and nobody guarantees that it will work correctly. Here's how to do it:
+
 Log into your VM, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
 
 {{{
@@ -243,102 +359,97 @@ to
 deb http://archive.bigbluebutton.org/dev bigbluebutton main
 }}}
 
-Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current iteration.
+Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds.
 
-=== VM won't resolve packages when updating, or is not connected to the internet ===
+== VM won't resolve packages when updating, or is not connected to the internet ==
 If you're using VM player, please go to VM>Settings>Network Adapter and make sure it is set to Bridged, with the box underneath left unchecked. 
 Also restart the networking on the VM by running the following command:
 {{{
   sudo /etc/init.d/networking restart
 }}}
 
-=== BBB is running inside the VM, but I can't access it from a browser ===
-Make sure your VMWave Player network settings are set to Bridged, not NAT. Go to Devices>Network Adapter, and select 'Bridged'
 
-=== Something is not working in the VM ... where can I go for help. ===
-The best source is to post to the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list. We all hang out there and help each other.
 
-=== Which log files should I check for errors?  ===
-Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here]
 
-=== How to access the red5 directory on the VM ===
-You might want access to the red5 directory on the Virtual Machine. The following commands will share a shortcut to the red5 folder into your dev directory.
 
-In /usr/share/red5
-  sudo chmod go+w log
-  sudo chown -R firstuser *
-
-In /home/firstuser/dev
-  ln -s /usr/share/red5 red5
-
-=== How do I change the security salt? ===
-
-To change the security salt, do the following: 
-  # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers with dashes that will be used to create a checksum for each API request from an external application. 
-  # Copy the string (including dashes) three places, replacing the existing security salt (if any) at each location: `/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp`, and `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties`. 
-  # Do a clean restart of the !BigBlueButton server `sudo bbb-conf --clean`.
-
-Note: If you are using a [http://bigbluebutton.org/support third-party plugin] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new salt.
-
-=== I need to change the maximum allowed presentation size ===
-Right now the maximum size is 30mb. To change it, edit the file:
-{{{
-  /etc/nginx/sites-available/bigbluebutton 
-}}}
-right here 
-{{{
-       location /bigbluebutton { 
-           proxy_pass         http://127.0.0.1:8080; 
-           proxy_redirect     default; 
-           proxy_set_header   X-Forwarded-For 
-$proxy_add_x_forwarded_for; 
-
-        # Allow 30M uploaded presentation document. 
-           client_max_body_size       30m; 
-}}}
-
-== Using !BigBlueButton ==
-=== Desktop Sharing ===
-==== What is needed to run desktop sharing? ====
+= Using !BigBlueButton =
+== Desktop Sharing ==
+=== What is needed to run desktop sharing? ===
 !BigBlueButton uses a Java applet to capture screen updates.   This means desktop sharing works for Mac, Unix, and PC platforms.  
 
-The presenter must have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].
-
-To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
+The presenter must have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
 
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
-==== How can I make desktop sharing faster? ====
-!BigBlueButton uses the Adobe Screen Codec to capture and transmit the desktop.  Kudos to Adobe, this is a high-quality lossless codec that gives you pixel-for-pixel view of the presenter's desktop.  If the presenter has a 32-bit background image, then the desktop sharing will send that image as well whenever it's visible.  This can slow down desktop sharing.
+=== How can I make desktop sharing faster? ===
+!BigBlueButton uses a lossless codec, which means remote students see a pixel-for-pixel view of the presenter's destkop.  However, if you have a 32-bit background image and show your desktop, then the desktop sharing will faithfully transmit your background image.
 
-One easy way to speed up desktop sharing as a presenter is choose a solid color for your background image.  If you do, you'll notice that whenever the desktop is visible, the viewer's images will update relatively quickly as the algorithm is very efficient at sending solid colors.
+The main bottleneck for desktop sharing is the presenter's upstream bandwidth.  
+  * Remove the 32-bit background image (replace it with a solid color is best)
+  * Lower the screen dept from 32-bit to 16-bit
+  
+  
 
-==== Can I share a specific window when sharing my desktop ====
+=== Can I share a specific window when sharing my desktop ===
 
 Unfortunately no.  Most commercial web conferencing systems download a binary file (i.e. DLL) on windows or Mac to hook into the Windows Mirror 
-Driver (to get screen event updates) and to use the Windows API calls 
-to find the current window.  
+Driver (to get screen event updates) and to use the Windows API calls to find the current window.  It's faster, but it isn't a solution for Unix users.
 
-Most commercial applications support binaries (native code) 
-for Windows and Mac and then call it.  Unix users are encourage to use 
-a Mac or PC if they want to share their desktops. 
+Since Flash can't view your desktop, !BigBlueButton uses a Java applet to capture and brodcast the presenter's desktop.  This way, !BigBlueButton equally support Mac, Unix, and PC users, but it restricts us to looking at the screen, not the underlying OS and a specific winodw.
 
-By using a Java applet, we can equally support Mac, Unix, and PC users, but it restricts us to looking at the screen, not the underlying OS.
-
-A Java applet could, in theory, use JNI to connect into the Windows 
-subsystem to make API calls, but we're back to downloading a binary 
-file (DLL) to enable it.  We haven't tried this yet.
+A Java applet could, in theory, use JNI to connect into the Windows  subsystem to make API calls, but we're back to downloading a binary file (DLL) to enable it.  We haven't tried this yet, and unless there is a strong demand for it, we'll keep the desktop sharing solution available for all users.
 
 
-=== Voice Conference ===
+== Presentations ==
+=== Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
 
-==== Why do I hear music when I join the voice conference? ====
+!BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
+
+We recommend Office 2007 uses use Microsoft's free download to enable an Office 2007 user to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
+
+You'll always get the best results with PDF.
+
+=== I can't upload a presentation ===
+We've noticed that on some UNIX systems, such as Linux (openSUSE 11.2 x64), when you click the 'upload presentation' button (lower left-hand of Presentation window), Flash will not let you upload a presentation.
+
+If you encounter this problem, try the following
+
+  # Click 'upload presentation'
+  # Close the File Open dialog box
+  # Click the (+) button next to the file name for the presentation (the File Open dialog box reappears).
+  # Select a file to upload in the File Open dialog box
+  # Click 'Open'
+  # Click 'Upload'
+  
+These steps trigger the opening of the File Open by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
+  
+  
+  
+== Voice Conference ==
+
+=== Why do I hear music when I join the voice conference? ===
 
 When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
 
-=== Chat ===
+=== There is an echo in the voice conference ===
 
-==== When I make !BigBlueButton full screen I can't enter any text into chat ====
+When users the built-in VoIP in !BigBlueButton you want to ensure they are using headphones  or they are muted.
+
+A common problem with echo occurs when a remote student is using a laptop.  They have activated the built-in VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
+
+To solve this problem, if you have logged in as a moderator, you can mute the student. Here's how:
+
+  # click on the student's name in the Voice window, then 
+  # click the speaker icon to the left of their name.  
+
+This will mute the student.   If they want to speak, they can click the raise hand button to get your attention.
+
+The best solution is ask all students to use a headset -- this will give them the best audio with no feedback.
+
+
+== Chat ==
+
+=== When I make !BigBlueButton full screen I can't enter any text into chat ===
 
 By design, Adobe disables keyboard input of Flash applications when they go full-screen.  
 
@@ -347,16 +458,9 @@ masquerade as your desktop showing a web browser, for example, with a login
 screen to your bank account.  
 
 
+= Developing for !BigBlueButton =
 
-=== Is the scheduling interface in bbb-web still supported? ===
-
-As of !BigBlueButton 0.63, we started transitioning away from the grails-based interface for scheduling conferences, located at http://ip/bigbluebutton.  We've found that most of our developers want to integrate !BigBlueButton into their application, so we've shifted focus to the !BigBlueButton API.
-
-There are also some legacy stuff in the bbb-web interface, such as limiting the number of users, that is not implemented yet and we'll be properly implementing in the API.  
-
-It may be in the future that the bbb-web interface is reborn and becomes a reference implementation of how to use the API, but we're currently focusing on providing examples through .jsp pages, which are much more portable and brandable for our users. 
-
-== Developing for !BigBlueButton ==
+== Setup ==
 
 === Setting up the Dev environment ===
 See [DevelopingBBB Developing !BigBlueButton] for full instructions.
@@ -385,34 +489,10 @@ interface to schedule meetings in favor of using the !BigBlueButton
 API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided examples] of using the !BigBlueButton API to show you how to use it.  
    
 
-== Troubleshooting ==
+= Troubleshooting =
 
-=== Uploading Presentations ===
+== General ==
 
-==== Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ====
-
-!BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
-
-We recommend Office 2007 uses use Microsoft's free download to enable an Office 2007 user to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
-
-You'll always get the best results with PDF.
-
-==== I can't upload a presentation ====
-We've noticed that on some UNIX systems, such as Linux (openSUSE 11.2 x64), when you click the 'upload presentation' button (lower left-hand of Presentation window), Flash will not let you upload a presentation.
-
-If you encounter this problem, try the following
-
-  # Click 'upload presentation'
-  # Close the File Open dialog box
-  # Click the (+) button next to the file name for the presentation (the File Open dialog box reappears).
-  # Select a file to upload in the File Open dialog box
-  # Click 'Open'
-  # Click 'Upload'
-  
-These steps trigger the opening of the File Open by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
-  
-  
- 
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
@@ -475,20 +555,6 @@ sudo /etc/init.d/tomcat6 restart
 sudo /etc/init.d/red5 restart
 }}}
 
-=== There is an echo in the voice conference ===
-
-When users the built-in VoIP in !BigBlueButton you want to ensure they are using headphones  or they are muted.
-
-A common problem with echo occurs when a remote student is using a laptop.  They have activated the built-in VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
-
-To solve this problem, if you have logged in as a moderator, you can mute the student. Here's how:
-
-  # click on the student's name in the Voice window, then 
-  # click the speaker icon to the left of their name.  
-
-This will mute the student.   If they want to speak, they can click the raise hand button to get your attention.
-
-The best solution is ask all students to use a headset -- this will give them the best audio with no feedback.
 
 === bbb-conf --check reports Host IP does not match !BigBlueButton ===
 
@@ -533,5 +599,31 @@ development, but rather it will support it.
 Please check your webcam driver and update it if possible.
 
 
-=== I can't find my answer in the FAQ ===
-If you don't see an answer here, please post your question to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list.
+
+=== Is the scheduling interface in bbb-web still supported? ===
+
+As of !BigBlueButton 0.63, we started transitioning away from the grails-based interface for scheduling conferences, located at http://ip/bigbluebutton.  We've found that most of our developers want to integrate !BigBlueButton into their application, so we've shifted focus to the !BigBlueButton API.
+
+There are also some legacy stuff in the bbb-web interface, such as limiting the number of users, that is not implemented yet and we'll be properly implementing in the API.  
+
+It may be in the future that the bbb-web interface is reborn and becomes a reference implementation of how to use the API, but we're currently focusing on providing examples through .jsp pages, which are much more portable and brandable for our users. 
+
+
+
+
+= Troubleshooting =
+
+
+== Which log files should I check for errors?  ==
+Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here]
+
+
+== How to access the red5 directory on the VM ==
+You might want access to the red5 directory on the Virtual Machine. The following commands will share a shortcut to the red5 folder into your dev directory.
+
+In /usr/share/red5
+  sudo chmod go+w log
+  sudo chown -R firstuser *
+
+In /home/firstuser/dev
+  ln -s /usr/share/red5 red5
