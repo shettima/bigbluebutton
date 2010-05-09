@@ -563,6 +563,22 @@ In !BigBlueButton 0.63, this is really more of a warning than an error.  If you 
 === UTF characters won't display correctly in the Client ===
 If you're using Linux, UTF characters won't display correctly. This is a Flash limitation and unfortunately there's not much we can do about it.
 
+
+
+=== Which log files should I check for errors?  ===
+Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here]
+
+
+=== How to access the red5 directory on the VM ===
+You might want access to the red5 directory on the Virtual Machine. The following commands will share a shortcut to the red5 folder into your dev directory.
+
+In /usr/share/red5
+  sudo chmod go+w log
+  sudo chown -R firstuser *
+
+In /home/firstuser/dev
+  ln -s /usr/share/red5 red5
+
 == Other Questions ==
 === When will feature X be supported? ===
 Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
@@ -609,21 +625,3 @@ There are also some legacy stuff in the bbb-web interface, such as limiting the 
 It may be in the future that the bbb-web interface is reborn and becomes a reference implementation of how to use the API, but we're currently focusing on providing examples through .jsp pages, which are much more portable and brandable for our users. 
 
 
-
-
-= Troubleshooting =
-
-
-== Which log files should I check for errors?  ==
-Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here]
-
-
-== How to access the red5 directory on the VM ==
-You might want access to the red5 directory on the Virtual Machine. The following commands will share a shortcut to the red5 folder into your dev directory.
-
-In /usr/share/red5
-  sudo chmod go+w log
-  sudo chown -R firstuser *
-
-In /home/firstuser/dev
-  ln -s /usr/share/red5 red5
