@@ -5,7 +5,7 @@
 
 ----
 
-== General Installation ==
+= General Installation =
 
 === What are the minimum hardware requirements to run !BigBlueButton? ===
 We recommend you run !BigBlueButton on dual core machine with at least 1 Gig of memory and a 2.0 Ghz processor.  You'll need good upstream and downstream bandwidth on the server. 
