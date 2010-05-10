@@ -157,6 +157,7 @@ If you would like to develop the client using Flex Builder, you can follow these
     * src/!VideoconfModule.mxml
     * src/!ViewersModule.mxml
   * Change all the IP addresses in src/conf/config.xml to point to your VM IP address
+  * Right click on src/BigBlueButton.mxml and click on Set As Default Application. Then delete the Main.mxml file.
   * Compile the client in Flex Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flex Builder environment.
 
 This approach is limited in the sense that you can't use the Run button within Flex to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flex, do the following:
