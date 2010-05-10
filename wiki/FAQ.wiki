@@ -299,7 +299,7 @@ The !BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (
 
 In short: At the peak we had over twenty users logged into the voice conference and, through each user opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into !BigBlueButton in a single virtual classroom.  
 
-
+The server was a Pentium(R) Dual-Core CPU E5200 @ 2.50GHz with 4GB RAM running Ubuntu 9.04 32-bit.
 
 == How do I change the security salt? ==
 
