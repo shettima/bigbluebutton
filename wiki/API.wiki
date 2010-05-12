@@ -15,6 +15,7 @@ In 0.70, we made a couple of changes that will force you to update your API inte
 
  * * Issue 487 * - Add the action name to the checksum calculation.  This will be more secure.  If you read the security section below, it will give you the updated instructions on calculating the checksum.  Basically, this change was simple.  Where you previously would have done something similar to: sha1(queryString + securitySalt), you now need to do sha1(callName + queryString + securitySalt).  callName will be "create", "join", "getMeetings", "getMeetingInfo", "end", et cetera - the name of the API call you are making.  This also eliminated the need to send the "random" parameter to getMeetings.
  * * Issue 473 * - Remove "meetingToken" from the API.  Now you will not be able to pass the meetingToken to any API call, nor will it be returned in any response from the API.  You should now use just the meetingID, which is now required for any meeting-related call.
+ * * Issue 394 * - Now, after calling "end" to forcibly end a meeting, you are not allowed to join that meeting again.  Previously, someone could reuse the join link they originally had, and join a meeting that had been forcibly ended.  A new response parameter (hasBeenForciblyEnded) was added to responses that return information about a meeting.
 
 = What's Planned =
 To see a list of the planned changes for 0.7, see: http://code.google.com/p/bigbluebutton/issues/list?q=label:API%20label:Release0.7
