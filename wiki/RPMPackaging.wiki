@@ -87,7 +87,21 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
 
 
 == Troubleshooting ==
-If you run !BigBlueButton immediately after installation and it is not running properly. Try executing this command to restart !BigBlueButton:
+If you run !BigBlueButton immediately after installation and it is not running properly.
+
+Check that the mysql database bigbluebutton_dev has been created.
+
+{{{
+mysql -p
+mysql> create database bigbluebutton_dev ;
+mysql> grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret';
+mysql> flush privileges;
+mysql> commit;
+mysql> quit
+}}}
+
+Next, restart BigBlueButton.
+
 {{{
 bbb-conf -clean
 }}}
