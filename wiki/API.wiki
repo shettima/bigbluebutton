@@ -14,14 +14,12 @@
 In 0.70, we made a couple of changes that will force you to update your API integrations.  These changes were necessary to improve the security of the API and our ability to add features in future releases.  We apologize for any inconvenience this may have caused.
 
  * * Issue 487 * - Add the action name to the checksum calculation.  This will be more secure.  If you read the security section below, it will give you the updated instructions on calculating the checksum.  Basically, this change was simple.  Where you previously would have done something similar to: sha1(queryString + securitySalt), you now need to do sha1(callName + queryString + securitySalt).  callName will be "create", "join", "getMeetings", "getMeetingInfo", "end", et cetera - the name of the API call you are making.  This also eliminated the need to send the "random" parameter to getMeetings.
+ * * Issue 473 * - Remove "meetingToken" from the API.  Now you will not be able to pass the meetingToken to any API call, nor will it be returned in any response from the API.  You should now use just the meetingID, which is now required for any meeting-related call.
 
 = What's Planned =
 To see a list of the planned changes for 0.7, see: http://code.google.com/p/bigbluebutton/issues/list?q=label:API%20label:Release0.7
 
-Here are the major changes:
-
- * * Issue 473 * - Remove "meetingToken" from the API.  It is confusing and redundant.
- * * Issue 487 * - Add the action name to the checksum calculation.  This will be more secure.
+The major changes were already completed - see the notes above.
 
 = Overview = 
 This document outlines the API that is available for integrating !BigBlueButton with other applications. It is currently in draft stage as not all features are available. Features which are not currently implemented will be clearly marked as such.
@@ -41,7 +39,6 @@ The code for the extension can be found at: http://github.com/jthomerson/BigBlue
 {{{
 <response>
     <returncode>SUCCESS</returncode>
-    <meetingToken>6db0a605-627f-4f6c-a384-53f745ee372c</meetingToken>
     <meetingID>abcdef</meetingID>
     <attendeePW>111222</attendeePW>
     <moderatorPW>333444</moderatorPW>
@@ -55,7 +52,6 @@ The code for the extension can be found at: http://github.com/jthomerson/BigBlue
 {{{
 <response>
     <returncode>SUCCESS</returncode>
-    <meetingToken>0752956f-dc4a-46f1-81a7-a1f98014c723</meetingToken>
     <meetingID>fedcba</meetingID>
     <attendeePW>tverwpay</attendeePW>
     <moderatorPW>eqma84wp</moderatorPW>
@@ -115,9 +111,9 @@ Those examples are clearly abuses of the system, and therefore must be protected
         ** See <a href="http://php.net/manual/en/function.sha1.php">http://php.net/manual/en/function.sha1.php</a>
 
 == _Error handling_ ==
-    * Any invalid API calls should return a properly formatted document that contains enough information for the user to be able to determine what the error is.
-    * It would be good if this returned a reasonable error message as well as a distinct error key for each type of error so that end users could internationalize their applications and provide custom messages based only on the key that we return.
-        ** i.e.-aninvalidrequestmayreturnanerrormessageof“Noconferenceexistswiththat token ID” but the error key returned is simply “invalidTokenID”.
+ * All API calls make a best-effort attempt to return a properly formatted document that contains enough information for the user to be able to determine what the error is.
+ * Errors are returned with a "returncode" value of "FAILED" and a "message" and "messageKey" value.  We will try very hard to keep the messageKey stable (unchanging) throughout the life of the API.  However, the "message" value is a plain text (english) value that may change with time.  You can use the messageKey to determine the type of error and look up internationalized text within your own system if needed.
+ ** i.e. - An invalid request may return an error message of "No conference with that meeting ID exists", but the messageKey is simple "invalidMeetingIdentifier".
 
 <br><br>
 = Desired Future Features =
@@ -161,7 +157,7 @@ Those examples are clearly abuses of the system, and therefore must be protected
 <p>*Parameters:*</p>    
 || *Param Name* || *Required / Optional* || *Type* || *Description* ||
 || name || Required || String || <p>A name for the meeting.</p> <p><font color="#FF0000">TODO: Currently there is no way to specify a name for the meeting that is different than the meeting ID / meetme room name. This is a limitation of BBB client and not really the API.</font></p> ||
-|| meetingID || Optional || String || <p>A meeting ID that can be used to identify this meeting by the third party application. This is optional, and if not supplied, BBB will generate a meeting token that can be used to identify the meeting.</p> ||
+|| meetingID || Required || String || <p>A meeting ID that can be used to identify this meeting by the third party application.  This must be unique to the server that you are calling.  If you supply a non-unique meeting ID, you will still have a successful call, but will receive a warning message in the response.</p> ||
 || attendeePW || Optional || String || <p>The password that will be required for attendees to join the meeting. This is optional, and if not supplied, BBB will assign a random password.</p> ||
 || moderatorPW || Optional || String || <p>The password that will be required for moderators to join the meeting or for certain administrative actions (i.e. ending a meeting). This is optional, and if not supplied, BBB will assign a random password.</p> ||
 || welcome || Optional || String || <p>A welcome message that gets displayed on the chat window when the participant joins. You can include keywords (`%%CONFNAME%%`, `%%DIALNUM%%`, `%%CONFNUM%%`) which will be substituted automatically. You can set a default welcome message on [http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties bigbluebutton.properties]</p> ||
@@ -171,8 +167,7 @@ Those examples are clearly abuses of the system, and therefore must be protected
 
 <p>*Response:*</p> 
 || *Param Name* || *When Returned* || *Type* || *Description* ||
-|| meetingToken || Always || String || <p>The internal meeting token assigned by the API for this meeting. It can be used by subsequent calls for joining or otherwise modifying a meeting's status.</p>||
-|| meetingID || Sometimes || String || <p>The meeting ID supplied by the third party app, or null if none was supplied. If can be used in conjunction with a password in subsequent calls for joining or otherwise modifying a meeting's status.</p> ||
+|| meetingID || Always || String || <p>The meeting ID supplied by the third party app.  It must be used in conjunction with a password in subsequent calls for joining or otherwise modifying a meeting's status.</p> ||
 || attendeePW || Always || String || <p>The password that will be required for attendees to join the meeting. If you did not supply one, BBB will assign a random password.</p> ||
 || moderatorPW || Always || String || <p>The password that will be required for moderators to join the meeting or for certain administrative actions (i.e. ending a meeting). If you did not supply one, BBB will assign a random password.</p> ||
 
@@ -182,8 +177,7 @@ Those examples are clearly abuses of the system, and therefore must be protected
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
 || fullName || Required || String || <p>The full name that is to be used to identify this user to other conference attendees.</p> ||
-|| meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created. Note that _either_ the meetingToken or the meetingID along with one of the passwords _must_ be passed into this call in order to determine which meeting to find.</p> ||
-|| meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use either the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p> ||
+|| meetingID || Required || String || <p>The meeting ID that identifies the meeting you are attempting to join.</p> ||
 || password || Optional || String || <p>The password that this attendee is using. If the moderator password is supplied, he will be given moderator status (and the same for attendee password, etc)</p> ||
 
 
@@ -197,24 +191,22 @@ There is no XML response for this call if it is properly formatted.  You should 
 <p>These calls may be used by the back-office applications to handle meeting management, etc.</p>
 
 == Is meeting running (isMeetingRunning) ==
-<p>This call enables you to simply check on whether or not a meeting is running by looking it up with either the token or your ID.</p>
+<p>This call enables you to simply check on whether or not a meeting is running by looking it up with your meeting ID.</p>
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
-|| meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created.</p> ||
-|| meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use _either_ the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p> ||
+|| meetingID || Required || String || <p>The meeting ID that identifies the meeting you are attempting to check on.</p> ||
 
 <p>*Response:*</p> 
 || *Param Name* || *When Returned* || *Type* || *Description* ||
-|| running || Always || String || <p>A string of either “true” or “false” that signals whether a meeting with this ID or token is currently running.</p>||
+|| running || Always || String || <p>A string of either “true” or “false” that signals whether a meeting with this ID is currently running.</p>||
 
 == End Meeting (end) ==
 <p>Use this to forcibly end a meeting and kick all participants out of the meeting.</p>
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
-|| meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created. Note that _either_ the meetingToken or the meetingID along with one of the passwords _must_ be passed into this call in order to determine which meeting to find.</p>||
-|| meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use either the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p>||
+|| meetingID || Required || String || <p>The meeting ID that identifies the meeting you are attempting to end.</p> ||
 || password || Required || String || <p>The moderator password for this meeting. You can not end a meeting using the attendee password.</p>||
 
 
@@ -234,8 +226,7 @@ This call returns no additional information other than the standard returncode p
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
-|| meetingToken || Optional || String || <p>The internal meeting token assigned by the API for this meeting when it was created. Note that _either_ the meetingToken or the meetingID along with one of the passwords _must_ be passed into this call in order to determine which meeting to find.</p>||
-|| meetingID || Optional || String || <p>If you specified a meeting ID when calling create, then you can use either the generated meeting token _or_ your specified meeting ID to find meetings. This parameter takes your meeting ID.</p>||
+|| meetingID || Required || String || <p>The meeting ID that identifies the meeting you are attempting to check on.</p> ||
 || password || Required || String || <p>The moderator password for this meeting. You can not get the meeting information using the attendee password.</p>||
 
 
@@ -249,7 +240,6 @@ If the returncode is "SUCCESS", all of the following elements are returned.  If 
 {{{
 <response>
     <returncode>SUCCESS</returncode>
-    <meetingToken>b141f4ac-14a8-448d-b690-816c9bcc1b6e</meetingToken>
     <meetingID>123456</meetingID>
     <attendeePW>abc</attendeePW>
     <moderatorPW>qwe</moderatorPW>
@@ -294,14 +284,12 @@ If the returncode is "SUCCESS", all of the following elements are returned.  If 
     <returncode>SUCCESS</returncode>
     <meetings>
         <meeting>
-            <meetingToken>47b3ea20-ae5a-47ae-aa87-8eb9b5d058c9</meetingToken>
             <meetingID>test123</meetingID>
             <attendeePW>234567</attendeePW>
             <moderatorPW>123456</moderatorPW>
             <running>true</running>
         </meeting>
         <meeting>
-            <meetingToken>ba619a84-873a-4539-aee6-c24a49772554</meetingToken>
             <meetingID>testAgain</meetingID>
             <attendeePW>def456</attendeePW>
             <moderatorPW>abc123</moderatorPW>
