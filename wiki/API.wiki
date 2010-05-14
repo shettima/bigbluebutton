@@ -8,6 +8,7 @@
   * * end * - added in 0.64
   * * getMeetingInfo * - added in 0.64
   * * getMeetings * - added in 0.64
+  * * api version returned on index * - added in 0.7 - now, if you call /bigbluebutton/api with no parameters (and no checksum is necessary), we will return a simple response that gives you the version of the API.  This may help if you are integrating against multiple machines that are running different versions of BigBlueButton (see issue #528)
 
 * 0.70 - YOU NEED TO READ ABOUT THESE CHANGES * 
 
