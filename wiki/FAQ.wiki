@@ -1,7 +1,7 @@
 #summary BigBlueButton Frequently Asked Questions
 #labels Phase-Support
 
-<wiki:toc max_depth="4"/>
+<wiki:toc max_depth="3"/>
 
 ----
 
@@ -138,7 +138,7 @@ If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and d
 
 Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
 
-=== Can I install BigBlueButton on a shared hosting server? ===
+=== Can I install BigBlueButton on a shared hosting server, such as GoDaddy? ===
 If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  !BigBlueButton requires a number of OpenSourceComponents that must be installed with root access.
 
 === I've installed using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
