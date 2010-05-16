@@ -292,7 +292,7 @@ wget http://bigbluebutton.org/downloads/0.64/packages/deskshare.tar.gz
 
 # install deskshare app
 #
-# Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
+# Before you install desktop sharing in BigBlueButton
 # please read how this changes the licensing of BigBlueButton from LGPL to AGPL.
 #
 #     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
