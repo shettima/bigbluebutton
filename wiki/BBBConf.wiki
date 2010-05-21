@@ -2,7 +2,7 @@
 
 = Introduction =
 
-`bbb-conf` is a script installed when you run the !BigBlueButton virtual machine or install BigBlueButton from packages. The `bbb-conf` script helps you modify !BigBlueButton's configuration and detect possible errors in installation.
+`bbb-conf` is a script installed when you run the !BigBlueButton virtual machine or install !BigBlueButton from packages. The `bbb-conf` script helps you modify !BigBlueButton's configuration and detect possible errors in installation.
 
 If you are installing !BigBlueButton from source, you can download `bbb-conf` from [http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf here].
 
