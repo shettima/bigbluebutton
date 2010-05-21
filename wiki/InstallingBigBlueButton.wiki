@@ -655,3 +655,20 @@ You can change !BigBlueButton's configuration to use MeetMe by executing the fol
  sudo sed -i "s/^exten => _XXXX.,n,Konference(\${CONFERENCE_FOUND},H)/# exten => _XXXX.,n,Konference(\${CONFERENCE_FOUND},H)/g" \
  /etc/asterisk/bbb_extensions.conf
 }}}
+
+=== Install bbb-conf ===
+
+The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
+
+{{{ 
+  wget http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf
+  sudo mv bbb-conf /usr/local/bin 
+  sudo chmod ugo+x /usr/local/bin/bbb-conf 
+}}}
+
+You should now be able to type
+{{{
+   bbb-conf -c
+}}}
+
+To check the current setup of !BigBlueButton.  For more options, see [BBBConf manual page for bbb-conf]. 
