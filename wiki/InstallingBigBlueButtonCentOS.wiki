@@ -1,6 +1,6 @@
 #summary How to install BigBlueButton on CentOS
 
-This guide shows you how to install BigBlueButton from source on *CentOS 5.4 32-bit*.  Of course, you can try other versions for CentOS, but we've only tested these against CentOS 5.4 32-bit.
+This guide shows you how to install !BigBlueButton from source on *CentOS 5.4 32-bit*.  Of course, you can try other versions for CentOS, but we've only tested these against CentOS 5.4 32-bit.
 
 If you want an easier install you can use the [RPMPackaging packages].  Of course, if you want to really understand how !BigBlueButton is setup, going through the following step-by-step instructions will show you how to install !BigBlueButton from source.
 
