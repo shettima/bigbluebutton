@@ -133,11 +133,13 @@ Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest bui
 
 When the VM first boots, it acquires an IP address and runs a setup script to finish the installation of !BigBlueButton.   The script:
   # updating the packages 
-  # run `sudo apt-get install bigbluebutton`
+  # installs !BigBlueButton
 
-The first step will ensure that any updated issued after the release of the !BigBlueButton VM will be automatically installed.
+The update step ensures that any updates to packages issued after the release of the !BigBlueButton VM will be automatically downloaded before installation proceeded.
 
-If you see an error on the console when booting, it's likely that the !BigBlueButton VM failed to acquire an IP address.  You can manually finish the installation process, but you need to ensure that the VM has acquired an IP address and that IP address is accessible by the host computer.
+The most common error that prevents update and installation is occurs when the !BigBlueButton VM failed to acquire an IP address.  When this occurs, you'll see errors in the console when booting.
+
+You can manually finish the installation process, but you first need to ensure the VM has (1) acquired an IP address and (2) the IP address is accessible by the host computer.
 
 First, check in VMWare Player that has networking set to *bridged*.  Next, type
 
@@ -169,9 +171,9 @@ Next, you can manually finish the setup to !BigBlueButton with the following com
     sudo apt-get install bigbluebutton
 }}}
 
-Finally, you'll want to ensure that !BigBlueButton is listening to the right IP address.  Use the command `bbb-conf` to check your current environment for possible problems that might prevent !BigBlueButton from running.  
+There should be no errors when you type the above three commands.
 
-Type 
+Next, you'll need to ensure that !BigBlueButton is listening to the IP address of your VM.  To check your current environment for possible problems that might prevent !BigBlueButton from running, type the following command:
 
 {{{
 
@@ -208,6 +210,17 @@ Current Configuration:
 
 If there are any problems (i.e. if bbb-conf detects that red5 isn't running), you'll see a warning message at the bottom.
 
+The output from above showed that !BigBlueButton's configuration files were listening to IP address 192.168.0.163.  When you type the command, if the IP address shown for your output differs from the IP address of your VM, you can change the IP address that !BigBlueButton is using `bbb-conf`.
+
+For example, if the output from `ifconfig` shows your VM is listening to IP address 192.168.0.125, then issue the following command
+
+{{{
+
+  sudo bbb-conf --setip 192.168.0.125
+
+}}}
+
+
 If you need to restart BigBlueButton, do the command
 
 {{{
@@ -218,17 +231,6 @@ If you need to restart BigBlueButton, do the command
 
 and this will do a clean restart.  
 
-== Change IP address of  !BigBlueButton Server ==
-
-The VM will automatically setup  !BigBlueButton components to use the IP address on first boot.  If you need to change the IP address of the server, we've provided a utility to let you change the configuration files for  !BigBlueButton to use the new IP address.
-
-For example, to change the IP address for  !BigBlueButton configuration files to use 192.168.0.125, do the following
-
-{{{
-
-  $ sudo bbb-conf --setip 192.168.0.125
-
-}}}
 
 == I'm still having problems ==
 
