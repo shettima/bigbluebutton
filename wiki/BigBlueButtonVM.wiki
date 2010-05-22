@@ -129,9 +129,47 @@ Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest bui
 
 = Troubleshooting =
 
-== Use bbb-conf ==
+== The console gives an error when booting ==
 
-Starting with !BigBlueButton 0.63, we've added logic to bbb-conf to check your current environment for possible problems that might prevent !BigBlueButton from running.  
+When the VM first boots, it acquires an IP address and runs a setup script to finish the installation of !BigBlueButton.   The script:
+  # updating the packages 
+  # run `sudo apt-get install bigbluebutton`
+
+The first step will ensure that any updated issued after the release of the !BigBlueButton VM will be automatically installed.
+
+If you see an error on the console when booting, it's likely that the !BigBlueButton VM failed to acquire an IP address.  You can manually finish the installation process, but you need to ensure that the VM has acquired an IP address and that IP address is accessible by the host computer.
+
+First, check in VMWare Player that has networking set to *bridged*.  Next, type
+
+{{{
+    ping google.com
+}}}
+
+You should get some ping results
+
+{{{
+   PING google.com (72.14.204.99) 56(84) bytes of data.
+   64 bytes from iad04s01-in-f99.1e100.net (72.14.204.99): icmp_seq=1 ttl=54 time=4.54 ms
+   64 bytes from iad04s01-in-f99.1e100.net (72.14.204.99): icmp_seq=2 ttl=54 time=4.42 ms
+}}}
+
+If not, it means that the VM is unable to acquire an IP address from a DHCP server on the network.  If there is a DHCP serer, you can try 
+
+{{{
+    sudo /etc/init.d/networking restart
+}}}
+
+Try the ping command again.  If you are unable to acquire an IP address, check out this resource [https://help.ubuntu.com/9.04/internet/C/index.html Ubuntu Networking].
+
+Next, you can manually finish the setup to !BigBlueButton with the following commands:
+
+{{{
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get install bigbluebutton
+}}}
+
+Finally, you'll want to ensure that !BigBlueButton is listening to the right IP address.  Use the command `bbb-conf` to check your current environment for possible problems that might prevent !BigBlueButton from running.  
 
 Type 
 
@@ -178,7 +216,7 @@ If you need to restart BigBlueButton, do the command
 
 }}}
 
-and this will do a clean restart.  If you've tried both the above commands and your BigBlueButton server is not working, please post to our [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 forums].  
+and this will do a clean restart.  
 
 == Change IP address of  !BigBlueButton Server ==
 
@@ -191,3 +229,7 @@ For example, to change the IP address for  !BigBlueButton configuration files to
   $ sudo bbb-conf --setip 192.168.0.125
 
 }}}
+
+== I'm still having problems ==
+
+If you've tried both the above commands and your BigBlueButton server is not working, please post to our [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 forums].  
