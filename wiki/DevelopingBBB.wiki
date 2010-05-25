@@ -14,6 +14,7 @@ The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing us
 
 The first half of this document begins by showing you how to make quick changes to !BigBlueButton's and immediately see the updates in the your VM.  The second half of this document shows how to setup Eclipse and Flex Builder to do day-to-day development.  Our approach is to use Windows for running Eclipse and Flex Builder, but the files are written to a !BigBlueButton VM (via a Samba network share). 
 
+<wiki:video url="http://www.youtube.com/watch?v=2wwbQpPbpsI" width="853" height="505"/>
 
 == Getting Started ==
 First, [BigBlueButtonVM setup a BigBlueButtonVM] if you have not already done so.  If you are totally new to !BigBlueButton, you should read the [ArchitectureOverview Architecture Overview].  Doing so will make the following instructions much easier to understand.
