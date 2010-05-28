@@ -4,6 +4,8 @@
 
 This documents outlines a proposal for a plug-in architecture to bbb-client and bbb-apps to facilitate 3rd parties in creating !BigBlueButton extensions.
 
+* THIS DOCUMENT IS A DRAFT. PLEASE READ IT AND PROVIDE YOUR THOUGHTS AND INPUT BELLOW *
+
 == Preliminary work ==
 Work that needs to be completed to facilitate the move to a plug-in architecture.
 
