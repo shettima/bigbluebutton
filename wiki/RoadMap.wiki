@@ -16,3 +16,7 @@ You can follow the progress of this release by subscribing to the [http://groups
 
 = Previous Releases =
 To see the results of previous releases, see [ReleaseNotes BigBlueButton Release Notes].
+
+
+= Architecture Roadmap =
+To see a roadmap of where the bbb architecture is headed, see the [ArchitectureRoadmap  roadmap].
