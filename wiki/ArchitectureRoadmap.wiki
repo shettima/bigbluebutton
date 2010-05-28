@@ -25,7 +25,7 @@ The following modules aren't being used and should be removed from bbb-client, b
 
 In addition, the following modules should be removed because they're not part of the core bbb-client. The modules should be put in a branch, or their own 3rd party repositories. As we build a plug-in architecture, these modules can be loaded externally.
   * Notes Module - aka demo module
-  * DynamicInfo Module
+  * !DynamicInfo Module
 
 === Add unit tests ===
 Add unit tests to the Main app of bbb-client.
@@ -80,4 +80,4 @@ The presentation module would only keep track of pages, and by advancing to diff
 The ability to extend the client is limited without at least some ability to connect to red5 and use the RTMP capability. It is possible right now for client side code to create remote Shared Objects and use those to communicate to red5 and propagate changes to other clients. This is great for creating collaborative real time modules. The only downside is that the updates to the shared object aren't stored on the server, so any conference participants joining the conference late would not receive content created before they joined the conference (for example, chat messages that were exchanged before the user joined). If possible, a simple service should be created for red5 that would allow storage of arbitrary data sent using shared objects. Module developers could use this to overcome the above limitation. With this in place, people could develop relatively complex BBB modules without having to do any server side coding.
 
 ==== A Development Guide on extending bbb-apps ====
-A creation of tutorials and a reference manual on how to easily extend bbb-apps to create BigBlueButton modules with a complex server side component.
+A creation of tutorials and a reference manual on how to easily extend bbb-apps to create !BigBlueButton modules with a complex server side component.
