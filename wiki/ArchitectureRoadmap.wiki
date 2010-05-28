@@ -1,5 +1,7 @@
 #summary A roadmap for architecture changes to bbb
 
+<wiki:toc max_depth="2"/>
+
 == Introduction ==
 
 This documents outlines a proposal for a plug-in architecture to bbb-client and bbb-apps to facilitate 3rd parties in creating !BigBlueButton extensions.
