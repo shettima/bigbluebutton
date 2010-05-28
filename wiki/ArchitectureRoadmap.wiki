@@ -45,7 +45,6 @@ Right now modules in config.xml are located in the same directory as the main ap
   * !BigBlueButton modules can be loaded by the conference users regardless of whether the module exists on the !BigBlueButton server the conference is being hosted on.
   * It would encourage people to extend !BigBlueButton
   * It allows people to more easily provide commercial plugins, since only the binaries of the modules are downloaded.
-  * Allows for the creation of a 'plug-in marketplace' for !BigBlueButton
 
 Security issues would need to be discussed for these changes to take place.
 
