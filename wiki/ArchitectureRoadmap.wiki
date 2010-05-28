@@ -2,10 +2,10 @@
 
 == Introduction ==
 
-This documents outlines a proposal for a plug-in architecture (PIA) to bbb-client and bbb-apps to facilitate 3rd parties in creating !BigBlueButton extensions.
+This documents outlines a proposal for a plug-in architecture to bbb-client and bbb-apps to facilitate 3rd parties in creating !BigBlueButton extensions.
 
 == Preliminary work ==
-Work that needs to be completed to facilitate the move to a PIA.
+Work that needs to be completed to facilitate the move to a plug-in architecture.
 
 === Refactoring to Mate ===
 In May 2009 work was started to move the client from the PureMVC framework to Mate. This has proven to be a very good change overall, making the client smaller and cleaner. However the work hasn't been completed yet. Right now most of the modules run Mate, but the following modules still need to be refactored:
@@ -13,7 +13,7 @@ In May 2009 work was started to move the client from the PureMVC framework to Ma
   * Listeners Module
   * Viewers Module
 
-The Main app is especially critical to refactor, as it's using both mate (for recent functionality) and PureMVC. Cleaning it up will allow further development, as most of the work for creating the PIA will
+The Main app is especially critical to refactor, as it's using both mate (for recent functionality) and PureMVC. Cleaning it up will allow further development, as most of the work for creating the plug-in architecture will
 
 === Cleanup ===
 The following modules aren't being used and should be removed from bbb-client, both to clean up the code base and prevent any confusion from users.
@@ -21,7 +21,7 @@ The following modules aren't being used and should be removed from bbb-client, b
   * Login Module
   * Playback Module
 
-In addition, the following modules should be removed because they're not part of the core bbb-client. The modules should be put in a branch, or their own 3rd party repositories. As we build a PIA, these modules can be loaded externally.
+In addition, the following modules should be removed because they're not part of the core bbb-client. The modules should be put in a branch, or their own 3rd party repositories. As we build a plug-in architecture, these modules can be loaded externally.
   * Notes Module - aka demo module
   * DynamicInfo Module
 
