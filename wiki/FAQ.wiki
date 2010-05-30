@@ -294,7 +294,7 @@ If you are looking for an integration module that does not exist, please post a 
 
 == How many simultaneous users can a !BigBlueButton server support? == 
 
-The !BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (read: let's try to make it crash) and posted the [http://bigbluebutton.org/content/videos results] to the bigbluebutton-dev mailing list.  The results includes a [http://groups.google.com/group/bigbluebutton-dev/attach/d34f62db6296dfbd/bbb-test-1.pdf?part=4 PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
+The !BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (read: let's try to make it crash) and posted the [http://groups.google.com/group/bigbluebutton-users/browse_thread/thread/307a9878fcf07ebe# results] to the bigbluebutton-dev mailing list.  The results includes a [http://groups.google.com/group/bigbluebutton-dev/attach/d34f62db6296dfbd/bbb-test-1.pdf?part=4 PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
 
 In short: At the peak we had over twenty users logged into the voice conference and, through each user opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into !BigBlueButton in a single virtual classroom.  
 
