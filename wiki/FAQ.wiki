@@ -37,8 +37,7 @@ To contribute, a good way to start is helping others in the mailing list solve t
 
 Next, you'll need to demonstrate you are familiar with contributing to an open source project.  A good way to start is try fixing an open issue in our [http://code.google.com/p/bigbluebutton/issues/list issue tracking system], or, if you are ambitions, try implementing one of [IdeasPage open ideas] for enhancing !BigBlueButton.
 
-Stability and usability are core to !BigBlueButton.  If you are able to help fix bugs and increase the stability and usability of the platform, we're interested in working with you 
-now and in the future. 
+Stability and usability are core to !BigBlueButton.  If you demonstrate and ability help fix bugs and increase the stability and usability of the platform, we're interested in mentoring you and helping you become a !BigBlueButton developer. 
 
 
 = Installation =
@@ -61,7 +60,7 @@ Work is underway in [RoadMap BigBlueButton 0.7] to support Ubuntu 10.04 32-bit a
 
 
 === CentOS ===
-As of !BigBlueButton 0.64, we recommend you install !BigBluebutton using [RPMPackaging RPM packages] on *CentOS 32-bit and 64-bit*.  If you are running a different version of CentOS, try following the [InstallingBigBlueButtonCentOS step-by-step instructions] for installing on CentOS.
+As of !BigBlueButton 0.64, we recommend you install !BigBluebutton using [RPMPackaging RPM packages] on *CentOS 5.4 32-bit and 64-bit*.  If you are running a different version of CentOS, try following the [InstallingBigBlueButtonCentOS step-by-step instructions] for installing on CentOS.
 
 === Windows === 
 While technically it should be possible to manually install each of the individual OpenSourceComponents needed to run !BigBlueButton on Windows, we haven't tried it nor have we tested it.
