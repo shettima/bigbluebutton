@@ -215,7 +215,7 @@ This call returns no additional information other than the standard returncode p
 == Get Meeting Info (getMeetingInfo) ==
 <p>This call will return all of a meeting's information, including the list of attendees as well as start and end times.</p>
 
-<font style="color: #FF0000; font-weight: bold">NOTE: This call is currently in-development.  The mentioned functionality below is working, but there may be slight changes to the return parameters in upcoming releases.  For instance, the userID that is returned will be modified (see note below).  Also, additional parameters may be added.  If necessary, some parameters may change.  Feel free to use it - but do so at your own risk.</font>
+<font style="color: #FF0000; font-weight: bold">NOTE: This call was initially added in the 0.64 release, but in that release, you had no control over the userID.  Starting with the 0.7 release, you can specify a userID in the join call that will now be used as a return parameter for the userID field returned in this call.</font>
 
 <p>*Parameters:*</p> 
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
