@@ -18,6 +18,7 @@ In 0.70, we made a couple of changes that will force you to update your API inte
  * * Issue 473 * - Remove "meetingToken" from the API.  Now you will not be able to pass the meetingToken to any API call, nor will it be returned in any response from the API.  You should now use just the meetingID, which is now required for any meeting-related call.
  * * Issue 394 * - Now, after calling "end" to forcibly end a meeting, you are not allowed to join that meeting again.  Previously, someone could reuse the join link they originally had, and join a meeting that had been forcibly ended.  A new response parameter (hasBeenForciblyEnded) was added to responses that return information about a meeting.
  * * Issue 247 * - After a meeting has ended (either forcibly or after all participants have voluntarily left), a meeting only stays in memory for 60 minutes.  After that it will no longer be returned from the getMeetings call, and you will not be able to call getMeetingInfo, etc, for that meeting.  The number of minutes that it remains in memory is configurable.  You can modify /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties and change (or add) the line "beans.dynamicConferenceService.minutesElapsedBeforeMeetingExpiration=60".  If you add it, it should be added just before or after the line where your security salt is configured.
+ * * Issue 393 * - getMeetingInfo / join enhancements: you can now specify a "userID" parameter to the join API call, and this will appear as the userID that is returned in getMeetingInfo.  You can use this for periodically checking to see who is still signed into the conference
 
 = What's Planned =
 To see a list of the planned changes for 0.7, see: http://code.google.com/p/bigbluebutton/issues/list?q=label:API%20label:Release0.7
@@ -169,7 +170,8 @@ Those examples are clearly abuses of the system, and therefore must be protected
 || *Param Name* || *Required/Optional* || *Type* || *Description* ||
 || fullName || Required || String || <p>The full name that is to be used to identify this user to other conference attendees.</p> ||
 || meetingID || Required || String || <p>The meeting ID that identifies the meeting you are attempting to join.</p> ||
-|| password || Optional || String || <p>The password that this attendee is using. If the moderator password is supplied, he will be given moderator status (and the same for attendee password, etc)</p> ||
+|| password || Required || String || <p>The password that this attendee is using. If the moderator password is supplied, he will be given moderator status (and the same for attendee password, etc)</p> ||
+|| userID || Optional || String || <p style="font-weight: bold; color: red">NEW in 0.7</p><p>An identifier for this user that will help your application to identify which person this is.  This user ID will be returned for this user in the getMeetingInfo API call so that you can check </p> ||
 
 
 <p>*Response:*</p> 
