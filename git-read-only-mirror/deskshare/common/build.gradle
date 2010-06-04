@@ -1,3 +1,0 @@
-usePlugin 'java'
-version = '0.64'
-archivesBaseName = 'bbb-deskshare-common'
