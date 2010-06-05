@@ -131,14 +131,16 @@ If the presenter has only 100 kilobytes/second upstream, then VoIP, video, and d
 
 == Troubleshooting ==
 
-=== I have an existing system and want to install BigBlueButton as a part of it ===
+=== I have an existing system and want to install !BigBlueButton as a part of it ===
 
 !BigBlueButton plays well with other systems.  If you are already running apache, you can have !BigBlueButton listen to a different port (see answer above).
 
 Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
 
-=== Can I install BigBlueButton on a shared hosting server, such as !GoDaddy? ===
-If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  !BigBlueButton requires a number of OpenSourceComponents that must be installed with root access.
+=== Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ===
+If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  
+
+There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include Asterisk and nginx. The former provides to voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.
 
 === I've installed using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
 Sometimes a hosted Ubuntu distribution, the hosting provider has removed the default access to packages in the multiverse.  Check
