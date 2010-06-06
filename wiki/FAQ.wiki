@@ -402,6 +402,13 @@ Since Flash can't view your desktop, !BigBlueButton uses a Java applet to captur
 A Java applet could, in theory, use JNI to connect into the Windows  subsystem to make API calls, but we're back to downloading a binary file (DLL) to enable it.  We haven't tried this yet, and unless there is a strong demand for it, we'll keep the desktop sharing solution available for all users.
 
 
+=== The share desktop window is too small and won't let me enlarge so I can see it ===
+
+As the presenter, when you share your desktop, !BigBlueButton will show you a *thumbnail* view of what users are seeing for your desktop.  As a thumbnail view, this is not re-sizable.  
+
+Your viewers have a resizable window showing your desktop.  You can see how this works by watching this [http://bigbluebutton.org/sites/all/videos/join/index.html video overview] at 2:47.
+
+
 == Presentations ==
 === Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
 
