@@ -2,7 +2,9 @@
 
 
 = Release 0.7 =
-We are currently working on !BigBlueButton 0.7.  This release will focus on adding a *whiteboard* to !BigBlueButton.  The whiteboad will be implemented as annotations within the presentation module.  Other features include
+We are currently working on !BigBlueButton 0.7.  This release will focus on adding a *whiteboard* to !BigBlueButton.  Click [http://bigbluebutton.org/sites/all/videos/whiteboard/index.html here] for a video preview of the upcoming whiteboard.
+
+The whiteboad will be implemented as annotations within the presentation module.  Other features include
    * API enhancements
    * better UTF-16 support
    * Ubuntu packages for 10.04 (32-bit and 64-bit)
