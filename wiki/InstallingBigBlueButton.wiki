@@ -661,7 +661,7 @@ You can change !BigBlueButton's configuration to use MeetMe by executing the fol
 The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
 
 {{{ 
-  wget http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-config/bin/bbb-conf
+  wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
   sudo mv bbb-conf /usr/local/bin 
   sudo chmod ugo+x /usr/local/bin/bbb-conf 
 }}}
