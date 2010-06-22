@@ -6,7 +6,7 @@ We are currently working on !BigBlueButton 0.7.  This release will focus on addi
 
 The whiteboad will be implemented as annotations within the presentation module.  Other features include
    * API enhancements
-   * better UTF-16 support
+   * better UTF-8 support
    * Ubuntu packages for 10.04 (32-bit and 64-bit)
    * Lots of small fixes (see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.7 Issues tagged for BigBlueButton 0.7])
 
