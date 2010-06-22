@@ -1,10 +1,13 @@
-This is a coordination page about how to use BigBlueButton for the use case of *remote participation to community events*. The goal is to come up with a global recipe. This will include BigBlueButton of course, but also suggested hardware and setup notes.
+The main use case for BBB is distance education. This is a coordination page about how to use BigBlueButton for the use case of *remote participation to community events*. The goal is to come up with a global recipe. This will include BigBlueButton of course, but also suggested hardware and setup notes.
+
 
 Community events do not typically benefit from a permanent setup. Thus, we should figure out a "mobile solution".
 
 The test case is the instance at http://Live.tikiwiki.org (which is integrated with Tiki), but it should be relevant with any or no CMS system. This will be a major topic at the [http://tikiwiki.org/TikiFestBigBlueButton TikiFestBigBlueButton]
 
 ==State as of Tiki 5.0 and BigBlueButton 0.64==
+
+Following testings in various events:
 
 Good:
   * The overall BBB session is very reliable. It can be broadcasting for several hours without a log off.
@@ -55,3 +58,7 @@ To investigate:
 = Projects =
   * Permanent BBB setup at the [http://www.cdec-cspmr.org/ CDEC]
   * [http://www.rococo2010.org/ RoCoCo event in Montreal] June 2010
+
+
+= Related =
+  * http://readytopresent.wordpress.com/
