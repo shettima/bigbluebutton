@@ -8,7 +8,7 @@ The !UserManager of bbb-client allows you to easily receive notifications of whe
 The !User class is located in package org.bigbluebutton.main.model
 Each instance of the User class represents one user. The User object contains information about the user, such as their name, role, presenter status, and unique user id.
 
-== The UserManager ==
+== The !UserManager ==
 The !UserManager class is located in package org.bigbluebutton.main.api
 To get a !UserManager object:
 {{{
