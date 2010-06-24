@@ -20,7 +20,7 @@ It has a couple useful methods:
   * public function getPresenter():User
 
 The first one returns the list of users currently in the room. Each object in the !ArrayCollection represents one User, and is of the type org.bigbluebutton.main.model.User
-The second method returns the current presenter, also of type User. This is a convenience method - you may also iterate through the !getUserList() !ArrayCollection to find who the presenter is, if there is one.
+The second method returns the current presenter, also of type User. This is a convenience method - you may also iterate through the getUserList() !ArrayCollection to find who the presenter is, if there is one.
 
 == The IUserListener interface ==
 To receive notifications whenever a user joins or leaves, or when a presenter changes, your class needs to implement the IUserListener interface, located in package org.bigbluebutton.main.api
