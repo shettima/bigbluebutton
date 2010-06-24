@@ -5,7 +5,7 @@
 The !UserManager of bbb-client allows you to easily receive notifications of when users join and leave the client, as well as when the presenter changes. This page contains everything you need to know about getting user updates from within bbb-client.
 
 == The User ==
-The User class is located in package org.bigbluebutton.main.model
+The User class is located in package org.bigbluebutton.main.model.
 Each instance of the User class represents one user. The User object contains information about the user, such as their name, role, presenter status, and unique user id.
 
 == The !UserManager ==
