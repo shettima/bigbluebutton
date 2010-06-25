@@ -457,6 +457,20 @@ This will mute the student.   If they want to speak, they can click the raise ha
 
 The best solution is ask all students to use a headset -- this will give them the best audio with no feedback.
 
+=== There is an audio delay when using VoIP ===
+
+!BigBlueButton uses asterisk as its voice conference server, which means you can join the voice conference using either a phone (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).
+
+When using the phone, referred to as direct inward dialing (DID) number, a user can dial a phone number (this is the DID) that is routed by a SIP trunk provider to the asterisk server.  The SIP Gateway is provided by a third-party company, which essentially maps a DID to a server on the internet, converts your voice to a digital format (such as mlaw), and authenticates and connects to asterisk server when someone calls the DID.  The receiving asterisk server then prompts the caller to enter an extension number that corresponds to the voice conference bridge for the !BigBlueButton session.  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
+
+Setting up asterisk with a SIP gateway takes a fair bit of knowledge about how asterisk works.  Fortunately, if when using the built-in VoIP client in !BigBlueButton, everything is pre-configured to automatically dialing into the asterisk server (again using SIP) and joining the proper extension.  However, when using VoIP, there will be a delay in your audio reaching participants.  This delay depends on the upstream bandwidth of the speaker, the CPU-load on the asterisk server, and the network latency. 
+
+As the administrator of the !BigBlueButton server, to reduce the delay, you can do the following:
+
+   # Run !BigBlueButton on a dedicated server (not a virtual server).  A virtual implementation of asterisk is more sensitive to hardware timing when running in a virtualized environment.
+   # Run asterisk on a separate computer.  This the task of audio mixing to a dedicated computer (you'll need to configure the asterisk server on the !BigBlueButton server to route the calls to the separate asterisk server).
+   # Setup DIDs for the asterisk.  This involves configuration of asterisk, and asterisk gives you lots of options (read: if you've never configured asterisk before, this isn't going to be a one or two hour job).  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
+
 
 == Chat ==
 
