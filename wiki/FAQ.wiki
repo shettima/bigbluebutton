@@ -465,7 +465,9 @@ When using the phone, referred to as direct inward dialing (DID) number, a user 
 
 Setting up asterisk with a SIP gateway takes a fair bit of knowledge about how asterisk works.  When using the built-in VoIP client in !BigBlueButton, everything is pre-configured to automatically dial into the asterisk server (again using SIP) and joining the proper extension.  
 
-However, when using VoIP, there will be a delay in your audio reaching participants.  This delay depends on the upstream bandwidth of the speaker, the CPU-load on the asterisk server (i.e. the number of callers in a voice conference), and the network latency. 
+However, when using VoIP, there will be a delay in your audio reaching participants.  This is due to the path that the packets take to reach the VoIP server, and also the upstream bandwidth of the speaker, the CPU-load on the asterisk server (i.e. the number of callers in a voice conference), and the network latency. 
+
+Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk (via SIP), then asterisk mixes in the audio (via appkonference), then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded back to nellymoser, then goes down to the client.
 
 As the administrator of the !BigBlueButton server, to reduce the delay, you can do the following:
 
@@ -477,13 +479,15 @@ In most cases (1) and (2) can make some improvements, but if you have a caller t
 
 For the best audio, setting up (3) will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very, very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your asterisk server.
 
+Finally, when looking at the path for the audio packets, there is an expensive operation in the transcoding within the red5 server: nellymoser -> mulaw and the reverse.  We are looking at ways of optimizing that transcoding in future versions of !BigBlueButton to reduce the audio delay of the built-in VoIP.
+
 === Why is the audio not synced with the video? ===
 
 Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through asterisk, while the video goes through red5.  
 
 For the video, red5 does not much with the video packets -- it just re-broadcasts them to all the clients current subscribed to the video stream.  It's basically a straight pass through of the packets.
 
-For the audio, there are (many) more steps. When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk (via SIP), then asterisk mixes in the audio (via appkonference), then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded back to nellymoser, then goes down to the client.
+For audio, the voice packets have a longer route to take (see answer to question above).
 
 Why use asterisk for the audio conferencing in !BigBlueButton?  The biggest reason is that, with a third-party SIP gateway, it enables users to dial into a !BigBlueButton conference server using the phone lines.  In other words, users have two ways to join the voice conference: built-in VoIP or the phone system.  It also enables !BigBlueButton to tightly integrate with an existing asterisk server if you already have one in place.
 
