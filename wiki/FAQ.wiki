@@ -457,7 +457,7 @@ This will mute the student.   If they want to speak, they can click the raise ha
 
 The best solution is ask all students to use a headset -- this will give them the best audio with no feedback.
 
-=== When I use the VoIP I have a delay in audio ===
+=== Why is there a delay in the audio when I use VoIP? ===
 
 Yes, you will experience delay in the audio when using VoIP.  To understand why, here's the background on how the audio works in !BigBlueButton.  !BigBlueButton uses asterisk as its voice conference server, which means you can join the voice conference by dialing a phone number (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).
 
