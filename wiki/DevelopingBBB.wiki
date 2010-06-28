@@ -61,44 +61,50 @@ Note: If you want to jump right into setting up a complete environment, we recom
 
 Let's begin.  
 
+== Checking out the source code ==
+Type the following command to checkout !BigBlueButton from our github repository.
+{{{
+   bbb-conf --checkout
+}}}
+
+This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}. By default, you will be working on the {{{master}}} (trunk) branch. 
+
+To work on stable releases, list the available {{{tags}}} with
+
+{{{
+   git tag
+}}}
+
+To switch to a {{{tag}}}, type
+{{{
+   git checkout <tag>        (e.g. git checkout v0.7)
+}}}
+
+
 == Setting up the development environment for !BigBlueButton Flex client: bbb-client ==
+Now that you have checked-out the source, let's start making changes.
 
-When building the client locally on the VM, the output will go into `/home/firstuser/dev/bbb-client`.  To setup a development environment for bbb-client, enter the following command
-
-{{{
-  bbb-conf --setup-dev bbb-client
-}}}
-
-You can also checkout from trunk by adding the --trunk option:
+To setup a development environment for bbb-client, enter the following command
 
 {{{
-  bbb-conf --trunk --setup-dev bbb-client
+  bbb-conf --setup-dev client
 }}}
 
-You will be prompted to enter your password for `firstuser` as the script needs root access to run.   This script does the following:
-
-  # run `svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-client bbb-client`
-  # Modify the root for '/client' in the nginx configuration for !BigBlueButton to point to `/home/firstuser/dev/bbb-client`
-  # Restart nginx 
-  # Copy the `config.xml` from `/var/www/bigbluebutton/client/conf` into `~/dev/bbb-client/bin/conf/config.xml`
-
-The first step anonymously checks out the source for bbb-client.  The next tells nginx to load your client (instead of the client in `/var/www/bigbluebutton`).  
-
-The last steps copies the current settings for `config.xml` into your local development directory.  This way, the local !BigBlueButton client has the same configuration.
+This will setup some directories and modify nginx config to use your development client.
 
 Everything is now setup to compile the local version of bbb-client.
 
 {{{
-  cd ~/dev/bbb-client
+  cd ~/dev/source/bigbluebutton/bigbluebutton-client
   ant localization
   ant
 }}}
 
 The first ant task runs the localization of the client, which builds language swf files from provided txt files.
 
-The next line runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/bbb-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
+The next line runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
 
-Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/bbb-client/bin`.  
+Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.  
 
 Let's dive in and make a change. We'll change the default position of the presentation window. This property is stored in the file "!PresentationWindow.mxml". To make the change, we'll do the following:
  # *Locate the file:* The 'find' command should return the path of !PresentationWindow.mxml. If you're using the development VM, the path should be './src/org/bigbluebutton/modules/present/views/PresentationWindow.mxml'
@@ -116,7 +122,7 @@ private var _yPosition:int = 150;
 
 When you're done making you changes, go to the bbb-client directory and rebuild it.
 {{{
-cd ~/dev/bbb-client
+cd ~/dev/source/bigbluebutton/bigbluebutton-client
 ant
 }}}
 
@@ -143,9 +149,9 @@ Then restart nginx.
 If you would like to develop the client using Flex Builder, you can follow these steps:
   * Install Flex Builder on your Windows/Mac machine.
   * Setup samba on the VM and mount the VM drive as described earlier in this document.
-  * In Flex, create a new project by going to New>Flex Project.
-    * For the name of the project enter bbb-client
-    * For project location, uncheck 'Use Default Location' and enter the location on the mounted VM drive where the client code is. For example W:\dev\bbb-client
+  * In Flex, import the project by going to File->Import->Flex Project.
+    * The choose Import Project From
+    * For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
     * Click next, and in the output folder, instead of 'bin-debug', put 'bin'
     * Click finish. It may take several minutes for this operation to complete, be patient.
   * Once this is done, right click on the project, go to properties>Flex Modules. Add these files to the modules list:
