@@ -179,7 +179,7 @@ mkdir room-mock-default
 chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default
 exit
 }}}
-  * On the client code, go to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml". Then open join-mock.xml and make sure the conference property is "conference-mock-default" and the room property is "room-mock-default"
+  * On the client code, to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml". Then open join-mock.xml and make sure the conference property is "conference-mock-default" and the room property is "room-mock-default"
   * You should now be able to launch from Flex using the Run/Debug button.
 
 == Setting up the development environment for !BigBlueButton web interface: bbb-web ==
@@ -187,24 +187,18 @@ exit
 The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
 
 {{{
-  bbb-conf --setup-dev bbb-web
+  bbb-conf --setup-dev web
 }}}
 
-You can also checkout from trunk by adding the --trunk option:
-
-{{{
-  bbb-conf --trunk --setup-dev bbb-web
-}}}
 
 This script does the following steps:
 
-  # svn checkout http://bigbluebutton.googlecode.com/svn/trunk/bigbluebutton-web bbb-web
   # set your local IP address into  `~/.grails/bigbluebutton-config.properties`
   # make all files in `/var/bigbluebutton` writable by everyone
 
-The second step sets up a global property for grails so it knows the IP address of your server when it runs.  The third step opens the permissions to slides directory so `firstuser` can upload a presentation.
+The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
 
-Note: If you get an error upload slides when running bbb-web as `first user`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
+Note: If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
 
 Before you can compile and run your version of bbb-web, you need to stop tomcat.  
 
@@ -215,7 +209,7 @@ Before you can compile and run your version of bbb-web, you need to stop tomcat.
 Next, let's compile and run bbb-web
 
 {{{
-  cd ~/dev/bbb-web
+  cd ~/dev/source/bigbluebutton/bigbluebutton-web
   ant
 }}}
 
@@ -256,18 +250,11 @@ The !BigBlueButton web apps runs within the red5 server.  Unlike development wit
 To setup a development environment for bbb-apps, enter the following command
 
 {{{
-  bbb-conf --setup-dev bbb-apps
-}}}
-
-You can also checkout from trunk by adding the --trunk option:
-
-{{{
-  bbb-conf --trunk --setup-dev bbb-apps
+  bbb-conf --setup-dev apps
 }}}
 
 This will 
 
-  # checkout bbb-apps to `~/dev/bbb-apps`.  
   # Enable write access to `/usr/share/red5/webapps`
   # Uninstall the existing `bbb-apps` package
   # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
@@ -283,7 +270,7 @@ At this point red5 is still running.  Before we deploy the local version of bbb-
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
 
 {{{
-    cd ~/dev/bbb-apps/
+    cd ~/dev/source/bigbluebutton/bigbluebutton-apps/
     gradle war deploy
 }}}
 
