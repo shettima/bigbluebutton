@@ -6,9 +6,9 @@
 = Setting up a !BigBlueButton Development Environment =
 We want it to be easy for others to develop and extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup your own !BigBlueButton development environment, giving you the ability to edit, test, and deploy changes to your !BigBlueButton server.
 
-One of these tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain as the differences between running !BigBlueButton on Windows and Linux caused us lots of support headaches.  Next, we created Ubuntu packages so [InstallationUbuntu installation] on Unix would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ Hudson server] to automatically compile and build the packages when developers check in updates to our Google Code SVN.  The pain reduced, but we were still building and running !BigBlueButton in Windows, then running it on Unix.  
+One of these tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain as the differences between running !BigBlueButton on Windows and Linux caused us lots of support headaches.  Next, we created Ubuntu packages so [InstallationUbuntu installation] on Unix would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ Hudson server] to automatically compile and build the packages when developers check in updates to our [http://www.github.com/bigbluebutton GitHub repositiory].  The pain reduced, but we were still building and running !BigBlueButton in Windows, then running it on Unix.  
 
-The last step was to edit on Windows, but compile and run on Linux.  We did this by running a custom Linux VM (using VMWare player) that had all the development environment setup.  In parallel, we were also shipping a !BigBlueButton VM that had all the runtime environment setup.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
+The last step was to edit on Windows, but compile and run on Linux.  We did this by running a custom Linux VM (using VMWare player or VirtualBox) that had all the development environment setup.  In parallel, we were also shipping a !BigBlueButton VM that had all the runtime environment setup.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
 
 The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM provides you with a working, reference implementation; by looking through the configuration (and using the docs below), you should be able to configure your own development environment on the Unix OS of your choice.
 
@@ -41,7 +41,7 @@ Note: `bbb-conf` is a bash utility script included in the !BigBlueButton VM. It'
 In some cases the IP of the VM maybe change while initializing for the first time and, consequently, the !BigBlueButton config files would be setup with the wrong IP address. If you're running into problems, execute the following command. 
 
 {{{
-bbb-conf -c
+   bbb-conf -c
 }}}
 
 If the IP in !BigBlueButton's config files don't match the IP of your VM, you will see something like the following.
@@ -51,7 +51,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbbconf-wrongip.png
 To resolve this, all you need to do is run this command:
 
 {{{
-bbb-conf --setip <YOUR-IP>
+   bbb-conf --setip <YOUR-IP>
 }}}
 
 = How to make simple changes to !BigBlueButton =
@@ -62,7 +62,7 @@ Note: If you want to jump right into setting up a complete environment, we recom
 Let's begin.  
 
 == Checking out the source code ==
-Type the following command to checkout !BigBlueButton from our github repository.
+Type the following command to checkout !BigBlueButton from our [http://www.github.com/bigbluebutton github repository].
 {{{
    bbb-conf --checkout
 }}}
@@ -80,6 +80,7 @@ To switch to a {{{tag}}}, type
    git checkout <tag>        (e.g. git checkout v0.7)
 }}}
 
+If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub help] has a lot of information too.
 
 == Setting up the development environment for !BigBlueButton Flex client: bbb-client ==
 Now that you have checked-out the source, let's start making changes.
@@ -295,10 +296,10 @@ If you want to revert back to the packaged version of !BigBlueButton apps, do th
 = Other Notes on setting up a Full Development Environment =
 
 == Pre-requisites ==
+
 On Windows:
  * Install Eclipse
  * Install !FlexBuilder
- * Install [http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA Subclipse plugin] for both Eclipse and !FlexBuilder
  * Install JDK 6 and add JAVA_HOME in your environment variables
  * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
