@@ -330,15 +330,12 @@ BBB web depends on bbb-commons for some common classes, you need to issue the fo
 NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
 === BBB apps ===
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-apps/index.html  bbb-apps video]
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
+
 {{{
-Use these commands instead of the ant commands for 0.63:
-
-gradle copyToLib
-gradle war
-gradle deploy
-
-then restart red5
+  gradle copyToLib
+  gradle war
+  gradle deploy
 }}}
 
 === Video app ===
