@@ -1,5 +1,12 @@
 #summary Release Notes for new versions of BigBlueButton.
 
+= Release 0.7 =
+  * * Whiteboard * - !BigBlueButton 0.7 comes with new whiteboard functionality. The whiteboard is overlaid over the presentation, and enables the presenter to draw freehand as well as simple shapes on top of the presentation slides. Each slide has it's own whiteboard instance, which is persistent as the presenter moves across the slides. Everything drawn on the whiteboard is synchronized in real time across all the conference participants.
+
+  * * Desktop Sharing Pointer * The mouse pointer is now visible to the viewers when the presenter is sharing their desktop.
+
+  * * UI Improvements * Changes to the UI make are part of an ongoing effort to make !BigBlueButton even simpler for people to use. Changes include better icons and labels for buttons, ability to change font sizes in chat, and a new layout manager that ensures !BigBlueButton looks better on screens of varying resolutions and sizes. 
+
 = Release 0.64: Lickety-split =
 
 _Code named for the reduced bandwidth and speed improvements to desktop sharing_
