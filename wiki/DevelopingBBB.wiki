@@ -108,7 +108,7 @@ The next line runs the default task (cleanandmake) and uses the mxmlc compiler t
 Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.  
 
 Let's dive in and make a change. We'll change the default position of the presentation window. This property is stored in the file "!PresentationWindow.mxml". To make the change, we'll do the following:
- # *Locate the file:* The 'find' command should return the path of !PresentationWindow.mxml. If you're using the development VM, the path should be './src/org/bigbluebutton/modules/present/views/PresentationWindow.mxml'
+ # *Locate the file:* The 'find' command should return the path of !PresentationWindow.mxml. If you're using the development VM, the path should be {{{./src/org/bigbluebutton/modules/present/views/PresentationWindow.mxml}}}
 {{{
 find . -name "PresentationWindow.mxml"
 }}}
@@ -303,28 +303,22 @@ On Windows:
  * Install JDK 6 and add JAVA_HOME in your environment variables
  * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
-
-== Videos on how to develop with different bbb components ==
-*NOTE*: These videos were made for version 0.62 of bigbluebutton and are therefore out of date and of limited use. We will be updating them soon.
-
 === Client ===
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-client/index.html bbb-client video]
+ * See the *Setting up Flex Builder to work with the client* heading above.
 
 === BBB Commons ===
 The bbb-commons contain classes that are common to bbb-web and bbb-apps.
-
- * Checkout bbb-commons-message from trunk
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-common-message}}}
  * Compile it and upload to your local repo {{{/home/firstuser/dev/repo}}} (assuming you are using the BBB VM as dev environment)
 {{{
+  cd ~/dev/source/git/bigbluebutton/bbb-common-message
   gradle jar  --- compiles the classes
   gradle uploadArchives --- copies the jar file to /home/firstuser/dev/repo
-
 }}}
 
 === BBB Web ===
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-web/index.html bbb-web video]
-
-BBB web depends on bbb-commons for some common classes. Once you have checked out (manually, not using bbb-conf) bbb-web from trunk, you need to issue the following
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
+BBB web depends on bbb-commons for some common classes, you need to issue the following
 {{{
   gradle copyToLib --- downloads all dependencies specifically bbb-commons from local repo
   
