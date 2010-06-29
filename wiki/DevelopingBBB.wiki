@@ -320,11 +320,13 @@ The bbb-commons contain classes that are common to bbb-web and bbb-apps.
  * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
 BBB web depends on bbb-commons for some common classes, you need to issue the following
 {{{
-  gradle copyToLib --- downloads all dependencies specifically bbb-commons from local repo
+  # downloads all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+  gradle copyToLib 
   
-  do your development
+  # do your development
 
-  ant --- to start bbb-web
+  # start bbb-web
+  ant 
 }}}
 
 NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
@@ -333,27 +335,81 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
  * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
 
 {{{
+  cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+  
+  # downloads all dependencies specifically bbb-commons from /home/firstuser/dev/repo
   gradle copyToLib
+
+  # builds the application
   gradle war
+
+  # deploys the application to Red5 (/usr/share/red5/webapps)
   gradle deploy
 }}}
 
 === Video app ===
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-video/index.html bbb-video video]
-=== Voice app ===
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-voice/index.html bbb-voice video]
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-video}}}
+
 {{{
-Use these commands instead of the ant commands for 0.63:
+  cd ~/dev/source/git/bigbluebutton/bbb-video
+  
+  # downloads all dependencies
+  gradle copyToLib
 
-gradle copyToLib
-gradle war
-gradle deploy
+  # builds the application
+  gradle war
 
-then restart red5
+  # deploys the application to Red5 (/usr/share/red5/webapps)
+  gradle deploy
+}}}
+
+=== Voice app ===
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-voice}}}
+
+{{{
+  cd ~/dev/source/git/bigbluebutton/bbb-video
+  
+  # downloads all dependencies 
+  gradle copyToLib
+
+  # builds the application
+  gradle war
+
+  # deploys the application to Red5 (/usr/share/red5/webapps)
+  gradle deploy
 }}}
 
 === Desktop Sharing app ===
- * [http://www.bigbluebutton.org/sites/all/videos/dev-env/bbb-deskshare/index.html bbb-deskshare video]
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/deskshare}}}
+
+{{{
+  cd ~/dev/source/git/bigbluebutton/deskshare
+  
+  # downloads all dependencies 
+  gradle copyToLib
+
+  # Build the server component
+  cd app
+
+  # builds the application
+  gradle war
+
+  # deploys the application to Red5 (/usr/share/red5/webapps)
+  gradle deploy
+
+  # To build the applet
+  cd applet
+
+  gradle jar
+
+  # sign the applet
+  ant sign-jar
+
+  # copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
+  cp ~/dev/source/git/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources
+
+  # compile the bbb-client
+}}}
 
 == TIPS ==
 
