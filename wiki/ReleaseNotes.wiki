@@ -8,7 +8,7 @@
   * * UI Improvements * - Changes to the UI make are part of an ongoing effort to make !BigBlueButton even simpler for people to use. Changes include better icons and labels for buttons, ability to change font sizes in chat, and a new layout manager that ensures !BigBlueButton looks better on screens of varying resolutions and sizes. 
 
 == Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7 Summary of issues fixed in BigBlueButton 0.7]
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
 
 = Release 0.64: Lickety-split =
 
