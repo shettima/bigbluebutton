@@ -12,6 +12,12 @@ This guide is for developers who want to contribute to !BigBlueButton.
  * http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html
 
 = How to develop with Git =
+=== Setting up your environment to work with GitHub ===
+ * Create an account in GitHub.
+ * [http://help.github.com/msysgit-key-setup/ Generate ssh keys] on your !BigBlueButton VM where you will be doing development.
+ * [http://help.github.com/git-email-settings/ Setup your username] so that commits are credited properly.
+
+=== Working with Git ===
 Here we describe the workflow that you may use to develop !BigBlueButton with git.
 
 Clone !BigBlueButton
