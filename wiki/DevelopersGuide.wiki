@@ -1,10 +1,13 @@
 #summary Developers Guide for BigBlueButton.
 
+* DRAFT *
 = Introduction =
 
 Add your content here.
 = Contributing to !BigBlueButton =
 
 = Code Convention =
+ * Based on [http://www.sip-communicator.org/index.php/Documentation/CodeConvention Sip Communicator]
 
 = How to develop with Git =
+We suggest reading the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub help] has a lot of information too.
