@@ -12,7 +12,7 @@ This guide is for developers who want to contribute to !BigBlueButton.
  * http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html
 
 = How to develop with Git =
-=== Setting up your environment to work with GitHub ===
+=== Setting up your environment to work with !GitHub ===
  * Create an account in [http:///www.github.com GitHub].
  * [http://help.github.com/msysgit-key-setup/ Generate ssh keys] on your !BigBlueButton VM where you will be doing development.
  * [http://help.github.com/git-email-settings/ Setup your username] so that commits are credited properly.
@@ -34,6 +34,7 @@ Once the checkout is complete, type the following
 }}}
 
 What this means is that the remote repository at "git@github.com:bigbluebutton/bigbluebutton.git" is aliased as "origin"
+(see http://progit.org/book/ch3-5.html)
 
 List all the branches from the "origin"
 {{{
