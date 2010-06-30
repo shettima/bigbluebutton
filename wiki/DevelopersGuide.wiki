@@ -22,10 +22,8 @@ Clone !BigBlueButton
 Once the checkout is complete, type the following
 {{{
   git remote --verbose
-}}}
 
-which will result in 
-{{{
+  # which will show
   origin  git@github.com:bigbluebutton/bigbluebutton.git
 }}}
 
@@ -34,31 +32,29 @@ What this means is that the remote repository at "git@github.com:bigbluebutton/b
 List all the branches from the "origin"
 {{{
   git branch
-}}}
 
-It will show
-{{{
+  # It will show
   * master
 }}}
 
 This means that there is one branch available called "master" and if you make changes, it will be applied to this branch as indicated by the "*".
 
-Let's say you want to implement the record and playback feature.
+Let's say your next deliverable is the record and playback feature.
 
 Create a branch where you will be doing your work
 {{{
   git checkout -b record-and-playback-feature
-}}}
 
-resulting in
-{{{
-Switched to a new branch "record-and-playback-feature"
-}}}
+  # It will show
+  Switched to a new branch "record-and-playback-feature"
 
-{{{
- git branch
-  master
-* record-and-playback-feature
+  # Confirm that you are now on the record and playback brancd
+  git branch
+
+  # It should show
+    master
+  * record-and-playback-feature
+
 }}}
 
 You are now working on the "record-and-playback-feature" branch. While on this branch, you create new classes, delete classes, modify code and do commits.
@@ -76,6 +72,7 @@ Update your master branch and merge the update into your "record-and-playback-fe
 {{{  
   git pull origin master
 
+  # Merger the changes from master into your branch, resolving conflicts
   git merge master
 }}}
 
@@ -112,4 +109,4 @@ Switch to the master branch and create a hotfix branch based on master.
 
 We suggest reading the book [http://progit.org/book/ Pro Git] especially [http://progit.org/book/ch1-0.html Getting Started], [http://progit.org/book/ch2-0.html Git Basics], [http://progit.org/book/ch3-0.html Git Branching], [http://progit.org/book/ch5-0.html Distributed Git] chapters. [http://help.github.com/ GitHub help] has a lot of information too.
 
-FAQ
+===FAQ===
