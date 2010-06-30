@@ -296,6 +296,7 @@ If you want to revert back to the packaged version of !BigBlueButton apps, do th
 = Other Notes on setting up a Full Development Environment =
 
 == Pre-requisites ==
+In this environment, we assume you are developing on Windows with Eclipse and FlexBuilder. Also, you have the BigBlueButton VM running on VMware/VirtualBox and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
 
 On Windows:
  * Install Eclipse
