@@ -116,4 +116,6 @@ Switch to the master branch and create a hotfix branch based on master.
 
 We suggest reading the book [http://progit.org/book/ Pro Git] especially [http://progit.org/book/ch1-0.html Getting Started], [http://progit.org/book/ch2-0.html Git Basics], [http://progit.org/book/ch3-0.html Git Branching], [http://progit.org/book/ch5-0.html Distributed Git] chapters. [http://help.github.com/ GitHub help] has a lot of information too.
 
+[http://ktown.kde.org/~zrusin/git/git-cheat-sheet-medium.png Git Cheat Sheet]
+
 ===FAQ===
