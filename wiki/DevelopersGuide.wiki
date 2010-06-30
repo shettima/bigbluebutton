@@ -13,7 +13,7 @@ This guide is for developers who want to contribute to !BigBlueButton.
 
 = How to develop with Git =
 === Setting up your environment to work with GitHub ===
- * Create an account in GitHub.
+ * Create an account in [http:///www.github.com GitHub].
  * [http://help.github.com/msysgit-key-setup/ Generate ssh keys] on your !BigBlueButton VM where you will be doing development.
  * [http://help.github.com/git-email-settings/ Setup your username] so that commits are credited properly.
 
@@ -43,7 +43,7 @@ List all the branches from the "origin"
   * master
 }}}
 
-This means that there is one branch available called "master" and if you make changes, it will be applied to this branch as indicated by the "*".
+This means that there is one branch available called "master" and if you make changes, it will be applied to this branch as indicated by the "star".
 
 Let's say your next deliverable is the record and playback feature.
 
