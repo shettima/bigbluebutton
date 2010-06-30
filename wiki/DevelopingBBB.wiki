@@ -8,7 +8,7 @@ We want it to be easy for others to develop and extend !BigBlueButton.  To achie
 
 One of these tools is the BigBlueButtonVM itself.  Currently, there are over fourteen OpenSourceComponents in !BigBlueButton, and it's no small feat to [InstallingBigBlueButton set everything up from scratch].  In the beginning, when we started developing !BigBlueButton, we did everything on Windows.  Later, we would manually install the components on a Unix server.  That was a pain as the differences between running !BigBlueButton on Windows and Linux caused us lots of support headaches.  Next, we created Ubuntu packages so [InstallationUbuntu installation] on Unix would only take a few minutes.  Then we configured a [http://bigbluebutton.org/hudson/ Hudson server] to automatically compile and build the packages when developers check in updates to our [http://www.github.com/bigbluebutton GitHub repositiory].  The pain reduced, but we were still building and running !BigBlueButton in Windows, then running it on Unix.  
 
-The last step was to edit on Windows, but compile and run on Linux.  We did this by running a custom Linux VM (using VMWare player or VirtualBox) that had all the development environment setup.  In parallel, we were also shipping a !BigBlueButton VM that had all the runtime environment setup.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
+The last step was to edit on Windows, but compile and run on Linux.  We did this by running a custom Linux VM (using VMWare player or [http://www.virtualbox.org/ VirtualBox]) that had all the development environment setup.  In parallel, we were also shipping a !BigBlueButton VM that had all the runtime environment setup.  (You can see where this is heading).  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
 
 The !BigBlueButton VM runs Ubuntu 9.04.  Of course, you may not be developing using Ubuntu, nor may you want to run the VM.  In that case, the VM provides you with a working, reference implementation; by looking through the configuration (and using the docs below), you should be able to configure your own development environment on the Unix OS of your choice.
 
@@ -296,7 +296,7 @@ If you want to revert back to the packaged version of !BigBlueButton apps, do th
 = Other Notes on setting up a Full Development Environment =
 
 == Pre-requisites ==
-In this environment, we assume you are developing on Windows with Eclipse and FlexBuilder. Also, you have the BigBlueButton VM running on VMware/VirtualBox and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
+In this environment, we assume you are developing on Windows with Eclipse and FlexBuilder. Also, you have the BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
 
 On Windows:
  * Install Eclipse
@@ -331,14 +331,16 @@ The bbb-commons contain classes that are common to bbb-web and bbb-apps.
 }}}
 
 === BBB Web ===
- * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
-BBB web depends on bbb-commons for some common classes, you need to issue the following
-{{{
-  # downloads all dependencies specifically bbb-commons from /home/firstuser/dev/repo
-  gradle copyToLib 
-  
-  # do your development
 
+{{{
+  cd ~/dev/source/git/bigbluebutton/bigbluebutton-web
+
+  # BBB web depends on bbb-commons,  
+  # download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+  gradle copyToLib 
+
+  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
+  
   # start bbb-web
   ant 
 }}}
