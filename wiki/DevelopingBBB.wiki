@@ -312,8 +312,10 @@ The bbb-commons contain classes that are common to bbb-web and bbb-apps.
  * Compile it and upload to your local repo {{{/home/firstuser/dev/repo}}} (assuming you are using the BBB VM as dev environment)
 {{{
   cd ~/dev/source/git/bigbluebutton/bbb-common-message
-  gradle jar  --- compiles the classes
-  gradle uploadArchives --- copies the jar file to /home/firstuser/dev/repo
+  # compile the classes
+  gradle jar  
+  # copy the jar file to /home/firstuser/dev/repo
+  gradle uploadArchives 
 }}}
 
 === BBB Web ===
@@ -337,7 +339,7 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 {{{
   cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
   
-  # downloads all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+  # download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
   gradle copyToLib
 
   # builds the application
@@ -353,13 +355,13 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 {{{
   cd ~/dev/source/git/bigbluebutton/bbb-video
   
-  # downloads all dependencies
+  # download all dependencies
   gradle copyToLib
 
-  # builds the application
+  # build the application
   gradle war
 
-  # deploys the application to Red5 (/usr/share/red5/webapps)
+  # deploy the application to Red5 (/usr/share/red5/webapps)
   gradle deploy
 }}}
 
@@ -369,13 +371,13 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 {{{
   cd ~/dev/source/git/bigbluebutton/bbb-video
   
-  # downloads all dependencies 
+  # download all dependencies 
   gradle copyToLib
 
-  # builds the application
+  # build the application
   gradle war
 
-  # deploys the application to Red5 (/usr/share/red5/webapps)
+  # deploy the application to Red5 (/usr/share/red5/webapps)
   gradle deploy
 }}}
 
@@ -385,16 +387,16 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 {{{
   cd ~/dev/source/git/bigbluebutton/deskshare
   
-  # downloads all dependencies 
+  # download all dependencies 
   gradle copyToLib
 
-  # Build the server component
+  # build the server component
   cd app
 
   # builds the application
   gradle war
 
-  # deploys the application to Red5 (/usr/share/red5/webapps)
+  # deploy the application to Red5 (/usr/share/red5/webapps)
   gradle deploy
 
   # To build the applet
@@ -408,7 +410,7 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
   # copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
   cp ~/dev/source/git/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources
 
-  # compile the bbb-client
+  # compile the bbb-client (see Developing with bbb client)
 }}}
 
 == TIPS ==
