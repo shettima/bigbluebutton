@@ -300,6 +300,8 @@ In this environment, we assume you are developing on Windows with Eclipse and Fl
 
 On Windows:
  * Install Eclipse
+ * Install the [http://www.scala-ide.org/ Scala Eclipse plugin]
+ * Install the [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
  * Install !FlexBuilder
  * Install JDK 6 and add JAVA_HOME in your environment variables
  * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
@@ -309,12 +311,21 @@ On Windows:
 
 === BBB Commons ===
 The bbb-commons contain classes that are common to bbb-web and bbb-apps.
- * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-common-message}}}
- * Compile it and upload to your local repo {{{/home/firstuser/dev/repo}}} (assuming you are using the BBB VM as dev environment)
+ 
 {{{
   cd ~/dev/source/git/bigbluebutton/bbb-common-message
+
+  # Generate Eclipse project files
+  gradle eclipse
+
+  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bbb-common-message
+
+  # Setup the build path. Right-click on the project, chose Build Path->Configure Build Path
+  # Click on the Source tab and add folder src/main/java
+
   # compile the classes
   gradle jar  
+
   # copy the jar file to /home/firstuser/dev/repo
   gradle uploadArchives 
 }}}
