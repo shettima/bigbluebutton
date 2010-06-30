@@ -348,13 +348,22 @@ The bbb-commons contain classes that are common to bbb-web and bbb-apps.
 NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
 === BBB apps ===
- * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
+
 
 {{{
   cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
   
+  # Generate Eclipse project files
+  gradle eclipse
+
   # download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
   gradle copyToLib
+
+  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+
+  # Right-click on the project and add Scala Nature and Groovy Nature
+  
+  # Setup your build path and library
 
   # builds the application
   gradle war
