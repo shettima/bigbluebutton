@@ -3,7 +3,7 @@
 = Contributing the new language translation to !BigBlueButton =
 If you would like to translate !BigBlueButton to another language, here are the steps you can follow:
 
-  # Download the [http://bigbluebutton.googlecode.com/svn/git-read-only-mirror/bigbluebutton-client/locale/en_US/bbbResources.properties language template file]. 
+  # Download the [http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-client/locale/en_US/bbbResources.properties language template file]. 
   # Open this file with a text editor, and translate the english text into your language.
   # Post the translated text to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List]
 *NOTE: While you will be credited bellow for the translation, by sending the translation to the mailing list you are automatically transferring all copyright of the translation file to the !BigBlueButton project.*
