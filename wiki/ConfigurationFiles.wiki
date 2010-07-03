@@ -18,7 +18,7 @@ Note: We used to have lots of detailed comments in this wiki page, but we found 
 
 Located in {{{/etc/nginx/sites-enabled/bigbluebutton}}}
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/config/bigbluebutton.nginx
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/config/bigbluebutton.nginx
 
 == Log files ==
 
@@ -40,12 +40,12 @@ Follow this thread http://osflash.org/pipermail/red5_osflash.org/2009-June/03384
 === /usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties ===
 Properties for bbb-apps, the core !BigBlueButton red5 module.
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-apps/src/main/webapp/WEB-INF/bigbluebutton.properties
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/webapp/WEB-INF/bigbluebutton.properties
 
 === /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties ===
 Properties for bbb-apps-sip, which specifies the range of ports for connecting to the Asterisk server.  Used with bbb_sip.conf.
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties
 
 === /usr/share/red5/log/deskshare.log ===
 Debug output from the deskshare red5 application, which is the red5 server component  for supporting desktop sharing in the !BigBlueButton client.
@@ -65,7 +65,7 @@ Debug output from the video red5 application, which is the red5 server component
 === /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ===
 This is one of the main configuration file for !BigBlueButton applications.
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
   
 == Log files ==
 === /var/log/tomcat6===
@@ -87,16 +87,16 @@ Contains !BigBlueButton grails app logs.
 == Configuration files ===
 === /etc/asterisk/bbb_extensions.conf ===
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bbb_extensions.conf
 
 === /etc/asterisk/manager.d/bigbluebutton.conf ===
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bigbluebutton.conf
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bigbluebutton.conf
 
 === /etc/asterisk/bbb_sip.conf ===
 
-[http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/src/conf/config.xml Click here to view the latest version]
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf
+[http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bbb_sip.conf Click here to view the latest version]
+
 
 == Aditional Steps ==
 
@@ -117,4 +117,4 @@ You must to edit the file: /etc/asterisk/sip.conf and add the following line on 
 == Configuration File ==
 === /var/www/bigbluebutton/client/conf/config.xml ===
 
-http://code.google.com/p/bigbluebutton/source/browse/trunk/bigbluebutton-client/src/conf/config.xml
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/conf/config.xml.template
