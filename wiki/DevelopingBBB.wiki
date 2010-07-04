@@ -114,11 +114,11 @@ find . -name "PresentationWindow.mxml"
 }}}
  # *Change the window position:* For this example, we'll change the default value of the y-position of the presentation window.
 {{{
-# On line 92, the value of yPosition is set to 0
-private var _yPosition:int = 0;
+# On ~ line 111, the value of yPosition is set to 0
+    [Bindable] private var DEFAULT_Y_POSITION:int = 0;
 
 # Change it to 150, like so
-private var _yPosition:int = 150;
+    [Bindable] private var DEFAULT_Y_POSITION:int = 150;
 }}}
 
 When you're done making you changes, go to the bbb-client directory and rebuild it.
