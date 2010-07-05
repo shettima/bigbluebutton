@@ -92,7 +92,7 @@ Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as RE
 
 Sets up the development environment for bbb-web, bbb-client, and bbb-apps.
 
-*NOTE:* You have to run this after {{{--checkout}}}.
+*NOTE:* You have to run this after you've ran {{{bbb-conf --checkout}}}.
 
 === --reset-dev ===
 
