@@ -437,6 +437,34 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 }}}
 
 == TIPS ==
+* Running Red5 *
+It is better to have multiple ssh windows when developing. On one window, you can start and stop Red5.
+{{{
+   # Stop Red5
+   sudo /etc/init.d/red5 stop
+
+   # cd to Red5 directory
+   cd /usr/share/red5
+
+   # Start Red5 as red5 user
+   sudo -u red5 ./red5.sh
+
+}}}
+
+On another window, you can make your code changes and deploy to Red5, e.g.
+{{{
+  cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+  
+  # make some changes
+  
+  # Build
+  gradle war
+
+  # Deploy 
+  gradle deploy
+
+}}}
+
 
 *Remove BBB packages*
 
