@@ -45,13 +45,10 @@ To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the 
 
 `bbb-conf` accepts the following options:
 
-{{{ --help }}}
+=== --version ===
 Displays a help message with a list of available options.
 
-{{{ --version }}}
-Displays a help message with a list of available options.
-
-{{{ --setip < Host > : < Port > }}}
+=== --setip < Host > : < Port > ===
 
 Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
@@ -72,43 +69,40 @@ or
 }}}
 
 
-{{{ --check }}}
+=== --check ===
 
 Checks current settings and outlines any potential problems.
 
-== --conference _conference_module_ ==
+=== --conference _conference_module_ ===
 
 Switches conference module in Asterisk.  Valid choices are `konference` or `meetme`.
 
-== --debug ==
+=== --debug ===
 
 Checks the log files for errors
 
-== --setup-samba ==
+=== --setup-samba ===
 
 This command is only available if you are using the !BigBlueButton virtual machine.
 
 It sets up a samba share for development.
 
-== --setup-dev [bbb-web|bbb-client|bbb-apps] ==
+=== --setup-dev [web|client|apps] ===
 
 Checks out the project from trunk.
 
-== --reset-dev ==
+=== --reset-dev ===
 
 Resets the development environment back to using packages.
 
-== --trunk ==
+=== --trunk ===
 Checkout trunk instead of last release.  This option is used in front of a --setup-dev command.  Example of a full command: bbb-conf --trunk --setup-dev bbb-web
 
-== --svn-username [[user]] ==
-Your Google code username if you want to
-                                      commit from the checked out code
-== --clean ==
+=== --clean ===
 Clear all the log files and restart !BigBlueButton
 
-== --watch ==
+=== --watch ===
 Watch log files for error messages every 2 seconds
 
-== --zip ==
+=== --zip ===
 Zip up log files for reporting an error
