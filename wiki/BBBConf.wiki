@@ -86,7 +86,7 @@ This command is only available if you are using the !BigBlueButton virtual machi
 It sets up a samba share for development.
 
 === --checkout < repo > ===
-Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no <repo> is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.
+Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no {{{<repo>}}} is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.
 
 === --setup-dev [web|client|apps] ===
 
