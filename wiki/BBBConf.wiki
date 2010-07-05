@@ -45,13 +45,13 @@ To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the 
 
 `bbb-conf` accepts the following options:
 
-== --help ==
+{{{ --help }}}
 Displays a help message with a list of available options.
 
-== --version ==
+{{{ --version }}}
 Displays a help message with a list of available options.
 
-== --setip < Host > : < Port > ==
+{{{ --setip < Host > : < Port > }}}
 
 Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
@@ -72,7 +72,7 @@ or
 }}}
 
 
-== --check ==
+{{{ --check }}}
 
 Checks current settings and outlines any potential problems.
 
