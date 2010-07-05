@@ -34,9 +34,6 @@ Development:
    --checkout                       Checkout BigBlueButton from github
    --setup-dev [client|web|apps]    Setup development environment
    --reset-dev                      Reset environment back to using packages
-   --trunk                          Checkout trunk instead of last release
-
-
 }}}
 
 To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
@@ -94,9 +91,6 @@ Checks out the project from trunk.
 === --reset-dev ===
 
 Resets the development environment back to using packages.
-
-=== --trunk ===
-Checkout trunk instead of last release.  This option is used in front of a --setup-dev command.  Example of a full command: bbb-conf --trunk --setup-dev bbb-web
 
 === --clean ===
 Clear all the log files and restart !BigBlueButton
