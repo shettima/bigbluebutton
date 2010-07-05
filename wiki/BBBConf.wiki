@@ -7,6 +7,38 @@
 If you are installing !BigBlueButton from source, you can download `bbb-conf` from [http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-config/bin/bbb-conf here].
 
 = Running bbb-conf =
+{{{
+BigBlueButton Configuration Utility - Version 0.70
+http://code.google.com/p/bigbluebutton/wiki/BBBConf
+
+bbb-conf [options]
+
+Configuration:
+   --version                        Display BigBlueButton version (packages)
+   --setip <host>                   Set IP/hostname for BigBlueButton
+   --conference [konference|meetme] Switch conference module in Asterisk
+   --salt <salt>                    Change the security salt in bigbluebutton.properties
+
+Monitoring:
+   --check                          Check configuration files and processes for problems
+   --debug                          Scan the log files for error messages
+   --watch                          Scan the log files for error messages every 2 seconds
+
+Administration:
+   --restart                        Restart BigBueButton
+   --clean                          Clear all the log files and restart BigBlueButton
+   --zip                            Zip up log files for reporting an error
+
+Development:
+   --setup-samba                    Setup samba share for development (VM only)
+   --checkout                       Checkout BigBlueButton from github
+   --setup-dev [client|web|apps]    Setup development environment
+   --reset-dev                      Reset environment back to using packages
+   --trunk                          Checkout trunk instead of last release
+
+
+}}}
+
 To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
 
 = Options =
