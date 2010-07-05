@@ -31,9 +31,10 @@ Administration:
 
 Development:
    --setup-samba                    Setup samba share for development (VM only)
-   --checkout                       Checkout BigBlueButton from github
-   --setup-dev [client|web|apps]    Setup development environment
+   --checkout  <repo>               Checkout from github or passed in repository
+   --setup-dev [client|web|apps]          Setup development environment
    --reset-dev                      Reset environment back to using packages
+
 }}}
 
 To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
@@ -84,9 +85,14 @@ This command is only available if you are using the !BigBlueButton virtual machi
 
 It sets up a samba share for development.
 
+=== --checkout <repo> ===
+Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no <repo> is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.
+
 === --setup-dev [web|client|apps] ===
 
-Checks out the project from trunk.
+Sets up the development environment for bbb-web, bbb-client, and bbb-apps.
+
+*NOTE:* You have to run this after {{{--checkout}}}.
 
 === --reset-dev ===
 
