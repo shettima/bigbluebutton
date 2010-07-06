@@ -49,18 +49,22 @@ If you created a custom language file but do not wish to contribute back to the 
 
   #  Put the template file into a new folder. The folder name should follow the language code convention stated above for the language/country the language file is written for. Put the folder under bigbluebutton-client/locale.
   # The file will be loaded whenever the user's broswer is set to that language/country code. Optionally, you could overwrite the english language files if you think that most of your users are running english language broswers, but would still like them to load a specific language.
-  # Next, on the client you need to edit the class org.bigbluebutton.util.i18n.ResourceUtil . There you will find an array containing the language codes for supported languages. Add your language here.
-  # Finally you will need to edit the build.xml file in the bigbluebutton-client root directory. Edit the _localization_ task to include your language files. Just follow the examples already there. For example, the to compile french the tag 
+
+  # Finally you will need to edit the build.xml file in the bigbluebutton-client root directory. Edit AVAILABLE_LOCALES to include your language files. Just follow the examples already there. 
 
 {{{
-   <compileLocale locale="fr_FR" />
+   <property name="AVAILABLE_LOCALES" value="az_AZ,de_DE,el_GR,en_US,es_ES,es_LA,fr_FR,hu_HU,it_IT,lt_LT,nb_NO,nl_NL,pl_PL,pt_BR,pt_PT,ro_RO,ru_RU,tr_TR,vi_VN,zh_CN,zh_TW"/>
 }}}
 
-is included in the task. Once you are done editing the file, you can rebuild the client using the command
+Once you are done editing the file, you can rebuild the client using the command
 
 {{{
-   ant
+   ant localization
 }}}
+
+To have the client load your locale, you need to add it to the locales.xml located in resources/prod folder.
+
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/prod/locales.xml
 
 Refer to the [http://code.google.com/p/bigbluebutton/wiki/FAQ#My_client_fails_at_startup_with_RSL_error;_Error_2035:URL_Not_Fo FAQ] if you have problems with Ant and Flex
 
