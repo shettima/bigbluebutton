@@ -97,8 +97,26 @@ Everything is now setup to compile the local version of bbb-client.
 
 {{{
   cd ~/dev/source/bigbluebutton/bigbluebutton-client
-  ant localization
+  # Build everything. This may take a while as it deletes everything and rebuilds everything.
   ant
+
+  # If you are only changing locales, do
+  ant localization
+
+  # If you are changing the modules. This will compile the modules but not the locales.
+  ant build-bbb
+
+Or, you can do
+
+  ant clean
+  ant localization
+  ant build-bbb
+
+which is equivalent to
+
+  ant
+
+  
 }}}
 
 The first ant task runs the localization of the client, which builds language swf files from provided txt files.
