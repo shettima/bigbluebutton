@@ -1,7 +1,7 @@
 #summary BigBlueButton Frequently Asked Questions
 #labels Phase-Support
 
-<wiki:toc max_depth="3"/>
+<wiki:toc max_depth="2"/>
 
 ----
 
@@ -39,7 +39,7 @@ Next, you'll need to demonstrate you are familiar with contributing to an open s
 
 Stability and usability are core to !BigBlueButton.  If you demonstrate and ability help fix bugs and increase the stability and usability of the platform, we're interested in mentoring you and helping you become a !BigBlueButton developer. 
 
-== Where can I find examples of people running BigBlueButton ==
+== Where can I find examples of people running !BigBlueButton ==
 We don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton. Such a list would be very hard to maintain up to date. Because this is an open source project and people can download it freely without our knowledge, such a list could also never be complete. If you'd like examples and use cases of people running !BigBlueButton, write to the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
 
 = Installation =
