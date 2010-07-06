@@ -130,9 +130,9 @@ Let's dive in and make a change. We'll change the default position of the presen
 {{{
 find . -name "PresentationWindow.mxml"
 }}}
- # *Change the window position:* For this example, we'll change the default value of the y-position of the presentation window.
+ # *Change the window position:* For this example, we'll change the upload presentation text in the presentation window.
 {{{
-# On ~ line 543, the value of yPosition is set to 0
+# On ~ line 543, change the text= line
 <mx:AddChild relativeTo="{spacer1}" position="before">
                 <mx:Label id="uploadPresentationLabel" visible="true" width="100%"
                                 text="{ResourceUtil.getInstance().getString('bbb.presentation.clickToUpload')}"/>
