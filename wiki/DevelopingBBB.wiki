@@ -1,7 +1,7 @@
 #summary How to develop BigBlueButton.
 
 <wiki:toc max_depth="2" />
-*NOTE: We are editing this for the 0.7 release.*
+=*NOTE: We are editing this for the 0.7 release. Things may not work if you have an old (064) VM*=
 
 = Setting up a !BigBlueButton Development Environment =
 We want it to be easy for others to develop and extend !BigBlueButton.  To achieve this, rather than writing lots of code and throwing a tarball over the wall, we've tried to provide you the tools and documentation setup your own !BigBlueButton development environment, giving you the ability to edit, test, and deploy changes to your !BigBlueButton server.
