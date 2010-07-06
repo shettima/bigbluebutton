@@ -93,7 +93,7 @@ To setup a development environment for bbb-client, enter the following command
 
 This will setup some directories and modify nginx config to use your development client.
 
-Everything is now setup to compile the local version of bbb-client.
+Everything is now setup to compile bbb-client.
 
 {{{
   cd ~/dev/source/bigbluebutton/bigbluebutton-client
@@ -119,9 +119,9 @@ which is equivalent to
   
 }}}
 
-The first ant task runs the localization of the client, which builds language swf files from provided txt files.
+{{{ant localization}}} which builds language swf files from provided txt files.
 
-The next line runs the default task (cleanandmake) and uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
+{{{ant build-bbb}}} uses the mxmlc compiler to rebuild the client from source. The resulting client is stored into `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.  If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.  
 
 Okay, at this point it looks the same.  (Actually, it may look different because you are building from trunk, which likely will have changes from a release version).  Behind the scenes, nginx is loading the client from `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.  
 
@@ -149,13 +149,11 @@ find . -name "PresentationWindow.mxml"
 
 When you're done making you changes, go to the bbb-client directory and rebuild it.
 {{{
-cd ~/dev/source/bigbluebutton/bigbluebutton-client
-ant
+   cd ~/dev/source/bigbluebutton/bigbluebutton-client
+   ant build-bbb
 }}}
 
-Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change in the default position of the presentation window, as in the following screenshot.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/presentation-offset.png
+Now open your web browser, login to !BigBlueButton, and launch the client.  You should see the change in the presentation window, as in the following screenshot.
 
 To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
 
