@@ -403,13 +403,13 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
   cd ~/dev/source/git/bigbluebutton/bbb-video
   
   # download all dependencies
-  gradle copyToLib
+  ant resolve
 
   # build the application
-  gradle war
+  ant dist
 
   # deploy the application to Red5 (/usr/share/red5/webapps)
-  gradle deploy
+  ant deploy
 }}}
 
 === Voice app ===
