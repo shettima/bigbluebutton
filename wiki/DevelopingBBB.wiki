@@ -461,6 +461,9 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 }}}
 
 == TIPS ==
+* Run bbb-conf --check *
+Run {{{bbb-conf --check}}} to see if there are any potential problems.
+
 * Running Red5 *
 
 It is better to have multiple ssh windows when developing. On one window, you can start and stop Red5.
