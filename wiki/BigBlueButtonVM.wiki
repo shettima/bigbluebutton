@@ -52,9 +52,13 @@ When it's done, you'll see a welcome message that asks you to login and change t
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
-The VM is setup to have a default account called *firstuser* with password *default*.  To secure your server, take a moment to login and change this password.
+*NOTE:* The VM is setup to have a default account
+  username: *firstuser*
+  password: *default*
 
-To change the password, login as firstuser and provide the default password.  You'll immediately be asked to enter the password again, then to provide a new password.  Again, do this now as it will secure your server.  
+When the first login prompt appears, enter the information above. To secure your server, you will be asked to change the password.
+
+You can also change the password later, login as firstuser and provide the default password.  You'll immediately be asked to enter the password again, then to provide a new password.  Again, do this now as it will secure your server.  
 
 After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser).
 
