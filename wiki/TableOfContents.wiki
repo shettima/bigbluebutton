@@ -1,7 +1,6 @@
   * [Installation Installation of Version 0.7]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu 9.04 or 10.04 (15 minutes)]
-    * [RPMPackaging Install on CentOS 5.4]
     * Install from source on [InstallingBigBlueButton Ubuntu]
     * [Integration Integrate] !BigBlueButton with your existing system
     * [ConfigurationFiles Configuration Files]
@@ -23,5 +22,6 @@
     * [Red5Phone Red 5 Phone]
     * [http://readytopresent.wordpress.com/ Ready To Present]
     * [Whiteboard Whiteboard using Wiimote]   
-    * [InstallingBigBlueButtonCentOS Installing in CentOS]
-    * [InstallingBigBlueButtonFedora Installing in Fedora]
+    * [InstallingBigBlueButtonCentOS Installing on CentOS]
+    * [InstallingBigBlueButtonFedora Installing on Fedora]
+    * [RPMPackaging Install on CentOS 5.4]
