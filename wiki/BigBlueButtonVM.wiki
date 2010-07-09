@@ -54,6 +54,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
 
 *NOTE:* The VM is setup to have a default account
   username: *firstuser*
+
   password: *default*
 
 When the first login prompt appears, enter the information above. To secure your server, you will be asked to change the password.
