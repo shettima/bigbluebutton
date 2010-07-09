@@ -1,6 +1,6 @@
-  * [Installation Installation of Version 0.64]
+  * [Installation Installation of Version 0.7]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
-    * [InstallationUbuntu Install on Ubuntu 9.04 (15 minutes)]
+    * [InstallationUbuntu Install on Ubuntu 9.04 or 10.04 (15 minutes)]
     * [RPMPackaging Install on CentOS 5.4]
     * Install from source on [InstallingBigBlueButton Ubuntu], [InstallingBigBlueButtonCentOS CentOS], and [InstallingBigBlueButtonFedora Fedora]
     * [Integration Integrate] !BigBlueButton with your existing system
