@@ -28,7 +28,7 @@ The second point is key: the VM must be able to connect to the internet to updat
   8d594c6f30b7af0786d259ca70392dc2  bigbluebutton-vm-2010-04-02.zip
 }}}
 
-[http://bigbluebutton.org/downloads/bigbluebutton-10.04-32.zip BigBlueButton 0.7 Ubuntu 10.04 32-bit pre-release]
+[http://bigbluebutton.org/downloads/bigbluebutton-10.04-32.zip BigBlueButton 0.7 Ubuntu 10.04 32-bit ] (pre-release)
 {{{
    # MD5SUM
    bd84a3c4f6a22e1d888a664fc5da4161  bigbluebutton-10.04-32.zip
