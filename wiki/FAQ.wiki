@@ -10,7 +10,7 @@
 
 We created this Frequently Asked Questions (FAQ) guide to help you get started installing, configuring, administrating, using, and upgrading !BigBlueButton quickly.  
 
-== How can I join the BigBlueButton Community? ==
+== How can I join the !BigBlueButton Community? ==
 There are three primary mailing lists in use by the !BigBlueButton community:
 
   * For setup, instllation, and configuration questions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup]  .
