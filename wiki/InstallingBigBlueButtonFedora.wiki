@@ -1,6 +1,6 @@
 #summary How to install BigBlueButton on Fedora
 
-The following instructions will guide you to install !BigBlueButton on Fedora. So far the instructions have been tested on *Fedora 12 32-bit*.
+The following instructions will guide you to install !BigBlueButton 0.64 on Fedora. So far the instructions have been tested on *Fedora 12 32-bit*.
 
 == Instructions ==
 *NOTE: If your 'hostname' command does not return the proper (working) IP or domain, you need to run `hostname <your-correct-hostname-or-ip>` to make these instructions work.*
