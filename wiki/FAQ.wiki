@@ -10,14 +10,14 @@
 
 We created this Frequently Asked Questions (FAQ) guide to help you get started installing, configuring, administrating, using, and upgrading !BigBlueButton quickly.  
 
-== What if I can't find my answer in this FAQ? ==
-If you find this FAQ does not answer your question(s), please post to one of the following mailing lists
+== How can I join the BigBlueButton Community? ==
+There are three primary mailing lists in use by the !BigBlueButton community:
 
   * For setup, instllation, and configuration questions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup]  .
   * For end user questions, please post to [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users].
   * For all other questions, please post to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev].
 
-All of the core !BigBlueButton contributions subscribe to all three mailing lists.
+All of the core !BigBlueButton contributions subscribe to all three mailing lists.  
 
 Please note that [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] is a recent split from [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].  Search the archives for bigbluebutton-dev and there's a good chance someone might asked your question and shared the answer. 
 
