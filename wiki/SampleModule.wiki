@@ -4,7 +4,7 @@
 Follow the [DevelopingBBB instructions] on setting up your development environment.
 
 == Running the Example Code ==
-There is an Example module in the code base. The main module class is in !bbb-client/src/ExampleChatModule. It uses two simple classes which are located in !bbb-client/src/org.bigbluebutton.modules.example
+There is an Example module in the code base. The main module class is in bbb-client/src/!ExampleChatModule.mxml. It uses two simple classes which are located in bbb-client/src/org.bigbluebutton.modules.example
 
 To get the !ExampleChatModule working:
   * Set up your development environment correctly, making sure you can launch your bbb-client from Flash Builder 4.
