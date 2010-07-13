@@ -185,9 +185,6 @@
 == Tunneling ==
  * http://www.devx.com/Java/Article/17679/1954
 
-= NOTE =
-|| * We have changed the name of the project to !BigBlueButton and moved to http://code.google.com/p/bigbluebutton. * ||
-
 
 = Slideshow =
  * http://meyerweb.com/eric/tools/s5/
@@ -198,7 +195,6 @@ http://unimod.sourceforge.net/intro.html
 
 = Flash Player =
  * http://www.jeroenwijering.com/?item=JW_FLV_Media_Player
-
  * http://www.flashinsider.com/2006/07/26/how-to-create-your-own-youtube-site/
  * http://www.howforge.com/open-source-youtube
  * http://pandastream.com/
@@ -228,9 +224,6 @@ http://unimod.sourceforge.net/intro.html
  * http://www.causecaller.com/wiki/Asterisk_on_EC2
 
 = MySQL Replication and Clustering =
-
-Some notes on mysql replication and clustering.
-
  * [http://www.softwareprojects.com/resources/programming/t-how-to-move-copy-a-live-mysql-database-1257.html How to: Move / Copy a live MySQL database (and what not to do)]
  * [http://dev.mysql.com/tech-resources/articles/failover-strategy-part1.html MySQL Failover Strategy using State Management]
  * [http://www.mysql.com/industry/telecom/ MySQL Cluster Carrier Grade Edition]
@@ -241,7 +234,7 @@ Some notes on mysql replication and clustering.
 
 == Tcpdump ==
 {{{
-> tcpdump -s 0 -i eth0 src 10.98.10.14 -vvv -ttt -e w feb7-8.49am.pbx2.pcap
+   > tcpdump -s 0 -i eth0 src 10.98.10.14 -vvv -ttt -e w feb7-8.49am.pbx2.pcap
 }}}
 
 == CPAN ==
@@ -262,9 +255,6 @@ Investigate creating ISO images for releases.
  * http://www.techonthenet.com/linux/centos4_update.php
 
 = Virtualization =
-
-Some notes on virtualization.
-
  * [http://www.onlamp.com/pub/a/onlamp/2008/02/05/using-xen-for-high-availabilty-clusters.html Using Xen for High Availability Clusters]
  * [http://www.clustermonkey.net//content/view/139/33/ Building A Virtual Cluster with Xen (Part One)]
  * [http://lists.digium.com/pipermail/asterisk-dev/2007-May/027470.html ztxen a zaptel timer for XEN virtual domains]
