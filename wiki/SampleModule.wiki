@@ -3,39 +3,32 @@
 == Getting Started ==
 Follow the [DevelopingBBB instructions] on setting up your development environment.
 
-== Creating a new !BigBlueButton Module ==
-_Note: There is a sample module implementation in the client code base, called Notes Module, which shows a simple way to create a BBB module, and is kept up to date. The following example is a general overview of how things work when creating a new module._
+== Running the Example Code ==
+There is an Example module in the code base. The main module class is in bbb-client/src/ExampleChatModule. It uses two simple classes which are located in bbb-client/src/org.bigbluebutton.modules.example
 
-To make a new BBB module, you need 2 things:
-  * A new module, just right click on the bigbluebutton-client project, go to new>MXML Module.
-  * Your module needs to implements the "org.bigbluebutton.common.IBigBlueButtonModule" interface. This tells the main BBB application that the module you're trying to add to it at runtime is a proper !BigBlueButton Module, and what to do with it. The interface defines several methods you will need to implement. These methods are largely the same across different modules, which means you can copy them from another BBB module with minor changes.
-
-After you've created the module and implemented the methods, you might want a UI for your module. To create a simple Window-based module, such as the Chat Module, you'll again need to do 2 things:
-  * Create a new MXML Component, extending the MDIWindow component of the flexlib library. 
-  * In this component, implement the org.bigbluebutton.common.IBbbModuleWindow interface. Again, implement the methods defined by the interface, which simply tell the main application where exactely to place the module on the screen once it's loaded.
-
-Having done this, in the start() method of your Module.mxml, first create a new Window for your Module and then dispatch an event of type org.bigbluebutton.main.events.OpenWindowEvent. This will tell the main application to add your window to the main application screen. The following code does this:
-
-Here the Dispatcher class refers to com.asfusion.mate.events.Dispatcher; the OpenWindowEvent is in org.bigbluebutton.main.events.OpenWindowEvent;
+To get the !ExampleChatModule working:
+  * Set up your development environment correctly, making sure you can launch your bbb-client from Flash Builder 4.
+  * Right click on your Flex Project, go to Properties>Modules and add src/ExampleChatModule.mxml to the list if it's not already there
+  * Add the following code to the src/conf/config.xml file:
 {{{
-window = new SampleModuleWindow();
-window.xPosition = 500;
-window.yPosition = 500;
-window.title = "This is my new Module!"
-				
-var event:OpenWindowEvent = new OpenWindowEvent(OpenWindowEvent.OPEN_WINDOW_EVENT);
-event.window = window;
-var dispatcher:Dispatcher = new Dispatcher();
-dispatcher.dispatchEvent(event);
+<module name="ExampleChatModule" url="ExampleChatModule.swf?v=56" 
+			uri="rtmp://192.168.0.219/bigbluebutton" 
+			host="http://192.168.0.219" 
+			onUserJoinedEvent="START" 
+			onUserLogoutEvent="STOP"
+/>
 }}}
+  * In the same config.xml file, make sure the !ExampleChatModule is also referenced as the loadNextProperty of the last loaded module (the module not already containing a loadNextModule property).
+  * Launch your client and make sure you can see the new example module, and that you can send chat messages and receive them back.
 
-Before you run your module, go back to the config.xml file and create a new entry for your module, based on the other entries. This file is a manifest of all the modules you wish to load.
-   * NOTE: You will also need to find the module that currently gets added last, and add to it a parameter 'loadNextModule="MyModule"'. Right now this is necessary but in the future you won't need to do this.
-Once you've done this, run your module, and see if your window pops up.
+== Examining the Example Code ==
+The ExampleChatModule demonstrates how to create a very simple module in !BigBlueButton. The module contains a simple window with two text boxes and a button for sending messages. In total the module has 3 classes.
 
-== Using the Mate Framework with BBB ==
-Because your module is decoupled from the rest of the application, you can use whichever framework you want inside your module. We prefer using the Mate Framework, although modules for !BigBlueButton have been built using both PureMVC and Cairngorm. Both Mate and PureMVC are in the lib directory of BigBlueButton.
-If you are unfamiliar with Mate, take a look at their [http://mate.asfusion.com/page/documentation/getting-started tutorial] for creating new applications.
-The following diagram shows the architecture of a BBB module built using Mate, in this case the Notes Module, the source code of which could be a good place to start with if you're just learning.
+=== ExampleChatModule.mxml ===
+You can use this class as a template for your future modules. The only relevant parts to you as a newbie to creating !BigBlueButton modules are the two methods at the bottom - start() and stop(). The start function is called by the Main !BigBlueButton Application when the module is loaded. It injects certain properties into the modules, such as the server connection to the red5 back-end of !BigBlueButton, as well as the username and unique userid. The start() method here creates a new UI instance for our module - ExampleChatWindow.mxml. It also sends out an event, called !OpenWindowEvent, which will get captured by the main application and the window will be displayed. The stop method is called when the user logs out or the application otherwise stops. You may perform any cleanup you need to do here.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SampleModuleNotesArchDiagram.png
+=== ExampleChatWindow.mxml ===
+The !ExampleChatWindow contains the UI for our module. The UI components in the window (such as the text boxes and buttons) are declared as tags on the bottom. When the user clicks the "Send Message" button, the !sendNewMessage() method is executed, which appends whatever text there is in the input text box to the user name of the current user, and sends that message to the ExampleChatProxy class instance.
+
+=== ExampleChatProxy.mxml ===
+The !ExampleChatProxy class has all the logic for communicating with the server, sending chat messages and receiving them. The class extracts the netConnection object from the attributes passed to it and uses the connection to the server to connect a !RemoteSharedObject to the server. When the user clicks the "Send Message" button on the UI, the !sendMessage() method on the Proxy class is called, which updates the RemoteSharedObject on the server with the new message string value. The server then calls back all the client which are connected to that !RemoteSharedObject with the updated string. In this case, the server calls the method !serverCallback(). This method updates the UI of our module, and the message appears in the window.
