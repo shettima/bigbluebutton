@@ -8,7 +8,7 @@ _Note: There is a sample module implementation in the client code base, called N
 
 To make a new BBB module, you need 2 things:
   * A new module, just right click on the bigbluebutton-client project, go to new>MXML Module.
-  * Your module needs to implements the "org.bigbluebutton.common.IBigBlueButtonModule" interface. This tells the main BBB application that the module you're trying to add to it at runtime is a proper BigBlueButton Module, and what to do with it. The interface defines several methods you will need to implement. These methods are largely the same across different modules, which means you can copy them from another BBB module with minor changes.
+  * Your module needs to implements the "org.bigbluebutton.common.IBigBlueButtonModule" interface. This tells the main BBB application that the module you're trying to add to it at runtime is a proper !BigBlueButton Module, and what to do with it. The interface defines several methods you will need to implement. These methods are largely the same across different modules, which means you can copy them from another BBB module with minor changes.
 
 After you've created the module and implemented the methods, you might want a UI for your module. To create a simple Window-based module, such as the Chat Module, you'll again need to do 2 things:
   * Create a new MXML Component, extending the MDIWindow component of the flexlib library. 
