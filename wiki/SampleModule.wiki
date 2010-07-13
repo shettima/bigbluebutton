@@ -22,7 +22,7 @@ To get the !ExampleChatModule working:
   * Launch your client and make sure you can see the new example module, and that you can send chat messages and receive them back.
 
 == Examining the Example Code ==
-The ExampleChatModule demonstrates how to create a very simple module in !BigBlueButton. The module contains a simple window with two text boxes and a button for sending messages. In total the module has 3 classes.
+The !ExampleChatModule demonstrates how to create a very simple module in !BigBlueButton. The module contains a simple window with two text boxes and a button for sending messages. In total the module has 3 classes.
 
 === !ExampleChatModule.mxml ===
 You can use this class as a template for your future modules. The only relevant parts to you as a newbie to creating !BigBlueButton modules are the two methods at the bottom - start() and stop(). The start function is called by the Main !BigBlueButton Application when the module is loaded. It injects certain properties into the modules, such as the server connection to the red5 back-end of !BigBlueButton, as well as the username and unique userid. The start() method here creates a new UI instance for our module - ExampleChatWindow.mxml. It also sends out an event, called !OpenWindowEvent, which will get captured by the main application and the window will be displayed. The stop method is called when the user logs out or the application otherwise stops. You may perform any cleanup you need to do here.
