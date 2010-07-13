@@ -8,7 +8,7 @@ There is an Example module in the code base. The main module class is in bbb-cli
 
 To get the !ExampleChatModule working:
   * Set up your development environment correctly, making sure you can launch your bbb-client from Flash Builder 4.
-  * Right click on your Flex Project, go to Properties>Modules and add src/ExampleChatModule.mxml to the list if it's not already there
+  * Right click on your Flex Project, go to Properties>Modules and add src/!ExampleChatModule.mxml to the list if it's not already there
   * Add the following code to the src/conf/config.xml file:
 {{{
 <module name="ExampleChatModule" url="ExampleChatModule.swf?v=56" 
