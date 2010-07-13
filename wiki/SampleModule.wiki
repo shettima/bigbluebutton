@@ -1,41 +1,7 @@
 #summary Creating a simple !BigBlueButton module using Mate
 
 == Getting Started ==
-This is a brief summary of how to create a new !BigBlueButton module.
-Before you start creating a new module, you will need to:
-  * Download the [BigBlueButtonVM BBB Virtual Machine], or have access to a BBB server you can test on.
-  * Download Flex Builder if you don't already have it.
-  * Check out BigBlueButton-Client from the SVN repository. You can do this right from Flex with the Subclipse plugin.
-  * Once you've checked out the client, edit the file src/conf/config.xml. In it, change all instances of an IP address to the IP address of your BBB server. For example:
-
-{{{
-<module name="VideoModule" url="VideoModule.swf" 
-			uri="rtmp://192.168.0.124/oflaDemo"
-			onUserJoinedEvent="START"
-			onUserLogoutEvent="STOP"	
-			loadNextModule="DeskShareModule"/>
-}}}
-
-change this to:
-
-{{{
-<module name="VideoModule" url="VideoModule.swf" 
-			uri="rtmp://Your-BBB-IP/oflaDemo"
-			onUserJoinedEvent="START"
-			onUserLogoutEvent="STOP"	
-			loadNextModule="DeskShareModule"
-}}}
-
-Do this for the whole document.
-
-  * In the same config.xml file, you will need to edit the ViewersModule entry to tell it to use a mock sign-in file. This is so you don't have to deploy your client to the server every time you want to test, and can test it instead right from Flex Builder. Change the 'host' entry of the ViewersModule entry to
-{{{
-host="conf/join-mock.xml"
-}}}
-
-  * If you haven't done it already, run your BBB server.
-  * Run the client and make sure it logs in properly.
-  * Congratulations, you've successfully set up your BBB-Client dev environment
+Follow the [DevelopingBBB instructions] on setting up your development environment.
 
 == Creating a new !BigBlueButton Module ==
 _Note: There is a sample module implementation in the client code base, called Notes Module, which shows a simple way to create a BBB module, and is kept up to date. The following example is a general overview of how things work when creating a new module._
