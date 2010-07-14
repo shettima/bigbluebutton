@@ -27,24 +27,7 @@ From your Windows environment, you'll want to access the !BigBlueButton source c
 
 This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, where '<ip>' is the local address of your VM.
 
-Note: [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf] is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. 
-
-== Troubleshooting ==
-In some cases the IP of the VM maybe change while initializing for the first time and, consequently, the !BigBlueButton config files would be setup with the wrong IP address. If you're running into problems, execute the following command. 
-
-{{{
-   bbb-conf -c
-}}}
-
-If the IP in !BigBlueButton's config files don't match the IP of your VM, you will see something like the following.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbbconf-wrongip.png
-
-To resolve this, all you need to do is run this command:
-
-{{{
-   bbb-conf --setip <YOUR-IP>
-}}}
+Note: [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf] is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. See the BBBConf page for troubleshooting tips.
 
 = How to make simple changes to !BigBlueButton =
 We will start by making a simple change to the !BigBlueButton Flash client (bbb-client).  
