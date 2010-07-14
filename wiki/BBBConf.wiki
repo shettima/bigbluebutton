@@ -6,6 +6,8 @@
 
 If you are installing !BigBlueButton from source, you can download `bbb-conf` from [http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-config/bin/bbb-conf here].
 
+On the VM, bbb-conf is located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS.
+
 = Running bbb-conf =
 {{{
 BigBlueButton Configuration Utility - Version 0.70
