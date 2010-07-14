@@ -13,21 +13,21 @@ First, [BigBlueButtonVM setup a BigBlueButtonVM] if you have not already done so
 
 Briefly, there are three main components to !BigBlueButton.  Each component has it's own runtime environment and, correspondingly, each is built using different tools.
 
-  * bigbluebutton-web, referred as _bbb-web_, is the scheduling and web interface for !BigBlueButton.  This component is written in grails and is built using goovy.
-  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in actionscript 3 using the Flex framework.
-  * bigbluebutton-apps, referred to as _bbb-apps_, is the red5 webapp that provides the synchronization logic for the bbb-client.  This component is written in straight up Java.
+  * bigbluebutton-web, referred as _bbb-web_, contains the [http://code.google.com/p/bigbluebutton/wiki/API API]
+  * bigbluebutton-client, referred to as _bbb-client_, is the real-time Flash client.  This component is written in !ActionScript3 using the Flex framework.
+  * bigbluebutton-apps, referred to as _bbb-apps_, is the collection of red5 webapps that provides the synchronization logic for the bbb-client.  This component is written in Java, though parts of it are written in JVM compatible languages [http://groovy.codehaus.org/ Groovy] and [http://www.scala-lang.org/ Scala].
 
 == Setting up access to the VM from windows ==
-
-(Skip this if you are developing completely on Unix and are pure of heart.)  On Windows, you'll want to access the !BigBlueButton source tree on your VM.  To do this, login to the VM as `firstuser` and issue the following command
+*Skip this section if you are developing completely on Unix*
+From your Windows environment, you'll want to access the !BigBlueButton source code that resides on your VM.  To do this, login to the VM as `firstuser` and issue the following command
 
 {{{
   bbb-conf --setup-samba
 }}}
 
-This script will share the `/home/firstuser/dev` on your VM so you can access it as `\\<ip>\firstuser` from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive.
+This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, where <ip> is the local address of your VM.
 
-Note: `bbb-conf` is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. 
+Note: [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf] is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. 
 
 == Troubleshooting ==
 In some cases the IP of the VM maybe change while initializing for the first time and, consequently, the !BigBlueButton config files would be setup with the wrong IP address. If you're running into problems, execute the following command. 
