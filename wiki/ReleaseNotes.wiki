@@ -9,7 +9,7 @@ Released: July XX, 2010
 
   * * Whiteboard * - Yes, !BigBlueButton 0.7 comes with whiteboard functionality. The whiteboard is overlaid over the presentation, and enables the presenter to draw freehand as well as simple shapes on top of the presentation slides. Each slide has it's own whiteboard instance, which is persistent as the presenter moves across the slides. Everything drawn on the whiteboard is synchronized in real time across all the conference participants.  See [http://bigbluebutton.org/sites/all/videos/whiteboard/index.html whiteboard overview video].
 
-  * * Desktop Sharing Pointer * - The mouse pointer is now visible to the viewers when the presenter is sharing their desktop.
+  * * Desktop Sharing * - The mouse pointer is now visible to the viewers when the presenter is sharing their desktop.  The presenter also has 'b' system tray icon when desktop sharing is active.
 
   * * UI Improvements * - Changes to the UI make are part of an ongoing effort to make !BigBlueButton even simpler for people to use. The make presenter icon has been changed by a button labeled 'Make Presenter', the two mute/unmute buttons have merged into one button: click to mute all (button stays down), click again to unmute all (button comes up).  As well, we've added a new layout manager that ensures !BigBlueButton looks better on screens of varying resolutions and sizes. 
 
