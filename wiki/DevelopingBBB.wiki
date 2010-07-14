@@ -89,25 +89,14 @@ Then restart nginx.
 }}}
 
 === Setting up Flash Builder to work with the client ===
-If you would like to develop the client using Flash Builder, you can follow these steps:
+To develop the client using Flash Builder, you can follow these steps:
   * Install Flash Builder on your Windows/Mac machine.
   * Setup samba on the VM and mount the VM drive as described earlier in this document.
   * In Flash Builder, import the project by going to File->Import->Flash Builder Project.
     * The choose Import Project From
     * For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
-    * Click next, and in the output folder, instead of 'bin-debug', put 'bin'
-    * Click finish. It may take several minutes for this operation to complete, be patient.
-  * Once this is done, right click on the project, go to properties>Flex Modules. Add these files to the modules list:
-    * src/!ChatModule.mxml
-    * src/!DeskShareModule.mxml
-    * src/!HighlighterModule.mxml
-    * src/!ListenersModule.mxml
-    * src/!PhoneModule.mxml
-    * src/!PresentModule.mxml
-    * src/!VideoconfModule.mxml
-    * src/!ViewersModule.mxml
-  * Change all the IP addresses in src/conf/config.xml to point to your VM IP address
-  * Right click on src/BigBlueButton.mxml and click on Set As Default Application. Then delete the Main.mxml file.
+    * Click finish.
+  * Right click on src/BigBlueButton.mxml and click on Set As Default Application.
   * Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
@@ -122,7 +111,7 @@ mkdir room-mock-default
 chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default
 exit
 }}}
-  * On the client code, to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml". Then open join-mock.xml and make sure the conference property is "conference-mock-default" and the room property is "room-mock-default"
+  * On the client code, to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml".
   * You should now be able to launch from Flash Builder using the Run/Debug button.
 
 == Setting up the development environment for !BigBlueButton web interface: bbb-web ==
