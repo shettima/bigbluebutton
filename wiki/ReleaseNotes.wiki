@@ -1,6 +1,9 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.7 (Draft) =
+= Release 0.7: Feynman (Draft) =
+
+_Code named in honor of the Nobel prize winning physicist_ 
+
 
 Released: July XX, 2010
 
@@ -15,7 +18,10 @@ Released: July XX, 2010
   * * Ubuntu 10.04 32-bit and 64-bit support * - We maintain support for Ubuntu 9.04 32-bit with this release, but we are now adding support installation via packages on [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Ubuntu 10.04 32-bit and 64-bit].   
 
 == Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]'
+
+== Known Issues ==
+  * [ http://code.google.com/p/bigbluebutton/issues/detail?id=524 Problems with audio delay using VoIP]
 
 = Release 0.64: Lickety-split =
 
