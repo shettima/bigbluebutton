@@ -9,7 +9,7 @@
 
   * * Font size in chat * -  You can now increase the font size in the chat window.
 
-  * * Ubuntu 10.04 32-bit and 64-bit support * - We maintain support for Ubuntu 9.04 32-bit with this release, but we are now adding support for Ubuntu 10.04 32-bit and 64-bit packages.  This means 
+  * * Ubuntu 10.04 32-bit and 64-bit support * - We maintain support for Ubuntu 9.04 32-bit with this release, but we are now adding support installation via packages on [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Ubuntu 10.04 32-bit and 64-bit].   
 
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
