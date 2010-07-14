@@ -25,7 +25,7 @@ From your Windows environment, you'll want to access the !BigBlueButton source c
   bbb-conf --setup-samba
 }}}
 
-This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, where '<ip>' is the local address of your VM.
+This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, the ip being the local address of your VM.
 
 See the [BBBConf] page for troubleshooting tips.
 
