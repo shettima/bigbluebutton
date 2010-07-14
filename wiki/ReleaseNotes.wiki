@@ -17,6 +17,8 @@ Released: July XX, 2010
 
   * * Ubuntu 10.04 32-bit and 64-bit support * - We maintain support for Ubuntu 9.04 32-bit with this release, but we are now adding support installation via packages on [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Ubuntu 10.04 32-bit and 64-bit].   
 
+  * * Desktop Sharing is now LGPL * - We've remove the AGPL license from the desktop sharing module.  This means that all the !BigBlueButton code is available under the LGPL license.   
+
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]'
 
