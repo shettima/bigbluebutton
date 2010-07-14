@@ -56,7 +56,7 @@ If you created a custom language file but do not wish to contribute back to the 
    <property name="AVAILABLE_LOCALES" value="az_AZ,de_DE,el_GR,en_US,es_ES,es_LA,fr_FR,hu_HU,it_IT,lt_LT,nb_NO,nl_NL,pl_PL,pt_BR,pt_PT,ro_RO,ru_RU,tr_TR,vi_VN,zh_CN,zh_TW"/>
 }}}
 
-Once you are done editing the file, you can rebuild the client using the command
+Once you are done editing the file, you can rebuild the client. Go to the client source directory - on the VM usually /home/firstuser/dev/bigbluebutton/bigbluebutton-client/, and run the command
 
 {{{
    ant localization
