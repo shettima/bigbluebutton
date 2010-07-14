@@ -1,11 +1,13 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.7 =
-  * * Whiteboard * - !BigBlueButton 0.7 comes with new whiteboard functionality. The whiteboard is overlaid over the presentation, and enables the presenter to draw freehand as well as simple shapes on top of the presentation slides. Each slide has it's own whiteboard instance, which is persistent as the presenter moves across the slides. Everything drawn on the whiteboard is synchronized in real time across all the conference participants.
+= Release 0.7 (Draft) =
+  * * Whiteboard * - !BigBlueButton 0.7 comes with new whiteboard functionality. The whiteboard is overlaid over the presentation, and enables the presenter to draw freehand as well as simple shapes on top of the presentation slides. Each slide has it's own whiteboard instance, which is persistent as the presenter moves across the slides. Everything drawn on the whiteboard is synchronized in real time across all the conference participants.  See [http://bigbluebutton.org/sites/all/videos/whiteboard/index.html overview video] of how the whiteboard works.
 
   * * Desktop Sharing Pointer * - The mouse pointer is now visible to the viewers when the presenter is sharing their desktop.
 
   * * UI Improvements * - Changes to the UI make are part of an ongoing effort to make !BigBlueButton even simpler for people to use. Changes include better icons and labels for buttons, ability to change font sizes in chat, and a new layout manager that ensures !BigBlueButton looks better on screens of varying resolutions and sizes. 
+
+  * * Ubuntu 10.04 32-bit and 64-bit support * - We maintain support for Ubuntu 9.04 32-bit with this release, but we are now adding support for Ubuntu 10.04 32-bit and 64-bit packages.  This means 
 
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
