@@ -101,16 +101,6 @@ To develop the client using Flash Builder, you can follow these steps:
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
 
-  * On your VM, do:
-{{{
-sudo su root
-cd /var/bigbluebutton
-mkdir conference-mock-default
-cd conference-mock-default
-mkdir room-mock-default
-chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default
-exit
-}}}
   * On the client code, to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml".
   * You should now be able to launch from Flash Builder using the Run/Debug button.
 
