@@ -25,7 +25,7 @@ From your Windows environment, you'll want to access the !BigBlueButton source c
   bbb-conf --setup-samba
 }}}
 
-This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, where <ip> is the local address of your VM.
+This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tolls -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, where '<ip>' is the local address of your VM.
 
 Note: [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf] is a bash utility script included in the !BigBlueButton VM. It's located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS. 
 
