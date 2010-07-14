@@ -1,4 +1,4 @@
 #summary Installing Desktop Sharing
 
-= Desktop sharing is now integrated with BigBlueButton =
+= Desktop sharing is now integrated with !BigBlueButton =
 Previous versions of !BigBlueButton had desktop sharing installed separately.  As of !BigBlueButton 0.7, the desktop sharing module is now licensed under LGPL and is integrated with the !BigBlueButton packages and VM.
