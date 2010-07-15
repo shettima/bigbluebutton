@@ -8,7 +8,7 @@
 
  * As of !BigBlueButton 0.7, we support installation from packages on *Ubuntu 9.04 32-bit* and *Ubuntu 10.04 32-bit and 64-bit*.
 
-If you are attempting to install on a variation of Ubuntu, these packages might work, but we recommend that you
+If you are attempting to install on a different variation of Ubuntu (i.e. 9.10), these packages might work.  We recommend that you
   # Search through [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] for your variation of Ubuntu.  
   # Post any new questions to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
