@@ -5,7 +5,7 @@
 _Code named in honor of the Nobel prize winning physicist_ 
 
 
-Released: July XX, 2010
+Released: July 15, 2010
 
   * * Whiteboard * - Yes, !BigBlueButton 0.7 comes with an integrated whiteboard. The whiteboard is overlaid over the presentation, and enables the presenter to draw freehand as well as simple shapes on top of the presentation slides. Each slide has it's own whiteboard instance, which is persistent as the presenter moves across the slides. Everything drawn on the whiteboard is synchronized in real time across all the conference participants.  See [http://bigbluebutton.org/sites/all/videos/whiteboard/index.html whiteboard overview video].
 
