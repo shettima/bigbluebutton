@@ -1,4 +1,4 @@
-#summary How to develop BigBlueButton.
+#summary How to develop on BigBlueButton 0.7.
 
 <wiki:toc max_depth="2" />
 
@@ -9,6 +9,8 @@ The !BigBlueButton VM runs Ubuntu 10.04.  Of course, you may not be developing u
 
 == Getting Started ==
 First, [BigBlueButtonVM setup a BigBlueButtonVM] if you have not already done so.  If you are totally new to !BigBlueButton, you should read the [ArchitectureOverview Architecture Overview].  Doing so will make the following instructions much easier to understand.
+
+Note: If you were using the 0.64 VM to develop, we recommend downloading the new 0.7 VM.
 
 Briefly, there are three main components to !BigBlueButton.  Each component has it's own runtime environment and, correspondingly, each is built using different tools.
 
