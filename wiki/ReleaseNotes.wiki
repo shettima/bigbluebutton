@@ -26,10 +26,11 @@ Released: July XX, 2010
   * * Improved Documentation * - There is a new, simpler, [SampleModule Example module] for bbb-client. As well, the [DevelopingBBB Developer documentation] has been updated to reflect the move to git. 
 
 == Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]'
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
 
 == Known Issues ==
-  * [ http://code.google.com/p/bigbluebutton/issues/detail?id=524 Problems with audio delay using VoIP]
+  * [ http://code.google.com/p/bigbluebutton/issues/detail?id=524 Issue 524] Problems with audio delay using VoIP]
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=579 Issue 579] Presenter can't widen the view of portrait documents
 
 = Release 0.64: Lickety-split =
 
