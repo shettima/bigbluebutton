@@ -38,6 +38,9 @@ If you are setting up on a *Ubuntu 9.04 32-bit*
 
    sudo apt-get install bigbluebutton 
 
+   # Ensure BigBlueButton is restarted and good to go
+   sudo bbb-conf --restart
+   sudo bbb-conf --check
 }}}
 
 If you are setting up on a *Ubuntu 10.04 32-bit and 64-bit*
@@ -62,8 +65,6 @@ If you are setting up on a *Ubuntu 10.04 32-bit and 64-bit*
 
    # Ensure BigBlueButton is restarted and good to go
    sudo bbb-conf --restart
-
-   # Run the BigBlueButton configuration tool to check the current state for any problems.
    sudo bbb-conf --check
 }}}
 
