@@ -11,7 +11,7 @@ This documents outlines a proposal for a *plug-in architecture* to bbb-client an
 == Preliminary work ==
 Work that needs to be completed to facilitate the move to a plug-in architecture.
 
-=== Refactoring to Mate ===
+=== Refactoring to Mate *DONE* ===
 In May 2009 work was started to move the client from the PureMVC framework to Mate. This has proven to be a very good change overall, making the client smaller and cleaner. However the work hasn't been completed yet. Right now most of the modules run Mate, but the following modules still need to be refactored:
   * The Main Application
   * Listeners Module
@@ -19,7 +19,7 @@ In May 2009 work was started to move the client from the PureMVC framework to Ma
 
 The Main app is especially critical to refactor, as it's using both mate (for recent functionality) and PureMVC. Cleaning it up will allow further development, as most of the work for creating the plug-in architecture will
 
-=== Cleanup ===
+=== Cleanup *DONE* ===
 The following modules aren't being used and should be removed from bbb-client, both to clean up the code base and prevent any confusion from users.
   * Join Module
   * Login Module
@@ -32,7 +32,7 @@ In addition, the following modules should be removed because they're not part of
 === Add unit tests ===
 Add unit tests to the Main app of bbb-client.
 
-== Changes to module loading ==
+== Changes to module loading *DONE* ==
 === Better dependency resolution ===
 Right now config.xml requires that a module be specified in another module's 'loadNextModule' property in order to be loaded. This creates a backward dependency that is unnecessary. This should be changed so that each module specifies their own dependencies instead, using a 'depends' property to specify the modules.
 
