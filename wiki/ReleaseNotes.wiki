@@ -15,7 +15,7 @@ Released: July XX, 2010
 
   * * Font size in chat * -  You can now increase the font size in the chat window.
 
-  * * Ubuntu 10.04 32-bit and 64-bit support * - We maintain support for Ubuntu 9.04 32-bit with this release, but we are now adding support installation via packages on [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Ubuntu 10.04 32-bit and 64-bit].   
+  * * Ubuntu 10.04 32-bit and 64-bit support * - While we maintain support for Ubuntu 9.04 32-bit with this release, we are adding support for installation via packages on [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Ubuntu 10.04 32-bit and 64-bit].   
 
   * * Desktop Sharing is now LGPL * - We've remove the AGPL license from the desktop sharing module.  This means that all the !BigBlueButton code is available under the LGPL license.   
 
