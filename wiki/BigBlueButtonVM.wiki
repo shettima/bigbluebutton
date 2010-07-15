@@ -94,7 +94,7 @@ Desktop sharing is now a separate component.  Don't worry, you can install it wi
 
 This is where packages make life easy.
 
-The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship !BigBlueButton 0.64 (for example), you'll be able to upgrade your server with two commands.
+The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship !BigBlueButton 0.8 (for example), you'll be able to upgrade your server with two commands.
 
 {{{
   # sudo apt-get update
