@@ -22,19 +22,13 @@ The second point is key: the VM must be able to connect to the internet to updat
 
   1.  Download and uncompress the the VM. 
 
-[http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-04-02.zip BigBlueButton 0.64 Ubuntu 9.04 32-bit VM]
-{{{
-  # MD5SUM
-  8d594c6f30b7af0786d259ca70392dc2  bigbluebutton-vm-2010-04-02.zip
-}}}
-
-[http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-07-13.zip BigBlueButton 0.7 Ubuntu 10.04 32-bit ] (pre-release)
+[http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-07-13.zip BigBlueButton 0.7 Ubuntu 10.04 32-bit ]
 {{{
    # MD5SUM
    387fda51ed04278c2cdb7dfdf1bae29e  bigbluebutton-vm-2010-07-13.zip
 }}}
 
-  2.  Open the enclosed *ubuntu-vmw6* folder.
+  2.  Open the enclosed folder.
 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
