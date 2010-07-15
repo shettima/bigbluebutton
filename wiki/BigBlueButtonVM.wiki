@@ -1,7 +1,5 @@
 #summary How to setup your own BigBlueButton Virtual Machine
 
-_Note: This document is currently being edited for the !BigBlueButton release 0.70_
-
 <wiki:toc max_depth="2" />
 
 = How to setup your own !BigBlueButton Server in a few minutes =
