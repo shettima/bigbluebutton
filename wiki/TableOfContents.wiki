@@ -1,7 +1,7 @@
-  * [Installation Installation of Version 0.64]
+  * [Installation Installation of Version 0.7]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu 9.04 or 10.04]
-    * Install from source on [InstallingBigBlueButton Ubuntu] (draft 0.7)
+    * Install from source on [InstallingBigBlueButton Ubuntu] (0.64)
     * [Integration Integrate] !BigBlueButton with your existing system
     * [ConfigurationFiles Configuration Files]
   * [GettingStarted Getting Started]
