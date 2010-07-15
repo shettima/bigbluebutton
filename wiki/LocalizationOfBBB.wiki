@@ -1,4 +1,4 @@
-#summary How to localize BBB
+#summary How to localize BigBlueButton
 
 = Contributing the new language translation to !BigBlueButton =
 If you would like to translate !BigBlueButton to another language, here are the steps you can follow:
