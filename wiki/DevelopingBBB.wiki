@@ -1,4 +1,4 @@
-#summary How to develop on BigBlueButton 0.7.
+#summary How to extend BigBlueButton 0.7.
 
 <wiki:toc max_depth="2" />
 
