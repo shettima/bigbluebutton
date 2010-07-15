@@ -97,6 +97,7 @@ To develop the client using Flash Builder, you can follow these steps:
     * The choose Import Project From
     * For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
     * Click finish.
+  * Right click on the project, go to Properties>Flex Compiler, and change the Flex version to 3.5. (BigBlueButton does not yet work with Flex 4)
   * Right click on src/BigBlueButton.mxml and click on Set As Default Application.
   * Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
 
