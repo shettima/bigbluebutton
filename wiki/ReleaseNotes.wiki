@@ -21,6 +21,8 @@ Released: July XX, 2010
 
   * * Source code moved to Github * - As the developer community grows, better source code control becomes more important. The entire source code repository has been moved to [http://github.com/bigbluebutton/bigbluebutton Github]. This enables developers to more easily branch and merge the !BigBlueButton source, and maintain feature branches.
 
+  * * API Updates * - Removed the redundant meetingToken parameter.  See [http://code.google.com/p/bigbluebutton/wiki/API#What's_New what's new in 0.7 API] for more details.
+
   * * Improved Documentation * - There is a new, simpler, [SampleModule Example module] for bbb-client. As well, the [DevelopingBBB Developer documentation] has been updated to reflect the move to git. 
 
 == Fixed Issues ==
