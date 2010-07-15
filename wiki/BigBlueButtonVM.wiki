@@ -16,7 +16,8 @@ The second point is key: the VM must be able to connect to the internet to updat
 
 <wiki:video url="http://www.youtube.com/watch?v=--yC6LpeFqA" />
 
-Noe
+Note: This video refers to 0.64, but the steps are valid for 0.7.
+
 == Installing !BigBlueButton VM  ==
 
   1.  Download and uncompress the the VM. 
