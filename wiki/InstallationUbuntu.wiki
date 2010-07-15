@@ -5,8 +5,8 @@
 = Installing !BigBlueButton using Ubuntu Packages =
 
 *NOTE:* 
- * As of !BigBlueButton 0.64, we support installation from packages on *Ubuntu 9.04 32-bit*.  
- * As of !BigBlueButton 0.7 (still in pre-release testing), we support installation from packages on *Ubuntu 9.04 32-bit* and *Ubuntu 10.04 32-bit and 64-bit*.
+
+ * As of !BigBlueButton 0.7, we support installation from packages on *Ubuntu 9.04 32-bit* and *Ubuntu 10.04 32-bit and 64-bit*.
 
 If you are attempting to install on a variation of Ubuntu, these packages might work, but we recommend that you
   # Search through [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] for your variation of Ubuntu.  
