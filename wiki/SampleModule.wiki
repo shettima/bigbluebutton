@@ -1,4 +1,4 @@
-#summary Creating a simple !BigBlueButton module using Mate
+#summary Creating a simple module in BigBlueButton 0.7 using Mate
 
 == Getting Started ==
 Follow the [DevelopingBBB instructions] on setting up your development environment.
