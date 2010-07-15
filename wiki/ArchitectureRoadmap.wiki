@@ -32,8 +32,8 @@ In addition, the following modules should be removed because they're not part of
 === Add unit tests. Status: PENDING ===
 Add unit tests to the Main app of bbb-client.
 
-== Changes to module loading. Status: DONE ==
-=== Better dependency resolution ===
+== Changes to module loading. Status: PENDING ==
+=== Better dependency resolution. Status: DONE ===
 Right now config.xml requires that a module be specified in another module's 'loadNextModule' property in order to be loaded. This creates a backward dependency that is unnecessary. This should be changed so that each module specifies their own dependencies instead, using a 'depends' property to specify the modules.
 
 === Support for dynamic loading. Status: PENDING ===
