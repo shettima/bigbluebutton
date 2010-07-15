@@ -19,6 +19,10 @@ Released: July XX, 2010
 
   * * Desktop Sharing is now LGPL * - We've remove the AGPL license from the desktop sharing module.  This means that all the !BigBlueButton code is available under the LGPL license.   
 
+  * * Source code moved to Github * - As the developer community grows, better source code control becomes more important. The entire source code repository has been moved to [http://github.com/bigbluebutton/bigbluebutton Github]. This enables developers to more easily branch and merge the !BigBlueButton source, and maintain feature branches.
+
+  * * Improved Documentation * There is a new, simpler, [SampleModule Example module] for bbb-client. As well, the [DevelopingBBB Developer documentation] has been updated to reflect the move to git. 
+
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]'
 
