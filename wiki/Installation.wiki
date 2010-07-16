@@ -1,9 +1,8 @@
 #summary Overview of installation options
 
-_Note: This page is draft as we update for the 0.7 release_
 = Introduction =
 
-The !BigBlueButton 0.7 server runs under Linux.  Here are some install options:
+The !BigBlueButton 0.7 server runs under Linux.  To setup your own !BigBlueButton server:
     * [BigBlueButtonVM Download the Virtual Machine] 
     * [InstallationUbuntu Install on Ubuntu 9.04 32-bit] 
     * [InstallingBigBlueButton Install from source (Ubuntu)]
