@@ -1,6 +1,8 @@
 #summary Development Road Map for BigBlueButton
 
-_To be updated for Release 0.8_
+= Release 0.8 =
+We are currently in the planning phase for !BigBlueButton 0.8.  This release will focus on adding the first iteration of record and playback (our #1 requested feature from educational institution).
+
 
 = Release 0.7 =
 We are currently working on !BigBlueButton 0.7.  This release will focus on adding a *whiteboard* to !BigBlueButton.  Click [http://bigbluebutton.org/sites/all/videos/whiteboard/index.html here] for a video preview of the upcoming whiteboard.
