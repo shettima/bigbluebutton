@@ -1,6 +1,6 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.7: Feynman (Draft) =
+= Release 0.7: Feynman =
 
 _Code named in honor of the Nobel prize winning physicist_ 
 
