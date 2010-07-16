@@ -17,5 +17,4 @@ Regardless of the way you choose, the following page shows the configuration fil
 
    * [ConfigurationFiles Configuration Files]
 
-Finally, if you are upgrading from a previous release, please see [ReleaseNotes Release Notes] on how to upgrade.
  
