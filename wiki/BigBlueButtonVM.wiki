@@ -22,10 +22,10 @@ Note: This video refers to 0.64, but the steps are valid for 0.7.
 
   1.  Download and uncompress the the VM. 
 
-[http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-07-13.zip BigBlueButton 0.7 Ubuntu 10.04 32-bit ]
+[http://bigbluebutton.org/downloads/bigbluebutton-vm-2010-07-15.zip BigBlueButton 0.7 Ubuntu 10.04 32-bit ]
 {{{
    # MD5SUM
-   387fda51ed04278c2cdb7dfdf1bae29e  bigbluebutton-vm-2010-07-13.zip
+   387fda51ed04278c2cdb7dfdf1bae29e  bigbluebutton-vm-2010-05-13.zip
 }}}
 
   2.  Open the enclosed folder.
