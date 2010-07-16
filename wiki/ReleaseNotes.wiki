@@ -31,8 +31,9 @@ Released: July 15, 2010
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
 
 == Known Issues ==
-  * [ http://code.google.com/p/bigbluebutton/issues/detail?id=524 Issue 524] Problems with audio delay using VoIP]
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=524 Issue 524] Problems with audio delay using VoIP]
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=579 Issue 579] Presenter can't widen the view of portrait documents
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=580 Issue 580] CentOS packages do not support BigBlueButton 0.7
 
 = Release 0.64: Lickety-split =
 
