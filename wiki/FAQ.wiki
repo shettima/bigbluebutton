@@ -58,12 +58,7 @@ There are a number of OpenSourceComponents in !BigBlueButton that need root acce
 
 
 === Ubuntu ===
-As of !BigBlueButton 0.64, we recommend you install and run !BigBluebutton on *Ubuntu 9.04 32-bit* OS. The [InstallationUbuntu Ubuntu packages] have been available and tested since December 2008, and with five commands you can install a full !BigBlueButton server in about fifteen (15) minutes.  Please note, that the packages have not been tested on Ubuntu 9.04 64-bit, Ubuntu 9.10 32-bit, or Ubuntu 9.10 64-bit, however, there are [InstallingBigBlueButton step-by-step instructions] for installing !BigBlueButton that you can adapt.
-
-Work is underway in [RoadMap BigBlueButton 0.7] to support Ubuntu 10.04 32-bit and 64-bit.
-
-
-
+As of !BigBlueButton 0.7, you can install !BigBluebutton on *Ubuntu 9.04 32-bit* or *Ubuntu 10.04 32-bit* or *Ubuntu 10.04 64-bit*. The [InstallationUbuntu Ubuntu packages] have been available and tested since December 2008, and with five commands you can install a full !BigBlueButton server in about fifteen (15) minutes.  Please note, that the packages have not been tested on Ubuntu 9.04 64-bit, Ubuntu 9.10 32-bit, or Ubuntu 9.10 64-bit, however, there are [InstallingBigBlueButton step-by-step instructions] for installing !BigBlueButton that you can adapt.
 
 
 
