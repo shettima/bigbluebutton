@@ -447,11 +447,16 @@ Need to run grails app, as changes where made to the url when joining the confer
   # did you already run "bbb-conf --setup-dev web"? If not, run it now
 
   grails run-war
-
-  # If there are no problems, you are good to go
-
 }}}
 
+Copy a new config.xml as the loading of modules have changed.
+{{{
+  cd ~/dev/source/bigbluebutton/bigbluebutton-client
+  cp resources/config.xml.template src/conf/config.xml
+
+  # Edit config.xml replacing "HOST" with your IP
+
+}}}
 
 
 
