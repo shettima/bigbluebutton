@@ -135,7 +135,7 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 == Install red5 ==
 {{{
   cd /tmp
-  wget http://bigbluebutton.org/downloads/0.64/red5-0.9.1.tar.gz
+  wget http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
   tar xvf red5-0.9.1.tar.gz
   mv /tmp/red5-0.9.1 /usr/share/red5
 }}}
@@ -184,14 +184,14 @@ Run red5
 
 == Modify Extensions ==
 {{{
-wget http://bigbluebutton.org/downloads/0.64/bbb_extensions.conf
+wget http://bigbluebutton.org/downloads/0.70/bbb_extensions.conf
 mv bbb_extensions.conf /etc/asterisk/
 echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
 }}}
 
 == Create SIP accounts ==
 {{{
-wget http://bigbluebutton.org/downloads/0.64/bbb_sip.conf
+wget http://bigbluebutton.org/downloads/0.70/bbb_sip.conf
 mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
 echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 }}}
@@ -199,7 +199,9 @@ echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
 == Install AppKonference ==
 
 {{{
-wget http://bigbluebutton.org/downloads/0.64/app_konference.so
+wget http://bigbluebutton.org/downloads/0.70/32bit/app_konference.so
+or
+wget http://bigbluebutton.org/downloads/0.70/64bit/app_konference-10.04-64.so
 mv app_konference.so /usr/lib/asterisk/modules/
 chmod 755 /usr/lib/asterisk/modules/app_konference.so
 # set autoload module BigBlueButton conference
@@ -230,7 +232,7 @@ echo "#include \"manager.d/*.conf\"" >> /etc/asterisk/manager.conf
 == Configure Nginx ==
 Be sure to replace < YOUR-IP > with your IP or domain.
 {{{
-  wget http://bigbluebutton.org/downloads/0.64/nginx-bigbluebutton.conf
+  wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
   cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
   rm nginx-bigbluebutton.conf
 }}}
@@ -248,7 +250,7 @@ apt-get install openoffice.org
 == Configure OpenOffice to start as a service ==
 {{{
 cd /etc/init.d
-wget http://www.bigbluebutton.org/downloads/0.64/ubuntu-install/bbb-openoffice-headless
+wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless
 
 # start the openoffice server
 chmod +x /etc/init.d/bbb-openoffice-headless
@@ -262,12 +264,12 @@ service bbb-openoffice-headless start
 == Download !BigBlueButton ==
 {{{ 
 cd /tmp
-wget http://bigbluebutton.org/downloads/0.64/packages/bbb-default.tar.gz
-wget http://bigbluebutton.org/downloads/0.64/packages/bigbluebutton.war
-wget http://bigbluebutton.org/downloads/0.64/packages/video.tar.gz
-wget http://bigbluebutton.org/downloads/0.64/packages/bigbluebutton-apps.tar.gz
-wget http://bigbluebutton.org/downloads/0.64/packages/client.tar.gz
-wget http://bigbluebutton.org/downloads/0.64/packages/sip.tar.gz
+wget http://bigbluebutton.org/downloads/0.70/packages/bbb-default.tar.gz
+wget http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton.war
+wget http://bigbluebutton.org/downloads/0.70/packages/video.tar.gz
+wget http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton-apps.tar.gz
+wget http://bigbluebutton.org/downloads/0.70/packages/client.tar.gz
+wget http://bigbluebutton.org/downloads/0.70/packages/sip.tar.gz
 }}}
 
 		
@@ -545,7 +547,7 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 #
 #     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
 #
-wget http://bigbluebutton.org/downloads/0.64/packages/deskshare.tar.gz
+wget http://bigbluebutton.org/downloads/0.70/packages/deskshare.tar.gz
 cp /tmp/deskshare.tar.gz /usr/share/red5/webapps/
 cd /usr/share/red5/webapps
 tar zxvf deskshare.tar.gz
@@ -553,7 +555,9 @@ rm -f deskshare.tar.gz
 
 }}}
 
-Desktop sharing is disabled by default. To enable it, we need to specify this in the "/var/www/bigbluebutton/client/conf/config.xml". The commands below should enable desksharing. 
+Since BigBlueButton 0.70, desktop sharing is enabled by default. However, if it is not enabled, please follow the following instructions.
+
+To enable it, we need to specify this in the "/var/www/bigbluebutton/client/conf/config.xml". The commands below should enable desksharing. 
 
 <b>Remember to replace < YOUR-IP > with your server's IP.</b>
 
