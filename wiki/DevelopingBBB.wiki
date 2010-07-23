@@ -462,6 +462,20 @@ Copy a new config.xml as the loading of modules have changed.
 === Installing FreeSWITCH ===
 These instructions will guide you on how to make BBB work with FreeSWITCH.
 
+Pull the latest code, build and deploy
+{{{
+  cd /home/firstuser/dev/source/bigbluebutton
+  git pull
+
+  cd bbb-voice
+  gradle war
+  gradle deploy
+
+  cd ../bigbluebutton-apps
+  gradle war
+  gradle deploy
+}}}
+
 Install FreeSWITCH
 {{{
   sudo apt-get install python-software-properties 
@@ -521,7 +535,7 @@ Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}
 {{{
   # Set esl.host to your IP
   esl.host=192.168.0.166
-}}
+}}}
 
 Stop Asterisk
 {{{
