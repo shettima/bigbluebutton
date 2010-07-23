@@ -459,7 +459,54 @@ Copy a new config.xml as the loading of modules have changed.
 }}}
 
 
+=== Installing FreeSWITCH ===
+These instructions will guide you on how to make BBB work with FreeSWITCH.
 
+Install FreeSWITCH
+{{{
+  sudo apt-get install python-software-properties 
+  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
+  sudo apt-get update 
+  sudo apt-get install freeswitch freeswitch-lang-en 
+}}}
+
+Install audio files 
+{{{
+   sudo mkdir /opt/freeswitch/sounds
+   cd /opt/freeswitch/sounds
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz   
+   tar zxvf freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-8000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-8000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-16000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-32000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-16000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-32000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
+   tar zxvf freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
+   tar zxvf freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
+}}}
+
+Copy the FS configuration files
+{{{
+  cd /opt/freeswitch
+  mv conf conf.dist
+  cp -a /home/firstuser/dev/source/bigbluebutton/bbb-voice-conference/config/freeswitch/conf ./
+  chown -R freeswitch:daemon conf
+  chmod -R 750 conf
+}}}
+
+Stop Asterisk
+{{{
+  sudo /etc/init.d/asterisk stop
+}}}
+
+Start FS
+{{{
+  cd /opt/freeswitch/bin
+  ./freeswitch
+}}}
 
 = Check-In Process =
 <p> The following diagram shows the check-in process </p>
