@@ -10,3 +10,4 @@ If you don't see your System bellow, feel free to request an integration on our 
   * [http://code.google.com/p/bigbluebuttongem/ Ruby Gem] - To help with developing Rails applications.
   * [https://chrome.google.com/extensions/detail/ncbonhmhjnamefpmmjdpbohnkbeliehb Chrome extension] to help you test your applications with the BBB API.
   * [http://doc.tikiwiki.org/BigBlueButton Tiki Wiki CMS Groupware] integration. Tiki 5.0 supports .64, while Tiki 5.1 will support .64 and .7
+  * [http://docs.efrontlearning.net/index.php/BigBlueButton eFront] LMS
