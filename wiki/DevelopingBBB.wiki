@@ -497,6 +497,32 @@ Copy the FS configuration files
   chmod -R 750 conf
 }}}
 
+Edit {{{/opt/freeswitch/conf/autoload_configs/event_socket.conf.xml}}}. 
+{{{
+   vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
+
+   # Set listen-ip to your IP
+   <param name="listen-ip" value="192.168.0.166"/>
+}}}
+
+Edit {{{vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml}}}
+{{{
+  vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
+
+  # Uncomment bbb-voice-freeswitch.xml and comment out bbb-voice-asterisk.xml
+  <!--
+    <import resource="bbb-voice-freeswitch.xml" />
+   -->
+    <import resource="bbb-voice-asterisk.xml" />
+
+}}}
+
+Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
+{{{
+  # Set esl.host to your IP
+  esl.host=192.168.0.166
+}}
+
 Stop Asterisk
 {{{
   sudo /etc/init.d/asterisk stop
