@@ -31,11 +31,12 @@ If you are setting up on a *Ubuntu 9.04 32-bit*
    wget http://archive.bigbluebutton.org/bigbluebutton.asc 
    sudo apt-key add bigbluebutton.asc 
 
-   # add the archive for BigBlueButton Ubuntu 9.04
+   # add the archive for BigBlueButton Ubuntu 9.04 and make sure multiverse
+   # is enabled
    echo "deb http://archive.bigbluebutton.org/ bigbluebutton main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+   echo "deb http://us.archive.ubuntu.com/ubuntu/ jaunty multiverse" | sudo tee -a /etc/apt/sources.list
 
    sudo apt-get update 
-
    sudo apt-get install bigbluebutton 
 
    # Ensure BigBlueButton is restarted and good to go
