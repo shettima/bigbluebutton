@@ -132,6 +132,14 @@ to
 deb http://archive.bigbluebutton.org/dev bigbluebutton main
 }}}
 
+If you have an ubuntu-10.04 lucid running, please do following changes:
+{{{
+#
+# Repository for BigBlueButton
+#
+deb http://archive.bigbluebutton.org/lucid/dev bigbluebutton-lucid main
+}}}
+
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
 
 
