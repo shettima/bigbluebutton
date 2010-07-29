@@ -112,6 +112,13 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
    apt-get install swftools
 }}}
 
+If the installer does not find the package swftools to install, you can download the packages with this command:
+{{{
+wget https://launchpad.net/ubuntu/+source/swftools/0.9.0-0ubuntu2/+build/1684493/+files/swftools_0.9.0-0ubuntu2_amd64.deb
+or
+wget https://launchpad.net/ubuntu/+source/swftools/0.9.0-0ubuntu2/+build/1684495/+files/swftools_0.9.0-0ubuntu2_i386.deb
+}}}
+
 == Install ImageMagick ==
 {{{
    apt-get install imagemagick
@@ -284,6 +291,7 @@ mv -f /tmp/tomcat6 /etc/default/tomcat6
   mysql -u root -p
 }}}
 
+This is an important step. If you skip this, BigBlueButton will not work at all.
 Just hit "Enter" when prompted for a password.
 
 On the {{{mysql>}}} prompt, type
@@ -538,7 +546,25 @@ Your config.xml should look something like:
 
 Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
 
+
+=== Install bbb-conf ===
+
+The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
+
+{{{ 
+  wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
+  sudo mv bbb-conf /usr/local/bin 
+  sudo chmod ugo+x /usr/local/bin/bbb-conf 
+}}}
+
+You should now be able to type
+{{{
+   bbb-conf -c
+}}}
+
+
 == Installing Desktop Sharing (optional) ==
+=== Desktop Sharing is not supported yet in the installation by source ===
 {{{
 # install deskshare app
 #
@@ -662,19 +688,5 @@ You can change !BigBlueButton's configuration to use MeetMe by executing the fol
  /etc/asterisk/bbb_extensions.conf
 }}}
 
-=== Install bbb-conf ===
-
-The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
-
-{{{ 
-  wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
-  sudo mv bbb-conf /usr/local/bin 
-  sudo chmod ugo+x /usr/local/bin/bbb-conf 
-}}}
-
-You should now be able to type
-{{{
-   bbb-conf -c
-}}}
 
 To check the current setup of !BigBlueButton.  For more options, see [BBBConf manual page for bbb-conf]. 
