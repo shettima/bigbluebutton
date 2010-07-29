@@ -252,4 +252,4 @@ and this will do a clean restart.
 
 == I'm still having problems ==
 
-If you've tried both the above commands and your BigBlueButton server is not working, please post to our [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 forums].  
+If you've tried both the above commands and your !BigBlueButton server is not working, please post to our [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] mailing list.  
