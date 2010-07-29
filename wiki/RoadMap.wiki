@@ -1,7 +1,9 @@
 #summary Development Road Map for BigBlueButton
 
 = Release 0.8 =
-We are currently in the planning phase for !BigBlueButton 0.8.  This release will focus on adding the first iteration of record and playback (our #1 requested feature from educational institution).
+We are currently in the planning phase for !BigBlueButton 0.8.  
+
+This release will focus investigating improvements to the VoIP and on adding the first iteration of record and playback (our #1 requested feature from educational institution).
 
 
 = Release 0.7 =
