@@ -44,18 +44,13 @@ The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, rel
   * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
 
-When it's done, you'll see a welcome message that asks you to login and change the password.
+When it's done, you'll see a a login message.  *NOTE:* The VM has been pre-configured to have the following user-id/password:
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_boot.png
-
-*NOTE:* The VM is setup to have a default account
-  username: *firstuser*
+  user-id: *firstuser*
 
   password: *default*
 
-When the first login prompt appears, enter the information above. To secure your server, you will be asked to change the password.
-
-You can also change the password later, login as firstuser and provide the default password.  You'll immediately be asked to enter the password again, then to provide a new password.  Again, do this now as it will secure your server.  
+*To secure your server, immediately login with the above user-id/password.*  This password is set to expire, so you'll be asked to enter the password *default* again, then to provide a new password (entering it twice to confirm).  Again, do this now as it will secure your server.  
 
 After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser).
 
