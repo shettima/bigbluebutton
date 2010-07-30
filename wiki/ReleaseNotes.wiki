@@ -2,7 +2,7 @@
 
 = Release 0.7: Feynman =
 
-_Code named in honor of the Nobel prize winning physicist_ 
+_Code named in honor of the Nobel prize winning physicist Richard Feynman._ 
 
 
 Released: July 15, 2010
