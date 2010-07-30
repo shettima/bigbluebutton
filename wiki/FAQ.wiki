@@ -448,11 +448,11 @@ These steps trigger the opening of the File Open by a user action, which seems t
 
 When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
 
-=== There is an echo in the voice conference ===
+=== Why is there an echo in the voice conference? ===
 
-When users the built-in VoIP in !BigBlueButton you want to ensure they are using headphones  or they are muted.
+You'll hear an echo if any users are not using a headset to join the voice conference through VoIP (clicking on the headset icon in the upper left).
 
-A common problem with echo occurs when a remote student is using a laptop.  They have activated the built-in VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
+This usually occurs when a remote student is using a laptop.  They have activated the VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
 
 To solve this problem, if you have logged in as a moderator, you can mute the student. Here's how:
 
