@@ -112,7 +112,7 @@ To develop the client using Flash Builder, you can follow these steps:
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
 
-  * On the client code, to src/conf/config.xml and change the 'host' property of the ViewersModule to point to "conf/join-mock.xml".
+  * On the client code, to src/conf/config.xml and change the 'host' property of the !ViewersModule to point to "conf/join-mock.xml".
   * You should now be able to launch from Flash Builder using the Run/Debug button.
 
 *NOTE*
@@ -234,7 +234,7 @@ If you want to revert back to the packaged version of !BigBlueButton apps, do th
 = Other Notes on setting up a Full Development Environment =
 
 == Pre-requisites ==
-In this environment, we assume you are developing on Windows with Eclipse and Flash Builder. Also, you have the BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
+In this environment, we assume you are developing on Windows with Eclipse and Flash Builder. Also, you have the !BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
 
 On Windows:
  * Install Eclipse
