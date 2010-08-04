@@ -5,10 +5,12 @@
 = Developing on the bleeding edge =
 Here are some extra steps you need to do if you are developing on the {{{master}}} branch. These extra steps are needed because of the changes to the code that's still in development. If you run into issues, please send email to the bigbluebutton-dev mailing list.
 
-Make sure you are in the tip of the blade.
+Make sure you are on the tip of the blade.
 {{{
   git pull origin master
 }}}
+
+ * {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}
 
 Need to run grails app, as changes where made to the url when joining the conference.
 {{{
