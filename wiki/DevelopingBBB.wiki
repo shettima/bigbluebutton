@@ -3,6 +3,46 @@
 <wiki:toc max_depth="2" />
 
 = Developing on the bleeding edge =
+
+== Building the client ==
+We have added Speex support for BBB Voice. This requires version 3.5 of the Flex SDK. Thus, to build the client, you need to download Flex 3.5 SDK from
+http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+3
+
+Unzip the SDK into your FlexBuilder/sdk folder and modify the compiler settings to use this SDK.
+
+To build using {{{ant}}}, unzip the folder into {{{/home/firstuser/dev/tools}}}.
+{{{
+  cd /home/firstuser/dev/tools
+  
+  # Uncompress the SDK. This will uncompress the files into a c folder
+  unzip -dc flex_sdk_3.5.0.12683_mpl.zip
+  
+  # Rename the c folder to flex-3.5.0.12683
+  mv c flex-3.5.0.12683
+
+  # Check if you have tofrodos
+  fromdos
+
+  # IF it says command not found, you have to install tofrodos
+  sudo apt-get install tofrodos
+
+  # Make the needed files unix compatible and executable
+  cd flex-3.5.0.12683/bin
+  fromdos aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
+  chmod 755 aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
+  
+  # Rename the flex3 folder to flex-3.4.1
+  cd /home/firstuser/dev/tools
+  mv flex3 flex-3.4.1
+  
+  # Create a softlink to the 3.5 SDK as the FLEX_HOME env var points to /home/firstuser/dev/tools/flex3
+  ln -s flex-3.5.0.12683 flex3
+
+  cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
+  ant
+
+}}} 
+
 Here are some extra steps you need to do if you are developing on the {{{master}}} branch. These extra steps are needed because of the changes to the code that's still in development. If you run into issues, please send email to the bigbluebutton-dev mailing list.
 
 Make sure you are on the tip of the blade.
