@@ -315,10 +315,9 @@ The server was a Pentium(R) Dual-Core CPU E5200 @ 2.50GHz with 4GB RAM running U
 
 To change the security salt, do the following: 
   # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers with dashes that will be used to create a checksum for each API request from an external application. 
-  # Copy the string (including dashes) three places, replacing the existing security salt (if any) at each location: `/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp`, and `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties`. 
-  # Do a clean restart of the !BigBlueButton server `sudo bbb-conf --clean`.
+  # Run the command `sudo bbb-conf --salt new_salt`. 
 
-Note: If you are using a [http://bigbluebutton.org/support third-party plugin] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new salt.
+Note: If you are using a [http://bigbluebutton.org/support third-party plug-in] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the value of the new salt; otherwise, if the salt do not match, the API calls from the third-party plug-in will fail.
 
 
 == How do I change the maximum allowed size for uploading a presentation? ==
