@@ -1,17 +1,25 @@
 #summary Development Road Map for BigBlueButton
 
-= Release 0.71 =
+
+= Current Release =
+
+== Release 0.71 ==
 We are currently in the planning phase for !BigBlueButton 0.71.  
 
-This release will focus investigating improvements to the VoIP and on adding the first iteration of record and playback (our #1 requested feature from educational institution).
+This release will focus investigating improvements to the VoIP 
+
+== Release 0.8 ==
+This next release will have the first iteration of record and playback (our #1 requested feature from educational institution).
 
 
-= Release 0.7 =
+= Previous Releases =
+
+== Release 0.7 ==
 !BigBlueButton 0.7 was released on July 15, 2010.  You can see a full list of what has been added in the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes Release Notes].
 
 You can see the original planning document for 0.7 in the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/33c2080e30fb5f02# Minutes from BigBlueButton committers meeting 2010-04-27].  
 
-= Previous Releases =
+
 To see the results of previous releases, see [ReleaseNotes BigBlueButton Release Notes].
 
 = Architecture Roadmap =
