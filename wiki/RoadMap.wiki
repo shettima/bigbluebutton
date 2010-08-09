@@ -6,7 +6,7 @@
 == Release 0.71 ==
 We are currently in the planning phase for !BigBlueButton 0.71.  
 
-This release will focus investigating improvements to the VoIP 
+This release will focus investigating improvements to the VoIP.  
 
 == Release 0.8 ==
 This next release will have the first iteration of record and playback (our #1 requested feature from educational institution).
