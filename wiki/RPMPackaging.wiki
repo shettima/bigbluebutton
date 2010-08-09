@@ -2,6 +2,8 @@
 
 <wiki:toc max_depth="2" />
 
+_These RPM packages are currently not working.  We are planning on updating them soon, but don't have a delivery date yet._
+
 = Introduction =
 
 This document describes how to use RPM packages to install !BigBlueButton on *CentOS 5.4 (32-bit and 64-bit)*.  The installation takes about fifteen minutes (depending on your internet connection).
