@@ -2,162 +2,6 @@
 
 <wiki:toc max_depth="2" />
 
-= Developing on the bleeding edge =
-
-== Building the client ==
-Here are some extra steps you need to do if you are developing on the {{{master}}} branch. These extra steps are needed because of the changes to the code that's still in development. If you run into issues, please send email to the bigbluebutton-dev mailing list.
-
-Make sure you are on the tip of the blade.
-{{{
-  git pull origin master
-}}}
-
-We have added Speex support for BBB Voice. This requires version 3.5 of the Flex SDK. Thus, to build the client, you need to download Flex 3.5 SDK from
-http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+3
-
-Unzip the SDK into your FlexBuilder/sdk folder and modify the compiler settings to use this SDK.
-
-To build using {{{ant}}}, unzip the folder into {{{/home/firstuser/dev/tools}}}.
-{{{
-  cd /home/firstuser/dev/tools
-  
-  # Uncompress the SDK. This will uncompress the files into a c folder
-  unzip -dc flex_sdk_3.5.0.12683_mpl.zip
-  
-  # Rename the c folder to flex-3.5.0.12683
-  mv c flex-3.5.0.12683
-
-  # Check if you have tofrodos
-  fromdos
-
-  # IF it says command not found, you have to install tofrodos
-  sudo apt-get install tofrodos
-
-  # Make the needed files unix compatible and executable
-  cd flex-3.5.0.12683/bin
-  fromdos aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
-  chmod 755 aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
-  
-  # Rename the flex3 folder to flex-3.4.1
-  cd /home/firstuser/dev/tools
-  mv flex3 flex-3.4.1
-  
-  # Create a softlink to the 3.5 SDK as the FLEX_HOME env var points to /home/firstuser/dev/tools/flex3
-  ln -s flex-3.5.0.12683 flex3
-
-  cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
-  ant
-
-}}} 
-
-
-
- * {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}
-
-Need to run grails app, as changes where made to the url when joining the conference.
-{{{
-  sudo /etc/init.d/tomcat6 stop
-  cd ~/dev/source/bigbluebutton/bigbluebutton-web
-
-  # did you already run "bbb-conf --setup-dev web"? If not, run it now
-
-  grails run-war
-}}}
-
-Copy a new config.xml as the loading of modules have changed.
-{{{
-  cd ~/dev/source/bigbluebutton/bigbluebutton-client
-  cp resources/config.xml.template src/conf/config.xml
-
-  # Edit config.xml replacing "HOST" with your IP
-
-}}}
-
-
-=== Installing FreeSWITCH ===
-These instructions will guide you on how to make BBB work with FreeSWITCH.
-
-Pull the latest code, build and deploy
-{{{
-  cd /home/firstuser/dev/source/bigbluebutton
-  git pull
-
-  cd bbb-voice
-  gradle war
-  gradle deploy
-
-  cd ../bigbluebutton-apps
-  gradle war
-  gradle deploy
-}}}
-
-Install FreeSWITCH
-{{{
-  sudo apt-get install python-software-properties 
-  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
-  sudo apt-get update 
-  sudo apt-get install freeswitch freeswitch-lang-en 
-}}}
-
-Install audio files 
-{{{
-   sudo mkdir /opt/freeswitch/sounds
-   cd /opt/freeswitch/sounds
-   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz   
-   tar zxvf freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-music-8000-1.0.8.tar.gz
-   tar zxvf freeswitch-sounds-music-8000-1.0.8.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-music-16000-1.0.8.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-music-32000-1.0.8.tar.gz
-   tar zxvf freeswitch-sounds-music-16000-1.0.8.tar.gz
-   tar zxvf freeswitch-sounds-music-32000-1.0.8.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
-   tar zxvf freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
-   tar zxvf freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
-}}}
-
-Copy the FS configuration files
-{{{
-  cd /opt/freeswitch
-  mv conf conf.dist
-  cp -a /home/firstuser/dev/source/bigbluebutton/bbb-voice-conference/config/freeswitch/conf ./
-  chown -R freeswitch:daemon conf
-  chmod -R 750 conf
-}}}
-
-Edit {{{/opt/freeswitch/conf/autoload_configs/event_socket.conf.xml}}}. 
-{{{
-   vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
-
-   # Set listen-ip to your IP
-   <param name="listen-ip" value="192.168.0.166"/>
-}}}
-
-Edit {{{vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml}}}
-{{{
-  vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
-
-  # Change bbb-voice-freeswitch.xml to bbb-voice-asterisk.xml
-    <import resource="bbb-voice-freeswitch.xml" />
-}}}
-
-Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
-{{{
-  # Set esl.host to your IP
-  esl.host=192.168.0.166
-}}}
-
-Stop Asterisk
-{{{
-  sudo /etc/init.d/asterisk stop
-}}}
-
-Start FS
-{{{
-  cd /opt/freeswitch/bin
-  ./freeswitch
-}}}
 
 = Setting up a !BigBlueButton Development Environment =
 We run a custom Linux VM (using VMWare player or [http://www.virtualbox.org/ VirtualBox]) that has all the development environment setup.  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
@@ -607,7 +451,159 @@ ii  openoffice-headless               0.63.0ubuntu8                       BigBlu
 <br>
 
 
+= Developing on the bleeding edge =
 
-= Check-In Process =
-<p> The following diagram shows the check-in process </p>
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/checkin_diagram.png
+== Building the client ==
+Here are some extra steps you need to do if you are developing on the {{{master}}} branch. These extra steps are needed because of the changes to the code that's still in development. If you run into issues, please send email to the bigbluebutton-dev mailing list.
+
+Make sure you are on the tip of the blade.
+{{{
+  git pull origin master
+}}}
+
+We have added Speex support for BBB Voice. This requires version 3.5 of the Flex SDK. Thus, to build the client, you need to download Flex 3.5 SDK from
+http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+3
+
+Unzip the SDK into your FlexBuilder/sdk folder and modify the compiler settings to use this SDK.
+
+To build using {{{ant}}}, unzip the folder into {{{/home/firstuser/dev/tools}}}.
+{{{
+  cd /home/firstuser/dev/tools
+  
+  # Uncompress the SDK. This will uncompress the files into a c folder
+  unzip -dc flex_sdk_3.5.0.12683_mpl.zip
+  
+  # Rename the c folder to flex-3.5.0.12683
+  mv c flex-3.5.0.12683
+
+  # Check if you have tofrodos
+  fromdos
+
+  # IF it says command not found, you have to install tofrodos
+  sudo apt-get install tofrodos
+
+  # Make the needed files unix compatible and executable
+  cd flex-3.5.0.12683/bin
+  fromdos aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
+  chmod 755 aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
+  
+  # Rename the flex3 folder to flex-3.4.1
+  cd /home/firstuser/dev/tools
+  mv flex3 flex-3.4.1
+  
+  # Create a softlink to the 3.5 SDK as the FLEX_HOME env var points to /home/firstuser/dev/tools/flex3
+  ln -s flex-3.5.0.12683 flex3
+
+  cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
+  ant
+
+}}} 
+
+
+
+ * {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}
+
+Need to run grails app, as changes where made to the url when joining the conference.
+{{{
+  sudo /etc/init.d/tomcat6 stop
+  cd ~/dev/source/bigbluebutton/bigbluebutton-web
+
+  # did you already run "bbb-conf --setup-dev web"? If not, run it now
+
+  grails run-war
+}}}
+
+Copy a new config.xml as the loading of modules have changed.
+{{{
+  cd ~/dev/source/bigbluebutton/bigbluebutton-client
+  cp resources/config.xml.template src/conf/config.xml
+
+  # Edit config.xml replacing "HOST" with your IP
+
+}}}
+
+
+=== Installing FreeSWITCH ===
+These instructions will guide you on how to make BBB work with FreeSWITCH.
+
+Pull the latest code, build and deploy
+{{{
+  cd /home/firstuser/dev/source/bigbluebutton
+  git pull
+
+  cd bbb-voice
+  gradle war
+  gradle deploy
+
+  cd ../bigbluebutton-apps
+  gradle war
+  gradle deploy
+}}}
+
+Install FreeSWITCH
+{{{
+  sudo apt-get install python-software-properties 
+  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
+  sudo apt-get update 
+  sudo apt-get install freeswitch freeswitch-lang-en 
+}}}
+
+Install audio files 
+{{{
+   sudo mkdir /opt/freeswitch/sounds
+   cd /opt/freeswitch/sounds
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz   
+   tar zxvf freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-8000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-8000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-16000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-32000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-16000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-32000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
+   tar zxvf freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
+   tar zxvf freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
+}}}
+
+Copy the FS configuration files
+{{{
+  cd /opt/freeswitch
+  mv conf conf.dist
+  cp -a /home/firstuser/dev/source/bigbluebutton/bbb-voice-conference/config/freeswitch/conf ./
+  chown -R freeswitch:daemon conf
+  chmod -R 750 conf
+}}}
+
+Edit {{{/opt/freeswitch/conf/autoload_configs/event_socket.conf.xml}}}. 
+{{{
+   vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
+
+   # Set listen-ip to your IP
+   <param name="listen-ip" value="192.168.0.166"/>
+}}}
+
+Edit {{{vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml}}}
+{{{
+  vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
+
+  # Change bbb-voice-freeswitch.xml to bbb-voice-asterisk.xml
+    <import resource="bbb-voice-freeswitch.xml" />
+}}}
+
+Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
+{{{
+  # Set esl.host to your IP
+  esl.host=192.168.0.166
+}}}
+
+Stop Asterisk
+{{{
+  sudo /etc/init.d/asterisk stop
+}}}
+
+Start FS
+{{{
+  cd /opt/freeswitch/bin
+  ./freeswitch
+}}}
