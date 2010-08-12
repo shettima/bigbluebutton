@@ -1,0 +1,14 @@
+#summary How to check out the source of BigBlueButton.
+
+== Checkout Source ==
+!BigBlueButton source code is hosted on !GitHub. You can check it out using git by running the following command on your command line in Linux:
+{{{
+git://github.com/bigbluebutton/bigbluebutton.git
+}}}
+
+== Download Source ==
+If you don't want to checkout the source using git, you can download it from the [http://github.com/bigbluebutton/bigbluebutton project webpage] on !GitHub.
+
+== Git? What the hell is that ==
+If you're not familiar with Git, here's a really good [http://progit.org/book/ free book]. The !GitHub website has very detailed [http://help.github.com/ help pages] as well.
+
