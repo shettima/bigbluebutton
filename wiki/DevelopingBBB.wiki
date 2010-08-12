@@ -2,6 +2,8 @@
 
 <wiki:toc max_depth="2" />
 
+= Talking to the developers =
+Write to the bigbluebutton-dev mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
 
 = Setting up a !BigBlueButton Development Environment =
 We run a custom Linux VM (using VMWare player or [http://www.virtualbox.org/ VirtualBox]) that has all the development environment setup.  We evolved our process to create a !BigBlueButton VM that is (a) a fully functional implementation of !BigBlueButton _and_ (b) a complete development environment.  Not only did we save ourselves a lot of effort, but we can offer you the same environment we use to develop !BigBlueButton.  
