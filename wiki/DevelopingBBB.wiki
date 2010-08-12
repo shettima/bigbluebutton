@@ -190,6 +190,22 @@ See the [BBBConf] page for troubleshooting tips.
 = Working with the source =
 
 == Checking out the source code ==
+----
+ * PLEASE READ BEFORE YOU CONTINUE! *
+ It seems like a lot of people are running into issues because the default working branch the {{{master}}} branch and there are a lot of changes that can trip them up.
+
+ So, it is best to work on the tagged 0.7 and stable release. To do this, edit line 466 of {{{/usr/local/bin/bbb-conf}}} to
+
+{{{
+        echo "# "
+        git clone $CHECKOUT
+        git checkout -b 0.7-release-workspace v0.7
+        echo "# "
+        echo "#  
+
+}}}
+----
+
 Type the following command to checkout !BigBlueButton from our [http://www.github.com/bigbluebutton github repository].
 {{{
    bbb-conf --checkout
