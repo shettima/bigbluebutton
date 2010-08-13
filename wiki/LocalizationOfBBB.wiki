@@ -14,9 +14,9 @@ DJP, one of the !BigBlueButton developers, will download and incorporate the lan
 || *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
 || Azerbaijani || az_AZ || Emin Hasanov || eminach AT gmail DOT com || 0.64 ||
 || Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom AT gmail DOT com || 0.63 ||
-|| Chinese (Traditional) || zh_TW || Alan Yu || secret1029 AT gmail DOT com || 0.63 ||
-|| English || en_US || !BigBlueButton Team || ffdixon AT bigbluebutton DOT org (and many others) || 0.63 ||
-|| French || fr_FR || Jean-Philippe Guiot || DJP AT architectes DOT org ||0.63 ||
+|| Chinese (Traditional) || zh_TW || Alan Yu || secret1029 AT gmail DOT com || 0.7 ||
+|| English || en_US || !BigBlueButton Team || ffdixon AT bigbluebutton DOT org (and many others) || 0.7 ||
+|| French || fr_FR || Jean-Philippe Guiot || DJP AT architectes DOT org ||0.7 ||
 || German || de_DE || Stefan Auditor || stefan.auditor AT googlemail DOT com || 0.63 ||
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas AT gmail DOT com || 0.64 ||
 || Italian || it_IT || Federico Corradino || spiorfeus AT gmail DOT com || 0.64 ||
@@ -34,7 +34,7 @@ DJP, one of the !BigBlueButton developers, will download and incorporate the lan
 || Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33 AT gmail DOT com || 0.64 ||
 || Swedish || sw_SW || Fredrik Garmer || garmer@gmail.com || 0.7 ||
 || Turkish || tr_TR || Ceyhun Kazel || ceyhunkazel AT gmail DOT com || 0.64 ||
-|| Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.64 ||
+|| Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.7 ||
 
 
 == Technical Background  ==
