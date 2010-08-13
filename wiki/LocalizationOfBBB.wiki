@@ -20,8 +20,8 @@ DJP, one of the !BigBlueButton developers, will download and incorporate the lan
 || German || de_DE || Stefan Auditor || stefan.auditor AT googlemail DOT com || 0.63 ||
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas AT gmail DOT com || 0.64 ||
 || Italian || it_IT || Federico Corradino || spiorfeus AT gmail DOT com || 0.64 ||
-|| Lithuania || lt_LT || Marius Kazlauskas || mar.kazlauskas AT gmail DOT com || 0.64 ||
-|| Netherland || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.64 ||
+|| Lithuanian || lt_LT || Marius Kazlauskas || mar.kazlauskas AT gmail DOT com || 0.64 ||
+|| Norwegian || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.64 ||
 || Netherland || nl_NL || Walter Tak || walter AT waltertak DOT com ||0.63 ||
 || Persian || fa_IR || Morteza Hanifnejad || m.hanifnejad@gmail.com || 0.7 ||
 || Portuguese || pt_PT || FábioVaz_IPT || fafvaz AT gmail DOT com || 0.63 ||
