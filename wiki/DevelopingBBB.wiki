@@ -550,6 +550,11 @@ Install FreeSWITCH
   sudo apt-get install freeswitch freeswitch-lang-en 
 }}}
 
+If you are using Ubuntu-9.04 you probably will get the message: add-apt-repository command not found. If this is the case, download this file: http://launchpadlibrarian.net/44222863/python-software-properties_0.75.10_all.deb and install it with
+{{{
+dpkg -i python-software-properties_0.75.10_all.deb
+}}}
+
 Install audio files 
 {{{
    sudo mkdir /opt/freeswitch/sounds
