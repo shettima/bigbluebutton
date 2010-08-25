@@ -60,6 +60,13 @@ Alter the client to make it easier for people to create their own !BigBlueButton
 === AIR Client ===
 Port the bbb-client to [http://www.adobe.com/products/air/ Air]. This allows for better performance for people who have slower computers, or simply like having a desktop application better. Plus it's not a lot of work. The biggest thing left to do is create an API interface in Flex that lets you join meetings straight from the Air Application.
 
+=== Desktop Sharing Optimizations ===
+There are a number of optimizations that are possible to improve the speed of desktop sharing.  They include
+   * Allow the presenter to select a region of their screen (instead of using the full screen by default)
+   * Reduce the captured screen regions from 32-bit to 16-bit
+   * Automatically reduce the quality to 8-bit greyscale if the upstream bandwidth is slow
+   * Implement the Adobe Screen Codec 2
+
 == *Other* ==
 
 === HTML5 Interface ===
