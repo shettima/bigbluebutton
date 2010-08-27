@@ -73,3 +73,6 @@ Refer to the [http://code.google.com/p/bigbluebutton/wiki/FAQ#My_client_fails_at
 
 == Testing your localization  ==
 There is a Firefox plug-in, "Quick Locale Switcher", that can be used for testing the localizations. The plug-in is available [https://addons.mozilla.org/en-US/firefox/addon/1333 here]. When this plug-in is installed, you will have a menu at the bottom right hand corner that allows you to change the locale in the browser.
+
+== Overwriting the English Translation with your Language ==
+If you think most of your users are running browsers set for English but would still like !BigBlueButton to load with a different language, you can delete the en_US.swf file from the directory where you deployed the bbb-client. Then rename your localization to en_US.swf. So for example if you wanted the Spanish language to be the default, just rename the file es_ES.swf to en_US.swf.
