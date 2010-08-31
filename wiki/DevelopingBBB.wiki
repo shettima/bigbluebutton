@@ -45,6 +45,7 @@ See the [BBBConf] page for troubleshooting tips.
 {{{
         echo "# "
         git clone $CHECKOUT
+        cd ~/dev/source/bigbluebutton
         git checkout -b 0.7-release-workspace v0.7
         echo "# "
         echo "#  
