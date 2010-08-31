@@ -11,4 +11,5 @@ Open up the config.xml file. This is a line by line discussion of it's propertie
 == Main parameters ==
 {{{
 <localeversion>0.71</localeversion>
-}}} This should be left as is. It has to do with the client caching localization files.
+}}} 
+This should be left as is. It has to do with the client caching localization files.
