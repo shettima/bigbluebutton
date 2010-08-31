@@ -16,4 +16,5 @@ Open up the config.xml file. This is a line by line discussion of it's propertie
 This should be left as is. It has to do with the client caching localization files.
 
 === version ===
-{{{<version>VERSION</version>}}} This has to do with the caching of the client as a whole. Should also be left alone, in general.
+{{{<version>VERSION</version>}}} 
+This has to do with the caching of the client as a whole. Should also be left alone, in general.
