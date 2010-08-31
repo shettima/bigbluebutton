@@ -9,6 +9,7 @@ The config.xml file is located in the deployed client directory, default locatio
 Open up the config.xml file. This is a line by line discussion of it's properties, applicable for version 0.71.
 
 == Main parameters ==
+=== localeversion ===
 {{{
 <localeversion>0.71</localeversion>
 }}} 
