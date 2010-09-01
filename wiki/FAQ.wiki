@@ -229,6 +229,8 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 = Configuration =
 
+== How do I enable feature X ==
+See the [ClientConfiguration client configuration] page for details on how to enable or disable specific modules and features.
 
 == Networking ==
 
