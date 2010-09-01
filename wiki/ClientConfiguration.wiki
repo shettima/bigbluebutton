@@ -20,3 +20,179 @@ This should be left as is. It has to do with the client caching localization fil
 <version>VERSION</version>
 }}} 
 This has to do with the caching of the client as a whole. Should also be left alone, in general.
+
+=== help url ===
+{{{
+<help url="http://192.168.0.225/help.html"/>
+}}}
+This is the url that you would like users redirected to when they click the Help button in the client.
+
+=== porttest ===
+{{{
+<porttest host="192.168.0.225" application="video"/> 
+}}}
+The ip and red5 application the client uses to test whether necessary ports are open, and determine whether tunneling should be used. The host should be your bbb server ip. The application should be left as video.
+
+=== application ===
+{{{
+<application uri="rtmp://192.168.0.225/bigbluebutton" host="conf/join-mock.xml" />
+}}}
+The main ip that the client will try to connect to. The uri attribute should be left as is, with the ip as your bbb server ip. The host property can be changed depending on how you are using the client:
+==== Developing with source and launching from Flash Builder ====
+{{{
+host="conf/join-mock.xml"
+}}}
+==== Using bbb-web 0.71 and later ====
+{{{
+host="http://192.168.0.225/bigbluebutton/api/enter"
+}}}
+==== Using bbb-web 0.7 and earlier ====
+{{{
+host="http://192.168.0.167/bigbluebutton/conference-session/enter"
+}}}
+*NOTE* This third option is important if you've decided to develop only the client, and have compiled the latest client source for 0.71 but have not compiled and deployed the latest version of bbb-web.
+
+=== language ===
+{{{
+<language userSelectionEnabled="true" />
+}}}
+This enables/disables the language selector combo box in the client. Enable this if you would like your users to be able to select the language of their !BigBlueButton client themselves instead of the language being detected automatically for them.
+
+=== skinning ===
+{{{
+<skinning enabled="false" url="branding/css/theme.swf" />
+}}}
+This enables/disables skinning support for the client. If the value is false, the url attribute will be ignored. Otherwise the url attribute specifies the compiled CSS file to load on startup. See [Branding Branding] for more details.
+
+== Modules ==
+The !BigBlueButton client is comprised of one or more modules. You can specify which modules you would like loaded in the config.xml file. The modules will be loaded at startup. The properties for the different currently available modules are shown here in no particular order. Most of the modules share certain attributes:
+
+==== name ====
+The unique name of the module
+
+==== url ====
+The url to the compiled module .swf file. Usually has a version appended to it, to prevent caching of old version when a new version of !BigBlueButton is released.
+
+==== uri ====
+The uri the module will connect to using rtmp. This is usually your bbb server ip with /bigbluebutton appended to it. Apart from making sure the ip is correct, you don't have to worry about it.
+
+==== depends on ====
+Optional parameter that should be included in the case that the module being loaded depends on another !BigBlueButton module being loaded first in order to work properly.
+
+=== Chat Module ===
+{{{
+<module name="ChatModule" url="ChatModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	dependsOn="ViewersModule"	
+	translationOn="true"
+	translationEnabled="true"	 
+/>
+}}}
+==== translationOn ===
+Determines whether the automatic translation of Chat messages to the users' language on by default. If true, all messages the user receives in the chat will be translated to their detected or selected language. The users can see the original message by rolling over the message in the Chat. They can also disable the translation in the '+' Tab of the chat window.
+==== translationEnabled ====
+If set to true, the user will have the option of enabling/disabling automatic translation from the '+' Tab in the chat window. They will also be able to detect the language they want their messages translated to.
+
+=== Viewers Module ===
+{{{
+<module name="ViewersModule" url="ViewersModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	host="http://192.168.0.225/bigbluebutton/api/enter"
+	allowKickUser="false"
+/>
+}}}
+==== allowKickUser ====
+Determines whether or not the Moderators of the meeting are able to kick a user from the conference. If set to true, a Moderator will be given the option of kicking a selected user from the conference by clicking on their name and the Kick button inside the Viewers window.
+
+=== Listeners Module ===
+{{{
+<module name="ListenersModule" url="ListenersModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	recordingHost="http://HOST"
+/>
+}}}
+The Listeners Module is the window which shows who is currently connected to the voice conference in the Listeners window. Nothing special here. The recordingHost attribute is not functioning and should be removed.
+
+=== Desktop Sharing ===
+{{{
+<module name="DeskShareModule" 
+	url="DeskShareModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/deskShare"
+/>
+}}}
+The Desktop Sharing module. Note that it connects to /deskShare, which is a red5 application on the server separate from the /bigbluebutton application.
+
+=== Phone Module ===
+{{{
+<module name="PhoneModule" url="PhoneModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/sip" 
+	dependsOn="ViewersModule"
+/>
+}}}
+The Phone Module is the shows as the small headset icon in the upper left of the client. It allows users to join the meeting through VoIP by using a headset. Note again the separate /sip server side application.
+
+=== Videoconf Module ===
+{{{
+<module name="VideoconfModule" url="VideoconfModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/video"
+	dependsOn="ViewersModule"
+	videoQuality="70"
+	presenterShareOnly="false"
+/>
+}}}
+The Video Conferencing Module. Allows users to share their webcams with the room. It connects to the separate /video application on the bbb server.
+==== videoQuality ====
+An attribute set to between 0 and 100. 0 means that priority will be given to optimizing bandwidth at the cost of quality. 100 means that no compression will be done, for maximum quality. This takes up high bandwidth and the frame rate may suffer. A quality of 100 is NOT recommended as it will eat up your server bandwidth quickly. Default is 70. Set to lower if you are concerned about bandwidth.
+==== presenterShareOnly ====
+If set to true, only the current presenter will have the option of sharing their webcam. This is useful in one-to-many meetings, where there is one presenter that everyone should be focusing on, such as a webcast or a virtual classroom.
+
+=== Present Module ===
+{{{
+<module name="PresentModule" url="PresentModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	host="http://192.168.0.225" 
+	dependsOn="ViewersModule"
+/>
+}}}
+The Presentation Module which lets users share slides and other documents in the main viewing area inside of !BigBlueButton.
+
+=== Whiteboard Module ===
+{{{
+<module name="WhiteboardModule" url="WhiteboardModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	dependsOn="PresentModule"
+/>
+}}}
+The Whiteboard Module is a transparent overlaid canvas on top of the presentation window. It allows users to draw annotations on top of uploaded slides and documents.
+
+=== Dynamic Info Module ===
+{{{
+<module name="DynamicInfoModule" url="DynamicInfoModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	host="http://192.168.0.225" 
+	infoURL="http://HOST/client/conf/example-info-data.xml?user={userID}&role={role}&meetingID={meetingID}"
+/>
+}}}
+An experimental module that allows you to inject custom data into the conference.
+
+=== Example Chat Module ===
+{{{
+<module name="ExampleChatModule" url="ExampleChatModule.swf?v=56" 
+            uri="rtmp://192.168.0.225/bigbluebutton" 
+            host="http://192.168.0.225"
+/>
+}}}
+A rudimentary module meant to provide sample code on how to build your own !BigBlueButton module. For more information see [SampleModule SampleModule]
+
+=== Breakout Module ===
+{{{
+<module name="BreakoutModule" url="BreakoutModule.swf?v=VERSION" 
+	uri="rtmp://192.168.0.225/bigbluebutton" 
+	host="http://192.168.0.225" 
+	dependsOn="ViewersModule"
+	salt="1708e5ecf25b7142b06f2338b4ea3cf1"
+/>
+}}}
+The Breakout Module allows the Moderator of the meeting to create and launch users of a meeting into other rooms. This is useful when you have a large meeting or a classroom which you would like to separate into smaller collaborative groups. This module uses the [API BigBlueButton API].
+==== salt ====
+The security salt needed to create meeting. This is required by the !BigBlueButton API. By default, the salt is found in /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
