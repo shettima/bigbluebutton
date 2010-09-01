@@ -1,4 +1,5 @@
 #summary Configuring bbb-client.
+<wiki:toc max_depth="3" />
 
 = Introduction =
 A detailed discussion of the client's config.xml file. This document shows you how to configure the client to work to your liking, and what options are available.
