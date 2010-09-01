@@ -114,6 +114,8 @@ You must to edit the file: /etc/asterisk/sip.conf and add the following line on 
 
 
 = !BigBlueButton Client (Flash) =
+== Enabling and Disabling client features ==
+Check the [ClientConfiguration client configuration] page.
 == Configuration File ==
 === /var/www/bigbluebutton/client/conf/config.xml ===
 
