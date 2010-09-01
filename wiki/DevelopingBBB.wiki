@@ -93,6 +93,9 @@ This approach is limited in the sense that you can't use the Run button within F
   * On the client code, to src/conf/config.xml and change the 'host' property of the !ViewersModule to point to "conf/join-mock.xml".
   * You should now be able to launch from Flash Builder using the Run/Debug button.
 
+=== Creating a new !BigBlueButton Module ===
+Follow this short [SampleModule tutorial].
+
 
 == Setting up the development environment for !BigBlueButton web interface: bbb-web ==
 
