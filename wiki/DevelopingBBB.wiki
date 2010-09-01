@@ -57,7 +57,11 @@ Everything is now setup to compile bbb-client.
 Behind the scenes, nginx is now loading the client from `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.
 If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.    
 
-Every time you make a change to the client source, you need to rebuild it using the 'ant' command in order for the changes to show in your browser.
+Every time you make a change to the client source, you need to rebuild it using the 'ant' command in order for the changes to show in your browser. If you haven't changed the localization files then you only need to run
+{{{
+ant modules
+}}}
+This will skip building the localization .swf files, and save you a lot of time.
 
 To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
 
