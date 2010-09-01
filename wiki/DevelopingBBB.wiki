@@ -30,7 +30,7 @@ Type the following command to checkout !BigBlueButton from our [http://www.githu
 
 This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}. 
 
-By default, you will now be on the bleeding edge of the master branch. This is usually unstable and recommended only for the core development team and those who are already experienced with bbb. It is instead recommended that you switch to the latest stable version of !BigBlueButton, right now version 0.7. To do this:
+By default, you will now be on the bleeding edge of the master branch. This is usually unstable and recommended only for the core development team and those who are already experienced with bbb (If you want to work on the bleeding edge, check [BleedingEdge here] for potential current problems). It is instead recommended that you switch to the latest stable version of !BigBlueButton, right now version 0.7. To do this:
 {{{
 cd /home/firstuser/dev/source/bigbluebutton
 git checkout -b 0.7-release-workspace v0.7
