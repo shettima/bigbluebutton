@@ -54,3 +54,4 @@ Then go back to bigbluebutton-apps, and you should be able to compile and deploy
 cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
 gradle war deploy
 }}}
+Then restart red5 and you should be good to go
