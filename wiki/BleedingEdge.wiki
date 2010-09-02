@@ -42,5 +42,15 @@ Make sure your config.xml file has the host property "conf/join-mock.xml".
 
 If your client throws an error at startup saying it cannot find the join-mock.xml, make sure you copy it over from bbb-client/resources/dev into bbb-client/src/conf.
 
-
-
+=== Building bbb-apps ===
+First you need to go to the bbb-common-message project directory, and build it:
+{{{
+cd /home/firstuser/dev/source/bigbluebutton/bbb-common-message/
+gradle jar
+gradle uploadArchives
+}}}
+Then go back to bigbluebutton-apps, and you should be able to compile and deploy it:
+{{{
+cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
+gradle war deploy
+}}}
