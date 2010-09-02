@@ -55,3 +55,18 @@ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
 gradle war deploy
 }}}
 Then restart red5 and you should be good to go
+
+=== Client logs out first time when you try to log in ===
+the red5 log should throw an error that has to do with freeswitch. When you log in the second time everything will work fine, but if you want to get rid of that initial error you can go to:
+{{{
+/usr/share/red5/webapps/bigbluebutton/WEB-INF
+vi red5-web.xml
+}}}
+Near the bottom you will see a line:
+{{{
+<import resource="bbb-voice-freeswitch.xml" />
+}}}
+Change it to:
+{{{
+<import resource="bbb-voice-asterisk.xml" />
+}}}
