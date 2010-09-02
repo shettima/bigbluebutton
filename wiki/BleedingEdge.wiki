@@ -70,3 +70,10 @@ Change it to:
 {{{
 <import resource="bbb-voice-asterisk.xml" />
 }}}
+
+=== bbb-voice problems ===
+When you compile and deploy bbb-voice, you may also need to change the ip in:
+{{{
+/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+}}}
+Near the top there, change the sip.server.host to your ip
