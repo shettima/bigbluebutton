@@ -345,6 +345,9 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 
   gradle jar
 
+  # create the signing key
+  ant create-signing-key
+
   # sign the applet
   ant sign-jar
 
