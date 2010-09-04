@@ -1,10 +1,11 @@
-#Summary List of 3rd party Systems and libraries that integrate with BigBlueButton.
+#Summary List of 3rd party Systems and libraries that integrate with !BigBlueButton.
 
 == Introduction ==
 If you don't see your System bellow, feel free to request an integration on our [http://groups.google.com/group/bigbluebutton-dev/ mailing list].
 
 == List of Systems !BigBlueButton integrates with ==
   * [http://confluence.sakaiproject.org/display/BBB/Home Sakai]
+  * [http://wordpress.org/extend/plugins/bigbluebutton/ WordPress]
   * [http://drupal.org/project/bbb Drupal]
   * [http://moodle.org/mod/data/view.php?d=13&rid=3524&filter=1 Moodle]
   * [http://code.google.com/p/bigbluebuttongem/ Ruby Gem] - To help with developing Rails applications.
