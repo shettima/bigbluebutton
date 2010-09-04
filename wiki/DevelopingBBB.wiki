@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 = Talking to the developers =
-Write to the bigbluebutton-dev mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
+Write to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=1 bigbluebutton-dev] mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
 
 = Setting up a !BigBlueButton Development Environment =
 The easiest way to develop !BigBlueButton is through an already setup Virtual Machine, which you can download [BigBlueButtonVM here]. The VM has tools already set up which will get you up and running quickly. The VM has an added benefit in that you can develop on it from your Windows or Mac environment, where you can get access to Flash Builder. This document explains how to develop with the VM in mind.
