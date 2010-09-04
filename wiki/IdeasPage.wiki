@@ -25,6 +25,7 @@ API strings for meetings returned are quite long. Create an API example that use
 
 === Flex API Module ===
 Create a module for the client that uses the API. This would allow people to create new meetings within already running meetings. A use-case for this would be if a professor wanted to do a break-out meeting - separate groups of students and send them to their own meeting room for example. Also useful for things like webinars and conferences.
+*UPDATE* - This module has been built for BigBlueButton v0.71
 
 == *bbb-apps* ==
 
