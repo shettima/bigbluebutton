@@ -25,7 +25,6 @@ API strings for meetings returned are quite long. Create an API example that use
 
 === Flex API Module ===
 Create a module for the client that uses the API. This would allow people to create new meetings within already running meetings. A use-case for this would be if a professor wanted to do a break-out meeting - separate groups of students and send them to their own meeting room for example. Also useful for things like webinars and conferences.
-
 *UPDATE* - This module has been built for !BigBlueButton v0.71
 
 == *bbb-apps* ==
@@ -38,6 +37,7 @@ A bridge from Chat to IRC. This could be done in conjunction with the XMPP idea,
 
 === Freeswitch Java Bridge ===
 Create an equivalent of Asterisk-Java for [http://www.freeswitch.org/ Freeswitch], to facilitate being able to use !BigBlueButton with Freeswitch as well as Asterisk.
+*UPDATE* - Freeswitch support has been added for !BigBlueButton v0.71
 
 === Collect BBB Usage Statistics ===
 Create a tool that collects usage statistics for !BigBlueButton such as the number of users, number of conferences, bandwidth and CPU statistics, peak load times, etc... Can be integrated with something like [http://www.eclipse.org/birt/phoenix/ BIRT].
@@ -52,12 +52,14 @@ Create a small utility on the client that checks the users bandwidth just before
 
 === Dynamically switch user languages ===
 Make it possible for the user to change the language of the client while inside the conference. Right now the language is chosen at startup based on the user's browser locale.
+*UPDATE* - This feature has been added for !BigBlueButton v0.71
 
 === Accessibility Support ===
 Find ways to make !BigBlueButton more accessible, in accordance with [http://www.section508.gov/ Section 508]
 
 === Flex 4 Themes Support ===
 Alter the client to make it easier for people to create their own !BigBlueButton Themes based on the new features in Flex4.
+*UPDATE* - Skinning support has been added for !BigBlueButton v0.71, for Flex 3.5
 
 === AIR Client ===
 Port the bbb-client to [http://www.adobe.com/products/air/ Air]. This allows for better performance for people who have slower computers, or simply like having a desktop application better. Plus it's not a lot of work. The biggest thing left to do is create an API interface in Flex that lets you join meetings straight from the Air Application.
