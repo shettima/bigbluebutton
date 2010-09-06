@@ -447,6 +447,21 @@ These steps trigger the opening of the File Open by a user action, which seems t
   
 == Voice Conference ==
 
+=== Why can't others hear me when I join the voice conference? ===
+
+If others in the voice conference don't hear you when you speak, it's likely that Flash has picked the wrong microphone on your computer.  You can change this with the following steps:
+
+  # Right-click on the background of BigBlueButton
+  # Choose "Settings..." from the flash pop-up menu
+  # Click the microphone icon
+  # Try choosing a different microphone from the drop-down list
+
+You see a volume indicator next to the drop down. If you select an active microphone, you'll immediately see activity in the volume indicator when you speak.
+
+Close this Flash settings dialog and others in the voice conference should hear you know.
+
+
+
 === Why do I hear music when I join the voice conference? ===
 
 When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
