@@ -4,7 +4,14 @@
 This document assumes you are developing from the latest source. So first thing you should do is pull the latest source if you haven't already. It's updated frequently. If you're having a problem with the latest source and this document isn't helping you, come to the #bigbluebutton channel on freenode, or write to the bigbluebutton-dev mailing list.
 
 === Client issues ===
-Right now when you build the client using ant, the config.xml file will not be properly generated. There have been lots of changes to config.xml for 0.71 so it's important to get the latest one. You can find the latest template for it in the bbb-client/resources/config.xml.template. Copy this file to src/conf and rename it config.xml. Then change all instances of HOST to your server ip. Recompile the client.
+The current client build does not generate the proper config.xml file, it creates an old version that no longer works.  There have been lots of changes to config.xml for 0.71 so it's important to get the latest one. 
+
+You can find the latest template for it in the bigbluebutton-client/resources/config.xml.template. Copy this file to src/conf and rename it config.xml. 
+{{{
+cp ~/dev/source/bigbluebutton/bigbluebutton-client/resources/config.xml.template ~/dev/source/bigbluebutton/bigbluebutton-client/src/conf/config.xml
+}}}
+
+Inside the newly copied config.xml are place holders for your current hostname. Change all instances of HOST inside the file to your server ip. Then recompile the client.
 
 If the client still hangs at load, and the last line in the client log (the icon on the bottom right) is:
 {{{
