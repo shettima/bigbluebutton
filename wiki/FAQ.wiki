@@ -596,7 +596,7 @@ To figure out what the problem is:
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
  * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
 
-=== Using the API examples I get an !java.lang.NullPointerException when trying to join a room ===
+=== Using the API examples I get an java.lang.!NullPointerException when trying to join a room ===
 
 Using the API demos, after reconfiguring your networking or changing the hostname, you may see
 
