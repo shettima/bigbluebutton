@@ -630,7 +630,9 @@ that is causing `parseXml()` to fail and throw an exception.
 
 The main reason `getURL()` fails is the URL it's passed isn't valid.  This URL is built using the variable `base_url_create`, which is created from the parameters set in bbb_api_conf.jsp, which are located in
 
+{{{
    /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
+}}}
 
 You'll see two parameters defined:
 
@@ -662,9 +664,14 @@ back an XML file similar to the following:
 </response>
 }}}
 
-If you get back a blank document or a server error, then this is the
-reason why you are getting the above exception.  You need to change your
-networking setup or the value of BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves.
+Now, this URL isn't actually called by your web browser; rather, it's called by the BigBlueButton server.  So login to your BigBlueButton server and enter the following command:
+
+{{{
+   wget http://<your_hostname>/bigbluebutton/api/isMeetingRunning?meetingID=abcdef
+-O -
+}}}
+
+and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the BigBlueButton server.
 
 === All I get is a "Welcome to Nginx" screen" ===
 If bbb-conf -c returns:
