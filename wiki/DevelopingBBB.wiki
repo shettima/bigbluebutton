@@ -352,7 +352,7 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
   ant sign-jar
 
   # copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
-  cp ~/dev/source/git/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources
+  cp ~/dev/source/git/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources/prod
 
   # compile the bbb-client (see Developing with bbb client)
 }}}
