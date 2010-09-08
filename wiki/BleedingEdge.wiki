@@ -11,7 +11,7 @@ If the client still hangs at load, and the last line in the client log (the icon
 8/31/2010 21:01:48.446 [DEBUG] JoinService:load(...) http://192.168.0.167/bigbluebutton/api/enter
 }}}
 
-The the host property of your config.xml file is wrong. See [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#application Client Configuration] for details. In short, you're running the latest client but not the latest bbb-web, so the url of the host property is wrong. It should be:
+Then the host property of your config.xml file is wrong. See [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#application Client Configuration] for details. In short, you're running the latest client but not the latest bbb-web, so the url of the host property is wrong. It should be:
 {{{
 host="http://192.168.0.167/bigbluebutton/conference-session/enter"
 }}}
