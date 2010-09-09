@@ -10,6 +10,8 @@ If you would like to translate !BigBlueButton to another language, here are the 
 
 DJP, one of the !BigBlueButton developers, will download and incorporate the language file into the latest build on your behalf. Once it's checked into the repository, you'll be able to test it on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
 
+If you wish to modify an existing translation instead of creating a new one, you can download the translation files [http://github.com/bigbluebutton/bigbluebutton/tree/master/bigbluebutton-client/locale?raw=true here]. Send the updated translation to the bigbluebutton-dev mailing list.
+
 == Current translation available ==
 || *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
 || Azerbaijani || az_AZ || Emin Hasanov || eminach AT gmail DOT com || 0.64 ||
