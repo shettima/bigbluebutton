@@ -74,7 +74,19 @@ For instance, a third party application that is integrated with the API may embe
 Those examples are clearly abuses of the system, and therefore must be protected against. The API must provide a way of enabling this protection.
 
 == _Configuration_ ==
-<p>*TODO:* the securitySalt is currently set on the !ApiController and needs to be able to be configured via bigbluebutton.properties (or similar)</p>
+The securitySalt is set in 
+
+{{{
+   /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties 
+}}}
+
+Look for the parameter 
+
+{{{
+   beans.dynamicConferenceService.securitySalt=<your_salt>
+}}}
+
+
 <p><font color="#FF0000">*IMPORTANT: DO NOT ALLOW END USERS TO KNOW YOUR SECURITY SALT OR ELSE YOUR SECURITY WILL BE COMPROMISED.*</font></p>
 
 == _Usage_ ==
