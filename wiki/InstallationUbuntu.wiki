@@ -69,6 +69,10 @@ If you are setting up on a *Ubuntu 10.04 32-bit and 64-bit*
    sudo bbb-conf --check
 }}}
 
+If you are getting errors about broken packages, try adding universe and main to the repository in /etc/apt/sources.list
+{{{
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse universe main
+}}}
 
 The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happens.  This one command will install *all* of !BigBlueButton (except for desktop sharing, see below) along with all its dependencies.  Here's a screen shot of the packages it will install. 
 
