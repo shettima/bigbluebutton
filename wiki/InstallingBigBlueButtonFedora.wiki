@@ -289,15 +289,6 @@ Installing Desktop Sharing (optional)
 {{{
 # download deskshare app
 wget http://bigbluebutton.org/downloads/0.64/packages/deskshare.tar.gz
-
-# install deskshare app
-#
-# Before you install desktop sharing in BigBlueButton
-# please read how this changes the licensing of BigBlueButton from LGPL to AGPL.
-#
-#     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
-#
-
 tar xvf deskshare.tar.gz
 mv deskshare /usr/share/red5/webapps/
 }}}
