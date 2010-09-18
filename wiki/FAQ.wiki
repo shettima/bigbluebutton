@@ -423,7 +423,7 @@ Your viewers have a resizable window showing your desktop.  You can see how this
 == Presentations ==
 === Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
 
-!BigBlueButton uses OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with OpenOffice 3.2.  
+!BigBlueButton uses !OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 documents (such as .pptx) are problematic with !OpenOffice 3.2.  
 
 We recommend Office 2007 uses use Microsoft's free download to enable an Office 2007 user to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
 
