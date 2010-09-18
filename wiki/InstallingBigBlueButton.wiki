@@ -566,19 +566,11 @@ You should now be able to type
 == Installing Desktop Sharing (optional) ==
 === Desktop Sharing is not supported yet in the installation by source ===
 {{{
-# install deskshare app
-#
-# Desktop sharing uses Xuggler.  Before you install desktop sharing in BigBlueButton
-# please read how this changes the licensing of BigBlueButton from LGPL to AGPL.
-#
-#     http://code.google.com/p/bigbluebutton/wiki/InstallingDesktopSharing 
-#
 wget http://bigbluebutton.org/downloads/0.70/packages/deskshare.tar.gz
 cp /tmp/deskshare.tar.gz /usr/share/red5/webapps/
 cd /usr/share/red5/webapps
 tar zxvf deskshare.tar.gz
 rm -f deskshare.tar.gz
-
 }}}
 
 Since BigBlueButton 0.70, desktop sharing is enabled by default. However, if it is not enabled, please follow the following instructions.
