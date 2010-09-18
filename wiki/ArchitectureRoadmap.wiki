@@ -51,7 +51,7 @@ Right now modules in config.xml are located in the same directory as the main ap
 Security issues would need to be discussed for these changes to take place.
 
 == Creating an Internal API. Status: PENDING ==
-Right now !BigBlueButton is licensed under the LGPL (with the exception of Desktop Sharing). This is great from the point of view of someone who would like to extend !BigBlueButton. However right now that usually means altering the source code which nullifies the LGPL advantages. It also means that people who change the system usually find their changes broken when updating to a new release. Creating an internal API would encourage more people to develop for BBB.
+Right now !BigBlueButton is licensed under the LGPL. This is great from the point of view of someone who would like to extend !BigBlueButton. However right now that usually means altering the source code which nullifies the LGPL advantages. It also means that people who change the system usually find their changes broken when updating to a new release. Creating an internal API would encourage more people to develop for BBB.
 
 === Client API. Status: PENDING ===
 Most of the API would be on the client. The API should provide:
