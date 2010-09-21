@@ -485,7 +485,7 @@ The best solution is ask all students to use a headset -- this will give them th
 
 Yes, you will experience delay in the audio when using VoIP.  To understand why, here's the background on how the audio works in !BigBlueButton.  !BigBlueButton uses asterisk as its voice conference server, which means you can join the voice conference by dialing a phone number (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).
 
-When using the phone, referred to as direct inward dialing (DID) number, a user can dial a phone number (this is the DID) that is routed by a SIP trunk provider to the asterisk server.  The SIP trunk provider is a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as mlaw), and authenticates and connects to asterisk server when someone calls the DID using session initiation protocol (SIP).  The receiving asterisk server then prompts the caller to enter an extension number that corresponds to the voice conference bridge for the !BigBlueButton session.  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
+When using the phone, referred to as direct inward dialing (DID) number, a user can dial a phone number (this is the DID) that is routed by a SIP trunk provider to the asterisk server.  The SIP trunk provider is a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as μlaw), and authenticates and connects to asterisk server when someone calls the DID using session initiation protocol (SIP).  The receiving asterisk server then prompts the caller to enter an extension number that corresponds to the voice conference bridge for the !BigBlueButton session.  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
 
 Setting up asterisk with a SIP gateway takes a fair bit of knowledge about how asterisk works.  When using the built-in VoIP client in !BigBlueButton, everything is pre-configured to automatically dial into the asterisk server (again using SIP) and joining the proper extension.  
 
@@ -509,7 +509,7 @@ Finally, when looking at the path for the audio packets, there is an expensive o
 
 Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through asterisk, while the video goes through red5.  
 
-For the video, red5 does not much with the video packets -- it just re-broadcasts them to all the clients current subscribed to the video stream.  It's basically a straight pass through of the packets.
+For the video, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients current subscribed to the video stream.  It's basically a straight pass through of the packets.
 
 For audio, the voice packets have a longer route to take (see answer to question above).
 
