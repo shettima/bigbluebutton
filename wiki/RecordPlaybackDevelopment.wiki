@@ -1,0 +1,68 @@
+#summary guide for setting record and playback feature under development.
+
+= Setup Recording Application =
+
+The Recording Application is deployed in the tomcat server as a web application... 
+
+Create the following table in the mysql database bigbluebutton_dev:
+
+{{{
+USE bigbluebutton_dev;
+CREATE TABLE event(
+    conferenceid VARCHAR(50) NOT NULL,
+    tsevent BIGINT NOT NULL,
+    message TEXT,
+    primary key(conferenceid,tsevent)
+);
+}}}
+
+Checkout the latest code in the recording-and-playback-feature branch
+{{{
+git checkout recording-and-playback-feature
+}}}
+
+Compile BBB Commons
+
+{{{
+cd ~/dev/source/git/bigbluebutton/bbb-common-message
+gradle jar 
+gradle uploadArchives
+}}}
+
+Setup the development for bigbluebutton-apps, and change the following line in:
+bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/BigBlueButtonApplication.java
+
+{{{
+boolean record = (Boolean)params[6];
+}}}
+to:
+{{{
+boolean record = true;//(Boolean)params[6];
+}}}
+
+Compile and deploy bigbluebutton-apps, just in case stop red5 server before:
+
+{{{
+cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+gradle resolveDeps
+gradle war
+gradle deploy
+}}}
+
+Compile and deploy events-recorder app, just in case stop tomcat server before:
+
+{{{
+cd ~/dev/source/git/bigbluebutton/record-and-playback/events-recorder
+
+# check that the info for connecting to the database is correct in src/main/webapp/WEB-INF/application.properties
+gradle copyToLib
+gradle war
+gradle deploy
+}}}
+
+Start tomcat and red5, test with the demo conference and check the database
+
+= Future Plans =
+
+ # maybe recording application will be integrated to bigbluebutton-apps
+ # store in files instead of a database
