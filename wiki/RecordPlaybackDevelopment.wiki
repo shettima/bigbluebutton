@@ -18,7 +18,8 @@ CREATE TABLE event(
 
 Checkout the latest code in the recording-and-playback-feature branch
 {{{
-git checkout recording-and-playback-feature
+git checkout record-and-playback-feature
+git pull origin record-and-playback-feature
 }}}
 
 Compile BBB Commons
