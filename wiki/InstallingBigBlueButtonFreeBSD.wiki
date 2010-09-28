@@ -107,7 +107,7 @@ cd /usr/local/etc/nginx
 fetch http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
 }}}
 
-#edit nginx-bigbluebutton.conf to change the server_name IP, change #/var/www/ paths to #/usr/local/www/, and correct nginx-dist to nginx-default
+#edit nginx-bigbluebutton.conf to change the server_name IP, change /var/www/ paths to /usr/local/www/, and correct nginx-dist to nginx-default
 
 {{{
 mkdir sites-available sites-enabled
