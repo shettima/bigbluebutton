@@ -1,4 +1,4 @@
-#How to Install BigBlueButton on FreeBSD/PC-BSD
+#summary How to Install BigBlueButton on FreeBSD/PC-BSD
 
 = Introduction =
 
