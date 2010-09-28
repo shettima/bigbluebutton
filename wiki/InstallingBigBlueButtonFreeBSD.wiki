@@ -17,16 +17,20 @@ cd /usr/ports/lang/jython && make install clean
 }}}
 
 (pkg_add will fail as looking for jre instead of diablo-jre)
-pkg_add -r mysql55-server (mysql-server already installed on PC-BSD)
+
+{{{
+pkg_add -r mysql55-server
 pkg_add -r mysql-connector-java
 pkg_add -r log4j
 pkg_add -r slf4j
 pkg_add -r tomcat60
-pkg_add -r ImageMagick (already installed on PC-BSD)
+pkg_add -r ImageMagick
 pkg_add -r swftools
 pkg_add -r nginx
-pkg_add -r linux_base (already installed on PC-BSD)
-pkg_add -rf asterisk (-f needed on PC-BSD as will conflict with libiodbc/virtuoso)
+pkg_add -r linux_base 
+pkg_add -rf asterisk 
+}}}
+(-f needed on PC-BSD as will conflict with libiodbc/virtuoso)
 pkg_add -r unzip (already installed on PC-BSD)
 pkg_add -rf activemq
 
