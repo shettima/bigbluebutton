@@ -195,6 +195,7 @@ unzip ../bigbluebutton.war
 }}}
 
 #edit IP in bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+
 # edit IP in /usr/local/apache-tomcat-6.0/webapps/bigbluebutton /demo/bbb_api_conf.jsp
 
 {{{
