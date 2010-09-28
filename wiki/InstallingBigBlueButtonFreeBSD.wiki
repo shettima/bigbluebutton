@@ -82,9 +82,7 @@ chmod 755 app_konference.so
 echo "load => app_konference.so" >> /usr/local/etc/asterisk/modules.conf
 }}}
 
-# edit /usr/local/etc/asterisk/manager.conf
-# change enabled = no to = yes
-# and add these lines:
+# edit /usr/local/etc/asterisk/manager.conf, change enabled = no to = yes, and add these lines:
 
 {{{
 ; BigBlueButton: Enable Red5 to connect 
