@@ -4,7 +4,7 @@
 
 This how-to has been tested on FreeBSD and PC-BSD 8.1. It assumes some familiarity with installing software using FreeBSD ports and packages. 
 
-= Install Required Software =
+== Install Required Software ==
 
 Note that some software may already be installed on your system and you can check first with the pkg_info command. JDK must be installed from ports due to licensing restrictions; follow the port's instructions for manually downloading the required software. Jython must be installed from ports as the package does not expect the diablo JDK. Asterisk must be forced with the -f switch on a PC-BSD system as it conflicts with the already installed libiodbc/virtuoso.
 
