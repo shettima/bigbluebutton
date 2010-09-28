@@ -8,8 +8,13 @@ This how-to has been tested on FreeBSD and PC-BSD 8.1. It assumes some familiari
 
 {{{cd /usr/ports/java/diablo-jdk16 && make install clean 
 }}}
+
 (follow instructions for manual download of jdk software)
-cd /usr/ports/lang/jython && make install clean (pkg_add will fail as looking for jre instead of diablo-jre)
+
+{{{cd /usr/ports/lang/jython && make install clean 
+}}}
+
+(pkg_add will fail as looking for jre instead of diablo-jre)
 pkg_add -r mysql55-server (mysql-server already installed on PC-BSD)
 pkg_add -r mysql-connector-java
 pkg_add -r log4j
