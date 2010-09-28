@@ -2,23 +2,15 @@
 
 = Introduction =
 
-This how-to has been tested on FreeBSD and PC-BSD 8.1. It assumes some familiarity with installing software using FreeBSD ports and packages. Notes are in (brackets).
+This how-to has been tested on FreeBSD and PC-BSD 8.1. It assumes some familiarity with installing software using FreeBSD ports and packages. 
 
 = Install Required Software =
 
+Note that some software may already be installed on your system and you can check first with the pkg_info command. JDK must be installed from ports due to licensing restrictions; follow the port's instructions for manually downloading the required software. Jython must be installed from ports as the package does not expect the diablo JDK. Asterisk must be forced with the -f switch on a PC-BSD system as it conflicts with the already installed libiodbc/virtuoso.
+
 {{{
 cd /usr/ports/java/diablo-jdk16 && make install clean 
-}}}
-
-(follow instructions for manual download of jdk software)
-
-{{{
 cd /usr/ports/lang/jython && make install clean 
-}}}
-
-(pkg_add will fail as looking for jre instead of diablo-jre)
-
-{{{
 pkg_add -r mysql55-server
 pkg_add -r mysql-connector-java
 pkg_add -r log4j
@@ -29,18 +21,23 @@ pkg_add -r swftools
 pkg_add -r nginx
 pkg_add -r linux_base 
 pkg_add -rf asterisk 
-}}}
-(-f needed on PC-BSD as will conflict with libiodbc/virtuoso)
-pkg_add -r unzip (already installed on PC-BSD)
+pkg_add -r unzip 
 pkg_add -rf activemq
+}}}
 
-Misc Settings
+==Misc Settings==
 
 #add to /root/.cshrc:
+
+{{{
 setenv RED5_home /usr/local/share/red5/
+}}}
 
 # add after comment section of /usr/local/etc/rc.d/tomcat6:
-TOMCAT6_SECURITY=no (is this required?)
+
+{{{
+TOMCAT6_SECURITY=no
+}}}
 
 # make mysql happy
 # add to /etc/hosts.allow
