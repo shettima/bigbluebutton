@@ -2,10 +2,11 @@
 
 = Introduction =
 
-The !BigBlueButton 0.7 server runs under Linux.  To setup your own !BigBlueButton server:
+The !BigBlueButton 0.7 server runs under Linux and BSD.  To setup your own !BigBlueButton server:
     * [BigBlueButtonVM Download the BigBlueButton Virtual Machine] 
     * [InstallationUbuntu Install on Ubuntu 9.04 32-bit or Ubuntu 10.04 32-bit/64-bit] 
     * [InstallingBigBlueButton Install on Ubuntu from source]
+    * [InstallingBigBlueButtonFreeBSD Install on FreeBSD/PC-BSD]
 
 Instructions for 0.64 release:
     * [RPMPackaging Install on CentOS 5.4 32-bit/64-bit (15 minutes)] (yellow belt, one brown stripe)
