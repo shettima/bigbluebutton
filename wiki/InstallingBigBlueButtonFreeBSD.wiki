@@ -54,10 +54,10 @@ tomcat60_enable="YES"
 mysql_enable="YES" 
 nginx_enable="YES" 
 asterisk_enable="YES"
-tomcat60_enable="YES"   
 }}}
 
 # tell tomcat to use 8080 instead of default of 8180
+
 # in /usr/local/apache-tomcat-6.0/conf/server.xml
 
 ==Configure Asterisk==
