@@ -41,49 +41,52 @@ TOMCAT6_SECURITY=no
 
 # make mysql happy
 # add to /etc/hosts.allow
+
+{{{
 mysqld : ALL : allow (can this be made more secure?)
+}}}
 
 # add to /etc/rc.conf:
 
-tomcat60_enable="YES" mysql_enable="YES" nginx_enable="YES" asterisk_enable="YES"
-tomcat60_enable="YES"   
-
-mysql_enable="YES"
-
-nginx_enable="YES"
-
+{{{
+tomcat60_enable="YES" 
+mysql_enable="YES" 
+nginx_enable="YES" 
 asterisk_enable="YES"
-
-
+tomcat60_enable="YES"   
+}}}
 
 # tell tomcat to use 8080 instead of default of 8180
 # in /usr/local/apache-tomcat-6.0/conf/server.xml
 
-Configure Asterisk
+==Configure Asterisk==
 
+{{{
 cd /usr/local/etc/asterisk
 fetch http://bigbluebutton.org/downloads/0.70/bbb_extensions.conf
 fetch http://bigbluebutton.org/downloads/0.70/bbb_sip.conf
+}}}
+
 # add these 2 lines to extensions.conf in #include section:
 
-#include bbb_extensions.conf #include bbb_sip.conf
+{{{
 #include bbb_extensions.conf
-
 #include bbb_sip.conf
+}}}
 
-
-
+{{{
 cd /usr/local/lib/asterisk/modules
 fetch http://bigbluebutton.org/downloads/0.70/32bit/app_konference.so
 chmod 755 app_konference.so
 echo "load => app_konference.so" >> /usr/local/etc/asterisk/modules.conf
+}}}
 
 # edit /usr/local/etc/asterisk/manager.conf
 # change enabled = no to = yes
 # and add these lines:
 
-; BigBlueButton: Enable Red5 to connect [bbb] secret = secret permit = 0.0.0.0/0.0.0.0 read = system,call,log,verbose,command,agent,user write = system,call,log,verbose,command,agent,user
-; BigBlueButton: Enable Red5 to connect
+{{{
+; BigBlueButton: Enable Red5 to connect 
 
 [bbb]
 
@@ -94,33 +97,35 @@ permit = 0.0.0.0/0.0.0.0
 read = system,call,log,verbose,command,agent,user
 
 write = system,call,log,verbose,command,agent,user
+}}}
 
+==Configure Webserver==
 
-
-Configure Webserver
+{{{
 cd /usr/local/etc/nginx
 fetch http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
-#edit nginx-bigbluebutton.conf to change the server_name IP, change #/var/www/ paths to /usr/local/www/, and correct nginx-dist to default
+}}}
+
+#edit nginx-bigbluebutton.conf to change the server_name IP, change #/var/www/ paths to #/usr/local/www/, and correct nginx-dist to nginx-default
+
+{{{
 mkdir sites-available sites-enabled
 mv nginx-bigbluebutton.conf sites-available/bigbluebutton
 ln -s /usr/local/etc/nginx/sites-available/bigbluebutton /usr/local/etc/nginx/sites-enabled/bigbluebutton
 mkdir /var/log/nginx
 touch /var/log/nginx/bigbluebutton.access.log
+}}}
 
 #replace /usr/local/etc/nginx/nginx.conf with:
 
-worker_processes 1; events { worker_connections 1024; } http { include mime.types; default_type application/octet-stream; sendfile on; keepalive_timeout 65; include /usr/local/etc/nginx/sites-enabled/*; }
-worker_processes  1;
-
-
+{{{
+worker_processes 1; 
 
 events {
 
     worker_connections  1024;
 
 }
-
-
 
 http {
 
@@ -135,20 +140,22 @@ http {
 include /usr/local/etc/nginx/sites-enabled/*;
 
     }
+}}}
 
-
-
+{{{
 cd /usr/local/www
 fetch http://bigbluebutton.org/downloads/0.70/packages/bbb-default.tar.gz
 tar xzvf bbb-default.tar.gz && rm bbb-default.tar.gz
 mkdir bigbluebutton && cd bigbluebutton
 fetch http://bigbluebutton.org/downloads/0.70/packages/client.tar.gz
 tar xzvf client.tar.gz && rm client.tar.gz
+}}}
 
 # edit client/conf/config.xml and edit 192.168. URLs
 
-Configure Red5
+==Configure Red5==
 
+{{{
 cd /usr/local/share
 fetch http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
 tar xzvf red5-0.9.1.tar.gz
@@ -160,51 +167,66 @@ tar xzvf video.tar.gz && rm video.tar.gz
 fetch http://bigbluebutton.org/downloads/0.70/packages/sip.tar.gz
 tar xzvf sip.tar.gz && rm sip.tar.gz
 chmod +x red5.sh
+}}}
 
 #vipw and add line:
+
+{{{
 red5:*:1935:1935::0:0:Red5 User:/usr/local/share/red5:/sbin/nologin
+}}}
 
 #add lines to /etc/group:
-red5:*:1935
 
+{{{
+red5:*:1935
+}}}
+
+{{{
 cd /usr/local/share/red5/log
 touch deskshare.log sip.log video.log
+}}}
 
-Configure Tomcat
+==Configure Tomcat==
 
+{{{
 cd /usr/local/apache-tomcat-6.0/webapps
 fetch http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton.war
 mkdir bigbluebutton && cd bigbluebutton
 unzip ../bigbluebutton.war
+}}}
 
 #edit IP in bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 # edit IP in /usr/local/apache-tomcat-6.0/webapps/bigbluebutton /demo/bbb_api_conf.jsp
 
+{{{
 mkdir /usr/local/etc/bigbluebutton
+}}}
 
-Various BBB Configuration
+==Various BBB Configuration==
 
 # create /usr/local/etc/bigbluebutton/nopdfmark.ps with:
 
-%! /pdfmark {cleartomark} bind def
+{{{
 %!
-
 /pdfmark {cleartomark} bind def
+}}}
 
-
-
+{{{
 mkdir /var/log/bigbluebutton
 touch /var/log/bigbluebutton/bbb-web.log
 chmod 777 /var/log/bigbluebutton/bbb-web.log
 mkdir -p /var/bigbluebutton/blank
 fetch http://bigbluebutton.org/downloads/0.64/blank/blank-slide.swf
 fetch http://bigbluebutton.org/downloads/0.64/blank/blank-thumb.png
+}}}
 
-Create Database
+==Create Database==
 
+{{{
 /usr/local/etc/rc.d/mysql-server start
+}}}
 
-mysql -u root mysql> create database bigbluebutton_dev; mysql > grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret'; mysql> commit; mysql> quit
+{{{
 mysql -u root 
 
 mysql> create database bigbluebutton_dev;
@@ -214,18 +236,19 @@ mysql > grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'sec
 mysql> commit;
 
 mysql> quit
+}}}
 
+==Start Services==
 
-
-Start Services
-
+{{{
 /usr/local/etc/rc.d/asterisk start
 /usr/local/etc/rc.d/nginx start
 /usr/local/etc/rc.d/tomcat6 start
 /usr/local/lib/activemq/bin/activemq &
 cd /usr/local/share/red5/&& ./red5.sh &
+}}}
 
-Testing
+==Testing==
 
 Use your browser to go to localhost. You should see a BBB page and be able to successfully Join a session.
 
