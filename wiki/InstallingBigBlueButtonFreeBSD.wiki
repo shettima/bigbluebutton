@@ -43,7 +43,7 @@ TOMCAT6_SECURITY=no
 # add to /etc/hosts.allow
 
 {{{
-mysqld : ALL : allow (can this be made more secure?)
+mysqld : ALL : allow 
 }}}
 
 # add to /etc/rc.conf:
