@@ -241,26 +241,63 @@ You can change the port which !BigBlueButton is accessed  using the [http://code
 
 === Can I provide external access to a !BigBlueButton server behind my firewall? ===
 
-Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.
+Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.  You have defined an external host name, such as host.domain.org, that will resolve to the IP address of your firewall.
 
-First, on your firewall, you need to forward three ports to the IP address of the internal computer (the !BigBlueButton server).  These are ports 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
+First, on your firewall, you need to forward three ports to the the internal IP address of the !BigBlueButton server.  These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
 
 Here is an example of forwarded ports on the D-Link DIR-665 router (the internal ip address of the !BigBlueButton server in this case is 192.168.10.198):
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/ports_example.jpg]
 
-Next, tell !BigBlueButton it's external IP address or hostname, whichever you are using to enable users to access !BigBlueButton from outside the firewall.  Do this using the `bbb-conf` command.
+Next, when the Firewall forwards the incoming request to host.domain.org, the !BigBlueButton must be listening for those request.  To set BigBlueButton to listen for incoming requests to host.domain.org, use the following `bbb-conf` command.
 
 {{{
-bbb-conf --setip <ip_or_hostname>
+sudo bbb-conf --setip host.domain.org
 }}}
 
-If you are using an external hostname, you will need to setup the /etc/hosts file on the !BigBlueButton server to know about that name.  For example, if your !BigBlueButton server has the internal IP address of 19.168.0.10 and your firewall has a fully qualified hostname of host.domain.org, add the following line to /etc/hosts.
+Internally, !BigBlueButton must be able to call host.domain.org to make API requests.  In this example, if the internal !BigBlueButton server is at 192.168.10.198, add the following line to /etc/hosts.
 
 {{{
-192.168.1.10 host.domain.org
+192.168.10.198 host.domain.org
 }}}
 
+To verify that the !BigBlueButton can access host.domain.org, enter the following command
+
+{{{
+wget -O - --quiet http://host.domain.org/bigbluebutton/api 
+}}}
+
+This should resolve to:
+
+{{{
+<response><returncode>SUCCESS</returncode><version>0.7</version></response> 
+}}}
+
+Next, to verify that external users can access the !BigBlueButton server, try to telnet port 80.
+
+{{{
+telnet host.domain.org 80
+Connected to host.domain.org.
+Escape character is '^]'.
+}}}
+
+and port 1935 
+
+{{{
+telnet host.domain.org 1935
+Connected to host.domain.org.
+Escape character is '^]'.
+}}}
+
+and port 9123
+
+{{{
+telnet host.domain.org 9123
+Connected to host.domain.org.
+Escape character is '^]'.
+}}}
+
+If you can connect to the service running on all three ports (nginx, red5, and deskshare), then your external users should be able to connect to !BigBlueButton.
 
 == Classrooms ==
 
