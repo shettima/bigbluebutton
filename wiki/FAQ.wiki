@@ -234,9 +234,10 @@ See the [ClientConfiguration client configuration] page for details on how to en
 
 == Networking ==
 
-=== How do I change the main port for !BigBlueButton? ===
+=== How do I change the port or hostname of my !BigBlueButton server? ===
 
-You can change the port which !BigBlueButton is accessed  using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+If you change the port or hostname of your !BigBlueButton server, you can easily change all the related !BigBlueButton configuration files using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+
 
 
 === Can I provide external access to a !BigBlueButton server behind my firewall? ===
