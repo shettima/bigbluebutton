@@ -521,6 +521,8 @@ The best solution is ask all students to use a headset -- this will give them th
 
 === Why is there a delay in the audio when I use VoIP? ===
 
+*Note*: We are reducing the VoIP delay in !BigBlueButton 0.71 (see [http://code.google.com/p/bigbluebutton/wiki/RoadMap Road Map]).
+
 Yes, you will experience delay in the audio when using VoIP.  To understand why, here's the background on how the audio works in !BigBlueButton.  !BigBlueButton uses asterisk as its voice conference server, which means you can join the voice conference by dialing a phone number (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).
 
 When using the phone, referred to as direct inward dialing (DID) number, a user can dial a phone number (this is the DID) that is routed by a SIP trunk provider to the asterisk server.  The SIP trunk provider is a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to asterisk server when someone calls the DID using session initiation protocol (SIP).  The receiving asterisk server then prompts the caller to enter an extension number that corresponds to the voice conference bridge for the !BigBlueButton session.  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
