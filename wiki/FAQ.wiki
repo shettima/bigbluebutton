@@ -306,7 +306,7 @@ If you can connect to the service running on all three ports (nginx, red5, and d
 
 The grails applications at /bigbluebutton is old code and is being depreciated.  Instead of using it, we recommend using the [ API for controlling !BigBlueButton.  
 
-We provide a number of [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp API].  To modify one of the examples to create you own classrooms, see [  http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to create your own virtual classrooms].
+We provide a number of [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp API].  To modify one of the examples to create you own classrooms, see [#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to create your own virtual classrooms].
 
 Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://bigbluebutton.org/support integration modules]. 
 
