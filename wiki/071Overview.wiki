@@ -7,7 +7,7 @@ This page gives you an overview of what's new in !BigBlueButton 0.71.  At the mo
 
 == Voice ==
 
-We've added support for FreeSWITCH, which gives us access to wideband speex.  We've also improved the algorithms to handle audio packets on the server so you'll experienced less lag in the VoIP.
+We've added support for FreeSWITCH, which now enables the client to transmit wide-band speex.  We've also improved the algorithms to handle audio packets so you'll experienced less lag in the VoIP.
 
 == Share region of your desktop ==
 
