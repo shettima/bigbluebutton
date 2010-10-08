@@ -2,22 +2,38 @@
 
 = Introduction =
 
-This page gives you an overview of what's new in BigBlueButton 0.71.  At the moment, you can try the latest version by using our [http://devbuild.bigbluebutton.org/ Development Build Server].
+This page gives you an overview of what's new in !BigBlueButton 0.71.  At the moment, you can try the latest version by using our [http://devbuild.bigbluebutton.org/ Development Build Server].
 
 
 == Voice ==
 
-We've added support for FreeSWITCH, which gives us access to wideband speex.  The deve
+We've added support for FreeSWITCH, which gives us access to wideband speex.  We've also improved the algorithms to handle audio packets on the server so you'll experienced less lag in the VoIP.
 
 == Share region of your desktop ==
 
 The share desktop button shows a preview window that enables you share your entire desktop (same as 0.70) or a selected region.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-3.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-5.png
 
 When you click 'Region', a Java applet will start and dragable selection area appears on your screen.  You can drag and resize it to select the area you want.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-4.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-6.png
+
+== Localization Drop-down ==
+
+The !BigBlueButton client will detect your local and choose the associated localization strings (if available).  There is now a drop-down menu to choose a locale.  When chosen, the interface will automatically switch.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-1.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-2.png
+
+== Improved chat ==
+
+The chat window now shows local times for messages.  It also uses Google Translate to translate messages between languages.
+
+For example, a user with language set to Chinese Simplified will tell !BigBlueButton to translate incoming chat messages into Chinese Simplifed.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-3.png
 
 = Details =
 
