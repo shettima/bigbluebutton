@@ -1,8 +1,15 @@
-#summary This is a temporary page for 0.71 Information
+#summary This page will hold 0.71 Information during the testing cycle
 
 = Introduction =
 
-Add your content here.
+This page gives you an overview of what's new in BigBlueButton 0.71.  At the moment, you can try the latest version by using our [http://devbuild.bigbluebutton.org/ Development Build Server].
+
+
+== Voice ==
+
+We've added support for FreeSWITCH, which gives us access to wideband speex.  The deve
+
+== Share region of your desktop ==
 
 
 = Details =
