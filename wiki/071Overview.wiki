@@ -11,6 +11,13 @@ We've added support for FreeSWITCH, which gives us access to wideband speex.  Th
 
 == Share region of your desktop ==
 
+The share desktop button shows a preview window that enables you share your entire desktop (same as 0.70) or a selected region.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-3.png
+
+When you click 'Region', a Java applet will start and dragable selection area appears on your screen.  You can drag and resize it to select the area you want.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-4.png
 
 = Details =
 
