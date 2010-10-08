@@ -20,13 +20,13 @@ Please test each of these features and see if you can break them or find bugs.
 
 Here's a summary of what's new in 0.71-dev.  
 
-== Video ==
+== Auto Display Video ==
 
 When a participant shares their webcam, the video window now opens automatically on all other computers.
 
 Test: Open two !BigBlueButton sessions.  In one, share your webcam.  Your webcam should automatically appear in the other.
 
-== Voice ==
+== Reduced Lag with VoIP ==
 
 We've added support for FreeSWITCH, which now enables the client to transmit wide-band (16 KHZ) speex in addition to the current nellymoser voce codec.  We've also improved the algorithms to handle audio packets so you'll experienced less lag in the VoIP.
 
@@ -45,7 +45,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-6.png
 Test: Try sharing a region of your desktop with other participants.  You can also open two !BigBlueButton sessions and share your desktop from one; a view desktop window should automatically open in the others.
 
 
-== Localization Drop-down ==
+== Localization Choice ==
 
 The !BigBlueButton client will detect your local and choose the associated localization strings (if available).  There is now a drop-down menu to choose a locale.  When chosen, the interface will automatically switch.
 
@@ -56,7 +56,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-2.png
 Test: Try changing the localization setting.  If you understand the language in a different localization setting, see if the user interface strings make sense.
 
 
-== Improved chat ==
+== Automatic Translation of Chat Messages using Google Translate ==
 
 The chat window now shows local times for messages.  It also uses Google Translate to translate messages between languages.
 
