@@ -12,31 +12,38 @@ At the moment, you can try 0.71-dev on our [http://devbuild.bigbluebutton.org/ D
   * releasing 0.71-dev VM for testing
   * releasing 0.71-dev packages for testing
 
-The following summarizes the updates to 0.71-dev.  
-
-When you find a bug, please post a short description along with the steps to reproduce to our issue tracker.  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
-
 = What's new in 0.71-dev =
 
-Here's a summary of what's new in 0.71-dev.
+Please test each of these features and see if you can break them or find bugs.
+
+*When you find a bug*, please post a short description along with the steps to reproduce to our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
+
+Here's a summary of what's new in 0.71-dev.  
 
 == Video ==
 
 When a participant shares their webcam, the video window now opens automatically on all other computers.
 
+Test: Open two !BigBlueButton sessions.  In one, share your webcam.  Your webcam should automatically appear in the other.
+
 == Voice ==
 
 We've added support for FreeSWITCH, which now enables the client to transmit wide-band (16 KHZ) speex in addition to the current nellymoser voce codec.  We've also improved the algorithms to handle audio packets so you'll experienced less lag in the VoIP.
 
+Test: Check the delay and audio quality of the other participants.  Are you able to talk normally ... try and judge the delay.  Is it 1 second, 2 second, etc.
+
 == Share region of your desktop ==
 
-The share desktop button shows a preview window that enables you share your entire desktop (same as 0.70) or a selected region.
+The share desktop button shows a preview window that enables you share your entire desktop (same as 0.70) or a selected region (new in 0.71-dev).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-5.png
 
 When you click 'Region', a Java applet will start and dragable selection area appears on your screen.  You can drag and resize it to select the area you want.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-6.png
+
+Test: Try sharing a region of your desktop with other participants.  You can also open two !BigBlueButton sessions and share your desktop from one; a view desktop window should automatically open in the others.
+
 
 == Localization Drop-down ==
 
@@ -46,6 +53,9 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-1.png
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-2.png
 
+Test: Try changing the localization setting.  If you understand the language in a different localization setting, see if the user interface strings make sense.
+
+
 == Improved chat ==
 
 The chat window now shows local times for messages.  It also uses Google Translate to translate messages between languages.
@@ -54,9 +64,4 @@ For example, a user with language set to Chinese Simplified will tell !BigBlueBu
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-3.png
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Test: Try opening two !BigBlueButton sessions and change the localization session in one.  Try typing test -- the text will be translated by Google Translate.
