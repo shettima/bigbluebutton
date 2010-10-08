@@ -16,9 +16,11 @@ The following summarizes the updates to 0.71-dev.
 
 When you find a bug, please post a short description along with the steps to reproduce to our issue tracker.  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
 
+= What's new in 0.71-dev =
+
 Here's a summary of what's new in 0.71-dev.
 
-== Voice ==
+== Video ==
 
 When a participant shares their webcam, the video window now opens automatically on all other computers.
 
