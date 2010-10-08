@@ -1,13 +1,30 @@
 #summary This page will hold 0.71 Information during the testing cycle
 
+<wiki:toc max_depth="2" />
+
 = Introduction =
 
-This page gives you an overview of what's new in !BigBlueButton 0.71.  At the moment, you can try the latest version by using our [http://devbuild.bigbluebutton.org/ Development Build Server].
+This page gives you an overview of what's new in !BigBlueButton 0.71-dev.  We emphasize "0.71-dev" as the development is now finishing and we are moving into our testing phase.
 
+At the moment, you can try 0.71-dev on our [http://devbuild.bigbluebutton.org/ Development Build Server].  This is the fist phase of testing, which will follow with
+
+  * testing 0.71-dev on demo.bigbluebutton.org
+  * releasing 0.71-dev VM for testing
+  * releasing 0.71-dev packages for testing
+
+The following summarizes the updates to 0.71-dev.  
+
+When you find a bug, please post a short description along with the steps to reproduce to our issue tracker.  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
+
+Here's a summary of what's new in 0.71-dev.
 
 == Voice ==
 
-We've added support for FreeSWITCH, which now enables the client to transmit wide-band speex.  We've also improved the algorithms to handle audio packets so you'll experienced less lag in the VoIP.
+When a participant shares their webcam, the video window now opens automatically on all other computers.
+
+== Voice ==
+
+We've added support for FreeSWITCH, which now enables the client to transmit wide-band (16 KHZ) speex in addition to the current nellymoser voce codec.  We've also improved the algorithms to handle audio packets so you'll experienced less lag in the VoIP.
 
 == Share region of your desktop ==
 
