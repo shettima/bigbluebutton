@@ -22,7 +22,7 @@ When a user shares their webcam, it automatically opens on all other users conne
 
 *Test:* Open two !BigBlueButton sessions.  Share your webcam in one; a view webcam window should automatically appear in the other.
 
-== Reduced lag with VoIP ==
+== Reduced audio lag with VoIP ==
 
 We've added support for FreeSWITCH.  This enables the !BigBlueButton client to transmit either wide-band (16 KHZ) speex or nellymoser voice codec (default).  We've also improved the algorithms to handle audio packets to reduce the audio lag for other listeners when using VoIP.
 
