@@ -1,4 +1,4 @@
-#summary This page will hold information on testing 0.71-dev during the testing cycle
+#summary This page will hold information for the 0.71-dev testing cycle
 
 <wiki:toc max_depth="2" />
 
