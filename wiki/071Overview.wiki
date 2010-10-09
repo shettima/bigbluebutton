@@ -16,7 +16,7 @@ At the moment, you can try 0.71-dev on [http://devtest.bigbluebutton.org/ 0.71-d
 
 = What's new in 0.71-dev =
 
-== Auto Display Video ==
+== Auto display of user's video ==
 
 When a user shares their webcam, it automatically opens on all other users connected to the virtual classroom.
 
@@ -28,7 +28,7 @@ We've added support for FreeSWITCH.  This enables the !BigBlueButton client to t
 
 *Test:* Open two !BigBlueButton sessions.  Join the audio in both session, but mute one of the microphones.  Using a headset, start counting 1, 2, 3, etc.  You'll hear yourself as the VoIP packages are sent to the !BigBlueButton server from one client and are received on the other.
 
-== Share region of your desktop ==
+== Presenter can now share a region of of their desktop ==
 
 To reduce the bandwidth usage of desktop sharing, !BigBlueButton now gives the presenter the option of selecting a rectangular region of their desktop.
 
@@ -41,7 +41,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-6.png
 *Test:* Try sharing a region of your desktop with other participants.  You can also open two !BigBlueButton sessions and share your desktop from one; a view desktop window should automatically open in the others.
 
 
-== Localization ==
+== Dynamic locale settings ==
 
 The !BigBlueButton client will detect your locale and choose the associated localization strings (if available).  There is now a drop-down menu to manually choose a locale (which helps test support for other languages).  When chosen, the interface will automatically switch to that language.
 
@@ -52,7 +52,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-2.png
 *Test:* Try changing the localization setting.  If you understand the language in a different localization setting, see if the user interface strings make sense.
 
 
-== Automatic Translation of Chat Messages using Google Translate ==
+== Automatic translation of chat messages using Google Translate ==
 
 When someone types you a message from a different locale, the Chat window will automatically use Google Translate to translate messages to your language.
 
