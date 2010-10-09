@@ -4,50 +4,46 @@
 
 = Introduction =
 
-This page gives you an overview of what's new in !BigBlueButton 0.71-dev.  We emphasize "0.71-dev" as the development is now finishing and we are moving into our testing phase.
+This page gives you an overview of what's new in !BigBlueButton 0.71-dev.  We emphasize "0.71-dev" as the development is still finishing up as we transition into our testing phase.
 
-At the moment, you can try 0.71-dev on our [http://devbuild.bigbluebutton.org/ Development Build Server].  This is the fist phase of testing, which will follow with
+At the moment, you can try 0.71-dev on our [http://devtest.bigbluebutton.org/ 0.71-dev Test Server].  This is the fist phase of testing.  If it goes well, the next phases will follow:
 
   * testing 0.71-dev on demo.bigbluebutton.org
   * releasing 0.71-dev VM for testing
   * releasing 0.71-dev packages for testing
 
-= What's new in 0.71-dev =
-
-Please test each of these features and see if you can break them or find bugs.
-
 *When you find a bug*, please post a short description along with the steps to reproduce to our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
 
-Here's a summary of what's new in 0.71-dev.  
+= What's new in 0.71-dev =
 
 == Auto Display Video ==
 
-When a participant shares their webcam, the video window now opens automatically on all other computers.
+When a user shares their webcam, it automatically opens on all other users connected to the virtual classroom.
 
-*Test:* Open two !BigBlueButton sessions.  In one, share your webcam.  Your webcam should automatically appear in the other.
+*Test:* Open two !BigBlueButton sessions.  Share your webcam in one; a view webcam window should automatically appear in the other.
 
-== Reduced Lag with VoIP ==
+== Reduced lag with VoIP ==
 
-We've added support for FreeSWITCH, which now enables the client to transmit wide-band (16 KHZ) speex in addition to the current nellymoser voce codec.  We've also improved the algorithms to handle audio packets so you'll experienced less lag in the VoIP.
+We've added support for FreeSWITCH.  This enables the !BigBlueButton client to transmit either wide-band (16 KHZ) speex or nellymoser voice codec (default).  We've also improved the algorithms to handle audio packets to reduce the audio lag for other listeners when using VoIP.
 
-*Test:* Check the delay and audio quality of the other participants.  Are you able to talk normally ... try and judge the delay.  Is it 1 second, 2 second, etc.
+*Test:* Open two !BigBlueButton sessions.  Join the audio in both session, but mute one of the microphones.  Using a headset, start counting 1, 2, 3, etc.  You'll hear yourself as the VoIP packages are sent to the !BigBlueButton server from one client and are received on the other.
 
 == Share region of your desktop ==
 
-The share desktop button shows a preview window that enables you share your entire desktop (same as 0.70) or a selected region (new in 0.71-dev).
+To reduce the bandwidth usage of desktop sharing, !BigBlueButton now gives the presenter the option of selecting a rectangular region of their desktop.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-5.png
 
-When you click 'Region', a Java applet will start and dragable selection area appears on your screen.  You can drag and resize it to select the area you want.
+When you click 'Region', the desktop sharing applet will start and display dragable and resizable selection area appears on your screen. 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-6.png
 
 *Test:* Try sharing a region of your desktop with other participants.  You can also open two !BigBlueButton sessions and share your desktop from one; a view desktop window should automatically open in the others.
 
 
-== Localization Choice ==
+== Localization ==
 
-The !BigBlueButton client will detect your local and choose the associated localization strings (if available).  There is now a drop-down menu to choose a locale.  When chosen, the interface will automatically switch.
+The !BigBlueButton client will detect your locale and choose the associated localization strings (if available).  There is now a drop-down menu to manually choose a locale (which helps test support for other languages).  When chosen, the interface will automatically switch to that language.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-1.png
 
@@ -58,10 +54,11 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-2.png
 
 == Automatic Translation of Chat Messages using Google Translate ==
 
-The chat window now shows local times for messages.  It also uses Google Translate to translate messages between languages.
+When someone types you a message from a different locale, the Chat window will automatically use Google Translate to translate messages to your language.
 
-For example, a user with language set to Chinese Simplified will tell !BigBlueButton to translate incoming chat messages into Chinese Simplifed.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-3.png
 
-*Test:* Try opening two !BigBlueButton sessions and change the localization session in one.  Try typing test -- the text will be translated by Google Translate.
+*Test:* Try opening two !BigBlueButton sessions and change the locale  session in one.  Try typing test -- the text will be translated by Google Translate.
+
+The chat window now shows local times for messages. 
