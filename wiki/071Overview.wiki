@@ -4,17 +4,17 @@
 
 = Introduction =
 
-We're getting close to finishing the development for !BigBlueButton 0.71-dev (and we emphasize the 'dev' as it's still in development), but we're far enough along to start limited testing.
+We're getting close to finishing the development for !BigBlueButton 0.71-dev (and we emphasize the 'dev' as it's still in development), but we're far enough along to start testing.
 
 This is where you can help.  
 
-Our goal at the moment is shake out the obvious bigs in !BigBlueButton 0.71-dev so we can soon move to broader testing.  If it goes well, we'll proceed as follows:
+Our goal at the moment is shake out the obvious (and no so obvious) bugs in !BigBlueButton 0.71-dev so we can soon move to broader testing.  If it goes well, we'll proceed as follows:
 
-  # testing 0.71-dev on demo.bigbluebutton.org
-  # releasing a 0.71-dev VM for download and testing
-  # releasing the 0.71-dev Ubuntu packages for installation and testing
+  # Install 0.71-dev on demo.bigbluebutton.org for broader testing
+  # Release a 0.71-dev VM for download and testing
+  # Release the 0.71-dev Ubuntu packages for local installation and testing
 
-Please read the list below of what's new and help us test and stress this version of 0.71-dev located at: *[http://devtest.bigbluebutton.org/ http://devtest.bigbluebutton.org/]*.   
+Please read the list below of what's new in 0.71-dev and help us test and stress it by visiting the following URL: *[http://devtest.bigbluebutton.org/ http://devtest.bigbluebutton.org/]*.   
 
 *Note:* When you find a bug, please use the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to submit a short description along with the steps to reproduce it.  We recognize that some bugs are not deterministic, but if you can provide steps, it *greatly* assists us in quickly fixing the bugs.  
 
