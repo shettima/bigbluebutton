@@ -1,4 +1,4 @@
-#summary This page will hold information for the 0.71-dev testing cycle
+#summary This page describes how you can help test 0.71-dev
 
 <wiki:toc max_depth="2" />
 
