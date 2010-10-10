@@ -40,7 +40,7 @@ When a user shares their webcam, it automatically opens on all other users conne
 *Test:* Open two !BigBlueButton sessions.  Share your webcam in one; a view webcam window should automatically appear in the other.
 
 
-== Presenter can now share a region of of their desktop ==
+== Share a region of your desktop ==
 
 To reduce the bandwidth usage of desktop sharing, !BigBlueButton now gives the presenter the option of selecting a rectangular region of their desktop.
 
