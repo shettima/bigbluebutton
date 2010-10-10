@@ -14,9 +14,8 @@ Our goal at the moment is shake out the obvious (and not so obvious) bugs in !Bi
   # Install 0.71-dev on demo.bigbluebutton.org for broader testing
   # Release a 0.71-dev VM for download and testing
   # Release the 0.71-dev Ubuntu packages for local installation and testing
-  # Ship !BigBlueButton 0.71.
 
-Please read the list below of what's new in 0.71-dev and help us test and stress it by visiting the following URL: *[http://devtest.bigbluebutton.org/ http://devtest.bigbluebutton.org/]*.   
+Please read 'What's new in 0.71-dev' below and help us test and stress it by visiting the following URL: *[http://devtest.bigbluebutton.org/ http://devtest.bigbluebutton.org/]*.   
 
 *Note:* When you find a bug, please use the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to submit a short description along with the steps to reproduce it.  We recognize that some bugs are not deterministic, but if you can provide steps, it *greatly* assists us in quickly fixing the bugs.  We'll watch the issue list closely and use it, along with the feedback in [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] to gauge our progress through the above stages.
 
