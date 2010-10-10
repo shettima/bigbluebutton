@@ -4,9 +4,9 @@
 
 = Introduction =
 
-This page gives you an overview of what's new in !BigBlueButton 0.71-dev.  We emphasize "0.71-dev" as the development is still finishing up as we transition into our testing phase.
+This page gives you an overview of what's new in !BigBlueButton 0.71-dev.  We emphasize "0.71-dev" as the development is still underway.  We're looking forward to soon moving into our testing phase.
 
-At the moment, you can try 0.71-dev on [http://devtest.bigbluebutton.org/ 0.71-dev Test Server].  This is the fist phase of testing.  If it goes well, the next phases will follow:
+We're far enough along for some broader testing.  There are still bugs (see note below), but at the moment you can try 0.71-dev on [http://devtest.bigbluebutton.org/ 0.71-dev Test Server].  This is the fist phase of testing.  If it goes well, the next phases will follow:
 
   # testing 0.71-dev on demo.bigbluebutton.org
   # releasing 0.71-dev VM for testing
