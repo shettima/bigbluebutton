@@ -16,17 +16,22 @@ We're far enough along for some broader testing.  There are still bugs (see note
 
 = What's new in 0.71-dev =
 
+While this list is not yet complete, below are some of the highlights.
+
+== Reduced audio lag with VoIP ==
+
+This was the bulk of effort on 0.71.  The focus was on improving the algorithms to handle audio packets to reduce the audio lag for other listeners when using VoIP.  We'll let you judge if it's an improvement of 0.70.
+
+!BigBlueButton 0.71 now supports FreeSWITCH as a voice conference server.  This enables the !BigBlueButton client to transmit either wide-band (16 KHZ) speex or nellymoser voice codec.   In our testing so far, we found that nellymoser scales better and will remain the default voice codec in !BigBlueButton.
+
+*Test:* Open two !BigBlueButton sessions.  Join the audio in both session, but mute one of the microphones.  Using a headset, start counting 1, 2, 3, etc.  You'll hear yourself as the VoIP packages are sent to the !BigBlueButton server from one client and are received on the other.
+
 == Auto display of user's video ==
 
 When a user shares their webcam, it automatically opens on all other users connected to the virtual classroom.
 
 *Test:* Open two !BigBlueButton sessions.  Share your webcam in one; a view webcam window should automatically appear in the other.
 
-== Reduced audio lag with VoIP ==
-
-We've added support for FreeSWITCH.  This enables the !BigBlueButton client to transmit either wide-band (16 KHZ) speex or nellymoser voice codec (default).  We've also improved the algorithms to handle audio packets to reduce the audio lag for other listeners when using VoIP.
-
-*Test:* Open two !BigBlueButton sessions.  Join the audio in both session, but mute one of the microphones.  Using a headset, start counting 1, 2, 3, etc.  You'll hear yourself as the VoIP packages are sent to the !BigBlueButton server from one client and are received on the other.
 
 == Presenter can now share a region of of their desktop ==
 
