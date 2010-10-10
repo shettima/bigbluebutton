@@ -4,7 +4,7 @@
 
 = Introduction =
 
-We're getting close to finishing the development of !BigBlueButton 0.71-dev (and we emphasize the 'dev' as it's still in development), but we're far enough along to start testing.
+We're getting close to finishing the development of !BigBlueButton 0.71, which we refer hereafter as 0.71-dev to emphasize it's still in development. 
 
 This is where you can help.  
 
