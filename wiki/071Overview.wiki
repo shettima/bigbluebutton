@@ -12,7 +12,7 @@ We're far enough along for some broader testing.  There are still bugs (see note
   # releasing 0.71-dev VM for testing
   # releasing 0.71-dev packages for testing
 
-*When you find a bug*, please post a short description along with the steps to reproduce to our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
+*Note:* When you find a bug, please post a short description along with the steps to reproduce to our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].  We'll monitor the bugs closely and update them as they arrive.  Our goal is to further harden !BigBlueButton 0.71-dev for testing on demo.bigbluebutton.org next.
 
 = What's new in 0.71-dev =
 
