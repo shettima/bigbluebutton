@@ -24,7 +24,7 @@ While this list is not complete, here are some highlights that are ready for you
 
 == Reduced audio lag with VoIP ==
 
-This was the bulk of our effort for 0.71.  The focus was on improving the algorithms to handle audio packets to reduce the audio lag for other listeners when using VoIP.  We'll let you judge if it's an improvement over 0.70.
+This was the bulk of our effort for 0.71.  We improved the algorithms to handle audio packets coming to and from the !BigBlueButton server.  You should experience less audio lag using VoIP when compared to 0.70.  (We'll let you judge the extent to which the lag has been reduced.)
 
 !BigBlueButton 0.71 now supports FreeSWITCH as a voice conference server.  This enables the !BigBlueButton client to transmit either wide-band (16 KHZ) speex or nellymoser voice codec.   In our testing so far, we found that nellymoser scales better and will remain the default voice codec in !BigBlueButton.
 
