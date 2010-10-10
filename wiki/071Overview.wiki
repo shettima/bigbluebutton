@@ -8,7 +8,7 @@ We're getting close to finishing the development of !BigBlueButton 0.71-dev (and
 
 This is where you can help.  
 
-Our goal at the moment is shake out the obvious (and not so obvious) bugs in !BigBlueButton 0.71-dev so we can soon move to broader testing.  Our plan for testing 0.71-dev is as follows:
+Our goal at the moment is shake out the obvious (and not so obvious) bugs in !BigBlueButton 0.71-dev so we can soon move to broader testing.  Our plan for testing 0.71-dev will proceed in stages:
 
   # Install 0.71-dev on devtest.bigbluebutton.org for limited testing _(done)_
   # Install 0.71-dev on demo.bigbluebutton.org for broader testing
