@@ -10,7 +10,7 @@ This is where you can help.
 
 Our goal at the moment is shake out the obvious (and no so obvious) bugs in !BigBlueButton 0.71-dev so we can soon move to broader testing.  If it goes well, we'll proceed through testing in the following stages:
 
-  # Install 0.71-dev on devtest.bigbluebutton.org for limited testing *[done]*
+  # Install 0.71-dev on devtest.bigbluebutton.org for limited testing (_done_)
   # Install 0.71-dev on demo.bigbluebutton.org for broader testing
   # Release a 0.71-dev VM for download and testing
   # Release the 0.71-dev Ubuntu packages for local installation and testing
