@@ -53,7 +53,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-6.png
 *Test:* Try sharing a region of your desktop with other participants.  You can also open two !BigBlueButton sessions and share your desktop from one; a view desktop window should automatically open in the others.
 
 
-== Dynamic locale settings ==
+== Change your locale from within the client ==
 
 The !BigBlueButton client will detect your locale and choose the associated localization strings (if available).  There is now a drop-down menu to manually choose a locale (which helps test support for other languages).  When chosen, the interface will automatically switch to that language.
 
