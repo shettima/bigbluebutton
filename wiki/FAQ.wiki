@@ -45,7 +45,7 @@ We don't keep a list of organizations, colleges and universities, and hosting pr
 = Installation =
 
 == What are the minimum hardware requirements to run !BigBlueButton? ==
-We recommend you run !BigBlueButton on dual core machine with at least 1 Gig of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
+We recommend you run !BigBlueButton on dual core machine with at least 2 Gig of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
 
 
 == Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ==
