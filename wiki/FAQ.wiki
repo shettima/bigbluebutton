@@ -29,6 +29,9 @@ The name comes from the goal of making setting up a virtual classroom as easy as
 
 The core developers are listed on the [http://code.google.com/p/bigbluebutton/ Google Code home page] for this project.   
 
+== Where is the source? ==
+We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We used to host it on Google Code, but we wanted to move to git because of the advantages it offers over svn.
+
 == How do I join the !BigBlueButton development team? ==
 
 We welcome contributions from other developers!  This is a merit-based project, which means you need to contribute for a while before you'll be granted check-in rights to the core repository.
@@ -41,6 +44,9 @@ Stability and usability are core to !BigBlueButton.  If you demonstrate and abil
 
 == Where can I find examples of people running !BigBlueButton ==
 We don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton. Such a list would be very hard to maintain up to date. Because this is an open source project and people can download it freely without our knowledge, such a list could also never be complete. If you'd like examples and use cases of people running !BigBlueButton, write to the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
+
+== Will !BigBlueButton always stay open source? ==
+Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. Once code is open sourced and, it cannot be closed sourced. The worst that can happen is that the lead developers of !BigBlueButton stop contributing to the open source version in favor of a commercial version. In that case the community around !BigBlueButton can simply fork the project and continue developing and maintaining it. As long as there is interest in the project and there are developers willing to maintain and develop it, every open source project can live on.
 
 = Installation =
 
