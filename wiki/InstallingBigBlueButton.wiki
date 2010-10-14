@@ -2,7 +2,7 @@
 
 _Note: This document is currently being edited for the !BigBlueButton release 0.71 and it is not recommend to use this as installation source right now_
 
-This guide shows you how to  install !BigBlueButton from source on Ubuntu 10.04 32-bit.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, go through the step-by-step instructions below and you'll become familiar with each component.  
+This guide shows you how to  install !BigBlueButton from source on Ubuntu 10.04.1 32-bit.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, go through the step-by-step instructions below and you'll become familiar with each component.  
 
 To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  If you are on Windows, the easiest way to start is to download a Ubuntu 9.04 Server VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player.  You don't have to use VMWare Player, Virtual Box is another excellent tool for running VMs.
 
@@ -14,7 +14,7 @@ When you boot your Ubuntu VM, it needs to have a network IP that you can access 
 
 Log in as root to avoid having to type sudo in front of most of the commands required to install !BigBlueButton.
 {{{
-sudo su - root
+sudo -i
 }}}
 
 == Check if you have a internet connection ==
