@@ -774,6 +774,9 @@ In /home/firstuser/dev
 === When will feature X be supported? ===
 Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
 
+=== Why is my webcam image upside down? ===
+
+We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
 === How can I donate or help the project ===
 The !BigblueButton project doesn't take donations. If you'd like to help, spread the word about BBB. Blog about us, follow us on [http://twitter.com/bigbluebutton twitter]. If you're a developer and want a contribute, write to the [http://groups.google.com/group/bigbluebutton-dev/ bigbluebutton-dev] mailing list.
