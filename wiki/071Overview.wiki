@@ -1,26 +1,26 @@
-#summary This page describes how you can help test 0.71-dev
+#summary This page describes how you can help test 0.71-beta
 
 <wiki:toc max_depth="2" />
 
 = Introduction =
 
-We're getting close to finishing the development of !BigBlueButton 0.71, which we refer hereafter as 0.71-dev to emphasize it's still in development. 
+We're getting close to finishing the development of !BigBlueButton 0.71, which we refer hereafter as 0.71-beta to emphasize it's still in development. 
 
 This is where you can help.  
 
-Our goal at the moment is shake out the obvious (and not so obvious) bugs in !BigBlueButton 0.71-dev so we can soon move to broader testing.  Our plan for testing 0.71-dev will proceed in stages:
+Our goal at the moment is shake out the obvious (and not so obvious) bugs in !BigBlueButton 0.71-beta so we can soon move to broader testing.  Our plan for testing 0.71-beta will proceed in stages:
 
-  # Install 0.71-dev on devtest.bigbluebutton.org for limited testing _(done)_
-  # Install 0.71-dev on demo.bigbluebutton.org for broader testing
-  # Release a 0.71-dev VM for download and testing
-  # Release the 0.71-dev Ubuntu packages for local installation and testing
+  # Install 0.71-beta on devtest.bigbluebutton.org for limited testing _(done)_
+  # Install 0.71-beta on demo.bigbluebutton.org for broader testing _(done)_
+  # Release a 0.71-beta VM for download and testing
+  # Release the 0.71-beta Ubuntu packages for local installation and testing
 
-Please read 'What's new in 0.71-dev' below and help us test and stress it by visiting the following URL: *[http://devtest.bigbluebutton.org/ http://devtest.bigbluebutton.org/]*.   
+Please read 'What's new in 0.71-beta' below and help us test and stress it by visiting the following URL: *[http://devtest.bigbluebutton.org/ http://devtest.bigbluebutton.org/]*.   
 
 *Note:* When you find a bug, please use the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to submit a short description along with the steps to reproduce it.  We recognize that some bugs are not deterministic, but if you can provide steps, it *greatly* assists us in quickly fixing the bugs.  We'll watch the issue list closely and use it, along with the feedback in [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] to gauge our progress through the above stages.
 
 
-= What's new in 0.71-dev =
+= What's new in 0.71-beta =
 
 While this list is not complete, here are some highlights that are ready for you to test.
 
