@@ -1,4 +1,4 @@
-#summary This page describes how you can help test 0.71-beta
+#summary This page contains information on the 0.71-beta testing cycle
 
 <wiki:toc max_depth="2" />
 
