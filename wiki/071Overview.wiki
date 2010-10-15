@@ -4,7 +4,7 @@
 
 = Introduction =
 
-We're getting close to finishing the development of !BigBlueButton 0.71, which we refer hereafter as 0.71-beta to emphasize it's still in development. 
+We're getting close to finishing the development of !BigBlueButton 0.71, which we refer hereafter as 0.71-beta to emphasize it's not released yet. 
 
 This is where you can help.  
 
