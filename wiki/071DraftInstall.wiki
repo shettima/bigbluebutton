@@ -6,18 +6,13 @@
 
 *NOTE:* 
 
- * As of !BigBlueButton 0.7, we support installation from packages on *Ubuntu 9.04 32-bit* and *Ubuntu 10.04 32-bit and 64-bit*.
+As of !BigBlueButton 0.71, we support installation from packages on *Ubuntu 9.04 32-bit* and *Ubuntu 10.04 32-bit and 64-bit*.
 
-If you are attempting to install on a different variation of Ubuntu (i.e. 9.10), these packages might work.  We recommend that you
-  # Search through [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] for your variation of Ubuntu.  
-  # Post any new questions to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
-
-
-Why only those distributions for the moment?  In a word: quality.  We want to have a really good reference implementation of !BigBlueButton that we know works out-of-the-box on a given setup for Ubuntu, rather than support ten different setups that all have small problems.
+Why only those distributions for the moment?  In a word: quality.  We want to have a really good reference implementation of !BigBlueButton that works out-of-the-box on a given setup for Ubuntu. 
 
 == Prerequisites ==
 
-You'll need root access to your *Ubuntu* desktop or server and the server should have a minimum of 1G of memory.  
+You'll need root access to your *Ubuntu* desktop or server and the server should have a minimum of 2G of memory.  
 
 Also,  !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling, so if you have apache running, you'll need to configure apache to listen to a different port by editing `/etc/apache2/ports.conf` and changing the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.
 
