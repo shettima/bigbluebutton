@@ -540,5 +540,5 @@ bbb-conf --restart
 == Try out BigBlueButton ==
 
 {{{
-Go to http://<YOUR-IP> which should display the bbb web page and join the conference! 
+Go to http://<YOUR-IP>/ which should display the !BigBlueButton web page and join the conference.
 }}}
