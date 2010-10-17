@@ -3,9 +3,7 @@
 Author: Wagner Spirigoni
 
 = Introduction =
-This guide will show how to install !BigBlueButton 0.70 on Debian Squeeze 32 bits
-
-Log in as root
+This guide will show how to install !BigBlueButton 0.70 on Debian Squeeze 32-bit.
 
 Log in as root to avoid having to type sudo in front of most of the commands required to install BigBlueButton.
 
@@ -26,7 +24,7 @@ First let's configure the mirrors of apt
 add the following mirror to /etc/apt/sources.list
 
 {{{
-echo “deb http://ftp.debian.org/ squeeze main non-free contrib” >> /etc/apt/sources.list
+echo "deb http://ftp.debian.org/ squeeze main non-free contrib" >> /etc/apt/sources.list
 }}}
 
 Syncronize apt with mirrors
