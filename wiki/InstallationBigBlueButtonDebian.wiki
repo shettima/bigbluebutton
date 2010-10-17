@@ -3,17 +3,21 @@
 Author: Wagner Spirigoni
 
 = Introduction =
-This guide will show how to install BigBlueButton 0.70 on Debian Squeeze 32 bits
+This guide will show how to install !BigBlueButton 0.70 on Debian Squeeze 32 bits
 
 Log in as root
 
 Log in as root to avoid having to type sudo in front of most of the commands required to install BigBlueButton.
 
-`su -`
+{{{
+su -
+}}}
 
 Check if you have a internet connection
 
-`ping www.google.com`
+{{{
+ping www.google.com
+}}}
 
 = Installing =
 == APT ==
