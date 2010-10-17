@@ -1,5 +1,7 @@
 #summary How to install BigBlueButton on Debian
 
+Author: Wagner Spirigoni
+
 = Introduction =
 This guide will show how to install BigBlueButton 0.70 on Debian Squeeze 32 bits
 
