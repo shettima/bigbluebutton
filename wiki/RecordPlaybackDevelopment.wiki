@@ -2,19 +2,7 @@
 
 = Setup Recording Application =
 
-The Recording Application is deployed in the tomcat server as a web application... 
-
-Create the following table in the mysql database bigbluebutton_dev:
-
-{{{
-USE bigbluebutton_dev;
-CREATE TABLE event(
-    conferenceid VARCHAR(50) NOT NULL,
-    tsevent BIGINT NOT NULL,
-    message TEXT,
-    primary key(conferenceid,tsevent)
-);
-}}}
+The Recording Application is deployed in the tomcat server as a web application.
 
 Checkout the latest code in the recording-and-playback-feature branch
 {{{
@@ -55,7 +43,7 @@ Compile and deploy events-recorder app, just in case stop tomcat server before:
 {{{
 cd ~/dev/source/git/bigbluebutton/record-and-playback/events-recorder
 
-# check that the info for connecting to the database is correct in src/main/webapp/WEB-INF/application.properties
+# check that the info is correct in src/main/webapp/WEB-INF/application.properties
 gradle copyToLib
 gradle war
 gradle deploy
@@ -107,4 +95,3 @@ http://<your-ip>:8080/playback-web/event/xml?confid=<conferenceid>
 = Future Plans =
 
  # maybe recording application will be integrated to bigbluebutton-apps
- # store in files instead of a database
