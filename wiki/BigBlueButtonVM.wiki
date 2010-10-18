@@ -22,7 +22,7 @@ Note: This video refers to 0.64, but the steps are valid for 0.7.
 
   1.  Download and uncompress the the VM. 
 
-!BigBlueButton 0.7 (2010-07-15) from SourceForge: [http://sourceforge.net/projects/bigbluebutton/  Download ]
+!BigBlueButton 0.7 (2010-07-15) from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/  Download ]
 
 
   2.  Open the enclosed folder.
