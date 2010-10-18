@@ -4,9 +4,9 @@
 
 = Installing !BigBlueButton using Ubuntu Packages =
 
-*NOTE:* This is DRAFT and these instructions do not work.  There will be an announcement in bigbluebutton-dev shortly when they are ready for others to try out.
+*NOTE:* This is a holding page for the DRAFT instructions for installation of 0.71-beta. There will be an announcement in bigbluebutton-dev shortly when they are ready use.
 
-As of !BigBlueButton 0.71, we support installation from packages on *Ubuntu 9.04 32-bit* and *Ubuntu 10.04 32-bit and 64-bit*.
+As of !BigBlueButton 0.71 we support installation of Ubuntu packages on *Ubuntu 10.04 32-bit and 64-bit*.
 
 Why only those distributions for the moment?  In a word: quality.  We want to have a really good reference implementation of !BigBlueButton that works out-of-the-box on a given setup for Ubuntu. 
 
@@ -14,18 +14,17 @@ Why only those distributions for the moment?  In a word: quality.  We want to ha
 
 You'll need the following prerequisits to install !BigBlueButton:
 
-  # You'll need root access to your *Ubuntu* desktop or server.
+  # You'll need root access to your Ubuntu server.
   # The server needs 10G of free disk space
-  # The server needs (a minimum) of 1G of memory.  
+  # The server needs (a minimum) of 2G of memory.  
   # Port 80 must be unused
 
-Also,  !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling, so if you have apache running, you'll need to configure apache to listen to a different port by editing `/etc/apache2/ports.conf` and changing the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.
+Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.
 
-== These are the commands to setup your own !BigBlueButton Server == 
+== Setup a !BigBlueButton Server == 
 
-Cut and paste the following commands into a terminal window.  
+First, we'll provide apt-get the key for the !BigBlueButton repository.
 
-If you are setting up on a *Ubuntu 9.04 32-bit*
 {{{
    # Add the package key
    wget http://archive.bigbluebutton.org/bigbluebutton.asc 
@@ -33,45 +32,34 @@ If you are setting up on a *Ubuntu 9.04 32-bit*
 
    # add the archive for BigBlueButton Ubuntu 9.04 and make sure multiverse
    # is enabled
-   echo "deb http://archive.bigbluebutton.org/ bigbluebutton main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+   echo "deb http://XXX.XXX.XXX.XXX/lucid bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
    echo "deb http://us.archive.ubuntu.com/ubuntu/ jaunty multiverse" | sudo tee -a /etc/apt/sources.list
+}}}
 
+
+!BigBlueButton supports two voice conferencing servers: Asterisk and FreeSWITCH.  First, install ONE OF THESE conference servers (you don't need to install both).
+
+If you want to use Asterisk, do the following:
+
+{{{
    sudo apt-get update 
-   sudo apt-get install bigbluebutton 
+   sudo apt-get install bbb-voice-conference
 
-   # Ensure BigBlueButton is restarted and good to go
-   sudo bbb-conf --restart
-   sudo bbb-conf --check
 }}}
 
-If you are setting up on a *Ubuntu 10.04 32-bit and 64-bit*
+If you want to use FreeSWITCH, do the following:
+
 {{{
-   # Add the package key
-   wget http://archive.bigbluebutton.org/bigbluebutton.asc
-   sudo apt-key add bigbluebutton.asc
+  sudo apt-get install python-software-properties 
+  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers
+  sudo apt-get update
+  sudo apt-get install bbb-freeswitch-config
+}}}
 
-   # add the archive for BigBlueButton Ubuntu 10.04
-   echo "deb http://archive.bigbluebutton.org/lucid bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+At this point you have either Asterisk or FreeSWITCH installed.  We're now ready to install BigBlueButton.
 
-   # Ensure the multiverse is in the souces list (needed for msttcorefonts)
-   echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
-
-   sudo apt-get update
-
-   # Install asterisk (you can hit enter for the prompt for dialing prefix)
-   sudo apt-get install asterisk
-
-   # Install BigBlueButton 
+{{{
    sudo apt-get install bigbluebutton
-
-   # Ensure BigBlueButton is restarted and good to go
-   sudo bbb-conf --restart
-   sudo bbb-conf --check
-}}}
-
-If you are getting errors about broken packages, try adding universe and main to the repository in /etc/apt/sources.list
-{{{
-deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse universe main
 }}}
 
 The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happens.  This one command will install *all* of !BigBlueButton (except for desktop sharing, see below) along with all its dependencies.  Here's a screen shot of the packages it will install. 
@@ -87,6 +75,17 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_my
 Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the setup script for bbb-web will then ask you for that mysql root password; bbb-web needs to access the mysql to create the database for !BigBlueButton.  Give the the same password your did a moment ago.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
+
+
+== Post Installation ==
+
+To ensure BigBlueButton has restarted cleanly, enter the following command:
+
+{{{
+   sudo bbb-conf --clean
+   sudo bbb-conf --check
+}}}
+
 
 == Trying out your server ( 8:42 minutes later) ==
 
@@ -112,41 +111,39 @@ If you think something isn't working correctly, the first step is enter the foll
    bbb-conf --check
 }}}
 
-The `--check` will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on our demo server
+The `--check` will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
 
 {{{
-Current Configuration:
+Server
+                    Kernel version: 2.6.32 
+                      Distribution: Ubuntu 10.04.1 LTS 32bit
+                            Memory: 2000 MB
 
-/var/www/bigbluebutton/client/conf/config.xml (bbb-client)
-                 IP for tunnel check: demo.bigbluebutton.org
-                  IP for rtmp (red5): demo.bigbluebutton.org
-          host for bbb-web interface: demo.bigbluebutton.org
+/var/www/bigbluebutton/client/conf/config.xml
+                Port test (tunnel): 192.168.0.211
+                              Red5: 192.168.0.211
 
-/etc/nginx/sites-available/bigbluebutton (configuration file nginx)
-                         server_name: demo.bigbluebutton.org
-                                port: 80
-                client document root: /var/www/bigbluebutton
+/etc/nginx/sites-available/bigbluebutton
+                       server name: 192.168.0.211
+                              port: 80
+                    bbb-client dir: /var/www/bigbluebutton
 
 /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties (bbb-web)
-                                host: demo.bigbluebutton.org
+                      bbb-web host: 192.168.0.211
 
 /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp (API demos)
-                                host: demo.bigbluebutton.org
+                  bbb-web-api host: 192.168.0.211
 
-/etc/asterisk/bbb_extensions.conf (asterisk)
-                   conference module: konference
+/usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
+                  voice conference: FreeSWITCH
+
+
+** Potential problems described below **
 }}}
 
-One common problem is that not all the processes are running.  You can do a clean restart of !BigBluebutton with the command.
+If you see text after the line `** Potential problems descirbe below **`, then `bbb-conf` detected something wrong with your setup.
 
-{{{
-   bbb-conf --clean
-}}}
-
-
-If you are accessing the server via an IP address, then another common problem is the IP address in !BigBlueButton's configuration files is different than the IP address of the host server.  To change all of !BigBlueButton's configuration files to use a different IP address, enter
-
-If you need to change your IP address for !BigBlueButton, the following command will update all the configuration files and restart the needed processes.
+A common problem is the address in !BigBlueButton's configuration files is different than the IP address of the host server.  To change all of !BigBlueButton's configuration files to use a different IP address, enter
 
 {{{
    bbb-conf --setip <ip_address>
