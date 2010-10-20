@@ -357,6 +357,22 @@ In short: At the peak we had over twenty users logged into the voice conference 
 
 The server was a Pentium(R) Dual-Core CPU E5200 @ 2.50GHz with 4GB RAM running Ubuntu 9.04 32-bit.
 
+== Where is the security salt located? ==
+
+You'll find the security salt in the file 
+
+{{{
+   /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+}}}
+
+Look for the line
+
+{{{
+   beans.dynamicConferenceService.securitySalt=<value_of_salt>
+}}}
+
+This is the security salt used for enabling 3rd party plug-ins and external applications to access your !BigBlueButton server through it's API.
+
 == How do I change the security salt? ==
 
 To change the security salt, do the following: 
