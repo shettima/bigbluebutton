@@ -32,7 +32,7 @@ First, we'll provide apt-get the key for the !BigBlueButton repository.
 
    # add the archive for BigBlueButton Ubuntu 9.04 and make sure multiverse
    # is enabled
-   echo "deb http://XXX.XXX.XXX.XXX/lucid bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+   echo "deb http://XXX.XXX.XXX.XXX/lucid_dev bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
    echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
