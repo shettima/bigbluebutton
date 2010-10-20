@@ -587,7 +587,7 @@ This prevents the scenario where a malicious Flash application tries to
 masquerade as your desktop showing a web browser, for example, with a login 
 screen to your bank account.  
 
-=== How come when I use a | in the chat any text after it disappears?
+=== How come when I use a | in the chat any text after it disappears? ===
 
 This has to do with how some data is used internally.  The data after the | is stripped and therefore will not show.
 
