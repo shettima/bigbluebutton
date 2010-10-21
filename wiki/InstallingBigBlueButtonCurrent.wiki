@@ -4,7 +4,7 @@ _Note: This document is currently being edited for the !BigBlueButton release 0.
 
 This guide shows you how to  install !BigBlueButton from source on Ubuntu 10.04.1 32-bit.    If you are using CentOS, see [InstallingBigBlueButtonCentOS InstallingBigBlueButtonCentOS].  In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, go through the step-by-step instructions below and you'll become familiar with each component.  
 
-To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  If you are on Windows, the easiest way to start is to download a Ubuntu 9.04 Server VM image from http://www.vmware.com/appliances/directory/va/147323/download and start it in VMWare Player.  You don't have to use VMWare Player, Virtual Box is another excellent tool for running VMs.
+To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  If you are on Windows, the easiest way to start is to download a Ubuntu 10.04 Server VM image from http://www.vmware.com/appliances/directory/va/542303/download and start it in VMWare Player.  You don't have to use VMWare Player, Virtual Box is another excellent tool for running VMs.
 
 When you boot your Ubuntu VM, it needs to have a network IP that you can access from another computer (such as the host computer running the VM).
 
@@ -112,14 +112,19 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
    apt-get install swftools
 }}}
 
-If the installer does not find the package swftools to install, you can download the packages with this command:
+If the installer does not find the package swftools to install, you have to edit the sources.list file for apt and uncomment the partner repository.  To do this:
+
 {{{
-wget https://launchpad.net/ubuntu/+source/swftools/0.9.0-0ubuntu2/+build/1684493/+files/swftools_0.9.0-0ubuntu2_amd64.deb
-or
-wget https://launchpad.net/ubuntu/+source/swftools/0.9.0-0ubuntu2/+build/1684495/+files/swftools_0.9.0-0ubuntu2_i386.deb
+vi /etc/apt/sources.list
 }}}
 
-== Install ImageMagick ==
+Once here uncomment the partner repository
+
+{{{
+deb http://archive.canonical.com/ubuntu lucid partner
+}}} 
+
+== Install !ImageMagick ==
 {{{
    apt-get install imagemagick
 }}}
