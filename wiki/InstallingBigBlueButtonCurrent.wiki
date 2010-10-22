@@ -144,6 +144,11 @@ mv /tmp/apache-activemq-5.4.1 /usr/share/activemq
 chown -R root:root /usr/share/activemq
 }}}
 
+ActiveMQ depends on Jsvc, to install:
+{{{
+apt-get install jsvc
+}}}
+
 
 == Install red5 ==
 {{{
@@ -263,7 +268,7 @@ mv -f /tmp/tomcat6 /etc/default/tomcat6
 mysql -u root -p
 }}}
 
-This is an important step. If you skip this, BigBlueButton will not work at all.
+This is an important step. If you skip this, !BigBlueButton will not work at all.
 Just hit "Enter" when prompted for a password if you didn't enter one, otherwise use the root password you added ealier.
 
 On the {{{mysql>}}} prompt, type
@@ -272,7 +277,7 @@ create database bigbluebutton_dev;
 
 grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret';
 
-commit;
+flush privileges;
 
 quit
 }}}
@@ -283,16 +288,11 @@ cd /var/lib/tomcat6/webapps
 cp /tmp/bigbluebutton.war ./bigbluebutton.war
 }}}
 
-== Generate a GUID ==
-
-For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
-
 == Determine PDF2SWF, CONVERT and GS applications ==
 Make a note of where pdf2swf is installed
 {{{
 which pdf2swf
 }}}
-
 You should see something like
 {{{
 /usr/bin/pdf2swf
@@ -313,6 +313,10 @@ You shoud see something like.
 {{{
 /usr/bin/gs
 }}}
+
+== Generate a GUID ==
+
+For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.  You will need to generate a *HEX Encoded* string and copy it _minus_ the *0x*.
 
 == Edit bbb-web properties ==
 {{{
@@ -336,7 +340,7 @@ Create {{{/etc/bigbluebutton/nopdfmark.ps}}} with the following content:
 
 == Restart Tomcat6 ==
 {{{
-  /etc/init.d/tomcat6 restart
+service tomcat6 restart
 }}}
 
 == Check if database tables were created ==
