@@ -238,6 +238,7 @@ cd /etc/init.d
 wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless
 }}}
 Start the OpenOffice.org server
+{{{
 chmod +x /etc/init.d/bbb-openoffice-headless
 update-rc.d bbb-openoffice-headless defaults
 service bbb-openoffice-headless start
