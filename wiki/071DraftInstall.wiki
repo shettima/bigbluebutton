@@ -63,17 +63,17 @@ At this point you have either Asterisk or FreeSWITCH installed.  We're now ready
 
 The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happens.  This one command will install *all* of !BigBlueButton along with all its dependencies.  Here's a screen shot of the packages it will install. 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/add_packages.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 Enter 'Y'.  Then sit back.
 
 After a few moments, if you don't have mysql installed, the mysql setup script will ask to specify a password for the mysql 'root' user.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_mysql.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/mysql.png
 
-Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the setup script for bbb-web will then ask you for that mysql root password; bbb-web needs to access the mysql to create the database for !BigBlueButton.  Give the the same password your did a moment ago.  
+Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the setup script for bbb-web will prompt you for that mysql root password; bbb-web needs to access the mysql to create the database for !BigBlueButton.  Give the the same password your did a moment ago.  
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/setup_bbb-web.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
 
 == Post Installation ==
@@ -91,13 +91,13 @@ To ensure BigBlueButton has restarted cleanly, enter the following command:
 After a few moments, everything will be installed --- including the voice conference server using Asterisk.  You've got a full !BigBlueButton server up and running that you can use.  Open a web browser to the URL provided using the IP address of the VM.  
 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
 
 You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  (We setup our demo server using these packages.).  To start using your !BigBlueButton server, enter your and then click Join.  You'll join the default meeting.
 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
 
 = Troubleshooting =
 
