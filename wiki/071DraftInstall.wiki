@@ -4,26 +4,25 @@
 
 = Installing !BigBlueButton using Ubuntu Packages =
 
-*NOTE:* This is a holding page for the DRAFT instructions for installation of 0.71-beta. There will be an announcement in bigbluebutton-dev shortly when they are ready use.
+*NOTE:* This page contains the instructions for installation of 0.71-beta. There will be an announcement in bigbluebutton-dev shortly when they are ready for use.  
 
-As of !BigBlueButton 0.71 we support installation of Ubuntu packages on *Ubuntu 10.04 32-bit and 64-bit*.
-
-Why only those distributions for the moment?  In a word: quality.  We want to have a really good reference implementation of !BigBlueButton that works out-of-the-box on a given setup for Ubuntu. 
+As of !BigBlueButton 0.71-beta we support installation of Ubuntu packages on *Ubuntu 10.04 32-bit and 64-bit*.
 
 == Prerequisites ==
 
-You'll need the following prerequisits to install !BigBlueButton:
+You'll need the following to install !BigBlueButton:
 
-  # You'll need root access to your Ubuntu server.
-  # The server needs 10G of free disk space
-  # The server needs (a minimum) of 2G of memory.  
+  # A Ubuntu 10.04 32-bit or 64-bit server.  These are the setups for which we've tested these instructions.
+  # Root access to the server
+  # 10G of free disk space
+  # 2G of memory of memory
   # Port 80 must be unused
 
 Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.
 
 == Setup a !BigBlueButton Server == 
 
-First, we'll provide apt-get the key for the !BigBlueButton repository.
+First, download the apt-get the key for the !BigBlueButton repository.
 
 {{{
    # Add the package key
@@ -39,7 +38,7 @@ First, we'll provide apt-get the key for the !BigBlueButton repository.
 
 !BigBlueButton supports two voice conferencing servers: Asterisk and FreeSWITCH.  First, install ONE OF THESE conference servers (you don't need to install both).
 
-If you want to use Asterisk, do the following:
+EITHER install Asterisk:
 
 {{{
    sudo apt-get update 
@@ -47,7 +46,7 @@ If you want to use Asterisk, do the following:
 
 }}}
 
-If you want to use FreeSWITCH, do the following:
+OR install FreeSWITCH:
 
 {{{
   sudo apt-get install python-software-properties 
@@ -62,7 +61,7 @@ At this point you have either Asterisk or FreeSWITCH installed.  We're now ready
    sudo apt-get install bigbluebutton
 }}}
 
-The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happens.  This one command will install *all* of !BigBlueButton (except for desktop sharing, see below) along with all its dependencies.  Here's a screen shot of the packages it will install. 
+The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happens.  This one command will install *all* of !BigBlueButton along with all its dependencies.  Here's a screen shot of the packages it will install. 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu/add_packages.png
 
