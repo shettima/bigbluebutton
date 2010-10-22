@@ -26,7 +26,7 @@ sudo -i
 If you get an error saying your eth0 is not connected, check if the VM is using eth1:
 
 {{{
- ifconfig -a
+ifconfig -a
 }}}
 
 If it shows the following:
@@ -54,7 +54,7 @@ lo        Link encap:Local Loopback
 
 Make it use eth0 instead
 {{{
- vi /etc/udev/rules.d/70-persistent-net.rules
+vi /etc/udev/rules.d/70-persistent-net.rules
 }}}
 
 This will show:
@@ -83,178 +83,141 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
  Once you have internet connection, update and upgrade your VM.
 {{{
-   sudo apt-get update
-   sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 }}}
 
 == Install MySQL ==
 {{{
-  apt-get install mysql-server
+apt-get install mysql-server
 }}}
 
 == Install Tomcat ==
 {{{
-   apt-get install tomcat6
+apt-get install tomcat6
 }}}
 
- Confirm that tomcat is running
+Confirm that tomcat is running
 {{{
-  http://<YOUR IP>:8080/
+http://<YOUR IP>:8080/
 
-  To determine your ip:
-  ifconfig
+To determine your ip:
+ifconfig
 
-  see "ifconfig -a" command above for output. Your ip should be the value of "inet addr:"  which from above is "192.168.0.154"
+see "ifconfig -a" command above for output. Your ip should be the value of "inet addr:"  which from above is "192.168.0.154"
 }}}
 
 == Install swftools ==
 {{{
-   apt-get install swftools
+apt-get install swftools
 }}}
 
 If the installer does not find the package swftools to install, you have to edit the sources.list file for apt and uncomment the partner repository.  To do this:
 
 {{{
-   vi /etc/apt/sources.list
+vi /etc/apt/sources.list
 }}}
 
 Once here, uncomment the partner repository
 
 {{{
-   deb http://archive.canonical.com/ubuntu lucid partner
+deb http://archive.canonical.com/ubuntu lucid partner
 }}} 
 
 == Install !ImageMagick ==
 {{{
-   apt-get install imagemagick
+apt-get install imagemagick
 }}}
 
 == Install Nginx ==
 {{{
-   apt-get install nginx
+apt-get install nginx
 }}}
 
 == Install ActiveMQ ==
 {{{
-   cd /tmp
-   wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.4.1/apache-activemq-5.4.1-bin.tar.gz
-   tar zxvf apache-activemq-5.4.1-bin.tar.gz
-   mv /tmp/apache-activemq-5.4.1 /usr/share/activemq
-   chown -R root:root /usr/share/activemq
+cd /tmp
+wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.4.1/apache-activemq-5.4.1-bin.tar.gz
+tar zxvf apache-activemq-5.4.1-bin.tar.gz
+mv /tmp/apache-activemq-5.4.1 /usr/share/activemq
+chown -R root:root /usr/share/activemq
 }}}
 
 
 == Install red5 ==
 {{{
-  cd /tmp
-  wget http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
-  tar xvf red5-0.9.1.tar.gz
-  mv /tmp/red5-0.9.1 /usr/share/red5
+cd /tmp
+wget http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
+tar xvf red5-0.9.1.tar.gz
+mv /tmp/red5-0.9.1 /usr/share/red5
 }}}
 
 Create red5 user
 {{{
-   adduser --system --home /usr/share/red5 --no-create-home --group --disabled-password --shell /bin/false red5
+adduser --system --home /usr/share/red5 --no-create-home --group --disabled-password --shell /bin/false red5
 }}}
 
 Assign proper permissions
 {{{
-  chown -R root:root /usr/share/red5
-  chown -R red5:adm /usr/share/red5/log
-  chmod 755 /usr/share/red5/log
-  chgrp red5 /usr/share/red5/webapps
-  chmod 775 /usr/share/red5/webapps
+chown -R root:root /usr/share/red5
+chown -R red5:adm /usr/share/red5/log
+chmod 755 /usr/share/red5/log
+chgrp red5 /usr/share/red5/webapps
+chmod 775 /usr/share/red5/webapps
 }}}
 
 == Auto-start ActiveMQ and Red5 on reboot ==
 {{{
-  cd /tmp/
-  wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
-  wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu
-  cd /etc/init.d/
-  cp /tmp/activemq-ubuntu ./activemq
-  cp /tmp/red5-ubuntu ./red5
-  sudo chmod +x red5
-  sudo chmod +x activemq
-
-  update-rc.d red5 defaults
-  update-rc.d activemq defaults
+cd /tmp/
+wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
+wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu
+cd /etc/init.d/
+cp /tmp/activemq-ubuntu ./activemq
+cp /tmp/red5-ubuntu ./red5
+chmod +x red5
+chmod +x activemq
+update-rc.d red5 defaults
+update-rc.d activemq defaults
 }}}
 
 Run red5
 
 {{{
-  service red5 start
+service red5 start
 }}}
 
 == Install Freeswitch ==
-BigBlueButton uses an external conferencing server to handle voice calls.  Freeswitch allows BigBlueButton to be integrated with a PBX system and when configured properly, can accept incoming calls from a SIP trunking provider.  Since Freeswitch isn't in the Ubuntu repositories we need to add it to our sources.  To do this:
+!BigBlueButton uses an external conferencing server to handle voice calls.  Freeswitch allows !BigBlueButton to be integrated with a PBX system and when configured properly, can accept incoming calls from a SIP trunking provider.  Since Freeswitch isn't in the Ubuntu repositories we need to add it to our sources.  To do this:
 {{{
-  sudo apt-get install python-software-properties
-  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
-  sudo apt-get update 
-  sudo apt-get install freeswitch freeswitch-lang-en
+apt-get install python-software-properties
+add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
+apt-get update 
+apt-get install freeswitch freeswitch-lang-en
 }}}
 
-
-== Modify Extensions ==
+== Configure Freeswitch ==
 {{{
-wget http://bigbluebutton.org/downloads/0.70/bbb_extensions.conf
-mv bbb_extensions.conf /etc/asterisk/
-echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
-}}}
-
-== Create SIP accounts ==
-{{{
-wget http://bigbluebutton.org/downloads/0.70/bbb_sip.conf
-mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
-echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
-}}}
-
-== Install AppKonference ==
-
-{{{
-wget http://bigbluebutton.org/downloads/0.70/32bit/app_konference.so
-or
-wget http://bigbluebutton.org/downloads/0.70/64bit/app_konference-10.04-64.so
-mv app_konference.so /usr/lib/asterisk/modules/
-chmod 755 /usr/lib/asterisk/modules/app_konference.so
-# set autoload module BigBlueButton conference
-echo "load => app_konference.so" >> /etc/asterisk/modules.conf
-}}}
-
-== Create AMI account ==
-Set enabled to yes in manager.conf
-{{{
-cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > /tmp/manager.conf
-mv -f /tmp/manager.conf /etc/asterisk/
-}}}
-
-Add account to manager.conf
-{{{
-echo "
-; BigBlueButton: Enable Red5 to connect
-[bbb]
-secret = secret
-permit = 0.0.0.0/0.0.0.0
-read = system,call,log,verbose,command,agent,user
-write = system,call,log,verbose,command,agent,user
-" >> /etc/asterisk/manager.d/bigbluebutton.conf
-
-echo "#include \"manager.d/*.conf\"" >> /etc/asterisk/manager.conf
-}}}
+cd /var/tmp/
+wget http://bigbluebutton.org/downloads/0.71/freeswitch-config.tar.gz
+cd /opt/freeswitch/
+tar xzvf freeswitch-config.tar.gz
+chown -R freeswitch:daemon conf
+chmod -R 755 conf
+sed -i 's/FREESWITCH_ENABLED=\"false\"/FREESWITCH_ENABLED=\"true\"/g' /etc/default/freeswitch
+  service freeswitch start
 
 == Configure Nginx ==
 Be sure to replace < YOUR-IP > with your IP or domain.
 {{{
-  wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
-  cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
-  rm nginx-bigbluebutton.conf
+cd /var/tmp
+wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
+cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
+rm nginx-bigbluebutton.conf
 }}}
 
 == Enable the bigbluebutton nginx config ==
 {{{
- ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 }}}
 
 == Install OpenOffice ==
@@ -266,11 +229,10 @@ apt-get install openoffice.org
 {{{
 cd /etc/init.d
 wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless
-
-# start the openoffice server
+}}}
+Start the OpenOffice.org server
 chmod +x /etc/init.d/bbb-openoffice-headless
-chkconfig --add bbb-openoffice-headless
-chkconfig bbb-openoffice-headless on
+update-rc.d bbb-openoffice-headless defaults
 service bbb-openoffice-headless start
 }}}
 
