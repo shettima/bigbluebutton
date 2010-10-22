@@ -115,13 +115,13 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 If the installer does not find the package swftools to install, you have to edit the sources.list file for apt and uncomment the partner repository.  To do this:
 
 {{{
-vi /etc/apt/sources.list
+   vi /etc/apt/sources.list
 }}}
 
-Once here uncomment the partner repository
+Once here, uncomment the partner repository
 
 {{{
-deb http://archive.canonical.com/ubuntu lucid partner
+   deb http://archive.canonical.com/ubuntu lucid partner
 }}} 
 
 == Install !ImageMagick ==
@@ -137,10 +137,10 @@ deb http://archive.canonical.com/ubuntu lucid partner
 == Install ActiveMQ ==
 {{{
    cd /tmp
-   wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
-   tar zxvf apache-activemq-5.2.0-bin.tar.gz
-   mv /tmp/apache-activemq-5.2.0 /usr/share/activemq
-   chown -R root.root /usr/share/activemq
+   wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.4.1/apache-activemq-5.4.1-bin.tar.gz
+   tar zxvf apache-activemq-5.4.1-bin.tar.gz
+   mv /tmp/apache-activemq-5.4.1 /usr/share/activemq
+   chown -R root:root /usr/share/activemq
 }}}
 
 
@@ -159,7 +159,7 @@ Create red5 user
 
 Assign proper permissions
 {{{
-  chown -R root.root /usr/share/red5
+  chown -R root:root /usr/share/red5
   chown -R red5:adm /usr/share/red5/log
   chmod 755 /usr/share/red5/log
   chgrp red5 /usr/share/red5/webapps
@@ -177,20 +177,23 @@ Assign proper permissions
   sudo chmod +x red5
   sudo chmod +x activemq
 
-  apt-get -y install chkconfig
-  chkconfig red5 on
-  chkconfig activemq on
+  update-rc.d red5 defaults
+  update-rc.d activemq defaults
 }}}
 
 Run red5
 
 {{{
-  sudo ./red5 start
+  service red5 start
 }}}
 
-== Install Asterisk ==
+== Install Freeswitch ==
+BigBlueButton uses an external conferencing server to handle voice calls.  Freeswitch allows BigBlueButton to be integrated with a PBX system and when configured properly, can accept incoming calls from a SIP trunking provider.  Since Freeswitch isn't in the Ubuntu repositories we need to add it to our sources.  To do this:
 {{{
-  apt-get -y install asterisk
+  sudo apt-get install python-software-properties
+  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
+  sudo apt-get update 
+  sudo apt-get install freeswitch freeswitch-lang-en
 }}}
 
 
