@@ -63,7 +63,7 @@ At this point you have either Asterisk or FreeSWITCH installed.  We're now ready
 
 The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happens.  This one command will install *all* of !BigBlueButton along with all its dependencies.  Here's a screen shot of the packages it will install. 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
 
 Enter 'Y'.  Then sit back.
 
@@ -91,8 +91,7 @@ To ensure BigBlueButton has restarted cleanly, enter the following command:
 After a few moments, everything will be installed --- including the voice conference server using Asterisk.  You've got a full !BigBlueButton server up and running that you can use.  Open a web browser to the URL provided using the IP address of the VM.  
 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
-
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71welcome.png
 
 You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  (We setup our demo server using these packages.).  To start using your !BigBlueButton server, enter your and then click Join.  You'll join the default meeting.
 
@@ -112,33 +111,8 @@ If you think something isn't working correctly, the first step is enter the foll
 
 The `--check` will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
 
-{{{
-Server
-                    Kernel version: 2.6.32 
-                      Distribution: Ubuntu 10.04.1 LTS 32bit
-                            Memory: 2000 MB
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
-/var/www/bigbluebutton/client/conf/config.xml
-                Port test (tunnel): 192.168.0.211
-                              Red5: 192.168.0.211
-
-/etc/nginx/sites-available/bigbluebutton
-                       server name: 192.168.0.211
-                              port: 80
-                    bbb-client dir: /var/www/bigbluebutton
-
-/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties (bbb-web)
-                      bbb-web host: 192.168.0.211
-
-/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp (API demos)
-                  bbb-web-api host: 192.168.0.211
-
-/usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
-                  voice conference: FreeSWITCH
-
-
-** Potential problems described below **
-}}}
 
 If you see text after the line `** Potential problems descirbe below **`, then `bbb-conf` detected something wrong with your setup.
 
