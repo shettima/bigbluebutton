@@ -20,7 +20,7 @@ sudo -i
 == Check if you have a internet connection ==
 
 {{{
-  ping www.google.com
+ ping www.google.com
 }}}
 
 If you get an error saying your eth0 is not connected, check if the VM is using eth1:
@@ -81,7 +81,7 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 == Update and Upgrade your VM ==
 
- Once you have internet connection, update and upgrade your VM.
+Once you have internet connection, update and upgrade your VM.
 {{{
 sudo apt-get update
 sudo apt-get upgrade
@@ -91,6 +91,7 @@ sudo apt-get upgrade
 {{{
 apt-get install mysql-server
 }}}
+When prompted, enter a password for the MySQL root account and keep this handy.
 
 == Install Tomcat ==
 {{{
@@ -205,6 +206,7 @@ chown -R freeswitch:daemon conf
 chmod -R 755 conf
 sed -i 's/FREESWITCH_ENABLED=\"false\"/FREESWITCH_ENABLED=\"true\"/g' /etc/default/freeswitch
   service freeswitch start
+}}}
 
 == Configure Nginx ==
 Be sure to replace < YOUR-IP > with your IP or domain.
@@ -258,27 +260,27 @@ mv -f /tmp/tomcat6 /etc/default/tomcat6
 
 == Setup the database ==
 {{{
-  mysql -u root -p
+mysql -u root -p
 }}}
 
 This is an important step. If you skip this, BigBlueButton will not work at all.
-Just hit "Enter" when prompted for a password.
+Just hit "Enter" when prompted for a password if you didn't enter one, otherwise use the root password you added ealier.
 
 On the {{{mysql>}}} prompt, type
 {{{
- create database bigbluebutton_dev;
+create database bigbluebutton_dev;
 
- grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret';
+grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret';
 
- commit;
+commit;
 
- quit
+quit
 }}}
 
 == Install bbb-web ==
 {{{
-  cd /var/lib/tomcat6/webapps
-  cp /tmp/bigbluebutton.war ./bigbluebutton.war
+cd /var/lib/tomcat6/webapps
+cp /tmp/bigbluebutton.war ./bigbluebutton.war
 }}}
 
 == Generate a GUID ==
@@ -286,29 +288,35 @@ On the {{{mysql>}}} prompt, type
 For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this one]. Keep this GUID handy as we will need it shortly.
 
 == Determine PDF2SWF, CONVERT and GS applications ==
+Make a note of where pdf2swf is installed
 {{{
-  Make a note of where pdf2swf is installed
-   which pdf2swf
-  
-  You should see something like
-  /usr/bin/pdf2swf
-  
-  Make a note of where the convert application is installed
-   which convert
+which pdf2swf
+}}}
 
-  You shoud see something like.
-  /usr/bin/convert
-
-  Note where GhostScript is installed
-   which gs
-
-  You shoud see something like.
-  /usr/bin/gs
+You should see something like
+{{{
+/usr/bin/pdf2swf
+}}}
+Make a note of where the convert application is installed
+{{{
+which convert
+}}}
+You shoud see something like.
+{{{
+/usr/bin/convert
+}}}
+Note where GhostScript is installed
+{{{
+which gs
+}}}
+You shoud see something like.
+{{{
+/usr/bin/gs
 }}}
 
 == Edit bbb-web properties ==
 {{{
-  vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 }}}
 
 Change the following:
