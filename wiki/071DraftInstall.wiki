@@ -4,24 +4,26 @@
 
 = Prerequisites =
 
-This document contains instructions for installation !BigBlueButton 0.71-beta on a new server.  If you encounter problems with these instructions, please post questions/feedback/bugs to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] (these packages are still in development).
+This document contains instructions for installation *!BigBlueButton 0.71-beta* on a new server.  If you encounter problems with these instructions, please post questions/feedback/bugs to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] (these packages are still in development).
 
-If you want to upgrade from !BigBlueButton 0.70, please see [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] below.
+If you want to upgrade from !BigBlueButton 0.70, please see [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70].
 
 Before you install !BigBlueButton 0.71-beta, you'll need:
-  # A Ubuntu 10.04 32-bit or 64-bit server
+  # An Ubuntu 10.04 32-bit or 64-bit server
   # Root access to the server
-  # 10G of free disk space
+  # 5G of free disk space
   # 2G of memory of memory
-  # Port 80 must be free
+  # Port 80 is free
 
-Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
+Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
-= Installation of !BigBlueButton 0.71-beta on a new server =
+We recommend you install !BigBlueButton on it's own dedicated server.
+
+= Installation of !BigBlueButton 0.71-beta =
 
 == 1. Install the !BigBlueButton apt-get repository key  == 
 
-First, install the !BigBlueButton repository key and URL. 
+First, install the !BigBlueButton apt-get repository key and URL. 
 
 *Note:* The URL has changed from 0.70.
 
@@ -36,9 +38,9 @@ First, install the !BigBlueButton repository key and URL.
    echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
-== 2. Install a Voice Conference Application == 
+== 2. Install a Voice Conference Server == 
 
-!BigBlueButton 0.71-beta now supports two voice servers: Asterisk and FreeSWITCH.  Both have configuration packages, so it's easy to install either one.  We recommend you use FreeSWITCH as it seems to scale better than Asterisk.
+!BigBlueButton now lets you choose to use either Asterisk or FreeSWITCH for voice conferencing.  We provide configuration packages for both, so it's easy to install either one.  We recommend FreeSWITCH.
 
 To install FreeSWITCH:
 {{{
@@ -55,7 +57,7 @@ Or, instead, to install Asterisk:
 
 }}}
 
-
+Again, install only one of the above
 
 == 3. Install !BigBlueButton == 
 
@@ -69,13 +71,11 @@ The {{{sudo apt-get install bigbluebutton}}} command is where all the magic happ
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
 
-Enter 'Y'.  Then sit back.
-
-After a few moments, if you don't have mysql installed, the mysql setup script will ask to specify a password for the mysql 'root' user.
+Enter 'Y'.  Then sit back.  After a few moments, if you don't have mysql installed, the mysql package script will ask to specify a password for the mysql 'root' user.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/mysql.png
 
-Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the setup script for bbb-web will prompt you for that mysql root password; bbb-web needs to access the mysql to create the database for !BigBlueButton.  Give the the same password your did a moment ago.  
+Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the package script for bbb-web will prompt you for that mysql root password (shown below).  !BigBlueButton needs to access the mysql to create a database.  Enter the the same password your did a moment ago for mysql.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
@@ -89,19 +89,21 @@ To ensure BigBlueButton has started cleanly, enter the following commands:
    sudo bbb-conf --check
 }}}
 
-The second command will check your current configuration to make sure everything has started correctly.
+The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any configuration or startup problems it has detected.  Normally, there is no text following this message.
 
-== Trying out your server ( 8:42 minutes later) ==
+== Trying out your server ( 14:42 minutes later) ==
 
-You've got a full !BigBlueButton server up and running.  (Don't you just love the power of Ubuntu/Debian packages.) Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
+You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71welcome.png
 
-To start using your !BigBlueButton server, enter your name and then click Join.  You'll join the default meeting.
+To start using your !BigBlueButton server, enter your name and click the 'Join' button.  You'll join the Demo Meeting.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
 
-You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  To create your own meeting rooms, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to setup multiple virtual classrooms].
+If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].  
+
+Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
 = Upgrading from !BigBlueButton 0.70 =
 
