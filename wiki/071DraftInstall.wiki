@@ -61,7 +61,7 @@ Again, install only one of the above
 
 == 3. Install !BigBlueButton == 
 
-We're now ready to install BigBlueButton.
+We're now ready to install !BigBlueButton.  Type:
 
 {{{
    sudo apt-get install bigbluebutton
