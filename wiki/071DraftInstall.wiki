@@ -4,7 +4,7 @@
 
 = Prerequisites =
 
-This document contains instructions for installation *!BigBlueButton 0.71-beta* on a new server.  If you encounter problems with these instructions, please post questions/feedback/bugs to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] (these packages are still in development).
+This document contains instructions for installation *!BigBlueButton 0.71-beta* on a new server using Ubuntu packages.  These packages are still being developed, so if you have questions/feedback/bugs, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
 If you want to upgrade from !BigBlueButton 0.70, please see [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70].
 
