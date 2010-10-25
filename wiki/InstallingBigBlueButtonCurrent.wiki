@@ -20,7 +20,7 @@ sudo -i
 == Check if you have a internet connection ==
 
 {{{
- ping www.google.com
+ping www.google.com
 }}}
 
 If you get an error saying your eth0 is not connected, check if the VM is using eth1:
