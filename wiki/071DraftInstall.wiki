@@ -4,7 +4,7 @@
 
 = Installing !BigBlueButton using Ubuntu Packages =
 
-*NOTE:* This page contains the instructions for installation of 0.71-beta. There will be an announcement in bigbluebutton-dev shortly when they are ready for use.  
+*NOTE:* This page contains the instructions for installation of 0.71-beta.  If you find bugs with these packages, please open an issue in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].
 
 As of !BigBlueButton 0.71-beta we support installation of Ubuntu packages on *Ubuntu 10.04 32-bit and 64-bit*.
 
@@ -12,15 +12,15 @@ As of !BigBlueButton 0.71-beta we support installation of Ubuntu packages on *Ub
 
 You'll need the following to install !BigBlueButton:
 
-  # A Ubuntu 10.04 32-bit or 64-bit server.  These are the setups for which we've tested these instructions.
+  # A Ubuntu 10.04 32-bit or 64-bit server.
   # Root access to the server
   # 10G of free disk space
   # 2G of memory of memory
-  # Port 80 must be unused
+  # Port 80 must be free
 
-Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.
+Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
-== Setup a !BigBlueButton Server == 
+=== 1. Download apt-get package key for !BigBlueButton === 
 
 First, download the apt-get the key for the !BigBlueButton repository.
 
@@ -31,23 +31,24 @@ First, download the apt-get the key for the !BigBlueButton repository.
 
    # add the archive for BigBlueButton Ubuntu 9.04 and make sure multiverse
    # is enabled
-   echo "deb http://XXX.XXX.XXX.XXX/lucid_dev bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+   echo "deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
    echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
+=== 2. Install a Voice Conference Application === 
 
-!BigBlueButton supports two voice conferencing servers: Asterisk and FreeSWITCH.  First, install ONE OF THESE conference servers (you don't need to install both).
+!BigBlueButton 0.71-beta now supports two voice conferencing servers: Asterisk and FreeSWITCH.  Both have configuration packages, so it's easy to install either one.
 
-EITHER install Asterisk:
+Install ONE of the following (we recommend FreeSWITCH).
 
+To install Asterisk:
 {{{
    sudo apt-get update 
    sudo apt-get install bbb-voice-conference
 
 }}}
 
-OR install FreeSWITCH:
-
+To install FreeSWITCH:
 {{{
   sudo apt-get install python-software-properties 
   sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers
@@ -55,7 +56,9 @@ OR install FreeSWITCH:
   sudo apt-get install bbb-freeswitch-config
 }}}
 
-At this point you have either Asterisk or FreeSWITCH installed.  We're now ready to install BigBlueButton.
+=== 3. Install !BigBlueButton === 
+
+We're now ready to install BigBlueButton.
 
 {{{
    sudo apt-get install bigbluebutton
@@ -76,31 +79,34 @@ Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almos
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
 
-== Post Installation ==
+=== 4. Do a Clean Restart === 
 
-To ensure BigBlueButton has restarted cleanly, enter the following command:
+To ensure BigBlueButton has started cleanly, enter the following commands:
 
 {{{
    sudo bbb-conf --clean
    sudo bbb-conf --check
 }}}
 
+The second command will check your current configuration to make sure everything has started correctly.
 
 == Trying out your server ( 8:42 minutes later) ==
 
-After a few moments, everything will be installed --- including the voice conference server using Asterisk.  You've got a full !BigBlueButton server up and running that you can use.  Open a web browser to the URL provided using the IP address of the VM.  
-
+You've got a full !BigBlueButton server up and running.  Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71welcome.png
 
-You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  (We setup our demo server using these packages.).  To start using your !BigBlueButton server, enter your and then click Join.  You'll join the default meeting.
-
+To start using your !BigBlueButton server, enter your name and then click Join.  You'll join the default meeting.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
+
+You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  To create your own meeting rooms, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to setup multiple virtual classrooms].
 
 = Troubleshooting =
 
 == Wait!  It didn't work! ==
+
+=== Troubleshooting your setup ===
 We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
 
 If you think something isn't working correctly, the first step is enter the following command.
@@ -116,6 +122,8 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 If you see text after the line `** Potential problems descirbe below **`, then `bbb-conf` detected something wrong with your setup.
 
+=== Changing your !BigBlueButton server's hostname (or IP address) ===
+
 A common problem is the address in !BigBlueButton's configuration files is different than the IP address of the host server.  To change all of !BigBlueButton's configuration files to use a different IP address, enter
 
 {{{
@@ -123,7 +131,7 @@ A common problem is the address in !BigBlueButton's configuration files is diffe
 }}}
 
 
-== Keeping your server up-to-date with a new release ==
+=== Keeping your server up-to-date with a new release ===
 
 Want to keep your !BigBlueButton server up-to-date with the latest !BigBlueButton release?  No problem, just enter
 
