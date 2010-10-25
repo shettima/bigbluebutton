@@ -107,7 +107,7 @@ Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently A
 
 = Upgrading from !BigBlueButton 0.70 =
 
-If you are running !BigBlueButton 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server with the following steps.
+If you are running !BigBlueButton 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server by entering the following commands.
 
 First, change the URL for the !BigBlueButton apt-get repository.
 
@@ -122,7 +122,7 @@ Next, update your packages
   sudo apt-get dist-upgrade
 }}}
 
-Finally, do a clean restart of !BigBlueButton and ensure that everything is running smoothly.
+Finally, do a clean restart of your !BigBlueButton server and use `bbb-conf` to check that everything is running smoothly.
 
 {{{
   sudo bbb-conf --clean
@@ -143,7 +143,7 @@ If you think something isn't working correctly, the first step is enter the foll
    bbb-conf --check
 }}}
 
-The `--check` will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
+This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
