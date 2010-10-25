@@ -71,7 +71,7 @@ This single command is where all the magic happens.  This command will install *
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
 
-Enter 'Y'.  Then sit back.  After a few moments, if you don't have mysql installed, the mysql package script will ask to specify a password for the mysql 'root' user.
+Type 'y' and press Enter.  Then sit back.  After a few moments, if you don't have mysql installed, the mysql package script will ask to specify a password for the mysql 'root' user.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/mysql.png
 
@@ -82,7 +82,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
 == 4. Do a Clean Restart == 
 
-To ensure BigBlueButton has started cleanly, enter the following commands:
+To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 {{{
    sudo bbb-conf --clean
