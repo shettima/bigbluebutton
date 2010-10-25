@@ -19,16 +19,18 @@ Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tu
 
 = Installation of !BigBlueButton 0.71-beta on a new server =
 
-== 1. Download apt-get package key for !BigBlueButton == 
+== 1. Install the !BigBlueButton apt-get repository key  == 
 
-First, download the apt-get the key for the !BigBlueButton repository.
+First, install the key and setup the URL for the !BigBlueButton apt-get repository. 
+
+*Note:* The URL has changed from 0.70.
 
 {{{
-   # Add the package key
+   # Install the package key
    wget http://archive.bigbluebutton.org/bigbluebutton.asc 
    sudo apt-key add bigbluebutton.asc 
 
-   # add the archive for BigBlueButton Ubuntu 9.04 and make sure multiverse
+   # Add the BigBlueButton repository URL and ensure the multiverse is enabled
    # is enabled
    echo "deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
    echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
