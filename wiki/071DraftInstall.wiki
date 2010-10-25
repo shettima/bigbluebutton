@@ -17,7 +17,7 @@ Before you install !BigBlueButton 0.71-beta, you'll need the following:
 
 Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
-= Installation of !BigBlueButton 0.71-beta =
+= Installation of !BigBlueButton 0.71-beta on a new server =
 
 == 1. Download apt-get package key for !BigBlueButton == 
 
@@ -129,7 +129,7 @@ A common problem is the address in !BigBlueButton's configuration files is diffe
 }}}
 
 
-== Keeping your server up-to-date with a new release ==
+= Upgrading !BigBlueButton 0.70 to 0.71-beta =
 
 If you are running 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server with the following steps.
 
