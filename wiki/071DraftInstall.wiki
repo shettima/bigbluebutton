@@ -21,7 +21,7 @@ Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tu
 
 == 1. Install the !BigBlueButton apt-get repository key  == 
 
-First, install the key and setup the URL for the !BigBlueButton apt-get repository. 
+First, install the !BigBlueButton repository key and URL. 
 
 *Note:* The URL has changed from 0.70.
 
@@ -38,16 +38,7 @@ First, install the key and setup the URL for the !BigBlueButton apt-get reposito
 
 == 2. Install a Voice Conference Application == 
 
-!BigBlueButton 0.71-beta now supports two voice conferencing servers: Asterisk and FreeSWITCH.  Both have configuration packages, so it's easy to install either one.
-
-Install ONE of the following (we recommend FreeSWITCH).
-
-To install Asterisk:
-{{{
-   sudo apt-get update 
-   sudo apt-get install bbb-voice-conference
-
-}}}
+!BigBlueButton 0.71-beta now supports two voice servers: Asterisk and FreeSWITCH.  Both have configuration packages, so it's easy to install either one.  We recommend you use FreeSWITCH as it seems to scale better than Asterisk.
 
 To install FreeSWITCH:
 {{{
@@ -56,6 +47,15 @@ To install FreeSWITCH:
   sudo apt-get update
   sudo apt-get install bbb-freeswitch-config
 }}}
+
+Or, instead, to install Asterisk:
+{{{
+   sudo apt-get update 
+   sudo apt-get install bbb-voice-conference
+
+}}}
+
+
 
 == 3. Install !BigBlueButton == 
 
