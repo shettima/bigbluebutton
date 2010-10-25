@@ -2,17 +2,14 @@
 
 <wiki:toc max_depth="3" />
 
-= Installing !BigBlueButton using Ubuntu Packages =
+= Prerequisites =
 
 *NOTE:* This page contains the instructions for installation of 0.71-beta.  If you find bugs with these packages, please open an issue in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].
 
-As of !BigBlueButton 0.71-beta we support installation of Ubuntu packages on *Ubuntu 10.04 32-bit and 64-bit*.
+If you are upgrading your Ubuntu 10.04 32-bit or 64-bit server, see [Upgrading from a 0.70].
 
-== Prerequisites ==
-
-You'll need the following to install !BigBlueButton:
-
-  # A Ubuntu 10.04 32-bit or 64-bit server.
+Before you install !BigBlueButton 0.71-beta, you'll need the following:
+  # A Ubuntu 10.04 32-bit or 64-bit server
   # Root access to the server
   # 10G of free disk space
   # 2G of memory of memory
@@ -20,9 +17,9 @@ You'll need the following to install !BigBlueButton:
 
 Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache running, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
-== Installation of !BigBlueButton 0.71-beta ==
+= Installation of !BigBlueButton 0.71-beta =
 
-=== 1. Download apt-get package key for !BigBlueButton === 
+== 1. Download apt-get package key for !BigBlueButton == 
 
 First, download the apt-get the key for the !BigBlueButton repository.
 
@@ -37,7 +34,7 @@ First, download the apt-get the key for the !BigBlueButton repository.
    echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
-=== 2. Install a Voice Conference Application === 
+== 2. Install a Voice Conference Application == 
 
 !BigBlueButton 0.71-beta now supports two voice conferencing servers: Asterisk and FreeSWITCH.  Both have configuration packages, so it's easy to install either one.
 
@@ -58,7 +55,7 @@ To install FreeSWITCH:
   sudo apt-get install bbb-freeswitch-config
 }}}
 
-=== 3. Install !BigBlueButton === 
+== 3. Install !BigBlueButton == 
 
 We're now ready to install BigBlueButton.
 
@@ -81,7 +78,7 @@ Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almos
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
 
-=== 4. Do a Clean Restart === 
+== 4. Do a Clean Restart == 
 
 To ensure BigBlueButton has started cleanly, enter the following commands:
 
