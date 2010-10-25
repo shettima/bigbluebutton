@@ -101,9 +101,9 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
 
 You are now running the same server as you'll find on-line at http://demo.bigbluebutton.org/.  To create your own meeting rooms, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to setup multiple virtual classrooms].
 
-= Upgrading !BigBlueButton 0.70 to 0.71-beta =
+= Upgrading from !BigBlueButton 0.70 =
 
-If you are running 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server with the following steps.
+If you are running !BigBlueButton 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server with the following steps.
 
 First, change the URL for the !BigBlueButton apt-get repository.
 
@@ -153,4 +153,3 @@ A common problem is the address in !BigBlueButton's configuration files is diffe
 {{{
    bbb-conf --setip <ip_address>
 }}}
-
