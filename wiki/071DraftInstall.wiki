@@ -4,11 +4,11 @@
 
 = Prerequisites =
 
-*NOTE:* This page contains the instructions for installation of 0.71-beta.  If you find bugs with these packages, please open an issue in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].
+This page contains the instructions for installation of 0.71-beta.  If you find bugs with these packages, please open an issue in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker].
 
-If you are upgrading your Ubuntu 10.04 32-bit or 64-bit server, see [Upgrading from a 0.70].
+If you are upgrading your Ubuntu 10.04 32-bit or 64-bit server, see [#Upgrading_from_BigBlueButton_0.70 Upgrading from !BigBlueButton 0.70] below.
 
-Before you install !BigBlueButton 0.71-beta, you'll need the following:
+Before you install !BigBlueButton 0.71-beta, you'll need:
   # A Ubuntu 10.04 32-bit or 64-bit server
   # Root access to the server
   # 10G of free disk space
