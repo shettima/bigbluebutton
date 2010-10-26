@@ -175,11 +175,11 @@ chmod 775 /usr/share/red5/webapps
 == Auto-start ActiveMQ and Red5 on reboot ==
 {{{
 cd /tmp/
-wget http://bigbluebutton.googlecode.com/files/red5-ubuntu
-wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu
+wget http://bigbluebutton.org/downloads/0.71/init-scripts.tar.gz
+tar xzvf init-scripts.tar.gz
 cd /etc/init.d/
-cp /tmp/activemq-ubuntu ./activemq
-cp /tmp/red5-ubuntu ./red5
+cp /tmp/activemq ./activemq
+cp /tmp/red5 ./red5
 chmod +x red5
 chmod +x activemq
 update-rc.d red5 defaults
@@ -192,34 +192,33 @@ Run red5
 service red5 start
 }}}
 
-== Install Freeswitch ==
-!BigBlueButton uses an external conferencing server to handle voice calls.  Freeswitch allows !BigBlueButton to be integrated with a PBX system and when configured properly, can accept incoming calls from a SIP trunking provider.  Since Freeswitch isn't in the Ubuntu repositories we need to add it to our sources.  To do this:
+== Install FreeSWITCH ==
+!BigBlueButton uses an external conferencing server to handle voice calls.  FreeSWITCH allows !BigBlueButton to be integrated with a PBX system and when configured properly, can accept incoming calls from a SIP trunking provider.  Since FreeSWITCH isn't in the Ubuntu repositories we need to add it to our sources.  To do this:
 {{{
 apt-get install python-software-properties
 add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
-apt-get update 
+apt-get update
 apt-get install freeswitch freeswitch-lang-en
 }}}
 
-== Configure Freeswitch ==
+== Configure FreeSWITCH ==
 {{{
-cd /var/tmp/
+cd /tmp/
 wget http://bigbluebutton.org/downloads/0.71/freeswitch-config.tar.gz
 cd /opt/freeswitch/
-tar xzvf freeswitch-config.tar.gz
+tar xzvf /tmp/freeswitch-config.tar.gz
 chown -R freeswitch:daemon conf
 chmod -R 755 conf
 sed -i 's/FREESWITCH_ENABLED=\"false\"/FREESWITCH_ENABLED=\"true\"/g' /etc/default/freeswitch
-  service freeswitch start
+service freeswitch start
 }}}
 
 == Configure Nginx ==
 Be sure to replace < YOUR-IP > with your IP or domain.
 {{{
-cd /var/tmp
+cd /tmp
 wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
-cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/<YOUR-IP>/" > /etc/nginx/sites-available/bigbluebutton
-rm nginx-bigbluebutton.conf
+cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/< YOUR-IP >/" > /etc/nginx/sites-available/bigbluebutton
 }}}
 
 == Enable the bigbluebutton nginx config ==
@@ -234,8 +233,9 @@ apt-get install openoffice.org
 
 == Configure OpenOffice to start as a service ==
 {{{
-cd /etc/init.d
-wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless
+cd /tmp
+wget http://www.bigbluebutton.org/downloads/0.71/bbb-openoffice-headless
+cp bbb-openoffice-headless /etc/init.d/
 }}}
 Start the OpenOffice.org server
 {{{
@@ -249,15 +249,10 @@ service bbb-openoffice-headless start
 == Download !BigBlueButton ==
 {{{ 
 cd /tmp
-wget http://bigbluebutton.org/downloads/0.70/packages/bbb-default.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton.war
-wget http://bigbluebutton.org/downloads/0.70/packages/video.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton-apps.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/client.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/sip.tar.gz
+wget http://bigbluebutton.org/downloads/0.71/bigbluebutton.tar.gz
+tar xzvf bigbluebutton.tar.gz
 }}}
-
-		
+	
 == Disable Security settings for TOMCAT6 ==
 {{{		
 cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=yes/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
@@ -285,8 +280,7 @@ quit
 
 == Install bbb-web ==
 {{{
-cd /var/lib/tomcat6/webapps
-cp /tmp/bigbluebutton.war ./bigbluebutton.war
+cp /tmp/bigbluebutton.war /var/lib/tomcat6/webapps/bigbluebutton.war
 }}}
 
 == Determine PDF2SWF, CONVERT and GS applications ==
@@ -391,51 +385,39 @@ mysql>
 
 == Create the Presentation Upload directory ==
 {{{
-  mkdir /var/bigbluebutton
-  chown -R tomcat6:adm /var/bigbluebutton
-  chmod -R 777 /var/bigbluebutton
+mkdir /var/bigbluebutton
+chown -R tomcat6:adm /var/bigbluebutton
+chmod -R 777 /var/bigbluebutton
 }}}
 
 == Install bbb-apps ==
-{{{
- cd /usr/share/red5/webapps
- cp /tmp/bigbluebutton-apps.tar.gz ./
- 
- tar zxvf bigbluebutton-apps.tar.gz
- rm -rf bigbluebutton-apps.tar.gz
+{{{ 
+tar xzvf bigbluebutton-webapps.tar.gz
+mv bigbluebutton /usr/share/red5/webapps
 }}}
 
 == Install bbb-deskshare-app ==
 {{{
-  cd /usr/share/red5/webapps
-  cp /tmp/deskshare.tar.gz ./
-  tar zxvf deskshare.tar.gz
-  rm deskshare.tar.gz
+tar xzvf deskshare.tar.gz
+mv deskshare /usr/share/red5/webapps/
 }}}
 
 == Install bbb-video-app ==
 {{{
-  cd /usr/share/red5/webapps
-  cp /tmp/video.tar.gz ./
-  tar zxvf video.tar.gz
-  rm video.tar.gz
+tar xzvf video.tar.gz
+mv video /usr/share/red5/webapps/
 }}}
 
 == Install bbb-voice-app ==
 {{{
- cd /usr/share/red5/webapps
- cp /tmp/sip.tar.gz ./
- tar zxvf sip.tar.gz
- rm sip.tar.gz
+tar xzvf sip.tar.gz
+mv sip /usr/share/red5/webapps/
 }}}
 
 == Install bbb-default ==
 {{{
- cd /var/www
- cp /tmp/bbb-default.tar.gz ./
- tar zxvf bbb-default.tar.gz
- mv web bigbluebutton-default
- rm bbb-default.tar.gz
+tar xzvf bbb-default.tar.gz
+mv bigbluebutton-default /var/www
 }}}
 
 Now we need to create bbb_api_conf.jsp, which will hold our GUID and the !BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively.
@@ -452,19 +434,15 @@ String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
 
 == Install bbb-client ==
 {{{
-  cd /var/www
-  mkdir bigbluebutton
-  cd bigbluebutton 
-  cp /tmp/client.tar.gz ./
-  tar zxvf client.tar.gz
-  rm client.tar.gz
-  mv bin client
+cd /tmp
+tar xzvf client.tar.gz
+mv client /var/www/bigbluebutton
 }}}
 
 == Edit client config ==
   
 {{{
- vi /var/www/bigbluebutton/client/conf/config.xml
+vi /var/www/bigbluebutton/client/conf/config.xml
 }}}
 
  * Change the uri to your IP address
@@ -473,61 +451,80 @@ Your config.xml should look something like:
 {{{
 <?xml version="1.0" ?>
 <config>
-    <version>0.4</version>
-    <porttest host="192.168.0.120" application="video"/>    
-	<modules>
+    <localeversion>0.7</localeversion>
+    <version>3764-2010-10-20</version>
+    <help url="http://192.168.0.211/help.html"/>
+    <porttest host="192.168.0.211" application="video"/>
+    <application uri="rtmp://192.168.0.211/bigbluebutton" host="http://192.168.0.211/bigbluebutton/api/enter" />
+    <language userSelectionEnabled="true" />
+    <skinning enabled="false" url="branding/css/theme.swf" />
+    <debug showDebugWindow="false" />
 
-		<module name="VideoModule" url="VideoModule.swf" 
-			uri="rtmp://192.168.0.120/video"
-			onUserJoinedEvent="START"
-			onUserLogoutEvent="STOP"	
-		/>
-		<module name="ChatModule" url="ChatModule.swf" 
-			uri="rtmp://192.168.0.120/bigbluebutton" 
-			loadNextModule="PresentationModule"	
-			onUserJoinedEvent="START"
-			onUserLogoutEvent="STOP"		 
-		/>
-		<module name="ViewersModule" url="ViewersModule.swf" 
-			uri="rtmp://192.168.0.120/bigbluebutton" 
-			host="http://192.168.0.120/bigbluebutton/conference-session/enter"
-			onAppInitEvent="LOAD" loadNextModule="ChatModule"
-			onAppStartEvent="START"
-			onUserLogoutEvent="STOP"
-		/>	
-		<module name="ListenersModule" url="ListenersModule.swf" 
-			uri="rtmp://192.168.0.120/bigbluebutton" 
-			recordingHost="http://192.168.0.120"
-			loadNextModule="DeskShareModule"
-			onUserJoinedEvent="START"
-			onUserLogoutEvent="STOP"
-		/>
-		<module name="PresentationModule" url="PresentationModule.swf" 
-			uri="rtmp://192.168.0.120/bigbluebutton" 
-			host="http://192.168.0.120" 
-			loadNextModule="ListenersModule"
-			onUserJoinedEvent="START" 
-			onUserLogoutEvent="STOP"
-		/>
-		
-		<module name="DeskShareModule" url="DeskShareModule.swf" 
-			uri="rtmp://192.168.0.120/deskShare" 
-			onUserJoinedEvent="START" 
-			onUserLogoutEvent="STOP"
-			loadNextModule="PhoneModule"
-		/>
-		
-		<module name="PhoneModule" url="PhoneModule.swf" 
-			uri="rtmp://192.168.0.120/sip" 
-			onUserJoinedEvent="START" 
-			onUserLogoutEvent="STOP"
-			loadNextModule="VideoModule"
-		/>
-	</modules>
+        <modules>
+
+                <module name="ChatModule" url="ChatModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/bigbluebutton"
+                        dependsOn="ViewersModule"
+                        translationOn="true"
+                        translationEnabled="true"
+                />
+
+                <module name="ViewersModule" url="ViewersModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/bigbluebutton"
+                        host="http://192.168.0.211/bigbluebutton/api/enter"
+                        allowKickUser="true"
+                />
+
+                <module name="ListenersModule" url="ListenersModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/bigbluebutton"
+                        recordingHost="http://192.168.0.211"
+                />
+
+                <module name="DeskShareModule"
+                        url="DeskShareModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/deskShare"
+                />
+
+                <module name="PhoneModule" url="PhoneModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/sip"
+                        dependsOn="ViewersModule"
+                />
+
+                <module name="VideoconfModule" url="VideoconfModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/video"
+                        dependsOn="ViewersModule"
+                        videoQuality="100"
+                        presenterShareOnly="false"
+                />
+
+                <module name="WhiteboardModule" url="WhiteboardModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/bigbluebutton"
+                        dependsOn="PresentModule"
+                />
+
+                <module name="PresentModule" url="PresentModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/bigbluebutton"
+                        host="http://192.168.0.211"
+                        dependsOn="ViewersModule"
+                />
+
+                <!--<module name="ExampleChatModule" url="ExampleChatModule.swf?v=56"
+            uri="rtmp://192.168.0.211/bigbluebutton"
+            host="http://192.168.0.211"
+                />-->
+
+                <!--<module name="BreakoutModule" url="BreakoutModule.swf?v=3764"
+                        uri="rtmp://192.168.0.211/bigbluebutton"
+                        host="http://192.168.0.211"
+                        dependsOn="ViewersModule"
+                        salt="1708e5ecf25b7142b06f2338b4ea3cf1"
+                />-->
+
+        </modules>
 </config>
 }}}
 
-Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.120/< YOUR-IP >/g
+Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0.211/< YOUR-IP >/g
 
 
 === Install bbb-conf ===
@@ -535,14 +532,15 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
 
 {{{ 
-  wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
-  sudo mv bbb-conf /usr/local/bin 
-  sudo chmod ugo+x /usr/local/bin/bbb-conf 
+cd /tmp
+wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
+sudo mv bbb-conf /usr/local/bin 
+sudo chmod a+x /usr/local/bin/bbb-conf 
 }}}
 
 You should now be able to type
 {{{
-   bbb-conf -c
+bbb-conf -c
 }}}
 
 
@@ -576,13 +574,13 @@ mkdir /var/log/bigbluebutton
 
 # create an empty log file
 touch /var/log/bigbluebutton/bbb-web.log
-chmod 777 /var/log/bigbluebutton/bbb-web.log
+chown tomcat6:tomcat6 /var/log/bigbluebutton/bbb-web.log
 
 # restart server
 
 service nginx restart
 service activemq restart
-service asterisk restart
+service freeswitch restart
 service red5 restart
 service tomcat6 restart
 }}}
