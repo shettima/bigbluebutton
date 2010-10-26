@@ -1,4 +1,4 @@
-#summary How to make !BigBlueButton look the way you want it to.
+#summary How to make BigBlueButton look the way you want it to.
 
 = Introduction =
 From !BigBlueButton 0.71 and on, you are able to customize the look and feel of your !BigBlueButton client using custom images and a single CSS file.
