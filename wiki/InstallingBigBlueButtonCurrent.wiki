@@ -83,8 +83,8 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 Once you have internet connection, update and upgrade your VM.
 {{{
-sudo apt-get update
-sudo apt-get upgrade
+apt-get update
+apt-get upgrade
 }}}
 
 == Install MySQL ==
@@ -139,10 +139,10 @@ apt-get install nginx
 
 == Install ActiveMQ ==
 {{{
-cd /tmp
+cd /tmp/bbb/bbb
 wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.4.1/apache-activemq-5.4.1-bin.tar.gz
 tar zxvf apache-activemq-5.4.1-bin.tar.gz
-mv /tmp/apache-activemq-5.4.1 /usr/share/activemq
+mv /tmp/bbb/bbb/apache-activemq-5.4.1 /usr/share/activemq
 chown -R root:root /usr/share/activemq
 }}}
 
@@ -154,10 +154,10 @@ apt-get install jsvc
 
 == Install red5 ==
 {{{
-cd /tmp
+cd /tmp/bbb/bbb
 wget http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
 tar xvf red5-0.9.1.tar.gz
-mv /tmp/red5-0.9.1 /usr/share/red5
+mv /tmp/bbb/red5-0.9.1 /usr/share/red5
 }}}
 
 Create red5 user
@@ -176,12 +176,12 @@ chmod 775 /usr/share/red5/webapps
 
 == Auto-start ActiveMQ and Red5 on reboot ==
 {{{
-cd /tmp/
+cd /tmp/bbb/
 wget http://bigbluebutton.org/downloads/0.71/init-scripts.tar.gz
 tar xzvf init-scripts.tar.gz
 cd /etc/init.d/
-cp /tmp/activemq ./activemq
-cp /tmp/red5 ./red5
+cp /tmp/bbb/activemq ./activemq
+cp /tmp/bbb/red5 ./red5
 chmod +x red5
 chmod +x activemq
 update-rc.d red5 defaults
@@ -199,10 +199,10 @@ apt-get install freeswitch freeswitch-lang-en
 
 == Configure FreeSWITCH ==
 {{{
-cd /tmp/
+cd /tmp/bbb/
 wget http://bigbluebutton.org/downloads/0.71/freeswitch-config.tar.gz
 cd /opt/freeswitch/
-tar xzvf /tmp/freeswitch-config.tar.gz
+tar xzvf /tmp/bbb/freeswitch-config.tar.gz
 chown -R freeswitch:daemon conf
 chmod -R 755 conf
 sed -i 's/FREESWITCH_ENABLED=\"false\"/FREESWITCH_ENABLED=\"true\"/g' /etc/default/freeswitch
@@ -211,7 +211,7 @@ sed -i 's/FREESWITCH_ENABLED=\"false\"/FREESWITCH_ENABLED=\"true\"/g' /etc/defau
 == Configure Nginx ==
 Be sure to replace < YOUR-IP > with your IP or domain.
 {{{
-cd /tmp
+cd /tmp/bbb
 wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
 cat nginx-bigbluebutton.conf  | sed "s/192.168.0.211/< YOUR-IP >/" > /etc/nginx/sites-available/bigbluebutton
 }}}
@@ -228,7 +228,7 @@ apt-get install openoffice.org
 
 == Configure OpenOffice to start as a service ==
 {{{
-cd /tmp
+cd /tmp/bbb
 wget http://www.bigbluebutton.org/downloads/0.71/bbb-openoffice-headless
 cp bbb-openoffice-headless /etc/init.d/
 }}}
@@ -243,15 +243,15 @@ service bbb-openoffice-headless start
 
 == Download !BigBlueButton ==
 {{{ 
-cd /tmp
+cd /tmp/bbb
 wget http://bigbluebutton.org/downloads/0.71/bigbluebutton.tar.gz
 tar xzvf bigbluebutton.tar.gz
 }}}
 	
 == Disable Security settings for TOMCAT6 ==
 {{{		
-cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=yes/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
-mv -f /tmp/tomcat6 /etc/default/tomcat6		
+cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=yes/TOMCAT6_SECURITY=no/" > /tmp/bbb/tomcat6
+mv -f /tmp/bbb/tomcat6 /etc/default/tomcat6		
 }}}
 
 == Setup the database ==
@@ -275,7 +275,7 @@ quit
 
 == Install bbb-web ==
 {{{
-cp /tmp/bigbluebutton.war /var/lib/tomcat6/webapps/bigbluebutton.war
+cp /tmp/bbb/bigbluebutton.war /var/lib/tomcat6/webapps/bigbluebutton.war
 }}}
 
 == Determine PDF2SWF, CONVERT and GS applications ==
@@ -437,7 +437,7 @@ String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
 
 == Install bbb-client ==
 {{{
-cd /tmp
+cd /tmp/bbb
 tar xzvf client.tar.gz
 mv client /var/www/bigbluebutton
 }}}
@@ -535,7 +535,7 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
 
 {{{ 
-cd /tmp
+cd /tmp/bbb
 wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
 sudo mv bbb-conf /usr/local/bin 
 sudo chmod a+x /usr/local/bin/bbb-conf 
