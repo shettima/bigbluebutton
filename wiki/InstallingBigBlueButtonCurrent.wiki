@@ -139,10 +139,10 @@ apt-get install nginx
 
 == Install ActiveMQ ==
 {{{
-cd /tmp/bbb/bbb
+cd /tmp/bbb
 wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.4.1/apache-activemq-5.4.1-bin.tar.gz
 tar zxvf apache-activemq-5.4.1-bin.tar.gz
-mv /tmp/bbb/bbb/apache-activemq-5.4.1 /usr/share/activemq
+mv /tmp/bbb/apache-activemq-5.4.1 /usr/share/activemq
 chown -R root:root /usr/share/activemq
 }}}
 
@@ -154,7 +154,7 @@ apt-get install jsvc
 
 == Install red5 ==
 {{{
-cd /tmp/bbb/bbb
+cd /tmp/bbb
 wget http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
 tar xvf red5-0.9.1.tar.gz
 mv /tmp/bbb/red5-0.9.1 /usr/share/red5
