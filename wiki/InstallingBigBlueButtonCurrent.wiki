@@ -123,7 +123,9 @@ Once here, uncomment the partner repository
 
 {{{
 deb http://archive.canonical.com/ubuntu lucid partner
-}}} 
+}}}
+
+Run {{{apt-get update}}} then try installing it once more.
 
 == Install !ImageMagick ==
 {{{
