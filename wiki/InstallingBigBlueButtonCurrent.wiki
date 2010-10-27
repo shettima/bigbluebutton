@@ -180,12 +180,12 @@ cd /tmp/bbb/
 wget http://bigbluebutton.org/downloads/0.71/init-scripts.tar.gz
 tar xzvf init-scripts.tar.gz
 cd /etc/init.d/
-cp /tmp/bbb/activemq ./activemq
-cp /tmp/bbb/red5 ./red5
-chmod +x red5
-chmod +x activemq
-update-rc.d red5 defaults
+mv activemq /etc/init.d/activemq
+mv red5 /etc/init.d/red5
+chmod +x /etc/init.d/activemq
+chmod +x /etc/init.d/red5
 update-rc.d activemq defaults
+update-rc.d red5 defaults
 }}}
 
 == Install FreeSWITCH ==
