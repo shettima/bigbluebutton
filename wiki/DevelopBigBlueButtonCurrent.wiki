@@ -257,7 +257,7 @@ gradle copyToLib
 ant 
 }}}
 
-NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file ./grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
+*NOTE*: If you encounter an error with the webapp redirecting to an invalid client, open the file ./grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
 === BBB apps ===
  # Change directory to {{{bigbluebutton-apps}}}
@@ -285,71 +285,81 @@ gradle deploy
 }}}
 
 === Video app ===
- * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-video}}}
-
+ # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-video}}}
 {{{
-  cd ~/dev/source/git/bigbluebutton/bbb-video
-  
-  # download all dependencies
-  ant resolve
-
-  # build the application
-  ant dist
-
-  # deploy the application to Red5 (/usr/share/red5/webapps)
-  ant deploy
+cd ~/dev/source/bigbluebutton/bbb-video
+}}}  
+ # Download all dependencies
+{{{  
+ant resolve
+}}}
+ # Build the application
+{{{
+ant dist
+}}}
+ # Deploy the application to Red5 (/usr/share/red5/webapps)
+{{{
+ant deploy
 }}}
 
 === Voice app ===
- * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-voice}}}
-
+ # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-voice}}}
 {{{
-  cd ~/dev/source/git/bigbluebutton/bbb-video
-  
-  # download all dependencies 
-  gradle copyToLib
-
-  # build the application
-  gradle war
-
-  # deploy the application to Red5 (/usr/share/red5/webapps)
-  gradle deploy
+cd ~/dev/source/git/bigbluebutton/bbb-video
+}}}
+ # Download all dependencies 
+{{{
+gradle copyToLib
+}}}
+ # Build the application
+{{{
+gradle war
+}}}
+ # Deploy the application to Red5 (/usr/share/red5/webapps)
+{{{ 
+gradle deploy
 }}}
 
 === Desktop Sharing app ===
- * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/deskshare}}}
+ # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/deskshare}}}
 
 {{{
-  cd ~/dev/source/git/bigbluebutton/deskshare
-  
-  # download all dependencies 
-  gradle copyToLib
-
-  # build the server component
-  cd app
-
-  # builds the application
-  gradle war
-
-  # deploy the application to Red5 (/usr/share/red5/webapps)
-  gradle deploy
-
-  # To build the applet
-  cd applet
-
-  gradle jar
-
-  # create the signing key
-  ant create-signing-key
-
-  # sign the applet
-  ant sign-jar
-
-  # copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
-  cp ~/dev/source/git/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources/prod
-
-  # compile the bbb-client (see Developing with bbb client)
+cd ~/dev/source/bigbluebutton/deskshare
 }}}
+ # Download all dependencies 
+{{{
+gradle copyToLib
+}}}
+ # Build the server component
+{{{ 
+cd app
+}}}
+ # Builds the application
+{{{
+gradle war
+}}}
+ # Deploy the application to Red5 (/usr/share/red5/webapps)
+{{{ 
+gradle deploy
+}}}
+ # To build the applet
+{{{  
+cd applet
+gradle jar
+}}}
+ # Create the signing key
+{{{
+ant create-signing-key
+}}}
+ # Sign the applet
+{{{ 
+ant sign-jar
+}}}
+ # Copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
+{{{
+cp ~/dev/source/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources/prod
+}}}
+ # compile the bbb-client (see Developing with bbb client)
 
 == TIPS ==
 * Run bbb-conf --check *
