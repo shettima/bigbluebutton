@@ -268,21 +268,21 @@ NOTE: If you encounter an error with the webapp redirecting to an invalid client
 {{{
 cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
 }}}
-#Generate Eclipse project files
+# Generate Eclipse project files
 {{{
 gradle eclipse
 }}}
-#Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+# Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
 {{{
 gradle copyToLib
 }}}
-#Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+# Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bigbluebutton-apps
 
-#Right-click on the project and add Scala Nature and Groovy Nature
+# Right-click on the project and add Scala Nature and Groovy Nature
 
-#Setup your build path and library
+# Setup your build path and library
 
-Build the application
+# Build the application
 {{{
 gradle war
 }}}
