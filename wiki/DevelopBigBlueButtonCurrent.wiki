@@ -222,42 +222,38 @@ On Windows:
  * See the *Setting up Flash Builder to work with the client* heading above.
 
 === BBB Commons ===
-The bbb-commons contain classes that are common to bbb-web and bbb-apps.
- 
+ # The bbb-commons contain classes that are common to bbb-web and bbb-apps.
 {{{
 cd ~/dev/source/bigbluebutton/bbb-common-message
 }}}
-Generate Eclipse project files
+ # Generate Eclipse project files
 {{{
 gradle eclipse
 }}}
-Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bbb-common-message
-
-Setup the build path. Right-click on the project, chose Build Path->Configure Build Path
-Click on the Source tab and add folder src/main/java
-
-Compile the classes
+ # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-common-message}}}
+ # Setup the build path. Right-click on the project, chose Build Path->Configure Build Path
+ # Click on the Source tab and add folder {{{src/main/java}}}
+ # Compile the classes
 {{{
 gradle jar  
 }}}
-Copy the jar file to /home/firstuser/dev/repo
+ # Copy the jar file to /home/firstuser/dev/repo
 {{{
-gradle uploadArchives 
+ # gradle uploadArchives 
 }}}
 
 === BBB Web ===
-
+ # Change directory to {{{bigbluebutton-web}}}
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
 }}}
-BBB web depends on bbb-commons,  
-Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
-{{{
-gradle copyToLib 
-}}}
-Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
-  
-Start bbb-web
+ # BBB web depends on bbb-commons
+	Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+	{{{
+	gradle copyToLib 
+	}}}
+ # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
+ # Start bbb-web
 {{{
 ant 
 }}}
@@ -277,7 +273,7 @@ gradle eclipse
 {{{
 gradle copyToLib
 }}}
- # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+ # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
  # Right-click on the project and add Scala Nature and Groovy Nature
  # Setup your build path and library
  # Build the application
