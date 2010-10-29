@@ -74,17 +74,17 @@ Then restart nginx.
 
 === Setting up Flash Builder to work with the client ===
 To develop the client using Flash Builder, you can follow these steps:
-  * Install Flash Builder on your Windows/Mac machine.
-  * Setup samba on the VM and mount the VM drive as described earlier in this document.
-  * In Flash Builder, import the project by going to File->Import->Flash Builder Project.
-    * The choose Import Project From
-    * For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
-    * Click finish.
-  * Right click on the project, go to Properties>Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4)
-  * In the same window, make sure the Flash Player minimum version is set to at least 10.0.0.
-  * In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package).
-  * Right click on src/!BigBlueButton.mxml and click on Set As Default Application.
-  * Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
+  # Install Flash Builder on your Windows/Mac machine.
+  # Setup samba on the VM and mount the VM drive as described earlier in this document.
+  # In Flash Builder, import the project by going to File->Import->Flash Builder Project.
+    # The choose Import Project From
+    # For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
+    # Click finish.
+  # Right click on the project, go to Properties>Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4)
+  # In the same window, make sure the Flash Player minimum version is set to at least 10.0.0.
+  # In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package).
+  # Right click on src/!BigBlueButton.mxml and click on Set As Default Application.
+  # Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
 
