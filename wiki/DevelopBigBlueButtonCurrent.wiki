@@ -249,9 +249,9 @@ cd ~/dev/source/bigbluebutton/bigbluebutton-web
 }}}
  # BBB web depends on bbb-commons
 	Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
-	{{{
-	gradle copyToLib 
-	}}}
+{{{
+gradle copyToLib 
+}}}
  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
  # Start bbb-web
 {{{
