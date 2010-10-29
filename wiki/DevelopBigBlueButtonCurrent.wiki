@@ -265,6 +265,7 @@ ant
 NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file ./grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
 === BBB apps ===
+ # Change directory to {{{bigbluebutton-apps}}}
 {{{
 cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
 }}}
@@ -277,11 +278,8 @@ gradle eclipse
 gradle copyToLib
 }}}
  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bigbluebutton-apps
-
  # Right-click on the project and add Scala Nature and Groovy Nature
-
  # Setup your build path and library
-
  # Build the application
 {{{
 gradle war
