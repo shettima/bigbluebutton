@@ -405,18 +405,18 @@ dpkg -l | grep bbb
 
 which results:
 {{{
-ii  bbb-apps						0.71ubuntu2				BigBlueButton applications for Red5
-ii  bbb-apps-deskshare				0.71ubuntu2				BigBlueButton deskshare module for Red5
-ii  bbb-apps-sip					0.71ubuntu2				BigBlueButton SIP module for Red5
-ii  bbb-apps-video					0.71ubuntu2				BigBlueButton video module for Red5
-ii  bbb-client						0.71ubuntu15			BigBlueButton Flash client
-ii  bbb-common						0.71ubuntu6				BigBlueButton common files
-ii  bbb-config						0.71ubuntu6				BigBlueButton group package
-ii  bbb-freeswitch-config			0.71ubuntu2				BigBlueButton group package
-ii  bbb-openoffice-headless			0.71ubuntu2				BigBlueButton wrapper for OpenOffice
-ii  bbb-voice-conference			0.71ubuntu3				BigBlueButton voice conference files
-ii  bbb-web							0.71ubuntu4				BigBlueButton web interface
-ii  bigbluebutton					0.71ubuntu4				Open Source Web Conferencing System (bbb)
+ii  bbb-apps                        0.71ubuntu2             BigBlueButton applications for Red5
+ii  bbb-apps-deskshare              0.71ubuntu2             igBlueButton deskshare module for Red5
+ii  bbb-apps-sip                    0.71ubuntu2             BigBlueButton SIP module for Red5
+ii  bbb-apps-video                  0.71ubuntu2             BigBlueButton video module for Red5
+ii  bbb-client                      0.71ubuntu15                BigBlueButton Flash client
+ii  bbb-common                      0.71ubuntu6             BigBlueButton common files
+ii  bbb-config                      0.71ubuntu6             BigBlueButton group package
+ii  bbb-freeswitch-config           0.71ubuntu2                     BigBlueButton group package
+ii  bbb-openoffice-headless         0.71ubuntu2             BigBlueButton wrapper for OpenOffice
+ii  bbb-voice-conference            0.71ubuntu3             BigBlueButton voice conference files
+ii  bbb-web                         0.71ubuntu4             BigBlueButton web interface
+ii  bigbluebutton                   0.71ubuntu4             Open Source Web Conferencing System (bbb)
 }}}
 
  * To remove a package type {{{apt-get remove <package name>}}}
@@ -478,116 +478,70 @@ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
 ant
 }}} 
 
-
-
  * {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}
 
 Need to run grails app, as changes where made to the url when joining the conference.
 {{{
-  sudo /etc/init.d/tomcat6 stop
-  cd ~/dev/source/bigbluebutton/bigbluebutton-web
-
-  # did you already run "bbb-conf --setup-dev web"? If not, run it now
-
-  grails run-war
+sudo /etc/init.d/tomcat6 stop
+cd ~/dev/source/bigbluebutton/bigbluebutton-web
+}}}
+ * Did you already run "bbb-conf --setup-dev web"? If not, run it now
+{{{
+grails run-war
 }}}
 
 Copy a new config.xml as the loading of modules have changed.
 {{{
-  cd ~/dev/source/bigbluebutton/bigbluebutton-client
-  cp resources/config.xml.template src/conf/config.xml
-
-  # Edit config.xml replacing "HOST" with your IP
-
+cd ~/dev/source/bigbluebutton/bigbluebutton-client
+cp resources/config.xml.template src/conf/config.xml
 }}}
-
+ * Edit {{{config.xml}}} replacing "HOST" with your IP
 
 === Installing FreeSWITCH ===
 These instructions will guide you on how to make BBB work with FreeSWITCH.
 
 Pull the latest code, build and deploy
 {{{
-  cd /home/firstuser/dev/source/bigbluebutton
-  git pull
+cd /home/firstuser/dev/source/bigbluebutton
+git pull
 
-  cd bbb-voice
-  gradle war
-  gradle deploy
+cd bbb-voice
+gradle war
+gradle deploy
 
-  cd ../bigbluebutton-apps
-  gradle war
-  gradle deploy
+cd ../bigbluebutton-apps
+gradle war
+gradle deploy
 }}}
 
-Install FreeSWITCH
+====Debugging FreeSWITCH====
+To start FreeSWITCH so you can see any errors produced by it run:
 {{{
-  sudo apt-get install python-software-properties 
-  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
-  sudo apt-get update 
-  sudo apt-get install freeswitch freeswitch-lang-en 
+cd /opt/freeswitch/bin
+./freeswitch
 }}}
 
-If you are using Ubuntu-9.04 you probably will get the message: add-apt-repository command not found. If this is the case, download this file: http://launchpadlibrarian.net/44222863/python-software-properties_0.75.10_all.deb and install it with
-{{{
-dpkg -i python-software-properties_0.75.10_all.deb
-}}}
-
-Install audio files 
-{{{
-   sudo mkdir /opt/freeswitch/sounds
-   cd /opt/freeswitch/sounds
-   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz   
-   tar zxvf freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-music-8000-1.0.8.tar.gz
-   tar zxvf freeswitch-sounds-music-8000-1.0.8.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-music-16000-1.0.8.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-music-32000-1.0.8.tar.gz
-   tar zxvf freeswitch-sounds-music-16000-1.0.8.tar.gz
-   tar zxvf freeswitch-sounds-music-32000-1.0.8.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
-   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
-   tar zxvf freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
-   tar zxvf freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
-}}}
-
-Copy the FS configuration files
-{{{
-  cd /opt/freeswitch
-  mv conf conf.dist
-  cp -a /home/firstuser/dev/source/bigbluebutton/bbb-voice-conference/config/freeswitch/conf ./
-  chown -R freeswitch:daemon conf
-  chmod -R 750 conf
-}}}
-
+If voice isn't working in the BBB interface or your listeners are not showing up the most likely reason is that FreeSWITCH and Red5 are not communicating properly.
+Check the configuration files and make sure that FreeSWITCH and Red5 are pointing at each other.
 Edit {{{/opt/freeswitch/conf/autoload_configs/event_socket.conf.xml}}}. 
 {{{
-   vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
-
-   # Set listen-ip to your IP
-   <param name="listen-ip" value="192.168.0.166"/>
+vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
 }}}
-
+Check the listen-ip parameter
+{{{
+<param name="listen-ip" value="192.168.0.166"/>
+}}}
 Edit {{{vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml}}}
 {{{
-  vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
-
-  # Change bbb-voice-freeswitch.xml to bbb-voice-asterisk.xml
-    <import resource="bbb-voice-freeswitch.xml" />
+vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
+}}}
+Change bbb-voice-freeswitch.xml to bbb-voice-asterisk.xml
+{{{
+<import resource="bbb-voice-freeswitch.xml" />
 }}}
 
 Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
+Set esl.host to your IP
 {{{
-  # Set esl.host to your IP
-  esl.host=192.168.0.166
-}}}
-
-Stop Asterisk
-{{{
-  sudo /etc/init.d/asterisk stop
-}}}
-
-Start FS
-{{{
-  cd /opt/freeswitch/bin
-  ./freeswitch
+esl.host=192.168.0.166
 }}}
