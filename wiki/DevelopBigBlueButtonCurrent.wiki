@@ -61,8 +61,8 @@ To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites
 
 {{{
 location /client {
-		root    /var/www/bigbluebutton;
-		index  index.html index.htm;
+	root    /var/www/bigbluebutton;
+	index  index.html index.htm;
 }
 }}}
 
@@ -406,13 +406,13 @@ dpkg -l | grep bbb
 which results:
 {{{
 ii  bbb-apps                        0.71ubuntu2             BigBlueButton applications for Red5
-ii  bbb-apps-deskshare              0.71ubuntu2             igBlueButton deskshare module for Red5
+ii  bbb-apps-deskshare              0.71ubuntu2             BigBlueButton deskshare module for Red5
 ii  bbb-apps-sip                    0.71ubuntu2             BigBlueButton SIP module for Red5
 ii  bbb-apps-video                  0.71ubuntu2             BigBlueButton video module for Red5
-ii  bbb-client                      0.71ubuntu15                BigBlueButton Flash client
+ii  bbb-client                      0.71ubuntu15            BigBlueButton Flash client
 ii  bbb-common                      0.71ubuntu6             BigBlueButton common files
 ii  bbb-config                      0.71ubuntu6             BigBlueButton group package
-ii  bbb-freeswitch-config           0.71ubuntu2                     BigBlueButton group package
+ii  bbb-freeswitch-config           0.71ubuntu2             BigBlueButton group package
 ii  bbb-openoffice-headless         0.71ubuntu2             BigBlueButton wrapper for OpenOffice
 ii  bbb-voice-conference            0.71ubuntu3             BigBlueButton voice conference files
 ii  bbb-web                         0.71ubuntu4             BigBlueButton web interface
