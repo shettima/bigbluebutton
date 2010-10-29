@@ -248,7 +248,7 @@ gradle jar
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
 }}}
  # BBB web depends on bbb-commons
-	Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+	* Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
 {{{
 gradle copyToLib 
 }}}
