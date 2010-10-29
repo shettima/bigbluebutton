@@ -1,0 +1,580 @@
+#summary How to develop BigBlueButton 0.7.
+
+<wiki:toc max_depth="2" />
+
+= Talking to the developers =
+Write to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=1 bigbluebutton-dev] mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
+
+= Setting up a !BigBlueButton Development Environment =
+The easiest way to develop !BigBlueButton is through an already setup Virtual Machine, which you can download [BigBlueButtonVM here]. The VM has tools already set up which will get you up and running quickly. The VM has an added benefit in that you can develop on it from your Windows or Mac environment, where you can get access to Flash Builder. This document explains how to develop with the VM in mind.
+
+== Setting up access to the VM file system ==
+From your Windows environment, you'll want to access the !BigBlueButton source code that resides on your VM.  To do this, login to the VM as `firstuser` and issue the following command
+
+{{{
+bbb-conf --setup-samba
+}}}
+
+This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tools -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, the ip being the local address of your VM.
+
+See the [BBBConf] page for troubleshooting tips.
+
+
+= Working with the source =
+
+== Checking out the source code ==
+Type the following command to checkout !BigBlueButton from our [http://www.github.com/bigbluebutton github repository].
+{{{
+bbb-conf --checkout
+}}}
+
+This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}. 
+
+If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub help] has a lot of information too.
+
+== Setting up the development environment for !BigBlueButton Flex client: bbb-client ==
+To setup a development environment for bbb-client, enter the following command
+
+{{{
+bbb-conf --setup-dev client
+}}}
+
+This will setup some directories and modify nginx config to use your development client.
+
+Everything is now setup to compile bbb-client.
+
+{{{
+cd ~/dev/source/bigbluebutton/bigbluebutton-client
+ant
+}}}
+
+Behind the scenes, nginx is now loading the client from `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.
+If the IP address for your !BigBlueButtom VM is 192.168.0.182, you should be able to browse to http://192.168.0.182/, login to the web interface, and see your new client load.    
+
+Every time you make a change to the client source, you need to rebuild it using the 'ant' command in order for the changes to show in your browser. If you haven't changed the localization files then you only need to run
+{{{
+ant modules
+}}}
+This will skip building the localization .swf files, and save you a lot of time.
+
+To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client' match the following.
+
+{{{
+location /client {
+		root    /var/www/bigbluebutton;
+		index  index.html index.htm;
+}
+}}}
+
+Then restart nginx.
+
+{{{
+/etc/init.d/nginx restart
+}}}
+
+=== Setting up Flash Builder to work with the client ===
+To develop the client using Flash Builder, you can follow these steps:
+  * Install Flash Builder on your Windows/Mac machine.
+  * Setup samba on the VM and mount the VM drive as described earlier in this document.
+  * In Flash Builder, import the project by going to File->Import->Flash Builder Project.
+    * The choose Import Project From
+    * For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
+    * Click finish.
+  * Right click on the project, go to Properties>Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4)
+  * In the same window, make sure the Flash Player minimum version is set to at least 10.0.0.
+  * In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package).
+  * Right click on src/!BigBlueButton.mxml and click on Set As Default Application.
+  * Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
+
+This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
+
+  * On the client code, to src/conf/config.xml and change the 'host' property of the !ViewersModule to point to "conf/join-mock.xml".
+  * You should now be able to launch from Flash Builder using the Run/Debug button.
+
+=== Creating a new !BigBlueButton Module ===
+Follow this short [SampleModule tutorial].
+
+
+== Setting up the development environment for !BigBlueButton web interface: bbb-web ==
+
+The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
+
+{{{
+  bbb-conf --setup-dev web
+}}}
+
+
+This script does the following steps:
+
+  # set your local IP address into  `~/.grails/bigbluebutton-config.properties`
+  # make all files in `/var/bigbluebutton` writable by everyone
+
+The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
+
+Note: If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
+
+Before you can compile and run your version of bbb-web, you need to stop tomcat.  
+
+{{{
+sudo /etc/init.d/tomcat6 stop
+}}}
+
+Next, let's compile and run bbb-web
+
+{{{
+cd ~/dev/source/bigbluebutton/bigbluebutton-web
+ant
+}}}
+
+The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
+
+If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
+
+{{{
+  sudo /etc/init.d/tomcat6 start
+}}}
+
+*Note:* After starting the tomcat server try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
+
+{{{
+bbb-conf -c
+}}}
+
+If the issue is listed under the Potential Problems heading then to resolve the issue enter
+
+{{{
+ps -aef | grep grails
+}}}
+
+This will list the grails process. Determine its pid (process id) and kill it. Then start the tomcat server. If the pid was 5012, enter the following commands.
+
+{{{
+sudo kill -9 5012
+sudo /etc/init.d/tomcat6 start
+}}}
+
+
+*Note:* In !BigBlueButton 0.63, we are depreced the grails interface.  If you want to create a front-end to !BigBlueButton, use the !BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
+
+== Setting up the development environment for !BigBlueButton red5 webapp: bbb-apps ==
+
+The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as shown at the end of this section).
+
+To setup a development environment for bbb-apps, enter the following command
+
+{{{
+bbb-conf --setup-dev apps
+}}}
+
+This will 
+
+  # Enable write access to `/usr/share/red5/webapps`
+  # Uninstall the existing `bbb-apps` package
+  # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
+
+Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
+
+At this point red5 is still running.  Before we deploy the local version of bbb-apps, let's stop the red5 server.  Open a new terminal window (if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty]) and enter the command. 
+
+{{{
+sudo /etc/init.d/red5 stop
+}}}
+
+We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
+
+{{{
+cd ~/dev/source/bigbluebutton/bigbluebutton-apps/
+gradle war deploy
+}}}
+
+At this point, the ant script has copied the local build of bbb-apps to `/usr/share/red5/webapps/bigbluebutton`.  Now switch back to the second terminal window and enter the following command:
+
+{{{
+cd /usr/share/red5
+sudo -u red5 ./red5.sh
+}}}
+
+You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility to any errors or exceptions.
+
+If you want to revert back to the packaged version of !BigBlueButton apps, do the following
+
+{{{
+rm -rf /usr/share/red5/webapps/bigbluebutton
+sudo apt-get install bbb-apps
+sudo /etc/init.d/red5 start
+}}}
+----
+
+= Other Notes on setting up a Full Development Environment =
+
+== Pre-requisites ==
+In this environment, we assume you are developing on Windows with Eclipse and Flash Builder. Also, you have the !BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
+
+On Windows:
+ * Install Eclipse
+ * Install the [http://www.scala-ide.org/ Scala Eclipse plugin]
+ * Install the [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
+ * Install Flash Builder
+ * Install JDK 6 and add JAVA_HOME in your environment variables
+ * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
+
+=== Client ===
+ * See the *Setting up Flash Builder to work with the client* heading above.
+
+=== BBB Commons ===
+The bbb-commons contain classes that are common to bbb-web and bbb-apps.
+ 
+{{{
+cd ~/dev/source/bigbluebutton/bbb-common-message
+}}}
+Generate Eclipse project files
+{{{
+gradle eclipse
+}}}
+Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bbb-common-message
+
+Setup the build path. Right-click on the project, chose Build Path->Configure Build Path
+Click on the Source tab and add folder src/main/java
+
+Compile the classes
+{{{
+gradle jar  
+}}}
+Copy the jar file to /home/firstuser/dev/repo
+{{{
+gradle uploadArchives 
+}}}
+
+=== BBB Web ===
+
+{{{
+cd ~/dev/source/bigbluebutton/bigbluebutton-web
+}}}
+BBB web depends on bbb-commons,  
+Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+{{{
+gradle copyToLib 
+}}}
+Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
+  
+Start bbb-web
+{{{
+ant 
+}}}
+
+NOTE: If you encounter an error with the webapp redirecting to an invalid client, open the file ./grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
+
+=== BBB apps ===
+{{{
+cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+}}}
+#Generate Eclipse project files
+{{{
+gradle eclipse
+}}}
+#Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
+{{{
+gradle copyToLib
+}}}
+#Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+
+#Right-click on the project and add Scala Nature and Groovy Nature
+
+#Setup your build path and library
+
+Build the application
+{{{
+gradle war
+}}}
+Deploy the application to Red5 (/usr/share/red5/webapps)
+{{{
+gradle deploy
+}}}
+
+=== Video app ===
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-video}}}
+
+{{{
+  cd ~/dev/source/git/bigbluebutton/bbb-video
+  
+  # download all dependencies
+  ant resolve
+
+  # build the application
+  ant dist
+
+  # deploy the application to Red5 (/usr/share/red5/webapps)
+  ant deploy
+}}}
+
+=== Voice app ===
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-voice}}}
+
+{{{
+  cd ~/dev/source/git/bigbluebutton/bbb-video
+  
+  # download all dependencies 
+  gradle copyToLib
+
+  # build the application
+  gradle war
+
+  # deploy the application to Red5 (/usr/share/red5/webapps)
+  gradle deploy
+}}}
+
+=== Desktop Sharing app ===
+ * Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/deskshare}}}
+
+{{{
+  cd ~/dev/source/git/bigbluebutton/deskshare
+  
+  # download all dependencies 
+  gradle copyToLib
+
+  # build the server component
+  cd app
+
+  # builds the application
+  gradle war
+
+  # deploy the application to Red5 (/usr/share/red5/webapps)
+  gradle deploy
+
+  # To build the applet
+  cd applet
+
+  gradle jar
+
+  # create the signing key
+  ant create-signing-key
+
+  # sign the applet
+  ant sign-jar
+
+  # copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
+  cp ~/dev/source/git/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources/prod
+
+  # compile the bbb-client (see Developing with bbb client)
+}}}
+
+== TIPS ==
+* Run bbb-conf --check *
+Run {{{bbb-conf --check}}} to see if there are any potential problems.
+
+* Running Red5 *
+
+It is better to have multiple ssh windows when developing. On one window, you can start and stop Red5.
+{{{
+   # Stop Red5
+   sudo /etc/init.d/red5 stop
+
+   # cd to Red5 directory
+   cd /usr/share/red5
+
+   # Start Red5 as red5 user
+   sudo -u red5 ./red5.sh
+
+}}}
+
+On another window, you can make your code changes and deploy to Red5, e.g.
+{{{
+  cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+  
+  # make some changes
+  
+  # Build
+  gradle war
+
+  # Deploy 
+  gradle deploy
+
+}}}
+
+
+*Remove BBB packages*
+
+List the BBB packages by typing
+{{{
+dpkg -l | grep bbb
+}}}
+
+which results:
+{{{
+ii  bbb-apps-sip                      0.63.0ubuntu27                      BigBlueButton SIP module for Red5
+ii  bbb-apps-video                    0.63.0ubuntu2                       BigBlueButton video module for Red5
+ii  bbb-client                        0.63.0ubuntu228                     BigBlueButton Flash client
+ii  bbb-common                        0.63.0ubuntu105                     BigBlueButton common files
+ii  bbb-voice-conference              0.63.0ubuntu30                      BigBlueButton voice conference files
+ii  bbb-web                           0.63.0ubuntu120                     BigBlueButton web interface
+ii  openoffice-headless               0.63.0ubuntu8                       BigBlueButton wrapper for openoffice (bbb)
+
+}}}
+
+ * To remove, type e.g. {{{apt-get remove bbb-apps}}}
+
+<br>
+<br>
+
+
+= Developing on the bleeding edge =
+
+== Building the client ==
+Here are some extra steps you need to do if you are developing on the {{{master}}} branch. These extra steps are needed because of the changes to the code that's still in development. If you run into issues, please send email to the bigbluebutton-dev mailing list.
+
+Make sure you are on the tip of the blade.
+{{{
+  git pull origin master
+}}}
+
+We have added Speex support for BBB Voice. This requires version 3.5 of the Flex SDK. Thus, to build the client, you need to download Flex 3.5 SDK from
+http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+3
+
+Unzip the SDK into your FlexBuilder/sdk folder and modify the compiler settings to use this SDK.
+
+To build using {{{ant}}}, unzip the folder into {{{/home/firstuser/dev/tools}}}.
+{{{
+  cd /home/firstuser/dev/tools
+  
+  # Uncompress the SDK. This will uncompress the files into a c folder
+  unzip -dc flex_sdk_3.5.0.12683_mpl.zip
+  
+  # Rename the c folder to flex-3.5.0.12683
+  mv c flex-3.5.0.12683
+
+  # Check if you have tofrodos
+  fromdos
+
+  # IF it says command not found, you have to install tofrodos
+  sudo apt-get install tofrodos
+
+  # Make the needed files unix compatible and executable
+  cd flex-3.5.0.12683/bin
+  fromdos aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
+  chmod 755 aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
+  
+  # Rename the flex3 folder to flex-3.4.1
+  cd /home/firstuser/dev/tools
+  mv flex3 flex-3.4.1
+  
+  # Create a softlink to the 3.5 SDK as the FLEX_HOME env var points to /home/firstuser/dev/tools/flex3
+  ln -s flex-3.5.0.12683 flex3
+
+  cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
+  ant
+
+}}} 
+
+
+
+ * {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}
+
+Need to run grails app, as changes where made to the url when joining the conference.
+{{{
+  sudo /etc/init.d/tomcat6 stop
+  cd ~/dev/source/bigbluebutton/bigbluebutton-web
+
+  # did you already run "bbb-conf --setup-dev web"? If not, run it now
+
+  grails run-war
+}}}
+
+Copy a new config.xml as the loading of modules have changed.
+{{{
+  cd ~/dev/source/bigbluebutton/bigbluebutton-client
+  cp resources/config.xml.template src/conf/config.xml
+
+  # Edit config.xml replacing "HOST" with your IP
+
+}}}
+
+
+=== Installing FreeSWITCH ===
+These instructions will guide you on how to make BBB work with FreeSWITCH.
+
+Pull the latest code, build and deploy
+{{{
+  cd /home/firstuser/dev/source/bigbluebutton
+  git pull
+
+  cd bbb-voice
+  gradle war
+  gradle deploy
+
+  cd ../bigbluebutton-apps
+  gradle war
+  gradle deploy
+}}}
+
+Install FreeSWITCH
+{{{
+  sudo apt-get install python-software-properties 
+  sudo add-apt-repository ppa:freeswitch-drivers/freeswitch-nightly-drivers 
+  sudo apt-get update 
+  sudo apt-get install freeswitch freeswitch-lang-en 
+}}}
+
+If you are using Ubuntu-9.04 you probably will get the message: add-apt-repository command not found. If this is the case, download this file: http://launchpadlibrarian.net/44222863/python-software-properties_0.75.10_all.deb and install it with
+{{{
+dpkg -i python-software-properties_0.75.10_all.deb
+}}}
+
+Install audio files 
+{{{
+   sudo mkdir /opt/freeswitch/sounds
+   cd /opt/freeswitch/sounds
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz   
+   tar zxvf freeswitch-sounds-en-us-callie-8000-1.0.13.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-8000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-8000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-16000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-music-32000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-16000-1.0.8.tar.gz
+   tar zxvf freeswitch-sounds-music-32000-1.0.8.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
+   wget http://files.freeswitch.org/freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
+   tar zxvf freeswitch-sounds-en-us-callie-32000-1.0.13.tar.gz
+   tar zxvf freeswitch-sounds-en-us-callie-16000-1.0.13.tar.gz
+}}}
+
+Copy the FS configuration files
+{{{
+  cd /opt/freeswitch
+  mv conf conf.dist
+  cp -a /home/firstuser/dev/source/bigbluebutton/bbb-voice-conference/config/freeswitch/conf ./
+  chown -R freeswitch:daemon conf
+  chmod -R 750 conf
+}}}
+
+Edit {{{/opt/freeswitch/conf/autoload_configs/event_socket.conf.xml}}}. 
+{{{
+   vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
+
+   # Set listen-ip to your IP
+   <param name="listen-ip" value="192.168.0.166"/>
+}}}
+
+Edit {{{vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml}}}
+{{{
+  vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
+
+  # Change bbb-voice-freeswitch.xml to bbb-voice-asterisk.xml
+    <import resource="bbb-voice-freeswitch.xml" />
+}}}
+
+Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
+{{{
+  # Set esl.host to your IP
+  esl.host=192.168.0.166
+}}}
+
+Stop Asterisk
+{{{
+  sudo /etc/init.d/asterisk stop
+}}}
+
+Start FS
+{{{
+  cd /opt/freeswitch/bin
+  ./freeswitch
+}}}
