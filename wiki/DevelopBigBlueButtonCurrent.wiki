@@ -365,37 +365,38 @@ cp ~/dev/source/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0
 * Run bbb-conf --check *
 Run {{{bbb-conf --check}}} to see if there are any potential problems.
 
-* Running Red5 *
+===Running Red5===
 
 It is better to have multiple ssh windows when developing. On one window, you can start and stop Red5.
+ # Stop Red5
 {{{
-   # Stop Red5
-   sudo /etc/init.d/red5 stop
-
-   # cd to Red5 directory
-   cd /usr/share/red5
-
-   # Start Red5 as red5 user
-   sudo -u red5 ./red5.sh
-
+sudo /etc/init.d/red5 stop
+}}}
+ # cd to Red5 directory
+{{{
+cd /usr/share/red5
+}}}
+ # Start Red5 as red5 user
+{{{
+sudo -u red5 ./red5.sh
 }}}
 
 On another window, you can make your code changes and deploy to Red5, e.g.
 {{{
-  cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
-  
-  # make some changes
-  
-  # Build
-  gradle war
-
-  # Deploy 
-  gradle deploy
-
+cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+}}}
+ # Make some changes
+ # Build
+{{{
+gradle war
+}}}
+ # Deploy 
+{{{
+gradle deploy
 }}}
 
 
-*Remove BBB packages*
+===Remove BBB packages===
 
 List the BBB packages by typing
 {{{
@@ -404,21 +405,25 @@ dpkg -l | grep bbb
 
 which results:
 {{{
-ii  bbb-apps-sip                      0.63.0ubuntu27                      BigBlueButton SIP module for Red5
-ii  bbb-apps-video                    0.63.0ubuntu2                       BigBlueButton video module for Red5
-ii  bbb-client                        0.63.0ubuntu228                     BigBlueButton Flash client
-ii  bbb-common                        0.63.0ubuntu105                     BigBlueButton common files
-ii  bbb-voice-conference              0.63.0ubuntu30                      BigBlueButton voice conference files
-ii  bbb-web                           0.63.0ubuntu120                     BigBlueButton web interface
-ii  openoffice-headless               0.63.0ubuntu8                       BigBlueButton wrapper for openoffice (bbb)
-
+ii  bbb-apps						0.71ubuntu2				BigBlueButton applications for Red5
+ii  bbb-apps-deskshare				0.71ubuntu2				BigBlueButton deskshare module for Red5
+ii  bbb-apps-sip					0.71ubuntu2				BigBlueButton SIP module for Red5
+ii  bbb-apps-video					0.71ubuntu2				BigBlueButton video module for Red5
+ii  bbb-client						0.71ubuntu15			BigBlueButton Flash client
+ii  bbb-common						0.71ubuntu6				BigBlueButton common files
+ii  bbb-config						0.71ubuntu6				BigBlueButton group package
+ii  bbb-freeswitch-config			0.71ubuntu2				BigBlueButton group package
+ii  bbb-openoffice-headless			0.71ubuntu2				BigBlueButton wrapper for OpenOffice
+ii  bbb-voice-conference			0.71ubuntu3				BigBlueButton voice conference files
+ii  bbb-web							0.71ubuntu4				BigBlueButton web interface
+ii  bigbluebutton					0.71ubuntu4				Open Source Web Conferencing System (bbb)
 }}}
 
- * To remove, type e.g. {{{apt-get remove bbb-apps}}}
-
-<br>
-<br>
-
+ * To remove a package type {{{apt-get remove <package name>}}}
+	Example, if you want to remove bbb-apps
+{{{
+sudo apt-get remove bbb-apps
+}}}
 
 = Developing on the bleeding edge =
 
