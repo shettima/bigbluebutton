@@ -69,7 +69,7 @@ location /client {
 Then restart nginx.
 
 {{{
-service nginx restart
+sudo service nginx restart
 }}}
 
 === Setting up Flash Builder to work with the client ===
@@ -131,10 +131,10 @@ The default task for ant here is to make sure your libraries are up-to-date (usi
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 
 {{{
-  sudo /etc/init.d/tomcat6 start
+sudo service tomcat6 start
 }}}
 
-*Note:* After starting the tomcat server try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
+*Note*: After starting the tomcat server try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
 
 {{{
 bbb-conf -c
