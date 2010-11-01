@@ -1,6 +1,6 @@
 #summary How to develop BigBlueButton 0.71
 
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="4" />
 
 = Talking to the developers =
 Write to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=1 bigbluebutton-dev] mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
@@ -498,7 +498,7 @@ cp resources/config.xml.template src/conf/config.xml
  * Edit {{{config.xml}}} replacing "HOST" with your IP
 
 == Installing FreeSWITCH ==
-These instructions will guide you on how to make BBB work with FreeSWITCH.
+These instructions will guide you on how to make BigBlueButton work with FreeSWITCH.
 
 Pull the latest code, build and deploy
 {{{
@@ -514,6 +514,7 @@ gradle war
 gradle deploy
 }}}
 
+=Troubleshooting=
 ==Debugging FreeSWITCH==
 To start FreeSWITCH so you can see any errors produced by it run:
 {{{
@@ -529,24 +530,26 @@ vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
 }}}
 Check the listen-ip parameter
 {{{
-<param name="listen-ip" value="192.168.0.166"/>
-}}}
-Edit {{{vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml}}}
-{{{
-vi /usr/share/red5/webapps/bigbluebutton/WEB-INF/red5-web.xml
-}}}
-Change bbb-voice-freeswitch.xml to bbb-voice-asterisk.xml
-{{{
-<import resource="bbb-voice-freeswitch.xml" />
+<param name="listen-ip" value="192.168.0.211"/>
 }}}
 
 Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
 Set esl.host to your IP
 {{{
-esl.host=192.168.0.166
+esl.host=192.168.0.211
 }}}
 
-=Troubleshooting=
+Lastly, make sure that the sip.server.host property in {{{/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties}}} is set to your FreeSWITCH server.
+{{{
+vi /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+}}}
+Edit the host address to match you own.
+{{{
+sip.server.host=192.168.0.211
+}}}
+
+*Note*: Make sure your two Red5 IPs are ponting to FreeSWITCH and that your FreeSWITHCH IP ip pointing to your Red5 sever.  Otherwise, Red5 won't know what SIP server to use and both FreeSWITCH and Red5 won't be able to communicate events with eachother (stopping the voice users from showing up in the Listeners Window).
+
 ==Launching from Flex/Flash Builder==
 If you get the compile error:
 {{{
