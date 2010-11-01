@@ -1,4 +1,4 @@
-#summary How to develop BigBlueButton 0.7.
+#summary How to develop BigBlueButton 0.71
 
 <wiki:toc max_depth="2" />
 
@@ -497,7 +497,7 @@ cp resources/config.xml.template src/conf/config.xml
 }}}
  * Edit {{{config.xml}}} replacing "HOST" with your IP
 
-=== Installing FreeSWITCH ===
+== Installing FreeSWITCH ==
 These instructions will guide you on how to make BBB work with FreeSWITCH.
 
 Pull the latest code, build and deploy
@@ -514,7 +514,7 @@ gradle war
 gradle deploy
 }}}
 
-===Debugging FreeSWITCH===
+==Debugging FreeSWITCH==
 To start FreeSWITCH so you can see any errors produced by it run:
 {{{
 cd /opt/freeswitch/bin
@@ -547,3 +547,28 @@ esl.host=192.168.0.166
 }}}
 
 =Troubleshooting=
+==Launching from Flex/Flash Builder==
+If you get the compile error:
+{{{
+unable to open 'W:\dev\source\bigbluebutton\bigbluebutton-client\tests\unit'	bigbluebutton-client		Unknown	Flex Problem
+}}}
+Just create the missing directories. This is a problem caused by an improperly generated .actionScriptProperties file in bbb-client/
+
+
+If you get the compile error:
+{{{
+The style 'backgroundImage' is only supported by type 'flexlib.mdi.containers.MDIWindow' with the theme(s) 'halo'.	DesktopPublishWindow.mxml	/bigbluebutton-client/src/org/bigbluebutton/modules/deskshare/view/components	line 33	Flex Problem
+}}}
+Right click on your project, go to Flex Compiler. Change SDK to 3.5, and Flash Player version to 10.0.0.
+
+If the client hangs at startup:
+and the last line in the log is:
+{{{
+8/31/2010 21:16:28.795 [DEBUG] Join FAILED = <join>
+  <returncode>FAILED</returncode>
+  <message>Could not find conference null.</message>
+</join>
+}}}
+Make sure your config.xml file has the host property "conf/join-mock.xml".
+
+If your client throws an error at startup saying it cannot find the join-mock.xml, make sure you copy it over from bbb-client/resources/dev into bbb-client/src/conf.
