@@ -1,4 +1,4 @@
-#summary How to develop BigBlueButton 0.7.
+#summary How to develop BigBlueButton 0.71.
 
 <wiki:toc max_depth="2" />
 
@@ -239,7 +239,7 @@ gradle jar
 }}}
  # Copy the jar file to /home/firstuser/dev/repo
 {{{
- # gradle uploadArchives 
+gradle uploadArchives 
 }}}
 
 === BBB Web ===
@@ -432,7 +432,7 @@ Here are some extra steps you need to do if you are developing on the {{{master}
 
 Make sure you are on the tip of the blade.
 {{{
-  git pull origin master
+git pull origin master
 }}}
 
 We have added Speex support for BBB Voice. This requires version 3.5 of the Flex SDK. Thus, to build the client, you need to download Flex 3.5 SDK from
@@ -545,3 +545,5 @@ Set esl.host to your IP
 {{{
 esl.host=192.168.0.166
 }}}
+
+===Trouble Shooting===
