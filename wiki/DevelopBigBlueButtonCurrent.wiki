@@ -1,4 +1,4 @@
-#summary How to develop BigBlueButton 0.71.
+#summary How to develop BigBlueButton 0.7.
 
 <wiki:toc max_depth="2" />
 
@@ -514,7 +514,7 @@ gradle war
 gradle deploy
 }}}
 
-====Debugging FreeSWITCH====
+===Debugging FreeSWITCH===
 To start FreeSWITCH so you can see any errors produced by it run:
 {{{
 cd /opt/freeswitch/bin
@@ -546,4 +546,4 @@ Set esl.host to your IP
 esl.host=192.168.0.166
 }}}
 
-===Trouble Shooting===
+=Troubleshooting=
