@@ -88,7 +88,7 @@ To develop the client using Flash Builder, you can follow these steps:
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
 
-  # On the client code, to src/conf/config.xml and change the 'host' property of the !ViewersModule to point to "conf/join-mock.xml".
+  # On the client code, edit {{{src/conf/config.xml}}} and change the 'host' property of the !ViewersModule to point to {{{conf/join-mock.xml}}}.
   # You should now be able to launch from Flash Builder using the Run/Debug button.
 
 === Creating a new !BigBlueButton Module ===
@@ -106,7 +106,7 @@ bbb-conf --setup-dev web
 
 This script does the following steps:
 
-  # set your local IP address into  `~/.grails/bigbluebutton-config.properties`
+  # sets your local IP address into  `~/.grails/bigbluebutton-config.properties`
   # make all files in `/var/bigbluebutton` writable by everyone
 
 The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
@@ -116,7 +116,7 @@ Note: If you get an error upload slides when running bbb-web as `firstuser`, run
 Before you can compile and run your version of bbb-web, you need to stop tomcat.  
 
 {{{
-sudo /etc/init.d/tomcat6 stop
+sudo service tomcat6 stop
 }}}
 
 Next, let's compile and run bbb-web
@@ -137,7 +137,7 @@ sudo service tomcat6 start
 *Note*: After starting the tomcat server try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
 
 {{{
-bbb-conf -c
+sudo bbb-conf -c
 }}}
 
 If the issue is listed under the Potential Problems heading then to resolve the issue enter
@@ -150,7 +150,7 @@ This will list the grails process. Determine its pid (process id) and kill it. T
 
 {{{
 sudo kill -9 5012
-sudo /etc/init.d/tomcat6 start
+sudo service tomcat6 start
 }}}
 
 
@@ -177,7 +177,7 @@ Uninstalling the existing `bbb-apps` package will stop the red5 server, remove t
 At this point red5 is still running.  Before we deploy the local version of bbb-apps, let's stop the red5 server.  Open a new terminal window (if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty]) and enter the command. 
 
 {{{
-sudo /etc/init.d/red5 stop
+sudo service red5 stop
 }}}
 
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
@@ -201,11 +201,11 @@ If you want to revert back to the packaged version of !BigBlueButton apps, do th
 {{{
 rm -rf /usr/share/red5/webapps/bigbluebutton
 sudo apt-get install bbb-apps
-sudo /etc/init.d/red5 start
+sudo service red5 start
 }}}
 ----
 
-= Other Notes on setting up a Full Development Environment =
+= Setting up a Full Development Environment =
 
 == Pre-requisites ==
 In this environment, we assume you are developing on Windows with Eclipse and Flash Builder. Also, you have the !BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
