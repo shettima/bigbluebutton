@@ -810,7 +810,7 @@ tested) to get everything right, and these manual changes would need
 to be updated (and tested anew) for each new version of !BigBlueButton that
 is released every 8-12 weeks.
 
-Rather than having the core developers support the branding efforts, we felt that if a commercial company wanted a branded version of BigBlueButton, the best option for them was to engage one of the [http://bigbluebutton.org/support companies that provide support for BigBlueButton].  
+Rather than having the core developers support the branding efforts, we felt that if a commercial company wanted a branded version of !BigBlueButton, the best option for them was to engage one of the [http://bigbluebutton.org/support companies that provide support for BigBlueButton].  
 
 Doing this removes the inevitable problems that are going to arise when manual code changes break in a new release and flood of forum posts ensue with the title "My
 branding changes no longer work -- please help me!!"
