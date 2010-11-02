@@ -46,7 +46,7 @@ Stability and usability are core to !BigBlueButton.  If you demonstrate and abil
 We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   We know from downloads there are probably quite a few.  If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
 
 == Will !BigBlueButton always stay open source? ==
-Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an independent not-for-profit !BigBlueButton Foundation (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
+Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit !BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
 
 = Installation =
 
