@@ -803,25 +803,20 @@ The !BigblueButton project doesn't take donations. If you'd like to help, spread
 
 === How do I change the brand of !BigBlueButton? ===
 There have been a number of companies (and individuals) posting to the
-mailing list asking for help in branding !BigBlueButton.  
+mailing list asking for help in branding !BigBlueButton. 
 
 However, there are lot of places in the code that need to be manually changed (and
 tested) to get everything right, and these manual changes would need
 to be updated (and tested anew) for each new version of !BigBlueButton that
-is released every 6-8 weeks.
+is released every 8-12 weeks.
 
-The (increasing) effort to support everyone's branding efforts taking resources away from working on the core of !BigBlueButton's development.  We think everyone would like to see the core development efforts continue to grow.
+Rather than having the core developers support the branding efforts, we felt that if a commercial company wanted a branded version of BigBlueButton, the best option for them was to engage one of the [http://bigbluebutton.org/support companies that provide support for BigBlueButton].  
 
-There is work underway to make
-it easier for people to brand !BigBlueButton by offering a commercially
-supported branding tool (from Blindside Networks).  This tool would enable companies/individuals to configure their brand and brand elements in !BigBlueButton, and the tool would be updated with each release so branding a new
-version of !BigBlueButton would take almost no effort.  
-
-For the community, this would remove the inevitable problems that are going to arise when manual code changes break and flood of forum posts ensue with the title "My
+Doing this removes the inevitable problems that are going to arise when manual code changes break in a new release and flood of forum posts ensue with the title "My
 branding changes no longer work -- please help me!!"
 
 Most importantly for everyone, the efforts to provide a commercially
-supported branding tool for !BigBlueButton won't take away from core
+supported branding option for !BigBlueButton won't take away from core
 development, but rather it will support it.
 
 
