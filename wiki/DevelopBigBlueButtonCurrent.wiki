@@ -211,15 +211,15 @@ sudo service red5 start
 In this environment, we assume you are developing on Windows with Eclipse and Flash Builder. Also, you have the !BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
 
 On Windows:
- * Install Eclipse
- * Install the [http://www.scala-ide.org/ Scala Eclipse plugin]
- * Install the [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
- * Install Flash Builder
- * Install JDK 6 and add JAVA_HOME in your environment variables
- * Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
+ # Install JDK 6 and add JAVA_HOME in your environment variables
+ # Install Eclipse
+ # Install the [http://www.scala-ide.org/ Scala Eclipse plugin]
+ # Install the [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
+ # Install Flash Builder
+ # Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
 === Client ===
- * See the *Setting up Flash Builder to work with the client* heading above.
+ * See the [DevelopBigBlueButtonCurrent#Setting_up_Flash_Builder_to_work_with_the_client Setting up Flash Builder to work with the client] heading above.
 
 === BBB Commons ===
  # The bbb-commons contain classes that are common to bbb-web and bbb-apps.
