@@ -219,7 +219,7 @@ On Windows:
  # Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
 === Client ===
- * See the [DevelopBigBlueButtonCurrent#Setting_up_Flash_Builder_to_work_with_the_client Setting up Flash Builder to work with the client] heading above.
+ * See DevelopBigBlueButtonCurrent#Setting_up_Flash_Builder_to_work_with_the_client Setting up Flash Builder to work with the client].
 
 === BBB Commons ===
  # The bbb-commons contain classes that are common to bbb-web and bbb-apps.
@@ -257,12 +257,12 @@ gradle copyToLib
 ant 
 }}}
 
-*NOTE*: If you encounter an error with the webapp redirecting to an invalid client, open the file ./grails-app/conf/bigbluebutton.properties and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
+*NOTE*: If you encounter an error with the webapp redirecting to an invalid client, open the file {{{./grails-app/conf/bigbluebutton.properties}}} and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
 === BBB apps ===
  # Change directory to {{{bigbluebutton-apps}}}
 {{{
-cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
+cd ~/dev/source/bigbluebutton/bigbluebutton-apps
 }}}
  # Generate Eclipse project files
 {{{
@@ -270,7 +270,7 @@ gradle eclipse
 }}}
  # Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
 {{{
-gradle copyToLib
+gradle resolveDeps
 }}}
  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
  # Right-click on the project and add Scala Nature and Groovy Nature
@@ -279,9 +279,9 @@ gradle copyToLib
 {{{
 gradle war
 }}}
-Deploy the application to Red5 (/usr/share/red5/webapps)
+ # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
 {{{
-gradle deploy
+sudo gradle deploy
 }}}
 
 === Video app ===
@@ -297,7 +297,7 @@ ant resolve
 {{{
 ant dist
 }}}
- # Deploy the application to Red5 (/usr/share/red5/webapps)
+ # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
 {{{
 ant deploy
 }}}
@@ -322,7 +322,6 @@ gradle deploy
 
 === Desktop Sharing app ===
  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/deskshare}}}
-
 {{{
 cd ~/dev/source/bigbluebutton/deskshare
 }}}
@@ -333,12 +332,9 @@ gradle copyToLib
  # Build the server component
 {{{ 
 cd app
-}}}
- # Builds the application
-{{{
 gradle war
 }}}
- # Deploy the application to Red5 (/usr/share/red5/webapps)
+ # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
 {{{ 
 gradle deploy
 }}}
@@ -361,16 +357,16 @@ cp ~/dev/source/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0
 }}}
  # compile the bbb-client (see Developing with bbb client)
 
-== TIPS ==
+=== TIPS ===
 * Run bbb-conf --check *
-Run {{{bbb-conf --check}}} to see if there are any potential problems.
+Run {{{sudo bbb-conf --check}}} to see if there are any potential problems.
 
 ===Running Red5===
 
 It is better to have multiple ssh windows when developing. On one window, you can start and stop Red5.
  # Stop Red5
 {{{
-sudo /etc/init.d/red5 stop
+sudo service red5 stop
 }}}
  # cd to Red5 directory
 {{{
@@ -381,7 +377,7 @@ cd /usr/share/red5
 sudo -u red5 ./red5.sh
 }}}
 
-On another window, you can make your code changes and deploy to Red5, e.g.
+In another window, you can make your code changes and deploy to Red5, e.g.
 {{{
 cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
 }}}
@@ -438,19 +434,15 @@ git pull origin master
 We have added Speex support for BBB Voice. This requires version 3.5 of the Flex SDK. Thus, to build the client, you need to download Flex 3.5 SDK from
 http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+3
 
-Unzip the SDK into your FlexBuilder/sdk folder and modify the compiler settings to use this SDK.
+Unzip the SDK into your !FlexBuilder/sdk folder and modify the compiler settings to use this SDK.
 
  # To build using {{{ant}}}, unzip the folder into {{{/home/firstuser/dev/tools}}}.
 {{{
 cd /home/firstuser/dev/tools
 }}}  
- # Uncompress the SDK. This will uncompress the files into a c folder
+ # Uncompress the SDK. This will uncompress the files
 {{{
-unzip -dc flex_sdk_3.5.0.12683_mpl.zip
-}}}
- # Rename the c folder to flex-3.5.0.12683
-{{{
-mv c flex-3.5.0.12683
+unzip -d flex_sdkflex-3.5.0.12683 flex_sdk_3.5.0.12683_mpl.zip
 }}}
  # Check if you have tofrodos
 {{{
@@ -466,26 +458,27 @@ cd flex-3.5.0.12683/bin
 fromdos aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
 chmod 755 aasdoc acompc amxmlc asdoc compc copylocale digest fcsh fdb mxmlc optimizer
 }}}  
- # Rename the flex3 folder to flex-3.4.1
+ # Backup the included flex3 folder to flex-3.4.1
 {{{
 cd /home/firstuser/dev/tools
 mv flex3 flex-3.4.1
 }}}
- # Create a softlink to the 3.5 SDK as the FLEX_HOME env var points to /home/firstuser/dev/tools/flex3
+ # Create a softlink to the 3.5 SDK as the FLEX_HOME env var points to {{{/home/firstuser/dev/tools/flex3}}}
 {{{
 ln -s flex-3.5.0.12683 flex3
 cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
 ant
 }}} 
+*Note*: {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}, if one doesn't work, try the other as not all instances have been converted.
 
- * {{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}
-
-Need to run grails app, as changes where made to the url when joining the conference.
+You will need to run the grails version of bigbluebutton-web which will allow you to see debugging information.  In order to do this tomcat6 needs to be stopped.
 {{{
-sudo /etc/init.d/tomcat6 stop
+sudo service tomcat6 stop
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
 }}}
  * Did you already run "bbb-conf --setup-dev web"? If not, run it now
+
+
 {{{
 grails run-war
 }}}
@@ -497,29 +490,11 @@ cp resources/config.xml.template src/conf/config.xml
 }}}
  * Edit {{{config.xml}}} replacing "HOST" with your IP
 
-== Installing FreeSWITCH ==
-These instructions will guide you on how to make BigBlueButton work with FreeSWITCH.
-
-Pull the latest code, build and deploy
-{{{
-cd /home/firstuser/dev/source/bigbluebutton
-git pull
-
-cd bbb-voice
-gradle war
-gradle deploy
-
-cd ../bigbluebutton-apps
-gradle war
-gradle deploy
-}}}
-
 =Troubleshooting=
 ==Debugging FreeSWITCH==
 To start FreeSWITCH so you can see any errors produced by it run:
 {{{
-cd /opt/freeswitch/bin
-./freeswitch
+sudo /opt/freeswitch/bin/fs_cli
 }}}
 
 If voice isn't working in the BBB interface or your listeners are not showing up the most likely reason is that FreeSWITCH and Red5 are not communicating properly.
