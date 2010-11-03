@@ -1,4 +1,5 @@
 #summary Overview of the documentation status for 0.71-Beta
+#labels Deprecated
 
 = Introduction =
 
