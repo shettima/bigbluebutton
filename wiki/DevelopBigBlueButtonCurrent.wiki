@@ -96,9 +96,10 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
  # Scroll down to near the end of the document and look for {{{<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>}}}.  This string is the Footer label that contains copyright data, version, etc.
  # Modify the text property to change the text that is displayed. For example:
  {{{
- <mx:Label text="Scott's BigBlueButton Client" id="copyrightLabel2"/>
+ <mx:Label text="My Modified BigBlueButton Client" id="copyrightLabel2"/>
  }}}
- Congradulations, you have now made your first change to BigBlueButton.
+ #To recompile the project save the file you just edited
+Congradulations, you have now made your first change to BigBlueButton.
  
 =Developing Other Components of !BigBlueButton=
 == Setting up the Development Environment ==
