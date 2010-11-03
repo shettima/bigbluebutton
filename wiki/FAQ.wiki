@@ -577,6 +577,19 @@ For audio, the voice packets have a longer route to take (see answer to question
 
 Why use asterisk for the audio conferencing in !BigBlueButton?  The biggest reason is that, with a third-party SIP gateway, it enables users to dial into a !BigBlueButton conference server using the phone lines.  In other words, users have two ways to join the voice conference: built-in VoIP or the phone system.  It also enables !BigBlueButton to tightly integrate with an existing asterisk server if you already have one in place.
 
+=== How do I remove sound when a user join or leave the conference? ===
+For FreeSWITCH, comment out {{{the following in /opt/freeswitch/conf/autoload_configs/conference.conf.xml}}}
+{{{
+      <!--param name="enter-sound" value="tone_stream://%(200,0,500,600,700)"/-->
+      <!--param name="exit-sound" value="tone_stream://%(500,0,300,200,100,50,25)"/-->
+}}}
+
+For Asterisk MeetMe, add {{{q}}} to the parameter list
+
+see http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe
+
+
+
 == Chat ==
 
 === When I make !BigBlueButton full screen I can't enter any text into chat ===
