@@ -1,0 +1,14 @@
+#summary Overview of the documentation status for 0.71-Beta
+
+= Introduction =
+
+Links to drafts of 0.71 documentation. We will be overwriting the old docs with these when 0.71 is released.
+
+
+= Details =
+ * [http://code.google.com/p/bigbluebutton/wiki/071Overview Overview]
+ * [http://code.google.com/p/bigbluebutton/wiki/Branding Branding]
+ * [http://code.google.com/p/bigbluebutton/wiki/071DraftInstall Ubuntu Install]
+ * [http://code.google.com/p/bigbluebutton/wiki/InstallingBigBlueButtonCurrent Manual Install]
+ * [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration Client Configuration]
+ * [http://code.google.com/p/bigbluebutton/wiki/DevelopBigBlueButtonCurrent Setting up development environment]
