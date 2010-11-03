@@ -89,47 +89,36 @@ This approach is limited in the sense that you can't use the Run button within F
   # You should now be able to launch from Flash Builder using the Run/Debug button.
 
 == Your First Modification of !BigBlueButton ==
-*<font color="880044">TODO*</font>
+*<font color="440088">TODO*</font>
   
 == Creating a new !BigBlueButton Module ==
 Follow this short [SampleModule tutorial].
 
-
-== Setting up the development environment for !BigBlueButton web interface: bbb-web ==
-
-The !BigBlueButton web interface is written in grails, so the development environment different from building the bbb-client.  As before, the first step is to use `bbb-conf` to setup the environment.
-
+=Developing Other Components of !BigBlueButton=
+== Setting up the Development Environment ==
+=== !BigBlueButton Web ===
+The !BigBlueButton web interface is written in grails, so the development environment different from building the Client (bbb-client).  As before, the first step is to use `bbb-conf` to setup the environment.
+ # Configure the environment
 {{{
 bbb-conf --setup-dev web
 }}}
-
-
 This script does the following steps:
-
   # sets your local IP address into  `~/.grails/bigbluebutton-config.properties`
   # make all files in `/var/bigbluebutton` writable by everyone
-
 The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
+*Note*: If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
 
-Note: If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
-
-Before you can compile and run your version of bbb-web, you need to stop tomcat.  
-
+ # Stop Tomcat so you can compile your bbb-web
 {{{
 sudo service tomcat6 stop
 }}}
-
-Next, let's compile and run bbb-web
-
+ # Compile and run bbb-web
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
 ant
 }}}
-
 The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
-
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
-
 {{{
 sudo service tomcat6 start
 }}}
