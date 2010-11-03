@@ -6,22 +6,22 @@ Below are the links to the drafts of 0.71 documentation.  Once we ship 0.71, the
  
 
 
-= 0.71 Issues =
-Here is a [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.71 link] to the outstanding issues remaining for 0.71-beta.
-
 = 0.71 Documentation =
  * [http://code.google.com/p/bigbluebutton/wiki/071Overview Overview]
     * Will be merged into the release notes
  * [http://code.google.com/p/bigbluebutton/wiki/Branding Branding]
     * Undergoing internal review
  * [http://code.google.com/p/bigbluebutton/wiki/071DraftInstall Ubuntu Install]
-    * Draft, ready for external review
- * [http://code.google.com/p/bigbluebutton/wiki/InstallingBigBlueButtonCurrent Manual Install]
-    * Draft, ready for external review
+    * *Draft, ready for external review*
+ * [http://code.google.com/p/bigbluebutton/wiki/InstallingBigBlueButtonCurrent Step-by-step Manual Install of BigBlueButton from source components]
+    * *Draft, ready for external review*
  * [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration Client Configuration]
     * Draft, ready for external review
  * [http://code.google.com/p/bigbluebutton/wiki/DevelopBigBlueButtonCurrent Setting up development environment]
     * Undergoing internal updates
+
+= 0.71 Issues =
+Here is a [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.71 link] to the outstanding issues remaining for 0.71-beta.
 
 = 0.71 Downloads =
 The !BigBlueButton 0.71-Beta VM is not yet ready for download.  
