@@ -24,4 +24,4 @@ Here is a [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=
     * Undergoing internal updates
 
 = 0.71 Downloads =
-The BigBlueButton 0.71-Beta VM is not yet ready for download.  
+The !BigBlueButton 0.71-Beta VM is not yet ready for download.  
