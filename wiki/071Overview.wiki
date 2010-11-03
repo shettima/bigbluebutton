@@ -1,28 +1,29 @@
 #summary This page contains information on the 0.71-beta testing cycle
 
-<wiki:toc max_depth="2" />
-
-
-#summary Overview of status for 0.71-Beta
-
+<wiki:toc max_depth="3" />
 
 = Introduction =
 
-Here's where we're at in our testing of 0.71-Beta.
-
+This page is a holding place for the latest information on testing of 0.71-Beta.  We're now in our testing phase.  Here's an update or our progress:
 
   # ~~Install 0.71-beta on devtest.bigbluebutton.org for limited testing~~
   # ~~Install 0.71-beta on demo.bigbluebutton.org for broader testing~~
   # ~~Release the 0.71-beta Ubuntu packages for local installation and testing~~
   # Release a 0.71-beta VM for download and testing
 
-Want to try the latest version, goto [http://demo.bigbluebutton.org/ http://demo.bigbluebutton.org/] and if you find a bug, pleaes check the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to see if it's already been reported.  If not, please create a new issue and provide
+If you want to try the latest version, you can
+  * visit [http://demo.bigbluebutton.org/ http://demo.bigbluebutton.org/], or
+  * [http://code.google.com/p/bigbluebutton/wiki/071DraftInstall install] !BigBlueButton 0.71-beta on your own server.
+
+If you find a bug, first check the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to see if it's already been reported.  If not, please create a new issue and provide
   * a short description   
-  * the steps to reproduce it.  
+  * the steps to reproduce it
 
-== 0.71-Beta Documentation ==
+You should also do a quick check of the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list before opening a new issue.
 
-Below are the links to the drafts of 0.71 documentation.  Once we ship 0.71, these documents will overwrite the existing documents and this page will be depreciated.
+== 0.71 Documentation ==
+
+Below are the links to the DRAFT 0.71 documentation.  Once we ship 0.71, these documents will overwrite the existing documents and the drafts below will be marked as depreciated.
 
  * [http://code.google.com/p/bigbluebutton/wiki/071Overview Overview]
     * Temporary page giving overview of what's new in 0.71; will be merged into the release notes
@@ -38,7 +39,7 @@ Below are the links to the drafts of 0.71 documentation.  Once we ship 0.71, the
     * Undergoing internal updates
 
 
-== Updates 0.71-beta ==
+== 0.71 Features ==
 
 While this list is not complete, here are some of the new capabilities coming in !BigBlueButton 0.71.
 
@@ -92,14 +93,14 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/0-17-3.png
 
 The chat window now shows local times for messages. 
 
-== Branding of your !BigBlueButton instance ==
+=== Branding of your !BigBlueButton instance ===
 You can now change the look and feel of bbb using css. Check the [Branding Branding] page for more info.
 
 === Configuration of BigBlueButton client ===
 You now have more control over certain functionality of !BigBlueButton. You can change the video quality, define who can share video, allow moderators to kick users, etc... Check the [ClientConfiguration Client Configuration] page for more info.
 
 
-== Breakout Meetings (experimental) ==
+=== Breakout Meetings (experimental) ===
 Sometimes you want to split up your conference into several smaller meetings right from inside !BigBlueButton. You can now do that using the new optional Breakout Module. See this [http://bigbluebutton-blog.blogspot.com/2010/09/breakout-rooms-in-071.html blog post] for more info.
 
 This feature will not be enabled by default in the final release.
