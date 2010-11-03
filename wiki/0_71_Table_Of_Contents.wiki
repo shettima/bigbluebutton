@@ -1,4 +1,5 @@
 #summary Temporary links to 0.71 Release Docs
+#labels Deprecated
 
 = Introduction =
 
