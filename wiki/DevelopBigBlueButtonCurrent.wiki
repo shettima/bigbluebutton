@@ -89,10 +89,7 @@ This approach is limited in the sense that you can't use the Run button within F
   # You should now be able to launch from Flash Builder using the Run/Debug button.
 
 == Your First Modification of !BigBlueButton ==
-*<font color="443388">TODO*</font>
-  
-== Creating a new !BigBlueButton Module ==
-Follow this short [SampleModule tutorial].
+*<font color="44388">TODO*</font>
 
 =Developing Other Components of !BigBlueButton=
 == Setting up the Development Environment ==
@@ -102,11 +99,12 @@ The !BigBlueButton web interface is written in grails, so the development enviro
 {{{
 bbb-conf --setup-dev web
 }}}
-This script does the following steps:
+	This script does the following steps:
   # sets your local IP address into  `~/.grails/bigbluebutton-config.properties`
   # make all files in `/var/bigbluebutton` writable by everyone
-The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
-*Note*: If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
+	The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
+
+	*Note*:  If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
 
  # Stop Tomcat so you can compile your bbb-web
 {{{
@@ -349,7 +347,7 @@ cp ~/dev/source/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0
 * Run bbb-conf --check *
 Run {{{sudo bbb-conf --check}}} to see if there are any potential problems.
 
-===Running Red5===
+====Running Red5====
 
 It is better to have multiple ssh windows when developing. On one window, you can start and stop Red5.
  # Stop Red5
@@ -380,7 +378,7 @@ gradle deploy
 }}}
 
 
-===Remove BBB packages===
+====Remove BBB packages====
 
 List the BBB packages by typing
 {{{
@@ -478,6 +476,10 @@ cp resources/config.xml.template src/conf/config.xml
 }}}
  * Edit {{{config.xml}}} replacing "HOST" with your IP
 
+== Creating a new !BigBlueButton Module ==
+Follow this short [SampleModule tutorial].
+ 
+ 
 =Troubleshooting=
 ==Debugging FreeSWITCH==
 To start FreeSWITCH so you can see any errors produced by it run:
