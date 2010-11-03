@@ -8,7 +8,7 @@ Below are the links to the drafts of 0.71 documentation.  Once we ship 0.71, the
 
 = 0.71 Documentation =
  * [http://code.google.com/p/bigbluebutton/wiki/071Overview Overview]
-    * Will be merged into the release notes
+    * Temporary page giving overview of what's new in 0.71; will be merged into the release notes
  * [http://code.google.com/p/bigbluebutton/wiki/Branding Branding]
     * Undergoing internal review
  * [http://code.google.com/p/bigbluebutton/wiki/071DraftInstall Ubuntu Install]
