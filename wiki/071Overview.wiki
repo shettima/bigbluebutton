@@ -96,7 +96,7 @@ The chat window now shows local times for messages.
 === Branding of your !BigBlueButton instance ===
 You can now change the look and feel of bbb using css. Check the [Branding Branding] page for more info.
 
-=== Configuration of BigBlueButton client ===
+=== Configuration of !BigBlueButton client ===
 You now have more control over certain functionality of !BigBlueButton. You can change the video quality, define who can share video, allow moderators to kick users, etc... Check the [ClientConfiguration Client Configuration] page for more info.
 
 
