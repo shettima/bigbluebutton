@@ -10,12 +10,12 @@ Below are the links to the drafts of 0.71-beta documentation.  Once we ship 0.71
  * [http://code.google.com/p/bigbluebutton/wiki/071Overview Overview]
     * Will be merged into the release notes
  * [http://code.google.com/p/bigbluebutton/wiki/Branding Branding]
-    * Needs internal review
+    * Undergoing internal review
  * [http://code.google.com/p/bigbluebutton/wiki/071DraftInstall Ubuntu Install]
-    * Minor updates needed
+    * Undergoing internal updates needed
  * [http://code.google.com/p/bigbluebutton/wiki/InstallingBigBlueButtonCurrent Manual Install]
-    * Needs external review
+    * Ready for external review
  * [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration Client Configuration]
-    * Needs external review
+    * Undergoing internal updates
  * [http://code.google.com/p/bigbluebutton/wiki/DevelopBigBlueButtonCurrent Setting up development environment]
-    * Updates underway
+    * Undergoing internal updates
