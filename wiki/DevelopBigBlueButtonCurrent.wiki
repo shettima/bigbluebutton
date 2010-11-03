@@ -90,13 +90,13 @@ This approach is limited in the sense that you can't use the Run button within F
   # You should now be able to launch from Flash Builder using the Run/Debug button.
 
 == Your First Modification of !BigBlueButton ==
-*<font color="44388">_Draft_</font>*
+*<font color="44388">_Draft_</font>*<br />
 At this point we are going to adorn our rubber boots and jump right in.  We are going to make a small modification to the UI so that you can start perusing the code.
  # In the Package Explorer navigate to src -> org.bigbluebutton -> main -> views -> MainApplicationShell.mxml
  # Scroll down to near the end of the document and look for {{{<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>}}}.  This string is the Footer label that contains copyright data, version, etc.
  # Modify the text property to change the text that is displayed. For example:
  {{{
- <mx:Label text="Scott's BigBlueButton Clien" id="copyrightLabel2"/>
+ <mx:Label text="Scott's BigBlueButton Client" id="copyrightLabel2"/>
  }}}
  Congradulations, you have now made your first change to BigBlueButton.
  
