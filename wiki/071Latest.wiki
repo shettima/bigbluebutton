@@ -6,17 +6,16 @@
 Here's where we're at in our testing of 0.71-Beta.
 
 
-  # Install 0.71-beta on devtest.bigbluebutton.org for limited testing _(done)_
-  # Install 0.71-beta on demo.bigbluebutton.org for broader testing _(done)_
-  # Release the 0.71-beta Ubuntu packages for local installation and testing _(done)_
+  # ~~Install 0.71-beta on devtest.bigbluebutton.org for limited testing~~
+  # ~~Install 0.71-beta on demo.bigbluebutton.org for broader testing~~
+  # ~~Release the 0.71-beta Ubuntu packages for local installation and testing~~
   # Release a 0.71-beta VM for download and testing
 
-Please read 'What's new in 0.71-beta' below and help us test and stress it by visiting the following URL: *[http://demo.bigbluebutton.org/ http://demo.bigbluebutton.org/]*.   
+Want to try the latest version, goto [http://demo.bigbluebutton.org/ http://demo.bigbluebutton.org/] and if you find a bug, pleaes check the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to see if it's already been reported.  If not, please create a new issue and provide
+  * a short description   
+  * the steps to reproduce it.  
 
-*Note:* When you find a bug, please use the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to submit a short description along with the steps to reproduce it.  We recognize that some bugs are not deterministic, but if you can provide steps, it *greatly* assists us in quickly fixing the bugs.  We'll watch the issue list closely and use it, along with the feedback in [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] to gauge our progress through the above stages.
-
-
-= 0.71 Documentation =
+== 0.71 Documentation ==
 
 Below are the links to the drafts of 0.71 documentation.  Once we ship 0.71, these documents will overwrite the existing documents and this page will be depreciated.
 
@@ -32,9 +31,3 @@ Below are the links to the drafts of 0.71 documentation.  Once we ship 0.71, the
     * *Draft, ready for external review* 
  * [http://code.google.com/p/bigbluebutton/wiki/DevelopBigBlueButtonCurrent Setting up development environment]
     * Undergoing internal updates
-
-= 0.71 Issues =
-Here is a [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.71 link] to the outstanding issues remaining for 0.71-beta.
-
-= 0.71 Downloads =
-The !BigBlueButton 0.71-Beta VM is not yet ready for download.  
