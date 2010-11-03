@@ -8,7 +8,7 @@ Write to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=
 = Setting up a !BigBlueButton Development Environment =
 The easiest way to develop !BigBlueButton is through an already setup Virtual Machine, which you can download [BigBlueButtonVM here]. The VM has tools already set up which will get you up and running quickly. The VM has an added benefit in that you can develop on it from your Windows or Mac environment, where you can get access to Flash Builder. This document explains how to develop with the VM in mind.
 
-== Setting up access to the VM file system ==
+== Acessing your VM ==
 From your Windows environment, you'll want to access the !BigBlueButton source code that resides on your VM.  To do this, login to the VM as `firstuser` and issue the following command
 
 {{{
@@ -20,9 +20,7 @@ This script will share the `/home/firstuser/dev` on your VM so you can access it
 See the [BBBConf] page for troubleshooting tips.
 
 
-= Working with the source =
-
-== Checking out the source code ==
+== Check Out the Source Code ==
 Type the following command to checkout !BigBlueButton from our [http://www.github.com/bigbluebutton github repository].
 {{{
 bbb-conf --checkout
@@ -30,19 +28,18 @@ bbb-conf --checkout
 
 This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}. 
 
-If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub help] has a lot of information too.
+If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub Help] has a lot of information too.
 
-== Setting up the development environment for !BigBlueButton Flex client: bbb-client ==
+== Compile the Client ==
 To setup a development environment for bbb-client, enter the following command
-
 {{{
 bbb-conf --setup-dev client
 }}}
-
 This will setup some directories and modify nginx config to use your development client.
 
 Everything is now setup to compile bbb-client.
 
+To compile the client:
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-client
 ant
@@ -72,8 +69,8 @@ Then restart nginx.
 sudo service nginx restart
 }}}
 
-=== Setting up Flash Builder to work with the client ===
-To develop the client using Flash Builder, you can follow these steps:
+== Flash Builder or How to Work with the Client ==
+To develop the client using Flash Builder, follow these steps:
   # Install Flash Builder on your Windows/Mac machine.
   # Setup samba on the VM and mount the VM drive as described earlier in this document.
   # In Flash Builder, import the project by going to File->Import->Flash Builder Project.
@@ -91,7 +88,10 @@ This approach is limited in the sense that you can't use the Run button within F
   # On the client code, edit {{{src/conf/config.xml}}} and change the 'host' property of the !ViewersModule to point to {{{conf/join-mock.xml}}}.
   # You should now be able to launch from Flash Builder using the Run/Debug button.
 
-=== Creating a new !BigBlueButton Module ===
+== Your First Modification of !BigBlueButton ==
+*<font color="884400">TODO*</font>
+  
+== Creating a new !BigBlueButton Module ==
 Follow this short [SampleModule tutorial].
 
 
@@ -203,9 +203,8 @@ rm -rf /usr/share/red5/webapps/bigbluebutton
 sudo apt-get install bbb-apps
 sudo service red5 start
 }}}
-----
 
-= Setting up a Full Development Environment =
+= Using the Development Environment =
 
 == Pre-requisites ==
 In this environment, we assume you are developing on Windows with Eclipse and Flash Builder. Also, you have the !BigBlueButton VM running on [http://www.vmware.com/ VMware]/[http://www.virtualbox.org/ VirtualBox] and mapped to a drive in your windows machine (see Setting up access to the VM from windows above).
