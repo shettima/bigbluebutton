@@ -54,6 +54,7 @@ ant modules
 }}}
 This will skip building the localization .swf files, and save you a lot of time.
 
+=== Returning to the Packaged Client ===
 To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client` match the following.
 
 {{{
@@ -74,13 +75,13 @@ To develop the client using Flash Builder, follow these steps:
   # Install Flash Builder on your Windows/Mac machine.
   # Setup samba on the VM and mount the VM drive as described earlier in this document.
   # In Flash Builder, import the project by going to File->Import->Flash Builder Project.
-    # The choose Import Project From
-    # For project location, choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
+	# Select the Project Folder radio
+	# Click Browse and choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
     # Click finish.
   # Right click on the project, go to Properties->Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4)
   # In the same window, make sure the Flash Player minimum version is set to at least 10.0.0.
   # In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package).
-  # Right click on src/!BigBlueButton.mxml and click on Set As Default Application.
+  # In the Package Explorer navigate to src/(default package) and _Right Click_ on !BigBlueButton.mxml and click on Set As Default Application.
   # Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
@@ -89,8 +90,16 @@ This approach is limited in the sense that you can't use the Run button within F
   # You should now be able to launch from Flash Builder using the Run/Debug button.
 
 == Your First Modification of !BigBlueButton ==
-*<font color="44388">TODO*</font>
-
+*<font color="44388">_Draft_</font>*
+At this point we are going to adorn our rubber boots and jump right in.  We are going to make a small modification to the UI so that you can start perusing the code.
+ # In the Package Explorer navigate to src -> org.bigbluebutton -> main -> views -> MainApplicationShell.mxml
+ # Scroll down to near the end of the document and look for {{{<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>}}}.  This string is the Footer label that contains copyright data, version, etc.
+ # Modify the text property to change the text that is displayed. For example:
+ {{{
+ <mx:Label text="Scott's BigBlueButton Clien" id="copyrightLabel2"/>
+ }}}
+ Congradulations, you have now made your first change to BigBlueButton.
+ 
 =Developing Other Components of !BigBlueButton=
 == Setting up the Development Environment ==
 === !BigBlueButton Web ===
