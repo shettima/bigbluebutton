@@ -103,7 +103,8 @@ Congradulations, you have now made your first change to !BigBlueButton.
 == Setting up the Development Environment ==
 === !BigBlueButton Web ===
 The !BigBlueButton web interface is written in grails, so the development environment different from building the Client (bbb-client).  As before, the first step is to use `bbb-conf` to setup the environment.
- # Configure the environment
+<ol>
+    <li>Configure the environment
 {{{
 bbb-conf --setup-dev web
 }}}
@@ -112,18 +113,20 @@ bbb-conf --setup-dev web
   # make all files in `/var/bigbluebutton` writable by everyone
 	The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
 
-	 <b>Note</b>:  If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.
+	 <b>Note</b>:  If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.</li>
 
- # Stop Tomcat so you can compile your bbb-web
+    <li>Stop Tomcat so you can compile your bbb-web
 {{{
 sudo service tomcat6 stop
-}}}
- # Compile and run bbb-web
+}}} </li>
+    <li>Compile and run bbb-web
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
 ant
-}}}
+}}} </li>
+</ol>
 The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
+
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 {{{
 sudo service tomcat6 start
