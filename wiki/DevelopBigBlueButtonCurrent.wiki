@@ -97,7 +97,7 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
  <mx:Label text="My Modified BigBlueButton Client" id="copyrightLabel2"/>
  }}}
  # To recompile the project save the file you just edited
-Congradulations, you have now made your first change to BigBlueButton.
+Congradulations, you have now made your first change to !BigBlueButton.
  
 =Developing Other Components of !BigBlueButton=
 == Setting up the Development Environment ==
@@ -148,10 +148,7 @@ sudo kill -9 5012
 sudo service tomcat6 start
 }}}
 
-
-*Note:* In !BigBlueButton 0.63, we are depreced the grails interface.  If you want to create a front-end to !BigBlueButton, use the !BigBlueButton API.  See examples at [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp Demo Apps].
-
-== Setting up the development environment for !BigBlueButton red5 webapp: bbb-apps ==
+== Setting up the development environment for !BigBlueButton red5 webapp: bbb-apps == 
 
 The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as shown at the end of this section).
 
@@ -213,7 +210,7 @@ On Windows:
  # Install Grails 1.1.1 and add GRAILS_HOME in your environment variables
 
 === Client ===
- * See DevelopBigBlueButtonCurrent#Setting_up_Flash_Builder_to_work_with_the_client Setting up Flash Builder to work with the client].
+ * See [DevelopBigBlueButtonCurrent#Setting_up_Flash_Builder_to_work_with_the_client Setting up Flash Builder to work with the client].
 
 === BBB Commons ===
  # The bbb-commons contain classes that are common to bbb-web and bbb-apps.
