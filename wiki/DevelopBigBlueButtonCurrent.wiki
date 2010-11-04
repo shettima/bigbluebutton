@@ -1,4 +1,6 @@
-#summary How to develop BigBlueButton 0.71 *<font color="44388">_Draft_</font>*
+#summary How to develop BigBlueButton 0.71
+
+<font color="44388">_This document is currently a Draft_</font>
 
 <wiki:toc max_depth="4" />
 
