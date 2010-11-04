@@ -104,7 +104,7 @@ Congradulations, you have now made your first change to !BigBlueButton.
 === !BigBlueButton Web ===
 The !BigBlueButton web interface is written in grails, so the development environment different from building the Client (bbb-client).  As before, the first step is to use `bbb-conf` to setup the environment.
 <ol>
-    <li>Configure the environment
+ <li>Configure the environment
 {{{
 bbb-conf --setup-dev web
 }}}
@@ -115,11 +115,11 @@ bbb-conf --setup-dev web
 
 	 <b>Note</b>:  If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R ugo+rwx /var/bigbluebutton`.</li>
 
-    <li>Stop Tomcat so you can compile your bbb-web
+ <li>Stop Tomcat so you can compile your bbb-web</li>
 {{{
 sudo service tomcat6 stop
 }}} </li>
-    <li>Compile and run bbb-web
+ <li>Compile and run bbb-web
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
 ant
