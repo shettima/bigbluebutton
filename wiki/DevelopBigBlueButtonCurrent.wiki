@@ -134,21 +134,23 @@ If you want to revert back to the web interface installed by the package bbb-web
 sudo service tomcat6 start
 }}}
 
-<b>Note</b>: After starting the tomcat server try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
+<b>Note</b>: After starting the tomcat server, try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
 {{{
 sudo bbb-conf -c
 }}}
 
-If the issue is listed under the Potential Problems heading then to resolve the issue enter
+Look under the Potential Problems heading to see if a problem has been detected.  If grails is still running then to resolve this we need to kill it.
 
+ # Determine its pid (process id)
 {{{
 ps -aef | grep grails
 }}}
-
-This will list the grails process. Determine its pid (process id) and kill it. Then start the tomcat server. If the pid was 5012, enter the following commands.
-
+ # Kill it!
 {{{
-sudo kill -9 5012
+sudo kill -9 <Grails PID>
+}}}
+ # Finally, we need to start Tomcat
+{{{
 sudo service tomcat6 start
 }}}
 
