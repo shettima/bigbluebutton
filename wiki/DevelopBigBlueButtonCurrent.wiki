@@ -134,7 +134,7 @@ If you want to revert back to the web interface installed by the package bbb-web
 sudo service tomcat6 start
 }}}
 
-<b>Note</b>: After starting the tomcat server, try to join a conference. If you receive the message "The page you are looking for is temporarily unavailable. Please try again later.", then the grails server could still be running and not tomcat. Enter the following command
+<b>Note</b>: After starting the tomcat server, try to join a conference. If you receive the message "_The page you are looking for is temporarily unavailable. Please try again later._", then the grails server could still be running and not tomcat. Enter the following command
 {{{
 sudo bbb-conf -c
 }}}
@@ -154,7 +154,7 @@ sudo kill -9 <Grails PID>
 sudo service tomcat6 start
 }}}
 
-== BigBlueButton Apps == 
+== !BigBlueButton Apps == 
 
 The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as shown at the end of this section).
 
