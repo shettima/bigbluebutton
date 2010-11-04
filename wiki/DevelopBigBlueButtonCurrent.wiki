@@ -215,7 +215,7 @@ The following tools are needed on Windows:
  # [http://www.scala-ide.org/ Scala Eclipse plugin]
  # [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
 
-== BigBlueButton Commons ==
+== !BigBlueButton Commons ==
 The bbb-commons contain classes that are common to bbb-web and bbb-apps.
  # Switch to the location of {{{bbb-commons}}}
 {{{
@@ -237,7 +237,7 @@ gradle jar
 gradle uploadArchives 
 }}}
 
-== BigBlueButton Web ==
+== !BigBlueButton Web ==
  # Change directory to {{{bigbluebutton-web}}}
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-web
@@ -254,7 +254,7 @@ ant
 
 *NOTE*: If you encounter an error with the webapp redirecting to an invalid client, open the file {{{./grails-app/conf/bigbluebutton.properties}}} and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
 
-== BigBlueButton Apps ==
+== !BigBlueButton Apps ==
  # Change directory to {{{bigbluebutton-apps}}}
 {{{
 cd ~/dev/source/bigbluebutton/bigbluebutton-apps
