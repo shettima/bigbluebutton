@@ -154,7 +154,7 @@ sudo kill -9 <Grails PID>
 sudo service tomcat6 start
 }}}
 
-== !BigBlueButton Apps == 
+=== !BigBlueButton Apps ===
 
 The !BigBlueButton web apps run within the red5 server.  Unlike development with bbb-client and bbb-web, where we could leave the packaged versions installed, there is only one red5 server on the VM.  In order to do development with it we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore them as shown at the end of this section).
 
@@ -171,7 +171,7 @@ bbb-conf --setup-dev apps
 
  Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
 
-At this point red5 would have restarted.  However, before we deploy the local version of bbb-apps, we need to stop the red5 server.  Open a new terminal window (you will need to start and stop Red5 as you develop) <b>(if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty])</b><i> Move this to the top!</i> and enter the command. 
+At this point Red5 would have restarted.  However, before we deploy the local version of bbb-apps, we need to stop the Red5 server.  Open a new terminal window (you will need to start and stop Red5 as you develop) <b>(if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty])</b><i> Move this to the top!</i> and stop Red5. 
 {{{
 sudo service red5 stop
 }}}
@@ -190,10 +190,10 @@ cd /usr/share/red5
 sudo -u red5 ./red5.sh
 }}}
 
-You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility to any errors or exceptions.
+You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility of any errors or exceptions that may occure.
 
-If you want to revert back to the packaged version of !BigBlueButton apps, do the following
-
+====Retruning to the Packaged Versions====
+If you want to revert back to the packaged versions of !BigBlueButton apps, do the following
 {{{
 rm -rf /usr/share/red5/webapps/bigbluebutton
 sudo apt-get install bbb-apps
