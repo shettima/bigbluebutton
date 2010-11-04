@@ -352,7 +352,7 @@ cp ~/dev/source/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0
 }}}
  # compile the bbb-client (see Developing with bbb client)
 
-== TIPS ==
+== Tips ==
 * Run bbb-conf --check *
 Run {{{sudo bbb-conf --check}}} to see if there are any potential problems.
 
@@ -387,7 +387,7 @@ gradle deploy
 }}}
 
 
-===Remove BBB packages===
+===Removing BBB packages===
 
 List the BBB packages by typing
 {{{
