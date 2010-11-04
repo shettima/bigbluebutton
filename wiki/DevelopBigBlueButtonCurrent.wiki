@@ -128,7 +128,7 @@ ant
 
 The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
 
-====Retunring to the Packaged Version====
+====Retruning to the Packaged Version====
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
 {{{
 sudo service tomcat6 start
@@ -156,24 +156,22 @@ sudo service tomcat6 start
 
 == !BigBlueButton Apps == 
 
-The !BigBlueButton web apps runs within the red5 server.  Unlike development with bbb-web and bbb-client, where we could leave the packaged versions installed, because there is only one red5 server on the VM, we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore it as shown at the end of this section).
+The !BigBlueButton web apps run within the red5 server.  Unlike development with bbb-client and bbb-web, where we could leave the packaged versions installed, there is only one red5 server on the VM.  In order to do development with it we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore them as shown at the end of this section).
 
-To setup a development environment for bbb-apps, enter the following command
-
+Configure the environment
 {{{
 bbb-conf --setup-dev apps
 }}}
 
-This will 
+ This will 
 
   # Enable write access to `/usr/share/red5/webapps`
   # Uninstall the existing `bbb-apps` package
   # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
 
-Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
+ Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
 
-At this point red5 is still running.  Before we deploy the local version of bbb-apps, let's stop the red5 server.  Open a new terminal window (if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty]) and enter the command. 
-
+At this point red5 would have restarted.  However, before we deploy the local version of bbb-apps, we need to stop the red5 server.  Open a new terminal window (you will need to start and stop Red5 as you develop) <b>(if you are on windows, we recommend installing [http://www.chiark.greenend.org.uk/~sgtatham/putty/ putty])</b><i> Move this to the top!</i> and enter the command. 
 {{{
 sudo service red5 stop
 }}}
