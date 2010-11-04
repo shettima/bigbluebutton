@@ -125,7 +125,7 @@ cd ~/dev/source/bigbluebutton/bigbluebutton-web
 ant
 }}}
 
-  The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
+The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
 
 ===Retunring to the Packaged Version===
 If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
