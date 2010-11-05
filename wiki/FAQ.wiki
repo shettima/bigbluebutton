@@ -588,7 +588,7 @@ For Asterisk MeetMe, add {{{q}}} to the parameter list
 
 see http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe
 
-=== I'd like to connect my BigBlueButton server to PSTN. Where can I det DIDs?===
+=== I'd like to connect my !BigBlueButton server to PSTN. Where can I det DIDs?===
 You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
 
 
