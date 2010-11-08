@@ -1,4 +1,4 @@
-#Summary List of 3rd party Systems and libraries that integrate with !BigBlueButton.
+#summary List of 3rd party Systems and libraries that integrate with !BigBlueButton.
 
 == Introduction ==
 If you don't see your System bellow, feel free to request an integration on our [http://groups.google.com/group/bigbluebutton-dev/ mailing list].
