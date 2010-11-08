@@ -1,4 +1,4 @@
-#summary How to develop BigBlueButton 0.71
+#summary How to setup a development environment for BigBlueButton 0.71
 
 <font color="44388">_This document is currently a Draft_</font>
 
