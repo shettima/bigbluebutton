@@ -5,7 +5,7 @@
 <wiki:toc max_depth="4" />
 
 = Getting Help=
-We're developers as well, and we know the importance of both well-written documentation and accessible developer support.
+We're developers as well, and we know the importance of both well-written documentation and accessible developer support.bbb-web-setup.png
 
 If you have any problems when following the documentation below, please post your questions to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=1 bigbluebutton-dev] mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
 
@@ -103,7 +103,7 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
  <mx:Label text="My Modified BigBlueButton Client" id="copyrightLabel2"/>
  }}}
  <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/FlashBuilderModify.png" height="500" />
- # To recompile the project save the file you just edited
+ # To recompile the project save the file you just edited just save the file.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png" height="500" />
 
