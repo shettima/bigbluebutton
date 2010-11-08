@@ -22,8 +22,9 @@ Note: This video refers to 0.64, but the steps are valid for 0.7.
 
   1.  Download and uncompress the the VM. 
 
-Download bigbluebutton-vm-2010-07-15.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/  Download ]
+Download bigbluebutton-vm-2010-07-15.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
 
+*BigBlueButton 0.71-Beta* To try the BigBlueButton 0.71-Beta VM, download the file bigbluebutton071-beta.zip from the above link.
 
   2.  Open the enclosed folder.
 
