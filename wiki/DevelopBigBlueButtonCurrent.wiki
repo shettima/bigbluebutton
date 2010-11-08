@@ -122,32 +122,6 @@ ant
 
 The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
 
-====Retruning to the Packaged Version====
-If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
-{{{
-sudo service tomcat6 start
-}}}
-
-<b>Note</b>: After starting the tomcat server, try to join a conference. If you receive the message "_The page you are looking for is temporarily unavailable. Please try again later._", then the grails server could still be running and not tomcat. Enter the following command
-{{{
-sudo bbb-conf -c
-}}}
-
-Look under the Potential Problems heading to see if a problem has been detected.  If grails is still running then to resolve this we need to kill it.
-
- # Determine its pid (process id)
-{{{
-ps -aef | grep grails
-}}}
- # Kill it!
-{{{
-sudo kill -9 <Grails PID>
-}}}
- # Finally, we need to start Tomcat
-{{{
-sudo service tomcat6 start
-}}}
-
 == Working with !BigBlueButton-Apps ==
 
 The !BigBlueButton web apps run within the red5 server.  Unlike development with bbb-client and bbb-web, where we could leave the packaged versions installed, there is only one red5 server on the VM.  In order to do development with it we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore them as shown at the end of this section).
@@ -431,6 +405,32 @@ Then restart nginx.
 
 {{{
 sudo service nginx restart
+}}}
+
+== Returning to the Packaged BBB-Web==
+If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
+{{{
+sudo service tomcat6 start
+}}}
+
+<b>Note</b>: After starting the tomcat server, try to join a conference. If you receive the message "_The page you are looking for is temporarily unavailable. Please try again later._", then the grails server could still be running and not tomcat. Enter the following command
+{{{
+sudo bbb-conf -c
+}}}
+
+Look under the Potential Problems heading to see if a problem has been detected.  If grails is still running then to resolve this we need to kill it.
+
+ # Determine its pid (process id)
+{{{
+ps -aef | grep grails
+}}}
+ # Kill it!
+{{{
+sudo kill -9 <Grails PID>
+}}}
+ # Finally, we need to start Tomcat
+{{{
+sudo service tomcat6 start
 }}}
 
 ==Debugging FreeSWITCH==
