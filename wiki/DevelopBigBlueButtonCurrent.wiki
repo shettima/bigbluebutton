@@ -60,22 +60,6 @@ ant modules
 }}}
 This will skip building the localization .swf files, and save you a lot of time.
 
-=== Returning to the Packaged Client ===
-To revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client` match the following.
-
-{{{
-location /client {
-	root    /var/www/bigbluebutton;
-	index  index.html index.htm;
-}
-}}}
-
-Then restart nginx.
-
-{{{
-sudo service nginx restart
-}}}
-
 == Flash Builder or How to Work with the Client ==
 To develop the client using Flash Builder, follow these steps:
  # Install Flash Builder on your Windows/Mac machine.
