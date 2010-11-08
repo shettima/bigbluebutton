@@ -161,7 +161,7 @@ sudo -u red5 ./red5.sh
 
 You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility of any errors or exceptions that may occure.
 
-= Using the Development Environment =
+= Using an IDE - Eclipse instructions =
 
 == Pre-requisites ==
 At this point it is assumed you have gone through setting up the client, bbb-web and bbb-apps environments and will be working with the !BigBlueButton Virtual Machine.  In this section, we will be Windows with Eclipse and Flash Builder.
