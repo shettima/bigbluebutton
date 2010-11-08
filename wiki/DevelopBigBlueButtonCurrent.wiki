@@ -82,8 +82,7 @@ This approach is limited in the sense that you can't use the Run button within F
  # On the client code, edit {{{src/conf/config.xml}}} and near the top change the line:
 {{{
 <application uri="rtmp://<HOST-IP>/bigbluebutton" host="http://<HOST-IP>/bigbluebutton/api/enter" />
-}}}
-to
+}}} to
 {{{
 <application uri="rtmp://<HOST-IP>/bigbluebutton" host="conf/join-mock.xml" />
 }}}
