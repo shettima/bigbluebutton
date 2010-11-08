@@ -102,7 +102,7 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
  {{{
  <mx:Label text="My Modified BigBlueButton Client" id="copyrightLabel2"/>
  }}}
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/FlashBuilderModify.png" height="500" />
+ <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/FlashBuilderModify.png" height="500" />
  # To recompile the project save the file you just edited
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png" height="500" />
