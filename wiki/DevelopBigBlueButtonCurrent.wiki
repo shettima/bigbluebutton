@@ -35,8 +35,10 @@ bbb-conf --checkout
 This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}. 
 
 If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub Help] has a lot of information too.
+ 
+=Developing Components of !BigBlueButton=
 
-== Compile the Client ==
+== Working on the Client side ==
 To setup a development environment for bbb-client, enter the following command
 {{{
 bbb-conf --setup-dev client
@@ -60,7 +62,7 @@ ant modules
 }}}
 This will skip building the localization .swf files, and save you a lot of time.
 
-== Flash Builder or How to Work with the Client ==
+=== Using Flex/Flash Builder ===
 To develop the client using Flash Builder, follow these steps:
  # Install Flash Builder on your Windows/Mac machine.
  # Setup samba on the VM and mount the VM drive as described earlier in this document.
@@ -78,7 +80,7 @@ This approach is limited in the sense that you can't use the Run button within F
  # On the client code, edit {{{src/conf/config.xml}}} and change the 'host' property of the !ViewersModule to point to {{{conf/join-mock.xml}}}.
  # You should now be able to launch from Flash Builder using the Run/Debug button.
 
-== Your First Modification of !BigBlueButton ==
+=== Your First Modification of !BigBlueButton ===
 At this point we are going to adorn our rubber boots and jump right in.  We are going to make a small modification to the UI so that you can start perusing the code.
  # In the Package Explorer navigate to src -> org.bigbluebutton -> main -> views -> !MainApplicationShell.mxml
  # Scroll down to near the end of the document and look for {{{<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>}}}.  This string is the Footer label that contains copyright data, version, etc.
@@ -92,10 +94,8 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png" height="500" />
 
 Congradulations, you have now made your first change to !BigBlueButton.
- 
-=Developing Other Components of !BigBlueButton=
-== Setting up the Development Environment ==
-=== !BigBlueButton Web ===
+
+== Working with !BigBlueButton Web - The API part of BBB ==
 The !BigBlueButton web interface is written in grails, so the development environment different from building the Client (bbb-client).  As before, the first step is to use `bbb-conf` to setup the environment.
 
 Configure the environment
@@ -148,7 +148,7 @@ sudo kill -9 <Grails PID>
 sudo service tomcat6 start
 }}}
 
-=== !BigBlueButton Apps ===
+== Working with !BigBlueButton-Apps ==
 
 The !BigBlueButton web apps run within the red5 server.  Unlike development with bbb-client and bbb-web, where we could leave the packaged versions installed, there is only one red5 server on the VM.  In order to do development with it we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore them as shown at the end of this section).
 
@@ -210,7 +210,7 @@ The following tools are needed on Windows:
  # [http://www.scala-ide.org/ Scala Eclipse plugin]
  # [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
 
-== !BigBlueButton Commons ==
+== !BigBlueButton Commons Libraries ==
 The bbb-commons contain classes that are common to bbb-web and bbb-apps.
  # Switch to the location of {{{bbb-commons}}}
 {{{
