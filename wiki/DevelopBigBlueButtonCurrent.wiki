@@ -103,6 +103,9 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
  <mx:Label text="My Modified BigBlueButton Client" id="copyrightLabel2"/>
  }}}
  # To recompile the project save the file you just edited
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png
+
 Congradulations, you have now made your first change to !BigBlueButton.
  
 =Developing Other Components of !BigBlueButton=
