@@ -9,7 +9,7 @@ This page is a holding place for the latest information on testing of 0.71-Beta.
   # ~~Install 0.71-beta on devtest.bigbluebutton.org for limited testing~~
   # ~~Install 0.71-beta on demo.bigbluebutton.org for broader testing~~
   # ~~Release the 0.71-beta Ubuntu packages for local installation and testing~~
-  # Release a 0.71-beta VM for download and testing
+  # ~~Release a 0.71-beta VM for download and testing~~
 
 If you want to try the latest version, you can
   * visit [http://demo.bigbluebutton.org/ http://demo.bigbluebutton.org/], or
