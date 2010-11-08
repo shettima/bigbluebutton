@@ -178,7 +178,7 @@ bbb-conf --setup-dev apps
   # Enable write access to `/usr/share/red5/webapps`
   # Uninstall the existing `bbb-apps` package
   # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
- <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/bbb-apps-setup.png" height="500" />
+ <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/bbb-apps-setup.png" />
 
  Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
 
