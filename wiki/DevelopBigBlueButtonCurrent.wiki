@@ -161,14 +161,6 @@ sudo -u red5 ./red5.sh
 
 You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility of any errors or exceptions that may occure.
 
-====Retruning to the Packaged Versions====
-If you want to revert back to the packaged versions of !BigBlueButton apps, do the following
-{{{
-rm -rf /usr/share/red5/webapps/bigbluebutton
-sudo apt-get install bbb-apps
-sudo service red5 start
-}}}
-
 = Using the Development Environment =
 
 == Pre-requisites ==
@@ -431,6 +423,14 @@ sudo kill -9 <Grails PID>
  # Finally, we need to start Tomcat
 {{{
 sudo service tomcat6 start
+}}}
+
+== Returning to the Packaged BBB-Apps==
+If you want to revert back to the packaged versions of !BigBlueButton apps, do the following
+{{{
+rm -rf /usr/share/red5/webapps/bigbluebutton
+sudo apt-get install bbb-apps
+sudo service red5 start
 }}}
 
 ==Debugging FreeSWITCH==
