@@ -104,7 +104,7 @@ At this point we are going to adorn our rubber boots and jump right in.  We are 
  }}}
  # To recompile the project save the file you just edited
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png" />
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png" height="50" width="50" />
 
 Congradulations, you have now made your first change to !BigBlueButton.
  
