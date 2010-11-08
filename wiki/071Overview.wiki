@@ -11,9 +11,12 @@ This page is a holding place for the latest information on testing of 0.71-Beta.
   # ~~Release the 0.71-beta Ubuntu packages for local installation and testing~~
   # ~~Release a 0.71-beta VM for download and testing~~
 
-If you want to try the latest version, you can
+If you want to try the latest version from packages, you can
   * visit [http://demo.bigbluebutton.org/ http://demo.bigbluebutton.org/], or
   * [http://code.google.com/p/bigbluebutton/wiki/071DraftInstall install] !BigBlueButton 0.71-beta on your own server.
+
+If you want to try the latest version from VM, you can
+  * [http://sourceforge.net/projects/bigbluebutton/ Download BigBlueButton 0.71-Beta VM], and follow the setup instructions at [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM Setting up a BigBlueButton VM].
 
 If you find a bug, first check the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] to see if it's already been reported.  If not, please create a new issue and provide
   * a short description   
