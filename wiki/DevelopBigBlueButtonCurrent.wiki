@@ -416,6 +416,23 @@ Follow this short [SampleModule tutorial].
  
  
 =Troubleshooting=
+
+== Returning to the Packaged Client ==
+If you ever wish to revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client` match the following.
+
+{{{
+location /client {
+	root    /var/www/bigbluebutton;
+	index  index.html index.htm;
+}
+}}}
+
+Then restart nginx.
+
+{{{
+sudo service nginx restart
+}}}
+
 ==Debugging FreeSWITCH==
 To start FreeSWITCH so you can see any errors produced by it run:
 {{{
