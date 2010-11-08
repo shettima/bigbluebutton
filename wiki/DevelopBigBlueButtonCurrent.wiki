@@ -62,6 +62,8 @@ ant modules
 }}}
 This will skip building the localization .swf files, and save you a lot of time.
 
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/bbb-client-setup.png" />
+
 === Using Flex/Flash Builder ===
 To develop the client using Flash Builder, follow these steps:
  # Install Flash Builder on your Windows/Mac machine.
