@@ -20,6 +20,7 @@ The following links will get you going with setting up !BigBlueButton.  For most
 
     * [ArchitectureOverview Overview of Architecture]
     * [DevelopingBBB Setting up a Development Environment]
+    * [Branding Creating a skin for the BigBlueButton interface]
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
     * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
