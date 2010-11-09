@@ -4,16 +4,15 @@
 
 = Prerequisites =
 
-This document contains instructions for installation *!BigBlueButton 0.71* on a new server using Ubuntu packages.  These packages are still being developed, so if you have questions/feedback/bugs, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
+This document contains instructions for installing/upgrading *!BigBlueButton 0.71* on a Ubuntu 10.04 32-bit or 64-bit server.  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] later in this document.
 
-If you want to upgrade from !BigBlueButton 0.70, please see [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70].
 
 Before you install !BigBlueButton 0.71, you'll need:
   # *An Ubuntu 10.04 32-bit or 64-bit server*
   # *2G of memory of memory*
   # Root access to the server
   # 5G of free disk space
-  # Port 80 is free
+  # Port 80 is not in use 
 
 Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
@@ -23,9 +22,7 @@ We recommend you install !BigBlueButton on a dedicated server.
 
 == 1. Install the !BigBlueButton apt-get repository key  == 
 
-First, install the !BigBlueButton apt-get repository key and URL. 
-
-*Note:* The URL has changed from 0.70.
+First, install the !BigBlueButton apt-get repository key and URL (*note:* The URL has changed from 0.70).
 
 {{{
    # Install the package key
@@ -91,7 +88,7 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any configuration or startup problems it has detected.  Normally, there is no text following this message.
 
-== Trying out your server ( 14:42 minutes later) ==
+== Trying out your server (14:42 minutes later) ==
 
 You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
 
@@ -158,6 +155,8 @@ A common problem is the address in !BigBlueButton's configuration files is diffe
    bbb-conf --setip <ip_address>
 }}}
 
+
+
 == Errors in shutting down red5 ==
 
 The red5 server will start without issues, but on occasion it will throw an exception when shutting down.
@@ -183,4 +182,8 @@ java.util.ConcurrentModificationException
         at org.apache.catalina.loader.WebappClassLoader.stop(WebappClassLoader.java:1622)
 }}}
 
-If this occurs, just kill the red5 process and do `sudo bbb-conf --clean` again.
+You can ignore this error as the `/etc/init.d/red5` script will automatically kill the red5 process if this occurs.
+
+== Getting Help ==
+
+If you have any problems not answered by this document, or you have questions/feedback/bugs, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
