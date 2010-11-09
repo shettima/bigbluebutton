@@ -1,9 +1,9 @@
 = Release 0.71: Titanic=
 
-_Code named in honor of the famous ship that sunk._ 
+_Code named in honour of the famous ship that sunk._ 
 
 
-Released: November 12, 2010
+Released: November XX, 2010
 
   * * VoIP Improvements * - This was the bulk of our effort for 0.71. We improved the algorithms to handle audio packets coming to and from the !BigBlueButton server. You should experience less audio lag using VoIP when compared to 0.70. (We'll let you judge the extent to which the lag has been reduced.)
 
