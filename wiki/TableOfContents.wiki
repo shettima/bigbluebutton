@@ -8,6 +8,7 @@
     * [ArchitectureOverview Overview of Architecture]
     * [OpenSourceComponents Open Source Components]
     * [DevelopingBBB Developing BigBlueButton]
+    * [Branding Creating a skin for the BigBlueButton interface]
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
     * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
