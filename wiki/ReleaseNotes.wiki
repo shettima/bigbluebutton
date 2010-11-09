@@ -23,6 +23,15 @@ Released: November XX, 2010
 
   * * Client Configuration * - Administrators can configure, on a server basis, specific capabilities of the !BigBlueButton client.  For example, you can change the video quality, define who can share video, and allow moderators to kick users.   See [ClientConfiguration Client Configuration] for the full list of configuration parameters.   
 
+== Fixed Issues ==
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71  issues fixed in BigBlueButton 0.71]
+
+== Known Issues ==
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=567Issue 567] Hitting backspace on Safari causes the browser to go back one page
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=634 Issue 634] You have been logged out
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=670 Issue 670] Listener Window Count
+
+
 = Release 0.7: Feynman =
 
 _Code named in honor of the Nobel prize winning physicist Richard Feynman._ 
