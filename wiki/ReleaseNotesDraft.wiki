@@ -19,6 +19,6 @@ Released: November 12, 2010
 
   * * Branding * - You can now change the look and feel of bbb using css. Check the [Branding] page for more info.  
 
-  * * Client Configuration * - You now have more control over certain functionality of !BigBlueButton. You can change the video quality, define who can share video, allow moderators to kick users, etc... Check the [ClientConfigurationClient Configuration] page for more info.   
+  * * Client Configuration * - You now have more control over certain functionality of !BigBlueButton. You can change the video quality, define who can share video, allow moderators to kick users, etc... Check the [ClientConfiguration Client Configuration] page for more info.   
 
   * * Breakout Meetings (experimental) * - Sometimes you want to split up your conference into several smaller meetings right from inside !BigBlueButton. You can now do that using the new optional Breakout Module. See this blog post for more info. _This feature is not enabled by default._
