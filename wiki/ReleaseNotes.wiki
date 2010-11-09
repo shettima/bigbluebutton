@@ -23,6 +23,8 @@ Released: November XX, 2010
 
   * * Client Configuration * - Administrators can configure, on a server basis, specific capabilities of the !BigBlueButton client.  For example, you can change the video quality, define who can share video, and allow moderators to kick users.   See [ClientConfiguration Client Configuration] for the full list of configuration parameters.   
 
+  * * Mate * - The !BigBlueButton client is now fully migrated to the [http://mate.asfusion.com/ mate] framework.
+
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71  issues fixed in BigBlueButton 0.71]
 
