@@ -219,18 +219,18 @@ cat nginx-bigbluebutton.conf  | sed "s/192.168.0.211/< YOUR-IP >/" > /etc/nginx/
 ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 }}}
 
-== Install OpenOffice ==
+== Install !OpenOffice ==
 {{{
 apt-get install openoffice.org
 }}}
 
-== Configure OpenOffice to start as a service ==
+== Configure !OpenOffice to start as a service ==
 {{{
 cd /tmp/bbb
 wget http://www.bigbluebutton.org/downloads/0.71/bbb-openoffice-headless
 cp bbb-openoffice-headless /etc/init.d/
 }}}
-Start the OpenOffice.org server
+Start the !OpenOffice.org server
 {{{
 chmod +x /etc/init.d/bbb-openoffice-headless
 update-rc.d bbb-openoffice-headless defaults
