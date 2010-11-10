@@ -66,7 +66,7 @@ Port the bbb-client to [http://www.adobe.com/products/air/ Air]. This allows for
 
 === Desktop Sharing Optimizations ===
 There are a number of optimizations that are possible to improve the speed of desktop sharing.  They include
-   * Allow the presenter to select a region of their screen (instead of using the full screen by default)
+   * ~~Allow the presenter to select a region of their screen (instead of using the full screen by default)~~ (implemented in 0.71)
    * Reduce the captured screen regions from 32-bit to 16-bit
    * Automatically reduce the quality to 8-bit greyscale if the upstream bandwidth is slow
    * Implement the Adobe Screen Codec 2
