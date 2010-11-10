@@ -19,7 +19,7 @@ Released: November 9, 2010
 
   * * Client Localization * -  The user can change their locale now through a drop-down menu on-the-fly.  This also triggers a change in the locale language for automatic chat translation.
 
-  * * Branding * - Administrators can now [Branding skin] the !BigBlueButton using cascading style sheets. 
+  * * Client Branding * - Administrators can now [Branding skin] the !BigBlueButton using cascading style sheets. 
 
   * * Client Configuration * - Administrators can configure, on a server basis, specific capabilities of the !BigBlueButton client.  For example, you can change the video quality, define who can share video, and allow moderators to kick users.   See [ClientConfiguration Client Configuration] for the full list of configuration parameters.   
 
