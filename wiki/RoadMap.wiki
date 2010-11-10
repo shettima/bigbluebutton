@@ -3,18 +3,19 @@
 
 = Current Release =
 
-== Release 0.71 ==
-We are currently in the development phase for !BigBlueButton 0.71.  You can read the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/6ffa48133ea7d2e6# minutes of the committers meeting] on 0.71.
-
-In short, this release will focus investigating improvements to the VoIP and will look at using, in addition to asterisk, freeswitch and the speex codec in !BigBlueButton. 
+== Release 0.8 ==
+We are now planning !BigBlueButton 0.8, which will add record and playback (our #1 requested feature from educational institutions).  As with previous releases, we'll be posting the minutes from our planning sessions as they are available.  
 
 While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
 
-== Release 0.8 ==
-After 0.71 ships, the first iteration of record and playback (our #1 requested feature from educational institutions) is planned for 0.8.
-
 
 = Previous Releases =
+
+== Release 0.71 ==
+!BigBlueButton 0.71 was released on November 9, 2010.  You can see a full list of what has been added in the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes Release Notes].
+
+You can read the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/6ffa48133ea7d2e6# minutes of the committers meeting] on 0.71.
+
 
 == Release 0.7 ==
 !BigBlueButton 0.7 was released on July 15, 2010.  You can see a full list of what has been added in the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes Release Notes].
