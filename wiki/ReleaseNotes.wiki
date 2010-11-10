@@ -29,7 +29,7 @@ Released: November 9, 2010
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71  issues fixed in BigBlueButton 0.71]
 
 == Known Issues ==
-  * [http://code.google.com/p/bigbluebutton/issues/detail?id=567Issue 567] Hitting backspace on Safari causes the browser to go back one page
+  * [http://code.google.com/p/bigbluebutton/issues/detail?id=567 Issue 567] Hitting backspace on Safari causes the browser to go back one page
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=634 Issue 634] You have been logged out
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=670 Issue 670] Listener Window Count
 
