@@ -339,7 +339,3 @@ Much of the effort in this release was on creating individual packages for the c
 Other updates include:
   * !BigBlueButton client now supports tunneling through a firewall via port 80
   * Uploading of multiple slides
-
-= Release 0.32 =
-Added
-  * Pan and zoom around the slide with the mouse and mouse-wheel
