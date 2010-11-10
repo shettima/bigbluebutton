@@ -9,7 +9,7 @@ Released: November 9, 2010
 
   * * VoIP Improvements * - This was the bulk of our effort for 0.71. We improved the algorithms to handle audio packets coming to and from the !BigBlueButton server. You should experience less audio lag using VoIP when compared to 0.70. (We'll let you judge the extent to which the lag has been reduced.)
 
- !BigBlueButton 0.71 now supports FreeSWITCH as a voice conference server. This enables the !BigBlueButton client to transmit either wide-band (16 kHz) Speex or the Nellymoser voice codec. In our testing so far, we found that nellymoser scales better and will remain the default voice codec in !BigBlueButton.
+  !BigBlueButton 0.71 now supports FreeSWITCH as a voice conference server (contributed by Leif Jackson). This enables the !BigBlueButton client to transmit either wide-band (16 kHz) Speex or the Nellymoser voice codec. In our testing so far, we found that nellymoser scales better and will remain the default voice codec in !BigBlueButton.
 
   * * Webcam Auto-Display * - When a user shares their webcam, it automatically opens on all other users connected to the virtual classroom.
 
