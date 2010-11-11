@@ -98,6 +98,21 @@ http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/c
 [http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bbb_sip.conf Click here to view the latest version]
 
 
+= FreeSWITCH =
+To change codecs from Ulaw to Speex16, change {{{global_codec_prefs}}}
+
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/vars.xml
+
+
+To change conference properties,
+
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/autoload_configs/conference.conf.xml
+
+To change conference number format, change {{{bbb_conferences}}}
+
+http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/dialplan/public.xml
+
+
 == Aditional Steps ==
 
 === extensions.conf ===
