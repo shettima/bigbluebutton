@@ -128,6 +128,31 @@ Finally, do a clean restart of your !BigBlueButton server and use `bbb-conf` to 
 
 You should now be running 0.71.  
 
+= Switching between Asterisk and FreeSWITCH ==
+The !BigBlueButton packages let you switch back and forth between using Asterisk and FreeSWITCH.
+
+
+To switch from Asterisk to FreeSWTICH, do 
+
+{{{
+   sudo apt-get purge bbb-voice-conference 
+   sudo apt-get purge asterisk 
+   sudo apt-get install bbb-freeswitch-config 
+   sudo bbb-conf --clean 
+}}}
+
+
+To switch from FreeSWITCH to asterisk, do 
+
+{{{
+   sudo apt-get purge bbb-freeswitch-config 
+   sudo apt-get purge freeswitch 
+   sudo apt-get install bbb-voice-conference 
+   sudo bbb-conf --clean 
+}}}
+
+
+
 = Troubleshooting =
 
 
