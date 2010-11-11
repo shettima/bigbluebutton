@@ -98,6 +98,20 @@ http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/c
 [http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bbb_sip.conf Click here to view the latest version]
 
 
+== Aditional Steps ==
+
+=== extensions.conf ===
+You must to edit the file: /etc/asterisk/extensions.conf and add the following line on the bottom of the file:
+
+#include "bbb_extensions.conf"
+
+=== sip.conf ===
+
+You must to edit the file: /etc/asterisk/sip.conf and add the following line on the bottom of the file:
+
+#include "bbb_sip.conf"
+
+
 = FreeSWITCH =
 To change codecs from Ulaw to Speex16, change {{{global_codec_prefs}}}
 
@@ -111,20 +125,6 @@ http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/c
 To change conference number format, change {{{bbb_conferences}}}
 
 http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/dialplan/public.xml
-
-
-== Aditional Steps ==
-
-=== extensions.conf ===
-You must to edit the file: /etc/asterisk/extensions.conf and add the following line on the bottom of the file:
-
-#include "bbb_extensions.conf"
-
-=== sip.conf ===
-
-You must to edit the file: /etc/asterisk/sip.conf and add the following line on the bottom of the file:
-
-#include "bbb_sip.conf"
 
 
 
