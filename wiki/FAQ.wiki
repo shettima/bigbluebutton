@@ -672,15 +672,15 @@ bindaddr = 127.0.0.1
 
 === Why can't I resize my portrait document ===
 
-!BigBlueButton is designed so that the contents of the presentation window are always in sync with the presenter and viewers.
+!BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and the viewers to say "I don't see what you are pointing at".
 
-To keep the presentation windows in sync, the dimensions of the presentation always match the dimensions of the presentation.  In other words, the presenter and viewer may have different sized windows, they they will be seeing the same content.  It's equivalent to viewing a document always in "fit to page" mode.  A presenter can zoom in and out, but at some point zooming out becomes fit to page again.
+To keep the presentation windows in sync, when you upload a presentation (landscape or portrait), the size of the presentation window becomes a ratio of the presentation.  The and viewer may have different sized windows, due to the sizes of their respective monitors, but they will always see the same content.  As of !BigBlueButton 0.71, this mode is equivalent to always running in "fit to page" mode.  A presenter can zoom in and out, but at some point, !BigBlueButton shows the entire page.
 
-For landscape documents, fixing the presentation to the document size works well.  Monitors are landscape, so presenting a landscape document makes good use of the screen space.  This equivalent to v
+For landscape documents, the "fit to page" approach works well.  Monitors are landscape, so presenting a landscape document makes good use of the screen space.  
 
-However, for portrait documents, the "fit to page" approach means that text is usually too small to read.  
+However, for portrait documents, the "fit to page" approach means that text is usually too small to read.  The presenter can zoom in to a portion of the document, but not change the width of the presentation window itself.
 
-We plan to add a "fit to width" option in BigBlueButton in a future iteration, one that preserves keeping the views in sync but allows for easier presentation of portrait documents.  
+We plan to add a "fit to width" option in BigBlueButton in a future iteration, one that both keeps the viewers and presenters in sync, but allows the presenter to better show portrait documents.  
 
 
 === I can't join the voice conference? When I click on the headset icon, nothing happens? ===
