@@ -669,6 +669,20 @@ bindaddr = 127.0.0.1
 #include "manager.d/*.conf"
 
 }}}
+
+=== Why can't I resize my portrait document ===
+
+!BigBlueButton is designed so that the contents of the presentation window are always in sync with the presenter and viewers.
+
+To keep the presentation windows in sync, the dimensions of the presentation always match the dimensions of the presentation.  In other words, the presenter and viewer may have different sized windows, they they will be seeing the same content.  It's equivalent to viewing a document always in "fit to page" mode.  A presenter can zoom in and out, but at some point zooming out becomes fit to page again.
+
+For landscape documents, fixing the presentation to the document size works well.  Monitors are landscape, so presenting a landscape document makes good use of the screen space.  This equivalent to v
+
+However, for portrait documents, the "fit to page" approach means that text is usually too small to read.  
+
+We plan to add a "fit to width" option in BigBlueButton in a future iteration, one that preserves keeping the views in sync but allows for easier presentation of portrait documents.  
+
+
 === I can't join the voice conference? When I click on the headset icon, nothing happens? ===
 To figure out what the problem is:
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
