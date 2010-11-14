@@ -670,7 +670,7 @@ bindaddr = 127.0.0.1
 
 }}}
 
-=== Why can't I resize my portrait document ===
+=== Why can't I resize my portrait document? ===
 
 !BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and the viewers to say "I don't see what you are pointing at".
 
