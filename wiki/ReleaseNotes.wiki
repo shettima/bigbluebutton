@@ -2,7 +2,7 @@
 
 = Release 0.71: Europa=
 
-_Code named after Eurpoa, Jupiter's moon, whose surface is among the brightest in the solar system._ 
+_Code named after Europa, Jupiter's moon, whose surface is among the brightest in the solar system._ 
 
 
 Released: November 9, 2010
