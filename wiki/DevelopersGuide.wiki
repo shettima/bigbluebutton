@@ -20,9 +20,9 @@ This guide is for developers who want to contribute to !BigBlueButton.
 === Working with Git ===
 Here we describe the workflow that you may use to develop !BigBlueButton with git.
 
-Clone !BigBlueButton
+Clone !BigBlueButton. This will provide you with READ-ONLY access to the repository. If you want READ-WRITE access, fork !BigBlueButton into your account and checkout from there.
 {{{
-  git clone git@github.com:bigbluebutton/bigbluebutton.git
+  git clone git://github.com/bigbluebutton/bigbluebutton.git
 }}}
 
 Once the checkout is complete, type the following
@@ -30,10 +30,10 @@ Once the checkout is complete, type the following
   git remote --verbose
 
   # which will show
-  origin  git@github.com:bigbluebutton/bigbluebutton.git
+  origin  git://github.com/bigbluebutton/bigbluebutton.git
 }}}
 
-What this means is that the remote repository at "git@github.com:bigbluebutton/bigbluebutton.git" is aliased as "origin"
+What this means is that the remote repository at "git://github.com/bigbluebutton/bigbluebutton.git" is aliased as "origin"
 (see http://progit.org/book/ch3-5.html)
 
 List all the branches from the "origin"
