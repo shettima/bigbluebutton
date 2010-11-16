@@ -1,5 +1,7 @@
 #summary BigBlueButton ebuild installation tutorial
 
+*Note:* These instructions are out-of-date an need to be updated for 0.71.
+
 = Introduction =
 
 Note: This is a !BigBlueButton Labs project and, as such, is not part of the core release.  If you have questions, please post them to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
