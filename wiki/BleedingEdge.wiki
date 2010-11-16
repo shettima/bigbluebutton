@@ -1,4 +1,7 @@
 #summary Notes on developing on the bleeding edge. Updated frequently
+#labels Deprecated
+
+*Note:* This was a temporary page for information on the 0.71 release.  This page is now marked as depreciated.  Please see [http://code.google.com/p/bigbluebutton/ BigBlueButton Google Code Home Page] for the latest content.
 
 == Introduction ==
 This document assumes you are developing from the latest source. So first thing you should do is pull the latest source if you haven't already. It's updated frequently. If you're having a problem with the latest source and this document isn't helping you, come to the #bigbluebutton channel on freenode, or write to the bigbluebutton-dev mailing list.
