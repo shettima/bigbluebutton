@@ -1,4 +1,5 @@
 #summary How to run Red5Phone within BigBlueButton server
+#labels Deprecated
 
 _*Note:* This content is now out of date.  We've merged the Red5 phone into the !BigBlueButton trunk.  For more information, see the source at [http://code.google.com/p/bigbluebutton/source/browse/#svn/vendors/red5phone Red5Phone] in the SVN repository._
 
