@@ -1,4 +1,7 @@
 #summary How to install  BigBlueButton on Ubuntu in under 15 minutes
+#labels Deprecated
+
+*Note:* This was a temporary page for information on the 0.71 release.  This page is now marked as depreciated.  Please see [http://code.google.com/p/bigbluebutton/ BigBlueButton Google Code Home Page] for the latest content.
 
 <wiki:toc max_depth="3" />
 
