@@ -1,4 +1,7 @@
 #summary Adding whiteboard functionality to BigBlueButton
+#labels Deprecated
+
+*Note:* This page is now marked as depreciated.  Please see [http://code.google.com/p/bigbluebutton/ BigBlueButton Google Code Home Page] for the latest content.
 
 == Current state ==
 There is a prototype whiteboard in the client code, under package org.bigbluebutton.modules.highlighter
