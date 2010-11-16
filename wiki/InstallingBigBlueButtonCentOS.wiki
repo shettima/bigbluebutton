@@ -1,6 +1,7 @@
 #summary How to install BigBlueButton on CentOS
 
-_Note: The CentOS packages currently are untested for 0.7 and still need to be updated._
+_Note: These instructions are for 0.64 and are now out of date.  We are planning on updating them, but don't have a delivery date for the updates._
+
 
 This guide shows you how to install !BigBlueButton 0.64 from source on *CentOS 5.4 32-bit*.  Of course, you can try other versions for CentOS, but we've only tested these against CentOS 5.4 32-bit.
 
