@@ -1,3 +1,4 @@
+#labels Deprecated
 = Release 0.71: Europa=
 
 _Code named after Eurpoa, Jupiter's moon, whose surface is among the brightest in the solar system._ 
