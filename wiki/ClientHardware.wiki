@@ -1,5 +1,7 @@
-#labels client,hardware
+#labels client,hardware,Deprecated
 #Discuss about interesting hardware to use with the BBB client computers
+
+*Note:* This is an older page of content that we're depreciating during a cleanup of our wiki pages.
 
 = Introduction =
 
