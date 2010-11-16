@@ -1,4 +1,5 @@
 #summary How to setup a development environment for BigBlueButton 0.71
+#labels Deprecated
 
 <font color="44388">_This document is currently a Draft_</font>
 
