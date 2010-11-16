@@ -1,4 +1,8 @@
 #summary How to install BigBlueButton like a real developer.  :-)
+#labels Deprecated
+
+*Note:* This was a temporary page for information on the 0.71 release.  This page is now marked as depreciated.  Please see [http://code.google.com/p/bigbluebutton/ BigBlueButton Google Code Home Page] for the latest content.
+
 
 _Note: This document is currently being edited for the !BigBlueButton release 0.71 and it is not recommend to use this as installation source right now_
 
