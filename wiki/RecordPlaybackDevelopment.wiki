@@ -1,7 +1,7 @@
 #summary guide for setting record and playback feature under development.
 #labels Deprecated
 
-*WARN: the page is out-of-date, please check bigbluebutton mailing list for recording and playback development*
+*WARNING: the page is out-of-date, please check bigbluebutton mailing list for recording and playback development*
 = Setup Recording Application =
 
 The Recording Application is deployed in the tomcat server as a web application.
