@@ -592,7 +592,37 @@ see http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe
 You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
 
 === Why did my voice conference number worked in 0.7 but not in 0.71? ===
-In 0.7, Asterisk was configured to use any 5-digit conference number. For 0.71, however, FreeSWITCH is configured to use any 5-digit number that begins with 7 (i.e. 7XXXX). If you have conference numbers that don't start with 7, edit bbb_conference in /opt/freeswitch/conf/dialplan/public.xml to accept your number format.
+In !BigBlueButton 0.7, Asterisk was configured to use any 5-digit conference number. However, for !BigBlueButton 0.71, FreeSWITCH is configured to use any 5-digit number that begins with 7 (i.e. 7XXXX). 
+
+If you have conference numbers that don't start with 7, edit bbb_conference in /opt/freeswitch/conf/dialplan/public.xml to accept your number format.  For example, to have FreeSWITCH accept numbers 8xxxx, chang
+
+{{{
+    <!-- BBB testing -->
+
+    <extension name="bbb_conferences">
+      <condition field="destination_number" expression="^(7\d{4})$">
+          <action application="answer"/>
+          <action application="conference" data="$1@wideband"/>
+          <!-- <action application="conference" data="$1@wideband"/> -->
+      </condition>
+    </extension>
+
+}}}
+
+to
+
+{{{
+    <!-- BBB testing -->
+
+    <extension name="bbb_conferences">
+      <condition field="destination_number" expression="^(8\d{4})$">
+          <action application="answer"/>
+          <action application="conference" data="$1@wideband"/>
+          <!-- <action application="conference" data="$1@wideband"/> -->
+      </condition>
+    </extension>
+}}}
+
 
 
 == Chat ==
