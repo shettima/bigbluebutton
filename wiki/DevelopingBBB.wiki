@@ -267,9 +267,9 @@ ant deploy
 }}}
 
 == Voice App ==
- # Import to your Eclipse by File -> New -> Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-voice}}}
+ # Import to your Eclipse by File -> New -> Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/bigbluebutton/bbb-voice}}}
 {{{
-cd ~/dev/source/git/bigbluebutton/bbb-video
+cd ~/dev/source/bigbluebutton/bbb-voice
 }}}
  # Download all dependencies 
 {{{
