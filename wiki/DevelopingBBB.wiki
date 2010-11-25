@@ -273,7 +273,7 @@ cd ~/dev/source/bigbluebutton/bbb-voice
 }}}
  # Download all dependencies 
 {{{
-gradle copyToLib
+gradle resolveDependencies 
 }}}
  # Build the application
 {{{
