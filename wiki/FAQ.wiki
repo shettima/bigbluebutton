@@ -348,11 +348,48 @@ The best approach is to see how others have integrated and adapt their code to y
 
 == How many simultaneous users can a !BigBlueButton server support? == 
 
-The !BigBlueButton community recently did a stress test of !BigBlueButton 0.17 (read: let's try to make it crash) and posted the [http://groups.google.com/group/bigbluebutton-users/browse_thread/thread/307a9878fcf07ebe# results] to the bigbluebutton-dev mailing list.  The results includes a [http://code.google.com/p/bigbluebutton/downloads/detail?name=bbb-test-1.pdf&can=2&q= PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
+We don't give out recommendations on how many users a !BigBlueButton server can support, as it's so dependent on the bandwidth usage, server capacity, and user activity.
 
-In short: At the peak we had over twenty users logged into the voice conference and, through each user opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into !BigBlueButton in a single virtual classroom.  
+Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.
 
-The server was a Pentium(R) Dual-Core CPU E5200 @ 2.50GHz with 4GB RAM running Ubuntu 9.04 32-bit.
+The !BigBlueButton community recently did a [http://bigbluebutton-blog.blogspot.com/2010/11/193-simultaneous-users.html stress test] of !BigBlueButton 0.71 (read: let's try to make it crash) and posted the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/0283af3cde5a220c# results] to the bigbluebutton-dev mailing list.
+
+Here's a summary
+{{{
+Intel Core 2 Quad Q6600 (quad-core 2.4Ghz) with 4GiB RAM with Ubuntu 
+10.10 32bit. (This was the only server we had available at the time.) 
+It was a plain Ubuntu install, and I installed asterisk, 
+bbb-voice-conference, and bigbluebutton. 
+Also installed Jeremy's patched AppKonference 
+(https://github.com/jthomerson/AsteriskAudioKonf). 
+Tweaked the asterisk extensions ( to support the alpha-numeric meeting 
+names from Jeremy's frontend to the test ). 
+Changed the salt to disable the demos. 
+Here's what I got for the stats (sorry there's no pretty graphs this time): 
+
+> The java app was using all 4 cores, and the cpu was used at <30% the 
+> entire time.  Total mem useage was about 728MB, of which the java 
+> process was using about 525MB.  At peak, we were receiving 8Mbit/sec 
+> and sending 112MBit/sec   Basically, the server never broke a sweat. 
+
+The error in the red5 log when server died was this: 
+2010-11-22 14:17:50,720 [http-8088-ClientPoller-2] ERROR 
+o.a.tomcat.util.net.NioEndpoint - 
+java.lang.OutOfMemoryError: GC overhead limit exceeded 
+2010-11-22 14:17:51,690 [pool-6736-thread-1] ERROR 
+o.r.s.m.InMemoryPushPushPipe - Exception when pushing message to consumer 
+java.lang.OutOfMemoryError: Java heap space 
+Thanks, 
+Cameron 
+}}}
+
+The server at Generic Conferencing would would have likely continued working had the default size for Java heap space been increased from 128M to a larger value.  See [http://code.google.com/p/bigbluebutton/issues/detail?id=758 Red5 out of memory].
+
+In short: At its peak, the server had 45 users in the voice conference and, through each user opening multiple browser pages, 193 simultaneous users logged into !BigBlueButton over the web -- all in a single virtual classroom. 
+
+_Keep in mind, we don't recommend to anyone to run BigBlueButton with 193 users in a single room (not yet anyway), but it is possible._
+
+You can also see the memory usage earlier stress test on 0.64  [http://code.google.com/p/bigbluebutton/downloads/detail?name=bbb-test-1.pdf&can=2&q= PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
 
 == Where is the security salt located? ==
 
@@ -368,15 +405,15 @@ Look for the line
    beans.dynamicConferenceService.securitySalt=<value_of_salt>
 }}}
 
-This is the security salt used for enabling 3rd party plug-ins and external applications to access your !BigBlueButton server through it's API.
+This is the security salt used for enabling 3rd party plug-ins and external applications to access your !BigBlueButton server through it's API.  
 
 == How do I change the security salt? ==
 
 To change the security salt, do the following: 
-  # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers with dashes that will be used to create a checksum for each API request from an external application. 
-  # Run the command `sudo bbb-conf --salt new_salt`. 
+  # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers that will be impossible to reverse engineer.  
+  # Run the command `sudo bbb-conf --setsalt new_salt`. 
 
-Note: If you are using a [http://bigbluebutton.org/support third-party plug-in] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the value of the new salt; otherwise, if the salt do not match, the API calls from the third-party plug-in will fail.
+Note: If you are using a [http://bigbluebutton.org/support third-party plug-in] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new value for the salt; otherwise, if the salts do not match, the API calls from the third-party plug-in will fail.
 
 
 == How do I change the maximum allowed size for uploading a presentation? ==
@@ -399,11 +436,12 @@ $proxy_add_x_forwarded_for;
 == How do I change the video quality of the shared webcams? ==
 In !BigBlueButton 0.71 and later, you can change the video quality through the client's config.xml file, by default located in /var/www/bigbluebutton/client/conf. Scroll down to the entry named !VideoconfModule. The value of the videoQuality attribute can be anywhere from 0 to 100. 0 means priority is given to the bandwidth and if bandwidth is low quality will suffer. Quality of 100 means no video compression will be done at all, and you will get maximum quality at the expense of bandwidth. If the bandwidth is low, the frame rate will suffer.
 
+For more information see ClientConfiguration.
 
 = Administration =
 
 == How do I update !BigBlueButton to the newest version? ==
-If you are running a !BigBlueButton VM or had installed !BigBlueButton using Ubuntu packages, you can upgrade to the newest stable release with the following two commands
+If you are running a !BigBlueButton VM 0.70 VM or had installed !BigBlueButton 0.70 using Ubuntu packages on Ubuntu 10.04, you can upgrade to the newest stable release with two commands
 
 {{{
   sudo apt-get update
@@ -418,7 +456,7 @@ Log into your VM, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and cha
 #
 # Repository for BigBlueButton
 #
-deb http://archive.bigbluebutton.org/ bigbluebutton main
+deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main
 }}}
 
 to
@@ -426,7 +464,7 @@ to
 #
 # Repository for BigBlueButton
 #
-deb http://archive.bigbluebutton.org/dev bigbluebutton main
+deb http://ubuntu.bigbluebutton.org/lucid_dev/ bigbluebutton-lucid main
 }}}
 
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds.
@@ -447,30 +485,27 @@ Also restart the networking on the VM by running the following command:
 === What is needed to run desktop sharing? ===
 !BigBlueButton uses a Java applet to capture screen updates.   This means desktop sharing works for Mac, Unix, and PC platforms.  
 
-The presenter must have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
+Only the presenter need have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
 
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
 === How can I make desktop sharing faster? ===
-!BigBlueButton uses a lossless codec, which means remote students see a pixel-for-pixel view of the presenter's destkop.  However, if you have a 32-bit background image and show your desktop, then the desktop sharing will faithfully transmit your background image.
+!BigBlueButton uses a lossless codec, which means remote students see a pixel-for-pixel view of the presenter's destkop.  Also, unlike most commercial web conferencing systems that download a binary file (i.e. DLL) on your windows machine (and then not provide any support for Mac or Unix), !BigBlueButton uses a Java applet to capture and transmit your screen.   It's going to be slower than a DLL, but it equally supports all three major desktop environments.
 
-The main bottleneck for desktop sharing is the presenter's upstream bandwidth.  
-  * Remove the 32-bit background image (replace it with a solid color is best)
+However, if you have a 32-bit background image and show your desktop, then the desktop sharing will faithfully transmit your background image.
+
+Here are some recommendations for reducing the bandwidth requirements for desktop sharing (and thus increasing the refresh rate):
+  * Share only a region of your desktop.
+  * Before you share your desktop, replace your 32-bit background image with a solid color
   * Lower the screen dept from 32-bit to 16-bit
-  
   
 
 === Can I share a specific window when sharing my desktop ===
 
-Unfortunately no.  Most commercial web conferencing systems download a binary file (i.e. DLL) on windows or Mac to hook into the Windows Mirror 
-Driver (to get screen event updates) and to use the Windows API calls to find the current window.  It's faster, but it isn't a solution for Unix users.
-
-Since Flash can't view your desktop, !BigBlueButton uses a Java applet to capture and brodcast the presenter's desktop.  This way, !BigBlueButton equally support Mac, Unix, and PC users, but it restricts us to looking at the screen, not the underlying OS and a specific winodw.
-
-A Java applet could, in theory, use JNI to connect into the Windows  subsystem to make API calls, but we're back to downloading a binary file (DLL) to enable it.  We haven't tried this yet, and unless there is a strong demand for it, we'll keep the desktop sharing solution available for all users.
+Yes.  As of !BigBlueButton 0.71, you can share a region of your desktop.  Just select the region of you window and, to your viewers, they will just see that window.
 
 
-=== The share desktop window is too small and won't let me enlarge so I can see it ===
+=== As a presenter the preview window is too small and I can't resize it ===
 
 As the presenter, when you share your desktop, !BigBlueButton will show you a *thumbnail* view of what users are seeing for your desktop.  As a thumbnail view, this is not re-sizable.  
 
