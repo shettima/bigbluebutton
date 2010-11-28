@@ -91,19 +91,19 @@ If at all possible, install on Ubuntu 10.04.  With a good internet connection, y
 
 
 === CentOS ===
-We created [RPMPackaging RPM Packages] for CentOS 5.4 for !BigBlueButton version 0.64, but, at the moment, they are now very much out of date.  We had also provided [InstallingBigBlueButtonCentOS step-by-step instructions] for installing on CentOS, but these too are out of date.
+For !BigBlueButton 0.64, we had created [RPMPackaging RPM Packages] for CentOS 5.4, but, at the moment, they are now very much out of date.  We had also provided [InstallingBigBlueButtonCentOS step-by-step instructions] for installing on CentOS, but these too are out of date.  We have no date for updating these packages and instructions.
 
-Why?  In a nutshell: quality.  We found it very difficult to test and maintain both packaging for RPM based systems (primarily CentOS) and Ubuntu.  Rather than try to do both and have them "kind of" work, which leads to many many posts in our forums for support, we've invested heavily in testing and maintaining the Ubuntu packages.  They are now very solid and tested.
+Why?  In a nutshell: quality.  We found it very difficult to test and maintain packaging for both RPM based systems (primarily CentOS) and Ubuntu.  Rather than try to do both and have them "kind of" work, which leads to many many posts in our forums for support, we've invested heavily in testing and maintaining the Ubuntu packages.  They are now very solid and tested.
 
-If at all possible, we recommend you setup a Ubuntu 10.04 server to try out !BigBlueButton.  If you *really* want support for CentOS, then you can contact one of the companies listed at http://bigbluebutton.org/support for commercial support.  Any contributions to supporting the CentOS packages will directly benefit other CentOS users in the community.
+If at all possible, we recommend you setup a Ubuntu 10.04 server to try out !BigBlueButton.  If you *really* want support for CentOS, you can contact one of the companies listed at http://bigbluebutton.org/support for commercial support.  Any financial contribution you make to updating CentOS packages will directly benefit other CentOS users in the community.
 
 
 === Windows === 
-While technically it should be possible to manually install each of the individual OpenSourceComponents needed to run !BigBlueButton on Windows, we haven't tried it nor have we tested it.
+While technically it should be possible to manually install each of the individual OpenSourceComponents needed to run !BigBlueButton on Windows, we haven't tried it, nor have we tested it.
 
-Don't worry -- using [http://www.vmware.com/products/player/ VMWare Player] you can have a full !BigBlueButton server running in under an hour using the [BigBlueButtonVM BigBlueButton Virtual Machine].  The !BigBlueButton VM is running Ubuntu 9.04 32-bit and has all the components pre-installed. 
+Don't worry -- using [http://www.vmware.com/products/player/ VMWare Player] you can have a full !BigBlueButton server running in under an hour using the [BigBlueButtonVM BigBlueButton Virtual Machine].  The !BigBlueButton VM is running Ubuntu 10.04 32-bit and has all the components pre-installed. 
 
-If you a brave soul and want to manually install the individual OpenSourceComponents natively on Windows and then install all the !BigBlueButton components, it should be possible. However, beware, no one who has tried this has lived to post a success message to our mailing list :-).
+If you a brave soul and want to manually install the individual OpenSourceComponents natively on Windows and then install all the !BigBlueButton components, it should be possible.  However, beware, no one who has tried this has lived to post a success message to our mailing list :-).
 
 === OS X ===
 The easiest way to get your own !BigBlueButton server under OS X is to install VMWare Fusion and run the [BigBlueButtonVM BigBlueButton Virtual Machine].  
@@ -118,9 +118,9 @@ There is a !BigBlueButton Labs project (prototype and unsupported) that shows ho
 
 === What are the bandwidth requirements for running a !BigBlueButton server? ===
 
-When sharing a webcam, as a moderator !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream. 
+When sharing a webcam, as a moderator !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream.  Viewers can only share a 320x240 webcam.
 
-For example, if you have a room with 5 people in it with 5 webcams then the fomula is: 
+For example, if you have a room with 5 users, each sharing their webcam, then the you can calculate the bandwidth usage as follows: 
 
   * Y = 30-50 Kbytes/sec; let's assume 40 Kbytes/sec on average 
   * W = amount of webcams that are streaming 
@@ -128,16 +128,15 @@ For example, if you have a room with 5 people in it with 5 webcams then the fomu
 
 For calculations:
   * server incoming bandwidth: W`*`Y 
-  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not has to subscrive to his own stream) 
+  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not have to subscrive to his own stream) 
 
-So with 5 ppl in a room with 5 webcams streaming you'll have; 
+For example, with 5 users in a room with 5 webcams streaming, the bandwidth calculation is as follows:
 
   * in: 5`*`40 = 200 Kbytes/sec incoming bandwidth needed to the server (e.g. 1.6 Mbit) 
   * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec incoming bandwidth needed from the server (e.g. 6.4 Mbit) 
   * Total traffic used after one our: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
 
-If you'd have a typical classroom situation with 1 stream going to 30 
-students in a remote learning environment: 
+If you'd have a typical classroom situation with the presenter broadcasting their webcam to 30 remote students, the calculation is as follows: 
 
   * in: 1`*`40 = 40 Kbytes/sec incoming (e.g. 0.32 Mbit/sec) 
   * out: 1`*`(30-1)`*`40 = 1160 Kbytes/sec outgoing (e.g. 9.3 Mbit/sec) 
@@ -145,8 +144,8 @@ students in a remote learning environment:
 Gbyte traffic per hour 
 
 If you'd have 10 of those classes then you server need to be able to output 
-93 Mbit/sec; that's not much in a LAN but it's pretty much if you need to 
-hire a server. 
+93 Mbit/sec; that's not much in a LAN but it's pretty much if your in a hosted environment.
+
 Large "cafe-style chatroom" : 20 viewers, 8 people broadcasting with a 
 webcam:  
 
@@ -155,16 +154,14 @@ webcam:
   * Total traffic used after one hour: 60 mins`*`60 secs`*`( 320 + 6080 ) = 23 Gbyte traffic per hour 
 
 
-Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  As the presenter moves to the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and their client's loads the next slide from cache. Chat also almost no bandwidth as well.
+Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  When the presenter clicks to show the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and they load the next slide from the local cache. Chat also almost no bandwidth as well.
 
-Desktop sharing takes the most bandwidth, and it's dependent on the presenter's screen size and how often their screen updates.  
+Desktop sharing takes the most bandwidth, and it's dependent on area chosen by the presenter (full screen and region) and how often their screen updates.  
 
-A VoIP connection from the !BigBlueButton takes roughly 20 kB/sec per user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 20 kB/sec = 400 kB/sec.
-
-
-If the presenter has only 100 kilobyte/second upstream, then performing VoIP, video, and desktop sharing with all participants will throttle back within that constraint (i.e. flash will degrade the quality automatically).  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still update, just at a slower rate.
+A VoIP connection to the !BigBlueButton takes roughly 20 kB/sec per user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 20 KBytes/sec = 400 kBytes/sec.
 
 
+If the presenter has only 100 KByte/second upstream, then performing VoIP, video, and desktop sharing will fit within that upstream constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still receive updates, but the refresh will be much slower than if the presenter was on a LAN (such as within the university or college network).
 
 
 == Troubleshooting ==
