@@ -166,11 +166,15 @@ If the presenter has only 100 KByte/second upstream, then performing VoIP, video
 
 == Troubleshooting ==
 
-=== I have an existing system and want to install !BigBlueButton as a part of it ===
+=== I have an existing server with web application already running on port 80 (such as Moodle).  Can I also install !BigBlueButton on that server? ===
 
-!BigBlueButton plays well with other systems.  If you are already running apache, you can have !BigBlueButton listen to a different port (see answer above).
+!BigBlueButton can run with other web based systems on the same server, but there are tradeoffs.  If you already have apache running on port 80, you can have !BigBlueButton listen to a different port (see [BBBConf#--setip_<_Host_>_:_<_Port_> bbb-conf]).
 
-Follow this guide for some good tips: http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty
+However, the trade off are remote users accessing behind a firewall can no longer tunnel through port 80 to !BigBlueButton. 
+
+As a result, we recommend installing !BigBlueButton on it's own dedicated server, making it easy to upgrade !BigBlueButton without affecting your existing applications, and easy to upgrade the server as your usage of !BigBlueButton grows.
+
+There are also some good instructions for setting up a server with !BigBlueButton running on a different port at [http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty#Install_the_BigBlueButton_teleconferencing_system Ultimate Server Jaunty].
 
 === I've installed using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
 Sometimes a hosted Ubuntu distribution, the hosting provider has removed the default access to packages in the multiverse.  Check
