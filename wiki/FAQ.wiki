@@ -34,15 +34,15 @@ We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We
 
 == How do I join the !BigBlueButton development team? ==
 
-We consider someone a BigBluebutton developer if they have rights to check in code to BigBlueButton's GIT repository, or have had their code pulled into the GIT repository by an existing developer.
+We consider someone a !BigBlueButton developer if they have check-in rights BigBlueButton's GIT repository, or have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
 
 We welcome contributions from other developers!  This is a merit-based project, which means you need to contribute to the community to become part of the project.
 
-A good way to start is to become very familiar with BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and [DevelopingBBB setting up a development environment].  You also need to understand how GIT works.  We recommend you setup an account on GitHUB and clone the BigBlueButton repository.
+A good way to start is to become very familiar with !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and [DevelopingBBB setting up a development environment].  You also need to understand how GIT works.  We recommend you setup an account on GitHUB and clone the !BigBlueButton repository.
 
 Next, you contribute by helping others in our mailing lists that are having problems.  This takes load of the core development team and is quickly noticed.  
 
-Next, try fixing a bug in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker] or implementing one of the items in the [IdeasPage wish list].  Make your intent visible on the developer mailing list.  If a developer is making an earnest effort to fix a bug or add a feature, we'll be there to help. 
+Next, try fixing a bug in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker] or implementing one of the items in the [IdeasPage wish list].  Make your intent visible on the developer mailing list.  If you demonstrate and earnest effort to fix a bug or add a feature, we'll be there to help. 
 
 Some bugs are more important than others.  Stability and usability are core to !BigBlueButton.  If you demonstrate and ability to help increase stability and usability of the platform, we're very interested in mentoring you and helping you become a !BigBlueButton developer. 
 
