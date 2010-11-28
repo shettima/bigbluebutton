@@ -10,10 +10,10 @@ Sequence of events when the VOIP application starting up.
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-startup.png]
 
- 1. The application starts initializing the SipPeerManager which manages connections to one or more peers
- 1. The SipPeerManager initializes the SipPeer
- 1. The SipPeer initiated registration with Asterisk or FreeSWITCH
- 1. The SipRegister service is in-charged of registering and re-registering for keep-alive
+ 1. The application starts initializing the !SipPeerManager which manages connections to one or more peers
+ 1. The !SipPeerManager initializes the !SipPeer
+ 1. The !SipPeer initiated registration with !Asterisk or !FreeSWITCH
+ 1. The !SipRegister service is in-charged of registering and re-registering for keep-alive
 
 == Join ==
 Sequence of events when a user joins the voice conference.
