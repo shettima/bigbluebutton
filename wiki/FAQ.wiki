@@ -8,18 +8,26 @@
 
 = Welcome =
 
-We created this Frequently Asked Questions (FAQ) to help you quickly get started installing, configuring, administrating, using, and upgrading !BigBlueButton.  
+Welcome to the !BigBlueButton Frequently Asked Questions (FAQ). 
 
-== How can I join the !BigBlueButton Community? ==
-There are three primary mailing lists in use by the !BigBlueButton community:
+We (the core developers) created this FAQ to help you quickly get started with installation, configuration, and using !BigBlueButton.  If you are a developer, you'll also find lots of answered herein that have been collected from discussions on our mailing lists.
 
-  * For setup, instllation, and configuration questions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup]
-  * For end user questions, please post to [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users].
-  * For all other questions, please post to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev].
+== What if I don't find my answer here? ==
+
+The BigBlueButton community focuses its support in three mailing lists (all hosted by Google Groups).  They are:
+
+  * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] -- Setup, instllation, and configuration questions, such as "How do I configure the !BigBlueButton client?"
+  * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users] -- End user questions, such as "How do I do X with !BigBlueButton?"
+  * [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] -- All other questions, such as "How do I integration !BigBlueButton with application Y?"
+
+The developer mailing list has almost 700 users, so before you post do the following:
+
+  # Scan the FAQ to see if you questions is answered herein
+  # Search the archives of the associated mailing list -- there's a good chance someone might have already asked your question and the ensuing discussion might help you as well 
+  # If you think you've found a bug, check the [http://code.google.com/p/bigbluebutton/issues/list issues database] first.  
 
 All of the core !BigBlueButton contributions subscribe to all three mailing lists.  Please don't cross post.
 
-Before you post, search the archives for the mailing list first.  There's a good chance someone might have already asked your question and the ensuing discussion might help you as well. 
 
 == Why is this project called !BigBlueButton? ==
 
@@ -34,22 +42,27 @@ We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We
 
 == How do I join the !BigBlueButton development team? ==
 
-We consider someone a !BigBlueButton developer if they have check-in rights BigBlueButton's GIT repository, or have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
+We consider someone a !BigBlueButton developer if they have check-in rights BigBlueButton's [https://github.com/bigbluebutton GIT repository], or if they have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
 
-We welcome contributions from other developers!  This is a merit-based project, which means you need to contribute to the community to become part of the project.
+This is a merit-based project, which means to eventually join the development team you need to first contribute to the community.
 
-A good way to start is to become very familiar with !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and [DevelopingBBB setting up a development environment].  You also need to understand how GIT works.  We recommend you setup an account on GitHUB and clone the !BigBlueButton repository.
+!BigBlueButton may seem complex, but it's not really once you get to know the system.  Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  You also need to understand how GIT works.  We recommend you setup an account on GitHUB, clone the !BigBlueButton repository, and try building from source on your computer.
 
-Next, you contribute by helping others in our mailing lists that are having problems.  This takes load of the core development team and is quickly noticed.  
+If your not a developer but really want to contribute, you can become proficient in the installation and configuration of a !BigBlueButton server.   There are usually a number of new users each month that need help with networking, especially setting up !BigBlueButton to [Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m work behind a firewall].  
 
-Next, try fixing a bug in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker] or implementing one of the items in the [IdeasPage wish list].  Make your intent visible on the developer mailing list.  If you demonstrate and earnest effort to fix a bug or add a feature, we'll be there to help. 
+We quickly notice anyone who is active in the mailing lists and helping others setup their server or getting started with development.  Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
 
-Some bugs are more important than others.  Stability and usability are core to !BigBlueButton.  If you demonstrate and ability to help increase stability and usability of the platform, we're very interested in mentoring you and helping you become a !BigBlueButton developer. 
+As a developer, once you understand the architecture and have become visible in the mailing list, the main step is to try fixing bugs in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker] or implementing one of the items in the [IdeasPage wish list].  Whichever your choice, make your intent visible on the developer mailing list.  If you demonstrate and earnest effort to fix a bug or add a feature, you'll get our attention and we'll help you in any way we can.
 
-Before any code can be accepted into the repository, you also need to sign a Joint Contributors agreement.  
+Some bugs are more important than others.  Stability and usability are very important to the !BigBlueButton community.  If you demonstrate and ability to help increase stability and usability of the platform, we're very interested in mentoring you and helping you become a full fledged, card carrying !BigBlueButton developer. 
+
+To ensure all the code contributed to the project can be released under an open source license, you also need to sign a Joint Contributors agreement.  
+
 
 == Where can I find examples of people running !BigBlueButton ==
-We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   We know from downloads there are probably quite a few.  If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
+We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   We know from downloads there many !BigBlueButton servers running world-wide.  
+
+If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
 
 == Will !BigBlueButton always stay open source? ==
 Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
@@ -57,8 +70,9 @@ Yes. We started !BigBlueButton as an open source project, and we intend to keep 
 = Installation =
 
 == What are the minimum hardware requirements to run !BigBlueButton? ==
-We recommend you run !BigBlueButton on dual core machine with at least 2 Gig of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
+As a minimum, we recommend you run !BigBlueButton on a dual-core machine with at least 2 Gig of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
 
+While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
 
 == Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ==
 If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  
