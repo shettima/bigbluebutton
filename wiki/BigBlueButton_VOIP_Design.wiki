@@ -5,15 +5,17 @@
 Add your content here.
 
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Startup ==
+Sequence of events when the VOIP application starting up.
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-startup.png]
 
+== Join ==
+Sequence of events when a user joins the voice conference.
+
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-join.png]
+
+== Leave ==
+Sequence of events when the user leaves the conference.
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-leave.png]
