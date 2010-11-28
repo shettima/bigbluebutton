@@ -11,3 +11,9 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+
+[http://bigbluebutton.googlecode.com/svn/trunk/bbb_diagramsPNG_06/voice-conf-detailed-design-startup.png]
+
+[http://bigbluebutton.googlecode.com/svn/trunk/bbb_diagramsPNG_06/voice-conf-detailed-design-join.png]
+
+[http://bigbluebutton.googlecode.com/svn/trunk/bbb_diagramsPNG_06/voice-conf-detailed-design-leave.png]
