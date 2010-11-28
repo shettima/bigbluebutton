@@ -21,12 +21,12 @@ Sequence of events when a user joins the voice conference.
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-join.png]
 
  1. The client connects to the application.
- 2. The ClientConnectionManager store the client connection
- 3. The ClientConnection will be used to send messages from the server to the client
- 4. The client then tells the Service to call into the voice conference
- 5. The Service forwards the request to the SipPeerManager which finds the SipPeer for the voice conference
- 6. The SipPeer receives the request to call into the conference
- 7. 
+ 1. The ClientConnectionManager store the client connection
+ 1. The ClientConnection will be used to send messages from the server to the client
+ 1. The client then tells the Service to call into the voice conference
+ 1. The Service forwards the request to the SipPeerManager which finds the SipPeer for the voice conference
+ 1. The SipPeer receives the request to call into the conference
+ 1. 
 
 == Leave ==
 Sequence of events when the user leaves the conference.
