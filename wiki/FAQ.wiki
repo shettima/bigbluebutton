@@ -896,18 +896,35 @@ In /home/firstuser/dev
 
 == Other Questions ==
 === When will feature X be supported? ===
-Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. 
 
+Keep in mind that BigBlueButton is largely built by a group of (very 
+determined) developers that volunteer their time.   Some of us work 
+for companies that provide paid support to educational institutions to 
+leverage BigBlueButton (see http://bigbluebutton.org/support). 
 
+Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for years.
 
-The more people ask for an issue, the faster it'll get done. So go ahead and ask
+Time is a precious commodity.  In general, when planning a new release, we look at all request in the following order: 
+  # What are our (paying) customers asking us to implement?
+  # What do we need to implement for our target market (distance education)? 
+  # What features do we (the core developers) like to see in BigBlueButton? 
+  # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
+
+If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to BigBlueButton (hey -- its open source!).  Barring those two, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).. 
+
+For a list of what's planned for the next iteration, check out our RoadMap.  
+
 
 === Why is my webcam image upside down? ===
 
 We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
 === How can I donate or help the project ===
-The !BigblueButton project doesn't take donations. If you'd like to help, spread the word about BBB. Blog about us, follow us on [http://twitter.com/bigbluebutton twitter]. If you're a developer and want a contribute, write to the [http://groups.google.com/group/bigbluebutton-dev/ bigbluebutton-dev] mailing list.
+The !BigblueButton project doesn't take donations. If you'd like to help out, consider [FAQ#How_do_I_join_the_BigBlueButton_development_team joining the development team].
+
+If you are not a developer, the biggest way you can help is SPREAD THE WORD about this project.  Blog about it, tweet about it, and share your experiences (good, bad, and ugly) with others.
+
+We love hearing the experiences of others using !BigBlueButton.  It gives us a lot of pride when we see another school or college adopt !BigBlueButton to teach their remote students.
 
 === How do I change the brand of !BigBlueButton? ===
 There have been a number of companies (and individuals) posting to the
@@ -926,11 +943,6 @@ branding changes no longer work -- please help me!!"
 Most importantly for everyone, the efforts to provide a commercially
 supported branding option for !BigBlueButton won't take away from core
 development, but rather it will support it.
-
-
-=== I see an inverted picture from my webcam ===
-Please check your webcam driver and update it if possible.
-
 
 
 === Is the scheduling interface in bbb-web still supported? ===
