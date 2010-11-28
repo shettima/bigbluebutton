@@ -548,9 +548,9 @@ If others in the voice conference don't hear you when you speak, it's likely tha
   # Click the microphone icon
   # Try choosing a different microphone from the drop-down list
 
-You see a volume indicator next to the drop down. If you select an active microphone, you'll immediately see activity in the volume indicator when you speak.
+You see a volume indicator next to the drop down for choosing a microphone.  Try selecting a different microphone.  When you select the active microphone, you'll immediately see activity in the volume indicator when you speak.
 
-Close this Flash settings dialog and others in the voice conference should hear you know.
+Close this Flash settings dialog and others in the voice conference should now hear you.
 
 
 
@@ -560,54 +560,56 @@ When you are the only person in the voice conference, you'll hear 'music on hold
 
 === Why is there an echo in the voice conference? ===
 
-You'll hear an echo if any users are not using a headset to join the voice conference through VoIP (clicking on the headset icon in the upper left).
+You'll hear an echo when a listener is not using a headset.  
 
-This usually occurs when a remote student is using a laptop.  They have activated the VoIP, and their audio is coming out through the built-in speakers in the laptop and they are using the built-in microphone.  The problem is the laptop's microphone picks up the audio and then everyone hears an echo.  
+This usually occurs when a remote student is using a laptop.  They have activated the VoIP, and their audio is coming out through the laptop's built-in speakers and is immediately picked up by the built-in microphone and retransmitted to everyone else, causing an echo. 
 
 To solve this problem, if you have logged in as a moderator, you can mute the student. Here's how:
 
   # click on the student's name in the Voice window, then 
   # click the speaker icon to the left of their name.  
 
-This will mute the student.   If they want to speak, they can click the raise hand button to get your attention.
+If they want to speak, they can click the raise hand button to get your attention.
 
-The best solution is ask all students to use a headset -- this will give them the best audio with no feedback.
+The best solution is ask all students to use a headset -- this will give everyone the best audio with no feedback.
 
 === Why is there a delay in the audio when I use VoIP? ===
 
-*Note*: We are reducing the VoIP delay in !BigBlueButton 0.71 (see [http://code.google.com/p/bigbluebutton/wiki/RoadMap Road Map]).
+Yes, you will experience delay in the audio when using VoIP.  It's unavoidable in an internet-based voice conferencing system.  We've put a lot of work into !BigBlueButton to reduce the delay, but we can never eliminate the variables such as:
+  * Available CPU resources of the host server
+  * Available memory for voice encoding
+  * Bandwidth to/from the server
+  * Bandwidth to/from each user
+  * network latency
 
-Yes, you will experience delay in the audio when using VoIP.  To understand why, here's the background on how the audio works in !BigBlueButton.  !BigBlueButton uses asterisk as its voice conference server, which means you can join the voice conference by dialing a phone number (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).
+
+!BigBlueButton uses Asterisk or FreeSWITCH as its voice conference server.  This has a big benefit in that your users can join the voice conference by dialing a phone number (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).  Both incoming streams will be mixed by Asterisk or FreeSWITCH.
 
 When using the phone, referred to as direct inward dialing (DID) number, a user can dial a phone number (this is the DID) that is routed by a SIP trunk provider to the asterisk server.  The SIP trunk provider is a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to asterisk server when someone calls the DID using session initiation protocol (SIP).  The receiving asterisk server then prompts the caller to enter an extension number that corresponds to the voice conference bridge for the !BigBlueButton session.  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
 
 Setting up asterisk with a SIP gateway takes a fair bit of knowledge about how asterisk works.  When using the built-in VoIP client in !BigBlueButton, everything is pre-configured to automatically dial into the asterisk server (again using SIP) and joining the proper extension.  
-
-However, when using VoIP, there will be a delay in your audio reaching participants.  This is due to the path that the packets take to reach the VoIP server, and also the upstream bandwidth of the speaker, the CPU-load on the asterisk server (i.e. the number of callers in a voice conference), and the network latency. 
 
 Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk (via SIP), then asterisk mixes in the audio (via appkonference), then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded back to nellymoser, then goes down to the client.
 
 As the administrator of the !BigBlueButton server, to reduce the delay, you can do the following:
 
    # Run !BigBlueButton on a dedicated server (not a virtual server).  A virtual implementation of asterisk is more sensitive to hardware timing when running in a virtualized environment.
-   # Run asterisk on a separate computer.  This the task of audio mixing to a dedicated computer (you'll need to configure the asterisk server on the !BigBlueButton server to route the calls to the separate asterisk server).
-   # Setup DIDs for the asterisk.  This involves configuration of asterisk, and asterisk gives you lots of options (read: if you've never configured asterisk before, this isn't going to be a one or two hour job).  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
+   # Run Asterisk or FreeSWTICH on a separate computer.  This the task of audio mixing to a dedicated computer (you'll need to configure the !BigBlueButton server to route the calls to the separate asterisk server).
+   # Setup DIDs.  This involves configuration of Asterisk/FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
 
 In most cases (1) and (2) can make some improvements, but if you have a caller that is going over the internet, their packages will arrive at the speed of their upstream bandwidth.  
 
-For the best audio, setting up (3) will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very, very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your asterisk server.
+For the best audio, setting up (3) will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very, very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your Asterisk/FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your Asterisk/FreeSWITCH server.
 
-Finally, when looking at the path for the audio packets, there is an expensive operation in the transcoding within the red5 server: nellymoser -> mulaw and the reverse.  We are looking at ways of optimizing that transcoding in future versions of !BigBlueButton to reduce the audio delay of the built-in VoIP.
 
 === Why is the audio not synced with the video? ===
 
-Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through asterisk, while the video goes through red5.  
+Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through Asterisk/FreeSWITCH, while the video goes through red5.  
 
 For the video, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients current subscribed to the video stream.  It's basically a straight pass through of the packets.
 
 For audio, the voice packets have a longer route to take (see answer to question above).
 
-Why use asterisk for the audio conferencing in !BigBlueButton?  The biggest reason is that, with a third-party SIP gateway, it enables users to dial into a !BigBlueButton conference server using the phone lines.  In other words, users have two ways to join the voice conference: built-in VoIP or the phone system.  It also enables !BigBlueButton to tightly integrate with an existing asterisk server if you already have one in place.
 
 === How do I remove sound when a user join or leave the conference? ===
 For FreeSWITCH, comment out {{{the following in /opt/freeswitch/conf/autoload_configs/conference.conf.xml}}}
@@ -669,10 +671,11 @@ This prevents the scenario where a malicious Flash application tries to
 masquerade as your desktop showing a web browser, for example, with a login 
 screen to your bank account.  
 
+As of !BigBlueButton 0.71, we've removed the full screen button and instead recommend users make their browser full screen. This has the same effect, but allows you to use your keyboard.
+
 === How come when I use a | (pipe character) in the chat any text after it disappears? ===
 
 This has to do with how some data is used internally.  The data after the | is stripped away and therefore will not show.
-
 
 = Developing for !BigBlueButton =
 
@@ -682,13 +685,14 @@ This has to do with how some data is used internally.  The data after the | is s
 See [DevelopingBBB Developing !BigBlueButton] for full instructions.
 
 === Where can I download the latest build? ===
-You can checkout the latest code from SVN.  If you want to install the latest build from packages, see how to [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonVM#Updating_the_BigBlueButton_VM_to_packages_on_trunk_(aka_Living_o Install from latest build].
+You can checkout the latest code from Git.  However, if you want to install the latest build from packages, see [The_Client using git to checkout from master].
 
 === I want to develop from Windows! ===
+
 Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
 
 === How to compile and deploy the components of !BigBlueButton? ===
-For most components of BBB, the source on the !BigBlueButton VM includes ant scripts which you can use to compile and deploy that particular component. If you have questions about compiling a specific component, post to the mailing list.
+For most components of BBB, the source on the !BigBlueButton VM includes ant scripts which you can use to compile and deploy that particular component. See DevelopingBBB.
 
 === What if I want to develop for the Client only? ===
 If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of !BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of !BigBlueButton.
@@ -698,12 +702,6 @@ You need to create the following 2 directories on your bbb server if they're not
 === My client fails at startup with RSL error; Error 2035:URL Not Found ===
 This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here]
 
-=== Where is the !BigBlueButton scheduling interface in 0.63 ===
-
-In !BigBlueButton 0.63, we are depreciating the grails web 
-interface to schedule meetings in favor of using the !BigBlueButton 
-API.  We [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp provided examples] of using the !BigBlueButton API to show you how to use it.  
-   
 
 = Troubleshooting =
 
@@ -737,6 +735,15 @@ bindaddr = 127.0.0.1
 
 }}}
 
+Try 
+
+{{{
+   sudo bbb-conf --check
+}}}
+
+which will analyze your current setup and print out any warnings/problems it finds.  Also see Why_did_my_voice_conference_number_worked_in_0.7_but_not_in_0.71.
+
+
 === Why can't I resize my portrait document? ===
 
 !BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and the viewers to say "I don't see what you are pointing at".
@@ -757,6 +764,7 @@ To figure out what the problem is:
 
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
  * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
+
 
 === Using the API examples I get an java.lang.!NullPointerException when trying to join a room ===
 
@@ -852,7 +860,7 @@ sudo /etc/init.d/nginx restart
 When you're inside the client, righclick, go to settings > microphone icon > select microphone, and talk to see if it works by checking the volume bar.
 
 === When I try to join the conference, I get logged out after loading the modules ===
-* Check if !BigBlueButton was ablt to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
+* Check if !BigBlueButton was able to connect to Asterisk AMI. Open {{{/usr/share/red5/log/bigbluebutton.log}}} and check for errors that has "login to AMI".
 * Make sure that red5/webapps/bigbluebutton is running properly. Try tailing {{{tail -f /usr/share/red5/log/bigbluebutton.log}}} and try joining again. Look for clues in the resulting log.
 
 === My slides upload but never finish converting! ===
@@ -865,7 +873,7 @@ sudo /etc/init.d/red5 restart
 
 === bbb-conf --check reports Host IP does not match !BigBlueButton ===
 
-In !BigBlueButton 0.63, this is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to !BigBlueButton, you can safely ignore the warning.
+This is really more of a warning than an error.  If you are using a DNS name, and that DNS name resolves to the IP address, or you have an external DNS name that is port forwarded to !BigBlueButton, you can safely ignore the warning.
 
 === UTF characters won't display correctly in the Client ===
 If you're using Linux, UTF characters won't display correctly. This is a Flash limitation and unfortunately there's not much we can do about it.
@@ -888,7 +896,11 @@ In /home/firstuser/dev
 
 == Other Questions ==
 === When will feature X be supported? ===
-Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. The more people ask for an issue, the faster it'll get done. So go ahead and ask
+Check out the RoadMap, search the [http://code.google.com/p/bigbluebutton/issues/list issue tracker], or ask the [http://groups.google.com/group/bigbluebutton-dev dev mailing list]. 
+
+
+
+The more people ask for an issue, the faster it'll get done. So go ahead and ask
 
 === Why is my webcam image upside down? ===
 
