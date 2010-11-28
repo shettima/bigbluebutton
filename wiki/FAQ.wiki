@@ -13,7 +13,7 @@ We (the core developers) created this FAQ to help you quickly get started with i
 
 == What if I don't find my answer here? ==
 
-The BigBlueButton community focuses its support in three mailing lists (all hosted by Google Groups).  They are:
+The !BigBlueButton community focuses its support in three mailing lists (all hosted by Google Groups).  They are:
 
   * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] -- Setup, instllation, and configuration questions, such as "How do I configure the !BigBlueButton client?"
   * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users] -- End user questions, such as "How do I do X with !BigBlueButton?"
@@ -41,7 +41,7 @@ We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We
 
 == How do I join the !BigBlueButton development team? ==
 
-We consider someone a !BigBlueButton developer if they have check-in rights BigBlueButton's [https://github.com/bigbluebutton GIT repository], or if they have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
+We consider someone a !BigBlueButton developer if they have check-in rights !BigBlueButton's [https://github.com/bigbluebutton GIT repository], or if they have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
 
 This is a merit-based project, which means to eventually join the development team you need to first contribute to the community.
 
@@ -211,7 +211,7 @@ deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
 Then, issue a `sudo apt-get update` and try following the install instructions again.
 
 
-=== I've installed BigBlueButton using the VM, but I can't access it from a browser ===
+=== I've installed !BigBlueButton using the VM, but I can't access it from a browser ===
 Make sure your VMWave Player (or VMWare Fusion) network settings are set to *bridged*, not NAT.  If they were set to NAT and you changed to bridged, you'll need to tell the VM to acquire a network address.  Enter the following command
 
 {{{
@@ -387,7 +387,7 @@ The server at Generic Conferencing would would have likely continued working had
 
 In short: At its peak, the server had 45 users in the voice conference and, through each user opening multiple browser pages, 193 simultaneous users logged into !BigBlueButton over the web -- all in a single virtual classroom. 
 
-_Keep in mind, we don't recommend to anyone to run BigBlueButton with 193 users in a single room (not yet anyway), but it is possible._
+_Keep in mind, we don't recommend to anyone to run !BigBlueButton with 193 users in a single room (not yet anyway), but it is possible._
 
 You can also see the memory usage earlier stress test on 0.64  [http://code.google.com/p/bigbluebutton/downloads/detail?name=bbb-test-1.pdf&can=2&q= PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
 
@@ -543,7 +543,7 @@ These steps trigger the opening of the File Open by a user action, which seems t
 
 If others in the voice conference don't hear you when you speak, it's likely that Flash has picked the wrong microphone on your computer.  You can change this with the following steps:
 
-  # Right-click on the background of BigBlueButton
+  # Right-click within the !BigBlueButton client
   # Choose "Settings..." from the flash pop-up menu
   # Click the microphone icon
   # Try choosing a different microphone from the drop-down list
@@ -754,7 +754,7 @@ For landscape documents, the "fit to page" approach works well.  Monitors are la
 
 However, for portrait documents, the "fit to page" approach means that text is usually too small to read.  The presenter can zoom in to a portion of the document, but not change the width of the presentation window itself.
 
-We plan to add a "fit to width" option in BigBlueButton in a future iteration, one that both keeps the viewers and presenters in sync, but allows the presenter to better show portrait documents.  
+We plan to add a "fit to width" option in !BigBlueButton in a future iteration, one that both keeps the viewers and presenters in sync, but allows the presenter to better show portrait documents.  
 
 
 === I can't join the voice conference? When I click on the headset icon, nothing happens? ===
@@ -816,7 +816,7 @@ BigBlueButton server
 %>
 }}}
 
-What's likely happening is that BigBlueButtonURL isn't resolving to a
+What's likely happening is that !BigBlueButtonURL isn't resolving to a
 valid host.  You can verify by using it's value to interactively make an API call from your browser.  To do this, enter the following URL in your browser
 
 {{{
@@ -834,14 +834,14 @@ back an XML file similar to the following:
 </response>
 }}}
 
-Now, this URL isn't actually called by your web browser; rather, it's called by the BigBlueButton server.  So login to your BigBlueButton server and enter the following command:
+Now, this URL isn't actually called by your web browser; rather, it's called by the !BigBlueButton server.  So login to your BigBlueButton server and enter the following command:
 
 {{{
    wget http://<your_hostname>/bigbluebutton/api/isMeetingRunning?meetingID=abcdef
 -O -
 }}}
 
-and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the BigBlueButton server.
+and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of !BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the BigBlueButton server.
 
 === All I get is a "Welcome to Nginx" screen" ===
 If bbb-conf -c returns:
@@ -897,20 +897,17 @@ In /home/firstuser/dev
 == Other Questions ==
 === When will feature X be supported? ===
 
-Keep in mind that BigBlueButton is largely built by a group of (very 
-determined) developers that volunteer their time.   Some of us work 
-for companies that provide paid support to educational institutions to 
-leverage BigBlueButton (see http://bigbluebutton.org/support). 
+Keep in mind that !BigBlueButton is largely built by a group of (very determined) developers that volunteer their time.   Some of us work for companies that provide paid support to educational institutions to leverage BigBlueButton (see http://bigbluebutton.org/support). 
 
 Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for years.
 
 Time is a precious commodity.  In general, when planning a new release, we look at all request in the following order: 
   # What are our (paying) customers asking us to implement?
   # What do we need to implement for our target market (distance education)? 
-  # What features do we (the core developers) like to see in BigBlueButton? 
+  # What features do we (the core developers) like to see in !BigBlueButton? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
-If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to BigBlueButton (hey -- its open source!).  Barring those two, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).. 
+If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to !BigBlueButton (hey -- its open source!).  Barring those two, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).. 
 
 For a list of what's planned for the next iteration, check out our RoadMap.  
 
