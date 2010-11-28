@@ -176,74 +176,39 @@ As a result, we recommend installing !BigBlueButton on it's own dedicated server
 
 There are also some good instructions for setting up a server with !BigBlueButton running on a different port at [http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty#Install_the_BigBlueButton_teleconferencing_system Ultimate Server Jaunty].
 
-=== I've installed using packages on Ubuntu 9.04 32-bit but I'm getting an error ===
-Sometimes a hosted Ubuntu distribution, the hosting provider has removed the default access to packages in the multiverse.  Check
+
+=== I've tried to install !BigBlueButton on a virtual private server running Ubuntu 10.04 but I'm getting packaging errors during the installation. ===
+Sometimes the hosting provider for a virtual private server (VPS) has removed the default entries from
 
 {{{
    /etc/apt/sources.list
 }}}
 
-that following repositories are enabled and try it again. 
+The easiest way to solve this is replace `sources.list` with the standard entries (show below).
+
 
 {{{
-#
-#
-# deb cdrom:[Ubuntu-Server 9.04 _Jaunty Jackalope_ - Release i386 (20090421.1)]/ jaunty main restricted
-# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
-# newer versions of the distribution.
-
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty main restricted
-deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty main restricted
-
-## Major bug fix updates produced after the final release of the
-## distribution.
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty-updates main restricted
-deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty-updates main restricted
-
-## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
-## team. Also, please note that software in universe WILL NOT receive any
-## review or updates from the Ubuntu security team.
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty universe
-deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty universe
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty-updates universe
-deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty-updates universe
-
-## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
-## team, and may not be under a free licence. Please satisfy yourself as to
-## your rights to use the software. Also, please note that software in
-## multiverse WILL NOT receive any review or updates from the Ubuntu
-## security team.
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty multiverse
-deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty multiverse
-deb http://us.archive.ubuntu.com/ubuntu/ jaunty-updates multiverse
-deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty-updates multiverse
-
-## Uncomment the following two lines to add software from the 'backports'
-## repository.
-## N.B. software from this repository may not have been tested as
-## extensively as that contained in the main release, although it includes
-## newer versions of some applications which may provide useful features.
-## Also, please note that software in backports WILL NOT receive any review
-## or updates from the Ubuntu security team.
-# deb http://us.archive.ubuntu.com/ubuntu/ jaunty-backports main restricted universe multiverse
-# deb-src http://us.archive.ubuntu.com/ubuntu/ jaunty-backports main restricted universe multiverse
-
-## Uncomment the following two lines to add software from Canonical's
-## 'partner' repository.
-## This software is not part of Ubuntu, but is offered by Canonical and the
-## respective vendors as a service to Ubuntu users.
-# deb http://archive.canonical.com/ubuntu jaunty partner
-# deb-src http://archive.canonical.com/ubuntu jaunty partner
-
-deb http://security.ubuntu.com/ubuntu jaunty-security main restricted
-deb-src http://security.ubuntu.com/ubuntu jaunty-security main restricted
-deb http://security.ubuntu.com/ubuntu jaunty-security universe
-deb-src http://security.ubuntu.com/ubuntu jaunty-security universe
-deb http://security.ubuntu.com/ubuntu jaunty-security multiverse
-deb-src http://security.ubuntu.com/ubuntu jaunty-security multiverse
+deb http://security.ubuntu.com/ubuntu lucid-security main restricted
+deb http://security.ubuntu.com/ubuntu lucid-security multiverse
+deb http://security.ubuntu.com/ubuntu lucid-security universe
+deb http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ lucid universe
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
+deb-src http://security.ubuntu.com/ubuntu lucid-security main restricted
+deb-src http://security.ubuntu.com/ubuntu lucid-security multiverse
+deb-src http://security.ubuntu.com/ubuntu lucid-security universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
 }}}
 
-
+Then, issue a `sudo apt-get update` and try following the install instructions again.
 
 
 === I've installed BigBlueButton using the VM, but I can't access it from a browser ===
@@ -263,8 +228,10 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 = Configuration =
 
-== How do I enable feature X ==
-See the [ClientConfiguration client configuration] page for details on how to enable or disable specific modules and features.
+== How do I enable feature X in the !BigBlueButton client ==
+As of !BigBlueButton 0.71, you can configure some options in the client, such as enabling moderators to eject users from the virtual classroom.
+
+Check out [ClientConfiguration client configuration] for details on how to enable or disable specific modules and features.  These options are on a server-wide basis (not virtual classroom or individual basis).
 
 == Networking ==
 
@@ -349,9 +316,9 @@ Also, most people integrate !BigBlueButton with an existing system using one of 
 Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Join Courses] API example.  You can modify this demo page to setup your own branded landing page.
 
 === How do I setup new classrooms in !BigBlueButton? === 
-If you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use one of these modules to setup your own classrooms.
+If you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use one of these modules to setup your own virtual classrooms.
 
-If you have a bit of programming skills, you create your own classrooms by modifying this [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
+If you have a bit of programming skills, you create your own virtual classrooms by modifying this [http://demo.bigbluebutton.org/bigbluebutton/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
 
 You will find `demo3.jsp` in the directory `/var/lib/tomcat6/webapps/bigbluebutton/demo/demo3.jsp`.
 
@@ -376,10 +343,12 @@ If you are looking for an integration module that does not exist, please post a 
 
 !BigBlueButton provides an [http://code.google.com/p/bigbluebutton/wiki/API API] for integration with other web-based applications.  
 
+The best approach is to see how others have integrated and adapt their code to your integration.  Don't you just love open source!
+
 
 == How many simultaneous users can a !BigBlueButton server support? == 
 
-The !BigBlueButton community recently did a stress test of !BigBlueButton 0.64 (read: let's try to make it crash) and posted the [http://groups.google.com/group/bigbluebutton-users/browse_thread/thread/307a9878fcf07ebe# results] to the bigbluebutton-dev mailing list.  The results includes a [http://code.google.com/p/bigbluebutton/downloads/detail?name=bbb-test-1.pdf&can=2&q= PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
+The !BigBlueButton community recently did a stress test of !BigBlueButton 0.17 (read: let's try to make it crash) and posted the [http://groups.google.com/group/bigbluebutton-users/browse_thread/thread/307a9878fcf07ebe# results] to the bigbluebutton-dev mailing list.  The results includes a [http://code.google.com/p/bigbluebutton/downloads/detail?name=bbb-test-1.pdf&can=2&q= PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
 
 In short: At the peak we had over twenty users logged into the voice conference and, through each user opening multiple browser pages, had over one hundred and sixty (160) simultaneous users logged into !BigBlueButton in a single virtual classroom.  
 
