@@ -1,4 +1,4 @@
-#summary : Information on the Bigbluebutton Foundation
+#summary Information on the Bigbluebutton Foundation
 
 =Bigbluebutton Foundation Wiki=
 
