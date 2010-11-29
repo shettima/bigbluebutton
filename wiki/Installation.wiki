@@ -9,7 +9,7 @@ The !BigBlueButton 0.71 server runs under Linux and BSD.  To setup your own !Big
     * Install from source on [InstallingBigBlueButtonFreeBSD Install on FreeBSD/PC-BSD] (0.70)
 
 Instructions for 0.64 release:
-    * [RPMPackaging Install on CentOS 5.4 32-bit/64-bit (15 minutes)] (
+    * [RPMPackaging Install on CentOS 5.4 32-bit/64-bit (15 minutes)]
     * [InstallingBigBlueButtonFedora Install from source (Fedora)] 
     * [InstallingBigBlueButtonCentOS Install from source (CentOS)] 
 
