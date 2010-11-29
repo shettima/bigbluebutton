@@ -907,10 +907,13 @@ Time is a precious commodity.  In general, when planning a new release, we look 
   # What features do we (the core developers) like to see in !BigBlueButton? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
-If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to !BigBlueButton (hey -- its open source!).  Barring those two, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).. 
+If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to !BigBlueButton (hey -- its open source!).  Barring those two, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).
 
 For a list of what's planned for the next iteration, check out our RoadMap.  
 
+=== My Mac iSight camera no longer works in BigBlueButton after a system update to Mac OS X 10.6.5 ===
+
+There were some problems with the latest Flash update on Mac OS X.  See this [http://discussions.apple.com/thread.jspa?messageID=12641342&#12641342 Apple Support thread] for suggested solutions.
 
 === Why is my webcam image upside down? ===
 
