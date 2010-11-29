@@ -1,3 +1,5 @@
+#summary : Information on the Bigbluebutton Foundation
+
 =Bigbluebutton Foundation Wiki=
 
 This page is currently under construction.   Included here are the items that drive the success of the Bigbluebutton product and its community.
