@@ -525,3 +525,24 @@ Now run the war file
 {{{
 grails run-war
 }}}
+
+=== Setting up a development on a package installation of !BigBlueButton ===
+
+At the moment, the script bbb-conf is written to work for setting up a development environment only within the VM, not within a target !BigBlueButton server that has been installed via packages. 
+
+Why?  The short answer is there are a lot of steps to properly setting up a development environment.   You'll also see in the VM that the tools already installed in the /home/firstuser/dev/tools folder, as well as environment variables already setup in /home/firstuser/.profile file in anticipation of development. 
+
+Furthermore, there are a lot of commands needed to be run to setup the development environment correctly, and most everything is done for you by bbb-conf  (you can take a look at the source for bbb-conf in /usr/local/bin/bbb-conf to see the commands that get run). 
+
+We recommend you use the !BigBlueButton VM for development. However, if you want to setup a development environment on a target BigBlueButton installed via packages, do the following on the target server: 
+
+  # Setup a firstuser account 
+  # Copy over the dev/tools folder to /home/firstuser/dev/tools 
+  # Copy over the settings for environment variables (in /home/firstuser/.profile) 
+
+Then type 
+{{{
+    source /home/firstuser/.profile 
+}}}
+
+and run the bbb-conf commands to setup the development environment on the target server. 
