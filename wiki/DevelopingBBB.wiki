@@ -526,7 +526,7 @@ Now run the war file
 grails run-war
 }}}
 
-== Setting up a development on a non-BigBlueButton VM ==
+== Setting up a development on a non-BigBlueButton !VM ==
 
 At the moment, the script bbb-conf is written to work for setting up a development environment only within the VM, not within a target !BigBlueButton server that has been installed via packages. 
 
