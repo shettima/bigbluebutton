@@ -566,18 +566,31 @@ Close this Flash settings dialog and others in the voice conference should now h
 
 When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
 
+
+=== How do I disable the music on hold? ===
+
 If you want to disable this sound, for :
 
-AppKonference, remove the {{{H}}} parameter in {{{/etc/asterisk/bbb_extensions.conf}}}
+!AppKonference, remove the `H` parameter in 
 
-see http://github.com/jthomerson/AsteriskAudioKonf/blob/master/konference/Dialplan.txt
+{{{
+   /etc/asterisk/bbb_extensions.conf
+}}}
 
-MeetMe, remove {{{M}}} parameter in {{{/etc/asterisk/bbb_extensions.conf}}}
-http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe
+see [http://github.com/jthomerson/AsteriskAudioKonf/blob/master/konference/Dialplan.txt Asterisk dialplan].  MeetMe, remove `M` parameter in 
 
-For FreeSWITCH, remove {{{moh-sound}}} entry in the wideband profile in {{{/opt/freeswitch/conf/autoload_configs/conference_conf.xml}}}
+{{{
+   /etc/asterisk/bbb_extensions.conf
 
-see http://wiki.freeswitch.org/wiki/Mod_conference and http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/autoload_configs/conference.conf.xml
+}}}
+
+For more information see [http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe Asterisk Commands].  For FreeSWITCH, remove `moh-sound` entry in the wideband profile in 
+
+{{{
+   /opt/freeswitch/conf/autoload_configs/conference_conf.xml
+}}}
+
+For more information, see [http://wiki.freeswitch.org/wiki/Mod_conference Mod_conference] and [http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/autoload_configs/conference.conf.xml BigBlueButton conference.xml].
 
 === Why is there an echo in the voice conference? ===
 
