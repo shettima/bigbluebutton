@@ -4,7 +4,7 @@
 
 = Prerequisites =
 
-This document contains instructions for installing/upgrading *!BigBlueButton 0.71* on a Ubuntu 10.04 32-bit or 64-bit server.  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] later in this document.
+This document contains instructions for installing/upgrading *!BigBlueButton 0.71* on a Ubuntu 10.04 32-bit or 64-bit server (earlier or later versions of Ubuntu are not supported).  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] later in this document.
 
 
 Before you install !BigBlueButton 0.71, you'll need:
