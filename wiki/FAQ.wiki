@@ -239,7 +239,13 @@ Check out [ClientConfiguration client configuration] for details on how to enabl
 
 If you change the port or hostname of your !BigBlueButton server, you can easily change all the related !BigBlueButton configuration files using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
 
+=== What ports must be open for external users to connect to !BigBluebutton? ===
 
+These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
+
+=== Does !BigBlueButon support tunneling? ===
+
+Yes.  If a remote user is unable to connect to port 1935, which typically occurs when a remote user's corporate firewall blocks external access to all other ports except port 80, then their !BigBlueButton client will fail to connect to port 1935 and, after about ten seconds, fall back to tunneling through port 80.
 
 === Can I provide external access to a !BigBlueButton server behind my firewall? ===
 
