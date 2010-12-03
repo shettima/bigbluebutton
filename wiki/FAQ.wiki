@@ -241,7 +241,7 @@ If you change the port or hostname of your !BigBlueButton server, you can easily
 
 === What ports must be open for external users to connect to !BigBluebutton? ===
 
-These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
+These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).  Ports 80 and 9123 use TCP, which port 1935 uses TCP and UDP.
 
 === Does !BigBlueButon support tunneling? ===
 
