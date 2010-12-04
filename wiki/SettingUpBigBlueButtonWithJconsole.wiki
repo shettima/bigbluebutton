@@ -6,7 +6,7 @@ In this section we are going to describe how to set up our [http://code.google.c
 
 Jconsole itself can put load n your server that is why it is recommended to connect it remotely to your server in order to have correct results (there are other ways we might have space to mentions them) 
 
-So in our case we are going to setup the [BigBlueBurron] Server 
+So in our case we are going to setup the [BigBlueButton] Server 
 
 = Details =
 
