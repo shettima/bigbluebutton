@@ -10,4 +10,13 @@ So in our case we are going to setup the [http://code.google.com/p/bigbluebutton
 
 = Details =
 
-To start with we will need to configure our server 
+To start with we will need to configure our Red5 server JMXRMI for remote connection to allow Jconsole to connect to the Red5 process. 
+
+I have started with the "simple" steps described in this [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication Red5 wiki page] and hoping it would work without problems. 
+
+Well, we had issues and here how we worked them out:
+
+1. Problem with the IP address or host name as it doesn't resolve to you server IP and it might sa in the debug error message the host IP or172.0.0.1 or 0.0.0.0. So to fix that we have to make sure that we have the "right" settings for our Red5 JMX/RMI by editing  remote JMX section red5.properties file. 
+Here is what it should look like after editing it: 
+
+{{{jmx.rmi.port.registry=9999 jmx.rmi.port.remoteobjects= jmx.rmi.host=0.0.0.0 jmx.rmi.ssl=false jmx.http=false jmx.http.port=8082}}}
