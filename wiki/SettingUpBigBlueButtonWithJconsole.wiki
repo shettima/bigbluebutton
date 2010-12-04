@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page included a description of how to set up our BigBlueButton server with Jconsole, the Java Management and Monitoring Tool
+This page included a description of how to set up our BigBlueButton server with [http://download.oracle.com/javase/6/docs/technotes/tools/share/jconsole.html  Jconsole, the Java Management and Monitoring Tool]
 
 
 = Details =
