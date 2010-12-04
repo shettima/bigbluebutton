@@ -20,3 +20,21 @@ Well, we had issues and here how we worked them out:
 Here is what it should look like after editing it: 
 
 {{{jmx.rmi.port.registry=9999 jmx.rmi.port.remoteobjects= jmx.rmi.host=0.0.0.0 jmx.rmi.ssl=false jmx.http=false jmx.http.port=8082}}}
+
+2. Now that we we will have another problem, after few attempts failing to connect to the red5 process on the BBB server, we had discovered that we need to setup the SSL for the Jconsole red5/JMX connection! To work that out you can follow the steps described in the "Enabling SSL" and the "Enabling the Client SSL authontication", [http://www.componative.com/content/controller/developer/insights/jconsole2/index.html in this web page] (it is for JBoss server but pretty much is what we had to do in the case of BBB).
+
+3. When you get to the last step and get to the jconsole connection dialogbox appears and we enter the URI for our red5 process 
+
+{{{service:jmx:rmi://YOUR_IP:JMX_PORT/jndi/rmi://YOUR_IP:JMX_PORT/red5}}} 
+
+Now by doing that you might success to connect or like what happened to me it didn't work (typical) you might get this message 
+
+{{{Authentication failed! Credentials required}}}
+
+So we need to a user name and password to connect to the Red5 JMX and the default user name and password for Red5 is  (default user//password are red5user//changeme) 
+
+Now you should be able to see the Jconsole main window and you go from there.
+
+
+
+ 
