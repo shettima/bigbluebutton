@@ -4,7 +4,7 @@
 
 In this section we are going to describe how to set up our [http://code.google.com/p/bigbluebutton/ BigBlueButton] server with [http://download.oracle.com/javase/6/docs/technotes/tools/share/jconsole.html  Jconsole, the Java Management and Monitoring Tool]for the purposes of monitoring the performance of our BBB server (memory consumption, CPU usage, threads, etc). Bare in mind we are monitoring the Red5 process only.
 
-Jconsole itself can put load n your server that is why it is recommended to connect it remotely to your server in order to have correct results (there are other ways we might have space to mentions them). [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication See this link]
+Jconsole itself can put load on your server that is why it is recommended to connect it remotely to your server in order to have correct results (there are other ways we might have space to mentions them). [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication See this link]
 
 So in our case we are going to setup the [http://code.google.com/p/bigbluebutton/ BigBlueButton] Server.
 
