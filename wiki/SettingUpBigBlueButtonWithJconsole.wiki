@@ -21,7 +21,7 @@ Here is what it should look like after editing it:
 
 {{{jmx.rmi.port.registry=9999
 
- jmx.rmi.port.remoteobjects= 
+jmx.rmi.port.remoteobjects= 
 
 jmx.rmi.host=0.0.0.0 
 
