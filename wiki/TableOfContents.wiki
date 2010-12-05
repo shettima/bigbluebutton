@@ -13,6 +13,7 @@
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
     * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
+    * [SettingUpBigBlueButtonWithJconsole Setting Up BigBlueButton With Jconsole]
   * [Support Support]
     * [ReleaseNotes Release Notes]
     * [FAQ FAQ]
