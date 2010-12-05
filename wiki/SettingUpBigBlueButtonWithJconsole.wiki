@@ -25,7 +25,9 @@ Here is what it should look like after editing it:
 
 {{{jmx.rmi.host=0.0.0.0}}} 
 
-{{{jmx.rmi.ssl=false jmx.http=false}}}
+{{{jmx.rmi.ssl=false}}}
+
+{{{jmx.http=false}}}
 
 {{{jmx.http.port=8082}}}
 
