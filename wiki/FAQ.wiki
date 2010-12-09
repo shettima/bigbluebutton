@@ -55,7 +55,19 @@ As a developer, once you understand the architecture and have become visible in 
 
 Some bugs are more important than others.  Stability and usability are very important to the !BigBlueButton community.  If you demonstrate and ability to help increase stability and usability of the platform, we're very interested in mentoring you and helping you become a full fledged, card carrying !BigBlueButton developer. 
 
-To ensure all the code contributed to the project can be released under an open source license, you also need to sign a Joint Contributors agreement.  
+To ensure all the code contributed to the project can be released under an open source license, you also need to sign a  Contributors agreement (seen entry below).  
+
+== How do I contribute my updates to !BigBlueButton? ==
+
+We currently host all the code on GitHub.  Only a few people have commit rights to ensure quality of the project.
+
+Before we can accept contributions, ws an open source project, we're need to ensure there isn't any ambiguity on the ownership of material committed to the project.  Therefore, before we can incorporate your materials, we need to have a Contributor Agreement in place.  For background on our reasons for doing this, please see http://www.oss-watch.ac.uk/resources/cla.xml.
+
+We've adopted to use the Sun Microsystems Contributer Agreement as it provides for joint ownership.  Except as set out in the agreement, you (and your employer if you have an intellectual property agreement in place) keep all right, title, and interest in your contribution.
+
+Please read over the [http://bigbluebutton.googlecode.com/files/Contributor%20Agreement.pdf Contributor Agreement] and, if you (and your employer) are in agreement with its terms, then sign, scan, and e-mail a copy back to one of the project owners.  Note: The agreement is currently between you (and your employer) and Blindside Networks.  When the !BigBlueButton foundation launches in 2011, Blindside Networks will assign these agreements to the foundation.
+
+Once we receive the signed Contributor Agreement, we can accept your contribution for inclusion in !BigBlueButton.
 
 
 == Where can I find examples of people running !BigBlueButton ==
