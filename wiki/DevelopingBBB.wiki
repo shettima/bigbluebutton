@@ -237,7 +237,7 @@ gradle eclipse
 gradle resolveDeps
 }}}
  # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
- # Right-click on the project and add Scala Nature and Groovy Nature
+ # Right-click on the project and add Scala Nature and Groovy Nature (*NOTE: This isn't really necessary. And in any case it's less than trivial. This document makes it seem matter-of-fact, but setting up Scala IDE with Eclipse is buggy and tricky. You will need a specific Eclipse version (3.5.2 Classic right now) - check the Scala plugin website for detailed instructions. For Groovy, you will need to install the Groovy plugin and for !BigBlueButton you currently need a very specific Groovy version that is hard to find. So just don't worry about this step * - Denis Zgonjanin, December 13 2010)
  # Setup your build path and library
  # Build the application
 {{{
