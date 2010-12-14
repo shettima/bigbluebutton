@@ -1,0 +1,32 @@
+#summary One-sentence summary of this page.
+This page is intended to describe the steps for setting up the BigBlueButton development environment within Eclipse. 
+
+= Introduction =
+
+Add your content here.
+
+=Prerequisite=
+
+EclipseEE
+
+IvyDe Eclipse plugin
+
+Flash Eclipse Plugin
+
+Subeclipse plugin
+
+
+
+= Details =
+
+*Setting p Red5 server*
+
+*Importing BigBlueButton apps*
+
+BigBlueButton-app
+
+bbb-voice
+
+bbb-web
+
+BigBlueButton-Client (You will need Flex Builder Eclipse Plugin)
