@@ -131,6 +131,15 @@ You should now be running 0.71.
 = Switching between Asterisk and FreeSWITCH ==
 The !BigBlueButton packages let you switch back and forth between using Asterisk and FreeSWITCH.
 
+To switch from FreeSWITCH to Asterisk, do 
+
+{{{
+   sudo apt-get purge bbb-freeswitch-config 
+   sudo apt-get purge freeswitch 
+   sudo apt-get install bbb-voice-conference 
+   sudo bbb-conf --clean 
+}}}
+
 
 To switch from Asterisk to FreeSWTICH, do 
 
@@ -141,16 +150,11 @@ To switch from Asterisk to FreeSWTICH, do
    sudo bbb-conf --clean 
 }}}
 
-
-To switch from FreeSWITCH to asterisk, do 
+Note: When you switch back to FreeSWITCH, it seems the FreeSWITCH package will not re-install the sounds.  To install them manually, do the following command:
 
 {{{
-   sudo apt-get purge bbb-freeswitch-config 
-   sudo apt-get purge freeswitch 
-   sudo apt-get install bbb-voice-conference 
-   sudo bbb-conf --clean 
+   sudo dpkg -i /var/cache/apt/archives/freeswitch-sounds-music-16000*
 }}}
-
 
 
 = Troubleshooting =
