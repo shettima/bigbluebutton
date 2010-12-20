@@ -2,7 +2,7 @@ This a dreaft for the BigBlueButton API partitioning  development, it contains m
 
 = Introduction =
 
-In this page we are going to describe the design of the [BigBlueButton] API and the progress for its development. 
+In this page we are going to describe the design of the BigBlueButton API and the progress for its development. 
 
 The goal for that part of the API development is to enable Third Party application to call the BigBlueButton modules separately. Example of that is, calling chat module or presentation module and enable Third Party application s to to access functionalities related to the loaded modules. 
 
@@ -38,3 +38,17 @@ In this section we are going to list the use cases or the scenarios for Third Pa
 For the API calls and response we just followed the orginal format that was set for the BBB API and we didn't introduce any changes. 
 
 The API standard calls and format can be found on the [API] page at the [http://code.google.com/p/bigbluebutton/wiki/API#API_Calls API Calls] section. 
+
+*Checkout the code and try out the API's*
+
+To check out the code you can go to the here and check out the BigBlueButton code on the API branch. 
+
+After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
+
+ # bigbluebutton-client part, follow the instructions on how to build and run the client code as described on the BigBlueButton development page the [ here]
+
+ # bbb-common-message, follow the instructions on the the BigBlueButton development page the [ here] to build and resolve libs.
+
+ # bigbluebutton-apps, follow the instructions on how to build and run the client code as described on the BigBlueButton development page the [ here]
+
+ # bigbluebutton-web, follow the instructions on how to build and run the client code as described on the BigBlueButton development page the [ here]
