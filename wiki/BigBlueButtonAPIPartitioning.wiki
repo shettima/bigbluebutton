@@ -26,11 +26,11 @@ In this section we are going to list the use cases or the scenarios for Third Pa
 
  * Load only one BBB module (i.e. load chat module or voice, etc) when a 3rd party application starts. Green: done with calling one module (Start/Stop), display the module in a single module within the BBB canvas. 
 
- * Load more than one BBB module (i.e. chat & video, chat & presentation) when 3rd party application starts. (Green: Load 2 modules at the beginning of the 3rd party app) 
+ * Load more than one BBB module (i.e. chat & video, chat & presentation) when 3rd party application starts. 
 
- * Load only one BBB module (i.e. load chat module or voice, etc)  in response to an event from a 3rd party application (mouse click, conf call button, etc) (Green: started, now we need to make sure that if clinets start to connect will be loading the right modules) 
- 
- * Load more than one module at different times in response to events from the 3rd party application. Example, click to make a call (load voice module) and later click to start the video or click to start a presentation while calling. (Yellow: started and able to load chat and presentation within different tomes) 
+ * Load only one BBB module (i.e. load chat module or voice, etc)  in response to an event from a 3rd party application (mouse click, conf call button, etc) 
+
+ * Load more than one module at different times in response to events from the 3rd party application. Example, click to make a call (load voice module) and later click to start the video or click to start a presentation while calling.
 
 
 *API Calls suggestions for format:*
@@ -72,3 +72,8 @@ http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module
 
  ** To stop Presentation Module use
 http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop
+
+
+*Potential Problems*
+
+_To be added_
