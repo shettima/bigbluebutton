@@ -9,7 +9,7 @@ The goal for that part of the API development is to enable Third Party applicati
 
 = Details =
 
-To review the changes and try out the API partitioning you can go to here and check ou the API branch. 
+To review the changes and try out the API partitioning you can go to here and check out the API branch [https://github.com/nnoori/bigbluebutton/tree/API here]. Will come later to the details of how to checkout the code and compile the pieces associated with API. 
 
 _Warning: we are at a very early stages for the development of the API partitioning so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
@@ -37,7 +37,4 @@ In this section we are going to list the use cases or the scenarios for Third Pa
 
 For the API calls and response we just followed the orginal format that was set for the BBB API and we didn't introduce any changes. 
 
-The API standard calls and format can be found on the [API] page at the [http://code.google.com/p/bigbluebutton/wiki/API#API_Calls API Calls] section 
-
-API Calls - parameters and response 
-API general format: (my suggestion is to follow the format that Jeremy had used for now, unless you see otherwise, suggestions!)
+The API standard calls and format can be found on the [API] page at the [http://code.google.com/p/bigbluebutton/wiki/API#API_Calls API Calls] section. 
