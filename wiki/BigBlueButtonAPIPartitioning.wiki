@@ -10,20 +10,33 @@ The goal for that part of the API development is to enable Third Party applicati
 
 = Details =
 
+To review the changes and try out the API partitioning you can go to here and check ou the API branch. 
+
+_Warning: we are at a very early stages for the development of the API partitioning so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
+
 == The API Architecture ==
 
+In this section contains a simple diagram the existing API architecture. The diagram below describes the operation and information exchange for the existing BigBlueButton API. The current development didn't involve any architectural changes for the API calls. (See digram below)
+
+(Need to insert image here) 
+
+
 *Use cases:*
+ 
+In this section we are going to list the use cases or the scenarios for Third Party application calls for the API's from their side.   
 
-This section rperesents the use cases for using the API 
-Load only one BBB module (i.e. load chat module or voice, etc) when a 3rd party application starts. Green: done with calling one module (Start/Stop), display the module in a single module within the BBB canvas. 
-Load more than one BBB module (i.e. chat & video, chat & presentation) when 3rd party application starts. (Green: Load 2 modules at the beginning of the 3rd party app) 
-Load only one BBB module (i.e. load chat module or voice, etc)  in response to an event from a 3rd party application (mouse click, conf call button, etc) (Green: started, now we need to make sure that if clinets start to connect will be loading the right modules) 
-Load more than one module at different times in response to events from the 3rd party application. Example, click to make a call (load voice module) and later click to start the video or click to start a presentation while calling. (Yellow: started and able to load chat and presentation within different tomes) 
+ * Load only one BBB module (i.e. load chat module or voice, etc) when a 3rd party application starts. Green: done with calling one module (Start/Stop), display the module in a single module within the BBB canvas. 
 
-(Please fell free to add more and improve) 
-API Calls suggestions for format: 
+ * Load more than one BBB module (i.e. chat & video, chat & presentation) when 3rd party application starts. (Green: Load 2 modules at the beginning of the 3rd party app) 
 
-Here is a simple diagram for the initial operation and information exchange for the API. But this will need to be improved as we go. 
+ * Load only one BBB module (i.e. load chat module or voice, etc)  in response to an event from a 3rd party application (mouse click, conf call button, etc) (Green: started, now we need to make sure that if clinets start to connect will be loading the right modules) 
+ 
+ * Load more than one module at different times in response to events from the 3rd party application. Example, click to make a call (load voice module) and later click to start the video or click to start a presentation while calling. (Yellow: started and able to load chat and presentation within different tomes) 
+
+
+*API Calls suggestions for format:*
+
+ 
 
 API Calls - parameters and response 
 API general format: (my suggestion is to follow the format that Jeremy had used for now, unless you see otherwise, suggestions!)
