@@ -8,6 +8,7 @@ We are now planning !BigBlueButton 0.8, which will add record and playback (our 
 
 While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
 
+As part of 0.8 we're also further profiling and refactoring of the handling of VoIP packets.
 
 = Previous Releases =
 
