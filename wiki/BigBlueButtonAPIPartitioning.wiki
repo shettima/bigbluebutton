@@ -37,7 +37,7 @@ In this section we are going to list the use cases or the scenarios for Third Pa
 
 For the API calls and response we just followed the orginal format that was set for the BBB API and we didn't introduce any changes. 
 
-The API standard calls and format can be found on the [API] page [http://code.google.com/p/bigbluebutton/wiki/API#API_Calls API stndrad calls]
+The API standard calls and format can be found on the [API] page at the [http://code.google.com/p/bigbluebutton/wiki/API#API_Calls API Calls] section 
 
 API Calls - parameters and response 
 API general format: (my suggestion is to follow the format that Jeremy had used for now, unless you see otherwise, suggestions!)
