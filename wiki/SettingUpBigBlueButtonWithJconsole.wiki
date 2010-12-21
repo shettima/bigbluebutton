@@ -7,10 +7,46 @@ In this page, we are going to describe how to monitor !BigBlueButton's performan
 Jconsole and VisualVM can put load on your server. It is recommended to connect remotely to your server to have correct results. 
 
 = Details =
+=== Generate Keys ===
 
+Go to the Red5 conf directory
+{{{
+   cd /usr/share/red5/conf
+}}}
+
+Generate a keystore. You will be prompted for password and other information. Make note of the password you entered as you'll need them later.
+{{{
+   sudo keytool -genkey -alias jconsole -keystore red5JConsoleKeyStore
+}}}
+
+Check if the keystore has been generated properly.
+{{{
+   keytool -list -keystore red5JConsoleKeyStore
+}}}
+
+Let's export the keystore so we can use it to connect from JConsole or VisualVM
+{{{
+   sudo keytool -export -alias jconsole -keystore red5JConsoleKeyStore -file jconsole.cert
+}}}
+
+Now we copy {{{jconsole.cert}}} into the machine where we will run jconsole or VisualVM. Let's put it into a folder called {{{D:\visualvm}}}.
+
+Import the into a file call {{{red5KeyStore}}}. When prompted for a password, enter the password you used when you created the keystore.
+{{{
+D:\visualvm>keytool -import -alias red5 -keystore C:\visualvm\red5KeyStore -file jconsole.cert
+}}}
 
 {{{
-/usr/share/red5/conf/red5.properties
+D:\visualvm_122\bin>jconsole -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
+
+D:\visualvm_122\bin>visualvm -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
+mv jconsole.cert ~/
+
+}}}
+
+Open up {{{/usr/share/red5/conf/red5.properties}}}:
+ 1. Make note of the value of {{{rtmps.keystorepass}}}, you 
+{{{
 
 rtmps.keystorepass=password
 
@@ -19,15 +55,13 @@ jmx.rmi.port.registry=9999
 jmx.rmi.port.remoteobjects=
 jmx.rmi.host=192.168.0.166
 jmx.rmi.ssl=true
+}}}
 
 /usr/share/red5/conf/password.properties
 red5user changeme
 
-cd /usr/share/red5/conf
-sudo keytool -genkey -alias jconsole -keystore red5JConsoleKeyStore
-keytool -list -keystore red5JConsoleKeyStore
-sudo keytool -export -alias jconsole -keystore red5JConsoleKeyStore -file jconsole.cert
-mv jconsole.cert ~/
+
+
 
 
 /usr/share/red5/conf/conf/red5-common.xml
@@ -51,16 +85,7 @@ mv jconsole.cert ~/
 
 
 
-D:\visualvm_122>keytool -import -alias red5 -keystore C:\Java\jdk1.6.0_07\bin\red5KeyStore -file jconsole.cert
-Enter keystore password:
-Re-enter new password:
 
-
-
-
-D:\visualvm_122\bin>jconsole -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
-
-D:\visualvm_122\bin>visualvm -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
 
 }}}
 
