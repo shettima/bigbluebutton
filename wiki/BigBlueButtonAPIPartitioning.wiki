@@ -60,10 +60,10 @@ Here are the available API calls so far:
  * To start Chat Module use
 http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start
 
- *To stop Chat Module use
+ * To stop Chat Module use
 http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop
 
- # You can load up, start and stop the chat module for the BigBlueButton within the BigBlueButton client canvas so far (the same gores for aiming to load independently) 
+ # You can load up, start and stop the presentation module for the BigBlueButton within the BigBlueButton client canvas so far (the same goes for aiming to load independently) 
  * To start Presentation Module use
 http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start
 
