@@ -55,20 +55,21 @@ After checking out the code, follow the steps for building and deploying the dif
 
 Here are the available API calls so far:
 
- # You can load up, start and stop the chat module for the BigBlueButton within the BigBlueButton client canvas so far (we are aiming to load each module in its own frame independently)
+ * You can load up, start and stop the chat module for the BigBlueButton within the BigBlueButton client canvas so far (we are aiming to load each module in its own frame independently)
  
- * To start Chat Module use
-http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start
+   * To start Chat Module use
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start}}}
 
- * To stop Chat Module use
-http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop
+   * To stop Chat Module use
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop}}}
 
- # You can load up, start and stop the presentation module for the BigBlueButton within the BigBlueButton client canvas so far (the same goes for aiming to load independently) 
- * To start Presentation Module use
-http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start
+ * You can load up, start and stop the presentation module for the BigBlueButton within the BigBlueButton client canvas so far (the same goes for aiming to load independently) 
+  
+    * To start Presentation Module use
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start }}}
 
- ** To stop Presentation Module use
-http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop
+    * To stop Presentation Module use
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop }}}
 
 To try out the API calls follow these steps:
 
