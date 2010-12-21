@@ -33,21 +33,14 @@ Now we copy {{{jconsole.cert}}} into the machine where we will run jconsole or V
 
 Import the into a file call {{{red5KeyStore}}}. When prompted for a password, enter the password you used when you created the keystore.
 {{{
-D:\visualvm>keytool -import -alias red5 -keystore C:\visualvm\red5KeyStore -file jconsole.cert
+D:\visualvm>keytool -import -alias red5 -keystore D:\visualvm\red5KeyStore -file jconsole.cert
 }}}
 
+Now let's configure Red5 to use the keystore we generated and accept connections using SSL.
+
+Open up {{{/usr/share/red5/conf/red5.properties}}}. Change the value of {{{rtmps.keystorepass}}} to the password you entered when generating the keystore. Also, change {{{jmx.rmi.host}}} to the IP of your Red5 server. And set {{{jmx.rmi.ssl=true}}}.
+
 {{{
-D:\visualvm_122\bin>jconsole -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
-
-D:\visualvm_122\bin>visualvm -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
-mv jconsole.cert ~/
-
-}}}
-
-Open up {{{/usr/share/red5/conf/red5.properties}}}:
- 1. Make note of the value of {{{rtmps.keystorepass}}}, you 
-{{{
-
 rtmps.keystorepass=password
 
 # JMX
@@ -57,14 +50,8 @@ jmx.rmi.host=192.168.0.166
 jmx.rmi.ssl=true
 }}}
 
-/usr/share/red5/conf/password.properties
-red5user changeme
-
-
-
-
-
-/usr/share/red5/conf/conf/red5-common.xml
+Open {{{/usr/share/red5/conf/conf/red5-common.xml}}}. Edit the value of {{{remoteSSLKeystore}}} to the keystore we generated (i.e. {{{red5JConsoleKeyStore}}}).
+{{{
         <bean id="jmxAgent" class="org.red5.server.jmx.JMXAgent" init-method="init">
                 <!-- The RMI adapter allows remote connections to the MBeanServer -->
                 <property name="enableRmiAdapter" value="true"/>
@@ -81,13 +68,39 @@ red5user changeme
                 <property name="remoteSSLKeystorePass" value="${rtmps.keystorepass}"/>
                 <!-- Mina offers its own Mbeans so you may integrate them here -->
                 <property name="enableMinaMonitor" value="false"/>
-        </bean>^M
-
-
-
-
-
+        </bean>
 }}}
+
+
+Make note of the username and password in {{{/usr/share/red5/conf/password.properties}}}, you will need it when connecting using JConsole and VisualVM. If you want to change it from the default, you can go ahead. 
+
+{{{
+red5user changeme
+}}}
+
+From your monitoring machine, startup JConsole passing in the location of the keystore and the password you entered when generating the keystore.
+{{{
+   D:\visualvm>jconsole -J-Djavax.net.ssl.keyStore="D:\visualvm\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="D:\visualvm\red5KeyStore"
+}}}
+
+You will be prompted to connect to the Red5 server. Use your server ip. Enter the username and password defined in {{{/usr/share/red5/conf/password.properties}}}
+{{{
+   service:jmx:rmi://192.168.0.166:9999/jndi/rmi://192.168.0.166:9999/red5
+}}}
+
+You should now be able to monitor Red5 using JConsole.
+
+For JVisualVM, the steps are not different. From your monitoring machine, startup JConsole passing in the location of the keystore and the password you entered when generating the keystore.
+{{{
+D:\visualvm>visualvm -J-Djavax.net.ssl.keyStore="D:\visualvm\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="D:\visualvm\red5KeyStore"
+}}}
+
+You will be prompted to connect to the Red5 server. Use your server ip. Enter the username and password defined in {{{/usr/share/red5/conf/password.properties}}}
+{{{
+   service:jmx:rmi://192.168.0.166:9999/jndi/rmi://192.168.0.166:9999/red5
+}}}
+
+You should now be able to monitor Red5 using JVisualVM.
 
 References:
 [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication See this link]
