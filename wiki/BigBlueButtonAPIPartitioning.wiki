@@ -46,11 +46,8 @@ To check out the code you can go to the here and check out the BigBlueButton cod
 After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
 
  # bigbluebutton-client part, follow the instructions on how to build and run the client code as described on the [DevelopingBBB] page at the [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Working_on_the_Client_side here]
-
  # bbb-common-message, follow the instructions on the the [DevelopingBBB] page the [ here] to build and resolve libs.
-
  # bigbluebutton-apps, follow the instructions on how to build and run the client code as described on the [DevelopingBBB] page the [ here]
-
  # bigbluebutton-web, follow the instructions on how to build and run the client code as described on the [DevelopingBBB] page at the [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#BigBlueButton_Web here]
 
 
