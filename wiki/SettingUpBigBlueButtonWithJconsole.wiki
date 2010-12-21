@@ -45,6 +45,59 @@ So we need to a user name and password to connect to the Red5 JMX and the defaul
 
 Now you should be able to see the Jconsole main window and you go from there.
 
+{{{
+red5.properties
 
+rtmps.keystorepass=password
+
+# JMX
+jmx.rmi.port.registry=9999
+jmx.rmi.port.remoteobjects=
+jmx.rmi.host=192.168.0.166
+jmx.rmi.ssl=true
+
+password.properties
+red5user changeme
+
+cd /usr/share/red5/conf
+sudo keytool -genkey -alias jconsole -keystore red5JConsoleKeyStore
+keytool -list -keystore red5JConsoleKeyStore
+sudo keytool -export -alias jconsole -keystore red5JConsoleKeyStore -file jconsole.cert
+mv jconsole.cert ~/
+
+
+conf/red5-common.xml
+        <bean id="jmxAgent" class="org.red5.server.jmx.JMXAgent" init-method="init">
+                <!-- The RMI adapter allows remote connections to the MBeanServer -->
+                <property name="enableRmiAdapter" value="true"/>
+                <property name="rmiAdapterPort" value="${jmx.rmi.port.registry}"/>
+                <property name="rmiAdapterRemotePort" value="${jmx.rmi.port.remoteobjects}"/>
+                <property name="rmiAdapterHost" value="${jmx.rmi.host}"/>
+                <property name="enableSsl" value="${jmx.rmi.ssl}"/>
+                <!-- Starts a registry if it doesnt exist -->
+                <property name="startRegistry" value="true"/>
+                <!-- Authentication -->
+                <property name="remoteAccessProperties" value="${red5.config_root}/access.properties"/>
+                <property name="remotePasswordProperties" value="${red5.config_root}/password.properties"/>
+                <property name="remoteSSLKeystore" value="${red5.config_root}/red5JConsoleKeyStore"/>
+                <property name="remoteSSLKeystorePass" value="${rtmps.keystorepass}"/>
+                <!-- Mina offers its own Mbeans so you may integrate them here -->
+                <property name="enableMinaMonitor" value="false"/>
+        </bean>^M
+
+
+
+D:\visualvm_122>keytool -import -alias red5 -keystore C:\Java\jdk1.6.0_07\bin\red5KeyStore -file jconsole.cert
+Enter keystore password:
+Re-enter new password:
+
+
+
+
+D:\visualvm_122\bin>jconsole -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
+
+D:\visualvm_122\bin>visualvm -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore" -J-Djavax.net.ssl.keyStorePassword=password -J-Djavax.net.ssl.trustStore="C:\Java\jdk1.6.0_07\bin\red5KeyStore"
+
+}}}
 
  
