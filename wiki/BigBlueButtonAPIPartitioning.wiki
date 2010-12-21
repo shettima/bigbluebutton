@@ -73,7 +73,15 @@ http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module
  ** To stop Presentation Module use
 http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop
 
+To try out the API calls follow these steps:
+
+ # Start you BigBlueButton server. 
+ # Call the BigBLueButton welcome page (i.e. http://YOUR_IP/), BigBlueButton welcome page should come up with only Listers and Viewers windows.
+ # Open another browser window and paste the link associated with the action you want (i.e. start chat, stop chat, etc) basically we are sending an HTTP POST to call the method.
+
 
 *Potential Problems*
+
+ * When building the client make sure that the /tools/ directory exists other wise the client won't build. This tend to happen if you are developing BigBlueButton client code outside the VM environment. 
 
 _To be added_
