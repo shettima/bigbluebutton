@@ -8,43 +8,9 @@ Jconsole and VisualVM can put load on your server. It is recommended to connect 
 
 = Details =
 
-To start with we will need to configure our Red5 server JMXRMI for remote connection to allow Jconsole to connect to the Red5 process. 
-
-I have started with the "simple" steps described in this [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication Red5 wiki page] and hoping it would work without problems. 
-
-Well, we had issues and here how we worked them out:
-
-1. Problem with the IP address or host name as it doesn't resolve to you server IP and it might sa in the debug error message the host IP or172.0.0.1 or 0.0.0.0. So to fix that we have to make sure that we have the "right" settings for our Red5 JMX/RMI by editing  remote JMX section red5.properties file. 
-Here is what it should look like after editing it: 
-
-{{{jmx.rmi.port.registry=9999}}}
-
-{{{jmx.rmi.port.remoteobjects=}}} 
-
-{{{jmx.rmi.host=0.0.0.0}}} 
-
-{{{jmx.rmi.ssl=false}}}
-
-{{{jmx.http=false}}}
-
-{{{jmx.http.port=8082}}}
-
-2. Now that we we will have another problem, after few attempts failing to connect to the red5 process on the BBB server, we had discovered that we need to setup the SSL for the Jconsole red5/JMX connection! To work that out you can follow the steps described in the "Enabling SSL" and the "Enabling the Client SSL authontication", [http://www.componative.com/content/controller/developer/insights/jconsole2/index.html in this web page] (it is for JBoss server but pretty much is what we had to do in the case of BBB).
-
-3. When you get to the last step and get to the jconsole connection dialogbox appears and we enter the URI for our red5 process 
-
-{{{service:jmx:rmi://YOUR_IP:JMX_PORT/jndi/rmi://YOUR_IP:JMX_PORT/red5}}} 
-
-Now by doing that you might success to connect or like what happened to me it didn't work (typical) you might get this message 
-
-{{{Authentication failed! Credentials required}}}
-
-So we need to a user name and password to connect to the Red5 JMX and the default user name and password for Red5 is  (default user//password are red5user//changeme) 
-
-Now you should be able to see the Jconsole main window and you go from there.
 
 {{{
-red5.properties
+/usr/share/red5/conf/red5.properties
 
 rtmps.keystorepass=password
 
@@ -54,7 +20,7 @@ jmx.rmi.port.remoteobjects=
 jmx.rmi.host=192.168.0.166
 jmx.rmi.ssl=true
 
-password.properties
+/usr/share/red5/conf/password.properties
 red5user changeme
 
 cd /usr/share/red5/conf
@@ -64,7 +30,7 @@ sudo keytool -export -alias jconsole -keystore red5JConsoleKeyStore -file jconso
 mv jconsole.cert ~/
 
 
-conf/red5-common.xml
+/usr/share/red5/conf/conf/red5-common.xml
         <bean id="jmxAgent" class="org.red5.server.jmx.JMXAgent" init-method="init">
                 <!-- The RMI adapter allows remote connections to the MBeanServer -->
                 <property name="enableRmiAdapter" value="true"/>
@@ -100,3 +66,4 @@ D:\visualvm_122\bin>visualvm -J-Djavax.net.ssl.keyStore="C:\Java\jdk1.6.0_07\bin
 
 References:
 [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication See this link]
+[http://www.componative.com/content/controller/developer/insights/jconsole2/index.html in this web page]
