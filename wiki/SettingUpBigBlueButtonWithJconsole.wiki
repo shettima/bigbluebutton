@@ -102,6 +102,8 @@ You will be prompted to connect to the Red5 server. Use your server ip. Enter th
 
 You should now be able to monitor Red5 using JVisualVM.
 
-References:
+==References==
+
 [http://www.red5tutorials.net/index.php/An_idiot's_guide_to_RMI/JMX_remote_connections_-_without_SSL_/_authentication An idiot's guide to RMI/JMX remote connections - without SSL / authentication]
-[http://www.componative.com/content/controller/developer/insights/jconsole2/index.html in this web page]
+
+[http://www.componative.com/content/controller/developer/insights/jconsole2/index.html Monitor Your Applications With JConsole - Part 2]
