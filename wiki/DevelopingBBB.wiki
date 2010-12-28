@@ -3,7 +3,7 @@
 <wiki:toc max_depth="4" />
 
 = Getting Help=
-We're developers as well, and we know the importance of both well-written documentation and accessible developer support.bbb-web-setup.png
+We're developers as well, and we know the importance of both well-written documentation and accessible developer support.
 
 If you have any problems when following the documentation below, please post your questions to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=1 bigbluebutton-dev] mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
 
