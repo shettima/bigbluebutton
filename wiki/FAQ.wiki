@@ -88,7 +88,7 @@ Yes. We started !BigBlueButton as an open source project, and we intend to keep 
 = Installation =
 
 == What are the minimum hardware requirements to run !BigBlueButton? ==
-As a minimum, we recommend you run !BigBlueButton on a dual-core machine with at least 2 Gig of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
+As a minimum, we recommend you run !BigBlueButton on a dual-core machine with at least 2 GB of memory and a 2.0+ Ghz processor.  Any new PC you buy today will be sufficent for a !BigBlueButton server.  You'll need good upstream and downstream bandwidth from the server. 
 
 While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
 
