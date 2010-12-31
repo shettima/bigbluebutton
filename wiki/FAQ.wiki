@@ -664,7 +664,7 @@ Here's a breakdown of the path for the audio packets from your !BigBlueButton cl
 As the administrator of the !BigBlueButton server, to reduce the delay, you can do the following:
 
    # Run !BigBlueButton on a dedicated server (not a virtual server).  A virtual implementation of asterisk is more sensitive to hardware timing when running in a virtualized environment.
-   # Run Asterisk or FreeSWTICH on a separate computer.  This the task of audio mixing to a dedicated computer (you'll need to configure the !BigBlueButton server to route the calls to the separate asterisk server).
+   # Run Asterisk or FreeSWITCH on a separate computer.  This the task of audio mixing to a dedicated computer (you'll need to configure the !BigBlueButton server to route the calls to the separate asterisk server).
    # Setup DIDs.  This involves configuration of Asterisk/FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
 
 In most cases (1) and (2) can make some improvements, but if you have a caller that is going over the internet, their packages will arrive at the speed of their upstream bandwidth.  
