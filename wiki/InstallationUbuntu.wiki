@@ -9,7 +9,7 @@ This document contains instructions for installing/upgrading *!BigBlueButton 0.7
 
 Before you install !BigBlueButton 0.71, you'll need:
   # *An Ubuntu 10.04 32-bit or 64-bit server*
-  # *2G of memory of memory*
+  # *2 GB of memory *
   # Root access to the server
   # 5G of free disk space
   # Port 80 is not in use 
