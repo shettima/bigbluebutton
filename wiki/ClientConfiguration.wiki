@@ -34,6 +34,14 @@ This is the url that you would like users redirected to when they click the Help
 }}}
 The ip and red5 application the client uses to test whether necessary ports are open, and determine whether tunneling should be used. The host should be your bbb server ip. The application should be left as video.
 
+=== showDebugWindow ===
+
+{{{
+    <debug showDebugWindow="false" />
+}}}
+
+Show or hide the button to display the debug window.
+
 === application ===
 {{{
 <application uri="rtmp://192.168.0.225/bigbluebutton" host="conf/join-mock.xml" />
