@@ -75,9 +75,9 @@ or
 
 Display the current security salt for the !BigBlueButton API.
 
-=== --setsalt <new_salt> ===
+=== --setsalt < new_salt > ===
 
-Sets the security salt for the !BigBlueButton API.  
+Assign a new security salt for the !BigBlueButton API.  
 
 === --check ===
 
