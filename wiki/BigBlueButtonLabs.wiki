@@ -3,11 +3,12 @@
 = Introduction =
 
 We have a number of projects that are related to !BigBlueButton.  
-    * [SummerOfCodeApplication Summer of Code Application template]
-    * [IdeasPage Ideas Page for Google Summer of Code Students]
-    * [Phidgets Physical Widgets for External Notification]
-    * [http://readytopresent.wordpress.com/ Ready To Present]
-    * [Whiteboard Whiteboard using Wiimote]   
-    * [InstallingBigBlueButtonCentOS Installing on CentOS]
-    * [InstallingBigBlueButtonFedora Installing on Fedora]
-    * [RPMPackaging Install on CentOS 5.4]
+  * [BigBlueButtonAPIPartitioning Partitioning the client]
+  * [SummerOfCodeApplication Summer of Code Application template]
+  * [IdeasPage Ideas Page for Google Summer of Code Students]
+  * [Phidgets Physical Widgets for External Notification]
+  * [http://readytopresent.wordpress.com/ Ready To Present]
+  * [Whiteboard Whiteboard using Wiimote]   
+  * [InstallingBigBlueButtonCentOS Installing on CentOS]
+  * [InstallingBigBlueButtonFedora Installing on Fedora]
+  * [RPMPackaging Install on CentOS 5.4]
