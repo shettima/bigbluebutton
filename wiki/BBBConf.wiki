@@ -21,7 +21,7 @@ Configuration:
    --version                        Display BigBlueButton version (packages)
    --setip <host>                   Set IP/hostname for BigBlueButton
    --conference [konference|meetme] Switch conference module in Asterisk
-   --salt <salt>                    Change the security salt in bigbluebutton.properties
+   --setsalt <salt>                 Change the security salt in bigbluebutton.properties
 
 Monitoring:
    --check                          Check configuration files and processes for problems
@@ -70,6 +70,14 @@ or
    bbb-conf --setip 192.168.0.1:8081
 }}}
 
+
+=== --salt ===
+
+Display the current security salt for the !BigBlueButton API.
+
+=== --setsalt <new_salt> ===
+
+Sets the security salt for the !BigBlueButton API.  
 
 === --check ===
 
