@@ -3,6 +3,7 @@
 = Introduction =
 
 We have a number of projects that are related to !BigBlueButton.  
+  * [ArchitectureRoadmap Architecture Plans for the client]
   * [BigBlueButtonAPIPartitioning Partitioning the client]
   * [SummerOfCodeApplication Summer of Code Application template]
   * [IdeasPage Ideas Page for Google Summer of Code Students]
