@@ -124,7 +124,7 @@ Zip up log files for reporting an error
 In some cases the IP of the VM maybe change while initializing for the first time and, consequently, the !BigBlueButton config files would be setup with the wrong IP address. If you're running into problems, execute the following command. 
 
 {{{
-   bbb-conf -c
+   sudo bbb-conf --check
 }}}
 
 If the IP in !BigBlueButton's config files don't match the IP of your VM, you will see something like the following.
