@@ -19,6 +19,7 @@
     * [FAQ FAQ]
     * [RoadMap Product Road Map]
   * [BigBlueButtonLabs BigBlueButton Labs]
+    * [ArchitectureRoadmap Architecture Plans for the client]
     * [BigBlueButtonAPIPartitioning Partitioning the client]
     * [SummerOfCodeApplication Summer of Code Application template]
     * [IdeasPage Ideas Page for Google Summer of Code Students]
