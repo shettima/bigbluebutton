@@ -1,7 +1,7 @@
   * [Installation Installation of Version 0.71]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu 10.04]
-    * Install from source on [InstallingBigBlueButton Ubuntu] (0.71)
+    * Install from source on [InstallingBigBlueButton Ubuntu]
     * [Integration Integrate] !BigBlueButton with your existing system
     * [ConfigurationFiles Configuration Files]
   * [GettingStarted Getting Started]
