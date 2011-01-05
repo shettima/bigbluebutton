@@ -1,4 +1,4 @@
-_This a dreaft for the BigBlueButton API partitioning  development, it contains material related to that issue such as design and progress._
+_This a draft for the BigBlueButton API partitioning  development, it contains material related to that issue such as design and progress._
 
 = Introduction =
 
