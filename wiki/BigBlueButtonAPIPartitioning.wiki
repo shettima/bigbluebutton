@@ -82,12 +82,13 @@ To try out the API calls follow these steps:
 
  * When building the client make sure that the /tools/ directory exists other wise the client won't build. This tend to happen if you are developing BigBlueButton client code outside the VM environment. 
 
- * Another problem associated with building the bigbluebutton-web: you have to call ‘ant war’ command for you bigbluebutton-web and then deploy the resulted war file
- # rename created file: bigbluebutton-0.71dev.war to bigbluebutton.war
- # delete file bigbluebutton.war and directory bigbluebutton under /var/lib/tomcat6/webapps/
+ * Another problem associated with deploying the bigbluebutton-web: you have to call ‘ant war’ command for you bigbluebutton-web and then deploy the resulted war file
+ # Rename created file: bigbluebutton-0.71dev.war to bigbluebutton.war
+ # Delete file bigbluebutton.war and directory bigbluebutton under /var/lib/tomcat6/webapps/
  # Copy the new bigbluebutton.war to /var/lib/tomcat6/webapps/
  # Re-start the Tomcat server.
 
 
+_Note: Any comments or input is more welcome to to improve our work_
 
 _To be added_
