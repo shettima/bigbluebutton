@@ -1,21 +1,20 @@
-_This a draft for the Bigbluebutton API partitioning  development, it contains material related to that issue such as design and progress._
+_This document is a draft for the Bigbluebutton API partitioning  development, it contains material related to design and work progress for the API Partitioning._
 
 = Introduction =
 
-On this page we are going to describe the design of the Bigbluebutton API and the progress of its development. 
+The goal for the API partitioning initiative is to provide API interfaces to enable a Third Party application make calls for different Bigbluebutton modules. 
 
-The goal for that part of the API development is to enable a Third Party application to call the Bigbluebutton modules separately. 
-
-An example would be, calling the chat module or the presentation module enabling Third Party applications to access functionalities related to the loaded modules. 
+An example would be, starting or stopping the chat module or the presentation module from the 3rd party applications and being bale to access functionalities related to the loaded module(s). 
 
 
 = Details =
 
-To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/nnoori/bigbluebutton/tree/API here].   Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
+To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/nnoori/bigbluebutton/tree/API here]. Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
 
 _Warning: we are at a very early stages of the API partitioning development, so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
 == The API Architecture ==
+
 This section contains a simple diagram of the existing API architecture. The diagram below describes the operation and information exchange for the existing Bigbluebutton API. The current development didn't involve any architectural changes for the API calls. (See digram below)
 
 (Need to insert image here) 
