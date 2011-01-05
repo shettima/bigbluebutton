@@ -102,7 +102,7 @@ If this is your first time using !BigBlueButton, take a moment and watch these [
 
 Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
-= Upgrading from !BigBlueButton 0.70 =
+= Upgrading to !BigBlueButton 0.71 =
 
 If you are running !BigBlueButton 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server by entering the following commands.
 
