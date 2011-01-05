@@ -2,16 +2,16 @@ _This a draft for the BigBlueButton API partitioning  development, it contains m
 
 = Introduction =
 
-In this page we are going to describe the design of the BigBlueButton API and the progress for its development. 
+On this page we are going to describe the design of the BigBlueButton API and the progress of its development. 
 
-The goal for that part of the API development is to enable Third Party application to call the BigBlueButton modules separately. Example of that is, calling chat module or presentation module and enable Third Party applications to to access functionalities related to the loaded modules. 
+The goal for that part of the API development is to enable a Third Party application to call the BigBlueButton modules separately. An example would be, calling the chat module or the presentation module enabling Third Party applications to access functionalities related to the loaded modules. 
 
 
 = Details =
 
-To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/nnoori/bigbluebutton/tree/API here]. Will come later to the details of how to checkout the code and compile the pieces associated with API. 
+To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/nnoori/bigbluebutton/tree/API here].   Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
 
-_Warning: we are at a very early stages for the development of the API partitioning so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
+_Warning: we are at a very early stages of the API partitioning development, so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
 == The API Architecture ==
 
