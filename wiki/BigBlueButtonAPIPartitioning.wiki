@@ -14,15 +14,13 @@ To review the changes and try out the API partitioning you can check out the cod
 _Warning: we are at a very early stages of the API partitioning development, so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
 == The API Architecture ==
-
-In this section contains a simple diagram the existing API architecture. The diagram below describes the operation and information exchange for the existing BigBlueButton API. The current development didn't involve any architectural changes for the API calls. (See digram below)
+This section contains a simple diagram of the existing API architecture. The diagram below describes the operation and information exchange for the existing BigBlueButton API. The current development didn't involve any architectural changes for the API calls. (See digram below)
 
 (Need to insert image here) 
 
 
 *Use cases:*
- 
-In this section we are going to list the use cases or the scenarios for Third Party application calls for the API's from their side.   
+ This section lists the use cases or the scenarios for Third Party application API calls.  
 
  * Load a single BBB module (i.e. load chat module or voice, etc) when a 3rd party application starts.  
 
@@ -80,7 +78,7 @@ To try out the API calls follow these steps:
 
 *Potential Problems*
 
- * When building the client make sure that the /tools/ directory exists other wise the client won't build. This tend to happen if you are developing BigBlueButton client code outside the VM environment. 
+ * When building the client make sure that the /tools/ directory exists otherwise the client won't build. This tends to happen if you are developing BigBlueButton client code outside the VM environment. 
 
  * Another problem associated with deploying the bigbluebutton-web: you have to call ‘ant war’ command for you bigbluebutton-web and then deploy the resulted war file
  # Rename created file: bigbluebutton-0.71dev.war to bigbluebutton.war
@@ -89,6 +87,6 @@ To try out the API calls follow these steps:
  # Re-start the Tomcat server.
 
 
-_Note: Any comments or input is more welcome to to improve our work_
+_Note: Any comments or input is more welcome to improve our work_
 
 _To be added_
