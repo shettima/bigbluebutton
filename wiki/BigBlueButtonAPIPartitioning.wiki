@@ -4,12 +4,12 @@ _This a dreaft for the BigBlueButton API partitioning  development, it contains 
 
 In this page we are going to describe the design of the BigBlueButton API and the progress for its development. 
 
-The goal for that part of the API development is to enable Third Party application to call the BigBlueButton modules separately. Example of that is, calling chat module or presentation module and enable Third Party application s to to access functionalities related to the loaded modules. 
+The goal for that part of the API development is to enable Third Party application to call the BigBlueButton modules separately. Example of that is, calling chat module or presentation module and enable Third Party applications to to access functionalities related to the loaded modules. 
 
 
 = Details =
 
-To review the changes and try out the API partitioning you can go to here and check out the API branch [https://github.com/nnoori/bigbluebutton/tree/API here]. Will come later to the details of how to checkout the code and compile the pieces associated with API. 
+To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/nnoori/bigbluebutton/tree/API here]. Will come later to the details of how to checkout the code and compile the pieces associated with API. 
 
 _Warning: we are at a very early stages for the development of the API partitioning so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
@@ -24,7 +24,7 @@ In this section contains a simple diagram the existing API architecture. The dia
  
 In this section we are going to list the use cases or the scenarios for Third Party application calls for the API's from their side.   
 
- * Load only one BBB module (i.e. load chat module or voice, etc) when a 3rd party application starts. Green: done with calling one module (Start/Stop), display the module in a single module within the BBB canvas. 
+ * Load a single BBB module (i.e. load chat module or voice, etc) when a 3rd party application starts.  
 
  * Load more than one BBB module (i.e. chat & video, chat & presentation) when 3rd party application starts. 
 
@@ -35,13 +35,13 @@ In this section we are going to list the use cases or the scenarios for Third Pa
 
 *API Calls suggestions for format:*
 
-For the API calls and response we just followed the orginal format that was set for the BBB API and we didn't introduce any changes. 
+For the API calls and response we just followed the orginal format that was used for the BBB API calls but to make things easy we didn't use the checksum (it will be added later for the final version). 
 
 The API standard calls and format can be found on the [API] page at the [http://code.google.com/p/bigbluebutton/wiki/API#API_Calls API Calls] section. 
 
 *Checkout the code and try out the API's*
 
-To check out the code you can go to the here and check out the BigBlueButton code on the API branch. 
+To check out the code you can go to s://github.com/nnoori/bigbluebutton/tree/API here] and check out the API branch. 
 
 After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
 
@@ -81,5 +81,13 @@ To try out the API calls follow these steps:
 *Potential Problems*
 
  * When building the client make sure that the /tools/ directory exists other wise the client won't build. This tend to happen if you are developing BigBlueButton client code outside the VM environment. 
+
+ * Another problem associated with building the bigbluebutton-web: you have to call ‘ant war’ command for you bigbluebutton-web and then deploy the resulted war file
+ # rename created file: bigbluebutton-0.71dev.war to bigbluebutton.war
+ # delete file bigbluebutton.war and directory bigbluebutton under /var/lib/tomcat6/webapps/
+ # Copy the new bigbluebutton.war to /var/lib/tomcat6/webapps/
+ # Re-start the Tomcat server.
+
+
 
 _To be added_
