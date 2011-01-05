@@ -2,7 +2,7 @@ _This a draft for the BigBlueButton API partitioning  development, it contains m
 
 = Introduction =
 
-On this page we are going to describe the design of the BigBlueButton API and the progress of its development. 
+On this page we are going to describe the design of the Bigbluebutton API and the progress of its development. 
 
 The goal for that part of the API development is to enable a Third Party application to call the BigBlueButton modules separately. An example would be, calling the chat module or the presentation module enabling Third Party applications to access functionalities related to the loaded modules. 
 
