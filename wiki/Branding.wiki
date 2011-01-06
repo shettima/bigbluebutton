@@ -17,9 +17,16 @@ In Flash Builder, right click on the theme.css file and check off 'Compile CSS t
 === Compiling using Ant ===
 In the command line, go to the bbb-client root directory and type in:
 {{{
-ant branding
+ant branding -DthemeFile=theme.css
 }}}
-If the build succeeds, you should be able to find the compiled .css file as bbb-client/bin/branding/css/theme.swf
+If the build succeeds, you should be able to find the compiled .css file as bbb-client/bin/branding/css/theme.css.swf
+If you would like to compile any other .css file in the branding directory, you can substitute the name of the file in the ant branding command, so for example:
+{{{
+ant branding -DthemeFile=myTheme.css
+}}}
+will compile the file myTheme.css and put it into client/bin/branding/css/myTheme.css.swf
+
+Note that you should not need to move any images that you are using to the bin directory. As long as you are using @Embed() tags in your .css file, your images will be compiled directly into the resulting .swf file.
 
 == Editing the config.xml ==
 To tell the !BigBlueButton client to load your the compiled .swf file you just created, open the file bbb-client/bin/conf/config.xml. Near the top of the file, you'll find the line:
