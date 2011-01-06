@@ -21,6 +21,10 @@ This section contains a simple diagram of the existing API architecture. The dia
 
 (Need to insert image here) 
 
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB_API.jpg" />
+
+
+
 
 *Use cases:*
  This section lists the use cases or the scenarios for Third Party application API calls.  
