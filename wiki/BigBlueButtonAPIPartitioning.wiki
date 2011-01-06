@@ -40,7 +40,7 @@ The API standard calls and format can be found on the [API] page at the [http://
 
 *Checkout the code and try out the API's*
 
-To check out the code you can go to s://github.com/nnoori/bigbluebutton/tree/API here] and check out the API branch. 
+To check out the code you can go to [https://github.com/nnoori/bigbluebutton/tree/API here] and check out the API branch. 
 
 After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
 
