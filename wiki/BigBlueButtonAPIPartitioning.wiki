@@ -22,6 +22,7 @@ This section contains a simple diagram of the existing API architecture. The dia
 (Need to insert image here) 
 
 
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB_API.jpg" />
 
 
 
