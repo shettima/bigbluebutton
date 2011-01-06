@@ -1,4 +1,4 @@
-#summary Edited wiki page BigBlueButtonAPIPartitioning through web user interface
+#summary BigBlueButton API partitioning design and roadmap
 
 _This document is a draft for the Bigbluebutton API partitioning  development, it contains material related to design and work progress for the API Partitioning._
 
