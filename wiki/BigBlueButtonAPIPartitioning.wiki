@@ -45,9 +45,9 @@ The API standard calls and format can be found on the [API] page at the [http://
 You can check out the code for the API partitioning from the following repository {{{ git://github.com/nnoori/bigbluebutton.git }}} and here are the steps to checkout the code and switch to the API branch:
 
  # Create a directory to check out your code there, such as "/bigbluebutton_api/".
- # Run command 'git init' to initialize the directory as a local git repository.
- # Clone the main repository {{{ git://github.com/nnoori/bigbluebutton.git }}} by using the command 'git clone git://github.com/nnoori/bigbluebutton.git' .
- # Switch to the API branch by using the command 'git checkout API'. 
+ # Run command `git init` to initialize the directory as a local git repository.
+ # Clone the main repository {{{ git://github.com/nnoori/bigbluebutton.git }}} by using the command `git clone git://github.com/nnoori/bigbluebutton.git`.
+ # Switch to the API branch by using the command `git checkout API`. 
  
 
 After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
