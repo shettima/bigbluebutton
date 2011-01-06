@@ -76,6 +76,10 @@ To try out the API calls follow these steps:
  # Call the Bigbluebbutton welcome page (i.e. http://YOUR_IP/), Bigbluebutton welcome page should come up with only Listers and Viewers windows.
  # Open another browser window and paste the link associated with the action you want (i.e. start chat, stop chat, etc) basically we are sending an HTTP POST to call the method.
 
+*How to add a new API command*
+
+_To Do_
+
 
 *Potential Problems*
 
