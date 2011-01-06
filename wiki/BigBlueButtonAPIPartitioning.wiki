@@ -73,10 +73,11 @@ Here are the available API calls so far:
  * You can load up, start and stop the presentation module for the Bigbluebutton within the Bigbluebutton client canvas so far (the same goes for aiming to load independently) 
   
     * To start Presentation Module use
-{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start }}}
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PresentModule&cmd=start }}}
+
 
     * To stop Presentation Module use
-{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop }}}
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PresentModule&cmd=stop }}}
 
 To try out the API calls follow these steps:
 
