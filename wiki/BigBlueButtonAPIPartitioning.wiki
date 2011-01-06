@@ -46,7 +46,7 @@ You can check out the code for the API partitioning from the following repositor
 
  # Create a directory to check out your code there, such as "/bigbluebutton_api/".
  # Run command {{{git init }}} to initialize the directory as a local git repository.
- # Clone the main repository {{{ git://github.com/nnoori/bigbluebutton.git }}} by using the command git clone {{{ git://github.com/nnoori/bigbluebutton.git }}} .
+ # Clone the main repository {{{ git://github.com/nnoori/bigbluebutton.git }}} by using the command {{{git clone git://github.com/nnoori/bigbluebutton.git }}} .
  # Switch to the API branch by using the command {{{git checkout API}}}. 
  
 
