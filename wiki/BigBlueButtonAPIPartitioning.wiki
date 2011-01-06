@@ -42,7 +42,11 @@ The API standard calls and format can be found on the [API] page at the [http://
 
 *Checkout the code and try out the API's*
 
-To check out the code you can go to [https://github.com/nnoori/bigbluebutton/tree/API here] and check out the API branch. 
+You can check out the code for the API partitioning from the following repository _git://github.com/nnoori/bigbluebutton.git_ and here is the steps:
+
+ # Create a directory to check out your code there, such as "/bigbluebutton_api/".
+ # Run command "git init" to initialize the directory.
+ # Clone the API repository  
 
 After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
 
