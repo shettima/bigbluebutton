@@ -159,8 +159,12 @@ Note: When you switch back to FreeSWITCH, it seems the FreeSWITCH package will n
 
 = Troubleshooting =
 
+== I'm running BigBlueButton 0.70 on Ubuntu 9.04 ==
 
-== Troubleshooting your setup ==
+!BigBlueButton 0.71 requires Ubuntu 10.04 (32-bit or 64-bit).  First upgrade your server to 10.04 before installing 0.71.
+
+
+== Run bbb-conf ==
 We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
 
 If you think something isn't working correctly, the first step is enter the following command.
