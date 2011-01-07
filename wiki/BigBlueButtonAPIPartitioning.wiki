@@ -115,3 +115,7 @@ _To Do_
 _Note: Any comments or input is more welcome to improve our work_
 
 _To be added_
+
+Test Image size:
+
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-Chat Module started.jpg" />
