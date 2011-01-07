@@ -97,7 +97,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.p
 
 == Updating the !BigBlueButton VM to packages on trunk (aka Living on the Edge) == 
 
-We upgrade the repository http://archive.bigbluebutton.org with every release.  In addition, during each iteration of !BigBlueButton, we have our [http://bigbluebutton.org/hudson continuous integration server Hudson] automatically updating packages off of the SVN tree in Google Code.
+We upgrade the repository http://archive.bigbluebutton.org with every release.  In addition, during each iteration of !BigBlueButton, we have our [http://bigbluebutton.org/hudson continuous integration server Hudson] automatically updating packages off our [https://github.com/bigbluebutton/bigbluebutton GitHUB repository]. 
 
 These packages are used to update our [http://devbuild.bigbluebutton.org devbuild server], so you can always try out the latest version.  Keep in mind that trunk isn't always going to be stable, so devbuild will be as stable as trunk.
 
