@@ -828,12 +828,41 @@ We plan to add a "fit to width" option in !BigBlueButton in a future iteration, 
 
 
 === I can't join the voice conference? When I click on the headset icon, nothing happens? ===
-To figure out what the problem is:
+
+First, as with most errors, run
+
+{{{
+   sudo bbb-conf --check
+}}}
+
+To see if it can determine configuration errors.
+
+If you are running !BigBlueButton on EC2, then note that EC2 uses both a public and private IP address.   For example, on an EC2 instance if you type
+
+{{{
+ifconfig
+
+eth0      Link encap:Ethernet  HWaddr 12:31:33:22:25:c2
+          inet addr:10.242.78.44  Bcast:10.242.7.255  Mask:255.255.254.0
+          inet6 addr: fe80::1034:33ff:fd02:23c2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4004469 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5024657 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:642594447 (642.5 MB)  TX bytes:2670592958 (2.6 GB)
+}}}
+
+!BigBlueButton needs to use the private (not public) IP address of the EC2 instance to connect to FreeSWITCH.  To do this, 
+
+  # Edit /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+  # Change the property for sip.server.host for the internal IP address of the EC2 instance
+  # Type sudo bbb-conf --clean to do a clean restart of !BigBlueButton.
+
+If you are a developer making changes to !BigBlueButton, you can also check
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
  * Open up asterisk console {{{sudo asterisk -vvvvvvr}}} and then try clicking on the headset icon on the client again. Look at the logs on the asterisk console for clues.
-
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
- * Make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
+ * If you are using Asterisk, make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf] 
 
 
 === Using the API examples I get an java.lang.!NullPointerException when trying to join a room ===
