@@ -66,19 +66,30 @@ After checking out the code, follow the steps for building and deploying the dif
 
 Here are the available API calls so far:
 
- * You can load up, start and stop the chat module for the Bigbluebutton within the Bigbluebutton client canvas so far (we are aiming to load each module in its own frame independently)
+ *Before starting anything you have to create a meeting room by calling the "create" API call. This should bring up the Bigbluebutton Demo page (see below), then you can log in. 
+
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-DemoScreen.jpg" />
+
+  * After logging in the Bigbluebutton client will load all the Bigbluebutton modules but  only 2 frames will be shown (Listeners and Viewers)(See image below). The rest of the modules (i.e. Chat, Presentation, Video, and Voice) are not started until a command is sent to start or stop. 
+
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-MainScreen.jpg" />
+
+   *You can start and stop the chat module for the Bigbluebutton within the Bigbluebutton client canvas so far (we are aiming to load each module in its own frame independently)
  
-   * To start Chat Module use
+   * To start Chat Module use (see image for Chat module started only) 
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start}}}
+
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-Chat Module started.jpg" />
 
    * To stop Chat Module use
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=stop}}}
 
  * You can load up, start and stop the presentation module for the Bigbluebutton within the Bigbluebutton client canvas so far (the same goes for aiming to load independently) 
   
-    * To start Presentation Module use
+    * To start Presentation Module use (see image for Presentation module started only)
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PresentModule&cmd=start }}}
 
+<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-Presentaion Module started.jpg" /> 
 
     * To stop Presentation Module use
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PresentModule&cmd=stop }}}
@@ -116,14 +127,7 @@ _Note: Any comments or input is more welcome to improve our work_
 
 _To be added_
 
-Test Image size:
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-Chat Module started.jpg" />
 
-Presentation
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-Presentaion Module started.jpg" /> 
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-MainScreen.jpg" />
-
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-DemoScreen.jpg" />
