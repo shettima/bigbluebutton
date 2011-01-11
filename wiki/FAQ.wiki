@@ -579,7 +579,12 @@ If you encounter this problem, try the following
   
 These steps trigger the opening of the File Open by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
   
-  
+ 
+== Video ==
+
+=== I'm on Ubuntu and I can't share my webcam ===
+See Ubuntu's documentation for [https://help.ubuntu.com/community/Webcam/Troubleshooting Webcam Troubleshooting].
+
   
 == Voice Conference ==
 
