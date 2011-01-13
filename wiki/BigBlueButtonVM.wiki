@@ -16,7 +16,7 @@ The second point is key: the VM must be able to connect to the internet to updat
 
 <wiki:video url="http://www.youtube.com/watch?v=--yC6LpeFqA" />
 
-Note: This video refers to 0.64, but the steps are valid for 0.71.
+Note: This video refers to 0.64, but the steps are valid for 0.71a.
 
 == Installing !BigBlueButton VM  ==
 
