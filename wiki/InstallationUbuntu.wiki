@@ -115,6 +115,7 @@ First, change the URL for the !BigBlueButton apt-get repository.
 Next, update your packages
 
 {{{
+  sudo /etc/init.d/red5 stop
   sudo apt-get update
   sudo apt-get dist-upgrade
 }}}
