@@ -4,7 +4,7 @@
 
 Released: January 13, 2011
 
-  * * Maintenance Release * - There is no new functionality in this release; this is a maintenance by the core developers to further optimize the handling of VoIP packages and reduce the memory footprint of the server.
+  * * Maintenance Release * - There is no new functionality in this release; this is a maintenance release by the core developers to further optimize the handling of VoIP packages and reduce the memory footprint of the server.
 
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71a  issues fixed in BigBlueButton 0.71a]
