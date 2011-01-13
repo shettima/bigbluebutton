@@ -1,5 +1,13 @@
 #summary Release Notes for new versions of BigBlueButton.
 
+= Release 0.71a =
+
+Released: January 13, 2011
+
+  * * Maintenance Release * - There is no new functionality in this release; this is a maintenance by the core developers to further optimize the handling of VoIP
+packages and reduce the memory footprint of the server.
+
+
 = Release 0.71: Europa=
 
 _Code named after Europa, Jupiter's moon, whose surface is among the brightest in the solar system._ 
