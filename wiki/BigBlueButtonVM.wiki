@@ -22,7 +22,7 @@ Note: This video refers to 0.64, but the steps are valid for 0.71.
 
   1.  Download and uncompress the the VM. 
 
-Download bigbluebutton071a.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
+Download bigbluebutton071a-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
 
   2.  Open the enclosed folder.
 
