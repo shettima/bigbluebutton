@@ -4,10 +4,10 @@
 
 = Prerequisites =
 
-This document contains instructions for installing/upgrading *!BigBlueButton 0.71* on a Ubuntu 10.04 32-bit or 64-bit server (earlier or later versions of Ubuntu are not supported).  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] later in this document.
+This document contains instructions for installing/upgrading *!BigBlueButton 0.71a* on a Ubuntu 10.04 32-bit or 64-bit server (earlier or later versions of Ubuntu are not supported).  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] later in this document.
 
 
-Before you install !BigBlueButton 0.71, you'll need:
+Before you install !BigBlueButton 0.71a, you'll need:
   # *An Ubuntu 10.04 32-bit or 64-bit server*
   # *2 GB of memory *
   # Root access to the server
@@ -18,7 +18,7 @@ Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tu
 
 We recommend you install !BigBlueButton on a dedicated server.
 
-= Installation of !BigBlueButton 0.71 =
+= Installation of !BigBlueButton 0.71a =
 
 == 1. Install the !BigBlueButton apt-get repository key  == 
 
@@ -102,7 +102,7 @@ If this is your first time using !BigBlueButton, take a moment and watch these [
 
 Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
-= Upgrading to !BigBlueButton 0.71 =
+= Upgrading to !BigBlueButton 0.71a =
 
 If you are running !BigBlueButton 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server by entering the following commands.
 
@@ -126,7 +126,7 @@ Finally, do a clean restart of your !BigBlueButton server and use `bbb-conf` to 
   sudo bbb-conf --check
 }}}
 
-You should now be running 0.71.  
+You should now be running 0.71a.  
 
 = Switching between Asterisk and FreeSWITCH ==
 The !BigBlueButton packages let you switch back and forth between using Asterisk and FreeSWITCH.
@@ -161,7 +161,7 @@ Note: When you switch back to FreeSWITCH, it seems the FreeSWITCH package will n
 
 == I'm running BigBlueButton 0.70 on Ubuntu 9.04 ==
 
-!BigBlueButton 0.71 requires Ubuntu 10.04 (32-bit or 64-bit).  First upgrade your server to 10.04 before installing 0.71.
+!BigBlueButton 0.71a requires Ubuntu 10.04 (32-bit or 64-bit).  First upgrade your server to 10.04 before installing 0.71a.
 
 
 == Run bbb-conf ==
