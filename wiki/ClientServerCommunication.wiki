@@ -8,30 +8,44 @@ DRAFT
 = Details =
 
 === Main ===
+This is BBB's main application called when Red5 starts/stops. This is also the entry point when the client connects and disconnects.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/BigBlueButtonApplication.java
 
+
+The applications below registers as listeners to BigBlueButtonApplication.
+
 === Participants ===
+This listener to BigBlueButtonApplication.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsHandler.java
 
+Handle RPC calls from the client.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsService.java
 
+Invokes methods on the client as well as send messages for recording.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsEventRecorder.java
 
 === Chat ===
-
+Listener to BigBlueButtonApplication.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatHandler.java
 
+
+Handles RPC calls from the client.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatService.java
 
+Invokes methods on the client and sends messages for recording.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatEventRecorder.java
 
 === Presentation ===
+Listener to BigBlueButtonApplication.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationHandler.java
 
+Handles RPC calls from the client.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationService.java
 
+Invokes methods on the client and send messages for recording.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationEventRecorder.java
 
+Receives JMS messages from ActiveMQ for presentation conversion updates when the presenter uploads a presentation. The messages are processed and passed to PresentationEventRecorder to invoke methods on the client.
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/ConversionUpdatesMessageListener.java
 
 
