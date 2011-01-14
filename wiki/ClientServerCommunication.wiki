@@ -76,3 +76,15 @@ https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/sr
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/whiteboard/WhiteboardApplication.java
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/whiteboard/WhiteboardService.java
+
+
+== VOIP ==
+Main application for BBB VOIP.
+
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/Application.java
+
+Handles RPC calls from the client.
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/Service.java
+
+Invokes methods on the client.
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/ClientConnection.java
