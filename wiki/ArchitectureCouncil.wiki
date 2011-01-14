@@ -1,4 +1,4 @@
-#summary BBB Architecture Council
+#summary BigBlueButton Architecture Council
 
 <wiki:toc max_depth="2"/>
 
