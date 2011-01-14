@@ -1,0 +1,13 @@
+#summary This page will contain how the BigBlueButton client and server talk to each other.
+
+= Introduction =
+
+DRAFT
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
