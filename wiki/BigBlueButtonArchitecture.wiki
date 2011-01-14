@@ -1,0 +1,8 @@
+#summary BigBlueButton Architecture
+
+= Introduction Status: PENDING =
+
+  * [ArchitectureCouncil Architecture Council]
+  * [ArchitectureOffice Architecture Office]
+  * [ArchitectureRoadmap Architecture Plans for the client]
+  * [ArchitectureOverview Overview of Architecture] 
