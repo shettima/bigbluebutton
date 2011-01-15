@@ -4,7 +4,7 @@
 
 = Prerequisites =
 
-This document contains instructions for installing/upgrading *!BigBlueButton 0.71a* on a Ubuntu 10.04 32-bit or 64-bit server (earlier or later versions of Ubuntu are not supported).  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_from_BigBlueButton_0.70 Upgrading from BigBlueButton 0.70] later in this document.
+This document contains instructions for installing/upgrading *!BigBlueButton 0.71a* on a Ubuntu 10.04 32-bit or 64-bit server (earlier or later versions of Ubuntu are not supported).  If you want to upgrade from !BigBlueButton 0.70, please see the section [#Upgrading_to_BigBlueButton_0.71a Upgrading from BigBlueButton 0.70] later in this document.
 
 
 Before you install !BigBlueButton 0.71a, you'll need:
@@ -104,7 +104,7 @@ Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently A
 
 = Upgrading to !BigBlueButton 0.71a =
 
-If you are running !BigBlueButton 0.70 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server by entering the following commands.
+If you are running !BigBlueButton 0.70 or 0.71 on Ubuntu 10.04 32-bit or 64-bit, you can upgrade your server by entering the following commands.
 
 First, change the URL for the !BigBlueButton apt-get repository.
 
@@ -160,7 +160,7 @@ Note: When you switch back to FreeSWITCH, it seems the FreeSWITCH package will n
 
 = Troubleshooting =
 
-== I'm running BigBlueButton 0.70 on Ubuntu 9.04 ==
+== I'm running !BigBlueButton 0.70 on Ubuntu 9.04 ==
 
 !BigBlueButton 0.71a requires Ubuntu 10.04 (32-bit or 64-bit).  First upgrade your server to 10.04 before installing 0.71a.
 
