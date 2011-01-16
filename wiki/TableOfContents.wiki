@@ -29,6 +29,6 @@
     * [Phidgets Physical Widgets for External Notification]
     * [http://readytopresent.wordpress.com/ Ready To Present]
     * [Whiteboard Whiteboard using Wiimote]   
-    * [InstallingBigBlueButtonCentOS Installing on CentOS]
-    * [InstallingBigBlueButtonFedora Installing on Fedora]
+    * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
+    * [InstallingBigBlueButtonFedora Installing on Fedora (0.64)]
     * [RPMPackaging Install on CentOS 5.4]
