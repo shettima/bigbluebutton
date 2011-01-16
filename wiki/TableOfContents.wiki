@@ -1,4 +1,4 @@
-  * [Installation Installation of BigBlueButton Version 0.71a]
+  * [Installation Installation of BigBlueButton]
     * [BigBlueButtonVM BigBlueButton Virtual Machine]
     * [InstallationUbuntu Install on Ubuntu 10.04]
     * Install from source on [InstallingBigBlueButton Ubuntu]
