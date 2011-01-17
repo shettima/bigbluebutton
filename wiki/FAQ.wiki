@@ -1009,7 +1009,7 @@ The default language is English, but you can change that by modifying the value
 localeChain = "us_EN";
 }}}
 
-in `bigbluebutton/client/BigBlueButton.html`.
+in `bigbluebutton/client/BigBlueButton.html`.  You can see the list of languages installed with !BigBlueButton in the directory `/var/www/bigbluebutton/client/locale/`.
 
 
 == Other Questions ==
