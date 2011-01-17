@@ -999,6 +999,19 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
+=== How to I change the default startup language? ===
+
+By default, the !BigBlueButton client should detect the browser's locale and use that default language accordingly.
+
+The default language is English, but you can change that by modifying the value 
+
+{{{
+localeChain = "us_EN";
+}}}
+
+in `bigbluebutton/client/BigBlueButton.html`.
+
+
 == Other Questions ==
 === When will feature X be implemented? ===
 
