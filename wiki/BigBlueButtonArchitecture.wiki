@@ -3,6 +3,4 @@
 = Introduction Status: PENDING =
 
   * [ArchitectureCouncil Architecture Council]
-  * [ArchitectureOffice Architecture Office]
-  * [ArchitectureOverview Overview of Architecture]
-  * [ArchitectureRoadmap Architecture Plans for the client] 
+  * [ArchitectureOffice Architecture Office] 
