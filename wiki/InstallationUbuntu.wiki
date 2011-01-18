@@ -74,6 +74,8 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/mysql.png
 
 Enter a password for mysql's 'root' user (you'll need to enter it twice).  Almost immediately, the package script for bbb-web will prompt you for that mysql root password (shown below).  !BigBlueButton needs to access the mysql to create a database.  Enter the the same password your did a moment ago for mysql.
 
+Note: The mysql password should not contain the following characters as `! # [ ^ $ ] ( )` as they will cause the bbb-web install script to break.
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
 
