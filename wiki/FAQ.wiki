@@ -921,7 +921,7 @@ BigBlueButton server
 %>
 }}}
 
-What's likely happening is that !BigBlueButtonURL isn't resolving to a
+What's likely happening is that BigBlueButtonURL isn't resolving to a
 valid host.  You can verify by using it's value to interactively make an API call from your browser.  To do this, enter the following URL in your browser
 
 {{{
@@ -946,7 +946,7 @@ Now, this URL isn't actually called by your web browser; rather, it's called by 
 -O -
 }}}
 
-and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of !BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the BigBlueButton server.
+and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the BigBlueButton server.
 
 === All I get is a "Welcome to Nginx" screen" ===
 If bbb-conf -c returns:
