@@ -5,3 +5,5 @@
 == Mission Status: PENDING ==
 
 == Resources. Status: PENDING ==
+  * [ArchitectureOverview Overview of Architecture]
+  * [ArchitectureRoadmap Architecture Plans for the client]
