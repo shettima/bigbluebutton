@@ -238,7 +238,7 @@ The limitations and assumptions are as follows:
 Capture
   # The moderator will not be able to start/stop record and playback (this greatly simplifies the architecture and changes to the BigBlueButton client). 
 Capture Archive
-  # Only the slides, slide transitions, and auto are captured.
+  # Only the slides, slide transitions, and audio are captured.
 Ingest and Processing
   # The IngestAndProcessingService for the Flash Playback Client will output English index.html pages.
   # There will not be any security/passwords/or user accounts protecting the recordings, other than the third-party tool must know the meetingID to access the recordings.
