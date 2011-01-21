@@ -390,6 +390,9 @@ Follow this short [SampleModule tutorial].
  
 = Record and Playback Branch =
 
+The following section is still under heavy development, and is only intended for developers with good programming experience.
+
+== Setting up ==
 The following instructions are for setup the development environment recording and playback. First of all, setup bigbluebutton development environment bigbluebutton-client, bigbluebutton-web and bigbluebutton-apps.
 
 Then, check the latest code of the record and playback feature:
@@ -407,12 +410,16 @@ Then:
 
 3) Compile bigbluebutton-web (the recording API is here):
 NOTE: Instead of running ant like in the instructions for default bbb-web, You will need to: 
+
 - make sure you’ve built the bbb-common-message library. This is important so that tomcat doesn’t throw a class mismatch error. Once you’ve built the new bbb-common-message.jar, copy it to bigbluebutton-web/lib.
+
 - Change the hardcoded ip in bigbluebutton-web/grails-app/conf/bigbluebutton.properties to your own ip.
+
 - Build the war with the command ‘grails war’
+
 - Deploy the war file for bbb-web to /var/lib/tomcat/webapps.
 
-4) Compile bigbluebutton-apps (events get dispatched from here):
+4) Compile bigbluebutton-apps (events get dispatched from here)
 
 5) Compile event-recorder
 {{{
@@ -432,8 +439,11 @@ sudo /etc/init.d/tomcat6 start
 }}}
 
 7) Playback client
+
 The playback client is located in record-and-playback/playback-client-js
 Right now there is no way for the client to pull recorded sessions. You can find a sample downloaded session in the Downloads section of this site, if you would like to play around with the client.
+
+
 
 =Troubleshooting=
 
