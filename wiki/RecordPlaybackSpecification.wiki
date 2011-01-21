@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="4" />
 
-= Overview =
+== Overview ==
 
 The first part of this document describes the long-term vision and scope for implementing record and playback into BigBlueButton. The second part outlines the work to be done for the initial record and playback release.
 
@@ -12,7 +12,7 @@ This document assumes the reader understands the current BigBlueButton architect
 
 The terms “virtual meeting”, “virtual classroom”, and “sessions” all refer to a virtual meeting within a BigBlueButton server.
 
-= Vision =
+== Vision ==
 
 The long-term vision for Record and Playback is to enable a university or college to capture, store, search, and retrieve lectures without any additional effort on the part of the teacher or students.
 
