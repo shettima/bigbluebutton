@@ -35,7 +35,7 @@ If you wish to modify an existing translation instead of creating a new one, you
 || Spanish || es_ES || Néstor || n3storm AT gmail DOT com || 0.64 ||
 || Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33 AT gmail DOT com || 0.64 ||
 || Swedish || sw_SW || Fredrik Garmer || garmer AT gmail.com || 0.7 ||
-|| Turkish || tr_TR || Ceyhun Kazel || ceyhunkazel AT gmail DOT com || 0.64 ||
+|| Turkish || tr_TR || Yasin Ozarslan || ozarslan AT gmail DOT com || 0.71 ||
 || Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.7 ||
 
 
