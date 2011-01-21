@@ -432,7 +432,6 @@ sudo /etc/init.d/tomcat6 start
 }}}
 
 7) Playback client
-
 The playback client is located in record-and-playback/playback-client-js
 Right now there is no way for the client to pull recorded sessions. You can find a sample downloaded session in the Downloads section of this site, if you would like to play around with the client.
 
