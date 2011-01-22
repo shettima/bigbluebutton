@@ -64,7 +64,7 @@ The vision for this phase includes the ability for an administrator to
   * access the the recorded sessions from within 3rd party applications, such as !WordPress or Joomla, using an associate !BigBlueButton plug-in.
 
 === Engage Tools ===
-In the Engage Tools phase, the user loads a client tool -- such as video player, custom Flash client, or custom HTML client -- to playback a recorded session.
+In the Engage Tools phase, the user loads a client tool -- such as video player, custom Flash client, or custom HTML5 client -- to playback a recorded session.
 
 For example, the client tool could be an HTML interface the allows the user to do keyword searching through past recordings.  A student could enter the keyword "ecosystem" and the tool would search through all recorded session, display thumbnails of slides that contain that specific keyword, and start playback on a specific slide when the user clicks a thumbnail.
 
@@ -113,7 +113,7 @@ Its Tuesday, December 7, 2010.   Mary enters the classroom around 2:52 PM and pr
 One of Mary’s students, Kevin, missed Thursday’s class.  Later that evening, he accesses the recorded session:
   # Kevin logs into Sakai and navigates to the English 432.
   # Below the link to the "Virtual Classroom" is a second link to "Recorded Lectures".  Kevin clicks the second link.
-  # He sees a list of recorded lectures.  He clicks the one dated Tuesday, December 7, 2010 2:52.  His browser loads a new Flash client.  This Flash client looks similar to !BigBlueButton, but Kevin knows he is no longer in a live session; rather, he is playing back the lecture he missed.
+  # He sees a list of recorded lectures.  He clicks the one dated Tuesday, December 7, 2010 2:52.  His browser loads an HTML5 web page.  This page is clearly different than !BigBlueButton, and Kevin knows he is playing back the lecture he missed.
   # He watches the lecture, moving the slider across the timeline to jump to a particular section.
 
 === Detailed Design ===
@@ -209,13 +209,13 @@ The engage tool would be a HTML/JavaScript Playback Client (a new client, not th
   # playback the slides and audio of the recorded session,
   # enable the user seek anywhere in the session using a slider on the audio timeline.
 
-The following diagram shows the design of the Flash Playback Client.
+The following diagram shows the design of the Playback Client.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image3.png
 
 The Playback Client will use the .png files for playback of slides. Any uploaded presentation will be converted to png images as part of the Ingest and Processing service.
 
-*ToDo*: Provide more detailed design of the Flash Playback Client.
+*ToDo*: Provide more detailed design of the Playback Client.
 
 == Requirements ==
 These sections capture the more specific requirements for the first iteration of Record and Playback (!BigBlueButton 0.8).
@@ -242,7 +242,7 @@ Capture
 Capture Archive
   # Only the slides, slide transitions, and audio are captured.
 Ingest and Processing
-  # The !IngestAndProcessingService for the Flash Playback Client will output English index.html pages.
+  # The !IngestAndProcessingService for the Playback Client will output English index.html pages.
   # There will not be any security/passwords/or user accounts protecting the recordings, other than the third-party tool must know the meetingID to access the recordings.
 Engage Tool
-  # The Simple Flash Playback Client will download the entire audio file for playback (this removes the need to use red5 as a streaming server).
+  # The Playback Client will download the entire audio file for playback (this removes the need to use red5 as a streaming server).
