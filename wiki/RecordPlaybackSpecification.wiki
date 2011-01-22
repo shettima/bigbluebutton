@@ -1,4 +1,4 @@
-#summary The Record and Playback functionality overview.
+#summary Draft - The Vision/Scope for implementation of Record and Playback in BigBlueButton.
 
 <wiki:toc max_depth="4" />
 
