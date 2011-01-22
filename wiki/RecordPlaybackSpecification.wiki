@@ -44,7 +44,7 @@ You can think of a server-based tool functioning as a VCR: it sees and records a
 The Ingest and Processing phase involves one or more tools that process the recorded events and media into a format for later playback.  A tool may process all or a subset of the recorded events and media.
 
 For example, a tool can extract and process only the slides, slide transition events, and audio to create one of the following output formats:
-  * a video file that could be uploaded to YouTube for playback,
+  * a video file that could be uploaded to !YouTube for playback,
   * a set of data files that could be loaded by a custom end-user Flash application that enables the user to navigate the recorded session by slide transitions, or
   * a set of data files that could be loaded by a custom HTML5 application that would enable the user to playback the recorded session on an iPad, iPhone, iPod touch.
 
@@ -54,7 +54,7 @@ The vision for this phase includes giving the moderator (or teacher or administr
   # schedule and monitor the processing of recorded content (such as in the case where video encoding takes significant time) and receive notifications when recorded material is ready for viewing.
 
 === Distribution Management ===
-The Distribution Management phase provides one or more tools to manage the publication and access to the recorded sessions.  For example, a Distribution Management tool could upload a video file of a recorded session to external sites like YouTube, iTunesU, and others.
+The Distribution Management phase provides one or more tools to manage the publication and access to the recorded sessions.  For example, a Distribution Management tool could upload a video file of a recorded session to external sites like !YouTube, iTunesU, and others.
 
 The vision for this phase includes the ability for an administrator to
   * easily distribute content to iTunesU, Youtube, etc,
@@ -80,11 +80,7 @@ The user`s browser loads the !BigBlueButton client(6). The client sends interact
 
 FreeSWITCH/Asterisk sends (9) an event stating that it has started recording. The timestamp for this event will later allow the !IngestAndProcessingService to sync the audio with the other events in the meeting.
 
-When the RecordingService receive the events, it forwards the events to an ActiveMQ event bus (10). The !EventRecorder receives (11) the events and stores them to an XML file. The xml file will be in
-
-{{{
-   /var/bigbluebutton/meetings/<meetingID>/<timestamp>/events.xml
-}}}
+When the RecordingService receive the events, it forwards the events to an ActiveMQ event bus (10). The !EventRecorder receives (11) the events and stores them to an XML file. The xml file will be in `/var/bigbluebutton/meetings/<meetingID>/<timestamp>/events.xml`.
 
 When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the !BigBlueButton server), the !RecordCoordinator tells FreeSWITCH/Asterisk and the !EventRecorder to stop (12) saving audio and recording events. The !RecordCoordinator then informs (13) the !ArchiveService about a recorded session that just ended. The !ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
 
@@ -158,9 +154,9 @@ Recording has now finished.  The !ArchiveService will gather the raw recorded ev
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image1.png" />
 
 The !ArchiveService will combine the audio files from the associated Asterisk/FreeSWITCH directory and raw data from 
-`/var/bigbluebutton/meetings/<meetingID>/<timestamp>` into a target folder located in /var/bigbluebutton/recordings/<meetingID>/<timestamp>. We will use the directory structure below as a convention.
+`/var/bigbluebutton/meetings/<meetingID>/<timestamp>` into a target folder located in `/var/bigbluebutton/recordings/<meetingID>/<timestamp>`. We will use the directory structure below as a convention.
 
-*ToDo*: Update the following diagram to show <meetingid>/<timestamp>.  Also, need to confirm whether the recorded media will be .ogg files or .wav files.
+*ToDo*: Update the following diagram to show `<meetingid>/<timestamp>`.  Also, need to confirm whether the recorded media will be .ogg files or .wav files.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image0.png" />
 
@@ -176,7 +172,7 @@ The !InjestAndProcessingService is triggered by the !RecordCoordinator, after th
 
 The following diagram show the directory structure by convention for !RecordedSessionArchives.  Here the !IngestAndProcessingService is called bbb-ingest-and-process.
 
-*ToDo*: Change the diagram to show <meetingid>/<timestamp>.
+*ToDo*: Change the diagram to show `<meetingid>/<timestamp>`.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image8.png" />
 
