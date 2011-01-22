@@ -4,13 +4,13 @@
 
 == Overview ==
 
-The first part of this document describes the long-term vision and scope for implementing record and playback into BigBlueButton. The second part outlines the work to be done for the initial record and playback release.
+The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work to be done for the initial record and playback release.
 
 The purpose of this document is to provide a clear understanding of the business needs, the long-term vision to address the needs, and the constraints that are being faced during this phase of this project.  It also details the requirements and specifications for implementation of the first iteration. The document also attempts to foresee and mitigate any risks that for the first iteration.
 
-This document assumes the reader understands the current BigBlueButton architecture. To get an overview of the architecture see http://code.google.com/p/bigbluebutton/wiki/ArchitectureOverview.
+This document assumes the reader understands the current !BigBlueButton architecture. To get an overview of the architecture see http://code.google.com/p/bigbluebutton/wiki/ArchitectureOverview.
 
-The terms “virtual meeting”, “virtual classroom”, and “sessions” all refer to a virtual meeting within a BigBlueButton server.
+The terms "virtual meeting", "virtual classroom", and "sessions" all refer to a virtual meeting within a !BigBlueButton server.
 
 == Vision ==
 
@@ -18,7 +18,7 @@ The long-term vision for Record and Playback is to enable a university or colleg
 
 The implementation of this vision would extend the current API to enable third-party plugins -- such as those for Moodle, Sakai, WordPress, and so on -- to give the teacher control over creating the recordings and provide students easy access to the recordings.
 
-The success of this vision would be measured in the number of educational institutions that actively use BigBlueButton to capture and distribute their lectures.
+The success of this vision would be measured in the number of educational institutions that actively use !BigBlueButton to capture and distribute their lectures.
 
 == Breakdown ==
 We break the vision for record and playback into the following architectural components (The details of the technical implementation for the first iteration are covered later in this document):
@@ -33,12 +33,12 @@ As shown below, each of the components corresponds to a phase in the processing 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image5.png" />
 
 === Capture ===
-The Capture phase involves enabling the BigBlueButton modules (chat, presentation, video, voice, etc.) to emit events over an event bus for capture on the BigBlueButton server.  Components that generate media (webcam, voice, desktop sharing) must also store their data streams on the server as well.
+The Capture phase involves enabling the !BigBlueButton modules (chat, presentation, video, voice, etc.) to emit events over an event bus for capture on the !BigBlueButton server.  Components that generate media (webcam, voice, desktop sharing) must also store their data streams on the server as well.
 
 === Capture Archive ===
-The Capture Archive phase involves one or more server-based tools that subscribe to the event bus and store the emitted events (such as “advance to slide 3 at 12:34:32”) together with the associated media (slides, audio, video, and other media streams) into a repository (database or file system) for later processing. 
+The Capture Archive phase involves one or more server-based tools that subscribe to the event bus and store the emitted events (such as "advance to slide 3 at 12:34:32") together with the associated media (slides, audio, video, and other media streams) into a repository (database or file system) for later processing. 
 
-You can think of a server-based tool functioning as a VCR: it sees and records all the events and media generated during a BigBlueButton session without affecting the session itself.
+You can think of a server-based tool functioning as a VCR: it sees and records all the events and media generated during a !BigBlueButton session without affecting the session itself.
 
 === Ingest and Processing ===
 The Ingest and Processing phase involves one or more tools that process the recorded events and media into a format for later playback.  A tool may process all or a subset of the recorded events and media.
@@ -61,12 +61,12 @@ The vision for this phase includes the ability for an administrator to
   * monitor the access to content (such as views),
   * monetize access to the content, 
   * transfer the media to a content distribution nework, 
-  * access the the recorded sessions from within 3rd party applications, such as WordPress or Joomla, using an associate BigBlueButton plug-in.
+  * access the the recorded sessions from within 3rd party applications, such as WordPress or Joomla, using an associate !BigBlueButton plug-in.
 
 === Engage Tools ===
 In the Engage Tools phase, the user loads a client tool -- such as video player, custom Flash client, or custom HTML client -- to playback a recorded session.
 
-For example, the client tool could be an HTML interface the allows the user to do keyword searching through past recordings.  A student could enter the keyword “ecosystem” and the tool would search through all recorded session, display thumbnails of slides that contain that specific keyword, and start playback on a specific slide when the user clicks a thumbnail.
+For example, the client tool could be an HTML interface the allows the user to do keyword searching through past recordings.  A student could enter the keyword "ecosystem" and the tool would search through all recorded session, display thumbnails of slides that contain that specific keyword, and start playback on a specific slide when the user clicks a thumbnail.
 
 == High-level Architecture ==
 === Capture and Archive ===
@@ -74,26 +74,26 @@ We begin with diagram that steps through in more detail the record and playback 
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image9.png" />
 
-The moderator (teacher) clicks (1) a join link in a 3rd party application (such as Wordpress BigBlueButton Plugin) that calls the BigBlueButton server with a create API request, passing “&record=true”. The BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The BigBlueButton API controller informs (3) the RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the RecordCoordinator tells (4) the EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
+The moderator (teacher) clicks (1) a join link in a 3rd party application (such as Wordpress !BigBlueButton Plugin) that calls the !BigBlueButton server with a create API request, passing "&record=true". The !BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The !BigBlueButton API controller informs (3) the RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the RecordCoordinator tells (4) the EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
 
-The user`s browser loads the BigBlueButton client(6). The client sends interacts (7) with bbb-apps during the session. All events sent through bbb-apps are forwarded (8) to the RecordingService, which is connected to the ActiveMQ event bus.
+The user`s browser loads the !BigBlueButton client(6). The client sends interacts (7) with bbb-apps during the session. All events sent through bbb-apps are forwarded (8) to the RecordingService, which is connected to the ActiveMQ event bus.
 
-FreeSWITCH/Asterisk sends (9) an event stating that it has started recording. The timestamp for this event will later allow the IngestAndProcessingService to sync the audio with the other events in the meeting.
+FreeSWITCH/Asterisk sends (9) an event stating that it has started recording. The timestamp for this event will later allow the !IngestAndProcessingService to sync the audio with the other events in the meeting.
 
 When the RecordingService receive the events, it forwards the events to an ActiveMQ event bus (10). The EventRecorder receives (11) the events and stores them to an XML file. The xml file will be in /var/bigbluebutton/meetings/<meetingID>/<timestamp>/events.xml.  
 
-When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the BigBlueButton server), the RecordCoordinator tells FreeSWITCH/Asterisk and the EventRecorder to stop (12) saving audio and recording events. The RecordCoordinator then informs (13) the ArchiveService about a recorded session that just ended. The ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
+When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the !BigBlueButton server), the RecordCoordinator tells FreeSWITCH/Asterisk and the EventRecorder to stop (12) saving audio and recording events. The RecordCoordinator then informs (13) the !ArchiveService about a recorded session that just ended. The !ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
 
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image2.png" />
 
-A user may trigger (or it may be triggered by the RecordCoordinator) the processing the recorded events and media (15).  The IngestAndProcessingService executes (16) with parameters to read the recorded events and media stored in a source directory and output the processed files to a specific target directory (17). The resulting files are stored into the RecordedSessionArchives (18).
+A user may trigger (or it may be triggered by the RecordCoordinator) the processing the recorded events and media (15).  The !IngestAndProcessingService executes (16) with parameters to read the recorded events and media stored in a source directory and output the processed files to a specific target directory (17). The resulting files are stored into the !RecordedSessionArchives (18).
 
-Once the IngestAndProcessingService is done, the recorded session will be available via HTTP requests, typically via a plug-in to a 3rd party application, such Sakai or Moodle, accesses the recordings using the meetingIDs (which it has recorded). The DistributionManagementService (19) will access the recorded session and publish them into sites like iTunesU or other sites.
+Once the !IngestAndProcessingService is done, the recorded session will be available via HTTP requests, typically via a plug-in to a 3rd party application, such Sakai or Moodle, accesses the recordings using the meetingIDs (which it has recorded). The DistributionManagementService (19) will access the recorded session and publish them into sites like iTunesU or other sites.
 
-Another way for a user to access (21) the recorded session is to playback within a Flash Playback Client. The Flash Playback loads (22) the recorded session from the RecordedSessionArchives and delivers it to the user.
+Another way for a user to access (21) the recorded session is to playback within a Flash Playback Client. The Flash Playback loads (22) the recorded session from the !RecordedSessionArchives and delivers it to the user.
 
 == Scope ==
 The scope for the first iteration of Record and Playback (0.8) is to capture and playback the slides, audio, and slide transitions.
@@ -105,15 +105,15 @@ Mary is the primary teacher for English 432, a forth year undergraduate course. 
 
 Its Tuesday, December 7, 2010.   Mary enters the classroom around 2:52 PM and prepares to teach her class.
   # Mary logs into Sakai as a teacher and navigates to the project page for English 432.
-  # She clicks on the link “Virtual Classroom” and enters the virtual classroom.  Her students can now the virtual classroom as well.   Mary and all her students see a red recording indicator on the tool bar showing that the class is being recorded.
+  # She clicks on the link "Virtual Classroom" and enters the virtual classroom.  Her students can now the virtual classroom as well.   Mary and all her students see a red recording indicator on the tool bar showing that the class is being recorded.
   # Mary proceeds to teach her class.
-  # Mary and her students exit BigBlueButton at 5:12 PM.
+  # Mary and her students exit !BigBlueButton at 5:12 PM.
 
 
 One of Mary’s students, Kevin, missed Thursday’s class.  Later that evening, he accesses the recorded session:
   # Kevin logs into Sakai and navigates to the English 432.
-  # Below the link to the “Virtual Classroom” is a second link to “Recorded Lectures”.  Kevin clicks the second link.
-  # He sees a list of recorded lectures.  He clicks the one dated Tuesday, December 7, 2010 2:52.  His browser loads a new Flash client.  This Flash client looks similar to BigBlueButton, but Kevin knows he is no longer in a live session; rather, he is playing back the lecture he missed.
+  # Below the link to the "Virtual Classroom" is a second link to "Recorded Lectures".  Kevin clicks the second link.
+  # He sees a list of recorded lectures.  He clicks the one dated Tuesday, December 7, 2010 2:52.  His browser loads a new Flash client.  This Flash client looks similar to !BigBlueButton, but Kevin knows he is no longer in a live session; rather, he is playing back the lecture he missed.
   # He watches the lecture, moving the slider across the timeline to jump to a particular section.
 
 === Detailed Design ===
@@ -132,44 +132,44 @@ The administrator can change the default values by modifying the associated prop
 
 The  RecordCoordinator will be part (3) of the API component and will send messages to an ActiveMQ Topic for starting and stopping of recording (4).
 
-The VoiceConf, RecordedAudioFileWatcher, and EventsRecorder components will listen for messages to start and stop recording of a meeting (5). The RecordedAudioFileWatcher will be monitoring the audio files to make sure that FS/Asterisk is actually recording. To make it simple, this will periodically look at the size of the file and see if it increases over time.
+The VoiceConf, !RecordedAudioFileWatcher, and !EventsRecorder components will listen for messages to start and stop recording of a meeting (5). The !RecordedAudioFileWatcher will be monitoring the audio files to make sure that FS/Asterisk is actually recording. To make it simple, this will periodically look at the size of the file and see if it increases over time.
 
 The diagram below details how the events and media are recorded.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image4.png" />
 
-FS/Asterisk will query the VoiceConf if the audio needs to be recorded (1) and, if true, will expect the dialplan to pass in a “recording” parameter. For FreeSWITCH, the VoiceConf can issue a command through the ESL to start recording. 
+FS/Asterisk will query the VoiceConf if the audio needs to be recorded (1) and, if true, will expect the dialplan to pass in a "recording" parameter. For FreeSWITCH, the VoiceConf can issue a command through the ESL to start recording. 
 
 *Note*: FreeSWITCH will only start recording when there are two (or more) people in a conference. To solve this issue we will need to investigate either altering Freeswitch to our needs, or add ‘Ghost’ users to the voice conference when the room starts, which will trigger the recording by FreeSWITCH. 
 
-The Chat, Presentation, and VoiceConf modules send events (2) to ActiveMQ via the RecordingService (3).  The EventsRecorder will listen (4) for these events (messages) and store them into a file called events.xml.
+The Chat, Presentation, and VoiceConf modules send events (2) to ActiveMQ via the RecordingService (3).  The !EventsRecorder will listen (4) for these events (messages) and store them into a file called events.xml.
 
-The EventsRecorder and RecordedAudioFileWatcher will send notifications (5) periodically to the RecordingService to report the status of the recording. The RecordingService will send (6) messages to the BigBlueButton client about the status of the recording.  Specifically, if the recording falters for any reason, then the client will receive a warning message on the toolbar that recording has stopped.
+The !EventsRecorder and !RecordedAudioFileWatcher will send notifications (5) periodically to the RecordingService to report the status of the recording. The RecordingService will send (6) messages to the !BigBlueButton client about the status of the recording.  Specifically, if the recording falters for any reason, then the client will receive a warning message on the toolbar that recording has stopped.
 
 ==== Archiving ====
-Recording has now finished.  The ArchiveService will gather the raw recorded events and media and store the files into RawRecordedArchives (a directory). 
+Recording has now finished.  The !ArchiveService will gather the raw recorded events and media and store the files into RawRecordedArchives (a directory). 
 
 *Note*: For the first iteration, there will be no webcam and desktop sharing recording. (The following diagram will be updated)
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image1.png" />
 
-The ArchiveService will combine the audio files from the associated Asterisk/FreeSWITCH directory and raw data from /var/bigbluebutton/meetings/<meetingID>/<timestamp> into a target folder located in /var/bigbluebutton/recordings/<meetingID>/<timestamp>. We will use the directory structure below as a convention.
+The !ArchiveService will combine the audio files from the associated Asterisk/FreeSWITCH directory and raw data from /var/bigbluebutton/meetings/<meetingID>/<timestamp> into a target folder located in /var/bigbluebutton/recordings/<meetingID>/<timestamp>. We will use the directory structure below as a convention.
 
 *ToDo*: Update the following diagram to show <meetingid>/<timestamp>.  Also, need to confirm whether the recorded media will be .ogg files or .wav files.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image0.png" />
 
 === Ingest and Processing ===
-The InjestAndProcessingService is triggered by the RecordCoordinator, after the last person leaves the room and the meeting ends.
+The !InjestAndProcessingService is triggered by the RecordCoordinator, after the last person leaves the room and the meeting ends.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image7.png" />
 
-  # RecordCoordinator starts the IngestAndProcessingService, passing the full path to the RawRecordedArchives as the first parameter
-  # The IngestAndProcessingService loads the raw recorded data and begin processing.
-  # During processing, the IngestAndProcessingService will regularly provide progress reports on the status of the conversion process on the event bus (however it is not planned in the first iteration that these events will be visible to the end user).
-  # The output of the IngestAndProcessingService process will be stored in the RecordedSessionArchives.
+  # RecordCoordinator starts the !IngestAndProcessingService, passing the full path to the RawRecordedArchives as the first parameter
+  # The !IngestAndProcessingService loads the raw recorded data and begin processing.
+  # During processing, the !IngestAndProcessingService will regularly provide progress reports on the status of the conversion process on the event bus (however it is not planned in the first iteration that these events will be visible to the end user).
+  # The output of the !IngestAndProcessingService process will be stored in the !RecordedSessionArchives.
 
-The following diagram show the directory structure by convention for RecordedSessionArchives.  Here the IngestAndProcessingService is called bbb-ingest-and-process.
+The following diagram show the directory structure by convention for !RecordedSessionArchives.  Here the !IngestAndProcessingService is called bbb-ingest-and-process.
 
 *ToDo*: Change the diagram to show <meetingid>/<timestamp>.
 
@@ -201,10 +201,10 @@ A plug-in could then access this index.xml, parse it, and display to the user a 
 There would be an paramter for bbb-injest-and-process to not create/update the root index.hml that is readable by an HTTP request.  This would restrict playback to only those 3rd party plug-ins that know the specific meetingIDs (which would only be know if they originally the recording using the create and join requests).
 
 === Distribution Management ===
-There is no requirement for any distribution management tools in the first release of record and playback.  All the recorded sessions would be stored with the /var/www directory on the BigBlueButton server.
+There is no requirement for any distribution management tools in the first release of record and playback.  All the recorded sessions would be stored with the /var/www directory on the !BigBlueButton server.
 
 === Engage Tools ===
-The engage tool would be a HTML/JavaScript Playback Client (a new client, not the BigBlueButton client) that would
+The engage tool would be a HTML/JavaScript Playback Client (a new client, not the !BigBlueButton client) that would
   # playback the slides and audio of the recorded session,
   # enable the user seek anywhere in the session using a slider on the audio timeline.
 
@@ -216,14 +216,14 @@ The Playback Client will use the .png files for playback of slides. Any uploaded
 *ToDo*: Provide more detailed design of the Flash Playback Client.
 
 == Requirements ==
-These sections capture the more specific requirements for the first iteration of Record and Playback (BigBlueButton 0.8).
+These sections capture the more specific requirements for the first iteration of Record and Playback (!BigBlueButton 0.8).
 
 === System Requirements ===
 The system requirements are
-  # The record and playback architecture must install within the BigBlueButton architecture
-  # The processing of captured events/media into recorded sessions must have minimal impact on the other functions of the BigBlueButton server
+  # The record and playback architecture must install within the !BigBlueButton architecture
+  # The processing of captured events/media into recorded sessions must have minimal impact on the other functions of the !BigBlueButton server
   # The encoding of recorded sessions must use codecs that are unencumbered by patents
-  # The record and playback components must be installed/uninstalled by BigBlueButton’s Ubuntu 10.04 32-bit/64-bit packages.
+  # The record and playback components must be installed/uninstalled by !BigBlueButton’s Ubuntu 10.04 32-bit/64-bit packages.
 
 === Support Requirements ===
 The support requriements are
@@ -236,11 +236,11 @@ The support requirements are
 == Limitations and Assumptions ==
 The limitations and assumptions are as follows:
 Capture
-  # The moderator will not be able to start/stop record and playback (this greatly simplifies the architecture and changes to the BigBlueButton client). 
+  # The moderator will not be able to start/stop record and playback (this greatly simplifies the architecture and changes to the !BigBlueButton client). 
 Capture Archive
   # Only the slides, slide transitions, and audio are captured.
 Ingest and Processing
-  # The IngestAndProcessingService for the Flash Playback Client will output English index.html pages.
+  # The !IngestAndProcessingService for the Flash Playback Client will output English index.html pages.
   # There will not be any security/passwords/or user accounts protecting the recordings, other than the third-party tool must know the meetingID to access the recordings.
 Engage Tool
   # The Simple Flash Playback Client will download the entire audio file for playback (this removes the need to use red5 as a streaming server).
