@@ -74,15 +74,15 @@ We begin with diagram that steps through in more detail the record and playback 
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image9.png" />
 
-The moderator (teacher) clicks (1) a join link in a 3rd party application (such as Wordpress !BigBlueButton Plugin) that calls the !BigBlueButton server with a create API request, passing "&record=true". The !BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The !BigBlueButton API controller informs (3) the !RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the !RecordCoordinator tells (4) the EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
+The moderator (teacher) clicks (1) a join link in a 3rd party application (such as !WordPress !BigBlueButton Plugin) that calls the !BigBlueButton server with a create API request, passing "&record=true". The !BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The !BigBlueButton API controller informs (3) the !RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the !RecordCoordinator tells (4) the !!!EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
 
 The user`s browser loads the !BigBlueButton client(6). The client sends interacts (7) with bbb-apps during the session. All events sent through bbb-apps are forwarded (8) to the RecordingService, which is connected to the ActiveMQ event bus.
 
 FreeSWITCH/Asterisk sends (9) an event stating that it has started recording. The timestamp for this event will later allow the !IngestAndProcessingService to sync the audio with the other events in the meeting.
 
-When the RecordingService receive the events, it forwards the events to an ActiveMQ event bus (10). The EventRecorder receives (11) the events and stores them to an XML file. The xml file will be in /var/bigbluebutton/meetings/<meetingID>/<timestamp>/events.xml.  
+When the RecordingService receive the events, it forwards the events to an ActiveMQ event bus (10). The !!!EventRecorder receives (11) the events and stores them to an XML file. The xml file will be in `/var/bigbluebutton/meetings/<meetingID>/<timestamp>/events.xml`.  
 
-When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the !BigBlueButton server), the !RecordCoordinator tells FreeSWITCH/Asterisk and the EventRecorder to stop (12) saving audio and recording events. The !RecordCoordinator then informs (13) the !ArchiveService about a recorded session that just ended. The !ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
+When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the !BigBlueButton server), the !RecordCoordinator tells FreeSWITCH/Asterisk and the !!!EventRecorder to stop (12) saving audio and recording events. The !RecordCoordinator then informs (13) the !ArchiveService about a recorded session that just ended. The !ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
 
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
@@ -91,7 +91,7 @@ The next diagram picks up the processing of the events and media to the playback
 
 A user may trigger (or it may be triggered by the !RecordCoordinator) the processing the recorded events and media (15).  The !IngestAndProcessingService executes (16) with parameters to read the recorded events and media stored in a source directory and output the processed files to a specific target directory (17). The resulting files are stored into the !RecordedSessionArchives (18).
 
-Once the !IngestAndProcessingService is done, the recorded session will be available via HTTP requests, typically via a plug-in to a 3rd party application, such Sakai or Moodle, accesses the recordings using the meetingIDs (which it has recorded). The DistributionManagementService (19) will access the recorded session and publish them into sites like iTunesU or other sites.
+Once the !IngestAndProcessingService is done, the recorded session will be available via HTTP requests, typically via a plug-in to a 3rd party application, such Sakai or Moodle, accesses the recordings using the meetingIDs (which it has recorded). The !DistributionManagementService (19) will access the recorded session and publish them into sites like iTunesU or other sites.
 
 Another way for a user to access (21) the recorded session is to playback within a Flash Playback Client. The Flash Playback loads (22) the recorded session from the !RecordedSessionArchives and delivers it to the user.
 
@@ -132,22 +132,22 @@ The administrator can change the default values by modifying the associated prop
 
 The  !RecordCoordinator will be part (3) of the API component and will send messages to an ActiveMQ Topic for starting and stopping of recording (4).
 
-The VoiceConf, !RecordedAudioFileWatcher, and !EventsRecorder components will listen for messages to start and stop recording of a meeting (5). The !RecordedAudioFileWatcher will be monitoring the audio files to make sure that FS/Asterisk is actually recording. To make it simple, this will periodically look at the size of the file and see if it increases over time.
+The !VoiceConf, !RecordedAudioFileWatcher, and !EventsRecorder components will listen for messages to start and stop recording of a meeting (5). The !RecordedAudioFileWatcher will be monitoring the audio files to make sure that FS/Asterisk is actually recording. To make it simple, this will periodically look at the size of the file and see if it increases over time.
 
 The diagram below details how the events and media are recorded.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image4.png" />
 
-FS/Asterisk will query the VoiceConf if the audio needs to be recorded (1) and, if true, will expect the dialplan to pass in a "recording" parameter. For FreeSWITCH, the VoiceConf can issue a command through the ESL to start recording. 
+FS/Asterisk will query the !VoiceConf if the audio needs to be recorded (1) and, if true, will expect the dialplan to pass in a "recording" parameter. For FreeSWITCH, the !VoiceConf can issue a command through the ESL to start recording. 
 
 *Note*: FreeSWITCH will only start recording when there are two (or more) people in a conference. To solve this issue we will need to investigate either altering Freeswitch to our needs, or add ‘Ghost’ users to the voice conference when the room starts, which will trigger the recording by FreeSWITCH. 
 
-The Chat, Presentation, and VoiceConf modules send events (2) to ActiveMQ via the RecordingService (3).  The !EventsRecorder will listen (4) for these events (messages) and store them into a file called events.xml.
+The Chat, Presentation, and !VoiceConf modules send events (2) to ActiveMQ via the RecordingService (3).  The !EventsRecorder will listen (4) for these events (messages) and store them into a file called events.xml.
 
 The !EventsRecorder and !RecordedAudioFileWatcher will send notifications (5) periodically to the RecordingService to report the status of the recording. The RecordingService will send (6) messages to the !BigBlueButton client about the status of the recording.  Specifically, if the recording falters for any reason, then the client will receive a warning message on the toolbar that recording has stopped.
 
 ==== Archiving ====
-Recording has now finished.  The !ArchiveService will gather the raw recorded events and media and store the files into RawRecordedArchives (a directory). 
+Recording has now finished.  The !ArchiveService will gather the raw recorded events and media and store the files into !RawRecordedArchives (a directory). 
 
 *Note*: For the first iteration, there will be no webcam and desktop sharing recording. (The following diagram will be updated)
 
@@ -164,7 +164,7 @@ The !InjestAndProcessingService is triggered by the !RecordCoordinator, after th
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image7.png" />
 
-  # !RecordCoordinator starts the !IngestAndProcessingService, passing the full path to the RawRecordedArchives as the first parameter
+  # !RecordCoordinator starts the !IngestAndProcessingService, passing the full path to the !RawRecordedArchives as the first parameter
   # The !IngestAndProcessingService loads the raw recorded data and begin processing.
   # During processing, the !IngestAndProcessingService will regularly provide progress reports on the status of the conversion process on the event bus (however it is not planned in the first iteration that these events will be visible to the end user).
   # The output of the !IngestAndProcessingService process will be stored in the !RecordedSessionArchives.
