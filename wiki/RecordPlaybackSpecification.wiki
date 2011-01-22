@@ -16,7 +16,7 @@ The terms "virtual meeting", "virtual classroom", and "sessions" all refer to a 
 
 The long-term vision for Record and Playback is to enable a university or college to capture, store, search, and retrieve lectures without any additional effort on the part of the teacher or students.
 
-The implementation of this vision would extend the current API to enable third-party plugins -- such as those for Moodle, Sakai, WordPress, and so on -- to give the teacher control over creating the recordings and provide students easy access to the recordings.
+The implementation of this vision would extend the current API to enable third-party plugins -- such as those for Moodle, Sakai, !WordPress, and so on -- to give the teacher control over creating the recordings and provide students easy access to the recordings.
 
 The success of this vision would be measured in the number of educational institutions that actively use !BigBlueButton to capture and distribute their lectures.
 
@@ -61,7 +61,7 @@ The vision for this phase includes the ability for an administrator to
   * monitor the access to content (such as views),
   * monetize access to the content, 
   * transfer the media to a content distribution nework, 
-  * access the the recorded sessions from within 3rd party applications, such as WordPress or Joomla, using an associate !BigBlueButton plug-in.
+  * access the the recorded sessions from within 3rd party applications, such as !WordPress or Joomla, using an associate !BigBlueButton plug-in.
 
 === Engage Tools ===
 In the Engage Tools phase, the user loads a client tool -- such as video player, custom Flash client, or custom HTML client -- to playback a recorded session.
@@ -74,7 +74,7 @@ We begin with diagram that steps through in more detail the record and playback 
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image9.png" />
 
-The moderator (teacher) clicks (1) a join link in a 3rd party application (such as Wordpress !BigBlueButton Plugin) that calls the !BigBlueButton server with a create API request, passing "&record=true". The !BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The !BigBlueButton API controller informs (3) the RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the RecordCoordinator tells (4) the EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
+The moderator (teacher) clicks (1) a join link in a 3rd party application (such as Wordpress !BigBlueButton Plugin) that calls the !BigBlueButton server with a create API request, passing "&record=true". The !BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The !BigBlueButton API controller informs (3) the !RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the !RecordCoordinator tells (4) the EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
 
 The user`s browser loads the !BigBlueButton client(6). The client sends interacts (7) with bbb-apps during the session. All events sent through bbb-apps are forwarded (8) to the RecordingService, which is connected to the ActiveMQ event bus.
 
@@ -82,14 +82,14 @@ FreeSWITCH/Asterisk sends (9) an event stating that it has started recording. Th
 
 When the RecordingService receive the events, it forwards the events to an ActiveMQ event bus (10). The EventRecorder receives (11) the events and stores them to an XML file. The xml file will be in /var/bigbluebutton/meetings/<meetingID>/<timestamp>/events.xml.  
 
-When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the !BigBlueButton server), the RecordCoordinator tells FreeSWITCH/Asterisk and the EventRecorder to stop (12) saving audio and recording events. The RecordCoordinator then informs (13) the !ArchiveService about a recorded session that just ended. The !ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
+When the last person leaves the session or when the meeting has ended (such as hitting a recording time limit set on the !BigBlueButton server), the !RecordCoordinator tells FreeSWITCH/Asterisk and the EventRecorder to stop (12) saving audio and recording events. The !RecordCoordinator then informs (13) the !ArchiveService about a recorded session that just ended. The !ArchiveService gathers all the recorded events and media and stores them into a target archive (14) directory (same location as the events.xml for this session).
 
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image2.png" />
 
-A user may trigger (or it may be triggered by the RecordCoordinator) the processing the recorded events and media (15).  The !IngestAndProcessingService executes (16) with parameters to read the recorded events and media stored in a source directory and output the processed files to a specific target directory (17). The resulting files are stored into the !RecordedSessionArchives (18).
+A user may trigger (or it may be triggered by the !RecordCoordinator) the processing the recorded events and media (15).  The !IngestAndProcessingService executes (16) with parameters to read the recorded events and media stored in a source directory and output the processed files to a specific target directory (17). The resulting files are stored into the !RecordedSessionArchives (18).
 
 Once the !IngestAndProcessingService is done, the recorded session will be available via HTTP requests, typically via a plug-in to a 3rd party application, such Sakai or Moodle, accesses the recordings using the meetingIDs (which it has recorded). The DistributionManagementService (19) will access the recorded session and publish them into sites like iTunesU or other sites.
 
@@ -130,7 +130,7 @@ The create (1) and join (2) API calls will be extended to pass two additional pa
 
 The administrator can change the default values by modifying the associated properties in bigbluebutton.properties.
 
-The  RecordCoordinator will be part (3) of the API component and will send messages to an ActiveMQ Topic for starting and stopping of recording (4).
+The  !RecordCoordinator will be part (3) of the API component and will send messages to an ActiveMQ Topic for starting and stopping of recording (4).
 
 The VoiceConf, !RecordedAudioFileWatcher, and !EventsRecorder components will listen for messages to start and stop recording of a meeting (5). The !RecordedAudioFileWatcher will be monitoring the audio files to make sure that FS/Asterisk is actually recording. To make it simple, this will periodically look at the size of the file and see if it increases over time.
 
@@ -160,11 +160,11 @@ The !ArchiveService will combine the audio files from the associated Asterisk/Fr
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image0.png" />
 
 === Ingest and Processing ===
-The !InjestAndProcessingService is triggered by the RecordCoordinator, after the last person leaves the room and the meeting ends.
+The !InjestAndProcessingService is triggered by the !RecordCoordinator, after the last person leaves the room and the meeting ends.
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image7.png" />
 
-  # RecordCoordinator starts the !IngestAndProcessingService, passing the full path to the RawRecordedArchives as the first parameter
+  # !RecordCoordinator starts the !IngestAndProcessingService, passing the full path to the RawRecordedArchives as the first parameter
   # The !IngestAndProcessingService loads the raw recorded data and begin processing.
   # During processing, the !IngestAndProcessingService will regularly provide progress reports on the status of the conversion process on the event bus (however it is not planned in the first iteration that these events will be visible to the end user).
   # The output of the !IngestAndProcessingService process will be stored in the !RecordedSessionArchives.
@@ -227,7 +227,7 @@ The system requirements are
 
 === Support Requirements ===
 The support requriements are
-  # The individual process tools (IngestAndRecording, etc.) must log their operations and any exceptions to facilitate troubleshooting.
+  # The individual process tools (!IngestAndRecording, etc.) must log their operations and any exceptions to facilitate troubleshooting.
 
 ==== Testing Requirements ====
 The support requirements are
