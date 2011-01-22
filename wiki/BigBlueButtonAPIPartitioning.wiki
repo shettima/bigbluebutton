@@ -66,7 +66,7 @@ After checking out the code, follow the steps for building and deploying the dif
 
 Here are the available API calls so far:
 
- *Before starting anything you have to create a meeting room by calling the "create" API call. This should bring up the Bigbluebutton Demo page (see below), then you can log in. 
+ * Before starting anything you have to create a meeting room by calling the "create" API call. This should bring up the Bigbluebutton Demo page (see below), then you can log in. 
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-DemoScreen.jpg" />
 
@@ -74,7 +74,7 @@ Here are the available API calls so far:
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB-API-MainScreen.jpg" />
 
-   *You can start and stop the chat module for the Bigbluebutton within the Bigbluebutton client canvas so far (we are aiming to load each module in its own frame independently)
+   * You can start and stop the chat module for the Bigbluebutton within the Bigbluebutton client canvas so far (we are aiming to load each module in its own frame independently)
  
    * To start Chat Module use (see image for Chat module started only) 
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=ChatModule&cmd=start}}}
@@ -126,6 +126,4 @@ _To Do_
 _Note: Any comments or input is more welcome to improve our work_
 
 _To be added_
-
-
 
