@@ -87,4 +87,4 @@ At this point, with a few computers running Ubuntu desktop, you can generate lar
 
 To the !BigBlueButton server, these are all real clients (with two streams for the VoIP channels).  If you generate 50 clients, for example, then login as the 51st client and upload a presentation, it will appear on all test clients.
 
-These scenarios are good for looking for SettingUpBigBlueButtonWithJconsole and profiling the memory usage. 
+These scenarios are good for  SettingUpBigBlueButtonWithJconsole and profiling the memory usage. 
