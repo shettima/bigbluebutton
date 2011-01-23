@@ -1,0 +1,43 @@
+#summary Developer information for testing BigBlueButton
+
+= Introduction =
+
+The itended audience for this document is developers who want to load test, unit test, and stress test !BigBlueButton.
+
+This document (currently in its early stages) gathers together the various approaches to testing !BigBlueButton so that other developers can participate in the testing.
+
+The goal is to make !BigBlueButton 
+
+== Quick checks ==
+
+!BigBlueButton has a lot of ConfigurationFiles; to see if your !BigBlueButton server is properly configured, use the command
+
+{{{
+   sudo bbb-conf --check
+}}}
+
+And look for any messages printed after "* Possible Problems *".  
+
+The !BigBlueButton process generate a lot of log files.  To quickly scan all the log files for errors or exceptions, use the command
+
+{{{
+   sudo bbb-conf --debug
+}}}
+
+After !BigBlueButton has been running for a while, the log files get large.  When figuring out exactly what caused the error, a common technique is to do the following:
+
+{{{
+   sudo bbb-conf --clean
+   sudo bbb-conf --watch
+}}}
+
+This will clean out all the log files (so there are no errors in the loogs), and display in the terminal the network activity and output of `bbb-conf --debug` every two seconds.
+
+
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
