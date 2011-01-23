@@ -5,6 +5,7 @@
 We have a number of projects that are related to !BigBlueButton.  
   * [ArchitectureRoadmap Architecture Plans for the client]
   * [BigBlueButtonAPIPartitioning Partitioning the client]
+  * [Testing Stress Testing the BigBlueButton server]
   * [SummerOfCodeApplication Summer of Code Application template]
   * [IdeasPage Ideas Page for Google Summer of Code Students]
   * [Phidgets Physical Widgets for External Notification]
