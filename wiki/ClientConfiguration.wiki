@@ -135,6 +135,7 @@ The Desktop Sharing module. Note that it connects to /deskShare, which is a red5
 {{{
 <module name="PhoneModule" url="PhoneModule.swf?v=VERSION" 
 	uri="rtmp://192.168.0.225/sip" 
+        autoJoin="false"
 	dependsOn="ViewersModule"
 />
 }}}
@@ -150,6 +151,7 @@ The Phone Module is the shows as the small headset icon in the upper left of the
 />
 }}}
 The Video Conferencing Module. Allows users to share their webcams with the room. It connects to the separate /video application on the bbb server.
+
 ==== videoQuality ====
 An attribute set to between 0 and 100. 0 means that priority will be given to optimizing bandwidth at the cost of quality. 100 means that no compression will be done, for maximum quality. This takes up high bandwidth and the frame rate may suffer. A quality of 100 is NOT recommended as it will eat up your server bandwidth quickly. Default is 70. Set to lower if you are concerned about bandwidth.
 ==== presenterShareOnly ====
