@@ -40,7 +40,48 @@ Using `--watch` you can connect to the !BigBlueButton server and try a series of
 
 == Testing with many clients ==
 
-A very good stress test is to run !BigBlueButton with many clients for long periods of time and watch the memory usage with a tool such as JConsole.
+A good stress test for !BigBlueButton is to generate load with many users.  Once you have 20, 40, 80 users connected, especially for long periods of time, you can watch the memory usage on the server with a tools such as JConsole.
+
+To generate users, there is a shell script `bbb-test` located [https://github.com/bigbluebutton/bigbluebutton/blob/master/labs/stress-testing/bbb-test here].  This script will let you startup N !BigBlueButton clients on a remote !BigBlueButton server.
+
+Run this script on a Ubuntu Desktop (either 10.04 or 10.10).  Firefox comes already installed with Flash.  
+
+For purposes of this example, let's say we're testing the !BigBlueButton server at 192.168.0.104.  We also have a separate computer running Ubuntu Desktop that we want to open a number of test clients to the !BigBlueButton server.  
+
+On 192.168.0.104, edit the `config.xml` and change autoJoin for the PhoneModule to true.
+
+{{{
+<module name="PhoneModule" url="PhoneModule.swf?v=VERSION" 
+        uri="rtmp://192.168.0.225/sip" 
+        autoJoin="false"
+        dependsOn="ViewersModule"
+/>
+}}} 
+
+This will automatically join new users into the voice.
+
+Next, copy the utility bbb-test to your Ubuntu desktop.  On the Ubuntu Desktop, start FireFox, connect to your !BigBlueButton server, and join the voice conference.  Flash will prompt you to join.  
+
+To remove the Flash prompt, open the global Flash Privacy Settings Manager using this [http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager02.html link].  Find the IP address 192.168.0.104 and choose "always allow".
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/testing/privacy.png
+
+Click the mute all button.    
+
+At this point, any subsequent !BigBlueButton clients launched from the Ubuntu desktop computer will automatically join the voice conference muted.
+
+To launch ten more clients, enter:
+
+{{{
+   bbb-test -h 192.168.0.104 -n 10
+}}}
+
+and the utility will ten !BigBlueButton clients, each in their own tab, on the !BigBlueButton server at 192.168.0.104.
+
+Here's a snapshot of the FireFox client.
+
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/testing/tenusers.png
 
 
 
