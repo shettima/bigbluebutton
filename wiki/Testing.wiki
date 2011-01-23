@@ -38,11 +38,11 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/testing/watch.png
 Using `--watch` you can connect to the !BigBlueButton server and try a series of steps that you suspect causes an exception.  You'll see the exception appear almost immediately when it occurs.
 
 
-== Testing with many clients ==
+== Stress Testing with Many Clients ==
 
-A good stress test for !BigBlueButton is to generate load with many users.  Once you have 20, 40, 80 users connected, especially for long periods of time, you can watch the memory usage on the server with a tools such as JConsole.
+A good stress test for !BigBlueButton is to generate load with many test users.  Once you have 20, 40, 80 users connected, especially for long periods of time, you can watch the memory usage on the server with a tools such as [SettingUpBigBlueButtonWithJconsole JConsole].
 
-To generate users, there is a shell script `bbb-test` located [https://github.com/bigbluebutton/bigbluebutton/blob/master/labs/stress-testing/bbb-test here].  This script will let you startup N !BigBlueButton clients on a remote !BigBlueButton server.
+To generate users, use the shell script `bbb-test` located [https://github.com/bigbluebutton/bigbluebutton/blob/master/labs/stress-testing/bbb-test here].  This script will let you startup N !BigBlueButton clients on a remote !BigBlueButton server.
 
 Run this script on a Ubuntu Desktop (either 10.04 or 10.10).  Firefox comes already installed with Flash.  
 
@@ -85,6 +85,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/testing/tenusers.png
 
 At this point, with a few computers running Ubuntu desktop, you can generate large numbers of !BigBlueButton clients connected to the server.  
 
-To the !BigBlueButton client, these are all real clients (with two streams for the VoIP channels).  If you generate 50 clients, for example, then login as the 51st client and upload a presentation, it will appear on all test clients.
+To the !BigBlueButton server, these are all real clients (with two streams for the VoIP channels).  If you generate 50 clients, for example, then login as the 51st client and upload a presentation, it will appear on all test clients.
 
 These scenarios are good for looking for SettingUpBigBlueButtonWithJconsole and profiling the memory usage. 
