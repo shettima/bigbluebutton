@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="3" />
 
-= Introduction to Testing !BigBlueButton =
+= Introduction to Stress Testing !BigBlueButton =
 
 This document is intended for developers who want to help stress test !BigBlueButton.
 
@@ -38,7 +38,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/testing/watch.png
 Using `--watch` you can connect to the !BigBlueButton server and try a series of steps that you suspect causes an exception.  You'll see the exception appear almost immediately when it occurs.
 
 
-== Stress Testing with Many Clients ==
+== Stress Testing the BigBlueButton Server with Many Clients ==
 
 A good stress test for !BigBlueButton is to generate load with many test users.  Once you have 20, 40, 80 users connected, especially for long periods of time, you can watch the memory usage on the server with a tools such as [SettingUpBigBlueButtonWithJconsole JConsole].
 
