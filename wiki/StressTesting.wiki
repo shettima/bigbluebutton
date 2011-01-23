@@ -1,4 +1,4 @@
-#summary Developer information for testing BigBlueButton
+#summary Stress Testing the BigBlueButton Server
 
 <wiki:toc max_depth="3" />
 
