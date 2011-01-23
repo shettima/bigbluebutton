@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="3" />
 
-= Introduction to Stress Testing !BigBlueButton =
+= Introduction to Testing !BigBlueButton =
 
 This document is intended for developers who want to help stress test !BigBlueButton.
 
