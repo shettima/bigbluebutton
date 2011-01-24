@@ -4,7 +4,7 @@
     * Install from source on [InstallingBigBlueButton Ubuntu]
     * [Integration Integrate] !BigBlueButton with your existing system
     * [ConfigurationFiles Configuration Files]
-  * [GettingStarted Getting Started]
+  * [GettingStarted Developing, Contributing, and Integrating]
     * [ArchitectureOverview Overview of Architecture]
     * [OpenSourceComponents Open Source Components]
     * [DevelopingBBB Developing BigBlueButton]
