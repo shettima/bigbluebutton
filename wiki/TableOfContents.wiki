@@ -18,6 +18,7 @@
     * [ReleaseNotes Release Notes]
     * [FAQ FAQ]
     * [RoadMap Product Road Map]
+    * [IssuesInstructions Issues/Bug Tracker]
   * [BigBlueButtonLabs BigBlueButton Labs]
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [BigBlueButtonAPIPartitioning Partitioning the client]
