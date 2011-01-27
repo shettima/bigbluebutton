@@ -88,3 +88,16 @@ At this point, with a few computers running Ubuntu desktop, you can generate lar
 To the !BigBlueButton server, these are all real clients (with two streams for the VoIP channels).  If you generate 50 clients, for example, then login as the 51st client and upload a presentation, it will appear on all test clients.
 
 These scenarios are good for  SettingUpBigBlueButtonWithJconsole and profiling the memory usage. 
+
+= Testing !BigBlueButton in Imperfect Network Conditions =
+
+The above test assumes that all users have perfect/excellent connection to the BigBlueButton server. Unfortunately, in production, that's not always the case.
+
+You need to see how !BigBlueButton behaves when a user or two doesn't have good connectivity to !BigBlueButton server and see if the quality is acceptable for your users.
+
+To do this, you can use Wan Emulator (http://wanem.sourceforge.net/).
+
+Wan Emulator allows you to simulate the "internet" in your Local Area Network. You can configure Wan Emulator to create a network with an unreliable (lossy, corrupted, delayed, jittered) connection. Then have a client connect to !BigBlueButton through that simulated network and see what the quality is.
+
+The Wan Emulator has pretty good documentation, so how to setup the environment won't be laid out in this wiki.
+
