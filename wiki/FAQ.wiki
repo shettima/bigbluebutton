@@ -1038,7 +1038,7 @@ There were some problems with the latest Flash update on Mac OS X.  See this [ht
 We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
 === How can I donate or help the project ===
-The !BigblueButton project doesn't take donations. If you'd like to help out, consider [FAQ#How_do_I_join_the_BigBlueButton_development_team joining the development team].
+The !BigblueButton project doesn't take donations. If you'd like to help out, consider [FAQ#How_do_I_join_the_BigBlueButton_development_team? joining the development team].
 
 If you are not a developer, the biggest way you can help is SPREAD THE WORD about this project.  Blog about it, tweet about it, and share your experiences (good, bad, and ugly) with others.
 
