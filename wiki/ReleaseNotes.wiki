@@ -4,7 +4,7 @@
 
 Released: January 13, 2011
 
-  * * Maintenance Release * - We spent about six weeks profiling and testing the server code. The end result: better handling of VoIP packets and lower memory usage on the server.  See documentation to [InstallationUbuntu install] or [InstallationUbuntu#Upgrading_to_BigBlueButton_0.71a for upgrade] your Ubuntu 10.04 server to !BigBlueButton 0.71a.
+  * * Maintenance Release * - We spent six weeks profiling and testing the server code to speed handling of VoIP packets and lower memory usage on the server.  See documentation to [InstallationUbuntu install] or [InstallationUbuntu#Upgrading_to_BigBlueButton_0.71a for upgrade] your Ubuntu 10.04 server to !BigBlueButton 0.71a.
 
 == Fixed Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71a  issues fixed in BigBlueButton 0.71a]
