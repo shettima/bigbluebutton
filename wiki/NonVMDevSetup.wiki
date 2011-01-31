@@ -17,3 +17,6 @@ Not for beginners. This is a rough set of guidelines on how to set up the bbb de
   # Go to bbb source, edit bigbluebutton-web/grails-app/conf/bigbluebutton.properties. Change the salt there to your salt and the ip of the server to your server/domain. This is so you don't have to run bbb-conf --setip and --setsalt after you deploy.
   # Instead of the usual instructions to run bbb-web, go to bbb-web source and do 'grails war'. This should create bigbluebutton.war if you're lucky ;) . Copy it to /var/lib/tomcat6/webapps/bigbluebutton.war.
   # Restart tomcat (/etc/init.d/tomcat6 restart). Make sure it starts fine with no errors in /var/lib/tomcat6/logs/catalina.out
+  # The instructions for bbb-common-message should be straight forward, but you most likely won't need to set up the dev env for this. Just use bbb-common-message.jar in bbb-web.
+  # I have not gone over the instructions for bbb-voice yet as I haven't needed it. if you want to fill in this part let me know the instructions and I'll put them in.
+  # That's it.
