@@ -2,7 +2,11 @@
 
 Not for beginners. This is a rough set of guidelines on how to set up the bbb dev environment on Unix system. These notes are complimentary to the notes on [DevelopingBBB Developing BigBlueButton]
   # Get BBB up and running. If you're not on Ubuntu 10.04 32bit then you have to follow manual instructions for w/e you're on. If you're setting up on non-Ubuntu, the paths for some things may be different.
-  # Need to grab the /home/firstuser/dev/tools directory off the VM and copy it to the dev machine ~/dev/tools.
+  # Need to grab the /home/firstuser/dev/tools directory off the VM and copy it to the dev machine ~/dev/tools. If you don't have a VM handy, you can grab the files from the Downloads page:
+    # wget http://bigbluebutton.googlecode.com/files/grails-1.1.1.tar
+    # wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar
+    # wget http://bigbluebutton.googlecode.com/files/flex3.tar
+    # Put these tars in ~/dev/tools and untar them there. These were grabbed off a VM and they should be configured as good to go.
   # Copy the ~/.profile script from the VM to ~/.profile. Then do 'source .profile'. You may need to change 'firstuser' in the script 
   # Install openjdk-6-jdk: sudo apt-get install openjdk-6-jdk . You could do another java but I know everything works well with openjdk and the paths will be easier to midify.
   # Do bbb-conf --setup-samba anyway, the script has some side-effects
