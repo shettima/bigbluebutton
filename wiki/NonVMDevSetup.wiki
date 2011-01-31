@@ -7,7 +7,7 @@ Not for beginners. This is a rough set of guidelines on how to set up the bbb de
     # wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar
     # wget http://bigbluebutton.googlecode.com/files/flex3.tar
     # Put these tars in ~/dev/tools and untar them there. These were grabbed off a VM and they should be configured as good to go.
-  # Copy the ~/.profile script from the VM to ~/.profile. Then do 'source .profile'. You may need to change 'firstuser' in the script 
+  # Copy the ~/.profile script from the VM to ~/.profile. Then do 'source .profile'. You may need to change 'firstuser' in the script. Again, if you don't have a VM, see [DevEnvironmentVariables this page] for the environment variables you need to export.
   # Install openjdk-6-jdk: sudo apt-get install openjdk-6-jdk . You could do another java but I know everything works well with openjdk and the paths will be easier to midify.
   # Do bbb-conf --setup-samba anyway, the script has some side-effects
   # Do bbb-conf --setup-dev client
