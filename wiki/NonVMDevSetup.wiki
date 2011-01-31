@@ -1,0 +1,10 @@
+#summary Setting up the dev environment, but not on the VM
+
+  # Get BBB up and running. If you're not on Ubuntu 10.04 32bit then you have to follow manual instructions for w/e you're on.
+  # Need to grab the /home/firstuser/dev/tools directory off the VM and copy it to the dev machine ~/dev/tools.
+  # Copy the ~/.profile script from the VM to ~/.profile. Then do 'source .profile'. You may need to change 'firstuser' in the script 
+  # Do bbb-conf --setup-samba anyway, the script has some side-effects
+  # Do bbb-conf --setup-dev client
+  # Try building the client with 'ant'
+  # If client build fails, find flexTasks.jar in ~/dev/tools/flex dir and copy it to where ant says it expects it
+  # Edit /etc/nginx/sites-available/bigbluebutton. Change the client to load from where you have it instead of /home/firstuser
