@@ -47,7 +47,7 @@ To install FreeSWITCH:
   sudo apt-get install bbb-freeswitch-config
 }}}
 
-Or, instead, to install Asterisk:
+Or, instead, to install Asterisk (*WARNING: Do not install both*):
 {{{
    sudo apt-get update 
    sudo apt-get install bbb-voice-conference
