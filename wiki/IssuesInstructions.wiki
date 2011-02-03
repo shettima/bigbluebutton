@@ -1,16 +1,16 @@
 #summary PLEASE READ THIS BEFORE POSTING A NEW ISSUE
 
-= Fist time here? Read this =
-It's likely someone has already has the same issue. Do the following first:
+= Hello. Fist time here? Please read this =
+It's likely someone has already has the same issue. To help the dev team better address any issues you are having, please do the following first:
   * Check the [FAQ FAQ]
   * Search the [http://code.google.com/p/bigbluebutton/issues/list Issues List] to check if somebody has already filed the same problem.
   * Search the mailing lists to see if anyone has experienced a problem similar to yours.
     * [http://groups.google.com/group/bigbluebutton-users BigBlueButton-users]
     * [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers]
     * [http://groups.google.com/group/bigbluebutton-setup BigBlueButton-setup]
-  * If you are having problems setting up !BigBlueButton, or getting any of it's functionality up and running, write to the [http://groups.google.com/group/bigbluebutton-setup BigBlueButton-setup] mailing list. The folks there will be able to help you better and more quickly that posting an issue to the tracker would.
+  * If you are having problems setting up !BigBlueButton, or getting any of it's functionality up and running, write to the [http://groups.google.com/group/bigbluebutton-setup BigBlueButton-setup] mailing list. Few people follow the Issue tracker closely. Writing to the mailing list will get you an answer more quickly.
   * If you've gone through all of the above and still can't get your problem solved/find your issue, then write to the [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list to ask about your problem. Once you get confirmation from a developer that this is in fact a bug, you can go ahead and file it to the [http://code.google.com/p/bigbluebutton/issues/list Issues List]. Please post a url to the original discussion in your Issue description.
-  * If you have a *FEATURE REQUEST*, write to the [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list with your feature proposal before filing an enhancement request. You can also try IRC, the #bigbluebutton channel on Freenode. Feel free to discuss your issue there as well. The better we understand the issue the more likely it will be fixed.
+  * If you have a *FEATURE REQUEST*, write to the [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list with your feature proposal before filing an enhancement request. This lets the !BigBlueButton community see what you are proposing, and people may offer valuable feedback and insight into your idea. You can also try IRC, the #bigbluebutton channel on Freenode. Feel free to discuss your issue there as well. The better we understand the issue the more likely it will be fixed.
 
 = I know the Drill, let me in already =
 Proceed to the [http://code.google.com/p/bigbluebutton/issues/list Issues List]. 
