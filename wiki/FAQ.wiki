@@ -635,18 +635,15 @@ For more information, see [http://wiki.freeswitch.org/wiki/Mod_conference Mod_co
 
 === Why is there an echo in the voice conference? ===
 
-You'll hear an echo when a listener is not using a headset.  
+You'll hear an echo when a user in the voice conference has joined over VoIP (by clicking the headset icon) is not using a headset.  
 
-This usually occurs when a remote student is using a laptop.  They have activated the VoIP, and their audio is coming out through the laptop's built-in speakers and is immediately picked up by the built-in microphone and retransmitted to everyone else, causing an echo. 
+This usually occurs when a remote user is using a laptop.  They have activated the VoIP, and their audio is coming out through the laptop's built-in speakers and is immediately picked up by the built-in microphone and retransmitted to everyone else, causing an echo. 
 
-To solve this problem, if you have logged in as a moderator, you can mute the student. Here's how:
+To solve this problem, if you are logged in as a moderator, you can mute the user by clicking on the speaker icon to the left of their name. 
 
-  # click on the student's name in the Voice window, then 
-  # click the speaker icon to the left of their name.  
+If they want to speak, they can click the raise hand button to get your attention or type in the chat window.
 
-If they want to speak, they can click the raise hand button to get your attention.
-
-The best solution is ask all students to use a headset -- this will give everyone the best audio with no feedback.
+The best solution is ask all users to use a headset -- this will ensure no feedback.
 
 === Why is there a delay in the audio when I use VoIP? ===
 
