@@ -1,8 +1,6 @@
 #summary PLEASE READ THIS BEFORE POSTING A NEW ISSUE
 
-= Please read before opening a new issue ... =
-
-Got a defect or enhancement request for !BigBlueButton?  We want to hear it!  But before you hit that create issue button, please do the following:
+Before you hit that create issue button, please do the following:
 
 == I have a "How to" question: ==
 
