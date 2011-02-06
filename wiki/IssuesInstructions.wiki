@@ -2,7 +2,7 @@
 
 == I have a "How to" question: ==
 
-*1. Check FAQ*: There are over 100 answers to common !BigBlueButton questions in our [FAQ FAQ].
+*1. Check the FAQ*: There are over 100 answers to common !BigBlueButton questions in our [FAQ FAQ].
 
 *2. Search the mailing lists*: There are three mailing lists that you can search for answers. 
 
