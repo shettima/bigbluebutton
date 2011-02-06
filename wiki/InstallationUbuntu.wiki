@@ -165,7 +165,7 @@ Note: When you switch back to FreeSWITCH, it seems the FreeSWITCH package will n
 
 !BigBlueButton 0.71a requires Ubuntu 10.04 (32-bit or 64-bit).  First upgrade your server to 10.04 before installing 0.71a.
 
-== Some dependencies are not met ==
+== Dependencies are not met ==
 
 For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
 
