@@ -8,9 +8,9 @@
 
     * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 BigBlueButton-users] - Usability questions ("How do I enable full-screen mode?")
     * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
-    * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Development Question ("How do I use the API create method?")
+    * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Development questions ("How do I use the API create method?")
 
-*3. Post your question:* If you don't find an answer, please join and post to the respective list.
+*3. Post your question:* If you don't find an answer, please join and post your question to the respective list.
 
 == I have a defect or enhancement request: ==
 
