@@ -1,16 +1,32 @@
 #summary PLEASE READ THIS BEFORE POSTING A NEW ISSUE
 
-= Hello. Fist time here? Please read this =
-It's likely someone has already has the same issue. To help the dev team better address any issues you are having, please do the following first:
-  * Check the [FAQ FAQ]
-  * Search the [http://code.google.com/p/bigbluebutton/issues/list Issues List] to check if somebody has already filed the same problem.
-  * Search the mailing lists to see if anyone has experienced a problem similar to yours.
-    * [http://groups.google.com/group/bigbluebutton-users BigBlueButton-users]
-    * [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers]
-    * [http://groups.google.com/group/bigbluebutton-setup BigBlueButton-setup]
-  * If you are having problems setting up !BigBlueButton, or getting any of it's functionality up and running, write to the [http://groups.google.com/group/bigbluebutton-setup BigBlueButton-setup] mailing list. Few people follow the Issue tracker closely. Writing to the mailing list will get you an answer more quickly.
-  * If you've gone through all of the above and still can't get your problem solved/find your issue, then write to the [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list to ask about your problem. Once you get confirmation from a developer that this is in fact a bug, you can go ahead and file it to the [http://code.google.com/p/bigbluebutton/issues/list Issues List]. Please post a url to the original discussion in your Issue description.
-  * If you have a *FEATURE REQUEST*, write to the [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list with your feature proposal before filing an enhancement request. This lets the !BigBlueButton community see what you are proposing, and people may offer valuable feedback and insight into your idea. You can also try IRC, the #bigbluebutton channel on Freenode. Feel free to discuss your issue there as well. The better we understand the issue the more likely it will be fixed.
+= Please read before opening a new issue ... =
 
-= I know the Drill, let me in already =
-Proceed to the [http://code.google.com/p/bigbluebutton/issues/list Issues List]. 
+Got a defect or enhancement request for !BigBlueButton?  We want to hear it!  But before you hit that create issue button, please do the following:
+
+== I have a "How to" question: ==
+
+*1. Check FAQ*: There are over 100 answers to common !BigBlueButton questions in our [FAQ FAQ].
+
+*2. Search the Mailing lists*: If you have "How to" questions, there are three mailing lists that you can search for answers. 
+
+    * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 BigBlueButton-users] - Usability questions ("How do I enable full-screen mode?")
+    * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
+    * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Development Question ("How do I use the API create method?")
+
+*3. Post your question:* If you don't find an answer, please join and post to the respective list.
+
+== I have a defect or enhancement request: ==
+
+*1. Search the Issues database*:   [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&cells=tiles Search the complete issue database] to see if someone has already reported the defect or make the enhancement request.  If you find a match, add your comments to the issue (don't create a new one!) and feel fee to vote (star the issue) for its resolution.
+
+*2.  Post to bigbluebutton-dev:* If you are not a !BigBlueButton developer, we ask that you first post to [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list.  
+
+ * *Report a defect:* Please provide the host operating system, the version of the browser, the version of BigBlueButton (the build number is visible in the lower left-hand corner), and the output of `sudo bbb-conf --check` if it's a server issue.
+
+ * *Make an enhancement request:* Let us know how we can make !BigBlueButton better. Give us a use case or user story.  Well though requests usually create a spirited discussion on the mailing list. 
+There are over 750 members of bigbluebutton-dev, and all of the core developers monitor the list daily (sometimes hourly!).  When you post you'll get a quick response which will lead to either (a) a resolution, (b) a request for you open an new issue, or (c) we'll go ahead and open one for you.
+
+When creating a new issue, please add a url to the original discussion in bigbluebutton-dev.
+
+Go to [http://code.google.com/p/bigbluebutton/issues/list BigBlueButton Issues List].
