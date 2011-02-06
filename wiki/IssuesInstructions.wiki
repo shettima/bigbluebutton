@@ -4,7 +4,7 @@
 
 *1. Check FAQ*: There are over 100 answers to common !BigBlueButton questions in our [FAQ FAQ].
 
-*2. Search the Mailing lists*: There are three mailing lists that you can search for answers. 
+*2. Search the mailing lists*: There are three mailing lists that you can search for answers. 
 
     * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 BigBlueButton-users] - Usability questions ("How do I enable full-screen mode?")
     * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
@@ -22,7 +22,7 @@
 
  * *For an enhancement request post:* Let us know how we can make !BigBlueButton better. Give us a use case or user story.  Well thought out requests will get more attention and usually create a spirited discussion. 
 
-There are over 750 members of bigbluebutton-dev, and all of the core developers monitor the list daily (sometimes hourly!).  When you post you'll get a quick response which will lead to either (a) a resolution, (b) a request for you open an new issue, or (c) we'll go ahead and open one for you.
+There are over 750 members of bigbluebutton-dev, and all of the core developers monitor the list daily (sometimes hourly!).  When you post you'll get a quick response which will lead to either (a) a resolution, (b) a request for you open a new issue, or (c) we'll go ahead and open one for you.
 
 When creating a new issue, please add a url to the original discussion in bigbluebutton-dev.
 
