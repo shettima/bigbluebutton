@@ -4,13 +4,13 @@
 
 *1. Check FAQ*: There are over 100 answers to common !BigBlueButton questions in our [FAQ FAQ].
 
-*2. Search the Mailing lists*: If you have "How to" questions, there are three mailing lists that you can search for answers. 
+*2. Search the Mailing lists*: There are three mailing lists that you can search for answers. 
 
     * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 BigBlueButton-users] - Usability questions ("How do I enable full-screen mode?")
     * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
     * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Development questions ("How do I use the API create method?")
 
-*3. Post your question:* If you don't find an answer, please join and post your question to the respective list.
+*3. Post your question:* If you don't find an answer in your search, please join and post your question to the respective list.
 
 == I have a defect or enhancement request: ==
 
