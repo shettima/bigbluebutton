@@ -22,7 +22,7 @@
 
  * *For an enhancement request post:* Let us know how we can make !BigBlueButton better. Give us a use case or user story.  Well thought out requests will get more attention and usually create a spirited discussion. 
 
-There are over 750 members of bigbluebutton-dev, and all of the core developers monitor the list daily (sometimes hourly!).  When you post you'll get a quick response which will lead to either (a) a resolution, (b) a request for you open a new issue, or (c) we'll go ahead and open one for you.
+There are over 750 members of bigbluebutton-dev, and all of the core developers monitor the list daily (sometimes hourly!).  When you post you'll get a quick response which will lead to either (a) resolution, (b) a request for you open a new issue, or (c) we'll go ahead and open one for you.
 
 When creating a new issue, please add a url to the original discussion in bigbluebutton-dev.
 
