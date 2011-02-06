@@ -1,6 +1,4 @@
-#summary PLEASE READ THIS BEFORE POSTING A NEW ISSUE
-
-Before you hit that create issue button, please do the following:
+#summary Before you hit that create issue button ...
 
 == I have a "How to" question: ==
 
