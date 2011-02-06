@@ -44,6 +44,8 @@ Create a tool that collects usage statistics for !BigBlueButton such as the numb
 
 == *bbb-client* ==
 
+The following items in the issue tracker are [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:GSOC+component%3DClient&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&cells=tiles Google Summer of Code client projects] for !BigBlueButton.
+
 === Polling Module ===
 Create a polling/quiz module that would allow the presenter to ask questions of the participants and then collect a summary of the answers. 
 
