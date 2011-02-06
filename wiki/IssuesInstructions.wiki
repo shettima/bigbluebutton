@@ -14,7 +14,7 @@
 
 == I have a defect or enhancement request: ==
 
-*1. Search the Issues database*:   [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&cells=tiles Search the complete issue database] to see if someone has already reported the defect or make the enhancement request.  If you find a match, add your comments to the issue (don't create a new one!) and feel fee to vote (star the issue) for its resolution.
+*1. Search the Issues database*:   [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&cells=tiles Search the complete issue database] to see if someone has already reported the defect or made the enhancement request.  If you find a match, add your comments to the issue (don't create a new one!) and feel fee to vote (star the issue) for its resolution.
 
 *2.  Post to bigbluebutton-dev:* If you are not a !BigBlueButton developer, we ask that you first post to [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list.  
 
