@@ -20,7 +20,7 @@
 
  * *Report a defect:* Please provide the host operating system, the version of the browser, the version of !BigBlueButton (the build number is visible in the lower left-hand corner), and the output of `sudo bbb-conf --check` if it's a server issue.
 
- * *Make an enhancement request:* Let us know how we can make !BigBlueButton better. Give us a use case or user story.  Well though requests usually create a spirited discussion on the mailing list. 
+ * *Make an enhancement request:* Let us know how we can make !BigBlueButton better. Give us a use case or user story.  Well thought out requests usually create a spirited discussion on the mailing list. 
 There are over 750 members of bigbluebutton-dev, and all of the core developers monitor the list daily (sometimes hourly!).  When you post you'll get a quick response which will lead to either (a) a resolution, (b) a request for you open an new issue, or (c) we'll go ahead and open one for you.
 
 When creating a new issue, please add a url to the original discussion in bigbluebutton-dev.
