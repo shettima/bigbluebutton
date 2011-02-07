@@ -28,4 +28,4 @@ When creating a new issue, please add a url to the original discussion in bigblu
 
 Go to [http://code.google.com/p/bigbluebutton/issues/list BigBlueButton Issues List].
 
-Grid view: [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Stars&cells=ids&nobtn=Update Stars] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=ids&nobtn=Update Priority]
+Grid view: [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Stars&cells=ids&nobtn=Update Stars] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=ids&nobtn=Update Priority] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Status&cells=ids&nobtn=Update Status]
