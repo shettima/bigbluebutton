@@ -26,7 +26,7 @@ There are over 750 members of bigbluebutton-dev, and all of the core developers 
 
 When creating a new issue, please add a url to the original discussion in bigbluebutton-dev.
 
-Go to [http://code.google.com/p/bigbluebutton/issues/list BigBlueButton Issues List].
+Go to [http://code.google.com/p/bigbluebutton/issues/list BigBlueButton Issues List]
 
 Grid view: [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Stars&cells=ids&nobtn=Update Stars] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=ids&nobtn=Update Priority] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Status&cells=ids&nobtn=Update Status] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Owner&x=Status&cells=ids&nobtn=Update Assigned]
 
