@@ -602,6 +602,27 @@ You see a volume indicator next to the drop down for choosing a microphone.  Try
 Close this Flash settings dialog and others in the voice conference should now hear you.
 
 
+=== Why are sounds being cut off when people speak? ===
+
+When using FreeSWITCH, it has automatic clipping, which means it will not transmit a speaker's audio if its too low.
+
+You may there that as FreeSWITCH taking a moment to recognize that someone is speaking, so that the listeners don't hear the very beginning of what people say.
+
+To lower the threshold, in 
+
+{{{
+ /opt/freeswitch/conf/autoload_configs/conference.conf.xml
+
+}}}
+
+try setting energy level to a lower value (.e.g 50)
+
+{{{
+   <profile name="wideband">
+     <param name="energy-level" value="300"/>
+}}}
+
+and do `sudo bbb-conf --restart`.
 
 === Why do I hear music when I join the voice conference? ===
 
