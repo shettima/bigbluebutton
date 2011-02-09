@@ -581,9 +581,7 @@ These steps trigger the opening of the File Open by a user action, which seems t
   
 === Can I increase the 100 page limit for uploads? ===
 
-!BigBlueButton, by default, restricts uploads to 100 pages.  To increase this value, open `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties`.
-
-and change the `maxNumPages` value:
+!BigBlueButton, by default, restricts uploads to 100 pages.  To increase this value, open `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties` and change the `maxNumPages` value:
 
 {{{
 #----------------------------------------------------
