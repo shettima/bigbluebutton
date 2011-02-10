@@ -20,6 +20,7 @@
     * [RoadMap Product Road Map]
     * [IssuesInstructions Issues/Bug Tracker]
   * [BigBlueButtonLabs BigBlueButton Labs]
+    * [RecordPlaybackSpecification Record and playback specification]
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [BigBlueButtonAPIPartitioning Partitioning the client]
     * [StressTesting Stress Testing the BigBlueButton server]
