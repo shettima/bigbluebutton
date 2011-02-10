@@ -49,7 +49,7 @@ to include the following line for the branding:
 <skinning enabled="true" url="branding/css/theme.css.swf" />
 }}}
 
-On a production server the only difference here is that there will be no /bin directory. The /client directory is essentially your bin directory.
+On a production server the only difference here is that there will be no /bin directory. The /client directory is essentially your bin directory. Also, if this is the first time you've deployed branding to your production server, you need to create the branding/css folders inside the client directory, as it won't be there by default.
 
 == Editing the config.xml ==
 To tell the !BigBlueButton client to load your the compiled .swf file you just created, open the file bbb-client/bin/conf/config.xml. Near the top of the file, you'll find the line:
