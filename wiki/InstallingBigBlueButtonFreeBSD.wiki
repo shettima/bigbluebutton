@@ -60,7 +60,7 @@ asterisk_enable="YES"
 
 # in /usr/local/apache-tomcat-6.0/conf/server.xml
 
-=Configure Asterisk=
+==Configure Asterisk==
 
 {{{
 cd /usr/local/etc/asterisk
