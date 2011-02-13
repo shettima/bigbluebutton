@@ -1,0 +1,14 @@
+#summary Techniques to install BigBlueButton on Ubuntu 10.10
+
+= Introduction =
+
+Note: Ubuntu 10.10 is not officially supported by the !BigBlueButton project.  If possible, we recommend using the [InstallationUbuntu Ubuntu 10.04 packages] have been extensively designed and tested.
+
+If you *really* want to try installing !BigBlueButton on 10.10, the following gives you some guidelines.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
