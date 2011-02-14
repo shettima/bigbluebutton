@@ -10,6 +10,7 @@
     * [DevelopingBBB Developing BigBlueButton]
     * [Branding Branding BigBlueButton client interface]
     * [ClientConfiguration Configuring the BigBlueButton client]
+    * [BBBConf bbb-conf configuration tool documentation]
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
     * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
