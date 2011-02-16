@@ -1,16 +1,16 @@
 #summary How to install BigBlueButton like a real developer.  :-)
 
-*This guide is currently DRAFT*
+*This guide is currently DRAFT -- if you are unable to complete these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll correct any errors.*
 
-This guide shows you how to  install !BigBlueButton from source on Ubuntu 10.04.1 32-bit.
+This guide shows you how to  install !BigBlueButton from source on Ubuntu 10.04.x 32-bit.
 
 In most cases, you'll want to install from [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu packages], but if you want to really understand how !BigBlueButton is setup, go through the step-by-step instructions below and you'll become familiar with each component.  
 
-To start, you'll need a computer running Ubuntu -- either a physical machine or a virtual machine (VM).  If you are on Windows, the easiest way to start is to download a Ubuntu 10.04 Server VM image from http://www.vmware.com/appliances/directory/va/542303/download and start it in VMWare Player.  You don't have to use VMWare Player, Virtual Box is another excellent tool for running VMs.
+To start, you'll need a computer running Ubuntu 10.04 32-bit or 64-bit, either a physical machine or a virtual machine (VM).  When you boot your Ubuntu VM, it needs to have a network IP that you can access from another computer (such as the host computer running the VM).
 
-When you boot your Ubuntu VM, it needs to have a network IP that you can access from another computer (such as the host computer running the VM).
+Also ensure that port 80 (HTTP), port 1935 (RTMP), and port 9123 (desktop sharing) are open on your server.  Port 80 must not be already in use by another server (such as apache2).
 
-*The instructions below assumes you have downloaded the VM image above and running it on WMWare.*
+*The instructions below assumes you are running a Ubuntu 10.04 VM with root access.*
 
 == Log in as root ==
 
@@ -178,7 +178,9 @@ chmod 775 /usr/share/red5/webapps
 }}}
 
 
-== Download BigBlueButton files ===
+== Download !BigBlueButton files files ===
+These .tar.gz files have created from a installation of !BigBlueButton 0.71a.
+
 {{{
 cd /tmp/bbb
 wget http://bigbluebutton.org/downloads/0.71a/init-scripts.tar.gz
@@ -192,9 +194,7 @@ wget http://bigbluebutton.org/downloads/0.71a/red5-video.tar.gz
 wget http://bigbluebutton.org/downloads/0.71a/www-bigbluebutton-default.tar.gz
 wget http://bigbluebutton.org/downloads/0.71a/www-bigbluebutton.tar.gz
 
-
 wget http://bigbluebutton.org/downloads/0.71a/bigbluebutton.war
-
 wget http://bigbluebutton.org/downloads/0.71a/nginx-bigbluebutton.conf
 
 wget http://bigbluebutton.org/downloads/0.71a/bbb-conf
@@ -500,7 +500,7 @@ Hint: if you are using vi you can use a command similar to this: :1,$s/192.168.0
 The utility `bbb-conf` is a shell script to help you configure your !BigBlueButton setup.  To install `bbb-conf`, do the following:
 
 {{{ 
-cp /tmp/bbb/bbb-conf /usr/local/bi
+cp /tmp/bbb/bbb-conf /usr/local/bin
 sudo chmod a+x /usr/local/bin/bbb-conf 
 }}}
 
@@ -522,34 +522,10 @@ sudo bbb-conf --check
 }}}
 
 
-== Try out !BigBlueButton ==
+== Launch !BigBlueButton ==
 
 If `sudo bbb-conf --check` gives you a clean bill of health, you should be ready to start !BigBluebutton
 
  Go to {{{http://<YOUR-IP>}}} which should display the bbb web page and join the conference!
 
-If you have a problem with these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setip].
-
-== When things go wrong ==
-Look for logs in the following
-{{{
- /var/log/syslog
- /var/log/tomcat6
- /usr/share/red5/log
- /opt/freeswich/log
-}}}
-
-Also ensure that port 1935 (RTMP) and port 9123 (desktop sharing) are open on your server.
-
-== If you make it successfully through the installation ==
-Good stuff!  Post a message to !BigBlueButton-setup letting everyone know that you are a real developer and you have installed !BigBlueButton from source.  :-)
-
-== Startup execution of scripts ==
-
-Use this command in /etc/init.d/ on the scripts activemq and red5 to setup the startup execution of these scripts.  The 99 is priority, so to make red5 start after activemq, use 98 for the priority of red5.
-
-{{{
-update-rc.d -f script_name start 99 2 3 4 5 .
-}}}
-
-You also might need to do this with the tomcat6 script as well if it is not starting up on reboot.
+If you have a problem with these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
