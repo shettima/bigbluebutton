@@ -1,6 +1,6 @@
 #summary How to install BigBlueButton like a real developer.  :-)
 
-*This guide is currently DRAFT -- if you are unable to complete these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll correct any errors.*
+*This guide has been updated for 0.71a and is currently DRAFT -- if you are unable to complete these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll correct any errors.*
 
 This guide shows you how to  install !BigBlueButton from source on Ubuntu 10.04.x 32-bit.
 
