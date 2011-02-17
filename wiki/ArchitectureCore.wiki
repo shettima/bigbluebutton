@@ -14,5 +14,7 @@ On the other hand,
     * Should aim to incorporate non-core features from best-of-breed implementations
     * A poll of the architecture council members revealed that they valued the simplicity of use most
 
+What goals are we missing?
+
 ----
 [ArchitectureCouncil] [UniqueDifferentiators]
