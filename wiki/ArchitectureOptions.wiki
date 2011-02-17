@@ -35,7 +35,7 @@ Insert description of WordPress-style extension model here.
 
 Insert description of event-based extension model here.
 
-Michael: The third benefit raised by Paul is an important one. The plugin architecture should allow developers to publish plugins (in some form of marketplace), and users to discover them. The plugin repository (marketplace) would also be a great resource for developers: either to learn or build on top.
+Michael: The third point raised by Paul is an important one. The plugin architecture should allow developers to publish plugins (in some form of marketplace), and users to discover them. The plugin repository (marketplace) would also be a great resource for developers: either to learn or build on top. The second point is also essential. You don't want to tie up the release of the core by release schedule of the plugins.
 
 == UI separation ==
 
