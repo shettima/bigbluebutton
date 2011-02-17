@@ -8,6 +8,12 @@ Core should focus on collaborative technologies (not just about voice).
 
 Core should be extensible through plugins.
 
+Benefits of a plugin architecture (list started by Paul):
+
+  * Division of core and application
+  * Application delivery releases independent of the core
+  * Potential items for the BBB store
+
 Michael: The design of the plugin architecture needs account for more than deployment and administration of plugins. In my view, the core issue is to define the extension model: how do plugins extend what exists (core or other plugins), how do the core (or other plugins) define points where the behavior can be extended. If we do not make this our first priority, we end up with a mechanism to define and load modules that does not contribute to a design that is decoupled, easy to understand, and extensible by third-parties without detailed knowledge of the core nor rights to modify the core to accommodate a plugin.
 
 Insert description of Extension Object pattern here.
@@ -28,6 +34,8 @@ Insert description of Eclipse extension model here.
 Insert description of WordPress-style extension model here.
 
 Insert description of event-based extension model here.
+
+Michael: The third benefit raised by Paul is an important one. The plugin architecture should allow developers to publish plugins (in some form of marketplace), and users to discover them. The plugin repository (marketplace) would also be a great resource for developers: either to learn or build on top.
 
 == UI separation ==
 
