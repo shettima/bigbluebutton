@@ -21,8 +21,7 @@
      * Action: Support the three Co-Chairs
      * Action: Co-Chairs to organize and lead the initiatives of the Council
   * Presentation by Tiago: How to improve BigBlueButton 
-     * Action: Members of the Architecture Council to provide Tiago feedback on his five ways to improve
-BigBlueButton
+     * Action: Members of the Architecture Council to provide Tiago feedback on his five ways to improve BigBlueButton
   * Presentation by Craik: Architeture goals
      * Action: Document direction, design decisions and reasoning by February 15
      * Action: Solicit feedback from the broader community
