@@ -7,7 +7,7 @@ Michael: OSGI appears to address the deployment problem, but does not define an 
 Michael: There are several existing extension models. For example:
   * Eclipse combines the OSGI deployment model with an extension model that allows plugin authors to expose extension points. An extension point is essentially an interface that the extension needs to implement. The model is capable but complex to implement. 
   * WordPress implements a more straightforward extension model: the WordPress core defines hooks in the code where it can be extended. Extensions can be defined in terms of actions performed at hooks or filters that should be applied to intermediate outputs. 
-  * Other systems use an event-based extension mechanism. The core exposes events and defines interfaces that event handlers need to implement. For example, an action such as advancing to the next slide would raise an event that triggers extensions that listen for it.
+  * Other systems use an event-based extension mechanism. The core exposes events and defines interfaces that event handlers need to implement. For example, an action such as advancing to the next slide would raise an event that triggers extensions that registered for it.
 
 ----
 [ArchitectureCouncil]
