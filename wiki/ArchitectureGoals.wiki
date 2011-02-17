@@ -14,4 +14,5 @@ The architecture should guide design decisions and provide design rationale:
   * Area contributors will be asked to contribute to the architecture evolution document
   * Target is to produce a draft of the architecture evolution document by Feb 15
 
+----
 [ArchitectureCouncil]
