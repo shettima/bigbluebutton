@@ -1,0 +1,18 @@
+The discussion on what should be at the core of the architecture evolves around two sets of considerations. On the one hand,
+
+  * Core should focus on collaborative technologies (not just about voice)
+    * Towards this end, need stable voice first (migration to SIP at endpoints), then stable video
+  * Core should be extensible through plugins
+    * Plugin architecture about more than APIs (eg administration, deployment, versioning, sandboxing)
+    * Initial guidance on plugins should come from opportunities
+  * Core should support different UI delivery mechanisms (such as Flash and HTML5)
+    * Emergent market for BigBlueButton on pads
+
+On the other hand,
+
+  * Core should focus on unique features that differentiate BigBlueButton
+    * Should aim to incorporate non-core features from best-of-breed implementations
+    * A poll of the architecture council members revealed that they valued the simplicity of the current user interface an deployment model most and saw it as a key differentiator
+
+----
+[ArchitectureCouncil] [UniqueDifferentiators]
