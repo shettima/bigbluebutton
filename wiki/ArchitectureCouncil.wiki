@@ -15,6 +15,7 @@
   * [ArchitectureCore What is core to the architecture] (A5, A10)
   * [UniqueDifferentiators Unique differentiators that add value to customers] (A8)
   * [TestEnvironment Test environment and coder pool] (A13, A14)
+  * [VoiceStability Ensure stable voice] (A5, A10, A11)
   * [ArchitectureOptions Discussion of options for the architecture] (A5, A6, A7, A10, A11)
 
 == Meeting Minutes ==
