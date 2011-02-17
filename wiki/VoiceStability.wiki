@@ -1,0 +1,20 @@
+The goal of this section is to summarize how we approach voice stability.
+
+== Goals ==
+Initial goals for this activity as stated by Tiago:
+
+  * Creating workaround for network hiccups
+  * Improve audio quality
+  * Improve video quality
+
+== Possible solutions ==
+
+Can work around network hiccups through client-side monitoring.
+
+Can improve audio quality by switching to another codec, avoiding TCP overhead, or echo messages.
+
+Can improve video quality by transcoding to H264 or FFMPEG.
+
+Both of the latter can be addressed by a local agent that is installed on each client.
+
+Alternatively, we can directly talk to Asterisk from the client through SIP, circumventing the current transcoding layer inside BigBlueButton/Red5. Nadia's experiments with the SIP user agent show that this leads to a noticeable improvement in voice quality. What is the cost of using this approach? 
