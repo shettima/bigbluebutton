@@ -12,7 +12,7 @@ On the other hand,
 
   * Core should focus on unique features that differentiate BigBlueButton
     * Should aim to incorporate non-core features from best-of-breed implementations
-    * A poll of the architecture council members revealed that they valued the simplicity of the current user interface an deployment model most and saw it as the key differentiator to focus on moving forward
+    * A poll of the architecture council members revealed that they valued the simplicity of use most
 
 ----
 [ArchitectureCouncil] [UniqueDifferentiators]
