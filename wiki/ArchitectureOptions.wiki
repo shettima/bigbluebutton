@@ -4,7 +4,10 @@ Michael: The design of the plugin architecture needs account for more than deplo
 
 Michael: OSGI appears to address the deployment problem, but does not define an extension model per se. Yes, it helps manage dependencies, but an extension model goes beyond managing dependencies. It provides guidance on how the system can be extended. We also need to identify concrete use scenarios that define what capabilities the extension model should have.
 
-Michael: There are several existing extension models. For example, Eclipse combines the OSGI deployment model with an extension model that allows plugin authors to expose extension points. An extension point is essentially an interface that the extension needs to implement. The model is capable but complex to implement. WordPress implements a more straightforward extension model: the WordPress core defines hooks in the code where it can be extended. Extensions can be defined in terms of actions performed at hooks or filters that should be applied to intermediate outputs. Other systems use an event-based extension mechanism. The core exposes events and defines interfaces that event handlers need to implement. For example, an action such as advancing to the next slide would raise an event that triggers extensions that have registered for that event.
+Michael: There are several existing extension models. For example:
+  * Eclipse combines the OSGI deployment model with an extension model that allows plugin authors to expose extension points. An extension point is essentially an interface that the extension needs to implement. The model is capable but complex to implement. 
+  * WordPress implements a more straightforward extension model: the WordPress core defines hooks in the code where it can be extended. Extensions can be defined in terms of actions performed at hooks or filters that should be applied to intermediate outputs. 
+  * Other systems use an event-based extension mechanism. The core exposes events and defines interfaces that event handlers need to implement. For example, an action such as advancing to the next slide would raise an event that triggers extensions that have registered for that event.
 
 ----
 [ArchitectureCouncil]
