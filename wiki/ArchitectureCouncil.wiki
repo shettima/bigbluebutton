@@ -37,7 +37,7 @@
      * Action (A8): Council to define small core comprised of unique differentiators that add value to customers
      * Action (A9): All to allocate resources for the purpose of strengthening these differentiators
   * Issues from presentations
-     * Action (A10): Initiatives will be categorized into three horizons (payoff after <12 month, 12-14 months, >24 months)    
+     * Action (A10): Initiatives will be categorized into three horizons (payoff after <12 month, 12-24 months, >24 months)    
      * Initiatives led by the Architecture Council fall in Horizon 2  
   * Product fixes
      * Action (A11): Council to develop an architecture that solves the current voice quality problem
