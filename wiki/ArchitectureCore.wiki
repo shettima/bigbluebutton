@@ -1,7 +1,7 @@
 The discussion on what should be at the core of the architecture evolves around two sets of considerations. On the one hand,
 
   * Core should focus on collaborative technologies (not just about voice)
-    * Towards this end, need stable voice first (migration to SIP at endpoints), then stable video
+    * Towards this end, need [VoiceStability stable voice] first (migration to SIP at endpoints), then stable video
   * Core should be extensible through plugins
     * Plugin architecture about more than APIs (eg administration, deployment, versioning, sandboxing)
     * Initial guidance on plugins should come from opportunities
