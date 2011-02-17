@@ -17,4 +17,9 @@ Can improve video quality by transcoding to H264 or FFMPEG.
 
 Both of the latter can be addressed by a local agent that is installed on each client.
 
-Alternatively, we can directly talk to Asterisk from the client through SIP, circumventing the current transcoding layer inside BigBlueButton/Red5. Nadia's experiments with the SIP user agent show that this leads to a noticeable improvement in voice quality. What is the cost of using this approach? 
+Alternatively, we can directly talk to Asterisk from the client through SIP, circumventing the current transcoding layer inside BigBlueButton. Nadia's experiments with the SIP user agent show that this leads to a noticeable improvement in voice quality. 
+
+What is the cost of using this approach? 
+
+----
+[ArchitectureCouncil]
