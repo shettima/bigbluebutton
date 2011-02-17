@@ -8,7 +8,7 @@
 
 == Resources ==
   * [ArchitectureOverview Overview of existing architecture]
-  * [ArchitectureRoadmap Existing architecture lans for the client]
+  * [ArchitectureRoadmap Existing architecture plans for the client]
 
 == Meeting Minutes ==
 
