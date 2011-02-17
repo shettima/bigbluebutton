@@ -1,6 +1,6 @@
 The goal of this section is to discuss candidate architectures. The structure of the section follows the [ArchitectureCore discussion of what should be at the core of the architecture].
 
-== Collaboration ==
+== Collaborative technologies ==
 
 Core should focus on collaborative technologies (not just about voice).
 
