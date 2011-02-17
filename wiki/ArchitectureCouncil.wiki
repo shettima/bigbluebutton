@@ -34,9 +34,7 @@
      * Initiatives led by the Architecture Council fall in Horizon 2  
   * Product fixes
      * Action: Council to develop an architecture that solves the current voice quality problem
-     * Action: Council to help Paul Wilson and Frank Horsfall attract talented coders to help fix voice quality
-problems
+     * Action: Council to help Paul Wilson and Frank Horsfall attract talented coders to help fix voice quality problems
   * Testing environment and coder pool
      * Action: Frank Horsfall to report experience with the environment and the coder pool
-     * Action: Frank Horsfall to provide access to the test environment to companies that contribute to
-BigBlueButton
+     * Action: Frank Horsfall to provide access to the test environment to companies that contribute to BigBlueButton
