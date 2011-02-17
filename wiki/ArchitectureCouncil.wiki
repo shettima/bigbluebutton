@@ -23,25 +23,25 @@
 
   * Recognition & motivation
      * Ways to recognize outstanding contributors to the Architecture Council were discussed.
-     * Action: Agreed that the best way to recognize contributors was through acknowledgements in recognition releases and Council meetings.
+     * Action (A1): Agreed that the best way to recognize contributors was through acknowledgements in recognition releases and Council meetings.
   * Elect chair(s)
-     * Action: Support the three Co-Chairs
-     * Action: Co-Chairs to organize and lead the initiatives of the Council
+     * Action (A2): Support the three Co-Chairs
+     * Action (A3): Co-Chairs to organize and lead the initiatives of the Council
   * Presentation by Tiago: How to improve BigBlueButton 
-     * Action: Members of the Architecture Council to provide Tiago feedback on his five ways to improve BigBlueButton
+     * Action (A4): Members of the Architecture Council to provide Tiago feedback on his five ways to improve BigBlueButton
   * Presentation by Craik: Architecture goals
-     * Action: Document direction, design decisions and reasoning by February 15
-     * Action: Solicit feedback from the broader community
-     * Action: Council to decide on architecture goals and what is core
+     * Action (A5): Document direction, design decisions and reasoning by February 15
+     * Action (A6): Solicit feedback from the broader community
+     * Action (A7): Council to decide on architecture goals and what is core
   * Presentation by Michael: Unique differentiators that add value
-     * Action: Council to define small core comprised of unique differentiators that add value to customers
-     * Action: All to allocate resources for the purpose of strengthening these differentiators
+     * Action (A8): Council to define small core comprised of unique differentiators that add value to customers
+     * Action (A9): All to allocate resources for the purpose of strengthening these differentiators
   * Issues from presentations
-     * Action: Initiatives will be categorized into three horizons (payoff after <12 month, 12-14 months, >24 months)    
+     * Action (A10): Initiatives will be categorized into three horizons (payoff after <12 month, 12-14 months, >24 months)    
      * Initiatives led by the Architecture Council fall in Horizon 2  
   * Product fixes
-     * Action: Council to develop an architecture that solves the current voice quality problem
-     * Action: Council to help Paul Wilson and Frank Horsfall attract talented coders to help fix voice quality problems
+     * Action (A11): Council to develop an architecture that solves the current voice quality problem
+     * Action (A12): Council to help Paul Wilson and Frank Horsfall attract talented coders to help fix voice quality problems
   * Testing environment and coder pool
-     * Action: Frank Horsfall to report experience with the environment and the coder pool
-     * Action: Frank Horsfall to provide access to the test environment to companies that contribute to BigBlueButton
+     * Action (A13): Frank Horsfall to report experience with the environment and the coder pool
+     * Action (A14): Frank Horsfall to provide access to the test environment to companies that contribute to BigBlueButton
