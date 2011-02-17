@@ -2,9 +2,11 @@
 
 <wiki:toc max_depth="2"/>
 
-== Mission Status: PENDING ==
+== Mission Status ==
+   * Council to decide on architecture goals and what is core
+   * Council to define small core comprised of unique differentiators that add value to customers
 
-== Resources. Status: PENDING ==
+== Resources ==
   * [ArchitectureOverview Overview of Architecture]
   * [ArchitectureRoadmap Architecture Plans for the client]
 
