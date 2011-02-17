@@ -11,8 +11,11 @@
   * [ArchitectureRoadmap Existing architecture plans for the client]
 
 == Deliverables ==
-  * ArchitectureGoals
-  * CoreOfArchitecture
+  * [ArchitectureGoals Goals of the new architecture]
+  * [ArchitectureCore What is core to the architecture]
+  * [UniqueDifferentiators Unique differentiators that add value]
+  * [TestEnvironment Test environment and coder pool]
+  * [ArchitectureOptions Discussion of options for the architecture]
 
 == Meeting Minutes ==
 
