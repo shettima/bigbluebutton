@@ -19,11 +19,11 @@ Michael: There are several existing extension models. For example:
 
 == UI separation ==
 
-Core should support different UI delivery mechanisms (such as Flash and HTML5)
+Core should support different UI delivery mechanisms (such as Flash and HTML5).
 
 == Simplicity ==
 
-Core should focus on unique features that differentiate BigBlueButton. Its simplicity of use is highly valued. How does the evolution of the architecture facilitate/maintain this simplicity.
+Core should focus on unique features that differentiate BigBlueButton. Its simplicity of use is highly valued. How does the evolution of the architecture maintain this simplicity.
 
 ----
 [ArchitectureCouncil]
