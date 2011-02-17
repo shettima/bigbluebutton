@@ -1,4 +1,4 @@
-The structure of this section follows the [ArchitectureCore discussion of what should be at the core of the architecture].
+The goal of this section is to discuss candidate architectures. The structure of the section follows the [ArchitectureCore discussion of what should be at the core of the architecture].
 
 == Collaboration ==
 
@@ -10,7 +10,7 @@ Core should be extensible through plugins.
 
 Michael: The design of the plugin architecture needs account for more than deployment and administration of plugins. In my view, the core issue is to define the extension model: how do plugins extend what exists (core or other plugins), how do the core (or other plugins) define points where the behavior can be extended. If we do not make this our first priority, we end up with a mechanism to define and load modules that does not contribute to a design that is decoupled, easy to understand, and extensible by third-parties without detailed knowledge of the core nor rights to modify the core to accommodate a plugin.
 
-Michael: OSGI appears to address the deployment problem, but does not define an extension model per se. Yes, it helps manage dependencies, but an extension model goes beyond managing dependencies. It provides guidance on how the system can be extended. We also need to identify concrete use scenarios that define what capabilities the extension model should have.
+Michael: OSGI appears to address the deployment problem, but does not define an extension model per se. Yes, it helps manage dependencies, but an extension model goes beyond managing dependencies. It provides guidance on how the system can be extended. We also need to identify concrete use scenarios that define what capabilities the extension model should have. As a Java technology, OSGI can be used on the server, but how does it address the need for client-side extensibility?
 
 Michael: There are several existing extension models. For example:
   * Eclipse combines the OSGI deployment model with an extension model that allows plugin authors to expose extension points. An extension point is essentially an interface that the extension needs to implement. The model is capable but complex to implement. 
