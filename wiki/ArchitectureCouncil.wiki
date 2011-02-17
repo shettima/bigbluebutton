@@ -13,7 +13,7 @@
 == Deliverables ==
   * [ArchitectureGoals Goals of the new architecture]
   * [ArchitectureCore What is core to the architecture]
-  * [UniqueDifferentiators Unique differentiators that add value]
+  * [UniqueDifferentiators Unique differentiators that add value to customers]
   * [TestEnvironment Test environment and coder pool]
   * [ArchitectureOptions Discussion of options for the architecture]
 
