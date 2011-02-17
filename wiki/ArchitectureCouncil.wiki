@@ -7,10 +7,8 @@
    * Council to define small core comprised of unique differentiators that add value to customers
 
 == Resources ==
-  * [ArchitectureOverview Overview of Architecture]
-  * [ArchitectureRoadmap Architecture Plans for the client]
-
-== Meeting Schedule ==
+  * [ArchitectureOverview Overview of existing architecture]
+  * [ArchitectureRoadmap Existing architecture lans for the client]
 
 == Meeting Minutes ==
 
