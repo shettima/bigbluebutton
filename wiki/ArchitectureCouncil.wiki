@@ -10,6 +10,10 @@
   * [ArchitectureOverview Overview of existing architecture]
   * [ArchitectureRoadmap Existing architecture plans for the client]
 
+== Deliverables ==
+  * ArchitectureGoals
+  * CoreOfArchitecture
+
 == Meeting Minutes ==
 
 *Jan 13, 2011:*  Tony, Michael, Richard, Frank, Elias, Andrey, David, Jeremy, Tiago, Paul, Craik, Nadia, Fred, Navjot, Senthil
