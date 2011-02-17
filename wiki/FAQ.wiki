@@ -861,13 +861,13 @@ which will analyze your current setup and print out any warnings/problems it fin
 
 === Why can't I resize my portrait document? ===
 
-!BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and the viewers to say "I don't see what you are pointing at".
+!BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and a viewer to say "I don't see what you are pointing at".
 
-To keep the presentation windows in sync, when you upload a presentation (landscape or portrait), the size of the presentation window becomes a ratio of the presentation.  The and viewer may have different sized windows, due to the sizes of their respective monitors, but they will always see the same content.  As of !BigBlueButton 0.71, this mode is equivalent to always running in "fit to page" mode.  A presenter can zoom in and out, but at some point, !BigBlueButton shows the entire page.
+To keep the presentation windows in sync, when you upload a presentation (landscape or portrait), the size of the presentation window becomes a ratio of the presentation.  You and viewer may have different sized windows, due to the sizes of your respective monitors, but you both always see the same content.  As of !BigBlueButton 0.71, this mode is equivalent to always running in "fit to page" mode.  A presenter can zoom in and out, and when you zoom out completely !BigBlueButton shows the entire page.
 
 For landscape documents, the "fit to page" approach works well.  Monitors are landscape, so presenting a landscape document makes good use of the screen space.  
 
-However, for portrait documents, the "fit to page" approach means that text is usually too small to read.  The presenter can zoom in to a portion of the document, but not change the width of the presentation window itself.
+However, for portrait documents, the "fit to page" approach means that text is usually too small to read.  The presenter can zoom in to a portion of the document, but !BigBlueButton does not change the width of the presentation window itself -- it's keeping that ratio to ensure both presenter and viewer are in sync.
 
 We plan to add a "fit to width" option in !BigBlueButton in a future iteration, one that both keeps the viewers and presenters in sync, but allows the presenter to better show portrait documents.  
 
