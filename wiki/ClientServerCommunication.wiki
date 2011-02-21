@@ -9,24 +9,24 @@ DRAFT
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/BigBlueButtonApplication.java
 {{{
-JOIN
-    sessionName, userid,  username, role, conference, mode, room, voiceBridge, record, externUserID
+
+join(sessionName, userid,  username, role, conference, mode, room, voiceBridge, record, externUserID)
 }}}
 
 PARTICIPANT
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsService.java    
 {{{
-Map getParticipants()
-setParticipantStatus(Long userid, String status, Object value) 
+Map getParticipants(room)
+setParticipantStatus(userid, status, value) 
 }}}
 
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsEventRecorder.java
 {{{
-so.sendMessage("logout", new ArrayList());
-so.sendMessage("participantJoined", args);
-so.sendMessage("participantLeft", args);
-so.sendMessage("participantStatusChange", args);
+logout
+participantJoined(participant)
+participantLeft(participant)
+participantStatusChange(participant, status)
 }}}
 
 CHAT
