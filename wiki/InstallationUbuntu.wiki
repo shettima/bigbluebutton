@@ -262,7 +262,7 @@ A common problem is the address in !BigBlueButton's configuration files is diffe
    bbb-conf --setip <ip_address>
 }}}
 
-
+For more information see [BBBConf bbb-conf options]. 
 
 == Errors in shutting down red5 ==
 
