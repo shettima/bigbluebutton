@@ -254,12 +254,14 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 If you see text after the line `** Potential problems descirbe below **`, then `bbb-conf` detected something wrong with your setup.
 
-== Changing your !BigBlueButton server's hostname (or IP address) ==
+== Welcome to nginx! ==
 
-A common problem is the address in !BigBlueButton's configuration files is different than the IP address of the host server.  To change all of !BigBlueButton's configuration files to use a different IP address, enter
+A common problem is the default install scripts in for !BigBlueButton configure it to list for an IP address, but if you are accessing your server via a DNS hostname, you'll see the 'Welcome to Nginx' message.
+
+To change all of !BigBlueButton's configuration files to use a different IP address or hostname, enter
 
 {{{
-   bbb-conf --setip <ip_address>
+   bbb-conf --setip <ip_address_or_hostname>
 }}}
 
 For more information see [BBBConf bbb-conf options]. 
