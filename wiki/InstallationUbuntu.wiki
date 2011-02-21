@@ -99,7 +99,9 @@ To start using your !BigBlueButton server, enter your name and click the 'Join' 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
 
-If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].  
+If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].
+
+Also see [InstallationUbuntu#Welcome_to_nginx! Welcome to nginx!] if you see this message instead of the !BigBlueButton client.
 
 Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
