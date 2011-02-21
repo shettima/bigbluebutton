@@ -16,6 +16,8 @@ Benefits of a plugin architecture (list started by Paul):
 
 Michael: The design of the plugin architecture needs account for more than deployment and administration of plugins. In my view, the core issue is to define the extension model: how do plugins extend what exists (core or other plugins), how do the core (or other plugins) define points where the behavior can be extended. If we do not make this our first priority, we end up with a mechanism to define and load modules that does not contribute to a design that is decoupled, easy to understand, and extensible by third-parties without detailed knowledge of the core nor rights to modify the core to accommodate a plugin.
 
+Richard: I agree. I would suggest somebody extract and document interaction between server and client. I have started it here [ClientServerCommunication]. And, also, someone should extract and document all events in the client. Having these list will provide us a good picture of the APIs (client<->server, client/UI) and help us design an architecture that is modular, extensible, and flexible.
+
 Insert description of Extension Object pattern here.
 
 Michael: OSGI appears to address the deployment problem, but does not define an extension model per se. Yes, it helps manage dependencies, but an extension model goes beyond managing dependencies. It provides guidance on how the system can be extended. We also need to identify concrete use scenarios that define what capabilities the extension model should have. As a Java technology, OSGI can be used on the server, but how does it address the need for client-side extensibility?
@@ -44,6 +46,10 @@ Core should support different UI delivery mechanisms (such as Flash and HTML5).
 == Simplicity ==
 
 Core should focus on unique features that differentiate BigBlueButton. Its simplicity of use is highly valued. Proposed changes to the architecture should be weighed against simplicity of use for end-users as well as developers.
+
+== Migration ==
+
+As the architecture evolves, current !BigBlueButton deployments *must* upgrade seamlessly.
 
 ----
 [ArchitectureCouncil] [ArchitectureCore]
