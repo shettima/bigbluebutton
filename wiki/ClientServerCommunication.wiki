@@ -23,7 +23,7 @@ setParticipantStatus(userid, status, value)
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsEventRecorder.java
 {{{
-logout
+logout(participant)
 participantJoined(participant)
 participantLeft(participant)
 participantStatusChange(participant, status)
@@ -31,25 +31,26 @@ participantStatusChange(participant, status)
 
 CHAT
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatService.java
-sendMessage(String message)
 {{{
-privateMessage(String message, String sender, String recepient)
+sendMessage(String message)
+
+privateMessage(message, sender, receiver)
 }}}
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatEventRecorder.java
 {{{
-void newChatMessage(String message)
+void newChatMessage(message)
 }}}
 
 PRESENTATION
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationService.java
 {{{
-assignPresenter(Long userid, String name, Long assignedBy)
-void removePresentation(String name)
+assignPresenter(userid, name, assignedBy)
+void removePresentation(name)
 Map getPresentationInfo()
-void gotoSlide(int slideNum)
-void sharePresentation(String presentationName, Boolean share)
-void resizeAndMoveSlide(Double xOffset,Double yOffset,Double widthRatio,Double heightRatio)
+void gotoSlide(slideNum)
+void sharePresentation(presentationName, share)
+void resizeAndMoveSlide(xOffset, yOffset, widthRatio, heightRatio)
 }}}
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationEventRecorder.java
