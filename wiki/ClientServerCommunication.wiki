@@ -4,128 +4,56 @@
 
 DRAFT
 
-
-= Details =
-
-=== Main ===
-This is BBB's main application called when Red5 starts/stops. This is also the entry point when the client connects and disconnects.
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/BigBlueButtonApplication.java
-
-
-The applications below registers as listeners to !BigBlueButtonApplication.
-
-=== Participants ===
-This listener to !BigBlueButtonApplication.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsHandler.java
-
-Handle RPC calls from the client.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsService.java
-
-Invokes methods on the client as well as send messages for recording.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsEventRecorder.java
-
-=== Chat ===
-Listener to !BigBlueButtonApplication.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatHandler.java
-
-
-Handles RPC calls from the client.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatService.java
-
-Invokes methods on the client and sends messages for recording.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatEventRecorder.java
-
-=== Presentation ===
-Listener to !BigBlueButtonApplication.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationHandler.java
-
-Handles RPC calls from the client.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationService.java
-
-Invokes methods on the client and send messages for recording.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationEventRecorder.java
-
-Receives JMS messages from ActiveMQ for presentation conversion updates when the presenter uploads a presentation. The messages are processed and passed to PresentationEventRecorder to invoke methods on the client.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/ConversionUpdatesMessageListener.java
-
-
-=== Voice ===
-Listener to !BigBlueButtonApplication.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/voice/VoiceHandler.java
-
-Handles RPC calls from the client.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/voice/VoiceService.java
-
-Abstracts out voice conf provider (Asterisk/FreeSWITCH). Manages voice participants and issues commands (mute/unmute/eject) as well as listens for events (join/leave/muted/unmuted/talking) from Asterisk/FS. 
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/webconference/voice/ConferenceService.java
-
-=== Whiteboard ===
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/whiteboard/WhiteboardApplication.java
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/whiteboard/WhiteboardService.java
-
-
-== VOIP ==
-Main application for BBB VOIP.
-
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/Application.java
-
-Handles RPC calls from the client.
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/Service.java
-
-Invokes methods on the client.
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/ClientConnection.java
-
-
 ==============
 == Current Client - Server APIs ==
-{{{
+
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/BigBlueButtonApplication.java
+{{{
 JOIN
     sessionName, userid,  username, role, conference, mode, room, voiceBridge, record, externUserID
+}}}
 
 PARTICIPANT
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsService.java    
+{{{
 Map getParticipants()
 setParticipantStatus(Long userid, String status, Object value) 
+}}}
+
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/participants/ParticipantsEventRecorder.java
+{{{
 so.sendMessage("logout", new ArrayList());
 so.sendMessage("participantJoined", args);
 so.sendMessage("participantLeft", args);
 so.sendMessage("participantStatusChange", args);
+}}}
 
 CHAT
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatService.java
 sendMessage(String message)
+{{{
 privateMessage(String message, String sender, String recepient)
+}}}
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/chat/ChatEventRecorder.java
+{{{
 void newChatMessage(String message)
+}}}
 
 PRESENTATION
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationService.java
+{{{
 assignPresenter(Long userid, String name, Long assignedBy)
 void removePresentation(String name)
 Map getPresentationInfo()
 void gotoSlide(int slideNum)
 void sharePresentation(String presentationName, Boolean share)
 void resizeAndMoveSlide(Double xOffset,Double yOffset,Double widthRatio,Double heightRatio)
+}}}
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/PresentationEventRecorder.java
+{{{
 so.sendMessage("conversionUpdateMessageCallback", list);
 so.sendMessage("pageCountExceededUpdateMessageCallback", list);
 so.sendMessage("generatedSlideUpdateMessageCallback", list);
@@ -134,20 +62,26 @@ so.sendMessage("removePresentationCallback", list);
 so.sendMessage("gotoSlideCallback", list);
 so.sendMessage("sharePresentationCallback", list);
 so.sendMessage("moveCallback", list);
+}}}
 
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/presentation/ConversionUpdatesMessageListener.java
-
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-
+{{{
+apps/src/main/java/org/bigbluebutton/conference/service/presentation/ConversionUpdatesMessageListener.java
+}}}
 
 VOICE
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/voice/VoiceService.java
+{{{
 Map<String, List> getMeetMeUsers()
 void muteAllUsers(boolean mute)
 boolean isRoomMuted()
 void muteUnmuteUser(Integer userid,Boolean mute)
 lockMuteUser(Integer userid, Boolean lock)
 void kickUSer(Integer userid)
+}}}
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/webconference/voice/ConferenceService.java
+{{{
 void startup()
 void shutdown()
 void createConference(String room)
@@ -161,9 +95,11 @@ void eject(Integer participant, String room)
 void eject(String room)
 void ejectParticipant(String room, Integer participant)
 ArrayList<Participant> getParticipants(String room)
+}}}
 
 WHITEBOARD
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/whiteboard/WhiteboardApplication.java
+{{{
 void setActivePresentation(String name, int numPages)
 void enableWhiteboard(boolean enabled)
 drawSO.sendMessage("modifyEnabledCallback", arguments);
@@ -175,8 +111,10 @@ void clear()
 drawSO.sendMessage("clear", new ArrayList<Object>());
 void undo()
 drawSO.sendMessage("undo", new ArrayList<Object>());
+}}}
   
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/service/whiteboard/WhiteboardService.java
+{{{
 void sendShape(double[] shape, String type, int color, int thickness, double parentWidth, double parentHeight)
 int setActivePage(int pageNum)
 List<Object[]> getShapes()
@@ -185,19 +123,18 @@ void undo()
 void setActivePresentation(String name, int numPages)
 void enableWhiteboard(boolean enable)
 boolean isWhiteboardEnabled()
+}}}
 
 VOIP
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/Service.java
+{{{
 Boolean hangup(String peerId)
 void setCallExtensionPattern(String callExtensionPattern)
+}}}
 
 https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/ClientConnection.java
+{{{
 connection.invoke("successfullyJoinedVoiceConferenceCallback", new Object[] {publishName, playName, codec});
 connection.invoke("failedToJoinVoiceConferenceCallback", new Object[] {"onUaCallFailed"});
 connection.invoke("disconnectedFromJoinVoiceConferenceCallback", new Object[] {"onUaCallClosed"});
-
-
-
-
-
 }}}
