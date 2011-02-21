@@ -624,7 +624,7 @@ You see a volume indicator next to the drop down for choosing a microphone.  Try
 Close this Flash settings dialog and others in the voice conference should now hear you.
 
 
-=== Why are sounds being cut off when people speak? ===
+=== Why are sounds being cut off when people speak? Why is the audio clipping? I don't hear the first part when a user starts to speak. ===
 
 When using FreeSWITCH, it has automatic clipping, which means it will not transmit a speaker's audio if its too low.
 
