@@ -624,17 +624,14 @@ You see a volume indicator next to the drop down for choosing a microphone.  Try
 Close this Flash settings dialog and others in the voice conference should now hear you.
 
 
-=== Why do I only hear part of a user's audio when they speak? ===
+=== Why do others only hear part of my audio? ===
 
-When using FreeSWITCH, it has automatic audio clipping, which means it will not transmit a speaker's audio if its too low.
+FreeSWITCH has automatic audio clipping, which means it will not transmit a speaker's audio if the volume is too low.   If the speaker's audio is low, FreeSWITCH might take a moment to recognize that someone is speaking before transmitting, causing others to hear your audio only after you have started speaking a few words.
 
-If the user's audio sensitivity on their microphone is low, or they are speaking in a low voice, FreeSWITCH may take a moment to recognize that someone is speaking before transmitting the speaker's audio.  The result is that others may only hear a portion of the speaker's audio.
 
-To resolve this, try having the speaker place the microphone closer to their mouth.  Also, you can have them increase the sensitivity of their microphone (see [FAQ#Why_can't_others_hear_me_when_I_join_the_voice_conference? why can't others hear me when I join the voice conference).
+Try placing the microphone closer to your mouth.  Also, try increasing the sensitivity of your microphone (see [FAQ#Why_can't_others_hear_me_when_I_join_the_voice_conference? why can't others hear me when I join the voice conference).
 
-You can also change the settings on the !BigBlueButton server to have a lower default threshold for audio. 
-
-To lower the threshold, switch to the root account, then edit
+You can also change the settings on FreeSWITCH to lower default threshold for audio.   To lower the threshold, switch to the root account, then edit
 
 {{{
  /opt/freeswitch/conf/autoload_configs/conference.conf.xml
