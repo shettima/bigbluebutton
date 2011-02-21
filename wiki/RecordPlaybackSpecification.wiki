@@ -98,6 +98,8 @@ Another way for a user to access (21) the recorded session is to playback within
 == Scope ==
 The scope for the first iteration of Record and Playback (0.8) is to capture and playback the slides, audio, and slide transitions.
 
+The first iteration will include capture of the presenter's video and desktop sharing for integration of !BigBlueButton with the [http://opencast.jira.com/wiki/display/MH/Personal+Lecture+Capture+with+Big+Blue+Button Matterhorn project].  
+
 This scope reflects the intent to create minimally viable product for educational and commercial companies to record and playback the core content in a session.   It will involve implementing many of the underlying architecture components (described in the high-level architecture).
 
 === Usage Scenario ===
