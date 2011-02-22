@@ -246,6 +246,66 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 
 = Configuration =
+== How do I forward calls from my Asterisk server to FreeSWITCH in BigBlueButton? ==
+
+Let's assume the following:
+
+{{{
+asterisk server ip:          192.168.1.100
+bigbluebutton/freeswitch ip: 192.168.1.200
+}}}
+
+Setup your gateway to BigBlueButton/FreeSWITCH. in {{{/etc/asterisk/sip.conf}}} add
+{{{
+[fs-gw]
+type=peer
+username=fs-gw
+insecure=very
+contactpermit=192.168.1.200/255.255.255.255
+qualify=no
+nat=yes
+host=192.168.1.200
+canreinvite=no
+disallow=all
+allow=ulaw
+
+}}}
+
+Route the calls to the gateway. In {{{/etc/asterisk/extensions.conf}}} context where your calls are being handled, forward the calls to the gateway. Here, when someone dials 85001, the call is sent to the {{{fs-gw}}} defined above.
+{{{
+exten => 85001,1,Dial(SIP/fs-gw/${EXTEN})
+exten => 85001,2,Hangup
+}}}
+
+In BigBlueButton/FreeSWITCH, make the following changes:
+
+Lock down so that only Asterisk can forward calls to FreeSWITCH. In {{{/opt/freeswitch/conf/autoload_configs/acl.conf.xml}}}, add the following ACL. We also need to allow BigBlueButton to call into FreeSWITCH, that's why we add the IP of BigBlueButton/FreeSWITCH into the ACL.
+
+{{{
+    <list name="asterisk-gw" default="deny">
+       <node type="allow" cidr="192.168.1.200/32"/>
+       <node type="allow" cidr="192.168.1.100/32"/>
+    </list>
+}}}
+
+Then we apply the ACL into the profile that receives the calls from external gateways. In {{{/opt/freeswitch/conf/sip_profiles/external.xml}}}, add the ACL under {{{<settings>}}}
+{{{
+  <settings>
+    <!-- Apply ACL from asterisk-gw -->
+    <param name="apply-inbound-acl" value="asterisk-gw"/>
+}}}
+
+To debug, try connecting to FS CLI and increase logging level. Once connected, make your call and see what the logs say.
+{{{
+  cd /opt/freeswitch/bin
+  ./fs_cli
+
+  Once connected:
+  help -- shows the available commands
+  console loglevel <level> -- change log level
+
+  Ctrl-D to exit
+}}}
 
 == How do I enable feature X in the !BigBlueButton client ==
 As of !BigBlueButton 0.71, you can configure some options in the client, such as enabling moderators to eject users from the virtual classroom.
