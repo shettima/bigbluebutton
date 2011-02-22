@@ -670,7 +670,7 @@ See Ubuntu's documentation for [https://help.ubuntu.com/community/Webcam/Trouble
   
 == Voice Conference ==
 
-=== Why can't others hear me when I join the voice conference? ===
+=== How can I increase the sensitivity of my microphone? ===
 
 If others in the voice conference don't hear you when you speak, it's likely that Flash has picked the wrong microphone on your computer.  You can change this with the following steps:
 
