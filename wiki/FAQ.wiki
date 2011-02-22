@@ -246,7 +246,7 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 
 = Configuration =
-== How do I forward calls from my Asterisk server to FreeSWITCH in BigBlueButton? ==
+== How do I forward calls from my Asterisk server to FreeSWITCH in !BigBlueButton? ==
 
 Let's assume the following:
 
@@ -255,7 +255,7 @@ asterisk server ip:          192.168.1.100
 bigbluebutton/freeswitch ip: 192.168.1.200
 }}}
 
-Setup your gateway to BigBlueButton/FreeSWITCH. in {{{/etc/asterisk/sip.conf}}} add
+Setup your gateway to !BigBlueButton/FreeSWITCH. in {{{/etc/asterisk/sip.conf}}} add
 {{{
 [fs-gw]
 type=peer
@@ -277,9 +277,9 @@ exten => 85001,1,Dial(SIP/fs-gw/${EXTEN})
 exten => 85001,2,Hangup
 }}}
 
-In BigBlueButton/FreeSWITCH, make the following changes:
+In !BigBlueButton/FreeSWITCH, make the following changes:
 
-Lock down so that only Asterisk can forward calls to FreeSWITCH. In {{{/opt/freeswitch/conf/autoload_configs/acl.conf.xml}}}, add the following ACL. We also need to allow BigBlueButton to call into FreeSWITCH, that's why we add the IP of BigBlueButton/FreeSWITCH into the ACL.
+Lock down so that only Asterisk can forward calls to FreeSWITCH. In {{{/opt/freeswitch/conf/autoload_configs/acl.conf.xml}}}, add the following ACL. We also need to allow !BigBlueButton to call into FreeSWITCH, that's why we add the IP of !BigBlueButton/FreeSWITCH into the ACL.
 
 {{{
     <list name="asterisk-gw" default="deny">
@@ -1022,7 +1022,7 @@ BigBlueButton server
 %>
 }}}
 
-What's likely happening is that BigBlueButtonURL isn't resolving to a
+What's likely happening is that !BigBlueButtonURL isn't resolving to a
 valid host.  You can verify by using it's value to interactively make an API call from your browser.  To do this, enter the following URL in your browser
 
 {{{
@@ -1040,14 +1040,14 @@ back an XML file similar to the following:
 </response>
 }}}
 
-Now, this URL isn't actually called by your web browser; rather, it's called by the !BigBlueButton server.  So login to your BigBlueButton server and enter the following command:
+Now, this URL isn't actually called by your web browser; rather, it's called by the !BigBlueButton server.  So login to your !BigBlueButton server and enter the following command:
 
 {{{
    wget http://<your_hostname>/bigbluebutton/api/isMeetingRunning?meetingID=abcdef
 -O -
 }}}
 
-and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the BigBlueButton server.
+and see if it again returns valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of !BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the !BigBlueButton server.
 
 === All I get is a "Welcome to Nginx" screen" ===
 If bbb-conf -c returns:
@@ -1130,7 +1130,7 @@ If you really want to see feature X, helping your organization become (1) is the
 
 For a list of what's planned for the next iteration, check out our RoadMap.  
 
-=== My Mac iSight camera no longer works in BigBlueButton after a system update to Mac OS X 10.6.5 ===
+=== My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
 There were some problems with the latest Flash update on Mac OS X.  See this [http://discussions.apple.com/thread.jspa?messageID=12641342&#12641342 Apple Support thread] for suggested solutions.
 
