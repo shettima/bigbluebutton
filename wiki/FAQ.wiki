@@ -390,9 +390,9 @@ If you can connect to the service running on all three ports (nginx, red5, and d
 
 === I tried the application at /bigbluebutton and it does not work? ===
 
-The grails applications at /bigbluebutton is old code and is being depreciated.  Instead of using it, we recommend using the [ API for controlling !BigBlueButton.  
+The grails applications at /bigbluebutton is old code and is now depreciated (it should not longer be accessible as of 0.71).  To control !BigBlueButton, we recommend using the [API API].  
 
-We provide a number of [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp API].  To modify one of the examples to create you own classrooms, see [#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to create your own virtual classrooms].
+We provide a number of [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp API] demo with !BigBlueButton's install.  To modify one of these demos to create you own classrooms, see [#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to create your own virtual classrooms].
 
 Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://bigbluebutton.org/support integration modules]. 
 
