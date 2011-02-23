@@ -53,5 +53,15 @@ Core should focus on unique features that differentiate BigBlueButton. Its simpl
 
 As the architecture evolves, current !BigBlueButton deployments *must* upgrade seamlessly.
 
+= Architecture work in the sharedNotes branch - Denis Zgonjanin=
+There has been some preliminary work in the [https://github.com/bigbluebutton/bigbluebutton/tree/sharedNotes sharedNotes] branch to work towards an extensible modular architecture. As you know, on the client it is already possible to develop and deploy modules. However it remains hard to do so on the server, as extensions need to be tightly integrated with red5. To this end, I've been working on an !RTMPAdapter application for red5. In a nutshell, the !RTMPAdapter is a bridge between Flash Player and other server side apps. !BigBlueButton Client performs remote procedure calls to the !RTMPAdapter, and they are published to Redis channels using [http://redis.io/topics/pubsub Redis PubSub]. Other server side applications can listen to specific channels to receive client data. The process works in both directions - server side apps can publish data to outbound channels. the !RTMPAdapter listens to these messages and sends them to the appropriate !BigBlueButton client connections.
+Right now this is a working prototype, though it needs some polish. After it is done, people will be able to build fully stand-alone extensions to !BigBlueButton on the server side. Following this, I would like to take the following steps:
+  # Migrate all applications within bbb-apps to stand-alone applications utilizing the !RTMPAdapter. 
+  # Create other protocol Adapters, such as a !WebsocketsAdapter, an !iOSAdapter, !AndroidAdapter, etc... This will allow us to work on bringing the !BigBlueButton experience to other platforms and technologies.
+  # Move away from red5 for VoIP. See my proposal [http://code.google.com/p/bigbluebutton/wiki/VoiceStability here].
+  # Move away from red5 for Video. Use a server with better performance and focused on video delivery, such as [https://github.com/erlyvideo/erlyvideo erlyvideo].
+  # After this is all done, re-write the !RTMPAdapter as a stand-alone C library using [http://monkey.org/~provos/libevent/ libevent] to allow for very high performance and scalability of a single server. 
+  # Remove red5 completely from !BigBlueButton, as it will no longer be needed.
+
 ----
 [ArchitectureCouncil] [ArchitectureCore]
