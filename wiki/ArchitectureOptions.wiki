@@ -18,7 +18,7 @@ Michael: The design of the plugin architecture needs account for more than deplo
 
 Richard: I agree. I would suggest somebody extract and document interaction between server and client. I have started it here [ClientServerCommunication]. And, also, someone should extract and document all events in the client. Having these list will provide us a good picture of the APIs (client to server, client/UI) and help us design an architecture that is modular, extensible, and flexible.
 
-Michael: Thanks. That is an very helpful document. It provides a map with the major landmarks in the server code. I agree that we should similarly document the events in the client. We should be able to get a student interested in that. It is well-defined in scope and it is clear how it adds value.
+Michael: Thanks. That is an very helpful document. It provides a map with the major landmarks in the server code. I agree that we should also document the events in the client. We should be able to get a student interested in that. It is well-defined in scope and it is clear how it adds value.
 
 Insert description of Extension Object pattern here.
 
