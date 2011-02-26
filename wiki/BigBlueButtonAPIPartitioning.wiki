@@ -19,7 +19,6 @@ _Warning: we are at a very early stages of the API partitioning development, so 
 
 This section contains a simple diagram of the existing API architecture. The diagram below describes the operation and information exchange for the existing Bigbluebutton API. The current development didn't involve any architectural changes for the API calls. (See digram below)
 
-(Need to insert image here) 
 
 
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB_API.jpg" />
