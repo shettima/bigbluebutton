@@ -11,7 +11,7 @@ An example would be, starting or stopping the chat module or the presentation mo
 
 = Details =
 
-To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/nnoori/bigbluebutton/tree/API here]. Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
+To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/coralcea/bigbluebutton here]. Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
 
 _Warning: we are at a very early stages of the API partitioning development, so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
@@ -50,7 +50,7 @@ You can check out the code for the API partitioning from the following repositor
 
  # Create a directory to check out your code there, such as "/bigbluebutton_api/".
  # Run command `git init` to initialize the directory as a local git repository.
- # Clone the main repository {{{ git://github.com/nnoori/bigbluebutton.git }}} by using the command `git clone git://github.com/nnoori/bigbluebutton.git`.
+ # Clone the main repository {{{ git://github.com/coralcea/bigbluebutton.git }}} by using the command `git clone git://github.com/coralcea/bigbluebutton.git`.
  # Switch to the API branch by using the command `git checkout API`. 
  
 
@@ -126,4 +126,3 @@ _To Do_
 _Note: Any comments or input is more welcome to improve our work_
 
 _To be added_
-
