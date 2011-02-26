@@ -131,7 +131,7 @@ NOTE:
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=VideoconfModule&cmd=stop }}} results disabling the Camera button(s) and killing (closing) the Webcam view window.
 
  * In case of using the command 
-{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PhoneModule&cmd=start }} will reult it will show the Headset button on the toolbar
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PhoneModule&cmd=start }}} will reult it will show the Headset button on the toolbar
 
  * Using the command 
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=phoneModule&cmd=stop }}} will kill (removes) the Headset button from the toolbar.
