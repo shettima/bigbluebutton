@@ -45,7 +45,7 @@ The API standard calls and format can be found on the [API] page at the [http://
 
 *Checkout the code and try out the API's*
 
-You can check out the code for the API partitioning from the following repository {{{ git://github.com/nnoori/bigbluebutton.git }}} and here are the steps to checkout the code:
+You can check out the code for the API partitioning from the following repository {{{ git://github.com/coralcea/bigbluebutton.git }}} and here are the steps to checkout the code:
 
  # Create a directory to check out your code there, such as "/bigbluebutton_api/".
  # Run command `git init` to initialize the directory as a local git repository.
