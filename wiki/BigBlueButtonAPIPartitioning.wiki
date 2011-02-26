@@ -93,12 +93,16 @@ Here are the available API calls so far:
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PresentModule&cmd=stop }}}
 
    * To start Voice Module use
-{{{http://192.168.1.108/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=dummy&cmd=init_voice}}} , then you can click the "Headset" button to join or leave a voice conference.
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=dummy&cmd=init_voice}}} , then you can click the "Headset" button to join or leave a voice conference.
 
    * To start Video Module use
-{{{http://192.168.1.108/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=dummy&cmd=init_video}}} , the click on the "Camera" button to start your video.
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=dummy&cmd=init_video}}} , the click on the "Camera" button to start your video.
 
- 
+   * All Modules wildcard API Call(s): To make the call for starting or stop all the module use the command 
+
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=All&cmd=<start/stop> }}}  
+
+
 To try out the API calls follow these steps:
 
  # Start you Bigbluebutton server. 
