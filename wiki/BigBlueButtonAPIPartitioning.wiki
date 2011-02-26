@@ -11,7 +11,7 @@ An example would be, starting or stopping the chat module or the presentation mo
 
 = Details =
 
-To review the changes and try out the API partitioning you can check out the code from the API branch [https://github.com/coralcea/bigbluebutton here]. Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
+To review the changes and try out the API partitioning you can check out the code from Coral CEA repository  [https://github.com/coralcea/bigbluebutton here]. Details of how to checkout the code and compile the pieces associated with API will come later on this page. 
 
 _Warning: we are at a very early stages of the API partitioning development, so the code is under ongoing changes and we can't guarantee a total functionality for the system at he moment._
 
@@ -46,12 +46,11 @@ The API standard calls and format can be found on the [API] page at the [http://
 
 *Checkout the code and try out the API's*
 
-You can check out the code for the API partitioning from the following repository {{{ git://github.com/nnoori/bigbluebutton.git }}} and here are the steps to checkout the code and switch to the API branch:
+You can check out the code for the API partitioning from the following repository {{{ git://github.com/nnoori/bigbluebutton.git }}} and here are the steps to checkout the code:
 
  # Create a directory to check out your code there, such as "/bigbluebutton_api/".
  # Run command `git init` to initialize the directory as a local git repository.
  # Clone the main repository {{{ git://github.com/coralcea/bigbluebutton.git }}} by using the command `git clone git://github.com/coralcea/bigbluebutton.git`.
- # Switch to the API branch by using the command `git checkout API`. 
  
 
 After checking out the code, follow the steps for building and deploying the different pieces that are related to the API and here is how: 
