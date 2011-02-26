@@ -124,6 +124,19 @@ _To Do_
  # Copy the new bigbluebutton.war to /var/lib/tomcat6/webapps/
  # Re-start the Tomcat server.
 
+NOTE: 
+ * In case of using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=VideoconfModule&cmd=start }}} will result starting multiple instances of the BBB the video module which reults having multiple Camera buttons on the toolbar and will not start a new Webcam window. 
+ * Using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=VideoconfModule&cmd=stop }}} results disabling the Camera button(s) and killing (closing) the Webcam view window.
+
+ * In case of using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PhoneModule&cmd=start }} will reult it will show the Headset button on the toolbar
+
+ * Using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=phoneModule&cmd=stop }}} will kill (removes) the Headset button from the toolbar.
+
+
 
 _Note: Any comments or input is more welcome to improve our work_
 
