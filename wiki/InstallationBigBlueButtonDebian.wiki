@@ -3,7 +3,7 @@
 = Introduction =
 This guide will show how to install !BigBlueButton 0.70 on Debian Squeeze 32-bit.
 
-Log in as root to avoid having to type sudo in front of most of the commands required to install BigBlueButton.
+Log in as root to avoid having to type sudo in front of most of the commands required to install !BigBlueButton.
 
 {{{
 su -
@@ -44,7 +44,7 @@ apt-get install linux-headers-`uname -r`
 }}}
 
 == Necessary Packages ==
-Install the necessary packages that we need to use BigBlueButton.
+Install the necessary packages that we need to use !BigBlueButton.
 
 {{{
 apt-get install sudo build-essential mysql-server sun-java6-jdk jsvc tomcat6 imagemagick nginx openoffice.org libjpeg62-dev libjpeg62 libfreetype6-dev libfreetype6 libgif-dev libgif4 libungif4-dev libungif-bin libncurses5-dev libxml2-dev subversion
@@ -105,9 +105,9 @@ chmod 777 /var/log/bigbluebutton/bbb-web.log
 == Daemon Files ==
 
 {{{
-wget http://bigbluebutton.googlecode.com/files/red5-ubuntu -o /etc/init.d/red5
-wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu -o /etc/init.d/activemq
-wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless -o /etc/init.d/bbb-openoffice-headless
+wget http://bigbluebutton.googlecode.com/files/red5-ubuntu -O /etc/init.d/red5
+wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu -O /etc/init.d/activemq
+wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless -O /etc/init.d/bbb-openoffice-headless
 
 chmod +x /etc/init.d/red5
 chmod +x /etc/init.d/activemq
@@ -133,7 +133,7 @@ We need to create a link to the kernel headers that we installed, so dahdi can f
 
 {{{
 cd /usr/src/
-ln -s /usr/src/linux-headers-2.6.32.5-686 /usr/src/linux
+ln -s /usr/src/linux-headers-`uname -r` /usr/src/linux
 }}}
 
 Change to fit your kernel version
@@ -144,7 +144,7 @@ Now let's download the sources of what we need:
 cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.6.2.9.tar.gz
 wget http://downloads.asterisk.org/pub/telephony/dahdi-linux/dahdi-linux-2.4.0.tar.gz
-wget http://github.com/jthomerson/AsteriskAudioKonf/tarball/master/
+wget --no-check-certificate http://github.com/jthomerson/AsteriskAudioKonf/tarball/master/
 }}}
 
 === Install Dahdi ===
@@ -232,7 +232,7 @@ Let's compile app_konference
 
 {{{
 cd /usr/src/
-tar -xvvzf jthomerson-AsteriskAudioKonf-genconf_v1.0.3-27-g3f63305.tar.gz
+tar -xvzf jthomerson-AsteriskAudioKonf-genconf_v1.0.3-27-g3f63305.tar.gz
 cd jthomerson-AsteriskAudioKonf-3f63305/konference
 }}}
 
@@ -271,12 +271,14 @@ cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' >
 }}}
 
 
-== nginX ==
+== nginx ==
+
+Use `ifconfig` to determine your IP.  Replace the string YOUR-IP with your IP in the following sed command top change all references to 192.168.0.211 to your IP.
 
 {{{
 cd /tmp
 wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
-cat nginx-bigbluebutton.conf  | sed "s/192.168.0.136/YOUR-IP/" > /etc/nginx/sites-available/bigbluebutton
+cat nginx-bigbluebutton.conf  | sed "s/192.168.0.211/YOUR-IP/" > /etc/nginx/sites-available/bigbluebutton
 
 rm nginx-bigbluebutton.conf
 
@@ -301,7 +303,7 @@ wget http://bigbluebutton.org/downloads/0.70/packages/deskshare.tar.gz
 == Tomcat Security ==
 
 {{{
-cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=YES/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
+cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=.*/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
 mv -f /tmp/tomcat6 /etc/default/tomcat6
 }}}
 
@@ -323,7 +325,7 @@ cp /tmp/bigbluebutton.war /var/lib/tomcat6/webapps/
 
 == Generate a GUID ==
 
-For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this] one. Keep this GUID handy as we will need it shortly. 
+For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this] one. Keep this GUID as YOUR-GUID in a section below. 
 
 == Determine PDF2SWF, CONVERT and GS applications ==
 
@@ -356,8 +358,8 @@ Change the following:
     * swfToolsDir to the directory where pdf2swf is located
     * imageMagickDir to the directory where convert is located
     * ghostScriptExec to point to the gs executable
-    * change bigbluebutton.web.serverURL=http://<YOUR IP>
-    * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=< YOUR-GUID >) 
+    * change bigbluebutton.web.serverURL=http://YOUR-IP
+    * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=YOUR-GUID) 
 
 == Create noPdfMarkWorkaround.ps ==
 
@@ -430,11 +432,11 @@ rm bbb-default.tar.gz
 }}}
 
 
-Now we need to create bbb_api_conf.jsp, which will hold our GUID and the !BigBlueButtonURL. Be sure to replace < YOUR-GUID > and < YOUR-IP > with the GUID we generated earlier and your IP, respectively. 
+Now we need to create bbb_api_conf.jsp, which will hold our GUID and the !BigBlueButtonURL. Be sure to replace YOUR-GUID and YOUR-IP with the GUID we generated earlier and your IP, respectively. 
 
 {{{
 echo "<%!
-// This is the security salt that must match the value set in the BigBlueButton server
+// This is the security salt that must match the value set in the !BigBlueButton server
 String salt = \"<YOUR-GUID>\";
 
 // This is the URL for the BigBlueButton server
@@ -460,7 +462,7 @@ vim /var/www/bigbluebutton/client/conf/config.xml
 
 * Change the uri to your IP address 
 
-Your config.xml should look something like: 
+Your config.xml should look something like (here the IP is 192.168.0.120, but yours should have the value for YOUR-IP): 
 
 {{{
 <?xml version="1.0" ?>
@@ -522,7 +524,7 @@ Your config.xml should look something like:
 == Install bbb-conf ==
 
 {{{
-wget http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
+wget --no-check-certificate http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
 mv bbb-conf /usr/local/bin
 chmod ugo+x /usr/local/bin/bbb-conf
 }}}
@@ -538,7 +540,7 @@ bbb-conf --restart
 == Try out !BigBlueButton ==
 
 {{{
-Go to http://<YOUR-IP>/ which should display the !BigBlueButton web page and join the conference.
+Go to http://YOUR-IP/ which should display the !BigBlueButton web page and join the conference.
 }}}
 
 
