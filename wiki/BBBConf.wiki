@@ -4,53 +4,47 @@
 
 = Introduction =
 
-`bbb-conf` is a script installed when you run the !BigBlueButton virtual machine or install !BigBlueButton from packages. The `bbb-conf` script helps you modify !BigBlueButton's configuration and detect possible errors in installation.
+`bbb-conf` is the !BigBlueButton configuration script for modifying !BigBlueButton's configuration, managing the !BigBlueButton processes (start/stop/reset), and troubleshooting your installation.
 
 If you are installing !BigBlueButton from source, you can download `bbb-conf` from [http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-config/bin/bbb-conf here].
 
-On the VM, bbb-conf is located in `/usr/local/bin/bbb-conf`.  If you want to see what happens when you invoke `bbb-conf`, just crack open the script; you can see all the commands it executes.  Doing this will help you understand how to setup your own development environment on a different Unix OS.
-
-= Running bbb-conf =
-{{{
-BigBlueButton Configuration Utility - Version 0.70
-http://code.google.com/p/bigbluebutton/wiki/BBBConf
-
-bbb-conf [options]
-
-Configuration:
-   --version                        Display BigBlueButton version (packages)
-   --setip <host>                   Set IP/hostname for BigBlueButton
-   --conference [konference|meetme] Switch conference module in Asterisk
-   --setsalt <salt>                 Change the security salt in bigbluebutton.properties
-
-Monitoring:
-   --check                          Check configuration files and processes for problems
-   --debug                          Scan the log files for error messages
-   --watch                          Scan the log files for error messages every 2 seconds
-
-Administration:
-   --restart                        Restart BigBueButton
-   --clean                          Clear all the log files and restart BigBlueButton
-   --zip                            Zip up log files for reporting an error
-
-Development:
-   --setup-samba                    Setup samba share for development (VM only)
-   --checkout  <repo>               Checkout from github or passed in repository
-   --setup-dev [client|web|apps]          Setup development environment
-   --reset-dev                      Reset environment back to using packages
-
-}}}
-
-To run `bbb-conf`, just type `bbb-conf` in the terminal, followed by any of the options documented below
+When installed from packages, `bbb-conf` is located in `/usr/local/bin/bbb-conf`.  If you are a developer, look through the source for `bbb-conf` (it's a shell script) will help you understand the various components of !BigBlueButton and how they work together.
 
 = Options =
 
-`bbb-conf` accepts the following options:
+If you type `bbb-conf` with no parameters it will print out the list of available options.
 
-=== --version ===
-Displays a help message with a list of available options.
+{{{
+BigBlueButton Configuration Utility - Version 0.71a
+http://code.google.com/p/bigbluebutton/wiki/BBBConf
 
-=== --setip < Host > : < Port > ===
+   bbb-conf [options]
+
+Configuration:
+   --setip <host>                   Set IP/hostname for BigBlueButton
+   --conference [konference|meetme|freeswitch]
+                                    Switch conference module
+   --setsalt <salt>                 Change the security salt in bigbluebutton.properties
+
+Monitoring:
+   --check <verbose>                Check configuration files and processes for problems
+   --debug                          Scan the log files for error messages
+   --watch                          Scan the log files for error messages every 2 seconds
+   --salt                           View the URL and security salt for the server
+
+Administration:
+   --restart                        Restart BigBueButton
+   --stop                           Stop BigBueButton
+   --start                          Start BigBueButton
+   --clean                          Restart and clean all log files
+   --zip                            Zip up log files for reporting an error
+
+}}}
+
+Some of the `bbb-conf` options require that you run the command as root user.  `bbb-conf` will print out a message prompting you to run the command with `sudo` if needed.
+
+
+=== `--setip <hostname_or_ip>[:<Port>]` ===
 
 Sets the IP/Hostname and port for !BigBlueButton's configuration.
 
@@ -61,13 +55,13 @@ Sets the IP/Hostname and port for !BigBlueButton's configuration.
 *Example Usage:* 
 
 {{{
-   bbb-conf --setip 192.168.0.1
+   bbb-conf --setip 192.168.0.211
 }}}
 
 or
 
 {{{
-   bbb-conf --setip 192.168.0.1:8081
+   bbb-conf --setip 192.168.0.211:8081
 }}}
 
 or 
@@ -77,53 +71,71 @@ or
 }}}
 
 
-=== --salt ===
 
-Display the current security salt for the !BigBlueButton API.
 
-=== --setsalt < new_salt > ===
+=== `--clean` ===
+Clear all the log files and restart !BigBlueButton
 
-Assign a new security salt for the !BigBlueButton API.  
 
-=== --check ===
-
+=== `--check` ===
 Checks current settings and outlines any potential problems.
 
-=== --conference _conference_module_ ===
 
+=== `--checkout <repo>` ===
+Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no {{{<repo>}}} is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.
+
+
+=== `--conference <conference_module>` ===
 Switches conference module in Asterisk.  Valid choices are `konference` or `meetme`.
 
-=== --debug ===
 
+=== `--debug` ===
 Checks the log files for errors
 
-=== --setup-samba ===
 
+=== `--reset-dev` ===
+Resets the development environment back to using packages.
+
+=== `--salt` ===
+Display the current security salt for the !BigBlueButton API.  For example:
+
+{{{
+firstuser@clean-vm-20101024-22:~$ bbb-conf --salt
+
+       URL: http://192.168.0.35/bigbluebutton/
+      Salt: f6c72afaaae95faa28c3fd90e39e7e6e
+
+}}}
+
+
+=== `--setup-samba` ===
 This command is only available if you are using the !BigBlueButton virtual machine.
 
 It sets up a samba share for development.
 
-=== --checkout < repo > ===
-Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no {{{<repo>}}} is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.
 
-=== --setup-dev [web|client|apps] ===
+=== `--setsalt <new_salt>` ===
+Assign a new security salt for the !BigBlueButton API. 
 
-Sets up the development environment for bbb-web, bbb-client, and bbb-apps.
 
-*NOTE:* You have to run this after you've ran {{{bbb-conf --checkout}}}.
+=== `--setup-dev [web|client|apps]` ===
+Sets up the development environment for bbb-web, bbb-client, and bbb-apps.  *NOTE:* Do `bbb-conf --checkout` before running `bbb-conf --setup-dev`.
 
-=== --reset-dev ===
 
-Resets the development environment back to using packages.
+=== `--start` ===
+Starts all the !BigBlueButton processes.
 
-=== --clean ===
-Clear all the log files and restart !BigBlueButton
 
-=== --watch ===
-Watch log files for error messages every 2 seconds
+=== `--stop` ===
+Stops all the !BigBlueButton processes.
 
-=== --zip ===
-Zip up log files for reporting an error
+
+=== `--watch` ===
+Watch log files for error messages every 2 seconds.  Use this command after `sudo bbb-conf --clean` to clean out all the log files.
+
+
+=== `--zip` ===
+Zip up log files for reporting an error.
 
 
 = Troubleshooting =
@@ -137,8 +149,8 @@ If the IP in !BigBlueButton's config files don't match the IP of your VM, you wi
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbbconf-wrongip.png
 
-To resolve this, all you need to do is run this command:
+To resolve this,  run this command:
 
 {{{
-   bbb-conf --setip <YOUR-IP>
+   bbb-conf --setip <hostname_or_ip>
 }}}
