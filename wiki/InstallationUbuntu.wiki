@@ -77,7 +77,7 @@ Note: The mysql password should not contain the following characters as `! # [ ^
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71web.png
 
-Finally, you'll be prompted to access an End User License Agreement (EULA) for the installation of the Microsoft TrueType Fonts.  These fonts help OpenOffice to convert Microsoft Office documents into PDF files.
+Finally, you'll be prompted to access an End User License Agreement (EULA) for the installation of the Microsoft !TrueType Fonts.  These fonts help !OpenOffice to convert Microsoft Office documents into PDF files.
 
 == 4. Do a Clean Restart == 
 
