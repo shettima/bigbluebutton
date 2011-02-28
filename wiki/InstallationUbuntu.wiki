@@ -268,6 +268,30 @@ To change all of !BigBlueButton's configuration files to use a different IP addr
 
 For more information see [BBBConf bbb-conf options]. 
 
+== Address already in use ==
+
+If you have apache2 already running on the server, you'll likely see the following error messages from nginx when it starts.
+
+{{{
+Restarting nginx: [emerg]: bind() to 0.0.0.0:80 failed (98: Address
+already in use)
+}}}
+
+If you see these errors, it means that nginx is unable to bind to port 80 on the local server.  To find out what's binding to port 80, do the following
+
+{{{
+   sudo apt-get install lsof
+   lsof -i :80
+}}}
+
+If you see apache2 listed, then stop apache2 and start nginx
+
+{{{
+   sudo /etc/init.d/apache2 stop
+   sudo /etc/init.d/nginx start
+}}}
+
+
 == Errors in shutting down red5 ==
 
 The red5 server will start without issues, but on occasion it will throw an exception when shutting down.
