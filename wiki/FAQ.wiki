@@ -39,6 +39,10 @@ The core developers are listed on the [http://code.google.com/p/bigbluebutton/ G
 == Where is the source? ==
 We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We used to host it on Google Code, but we wanted to move to git because of the advantages it offers over svn.
 
+== What is the open source license used in !BigBlueButton?
+We use the LGPL license.
+
+
 == How do I join the !BigBlueButton development team? ==
 
 We consider someone a !BigBlueButton developer if they have check-in rights !BigBlueButton's [https://github.com/bigbluebutton GIT repository], or if they have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
@@ -59,7 +63,7 @@ To ensure all the code contributed to the project can be released under an open 
 
 == How do I contribute my updates to !BigBlueButton? ==
 
-We currently host all the code on [https://github.com/bigbluebutton GitHub].  Only a few people have commit rights to ensure quality of the project.
+We currently host all the code on [https://github.com/bigbluebutton GitHub].  The code for !BigBlueButton is licensed under LGPL.  Only a few people have commit rights to ensure quality of the project.
 
 The easiest way to make a contribution would be to:
 
