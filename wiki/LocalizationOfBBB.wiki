@@ -17,13 +17,14 @@ If you wish to modify an existing translation instead of creating a new one, you
 || Azerbaijani || az_AZ || Emin Hasanov || eminach AT gmail DOT com || 0.64 ||
 || Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom AT gmail DOT com || 0.63 ||
 || Chinese (Traditional) || zh_TW || Alan Yu || secret1029 AT gmail DOT com || 0.7 ||
+|| Danish || da_DK || Jesper Skelgaard || skelgaard AT gmail DOT com || 0.71 ||
 || English || en_US || !BigBlueButton Team || ffdixon AT bigbluebutton DOT org (and many others) || 0.7 ||
 || French || fr_FR || Jean-Philippe Guiot || DJP AT architectes DOT org ||0.7 ||
 || German || de_DE || Stefan Auditor || stefan.auditor AT googlemail DOT com || 0.63 ||
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas AT gmail DOT com || 0.64 ||
 || Italian || it_IT || Federico Corradino || spiorfeus AT gmail DOT com || 0.64 ||
 || Lithuanian || lt_LT || Marius Kazlauskas || mar.kazlauskas AT gmail DOT com || 0.64 ||
-|| Norwegian || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.64 ||
+|| Norwegian || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.71 ||
 || Netherland || nl_NL || Walter Tak || walter AT waltertak DOT com ||0.63 ||
 || Persian || fa_IR || Morteza Hanifnejad || m.hanifnejad AT gmail.com || 0.7 ||
 || Portuguese || pt_PT || FábioVaz_IPT || fafvaz AT gmail DOT com || 0.63 ||
@@ -36,6 +37,7 @@ If you wish to modify an existing translation instead of creating a new one, you
 || Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33 AT gmail DOT com || 0.64 ||
 || Swedish || sw_SW || Fredrik Garmer || garmer AT gmail.com || 0.7 ||
 || Turkish || tr_TR || Yasin Ozarslan || ozarslan AT gmail DOT com || 0.71 ||
+|| Ukrainian || uk_UA || Yevgen || yevgen.pal AT gmail DOT com || 0.71 ||
 || Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.7 ||
 
 
