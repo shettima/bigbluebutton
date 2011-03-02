@@ -68,7 +68,7 @@ Next, populate the BigBlueButton database with this command:
 
 */usr/local/etc/rc.d/mysql start*
 
-Finally, start BigBlueButton (the command is typed on one line):
+Finally, start BigBlueButton:
 
 *bbb_conf install -h `<ip_address>` -c `<konference|meetme|freeswitch>`*
 
