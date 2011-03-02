@@ -86,9 +86,9 @@ If you wish to stop `BigBlueButton`, use this command:
 
 If you have any issues with functionality please let me know (http://code.google.com/u/dru.lavigne/).
 
-This is a fix for a currently known issue: the latest version of ImageMagick fails to convert uploaded presentations correctly. If you are running a version of ImageMagick higher than 6.6.4.10 (which does work correctly) you can do this:
+This is a fix for a currently known issue: the latest version of `ImageMagick` fails to convert uploaded presentations correctly. If you are running a version of `ImageMagick` higher than 6.6.4.10 (which does work correctly) you can do this:
 
-*cd /usr/ports/graphics/ImageMagick*
+*cd /usr/ports/graphics/`ImageMagick`*
 *make deinstall*
 
 replace the existing distinfo file with this one: http://www.freebsd.org/cgi/cvsweb.cgi/ports/graphics/ImageMagick/distinfo?rev=1.151;content-type=text%2Fplain
