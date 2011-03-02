@@ -2,7 +2,13 @@
 
 = Introduction =
 
-This how-to has been tested on FreeBSD and PC-BSD 8.1. It assumes some familiarity with installing software using FreeBSD ports and packages. 
+This how-to has been tested on FreeBSD and PC-BSD 8.1 and 8.2. It assumes some familiarity with installing software using FreeBSD ports and packages. 
+
+= Method 1: Using the FreeBSD Port =
+
+= Method 2: Reinventing the Wheel =
+
+Since the FreeBSD port became available in January, 2011, the following instructions can be considered deprecated. They are left here for readers who wish to know what the FreeBSD port is doing or for users who are considering what steps would be required in order to create an OpenBSD port or a NetBSD/DragonFly BSD pkgsrc module.
 
 == Install Required Software ==
 
