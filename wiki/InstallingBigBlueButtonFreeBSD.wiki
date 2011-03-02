@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This how-to has been tested on FreeBSD and PC-BSD 8.1 and 8.2. It assumes some familiarity with installing software using FreeBSD ports and packages. 
+This how-to has been tested on FreeBSD and PC-BSD 8.1 and 8.2. It assumes some familiarity with installing software using FreeBSD ports and packages. All commands should be run as the superuser.
 
 = Method 1: Using the FreeBSD Port =
 
@@ -12,7 +12,7 @@ The recommended way to install BigBlueButton on a FreeBSD or PC-BSD system is to
 
 If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html. If your system does have the ports tree but it hasn't been updated in a while, follow the instructions for the heading *CVSup Method* at that link.
 
-Once you have an updated ports tree, become the superuser, open the file _/usr/ports/www/tomcat6/Makefile_ in your favourite editor and edit this line:
+Once you have an updated ports tree, open the file _/usr/ports/www/tomcat6/Makefile_ in your favourite editor and edit this line:
 
 HTTP_PORT?=     8180
 
