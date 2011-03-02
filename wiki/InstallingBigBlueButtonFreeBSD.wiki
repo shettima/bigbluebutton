@@ -51,11 +51,17 @@ Before starting BigBlueButton, you will need to add the hostname and IP address 
 Next, add the following lines to _/etc/rc.conf_:
 
 tomcat60_enable="YES"
+
 mysql_enable="YES"
+
 nginx_enable="YES"
+
 asterisk_enable="YES"
+
 activemq_enable="YES"
+
 openoffice_enable="YES"
+
 red5_enable="YES"
 
 Next, populate the BigBlueButton database with this command:
