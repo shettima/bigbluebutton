@@ -84,7 +84,7 @@ If you wish to stop BigBlueButton, use this command:
 
 = Method 2: Reinventing the Wheel =
 
-Since the FreeBSD port became available in January, 2011, the following instructions can be considered deprecated. They are left here for readers who wish to know what the FreeBSD port is doing or for users who are considering what steps would be required in order to create an OpenBSD port or a NetBSD or DragonFly BSD pkgsrc module.
+Since the FreeBSD port became available in January, 2011, the remaining instructions can be considered deprecated. They are left here for readers who wish to know what the FreeBSD port is doing or for users who are considering what steps would be required in order to create an OpenBSD port or a NetBSD or DragonFly BSD pkgsrc module.
 
 == Install Required Software ==
 
