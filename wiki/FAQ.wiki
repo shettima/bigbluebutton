@@ -1165,7 +1165,7 @@ Doing this removes the inevitable problems that arise when manual code changes b
 branding changes no longer work -- please help me!!"
 
 Most importantly for everyone, the efforts to support a [http://en.wikipedia.org/wiki/White-label_product white labeled] version of !BigBlueButton won't take away from core
-development, but rather it will support it.
+development, but will rather support it.
 
 
 === Is the scheduling interface in bbb-web still supported? ===
