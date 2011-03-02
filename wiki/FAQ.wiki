@@ -1159,7 +1159,7 @@ is released every 8-12 weeks.
 
 From the point of view of the open source project, having the word bigbluebutton in the URL spreads awareness of the project and increases the community, which benefits everyone.  We know that many companies have released products based on !BigBlueButton, and they enjoy the commercial benefits of building on open source, and the project enjoys the increased awareness.  Everyone wins.
 
-Still, from time to time, we see posts in our developer mailing list (usually from a commercial company wanting to represent the product as their own) asking for help to completely remove all references to !BigBlueButton.  Rather than having the core developers support such branding efforts in the forum, we believe best option is to have them contact one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
+Still, from time to time, we see individual posts in our developer mailing list (usually from a commercial company wanting to represent the product as their own) asking for help to completely remove all references to !BigBlueButton.  Rather than have the core developers support such branding efforts, we believe best option is to have the individual contact one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
 
 Doing this removes the inevitable problems that arise when manual code changes break in a new release and flood of forum posts ensue with the title "My
 branding changes no longer work -- please help me!!"
