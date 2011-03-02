@@ -41,6 +41,12 @@ Once you have made your selections, use the tab key to highlight OK and press en
 
 == Start BigBlueButton ==
 
+Once the installation is complete, a message will be displayed indicating how to start BigBlueButton. If you missed the message or would like to read it again, use the command:
+
+*pkg_info -Dx bigbluebutton*
+
+Before starting BigBlueButton, you will need to add the hostname and IP address of the system to _/etc/hosts_. If you forget to do this, BigBlueButton will load in the client's browser but will fail to connect to a meeting. The *hostname* and *ifconfig* commands can be used to get the system's hostname and IP address.
+
 
 
 = Method 2: Reinventing the Wheel =
