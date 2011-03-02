@@ -20,7 +20,7 @@ so that it reads:
 
 HTTP_PORT?=     8080
 
-Save your change. Next, compile BigBlueButton:
+Save your change. Next, compile `BigBlueButton`:
 
 *cd /usr/ports/www/bigbluebutton*
 
