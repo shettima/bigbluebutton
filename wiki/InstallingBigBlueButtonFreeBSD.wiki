@@ -12,7 +12,7 @@ The recommended way to install BigBlueButton on a FreeBSD or PC-BSD system is to
 
 If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html. If your system does have the ports tree but it hasn't been updated, follow the instructions for the heading *CVSup Method* at that link.
 
-Once you have an updated ports tree, become the superuser, open the file /usr/ports/www/tomcat6/Makefile in your favourite editor and edit this line:
+Once you have an updated ports tree, become the superuser, open the file _/usr/ports/www/tomcat6/Makefile_ in your favourite editor and edit this line:
 
 HTTP_PORT?=     8180
 
@@ -27,13 +27,19 @@ Save your change. Next, compile BigBlueButton:
 
 A menu will open with a list of options. The first three determine which asterisk module will be used:
 
-*meetme:*
+*meetme:* requires a Zaptel hardware device to provide timing
 
-*konference:* (the default selection)
+*konference:* (the default selection) doesn't require any specialized hardware
 
-*freeswitch:*
+*freeswitch:* may be a better choice if you will be supporting many simultaneous users
 
 If you don't have a preference, the default selection is fine. Otherwise, use your arrow and enter keys to change the selection.
+
+The last menu option is whether or not to include OpenOffice support. While OpenOffice is mandatory for the proper functioning of BigBlueButton, it requires *much* time and disk space to compile. If OpenOffice is already installed, you can leave this unchecked. If it is not installed, consider leaving this option unchecked and instead installing the package instead from ftp://ooopackages.good-day.net/pub/OpenOffice.org/FreeBSD/. 
+
+Once you have made your selections, use the tab key to highlight OK and press enter. BigBlueButton will now build on your system.
+
+== Start BigBlueButton ==
 
 
 
