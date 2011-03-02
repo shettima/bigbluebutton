@@ -36,7 +36,7 @@ A menu will open with a list of options. The first three determine which asteris
 
 If you don't have a preference, the default selection is fine. Otherwise, use your arrow and enter keys to change the selection.
 
-The last menu option is whether or not to include OpenOffice support. While OpenOffice is mandatory for the proper functioning of BigBlueButton, it requires *much* time and disk space to compile. If OpenOffice is already installed, you can leave this unchecked. If it is not installed, consider leaving this option unchecked and instead installing the package instead from ftp://ooopackages.good-day.net/pub/OpenOffice.org/FreeBSD/. 
+The last menu option is whether or not to include OpenOffice support. While OpenOffice is mandatory for the proper functioning of BigBlueButton, it requires *much* time and disk space to compile. If OpenOffice is already installed, you can leave this unchecked. If it is not installed, consider leaving this option unchecked and instead installing the package from ftp://ooopackages.good-day.net/pub/OpenOffice.org/FreeBSD/. 
 
 Once you have made your selections, use the tab key to highlight OK and press enter. BigBlueButton will now build on your system.
 
