@@ -843,6 +843,10 @@ sudo /etc/init.d/freeswitch restart
 
 == Chat ==
 
+=== How can I copy all chat messages to the clipboard? ===
+
+Right-click within the chat area and choose the option "Copy All Text".
+
 === When I make !BigBlueButton full screen I can't enter any text into chat ===
 
 By design, Adobe disables keyboard input of Flash applications when they go full-screen.  
