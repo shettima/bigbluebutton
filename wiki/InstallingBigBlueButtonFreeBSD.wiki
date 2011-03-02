@@ -82,6 +82,31 @@ If you wish to stop `BigBlueButton`, use this command:
 
 *bbb-conf stop*
 
+== Troubleshooting ==
+
+If you have any issues with functionality please let me know.
+
+This is a fix for a currently known issue: the latest version of ImageMagick fails to convert uploaded presentations correctly. If you are running a version of ImageMagick higher than 6.6.4.10 (which does work correctly) you can do this:
+
+*cd /usr/ports/graphics/ImageMagick*
+*make deinstall*
+
+replace the existing distinfo file with this one: http://www.freebsd.org/cgi/cvsweb.cgi/ports/graphics/ImageMagick/distinfo?rev=1.151;content-type=text%2Fplain
+
+replace the existing Makefile with this one: http://www.freebsd.org/cgi/cvsweb.cgi/ports/graphics/ImageMagick/Makefile?rev=1.311;content-type=text%2Fplain
+
+edit the new Makefile so that this line:
+
+USE_AUTOTOOLS=	libltdl:22
+
+looks like this:
+
+USE_AUTOTOOLS=	libltdl
+
+Now, build the corrected version:
+
+*make install clean*
+
 = Method 2: Reinventing the Wheel =
 
 Since the FreeBSD port became available in January, 2011, the remaining instructions can be considered deprecated. They are left here for readers who wish to know what the FreeBSD port is doing or for users who are considering what steps would be required in order to create an OpenBSD port or a NetBSD or `DragonFly` BSD pkgsrc module.
