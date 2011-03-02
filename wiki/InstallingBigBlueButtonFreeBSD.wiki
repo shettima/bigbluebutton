@@ -70,9 +70,9 @@ Next, populate the BigBlueButton database with this command:
 
 Finally, start BigBlueButton (the command is typed on one line):
 
-*bbb_conf install -h <ip_address> -c <konference|meetme|freeswitch>*
+*bbb_conf install -h `<ip_address>` -c `<konference|meetme|freeswitch>`*
 
-Replace <ip_address> with the address you input into _/etc/hosts_ and <konference|meetme|freeswitch> with the one module type that you selected in the port's configuration menu.
+Replace `<ip_address>` with the address you input into _/etc/hosts_ and `<konference|meetme|freeswitch>` with one module type that you selected in the port's configuration menu.
 
 You should now be able to connect to your BigBlueButton server. Input the IP address into a flash-capable web browser and input a name to join a demo meeting.
 
