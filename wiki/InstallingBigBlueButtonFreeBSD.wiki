@@ -36,17 +36,17 @@ A menu will open with a list of options. The first three determine which asteris
 
 If you don't have a preference, the default selection is fine. Otherwise, use your arrow and enter keys to change the selection.
 
-The last menu option is whether or not to include OpenOffice support. While OpenOffice is mandatory for the proper functioning of BigBlueButton, it requires *much* time and disk space to compile. If OpenOffice is already installed, you can leave this unchecked. If it is not installed, consider leaving this option unchecked and instead installing the package from ftp://ooopackages.good-day.net/pub/OpenOffice.org/FreeBSD/. 
+The last menu option is whether or not to include `OpenOffice` support. While `OpenOffice` is mandatory for the proper functioning of `BigBlueButton`, it requires *much* time and disk space to compile. If OpenOffice is already installed, you can leave this unchecked. If it is not installed, consider leaving this option unchecked and instead installing the package from ftp://ooopackages.good-day.net/pub/OpenOffice.org/FreeBSD/. 
 
-Once you have made your selections, use the tab key to highlight OK and press enter. BigBlueButton will now build on your system.
+Once you have made your selections, use the tab key to highlight OK and press enter. `BigBlueButton` will now build on your system.
 
-== Start BigBlueButton ==
+== Start `BigBlueButton` ==
 
-Once the installation is complete, a message will be displayed indicating how to start BigBlueButton. If you missed the message or would like to read it again, use the command:
+Once the installation is complete, a message will be displayed indicating how to start `BigBlueButton`. If you missed the message or would like to read it again, use the command:
 
 *pkg_info -Dx bigbluebutton*
 
-Before starting BigBlueButton, you will need to add the hostname and IP address of the system to _/etc/hosts_. If you forget to do this, BigBlueButton will load in the client's browser but will fail to connect to a meeting. The *hostname* and *ifconfig* commands can be used to get the system's hostname and IP address.
+Before starting `BigBlueButton`, you will need to add the hostname and IP address of the system to _/etc/hosts_. If you forget to do this, `BigBlueButton` will load in the client's browser but will fail to connect to a meeting. The *hostname* and *ifconfig* commands can be used to get the system's hostname and IP address.
 
 Next, add the following lines to _/etc/rc.conf_:
 
@@ -64,11 +64,11 @@ openoffice_enable="YES"
 
 red5_enable="YES"
 
-Next, populate the BigBlueButton database with this command:
+Next, populate the `BigBlueButton` database with this command:
 
 */usr/local/etc/rc.d/mysql start*
 
-Finally, install and start BigBlueButton:
+Finally, install and start `BigBlueButton`:
 
 *bbb_conf install -h `<ip_address>` -c `<konference|meetme|freeswitch>`*
 
@@ -76,15 +76,15 @@ Replace `<ip_address>` with the address you input into _/etc/hosts_ and `<konfer
 
 *bbb_conf start*
 
-You should now be able to connect to your BigBlueButton server. Input the IP address into a flash-capable web browser and input a name to join a demo meeting.
+You should now be able to connect to your `BigBlueButton` server. Input the IP address into a flash-capable web browser and input a name to join a demo meeting.
 
-If you wish to stop BigBlueButton, use this command:
+If you wish to stop `BigBlueButton`, use this command:
 
 *bbb_conf stop*
 
 = Method 2: Reinventing the Wheel =
 
-Since the FreeBSD port became available in January, 2011, the remaining instructions can be considered deprecated. They are left here for readers who wish to know what the FreeBSD port is doing or for users who are considering what steps would be required in order to create an OpenBSD port or a NetBSD or DragonFly BSD pkgsrc module.
+Since the FreeBSD port became available in January, 2011, the remaining instructions can be considered deprecated. They are left here for readers who wish to know what the FreeBSD port is doing or for users who are considering what steps would be required in order to create an OpenBSD port or a NetBSD or `DragonFly` BSD pkgsrc module.
 
 == Install Required Software ==
 
