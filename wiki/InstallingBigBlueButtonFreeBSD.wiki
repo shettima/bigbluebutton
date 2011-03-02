@@ -47,7 +47,27 @@ Once the installation is complete, a message will be displayed indicating how to
 
 Before starting BigBlueButton, you will need to add the hostname and IP address of the system to _/etc/hosts_. If you forget to do this, BigBlueButton will load in the client's browser but will fail to connect to a meeting. The *hostname* and *ifconfig* commands can be used to get the system's hostname and IP address.
 
+Next, add the following lines to _/etc/rc.conf_:
 
+tomcat60_enable="YES"
+mysql_enable="YES"
+nginx_enable="YES"
+asterisk_enable="YES"
+activemq_enable="YES"
+openoffice_enable="YES"
+red5_enable="YES"
+
+Next, populate the BigBlueButton database with this command:
+
+*/usr/local/etc/rc.d/mysql start*
+
+Finally, start BigBlueButton:
+
+*bbb_conf install -h <ip_address> -c <konference|meetme|freeswitch>*
+
+Replace <ip_address> with the address you input into _/etc/hosts_ and <konference|meetme|freeswitch> with the one module type that you selected in the port's configuration menu.
+
+You should now be able to connect to your BigBlueButton server. Input the IP address into a flash-capable web browser and input a name to join a demo meeting.
 
 = Method 2: Reinventing the Wheel =
 
