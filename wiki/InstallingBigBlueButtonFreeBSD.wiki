@@ -72,7 +72,7 @@ Finally, install and start BigBlueButton:
 
 *bbb_conf install -h `<ip_address>` -c `<konference|meetme|freeswitch>`*
 
-Replace `<ip_address>` with the address you input into _/etc/hosts_ and `<konference|meetme|freeswitch>` with one module type that you selected in the port's configuration menu.
+Replace `<ip_address>` with the address you input into _/etc/hosts_ and `<konference|meetme|freeswitch>` with one module type that you selected in the port's configuration menu. You are now ready to start BigBlueButton:
 
 *bbb_conf start*
 
