@@ -10,7 +10,7 @@ The recommended way to install BigBlueButton on a FreeBSD or PC-BSD system is to
 
 == Obtain/Update the Ports Tree and Compile the Port ==
 
-If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html. If your system does have the ports tree but it hasn't been updated, follow the instructions for the heading *CVSup Method* at that link.
+If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html. If your system does have the ports tree but it hasn't been updated in a while, follow the instructions for the heading *CVSup Method* at that link.
 
 Once you have an updated ports tree, become the superuser, open the file _/usr/ports/www/tomcat6/Makefile_ in your favourite editor and edit this line:
 
