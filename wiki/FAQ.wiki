@@ -755,31 +755,22 @@ The best solution is ask all users to use a headset -- this will ensure no feedb
 
 === Why is there a delay in the audio when I use VoIP? ===
 
-Yes, you will experience delay in the audio when using VoIP.  It's unavoidable in an internet-based voice conferencing system.  We've put a lot of work into !BigBlueButton to reduce the delay, but we can never eliminate the variables such as:
-  * Available CPU resources of the host server
-  * Available memory for voice encoding
-  * Bandwidth to/from the server
-  * Bandwidth to/from each user
-  * network latency
+You will experience a 2-4 second delay in the audio when using the built-in VoIP in !BigBlueButton (clicking the headset icon).
 
+The delay is largely due to the internal Java-based transcoding of audio packets with !BigBlueButton itself.
 
-!BigBlueButton uses Asterisk or FreeSWITCH as its voice conference server.  This has a big benefit in that your users can join the voice conference by dialing a phone number (this must be configured by the administrator) or using the built-in VoIP client in !BigBlueButton (which requires no configuration).  Both incoming streams will be mixed by Asterisk or FreeSWITCH.
+Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk/FreeSWITCH (via SIP), then asterisk/FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded again (mulaw -> nellymoser), then goes down to the client.
 
-When using the phone, referred to as direct inward dialing (DID) number, a user can dial a phone number (this is the DID) that is routed by a SIP trunk provider to the asterisk server.  The SIP trunk provider is a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to asterisk server when someone calls the DID using session initiation protocol (SIP).  The receiving asterisk server then prompts the caller to enter an extension number that corresponds to the voice conference bridge for the !BigBlueButton session.  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
+Lots of audio processing, and that what is introducing the delay.  We're investigating two ways of reducing the transcoding.
 
-Setting up asterisk with a SIP gateway takes a fair bit of knowledge about how asterisk works.  When using the built-in VoIP client in !BigBlueButton, everything is pre-configured to automatically dial into the asterisk server (again using SIP) and joining the proper extension.  
+  # Move the transcoding of nellymoser -> mulaw/mulaw -> nellymoser out of Java into native code
+  # Launch an external Java-based SIP client to connect directly with asterisk/FreeSWITCH
 
-Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk (via SIP), then asterisk mixes in the audio (via appkonference), then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded back to nellymoser, then goes down to the client.
+Another option is to setup asterisk/FreeSWITCH to use a direct inward dialing (DID) number, which you can get from a SIP trunk provider, a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to asterisk/FreeSWITCH server when someone calls the DID using session initiation protocol (SIP).  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
 
-As the administrator of the !BigBlueButton server, to reduce the delay, you can do the following:
+Setting up DIDs involves configuration of Asterisk/FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering !BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
 
-   # Run !BigBlueButton on a dedicated server (not a virtual server).  A virtual implementation of asterisk is more sensitive to hardware timing when running in a virtualized environment.
-   # Run Asterisk or FreeSWITCH on a separate computer.  This the task of audio mixing to a dedicated computer (you'll need to configure the !BigBlueButton server to route the calls to the separate asterisk server).
-   # Setup DIDs.  This involves configuration of Asterisk/FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering !BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
-
-In most cases (1) and (2) can make some improvements, but if you have a caller that is going over the internet, their packages will arrive at the speed of their upstream bandwidth.  
-
-For the best audio, setting up (3) will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very, very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your Asterisk/FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your Asterisk/FreeSWITCH server.
+Setting up DIDs will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your Asterisk/FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your Asterisk/FreeSWITCH server.
 
 
 === Why is the audio not synced with the video? ===
