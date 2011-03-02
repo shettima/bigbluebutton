@@ -8,9 +8,34 @@ This how-to has been tested on FreeBSD and PC-BSD 8.1 and 8.2. It assumes some f
 
 The recommended way to install BigBlueButton on a FreeBSD or PC-BSD system is to compile the FreeBSD port. Additional instructions will be added here once the FreeBSD package and the PC-BSD PBI become available as they will considerably simplify installing BigBlueButton on these systems.
 
-== Update the Ports Tree and Compile the Port ==
+== Obtain/Update the Ports Tree and Compile the Port ==
 
-If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html.
+If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html. If your system does have the ports tree but it hasn't been updated, follow the instructions for the heading *CVSup Method* at that link.
+
+Once you have an updated ports tree, become the superuser, open the file /usr/ports/www/tomcat6/Makefile in your favourite editor and edit this line:
+
+HTTP_PORT?=     8180
+
+so that it reads:
+
+HTTP_PORT?=     8080
+
+Save your change. Next, compile BigBlueButton:
+
+*cd /usr/ports/www/bigbluebutton*
+*make install clean*
+
+A menu will open with a list of options. The first three determine which asterisk module will be used:
+
+*meetme:*
+
+*konference:* (the default selection)
+
+*freeswitch:*
+
+If you don't have a preference, the default selection is fine. Otherwise, use your arrow and enter keys to change the selection.
+
+
 
 = Method 2: Reinventing the Wheel =
 
