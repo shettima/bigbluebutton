@@ -10,7 +10,7 @@ The recommended way to install BigBlueButton on a FreeBSD or PC-BSD system is to
 
 == Update the Ports Tree and Compile the Port ==
 
-If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions url="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html".
+If your system does not currently have the ports tree (i.e. there is nothing in /usr/ports), install the ports tree using these instructions: http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/ports-using.html.
 
 = Method 2: Reinventing the Wheel =
 
