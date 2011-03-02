@@ -1153,14 +1153,14 @@ We love hearing the experiences of others using !BigBlueButton.  It gives us a l
 There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton. 
 
-However, there are lot of places in the code that need to be manually changed (and
-tested) to get everything right, and these manual changes would need
+In recent releases you can now [Branding skin] the BigBlueButton interface.  However, the URL still reads bigbluebutton.  We know there are lot of places in the code that need to be manually changed (and
+tested) to change this string, and these manual changes would need
 to be updated (and tested anew) for each new version of !BigBlueButton that
 is released every 8-12 weeks.
 
-Rather than having the core developers support the branding efforts, we felt that if a commercial company wanted a branded version of !BigBlueButton, the best option for them was to engage one of the [http://bigbluebutton.org/support companies that provide support for BigBlueButton].  
+Rather than having the core developers support the branding efforts in the forum, we felt that if a commercial company wanted a branded version of !BigBlueButton, the best option for them was to engage one of the [http://bigbluebutton.org/support companies that provide support for BigBlueButton].  
 
-Doing this removes the inevitable problems that are going to arise when manual code changes break in a new release and flood of forum posts ensue with the title "My
+Doing this removes the inevitable problems that arise when manual code changes break in a new release and flood of forum posts ensue with the title "My
 branding changes no longer work -- please help me!!"
 
 Most importantly for everyone, the efforts to provide a commercially
