@@ -1153,7 +1153,7 @@ We love hearing the experiences of others using !BigBlueButton.  It gives us a l
 There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton. 
 
-In recent releases you can now [Branding skin] the BigBlueButton interface.  However, the URL still reads bigbluebutton.  We know there are lot of places in the code that need to be manually changed (and
+In recent releases you can now [Branding skin] the !BigBlueButton interface.  However, the URL still reads bigbluebutton.  We know there are lot of places in the code that need to be manually changed (and
 tested) to change this string, and these manual changes would need
 to be updated (and tested anew) for each new version of !BigBlueButton that
 is released every 8-12 weeks.
