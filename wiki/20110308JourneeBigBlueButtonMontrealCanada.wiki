@@ -11,9 +11,9 @@ Programme de la journée :
 
   * Présentation de Fred Dixon - Leader du projet BigBlueButton et fondateur de Blindside Networks (en anglais).
   * Présentation de BigBlueButton
-  ** Fonctionnalités actuelles
-  ** Nouvelles fonctionnalités
-  ** Cas d'utilisation
+    ** Fonctionnalités actuelles
+    ** Nouvelles fonctionnalités
+    ** Cas d'utilisation
   * Discussion sur les modèles d'affaire de BigBlueButton.
   * Améliorations et nouvelles fonctionnalités souhaitées.
   * Discussion générale.	
@@ -26,7 +26,6 @@ En métro :
 À 2 minutes à pied du métro De Castelnau sur la ligne bleue
 
 Pour toute information, veuillez contacter les organisateurs : 
-* Marc Laporte - marclaporte@tiki.org
-* Michael Faille - m.faille@gestion-ressources.com
-
-http://bigbluebutton.org/
+  * Marc Laporte - marclaporte@tiki.org
+  * Michael Faille - m.faille@gestion-ressources.com
+  * http://bigbluebutton.org/
