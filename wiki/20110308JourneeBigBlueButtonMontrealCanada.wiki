@@ -1,3 +1,4 @@
+#labels event,Canada
 Journée BigBlueButton à Montréal, le système libre de conférence en ligne!
 
 Le 8 mars prochain aura lieu la première journée de travail centrée sur le logiciel libre de vidéo conférence BigBlueButton (http://bigbluebutton.org/). Les ateliers se dérouleront de 9h00 à 17h00 dans les locaux de Savoir-faire Linux. 
