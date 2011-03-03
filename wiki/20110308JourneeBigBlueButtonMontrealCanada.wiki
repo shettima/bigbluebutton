@@ -9,14 +9,14 @@ Le projet BigBlueButton a été lancé pour offrir aux institutions scolaires un
 
 Programme de la journée :
 
-* Présentation de Fred Dixon - Leader du projet BigBlueButton et fondateur de Blindside Networks (en anglais).
-* Présentation de BigBlueButton
-** Fonctionnalités actuelles
-** Nouvelles fonctionnalités
-** Cas d'utilisation
-* Discussion sur les modèles d'affaire de BigBlueButton.
-* Améliorations et nouvelles fonctionnalités souhaitées.
-* Discussion générale.	
+  * Présentation de Fred Dixon - Leader du projet BigBlueButton et fondateur de Blindside Networks (en anglais).
+  * Présentation de BigBlueButton
+  ** Fonctionnalités actuelles
+  ** Nouvelles fonctionnalités
+  ** Cas d'utilisation
+  * Discussion sur les modèles d'affaire de BigBlueButton.
+  * Améliorations et nouvelles fonctionnalités souhaitées.
+  * Discussion générale.	
 
 Adresse :
 7275, Saint-Urbain, Bureau 200
