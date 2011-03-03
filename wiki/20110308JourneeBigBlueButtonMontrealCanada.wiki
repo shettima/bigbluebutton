@@ -11,9 +11,9 @@ Programme de la journée :
 
 * Présentation de Fred Dixon - Leader du projet BigBlueButton et fondateur de Blindside Networks (en anglais).
 * Présentation de BigBlueButton
-	* Fonctionnalités actuelles
-	* Nouvelles fonctionnalités
-	* Cas d'utilisation
+** Fonctionnalités actuelles
+** Nouvelles fonctionnalités
+** Cas d'utilisation
 * Discussion sur les modèles d'affaire de BigBlueButton.
 * Améliorations et nouvelles fonctionnalités souhaitées.
 * Discussion générale.	
