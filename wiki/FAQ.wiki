@@ -764,7 +764,8 @@ Here's a breakdown of the path for the audio packets from your !BigBlueButton cl
 Lots of audio processing, and that what is introducing the delay.  We're investigating two ways of reducing the transcoding.
 
   # Move the transcoding of nellymoser -> mulaw/mulaw -> nellymoser out of Java into native code
-  # Launch an external Java-based SIP client to connect directly with asterisk/FreeSWITCH
+  # Launch an external Java-based SIP client to connect directly with asterisk/FreeSWITCH (bypassing red5 completely)
+  # Implement a push-to-talk mode for one-to-many sessions (i.e. a remote class)
 
 Another option is to setup asterisk/FreeSWITCH to use a direct inward dialing (DID) number, which you can get from a SIP trunk provider, a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to asterisk/FreeSWITCH server when someone calls the DID using session initiation protocol (SIP).  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
 
