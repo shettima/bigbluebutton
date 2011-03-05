@@ -120,6 +120,11 @@ To change codecs from Ulaw to Speex16, change {{{global_codec_prefs}}}
 
 http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/vars.xml
 
+On a production server, this file is by default located in
+{{{
+/opt/freeswitch/conf/vars.xml
+}}}
+
 === conference.conf.xml ===
 To change conference properties,
 
