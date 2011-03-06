@@ -757,7 +757,7 @@ The best solution is ask all users to use a headset -- this will ensure no feedb
 
 You will experience a 2-4 second delay in the audio when using the built-in VoIP in !BigBlueButton (clicking the headset icon).
 
-The delay is largely due to the internal Java-based transcoding of audio packets with !BigBlueButton itself.
+The delay is largely due to the internal Java-based transcoding of audio packets with !BigBlueButton itself, and partly due to the restriction that Flash sockets are TCP/IP based, not UDP.
 
 Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk/FreeSWITCH (via SIP), then asterisk/FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded again (mulaw -> nellymoser), then goes down to the client.
 
