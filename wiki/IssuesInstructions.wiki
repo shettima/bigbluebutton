@@ -10,7 +10,7 @@
     * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
     * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Development questions ("How do I use the API create method?")
 
-*3. Post your question:* If you don't find an answer in your search, please join and post your question to the respective list.
+*3. Post your question:* If your search doesn't find an answer, please join the respective list and post your question. 
 
 == I have a defect or enhancement request: ==
 
