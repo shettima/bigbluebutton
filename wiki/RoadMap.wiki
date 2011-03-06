@@ -4,11 +4,16 @@
 = Current Release =
 
 == Release 0.8 ==
-We are now planning !BigBlueButton 0.8, which will add record and playback (our #1 requested feature from educational institutions).  As with previous releases, we'll be posting the minutes from our planning sessions as they are available.  
+Development of !BigBlueButton 0.8 is underway.  The focus for !BigBlueButton 0.8 is adding the following three new features:
+
+
+  # Record and Playback (see [http://code.google.com/p/bigbluebutton/wiki/RecordPlaybackSpecification specification])
+  # Pre-upload of slides (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=356 356])
+  # Pre-flight checklist (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=122 122])
+
+As part of 0.8 we're also exploring ways to reduce the audio latency for using the built-in VoIP (clicking the headset icon).  On March 3rd, we [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/212cab1b0c8bdee4# posted to bigbluebutton-dev] an update on our progress towards !BigBlueButton 08.
 
 While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
-
-As part of 0.8 we're also further profiling and refactoring of the handling of VoIP packets.
 
 = Previous Releases =
 
