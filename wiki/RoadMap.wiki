@@ -4,7 +4,7 @@
 = Current Release =
 
 == Release 0.8 ==
-Development of !BigBlueButton 0.8 is underway.  The focus for !BigBlueButton 0.8 is adding the following three new features:
+Development of !BigBlueButton 0.8 is underway.  The focus is the following features:
 
 
   # Record and Playback (see [http://code.google.com/p/bigbluebutton/wiki/RecordPlaybackSpecification specification])
