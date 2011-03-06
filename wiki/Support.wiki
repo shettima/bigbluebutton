@@ -7,6 +7,7 @@ Need help?  If you don't find an answer in the links below
   * ReleaseNotes
   * FrequentlyAskedQuestions
   * RoadMap
+  * [IssuesInstructions Issues/Bug Tracker]
 
 then post a message to one of the following groups:
 
