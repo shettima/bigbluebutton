@@ -6,26 +6,7 @@
 
 This is a wish list of some of feature request we've received, and what we developers think would be nice to have in bigbluebutton, but don't have the time to do it right now. If you want to develop any of these things write to us on the [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] mailing list. If you'd like to add anything to the list, post a comment bellow.
 
-
 = Ideas =
-
-== *API* ==
-
-=== OAuth Examples for the API ===
-[http://code.google.com/p/bigbluebutton/wiki/API API] examples on how to use !BigBlueButton with [http://oauth.net/ OAuth].
-
-=== LDAP Examples for the API ===
-[http://code.google.com/p/bigbluebutton/wiki/API API] examples on how to use !BigBlueButton with LDAP.
-
-=== API Examples for different programming languages ===
-Create [http://code.google.com/p/bigbluebutton/source/browse/#svn/trunk/bbb-api-examples API examples] in your favorite programming language.
-
-=== API Example that uses a URL-Shortener ===
-API strings for meetings returned are quite long. Create an API example that uses one of the common url shorteners like bit.ly to return the result.
-
-=== Flex API Module ===
-Create a module for the client that uses the API. This would allow people to create new meetings within already running meetings. A use-case for this would be if a professor wanted to do a break-out meeting - separate groups of students and send them to their own meeting room for example. Also useful for things like webinars and conferences.
-*UPDATE* - This module has been built for !BigBlueButton v0.71
 
 == *bbb-apps* ==
 
@@ -35,62 +16,24 @@ Convert the Chat module to work with XMPP. This would enable people to log into 
 === IRC Bridge ===
 A bridge from Chat to IRC. This could be done in conjunction with the XMPP idea, as there are already some XMPP to IRC solutions.
 
-=== Freeswitch Java Bridge ===
-Create an equivalent of Asterisk-Java for [http://www.freeswitch.org/ Freeswitch], to facilitate being able to use !BigBlueButton with Freeswitch as well as Asterisk.
-*UPDATE* - Freeswitch support has been added for !BigBlueButton v0.71
-
-=== Collect BBB Usage Statistics ===
-Create a tool that collects usage statistics for !BigBlueButton such as the number of users, number of conferences, bandwidth and CPU statistics, peak load times, etc... Can be integrated with something like [http://www.eclipse.org/birt/phoenix/ BIRT].
-
 == *bbb-client* ==
 
 The following items in the issue tracker are [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:GSOC+component%3DClient&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&cells=tiles Google Summer of Code client projects] for !BigBlueButton.
 
-=== Polling Module ===
-Create a polling/quiz module that would allow the presenter to ask questions of the participants and then collect a summary of the answers. 
-
-=== Preflight Check ===
-Create a small utility on the client that checks the users bandwidth just before they have joined the conference. The information can be used to limit the quality of the sent video to maximize the user experience for the participant.
-
-=== Dynamically switch user languages ===
-Make it possible for the user to change the language of the client while inside the conference. Right now the language is chosen at startup based on the user's browser locale.
-*UPDATE* - This feature has been added for !BigBlueButton v0.71
-
 === Accessibility Support ===
 Find ways to make !BigBlueButton more accessible, in accordance with [http://www.section508.gov/ Section 508]
 
-=== Flex 4 Themes Support ===
-Alter the client to make it easier for people to create their own !BigBlueButton Themes based on the new features in Flex4.
-*UPDATE* - Skinning support has been added for !BigBlueButton v0.71, for Flex 3.5
+=== Flex 4 Prototype ===
+We need a shiny new Flex 4 client to replace our Flex 3 client. Want to work on it?
 
-=== AIR Client ===
-Port the bbb-client to [http://www.adobe.com/products/air/ Air]. This allows for better performance for people who have slower computers, or simply like having a desktop application better. Plus it's not a lot of work. The biggest thing left to do is create an API interface in Flex that lets you join meetings straight from the Air Application.
-
-=== Desktop Sharing Optimizations ===
-There are a number of optimizations that are possible to improve the speed of desktop sharing.  They include
-   * ~~Allow the presenter to select a region of their screen (instead of using the full screen by default)~~ (implemented in 0.71)
-   * Reduce the captured screen regions from 32-bit to 16-bit
-   * Automatically reduce the quality to 8-bit greyscale if the upstream bandwidth is slow
-   * Implement the Adobe Screen Codec 2
-
-== *Other* ==
-
-=== HTML5 Interface ===
-Create an HTML5 client interface for bbb.
-
-=== HTML5 RTMP Client ===
-Create an HTML5 websockets red5 application. This will allow us to create a backwards compatible HTML5 bbb client.
+=== HTML5 Client ===
+Create an HTML5 client for bbb.
 
 === Android Client ===
 Create an Android client for !BigBlueButton.
 
 === iPhone/iPad Client ===
 Create a native Objective-C client for the iPhone or iPad
-
-=== Spreadsheet Bandwidth Calculator ===
-Create an Excel spreadsheet that lets people enter parameters such as number of rooms, number of users, number of webcams shared and number of voice connections, and calculate the necessary bandwidth based on that.
-
-*WAIT* - I think better than this would be to create it as an HTML page that uses JavaScript to do the calculation.  We can throw it into our SVN repo, and it will then be "hosted" on google code.  We can link to it from the wiki. (Jeremy)
 
 === Fix issues ===
 Go to the [http://code.google.com/p/bigbluebutton/issues/list issue tracker] and fix an issue or two.
