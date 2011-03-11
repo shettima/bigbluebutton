@@ -39,7 +39,7 @@ The core developers are listed on the [http://code.google.com/p/bigbluebutton/ G
 == Where is the source? ==
 We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We used to host it on Google Code, but we wanted to move to git because of the advantages it offers over svn.
 
-== What is the open source license used in !BigBlueButton?
+== What is the open source license used in !BigBlueButton? ==
 We use the LGPL license.
 
 
