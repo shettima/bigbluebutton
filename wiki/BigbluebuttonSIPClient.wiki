@@ -8,7 +8,27 @@ This is a place holder for Bigbluebutton SIPClient
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+main sections: 
+
+Design
+
+SIP Phone
+
+SIP Client Applet
+
+
+Build and Deployment
+
+SIP Phone
+
+SIP Client Applet
+
+
+Potential problems and issues
+
+Future work 
+
+Features, enhancements, server side work, etc
+
+
+
