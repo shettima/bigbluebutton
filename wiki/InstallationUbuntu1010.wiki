@@ -19,7 +19,7 @@ add: "deb http://archive.canonical.com/ lucid partner" (without the quotes), to 
    sudo apt-get install sun-java6-jre sun-java6-plugin  sun-java6-fonts sun-java6-jdk
 }}}
 
-See: [http://ubuntuforums.org/showpost.php?p=9723091&postcount=10 source].
+
 
 ==Installing FreeSWITCH==
 
@@ -44,7 +44,7 @@ Now that freeswitch is installed you can clean up the temporary directory
    rm -rf freeswitch/
 }}}
 
-See [http://wiki.freeswitch.org/wiki/Ubuntu_Quick_Start source].
+
 
 ==Installing BigBlueButton==
 
@@ -59,7 +59,7 @@ See [http://wiki.freeswitch.org/wiki/Ubuntu_Quick_Start source].
 
 Go to http://youripaddress and it should show the bbb welcome screen.
 
-See [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu source].
+
 
 ==Setting !BigBlueButton to run on a different port than 80==
 
