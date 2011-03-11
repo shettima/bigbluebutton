@@ -761,8 +761,9 @@ The delay is largely due to the internal Java-based transcoding of audio packets
 
 Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk/FreeSWITCH (via SIP), then asterisk/FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded again (mulaw -> nellymoser), then goes down to the client.
 
-Lots of audio processing, and that what is introducing the delay.  We're investigating two ways of reducing the transcoding.
+Lots of audio processing, and that what is introducing the delay.  We're investigating a number of ways to reducing the transcoding.
 
+  # Use speex instead of nellymoser (requires more CPU to encode/decode audio packets)
   # Move the transcoding of nellymoser -> mulaw/mulaw -> nellymoser out of Java into native code
   # Launch an external Java-based SIP client to connect directly with asterisk/FreeSWITCH (bypassing red5 completely)
   # Implement a push-to-talk mode for one-to-many sessions (i.e. a remote class)
