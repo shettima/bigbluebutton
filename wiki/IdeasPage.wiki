@@ -11,7 +11,7 @@ If you are interested in one of these projects, please post to [http://groups.go
 For some background on the !BigBlueButton project, see the FAQ, [http://en.wikipedia.org/wiki/BigBlueButton wikipedia], [http://bigbluebutton.org/content/videos videos].
 
 
-= Ideas =
+= GSOC 2011 Student Projects =
 
 == HTML5 Client ==
 Create an HTML5 client for !BigBlueButton.  This project touches on creating a WebSockets server that can bridge communications to the red5 RTMP server.  Once you have the WebSockets server in place, you need to create a UI that mimics (or improves!) on the current Flash UI.  
