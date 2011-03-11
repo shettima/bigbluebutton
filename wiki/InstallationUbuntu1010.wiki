@@ -61,7 +61,7 @@ Go to http://youripaddress and it should show the bbb welcome screen.
 
 See [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu source].
 
-==Setting BigBlueButton to run on a different port than 80==
+==Setting !BigBlueButton to run on a different port than 80==
 
 This is useful if you already run an apache webserver on your server and want to use bbb without interfering.
 
