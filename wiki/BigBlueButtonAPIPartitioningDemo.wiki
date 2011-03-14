@@ -70,3 +70,38 @@ To try out the API calls follow these steps:
  # Start you Bigbluebutton server. 
  # Call the Bigbluebbutton welcome page (i.e. http://YOUR_IP/), Bigbluebutton welcome page should come up with only Listers and Viewers windows.
  # Open another browser window and paste the link associated with the action you want (i.e. start chat, stop chat, etc) basically we are sending an HTTP POST to call the method.
+
+
+NOTE: 
+ * In case of using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=VideoconfModule&cmd=start }}} will result starting multiple instances of the BBB the video module which reults having multiple Camera buttons on the toolbar and will not start a new Webcam window. 
+ * Using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=VideoconfModule&cmd=stop }}} results disabling the Camera button(s) and killing (closing) the Webcam view window.
+
+ * In case of using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=PhoneModule&cmd=start }}} will reult it will show the Headset button on the toolbar
+
+ * Using the command 
+{{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=phoneModule&cmd=stop }}} will kill (removes) the Headset button from the toolbar.
+
+
+
+*Potential Problems*
+
+ * When building the client make sure that the /tools/ directory exists otherwise the client won't build. This tends to happen if you are developing Bigbluebutton client code outside the VM environment. 
+
+ * Another problem associated with deploying the bigbluebutton-web: you have to call ‘ant war’ command for you bigbluebutton-web and then deploy the resulted war file
+ # Rename created file: bigbluebutton-0.71dev.war to bigbluebutton.war
+ # Delete file bigbluebutton.war and directory bigbluebutton under /var/lib/tomcat6/webapps/
+ # Copy the new bigbluebutton.war to /var/lib/tomcat6/webapps/
+ # Re-start the Tomcat server.
+ 
+
+ * A client/user joining a conference room after calling the "moduleCommand" will not have the started modules loaded into his Bigbluebutton canvas and the started modules has to be initiated again. 
+
+
+
+
+_Note: Any comments or input is more welcome to improve our work_
+
+_To be added_
