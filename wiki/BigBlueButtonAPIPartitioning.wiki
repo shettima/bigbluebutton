@@ -24,6 +24,7 @@ This section contains a simple diagram of the existing API architecture. The dia
 <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/API_PART/BBB_API.jpg" />
 
 _Add more details and update the images for loading 2 modules etc_
+_Also need to explain the JMS message systems and structure and more details about the "moduleCommand" API call_
 
 *Use cases:*
  This section lists the use cases or the scenarios for Third Party application API calls.  
