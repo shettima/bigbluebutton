@@ -134,6 +134,8 @@ Files involved:
 
 * Changes on the Client side
 
+ # bigbluebutton-client/src/org/bigbluebutton/main/maps/ApplicationEventMap.mxml
+
 
 * Changes on the Server side (i.e. red5) 
 Files involved:
