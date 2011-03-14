@@ -113,6 +113,30 @@ To try out the API calls follow these steps:
 
 _To Do_
 
+* Changes on the API web-app side
+Files involved:
+ # bigbluebutton-web/grails-app/controllers/org/bigbluebutton/web/controllers/ApiController.groovy
+ # bigbluebutton-web/grails-app/conf/spring/resources.xml
+ # bigbluebutton-web/src/groovy/org/bigbluebutton/api/IApiConferenceEventListener.groovy
+  
+
+* Changes on the bbb-common-message side
+Files involved:
+ # bbb-common-message/src/main/groovy/org/bigbluebutton/conference/IRoomListener.groovy
+ # bbb-common-message/src/main/groovy/org/bigbluebutton/conference/Room.groovy
+
+
+
+* Changes on the Client side
+
+
+* Changes on the Server side (i.e. red5) 
+
+
+
+
+
+
 
 *Potential Problems*
 
