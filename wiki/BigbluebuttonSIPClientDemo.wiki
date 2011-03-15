@@ -38,17 +38,21 @@ Below are the steps on how to check out the source code and build from realwat g
 a)Remove or backup folder /home/firstuser/dev/source/bigbluebutton
 
 b)Check out the source code from realwat git repository
-{{{$ git clone git://github.com/realwatcm/bigbluebutton.git 
+{{{
+$ git clone git://github.com/realwatcm/bigbluebutton.git 
 OR
-$ git clone git://github.com/coralcea/bigbluebutton.git}}}
+$ git clone git://github.com/coralcea/bigbluebutton.git
+}}}
 
 c)Build bbb-common-message library
-{{{$ cd /home/firstuser/dev/source/bigbluebutton/bbb-commom-message
+{{{
+$ cd /home/firstuser/dev/source/bigbluebutton/bbb-commom-message
 $ gradle jar
-$ gradle uploadArchives}}}
+$ gradle uploadArchives
+}}}
 
 d)Build bigbluebutton-web 
-
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-web
 $ bbb-conf --setup-dev  web
 $ gradle copyToLib
@@ -58,7 +62,7 @@ $ sudo rm –rf /var/lib/tomcat6/webapps/bigbluebutton*
 $ sudo cp bigbluebutton-0.71dev.war  /var/lib/tomcat6/webapps/bigbluebutton.war
 $ sudo touch /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
 $ sudo vi /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
-
+}}}
 Add these lines to the file:
 {{{
 		<%
@@ -67,31 +71,38 @@ Add these lines to the file:
 		%>
 }}}
 
-
+{{{
 $ sudo /etc/init.d/tomcat6 start
-	We can obtain  securitySalt from “/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties”
+}}}
+
+We can obtain  securitySalt from “/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties”
 
 e)Build bigbluebutton-apps
-
+{{{
 $ sudo /etc/init.d/red5 stop
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
 $ bbb-conf --setup-dev  apps
 $ gradle resolveDeps
 $ gradle war deploy
 $ sudo /etc/init.d/red5 start
+}}}
 
 f)Build bbb-video
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bbb-video
 $ ant resolve
 $ ant dist
 $ ant deploy
-
+}}}
 g)Build bbb-voice
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bbb-voice
 $ gradle resolveDependencies
 $ gradle war deploy
+}}}
 
 h)Build deskshare
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/deskshare
 $ gradle copyToLib
 $ cd app
@@ -101,31 +112,40 @@ $ gradle jar
 $ ant create-signing-key  ( if you haven’t create keypair yet )
 $ ant sign-jar
 $ cp build/libs/bbb-deskshare-applet-0.71.jar  ../../bigbluebutton-client/resources/prod
+}}}
 
 i)Build sipphone
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/sipphone
 $ ant build
 $ ant sign-jar
 $ cp dist/sip.jar  ../bigbluebutton-client/resources/prod/
+}}}
 
 j)Build bigbluebutton-client
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
 $ bbb-conf --setup-dev client
 $ ant
+}}}
 
 k)Copy web to bigbluebutton-default
+{{{
 $ sudo cp –R /home/firstuser/dev/source/bigbluebutton/bigbluebutton-config/web/*  /var/www/bigbluebutton-default
+}}}
 
 l)Install bbb-voice-conference
+{{{
 $ sudo apt-get install bbb-voice-conference
 $ sudo bbb-conf --conference konference
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
 $ gradle war deploy
 $ sudo bbb-conf –clean
 $ sudo bbb-conf --check
+}}}
 
 
-Note: 
+*Note:* 
 1.	If you can’t see listeners when the applet is launched, please reboot the server.
 2.	If you cannot call the api to start or stop module or new user is redirect to a different room, it is because your bbb-common-message-0.7.jar is compiled in different time. To resolve this problem you have to recompile the bbb-common-message
 
