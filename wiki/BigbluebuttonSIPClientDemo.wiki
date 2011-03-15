@@ -1,9 +1,14 @@
 #summary of how to install or build the Bigbluebutton 0.72.
 
+<wiki:toc max_depth="3" />
+
+
 ==Checkout the code and try out the Bigbluebutton SIP applet==
 
+
+
 ==Installing from packages==
-<wiki:toc max_depth="3" />
+
 
 * Prerequisites
 
