@@ -33,7 +33,7 @@ Bigbluebutton 0.71a or 0.72 virtual machine
 
 *Instructions*
 
-This section contains instructions for checking out the code from [https://github.com/coralcea Coral CEA]or[https://github.com/realwatcm Realwat]git repository for latest changes regarding the Bigbluebutton SIP applet and SIP phone. 
+This section contains instructions for checking out the code from  [https://github.com/coralcea Coral CEA] git repository or [https://github.com/realwatcm Realwat] git repository for latest changes regarding the Bigbluebutton SIP applet and SIP phone. 
 Below are the steps on how to check out the source code and build from realwat git repository
 a)Remove or backup folder /home/firstuser/dev/source/bigbluebutton
 
