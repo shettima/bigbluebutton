@@ -2,7 +2,7 @@
 
 !BigBlueButton's SoC profile can be found [http://socghop.appspot.com/gsoc/org/show/google/gsoc2010/bigbluebutton_soc here].
 
-Before you submit your application feel free to discuss your project proposal with the project by writing to our developer mailing list at http://groups.google.com/group/bigbluebutton-dev. This way we can give you feedback on your proposal, and it will give you a good idea of the overview of the project and introduce you to the !BigBlueButton community. If you'd like to chat with a developer or other potential summer of code students, you can visit our [http://devbuild.bigbluebutton.org development server] where you'll usually be able to find people hanging out.
+Before you submit your application feel free to discuss your project proposal with the project by writing to our developer mailing list at http://groups.google.com/group/bigbluebutton-dev. This way we can give you feedback on your proposal, and it will give you a good idea of the overview of the project and introduce you to the !BigBlueButton community. If you'd like to chat with a developer or other potential summer of code students, you can visit our IRC channel at #bigbluebutton on freenode.net.  You can experience !BigBlueButton itself using our [http://demo.bigbluebutton.org/ demo server] (be sure to check out these short [http://bigbluebutton.org/content/videos videos] on how !BigBlueButton works first).
 
 Here are some questions to get you started on your proposal. You don't have to follow it and you're application will still be considered, but it's a good place to start. Feel free to include anything else you feel is important.
 
