@@ -1,13 +1,13 @@
 #summary of how to install or build the Bigbluebutton 0.72.
 
-==Checkout the code and try out the Bigbluebutton SIP applet==
+=Checkout the code and try out the Bigbluebutton SIP applet=
 
 <wiki:toc max_depth="3" />
 
 ==Installing from packages==
 
 
-* Prerequisites
+*Prerequisites*
 
 This section contains instructions for installing/upgrade *!BigBlueButton 0.72* on a Ubuntu 10.04 32-bit or 64-bit serve. 
 
@@ -25,5 +25,119 @@ We recommend you install !BigBlueButton on a dedicated server.
 
 
 
+==Building from source code==
 
- # Building from source code
+*Prerequisites*
+
+Bigbluebutton 0.71a or 0.72 virtual machine
+
+*Instructions*
+
+This section contains instructions for checking out the code from [https://github.com/coralcea Coral CEA]or[https://github.com/realwatcm Realwat]git repository for latest changes regarding the Bigbluebutton SIP applet and SIP phone. 
+Below are the steps on how to check out the source code and build from realwat git repository
+a)Remove or backup folder /home/firstuser/dev/source/bigbluebutton
+
+b)Check out the source code from realwat git repository
+$ git clone git://github.com/realwatcm/bigbluebutton.git 
+OR
+$ git clone git://github.com/coralcea/bigbluebutton.git
+
+c)Build bbb-common-message library
+$ cd /home/firstuser/dev/source/bigbluebutton/bbb-commom-message
+$ gradle jar
+$ gradle uploadArchives
+
+d)Build bigbluebutton-web 
+
+$ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-web
+$ bbb-conf --setup-dev  web
+$ gradle copyToLib
+$ ant war
+$ sudo /etc/init.d/tomcat6 stop
+$ sudo rm –rf /var/lib/tomcat6/webapps/bigbluebutton*
+$ sudo cp bigbluebutton-0.71dev.war  /var/lib/tomcat6/webapps/bigbluebutton.war
+$ sudo touch /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
+$ sudo vi /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
+
+Add these lines to the file:
+{{{
+		<%
+			String salt = “[securitySalt]”;
+			String BigbluebuttonURL = “http:// [IP] /bigbluebutton/”;
+		%>
+}}}
+
+
+$ sudo /etc/init.d/tomcat6 start
+	We can obtain  securitySalt from “/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties”
+
+e)Build bigbluebutton-apps
+
+$ sudo /etc/init.d/red5 stop
+$ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
+$ bbb-conf --setup-dev  apps
+$ gradle resolveDeps
+$ gradle war deploy
+$ sudo /etc/init.d/red5 start
+
+f)Build bbb-video
+$ cd /home/firstuser/dev/source/bigbluebutton/bbb-video
+$ ant resolve
+$ ant dist
+$ ant deploy
+
+g)Build bbb-voice
+$ cd /home/firstuser/dev/source/bigbluebutton/bbb-voice
+$ gradle resolveDependencies
+$ gradle war deploy
+
+h)Build deskshare
+$ cd /home/firstuser/dev/source/bigbluebutton/deskshare
+$ gradle copyToLib
+$ cd app
+$ gradle war deploy
+$ cd ../applet
+$ gradle jar
+$ ant create-signing-key  ( if you haven’t create keypair yet )
+$ ant sign-jar
+$ cp build/libs/bbb-deskshare-applet-0.71.jar  ../../bigbluebutton-client/resources/prod
+
+i)Build sipphone
+$ cd /home/firstuser/dev/source/bigbluebutton/sipphone
+$ ant build
+$ ant sign-jar
+$ cp dist/sip.jar  ../bigbluebutton-client/resources/prod/
+
+j)Build bigbluebutton-client
+$ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
+$ bbb-conf --setup-dev client
+$ ant
+
+k)Copy web to bigbluebutton-default
+$ sudo cp –R /home/firstuser/dev/source/bigbluebutton/bigbluebutton-config/web/*  /var/www/bigbluebutton-default
+
+l)Install bbb-voice-conference
+$ sudo apt-get install bbb-voice-conference
+$ sudo bbb-conf --conference konference
+$ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
+$ gradle war deploy
+$ sudo bbb-conf –clean
+$ sudo bbb-conf --check
+
+
+Note: 
+1.	If you can’t see listeners when the applet is launched, please reboot the server.
+2.	If you cannot call the api to start or stop module or new user is redirect to a different room, it is because your bbb-common-message-0.7.jar is compiled in different time. To resolve this problem you have to recompile the bbb-common-message
+
+$ cd /home/firstuser/dev/source/bigbluebutton/bbb-common-message
+$ gradle jar
+
+$ rm -f /usr/share/red5/webapps/bigbluebutton/WEB-INF/lib/bbb-common-message-0.7.jar
+$ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-common-message-0.7.jar  /usr/share/red5/webapps/bigbluebutton/WEB-INF/lib/
+
+$ rm –f /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/lib/bbb-common-message-0.7.jar
+$ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-common-message-0.7.jar  /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/lib/
+
+$ sudo service tomcat6 restart
+$ sudo service red5 restart
+
