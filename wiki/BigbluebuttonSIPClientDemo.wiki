@@ -9,6 +9,20 @@ Add your content here.
 
  # Installing from packages
 
+This section contains instructions for installing/upgrading BigBlueButton 0.72 on a Ubuntu 10.04 32-bit or 64-bit server.
+
+Before you install BigBlueButton 0.72, you'll need:
+
+An Ubuntu 10.04 32-bit or 64-bit server
+2 GB of memory
+Root access to the server
+5G of free disk space
+Port 80 is not in use by other applications
+Note: BigBlueButton uses nginx, which listens on port 80 for http access and tunneling. If you have apache already running on your server, then you'll need to configure apache to listen on a different port. To do this, edit /etc/apache2/ports.conf and change the entry for 80 to another number, such as 8081. Avoid using 8080 in apache as BigBlueButton uses tomcat6 which binds to that port.
+
+We recommend you install BigBlueButton on a dedicated server.
+
+
 
 
  # Building from source code
