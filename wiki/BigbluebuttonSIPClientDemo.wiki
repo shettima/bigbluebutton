@@ -38,14 +38,14 @@ Below are the steps on how to check out the source code and build from realwat g
 a)Remove or backup folder /home/firstuser/dev/source/bigbluebutton
 
 b)Check out the source code from realwat git repository
-$ git clone git://github.com/realwatcm/bigbluebutton.git 
+{{{$ git clone git://github.com/realwatcm/bigbluebutton.git 
 OR
-$ git clone git://github.com/coralcea/bigbluebutton.git
+$ git clone git://github.com/coralcea/bigbluebutton.git}}}
 
 c)Build bbb-common-message library
-$ cd /home/firstuser/dev/source/bigbluebutton/bbb-commom-message
+{{{$ cd /home/firstuser/dev/source/bigbluebutton/bbb-commom-message
 $ gradle jar
-$ gradle uploadArchives
+$ gradle uploadArchives}}}
 
 d)Build bigbluebutton-web 
 
@@ -140,4 +140,3 @@ $ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-
 
 $ sudo service tomcat6 restart
 $ sudo service red5 restart
-
