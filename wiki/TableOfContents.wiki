@@ -26,7 +26,7 @@
     * [BigBlueButtonAPIPartitioning Partitioning the client]
       * [BigBlueButtonAPIPartitioningFramework Partitioning the client architecture]
       * [BigBlueButtonAPIPartitioningDemo How to build and run the Partitioning the client]
-    * [BigbluebuttonSIPClient Bigbluebutton SIP softphone and SIP applet]
+    * [BigbluebuttonSIPClient SIP softphone and SIP applet]
     * [StressTesting Stress Testing the BigBlueButton server]
     * [SummerOfCodeApplication Summer of Code Application template]
     * [IdeasPage Ideas Page for Google Summer of Code Students]
