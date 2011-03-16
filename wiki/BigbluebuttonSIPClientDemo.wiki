@@ -1,6 +1,6 @@
-#summary of how to install or build the Bigbluebutton 0.72.
+#summary of how to install or build the SIP applet.
 
-=Checkout the code and try out the Bigbluebutton SIP applet=
+=Checkout the code and try out the !BigBlueButton SIP applet=
 
 <wiki:toc max_depth="3" />
 
@@ -9,9 +9,9 @@
 
 *Prerequisites*
 
-This section contains instructions for installing/upgrade *!BigBlueButton 0.72* on a Ubuntu 10.04 32-bit or 64-bit serve. 
+This section contains instructions for installing !BigBlueButton SIP applet on a Ubuntu 10.04 32-bit or 64-bit serve. 
 
-Before you install !BigBlueButton 0.72, you'll need:
+Before you install, you'll need:
 
   # An Ubuntu 10.04 32-bit or 64-bit server
   # 2 GB of memory
@@ -29,7 +29,7 @@ We recommend you install !BigBlueButton on a dedicated server.
 
 *Prerequisites*
 
-Bigbluebutton 0.71a or 0.72 virtual machine
+Bigbluebutton 0.71a virtual machine
 
 *Instructions*
 
@@ -160,8 +160,3 @@ $ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-
 
 $ sudo service tomcat6 restart
 $ sudo service red5 restart
-
-
-==How to run the Bigbluebutton SIP applet==
-
-[https://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApplet.jpg]
