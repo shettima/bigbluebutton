@@ -160,3 +160,8 @@ $ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-
 
 $ sudo service tomcat6 restart
 $ sudo service red5 restart
+
+
+==How to run the Bigbluebutton SIP applet==
+
+[https://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApplet.jpg]
