@@ -1,5 +1,7 @@
 #summary of how to install or build the SIP applet.
 
+_This page is still under construction so some information might not be accurate. Sorry for the inconvenience_
+
 =Checkout the code and try out the !BigBlueButton SIP applet=
 
 <wiki:toc max_depth="3" />
@@ -21,7 +23,28 @@ Before you install, you'll need:
 
 Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port.  To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
-We recommend you install !BigBlueButton on a dedicated server.
+{{{
+wget http://173.195.48.99/coralcea.asc  -O- | sudo apt-key add - 
+
+echo "deb http://173.195.48.99/lucid_dev/  bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+
+}}}
+
+Install the voice system, (youwill need to install Asterisk, FreeSwitch not tested yet)  
+{{{
+sudo apt-get update
+sudo apt-get install bbb-voice-conference
+
+}}}
+
+The install BBB
+{{{
+sudo apt-get install bigbluebutton
+sudo bbb-conf --clean
+sudo bbb-conf --check
+
+}}}
 
 
 
