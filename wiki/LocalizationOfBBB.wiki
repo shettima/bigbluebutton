@@ -24,6 +24,7 @@ If you wish to modify an existing translation instead of creating a new one, you
 || Greek || el_GR || Andreas Botsikas || andreasbotsikas AT gmail DOT com || 0.64 ||
 || Indonesian || id_ID || Ibnu || kandiraytower AT gmail DOT com || 0.71 ||
 || Italian || it_IT || Federico Corradino || spiorfeus AT gmail DOT com || 0.64 ||
+|| Korean || ko_KR || Yoo || cwdaddy AT gmail DOT com || 0.71 ||
 || Lithuanian || lt_LT || Marius Kazlauskas || mar.kazlauskas AT gmail DOT com || 0.64 ||
 || Norwegian || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.71 ||
 || Netherland || nl_NL || Kristof Keppens || kristof AT inuits DOT be ||0.71 ||
