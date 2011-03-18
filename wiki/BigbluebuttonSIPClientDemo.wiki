@@ -2,12 +2,12 @@
 
 _This page is still under construction so some information might not be accurate. Sorry for the inconvenience_
 
-=Checkout the code and try out the !BigBlueButton SIP applet=
-
 <wiki:toc max_depth="3" />
 
-==Installing from packages==
 
+=Checkout the code and try out the !BigBlueButton SIP applet=
+
+==Installing from packages==
 
 *Prerequisites*
 
