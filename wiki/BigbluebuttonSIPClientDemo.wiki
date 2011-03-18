@@ -5,9 +5,8 @@ _This page is still under construction so some information might not be accurate
 <wiki:toc max_depth="3" />
 
 
-=Checkout the code and try out the !BigBlueButton SIP applet=
+= Installation of Coral CEA Release =
 
-The puro
 
 ==Installing from packages==
 
@@ -26,7 +25,7 @@ Before you install, you'll need:
 Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port. 
 To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
-= Installation of Coral CEA Release =
+
 
 {{{
 wget http://173.195.48.99/coralcea.asc  -O- | sudo apt-key add - 
