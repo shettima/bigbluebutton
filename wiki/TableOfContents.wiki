@@ -24,7 +24,6 @@
     * [RecordPlaybackSpecification Record and playback specification]
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [BigBlueButtonAPIPartitioning Partitioning the client]
-      * [BigBlueButtonAPIPartitioningFramework Partitioning the client architecture]
       * [BigBlueButtonAPIPartitioningDemo How to build and run the Partitioning the client]
     * [BigbluebuttonSIPClientDemo SIP softphone and SIP applet]
     * [StressTesting Stress Testing the BigBlueButton server]
