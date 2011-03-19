@@ -7,14 +7,18 @@ _This page is still under construction so some information might not be accurate
 
 = Installation of Coral CEA Release =
 
+To test the SIP Client applet we will need to install the Coral CEA version of the Bigbluebutton. The Coral CEA version is based on the Bigbluebutton 0.71 codebase. The Coral CEA release includes other feature that we have been working on such as [BigBlueButtonAPIPartitioning API Partitioning], "Full Screen" feature, and "Chat History " feature.  
+
+In the next sections we are going to provide the steps for installing the Coral CEA release either from packages or from source. 
+
 
 ==Installing from packages==
 
+This section contains instructions for installing the Coral CEA release on a Ubuntu 10.04 32-bit or 64-bit serve. The instructions are similar to the Bigbluebutton installation. 
+
 *Prerequisites*
 
-This section contains instructions for installing !BigBlueButton SIP applet on a Ubuntu 10.04 32-bit or 64-bit serve. 
-
-Before you install, you'll need:
+The minimum system requirements that is recommended for the original !Bigbluebutton installation are the following:
 
   # An Ubuntu 10.04 32-bit or 64-bit server
   # 2 GB of memory
@@ -22,27 +26,32 @@ Before you install, you'll need:
   # 5G of free disk space
   # Port 80 is not in use by other applications
 
-Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port. 
-To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
+Note: !Bigbluebutton uses nginx, which listens on port 80 for http access and tunnelling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port. 
+To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !Bigbluebutton uses tomcat6 which binds to that port.  
 
 
 
 {{{
-wget http://173.195.48.99/coralcea.asc  -O- | sudo apt-key add - 
+# Install the package key
+wget http://173.195.48.104/coralcea.asc -O- | sudo apt-key add - 
 
-echo "deb http://173.195.48.99/lucid_dev/  bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+# Add the Coral CEA repository URL and ensure the multiverse is enabled
+
+echo "deb http://173.195.48.104/lucid_dev/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+
 echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
-
 }}}
 
-Install the voice system, (youwill need to install Asterisk, FreeSwitch not tested yet)  
+== 2. Install a Voice Conference Server == 
+
+Install the voice system, (you will need to install Asterisk, FreeSwitch not tested yet)  
+
 {{{
 sudo apt-get update
 sudo apt-get install bbb-voice-conference
-
 }}}
 
-The install BBB
+== 3. Install Coral CEA release ==
 {{{
 sudo apt-get install bigbluebutton
 sudo bbb-conf --clean
@@ -53,6 +62,8 @@ sudo bbb-conf --check
 
 
 ==Building from source code==
+
+In case we  have already the Bigbluebutton 0.71 installed on our system, we can try to upgrade to Coral CEA release by checking out the code and build the different system components and deploy them. 
 
 *Prerequisites*
 
@@ -173,6 +184,7 @@ $ sudo bbb-conf --check
 
 
 *Note:* 
+
 1.	If you can’t see listeners when the applet is launched, please reboot the server.
 2.	If you cannot call the api to start or stop module or new user is redirect to a different room, it is because your bbb-common-message-0.7.jar is compiled in different time. To resolve this problem you have to recompile the bbb-common-message
 
