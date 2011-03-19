@@ -51,12 +51,14 @@ sudo apt-get update
 sudo apt-get install bbb-voice-conference
 }}}
 
-== 3. Install Coral CEA release ==
+== 3. Install the Bigbluebutton ==
+
+After setting up the key for the Coral CEA packages and the repository for the COral CEA release. The Bigbluebutton installation is the same as described [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu?ts=1300500710&updated=InstallationUbuntu#3._Install_BigBlueButton here]
+
 {{{
 sudo apt-get install bigbluebutton
 sudo bbb-conf --clean
 sudo bbb-conf --check
-
 }}}
 
 
@@ -188,14 +190,29 @@ $ sudo bbb-conf --check
 1.	If you can’t see listeners when the applet is launched, please reboot the server.
 2.	If you cannot call the api to start or stop module or new user is redirect to a different room, it is because your bbb-common-message-0.7.jar is compiled in different time. To resolve this problem you have to recompile the bbb-common-message
 
+{{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bbb-common-message
 $ gradle jar
+# Remove the old jar file in the red5-webapps and replace it with the new version
 
 $ rm -f /usr/share/red5/webapps/bigbluebutton/WEB-INF/lib/bbb-common-message-0.7.jar
 $ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-common-message-0.7.jar  /usr/share/red5/webapps/bigbluebutton/WEB-INF/lib/
 
+# Remove the old jar file in the Tomcat-webapps and replace it with the new version
 $ rm –f /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/lib/bbb-common-message-0.7.jar
 $ cp /home/firstuser/dev/source/bigbluebutton/bbb-common-message/build/libs/bbb-common-message-0.7.jar  /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/lib/
 
 $ sudo service tomcat6 restart
 $ sudo service red5 restart
+}}}
+
+==How to run the SIP Client Applet==
+
+Before running the applet we might need to perform some steps to make sure that our system has the minimum requirements to run the applet. You can find related information [http://www.titook.net/faq/index.php/BigBlueButton here]
+
+After making sure our system is configured properly now we can run the SIP Client applet for the Bigbluebutton. 
+
+
+
+
+==Potential problems==
