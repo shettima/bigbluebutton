@@ -86,7 +86,7 @@ Files involved:
  # Copy the new bigbluebutton.war to /var/lib/tomcat6/webapps/
  # Re-start the Tomcat server.
 
-
+*steps to run and use the API are described [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonAPIPartitioningDemo here]*
 
 _Note: Any comments or input is more welcome to improve our work_
 
