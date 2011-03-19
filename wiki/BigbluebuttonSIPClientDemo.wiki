@@ -74,23 +74,30 @@ Bigbluebutton 0.71a virtual machine
 
 This section contains instructions for checking out the code from  [https://github.com/coralcea Coral CEA] git repository or [https://github.com/realwatcm Realwat] git repository for latest changes regarding the Bigbluebutton SIP applet and SIP phone. 
 Below are the steps on how to check out the source code and build from realwat git repository
-1. Remove or backup folder /home/firstuser/dev/source/bigbluebutton
+=== 1. Backup your source code===
 
-2. Check out the source code from realwat git repository
+Remove or backup folder /home/firstuser/dev/source/bigbluebutton
+
+=== 2. Checkong out the source code === 
+
+Check out the source code from realwat git repository or Coral CEA repository
+
 {{{
 $ git clone git://github.com/realwatcm/bigbluebutton.git 
 OR
 $ git clone git://github.com/coralcea/bigbluebutton.git
 }}}
 
-3. Build bbb-common-message library
+=== 3. Build bbb-common-message library ===
+
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bbb-commom-message
 $ gradle jar
 $ gradle uploadArchives
 }}}
 
-4. Build bigbluebutton-web 
+=== 4. Build bigbluebutton-web  ===
+
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-web
 $ bbb-conf --setup-dev  web
@@ -116,7 +123,7 @@ $ sudo /etc/init.d/tomcat6 start
 
 We can obtain  securitySalt from “/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties”
 
-5. Build bigbluebutton-apps
+=== 5. Build bigbluebutton-apps ===
 {{{
 $ sudo /etc/init.d/red5 stop
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
@@ -126,21 +133,21 @@ $ gradle war deploy
 $ sudo /etc/init.d/red5 start
 }}}
 
-6. Build bbb-video
+=== 6. Build bbb-video ===
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bbb-video
 $ ant resolve
 $ ant dist
 $ ant deploy
 }}}
-7. Build bbb-voice
+=== 7. Build bbb-voice ===
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bbb-voice
 $ gradle resolveDependencies
 $ gradle war deploy
 }}}
 
-8. Build deskshare
+=== 8. Build Deskshare ===
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/deskshare
 $ gradle copyToLib
@@ -153,7 +160,7 @@ $ ant sign-jar
 $ cp build/libs/bbb-deskshare-applet-0.71.jar  ../../bigbluebutton-client/resources/prod
 }}}
 
-9. Build sipphone
+=== 9. Build SIP Client Applet (sipphone) ===
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/sipphone
 $ ant build
@@ -161,19 +168,19 @@ $ ant sign-jar
 $ cp dist/sip.jar  ../bigbluebutton-client/resources/prod/
 }}}
 
-10. Build bigbluebutton-client
+=== 10. Build bigbluebutton-client ===
 {{{
 $ cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
 $ bbb-conf --setup-dev client
 $ ant
 }}}
 
-11. Copy web to bigbluebutton-default
+=== 11. Copy web to bigbluebutton-default ===
 {{{
 $ sudo cp –R /home/firstuser/dev/source/bigbluebutton/bigbluebutton-config/web/*  /var/www/bigbluebutton-default
 }}}
 
-12. Install bbb-voice-conference
+=== 12. Install bbb-voice-conference ===
 {{{
 $ sudo apt-get install bbb-voice-conference
 $ sudo bbb-conf --conference konference
@@ -184,7 +191,7 @@ $ sudo bbb-conf --check
 }}}
 
 
-*Note:* 
+== Potential problems  ==
 
 1. If you can’t see listeners when the applet is launched, please reboot the server.
 2. If you cannot call the api to start or stop module or new user is redirect to a different room, it is because your bbb-common-message-0.7.jar is compiled in different time. To resolve this problem you have to recompile the bbb-common-message
@@ -210,7 +217,3 @@ $ sudo service red5 restart
 Before running the applet we might need to perform some steps to make sure that our system has the minimum requirements to run the applet. You can find related information [http://www.titook.net/faq/index.php/BigBlueButton here]
 
 After making sure our system is configured properly now we can run the SIP Client applet for the Bigbluebutton. 
-
-
-
-==Potential problems==
