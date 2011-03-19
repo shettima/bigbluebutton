@@ -1,11 +1,4 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
-
-
-*Checkout the code and try out the API's*
+=Checkout the code and try out the API's=
 
 You can check out the code for the API partitioning from the following repository {{{ git://github.com/coralcea/bigbluebutton.git }}} and here are the steps to checkout the code:
 
@@ -22,7 +15,7 @@ After checking out the code, follow the steps for building and deploying the dif
  # bigbluebutton-web, follow the instructions on how to build and run the client code as described on the [DevelopingBBB] page  [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#BigBlueButton_Web here]
 
 
-*How to try out the code*
+==How to try out the code==
 
 Here are the available API calls so far:
 
@@ -72,7 +65,7 @@ To try out the API calls follow these steps:
  # Open another browser window and paste the link associated with the action you want (i.e. start chat, stop chat, etc) basically we are sending an HTTP POST to call the method.
 
 
-NOTE: 
+*NOTE:*
  * In case of using the command 
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=VideoconfModule&cmd=start }}} will result starting multiple instances of the BBB the video module which reults having multiple Camera buttons on the toolbar and will not start a new Webcam window. 
  * Using the command 
@@ -86,7 +79,7 @@ NOTE:
 
 
 
-*Potential Problems*
+==Potential Problems==
 
  * When building the client make sure that the /tools/ directory exists otherwise the client won't build. This tends to happen if you are developing Bigbluebutton client code outside the VM environment. 
 
