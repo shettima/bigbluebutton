@@ -57,7 +57,7 @@ echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /
 
 === 2. Install a Voice Conference Server=== 
 
-Install the voice system, (you will need to install Asterisk, FreeSwitch not tested yet)  
+Install the voice system, (you will need to install [http://www.asterisk.org/ Asterisk], [http://www.freeswitch.org/ FreeSwitch] not tested yet)  
 
 {{{
 sudo apt-get update
