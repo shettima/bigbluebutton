@@ -43,6 +43,8 @@ echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /
 }}}
 
 *For 64-bit installation,*
+
+{{{
 # Install the package key
 wget http://173.195.48.99/coralcea.asc -O- | sudo apt-key add - 
 
