@@ -95,6 +95,29 @@ sudo apt-get dist-upgrade
 In case of having Bigbluebutton already installed on the system, we can upgrade to Coral CEA release(s) by following the steps below: 
 
 === 1. Remove the old Bigbluebutton packages==  
+{{{
+sudo /etc/init.d/red5 stop
+sudo apt-get --force-yes -y purge red5
+
+echo "Removing old copy of BigBlueButton"
+sudo apt-get --force-yes -y purge bbb-apps
+sudo apt-get --force-yes -y purge bbb-apps-deskshare
+sudo apt-get --force-yes -y purge bbb-apps-sip	
+sudo apt-get --force-yes -y purge bbb-apps-video
+sudo apt-get --force-yes -y purge bbb-client
+sudo apt-get --force-yes -y purge bbb-config
+sudo apt-get --force-yes -y purge bbb-common
+sudo apt-get --force-yes -y purge bbb-freeswitch-config
+sudo apt-get --force-yes -y purge bbb-freeswitch
+sudo apt-get --force-yes -y purge bbb-openoffice-headless
+sudo apt-get --force-yes -y purge bbb-web
+sudo apt-get --force-yes -y remove swftools-0.9.1
+sudo apt-get --force-yes -y remove bbb-voice-conference 
+sudo apt-get --force-yes -y remove asterisk 
+sudo apt-get --force-yes -y remove asterisk-config 
+                 sudo apt-key del 328BD16D
+
+}}}
 
 === 2. Install the Coral CEA apt-get repository key===
 
