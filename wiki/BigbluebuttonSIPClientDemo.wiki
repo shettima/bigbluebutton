@@ -29,7 +29,7 @@ The minimum system requirements that is recommended for the original !Bigbluebut
 Note: !Bigbluebutton uses nginx, which listens on port 80 for http access and tunnelling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port. 
 To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !Bigbluebutton uses tomcat6 which binds to that port.  
 
-=== 1. Install the Coral CEA apt-get repository key ===
+=== 1. Install the Coral CEA apt-get repository key===
 *For 32-bit installation,* 
 {{{
 # Install the package key
@@ -53,7 +53,7 @@ echo "deb http://173.195.48.99/lucid_dev/ bigbluebutton-lucid main" | sudo tee /
 echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
-=== 2. Install a Voice Conference Server === 
+=== 2. Install a Voice Conference Server=== 
 
 Install the voice system, (you will need to install Asterisk, FreeSwitch not tested yet)  
 
@@ -62,7 +62,7 @@ sudo apt-get update
 sudo apt-get install bbb-voice-conference
 }}}
 
-=== 3. Install the Coral CEA release of !Bigbluebutton ===
+=== 3. Install the Coral CEA release of !Bigbluebutton===
 
 After setting up the key for the Coral CEA packages and the repository for the COral CEA release. The Bigbluebutton installation is the same as described [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu?ts=1300500710&updated=InstallationUbuntu#3._Install_BigBlueButton here]
 
@@ -73,17 +73,17 @@ sudo bbb-conf --check
 }}}
 
 
-== Upgrading from Bigbluebutton 0.71 release or earlier releases ==
+== Upgrading from Bigbluebutton 0.71 release or earlier releases==
 
 In case of having Bigbluebutton already installed on the system, we can upgrade to Coral CEA release(s) by following the steps below: 
 
-=== 1. Remove the old Bigbluebutton packages ==  
+=== 1. Remove the old Bigbluebutton packages==  
 
-=== 2. Install the Coral CEA apt-get repository key ===
+=== 2. Install the Coral CEA apt-get repository key===
 
-=== 3. Update the packages source repository with Coral CAE ===
+=== 3. Update the packages source repository with Coral CAE===
 
-=== 4. Install Coral CEA release of !Bigbluebutton ===
+=== 4. Install Coral CEA release of !Bigbluebutton===
 
 
 
