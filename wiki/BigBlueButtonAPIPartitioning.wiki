@@ -66,7 +66,7 @@ Files involved:
 
 * Changes on the Client side
 
- # bigbluebutton-client/src/org/bigbluebutton/main/maps/ApplicationEventMap.mxml
+ # bigbluebutton-client/src/org/bigbluebutton/main/maps/!ApplicationEventMap.mxml
 
 
 * Changes on the Server side (i.e. red5) 
@@ -85,6 +85,8 @@ Files involved:
  # Delete file bigbluebutton.war and directory bigbluebutton under /var/lib/tomcat6/webapps/
  # Copy the new bigbluebutton.war to /var/lib/tomcat6/webapps/
  # Re-start the Tomcat server.
+
+ * The current API calls doesn't include the salt value for security, this feature would (must) be integrated back for the next release. 
 
 *steps to run and use the API are described [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonAPIPartitioningDemo here]*
 
