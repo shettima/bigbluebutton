@@ -57,7 +57,7 @@ Here are the available API calls so far:
 
 {{{http://YOUR_IP_ADDRESS/bigbluebutton/api/moduleCmd?meetingID=Demo+Meeting&module=All&cmd=<start/stop> }}}  
 
-
+*NOTE*: The Desktopshare API call is still not implemented, but we are planning on executing it soon. 
 To try out the API calls follow these steps:
 
  # Start you Bigbluebutton server. 
