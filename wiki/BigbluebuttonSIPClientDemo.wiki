@@ -74,6 +74,21 @@ sudo bbb-conf --clean
 sudo bbb-conf --check
 }}}
 
+== Upgrading from Bigbluebutton 0.71 release or earlier releases==
+
+For upgrading to the latest Coral CEA release, this can be done by executing the commands listed below:  
+
+{{{
+#Stop the Red5 process
+#Note: if command below does not work you can kill the Red5 process manually as well 
+# Use command "kill PID", where PID is the Red5 process ID# 
+
+sudo /etc/init.d/red5 stop
+
+#Update the packages and upgrade with the current release 
+sudo apt-get update
+sudo apt-get dist-upgrade
+}}}
 
 == Upgrading from Bigbluebutton 0.71 release or earlier releases==
 
