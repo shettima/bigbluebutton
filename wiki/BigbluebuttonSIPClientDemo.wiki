@@ -61,6 +61,20 @@ sudo bbb-conf --check
 }}}
 
 
+==Upgrading from Bigbluebutton 0.71 release or earlier releases==
+
+In case of having Bigbluebutton already installed on the system, we can upgrade to Coral CEA release(s) by following the steps below: 
+
+=== 1. Remove the old Bigbluebutton packages ==  
+
+=== 2. Get apt-key to install packages===
+
+=== 3. Update the packages source repository with Coral CAE===
+
+=== 4. Install Coral CEA release of !Bigbluebutton===
+
+
+
 
 ==Building from source code==
 
