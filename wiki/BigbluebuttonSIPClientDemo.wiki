@@ -26,8 +26,8 @@ The minimum system requirements that is recommended for the original !Bigbluebut
   # 5G of free disk space
   # Port 80 is not in use by other applications
 
-Note: !Bigbluebutton uses nginx, which listens on port 80 for http access and tunnelling.  If you have apache already running on your server, then you'll need to configure apache to listen on a different port. 
-To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !Bigbluebutton uses tomcat6 which binds to that port.  
+Note: !BigBlueButton uses nginx, which listens on port 80 for http access and tunneling.  If you have Apache already running on your server, then you'll need to configure Apache to listen on a different port. 
+To do this, edit `/etc/apache2/ports.conf` and change the entry for 80 to another number, such as 8081.  Avoid using 8080 in apache as !BigBlueButton uses tomcat6 which binds to that port.  
 
 === 1. Install the Coral CEA apt-get repository key===
 *For 32-bit installation,* 
@@ -130,7 +130,7 @@ sudo apt-get --force-yes -y remove asterisk-config
 
 ==Building from source code==
 
-In case we  have already the Bigbluebutton 0.71 installed on our system, we can try to upgrade to Coral CEA release by checking out the code and build the different system components and deploy them. 
+In case we  have already the BigBlueButton 0.71 installed on our system, we can try to upgrade to Coral CEA release by checking out the code and build the different system components and deploy them. 
 
 *Prerequisites*
 
