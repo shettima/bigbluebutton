@@ -260,6 +260,7 @@ $ sudo bbb-conf --check
 == Potential problems  ==
 
 1. If you can’t see listeners when the applet is launched, please reboot the server.
+
 2. If you cannot call the api to start or stop module or new user is redirect to a different room, it is because your bbb-common-message-0.7.jar is compiled in different time. To resolve this problem you have to recompile the bbb-common-message
 
 {{{
