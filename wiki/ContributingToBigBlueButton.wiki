@@ -4,11 +4,12 @@
 
 DRAFT: How to contribute to !BigBlueButton
 
-= Testing = 
-http://testng.org/doc/index.html
 
 = Submitting a Pull Request =
 http://help.github.com/pull-requests/
+
+= Testing = 
+http://testng.org/doc/index.html
 
 = Documentation =
 http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html
