@@ -15,3 +15,6 @@ http://testng.org/doc/index.html
 http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html
 
 http://livedocs.adobe.com/flex/3/html/help.html?content=asdoc_1.html
+
+= Code Convention =
+http://www.oracle.com/technetwork/java/codeconvtoc-136057.html
