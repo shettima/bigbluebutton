@@ -2,9 +2,15 @@
 
 = Introduction =
 
-Add your content here.
+DRAFT: How to contribute to !BigBlueButton
 
+= Testing = 
+http://testng.org/doc/index.html
 
-= Details =
-
+= Submitting a Pull Request =
 http://help.github.com/pull-requests/
+
+= Documentation =
+http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html
+
+http://livedocs.adobe.com/flex/3/html/help.html?content=asdoc_1.html
