@@ -101,7 +101,17 @@ If you have a hosting account that only gives you, for example, FTP access and a
 
 There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include Asterisk and nginx. The former provides to voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.
 
+== Can I install !BigBlueButton on EC2? ==
 
+Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 32-bit and 64-bit.  To install !BigBlueButton on EC2, do the following 
+
+  # Launch a "lucid" image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI]
+  # Follow the instructions to InstallationUbuntu
+  # Adjust the FreeSWITCH configuration (see [FAQ#When_I_click_on_the_headset_icon,_nothing_happens? FAQ]) to work on an internal IP address
+
+You'll need (at a minimum) a m1.small.  We recommend running !BigBlueButton on a c1.medium.
+
+ 
 == OS Requirements ==
 
 
