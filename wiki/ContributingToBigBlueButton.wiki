@@ -4,9 +4,15 @@
 
 DRAFT: How to contribute to !BigBlueButton
 
+First, you need to setup your development environment following instructions [DevelopingBBB here]
 
-= Submitting a Pull Request =
-http://help.github.com/pull-requests/
+ 1. Fork [https://github.com/bigbluebutton !BigBlueButton] on [http://www.github.com/bigbluebutton GitHub]
+ 1. Create a topic branch
+ 1. Make your changes
+ 1. Send a pull request
+
+The details are well documented in !GitHub's [http://help.github.com/pull-requests/ Submitting a Pull Request] page.
+
 
 = Testing = 
 http://testng.org/doc/index.html
