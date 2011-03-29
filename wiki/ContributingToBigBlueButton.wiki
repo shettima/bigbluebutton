@@ -13,6 +13,10 @@ First, you need to setup your development environment following instructions [De
 
 The details are well documented in !GitHub's [http://help.github.com/pull-requests/ Submitting a Pull Request] page.
 
+References:
+ 1. http://help.github.com/
+ 1. http://progit.org/
+
 = Tests = 
 Your changes should be accompanied by tests. We have setup some of the subsystems to use [http://testng.org/doc/index.html TestNG]. We will be also refactoring these subsystems and writing tests for them.
 
@@ -22,4 +26,3 @@ For code written in Java, we will follow the [http://www.oracle.com/technetwork/
 Methods, especially those classes that provides an API, should be documented  using the [http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html JavaDoc] format. This way we as part of running !Hudson CI, we will generate the docs.
 
 For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/help.html?content=asdoc_1.html AsDoc] format.
-
