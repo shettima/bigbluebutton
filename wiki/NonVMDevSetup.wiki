@@ -14,7 +14,7 @@ Not for beginners. This is a rough set of guidelines on how to set up the bbb de
   # Do bbb-conf --setup-dev client
   # Try building the client with 'ant'
   # If client build fails, find flexTasks.jar in ~/dev/tools/flex dir and copy it to where ant says it expects it
-  # Edit /etc/nginx/sites-available/bigbluebutton. Change the client to load from where you have it instead of /home/firstuser
+  # Edit /etc/nginx/sites-available/bigbluebutton. Change the client to load from where you have it instead of /home/firstuser. Restart nginx.
   # Do bbb-conf --setup-dev apps
   # Go to the bbb-apps source (~/dev/source/bbb/bbb-apps/). Edit build.gradle and change any instances of 'firstuser' to whatever your user name is.
   # Build and deploy apps as normal (gradle war deploy). Then restart red5. make sure it starts with no errors.
