@@ -95,19 +95,19 @@ When updating, you'll see the upgrade messages.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
 
-== Updating the !BigBlueButton VM to packages on trunk (aka Living on the Edge) == 
+== Updating the !BigBlueButton VM to packages on master (aka Living on the Edge) == 
 
-We upgrade the repository http://archive.bigbluebutton.org with every release.  In addition, during each iteration of !BigBlueButton, we have our [http://hudson.bigbluebutton.org/ continuous integration server Hudson] automatically updating packages off our [https://github.com/bigbluebutton/bigbluebutton GitHUB repository]. 
+We upgrade the repository http://ubuntu.bigbluebutton.org with every release.  In addition, during each iteration of !BigBlueButton, we have our [http://hudson.bigbluebutton.org/ continuous integration server Hudson] automatically updating packages off our [https://github.com/bigbluebutton/bigbluebutton GitHUB repository]. 
 
-These packages are used to update our [http://devbuild.bigbluebutton.org devbuild server], so you can always try out the latest version.  Keep in mind that trunk isn't always going to be stable, so devbuild will be as stable as trunk.
+These packages are used to update our [http://devbuild.bigbluebutton.org devbuild server], so you can always try out the latest version.  Keep in mind that master isn't always going to be stable, so devbuild will be as stable as master.
 
-However, if you want to live on the edge and use the latest packages built by our from the trunk of the !BigBlueButton Google Code repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
+However, if you want to live on the edge and use the latest packages built by our from the master of the !BigBlueButton GitHub repository, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
 
 {{{
 #
 # Repository for BigBlueButton
 #
-deb http://archive.bigbluebutton.org/ bigbluebutton main
+deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton main
 }}}
 
 to
@@ -115,15 +115,7 @@ to
 #
 # Repository for BigBlueButton
 #
-deb http://archive.bigbluebutton.org/dev bigbluebutton main
-}}}
-
-If you have an ubuntu-10.04 lucid running, please do following changes:
-{{{
-#
-# Repository for BigBlueButton
-#
-deb http://archive.bigbluebutton.org/lucid/dev bigbluebutton-lucid main
+deb http://ubuntu.bigbluebutton.org/lucid_dev/ bigbluebutton main
 }}}
 
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
