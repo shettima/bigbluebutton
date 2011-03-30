@@ -217,7 +217,7 @@ For example, if the output from `ifconfig` shows your VM is listening to IP addr
 }}}
 
 
-If you need to restart BigBlueButton, do the command
+If you need to restart !BigBlueButton, do the command
 
 {{{
 
