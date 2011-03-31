@@ -6,7 +6,7 @@ DRAFT: How to contribute to !BigBlueButton
 
 First, you need to setup your development environment following instructions [DevelopingBBB here]
 
- 1. [http://help.github.com/fork-a-repo/ Fork] [https://github.com/bigbluebutton BigBlueButton] on [http://www.github.com/bigbluebutton GitHub]
+ 1. [http://help.github.com/fork-a-repo/ Fork] !BigBlueButton on [http://www.github.com/bigbluebutton GitHub]
  1. Create a topic branch - {{{git checkout -b my_branch}}}
  1. Push to your branch - {{{git push origin my_branch}}}
  1. Create a [http://help.github.com/pull-requests/ Pull Request] from your branch
