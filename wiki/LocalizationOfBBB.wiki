@@ -16,7 +16,7 @@ If you wish to modify an existing translation instead of creating a new one, you
 || *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
 || Azerbaijani || az_AZ || Emin Hasanov || eminach AT gmail DOT com || 0.64 ||
 || Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom AT gmail DOT com || 0.63 ||
-|| Chinese (Traditional) || zh_TW || Alan Yu || secret1029 AT gmail DOT com || 0.7 ||
+|| Chinese (Traditional) || zh_TW || Patrick Roan || patrick.roan AT gmail DOT com || 0.71 ||
 || Danish || da_DK || Jesper Skelgaard || skelgaard AT gmail DOT com || 0.71 ||
 || English || en_US || !BigBlueButton Team || ffdixon AT bigbluebutton DOT org (and many others) || 0.7 ||
 || French || fr_FR || Jean-Philippe Guiot || DJP AT architectes DOT org ||0.7 ||
