@@ -97,9 +97,11 @@ As a minimum, we recommend you run !BigBlueButton on a dual-core machine with at
 While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
 
 == Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ==
+You need root access to install !BigBluebutton.
+
 If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  
 
-There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include Asterisk and nginx. The former provides to voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.
+There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include Asterisk and nginx. The former provides to voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.  
 
 == Can I install !BigBlueButton on EC2? ==
 
