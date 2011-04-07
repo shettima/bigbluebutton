@@ -17,7 +17,7 @@ While we don't give out release dates (we release on quality, not dates), you ca
 
 = Roadmap to BigBlueButton 1.0 =
 
-See [RoadMap1dot0 Roadmap to BigBlueButton 1.0].
+See [RoadMap1dot0 Roadmap to !BigBlueButton 1.0].
 
 = Previous Releases =
 
