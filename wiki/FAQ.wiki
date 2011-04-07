@@ -749,7 +749,7 @@ see [http://github.com/jthomerson/AsteriskAudioKonf/blob/master/konference/Dialp
 For more information see [http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe Asterisk Commands].  For FreeSWITCH, remove `moh-sound` entry in the wideband profile in 
 
 {{{
-   /opt/freeswitch/conf/autoload_configs/conference_conf.xml
+   //opt/freeswitch/conf/autoload_configs/conference.conf.xml
 }}}
 
 For more information, see [http://wiki.freeswitch.org/wiki/Mod_conference Mod_conference] and [http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/autoload_configs/conference.conf.xml BigBlueButton conference.xml].
