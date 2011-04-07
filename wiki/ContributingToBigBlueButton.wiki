@@ -47,8 +47,8 @@ The ideal patch submission has all the above true, which essentially you have bu
 
 There are a number of items that are *must haves*.  
 
-  # You have forked !BigBlueButton on GitHub and submitted the patch as a pull request (this makes it *much* easier for a committer to review and incorporate your patch)
-  # You have signed a [How_do_I_contribute_my_updates_to_BigBlueButton_? committers agreement] so there is no ambiguity that your contributions may be released under an open source license.
+  # You have forked !BigBlueButton on !GitHub and submitted the patch as a pull request (this makes it *much* easier for a committer to review and incorporate your patch)
+  # You have signed a [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_contribute_my_updates_to_BigBlueButton_? committers agreement] so there is no ambiguity that your contributions may be released under an open source license.
 
 == Submission of a feature ==
 Some of the items in our issue tracker are enhancements to the core product.  If you are interested in contributing an enhancement, your want to do the following.
