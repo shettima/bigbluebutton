@@ -7,7 +7,7 @@ DRAFT: How to contribute to !BigBlueButton
 == Background == 
 The success of the !BigBlueButton project is a direct result of the efforts of many developers who have contributed their time and skills to improving !BigBlueButton. 
 
-!BigBlueButton is not a small open source project, nor is it a simple one to master.  There are many components, interfaces, and [http://code.google.com/p/bigbluebutton/wiki/OpenSourceComponents fifteen] other open source components that all work together to create (what we hope is) a simple web conferencing system.  Like many open source projects, at the core are small group of developers that have commit rights and are responsible for the overall quality of !BigBlueButton project.
+!BigBlueButton is not a small open source project, nor is it a simple one to master.  There are many components, interfaces, and [http://code.google.com/p/bigbluebutton/wiki/OpenSourceComponents fifteen] other open source components that all work together to create (what we hope is) a simple web conferencing system.  Like many open source projects, at the core is small group of developers that have commit rights and responsibilities for the overall quality of the project.
 
 These committers are 
 
@@ -17,7 +17,7 @@ These committers are
   * Jeremy Thomerson, API
   * Tiago Jacobs, red5
 
-The committers welcomes the contribution of other developers.  This is visible by our efforts to cultivate and nurture contributions from others in our [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list and by Google accepting !BigBlueButton into the 2010 Google Summer of Code.
+The committers welcomes the contribution of other developers, as visible by our efforts to cultivate and nurture contributions from others in our [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list and by Google accepting !BigBlueButton into the 2010 Google Summer of Code.
 
 The committer's group is not closed.  Any developer that wishes to become a
 committer can achieve it through participation.  The decision of expanding the committers group rests with the committers.
@@ -34,7 +34,7 @@ Another example is the submission of an updated language file.
 All the committers watch the mailing list and issue tracker closely, and you submission will be reviewed.
 
 
-== Submission of a bug fix ==
+== Submission of a patch ==
 If you have made a change to the code base and want to contribute it, your chances of acceptance are *greatly* improved the following are true.
 
   # You are an active participant in bigbluebutton-dev and have demonstrated an understanding of the product by helping others and participating in discussions on other patches
