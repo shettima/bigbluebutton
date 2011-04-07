@@ -17,13 +17,13 @@ The requirements for !BigBlueButton 1.0 are driven by our target market: distanc
 
 What are the requirements for distance education?  At the highest level, we state the goal of !BigBlueButton is to enable universities and colleges to provide remote students a high-quality learning experience.  Going into more detail, we can refine the requirements using the following user stories:
  
-  * As a teacher, I want to start my on-line class within five minutes so I can focus my energies on teaching students.
+  * As a *teacher*, I want to start my on-line class within five minutes so I can focus my energies on teaching students.
  
-  * As a remote student, I want to effortlessly interact with the teacher and other students so I can focus my energies on learning.
+  * As a *student*, I want to effortlessly interact with the teacher and other students so I can focus my energies on learning.
  
-  * As an administrator, I want to install !BigBlueButton in under fifteen minutes so I can experiment with its capabilities within my organization.
+  * As an *administrator*, I want to install !BigBlueButton in under fifteen minutes so I can experiment with its capabilities within my organization.
  
-  * As a developer, I want to integrate !BigBlueButton into my product in less than four hours so I can demonstrate integrated real-time collaboration.
+  * As a *developer*, I want to integrate !BigBlueButton into my product in less than four hours so I can demonstrate integrated real-time collaboration.
  
 From the above user stories there are four distinct roles: teacher, student, administrator, and developer.  Each user has a job to accomplish.  We want the interface of !BigBlueButton to fade into the background and enable each user to get that job done efficiently.
                                                                                   	
