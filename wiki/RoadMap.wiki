@@ -15,9 +15,9 @@ As part of 0.8 we're also exploring ways to reduce the audio latency for using t
 
 While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
 
-= Roadmap to BigBlueButton 1.0 =
+= Roadmap to !BigBlueButton 1.0 =
 
-See [RoadMap1dot0 Roadmap to !BigBlueButton 1.0].
+See [RoadMap1dot0 Roadmap to BigBlueButton 1.0].
 
 = Previous Releases =
 
