@@ -193,8 +193,8 @@ When looking at !BigBlueButton 1.0, we want the developer to see a platform, not
 There are a spectrum of modularity we can achieve.
 
 For existing components:
-  # Configure the components within the server (implemented in XXX)
-  # Dynamically enable/disable components at time of creating a meeting
+  # Configure the components within the server 
+  # Dynamically enable/disable components at time of creating a meeting (see [http://code.google.com/p/bigbluebutton/wiki/BigBlueButtonAPIPartitioningDemo BigBlueButton Labs project)
   # Dynamically enable/disable components after the meeting has started
 
 By creating modularity, a developer could start a !BigBlueButton session specific with only the modules needed for her specific application.  For example
