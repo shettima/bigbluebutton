@@ -233,13 +233,13 @@ There are a number of capabilities that we want to add (soon) after 1.0 is relea
 
   * *Plug-in Architecture* - Currently, !BigBlueButton is self-contained product.  Everything comes pre-assembled, ready to go.  That is great for initial adoption, but we want !BigBlueButton to become modular platform (like eclipse) to enable other developers to easily create an integrate their own modules.  
 
-  * *Full mobile support* - This includes a Android, Rim, iPhone client.
+  * *Full mobile support* - This includes a Android ([http://code.google.com/p/bigbluebutton/issues/detail?id=851 851]), BlackBerry, and iPhone/iPad client ([http://code.google.com/p/bigbluebutton/issues/detail?id=852 852]).
 
-  * *HTML 5 client* - While the absence of an ability to access the microphone and web cam would prevent an HTML 5 client from becoming a first-class client, an HTML 5 client could receive a stream of the current video and audio, and it could participate in other areas, such as real-time chat.
+  * *HTML 5 client* - While the absence of an ability to access the microphone and web cam would prevent an HTML 5 client from becoming a first-class client, an HTML 5 client could receive a stream of the current video and audio, and it could participate in other areas, such as real-time chat ([http://code.google.com/p/bigbluebutton/issues/detail?id=850 850]).
 
   * *Integration with H.263* - This would enable !BigBlueButton to integrate with other commercial conferencing systems.
 
-  * *Support for Jabber* - This would enable us to integrate with other popular IM systems.
+  * *Support for Jabber* - This would enable us to integrate with other popular IM systems ([http://code.google.com/p/bigbluebutton/issues/detail?id=921 921]).
 
   * *Support right-left languages* - See [http://code.google.com/p/bigbluebutton/issues/detail?id=686 686]. 
  
