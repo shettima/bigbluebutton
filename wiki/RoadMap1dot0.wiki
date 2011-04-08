@@ -143,7 +143,7 @@ Add additional API examples:
 
 == Stability and Testing ==
 
-=== No Open Stability Issues ===
+=== All Stability Issues Closed ===
 All [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Stability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles stability issues] are closed.
 
 === Unit Testing ===
