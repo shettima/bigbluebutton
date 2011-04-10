@@ -1,6 +1,9 @@
 #summary How to submit your changes for inclusion in !BigBlueButton.
+#labels Deprecated
 
 = Introduction =
+
+This page is now merged into the FAQ as [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]
 
 DRAFT: How to contribute to !BigBlueButton
 
