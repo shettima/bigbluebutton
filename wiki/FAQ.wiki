@@ -53,7 +53,7 @@ Yes. We started !BigBlueButton as an open source project, and we intend to keep 
 == How can I contribute? == 
 The !BigBlueButton exists as the result of many developers who have contributed their time and skills to its development.  
 
-!BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as ActionScript, grails, and scala are all similar to Java.
+!BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in !ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as !ActionScript, grails, and scala are all similar to Java.
 
 Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  The source code for !BigBlueButton is hosted at [https://github.com/bigbluebutton/bigbluebutton github], so you'll to understand how [http://progit.org/ git works] and the workflow for distributed software development.  
 
