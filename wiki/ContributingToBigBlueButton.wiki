@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This page is now merged into the FAQ as [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]
+This page is now depreciated and has been merged into the FAQ.  See:  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]
 
 DRAFT: How to contribute to !BigBlueButton
 
