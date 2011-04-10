@@ -10,6 +10,7 @@ If you are interested in one of these projects, please post to [http://groups.go
 
 For some background on the !BigBlueButton project, see the FAQ, [http://en.wikipedia.org/wiki/BigBlueButton wikipedia], [http://bigbluebutton.org/content/videos videos].
 
+_Note: !BigBlueButton didn't get accepted this year in GSOC -- but we'll be trying hard for 2012!  Further discussion on these projects has moved to the issue tracker with labels of [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Type-Research&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles Research]._
 
 = GSOC 2011 Student Projects =
 
