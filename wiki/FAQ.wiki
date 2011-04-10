@@ -32,62 +32,121 @@ All of the core !BigBlueButton contributions subscribe to all three mailing list
 
 The name comes from the goal of making setting up a virtual classroom as easy as pressing a (metaphorical) big blue button.
 
-== Who are the core developers of !BigBlueButton? ==
-
-The core developers are listed on the [http://code.google.com/p/bigbluebutton/ Google Code home page] for this project.   
 
 == Where is the source? ==
 We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We used to host it on Google Code, but we wanted to move to git because of the advantages it offers over svn.
 
 == What is the open source license used in !BigBlueButton? ==
-We use the LGPL license.
+We use the LGPL license.  Some of the open source components we build on use different licenses, such as red5phone uses the GPL license.
 
 
-== How do I join the !BigBlueButton development team? ==
-
-We consider someone a !BigBlueButton developer if they have check-in rights !BigBlueButton's [https://github.com/bigbluebutton GIT repository], or if they have had their code pulled into the GIT repository by an existing !BigBlueButton developer.
-
-This is a merit-based project, which means to eventually join the development team you need to first contribute to the community.
-
-!BigBlueButton may seem complex, but it's not really once you get to know the system.  Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  You also need to understand how GIT works.  We recommend you setup an account on GitHUB, clone the !BigBlueButton repository, and try building from source on your computer.
-
-If your not a developer but really want to contribute, you can become proficient in the installation and configuration of a !BigBlueButton server.   There are usually a number of new users each month that need help with networking, especially setting up !BigBlueButton to [Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m work behind a firewall].  
-
-We quickly notice anyone who is active in the mailing lists and helping others setup their server or getting started with development.  Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
-
-As a developer, once you understand the architecture and have become visible in the mailing list, the main step is to try fixing bugs in our [http://code.google.com/p/bigbluebutton/issues/list issue tracker] or implementing one of the items in the [IdeasPage wish list].  Whichever your choice, make your intent visible on the developer mailing list.  If you demonstrate and earnest effort to fix a bug or add a feature, you'll get our attention and we'll help you in any way we can.
-
-Some bugs are more important than others.  Stability and usability are very important to the !BigBlueButton community.  If you demonstrate and ability to help increase stability and usability of the platform, we're very interested in mentoring you and helping you become a full fledged, card carrying !BigBlueButton developer. 
-
-To ensure all the code contributed to the project can be released under an open source license, you also need to sign a  Contributors agreement (seen entry below).  
-
-== How do I contribute my updates to !BigBlueButton? ==
-
-We currently host all the code on [https://github.com/bigbluebutton GitHub].  The code for !BigBlueButton is licensed under LGPL.  Only a few people have commit rights to ensure quality of the project.
-
-The easiest way to make a contribution would be to:
-
-  # Setup an account on !GitHub
-  # Clone the !BigBlueButton source
-  # Implement the changes and test in your own repository (we recommend posting to [groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] to have others help test)
-  # Send a pull request to one of the core developers to incorporate your contribution
-
-Before we can accept contributions, an open source project, we're need to ensure there isn't any ambiguity on the ownership of material committed to the project.  Therefore, before we can incorporate your materials, we need to have a Contributor Agreement in place.  For background on our reasons for doing this, please see http://www.oss-watch.ac.uk/resources/cla.xml.
-
-We've adopted to use the Sun Microsystems Contributer Agreement (yes, we know they are now Oracle, but we're using the agreement that Sun had published) as it provides for joint ownership.  Except as set out in the agreement, you (and your employer if you have an intellectual property agreement in place) keep all right, title, and interest in your contribution.  
-
-Please read over the [http://bigbluebutton.googlecode.com/files/Contributor%20Agreement.pdf Contributor Agreement] and, if you (and your employer) are in agreement with its terms, then sign, scan, and e-mail a copy back to Fred Dixon (ffdixon at bigbluebutton _dot_ org).  Note: The agreement is currently between you (and your employer) and Blindside Networks.  When the !BigBlueButton foundation launches in 2011, Blindside Networks will assign agreements to the foundation.
-
-Once we receive the signed Contributor Agreement, we can accept your contribution for inclusion in !BigBlueButton.
-
-
-== Where can I find examples of people running !BigBlueButton ==
+== Where can I find examples of people running !BigBlueButton? ==
 We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   We know from downloads there many !BigBlueButton servers running world-wide.  
 
 If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
 
 == Will !BigBlueButton always stay open source? ==
 Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit !BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
+
+= Contributing to !BigBlueButton =
+
+== How can I contribute? == 
+The !BigBlueButton exists as the result of many developers who have contributed their time and skills to its development.  
+
+!BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as ActionScript, grails, and scala are all similar to Java.
+
+Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  The source code for !BigBlueButton is hosted at [https://github.com/bigbluebutton/bigbluebutton github], so you'll to understand how [http://progit.org/ git works] and the workflow for distributed software development.  
+
+Like other open source projects, a good place to start is try fixing an [http://code.google.com/p/bigbluebutton/issues/list open issue].  We've tagged a few issues as [http://code.google.com/p/bigbluebutton/issues/list?q=label:FirstProject FirstProject] to make it easy for you to find those issues that are both (relatively simple) to fix but would be meaningful to !BigBlueButton.
+
+You an also browse the bugs by labels: [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Stability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles Stability] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Usability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=tiles&nobtn=Update Usability] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Performance&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles Performance] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=component=Localization&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary Localization] - [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Type-Research&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles Research].  You could also try tackling one of the [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=type=Enhancement enhancements] to !BigBlueButton.
+
+Some bugs are more important than others.  Stability and usability issues are very important to the !BigBlueButton community.
+
+== I'm not a developer, can I still contribute? ==
+
+Dont' worry if you are not a proficient developer -- there are many ways to help out!  You can become proficient in the installation and configuration of a !BigBlueButton server.  Each month, there are many new users in [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] that need help with setup of !BigBlueButton, especially setup  [Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m work behind a firewall].    You can [LocalizationOfBBB contribute a language file].  Or you can become an editor of the wiki pages to help provide documentation in a specific area, such as setup of !BigBlueButton on [InstallingBigBlueButtonFreeBSD FreeBSD].   Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
+
+== Who are the core developers of !BigBlueButton? ==
+
+Like many open source projects, at the core of the developer team is small group that have commit rights and the overall responsibility for the quality of the project.  The committers are 
+
+  * Richard Alam, Lead Architect
+  * Denis Zgonjanin, Client
+  * Fred Dixon, Packaging
+  * Jeremy Thomerson, API
+  * Tiago Jacobs, red5
+
+We are very active in the support and mentoring of other developers in the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list and, recently, in the 2010 Google Summer of Code (Google paid for two students to work on the project).
+
+The committer's group is not closed.  Any developer that wishes to become a committer can achieve it through participation.  The decision of expanding the committers group rests with the committers.
+
+Any source code you submit for inclusion into !BigBlueButton will be reviewed by one (or more) of the committers.   The process for submission and review depends on the complexity of the contribution and requires that you have signed a Contributor License Agreement.  
+
+== Why do I need to sign a Contributor License Agreement to contribute source code? ==
+
+Before we can accept contributions, as an open source project, we're need to ensure there isn't any ambiguity on the ownership of material committed to the project.  Therefore, before we can incorporate your code, we need to have a Contributor License Agreement in place.  For background on our reasons for doing this, please see http://www.oss-watch.ac.uk/resources/cla.xml.
+
+We've adopted to use the Sun Microsystems Contributer Agreement (yes, we know they are now Oracle, but we're using the agreement that Sun had published) as it provides for joint ownership.  Except as set out in the agreement, you (and your employer if you have an intellectual property agreement in place) keep all right, title, and interest in your contribution.  
+
+Please read over the [http://bigbluebutton.googlecode.com/files/Contributor%20Agreement.pdf Contributor Agreement] and, if you (and your employer) are in agreement with its terms, then sign, scan, and e-mail a copy back to Fred Dixon (ffdixon at bigbluebutton _dot_ org).  Note: The agreement is currently between you (and your employer) and Blindside Networks.  When the [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html BigBlueButton foundation] launches, Blindside Networks will assign these agreements to the foundation.
+
+Once we receive the signed Contributor Agreement, we can review your submission for inclusion in !BigBlueButton.  The process for submission depends is different on whether it's a fixing a bug (submitting a patch) or enhancement (submitting a feature).
+
+=== Submission of a patch ===
+If you want to contribute a patch to !BigBlueButton, your chances of acceptance are *greatly* improved the following are true:
+
+  # You are an active participant in [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] and have demonstrated an understanding of the product by helping others and participating in discussions on other patches
+  # Your patch fixes an [http://code.google.com/p/bigbluebutton/wiki/IssuesInstructions?tm=3 open issue]. 
+  # Before submitting your patch, you have announced your intent to bigbluebutton-dev and invited discussion from others
+  # You have received positive feedback from a committer on your intent
+
+The ideal patch submission has all the above true, which essentially means you have built a relationship of trust with other !BigBlueButton developers and have been visible on your willingness to contribute your skills to the project.  
+
+There are a number of *must haves* for your submission to be accepted.
+
+  # You have forked !BigBlueButton on !GitHub and submitted the patch as a pull request (this makes it *much* easier for a committer to review and incorporate your patch)
+  # You have signed a [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_contribute_my_updates_to_BigBlueButton_? committers agreement] so there is no ambiguity that your contributions may be released under an open source license.
+  # Your submission is LGPL (unless it modifies existing code that is under a different license).
+
+Specifically, for using GitHub, you need to do the following:
+
+  1. [http://help.github.com/fork-a-repo/ Fork] !BigBlueButton on [http://www.github.com/bigbluebutton GitHub]
+  1. Create a topic branch - {{{git checkout -b my_branch}}}
+  1. Push to your branch - {{{git push origin my_branch}}}
+  1. Create a [http://help.github.com/pull-requests/ Pull Request] from your branch
+
+GitHub provides some good [http://help.github.com/ help] in the above steps, and there is an excellent [http//progit.org/ Pro Git] book by Scott Chacon available on-line.
+
+=== Submission of a feature ===
+Some of the items in our issue tracker are enhancements to the core product.  If you are interested in contributing an enhancement, your chances of acceptance are *greatly* improved the following are true:
+
+  # You have had patches accepted by a committer
+  # You have posted a Request for Comments to the bigbluebuton-dev mailing list signaling your willingness to work on the enhancement.  In your post you have provide (at minimum) 
+    * An overview of the design and implementation of your feature.  For examples see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79/91de48842ae1ea75?lnk=gst&q=rfc#91de48842ae1ea75 RFC for Preupload of Documents]
+    * An outline of how you intend to test the enhancement
+    * An estimate of how much time you have to work on the enhancement
+  # A committer has signaled their intent to work closely with you on the enhancement
+
+Like other open source projects, the participation of a committer is central to the above process as they will take the responsibility for reviewing and signing off on your contribution. 
+
+
+=== Testing your submission === 
+Depending on the complexity of your patch or feature, it should be accompanied by tests cases or, at minimum, a series of steps to test the code is functioning properly.  
+
+We are continuously trying to incorporate more automated testing into !BigBlueButton development process, such as using [http://testng.org/doc/index.html TestNG]. 
+
+We know that the most important part of any submission is the ability for others to test that it works correctly.   Any documentation, sample code, or unit tests that you can provide will greatly reduce the effort of the committer to review your submission.
+
+
+=== Coding conventions  ===
+Take a look at the existing code in !BigBlueButton and follow it as an examples of the project's coding and documentation conventions.
+
+For code written in Java, we will follow the [http://www.oracle.com/technetwork/java/codeconvtoc-136057.html Java Coding Convention] with minor changes. We will be documenting those changes in this wiki.
+
+For documentation of code method -- especially those classes that provides an API to other classes -- should be documented  using the [http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html JavaDoc] format. This way we as part of running !Hudson CI, we will generate the docs.
+
+For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/help.html?content=asdoc_1.html AsDoc] format.
 
 = Installation =
 
