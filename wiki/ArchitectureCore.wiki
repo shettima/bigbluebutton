@@ -1,3 +1,4 @@
+#labels Deprecated
 The discussion on what should be at the core of the architecture evolves around two sets of considerations. On the one hand,
 
   * Core should focus on collaborative technologies (not just about voice)
