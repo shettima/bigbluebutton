@@ -1,3 +1,12 @@
+_This page along is depreciated.  The discussions for the future architecture of !BigBlueButton have moved into the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list._
+
+In particular, you can see the efforts to improve the voice: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# Improving audio in BigBlueButton 0.8].
+
+_For a high-level draft roadmap for !BigBlueButton's architecture, please see [http://code.google.com/p/bigbluebutton/wiki/RoadMap1dot0 Roadmap to 1.0]. For information on contributing to !BigBlueButton, please see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]._
+
+*Depreciated*
+
+
 The goal of this section is to summarize how we approach voice stability.
 
 == Goals ==
