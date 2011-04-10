@@ -1,6 +1,6 @@
 #summary Proposed Google Summer of Code projects for BigBlueButton. Let us know if you want to work on one.
 
-_Note: !BigBlueButton didn't get accepted this year in GSOC -- but we'll be trying hard for 2012!  Further discussion on these projects has moved to the issue tracker with labels of [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Type-Research&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles Research]._
+_Note: !BigBlueButton didn't get accepted this year in GSOC 2011 -- but we'll be trying hard for 2012!  Further discussion on these projects has moved to the issue tracker with labels of [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Type-Research&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles Research]._
 
 <wiki:toc max_depth="3" />
 
