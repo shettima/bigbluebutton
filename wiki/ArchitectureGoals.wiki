@@ -1,3 +1,4 @@
+#labels Deprecated
 The goals for the new architecture are to guide design decisions and provide design rationale:
 
   * Share architecture evolution documents with council members
