@@ -256,7 +256,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
 
-== Welcome to nginx! ==
+== Change the BigBlueButton Server's IP ==
 
 A common problem is the default install scripts in for !BigBlueButton configure it to list for an IP address, but if you are accessing your server via a DNS hostname, you'll see the 'Welcome to Nginx' message.
 
