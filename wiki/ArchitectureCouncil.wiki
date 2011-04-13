@@ -3,7 +3,7 @@
 
 *Depreciated*
 
-_This page along, with the Architecture Council, are depreciated.  The discussions for the future architecture of !BigBlueButton have moved into the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list._
+_This page along, with the Architecture Council, are deprecated.  The discussions for the future architecture of !BigBlueButton have moved into the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list._
 
 _For a high-level draft roadmap for !BigBlueButton's architecture, please see [http://code.google.com/p/bigbluebutton/wiki/RoadMap1dot0 Roadmap to 1.0]. For information on contributing to !BigBlueButton, please see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]._
 
