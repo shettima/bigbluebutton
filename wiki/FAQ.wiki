@@ -336,6 +336,7 @@ asterisk server ip:          192.168.1.100
 bigbluebutton/freeswitch ip: 192.168.1.200
 }}}
 
+* Changes to your Asterisk server *
 Setup your gateway to !BigBlueButton/FreeSWITCH. in {{{/etc/asterisk/sip.conf}}} add
 {{{
 [fs-gw]
@@ -358,6 +359,7 @@ exten => 85001,1,Dial(SIP/fs-gw/${EXTEN})
 exten => 85001,2,Hangup
 }}}
 
+* Changes to your !BigBlueButton/FreeSWITCH server *
 In !BigBlueButton/FreeSWITCH, make the following changes:
 
 Lock down so that only Asterisk can forward calls to FreeSWITCH. In {{{/opt/freeswitch/conf/autoload_configs/acl.conf.xml}}}, add the following ACL. We also need to allow !BigBlueButton to call into FreeSWITCH, that's why we add the IP of !BigBlueButton/FreeSWITCH into the ACL.
