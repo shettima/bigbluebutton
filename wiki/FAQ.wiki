@@ -1208,7 +1208,7 @@ While we are a world-wide community of developers, time is a precious commodity.
   # What features do we (the core developers) like to see in !BigBlueButton? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
-If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to !BigBlueButton (hey -- its open source!).  Following that, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).
+If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to !BigBlueButton (see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]).  Following that, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).
 
 For a list of what's planned for the next iteration, check out our RoadMap.  
 
