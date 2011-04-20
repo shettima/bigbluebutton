@@ -20,28 +20,24 @@ The implementation of this vision would extend the current API to enable third-p
 
 The success of this vision would be measured in the number of educational institutions that actively use !BigBlueButton to capture and distribute their lectures.
 
-== Breakdown ==
-We break the vision for record and playback into the following architectural components (The details of the technical implementation for the first iteration are covered later in this document):
+== Phases ==
+Record and playback can be broken down into the following phases (The details of the technical implementation for the first iteration are covered later in this document):
   # Capture
-  # Capture Archive
-  # Ingest and Processing
-  # Distribution Management
-  # Engage Tools
+  # Archive
+  # Ingest and Process
+  # Publish
+  # Playback
 
-As shown below, each of the components corresponds to a phase in the processing of content from lecture to playback.
-
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image5.png" />
-
-=== Capture ===
+=== Capture Phase ===
 The Capture phase involves enabling the !BigBlueButton modules (chat, presentation, video, voice, etc.) to emit events over an event bus for capture on the !BigBlueButton server.  Components that generate media (webcam, voice, desktop sharing) must also store their data streams on the server as well.
 
-=== Capture Archive ===
+=== Archive Phase ===
 The Capture Archive phase involves one or more server-based tools that subscribe to the event bus and store the emitted events (such as "advance to slide 3 at 12:34:32") together with the associated media (slides, audio, video, and other media streams) into a repository (database or file system) for later processing. 
 
 You can think of a server-based tool functioning as a VCR: it sees and records all the events and media generated during a !BigBlueButton session without affecting the session itself.
 
-=== Ingest and Processing ===
-The Ingest and Processing phase involves one or more tools that process the recorded events and media into a format for later playback.  A tool may process all or a subset of the recorded events and media.
+=== Ingest and Process Phase ===
+The Ingest and Process Phase involves one or more tools that process the recorded events and media into a format for later playback.  A tool may process all or a subset of the recorded events and media.
 
 For example, a tool can extract and process only the slides, slide transition events, and audio to create one of the following output formats:
   * a video file that could be uploaded to !YouTube for playback,
@@ -53,8 +49,8 @@ The vision for this phase includes giving the moderator (or teacher or administr
   # edit a recorded session, such as trimming content from the start or end of the recording, or deleting unwanted sections of the recording,
   # schedule and monitor the processing of recorded content (such as in the case where video encoding takes significant time) and receive notifications when recorded material is ready for viewing.
 
-=== Distribution Management ===
-The Distribution Management phase provides one or more tools to manage the publication and access to the recorded sessions.  For example, a Distribution Management tool could upload a video file of a recorded session to external sites like !YouTube, iTunesU, and others.
+=== Publish Phase ===
+The Public Phase provides one or more tools to manage the publication and access to the recorded sessions.  For example, a Distribution Management tool could upload a video file of a recorded session to external sites like !YouTube, iTunesU, and others.
 
 The vision for this phase includes the ability for an administrator to
   * easily distribute content to iTunesU, Youtube, etc,
@@ -63,12 +59,12 @@ The vision for this phase includes the ability for an administrator to
   * transfer the media to a content distribution nework, 
   * access the the recorded sessions from within 3rd party applications, such as !WordPress or Joomla, using an associate !BigBlueButton plug-in.
 
-=== Engage Tools ===
-In the Engage Tools phase, the user loads a client tool -- such as video player, custom Flash client, or custom HTML5 client -- to playback a recorded session.
+=== Playback Phase ===
+In the Playback Phase, the user loads a client tool -- such as video player, custom Flash client, or custom HTML5 client -- to playback a recorded session.
 
 For example, the client tool could be an HTML interface the allows the user to do keyword searching through past recordings.  A student could enter the keyword "ecosystem" and the tool would search through all recorded session, display thumbnails of slides that contain that specific keyword, and start playback on a specific slide when the user clicks a thumbnail.
 
-== High-level Architecture ==
+== High Level Architecture ==
 === Capture and Archive ===
 We begin with diagram that steps through in more detail the record and playback process, from the moment the user enters a session, to when the recorded session is available for Ingest and Processing.
 
