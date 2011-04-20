@@ -65,10 +65,19 @@ In the Playback Phase, the user loads a client tool -- such as video player, cus
 For example, the client tool could be an HTML interface the allows the user to do keyword searching through past recordings.  A student could enter the keyword "ecosystem" and the tool would search through all recorded session, display thumbnails of slides that contain that specific keyword, and start playback on a specific slide when the user clicks a thumbnail.
 
 == High Level Architecture ==
-=== Capture and Archive ===
-We begin with diagram that steps through in more detail the record and playback process, from the moment the user enters a session, to when the recorded session is available for Ingest and Processing.
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/record_and_playback/image9.png" />
+=== Capture ===
+
+{{{
+
+          deskshare       video          bbb-apps             bbb-web
+                                           |  |                  |
+                                           |  |                  |
+                            FreeSWITCH <---|  |-----> Redis <----|
+
+
+}}}
+
 
 The moderator (teacher) clicks (1) a join link in a 3rd party application (such as !WordPress !BigBlueButton Plugin) that calls the !BigBlueButton server with a create API request, passing "&record=true". The !BigBlueButton API controller creates (2) a meetingID and returns it to the 3rd party application. The !BigBlueButton API controller informs (3) the !RecordCoordinator that a specific session that is about to start.  When the first user joins the session, the !RecordCoordinator tells (4) the !EventRecorder to listen and record events for a the session. It also informs (5) FreeSWITCH/Asterisk to begin recording the voice conference for the session.
 
