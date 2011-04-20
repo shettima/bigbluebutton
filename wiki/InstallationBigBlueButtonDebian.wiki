@@ -3,6 +3,9 @@
 = Introduction =
 This guide will show how to install !BigBlueButton 0.70 on Debian Squeeze 32-bit.
 
+Note: This is for an out-of-date version of !BigBlueButton and the instructions may not work.  If possible, we recommend you install !BigBlueButton on a Ubuntu 10.04 32-bit or 64-bit server.  See [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Installation on Ubuntu].
+
+
 Log in as root to avoid having to type sudo in front of most of the commands required to install !BigBlueButton.
 
 {{{
