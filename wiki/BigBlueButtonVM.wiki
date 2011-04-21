@@ -169,6 +169,7 @@ Next, you can manually finish the setup to !BigBlueButton with the following com
 
 There should be no errors when you type the above three commands.
 
+== The IP address of my VM has changed and now !BigBlueButton does not work ==
 Next, you'll need to ensure that !BigBlueButton is listening to the IP address of your VM.  To check your current environment for possible problems that might prevent !BigBlueButton from running, type the following command:
 
 {{{
