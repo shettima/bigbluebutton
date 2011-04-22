@@ -193,6 +193,8 @@ If at all possible, install on Ubuntu 10.04.  With a good internet connection, y
 === CentOS ===
 For !BigBlueButton 0.64, we had created [RPMPackaging RPM Packages] for CentOS 5.4, but, at the moment, they are now very much out of date.  We had also provided [InstallingBigBlueButtonCentOS step-by-step instructions] for installing on CentOS, but these too are out of date.  We have no date for updating these packages and instructions.
 
+Any further updates are tracked in the following issue: [http://code.google.com/p/bigbluebutton/issues/detail?id=624 624].
+
 Why?  In a nutshell: quality.  We found it very difficult to test and maintain packaging for both RPM based systems (primarily CentOS) and Ubuntu.  Rather than try to do both and have them "kind of" work, which leads to many many posts in our forums for support, we've invested heavily in testing and maintaining the Ubuntu packages.  They are now very solid and tested.
 
 If at all possible, we recommend you setup a Ubuntu 10.04 server to try out !BigBlueButton.  If you *really* want support for CentOS, you can contact one of the companies listed at http://bigbluebutton.org/support for commercial support.  Any financial contribution you make to updating CentOS packages will directly benefit other CentOS users in the community.
