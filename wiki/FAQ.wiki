@@ -1200,9 +1200,9 @@ in `bigbluebutton/client/BigBlueButton.html`.  You can see the list of languages
 == Other Questions ==
 === When will feature X be implemented? ===
 
-Keep in mind that !BigBlueButton is largely built by a group of (very determined) open source developers that volunteer their time.   Some of us work for companies that provide paid support to enable educational institutions and companies to leverage !BigBlueButton (see http://bigbluebutton.org/support). 
+Keep in mind that !BigBlueButton is largely built by a group of (very determined) open source developers that volunteer their time.   Some of us work for companies that provide commercial support for !BigBlueButton (see http://bigbluebutton.org/support). 
 
-Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for over two years years.
+Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://en.wikipedia.org/wiki/BigBlueButton over three years].
 
 While we are a world-wide community of developers, time is a precious commodity.  In general, when planning the next release, we look at all feature requests and bug fixes in the following order: 
   # What are our (paying) customers asking us to implement?
@@ -1210,9 +1210,14 @@ While we are a world-wide community of developers, time is a precious commodity.
   # What features do we (the core developers) like to see in !BigBlueButton? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
-If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  Following that, you could roll up your sleeves and add the feature to !BigBlueButton (see [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]).  Following that, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).
+For (1), the request of our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  For (2), you can see the current development work by looking at our RoadMap; you an also look further ahead to see our roadmap to [RoadMap1dot0 BigBlueButton 1.0].
 
-For a list of what's planned for the next iteration, check out our RoadMap.  
+If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  If the feature you are requesting is not already on our roadmap or in our issue tracker, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).
+
+!BigBlueButton is an open source project.  Anyone with the necessary skills can roll up their sleeves and try their hand at implementing a needed feature.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]).
+
+Finally, if your feature request is not on our RoadMap and is not related to distance education, then it will likely be a while before we implement it.  Your best option is (1) or try implementing the feature yourself.
+
 
 === My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
