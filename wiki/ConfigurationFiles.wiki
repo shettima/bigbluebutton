@@ -43,7 +43,7 @@ Properties for bbb-apps, the core !BigBlueButton red5 module.
 http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/webapp/WEB-INF/bigbluebutton.properties
 
 === /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties ===
-Properties for bbb-apps-sip, which specifies the range of ports for connecting to the Asterisk server.  Used with bbb_sip.conf.
+Properties for bbb-apps-sip, which specifies the range of ports for connecting to the Asterisk or FreeSWITCH server.  Used with bbb_sip.conf.
 
 http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties
 
