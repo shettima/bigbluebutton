@@ -1216,9 +1216,6 @@ If you really want to see feature X, helping your organization become (1) is the
 
 !BigBlueButton is an open source project.  Anyone with the necessary skills can roll up their sleeves and try their hand at implementing a needed feature.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]).
 
-Finally, if your feature request is not on our RoadMap and is not related to distance education, then it will likely be a while before we implement it.  Your best option is (1) or try implementing the feature yourself.
-
-
 === My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
 There were some problems with the latest Flash update on Mac OS X.  See this [http://discussions.apple.com/thread.jspa?messageID=12641342&#12641342 Apple Support thread] for suggested solutions.
