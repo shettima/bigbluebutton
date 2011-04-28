@@ -715,7 +715,7 @@ You'll always get the best results with PDF.
 
 If you upload a PDF document, all your fonts will come through with the document.
 
-However, if you upload a Word or Power Point document that has special fonts, such as Chinese language, the document must first be converted by OpenOffice into PDF.  Unless you've configured the OpenOffice server running within !BigBlueButton to have the necessary fonts, the you will see empty spaces (or boxes) for the missing fonts.
+However, if you upload a Word or Power Point document that has special fonts, such as Chinese language, the document must first be converted by !OpenOffice into PDF.  Unless you've configured the !OpenOffice server running within !BigBlueButton to have the necessary fonts, the you will see empty spaces (or boxes) for the missing fonts.
 
 For best results, always create a PDF and upload it for conversion.
 
