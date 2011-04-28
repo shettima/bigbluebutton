@@ -962,6 +962,11 @@ You need to create the following 2 directories on your bbb server if they're not
 === My client fails at startup with RSL error; Error 2035:URL Not Found ===
 This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here]
 
+=== Why do I need to use mysql if BigBlueButton does not store state? ===
+!BigBlueButton used to come with a (very) primitive grails-based application for scheduling.  We depreciated it, but we still use grails to implement the API logic, and grails is still looking for a bigbluebutton-dev database.
+
+We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=869 issue 869] to remove the dependency on mysql in a future iteration of !BigBlueButton.
+
 
 = Troubleshooting =
 
