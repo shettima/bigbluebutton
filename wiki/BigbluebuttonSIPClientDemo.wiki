@@ -284,3 +284,5 @@ $ sudo service red5 restart
 Before running the applet we might need to perform some steps to make sure that our system has the minimum requirements to run the applet. You can find related information [http://www.titook.net/faq/index.php/BigBlueButton here]
 
 After making sure our system is configured properly now we can run the SIP Client applet for the Bigbluebutton. 
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApplet.jpg
