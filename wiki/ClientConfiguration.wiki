@@ -12,9 +12,9 @@ Open up the config.xml file. This is a line by line discussion of it's propertie
 == Main parameters ==
 === localeversion ===
 {{{
-<localeversion>0.71</localeversion>
+<localeversion suppressWarning="false">0.71</localeversion>
 }}} 
-This should be left as is. It has to do with the client caching localization files.
+This should be left as is. It has to do with the client caching localization files. If you're having problems with the Warning Dialog for old localizations, you can set the suppressWarning parameter to true.
 
 === version ===
 {{{
