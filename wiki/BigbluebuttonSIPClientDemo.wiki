@@ -291,11 +291,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApple
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApplet2.jpg
 
 
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApplet4.jpg
-
-
-
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/SIP_APPLET_IMG/BBBApplet5.jpg
 
 
