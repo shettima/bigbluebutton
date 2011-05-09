@@ -361,4 +361,4 @@ Use your browser to go to localhost. You should see a BBB page and be able to su
 
 If necessary, open these ports in firewall:
 
-80 (nginx); 8080 (tomcat); 8088, 5080 (red5); 5080 (deskshare); 8161, 61616 (activemq) 
+80 (nginx); 8080 (tomcat); 8088, 5080 (red5); 5080 (deskshare); 8161, 61616 (activemq), 1935 (red5) 
