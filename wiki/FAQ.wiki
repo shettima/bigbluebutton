@@ -531,7 +531,9 @@ The best approach is to see how others have integrated and adapt their code to y
 
 == How many simultaneous users can a !BigBlueButton server support? == 
 
-We don't give out recommendations on how many users a !BigBlueButton server can support, as it's so dependent on the bandwidth usage, server capacity, and user activity.
+As a rule of the thumb, we recommend you use !BigBlueButton for on-line classes of twenty-five (25) users or less.  You can run multiple on-line classes on a !BigBlueButton server.
+
+We don't give out recommendations for the maximum number users a !BigBlueButton server can support, as it's so dependent on the bandwidth usage, server capacity, and user activity.
 
 Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.
 
@@ -570,7 +572,7 @@ The server at Generic Conferencing would would have likely continued working had
 
 In short: At its peak, the server had 45 users in the voice conference and, through each user opening multiple browser pages, 193 simultaneous users logged into !BigBlueButton over the web -- all in a single virtual classroom. 
 
-_Keep in mind, we don't recommend to anyone to run !BigBlueButton with 193 users in a single room (not yet anyway), but it is possible._
+Keep in mind, we don't recommend to anyone to run !BigBlueButton with 193 users in a single room (not yet anyway), but it is possible.  Again, we recommend using !BigBlueButton for class sizes of 25 or less.
 
 You can also see the memory usage earlier stress test on 0.64  [http://code.google.com/p/bigbluebutton/downloads/detail?name=bbb-test-1.pdf&can=2&q= PDF Summary Graph] for both CPU usage and bandwidth usage during the test.
 
