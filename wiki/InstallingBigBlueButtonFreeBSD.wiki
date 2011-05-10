@@ -66,7 +66,7 @@ red5_enable="YES"
 
 Next, populate the `BigBlueButton` database with this command:
 
-*/usr/local/etc/rc.d/mysql start*
+*/usr/local/etc/rc.d/mysql-server start*
 
 Finally, install and start `BigBlueButton`:
 
