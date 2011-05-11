@@ -1,46 +1,24 @@
 #summary How to localize BigBlueButton
 
 = Contributing the new language translation to !BigBlueButton =
-If you would like to translate !BigBlueButton to another language, here are the steps you can follow:
 
-  # Download the [http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-client/locale/en_US/bbbResources.properties language template file]. 
-  # Open this file with a text editor, and translate the english text into your language.
-  # Post the translated text to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List]
-*NOTE: While you will be credited bellow for the translation, by sending the translation to the mailing list you are automatically transferring all copyright of the translation file to the !BigBlueButton project.*
+If you would like to translate !BigBlueButton to another language, you can watch this video http://www.youtube.com/watch?v=LK-IWLctInw or you can follow the steps below:
 
-One of the !BigBlueButton developers will download and incorporate the language file into the latest build on your behalf. Once it's checked into the repository, you'll be able to test it on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
+  # Go to http://localize.bigbluebutton.org
+  # Sign up for an account.
+  # Wait for approval from the site administrators. You will be notified in an e-mail.
+  # Login using the link provided in the e-mail.
+  # Set your password.
+  # Click on translate from the side menu.
+  # Select the language you wish to translate.
+  # Click on translate from the top menu.
+  # Begin Translating.
+  # Save Changes.
 
-If you wish to modify an existing translation instead of creating a new one, you can download the translation files [http://github.com/bigbluebutton/bigbluebutton/tree/master/bigbluebutton-client/locale?raw=true here]. Send the updated translation to the bigbluebutton-dev mailing list.
 
-== Current translation available ==
-|| *Language* || *Code* || *Translator* || *Email* || *BBB Version* ||
-|| Azerbaijani || az_AZ || Emin Hasanov || eminach AT gmail DOT com || 0.64 ||
-|| Chinese (Simplified) || zh_CN || Xie Yan Qing || qingtom AT gmail DOT com || 0.63 ||
-|| Chinese (Traditional) || zh_TW || Patrick Roan || patrick.roan AT gmail DOT com || 0.71 ||
-|| Danish || da_DK || Jesper Skelgaard || skelgaard AT gmail DOT com || 0.71 ||
-|| English || en_US || !BigBlueButton Team || ffdixon AT bigbluebutton DOT org (and many others) || 0.7 ||
-|| French || fr_FR || Jean-Philippe Guiot || DJP AT architectes DOT org ||0.7 ||
-|| German || de_DE || Stefan Auditor || stefan.auditor AT googlemail DOT com || 0.63 ||
-|| Greek || el_GR || Andreas Botsikas || andreasbotsikas AT gmail DOT com || 0.64 ||
-|| Indonesian || id_ID || Ibnu || kandiraytower AT gmail DOT com || 0.71 ||
-|| Italian || it_IT || Federico Corradino || spiorfeus AT gmail DOT com || 0.64 ||
-|| Korean || ko_KR || Yoo || cwdaddy AT gmail DOT com || 0.71 ||
-|| Lithuanian || lt_LT || Marius Kazlauskas || mar.kazlauskas AT gmail DOT com || 0.64 ||
-|| Norwegian || nb_NO || Tore Gaupseth || firetreto AT gmail DOT com ||0.71 ||
-|| Netherland || nl_NL || Kristof Keppens || kristof AT inuits DOT be ||0.71 ||
-|| Persian || fa_IR || Morteza Hanifnejad || m.hanifnejad AT gmail.com || 0.7 ||
-|| Portuguese || pt_PT || FábioVaz_IPT || fafvaz AT gmail DOT com || 0.63 ||
-|| Portuguese (Brazilian) || pt_BR || Márcio Moraes || marciopanto AT gmail DOT com || 0.71 ||
-|| Polish || pl_PL || Artur Zdolinski || artur.zdolinski AT gmail DOT com || 0.71 ||
-|| Romanian || ro_RO || Claudius Tiberiu Iacob || claudius.iacob AT gmail DOT com || 0.64 ||
-|| Russian || ru_RU || Mike Ozornin || mike.ozornin AT gmail DOT com || 0.64 ||
-|| Serbian || sr_RS || Denis Zgonjanin || deniszgonjanin AT gmail DOT com || 0.64 ||
-|| Spanish || es_ES || Néstor || n3storm AT gmail DOT com || 0.64 ||
-|| Spanish (Latin American) || es_LA || Alejandro Sánchez López || alexsl33 AT gmail DOT com || 0.64 ||
-|| Swedish || sw_SW || Fredrik Garmer || garmer AT gmail.com || 0.7 ||
-|| Turkish || tr_TR || Yasin Ozarslan || ozarslan AT gmail DOT com || 0.71 ||
-|| Ukrainian || uk_UA || Yevgen || yevgen.pal AT gmail DOT com || 0.71 ||
-|| Vietnamese || vi_VN || Phan Thái Trung || phanthaitrung AT gmail DOT com || 0.7 ||
+*NOTE: If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
+
+Within 2-3 hours the new translations will be available on GitHub (master), and on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
 
 
 == Technical Background  ==
