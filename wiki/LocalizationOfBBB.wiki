@@ -18,7 +18,7 @@ If you would like to translate !BigBlueButton to another language, you can watch
 
 *NOTE: If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
 
-Within 2-3 hours the new translations will be available on GitHub (master), and on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
+Within 2-3 hours the new translations will be available on github (master), and on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
 
 
 == Technical Background  ==
