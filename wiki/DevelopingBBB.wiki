@@ -153,6 +153,12 @@ At this point Red5 would have restarted.  However, before we deploy the local ve
 sudo service red5 stop
 }}}
 
+In version 0.71a, you will need to also add the local jar repository to your path:
+{{{
+echo 'export FLAT_REPO=~/dev/repo' >> ~/.profile
+source ~/.profile
+}}}
+
 We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
 
 {{{
