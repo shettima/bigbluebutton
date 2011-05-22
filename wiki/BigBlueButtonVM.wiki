@@ -2,6 +2,10 @@
 
 <wiki:toc max_depth="2" />
 
+
+
+*Note: March 22, 2010 -- Our BigblueButton Package Archive is currently off-line so the BigBlueButton VM will not load.  We expect the archive to be back-online by Noon on March 24th.  *
+
 = How to setup your own !BigBlueButton Server in a few minutes =
 
 Many universities and colleges have told us they want to run their own version  !BigBlueButton behind their firewall.  In addition, developers have asked how to setup a development environment to enhance and extend !BigBlueButton.
