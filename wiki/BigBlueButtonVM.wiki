@@ -1,10 +1,10 @@
 #summary How to setup your own BigBlueButton Virtual Machine
 
+*Note: March 22, 2010 @ 1:09pm -- The site bigbluebutton.org, demo.bigbluebutton.org, and ubuntu.bigbluebutton.org (apt-get archive) are currently offline.  We expect all the sites to be back on-line by noon on March 24th.  *
+
+* The absence of ubuntu.bigbluebutton.org means that the BigBlueButton VM will not successfully install when first run.  *
+
 <wiki:toc max_depth="2" />
-
-
-
-*Note: March 22, 2010 -- Our BigblueButton Package Archive is currently off-line so the BigBlueButton VM will not load.  We expect the archive to be back-online by Noon on March 24th.  *
 
 = How to setup your own !BigBlueButton Server in a few minutes =
 
