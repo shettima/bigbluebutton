@@ -1,5 +1,7 @@
 #summary How to install  BigBlueButton 0.71a on Ubuntu in under 15 minutes
 
+*Note: March 22, 2010 @ 1:09pm -- The site bigbluebutton.org, demo.bigbluebutton.org, and ubuntu.bigbluebutton.org (apt-get archive) are currently offline.  We expect all the sites to be back on-line by noon on March 24th.  *
+
 <wiki:toc max_depth="3" />
 
 = Prerequisites =
