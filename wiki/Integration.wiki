@@ -4,6 +4,7 @@
 If you don't see your System bellow, feel free to request an integration on our [http://groups.google.com/group/bigbluebutton-dev/ mailing list].
 
 == List of Systems !BigBlueButton integrates with ==
+  * [https://github.com/instructure/canvas-lms/blob/stable/app/models/big_blue_button_conference.rb Canvas LMS]
   * [http://confluence.sakaiproject.org/display/BBB/Home Sakai]
   * [http://wordpress.org/extend/plugins/bigbluebutton/ WordPress]
   * [http://drupal.org/project/bbb Drupal]
