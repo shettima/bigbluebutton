@@ -2,12 +2,12 @@
 
 = Introduction =
 
-BigBlueButton will soon by default build with Maven. Until then you can help us test out the maven integration by following these instructions.
+!BigBlueButton will soon by default build with Maven. Until then you can help us test out the maven integration by following these instructions.
 
 
 = Details =
 
-1. Install BigBlueButton on your server.
+1. Install !BigBlueButton on your server.
 2. Checkout the source.
 3. cd to bigbluebutton/.
 4. run:
