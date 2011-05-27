@@ -7,11 +7,11 @@
 
 = Details =
 
-1. Install !BigBlueButton on your server.
-2. Checkout the source.
-3. cd to bigbluebutton/.
-4. run:
+  # Install !BigBlueButton on your server.
+  # Checkout the source.
+  # cd to bigbluebutton/.
+  # run:
 {{{
 mvn clean install -Dmaven.test.skip=true
 }}}
-5. Report errors to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev]
+  # Report errors to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev]
