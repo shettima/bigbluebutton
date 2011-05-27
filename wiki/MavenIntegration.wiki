@@ -1,0 +1,17 @@
+#summary Instructions to build with Maven
+
+= Introduction =
+
+BigBlueButton will soon by default build with Maven. Until then you can help us test out the maven integration by following these instructions.
+
+
+= Details =
+
+1. Install BigBlueButton on your server.
+2. Checkout the source.
+3. cd to bigbluebutton/.
+4. run:
+{{{
+mvn clean install -Dmaven.test.skip=true
+}}}
+5. Report errors to [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev]
