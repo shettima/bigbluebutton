@@ -10,6 +10,10 @@
   # Install !BigBlueButton on your server.
   # Checkout the source.
   # cd to bigbluebutton/.
+  # Checkout the maven branch:
+{{{
+git checkout maven
+}}}
   # run:
 {{{
 mvn clean install -Dmaven.test.skip=true
