@@ -11,7 +11,7 @@ On a Ubuntu 10.04 32-bit or 64-bit server, do the following:
 
   # [InstallationUbuntu Install BigBlueButton].
   # Install [http://maven.apache.org/download.html Maven 3].
-  # Checkout the [https://github.com/bigbluebutton/bigbluebutton BigBlueButton source] from GitHub.
+  # Checkout the [https://github.com/bigbluebutton/bigbluebutton BigBlueButton source] from !GitHub.
   # cd to bigbluebutton/.
   # Checkout the maven branch:
 {{{
