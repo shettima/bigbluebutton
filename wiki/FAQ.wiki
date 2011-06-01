@@ -175,6 +175,7 @@ Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 32-bit and 
   # Launch a "lucid" image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].
   # Follow the instructions to InstallationUbuntu.
   # Adjust the FreeSWITCH configuration (see [FAQ#When_I_click_on_the_headset_icon,_nothing_happens? FAQ]) to work on an internal IP address.
+  # Set !BigBlueButton to list to the external DNS name for the EC2 instance (see [http://code.google.com/p/bigbluebutton/wiki/BBBConf#--setip_<hostname_or_ip>[:<Port>] bbb-conf])
 
 You'll need (at a minimum) a m1.small.  We recommend running !BigBlueButton on a c1.medium.
 
