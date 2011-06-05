@@ -35,7 +35,7 @@ git checkout v0.71a
 
 This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}.  
 
-Note - June 3, 2010: You want to checkout the source tagged for 0.71a as master is under active development for 0.8 and is currently not stable.
+Note - June 3, 2011: You want to checkout the source tagged for 0.71a as master is under active development for 0.8 and is currently not stable.
 
 If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub Help] has a lot of information too.
  
