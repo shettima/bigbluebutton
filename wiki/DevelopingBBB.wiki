@@ -28,9 +28,14 @@ See the [BBBConf] page for troubleshooting tips.
 Type the following command to checkout !BigBlueButton from our [http://www.github.com/bigbluebutton github repository].
 {{{
 bbb-conf --checkout
+cd ~/dev/source/bigbluebutton
+git init
+git checkout v0.71a
 }}}
 
-This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}. 
+This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}.  
+
+Note - June 3, 2010: You want to checkout the source tagged for 0.71a as master is under active development for 0.8 and is currently not stable.
 
 If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub Help] has a lot of information too.
  
