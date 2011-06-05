@@ -860,6 +860,7 @@ Setting up DIDs involves configuration of Asterisk/FreeSWITCH. If you've never d
 
 Setting up DIDs will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your Asterisk/FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your Asterisk/FreeSWITCH server.
 
+Update (June 2, 2011): We've made progress in reducing the audio delay in the upcoming !BigBlueButton 0.8. See this [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# thread] in bigbluebutton-dev group.
 
 === Why is the audio not synced with the video? ===
 
