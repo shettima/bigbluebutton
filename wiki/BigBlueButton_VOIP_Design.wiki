@@ -41,3 +41,14 @@ Sequence of events when a user joins the voice conference.
 Sequence of events when the user leaves the conference.
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-leave.png]
+
+ 1. When the user clicks hangup, the Client invoke a method on the Service class located server.
+ 1. The Service class forwards the request to the !SipPeerManager.
+ 1. Which then forwards it to !SipPeer.
+ 1. And then to the !CallManager.
+ 1. The !CallManager tells Call to terminate.
+ 1. The Call instance will stop the streams by informing !CallStream
+ 1. !CallStream then stop both streams.
+ 1. And Call will disconnect (BYE) from Asterisk/FS.
+ 1. Tells the !ClientConnection that the call has been hanged-up.
+ 1. The !ClientConnection invokes a method on the Client telling it the the call has ended.
