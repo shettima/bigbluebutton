@@ -32,7 +32,10 @@ Sequence of events when a user joins the voice conference.
  1. Once the call is connected, the Call instance will create a CallStream which encapsulates 2 streams. One stream from Red5 to FS and the other in the opposite direction.
  1. The stream that handles audio packets from FS/Asterisk is !SipToFlashAudioStream
  1. The stream for the opposite directions is !FlashToSipAudioStream.
-
+ 1. Now that the streams have been setup, notify the !ClientConnection about the stream.
+ 1. The !ClientConnection invokes a method on the client passing in the all relevant information (stream name, codec) to be able to connect to the streams.
+ 1. Both stream are told to start processing the audio packets.
+ 1. Audio RTP packets from Asterisk/FS are handled by the !RtpStreamReceiver and forwarded to the !Transcoder and then pushed to the Client. Audio RTMP packets from the Client are received by !FlashToSipAudioStream and forwarded to the Transcoder then to the RtpStreamSender which packages the packet using RTP to Asterisk/FS. During the SDP codec negotiation, the type (SPEEX, ULAW) of Transcoder is initialized. The different Trancoders are [https://github.com/bigbluebutton/bigbluebutton/tree/master/bbb-voice/src/main/java/org/bigbluebutton/voiceconf/red5/media/transcoder here].
 
 == Leave ==
 Sequence of events when the user leaves the conference.
