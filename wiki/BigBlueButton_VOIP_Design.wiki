@@ -21,12 +21,18 @@ Sequence of events when a user joins the voice conference.
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/bbb_diagramsPNG_06/voice-conf-detailed-design-join.png]
 
  1. The client connects to the application.
- 1. The ClientConnectionManager store the client connection
- 1. The ClientConnection will be used to send messages from the server to the client
+ 1. The !ClientConnectionManager store the client connection
+ 1. The !ClientConnection will be used to send messages from the server to the client
  1. The client then tells the Service to call into the voice conference
  1. The Service forwards the request to the SipPeerManager which finds the SipPeer for the voice conference
- 1. The SipPeer receives the request to call into the conference
- 1. 
+ 1. The !SipPeer receives the request to call into the conference
+ 1. !SipPeer tells the !CallManager to start the call.
+ 1. The !CallManager create the Call instance.
+ 1. The Call instance connects to FS/Asterisk (INVITE, SDP negotation, etc.)
+ 1. Once the call is connected, the Call instance will create a CallStream which encapsulates 2 streams. One stream from Red5 to FS and the other in the opposite direction.
+ 1. The stream that handles audio packets from FS/Asterisk is !SipToFlashAudioStream
+ 1. The stream for the opposite directions is !FlashToSipAudioStream.
+
 
 == Leave ==
 Sequence of events when the user leaves the conference.
