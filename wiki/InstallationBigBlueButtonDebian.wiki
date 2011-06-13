@@ -165,12 +165,12 @@ Even then, I still have problems right now uploading documents to the whiteboard
 
 == References ==
 
-* http://www.khattam.info/howto-add-launchpad-ubuntu-ppa-in-debian-squeeze-testing-2010-11-13.html
-* https://launchpad.net/~freeswitch-drivers/+archive/freeswitch-nightly-drivers?field.series_filter=lucid
-* http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/c9de580177e6f4bf
-* http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu
-* http://www.debian.org/doc/manuals/apt-howto/ch-helpers.en.html
-* http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/76dc74876f091b3b/aef92ac086c0d5d3?lnk=gst&q=change+port#aef92ac086c0d5d3
+  * http://www.khattam.info/howto-add-launchpad-ubuntu-ppa-in-debian-squeeze-testing-2010-11-13.html
+  * https://launchpad.net/~freeswitch-drivers/+archive/freeswitch-nightly-drivers?field.series_filter=lucid
+  * http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/c9de580177e6f4bf
+  * http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu
+  * http://www.debian.org/doc/manuals/apt-howto/ch-helpers.en.html
+  * http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/76dc74876f091b3b/aef92ac086c0d5d3?lnk=gst&q=change+port#aef92ac086c0d5d3
 
 
 
