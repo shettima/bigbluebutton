@@ -2,7 +2,7 @@
 #labels Phase-Deploy
 
 = Introduction =
-This guide will show how to install !BigBlueButton 0.71 on Debian Squeeze 32-bit.
+This guide will show how to install !BigBlueButton 0.71 on Debian Squeeze 32-bit (still having little issues with uploading documents, but that might be gone soon).
 
 Previous basic instructions are available at the end of this document.
 
@@ -70,7 +70,7 @@ Standards-Version: 3.6.2
 
 Package: swftools-0.9.1
 Version: 0.9.1
-Maintainer: Yannick Warnier <ywarnier@beeznest.org>
+Maintainer: Your own original name of fake packager <you@example.com>
 # Pre-Depends: <comma-separated list of packages>
 # Depends: <comma-separated list of packages>
 # Recommends: <comma-separated list of packages>
