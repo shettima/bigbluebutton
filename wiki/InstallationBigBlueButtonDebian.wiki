@@ -1,7 +1,180 @@
 #summary How to install BigBlueButton on Debian
+#labels Phase-Deploy
 
 = Introduction =
-This guide will show how to install !BigBlueButton 0.70 on Debian Squeeze 32-bit.
+This guide will show how to install !BigBlueButton 0.71 on Debian Squeeze 32-bit.
+
+Previous basic instructions are available at the end of this document.
+
+Ubuntu 10.04 (upstream's favorite distribution) instructions are available here: http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu
+
+Instead of following the previous Debian documentation method, which apparently doesn't work anymore, we're going to following Ubuntu's documentation.
+
+We'll assume you've installed a Squeeze i386 netinst with only SSH server option selected. Get on a command line as root and get typing:
+
+{{{
+wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | apt-key add -
+}}}
+
+Add the BigBlueButton repository URL and ensure the multiverse is enabled
+
+{{{
+echo "deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main" | tee /etc/apt/sources.list.d/bigbluebutton.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | tee -a /etc/apt/sources.list
+apt-get install vim python-software-properties
+echo "deb http://ppa.launchpad.net/freeswitch-drivers/freeswitch-nightly-drivers/ubuntu lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 451AE93C
+apt-get update
+apt-get install bbb-freeswitch-config
+apt-get install bigbluebutton
+}}}
+
+Here, we run into the first problem. bigbluebutton depends on _bbb-config_ which depends on _bbb-web_ which depends on swftools-0.9.1 which depends on libmpfr1ldbl (>=2.3.2.dfsg.1-1ubuntu1) which is not installable (package does not exist in Debian or any repository added previously).
+
+One way to circumvent the problem is to install swftools manually (as versions previous to 0.9.1 aren't recommendable anyway):
+
+{{{
+cd /tmp
+wget http://www.swftools.org/swftools-0.9.1.tar.gz
+tar zxf swftools-0.9.1.tar.gz
+cd swftools-0.9.1
+./configure
+make
+make install
+}}}
+
+The ./configure step might give you a few problems (it might depend on specific libraries which might not be present on your system (things like zlib etc).
+I fixed it by executing the following then resuming the _make_ and _make install_ commands:
+{{{
+apt-get install zlib1g-dev giflib-tools libgif-dev libjpeg8-dev g++
+}}}
+
+Then use the Debian _equivs_ command to create a fake package by the name of the missing package.
+
+{{{
+apt-get install equivs
+cd /tmp
+equivs-control swftools
+vi swftools
+}}}
+
+Example of swftools control file:
+
+{{{
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+Section: misc
+Priority: optional
+Homepage: http://www.swftools.org
+Standards-Version: 3.6.2
+
+Package: swftools-0.9.1
+Version: 0.9.1
+Maintainer: Yannick Warnier <ywarnier@beeznest.org>
+# Pre-Depends: <comma-separated list of packages>
+# Depends: <comma-separated list of packages>
+# Recommends: <comma-separated list of packages>
+# Suggests: <comma-separated list of packages>
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+Architecture: all
+# Copyright: <copyright file; defaults to GPL2>
+# Changelog: <changelog file; defaults to a generic changelog>
+# Readme: <README.Debian file; defaults to a generic one>
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+# Files: <pair of space-separated paths; First is file to include, second is destination>
+#  <more pairs, if there's more than one file to include. Notice the starting space>
+Description: Fake empty swftools package
+ This fake package requires you to manually install the swftools 0.9.1
+ package on your server. At this point, installing this package will
+ abuse bbb-web's confidence in the Ubuntu swftools package (although no
+ harm is done anyway).
+}}}
+
+Then continue: 
+
+{{{
+equivs-build swftools
+dpkg -i swftools-0.9.1_0.9.1_all.deb
+apt-get install bbb-web
+}}}
+
+
+Now we can proceed with the installation:
+{{{
+apt-get install bigbluebutton
+}}}
+
+At the end of this one, an error shows up saying the package cannot stat /var/www/nginx-default/50x.html. That's not a big deal (must be something with the nginx package), just create the directory and file:
+
+{{{
+mkdir -p /var/www/nginx-default/
+touch /var/www/nginx-default/50x.html
+apt-get -f install
+}}}
+
+At this point, the BBB server is installed. To test it through a VirtualBox instance of Debian, you'll have to add a new ETH interface to your VirtualBox instance's config (DHCP) then check the new IP from inside your VirtualBox with
+{{{
+/sbin/ifconfig
+}}}
+
+On an internal network, this should give you something like this:
+{{{
+eth1      Link encap:Ethernet  direcciónHW 00:22:68:12:0c:43  
+          Direc. inet:192.168.1.156  Difus.:192.168.1.255  Másc:255.255.255.0
+          Dirección inet6: fe80::222:68ff:fe12:c43/64 Alcance:Enlace
+          ACTIVO DIFUSIÓN FUNCIONANDO MULTICAST  MTU:1500  Métrica:1
+          Paquetes RX:611063 errores:0 perdidos:0 overruns:0 frame:0
+          Paquetes TX:411786 errores:0 perdidos:0 overruns:0 carrier:0
+          colisiones:0 long.colaTX:1000 
+          Bytes RX:726274184 (726.2 MB)  TX bytes:42872798 (42.8 MB)
+          Interrupción:20 Memoria:fc000000-fc020000 
+}}}
+
+What you need is the "Direc. inet:www.xxx.yyy.zzz" address.
+Reconfig your BBB with bbb-conf (first doing a cleanup and a check):
+{{{
+bbb-conf --clean
+bbb-conf --check
+bbb-conf -c
+bbb-conf --setip www.xxx.yyy.zzz
+}}}
+
+This will restart the whole videoconference system and you should be able to access it from your main computer.
+
+==Installing on another port==
+
+If you want to install BigBlueButton on another port (let's say you already have Apache running on :80 and want to use BigBlueButton on :8082), the feature to update the port is not implemented in bbb-conf of BBB version 0.71. You have to download a patched version (thanks to Fred Dixon) from https://raw.github.com/bigbluebutton/bigbluebutton/master/bigbluebutton-config/bin/bbb-conf
+
+{{{
+cd /tmp
+wget https://raw.github.com/bigbluebutton/bigbluebutton/master/bigbluebutton-config/bin/bbb-conf
+cp bbb-conf /usr/local/bin
+chmod +x /usr/local/bin/bbb-conf
+bbb-conf --setip www.xxx.yyy.zzz:8082
+}}}
+
+There remain problems with some *2swf commands which apparently should be in /bin and aren't, so:
+{{{
+ln -s /usr/local/bin/pdf2swf /bin/pdf2swf
+ln -s /usr/local/bin/jpeg2swf /bin/jpeg2swf
+ln -s /usr/local/bin/png2swf /bin/png2swf
+}}}
+
+Even then, I still have problems right now uploading documents to the whiteboard, but the video/chat/audio are fully-functional.
+
+== References ==
+
+* http://www.khattam.info/howto-add-launchpad-ubuntu-ppa-in-debian-squeeze-testing-2010-11-13.html
+* https://launchpad.net/~freeswitch-drivers/+archive/freeswitch-nightly-drivers?field.series_filter=lucid
+* http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/c9de580177e6f4bf
+* http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu
+* http://www.debian.org/doc/manuals/apt-howto/ch-helpers.en.html
+* http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/76dc74876f091b3b/aef92ac086c0d5d3?lnk=gst&q=change+port#aef92ac086c0d5d3
+
+
+
+= Previous installation manual (out of date) =
 
 Note: This is for an out-of-date version of !BigBlueButton and the instructions may not work.  If possible, we recommend you install !BigBlueButton on a Ubuntu 10.04 32-bit or 64-bit server.  See [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Installation on Ubuntu].
 
