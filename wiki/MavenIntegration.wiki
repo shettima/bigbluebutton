@@ -2,7 +2,11 @@
 
 = Introduction =
 
-!BigBlueButton will soon by default build with Maven 3. Until then you can help us test out the maven integration by following these instructions.
+One of our ongoing goals is to make it easier for other developers to build, extend, and help improve !BigBlueButton.
+
+Currently, !BigBlueButton uses different build systems (ant and gradel) with the requirement of using the VM for development.  To make it easier to build, we are working on moving to a unified build system using maven 3.
+
+You can try building !BigBlueButton using the following instructions.
 
 
 = Details =
@@ -11,6 +15,8 @@ On a Ubuntu 10.04 32-bit or 64-bit server, do the following:
 
   # [InstallationUbuntu Install BigBlueButton].
   # Install [http://maven.apache.org/download.html Maven 3].
+  # Add `export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512M"` to your ~/.bashrc
+  # Type `source ~/.bashrc`
   # Checkout the [https://github.com/bigbluebutton/bigbluebutton BigBlueButton source] from !GitHub.
   # cd to bigbluebutton/.
   # Checkout the maven branch:
