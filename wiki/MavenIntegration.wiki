@@ -15,8 +15,11 @@ On a Ubuntu 10.04 32-bit or 64-bit server, do the following:
 
   # [InstallationUbuntu Install BigBlueButton].
   # Install [http://maven.apache.org/download.html Maven 3].
-  # Add `export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512M"` to your ~/.bashrc
-  # Type `source ~/.bashrc`
+  # Add the following line to your ~/.bashrc
+{{{
+export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=512M"
+}}}
+  # Enter the command `source ~/.bashrc` to reload the environment variables in ~/.bashrc
   # Checkout the [https://github.com/bigbluebutton/bigbluebutton BigBlueButton source] from !GitHub.
   # cd to bigbluebutton/.
   # Checkout the maven branch:
