@@ -50,8 +50,6 @@ Yes. We started !BigBlueButton as an open source project, and we intend to keep 
 
 = Contributing to !BigBlueButton =
 
-(_This section is currently draft._)
-
 == How can I contribute? == 
 The !BigBlueButton exists as the result of many developers who have contributed their time and skills to its development.  
 
