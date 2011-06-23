@@ -30,8 +30,10 @@ Type the following command to checkout !BigBlueButton from our [http://www.githu
 bbb-conf --checkout
 cd ~/dev/source/bigbluebutton
 git init
-git checkout v0.71a
+git checkout -b v0.71a
 }}}
+
+See [http://stackoverflow.com/questions/791959/how-to-use-git-to-download-a-particular-tag]
 
 This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}.  
 
