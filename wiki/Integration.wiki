@@ -15,3 +15,4 @@ If you don't see your System bellow, feel free to request an integration on our 
   * [http://docs.efrontlearning.net/index.php/BigBlueButton eFront]
   * [http://extensions.joomla.org/extensions/communication/video-conference/14317 Joomla]
   * [http://code.google.com/p/www-bbb-api/ Perl Scripts] for interfacing Perl with BBB
+  * [http://code.google.com/p/chamilo/ Chamilo LMS] with 5-clicks integration inside course spaces
