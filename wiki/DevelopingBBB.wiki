@@ -30,8 +30,11 @@ Type the following command to checkout !BigBlueButton from our [http://www.githu
 bbb-conf --checkout
 cd ~/dev/source/bigbluebutton
 git init
-git checkout -b v0.71a
+git checkout v0.71a
+git checkout -b my_v0.71a
 }}}
+
+The second last command switches your development environment to the code tagged for release at BigBlueButton 0.71a.  The last command creates a new local branch for you to do development.  
 
 See [http://stackoverflow.com/questions/791959/how-to-use-git-to-download-a-particular-tag]
 
