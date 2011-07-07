@@ -7,8 +7,8 @@
 *2. Search the mailing lists*: There are three mailing lists that you can search for answers. 
 
     * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 BigBlueButton-users] - Usability questions ("How do I enable full-screen mode?")
-    * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
-    * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Development questions ("How do I use the API create method?")
+    * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
+    * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Development questions ("How do I use the API create method?")
 
 *3. Post your question:* If your search doesn't find an answer, please join the respective list and post your question. 
 
