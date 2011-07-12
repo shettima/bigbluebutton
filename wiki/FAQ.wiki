@@ -67,7 +67,7 @@ Some bugs are more important than others.  Stability and usability issues are ve
 
 Dont' worry if you are not a proficient developer -- there are many ways to help out!  You can become proficient in the installation and configuration of a !BigBlueButton server.  Each month, there are many new users in [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] that need help with setup of !BigBlueButton, especially setup  [Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m work behind a firewall].    You can [LocalizationOfBBB contribute a language file].  Or you can become an editor of the wiki pages to help provide documentation in a specific area, such as setup of !BigBlueButton on [InstallingBigBlueButtonFreeBSD FreeBSD].   Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
 
-== Who are the core developers of !BigBlueButton? ==
+== !BigBlueButton Committers ==
 
 Like many open source projects, at the core of the developer team is small group that have commit rights and the overall responsibility for the quality of the project.  The committers are 
 
