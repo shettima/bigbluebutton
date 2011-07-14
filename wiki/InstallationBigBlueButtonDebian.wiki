@@ -1,723 +1,114 @@
 #summary How to install BigBlueButton on Debian
 #labels Phase-Deploy
 
-= Introduction =
-This guide will show how to install !BigBlueButton 0.71 on Debian Squeeze 32-bit (still having little issues with uploading documents, but that might be gone soon).
+= How to install !BigBlueButton on Debian Squeeze =
 
-Previous basic instructions are available at the end of this document.
+<wiki:toc max_depth="3" />
 
-Ubuntu 10.04 (upstream's favorite distribution) instructions are available here: http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu
+This small tutorial is an update of the step by step procedure to install a !BigBlueButton 0.71a server on Debian Squeeze 32bit. This procedure assumes you've installed the i386 version of Squeeze with only the SSH server option selected.
 
-Instead of following the previous Debian documentation method, which apparently doesn't work anymore, we're going to following Ubuntu's documentation.
+== 1. Pre-requesites ==
 
-We'll assume you've installed a Squeeze i386 netinst with only SSH server option selected. Get on a command line as root and get typing:
-
+ * Add repositories with their keys
 {{{
+# bigbluebutton repository key
 wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | apt-key add -
-}}}
-
-Add the BigBlueButton repository URL and ensure the multiverse is enabled
-
-{{{
-echo "deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main" | tee /etc/apt/sources.list.d/bigbluebutton.list
-echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | tee -a /etc/apt/sources.list
-apt-get install vim python-software-properties
-echo "deb http://ppa.launchpad.net/freeswitch-drivers/freeswitch-nightly-drivers/ubuntu lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+# Freeswitch PPA key
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 451AE93C
-apt-get update
-apt-get install bbb-freeswitch-config
-apt-get install bigbluebutton
+echo -e "deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main\ndeb http://ppa.launchpad.net/freeswitch-drivers/freeswitch-nightly-drivers/ubuntu lucid main" > /etc/apt/sources.list.d/bigbluebutton.list
+aptitude update
 }}}
-
-Here, we run into the first problem. bigbluebutton depends on _bbb-config_ which depends on _bbb-web_ which depends on swftools-0.9.1 which depends on libmpfr1ldbl (>=2.3.2.dfsg.1-1ubuntu1) which is not installable (package does not exist in Debian or any repository added previously).
-
-One way to circumvent the problem is to install swftools manually (as versions previous to 0.9.1 aren't recommendable anyway):
-
+ * Install pre-requisites with necessary workaround for packaging bugs :
+    * Install sudo
+    All script are Ubuntufied so you will have to install sudo or some scripts (bbb-conf) won't work correctly.
 {{{
-cd /tmp
-wget http://www.swftools.org/swftools-0.9.1.tar.gz
-tar zxf swftools-0.9.1.tar.gz
-cd swftools-0.9.1
-./configure
-make
-make install
+aptitude install sudo
 }}}
-
-The ./configure step might give you a few problems (it might depend on specific libraries which might not be present on your system (things like zlib etc).
-I fixed it by executing the following then resuming the _make_ and _make install_ commands:
+    * Install libmpfr
+    libmpfr has been superseded by [http://packages.qa.debian.org/m/mpfr/news/20110223T163917Z.html libmpfr4] and so is no longer available in Debian Squeeze. swftools depends on it but the version in Lenny is a little bit too old (2.3.1), so instead of compiling the source and making a new package, as indicated in the old official how to, we'll just resolve the dependencies by using the one from ubuntu :
 {{{
-apt-get install zlib1g-dev giflib-tools libgif-dev libjpeg8-dev g++
+aptitude install libgmp3c2
+wget http://ubuntu.mirror.cambrium.nl/ubuntu//pool/main/m/mpfr/libmpfr1ldbl_2.4.2-3ubuntu1_i386.deb
+dpkg -i libmpfr1ldbl_2.4.2-3ubuntu1_i386.deb
 }}}
-
-Then use the Debian _equivs_ command to create a fake package by the name of the missing package.
-
-{{{
-apt-get install equivs
-cd /tmp
-equivs-control swftools
-vi swftools
-}}}
-
-Example of swftools control file:
-
-{{{
-### Commented entries have reasonable defaults.
-### Uncomment to edit them.
-Section: misc
-Priority: optional
-Homepage: http://www.swftools.org
-Standards-Version: 3.6.2
-
-Package: swftools-0.9.1
-Version: 0.9.1
-Maintainer: Your own original name of fake packager <you@example.com>
-# Pre-Depends: <comma-separated list of packages>
-# Depends: <comma-separated list of packages>
-# Recommends: <comma-separated list of packages>
-# Suggests: <comma-separated list of packages>
-# Provides: <comma-separated list of packages>
-# Replaces: <comma-separated list of packages>
-Architecture: all
-# Copyright: <copyright file; defaults to GPL2>
-# Changelog: <changelog file; defaults to a generic changelog>
-# Readme: <README.Debian file; defaults to a generic one>
-# Extra-Files: <comma-separated list of additional files for the doc directory>
-# Files: <pair of space-separated paths; First is file to include, second is destination>
-#  <more pairs, if there's more than one file to include. Notice the starting space>
-Description: Fake empty swftools package
- This fake package requires you to manually install the swftools 0.9.1
- package on your server. At this point, installing this package will
- abuse bbb-web's confidence in the Ubuntu swftools package (although no
- harm is done anyway).
-}}}
-
-Then continue: 
-
-{{{
-equivs-build swftools
-dpkg -i swftools-0.9.1_0.9.1_all.deb
-apt-get install bbb-web
-}}}
-
-
-Now we can proceed with the installation:
-{{{
-apt-get install bigbluebutton
-}}}
-
-At the end of this one, an error shows up saying the package cannot stat /var/www/nginx-default/50x.html. That's not a big deal (must be something with the nginx package), just create the directory and file:
-
+    * Another workaround to avoid packaging errors later on :
 {{{
 mkdir -p /var/www/nginx-default/
 touch /var/www/nginx-default/50x.html
-apt-get -f install
 }}}
 
-At this point, the BBB server is installed. To test it through a VirtualBox instance of Debian, you'll have to add a new ETH interface to your VirtualBox instance's config (DHCP) then check the new IP from inside your VirtualBox with
+
+== 2. !BigBlueButton Install ==
+
+ * You are now ready to install !BigBlueButton
 {{{
-/sbin/ifconfig
+aptitude install bbb-freeswitch-config bbb-client bigbluebutton
 }}}
-
-On an internal network, this should give you something like this:
-{{{
-eth1      Link encap:Ethernet  direcciónHW 00:22:68:12:0c:43  
-          Direc. inet:192.168.1.156  Difus.:192.168.1.255  Másc:255.255.255.0
-          Dirección inet6: fe80::222:68ff:fe12:c43/64 Alcance:Enlace
-          ACTIVO DIFUSIÓN FUNCIONANDO MULTICAST  MTU:1500  Métrica:1
-          Paquetes RX:611063 errores:0 perdidos:0 overruns:0 frame:0
-          Paquetes TX:411786 errores:0 perdidos:0 overruns:0 carrier:0
-          colisiones:0 long.colaTX:1000 
-          Bytes RX:726274184 (726.2 MB)  TX bytes:42872798 (42.8 MB)
-          Interrupción:20 Memoria:fc000000-fc020000 
-}}}
-
-What you need is the "Direc. inet:www.xxx.yyy.zzz" address.
-Reconfig your BBB with bbb-conf (first doing a cleanup and a check):
+ * Configure !BigBlueButton and start it : 
 {{{
 bbb-conf --clean
 bbb-conf --check
-bbb-conf -c
-bbb-conf --setip www.xxx.yyy.zzz
+bbb-conf --setip YOUR_IP
 }}}
 
-This will restart the whole videoconference system and you should be able to access it from your main computer.
+You can now go to http://YOUR_IP and try the demo.
 
-==Installing on another port==
+== 3. Tips and tricks ==
 
-If you want to install BigBlueButton on another port (let's say you already have Apache running on :80 and want to use BigBlueButton on :8082), the feature to update the port is not implemented in bbb-conf of BBB version 0.71. You have to download a patched version (thanks to Fred Dixon) from https://raw.github.com/bigbluebutton/bigbluebutton/master/bigbluebutton-config/bin/bbb-conf
+!BigBlueButton works very well out of the box, but it is still quite young, and is not yet very flexible in term of configuration. So here are some tips that I collected, hoping they will save you some hours of hair pulling.
+
+=== 3.1. Firewall setup ===
+
+!BigBlueButton require to open 3 ports : 80, 1935, 9123. You can also open only port 80 and so tunnel everything through it, but you will most likely get bitten by [http://code.google.com/p/bigbluebutton/issues/detail?id=785 this bug] which is a [https://bugs.adobe.com/jira/browse/FP-4797 known Linux/Mac Adobe Flash bug]. Basically you will be connected, and you will be able to do things but the session will re-initalise every 20-30 seconds. This bug doesn't affect Windows users and is supposed to be solved in Flashplayer 11.0.1.3 beta for Linux and Mac.
+
+=== 3.2. Put !BigBlueButton server behind a firewall or on a VPN ===
+
+If you put your !BigBlueButton server on a VPN or behind a firewall and you want to configure a public access, the configuration can be very tricky. Here is an example config providing that you have the following topology : 
 
 {{{
-cd /tmp
-wget https://raw.github.com/bigbluebutton/bigbluebutton/master/bigbluebutton-config/bin/bbb-conf
-cp bbb-conf /usr/local/bin
-chmod +x /usr/local/bin/bbb-conf
-bbb-conf --setip www.xxx.yyy.zzz:8082
+WEB          <=>          Web Server           <=>          BigBlueButton server
+              ExtIP : bigbluebutton.mydomain.com             IP : 192.168.1.10
 }}}
 
-There remain problems with some *2swf commands which apparently should be in /bin and aren't, so:
+!BigBlueButton requires to have an IP that resolves to the same name as configured so either you can put a record in an internal DNS or add the following to its /etc/hosts :
 {{{
-ln -s /usr/local/bin/pdf2swf /bin/pdf2swf
-ln -s /usr/local/bin/jpeg2swf /bin/jpeg2swf
-ln -s /usr/local/bin/png2swf /bin/png2swf
-}}}
-
-Even then, I still have problems right now uploading documents to the whiteboard, but the video/chat/audio are fully-functional.
-
-== References ==
-
-  * http://www.khattam.info/howto-add-launchpad-ubuntu-ppa-in-debian-squeeze-testing-2010-11-13.html
-  * https://launchpad.net/~freeswitch-drivers/+archive/freeswitch-nightly-drivers?field.series_filter=lucid
-  * http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/c9de580177e6f4bf
-  * http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu
-  * http://www.debian.org/doc/manuals/apt-howto/ch-helpers.en.html
-  * http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/76dc74876f091b3b/aef92ac086c0d5d3?lnk=gst&q=change+port#aef92ac086c0d5d3
-
-
-
-= Previous installation manual (out of date) =
-
-Note: This is for an out-of-date version of !BigBlueButton and the instructions may not work.  If possible, we recommend you install !BigBlueButton on a Ubuntu 10.04 32-bit or 64-bit server.  See [http://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu Installation on Ubuntu].
-
-
-Log in as root to avoid having to type sudo in front of most of the commands required to install !BigBlueButton.
-
+vi /etc/hosts
+-> 192.168.1.10	bigbluebutton.mydomain.com
+bbb-conf --setip bigbluebutton.mydomain.com
+}}} 
+It will throw a message that the IP does not match but this is ok.
 {{{
-su -
+# IP does not match:
+#                           IP from ifconfig: 192.168.1.10
+#   /etc/nginx/sites-available/bigbluebutton: bigbluebutton.mydomain.com
 }}}
 
-Check if you have a internet connection
+On the Web server :
+ * Forward port 9123 to !BigBlueButton's server port 9123
+ * Forward port 1935 to !BigBlueButton's server port 1935
+ * Configure a new vhost called bigbluebutton.mydomain.com that does a proxy pass to 192.168.1.10
+ * DO NOT TRY to put it on a subfolder (ie. mydomain.com/bbb) if you don't want to have to modify lots of bigblubutton's source code.
 
+You should now be able to access your !BigBlueButton server through http://bigbluebutton.mydomain.com 
+
+Beware that !BigBlueButton's configuration is extremely sensitive, a slight change in the above and it might not work. 
+
+=== 3.3. End meeting after every participants logged out ===
+
+You can do this easily by modifying the configuration :
 {{{
-ping www.google.com
+vi /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+-> beans.dynamicConferenceService.minutesElapsedBeforeMeetingExpiration=0
 }}}
+I found during my testing that the delay before the meeting is actually closed can vary from a few seconds to a few minutes, but it does work.
 
-= Installing =
-== APT ==
-First let's configure the mirrors of apt
+== 4. Conclusion ==
 
-add the following mirror to /etc/apt/sources.list
+This will install a FULLY functional !BigBlueButton server on your Squeeze box. Please check the [wiki:FAQ FAQ] or the support if your encounter any issue.
 
-{{{
-echo "deb http://ftp.debian.org/ squeeze main non-free contrib" >> /etc/apt/sources.list
-}}}
+== 5. References ==
 
-Syncronize apt with mirrors
+  * [https://redmine.personalized-software.ie/projects/opensource/wiki/BigBlueButton_Debian_Squeeze Original version] of this tutorial with some Redmine integration tips.
+  * [wiki:FAQ FAQ]
 
-{{{
-apt-get update
-}}}
-
-Upgrade your system
-
-{{{
-apt-get upgrade
-}}}
-
-Install the headers of you kernel
-
-{{{
-apt-get install linux-headers-`uname -r`
-}}}
-
-== Necessary Packages ==
-Install the necessary packages that we need to use !BigBlueButton.
-
-{{{
-apt-get install sudo build-essential mysql-server sun-java6-jdk jsvc tomcat6 imagemagick nginx openoffice.org libjpeg62-dev libjpeg62 libfreetype6-dev libfreetype6 libgif-dev libgif4 libungif4-dev libungif-bin libncurses5-dev libxml2-dev subversion
-}}}
-
-== Install swftools ==
-
-{{{
-cd /usr/src/
-wget http://www.swftools.org/swftools-0.9.1.tar.gz
-tar -xvzf swftools-0.9.1.tar.gz
-cd swftools-0.9.1
-./configure
-make
-make install
-}}}
-
-== Install ActiveMQ ==
-
-{{{
-cd /tmp
-wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.2.0/apache-activemq-5.2.0-bin.tar.gz
-tar zxvf apache-activemq-5.2.0-bin.tar.gz
-mv /tmp/apache-activemq-5.2.0 /usr/share/activemq
-chown -R root.root /usr/share/activemq
-}}}
-
-== Install Red5 ==
-
-{{{
-cd /tmp
-wget http://bigbluebutton.org/downloads/0.70/red5-0.9.1.tar.gz
-tar xvf red5-0.9.1.tar.gz
-mv /tmp/red5-0.9.1 /usr/share/red5
-adduser --system --home /usr/share/red5/ --no-create-home --group --disabled-password --shell /bin/false red5
-}}}
-
-Create the logs files and the log folder of tomcat if this doesn't exist
-
-{{{
-touch /usr/share/red5/log/sip.log
-touch /usr/share/red5/log/video.log 
-touch /usr/share/red5/log/bigbluebutton.log 
-
-test -d /var/log/tomcat6 || mkdir /var/log/tomcat6
-
-chown -R root.root /usr/share/red5
-chown -R red5:adm /usr/share/red5/log/
-chmod 755 /usr/share/red5/log/
-chgrp red5 /usr/share/red5/webapps/
-chmod 775 /usr/share/red5/webapps/
-
-mkdir /var/log/bigbluebutton
-touch /var/log/bigbluebutton/bbb-web.log
-chmod 777 /var/log/bigbluebutton/bbb-web.log
-}}}
-
-== Daemon Files ==
-
-{{{
-wget http://bigbluebutton.googlecode.com/files/red5-ubuntu -O /etc/init.d/red5
-wget http://bigbluebutton.googlecode.com/files/activemq-ubuntu -O /etc/init.d/activemq
-wget http://www.bigbluebutton.org/downloads/0.70/ubuntu-install/bbb-openoffice-headless -O /etc/init.d/bbb-openoffice-headless
-
-chmod +x /etc/init.d/red5
-chmod +x /etc/init.d/activemq
-chmod +x /etc/init.d/bbb-openoffice-headless
-
-/etc/init.d/red5 start
-
-/etc/init.d/bbb-openoffice-headless start
-}}}
-
-Add then to start on boot
-
-{{{
-update-rc.d -f activemq start 99 2 3 4 5 
-update-rc.d -f red5 start 98 2 3 4 5 
-update-rc.d -f tomcat6 start 97 2 3 4 5
-update-rc.d -f bbb-openoffice-headless start 96 2 3 4 5  
-}}}
-
-== Install Asterisk ==
-
-We need to create a link to the kernel headers that we installed, so dahdi can found the right kernel, to do this, go back to /usr/src and create a link as bellow:
-
-{{{
-cd /usr/src/
-ln -s /usr/src/linux-headers-`uname -r` /usr/src/linux
-}}}
-
-Change to fit your kernel version
-
-Now let's download the sources of what we need:
-
-{{{
-cd /usr/src
-wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-1.6.2.9.tar.gz
-wget http://downloads.asterisk.org/pub/telephony/dahdi-linux/dahdi-linux-2.4.0.tar.gz
-wget --no-check-certificate http://github.com/jthomerson/AsteriskAudioKonf/tarball/master/
-}}}
-
-=== Install Dahdi ===
-
-{{{
-cd /usr/src
-tar -xvvzf dahdi-linux-2.4.0.tar.gz
-cd /usr/src/dahdi-linux-2.4.0/drivers/dahdi/
-}}}
-
-Edit the file Kbuild uncommenting the line
-{{{
-obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_DUMMY)            += dahdi_dummy.o
-}}}
-
-and commenting the lines bellow:
-
-{{{
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCT4XXP)           += wct4xxp/ 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCTC4XXP)          += wctc4xxp/ 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCTDM24XXP)        += wctdm24xxp/ 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCTE12XP)          += wcte12xp/ 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCTDM)             += wctdm.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_VOICEBUS)          += voicebus/ 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCB4XXP)           += wcb4xxp/ 
-
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCT1XXP)           += wct1xxp.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCTE11XP)          += wcte11xp.o 
-
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_WCFXO)             += wcfxo.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_TOR2)              += tor2.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_PCIRADIO)          += pciradio.o 
-
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_XPP)               += xpp/ 
- 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_ECHOCAN_JPAH)      += dahdi_echocan_jpah.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_ECHOCAN_STEVE)     += dahdi_echocan_sec.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_ECHOCAN_STEVE2)    += dahdi_echocan_sec2.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_ECHOCAN_KB1)       += dahdi_echocan_kb1.o 
-#obj-$(DAHDI_BUILD_ALL)$(CONFIG_DAHDI_ECHOCAN_MG2)       += dahdi_echocan_mg2.o
-}}}
-
-Save and exit
-
-Now compile it
-
-{{{
-cd /usr/src/dahdi-linux-2.4.0
-make
-make install
-}}}
-
-=== Asterisk ===
-
-{{{
-cd /usr/src/
-tar -xvvzf asterisk-1.6.2.9.tar.gz
-cd asterisk-1.6.2.9
-./configure
-make
-make install
-make samples
-}}}
-
-Copy the daemon file of asterisk to /etc/init.d/
-
-{{{
-cp contrib/init.d/rc.debian.asterisk /etc/init.d/asterisk
-chmod +x /etc/init.d/asterisk
-}}}
-
-Change the lines 24, 25 and 26 to fit our configuration:
-
-{{{
-DAEMON=/usr/sbin/asterisk
-ASTVARRUNDIR=/var/run/asterisk
-ASTETCDIR=/etc/asterisk
-}}}
-
-Save and exit the file
-
-=== app_konference ===
-
-Let's compile app_konference
-
-{{{
-cd /usr/src/
-tar -xvzf jthomerson-AsteriskAudioKonf-genconf_v1.0.3-27-g3f63305.tar.gz
-cd jthomerson-AsteriskAudioKonf-3f63305/konference
-}}}
-
-Let's edit Makefile and change the include variable:
-
-{{{
-vim Makefile
-
-ASTERISK_INCLUDE_DIR ?= /usr/include 
-}}}
-
-Save and exit
-
-then compile
-
-{{{
-make
-make install
-}}}
-
-=== Configuration files ===
-
-{{{
-wget http://bigbluebutton.org/downloads/0.70/bbb_extensions.conf
-mv bbb_extensions.conf /etc/asterisk/
-wget http://bigbluebutton.org/downloads/0.70/bbb_sip.conf
-mv bbb_sip.conf /etc/asterisk/bbb_sip.conf
-
-echo "#include \"bbb_extensions.conf\"" >> /etc/asterisk/extensions.conf
-echo "#include \"bbb_sip.conf\"" >> /etc/asterisk/sip.conf
-
-echo "load => app_konference.so" >> /etc/asterisk/modules.conf
-
-cat /etc/asterisk/manager.conf | sed 's/^enabled = no/enabled = yes/' > 
-/tmp/manager.conf
-}}}
-
-
-== nginx ==
-
-Use `ifconfig` to determine your IP.  Replace the string YOUR-IP with your IP in the following sed command top change all references to 192.168.0.211 to your IP.
-
-{{{
-cd /tmp
-wget http://bigbluebutton.org/downloads/0.70/nginx-bigbluebutton.conf
-cat nginx-bigbluebutton.conf  | sed "s/192.168.0.211/YOUR-IP/" > /etc/nginx/sites-available/bigbluebutton
-
-rm nginx-bigbluebutton.conf
-
-ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
-}}}
-
-== BBB Modules ==
-
-Download the bbb modules for later use
-
-{{{
-cd /tmp
-wget http://bigbluebutton.org/downloads/0.70/packages/bbb-default.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton.war
-wget http://bigbluebutton.org/downloads/0.70/packages/video.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/bigbluebutton-apps.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/client.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/sip.tar.gz
-wget http://bigbluebutton.org/downloads/0.70/packages/deskshare.tar.gz
-}}}
-
-== Tomcat Security ==
-
-{{{
-cat /etc/default/tomcat6 | sed "s/#TOMCAT6_SECURITY=.*/TOMCAT6_SECURITY=no/" > /tmp/tomcat6
-mv -f /tmp/tomcat6 /etc/default/tomcat6
-}}}
-
-== Setup MySQL ==
-
-{{{
-mysql -u root -p
-create database bigbluebutton_dev;
-grant all on bigbluebutton_dev.* to 'bbb'@'localhost' identified by 'secret';
-commit;
-quit
-}}}
-
-== Install bbb-web ==
-
-{{{
-cp /tmp/bigbluebutton.war /var/lib/tomcat6/webapps/
-}}}
-
-== Generate a GUID ==
-
-For security, you need to generate a GUID. You can use an online GUID generator, such as [http://www.somacon.com/p113.php this] one. Keep this GUID as YOUR-GUID in a section below. 
-
-== Determine PDF2SWF, CONVERT and GS applications ==
-
-{{{
-Make a note of where pdf2swf is installed
-which pdf2swf
-  
-You should see something like
-/usr/local/bin/pdf2swf
-  
-Make a note of where the convert application is installed
-which convert
-
-You shoud see something like.
-/usr/bin/convert
-
-Note where GhostScript is installed
-which gs
-
-You shoud see something like.
-/usr/bin/gs
-}}}
-
-== Edit bbb-web properties ==
-
-vim /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
-
-Change the following:
-
-    * swfToolsDir to the directory where pdf2swf is located
-    * imageMagickDir to the directory where convert is located
-    * ghostScriptExec to point to the gs executable
-    * change bigbluebutton.web.serverURL=http://YOUR-IP
-    * set beans.dynamicConferenceService.securitySalt to be equal to the guid we just generated (i.e. beans.dynamicConferenceService.securitySalt=YOUR-GUID) 
-
-== Create noPdfMarkWorkaround.ps ==
-
-Create /etc/bigbluebutton/nopdfmark.ps with the following content:
-
-{{{
-%!
-/pdfmark {cleartomark} bind def
-}}}
-
-== Restart Tomcat6 ==
-
-{{{
-/etc/init.d/tomcat6 restart
-}}}
-
-== Create the Presentation Upload directory ==
-
-{{{
-mkdir /var/bigbluebutton
-chown -R tomcat6:adm /var/bigbluebutton
-chmod -R 777 /var/bigbluebutton
-}}}
-
-== Install bbb-apps ==
-
-{{{
-cd /usr/share/red5/webapps
-cp /tmp/bigbluebutton-apps.tar.gz ./
-tar xvf bigbluebutton-apps.tar.gz
-rm -rf bigbluebutton-apps.tar.gz
-}}}
-
-== Install Deskshare ==
-
-{{{
-cd /usr/share/red5/webapps
-cp /tmp/deskshare.tar.gz ./
-tar xvf deskshare.tar.gz
-rm deskshare.tar.gz
-}}}
-
-== Install bbb-video-app ==
-
-{{{
-cd /usr/share/red5/webapps
-cp /tmp/video.tar.gz ./
-tar xvf video.tar.gz
-rm video.tar.gz
-}}}
-
-== Install bbb-voice-app ==
-
-{{{
-cd /usr/share/red5/webapps
-cp /tmp/sip.tar.gz ./
-tar xvf sip.tar.gz
-rm sip.tar.gz
-}}}
-
-== Instal bbb-default ==
-
-{{{
-test -d /var/www || mkdir /var/www
-
-cd /var/www
-cp /tmp/bbb-default.tar.gz ./
-tar xvf bbb-default.tar.gz
-rm bbb-default.tar.gz
-}}}
-
-
-Now we need to create bbb_api_conf.jsp, which will hold our GUID and the !BigBlueButtonURL. Be sure to replace YOUR-GUID and YOUR-IP with the GUID we generated earlier and your IP, respectively. 
-
-{{{
-echo "<%!
-// This is the security salt that must match the value set in the !BigBlueButton server
-String salt = \"<YOUR-GUID>\";
-
-// This is the URL for the BigBlueButton server
-String BigBlueButtonURL = \"http://<YOUR-IP>/bigbluebutton/\";
-%>" > /var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp
-}}}
-
-== Install bbb-client ==
-
-{{{
-test -d /var/www/bigbluebutton || mkdir /var/www/bigbluebutton
-cd /var/www/bigbluebutton
-cp /tmp/client.tar.gz ./
-tar xvf client.tar.gz
-rm client.tar.gz
-}}}
-
-== Edit Client Config ==
-
-{{{
-vim /var/www/bigbluebutton/client/conf/config.xml
-}}}
-
-* Change the uri to your IP address 
-
-Your config.xml should look something like (here the IP is 192.168.0.120, but yours should have the value for YOUR-IP): 
-
-{{{
-<?xml version="1.0" ?>
-<config>
-    <version>0.4</version>
-    <porttest host="192.168.0.120" application="video"/>    
-        <modules>
-
-                <module name="VideoModule" url="VideoModule.swf" 
-                        uri="rtmp://192.168.0.120/video"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"        
-                />
-                <module name="ChatModule" url="ChatModule.swf" 
-                        uri="rtmp://192.168.0.120/bigbluebutton" 
-                        loadNextModule="PresentationModule"     
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"                 
-                />
-                <module name="ViewersModule" url="ViewersModule.swf" 
-                        uri="rtmp://192.168.0.120/bigbluebutton" 
-                        host="http://192.168.0.120/bigbluebutton/conference-session/enter"
-                        onAppInitEvent="LOAD" loadNextModule="ChatModule"
-                        onAppStartEvent="START"
-                        onUserLogoutEvent="STOP"
-                />      
-                <module name="ListenersModule" url="ListenersModule.swf" 
-                        uri="rtmp://192.168.0.120/bigbluebutton" 
-                        recordingHost="http://192.168.0.120"
-                        loadNextModule="DeskShareModule"
-                        onUserJoinedEvent="START"
-                        onUserLogoutEvent="STOP"
-                />
-                <module name="PresentationModule" url="PresentationModule.swf" 
-                        uri="rtmp://192.168.0.120/bigbluebutton" 
-                        host="http://192.168.0.120" 
-                        loadNextModule="ListenersModule"
-                        onUserJoinedEvent="START" 
-                        onUserLogoutEvent="STOP"
-                />
-                
-                <module name="DeskShareModule" url="DeskShareModule.swf" 
-                        uri="rtmp://192.168.0.120/deskShare" 
-                        onUserJoinedEvent="START" 
-                        onUserLogoutEvent="STOP"
-                        loadNextModule="PhoneModule"
-                />
-                
-                <module name="PhoneModule" url="PhoneModule.swf" 
-                        uri="rtmp://192.168.0.120/sip" 
-                        onUserJoinedEvent="START" 
-                        onUserLogoutEvent="STOP"
-                        loadNextModule="VideoModule"
-                />
-        </modules>
-</config>
-}}}
-
-== Install bbb-conf ==
-
-{{{
-wget --no-check-certificate http://github.com/bigbluebutton/bigbluebutton/raw/master/bigbluebutton-config/bin/bbb-conf
-mv bbb-conf /usr/local/bin
-chmod ugo+x /usr/local/bin/bbb-conf
-}}}
-
-== Finish ==
-
-Restart the Services
-
-{{{
-bbb-conf --restart
-}}}
-
-== Try out !BigBlueButton ==
-
-{{{
-Go to http://YOUR-IP/ which should display the !BigBlueButton web page and join the conference.
-}}}
-
-
-Author: Wagner Spirigoni
+Author: Anthony Callegaro
