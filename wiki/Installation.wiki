@@ -6,7 +6,13 @@ The !BigBlueButton 0.71a server runs under Ubuntu 10.04 32-bit or 64-bit, as wel
 
     * [BigBlueButtonVM Download the BigBlueButton Virtual Machine (0.71a)] 
     * [InstallationUbuntu Install from packages on Ubuntu 10.04 (0.71a)]
-    * [Install from source on [InstallingBigBlueButton Ubuntu (0.71a)]
+    * [InstallingBigBlueButton Install from source on Ubuntu (0.71a)]
+
+Other install options:
+    * [InstallationBigBlueButtonDebian Debian Squeeze] (v0.71a)
+    * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
+
+Configuration files:
     * [ConfigurationFiles Configuration Files]
     * [BBBConf bbb-conf] configuration tool
 
