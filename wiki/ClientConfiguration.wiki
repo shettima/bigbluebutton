@@ -40,7 +40,7 @@ The ip and red5 application the client uses to test whether necessary ports are 
     <debug showDebugWindow="false" />
 }}}
 
-Show or hide the button to display the debug window.
+Show or hide the button (lower right-hand corner) to display the debug window.
 
 === application ===
 {{{
