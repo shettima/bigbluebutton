@@ -104,11 +104,11 @@ I found during my testing that the delay before the meeting is actually closed c
 
 == 4. Conclusion ==
 
-This will install a FULLY functional !BigBlueButton server on your Squeeze box. Please check the [wiki:FAQ FAQ] or the support if your encounter any issue.
+This will install a FULLY functional !BigBlueButton server on your Squeeze box. Please check the [FAQ FAQ] or the support if your encounter any issue.
 
 == 5. References ==
 
   * [https://redmine.personalized-software.ie/projects/opensource/wiki/BigBlueButton_Debian_Squeeze Original version] of this tutorial with some Redmine integration tips.
-  * [wiki:FAQ FAQ]
+  * [FAQ FAQ]
 
 Author: Anthony Callegaro
