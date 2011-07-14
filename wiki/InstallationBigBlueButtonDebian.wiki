@@ -44,7 +44,7 @@ touch /var/www/nginx-default/50x.html
 
  * You are now ready to install !BigBlueButton
 {{{
-aptitude install bbb-freeswitch-config bbb-client bigbluebutton
+aptitude install bbb-freeswitch-config bigbluebutton
 }}}
  * Configure !BigBlueButton and start it : 
 {{{
