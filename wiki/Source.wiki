@@ -3,7 +3,7 @@
 == Checkout Source ==
 !BigBlueButton source code is hosted on [https://github.com/bigbluebutton GitHub]. You can check it out using git by running the following command on your command line in Linux:
 {{{
-git://github.com/bigbluebutton/bigbluebutton.git
+git clone https://github.com/bigbluebutton/bigbluebutton.git
 }}}
 
 == Download Source ==
