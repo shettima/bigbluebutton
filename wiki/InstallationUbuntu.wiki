@@ -62,7 +62,7 @@ We're now ready to install !BigBlueButton.  Type:
    sudo apt-get install bigbluebutton
 }}}
 
-This single command is where all the magic happens.  This command will install *all* of !BigBlueButton components with with their dependencies.  Here's a screen shot of the packages it will install. 
+This single command is where all the magic happens.  This command will install *all* of !BigBlueButton components with their dependencies.  Here's a screen shot of the packages it will install. 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
 
