@@ -8,7 +8,7 @@ If you don't see your System bellow, feel free to request an integration on our 
   * [http://confluence.sakaiproject.org/display/BBB/Home Sakai]
   * [http://wordpress.org/extend/plugins/bigbluebutton/ WordPress]
   * [http://drupal.org/project/bbb Drupal]
-  * [http://moodle.org/mod/data/view.php?d=13&rid=3524&filter=1 Moodle]
+  * [http://moodle.org/mod/data/view.php?d=13&perpage=10&search=bigbluebutton&sort=0&order=DESC&advanced=0&filter=1&f_44=&f_45=&f_46=&f_47=&f_48=&f_49=&f_51=&f_96=&f_97=&f_98=&f_99=&f_100=&f_101=&f_195=&f_213=&f_214=&f_215=&f_216=&u_fn=&u_ln= Moodle]
   * [http://code.google.com/p/bigbluebuttongem/ Ruby Gem] - To help with developing Rails applications.
   * [https://chrome.google.com/extensions/detail/ncbonhmhjnamefpmmjdpbohnkbeliehb Chrome extension] to help you test your applications with the BBB API.
   * [http://doc.tikiwiki.org/BigBlueButton Tiki Wiki CMS Groupware] integration. Tiki 5.0 supports .64, while Tiki 5.1 will support .64 and .7
