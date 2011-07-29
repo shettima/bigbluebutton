@@ -543,14 +543,14 @@ For the current !BigBlueButton 0.71a,[http://bigbluebutton-blog.blogspot.com/201
 Take any stress test with a grain of salt.  There are many variables at play:
 
   * Server: CPU memory, disks space, and bandwidth
-  * Usage scenarios
+  * Usage scenarios (# of webcams and use of desktop sharing)
   * Upstream bandwidth from clients
-  * Configuration of BigBlueButton server
-  * Version of BigBlueButton
+  * Configuration of !BigBlueButton
+  * Version of !BigBlueButton
 
 Every usage scenario is different.  Consider a room with 20 people listening to one speaker, compared with a second room with 20 people all sharing their webcam and the presenter using desktop sharing.  In the latter, you have 400 additional video streams and 20 desktop sharing streams.  While the number of users is the same, the usage scenario (and corresponding the load on the !BigBlueButton server) is much different.
 
-The capacity of a server running !BigBlueButton 0.8 server will be less than the same server running !BigBlueButton 0.71a server due to the use of speex for audio.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the !BigBlueButton server needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].
+The capacity of a server running the upcoming !BigBlueButton 0.8 server will be less than the same server running !BigBlueButton 0.71a server due to the use of speex for audio.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the !BigBlueButton server needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].
 
 Again, we recommend you try stress testing your own server under your own usage scenarios.  
 
