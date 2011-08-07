@@ -77,6 +77,13 @@ For example, the client tool could be an HTML interface the allows the user to d
  * video records into {{{/usr/share/red5/webapps/video/streams/<meeting-id>/}}}
  * freeSWITCH records into {{{/var/freeswitch/meetings/}}}
 
+The directories below are where the different subsystems will write the recordings:
+ * {{{/var/bigbluebutton/<meeting-id>/presentations/}}}
+ * {{{/var/freeswitch/meetings/}}}
+ * {{{/usr/share/red5/webapps/video/streams/<meeting-id>/}}}
+ * {{{/var/bigbluebutton/deskshare/}}}
+
+
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
 
