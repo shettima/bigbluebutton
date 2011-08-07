@@ -157,6 +157,30 @@ The output of the process phase should be stored in
 
 There should be a process.done file to keep the status of each process step.
 
+=== Properties ===
+{{{
+# Default maximum number of users a meeting can have.
+# Doesn't get enforced yet but is the default value when the create
+# API doesn't pass a value.
+defaultMaxUsers=20
+
+# Default duration of the meeting in minutes.
+# Current default is 0 (meeting doesn't end).
+defaultMeetingDuration=0
+
+# Remove the meeting from memory when the end API is called.
+# This allows 3rd-party apps to recycle the meeting right-away
+# instead of waiting for the meeting to expire (see below).
+removeMeetingWhenEnded=false
+
+# The number of minutes before the system removes the meeting from memory.
+defaultMeetingExpireDuration=1
+
+# The number of minutes the system waits when a meeting is created and when
+# a user joins. If after this period, a user hasn't joined, the meeting is
+# removed from memory.
+defaultMeetingCreateJoinDuration=5
+}}}
 
 == Requirements ==
 These sections capture the more specific requirements for the first iteration of Record and Playback (!BigBlueButton 0.8).
