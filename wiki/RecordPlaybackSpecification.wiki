@@ -70,21 +70,12 @@ For example, the client tool could be an HTML interface the allows the user to d
 
 === Capture ===
 
-{{{
-
-          deskshare       video          bbb-apps             bbb-web
-                                           |  |                  |
-                                           |  |                  |
-                            FreeSWITCH <---|  |-----> Redis <----|
-
-
-}}}
-
-When a user (USER-1) joins a meeting that will be recorded, the API call to bbb-web will have a "record" parameter set to TRUE. Any information about the meeting that needs to be stored as part of the recording can also be passed on this API call. The meeting information is stored in Redis.
-
-After the meeting has been created, USER-1 is redirected to a web page that will load the !BigBlueButton client. Once the client has been loaded, it will query bbb-web for any information it needs about the user and the meeting. The information that the meeting should be recorded is returned as part of the response to this query. Once the client receives the response, it connects to Red5 passing the information that the meeting should be recorded to bbb-apps. bbb-apps will inform the different applications (chat, presentation, voice) that the meeting needs to be recorded. The different applications then sets up everything it needs to do to record.
-
-The chat application will save all public (private are not recorded) chat events to Redis. The presentation application save all presentation and slide events to Redis.
+ * bbb-web stores meeting info into redis
+ * bbb-apps stores presentations in /var/bigbluebutton/meetings/<meeting-id>/presentations/
+ * bbb-apps stores events into redis
+ * deskshare records into /var/bigbluebutton/deskshare/
+ * video records into /usr/share/red5/webapps/video/streams/<meeting-id>/
+ * freeSWITCH records into /var/freeswitch/meetings/
 
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
