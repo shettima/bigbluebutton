@@ -71,11 +71,11 @@ For example, the client tool could be an HTML interface the allows the user to d
 === Capture ===
 
  * bbb-web stores meeting info into redis
- * bbb-apps stores presentations in /var/bigbluebutton/meetings/<meeting-id>/presentations/
+ * bbb-apps stores presentations in {{{/var/bigbluebutton/meetings/<meeting-id>/presentations/}}}
  * bbb-apps stores events into redis
- * deskshare records into /var/bigbluebutton/deskshare/
- * video records into /usr/share/red5/webapps/video/streams/<meeting-id>/
- * freeSWITCH records into /var/freeswitch/meetings/
+ * deskshare records into {{{/var/bigbluebutton/deskshare/}}}
+ * video records into {{{/usr/share/red5/webapps/video/streams/<meeting-id>/}}}
+ * freeSWITCH records into {{{/var/freeswitch/meetings/}}}
 
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
