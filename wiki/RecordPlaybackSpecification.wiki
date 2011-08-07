@@ -124,6 +124,28 @@ The archive.done file is a status file where the scripts can store the archive s
 After several attempts, if there are still problems, the administrator needs to be notified.
 Sample archive.done with convention [type attempts status]
 
+* events.xml *
+{{{
+   <recording>
+     <meeting>
+       <title>Business Ecosystem</title>
+       <subject>TTMG 5001</subject>
+       <description>How to manage your product's ecosystem</description>
+       <creator>Richard Alam</creator>
+       <contributor>Tony B.</contributor>
+       <language>En-US</language>
+       <identifier>TTMG5001-Week2-20110121</identifier>
+     </meeting>
+     <event timestamp="1296681157242" module="PARTICIPANT"
+             name="ParticipantJoinEvent">
+          <status>{raiseHand=false, hasStream=false, presenter=false}</status>
+          <userId>1</userId>
+          <role>MODERATOR</role>
+     </event>
+     …
+   </recording>
+}}}
+
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
 
