@@ -93,6 +93,22 @@ The directories below are where the different subsystems will write the recordin
  * Informs FreeSWITCH to start and stop recording
  * Listens start recording and stop recording events from FreeSWITCH
 
+* Deskshare *
+ * Records the deskshare stream as FLV in /var/bigbluebutton/deskshare/
+ * Stores a start recording and stop recording event into redis
+* Webcam *
+ * Records the webcam stream as FLV in {{{/usr/share/red5/webapps/video/<meeting-id>}}}
+ * Stores a start recording and stop recording event into redis
+
+=== Raw Archiving ===
+During archiving, scripts will copy the raw recordings into the following directories:
+ * {{{/var/bigbluebutton/archive/<meeting-id>/events.xml}}}
+ * {{{/var/bigbluebutton/archive/<meeting-id>/audio/}}}
+ * {{{/var/bigbluebutton/archive/<meeting-id>/presentations/}}}
+ * {{{/var/bigbluebutton/archive/<meeting-id>/video/}}}
+ * {{{/var/bigbluebutton/archive/<meeting-id>/deskshare/}}}
+
+
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
 
