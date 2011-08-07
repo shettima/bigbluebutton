@@ -86,8 +86,6 @@ After the meeting has been created, USER-1 is redirected to a web page that will
 
 The chat application will save all public (private are not recorded) chat events to Redis. The presentation application save all presentation and slide events to Redis.
 
-The voice application will need to do more. When it detects 
-
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
 
