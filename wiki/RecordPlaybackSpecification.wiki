@@ -77,12 +77,21 @@ For example, the client tool could be an HTML interface the allows the user to d
  * video records into {{{/usr/share/red5/webapps/video/streams/<meeting-id>/}}}
  * freeSWITCH records into {{{/var/freeswitch/meetings/}}}
 
+* Raw Recording Directory *
 The directories below are where the different subsystems will write the recordings:
  * {{{/var/bigbluebutton/<meeting-id>/presentations/}}}
  * {{{/var/freeswitch/meetings/}}}
  * {{{/usr/share/red5/webapps/video/streams/<meeting-id>/}}}
  * {{{/var/bigbluebutton/deskshare/}}}
 
+* BBB Web API *
+ * Called by 3rd-party apps through the API setting a record parameter to TRUE
+ * Stores meeting info into Redis
+
+* BBB - Apps *
+ * Stores meeting events into Redis
+ * Informs FreeSWITCH to start and stop recording
+ * Listens start recording and stop recording events from FreeSWITCH
 
 === Ingest and Processing to Engage ===
 The next diagram picks up the processing of the events and media to the playback by the user.
