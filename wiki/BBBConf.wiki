@@ -27,7 +27,7 @@ Configuration:
    --setsalt <salt>                 Change the security salt in bigbluebutton.properties
 
 Monitoring:
-   --check <verbose>                Check configuration files and processes for problems
+   --check                          Check configuration files and processes for problems
    --debug                          Scan the log files for error messages
    --watch                          Scan the log files for error messages every 2 seconds
    --salt                           View the URL and security salt for the server
