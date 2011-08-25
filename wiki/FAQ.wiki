@@ -1196,8 +1196,8 @@ Our goal is to make !BigBlueButton the leading open source web conferencing syst
 
 Time is a precious commodity.  In general, when planning the next release, we look at the outstanding feature requests and bug fixes in the following order: 
   # What are our (paying) customers asking us to implement?
-  # What requirements are on our road map for our target market (distance education)? 
-  # What refactoring/features do we the [BigBlueButton_Committer core developers] like to see in !BigBlueButton? 
+  # What requirements are on our [RoadMap1dot0 road map] for our target market (distance education)? 
+  # What refactoring/features do the [FAQ#BigBlueButton_Committer core committers] believe are necessary to improve the code base/maintainability/usability of the project? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
 For (1), the request of our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  For (2), you can see the current development work by looking at our RoadMap; you an also look further ahead to see our roadmap to [RoadMap1dot0 BigBlueButton 1.0].
