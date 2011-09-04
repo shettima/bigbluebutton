@@ -1,0 +1,236 @@
+#summary How to install  BigBlueButton 0.8-beta on Ubuntu in under 15 minutes
+
+<wiki:toc max_depth="3" />
+
+= Prerequisites =
+
+*Draft* 
+
+This document contains instructions for installing/upgrading BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (we've not tested earlier or later versions of Ubuntu).
+
+We recommend  installing BigBlueButton on a dedicated server for optimal performance.  Before installation you'll need root access to a server with
+
+  # *2 GB of memory*
+  # Recommended 200G of free disk space (for recordings)
+  # Ports 80, 1935, 9123 accessible externally
+  # No other application binding to port 80
+
+
+= Installation of !BigBlueButton =
+
+== 1. Install the !BigBlueButton apt-get repository key  == 
+
+Note: The 'XXX' below is not a valid location.  We'll be publishing the location as part of the beta.
+
+{{{
+   # Install the package key
+   wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
+
+   # Add the BigBlueButton repository URL and ensure the multiverse is enabled
+   echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+   echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+}}}
+
+== 2. Install Ruby == 
+
+Parts of the !BigBlueButton record and playback infrastructure now uses ruby for scripting.  If you already have a working ruby and gem installation, you can skip this step.
+
+{{{
+cd /tmp
+wget http://production.cf.rubygems.org/rubygems/rubygems-1.6.0.tgz
+tar zxvf rubygems-1.6.0.tgz
+cd rubygems-1.6.0
+sudo ruby setup.rb
+sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
+sudo gem update --system 1.7.2
+sudo gem install builder bundler god
+}}}
+
+== 3.  Install packages for nokogiri == 
+
+The ruby scripts in !BigBlueButton use nokogiri, an XML parsing library, and this library needs the following packages to install.
+
+{{{
+   sudo apt-get install libreadline-ruby libopenssl-ruby libxslt-dev libxml2-dev curl libcurl3 libcurl3-dev
+}}}
+
+== 4.  Install FreeSWITCH Configuration == 
+!BigBlueButton uses FreeSWITCH for voice conferencing (this gives you the option to add dial-in numbers to your sessions if you wish). 
+
+To install and configrue FreeSWITCH:
+{{{
+  sudo apt-get install bbb-freeswitch-config
+}}}
+
+== 5.  Install !BigBlueButton == 
+
+We're now ready to install !BigBlueButton.  Type:
+
+{{{
+   sudo apt-get install bigbluebutton
+}}}
+
+This single command is where all the magic happens.  This command will install *all* of !BigBlueButton components with their dependencies.  Here's a screen shot of the packages it will install. 
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
+
+Type 'y' and press Enter.  Then sit back.  
+
+BigBlueButton use the msft-ttyfonts package, which may prompt you for accepting an End User License Agreement (EULA) for the installation of the Microsoft !TrueType Fonts.  These fonts help !OpenOffice to convert Microsoft Office documents into PDF files.
+
+== 6. Do a Clean Restart == 
+
+To ensure !BigBlueButton has started cleanly, enter the following commands:
+
+{{{
+   sudo bbb-conf --clean
+   sudo bbb-conf --check
+}}}
+
+The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any configuration or startup problems it has detected.  Normally, there is no text following this message.
+
+== Trying out your server (14:42 minutes later) ==
+
+You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71welcome.png
+
+To start using your !BigBlueButton server, enter your name and click the 'Join' button.  You'll join the Demo Meeting.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
+
+If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].
+
+Also see [InstallationUbuntu#Welcome_to_nginx! Welcome to nginx!] if you see this message instead of the !BigBlueButton client.
+
+Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
+
+
+== Dependencies are not met ==
+
+For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
+
+
+{{{
+#
+#
+# deb cdrom:[Ubuntu-Server 10.04 LTS _Lucid Lynx_ - Release amd64 (20100427)]/ lucid main restricted
+
+# deb cdrom:[Ubuntu-Server 10.04 LTS _Lucid Lynx_ - Release amd64 (20100427)]/ lucid main restricted
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+
+deb http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://us.archive.ubuntu.com/ubuntu/ lucid universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid universe
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+
+## Uncomment the following two lines to add software from the 'backports'
+## repository.
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+# deb http://us.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+# deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+
+## Uncomment the following two lines to add software from Canonical's
+## 'partner' repository.
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+# deb http://archive.canonical.com/ubuntu lucid partner
+# deb-src http://archive.canonical.com/ubuntu lucid partner
+
+deb http://security.ubuntu.com/ubuntu lucid-security main restricted
+deb-src http://security.ubuntu.com/ubuntu lucid-security main restricted
+deb http://security.ubuntu.com/ubuntu lucid-security universe
+deb-src http://security.ubuntu.com/ubuntu lucid-security universe
+deb http://security.ubuntu.com/ubuntu lucid-security multiverse
+deb-src http://security.ubuntu.com/ubuntu lucid-security multiverse
+}}}
+
+then do
+
+{{{ 
+   sudo apt-get update
+}}}
+
+and try installing !BigBlueButton again.
+
+== Run bbb-conf ==
+We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
+
+If you think something isn't working correctly, the first step is enter the following command.
+
+{{{
+   bbb-conf --check
+}}}
+
+This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
+
+
+If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
+
+== Change the BigBlueButton Server's IP ==
+
+A common problem is the default install scripts in for !BigBlueButton configure it to list for an IP address, but if you are accessing your server via a DNS hostname, you'll see the 'Welcome to Nginx' message.
+
+To change all of !BigBlueButton's configuration files to use a different IP address or hostname, enter
+
+{{{
+   bbb-conf --setip <ip_address_or_hostname>
+}}}
+
+For more information see [BBBConf bbb-conf options]. 
+
+== Address already in use ==
+
+If you have apache2 already running on the server, you'll likely see the following error messages from nginx when it starts.
+
+{{{
+Restarting nginx: [emerg]: bind() to 0.0.0.0:80 failed (98: Address
+already in use)
+}}}
+
+If you see these errors, it means that nginx is unable to bind to port 80 on the local server.  To find out what's binding to port 80, do the following
+
+{{{
+   sudo apt-get install lsof
+   lsof -i :80
+}}}
+
+If you see apache2 listed, then stop apache2 and start nginx
+
+{{{
+   sudo /etc/init.d/apache2 stop
+   sudo /etc/init.d/nginx start
+}}}
+
+
+== Getting Help ==
+
+If you have any problems not answered by this document, or you have questions/feedback/bugs, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
