@@ -16,7 +16,7 @@ We recommend  installing BigBlueButton on a dedicated server for optimal perform
   # No other application binding to port 80
 
 
-= Installation of !BigBlueButton =
+= Installation of !BigBlueButton 0.8-beta =
 
 == 1. Install the !BigBlueButton apt-get repository key  == 
 
@@ -74,9 +74,7 @@ This single command is where all the magic happens.  This command will install *
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
 
-Type 'y' and press Enter.  Then sit back.  
-
-BigBlueButton use the msft-ttyfonts package, which may prompt you for accepting an End User License Agreement (EULA) for the installation of the Microsoft !TrueType Fonts.  These fonts help !OpenOffice to convert Microsoft Office documents into PDF files.
+Type 'y' and press Enter.  Then sit back.  The packaging will do all the work for you to install and configure !BigBlueButton with a working setup.
 
 == 6. Do a Clean Restart == 
 
