@@ -1,5 +1,19 @@
 #summary Release Notes for new versions of BigBlueButton.
 
+= Release 0.8: Bailetti (draft) =
+
+Released: XXX YY, 2011
+
+_Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of BigBlueButton._
+
+  * * Record and Playback * - BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) on the server.  After a recorded meeting ends, the BigBlueButton server will run one (or more) ingest and processing scripts to convert the events + media into playback formats.
+
+  * * Popcorn.js * - The 'slides' ingest and processing script uses popcorn.js for enabling HTML5 playback of content.
+
+  * * Upload Slides * - The BigBlueButton 'create' API now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
+
+  * * Reduced latency in audio * - The BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
+
 = Release 0.71a =
 
 Released: January 13, 2011
