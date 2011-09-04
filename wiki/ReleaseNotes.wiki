@@ -8,7 +8,7 @@ _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailett
 
   * * Record and Playback * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) on the server.  After a recorded meeting ends, the BigBlueButton server will run one (or more) ingest and processing scripts to convert the events + media into playback formats.
 
-  * * Popcorn.js * - The 'slides' ingest and processing script uses popcorn.js for enabling HTML5 playback of content.
+  * * HTML5 playback of recordings * - The 'slides' ingest and processing script uses [http://popcornjs.org/ popcorn.js] for converting a BigBlueButton recording into synchronized format for playback within an HTML5 browser.
 
   * * Upload Slides * - The implementation of 'create' API call now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
 
