@@ -89,7 +89,7 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any configuration or startup problems it has detected.  Normally, there is no text following this message.
 
-== Trying out your server (14:42 minutes later) ==
+= Trying out your server (14:42 minutes later) =
 
 You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
 
@@ -105,7 +105,7 @@ Also see [InstallationUbuntu#Welcome_to_nginx! Welcome to nginx!] if you see thi
 
 Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
-
+= Troubleshooting =
 == Dependencies are not met ==
 
 For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
