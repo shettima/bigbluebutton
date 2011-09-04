@@ -231,6 +231,6 @@ If you see apache2 listed, then stop apache2 and start nginx
 }}}
 
 
-== Getting Help ==
+= Getting Help =
 
 If you have any problems not answered by this document, or you have questions/feedback/bugs, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
