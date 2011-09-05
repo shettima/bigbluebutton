@@ -1,4 +1,4 @@
-#summary How to install  BigBlueButton 0.8-beta on Ubuntu in under 15 minutes
+#summary How to install  BigBlueButton 0.8-beta on Ubuntu in under 30 minutes
 
 <wiki:toc max_depth="3" />
 
@@ -106,7 +106,7 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any configuration or startup problems it has detected.  Normally, there is no text following this message.
 
-= Trying out your server (14:42 minutes later) =
+= Trying out your server (24:42 minutes later) =
 
 You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
 
