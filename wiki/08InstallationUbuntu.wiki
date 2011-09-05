@@ -32,26 +32,47 @@ Note: The 'XXX' below is not a valid location.  We'll be publishing the location
    echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
-== 2. Install Ruby == 
+== 2. Install the latest version of Ruby == 
 
-Parts of the !BigBlueButton record and playback infrastructure now uses ruby for scripting.  If you already have a working ruby and gem installation, you can skip this step.
+Parts of the !BigBlueButton record and playback infrastructure now uses Ruby for scripting.  Unfortunately, the Ruby packaging for Ubuntu 10.04 isn't up-to-date.  The following script will install the latest version of Ruby (and it can be removed like a package).
 
 {{{
+sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall
 cd /tmp
-wget http://production.cf.rubygems.org/rubygems/rubygems-1.6.0.tgz
-tar zxvf rubygems-1.6.0.tgz
-cd rubygems-1.6.0
-sudo ruby setup.rb
-sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
-sudo gem update --system 1.7.2
-sudo gem install builder bundler god
+wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
+tar xvzf ruby-1.9.2-p290.tar.gz
+cd ruby-1.9.2-p290
+./configure --prefix=/usr\
+            --program-suffix=1.9.2\
+            --with-ruby-version=1.9.2\
+            --disable-install-doc
+make
+sudo checkinstall -D -y\
+                  --fstrans=no\
+                  --nodoc\
+                  --pkgname='ruby1.9.2'\
+                  --pkgversion='1.9.2-p290'\
+                  --provides='ruby'\
+                  --requires='libc6,libffi5,libgdbm3,libncurses5,libreadline5,openssl,libyaml-0-2,zlib1g'\
+                  --maintainer=brendan.ribera@gmail.com
+sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.2 500\
+                        --slave   /usr/bin/ri   ri   /usr/bin/ri1.9.2\
+                        --slave   /usr/bin/irb  irb  /usr/bin/irb1.9.2\
+                        --slave   /usr/bin/gem  gem  /usr/bin/gem1.9.2\
+                        --slave   /usr/bin/erb  erb  /usr/bin/erb1.9.2\
+                        --slave   /usr/bin/rdoc rdoc /usr/bin/rdoc1.9.2
 }}}
 
-== 3.  Install packages for nokogiri == 
+Thanks to the post by [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] on this approach.
 
-The ruby scripts in !BigBlueButton use nokogiri, an XML parsing library, and this library needs the following packages to install.
+== 3.  Install required gems and packages for ruby == 
+
+The package bbb-record-core uses ruby and has dependencies on god (a process monitoring framework), builder and bundler.
+
+bbb-record-core also installs some gems, one of which is nokogiri (for XML parsing), and it needs some apt-get packages.
 
 {{{
+   sudo gem install god builder bundler
    sudo apt-get install libreadline-ruby libopenssl-ruby libxslt-dev libxml2-dev curl libcurl3 libcurl3-dev
 }}}
 
