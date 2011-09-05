@@ -91,7 +91,7 @@ We're now ready to install !BigBlueButton.  Type:
 
 This single command is where all the magic happens.  This command will install *all* of !BigBlueButton components with their dependencies.  Here's a screen shot of the packages it will install. 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71apt-get.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-get-install.png
 
 Type 'y' and press Enter.  Then sit back.  The packaging will do all the work for you to install and configure !BigBlueButton with a working setup.
 
@@ -110,11 +110,11 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71welcome.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/welcome.png
 
 To start using your !BigBlueButton server, enter your name and click the 'Join' button.  You'll join the Demo Meeting.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/07bbb.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/running.png
 
 If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].
 
