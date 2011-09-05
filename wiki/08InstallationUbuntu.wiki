@@ -6,14 +6,15 @@
 
 *Draft* 
 
-This document contains instructions for installing/upgrading BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (we've not tested earlier or later versions of Ubuntu).
+This document contains instructions for installing !BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (we've not tested earlier or later versions of Ubuntu).
 
-We recommend  installing BigBlueButton on a dedicated server for optimal performance.  Before installation you'll need root access to a server with
+We recommend  installing BigBlueButton on a dedicated server for optimal performance.  To install you'll need root access to a Ubuntu 10.04 32-bit or 64-bit server with
 
-  # *2 GB of memory*
-  # Recommended 200G of free disk space (for recordings)
+  # 2 GB (or more) of memory
   # Ports 80, 1935, 9123 accessible externally
   # No other application binding to port 80
+  # 200G (or more) of free disk space (for recordings)
+
 
 
 = Installation of !BigBlueButton 0.8-beta =
