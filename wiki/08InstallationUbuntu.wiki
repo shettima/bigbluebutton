@@ -37,7 +37,7 @@ Parts of the !BigBlueButton record and playback infrastructure use uses Ruby for
 Copy the following script to a file called `install-ruby.sh`.
 
 {{{
-sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall
+sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5
 cd /tmp
 wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
 tar xvzf ruby-1.9.2-p290.tar.gz
