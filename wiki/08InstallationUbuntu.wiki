@@ -8,7 +8,7 @@
 
 This document contains instructions for installing !BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (we've not tested earlier or later versions of Ubuntu).
 
-We recommend installing BigBlueButton on a dedicated server for optimal performance.  To install you'll need root access to a server with
+We recommend installing !BigBlueButton on a dedicated server for optimal performance.  To install you'll need root access to a server with
 
   # 2 GB (or more) of memory
   # Ports 80, 1935, 9123 accessible externally
@@ -220,7 +220,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
 
-== Change the BigBlueButton Server's IP ==
+== Change the !BigBlueButton Server's IP ==
 
 A common problem is the default install scripts in for !BigBlueButton configure it to list for an IP address, but if you are accessing your server via a DNS hostname, you'll see the 'Welcome to Nginx' message.
 
