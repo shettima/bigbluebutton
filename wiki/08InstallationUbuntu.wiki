@@ -94,7 +94,7 @@ To install and configrue FreeSWITCH:
 We're now ready to install !BigBlueButton.  Type:
 
 {{{
-   sudo apt-get install bigbluebutton bbb-demo
+   sudo apt-get install bigbluebutton
 }}}
 
 
@@ -103,6 +103,17 @@ This single command is where all the magic happens.  This command will install *
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-get-install.png
 
 Type 'y' and press Enter.  Then sit back.  The packaging will do all the work for you to install and configure !BigBlueButton with a working setup.
+
+== 5. Install API Demos ==
+
+To interactively test your !BigBlueButton server, you can install a set of API demos.  
+
+{{{
+   sudo apt-get install bbb-demo
+}}}
+
+These are the same API demos that are available off of the [http://demo.bigbluebutton.org/ BigBlueButton demo server].
+
 
 == 6. Do a Clean Restart == 
 
