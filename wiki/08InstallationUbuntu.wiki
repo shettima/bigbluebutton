@@ -22,13 +22,22 @@ We recommend installing !BigBlueButton on a dedicated server for optimal perform
 Note: The 'XXX' below is not a valid location.  We'll be publishing the location as part of the beta.
 
 {{{
-   # Install the package key
-   wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
+# Install the package key
+wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 
-   # Add the BigBlueButton repository URL and ensure the multiverse is enabled
-   echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
-   echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+# Add the BigBlueButton repository URL and ensure the multiverse is enabled
+echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
+
+After you've made the above changes, update your list of packages and upgrade any existing packages to make sure your running the latest.
+
+{{{
+sudo apt-get update
+sudo apt-get dist-upgrade
+}}}
+
+If you've not updated in a while, apt may recommend you reboot your server.  Do so and then proceed to the next step.
 
 == 2. Install the latest version of Ruby == 
 
