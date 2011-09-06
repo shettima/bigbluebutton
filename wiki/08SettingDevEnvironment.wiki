@@ -15,60 +15,7 @@ sudo useradd -d /home/firstuser -m firstuser
 sudo passwd firstuser
 }}}
 
-Update the system
-{{{
-   sudo apt-get update
-   sudo apt-get dist-upgrade
-}}}
-
-Copy to following in a file named {{{install.sh}}}
-{{{
-#!/bin/bash
-set -x
-set -e
-
-wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
-
-#
-# 32-bit URL
-#
-echo "deb http://ubuntu.bigbluebutton.org/bbb_0.8.0.1/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
-
-#
-# 64-bit URL
-#
-#echo "deb http://ubuntu.bigbluebutton.org/bbb0_8-64/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
-
-sudo apt-get update
-sudo apt-get install build-essential ruby rdoc libopenssl-ruby ruby-dev wget
-
-wget http://production.cf.rubygems.org/rubygems/rubygems-1.6.0.tgz
-tar zxvf rubygems-1.6.0.tgz
-cd rubygems-1.6.0
-sudo ruby setup.rb
-sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
-sudo gem update --system 1.7.2
-
-# Install builder gem
-sudo gem install builder bundler god
-
-# Install needed packages for nokogiri
-sudo apt-get install libreadline-ruby libopenssl-ruby libxslt-dev libxml2-dev curl libcurl3 libcurl3-dev
-
-sudo apt-get install bbb-freeswitch-config
-sudo apt-get install bigbluebutton
-sudo apt-get install bbb-demo
-
-sudo bbb-conf --clean
-sudo bbb-conf --check
-
-}}}
-
-Make the script executable.When prompted for mysql password, just hit enter. Accept the Java license agreement by hitting Tab or left arrow.
-{{{
-  chmod +x install.sh
-  sudo ./install.sh
-}}}
+Follow instructions found in [08InstallationUbuntu]
 
 When finished, you should be able to join the demo conference. 
 
