@@ -107,7 +107,7 @@ However, if you want to live on the edge and use the latest packages built by ou
 #
 # Repository for BigBlueButton
 #
-deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton main
+deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main
 }}}
 
 to
@@ -115,7 +115,7 @@ to
 #
 # Repository for BigBlueButton
 #
-deb http://ubuntu.bigbluebutton.org/lucid_dev/ bigbluebutton main
+deb http://ubuntu.bigbluebutton.org/lucid_dev/ bigbluebutton-lucid main
 }}}
 
 Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds, which are not guaranteed to be stable, but you can see what's happing in the current itteration.
