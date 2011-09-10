@@ -30,20 +30,20 @@ echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-lucid main" | sudo 
 echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
-After you've made the above changes, update your list of packages and upgrade any existing packages to make sure your running the latest.
+After you've made the above changes, do a dist-upgrade ensure your running the latest kernel and packages from Ubuntu.
 
 {{{
 sudo apt-get update
 sudo apt-get dist-upgrade
 }}}
 
-If you've not updated in a while, apt may recommend you reboot your server.  Do so and then proceed to the next step.
+If you've not updated in a while, apt may recommend you reboot your server; reboot and proceed to the next step.
 
 == 2. Install the latest version of Ruby == 
 
-Parts of the !BigBlueButton record and playback infrastructure use uses Ruby for scripting.  Unfortunately, the Ruby packaging for Ubuntu 10.04 isn't up-to-date.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
+In !BigBlueButton 0.8, the record and playback infrastructure uses Ruby for processing your recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
 
-Copy the following script to a file called `install-ruby.sh`.
+Copy the script below to a file called `install-ruby.sh`.
 
 {{{
 sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5
@@ -79,7 +79,14 @@ chmod +x install-ruby.sh
 ./install-ruby.sh
 }}}
 
-Thanks to the post by [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for sharing this approach.
+After the install finishes, type `ruby -v` to ensure your running the latest. 
+
+{{{
+$ ruby -v
+ruby 1.9.2p290 (2011-07-09 revision 32553)
+}}}
+
+You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04.
 
 == 3.  Install FreeSWITCH Configuration == 
 We're now into the installation of !BigblueButton.  !BigBlueButton uses FreeSWITCH for voice conferencing (this gives you the option to add dial-in numbers to your sessions if you wish).  
