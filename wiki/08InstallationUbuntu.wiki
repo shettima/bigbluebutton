@@ -6,11 +6,12 @@
 
 *Draft* 
 
-This document contains instructions for installing !BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (we've not tested earlier or later versions of Ubuntu).
+This document contains instructions for installing !BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested earlier or later versions of Ubuntu.
 
-We recommend installing !BigBlueButton on a dedicated server for optimal performance.  To install you'll need root access to a server with
+We recommend installing !BigBlueButton on a dedicated (non virtual) server for optimal performance.  To install you'll need root access to a server with
 
   # 2 GB (or more) of memory
+  # Dual-core CPU running at 2.6 GHZ (or faster)
   # Ports 80, 1935, 9123 accessible externally
   # No other application binding to port 80
   # 200G (or more) of free disk space (for recordings)
@@ -22,7 +23,7 @@ We recommend installing !BigBlueButton on a dedicated server for optimal perform
 Note: The 'XXX' below is not a valid location.  We'll be publishing the location as part of the beta.
 
 {{{
-# Install the package key
+# Add the !BigBlueButton repository
 wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
@@ -41,7 +42,7 @@ If you've not updated in a while, apt may recommend you reboot your server; rebo
 
 == 2. Install the latest version of Ruby == 
 
-In !BigBlueButton 0.8, the record and playback infrastructure uses Ruby for processing your recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
+In !BigBlueButton 0.8, the record and playback infrastructure uses Ruby for the processing of recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
 
 Copy the script below to a file called `install-ruby.sh`.
 
