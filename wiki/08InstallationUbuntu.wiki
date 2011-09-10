@@ -20,7 +20,6 @@ We recommend installing !BigBlueButton on a dedicated (non virtual) server for o
 
 == 1. Add the !BigBlueButton repository and ensure your server is up-to-date  == 
 
-Note: The 'XXX' below is not a valid location.  We'll be publishing the location as part of the beta.
 
 {{{
 # Add the BigBlueButton key
@@ -29,6 +28,7 @@ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
 echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+
 }}}
 
 After you've made the above changes, do a dist-upgrade ensure your running the latest kernel and packages from Ubuntu.
@@ -36,6 +36,7 @@ After you've made the above changes, do a dist-upgrade ensure your running the l
 {{{
 sudo apt-get update
 sudo apt-get dist-upgrade
+
 }}}
 
 If you've not updated in a while, apt may recommend you reboot your server; reboot and proceed to the next step.
@@ -71,6 +72,7 @@ sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.2 500\
                         --slave   /usr/bin/gem  gem  /usr/bin/gem1.9.2\
                         --slave   /usr/bin/erb  erb  /usr/bin/erb1.9.2\
                         --slave   /usr/bin/rdoc rdoc /usr/bin/rdoc1.9.2
+
 }}}
 
 Next, run the script
