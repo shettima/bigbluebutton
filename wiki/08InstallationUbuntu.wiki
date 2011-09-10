@@ -10,11 +10,11 @@ This document contains instructions for installing !BigBlueButton 0.8-beta on a 
 
 We recommend installing !BigBlueButton on a dedicated (non virtual) server for optimal performance.  To install you'll need root access to a server with
 
-  # 2 GB (or more) of memory
-  # Dual-core CPU running at 2.6 GHZ (or faster)
+  # 2 GB of memory (or more)
+  # Dual-core 2.6 GHZ CPU (or faster)
   # Ports 80, 1935, 9123 accessible externally
-  # No other application binding to port 80
-  # 200G (or more) of free disk space (for recordings)
+  # Port 80 is available (no other application is using it)
+  # 200G of free disk space (or more) for recordings
 
 = Installation of !BigBlueButton 0.8-beta =
 
@@ -80,7 +80,7 @@ chmod +x install-ruby.sh
 ./install-ruby.sh
 }}}
 
-After the install finishes, type `ruby -v` to ensure your running 1.9.2p290 (or later). 
+After the install finishes, type `ruby -v`.  You should see the ruby interpreter output `1.9.2p290` (or later). 
 
 {{{
 $ ruby -v
