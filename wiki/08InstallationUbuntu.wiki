@@ -146,11 +146,24 @@ Click 'Slides' to playback the slides, audio, and chat of the recording.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/playback.png
 
-Also see [InstallationUbuntu#Welcome_to_nginx! Welcome to nginx!] if you see this message instead of the !BigBlueButton client.
+If you want to use BigBlueButton with a [http://bigbluebutton.org/support 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
 
-Also check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  For example, a common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
+{{{
+$ bbb-conf --salt
+
+       URL: http://192.168.0.36/bigbluebutton/
+      Salt: b22e37979cf3587dd616fa0a4e6228
+}}}
+
+We hope you enjoy using !BigBlueButton.
 
 = Troubleshooting =
+
+If you don't find an answer to your questions below, check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  
+
+A common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
+
+
 == Dependencies are not met ==
 
 For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
