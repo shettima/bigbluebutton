@@ -218,6 +218,22 @@ If you don't find an answer to your questions below, check out our [http://code.
 A common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
 
+== Run sudo bbb-conf --check ==
+We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
+
+If you think something isn't working correctly, the first step is enter the following command.
+
+{{{
+   sudo bbb-conf --check
+}}}
+
+This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
+
+
+If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
+
 == Dependencies are not met ==
 
 For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
@@ -291,21 +307,6 @@ then do
 
 and try installing !BigBlueButton again.
 
-== Run bbb-conf ==
-We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
-
-If you think something isn't working correctly, the first step is enter the following command.
-
-{{{
-   bbb-conf --check
-}}}
-
-This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
-
-
-If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
 
 == Change the !BigBlueButton Server's IP ==
 
