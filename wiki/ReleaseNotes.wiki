@@ -8,7 +8,7 @@ _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailett
 
   * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  When recording a session, after the session ends the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
-  * * Playback in HTML 5 browser * - The default playback format is slides, which will playback audio, slides, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers is Chrome and Firefox; support for Safari and IE coming soon.
+  * * Playback of recordings in HTML 5 browser * - The default playback format is slides, which will playback audio, slides, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers is Chrome and Firefox; support for Safari and IE coming soon.
 
   * * Upload Slides * - The implementation of 'create' API call now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
 
