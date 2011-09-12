@@ -118,18 +118,13 @@ wget http://fpdownload.macromedia.com/pub/flashplayer/updaters/10/playerglobal10
 mv playerglobal10_3.swc playerglobal.swc
 }}}
 
-Install Ant
-{{{
- sudo apt-get install an
-}}}
-
 Setup the client for development.
 {{{
 bbb-conf --setup-dev client
 }}}
 
 ----
-*NOTE:* If you don't want to run [{{{bbb-conf --setup-dev client}}}] but want to instead setup manually, do the following: (the steps below essentially is what [{{{bbb-conf --setup-dev client}}}} executes.
+*NOTE:* If you don't want to run [{{{bbb-conf --setup-dev client}}}] but want to instead setup manually, do the following: (the steps below essentially is what [{{{bbb-conf --setup-dev client}}}] executes.
 {{{
 cd dev/source/bigbluebutton/bigbluebutton-client
 mkdir -p bin/conf
