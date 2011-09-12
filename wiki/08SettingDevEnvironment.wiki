@@ -30,6 +30,7 @@ sudo apt-get install ant
 
 SSH into your !BigBlueButton VM.
 {{{
+mkdir -p /home/firstuser/dev/tools
 cd /home/firstuser/dev/tools
 tar zcvf gradle-0.8.tar.gz gradle-0.8
 tar zcvf grails-1.1.1.tar.gz grails-1.1.1
