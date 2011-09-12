@@ -8,7 +8,7 @@ We're pleased to announce the release !BigBlueButton 0.8 beta.
 
 Our goal since the beginning of the !BigBlueButton project has been to integrate record and playback into the core.   In the release of 0.8, you can now record and playback slides, audio, and chat within !BigBlueButton.  For a detailed list of changes, see [ReleaseNotes 0.8 release notes].
 
-= Getting Help and Bug Reporting =
+== Getting Help and Bug Reporting ==
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
@@ -341,4 +341,3 @@ If you see apache2 listed, then stop apache2 and start nginx
    sudo /etc/init.d/apache2 stop
    sudo /etc/init.d/nginx start
 }}}
-
