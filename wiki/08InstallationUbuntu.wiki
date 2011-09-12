@@ -6,7 +6,9 @@
 
 We're pleased to announce the release !BigBlueButton 0.8 beta. 
 
-Our goal since the beginning of this release has been to integrate record and playback into !BigBlueButton's core.   This release is the culmination of months of effort (our last release was January 14, 2010).  With this release, you can now record and playback slides, audio, and chat within !BigBlueButton.  This enables !BigBlueButton to address a much wider set of use cases for distance education.  For a detailed list of changes, see [ReleaseNotes 0.8 release notes].
+Our goal since the beginning of this release has been to integrate record and playback into !BigBlueButton's core.   This release is the culmination of months of effort (our last release was January 14, 2010).  With this release, you can now record and playback slides, audio, and chat within !BigBlueButton.  This enables !BigBlueButton to address a much wider set of use cases for distance education.  
+
+For a detailed list of changes, see [ReleaseNotes 0.8 release notes].
 
 == Getting help and bug reporting ==
 
