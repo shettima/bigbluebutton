@@ -2,9 +2,19 @@
 
 <wiki:toc max_depth="3" />
 
+= Welcome =
+
+We're pleased to announce the release !BigBlueButton 0.8 beta. 
+
+Our goal since the beginning of the !BigBlueButton project has been to integrate record and playback into the core.   In the release of 0.8, you can now record and playback slides, audio, and chat within !BigBlueButton.  For a detailed list of changes, see [ReleaseNotes 0.8 release notes].
+
+If encounter problems with the install instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] with a description of the problem or error message.  
+
+After you have BigBlueButton 0.8 running, if you encounter bugs, please let us know (see  You can see our [IssuesInstructions process for reporting bugs]).
+
 = Prerequisites =
 
-*This document contains instructions for installing !BigBlueButton 0.8-beta* on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).*  We've not tested these instructions on earlier or later versions of Ubuntu.
+These instructions require you install !BigBlueButton 0.8 on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
 
 We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
