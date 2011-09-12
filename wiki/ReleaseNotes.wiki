@@ -28,8 +28,6 @@ The following items are planned for inclusion in subsequent updates to the 0.8 b
 
   * * Pre-flight checklist * -  To assist users in configuration their audio, display a dialog box when joining the voice conference bridge to to check speakers and microphone.
 
-
-== Current Issues ==
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8 for a list open issues for this release]
 
 = Release 0.71a =
