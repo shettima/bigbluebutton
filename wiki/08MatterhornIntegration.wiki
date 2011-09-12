@@ -43,24 +43,13 @@ sudo ./configure --enable-nasm --disable-shared
 sudo make
 sudo checkinstall --pkgname=lame-ffmpeg --pkgversion="3.98.4" --backup=no --default     --deldoc=yes
 
-# Install libvpx (optional)
-cd /usr/local/src
-sudo git clone git://review.webmproject.org/libvpx
-cd /usr/local/src/libvpx
-sudo git checkout v0.9.6
-sudo git checkout -b v0.9.6
-sudo ./configure
-sudo make
-sudo checkinstall --pkgname=libvpx --pkgversion="$(date +%Y%m%d%H%M)-git" --backup=no --default --deldoc=yes
-
-
 # Install FFMPEG
 cd /usr/local/src
 sudo git clone git://git.videolan.org/ffmpeg
 cd /usr/local/src/ffmpeg
 sudo git checkout n0.8.1
 sudo git checkout -b n0.8.1
-sudo ./configure --enable-gpl --enable-version3 --enable-nonfree --enable-postproc --enable-libfaac --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libx264 --enable-libxvid --enable-x11grab --enable-libvpx --enable-libmp3lame
+sudo ./configure --enable-gpl --enable-version3 --enable-nonfree --enable-postproc --enable-libfaac --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libx264 --enable-libxvid --enable-x11grab --enable-libmp3lame
 sudo make
 sudo checkinstall --pkgname=ffmpeg --pkgversion="8:$(./version.sh)" --backup=no --deldoc=yes --default
 
