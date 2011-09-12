@@ -6,14 +6,14 @@
 
 *Draft* 
 
-This document contains instructions for installing !BigBlueButton 0.8-beta on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested earlier or later versions of Ubuntu.
+This document contains instructions for installing *!BigBlueButton 0.8-beta* on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested these instructions on earlier or later versions of Ubuntu.
 
-We recommend installing !BigBlueButton on a dedicated (non virtual) server for optimal performance.  To install you'll need root access to a server with
+We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
   # 2 GB of memory (or more)
   # Dual-core 2.6 GHZ CPU (or faster)
-  # Ports 80, 1935, 9123 accessible externally
-  # Port 80 is available (no other application is using it)
+  # Ports 80, 1935, 9123 accessible 
+  # Port 80 is available and not used by another application
   # 200G of free disk space (or more) for recordings
 
 = Installation of !BigBlueButton 0.8-beta =
@@ -31,7 +31,7 @@ echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /
 
 }}}
 
-After you've made the above changes, do a dist-upgrade ensure your running the latest kernel and packages from Ubuntu.
+After you've made the above changes, do a dist-upgrade to ensure your running the latest packages and your server is up-to-date before installing !BigBlueButton.
 
 {{{
 sudo apt-get update
@@ -43,7 +43,7 @@ If you've not updated in a while, apt may recommend you reboot your server; rebo
 
 == 2. Install the latest version of Ruby == 
 
-In !BigBlueButton 0.8, the record and playback infrastructure uses Ruby for the processing of recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
+The record and playback infrastructure uses Ruby for the processing of recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
 
 Copy the script below to a file called `install-ruby.sh`.
 
