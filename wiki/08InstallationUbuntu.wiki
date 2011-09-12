@@ -4,9 +4,7 @@
 
 = Prerequisites =
 
-*Draft* 
-
-This document contains instructions for installing *!BigBlueButton 0.8-beta* on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested these instructions on earlier or later versions of Ubuntu.
+*This document contains instructions for installing !BigBlueButton 0.8-beta* on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).*  We've not tested these instructions on earlier or later versions of Ubuntu.
 
 We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
@@ -15,6 +13,11 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Ports 80, 1935, 9123 accessible 
   # Port 80 is available and not used by another application
   # 200G of free disk space (or more) for recordings
+
+= Video Walkthrough =
+The following video will walk you through the installation of !BigBlueButton 0.8.
+
+<wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
 
 
 = Installation of !BigBlueButton 0.8-beta =
@@ -159,6 +162,8 @@ Click 'Slides' to playback the slides, audio, and chat of the recording.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/playback.png
 
+The following [http://www.youtube.com/watch?v=4b_tC1JEX1E YouTube Video] will walk you through using record and playback.
+
 If you want to use !BigBlueButton with a [http://bigbluebutton.org/support 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
 
 {{{
@@ -168,7 +173,7 @@ $ bbb-conf --salt
       Salt: b22e37979cf3587dd616fa0a4e6228
 }}}
 
-We hope you enjoy using !BigBlueButton.
+We hope you enjoy using !BigBlueButton and welcome your feedback!
 
 = Troubleshooting =
 
