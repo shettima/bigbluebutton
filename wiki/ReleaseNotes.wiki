@@ -6,13 +6,15 @@ Released: XXX YY, 2011
 
 _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
-  * * Record and Playback * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) on the server.  After a recorded meeting ends, the BigBlueButton server will run one (or more) ingest and processing scripts to convert the events + media into playback formats.
+  * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  When recording a session, after the session ends the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
-  * * HTML5 playback of recordings * - The 'slides' ingest and processing script uses [http://popcornjs.org/ popcorn.js] for converting a BigBlueButton recording into synchronized format for playback within an HTML5 browser.
+  * * Playback in HTML 5 browser * - The default playback format is slides, which will playback audio, slides, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers is Chrome and Firefox; support for Safari and IE coming soon.
 
   * * Upload Slides * - The implementation of 'create' API call now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
 
-  * * Reduced latency in audio * - The BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
+  * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings.  See [08API#Version_0.8 0.8 API] for details.
+
+  * * Reduced latency in audio * - The !BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
 
 = Release 0.71a =
 
