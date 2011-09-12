@@ -14,7 +14,7 @@ These instructions will configure your !BigBlueButton 0.8 server to capture the 
 
 After each lecture is finished, the Matterhorn ingest and processing scripts (installed on the !BigBlueButton server following the instructions below) will create two video files: one with webcam + audio, the other for desktop sharing, and scp the files to your Matterhorn server.
 
-If you encounter any problems with these instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
+If you encounter any problems with these instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton setup mailing list].
 
 
 == 1. Install ffmpeg  == 
