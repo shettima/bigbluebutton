@@ -22,9 +22,9 @@ _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailett
 
   * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to 1.0.7.  !BigBlueButton no longer requires installation of mysql.
 
+The following items are planned for inclusion in subsequent updates to the 0.8 beta
 
-
-The following items are planned for inclusion in the beta: pre-flight checklist for audio to assist users in ensuring their microphone is properly working.  
+  * * Pre-flight checklist * -  To assist users in configuration their audio, display a dialog box when joining the voice conference bridge to to check speakers and microphone.
 
 = Release 0.71a =
 
