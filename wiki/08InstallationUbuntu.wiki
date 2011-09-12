@@ -25,7 +25,7 @@ These instructions will not upgrade from a previous version of !BigBlueButton (i
 
 We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
-  # 2 GB of memory (or more)
+  # 2 GB of memory (4 GB is better)
   # Dual-core 2.6 GHZ CPU (or faster)
   # Ports 80, 1935, 9123 accessible 
   # Port 80 is available and not used by another application
