@@ -6,7 +6,7 @@ Released: September XX, 2011
 
 _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
-Instructions for installing !BigBlueButton 0.8-beta are [08InstallationUbuntu here]. 
+See [08InstallationUbuntu installation instructions]. 
 
   * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
