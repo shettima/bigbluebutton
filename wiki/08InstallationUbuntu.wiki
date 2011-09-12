@@ -35,6 +35,9 @@ We recommend you following the video with these step-by-step instructions below.
 
 == 1. Add the !BigBlueButton repository and ensure your server is up-to-date  == 
 
+You first need to give your server access to the !BigBlueButton package repository for 0.8.
+
+In a terminal window, copy and paste the following commands.
 
 {{{
 # Add the BigBlueButton key
