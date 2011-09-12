@@ -10,7 +10,7 @@ Our goal since the beginning of this release has been to integrate record and pl
 
 For a detailed list of changes, see [ReleaseNotes 0.8-beta release notes].
 
-== Getting help and bug reporting ==
+== Getting help ==
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
