@@ -1,8 +1,8 @@
 #summary How to install  BigBlueButton 0.71a on Ubuntu in under 15 minutes
 
 <wiki:toc max_depth="3" />
-= Looking to try BigBlueButton 08-beta? =
-See [08InstallationUbuntu Install BigBlueButton 0.8].
+= BigBlueButton 0.8 =
+We've made a lot of [ReleaseNotes improvements] in the upcoming release of !BigBlueButton 0.8.  If you'd like to try installing it instead of 0.71a, see [08InstallationUbuntu Install BigBlueButton 0.8-beta].
 
 = Prerequisites =
 
