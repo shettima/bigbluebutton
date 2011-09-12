@@ -1,6 +1,6 @@
 #summary Before you hit that New Issue button ...
 
-== I have a "How to" question: ==
+== I have a question ... ==
 
 *1. Check the FAQ*: There are over 100 answers to common !BigBlueButton questions in our [FAQ Frequently Asked Questions].
 
