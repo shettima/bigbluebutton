@@ -138,13 +138,13 @@ Now ingestion should work during publish phase.
 
 
 === About Matterhorn ingestion ===
- - By default the directory where zipped packages are ingested in Matterhorn server is $FELIX_HOME/inbox
+ * By default the directory where zipped packages are ingested in Matterhorn server is $FELIX_HOME/inbox
 
 To change inbox directory, change the parameter felix.fileinstall.dir  in /opt/matterhorn/1.1.0/docs/felix/load/org.apache.felix.fileinstall-inbox.cfg
 
- - A zipped package is deleted from inbox after it is ingested
+ * A zipped package is deleted from inbox after it is ingested
  
- - If the zipped package  sent from BigBlueButton is not a valid media package it is sent to ${org.opencastproject.storage.dir}/files/collection where org.opencastproject.storage.dir is a parameter configured in $FELIX_HOME/conf/config.properties
+ * If the zipped package  sent from BigBlueButton is not a valid media package it is sent to ${org.opencastproject.storage.dir}/files/collection where org.opencastproject.storage.dir is a parameter configured in $FELIX_HOME/conf/config.properties
 
 = Troubleshooting =
 
