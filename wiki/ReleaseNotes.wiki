@@ -12,7 +12,7 @@ _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailett
 
   * * Upload slides on create of a session * - The implementation of 'create' API call now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
 
-  * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings (see [API#Version_0.8 API updates for 0.8].
+  * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings (see [API#Version_0.8 API updates for 0.8]).
 
   * * Reduced latency in audio * - The !BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
 
