@@ -13,6 +13,8 @@ You need to have a install of !BigBlueButton 0.8 (see InstallationUbuntu) and an
 
 == 1. Install ffmpeg  == 
 
+!BigBlueButton can capture the audio, desktop, and webcam from a session and create two video files: one with webcam + audio, the other for desktop sharing.
+
 Login to your !BigBlueButton server with root access.  Create a new file called install_ffmpeg.sh and paste in the following commands.
 
 {{{
@@ -90,8 +92,6 @@ The ingest and processing scripts will use a public/private key to move files to
 
 === Generate a ssh public key ===
 
-Note: These instructions are for firstuser and need to be generalized.
-
 This key will let BigBlueButton server send files to Matterhorn server without prompting a password. 
 
 {{{
@@ -106,6 +106,7 @@ Next, we'll copy the public key to the BigBlueButton scripts directory change it
 {{{
 sudo cp ~/.ssh/id_rsa /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 sudo chmod 600 /usr/local/bigbluebutton/core/scripts/matt_id_rsa
+sudo chown tomcat6:tomcat6 /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 }}}
 
 Set configuration parameters about BigBlueButton-Matterhorn connection in /usr/local/bigbluebutton/core/scripts/matterhorn.yml
