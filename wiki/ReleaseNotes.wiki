@@ -22,7 +22,7 @@ Instructions for installing !BigBlueButton 0.8-beta are [08InstallationUbuntu he
 
   * * API demos now separate * - The API demos are installed in their own package (for easy addition and removal).  The install location has changed to `/var/lib/tomcat6/webapps/demo`, which changes the URL from accessing them from `/bigbluebutton/demo` to `/demo`.
 
-  * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to 1.0.7.  !BigBlueButton no longer requires installation of mysql.
+  * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to a snapshot of 1.0.7.  !BigBlueButton no longer requires installation of mysql.
 
 The following items are planned for inclusion in subsequent updates to the 0.8 beta
 
