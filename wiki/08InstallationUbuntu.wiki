@@ -24,13 +24,14 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Port 80 is available and not used by another application
   # 200G of free disk space (or more) for recordings
 
-= Video Walkthrough =
+= Video Instructions =
 The following video will walk you through the installation of !BigBlueButton 0.8.
 
 <wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
 
+We recommend you following the video with these step-by-step instructions below.
 
-= Installation of !BigBlueButton 0.8-beta =
+= Step-by-step installation =
 
 == 1. Add the !BigBlueButton repository and ensure your server is up-to-date  == 
 
