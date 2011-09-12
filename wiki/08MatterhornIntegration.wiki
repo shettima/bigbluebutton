@@ -113,6 +113,8 @@ Set configuration parameters about BigBlueButton-Matterhorn connection in /usr/l
 
  These parameters will be read during publish phase.
 
+
+{{{
 # The ip address of the matterhorn server.
 server: 192.168.0.147
 # The username we use to SCP the processed recording to matterhorn.
@@ -123,8 +125,7 @@ key: /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 # processed recording will be delivered for publishing to matterhorn.
 # NOTE: Make sure that the directory is writeable by the above user.
 inbox: /opt/matterhorn/felix/inbox/
-
-
+}}}
 
 = Troubleshooting =
 
