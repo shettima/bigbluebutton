@@ -6,16 +6,20 @@
 
 *Draft* 
 
-You need to have a install of !BigBlueButton 0.8 (see 08InstallationUbuntu) and an installation of Matterhorn 1.0.
+You need to have to have installed [08InstallationUbuntu BigBlueButton 0.8] and an installation of Matterhorn 1.1 or 1.2.
 
 
 = Installation of Matterhorn integration =
+These instructions will configure your !BigBlueButton 0.8 server to capture the audio, desktop, and webcam from a session.
+
+After each lecture is finished, the Matterhorn ingest and processing scripts (installed on the !BigBlueButton server following the instructions below) will create two video files: one with webcam + audio, the other for desktop sharing, and scp the files to your Matterhorn server.
+
+If you encounter any problems with these instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
+
 
 == 1. Install ffmpeg  == 
 
-!BigBlueButton can capture the audio, desktop, and webcam from a session and create two video files: one with webcam + audio, the other for desktop sharing.
-
-Login to your !BigBlueButton server with root access.  Create a new file called install_ffmpeg.sh and paste in the following commands.
+To install ffmpeg, login to your !BigBlueButton server with root access.  Copy the following script and and save as a file  `install_ffmpeg.sh` on your server
 
 {{{
 # install dependencies
