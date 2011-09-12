@@ -200,6 +200,10 @@ sudo /etc/init.d/nginx restart
 Now let's start grails webapp.
 {{{
 cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-web/
+
+# Resolve all dependencies
+gradle resolveDeps
+
 # Tell grails to listen on port 8888
 grails -Dserver.port=8888 run-app
 }}}
