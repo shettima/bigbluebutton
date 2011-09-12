@@ -19,7 +19,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
 = Video Walkthrough =
 The following video will walk you through the installation of !BigBlueButton 0.8.
 
-<wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" height=480 width=720/>
+<wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" height=576 width=1024/>
 
 
 = Installation of !BigBlueButton 0.8-beta =
