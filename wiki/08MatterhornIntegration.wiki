@@ -6,7 +6,7 @@
 
 *Draft* 
 
-You need to have a install of !BigBlueButton 0.8 (see InstallationUbuntu) and an installation of Matterhorn 1.0.
+You need to have a install of !BigBlueButton 0.8 (see 08InstallationUbuntu) and an installation of Matterhorn 1.0.
 
 
 = Installation of Matterhorn integration =
