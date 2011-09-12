@@ -10,7 +10,7 @@ Our goal since the beginning of the !BigBlueButton project has been to integrate
 
 If encounter problems with the install instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] with a description of the problem or error message.  
 
-After you have BigBlueButton 0.8 running, if you encounter bugs, please let us know (see  You can see our [IssuesInstructions process for reporting bugs]).
+After you have !BigBlueButton 0.8 running, if you encounter bugs, please let us know (see  You can see our [IssuesInstructions process for reporting bugs]).
 
 = Prerequisites =
 
@@ -91,6 +91,8 @@ sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.2 500\
                         --slave   /usr/bin/erb  erb  /usr/bin/erb1.9.2\
                         --slave   /usr/bin/rdoc rdoc /usr/bin/rdoc1.9.2
 
+ruby -v
+gem -v
 }}}
 
 Next, run the script
