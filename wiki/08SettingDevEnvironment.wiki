@@ -28,9 +28,13 @@ sudo apt-get install openjdk-6-jdk
 sudo apt-get install ant
 }}}
 
-SSH into your !BigBlueButton VM.
+Create tools directory
 {{{
 mkdir -p /home/firstuser/dev/tools
+}}}
+
+SSH into your !BigBlueButton VM.
+{{{
 cd /home/firstuser/dev/tools
 tar zcvf gradle-0.8.tar.gz gradle-0.8
 tar zcvf grails-1.1.1.tar.gz grails-1.1.1
@@ -46,7 +50,6 @@ scp groovy-1.6.5.tar.gz <your server's ip>:~/dev/tools/
 
 In you dev env. Extract the files you just transferred.
 {{{
-mkdir /homr/firstuser/dev/tools
 cd /home/firstuser/dev/tools
 tar zxvf gradle-0.8.tar.gz 
 tar zxvf grails-1.1.1.tar.gz 
