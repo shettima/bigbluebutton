@@ -19,7 +19,8 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
 = Video Walkthrough =
 The following video will walk you through the installation of !BigBlueButton 0.8.
 
-http://www.youtube.com/watch?v=A_rYw82-9Bs
+<wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs"/>
+
 
 = Installation of !BigBlueButton 0.8-beta =
 
@@ -163,7 +164,7 @@ Click 'Slides' to playback the slides, audio, and chat of the recording.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/playback.png
 
-If you want to use BigBlueButton with a [http://bigbluebutton.org/support 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
+If you want to use !BigBlueButton with a [http://bigbluebutton.org/support 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
 
 {{{
 $ bbb-conf --salt
