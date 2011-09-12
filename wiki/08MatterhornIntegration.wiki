@@ -104,7 +104,7 @@ sudo chown tomcat6:tomcat6 /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 
 Set configuration parameters about BigBlueButton-Matterhorn connection in /usr/local/bigbluebutton/core/scripts/matterhorn.yml
 
- These parameters will be read during publish phase.
+These parameters will be read during publish phase.
 
 
 {{{
@@ -119,6 +119,32 @@ key: /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 # NOTE: Make sure that the directory is writeable by the above user.
 inbox: /opt/matterhorn/felix/inbox/
 }}}
+
+In Matterhorn server
+
+Create a directory for ssh  keys
+{{{
+sudo mkdir /root/.ssh
+}}}
+Create a file for authorized keys (only if it does not exist)
+{{{
+sudo nano /root/.ssh/authorized_keys
+}}}
+Add the public key generated in BigBlueButton server to authorizes keys in Matterhorn server.
+Copy the content of  the file 
+/home/firstuser/.ssh/id_rsa.pub that is located in BigBlueButton server to /root/.ssh/authorized_keys in Matterhorn server
+
+Now ingestion should work during publish phase.
+
+
+=== About Matterhorn ingestion ===
+ - By default the directory where zipped packages are ingested in Matterhorn server is $FELIX_HOME/inbox
+
+To change inbox directory, change the parameter felix.fileinstall.dir  in /opt/matterhorn/1.1.0/docs/felix/load/org.apache.felix.fileinstall-inbox.cfg
+
+ - A zipped package is deleted from inbox after it is ingested
+ 
+ - If the zipped package  sent from BigBlueButton is not a valid media package it is sent to ${org.opencastproject.storage.dir}/files/collection where org.opencastproject.storage.dir is a parameter configured in $FELIX_HOME/conf/config.properties
 
 = Troubleshooting =
 
