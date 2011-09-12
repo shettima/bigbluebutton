@@ -10,11 +10,21 @@ _Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailett
 
   * * Playback of recordings in HTML 5 * - The default playback format is slides, which will playback audio, slides, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers is Chrome and Firefox; support for Safari and IE coming soon.
 
-  * * Upload slides on create of a session * - The implementation of 'create' API call now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
-
   * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings (see [API#Version_0.8 API updates for 0.8]).
 
+  * * Upload slides on create of a session * - The implementation of 'create' API call now supports uploading of slides.  To pass slides, developers call 'create' using a HTTP POST and pass an xml file referencing the slides.  The xml file may include the slides inline or reference them via URLs.
+
   * * Reduced latency in audio * - The !BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
+
+  * * API demos now separate * - The API demos are installed in their own package (for easy addition and removal).  The install location has changed to `/var/lib/tomcat6/webapps/demo`, which changes the URL from accessing them from `/bigbluebutton/demo` to `/demo`.
+
+  * * Matterhorn Integration * -  When integrated with Matterhorn, !BigBlueButton can capture and process the desktop and webcam for automatic submission to a Matterhorn server.  See [08MatterhornIntegration Matterhorn integration] for setup instructions.
+
+  * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to 1.0.7.  !BigBlueButton no longer requires installation of mysql.
+
+
+
+The following items are planned for inclusion in the beta: pre-flight checklist for audio to assist users in ensuring their microphone is properly working.  
 
 = Release 0.71a =
 
