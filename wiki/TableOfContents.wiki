@@ -1,3 +1,4 @@
+  * [08InstallationUbuntu Install BigBlueButton 0.8-beta]
   * [Installation Setting up BigBlueButton]
     * [BigBlueButtonVM Virtual Machine Setup]
     * [InstallationUbuntu Ubuntu 10.04 Installation]
