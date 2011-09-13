@@ -73,7 +73,7 @@ The record and playback infrastructure uses Ruby for the processing of recorded 
 Copy the script below to a file called `install-ruby.sh`.
 
 {{{
-sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5
+sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc
 cd /tmp
 wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
 tar xvzf ruby-1.9.2-p290.tar.gz
