@@ -85,16 +85,16 @@ The ingest and processing scripts will use a public/private key to move files to
 
 === Generate a ssh public key ===
 
-This key will let BigBlueButton server send files to Matterhorn server without prompting a password. 
+This key will let !BigBlueButton server send files to Matterhorn server without prompting a password. 
 
 {{{
    ssh-keygen -t rsa
 }}}
 
-When it asks for a passphrase, just press enter (we don’t want to be prompted for a password). The public key will be generated in /home/firstuser/.ssh/id_rsa.pub.
+When it asks for a passphrase, just press enter (we don’t want to be prompted for a password). The public key will be generated in `/home/firstuser/.ssh/id_rsa.pub`.
 
 
-Next, we'll copy the public key to the BigBlueButton scripts directory change it’s permissions to 600 (otherwise, the publish script will fail to push the recording to the Matterhorn server).
+Next, we'll copy the public key to the !BigBlueButton scripts directory change it’s permissions to 600 (otherwise, the publish script will fail to push the recording to the Matterhorn server).
 
 {{{
 sudo cp ~/.ssh/id_rsa /usr/local/bigbluebutton/core/scripts/matt_id_rsa
@@ -102,7 +102,7 @@ sudo chmod 600 /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 sudo chown tomcat6:tomcat6 /usr/local/bigbluebutton/core/scripts/matt_id_rsa
 }}}
 
-Set configuration parameters about BigBlueButton-Matterhorn connection in `/usr/local/bigbluebutton/core/scripts/matterhorn.yml`
+Set configuration parameters about !BigBlueButton-Matterhorn connection in `/usr/local/bigbluebutton/core/scripts/matterhorn.yml`
 
 These parameters will be read during publish phase.
 
