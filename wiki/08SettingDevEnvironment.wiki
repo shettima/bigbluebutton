@@ -321,4 +321,6 @@ If not, enable it.
 
 {{{
 sudo ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+
+sudo /etc/init.d/nginx restart
 }}}
