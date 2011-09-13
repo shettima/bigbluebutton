@@ -312,3 +312,13 @@ gradle war deploy
 cd /usr/share/red5/
 sudo -u red5 ./red5.sh
 }}}
+
+==Troubleshooting==
+
+If you get a the "Welcome to Nginx" page. Check if bigbluebutton is enabled in nginx. You should see *bigbluebutton* in {{{/etc/nginx/sites-enabled}}}.
+
+If not, enable it.
+
+{{{
+sudo ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+}}}
