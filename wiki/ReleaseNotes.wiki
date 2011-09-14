@@ -4,7 +4,7 @@
 
 Beta Released: September 12, 2011
 
-_Code in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
+_Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
 See [08InstallationUbuntu installation instructions]. 
 
