@@ -130,9 +130,9 @@ Create a file for authorized keys (only if it does not exist)
 {{{
 sudo nano /root/.ssh/authorized_keys
 }}}
-Add the public key generated in BigBlueButton server to authorizes keys in Matterhorn server.
+Add the public key generated in !BigBlueButton server to authorizes keys in Matterhorn server.
 Copy the content of  the file 
-`/home/firstuser/.ssh/id_rsa.pub` that is located in BigBlueButton server to `/root/.ssh/authorized_keys` in Matterhorn server
+`/home/firstuser/.ssh/id_rsa.pub` that is located in !BigBlueButton server to `/root/.ssh/authorized_keys` in Matterhorn server
 
 Now ingestion should work during publish phase.
 
