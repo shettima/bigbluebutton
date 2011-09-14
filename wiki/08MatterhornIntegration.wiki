@@ -134,7 +134,14 @@ Add the public key generated in !BigBlueButton server to authorizes keys in Matt
 Copy the content of  the file 
 `/home/firstuser/.ssh/id_rsa.pub` that is located in !BigBlueButton server to `/root/.ssh/authorized_keys` in Matterhorn server
 
-Now ingestion should work during publish phase.
+=== Test SSH Connection ===
+You can do a small test for checking the ssh connection by running a remote command, for example you can use the `ls` command and list the files inside the matterhorn folder
+
+{{{
+sudo -su tomcat6 ssh -i /usr/local/bigbluebutton/core/scripts/matt_id_rsa  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o CheckHostIP=no root@192.168.0.147 'ls /opt/matterhorn/felix/'
+}}}
+
+Now ingestion should work during the publish phase.
 
 
 === About Matterhorn ingestion ===
@@ -145,6 +152,16 @@ To change inbox directory, change the parameter `felix.fileinstall.dir`  in `/op
  * A zipped package is deleted from inbox after it is ingested
  
  * If the zipped package  sent from !BigBlueButton is not a valid media package it is sent to `${org.opencastproject.storage.dir}/files/collection` where `org.opencastproject.storage.dir` is a parameter configured in `$FELIX_HOME/conf/config.properties`
+
+= Your First Recording =  
+Open the home page on the BigBlueButton server. For example:
+{{{
+   http://192.168.0.35/
+}}}
+
+Click "View API Examples".  Click "Record (Matterhorn)".  Fill out the entry for the meeting.
+
+
 
 = Troubleshooting =
 
