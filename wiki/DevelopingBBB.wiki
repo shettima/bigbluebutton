@@ -1,5 +1,7 @@
 #summary How to setup a development environment for BigBlueButton 0.71
 
+Note: If you are using !BigBlueButton 0.80-beta, see [08SettingDevEnvironmentsetting up a development environment for 0.8].
+
 <wiki:toc max_depth="4" />
 
 Note: If you are using !BigBlueButton 0.80-beta, see [08SettingDevEnvironmentsetting up a development environment for 0.8].
