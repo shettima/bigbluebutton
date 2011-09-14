@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="4" />
 
-Note: We are in process of updating these instructions for !BigBlueButton 0.8 (2011/08/12).
+Note: If you are using !BigBlueButton 0.80-beta, see [08SettingDevEnvironmentsetting up a development environment for 0.8].
 
 = Getting Help=
 We're developers as well, and we know the importance of both well-written documentation and accessible developer support.
