@@ -1,4 +1,4 @@
-#summary How to integrate BigBlueButton 0.8-beta with Matterhorn 1.2
+#summary How to integrate BigBlueButton 0.8-beta with Matterhorn 1.1 or 1.2
 
 <wiki:toc max_depth="3" />
 
