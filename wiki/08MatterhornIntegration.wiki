@@ -154,7 +154,7 @@ To change inbox directory, change the parameter `felix.fileinstall.dir`  in `/op
  * If the zipped package  sent from !BigBlueButton is not a valid media package it is sent to `${org.opencastproject.storage.dir}/files/collection` where `org.opencastproject.storage.dir` is a parameter configured in `$FELIX_HOME/conf/config.properties`
 
 = Your First Recording =  
-Open the home page on the BigBlueButton server. For example:
+Open the home page on the !BigBlueButton server. For example:
 {{{
    http://192.168.0.35/
 }}}
