@@ -166,7 +166,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/matterhorn/matt1.png
 Create and Start the !BigBlueButton Session. Now:
  * Join to the voice conference
  * Start the webcam
- * And init desktop sharing
+ * Start desktop sharing
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/matterhorn/matt2.png
 
