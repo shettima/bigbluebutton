@@ -532,7 +532,7 @@ The best approach is to see how others have integrated and adapt their code to y
 
 As a rule of the thumb, we recommend you use !BigBlueButton for on-line classes of twenty-five (25) users or less.  You can run multiple on-line classes on a !BigBlueButton server.
 
-We don't give out recommendations for the maximum number users a !BigBlueButton server can support, as it's so dependent on the bandwidth usage, server capacity, and user activity.
+We don't give out recommendations for the maximum number users a !BigBlueButton server can support, as it's so dependent on the bandwidth usage, server capacity, and user activity. 
 
 Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.
 
@@ -544,9 +544,9 @@ Take any stress test with a grain of salt.  There are many variables at play:
   * Configuration of !BigBlueButton
   * Version of !BigBlueButton
 
-For the upcoming !BigBlueButton 0.8, [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results] from a stress test of an internal build of 0.8.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the !BigBlueButton server needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].
+For the upcoming !BigBlueButton 0.8, [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results] from a stress test of an internal build of 0.8.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  
 
-Again, we recommend you stress test own server with a group of users to get real-world data. 
+Again, we recommend you stress test own server with a group of users to get real-world data.  As a general rule of the thumb, if you compare the capacity (number of simultaneous users) between two servers, the server with a faster CPU will have a higher capacity.
 
 To test your own server, have ten people login and successively open multiple browser tabs, each one logging into the server.  With 10 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.
 
