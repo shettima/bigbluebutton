@@ -548,7 +548,7 @@ For the upcoming !BigBlueButton 0.8, [http://groups.google.com/group/bigbluebutt
 
 Again, we recommend you stress test own server with a group of users to get real-world data.  As a general rule of the thumb, if you compare the capacity (number of simultaneous users) between two servers, the server with a faster CPU will have a higher capacity.
 
-To test your own server, have ten people login and successively open multiple browser tabs, each one logging into the server.  With 10 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.
+To test your own server, have ten people login and successively open multiple browser tabs, each one logging into !BigBlueButton and joining the audio conference.  With 10 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.
 
 To monitor bandwidth, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
 
