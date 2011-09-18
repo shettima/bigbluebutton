@@ -344,9 +344,7 @@ We hope you enjoy using !BigBlueButton and welcome your feedback!
 
 = Troubleshooting =
 
-If you don't find an answer to your questions below, check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  
-
-A common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
+If you don't find an answer to your questions below, check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  A common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
 
 
 == Run sudo bbb-conf --check ==
