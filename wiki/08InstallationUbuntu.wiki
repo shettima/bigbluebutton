@@ -38,7 +38,7 @@ We recommend you following the video with these step-by-step instructions below.
 
 = Installation of !BigBlueButton 0.8-beta =
 
-== 1. Add the !BigBlueButton repository and ensure your server is up-to-date  == 
+== 1. Update your server == 
 
 You first need to give your server access to the !BigBlueButton package repository for 0.8.
 
