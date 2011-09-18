@@ -66,7 +66,7 @@ sudo apt-get dist-upgrade
 
 If you've not updated in a while, apt-get may recommend you reboot your server; reboot and proceed to the next step.
 
-== 2. Install the latest version of Ruby == 
+== 2. Install Ruby == 
 
 The record and playback infrastructure uses Ruby for the processing of recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
 
@@ -221,7 +221,7 @@ If you've not updated in a while, apt-get may recommend you reboot your server; 
 
 == 2.  Install Ruby == 
 
-Follow the instructions here.
+Follow the instructions [08InstallationUbuntu#2._Install_the_latest_version_of_Ruby here].
 
 == 3.  Remove older version of FreeSWITCH ==
 
