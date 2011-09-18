@@ -38,7 +38,7 @@ The following video will walk you through the installation of !BigBlueButton 0.8
 
 We recommend you following the video with these step-by-step instructions below.
 
-= Step-by-step installation =
+= Installation of BigBlueButton 0.8-beta =
 
 == 1. Add the !BigBlueButton repository and ensure your server is up-to-date  == 
 
@@ -64,7 +64,7 @@ sudo apt-get dist-upgrade
 
 }}}
 
-If you've not updated in a while, apt may recommend you reboot your server; reboot and proceed to the next step.
+If you've not updated in a while, apt-get may recommend you reboot your server; reboot and proceed to the next step.
 
 == 2. Install the latest version of Ruby == 
 
@@ -180,6 +180,106 @@ Note: For the beta, you see the following warning
 }}}
 
 which can be safely ignored.
+
+
+
+
+
+
+= Upgrading to !BigBlueButton 0.8-beta =
+
+The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta.
+
+A 'standard installation' is an installation of !BigBlueButton 0.71a that has been configured using the standard commands
+
+{{{
+   sudo bbb-conf --setip <ip/hostname>
+   sudo bbb-conf --setsalt <salt>
+}}}
+
+If you have a standard installation, the upgrade scripts will propagate over your current settings to !BigBlueButton 0.8.
+
+However, if you've any other changes to !BigBlueButton 0.71a, such as  
+  * applying a custom brand
+  * deploying custom modules
+  * changed config.xml
+  * modified API demos
+  * etc ..
+
+you'll need to backup your changes before doing the upgrade, after which you can reapply the changes.
+
+== 1.  Make sure your server is up-to-date == 
+
+Upgrade all the current packages on your server (including the kernel) to ensure your starting with an up-to-date system.
+
+{{{
+sudo apt-get update
+sudo apt-get dist-upgrade
+}}}
+
+If you've not updated in a while, apt-get may recommend you reboot your server; reboot and proceed to the next step.
+
+== 2.  Install Ruby == 
+
+Follow the instructions here.
+
+== 3.  Remove older version of FreeSWITCH ==
+
+!BigBlueButton 0.8 requires FreeSWITCH 1.0.7 for recording of sessions.  Currently, the Ubuntu 10.04 packages install FreeSWITCH 1.0.6.
+
+To make it easy to install FreeSWITCH 1.0.7, !BigBlueButton 0.8 includes it's own packaging for FreeSWITCH.
+
+Before upgrading, first remove the older FreeSWITCH packages.
+
+{{{
+sudo apt-get purge freeswitch freeswitch-sounds-en-us-callie-16000 freeswitch-sounds-en-us-callie-8000 freeswitch-sounds-music-16000
+}}}
+
+== 4.  Update the current !BigBlueButton packages == 
+
+Enter the following command to update your repository URL for !BigBlueButton 0.8-beta.
+
+{{{
+echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_08/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+}}}
+
+Next, update the local  packages.  This will make `apt-get` aware of the newer packages for !BigBlueButton 0.8.
+
+{{{
+sudo apt-get update
+}}}
+
+Next, upgrade your installation to 0.8-beta.
+
+{{{
+sudo apt-get dist-upgrade
+}}}
+
+== 5. Install FreeSWITCH and API demos ==
+Now let's install the packaged version of FreeSWITCH with !BigBlueButton along with the API demos.
+
+{{{
+sudo apt-get install bbb-freeswitch-config
+sudo apt-get install bbb-demo
+}}}
+
+== 6. Remove unneeded packages ==
+We no longer need activmq, so let's remove it.  The command `sudo apt-get autoremove` will remove all remaining packages that have no reference.
+
+{{{
+sudo apt-get purge activemq
+sudo apt-get autoremove
+}}}
+
+== 7. Restart !BigBlueButton ==
+
+Let's do the standard clean restart and then check the system for any potential problems.
+
+{{{
+sudo bbb-conf --clean
+sudo bbb-conf --check
+}}}
+
 
 
 = Trying out your server (24:42 minutes later) =
