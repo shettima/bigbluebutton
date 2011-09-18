@@ -221,7 +221,7 @@ If you've not updated in a while, apt-get may recommend you reboot your server; 
 
 == 2.  Install Ruby == 
 
-Follow the instructions [08InstallationUbuntu#2._Install_the_latest_version_of_Ruby here].
+Follow the instructions [#2._Install_the_latest_version_of_Ruby here].
 
 == 3.  Remove older version of FreeSWITCH ==
 
