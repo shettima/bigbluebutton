@@ -275,7 +275,7 @@ Now let's install and configure FreeSWITCH 1.0.7.
 sudo apt-get install bbb-freeswitch-config
 }}}
 
-(Optional) Install the API demos to interactively try !BigBlueButton.
+Install the API demos to interactively try !BigBlueButton.
 
 {{{
 sudo apt-get install bbb-demo
