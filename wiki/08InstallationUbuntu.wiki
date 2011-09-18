@@ -27,7 +27,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Port 80 is available and not used by another application
   # 200G of free disk space (or more) for recordings
 
-If you are upgrading from !BigBlueButton 0.71a, start here.
+If you are upgrading from !BigBlueButton 0.71a, start [InstallationUbuntu#Upgrading_from_BigBlueButton_0.71a here].
 
 = Install Video =
 The following video will walk you through the installation of !BigBlueButton 0.8.
