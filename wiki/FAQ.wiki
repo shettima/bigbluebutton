@@ -916,6 +916,69 @@ As of !BigBlueButton 0.71, we've removed the full screen button and instead reco
 
 This has to do with how some data is used internally.  The data after the | is stripped away and therefore will not show.
 
+
+
+== Record and Playback ==
+
+These answers are related to the !BigBlueButton 0.8-beta.
+
+=== What parts of the session does !BigBlueButton record? ===
+
+BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback. After the session ends, the BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events and media into playback formats (see Record and Playback Specification). 
+
+The build-in ingest and processing script _slides_ will process the recorded events and media to create an HTML5 page that will playback slides, audio, and chat.
+
+When integrated with Matterhorn, !BigBlueButton can process the desktop and webcam for automatic submission to a Matterhorn server (see Matterhorn integration).  Playback of recorded content occurs within the Matterhorn interface.
+
+Currently, !BigBlueButton does not record or playback mouse movements or whiteboard events.  The intent is to add these elements to playback in a future iteration of !BigBlueButton.
+
+=== What devices can I playback a recording ===
+The audio from the recorded session is converted to Vorbis.  Currently, playback only works on FireFox and Chrome browsers.  We'll be adding .wav file formats to the playback so Safari and IE can also playback the session.
+
+=== Can I see the total time of the session ===
+This is browser specific.  In Chrome, the audio playback component shows only the current time index for the playback.  To see the overall length of the session, you can scrub to the end of the audio after the audio file has loaded.
+
+In FireFox, the audio playback component shows the both the current time index and total time of the audio file.
+
+
+=== How do I modify the default playback format? ===
+
+The ingest and processing scripts, written in Ruby, process the recorded events and media to create a playback option.  The default scripts, called `slides.rb` (there is a script for processing and publishing), are located in 
+
+{{{
+/usr/local/bigbluebutton/core/scripts/process/slides.rb
+/usr/local/bigbluebutton/core/scripts/publish/slides.rb
+}}}
+
+!BigBlueButton uses popcorn.js, an HTML5 media framework, for playback.  
+
+By modifying slides.rb, you can modify the output HTML page (such as remove chat) or change the layout of the web page. 
+
+
+=== How do I download a recorded session? ===
+
+The default script `slides.rb` does not create video file for playback.  This is by design, as video files for a three hour lecture can get very large.  Instead, `slides.rb` creates an HTML5 page that referenes PNG images and audio, and time indexes the PNG images against the audio to match their display in the session.  The benefit is the resulting playback files are very small and can be hosted on any web server.  The drawback is there will be a pause for the browser to downloading all this content, but, once downloaded, there is no more load on the web server.
+
+Curently, `slides.rb` does not create a download package -- which would be .zip file of PNG images, audio file, HTML, XML, and javascript libraries for later playback -- but this could be added.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 = Developing for !BigBlueButton =
 
 == Setup ==
