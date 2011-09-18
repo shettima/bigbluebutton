@@ -2,15 +2,13 @@
 
 <wiki:toc max_depth="3" />
 
-= Welcome =
+= Overview =
 
 We're pleased to announce the release !BigBlueButton 0.8-beta. 
 
 Our goal since the beginning of this release has been to integrate record and playback into !BigBlueButton's core.   This release is the culmination of months of effort (our last release was January 14, 2010).  With this release, you can now record and playback slides, audio, and chat within !BigBlueButton.  This enables !BigBlueButton to address a much wider set of use cases for distance education.  
 
 For a detailed list of changes, see [ReleaseNotes 0.8-beta release notes].
-
-== Getting help ==
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
@@ -31,7 +29,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Port 80 is available and not used by another application
   # 200G of free disk space (or more) for recordings
 
-= Video Instructions =
+= Install Video =
 The following video will walk you through the installation of !BigBlueButton 0.8.
 
 <wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
@@ -186,7 +184,7 @@ which can be safely ignored.
 
 
 
-= Upgrading from !BigBlueButton 0.71a !BigBlueButton 0.8-beta =
+= Upgrading from !BigBlueButton 0.71a =
 
 The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta.
 
@@ -223,11 +221,11 @@ If you've not updated in a while, apt-get may recommend you reboot your server; 
 
 Follow the instructions [#2._Install_Ruby here].
 
-== 3.  Remove older version of FreeSWITCH ==
+== 3.  Remove FreeSWITCH 1.0.6 ==
 
-!BigBlueButton 0.8 requires FreeSWITCH 1.0.7 for recording of sessions.  Currently, the Ubuntu 10.04 packages install FreeSWITCH 1.0.6.
+This step will uninstall FreeSWITCH 1.0.6.  
 
-To make it easy to install FreeSWITCH 1.0.7, !BigBlueButton 0.8 includes it's own packaging for FreeSWITCH.
+!BigBlueButton 0.8 requires FreeSWITCH 1.0.7 for recording of sessions.   In later steps, the !BigBlueButton 0.8 will install and configure FreeSWITCH 1.0.7.
 
 Before upgrading, first remove the older FreeSWITCH packages.
 
@@ -235,9 +233,9 @@ Before upgrading, first remove the older FreeSWITCH packages.
 sudo apt-get purge freeswitch freeswitch-sounds-en-us-callie-16000 freeswitch-sounds-en-us-callie-8000 freeswitch-sounds-music-16000
 }}}
 
-== 4.  Update the current !BigBlueButton packages == 
+== 4.  Upgrade !BigBlueButton == 
 
-Enter the following command to update your repository URL for !BigBlueButton 0.8-beta.
+First, update the !BigBlueButton repository URL to the beta repository.
 
 {{{
 echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_08/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
@@ -249,7 +247,7 @@ Next, update the local  packages.  This will make `apt-get` aware of the newer p
 sudo apt-get update
 }}}
 
-Next, upgrade your installation to 0.8-beta.
+The following command will upgrade the bulk of packages to 0.8-beta.
 
 {{{
 sudo apt-get dist-upgrade
@@ -270,14 +268,19 @@ Configuration file `/etc/nginx/sites-available/bigbluebutton'
 *** bigbluebutton (Y/I/N/O/D/Z) [default=N] ?
 }}}
 
-Type 'y' and hit Enter.  The package scripts will reapply the hostname.
+Type 'y' and hit Enter.  
  
 
-== 5. Install FreeSWITCH and API demos ==
-Now let's install the packaged version of FreeSWITCH with !BigBlueButton along with the API demos.
+== 5. Install FreeSWITCH Configuration and API demos ==
+Now let's install and configure FreeSWITCH 1.0.7.
 
 {{{
 sudo apt-get install bbb-freeswitch-config
+}}}
+
+(Optional) Install the API demos to interactively try !BigBlueButton.
+
+{{{
 sudo apt-get install bbb-demo
 }}}
 
@@ -289,7 +292,7 @@ sudo apt-get purge activemq
 sudo apt-get autoremove
 }}}
 
-== 7. Restart !BigBlueButton ==
+== 7. Do a clean restart ==
 
 Let's do the standard clean restart and then check the system for any potential problems.
 
@@ -322,6 +325,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/playb
 
 The following [http://www.youtube.com/watch?v=4b_tC1JEX1E YouTube Video] will walk you through using record and playback.
 
+== URL and salt for 3rd party integrations ==
 If you want to use !BigBlueButton with a [http://bigbluebutton.org/support 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
 
 {{{
