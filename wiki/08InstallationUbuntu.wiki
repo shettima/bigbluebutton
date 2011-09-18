@@ -194,16 +194,14 @@ A 'standard installation' is an installation of !BigBlueButton 0.71a that has be
    sudo bbb-conf --setsalt <salt>
 }}}
 
-If you have a standard installation, the upgrade scripts will propagate over your current settings to !BigBlueButton 0.8.
-
-However, if you've any other changes to !BigBlueButton 0.71a, such as  
-  * applying a custom brand
-  * deploying custom modules
-  * changed config.xml
+If you've made custom changes to !BigBlueButton 0.71a, such as  
+  * applied custom branding
+  * modified `/var/www/bigbluebutton/client/conf/config.xml`
+  * modified `/var/www/bigbluebutton-default/index.html`
   * modified API demos
-  * etc ..
+  * etc ...
 
-you'll need to backup your changes before doing the upgrade, after which you can reapply the changes.
+then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
 
 == 1.  Update your server == 
 
