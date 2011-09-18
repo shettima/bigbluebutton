@@ -62,7 +62,7 @@ sudo apt-get dist-upgrade
 
 }}}
 
-If you've not updated in a while, apt-get may recommend you reboot your server; reboot and proceed to the next step.
+If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
 == 2. Install Ruby == 
 
@@ -177,7 +177,7 @@ Note: For the beta, you can ignore the following warning
 #     bigbluebutton.web.logoutURL
 }}}
 
-
+Got to [#Trying_out_your_server_(24:42_minutes_later) Trying out your sever].
 
 
 
@@ -205,14 +205,14 @@ then you'll need to backup your changes before doing the following upgrade, afte
 
 == 1.  Update your server == 
 
-Upgrade all the current packages on your server (including the kernel) to ensure your starting with an up-to-date system.
+First, let's update all the current packages on your server (including the kernel) to ensure your starting with an up-to-date system.
 
 {{{
 sudo apt-get update
 sudo apt-get dist-upgrade
 }}}
 
-If you've not updated in a while, apt-get may recommend you reboot your server; reboot and proceed to the next step.
+If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
 == 2.  Install Ruby == 
 
