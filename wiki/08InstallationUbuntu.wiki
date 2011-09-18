@@ -244,7 +244,7 @@ Next, update the local  packages.  This will make `apt-get` aware of the newer p
 sudo apt-get update
 }}}
 
-The following command will upgrade the bulk of packages to 0.8-beta.
+The following command will upgrade your !BigBlueButton packages to 0.8-beta.
 
 {{{
 sudo apt-get dist-upgrade
