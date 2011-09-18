@@ -38,7 +38,7 @@ The following video will walk you through the installation of !BigBlueButton 0.8
 
 We recommend you following the video with these step-by-step instructions below.
 
-= Installation of BigBlueButton 0.8-beta =
+= Installation of !BigBlueButton 0.8-beta =
 
 == 1. Add the !BigBlueButton repository and ensure your server is up-to-date  == 
 
@@ -186,7 +186,7 @@ which can be safely ignored.
 
 
 
-= Upgrading to !BigBlueButton 0.8-beta =
+= Upgrading from !BigBlueButton 0.71a !BigBlueButton 0.8-beta =
 
 The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta.
 
@@ -208,7 +208,7 @@ However, if you've any other changes to !BigBlueButton 0.71a, such as
 
 you'll need to backup your changes before doing the upgrade, after which you can reapply the changes.
 
-== 1.  Make sure your server is up-to-date == 
+== 1.  Update your server == 
 
 Upgrade all the current packages on your server (including the kernel) to ensure your starting with an up-to-date system.
 
