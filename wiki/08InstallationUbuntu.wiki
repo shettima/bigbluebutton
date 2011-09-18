@@ -169,7 +169,7 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any configuration or startup problems it has detected.  Normally, there is no text following this message.
 
-Note: For the beta, you see the following warning
+Note: For the beta, you can ignore the following warning
 
 {{{
 ** Potential problems described below **
@@ -177,7 +177,6 @@ Note: For the beta, you see the following warning
 #     bigbluebutton.web.logoutURL
 }}}
 
-which can be safely ignored.
 
 
 
@@ -299,6 +298,14 @@ Let's do the standard clean restart and then check the system for any potential 
 {{{
 sudo bbb-conf --clean
 sudo bbb-conf --check
+}}}
+
+Note: For the beta, you can ignore the following warning
+
+{{{
+** Potential problems described below **
+# The following properties in /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties have no value.
+#     bigbluebutton.web.logoutURL
 }}}
 
 
