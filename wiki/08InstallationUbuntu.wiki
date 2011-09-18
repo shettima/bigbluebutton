@@ -183,7 +183,7 @@ Note: For the beta, you can ignore the following warning
 
 
 
-= Upgrading from !BigBlueButton 0.71a =
+= Upgrading a !BigBlueButton 0.71a Server =
 
 The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta.
 
