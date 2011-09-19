@@ -268,6 +268,18 @@ To change all of !BigBlueButton's configuration files to use a different IP addr
    bbb-conf --setip <ip_address_or_hostname>
 }}}
 
+For example
+
+{{{
+   bbb-conf --setip 192.168.0.200
+}}}
+
+or
+
+{{{
+   bbb-conf --setip bbb.myhostname.com
+}}}
+
 For more information see [BBBConf bbb-conf options]. 
 
 == Address already in use ==
