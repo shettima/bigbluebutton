@@ -68,8 +68,6 @@ If you've not updated in a while, apt-get may recommend you reboot your server a
 
 The record and playback infrastructure uses Ruby for the processing of recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
 
-Copy the script below to a file called `install-ruby.sh`.
-
 {{{
 sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
 cd /tmp
@@ -98,7 +96,7 @@ sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.2 500\
 
 }}}
 
-Next, run the script
+Copy the script above to a file called `install-ruby.sh`. Next, run the script
 
 {{{
 chmod +x install-ruby.sh
