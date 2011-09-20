@@ -169,6 +169,8 @@ Create and Start the !BigBlueButton Session. Now:
  * Start the webcam
  * Start desktop sharing
 
+You must start all three, if you omit one then the recording will not be processed by BigBlueButton's matterhorn scripts.
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/matterhorn/matt2.png
 
 When you are done presenting logout from the conference. After a couple of minutes the process and publish phase will start and it will send a zip file with the files necessary for matterhorn to process. You can check in the logs of matterhorn when the zip file is being processed:
