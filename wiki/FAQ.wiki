@@ -816,7 +816,7 @@ The best solution is ask all users to use a headset -- this will ensure no feedb
 
 === Why is there a delay in the audio when I use VoIP? ===
 
-You will experience a 2-4 second delay in the audio when using the built-in VoIP in !BigBlueButton (clicking the headset icon).
+You will experience a 2-4 second delay in the audio when using the built-in VoIP in !BigBlueButton 0.71a (clicking the headset icon).
 
 The delay is largely due to the internal Java-based transcoding of audio packets with !BigBlueButton itself, and partly due to the restriction that Flash sockets are TCP/IP based, not UDP.
 
@@ -836,6 +836,8 @@ Setting up DIDs involves configuration of Asterisk/FreeSWITCH. If you've never d
 Setting up DIDs will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your Asterisk/FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your Asterisk/FreeSWITCH server.
 
 Update (June 2, 2011): We've made progress in reducing the audio delay in the upcoming !BigBlueButton 0.8. See this [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# thread] in bigbluebutton-dev group.
+
+Update (September 123, 2011): We released !BigBlueButton 0.8-beta, so you can now install on your own server and try out the improved audio on our [http://demo.bigbluebutton.org/ demo server].
 
 === Why is the audio not synced with the video? ===
 
