@@ -1,0 +1,8 @@
+#summary Creating a polling module for BigBlueButton
+
+= Introduction =
+
+This project will prototype the creation of a polling module for !BigBlueButton.
+
+
+= Details =
