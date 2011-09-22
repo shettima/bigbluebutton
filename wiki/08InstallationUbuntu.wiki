@@ -153,7 +153,7 @@ To interactively test your !BigBlueButton server, you can install a set of API d
    sudo apt-get install bbb-demo
 }}}
 
-These are the same API demos that are available off of the [http://demo.bigbluebutton.org/ BigBlueButton demo server].
+You'll need the bbb-demo package installed if you want to join the Demo Meeting from your !BigBlueButton server's welcome page.  This is the same welcome page you see at [http://demo.bigbluebutton.org our demo server].
 
 
 == 6. Do a Clean Restart == 
