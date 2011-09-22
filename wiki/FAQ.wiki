@@ -431,6 +431,8 @@ These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).  These ports
 
 Yes.  If a remote user is unable to connect to port 1935, which typically occurs when a remote user's corporate firewall blocks external access to all other ports except port 80, then their !BigBlueButton client will fail to connect to port 1935 and, after about ten seconds, fall back to tunneling through port 80.
 
+For bigbluebutton 0.8, you can check tunneling in the following <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=1007">link</a>
+
 === Can I provide external access to a !BigBlueButton server behind my firewall? ===
 
 Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.  You have defined an external hostname, such as `external.host.org`, that will resolve to the IP address of your firewall. You want external users to access !BigBlueButton using that hostname.
