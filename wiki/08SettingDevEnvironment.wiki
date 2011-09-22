@@ -31,19 +31,11 @@ Create tools directory
 mkdir -p /home/firstuser/dev/tools
 }}}
 
-SSH into your !BigBlueButton VM.
+Now, the following tar.gz files to your new dev env. 
 {{{
-cd /home/firstuser/dev/tools
-tar zcvf gradle-0.8.tar.gz gradle-0.8
-tar zcvf grails-1.1.1.tar.gz grails-1.1.1
-tar zcvf groovy-1.6.5.tar.gz groovy-1.6.5
-}}}
-
-Now, transfer the tar.gz files to your new dev env. 
-{{{
-scp gradle-0.8.tar.gz <your server's ip>:~/dev/tools
-scp grails-1.1.1.tar.gz <your server's ip>:~/dev/tools/
-scp groovy-1.6.5.tar.gz <your server's ip>:~/dev/tools/
+wget http://bigbluebutton.googlecode.com/files/grails-1.1.1.tar.gz
+wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar.gz
+wget http://bigbluebutton.googlecode.com/files/groovy-1.6.5.tar.gz
 }}}
 
 In you dev env. Extract the files you just transferred.
