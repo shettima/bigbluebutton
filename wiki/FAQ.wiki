@@ -329,6 +329,15 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 = Configuration =
 
+== What is needed to run !BigBlueButton on the client? ==
+The BigButtonButton client runs in Flash 10.3 and works on Mac, Unix, and PC web browsers. 
+
+Users need to be running Flash 10.3.  To check the version of flash visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
+
+Most users will automatically be running the latest version of Flash.  However, on older Macs, Apple has stopped updating Flash.  If a Mac user is running an out-of-date version of Flash, they should upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
+
+  
+
 == Where is the Admin interface for !BigBlueButton? ==
 Early on in !BigBlueButton's development (around 2009), we started to create an admin interface to let administrators create accounts, schedule meetings, configure properties for meetings, etc.  
 
