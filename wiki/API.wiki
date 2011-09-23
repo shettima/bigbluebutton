@@ -40,7 +40,7 @@ Updates:
   * * create * - Now supports pre-uploading slides
   * * create * - Added new parameters duration and record
   * * join * - Added createTime parameter
-  * * getMeetingInfo * - Added recording indicator to the response  
+  * * getMeetingInfo * - Added recording indicator and voiceBridge  
 
 For a detail of the updates in the api 0.8 check the following <a href="http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/c214cbe9bdb2268a">link</a>
 
@@ -313,6 +313,7 @@ There is no XML response for this call if it is properly formatted.  You should 
    <meetingName>Test</meetingName>
    <meetingID>test01</meetingID>
    <createTime>1315254777880</createTime>
+   <voiceBridge>70775</voiceBridge>
    <attendeePW>ap</attendeePW>
    <moderatorPW>mp</moderatorPW>
    <running>true</running>
