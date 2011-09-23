@@ -151,6 +151,7 @@ Now compile the client.
 {{{
 cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
 ant
+ant locales
 }}}
 
 Restart the servers.
