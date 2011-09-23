@@ -329,13 +329,14 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 = Configuration =
 
-== What is needed to run !BigBlueButton on the client? ==
+== What are the minimum requirements for the !BigBlueButton client? ==
 The BigButtonButton client runs in Flash 10.3 and works on Mac, Unix, and PC web browsers. 
 
 Users need to be running Flash 10.3.  To check the version of flash visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
 
 Most users will automatically be running the latest version of Flash.  However, on older Macs, Apple has stopped updating Flash.  If a Mac user is running an out-of-date version of Flash, they should upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
 
+To run the desktop sharing the presenter (and only the presenter) needs to also run Java applets.  You can test that Java is installed by visiting [http://java.com/en/download/testjava.jsp Java Test Page] (there are download links on this page if you need to install Java).
   
 
 == Where is the Admin interface for !BigBlueButton? ==
