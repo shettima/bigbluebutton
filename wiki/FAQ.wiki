@@ -691,9 +691,11 @@ If the tile is mostly a solid color, it compresses very well and gets quickly se
 
 To help reduce the amount of data being sent to the server (and thus increase the refresh rates for desktop sharing), we recommend the following:
  
-   # Share a region of your desktop (this is a good approach if you want to share only a specific window)
-   # Replace any 32-bit desktop background image with a solid color (this greatly increases the refresh rates when the desktop becomes visible)
-   # Lower your screen dept from 32-bit to 16-bit
+  # Reduce the screen size to 1024x768 or 800x600
+  # Share a region of your desktop (this is a good approach if you want to share only a specific window)
+  # Replace any 32-bit desktop background image with a solid color (this greatly increases the refresh rates when the desktop becomes visible)
+  # Lower your screen dept from 32-bit to 16-bit
+
 
 Another factor in the refresh rate is presenter's upstream bandwidth.  In some countries, the bandwidth is asymmetrical.  Desktop sharing will attempt to push as many tiles as quickly as possible to the remote !BigBlueButton server, so having good upstream bandwidth will help increase the refresh rate for remote viewers.
 
