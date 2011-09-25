@@ -153,7 +153,7 @@ For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/
 
 = Installation =
 
-== What are the minimum hardware requirements to run !BigBlueButton? ==
+== What are the minimum hardware requirements for the !BigBlueButton? Server==
 As a minimum, we recommend you run !BigBlueButton on a dual-core machine with at least 2 GB of memory and a 2.0+ Ghz processor.  You'll need good upstream and downstream bandwidth from the server.  We recommend installing Ubuntu 10.04 32-bit/64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
 
 While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
@@ -330,13 +330,11 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 = Configuration =
 
 == What are the minimum requirements for the !BigBlueButton client? ==
-The BigButtonButton client runs in Flash 10.3 and works on Mac, Unix, and PC web browsers. 
+Users need to be running a web browser with Flash 10.3.  To check the version of flash visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
 
-Users need to be running Flash 10.3.  To check the version of flash visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
+As of Mac OS X 10.6, Apple stopped updating Flash.  If a Mac user is running an out-of-date version of Flash (!BigBlueButton will check the version of flash), they can upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
 
-Most users will automatically be running the latest version of Flash.  However, on older Macs, Apple has stopped updating Flash.  If a Mac user is running an out-of-date version of Flash, they should upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
-
-To run the desktop sharing the presenter (and only the presenter) needs to also run Java applets.  You can test that Java is installed by visiting [http://java.com/en/download/testjava.jsp Java Test Page] (there are download links on this page if you need to install Java).
+To run the desktop sharing the presenter (and only the presenter) needs to have a Java runtime.  You can test that Java is installed by visiting [http://java.com/en/download/testjava.jsp Java Test Page] (there are download links on this page if you need to install Java).
   
 
 == Where is the Admin interface for !BigBlueButton? ==
