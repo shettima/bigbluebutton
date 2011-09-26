@@ -118,8 +118,8 @@ Install {{{playerglobal.swc}}}
 
 {{{
 cd
-mkdir dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
-cd dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
+mkdir /home/firstuser/dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
+cd /home/firstuser/dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
 wget http://fpdownload.macromedia.com/pub/flashplayer/updaters/10/playerglobal10_3.swc
 mv playerglobal10_3.swc playerglobal.swc
 }}}
