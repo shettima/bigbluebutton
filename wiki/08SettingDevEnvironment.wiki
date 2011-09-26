@@ -132,7 +132,7 @@ bbb-conf --setup-dev client
 ----
 *NOTE:* If you don't want to run [{{{bbb-conf --setup-dev client}}}] but want to instead setup manually, do the following: (the steps below essentially is what [{{{bbb-conf --setup-dev client}}}] executes.
 {{{
-cd dev/source/bigbluebutton/bigbluebutton-client
+cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client
 mkdir -p bin/conf
 ln -s bin client
 }}}
