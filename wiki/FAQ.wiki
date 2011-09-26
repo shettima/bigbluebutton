@@ -76,6 +76,8 @@ Like many open source projects, at the core of the developer team is small group
   * Fred Dixon, Packaging
   * Jeremy Thomerson, API
   * Tiago Jacobs, red5
+  * Marco Calderon, Server
+  * Felipe Cecagno, Client
 
 The committers have earned this responsibility through years of effort
 working on !BigBlueButton and related open source projects (i.e. red5).  In particular, we very much respect Richard's four year-plus effort to create !BigBlueButton.  As the Lead Architect for this project, he has the final say. 
