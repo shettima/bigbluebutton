@@ -27,7 +27,7 @@ Fixes:
   * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=487">Issue 487</a> * - Add the action name to the checksum calculation.  
   * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=473">Issue 473</a> * - Remove "meetingToken" from the API.
   * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=394">Issue 394</a> * - Need endMeeting API call implemented.
-  * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=247">Issue 247</a> * - DynamicConferenceService never cleans out ended conferences.
+  * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=247">Issue 247</a> * - !DynamicConferenceService never cleans out ended conferences.
   * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=393">Issue 393</a> * - Need getMeetingInfo API call implemented.
 
 == Version 0.8 ==
