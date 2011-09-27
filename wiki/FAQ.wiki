@@ -447,6 +447,8 @@ For bigbluebutton 0.8, you can check tunneling in the following <a href="http://
 
 Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.  You have defined an external hostname, such as `external.host.org`, that will resolve to the IP address of your firewall. You want external users to access !BigBlueButton using that hostname.
 
+Note: The instructions below require that you use an external hostname (not IP address) for your firewall.  If you only have an IP address, you can setup a hostname using a free DNS service such as [http://dyn.com/dns/dyndns-free/ dny.com].
+
 First, on your firewall, you need to forward three ports to the the internal IP address of the !BigBlueButton server.  These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
 
 Here is an example of forwarded ports on the D-Link DIR-665 router (the internal IP address of the !BigBlueButton server in this example  is 192.168.10.198):
