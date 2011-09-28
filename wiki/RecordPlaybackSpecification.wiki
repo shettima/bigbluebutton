@@ -68,6 +68,42 @@ For example, the client tool could be an HTML interface the allows the user to d
 
 == High Level Architecture ==
 
+=== Record and Playback core directory ===
+/usr/local/bigbluebutton/
+└── core
+    ├── Gemfile
+    ├── Gemfile.lock
+    ├── lib
+    │   ├── recordandplayback
+    │   │   ├── audio_archiver.rb
+    │   │   ├── deskshare_archiver.rb
+    │   │   ├── events_archiver.rb
+    │   │   ├── generators
+    │   │   │   ├── audio_processor.rb
+    │   │   │   ├── audio.rb
+    │   │   │   ├── events.rb
+    │   │   │   ├── matterhorn_processor.rb
+    │   │   │   ├── presentation.rb
+    │   │   │   └── video.rb
+    │   │   ├── presentation_archiver.rb
+    │   │   └── video_archiver.rb
+    │   └── recordandplayback.rb
+    └── scripts
+        ├── archive
+        │   └── archive.rb
+        ├── bbb-rap.sh
+        ├── bigbluebutton.yml
+        ├── cleanup.rb
+        ├── process
+        │   ├── README
+        │   └── slides.rb
+        ├── publish
+        │   ├── README
+        │   └── slides.rb
+        ├── rap-worker.rb
+        └── slides.yml
+
+
 === Capture ===
 
  * bbb-web stores meeting info into redis
