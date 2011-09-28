@@ -69,6 +69,7 @@ For example, the client tool could be an HTML interface the allows the user to d
 == High Level Architecture ==
 
 === Record and Playback core directory ===
+{{{
 /usr/local/bigbluebutton/
 └── core
     ├── Gemfile
@@ -102,7 +103,7 @@ For example, the client tool could be an HTML interface the allows the user to d
         │   └── slides.rb
         ├── rap-worker.rb
         └── slides.yml
-
+}}}
 
 === Capture ===
 
