@@ -25,7 +25,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Dual-core 2.6 GHZ CPU (quad core is better)
   # Ports 80, 1935, 9123 accessible 
   # Port 80 is available and not used by another application
-  # 200G of free disk space (or more) for recordings
+  # 400G of free disk space (or more) for recordings
 
 If you are upgrading from !BigBlueButton 0.71a, start [InstallationUbuntu#Upgrading_from_BigBlueButton_0.71a here].
 
