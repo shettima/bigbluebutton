@@ -563,13 +563,11 @@ The best approach is to see how others have integrated and adapt their code to y
 
 == How many simultaneous users can a !BigBlueButton server support? == 
 
-As a rule of the thumb, we recommend you use !BigBlueButton for on-line classes of twenty-five (25) users or less.  You can run multiple on-line classes on a !BigBlueButton server.
+As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton server for on-line classes of twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
 
-We don't give out recommendations for the maximum number users a !BigBlueButton server can support, as it's so dependent on the bandwidth usage, server capacity, and user activity. 
+Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.
 
-Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.
-
-Take any stress test with a grain of salt.  There are many variables at play:
+Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.   Take any stress test with a grain of salt.  There are many variables at play:
 
   * Server: CPU memory, disks space, and bandwidth
   * Usage scenarios (# of webcams and use of desktop sharing)
@@ -577,12 +575,13 @@ Take any stress test with a grain of salt.  There are many variables at play:
   * Configuration of !BigBlueButton
   * Version of !BigBlueButton
 
-For the upcoming !BigBlueButton 0.8, [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results] from a stress test of an internal build of 0.8.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, of all the variables listed above, the most important is CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.
+In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, the scalability dends largely on the number of simultaneous users in a voice conference (again 1 x 25, 2 x 12, 5 x 5 all roughly equate the same CPU load).
 
+We recently did a stress test of an internal build of !BigBlueButton 0.8 and  [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results].   Hence, of all the variables listed above, the most important is CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.
 
-Again, we recommend you stress test own server with a group of users to get real-world data.  As a general rule of the thumb, if you compare the capacity (number of simultaneous users) between two servers, the server with a faster CPU will have a higher capacity.
+We *strongly* recommend you first stress test own server with a group of users to get real-world data.  
 
-To test your own server, have ten people login and successively open multiple browser tabs, each one logging into !BigBlueButton and joining the audio conference.  With 10 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.
+To test your own server, have ten people login and have each open multiple browser tabs, each one logging into !BigBlueButton and joining the audio conference.  With 10 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.  You'll find once the CPU reaches 80%, the audio starts to degrade.
 
 To monitor bandwidth, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
 
