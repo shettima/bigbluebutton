@@ -577,7 +577,8 @@ Take any stress test with a grain of salt.  There are many variables at play:
   * Configuration of !BigBlueButton
   * Version of !BigBlueButton
 
-For the upcoming !BigBlueButton 0.8, [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results] from a stress test of an internal build of 0.8.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  
+For the upcoming !BigBlueButton 0.8, [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results] from a stress test of an internal build of 0.8.  In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, of all the variables listed above, the most important is CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.
+
 
 Again, we recommend you stress test own server with a group of users to get real-world data.  As a general rule of the thumb, if you compare the capacity (number of simultaneous users) between two servers, the server with a faster CPU will have a higher capacity.
 
