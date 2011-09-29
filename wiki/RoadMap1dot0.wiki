@@ -116,6 +116,7 @@ Include the following additional modules.
   * Polling module ([http://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Breakout module (see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=breakout issues related to breakout module])
   * Shared notes module ([http://code.google.com/p/bigbluebutton/issues/detail?id=875 875])
+  * Synchronized video playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=218])
  
  
 == Developer Requirements ==
