@@ -173,11 +173,11 @@ Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 32-bit and 
 
   # Modify the default security group (or create a new security group) that opens the needed ports for !BigBlueButton (see [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue FAQ]).
   # Launch a "lucid" image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].
-  # Follow the instructions to InstallationUbuntu.
+  # Follow the instructions to InstallationUbuntu (or for the beta of 0.8 08InstallationUbuntu).
   # Adjust the FreeSWITCH configuration (see [FAQ#When_I_click_on_the_headset_icon,_nothing_happens? FAQ]) to work on an internal IP address.
   # Use `sudo bbb-conf --setip hostname` to instruct !BigBlueButton to listen to the external DNS name for the EC2 instance (see [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf])
 
-You'll need (at a minimum) a m1.small.  We recommend running !BigBlueButton on a c1.medium.
+We recommend running !BigBlueButton on a c1.medium.
 
  
 == OS Requirements ==
