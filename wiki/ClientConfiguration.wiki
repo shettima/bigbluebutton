@@ -144,11 +144,23 @@ The Phone Module is the shows as the small headset icon in the upper left of the
 === Videoconf Module ===
 {{{
 <module name="VideoconfModule" url="VideoconfModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/video"
-	dependsOn="ViewersModule"
-	videoQuality="70"
-	presenterShareOnly="false"
-/>
+			uri="rtmp://HOST/video"
+			dependsOn="ViewersModule"
+			videoQuality="70"
+			presenterShareOnly="false"
+			resolutions="320x240,640x480,1280x720"
+			autoStart="false"
+			showButton="true"
+			publishWindowVisible="true"
+			viewerWindowMaxed="false"
+			viewerWindowLocation="top"
+			camKeyFrameInterval="5"
+			camModeFps="15"
+			camQualityBandwidth="0"
+			camQualityPicture="100"
+			h264Level="4.1"
+			h264Profile="main"			
+		/>
 }}}
 The Video Conferencing Module. Allows users to share their webcams with the room. It connects to the separate /video application on the bbb server.
 
@@ -156,6 +168,40 @@ The Video Conferencing Module. Allows users to share their webcams with the room
 An attribute set to between 0 and 100. 0 means that priority will be given to optimizing bandwidth at the cost of quality. 100 means that no compression will be done, for maximum quality. This takes up high bandwidth and the frame rate may suffer. A quality of 100 is NOT recommended as it will eat up your server bandwidth quickly. Default is 70. Set to lower if you are concerned about bandwidth.
 ==== presenterShareOnly ====
 If set to true, only the current presenter will have the option of sharing their webcam. This is useful in one-to-many meetings, where there is one presenter that everyone should be focusing on, such as a webcast or a virtual classroom.
+
+==== resolutions ====
+Configure the resolutions you want the user to choose from.
+
+==== autoStart ====
+Start the webcam automatically. This will choose the first option in the {{{resolutions}}} entry.
+
+==== showButton ====
+Show button in main toolbar.
+
+==== publishWindowVisible ====
+Make the webcam publish window visible. If you set to false, you need to make {{{autoStart}}} to true. Otherwise, you won't be able to start camera.
+
+==== viewerWindowMaxed ====
+Maximize the webcam viewer window.
+
+==== viewerWindowLocation ====
+Set the preferred location of the viewer window when it pops up.
+
+==== camKeyFrameInterval, camModeFps, camQualityBandwidth, camQualityPicture ====
+Configure quality and framerate of webcam.
+See [http://help.adobe.com/en_US/FlashPlatform/beta/reference/actionscript/3/flash/media/Camera.html]
+
+==== h264Level, h264Profile ====
+*NOTE* You need to uncomment and compile source to make this work. This only works on Flash Player 11 (still in Beta).
+
+See the following:
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/modules/videoconf/business/VideoProxy.as]
+
+[http://help.adobe.com/en_US/FlashPlatform/beta/reference/actionscript/3/flash/media/H264Level.html]
+
+[http://help.adobe.com/en_US/FlashPlatform/beta/reference/actionscript/3/flash/media/H264Profile.html]
+
 
 === Present Module ===
 {{{
