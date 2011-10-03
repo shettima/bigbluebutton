@@ -7,11 +7,13 @@
 You need to have to have installed [08InstallationUbuntu BigBlueButton 0.8] and an installation of [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+All+in+One++V1.1 Matterhorn 1.1] or [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2]
 
 = Installation of Matterhorn integration =
-These instructions will configure your !BigBlueButton 0.8 server to capture the audio, desktop, and webcam from a session.
+Using the !BigBlueButton API, when you pass the parameter 'record=true' with [API#Create_Meeting create], !BigBlueButton will create a session and record the slides, chat, audio, desktop, and webcam for later processing.
 
-After each lecture is finished, the Matterhorn ingest and processing scripts (installed on the !BigBlueButton server following the instructions below) will create two video files: one with webcam + audio, the other for desktop sharing, and scp the files to your Matterhorn server.
+After the session finishes, the  !BigBlueButton server will run one (or more) ingest and processing scripts that will process the captured data into a format for playback.  
 
-BigBlueButton scales the resolution of the desktop video to 640x480 before sending to Matterhorn.  
+The instructions below show you how to install and configure the Matterhorn ingest and processing scripts.  When called by !BigBlueButton, these scripts will create two video files: one with webcam + audio, the other for desktop sharing, along with an XML file (called dublin core) and bundle everything into a single zip file.  It will then scp the zip file to your Matterhorn server for processing.
+
+The Matterhorn ingest and processing will scale the resolution of the desktop video to 640x480 before sending to Matterhorn.  
 
 If you encounter any problems with these instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton setup mailing list].
 
