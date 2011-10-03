@@ -79,7 +79,7 @@ Refresh your environment.
 
 Clone !BigBlueButton
 {{{
-mkdir /home/firstuser/dev/source
+mkdir -p /home/firstuser/dev/source
 cd /home/firstuser/dev/source
 sudo apt-get install git-core
 git clone git://github.com/bigbluebutton/bigbluebutton.git
@@ -118,7 +118,7 @@ Install {{{playerglobal.swc}}}
 
 {{{
 cd
-mkdir /home/firstuser/dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
+mkdir -p /home/firstuser/dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
 cd /home/firstuser/dev/tools/flex-4.5.0.20967/frameworks/libs/player/10.3
 wget http://fpdownload.macromedia.com/pub/flashplayer/updaters/10/playerglobal10_3.swc
 mv playerglobal10_3.swc playerglobal.swc
