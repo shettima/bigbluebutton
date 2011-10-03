@@ -15,7 +15,7 @@ The instructions below show you how to install and configure the Matterhorn inge
 
 The Matterhorn ingest and processing will scale the resolution of the desktop video to 640x480 before sending to Matterhorn.  
 
-If you encounter any problems with these instructions, please post to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton setup mailing list].
+If you encounter any problems with these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton setup] mailing list.
 
 
 == 1. Install ffmpeg  == 
