@@ -202,6 +202,24 @@ See the following:
 
 [http://help.adobe.com/en_US/FlashPlatform/beta/reference/actionscript/3/flash/media/H264Profile.html]
 
+=== Videodock Module ===
+This module will dock viewed webcams and and tile them.
+
+{{{
+  <module name="VideodockModule" url="VideodockModule.swf?v=VERSION"
+			uri="rtmp://HOST/bigbluebutton" 
+			dependsOn="VideoconfModule, ViewersModule"
+			autoDock="true"
+			maximizeWindow="false"
+  />
+}}}
+
+==== autoDock ====
+Automatically dock all webcam windows.
+
+==== maximizeWindow ====
+Maximize the docking window.
+
 
 === Present Module ===
 {{{
