@@ -55,7 +55,8 @@ If you don't want to do this process every time you need to compile the Module, 
 
   1. Create new file call it ***compile-bbb-client-module*** (its ok not to use extension)
  2. Copy and paste script below into the file
- 3. ***Run*** the script by opening Terminal and running the file where you copied the script (e.g ***./compile-bbb-client-module ExampleChatModule *** )
+
+ 3. Run the script by opening Terminal and executing  file that you have copied the script (e.g ***./compile-bbb-client-module ExampleChatModule *** )
 
   When it compiles just go to your BBB website and check if new module appeared.
 
