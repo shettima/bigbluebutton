@@ -140,6 +140,15 @@ ln -s bin client
 
 Edit {{{/etc/nginx/sites-enabled/bigbluebutton}}} and change root entry in /client to point to your dev client.
 {{{
+
+        # BigBlueButton.html is here so we can expire it every 1 minute to
+        # prevent caching.
+        location /client/BigBlueButton.html {
+                root    /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client;
+                index  index.html index.htm;
+                expires 1m;
+        }
+
         # BigBlueButton Flash client.
         location /client {
                 root    /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client;
