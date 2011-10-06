@@ -774,7 +774,25 @@ sudo bbb-conf --restart
 === I'm on Ubuntu and I can't share my webcam ===
 See Ubuntu's documentation for [https://help.ubuntu.com/community/Webcam/Troubleshooting Webcam Troubleshooting].
 
-  
+ 
+=== How do I prevent viewers from sharing their webcam? ===
+
+On the !BigBlueButton server you can change
+
+{{{
+presenterShareOnly="false"
+}}}
+
+to
+
+{{{
+presenterShareOnly="true"
+}}}
+
+in [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml for video module].
+
+
+
 == Voice Conference ==
 
 === How can't others hear me in the voice conference? ===
