@@ -10,9 +10,9 @@ See [08InstallationUbuntu installation instructions].
 
 What's new in 0.8-beta-2:
 
-  * * Pre-flight checklist * -  To assist users in configuration their audio, !BigBlueButton displays an audio settings dialog box when joining the voice conference bridge.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Audio_Settings_Dialog audio settings screenshot].
+  * * Audio Settings Dialog * -  To assist users in checking their audio setup *before* joining the voice conference, !BigBlueButton now displays an Audio Settings dialog box to enable the user to verify that audio and microphone are correctly configured for a headset.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Audio_Settings_Dialog audio settings screenshot].
 
-  * * Video Dock * -  Helps organize multiple web cam displays.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Video_Dock video dock screenshot].
+  * * Video Dock * -  To help users view webcams from multiple sources, a new video dock window now 'docks' all the webcams.  The user can drag individual windows in and out of the dock.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Video_Dock video dock screenshot].
 
 What's new in 0.8-beta:
 
