@@ -1,16 +1,15 @@
-#summary Visual overview of what's new in BigBlueButton 0.8.
+#summary Visual overview of BigBlueButton 0.8.
 
 = Introduction =
 
 This page contains screen shots of what's new in BigBlueButton 0.8
 
-
 == Audio Settings Dialog ==
 
 Clicking on the headset icon will now display an Audio Settings dialog to enable the user to 
   
-  * verify they can hear audio through their headset
-  * adjust the sensitivity of their headset's microphone
+  # verify they can hear audio through their headset
+  # adjust the sensitivity of their headset's microphone
 
 The following image shows the sequence of steps from when the user clicks the headset icon.
 
