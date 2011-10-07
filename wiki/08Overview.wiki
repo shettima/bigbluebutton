@@ -1,0 +1,9 @@
+#summary Visual overview of what's new in BigBlueButton 0.8.
+
+= Introduction =
+
+This page contains screen shots of what's new in BigBlueButton 0.8
+
+
+== Audio Settings Dialog ==
+
