@@ -1,12 +1,20 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.8-beta: Bailetti =
+= Release 0.8-beta-2: Bailetti =
 
-Beta Released: September 12, 2011
+Beta Released: September xx, 2011
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
 See [08InstallationUbuntu installation instructions]. 
+
+What's new in 0.8-beta-2:
+
+  * * Pre-flight checklist * -  To assist users in configuration their audio, !BigBlueButton displays an audio settings dialog box when joining the voice conference bridge.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Audio_Settings_Dialog audio settings screenshot].
+
+  * * Video Dock * -  Helps organize multiple web cam displays.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Video_Dock video dock screenshot].
+
+What's new in 0.8-beta:
 
   * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
@@ -23,10 +31,6 @@ See [08InstallationUbuntu installation instructions].
   * * API demos now separate * - The API demos are installed in their own package (for easy addition and removal).  The install location has changed to `/var/lib/tomcat6/webapps/demo`, which changes the URL from accessing them from `/bigbluebutton/demo` to `/demo`.
 
   * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to a snapshot of 1.0.7.  !BigBlueButton no longer requires installation of mysql.
-
-The following items are planned for inclusion in subsequent updates to the 0.8 beta
-
-  * * Pre-flight checklist * -  To assist users in configuration their audio, display a dialog box when joining the voice conference bridge to to check speakers and microphone.
 
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8 open issues for BigBlueButton 0.8 beta].
 
