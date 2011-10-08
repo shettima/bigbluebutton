@@ -4,6 +4,10 @@
 
 This page contains screen shots of what's new in BigBlueButton 0.8
 
+== Record and Playback ==
+See this [http://www.youtube.com/user/bigbluebuttonshare#p/a/u/1/4b_tC1JEX1E video overview] for an introduction of the new record and playback capabilities.
+
+
 == Audio Settings Dialog ==
 
 Clicking on the headset icon will now display an Audio Settings dialog to enable the user to 
