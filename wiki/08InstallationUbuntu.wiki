@@ -1,14 +1,14 @@
-#summary How to install  BigBlueButton 0.8-beta on Ubuntu in under 30 minutes
+#summary How to install  BigBlueButton 0.8-beta-2 on Ubuntu in under 30 minutes
 
 <wiki:toc max_depth="3" />
 
 = Overview =
 
-We're pleased to announce the release !BigBlueButton 0.8-beta. 
+We're pleased to announce the release !BigBlueButton 0.8-beta-2. 
 
 Our goal since the beginning of this release has been to integrate record and playback into !BigBlueButton's core.   This release is the culmination of months of effort (our last release was January 14, 2010).  With this release, you can now record and playback slides, audio, and chat within !BigBlueButton.  This enables !BigBlueButton to address a much wider set of use cases for distance education.  
 
-For a detailed list of changes, see [ReleaseNotes 0.8-beta release notes].
+For a detailed list of changes, see [ReleaseNotes 0.8-beta-2 release notes].
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
@@ -36,7 +36,7 @@ The following video will walk you through the installation of !BigBlueButton 0.8
 
 We recommend you following the video with these step-by-step instructions below.
 
-= Installation of !BigBlueButton 0.8-beta =
+= Installation of !BigBlueButton 0.8-beta-2 =
 
 == 1. Update your server == 
 
@@ -183,7 +183,7 @@ Got to [#Trying_out_your_server_(24:42_minutes_later) Trying out your sever].
 
 = Upgrading a !BigBlueButton 0.71a Server =
 
-The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta.
+The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta-2.
 
 A 'standard installation' is an installation of !BigBlueButton 0.71a that has been configured using the standard commands
 
