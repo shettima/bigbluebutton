@@ -1331,7 +1331,7 @@ For (1), the request of our paying customers come first. This has two benefits: 
 
 If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  If the feature you are requesting is not already on our roadmap or in our issue tracker, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] request and make a convincing argument that the feature belongs in (2).
 
-!BigBlueButton is an open source project.  Anyone with the necessary skills can roll up their sleeves and try their hand at implementing a needed feature.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton]).
+!BigBlueButton is an open source project.  We welcome the contributions of others who want to help improve !BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
 
 === My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
