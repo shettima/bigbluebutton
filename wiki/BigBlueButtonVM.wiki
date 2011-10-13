@@ -145,18 +145,20 @@ Next, you can manually finish the setup to !BigBlueButton with the following com
 There should be no errors when you type the above three commands.
 
 == The IP address of my VM has changed and now !BigBlueButton does not work ==
-Next, you'll need to ensure that !BigBlueButton is listening to the IP address of your VM.  To check your current environment for possible problems that might prevent !BigBlueButton from running, type the following command:
+Next, you'll need to ensure that !BigBlueButton is listening to the IP address of your VM.  One symptom is when you try to access !BigBlueButton through the web browser you get the `Welcome to nginx!` message.
+
+To check your current environment for possible problems that might prevent !BigBlueButton from running, type the following command:
 
 {{{
 
-   bbb-conf -c
+   sudo bbb-conf --check
 
 }}}
 
 You should see output such as 
 
 {{{ 
-root@bbb-vm-20100102:/etc/asterisk# bbb-conf -c
+$ sudo bbb-conf --check
 Current Configuration:
 
 /var/www/bigbluebutton/client/conf/config.xml (bbb-client)
@@ -182,7 +184,7 @@ Current Configuration:
 
 If there are any problems (i.e. if bbb-conf detects that red5 isn't running), you'll see a warning message at the bottom.
 
-The output from above showed that !BigBlueButton's configuration files were listening to IP address 192.168.0.163.  When you type the command, if the IP address shown for your output differs from the IP address of your VM, you can change the IP address that !BigBlueButton is using `bbb-conf`.  When this happens you'll also get the `Welcome to nginx` page when accessing BigBlueButton from the web browser.
+The output from above showed that !BigBlueButton's configuration files were listening to IP address 192.168.0.163.  When you type the command, if the IP address shown for your output differs from the IP address of your VM, you can change the IP address that !BigBlueButton is using `bbb-conf`.  
 
 For example, if the output from `ifconfig` shows your VM is listening to IP address 192.168.0.125, then issue the following command
 
