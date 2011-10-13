@@ -673,7 +673,9 @@ Also restart the networking on the VM by running the following command:
 
 == How do I delete old presentations on the server? ==
 
-As root create the file in
+Documents uploaded to a presentation remain on the BigBlueButton server until deleted by the administrator. 
+
+To setup an automatic deletion of old presentations, create the file in
 
   /var/cron.daily/bigbluebutton
 
@@ -683,7 +685,7 @@ with the contents
 #!/bin/sh
 
 #
-# Delete older presentations in BigBlueButton 0.8
+# Delete old presentation directories in /var/bigbluebutton
 #
 test -x /var/bigbluebutton || exit 0
 find /var/bigbluebutton -maxdepth 1 -type d -name "*-*" -mtime +11 -exec rm -r '{}' \;
