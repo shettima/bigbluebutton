@@ -671,6 +671,32 @@ Also restart the networking on the VM by running the following command:
 }}}
 
 
+== How do I delete old presentations on the server? ==
+
+As root create the file in
+
+  /var/cron.daily/bigbluebutton
+
+with the contents
+
+{{{
+#!/bin/sh
+
+#
+# Delete older presentations in BigBlueButton 0.8
+#
+test -x /var/bigbluebutton || exit 0
+find /var/bigbluebutton -maxdepth 1 -type d -name "*-*" -mtime +11 -exec rm -r '{}' \;
+}}}
+
+and set the script to be executable.  
+
+{{{
+sudo chmod +x /var/cron.daily/bigbluebutton
+}}}
+
+Now, once a day, cron will execute this script and delete presentation directories in /var/bigbluebutton that are older than 11 days.
+
 
 
 
