@@ -65,11 +65,17 @@ sudo apt-get dist-upgrade
 If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
 == 2. Install Ruby == 
+The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
 
-The record and playback infrastructure uses Ruby for the processing of recorded sessions.  The following script will install Ruby 1.9.2 as a package (so it can be removed later on if desired).
+First, you'll need to install the following dependencies to compile ruby.
 
 {{{
-sudo apt-get -y install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
+sudo apt-get install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
+}}}
+
+Next, create a file called `install-ruby.sh` and copy and paste in the following script.
+
+{{{
 cd /tmp
 wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
 tar xvzf ruby-1.9.2-p290.tar.gz
@@ -96,7 +102,7 @@ sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.2 500\
 
 }}}
 
-Copy the script above to a file called `install-ruby.sh`. Next, run the script
+Next, run the script
 
 {{{
 chmod +x install-ruby.sh
