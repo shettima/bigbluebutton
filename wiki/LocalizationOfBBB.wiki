@@ -2,23 +2,12 @@
 
 = Contributing the new language translation to !BigBlueButton =
 
-If you would like to translate !BigBlueButton to another language, you can watch this video http://www.youtube.com/watch?v=LK-IWLctInw or you can follow the steps below:
+If you would like to translate !BigBlueButton to another language, please send an email to ritzalam AT gmail DOT com and tell us the locale you will be translating.
 
-  # Go to http://localize.bigbluebutton.org
-  # Sign up for an account.
-  # Wait for approval from the site administrators. You will be notified in an e-mail.
-  # Login using the link provided in the e-mail.
-  # Set your password.
-  # Click on translate from the side menu.
-  # Select the language you wish to translate.
-  # Click on translate from the top menu.
-  # Begin Translating.
-  # Save Changes.
+The localization service for !BigBlueButton is located  in [http://mygengo.com/string/p/bigbluebutton-1].
 
-
+  
 *NOTE: If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
-
-Within 2-3 hours the new translations will be available on github (master), and on our [http://devbuild.bigbluebutton.org/ Developer Build Server], which becomes the basis for the next release.
 
 
 == Technical Background  ==
