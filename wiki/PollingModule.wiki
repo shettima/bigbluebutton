@@ -56,7 +56,7 @@
     2. _*closeInstructionsWindow()*_ method that uses CloseInstructionsEvent to dispatch parameters to EventMap
  </code>
 
- _*0.015*_ _Problem Solved_ by adding two separate invokes into CloseInstructionsEvent one invokes method from manager other from PollingEventmap.
+ _*0.015*_ _Problem Solved_ by adding two separate invokes into CloseInstructionsEvent one invokes method from manager other from PollingEventmap.<br /><br />
  _*0.016*_ ToolBarButton.mxml received new method:  
 
  <code>
