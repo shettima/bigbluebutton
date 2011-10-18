@@ -11,7 +11,7 @@
 === bbb-client part ===
  
  _*0.001*_ Created Polling Module Architecture (folders: events, managers, maps, views) <br /> <br />
- _*0.002*_ Created PollingInstructionsWindow.mxml  window designed following the Polling Mockup which consist of: <br />
+ _*0.002*_ Created PollingInstructionsWindow  - window designed following the Polling Mockup which consist of: <br />
 <code>
    Title : text box for title
    Questions: text area for questions
