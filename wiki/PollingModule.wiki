@@ -1,8 +1,78 @@
 #summary Creating a polling module for BigBlueButton
 
-= Introduction =
-
-This project will prototype the creation of a polling module for !BigBlueButton.
+= Polling Module Prototype =
 
 
-= Details =
+
+
+== Polling Module Progress Map  ==
+
+
+=== bbb-client part ===
+ 
+ _*0.001*_ Created Polling Module Architecture (folders: events, managers, maps, views) <br /> <br />
+ _*0.002*_ Created PollingInstructionsWindow.mxml - window designed following the Polling Mockup which consist of: <br />
+<code>
+   Title : text box for title
+   Questions: text area for questions
+   Responses: text are for responses
+   Checkbox with label: Allow users to check ,more than one response 
+   Two Buttons: Create New Poll and Cancel that does not invoke any methods so far
+</code>
+
+  Here is the screen-shot of the design:
+
+   http://myprogrammingblog.files.wordpress.com/2011/10/pollinginstructions.png
+
+  _*0.003*_ PollingInstructionsWindow.mxml receives new method:
+  getPrefferedPosition() -> states how the window should appear in the interface (set to POPUP)
+
+  _*0.004*_ Created PollingManager.as  that is responsible for all communication processes between EventMap and Views<br /> <br />
+  _*0.005*_ Created PollingEventMap <br /> <br />
+  _*0.006*_ Created ToolBar icon and ToolBarButtonManager.as that is responsible for all ToolBarButton actions <br /> <br />
+  _*0.007*_ ToolBarButton Manager receives method addToolbarButton() that enables ToolBarButton to show on MainToolBar <br /> <br />
+  _*0.008*_ Created ToolbarButton.mxml that states alignment of Button <br /> <br />
+  _*0.009*_ ToolBar icon is Integrated into interface <br /> <br />
+
+   http://myprogrammingblog.files.wordpress.com/2011/10/toolbarbutton.png
+  _*0.010*_ ToolBar icon became  clickable <br /> <br />
+  _*0.011*_ Created maps/PollingEventMap.mxml <br /> <br />
+  _*0.012*_ 2 events created inside events:  <br /> <br />
+
+  <code>
+    1. _*OpenInstructionsEvent*  -> opens instructions window (window for Presenter to create a new poll) 
+    2. _*CloseInstructionsEvent* -> event that closes Instrucitons window 
+  </code>
+
+  _*0.013*_ ToolBar button  on click invokes PollingInstructionsWindow.mxml 
+
+<code>
+    _*Problem Encountered:* _When ToolBarButton invokes Window, toolbarbutton becomes stays, when trying to solve this problem, window does not close._
+</code>
+ _*0.014*_ PollingInstructionsWindow.mxml receives 2 new methods:<br /> 
+
+<code>
+    1.overloaded _*close*_ function that uses custom method to Close Instructions Window
+    2. _*closeInstructionsWindow()*_ method that uses CloseInstructionsEvent to dispatch parameters to EventMap
+ </code>
+
+ _*0.015*_ _Problem Solved_ by adding two separate invokes into CloseInstructionsEvent one invokes method from manager other from PollingEventmap.
+ _*0.016*_ ToolBarButton.mxml received new method:  
+
+ <code>
+   ** _*openPollingInstructions()*_ -> opens PollingInstructionsWindow.mxml
+ </code>
+
+ _*0.017*_ ToolBarButton becomes active when window closes<br /> <br />
+
+ _*0.018*_ ToolBarButtonManager receives removeToolBarButton method that  hides toolbarButton<br /> <br />
+ _*0.019*_ ToolBarButtonManager receives enableToolbarButton method that enables ToolBarButton in MainToolbar<br /> <br />
+ _*0.02*_ Two Event added to PollingEventMap:
+ <code>
+  ** _*MadePresenterEvent.SWITCH_TO_PRESENTER_MODE*_ - shows toolbarbutton only to Presenter
+  ** _*MadePresenterEvent.SWITCH_TO_VIEWER_MODE*_ - hides toolbarbutton from Viewers
+</code>
+  _*0.021*_ New Events integrated in the System - ToolBarButton appears only to presenter, disappears when Presenter changes to Viewer.
+
+
+<wiki:video url="http://www.youtube.com/watch?v=1QU1mY6qhr4"/>
