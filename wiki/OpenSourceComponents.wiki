@@ -33,7 +33,7 @@ See the diagrams in ArchitectureOverview for how these components interact.
                 <td valign="top" width="150" align="center"><a href="http://nginx.net/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/nginx.png</a></td>
                 <td valign="top" width="300"><p>*nginx*</p><p>nginx "engine x" is a HTTP server and mail proxy server. </p><p><a href="http://nginx.net/">http://nginx.net/</a></p></td>
                 <td valign="top" width="150" align="center"><a href="http://osflash.org/red5">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/red5.png</a></td>
-                <td valign="top" width="300"><p>*Red5*</p><p>Red5 is an Open Source Flash Server written in Java.</p><p><a href="http://osflash.org/red5">http://osflash.org/red5</a></p></td>
+                <td valign="top" width="300"><p>*Red5*</p><p>Red5 is an Open Source Flash Server written in Java.</p><p><a href="http://red5.org/">http://red5.org/</a></p></td>
             </tr>
             <tr>
                 <td valign="top" width="150" align="center"><a href="http://www.swftools.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/swftools.png</a></td>
