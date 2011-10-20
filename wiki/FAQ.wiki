@@ -1124,6 +1124,25 @@ We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=
 
 == General ==
 
+=== voice Application failed to register with sip server ===
+When doing `sudo bbb-conf --check` you may see this error.  This error occurs when bbb-apps-sip isn't able to connect with FreeSWITCH.  Possible causes for this error are
+
+  * You have just installed !BigBlueButton, but not restarted it.  The packages do not start up the !BigBlueButton components in the right order.  To restart BigBlueButton, do the following 
+
+{{{
+    sudo bbb-conf --clean
+    sudo bbb-conf --check
+}}}
+
+  * On startup of the host server, the init.d script for red5 exectued before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-confgi).  FreeSWITCH nees to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
+
+  * The IP address on the host server has changed, causing FreeSWITCH to bind (listen) to a different IP address.  To update the configuration for red, edit `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties` and modify the settings for `sip.server.host`.
+
+
+
+
+
+ 
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
