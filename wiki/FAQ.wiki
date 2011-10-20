@@ -1120,6 +1120,10 @@ This is related to localization. Before you launch your client, you need to firs
 We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=869 issue 869] to remove the dependency on mysql in a future iteration of !BigBlueButton.
 
 
+
+
+
+
 = Troubleshooting =
 
 == General ==
@@ -1127,7 +1131,7 @@ We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=
 === voice Application failed to register with sip server ===
 When doing `sudo bbb-conf --check` you may see this error.  This error occurs when bbb-apps-sip isn't able to connect with FreeSWITCH.  Possible causes for this error are
 
-  * You have just installed !BigBlueButton, but not restarted it.  The packages do not start up the !BigBlueButton components in the right order.  To restart BigBlueButton, do the following 
+  * You have just installed !BigBlueButton, but not restarted it.  The packages do not start up the !BigBlueButton components in the right order.  To restart !BigBlueButton, do the following 
 
 {{{
     sudo bbb-conf --clean
