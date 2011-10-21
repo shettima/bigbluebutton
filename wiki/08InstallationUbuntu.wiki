@@ -76,6 +76,7 @@ sudo apt-get install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-es
 Next, create a file called `install-ruby.sh` and copy and paste in the following script.
 
 {{{
+#!/bin/bash
 cd /tmp
 wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
 tar xvzf ruby-1.9.2-p290.tar.gz
