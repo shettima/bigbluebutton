@@ -449,7 +449,7 @@ A common problem is the default install scripts in for !BigBlueButton configure 
 To change all of !BigBlueButton's configuration files to use a different IP address or hostname, enter
 
 {{{
-   bbb-conf --setip <ip_address_or_hostname>
+   sudo bbb-conf --setip <ip_address_or_hostname>
 }}}
 
 For more information see [BBBConf bbb-conf options]. 
