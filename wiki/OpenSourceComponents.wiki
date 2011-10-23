@@ -44,8 +44,8 @@ See the diagrams in ArchitectureOverview for how these components interact.
             <tr>
                 <td valign="top" width="150" align="center"><a href="http://www.ubuntu.com/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/ubuntu.png</a></td>
                 <td valign="top" width="300"><p>*Ubuntu*</p><p>Ubuntu is a distribution of the Linux Operating system, focused on user friendly Graphical User Interfaces.</p><p><a href="http://www.ubuntu.com/">http://www.ubuntu.com/</a></p></td>
-                <td valign="top" width="150" align="center"><a href="http://www.xuggle.com/xuggler/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/xuggler.png</a></td>
-                <td valign="top" width="300"><p>*Xuggler*</p><p>Xuggler is a library for Java or C++ developers that allows you to decode, manipulate, and encode (almost) any type of video file in near real time.</p><p><a href="http://www.xuggle.com/xuggler/">http://www.xuggle.com/xuggler/</a></p></td>
+                <td valign="top" width="150" align="center"><a href="http://redis.io/">http://redis.io/images/redis.png</a></td>
+                <td valign="top" width="300"><p>*redis*</p><p>Redis is an open source, advanced key-value store.</p><p><a href="http://redis.io/">http://redis.io/</a></p></td>
             </tr>
             <tr>
                 <td valign="top" width="150" align="center"><a href="http://www.openoffice.org/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/openoffice-logo.png</a></td>
