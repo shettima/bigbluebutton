@@ -86,7 +86,7 @@ The ingest and processing scripts will use a public/private key to move files to
 
 === Generate a ssh public key ===
 
-This key will let !BigBlueButton server send files to Matterhorn server without prompting a password. 
+This key will let !BigBlueButton server send files to Matterhorn server without prompting a password.  The example below uses the 'root' user on your Matterhorn server.   If you have the matterhorn server running under a different account, such as matterhorn_user, use that account in the instructions below instead of the root account.
 
 {{{
    ssh-keygen -t rsa
