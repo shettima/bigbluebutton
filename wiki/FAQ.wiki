@@ -561,7 +561,7 @@ If you are looking for an integration module that does not exist, please post a 
 The best approach is to see how others have integrated and adapt their code to your integration.  Don't you just love open source!
 
 
-== How many simultaneous users can a !BigBlueButton server support? == 
+== How many users can !BigBlueButton support == 
 
 As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton on-line classes totaling twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
 
