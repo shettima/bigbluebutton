@@ -1140,9 +1140,11 @@ When doing `sudo bbb-conf --check` you may see this error.  This error occurs wh
 
   * On startup of the host server, the init.d script for red5 exectued before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-confgi).  FreeSWITCH nees to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
 
-  * The IP address on the host server has changed, causing FreeSWITCH to bind (listen) to a different IP address.  To update the configuration for red, edit `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties` and modify the settings for `sip.server.host`.
+  * The IP address on the host server has changed, causing FreeSWITCH to bind (listen) to a different IP address.  To update the configuration
 
-
+  # Edit /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
+  # Change the property for `sip.server.host` and make sure it has the proper value for the IP address of your server
+  # Run `sudo bbb-conf --restart` to restart !BigBlueButton.
 
 
 
