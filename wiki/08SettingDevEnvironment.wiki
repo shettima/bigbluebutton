@@ -333,7 +333,7 @@ sudo -u red5 ./red5.sh
 
 ==Troubleshooting==
 
-If you get a the "Welcome to Nginx" page. Check if bigbluebutton is enabled in nginx. You should see *bigbluebutton* in {{{/etc/nginx/sites-enabled}}}.
+If you get the "Welcome to Nginx" page. Check if bigbluebutton is enabled in nginx. You should see *bigbluebutton* in {{{/etc/nginx/sites-enabled}}}.
 
 If not, enable it.
 
@@ -341,4 +341,16 @@ If not, enable it.
 sudo ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
 
 sudo /etc/init.d/nginx restart
+}}}
+
+If you get a "Old Translation" warning when starting the client, in `/var/www/bigbluebutton/client/conf/config.xml` change
+
+{{{
+<localeversion suppressWarning="false">0.71</localeversion>
+}}}
+
+to 
+
+{{{
+<localeversion suppressWarning="false">0.8</localeversion>
 }}}
