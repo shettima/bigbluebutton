@@ -158,13 +158,20 @@ Edit {{{/etc/nginx/sites-enabled/bigbluebutton}}} and change root entry in /clie
 
 Restart Nginx
 {{{
-/etc/init.d/nginx/restart
+/etc/init.d/nginx restart
 }}}
 
 Copy the installed {{{config.xml}}} into the client dev directory.
 {{{
-cp /var/www/bigbluebutton/client/conf/config.xml bigbluebutton-client/src/conf/config.xml
+cp /var/www/bigbluebutton/client/conf/config.xml bigbluebutton-client/src/conf
 }}}
+
+Copy the `join-mock.xml` into the client src directory.
+
+{{{
+cp bigbluebutton-client/resources/dev/join-mock.xml  bigbluebutton-client/src/conf 
+}}}
+
 ----
 
 Now compile the client.
