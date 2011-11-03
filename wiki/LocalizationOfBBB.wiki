@@ -35,7 +35,7 @@ If you created a custom language file but do not wish to contribute back to the 
 Once you are done editing the file, you can rebuild the client. Go to the client source directory - on the VM usually /home/firstuser/dev/bigbluebutton/bigbluebutton-client/, and run the command
 
 {{{
-   ant localization
+   ant locales
 }}}
 
 To have the client load your locale, you need to add it to the locales.xml located in resources/prod folder.
