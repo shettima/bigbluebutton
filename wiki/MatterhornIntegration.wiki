@@ -4,7 +4,7 @@
 
 = Prerequisites =
 
-You need to have to have already installed [08InstallationUbuntu BigBlueButton 0.8] on a separate, dedicated server.  On another server, install [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+All+in+One++V1.1 Matterhorn 1.1] or [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2].
+You need to have to have installed [08InstallationUbuntu BigBlueButton 0.8] on a server.  On a separate server (not the same server as !BigBlueButton) install [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+All+in+One++V1.1 Matterhorn 1.1] or [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2].
 
 = Overview =
 Using the !BigBlueButton API, when you pass the parameter 'record=true' with [API#Create_Meeting create], !BigBlueButton will create a session and record the slides, chat, audio, desktop, and webcam for later processing.
