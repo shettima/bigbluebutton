@@ -95,9 +95,23 @@ The above test assumes that all users have perfect/excellent connection to the B
 
 You need to see how !BigBlueButton behaves when a user or two doesn't have good connectivity to !BigBlueButton server and see if the quality is acceptable for your users.
 
-To do this, you can use Wan Emulator (http://wanem.sourceforge.net/).
+== Wan Emulator ==
+
+You can use Wan Emulator (http://wanem.sourceforge.net/).
 
 Wan Emulator allows you to simulate the "internet" in your Local Area Network. You can configure Wan Emulator to create a network with an unreliable (lossy, corrupted, delayed, jittered) connection. Then have a client connect to !BigBlueButton through that simulated network and see what the quality is.
 
 The Wan Emulator has pretty good documentation, so how to setup the environment won't be laid out in this wiki.
+
+== pfsense Firewall ==
+
+You can also use [pfsense http://www.pfsense.org/] Firewall.  Here are the general steps:
+
+  # Install pfsense on a [http://doc.pfsense.org/index.php/Installing_pfSense_in_vmware_under_windows computer ] or a [http://doc.pfsense.org/index.php/Installing_pfSense_in_vmware_under_windows virtual machine].
+  # Setup a [http://doc.pfsense.org/index.php/Traffic_Shaping_Guide#Limiter limiter] inside the firewall to limit bandwidth and introduce packet delay and loss. 
+  # Change the router IP on your desktop computer to the one from the new firewall.
+  # Check with an traceroute that all the traffic goes over the new firewall. Use [http://en.wikipedia.org/wiki/MTR_(software) mrt] to check the packet loss and delay.
+
+Now all traffic from your desktop must go through the limiter.  Connect to a !BigBlueButton server from your desktop to simulate a remote user with poor network connectivity.  
+ 
 
