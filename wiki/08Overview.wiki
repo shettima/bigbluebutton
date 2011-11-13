@@ -38,4 +38,4 @@ As discussed in the [http://groups.google.com/group/bigbluebutton-dev/browse_thr
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/push_to_talk1.png
 
-For control, moderators can disable a student's ability to talk/mute themselves by clicking the 'lock' icon next to the student's name.  When locked, the student's 'push to talk' button disappears.
+For control, moderators can click the 'lock' icon next to the student's name to both lock the student's audio as muted/unmuted and remove the student's 'push to talk' button.
