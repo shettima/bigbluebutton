@@ -30,3 +30,12 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/dock1.png
 or horizontally.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/dock2.png
+
+== Push To Talk ==
+As discussed in the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/03965da6cbbc2f14 bigbluebutton-dev mailing list], BigBlueButton 0.8-beta-3 adds a 'push to talk' button to enable students to un-mute themselves and ask questions during the session.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/push_to_talk1.png
+
+For control, moderators can disable a student's ability to talk/mute themselves by clicking the 'lock' icon next to the student's name.  When locked, the student's 'push to talk' button disappears.
+
+
