@@ -2,9 +2,7 @@
 
 = Introduction =
 
-Much of the changes in !BigBlueButton 0.8 -- record and playback and improvements to audio -- are under the hood.
-
-However, as with each release, we make some improvements to the user experience to continually simplify BigBlueButton.
+This document provides some screen shots of the new features in !BigBlueButton 0.8-beta-3.  For details on this release, see the ReleaseNotes.
 
 == Record and Playback ==
 See this [http://www.youtube.com/user/bigbluebuttonshare#p/a/u/1/4b_tC1JEX1E video overview] for an introduction of the new record and playback capabilities.
