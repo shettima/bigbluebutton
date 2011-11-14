@@ -12,7 +12,7 @@ For a detailed list of changes, see [ReleaseNotes 0.8-beta-2 release notes].
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
-If you encounter a bug -- good on you mate!  Let us know (see  You can see our [IssuesInstructions process for reporting bugs]) so we can triage and fix it.  
+If you encounter a bug when using !BigBlueButton, please [IssuesInstructions report it]) so we can continue to improve !BigBlueButton for the benefit of all.
 
 
 = Before you install =
