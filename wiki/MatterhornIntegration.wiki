@@ -95,7 +95,7 @@ This key will let !BigBlueButton server send files to Matterhorn server without 
 When it asks for a passphrase, just press enter (we don’t want to be prompted for a password). The public key will be generated in `/home/firstuser/.ssh/id_rsa.pub`.
 
 
-Next, we'll copy the public key to the !BigBlueButton scripts directory change it’s permissions to 600 (otherwise, the publish script will fail to push the recording to the Matterhorn server).
+Next, we'll copy the private key to the !BigBlueButton scripts directory change it’s permissions to 600 (otherwise, the publish script will fail to push the recording to the Matterhorn server).
 
 {{{
 sudo cp ~/.ssh/id_rsa /usr/local/bigbluebutton/core/scripts/matt_id_rsa
