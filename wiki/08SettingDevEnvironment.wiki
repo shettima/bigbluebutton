@@ -29,6 +29,7 @@ sudo apt-get install ant
 Create tools directory
 {{{
 mkdir -p /home/firstuser/dev/tools
+cd /home/firstuser/dev/tools
 }}}
 
 Now, the following tar.gz files to your new dev env. 
@@ -40,7 +41,7 @@ wget http://bigbluebutton.googlecode.com/files/groovy-1.6.5.tar.gz
 
 In you dev env. Extract the files you just transferred.
 {{{
-cd /home/firstuser/dev/tools
+
 tar zxvf gradle-0.8.tar.gz 
 tar zxvf grails-1.1.1.tar.gz 
 tar zxvf groovy-1.6.5.tar.gz 
