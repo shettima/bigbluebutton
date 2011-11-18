@@ -76,3 +76,19 @@
 
 
 <wiki:video url="http://www.youtube.com/watch?v=fQHPOjuxnfo"/>
+
+   _*0.023*_ Polling Service now allows to share the object between moderator and viewers
+
+   _*0.024*_ Feature added to Polling Service: only viewers see the poll, moderator does not
+
+   _*0.025*_ Module design has changed allowing to cut 200 lines of code, without compromising on performance 
+
+   _*0.026*_ !PollingWindowManager is added, it takes control strictly over the actions of opening, closing windows
+
+   _*0.027*_  !PollPreview feature is added. Demo video:
+
+  <wiki:video url="http://www.youtube.com/watch?v=BuZ47aGLWGQ"/>
+
+
+
+ 
