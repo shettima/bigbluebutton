@@ -1,18 +1,18 @@
-#summary How to install  BigBlueButton 0.8-beta-2 on Ubuntu in under 30 minutes
+#summary How to install  BigBlueButton 0.8-beta-3 on Ubuntu in under 30 minutes
 
 <wiki:toc max_depth="3" />
 
 = Overview =
 
-We're pleased to announce the release !BigBlueButton 0.8-beta-2. 
+We're pleased to announce the release !BigBlueButton 0.8-beta-3. 
 
 Our goal since the beginning of this release has been to integrate record and playback into !BigBlueButton's core.   This release is the culmination of months of effort (our last release was January 14, 2010).  With this release, you can now record and playback slides, audio, and chat within !BigBlueButton.  This enables !BigBlueButton to address a much wider set of use cases for distance education.  
 
-For a detailed list of changes, see [ReleaseNotes 0.8-beta-2 release notes].
+For a detailed list of changes, see [ReleaseNotes 0.8-beta-3 release notes].
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
-If you encounter a bug when using !BigBlueButton, please [IssuesInstructions report it]) so we can continue to improve !BigBlueButton for the benefit of all.
+If you encounter a bug when using !BigBlueButton, please [IssuesInstructions report it] so we can continue to improve !BigBlueButton for the benefit of all.
 
 
 = Before you install =
@@ -27,16 +27,57 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Port 80 is available and not used by another application
   # 400G of free disk space (or more) for recordings
 
+
+== Upgrading from BigBlueButton 0.71a ==
+
 If you are upgrading from !BigBlueButton 0.71a, start [InstallationUbuntu#Upgrading_from_BigBlueButton_0.71a here].
 
-= Install Video =
-The following video will walk you through the installation of !BigBlueButton 0.8.
+
+== Upgrading from an earlier BigBlueButton 0.8 beta ==
+
+If you are upgrading from !BigBlueButton 0.8-beta or 0.8-beta2, do the following
+
+{{{
+   sudo apt-get update
+   sudo apt-get dist-upgrade
+}}}
+
+At some point in the process you may be asked to update configuration files, as in
+
+
+{{{
+  Configuration file `/etc/nginx/sites-available/bigbluebutton' 
+   ==> Modified (by you or by a script) since installation. 
+   ==> Package distributor has shipped an updated version. 
+     What would you like to do about it ?  Your options are: 
+      Y or I  : install the package maintainer's version 
+      N or O  : keep your currently-installed version 
+        D     : show the differences between the versions 
+        Z     : background this process to examine the situation 
+   The default action is to keep your current version. 
+  *** bigbluebutton (Y/I/N/O/D/Z) [default=N] ? 
+}}}
+
+Enter 'Y' to continue the upgrade.  After !BigBlueButton updates, restart all the processes
+
+After the install finishes, restart your !BigBlueButton server with 
+
+{{{
+   sudo bbb-conf --clean 
+   sudo bbb-conf --check 
+}}}
+
+
+
+
+= Installation of !BigBlueButton 0.8-beta-3 =
+
+== Install Video ==
+To make it easy for you to setup your own !BigBlueButton 0.8-beta-3 server, we've put together the following overview video.
 
 <wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
 
 We recommend you following the video with these step-by-step instructions below.
-
-= Installation of !BigBlueButton 0.8-beta-2 =
 
 == 1. Update your server == 
 
@@ -190,7 +231,7 @@ Got to [#Trying_out_your_server_(24:42_minutes_later) Trying out your sever].
 
 = Upgrading a !BigBlueButton 0.71a Server =
 
-The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta-2.
+The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta-3.
 
 A 'standard installation' is an installation of !BigBlueButton 0.71a that has been configured using the standard commands
 
