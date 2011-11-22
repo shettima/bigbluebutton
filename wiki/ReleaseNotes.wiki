@@ -1,12 +1,16 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.8-beta-2: Bailetti =
+= Release 0.8-beta-3: Bailetti =
 
-Beta Released: October 7, 2011
+Beta Released: November 2X, 2011
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
 See [08InstallationUbuntu installation instructions]. 
+
+What's new in 0.8-beta-3:
+
+  * * Push to Talk * -  Remote students can now mute/unmute themselves with a 'push to talk' button.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Push_To_Talk screenshot].
 
 What's new in 0.8-beta-2:
 
