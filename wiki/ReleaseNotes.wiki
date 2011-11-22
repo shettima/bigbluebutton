@@ -12,6 +12,8 @@ What's new in 0.8-beta-3:
 
   * * Push to Talk * -  Remote students can now mute/unmute themselves with a 'push to talk' button.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Push_To_Talk screenshot].
 
+  * * Auto-translate disabled * -  Google Translate APIs are [http://code.google.com/apis/language/translate/overview.html no longer free], so for the moment we've disabled them. 
+
 What's new in 0.8-beta-2:
 
   * * Audio Settings Dialog * -  To assist users in checking their audio setup *before* joining the voice conference, !BigBlueButton now displays an Audio Settings dialog box to enable the user to verify that audio and microphone are correctly configured for a headset.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Audio_Settings_Dialog audio settings screenshot].
