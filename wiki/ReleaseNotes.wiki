@@ -2,7 +2,7 @@
 
 = Release 0.8-beta-3: Bailetti =
 
-Beta Released: November 2X, 2011
+Beta Released: November 21, 2011
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
