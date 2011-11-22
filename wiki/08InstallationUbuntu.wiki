@@ -28,12 +28,12 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # 400G of free disk space (or more) for recordings
 
 
-== Upgrading from BigBlueButton 0.71a ==
+== Upgrading from !BigBlueButton 0.71a ==
 
 If you are upgrading from !BigBlueButton 0.71a, start [InstallationUbuntu#Upgrading_from_BigBlueButton_0.71a here].
 
 
-== Upgrading from an earlier BigBlueButton 0.8 beta ==
+== Upgrading from an earlier !BigBlueButton 0.8 beta ==
 
 If you are upgrading from !BigBlueButton 0.8-beta or 0.8-beta2, do the following
 
