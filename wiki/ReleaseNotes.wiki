@@ -12,7 +12,7 @@ What's new in 0.8-beta-3:
 
   * * Push to Talk * -  Remote students can now mute/unmute themselves with a 'push to talk' button.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Push_To_Talk screenshot].
 
-  * * Auto-translate disabled * -  Google Translate APIs are [http://code.google.com/apis/language/translate/overview.html no longer free] so the auto translate feature is now disabled by default until we can determine the best way to support their new model (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1079 1079)
+  * * Auto-translate disabled * -  Google Translate APIs are [http://code.google.com/apis/language/translate/overview.html no longer free] so the auto translate feature is now disabled by default until we can determine the best way to support their new model (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1079 1079])
 
 What's new in 0.8-beta-2:
 
