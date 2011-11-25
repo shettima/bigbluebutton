@@ -2,9 +2,18 @@
 
 = Contributing the new language translation to !BigBlueButton =
 
-If you would like to translate !BigBlueButton to another language, please send an email to ritzalam AT gmail DOT com and tell us the locale you will be translating.
+We are [http://mygengo.com/string/p/bigbluebutton-1 myGengo] to make contributing/updating a translation easy for !BigBlueButton community.
 
-The localization service for !BigBlueButton is located  in [http://mygengo.com/string/p/bigbluebutton-1].
+To help translate !BigBlueButton into your language, do the following.
+
+  # Create an account on [http://mygengo.com/string/p/bigbluebutton-1 myGengo.com].
+  # Click the [http://mygengo.com/string/p/bigbluebutton-1 Request Access] button on the !BigBlueButton page.
+  # Send an e-mail to Marcos Calderon (mcmarkos86 *at* gmail *dot* com) requesting access to modify !BigBlueButton language strings.
+
+The last step is needed as sometimes the Request Access process doesn't work.  Marcos will add you as an editor and you can then update the language strings.  If you want to localize !BigBlueButton into a new language, let Marcos know in your e-mail.
+
+If you have any questions, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
+
 
   
 *NOTE: If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
