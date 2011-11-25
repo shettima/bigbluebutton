@@ -168,8 +168,8 @@ Both the above commands must execute without errors before continuing with these
 
 You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
 
-== 3.  Install FreeSWITCH Configuration == 
-We're now into the installation of !BigblueButton. Type
+== 3.  Install !BigBlueButton == 
+We're now ready to install !BigblueButton. Type
 
 {{{
    sudo apt-get install bigbluebutton
