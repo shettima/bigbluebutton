@@ -169,18 +169,7 @@ Both the above commands must execute without errors before continuing with these
 You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
 
 == 3.  Install FreeSWITCH Configuration == 
-We're now into the installation of !BigblueButton.  The !BigBlueButton makes it easy to install.
-
-{{{
-  sudo apt-get install bbb-freeswitch-config
-}}}
-
-!BigBlueButton FreeSWITCH for voice conferencing, which gives you the option setup dial-in phone numbers to your !BigBlueButton server.  
-
-
-== 4.  Install !BigBlueButton == 
-
-We're now ready to install !BigBlueButton. 
+We're now into the installation of !BigblueButton. Type
 
 {{{
    sudo apt-get install bigbluebutton
@@ -193,7 +182,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-g
 
 Type 'y' and press Enter.  Then sit back.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
 
-== 5. Install API Demos ==
+== 4. Install API Demos ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
 
