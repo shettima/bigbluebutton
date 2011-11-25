@@ -12,6 +12,8 @@ To help translate !BigBlueButton into your language, do the following.
 
 The last step is needed as sometimes the Request Access process doesn't work.  Marcos will add you as an editor and you can then update the language strings.  If you want to localize !BigBlueButton into a new language, let Marcos know in your e-mail.
 
+As the translations are updated by the community, we will sync them with   [https://github.com/bigbluebutton/bigbluebutton/tree/master/bigbluebutton-client/locale locale] so they get into master.
+
 If you have any questions, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
 
