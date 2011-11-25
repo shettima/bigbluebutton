@@ -8,7 +8,7 @@ To help translate !BigBlueButton into your language, do the following.
 
   # Create an account on [http://mygengo.com/string/p/bigbluebutton-1 myGengo.com].
   # Click the [http://mygengo.com/string/p/bigbluebutton-1 Request Access] button on the !BigBlueButton page.
-  # Send an e-mail to Marcos Calderon (mcmarkos86 *at* gmail *dot* com) requesting access to modify !BigBlueButton language strings.
+  # Send an e-mail to Marcos Calderon (mcmarkos86 *at* gmail *dot* com) requesting access to modify !BigBlueButton language strings myGengo.
 
 The last step is needed as sometimes the Request Access process doesn't work.  Marcos will add you as an editor and you can then update the language strings.  If you want to localize !BigBlueButton into a new language, let Marcos know in your e-mail.
 
