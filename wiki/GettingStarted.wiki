@@ -24,7 +24,7 @@ The following links will get you going with setting up !BigBlueButton.  For most
     * [ClientConfiguration Configuring the BigBlueButton client]
     * [SampleModule Tutorial on Creating a New Module]
     * [API API for Integration with Third-Party Applications]  
-    * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
+    * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
 
 See also instructions for installing !BigBlueButton:
     * [BigBlueButtonVM Download BigBlueButton VM]
