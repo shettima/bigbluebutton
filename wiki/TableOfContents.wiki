@@ -13,7 +13,7 @@
     * [ClientConfiguration Client-side configuration]
     * [SampleModule New Module Tutorial]
     * [API API for Integration with Third-Party Applications]  
-    * [LocalizationOfBBB Translating BigBlueButton into Another Lanugage]  
+    * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
     * [SettingUpBigBlueButtonWithJconsole Jconsole Setup]
     * [OpenSourceComponents Open Source Components]
   * [Support Support]
