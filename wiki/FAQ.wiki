@@ -1394,7 +1394,7 @@ Time is a precious commodity.  In general, when planning the next release, we lo
   # What refactoring/features do the [FAQ#BigBlueButton_Committer core committers] believe are necessary to improve the code base/maintainability/usability of the project? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
-For (1), the requests from our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  If you would like to become a customer by engaging one of the companies providing commercial support for BigBlueButton, see [http://bigbluebutton.org/support http://bigbluebutton.org/support].
+For (1), the requests from our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  If you would like to become a customer by engaging one of the companies providing commercial support for !BigBlueButton, see [http://bigbluebutton.org/support http://bigbluebutton.org/support].
 
 For (2), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  
 
