@@ -72,12 +72,12 @@ Dont' worry if you are not a proficient developer -- there are many ways to help
 Like many open source projects, at the core of the developer team is small group that have commit rights and the overall responsibility for the quality of the project.  The committers are 
 
   * Richard Alam, Lead Architect
-  * Denis Zgonjanin, Client
-  * Fred Dixon, Packaging
-  * Jeremy Thomerson, API
-  * Tiago Jacobs, red5
   * Marco Calderon, Server
   * Felipe Cecagno, Client
+  * Fred Dixon, Packaging
+  * Tiago Jacobs, red5
+  * Jeremy Thomerson, API
+  * Denis Zgonjanin, Client
 
 The committers have earned this responsibility through years of effort
 working on !BigBlueButton and related open source projects (i.e. red5).  In particular, we very much respect Richard's four year-plus effort to create !BigBlueButton.  As the Lead Architect for this project, he has the final say. 
