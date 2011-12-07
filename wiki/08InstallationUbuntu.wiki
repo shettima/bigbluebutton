@@ -30,7 +30,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
 
 == Upgrading from !BigBlueButton 0.71a ==
 
-If you are upgrading from !BigBlueButton 0.71a, start [InstallationUbuntu#Upgrading_from_BigBlueButton_0.71a here].
+If you are upgrading from !BigBlueButton 0.71a, start [#Upgrading_a_BigBlueButton_0.71a_Server here].
 
 
 == Upgrading from an earlier !BigBlueButton 0.8 beta ==
