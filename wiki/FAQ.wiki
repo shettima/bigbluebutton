@@ -358,6 +358,10 @@ For a stand-along landing page, for most cases modifying API demo3.jsp is suffic
 
 == Voice Conference ==
 
+=== Does !BigBlueButton use Asterisk or FreeSWITCH ? ===
+
+!BigBlueButton started using Asterisk in the beginning, but over time we added support for using FreeSWITCH as well.   As of !BigBlueButton 0.8, we stopped testing with Asterisk and now focus on FreeSWITCH.  For reasons see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d53494bfa1d4685 Shifting !BigBlueButton to using FreeSWITCH].
+
 === How do I turn off the music on hold when there is only one user in the voice conference ? ===
 The music on hold is provided by FreeSWITCH.  To disable it, edit `confernece.conf.xml` (you need to edit it as root)
 
