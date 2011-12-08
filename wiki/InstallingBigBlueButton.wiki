@@ -143,9 +143,9 @@ apt-get install nginx
 {{{
 mkdir /tmp/bbb
 cd /tmp/bbb
-wget http://apache.mirror.rafal.ca/activemq/apache-activemq/5.4.1/apache-activemq-5.4.1-bin.tar.gz
-tar zxvf apache-activemq-5.4.1-bin.tar.gz
-mv /tmp/bbb/apache-activemq-5.4.1 /usr/share/activemq
+wget http://apache.sunsite.ualberta.ca//activemq/apache-activemq/5.4.3/apache-activemq-5.4.3-bin.tar.gz
+tar zxvf apache-activemq-5.4.3-bin.tar.gz
+mv /tmp/bbb/apache-activemq-5.4.3 /usr/share/activemq
 chown -R root:root /usr/share/activemq
 }}}
 
