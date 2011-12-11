@@ -7,13 +7,13 @@ As the popularity of !BigBlueButton increases, we are increasingly asked "when a
 
 We first released !BigBlueButton version 0.4 on June 12, 2009 (see [http://en.wikipedia.org/wiki/BigBlueButton#History project history]).  Since then, we've had nine subsequent releases: 0.5, 0.6, 0.61, 0.62, 0.63, 0.64, 0.7, 0.71, and 0.71a – each release improving on the previous, each reflecting the desire by the core development team to build a solid product. 
 
-This document outlines the *DRAFT* requirements for 1.0.  
+This document outlines the *DRAFT* requirements for !BigBlueButton 1.0.  
  
-For many the version number is arbitrary -- it's a marketing name.  Whether its 0.71a, 1.2, 4.5 or some other number, we see more universities, colleges, and K12 institutions using !BigBlueButton in their classes, and more companies integrating !BigBlueButton into their products.  
+For many the version number is arbitrary -- it's a marketing name.  Whether its 0.71a, 1.2, 4.5 or some other number, we see more universities, colleges, and K12 institutions using !BigBlueButton in their classes, and more companies integrating !BigBlueButton into their products. 
 
 For others -- including the core developers -- the version number is *not* arbitrary.  It represents a level of quality, stability, and completeness in !BigBlueButton that we want to achieve before calling it 1.0.  When !BigBlueButton 1.0 is released, it will be in substance, not name. 
 
-The requirements for !BigBlueButton 1.0 are driven by our target market: distance education. We are also often asked "why are you focusing on one target market -- don’t you realize that !BigBlueButton would be great for market X, Y, and Z?"  We realize this, but we also realize that the core features of !BigBlueButton -- shared chat, presentation, voice, video, and desktop -- are the same core features for multiple markets (including distance education).  Our belief is when we deliver a world-class open source solution for distance education, then we will at the core, in essence, deliver a world class solution for other markets as well.  
+The requirements for !BigBlueButton 1.0 are driven by our target market: distance education. We are also often asked "why are you focusing on one target market -- don’t you realize that !BigBlueButton would be great for market X, Y, and Z?"  We realize this, but we also realize that the core features of !BigBlueButton -- shared chat, presentation, voice, video, and desktop -- are the same core features for multiple markets (including distance education).  Our belief is when we deliver a world-class open source solution for distance education, we will, in essence, deliver a world class solution for other markets as well.  
 
 What are the requirements for distance education?  At the highest level the goal of !BigBlueButton is to enable universities and colleges to deliver a high-quality learning experience to remote students.  We can analyze this using the following user stories:
  
