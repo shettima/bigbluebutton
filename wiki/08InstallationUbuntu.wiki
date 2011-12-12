@@ -164,7 +164,18 @@ $ gem -v
 1.3.7
 }}}
 
-Both the above commands must execute without errors before continuing with these instructions.
+Finally, to make sure you can install gems, type `sudo gem install hello`
+
+{{{
+$ sudo gem install hello
+Successfully installed hello-0.0.1
+1 gem installed
+Installing ri documentation for hello-0.0.1...
+Installing RDoc documentation for hello-0.0.1...
+}}}
+
+
+Make sure you can execute the above three commands without errors before continuing with these instructions.  If you do encounter errors, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2&pli=1 bigbluebutton-setup] and we'll help you resolve the errors.
 
 You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
 
