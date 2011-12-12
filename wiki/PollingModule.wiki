@@ -90,27 +90,34 @@
   <wiki:video url="http://www.youtube.com/watch?v=BuZ47aGLWGQ"/>
 
 
-   _*0.028*_ !PollingService received method *!savePoll* that sends polling info to the red5
+   _*0.028*_  !PollInstrucuctionsWindow got rid of star symbol when creating answers. 
+  
+   _*0.029*_  Script created that trims whitespaces and return characters in PollingInstructionsWindow
+
+   _*0.030*_ Script created that does not allow duplicate answers 
+
+
+   _*0.031*_ !PollingService received method *!savePoll* that sends polling info to the red5
 
    === bbb-app part ===
 
-    _*0.029*_ !PollService.java created to receive and direct calls between reed5 and bbb-client
+    _*0.032*_ !PollService.java created to receive and direct calls between reed5 and bbb-client
 
-    _*0.030*_ !Poll.java is created. It encapsulates poll data into an object
+    _*0.033*_ !Poll.java is created. It encapsulates poll data into an object
 
-    _*0.031*_ !PollService.java have received method !savePoll that receives info from the bbb-client thus communication between apps and  client is established
+    _*0.034*_ !PollService.java have received method !savePoll that receives info from the bbb-client thus communication between apps and  client is established
 
-  _*0.032*_ !PollApllication.java is created - it receives information from Service and makes sure info goes to the correct room by sending info to the !PollRoomsManager
+  _*0.035*_ !PollApllication.java is created - it receives information from Service and makes sure info goes to the correct room by sending info to the !PollRoomsManager
 
-   _*0.033*_ !PolRoom.java receives info from !PollRoomsManager and sends info to the listener
+   _*0.036*_ !PolRoom.java receives info from !PollRoomsManager and sends info to the listener
 
-   _*0.034*_ !PollEventRecorder build an event and maps poll data so it could be recorded to Redis
+   _*0.037*_ !PollEventRecorder build an event and maps poll data so it could be recorded to Redis
 
-  _*0.035*_ !PollHandler.java is created to give a specific instructions when the BigBlueButton starts
+  _*0.038*_ !PollHandler.java is created to give a specific instructions when the BigBlueButton starts
 
-   _*0.036*_ !PublicPollRecorder creates key-value pairs that can be recorded to the redis
+   _*0.039*_ !PublicPollRecorder creates key-value pairs that can be recorded to the redis
 
-  _*0.037*_ Data is successfully sent to redis database and recorded as key-value pairs
+  _*0.040*_ Data is successfully sent to redis database and recorded as key-value pairs
 
   
  
