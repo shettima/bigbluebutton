@@ -164,7 +164,7 @@ $ gem -v
 1.3.7
 }}}
 
-Finally, to make sure you can install gems, type `sudo gem install hello`
+Finally, to make sure you can install gems, type `sudo gem install hello` (!BigBlueButton does not need the gem hello; rather, we're just testing to makes sure gem is working properly).
 
 {{{
 $ sudo gem install hello
