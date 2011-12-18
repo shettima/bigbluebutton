@@ -1427,13 +1427,12 @@ Time is a precious commodity.  In general, when planning the next release, we lo
   # What refactoring/features do the [FAQ#BigBlueButton_Committer core committers] believe are necessary to improve the code base/maintainability/usability of the project? 
   # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
 
-For (1), the requests from our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  If you would like to become a customer by engaging one of the companies providing commercial support for !BigBlueButton, see [http://bigbluebutton.org/support http://bigbluebutton.org/support].
+For (1), the requests from our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  If you really want to see your feature implemented, helping your organization become (1) is the best way to achieve it.  
 
-For (2), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  
+For (2), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting are not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument the feature belongs in (2).
 
-If you really want to see feature X, helping your organization become (1) is the best way to achieve it.  If the feature you are requesting are not on our RoadMap or already in our issue tracker, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument the feature belongs in (2).
 
-!BigBlueButton is an open source project.  We welcome the contributions of others who want to help improve !BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
+If (1) or (2) are not options, then keep in mind that !BigBlueButton is an open source project.  We welcome the contributions of others who want to help improve !BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
 
 === My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
