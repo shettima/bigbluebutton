@@ -10,6 +10,7 @@ If you want to give feedback on a particular labs project, please post to [http:
 
 
     * [RecordPlaybackSpecification Record and playback specification]
+    * [PollingModule Polling module]
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [BigBlueButtonAPIPartitioning Partitioning the client]
       * [BigBlueButtonAPIPartitioningDemo How to build and run the Partitioning the client]
