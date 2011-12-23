@@ -42,8 +42,17 @@ If you are upgrading from !BigBlueButton 0.8-beta or 0.8-beta2, do the following
    sudo apt-get dist-upgrade
 }}}
 
-At some point in the process you may be asked to update configuration files, as in
+If you've made custom changes to BigBlueButton, such as
 
+ * applied custom branding
+ * modified /var/www/bigbluebutton/client/conf/config.xml
+ * modified /var/www/bigbluebutton-default/index.html
+ * modified API demos
+ * etc ...
+
+then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
+
+At some point in the process you may be asked to update configuration files, as in
 
 {{{
   Configuration file `/etc/nginx/sites-available/bigbluebutton' 
