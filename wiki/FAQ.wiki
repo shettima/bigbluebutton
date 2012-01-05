@@ -494,7 +494,7 @@ Next, when the firewall forwards incoming requests to the internal !BigBlueButto
 sudo bbb-conf --setip external.host.org
 }}}
 
-Internally, !BigBlueButton must be able to call `external.host.org` to make API requests.  In this example, if the internal !BigBlueButton server is at 192.168.10.198, add the following line to /etc/hosts.
+Internally, !BigBlueButton must be able to call `external.host.org` to make API requests.  In this example, if the internal !BigBlueButton server is at 192.168.10.198, add the following line to /etc/hosts (you'll need to edit this file as root user).
 
 {{{
 192.168.10.198 external.host.org
