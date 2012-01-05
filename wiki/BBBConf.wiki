@@ -44,24 +44,17 @@ Administration:
 Some of the `bbb-conf` options require that you run the command as root user.  `bbb-conf` will print out a message prompting you to run the command with `sudo` if needed.
 
 
-=== `--setip <hostname_or_ip>[:<Port>]` ===
+=== `--setip <hostname_or_ip>` ===
 
-Sets the IP/Hostname and port for !BigBlueButton's configuration.
+Sets the IP/Hostname for !BigBlueButton's configuration.
 
 || *Parameter* || *Required/Optional* || *Additional Information* ||
-|| Host || Required || Hostname or IP of the machine where !BigBlueButton ||
-|| Port || Optional || Port at which !BigBlueButton is set ||
+|| Host || Required || Hostname or IP of the machine where !BigBlueButton
 
 *Example Usage:* 
 
 {{{
    bbb-conf --setip 192.168.0.211
-}}}
-
-or
-
-{{{
-   bbb-conf --setip 192.168.0.211:8081
 }}}
 
 or 
