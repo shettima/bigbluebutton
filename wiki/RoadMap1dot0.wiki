@@ -139,7 +139,7 @@ Add additional API examples:
 
   * Embedding !BigBlueButton in an iFrame
   * Using oAuth to log into a meeting
-  * Using sibbolith to log into a meeting
+  * Using Shibboleth to log into a meeting
          
 
 == Stability and Testing ==
