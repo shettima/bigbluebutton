@@ -269,15 +269,6 @@ If the presenter has only 100 KByte/second upstream, then performing VoIP, video
 
 == Troubleshooting ==
 
-=== I have an existing server with web application already running on port 80 (such as Moodle).  Can I also install !BigBlueButton on that server? ===
-
-!BigBlueButton can run with other web based systems on the same server, but there are tradeoffs.  If you already have apache running on port 80, you can have !BigBlueButton listen to a different port (see [BBBConf#--setip_<_Host_>_:_<_Port_> bbb-conf]).
-
-However, the trade off are remote users accessing behind a firewall can no longer tunnel through port 80 to !BigBlueButton. 
-
-As a result, we recommend installing !BigBlueButton on it's own dedicated server, making it easy to upgrade !BigBlueButton without affecting your existing applications, and easy to upgrade the server as your usage of !BigBlueButton grows.
-
-There are also some good instructions for setting up a server with !BigBlueButton running on a different port at [http://ubuntuguide.org/wiki/Ultimate_Server_Jaunty#Install_the_BigBlueButton_teleconferencing_system Ultimate Server Jaunty].
 
 
 === I've tried to install !BigBlueButton on a virtual private server running Ubuntu 10.04 but I'm getting packaging errors during the installation. ===
@@ -462,9 +453,28 @@ Check out [ClientConfiguration client configuration] for details on how to enabl
 
 == Networking ==
 
-=== How do I change the port or hostname of my !BigBlueButton server? ===
+=== How do I change the hostname of my !BigBlueButton server? ===
 
-If you change the port or hostname of your !BigBlueButton server, you can easily change all the related !BigBlueButton configuration files using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+If you change the hostname (or IP address) of your !BigBlueButton server, you can easily change all the related !BigBlueButton configuration files using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
+
+
+=== Can I run !BigBlueButton on a port other than 80? ===
+
+We recommend against running !BigBlueButton on a server where applications are already using port 80.
+
+In previous versions, bbb-conf would let you configure !BigBlueButton to run on a different port, but this has lead to a number of subtle configuration problems: 
+
+  # !BigBlueButton client cannot use HTTP tunneling if the !BigBlueButton server is not listening on port 80 
+  # Port conflicts with existing applications 
+  # Resource contention with existing applications 
+
+To an experienced system administrator, the above problems are not insurmountable, but most people setting up !BigBlueButton are not 
+experienced system administrators, and when tunneling doesn't work (1), 
+!BigBlueButton doesn't load (2), or performance is less than expected 
+(3), the first conclusion is there is something wrong with 
+!BigBlueButton. 
+
+The recommended setup for BigBlueButton is running it on port 80 on a dedicated server. Such setup makes  it easy to upgrade !BigBlueButton without affecting your existing applications.
 
 === What ports must be open for external users to connect to !BigBluebutton? ===
 
