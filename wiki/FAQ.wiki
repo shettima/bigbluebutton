@@ -458,9 +458,9 @@ Check out [ClientConfiguration client configuration] for details on how to enabl
 If you change the hostname (or IP address) of your !BigBlueButton server, you can easily change all the related !BigBlueButton configuration files using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
 
 
-=== Can I run !BigBlueButton on a port other than 80? ===
+=== We recommend running !BigBlueButton on port 80 ===
 
-We recommend against running !BigBlueButton on a server where applications are already using port 80.
+We recommend running !BigBlueButton on a server where port 80 is available for binding by nginx.  In other words, we recommend against running BigBlueButton on port 8081 (or another port).
 
 In previous versions, bbb-conf would let you configure !BigBlueButton to run on a different port, but this has lead to a number of subtle configuration problems: 
 
