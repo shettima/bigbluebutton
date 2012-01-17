@@ -356,5 +356,5 @@ If you get a "Old Translation" warning when starting the client, in `/var/www/bi
 to 
 
 {{{
-<localeversion suppressWarning="false">0.8</localeversion>
+<localeversion suppressWarning="false">0.8-beta2</localeversion>
 }}}
