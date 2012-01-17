@@ -165,8 +165,10 @@ Restart Nginx
 
 Copy the installed {{{config.xml}}} into the client dev directory.
 {{{
-cp /var/www/bigbluebutton/client/conf/config.xml bigbluebutton-client/src/conf
+cp /var/www/bigbluebutton/client/resources/config.xml.template bigbluebutton-client/src/conf/config.xml
 }}}
+
+Edit {{{src/conf/config.xml}}} and change all {{{HOST}}} to your IP address.
 
 Copy the `join-mock.xml` into the client src directory.
 
