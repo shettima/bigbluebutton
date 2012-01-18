@@ -606,7 +606,7 @@ The best approach is to see how others have integrated and adapt their code to y
 
 == How many simultaneous users can !BigBlueButton support == 
 
-As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton on-line classes totaling twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
+As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton with on-line classes totaling twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
 
 Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  You should stress test your server before trying it with a live class (see below).
 
@@ -618,7 +618,7 @@ Members of our community periodically host stress tests for !BigBlueButton, whic
   * Configuration of !BigBlueButton
   * Version of !BigBlueButton
 
-In !BigBlueButton 0.8, users will experience higher quality audio with lower latency with speex, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, the scalability dends largely on the number of simultaneous users in a voice conference (again 1 x 25, 2 x 12, 5 x 5 all roughly equate the same CPU load).
+In !BigBlueButton 0.8, users will experience higher quality audio with lower latency, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, the scalability depends largely on the number of simultaneous users in a voice conference (again 1 x 25, 2 x 12, 5 x 5 all roughly equate the same CPU load).
 
 We recently did a stress test of an internal build of !BigBlueButton 0.8 and  [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results].   This test confirms that the most important factor in scaling to larger numbers of simultaneous users is CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.
 
