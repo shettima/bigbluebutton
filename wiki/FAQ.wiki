@@ -1185,13 +1185,32 @@ Here are the possible causes for this error with steps to resolve.
 
   * On startup of the host server, the init.d script for red5 exectued before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-config).  FreeSWITCH nees to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
 
-  * The IP address on the !BigBlueButton server has changed, causing FreeSWITCH to bind (listen) to a different IP address, but !BigBlueButton is still trying to connect to FreeSWITCH using the old IP address.  To update !BigBlueButton's configuration, do the following:
+  * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to a an IP address, but !BigBlueButton trying to connect on an old (or incorrect) IP address.  
 
-  # Edit `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties`
-  # Change the property for `sip.server.host` and make sure it has the proper value for the IP address of your server
-  # Run `sudo bbb-conf --restart` to restart !BigBlueButton.
+To solve this, first determine the IP address FreeSWITCH on which is monitoring for incoming SIP calls with the following command:
 
+{{{
+netstat -ant | grep 5060
+}}} 
 
+You should see an output such as
+
+{{{
+tcp        0      0 234.147.116.3:5060    0.0.0.0:*               LISTEN
+}}}
+
+In this example, FreeSWITCH is listening on IP address 234.147.116.3.  The IP address on your server will be different.
+
+Next, edit `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties` and set the value for `sip.server.host` to the IP address returned from the above command.   Save the changes (you'll need to edit the file as root to save changes).
+
+Restart !BigBlueButton using the commands and run the built-in diagnostics checks.  
+
+{{{
+sudo bbb-conf --clean
+sudo bbb-conf --check
+}}}
+
+If the above does not resolve your problem, post to the output of the commands `sudo bbb-conf --check` and `ifconfig` to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll help you there.
 
  
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
