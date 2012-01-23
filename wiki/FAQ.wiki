@@ -720,7 +720,7 @@ Documents uploaded to a presentation remain on the !BigBlueButton server until d
 
 To setup an automatic deletion of old presentations, create the file in
 
-  /var/cron.daily/bigbluebutton
+  /etc/cron.daily/bigbluebutton
 
 with the contents
 
@@ -749,12 +749,10 @@ find /var/bigbluebutton/deskshare -name "*.flv" -mtime +1 -exec rm '{}' \;
 and set the script to be executable.  
 
 {{{
-sudo chmod +x /var/cron.daily/bigbluebutton
+sudo chmod +x /etc/cron.daily/bigbluebutton
 }}}
 
-Now, once a day, cron will execute this script and delete presentation directories in /var/bigbluebutton that are older than 11 days.
-
-
+Now, once a day, cron will execute this script and delete presentation directories in /var/bigbluebutton that are older than 11 days.  [Note: This script was incorporated in the build for !BigBlueButton-0.8-beta3.]
 
 
 = Using !BigBlueButton =
