@@ -7,9 +7,11 @@
 You need to have to have installed [08InstallationUbuntu BigBlueButton 0.8].  On a separate server (not the same server as !BigBlueButton) install [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+All+in+One++V1.1 Matterhorn 1.1] or [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2].
 
 = Overview =
-Using the !BigBlueButton API, when you pass the parameter 'record=true' with [API#Create_Meeting create], !BigBlueButton will create a session and record the slides, chat, audio, desktop, and webcam for later processing.
+[http://opencast.org/matterhorn/ Matterhorn] is an open source lecture capture and video management system for education.  When integrated with Matterhorn (see instructions below), !BigBlueButton can record video, desktop, and audio and send the files to Matterhorn for processing and playback.
 
-After the session finishes, the  !BigBlueButton server will run one (or more) ingest and processing scripts that will process the captured data into a format for playback.  
+From a technical point of view, in the !BigBlueButton API, when you pass the parameter 'record=true' with [API#Create_Meeting create], !BigBlueButton will create a session and record the slides, chat, audio, desktop, and webcam for later processing.
+
+After the session finishes, the !BigBlueButton server will run one (or more) ingest and processing scripts that will process the captured data into a format for playback.  
 
 The instructions below show you how to install and configure the Matterhorn ingest and processing scripts.  When called by !BigBlueButton, these scripts will create two video files: one with webcam + audio, the other for desktop sharing, along with an XML file (called dublin core) and bundle everything into a single zip file.  It will then scp the zip file to your Matterhorn server for processing.
 
