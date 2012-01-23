@@ -18,6 +18,10 @@ The Matterhorn ingest and processing will scale the resolution of the desktop vi
 If you encounter any problems with these instructions, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton setup] mailing list.
 
 
+== Before you install ==
+You'll need to ensure your `/etc/apt/sources.list` has the multiverse enabled.  If you get an error message such as `libfaac-dev can't be found` with the instructions below, see [http://code.google.com/p/bigbluebutton/wiki/08InstallationUbuntu#Dependencies_are_not_met Dependencies not met].
+
+
 == 1. Install ffmpeg  == 
 
 To install ffmpeg, login to your !BigBlueButton server with root access.  Copy the following script and and save as a file  `install_ffmpeg.sh` on your server
