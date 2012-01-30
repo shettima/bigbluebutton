@@ -1,5 +1,8 @@
 #summary How to install BigBlueButton on Fedora
 
+
+* *Note* This page is depreciated and no longer supported.
+
 The following instructions will guide you to install !BigBlueButton 0.64 on Fedora. So far the instructions have been tested on *Fedora 12 32-bit*.
 
 == Instructions ==
