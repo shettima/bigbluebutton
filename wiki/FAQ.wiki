@@ -43,7 +43,7 @@ We use the LGPL license.  Some of the open source components we build on use dif
 == Where can I find examples of people running !BigBlueButton? ==
 We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   We know from downloads there many !BigBlueButton servers running world-wide.  
 
-If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bbb-users] or [http://groups.google.com/group/bigbluebutton-setup bbb-setup] mailing lists.
+If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bigbluebutton-users] or [http://groups.google.com/group/bigbluebutton-setup bigbluebutton-setup] mailing lists.
 
 == Will !BigBlueButton always stay open source? ==
 Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit !BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
@@ -51,11 +51,11 @@ Yes. We started !BigBlueButton as an open source project, and we intend to keep 
 = Contributing to !BigBlueButton =
 
 == How can I contribute? == 
-The !BigBlueButton exists as the result of many developers who have contributed their time and skills to its development.  
+!BigBlueButton exists because many developers  have contributed their time and expertise to its development.  
 
-!BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in !ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as !ActionScript, grails, and scala are all similar to Java.
+At first glance at the underlying architecture, !BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in !ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as !ActionScript, grails, and scala are all similar to Java.
 
-Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  The source code for !BigBlueButton is hosted at [https://github.com/bigbluebutton/bigbluebutton github], so you'll to understand how [http://progit.org/ git works] and the workflow for distributed software development.  
+Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  The source code for !BigBlueButton is hosted at [https://github.com/bigbluebutton/bigbluebutton github], so you'll need to understand how [http://progit.org/ git works] and the workflow for distributed software development.  
 
 Like other open source projects, a good place to start is try fixing an [http://code.google.com/p/bigbluebutton/issues/list open issue].  We've tagged a few issues as [http://code.google.com/p/bigbluebutton/issues/list?q=label:FirstProject FirstProject] to make it easy for you to find those issues that are both (relatively simple) to fix but would be meaningful to !BigBlueButton.
 
@@ -329,6 +329,29 @@ As of Mac OS X 10.6, Apple stopped updating Flash.  If a Mac user is running an 
 
 To run the desktop sharing the presenter (and only the presenter) needs to have a Java runtime.  You can test that Java is installed by visiting [http://java.com/en/download/testjava.jsp Java Test Page] (there are download links on this page if you need to install Java).
   
+== How many simultaneous users can !BigBlueButton support == 
+
+As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton with on-line classes totaling twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
+
+Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  You should stress test your server before trying it with a live class (see below).
+
+Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.   Take any stress test with a grain of salt.  There are many variables at play:
+
+  * Server: CPU memory, disks space, and bandwidth
+  * Usage scenarios (# of webcams and use of desktop sharing)
+  * Upstream bandwidth from clients
+  * Configuration of !BigBlueButton
+  * Version of !BigBlueButton
+
+In !BigBlueButton 0.8, users will experience higher quality audio with lower latency, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, the scalability depends largely on the number of simultaneous users in a voice conference (again 1 x 25, 2 x 12, 5 x 5 all roughly equate the same CPU load).
+
+We recently did a stress test of an internal build of !BigBlueButton 0.8 and  [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results].   This test confirms that the most important factor in scaling to larger numbers of simultaneous users is CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.
+
+We *strongly* recommend you first stress test own server with a group of users to get real-world data.  
+
+To test your own server, have five people login and have each open multiple browser tabs, each tab logging into !BigBlueButton and joining the audio conference.  With 5 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.  You'll find once the CPU reaches 80%, the audio starts to degrade.  When the audio starts to degrade, you've found the maximum number of users for your server.
+
+If you also want to monitor, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
 
 == Where is the Admin interface for !BigBlueButton? ==
 Early on in !BigBlueButton's development (around 2009), we started to create an admin interface to let administrators create accounts, schedule meetings, configure properties for meetings, etc.  
@@ -604,31 +627,9 @@ If you are looking for an integration module that does not exist, please post a 
 The best approach is to see how others have integrated and adapt their code to your integration.  Don't you just love open source!
 
 
-== How many simultaneous users can !BigBlueButton support == 
+== Server Configuration ==
 
-As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton with on-line classes totaling twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
-
-Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  You should stress test your server before trying it with a live class (see below).
-
-Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.   Take any stress test with a grain of salt.  There are many variables at play:
-
-  * Server: CPU memory, disks space, and bandwidth
-  * Usage scenarios (# of webcams and use of desktop sharing)
-  * Upstream bandwidth from clients
-  * Configuration of !BigBlueButton
-  * Version of !BigBlueButton
-
-In !BigBlueButton 0.8, users will experience higher quality audio with lower latency, but the CPU needs to work harder to transcode the audio.  See [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# this post].  Hence, the scalability depends largely on the number of simultaneous users in a voice conference (again 1 x 25, 2 x 12, 5 x 5 all roughly equate the same CPU load).
-
-We recently did a stress test of an internal build of !BigBlueButton 0.8 and  [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3# here were the results].   This test confirms that the most important factor in scaling to larger numbers of simultaneous users is CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.
-
-We *strongly* recommend you first stress test own server with a group of users to get real-world data.  
-
-To test your own server, have five people login and have each open multiple browser tabs, each tab logging into !BigBlueButton and joining the audio conference.  With 5 friends, you can simulate 10, 20, 30, etc. users.  We provide [http://code.google.com/p/bigbluebutton/wiki/StressTesting some scripts] to help you launch browsers.  You'll find once the CPU reaches 80%, the audio starts to degrade.  When the audio starts to degrade, you've found the maximum number of users for your server.
-
-If you also want to monitor, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
-
-== Where is the security salt located? ==
+=== Where is the security salt located? ===
 
 You'll find the security salt in the file 
 
@@ -644,7 +645,7 @@ Look for the line
 
 This is the security salt used for enabling 3rd party plug-ins and external applications to access your !BigBlueButton server through it's API.  
 
-== How do I change the security salt? ==
+=== How do I change the security salt? ===
 
 To change the security salt, do the following: 
   # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers that will be impossible to reverse engineer.  
@@ -653,7 +654,7 @@ To change the security salt, do the following:
 Note: If you are using a [http://bigbluebutton.org/support third-party plug-in] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new value for the salt; otherwise, if the salts do not match, the API calls from the third-party plug-in will fail.
 
 
-== How do I change the maximum allowed size for uploading a presentation? ==
+=== How do I change the maximum allowed size for uploading a presentation? ===
 Right now the maximum size is 30mb. To change it, edit the file:
 {{{
   /etc/nginx/sites-available/bigbluebutton 
@@ -670,10 +671,49 @@ $proxy_add_x_forwarded_for;
            client_max_body_size       30m; 
 }}}
 
-== How do I change the video quality of the shared webcams? ==
+=== How do I change the video quality of the shared webcams? ===
 In !BigBlueButton 0.71 and later, you can change the video quality through the client's config.xml file, by default located in /var/www/bigbluebutton/client/conf. Scroll down to the entry named !VideoconfModule. The value of the videoQuality attribute can be anywhere from 0 to 100. 0 means priority is given to the bandwidth and if bandwidth is low quality will suffer. Quality of 100 means no video compression will be done at all, and you will get maximum quality at the expense of bandwidth. If the bandwidth is low, the frame rate will suffer.
 
 For more information see ClientConfiguration.
+
+=== How do I change the /client/BigBlueButton.html portion of the URL?
+
+Using nginx, you can rewrite the incoming URL so that the references to /client/BigBlueButton.html appear as /conference.  
+
+ # Modify `/etc/nginx/sites-avaialble/bigbluebutton` and comment out the following section
+
+{{{
+        # BigBlueButton.html is here so we can expire it every 1 minute to
+        # prevent caching.
+        #location /client/BigBlueButton.html {
+        #        root    /var/www/bigbluebutton;
+        #        index  index.html index.htm;
+        #        expires 1m;
+        #}
+}}}
+
+  # Create the file `/etc/bigbluebutton/nginx/rewrite.nginx` with the following contents:
+
+{{{
+location /client/BigBlueButton.html {
+        rewrite ^ /conference permanent;
+}
+
+location /conference {
+        alias  /var/www/bigbluebutton/client;
+        index BigBlueButton.html;
+        expires 1m;
+}
+}}}
+
+  # Restart nginx with the command
+
+{{{
+   sudo /etc/init.d/nginx restart
+}}}
+
+Now login into the demo page and you'll see the URL now shows `/conference` instead of `/client/BigBlueButton.html`.
+
 
 = Administration =
 
