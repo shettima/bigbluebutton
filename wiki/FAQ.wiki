@@ -579,7 +579,7 @@ The grails applications at /bigbluebutton is old code and is now depreciated (it
 
 We provide a number of [http://demo.bigbluebutton.org/bigbluebutton/demo/demo1.jsp API] demo with !BigBlueButton's install.  To modify one of these demos to create you own classrooms, see [#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to create your own virtual classrooms].
 
-Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://bigbluebutton.org/support integration modules]. 
+Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://www.bigbluebutton.org/open-source-integrations/ integration modules]. 
 
 
 === How do I modify the default landing page? ===
