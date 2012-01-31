@@ -676,9 +676,9 @@ In !BigBlueButton 0.71 and later, you can change the video quality through the c
 
 For more information see ClientConfiguration.
 
-=== How do I change the /client/BigBlueButton.html portion of the URL?
+=== How do I change the /client/!BigBlueButton.html portion of the URL?===
 
-Using nginx, you can rewrite the incoming URL so that the references to /client/BigBlueButton.html appear as /conference.  
+Using nginx, you can rewrite the incoming URL for `/client/BigBlueButton.html` to appear as a different link, such as `conference`.  
 
  # Modify `/etc/nginx/sites-avaialble/bigbluebutton` and comment out the following section
 
