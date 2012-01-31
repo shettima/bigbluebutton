@@ -714,6 +714,12 @@ location /conference {
 
 Now login into the demo page and you'll see the URL now shows `/conference/` instead of `/client/BigBlueButton.html`.
 
+=== Does !BigBlueButton offer secure collaboration? ===
+
+There has been no effort to make the communication in !BigBlueButton secure.  For example, !BigBlueButton does not use https for the URLs, nor does it use RTMPS for sending of data.
+
+All API request must have a checksum that is computed using a share secret, but otherwise there is *no* security offered in !BigBlueButton.
+
 
 = Administration =
 
