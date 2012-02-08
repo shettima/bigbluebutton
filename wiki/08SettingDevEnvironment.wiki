@@ -31,7 +31,7 @@ pwd
 }}}
 should display {{{/home/firstuser/}}}.
 
-If the result of the above is not the same. Don't proceed as things will break. Fix the problem why you are not firstuser before continuing.
+*If the result of the above is not the same. Don't proceed as things will break. Fix the problem why you are not firstuser before continuing.*
 
 
 Follow instructions found in [08InstallationUbuntu]
