@@ -1,5 +1,8 @@
 #summary How to setup your own BigBlueButton Virtual Machine
 
+* *Note* The server ubuntu.bigbluebutton.org is temporarily off-line and should be restored shortly.  See [https://groups.google.com/forum/?fromgroups#!topic/bigbluebutton-setup/AmudPvjW7Tk bigbluebutton-setup] for updates.  It should be back on-line shortly.
+
+
 <wiki:toc max_depth="2" />
 
 = How to setup your own !BigBlueButton Server in a few minutes =
