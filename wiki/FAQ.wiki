@@ -820,28 +820,28 @@ The benefit of the above approach is unlike most commercial web conferencing sys
 
 If the tile is mostly a solid color, it compression works very well: the size of the compressed tile is small and is quickly sent to the server.  However, if the tile portion 32-bit image, for example, it will be larger and will take longer to send to the server.
 
-The speed of the desktop sharing is largely determined by the upstream bandwidth of the presenter's computer.  As most internet connections provide non-symmetrical bandwidth, with larger downstream than upstream, a narrow upstream bandwidth will limit the rate at which the presenter's computer can send updated tiles to the server.
+The speed of the desktop sharing is largely determined by the upstream bandwidth of the presenter's computer.  As most internet connections provide non-symmetrical bandwidth, which means users have a narrow upstream bandwidth and a larger downstream bandwidth.  This narrow upstream bandwidth limits the rate at which the presenter's computer can send updated tiles to the !BigBlueButton server.  Running desktop sharing on a LAN is usually (much) faster than over the Internet as the corresponding upstream (and overall) bandwidth is greater.
 
 There are three options to improving the speed of desktop sharing:
 
-1.  Reduce the amount of data sent to the server
+(1)  Reduce the amount of data sent to the server
 
 To reduce the amount of data being sent to the server (and thus increase the refresh rates for desktop sharing), the presenter can do the following:
  
-  # Share a region of your desktop (this is a good approach if you want to share only a specific window)
-  # Reduce the screen size to 1024x768 or 800x600 
-  # Replace any 32-bit desktop background image with a solid color (this greatly increases the refresh rates when the desktop becomes visible)
+  # Share a smaller region of your desktop (this is a good approach if you want to share only a specific window)
+  # Reduce the screen size to 1024x768 or 800x600 (this is in essence similar to sharing a region)
+  # Replace any 32-bit desktop background image with a solid color (this greatly increases the refresh rates when the presenter's desktop becomes visible)
   # Lower your screen dept from 32-bit to 16-bit
 
-2.  Increase upstream bandwidth available to desktop sharing
+(2)  Increase upstream bandwidth available to desktop sharing
 
 To increase upstream bandwidth, the presenter can turn any applications that are using bandwidth, such as file transfer or P2P applications.  Turn off sharing of webcam as well.
 
-3.  Improve the algorithm for desktop sharing
+(3)  Improve the algorithm for desktop sharing
 
-There are a number of open issues for improving desktop sharing: [http://code.google.com/p/bigbluebutton/issues/detail?id=512 512], [http://code.google.com/p/bigbluebutton/issues/detail?id=854 854], [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902], [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].
+There are a number of open issues for improving desktop sharing: [http://code.google.com/p/bigbluebutton/issues/detail?id=512 512], [http://code.google.com/p/bigbluebutton/issues/detail?id=854 854], [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902], and [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].  Another approach is to explore creating compiled code that, for specific operating systems, would be downloaded by the Java applet and run natively (this is how commercial web conferencing systems achieve their speed).  
 
-To understand how the !BigBlueButton project allocates resources to working on issues, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#When_will_feature_X_be_implemented When will feature X be implemented?].
+There are lots of opportunities to explore increasing the speed of desktop sharing in !BigBlueButton.  to understand how the !BigBlueButton project allocates resources for each release, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#When_will_feature_X_be_implemented When will feature X be implemented?].
 
 
 
