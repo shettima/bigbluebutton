@@ -822,9 +822,9 @@ If the tile is mostly a solid color, it compression works very well: the size of
 
 The speed of the desktop sharing is largely determined by the upstream bandwidth of the presenter's computer.  As most internet connections provide non-symmetrical bandwidth, which means users have a narrow upstream bandwidth and a larger downstream bandwidth.  This narrow upstream bandwidth limits the rate at which the presenter's computer can send updated tiles to the !BigBlueButton server.  Running desktop sharing on a LAN is usually (much) faster than over the Internet as the corresponding upstream (and overall) bandwidth is greater.
 
-There are three options to improving the speed of desktop sharing:
+There are four options to improving the speed of desktop sharing:
 
-(1)  Reduce the amount of data sent to the server
+1) Reduce the amount of data sent to the server
 
 To reduce the amount of data being sent to the server (and thus increase the refresh rates for desktop sharing), the presenter can do the following:
  
@@ -833,13 +833,17 @@ To reduce the amount of data being sent to the server (and thus increase the ref
   # Replace any 32-bit desktop background image with a solid color (this greatly increases the refresh rates when the presenter's desktop becomes visible)
   # Lower your screen dept from 32-bit to 16-bit
 
-(2)  Increase upstream bandwidth available to desktop sharing
+2) Increase upstream bandwidth available to desktop sharing
 
 To increase upstream bandwidth, the presenter can turn any applications that are using bandwidth, such as file transfer or P2P applications.  Turn off sharing of webcam as well.
 
-(3)  Improve the algorithm for desktop sharing
+3) Improve the algorithm for desktop sharing
 
-There are a number of open issues for improving desktop sharing: [http://code.google.com/p/bigbluebutton/issues/detail?id=512 512], [http://code.google.com/p/bigbluebutton/issues/detail?id=854 854], [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902], and [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].  Another approach is to explore creating compiled code that, for specific operating systems, would be downloaded by the Java applet and run natively (this is how commercial web conferencing systems achieve their speed).  
+There are a number of open issues for improving the desktop sharing: [http://code.google.com/p/bigbluebutton/issues/detail?id=512 512], [http://code.google.com/p/bigbluebutton/issues/detail?id=854 854], [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902], and [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].  
+
+4) Improve the architecture for desktop sharing
+
+Another approach is to explore creating platform specific code that would be downloaded by the Java applet and run natively (this is how commercial web conferencing systems achieve their speed).  
 
 There are lots of opportunities to explore increasing the speed of desktop sharing in !BigBlueButton.  to understand how the !BigBlueButton project allocates resources for each release, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#When_will_feature_X_be_implemented When will feature X be implemented?].
 
@@ -1512,18 +1516,19 @@ Keep in mind that !BigBlueButton is largely built by a group of (very determined
 
 Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://en.wikipedia.org/wiki/BigBlueButton over three years].
 
-Time is a precious commodity.  In general, when planning the next release, we look at the outstanding feature requests and bug fixes in the following order: 
+Time is a precious commodity.  In general, when planning the a release, we look at the outstanding issues in the following order: 
   # What are our (paying) customers asking us to implement?
-  # What requirements are on our [RoadMap1dot0 road map] for our target market (distance education)? 
+  # What are the most important items on our [RoadMap1dot0 road map]? 
   # What refactoring/features do the [FAQ#BigBlueButton_Committer core committers] believe are necessary to improve the code base/maintainability/usability of the project? 
-  # What features are our community asking for (specifically, those not related to distance education, like control of remote desktop)?
+  # What features are our community asking to implement (specifically, those not related to distance education, like control of remote desktop)?
 
 For (1), the requests from our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  If you really want to see your feature implemented, helping your organization become (1) is the best way to achieve it.  
 
 For (2), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting are not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument the feature belongs in (2).
 
+For (3), sometimes we'll revisit a previously implemented feature to improve it's performance or refactor the code.  Other times, we'll implement the features that have the highest value to the community with with the least amount of effort.  The features that are high-value and high-effort usually already land in (1) or (2).
 
-If (1) or (2) are not options, then keep in mind that !BigBlueButton is an open source project.  We welcome the contributions of others who want to help improve !BigBlueButton.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
+For (4), if your feature does occur in the above during iteration, you have more options.  !BigBlueButton is an open source project: if you (or your organization) want to improve !BigBlueButton, we welcome your contribution.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
 
 === My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
