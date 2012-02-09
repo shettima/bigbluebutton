@@ -172,7 +172,7 @@ There are a number of OpenSourceComponents in !BigBlueButton that need root acce
 Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 32-bit and 64-bit.  To install !BigBlueButton on EC2, do the following 
 
   # Modify the default security group (or create a new security group) that opens the needed ports for !BigBlueButton (see [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue FAQ]).
-  # Launch a "lucid" image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.medium (or instance with greater CPU).
+  # Launch a "lucid" image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.medium (or greater CPU).
   # Follow the instructions to InstallationUbuntu (or for the beta of 0.8 08InstallationUbuntu).
   # Adjust the FreeSWITCH configuration (see [FAQ#When_I_click_on_the_headset_icon,_nothing_happens? FAQ]) to work on an internal IP address.
   # Use `sudo bbb-conf --setip hostname` to instruct !BigBlueButton to listen to the external DNS name for the EC2 instance (see [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf])
