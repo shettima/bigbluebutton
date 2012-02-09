@@ -812,23 +812,38 @@ There are no additional requirements (beyond having Flash installed) for viewers
   
 === How can I make desktop sharing faster? ===
 
-First, a bit of background: to share your screen, !BigBlueButton runs a Java applet (Flash can't see your screen).  The applet takes a few screen shots each second, then divides up each captured screen shot into a checkboard, and figures out which checkerboard tile is different than the previous screen shot.  Those different tiles are then compressed and sent to the !BigBlueButton server for broadcast to viewers.
+First, a bit of background: to share your screen, !BigBlueButton runs a Java applet (Flash can't see your screen).  The Java applet takes a few screen shots each second, divides up each captured screen shot into a checkboard, and figures out which checkerboard tile is different than the previous screen shot.  Those different tiles are then compressed and sent to the !BigBlueButton server for broadcast to viewers.
 
-The compression algorithm is lossless, which means remote viewers see a pixel-for-pixel view of the presenter's destkop.  However, if the presenter's screen size is above 1280 x 1024, the applet will scale the screen shot to fit within 1280 x 1024 dimension are before dividing it into a checkerboard.  This reduces the overall data sent to the server.
+The compression algorithm is lossless, which means remote viewers see a pixel-for-pixel view of the presenter's destkop.  If the presenter's screen size is above 1280 x 1024, the applet will scale the screen shot to fit within 1280 x 1024 dimension are before dividing it into a checkerboard.  This reduces the overall data sent to the server.
 
-The benefit of the above approach is unlike most commercial web conferencing systems that download a binary file (i.e. DLL) on your windows machine (and then not provide any support for Mac or Unix), !BigBlueButton's desktop sharing runs on Mac, Unix, and PC computers.  However, the applet approach is going to be slower than a native application as the applet can only look at the screen (it doesn't have any concept of what the operating system is actually drawing).  And the algorithm is simple: if a tile has changed, send it to the server.  
+The benefit of the above approach is unlike most commercial web conferencing systems that download a binary file (i.e. DLL) on your windows machine (and then not provide any support for Mac or Unix), !BigBlueButton's desktop sharing runs on Mac, Unix, and PC computers.  However, the applet approach is going to be slower than a native code as the applet can only look at the screen as a bitmap -- it doesn't have any concept of what the operating system is actually drawing.  And the algorithm is simple: if a tile has changed, send it to the server.  
 
-If the tile is mostly a solid color, it compresses very well and gets quickly sent.  If the tile is over a 32-bit image, it will be larger and will take longer to send to the server.
+If the tile is mostly a solid color, it compression works very well: the size of the compressed tile is small and is quickly sent to the server.  However, if the tile portion 32-bit image, for example, it will be larger and will take longer to send to the server.
 
-To help reduce the amount of data being sent to the server (and thus increase the refresh rates for desktop sharing), we recommend the following:
+The speed of the desktop sharing is largely determined by the upstream bandwidth of the presenter's computer.  As most internet connections provide non-symmetrical bandwidth, with larger downstream than upstream, a narrow upstream bandwidth will limit the rate at which the presenter's computer can send updated tiles to the server.
+
+There are three options to improving the speed of desktop sharing:
+
+1.  Reduce the amount of data sent to the server
+
+To reduce the amount of data being sent to the server (and thus increase the refresh rates for desktop sharing), the presenter can do the following:
  
-  # Reduce the screen size to 1024x768 or 800x600
   # Share a region of your desktop (this is a good approach if you want to share only a specific window)
+  # Reduce the screen size to 1024x768 or 800x600 
   # Replace any 32-bit desktop background image with a solid color (this greatly increases the refresh rates when the desktop becomes visible)
   # Lower your screen dept from 32-bit to 16-bit
 
+2.  Increase upstream bandwidth available to desktop sharing
 
-Another factor in the refresh rate is presenter's upstream bandwidth.  In some countries, the bandwidth is asymmetrical.  Desktop sharing will attempt to push as many tiles as quickly as possible to the remote !BigBlueButton server, so having good upstream bandwidth will help increase the refresh rate for remote viewers.
+To increase upstream bandwidth, the presenter can turn any applications that are using bandwidth, such as file transfer or P2P applications.  Turn off sharing of webcam as well.
+
+3.  Improve the algorithm for desktop sharing
+
+There are a number of open issues for improving desktop sharing: [http://code.google.com/p/bigbluebutton/issues/detail?id=512 512], [http://code.google.com/p/bigbluebutton/issues/detail?id=854 854], [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902], [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].
+
+To understand how the !BigBlueButton project allocates resources to working on issues, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#When_will_feature_X_be_implemented When will feature X be implemented?].
+
+
 
 === Can I share a specific window when sharing my desktop ===
 
