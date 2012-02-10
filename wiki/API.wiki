@@ -185,9 +185,9 @@ In the following section is described the monitoring calls
 }}}
 
 === Preupload Slides ===
-Now, it's possible to preupload slides within the create call. You can specify an URL for BigBlueButton to download and process the slides or you can upload the slides in base64 form. For use the preupload slides part, you have to do it in the following way:
+You can now preupload slides within the create call. You can specify an URL for BigBlueButton to download and process the slides, or you can embed the slides in base64 as part of the POST request. For use the preupload slides part:
 
- * You have to send a HTTP POST request. 
+ * You have to send a HTTP POST request (by default, the total size of the POST request can't exceed 2MB, so embedding very large slides won't work).
  * The URL Resource has to be the same as the previously described. 
  * In the body part, you would append a simple XML like the following with the presentation to upload:
 {{{
@@ -202,8 +202,6 @@ Now, it's possible to preupload slides within the create call. You can specify a
     </module> 
 </modules> 
 }}} 
-
-And that's all!
 
 For more information about the preupload slides check the following <a href="http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79">link</a>. For a complete example of the preupload slides check the following demos: <a href="https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-api-demo/src/main/webapp/demo7.jsp">demo7</a> and <a href="https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-api-demo/src/main/webapp/demo8.jsp">demo8</a>.
 
