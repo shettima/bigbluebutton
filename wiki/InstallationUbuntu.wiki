@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="3" />
 = !BigBlueButton 0.8 =
-We've made a lot of [ReleaseNotes improvements] in the upcoming release of !BigBlueButton 0.8.  If you'd like to try installing it instead of 0.71a, see [08InstallationUbuntu Install BigBlueButton 0.8-beta on Ubuntu].
+We've made a lot of [ReleaseNotes improvements] in the upcoming release of !BigBlueButton 0.8.  If you'd like to try installing 0.8 instead of 0.71a, see [08InstallationUbuntu Install BigBlueButton 0.8-beta on Ubuntu].
 
 = Prerequisites =
 
