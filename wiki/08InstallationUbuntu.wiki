@@ -285,6 +285,19 @@ Before upgrading, first remove the older FreeSWITCH packages.
 sudo apt-get purge freeswitch freeswitch-sounds-en-us-callie-16000 freeswitch-sounds-en-us-callie-8000 freeswitch-sounds-music-16000
 }}}
 
+Check to ensure that there are no remaining FreeSWITCH packages.
+
+{{{
+   dpkg -l | grep freesw
+}}}
+
+If there are any remaining packages, such as freeswitch-lang-en, then purge those as well
+
+{{{
+   sudo apt-get purge freeswitch-lang-en
+}}}
+
+
 == 4.  Upgrade !BigBlueButton == 
 
 First, update the !BigBlueButton repository URL to the beta repository.
