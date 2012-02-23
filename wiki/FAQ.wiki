@@ -974,7 +974,7 @@ and set energy-level to a lower value (.e.g 50)
 
 {{{
    <profile name="wideband">
-     <param name="energy-level" value="300"/>
+     <param name="energy-level" value="50"/>
 }}}
 
 Save the file, then do `sudo bbb-conf --restart` to restart !BigBlueButton.
