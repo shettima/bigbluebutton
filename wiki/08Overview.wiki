@@ -41,9 +41,9 @@ For control, moderators can click the 'lock' icon next to the student's name to 
 == Fit-to-width ==
 !BigBlueButton 0.8-beta-4 can now properly display a portrait document using fit-to-width layout.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-mages/08/fit-to-width.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/fit-to-width.png
 
 There are now two buttons on visible to the presenter for switching between fit-to-width and fit-to-page.  
 
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-mages/08/fit-to-width-buttons.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/fit-to-width-buttons.png
