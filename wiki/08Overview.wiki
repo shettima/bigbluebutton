@@ -37,3 +37,13 @@ As discussed in the [http://groups.google.com/group/bigbluebutton-dev/browse_thr
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/push_to_talk1.png
 
 For control, moderators can click the 'lock' icon next to the student's name to both lock the student's audio as muted/unmuted and remove the student's 'push to talk' button.
+
+== Fit-to-width ==
+!BigBlueButton 0.8-beta-4 can now properly display a portrait document using fit-to-width layout.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-mages/08/fit-to-width.png
+
+There are now two buttons on visible to the presenter for switching between fit-to-width and fit-to-page.  
+
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-mages/08/fit-to-width-buttons.png
