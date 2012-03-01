@@ -1,12 +1,22 @@
 #summary Release Notes for new versions of BigBlueButton.
 
-= Release 0.8-beta-3: Bailetti =
 
-Beta Released: November 21, 2011
+= Release 0.8-beta-4: Bailetti =
+
+Beta Released: March XX, 2012
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
 See [08InstallationUbuntu installation instructions]. 
+
+
+What's new in 0.8-beta-3:
+
+  * * Fit-to-Width * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width].
+
+= Release 0.8-beta-3 =
+
+Beta Released: November 21, 2011
 
 What's new in 0.8-beta-3:
 
