@@ -30,7 +30,7 @@ What's new in 0.8-beta-2:
 
   * * Video Dock * -  To help users view webcams from multiple sources, a new video dock window now 'docks' all the webcams.  The user can drag individual windows in and out of the dock.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Video_Dock video dock screenshot].
 
-What's new in 0.8-beta:
+What's new in 0.8-beta-1:
 
   * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
