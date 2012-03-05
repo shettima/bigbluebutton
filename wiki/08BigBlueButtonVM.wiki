@@ -2,13 +2,13 @@
 
 <wiki:toc max_depth="2" />
 
-= How to setup your own !BigBlueButton Server in a few minutes =
+= How to setup your own !BigBlueButton 0.8-beta-4 server in a few minutes =
 
-Many universities and colleges have told us they want to run their own version  !BigBlueButton behind their firewall.  In addition, developers have asked how to setup a development environment to enhance and extend !BigBlueButton.
+This page describes how to download and run the !BigBlueButton 0.8-beta-4 VM.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac.  We've also pre-configured the VM so it can serve as a full [DevelopingBBB development environment].  We've added scripts (using `bbb-conf`) to make it easy for a developer to checkout !BigBlueButton's source from Google Code repository, make local changes, and, with a few commands, re-compile various components of !BigBlueButton for development and testing.  
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a !BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac.  We've also pre-configured the VM so it can serve as a full [DevelopingBBB development environment].  We've added scripts (using `bbb-conf`) to make it easy for a developer to checkout !BigBlueButton's source from Google Code repository, make local changes, and, with a few commands, re-compile various components of !BigBlueButton for development and testing.  
+Note: The !BigBlueButton VM is good for testing !BigBlueButton with small groups of people, but if your are going to use it for production, we recommend running !BigBlueButton on a dedicated server installed from packages.
 
-Prerequisites:
+Prerequisites for the VM:
   # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
   # A DHCP Server for the VM to acquire an IP address on boot
 
@@ -25,7 +25,7 @@ Download bigbluebutton-08-beta-4-vm.zip from !SourceForge: [http://sourceforge.n
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
-  3.  Double-click on the bigbluebutton-08-beta-4-vm.vmx icon.  
+  3.  Double-click on the bigbluebutton-vm.vmx icon.  
 
 This will start VMWare Player (or VMWare Workstation) and boot the VM. Note: In VMWare, make sure the networking is set to *Bridged*, not NAT.  
 
