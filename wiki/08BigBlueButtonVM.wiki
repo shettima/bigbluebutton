@@ -6,7 +6,7 @@
 
 This page describes how to download and run the !BigBlueButton 0.8-beta-4 VM.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac.  We've also pre-configured the VM so it can serve as a full [DevelopingBBB development environment].  We've added scripts (using `bbb-conf`) to make it easy for a developer to checkout !BigBlueButton's source from Google Code repository, make local changes, and, with a few commands, re-compile various components of !BigBlueButton for development and testing.  
 
-Note: The !BigBlueButton VM is good for testing !BigBlueButton with small groups of people, but if your are going to use it for production, we recommend running !BigBlueButton on a dedicated server installed from packages.
+Note: The !BigBlueButton VM is good for testing !BigBlueButton with small groups of people (depends on the speed of the VM host), but if your are going to setup !BigBlueButton production use, we recommend running !BigBlueButton on dedicated hardware (not a virtualized environment) installed from packages.  See [What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements].
 
 Prerequisites for the VM:
   # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
