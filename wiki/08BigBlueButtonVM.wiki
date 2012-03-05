@@ -21,7 +21,7 @@ The third requirement is important: the VM must be able to connect to the intern
 
   1.  Download and uncompress the the !BigBlueButton VM. 
 
-Download bigbluebutton-08-beta-4-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
+Download bigbluebutton08-beta-4-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
 
   2.  Open the enclosed folder.
 
