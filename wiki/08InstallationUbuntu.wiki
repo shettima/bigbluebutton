@@ -540,3 +540,44 @@ If you see apache2 listed, then stop apache2 and start nginx
    sudo /etc/init.d/apache2 stop
    sudo /etc/init.d/nginx start
 }}}
+
+== Unable to install gems ==
+The install script for bbb-record-core needs to install a number of ruby gems.  However, if you are behind a HTTP_PROXY, then the install script for bbb-record-core will likely exit with an error.  This occurs because the bash environment for bbb-record-core will not have a value for HTTP_PROXY.
+
+You can resolve this by manually installing the gems using the following script.
+{{{
+#!/bin/bash
+
+export HTTP_PROXY="<your_http_proxy>"
+
+gem install --http-proxy $HTTP_PROXY builder -v 2.1.2
+gem install --http-proxy $HTTP_PROXY diff-lcs -v 1.1.2
+gem install --http-proxy $HTTP_PROXY json -v 1.4.6
+gem install --http-proxy $HTTP_PROXY term-ansicolor -v 1.0.5
+gem install --http-proxy $HTTP_PROXY gherkin -v 2.2.9
+gem install --http-proxy $HTTP_PROXY cucumber -v 0.9.2
+gem install --http-proxy $HTTP_PROXY cucumb -v 0.9.2
+gem install --http-proxy $HTTP_PROXY curb -v 0.7.15
+gem install --http-proxy $HTTP_PROXY mime-types -v 1.16
+gem install --http-proxy $HTTP_PROXY nokogiri -v 1.4.4
+gem install --http-proxy $HTTP_PROXY rack -v 1.2.2
+gem install --http-proxy $HTTP_PROXY redis -v 2.1.1
+gem install --http-proxy $HTTP_PROXY redis-namespace -v 0.10.0
+gem install --http-proxy $HTTP_PROXY tilt -v 1.2.2
+gem install --http-proxy $HTTP_PROXY sinatra -v 1.2.1
+gem install --http-proxy $HTTP_PROXY vegas -v 0.1.8
+gem install --http-proxy $HTTP_PROXY resque -v 1.15.0
+gem install --http-proxy $HTTP_PROXY rspec-core -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rspec-expectations -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rspec-mocks -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rspec -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rubyzip -v 0.9.4
+gem install --http-proxy $HTTP_PROXY streamio-ffmpeg -v 0.7.8
+gem install --http-proxy $HTTP_PROXY trollop -v 1.16.2
+}}}
+
+Once all the gems are installed, you can restart the installation process with the command
+
+{{{
+sudo apt-get install -f
+}}}
