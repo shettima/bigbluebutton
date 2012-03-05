@@ -1,5 +1,7 @@
 #summary How to install  BigBlueButton 0.8-beta-4 on Ubuntu in under 30 minutes
 
+* *Note:* We are in the process of finishing the final build of 0.8-beta-4.  We recommend waiting until you see the release announcement in bigbluebutton-dev before installing below.
+
 <wiki:toc max_depth="3" />
 
 = Overview =
