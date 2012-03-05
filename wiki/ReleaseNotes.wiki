@@ -18,7 +18,7 @@ What's new in 0.8-beta-4:
 
  * *Default Presentation* - You can specify a default presentation for all !BigBlueButton sessions, which lets you, for example, show an initial help page in a session.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L130 defaultUploadedPresentation] property.
 
- * *bbb-conf now Installs Development Tools* - To make it easer to setup a development environment, `bbb-conf` can now setup a development environment on a !BigBlueButton server.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
+ * *bbb-conf now Installs Development Tools* - To make it easer to setup a development environment, `bbb-conf` now installs a build environment on a !BigBlueButton server.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
 
 = Release 0.8-beta-3 =
 
