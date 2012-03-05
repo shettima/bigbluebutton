@@ -184,7 +184,6 @@ Installing ri documentation for hello-0.0.1...
 Installing RDoc documentation for hello-0.0.1...
 }}}
 
-
 Make sure you can execute the above three commands without errors before continuing with these instructions.  If you do encounter errors, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2&pli=1 bigbluebutton-setup] and we'll help you resolve the errors.
 
 You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
@@ -201,7 +200,9 @@ This single command is where all the magic happens.  This command installs *all*
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-get-install.png
 
-Type 'y' and press Enter.  Then sit back.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
+Type 'y' and press Enter.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
+
+If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You an resolve this by [#Unable_to_install_gems manually installing the gems].
 
 == 4. Install API Demos ==
 
