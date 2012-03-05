@@ -14,11 +14,13 @@ What's new in 0.8-beta-4:
 
   * * Fit-to-Width for Layout of Portrait Documents * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width screenshot].
 
- * * !BigBlueButton VM 0.8-beta-4 VM * - You can now download and install a [08BigBlueButtonVM BigBlueButton 0.8-beta-4 virtual machine] (VMWare and VMWare Fusion).
+ * * !BigBlueButton VM 0.8-beta-4 VM * - To quickly setup a !BigBlueButton server for testing, see download [08BigBlueButtonVM BigBlueButton 0.8-beta-4 VM] for VMWare Player/Workstation (Windows, Unix) and VMWare Fusion (Mac).
 
- * *Default Presentation* - You can specify a default presentation for all !BigBlueButton sessions, which lets you, for example, show an initial help page in a session.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L130 defaultUploadedPresentation] property.
+ * *Default Presentation* - You can now specify a default presentation for all !BigBlueButton sessions, which lets you, for example, show an initial help page in a session.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L130 defaultUploadedPresentation] property.
 
- * *bbb-conf now Installs Development Tools* - To make it easer to setup a development environment, `bbb-conf` now installs a build environment on a !BigBlueButton server.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
+ * *bbb-conf now Installs Development Tools* - To make it easer to develop !BigBlueButton, `bbb-conf` can now install a build environment on a !BigBlueButton server within any account with sudo privileges.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
+
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8  issues fixed in BigBlueButton 0.8].
 
 = Release 0.8-beta-3 =
 
@@ -55,9 +57,6 @@ What's new in 0.8-beta-1:
   * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to a snapshot of 1.0.7.  !BigBlueButton no longer requires installation of mysql.
 
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8 open issues for BigBlueButton 0.8 beta].
-
-== Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8  issues fixed in BigBlueButton 0.8]
 
 = Release 0.71a =
 
