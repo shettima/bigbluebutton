@@ -227,9 +227,12 @@ cd ~/dev/bigbluebutton/bigbluebutton-client
 ant
 }}}
 
-When done, join the demo meeting using the client. You should be able to see your changes.
+When done, join the demo meeting using the client. You'll see the message `-- BigBlueButton Rocks!` added to the copyright line.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/rocks.png
 
 
+=== Switching back to the packaged client ===
 To switch to using the built-in version of !BigBlueButton, do
 
 {{{
