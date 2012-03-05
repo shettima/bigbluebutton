@@ -93,7 +93,7 @@ The `bbb-conf` script create for you a `dev` directory in your account.
 
 It's in this directory that you'll place the source for !BigBlueButton.
 
-== Hard Core Forking ==
+== Checking out the Source ==
 
 We recommend you use !GitHub to fork !BigBlueButton.  This will make it easy for to work on your own copy of !BigBlueButton's source, store updates to GitHub, and [Contributing_to_BigBlueButton contribute] back to the project by sending us pull requests.
 
@@ -151,12 +151,12 @@ The output should be
 nothing to commit (working directory clean)
 }}}
 
-== Client Development ==
+= Client Development =
 With the development environment checked out and the code cloned, we're ready to start developing!
 
 This section will walk you through making a change to the !BigBlueButton client.  
 
-=== Setting up the environment ===
+== Setting up the environment ==
 To setup the client for development for the client, do the following
 
 {{{
@@ -175,7 +175,7 @@ instead of
 /var/www/bigbluebutton
 }}}
 
-=== Build the client ===
+== Build the client ==
 Let's now build the client  Note we're not making any changes yet -- we're going to build the client to ensure it works.
 
 
@@ -201,7 +201,7 @@ ant
 
 After that, point your browser to your !BigBlueButton server and login ot the demo page.  The client should start properly.
 
-=== Making a change ===
+== Making a change ==
 
  Before we build the !BigBlueButton client, let's make a small visible change to the interface.
 
@@ -234,7 +234,7 @@ When done, join the demo meeting using the client. You'll see the message `-- Bi
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/rocks.png
 
 
-=== Switching back to the packaged client ===
+== Switching back to the packaged client ==
 To switch to using the built-in version of !BigBlueButton, do
 
 {{{
@@ -250,7 +250,7 @@ To switch back to your development setup, do
 }}}
 
 
-=== Developing BBB-Web===
+= Developing BBB-Web =
 {{{
 bbb-conf --setup-dev web
 }}}
@@ -269,7 +269,7 @@ If you get an error {{{ "Could not resolve placeholder 'apiVersion'"}}}., just r
 
 Now test again if you can join the demo meeting.
 
-== Developing the Red5 Applications ==
+= Developing the Red5 Applications =
 
 Make red5/webapps writeable. Otherwise, you will get permission error when you try to deploy into Red5.
 
@@ -305,7 +305,7 @@ cd /usr/share/red5/
 sudo -u red5 ./red5.sh
 }}}
 
-===Developing BBB-Voice===
+== Developing BBB-Voice ==
 {{{
 # Stop red5
     sudo /etc/init.d/red5 stop
@@ -322,7 +322,7 @@ sudo -u red5 ./red5.sh
 
 }}}
 
-===Developing Deskshare===
+== Developing Deskshare ==
 {{{
 cd /home/firstuser/dev/bigbluebutton/deskshare
 gradle resolveDeps
@@ -379,8 +379,9 @@ cd /usr/share/red5/
 sudo -u red5 ./red5.sh
 }}}
 
-==Troubleshooting==
+= Troubleshooting =
 
+== Welcome to Nginx page ==
 If you get the "Welcome to Nginx" page. Check if bigbluebutton is enabled in nginx. You should see *bigbluebutton* in {{{/etc/nginx/sites-enabled}}}.
 
 If not, enable it.
@@ -391,6 +392,7 @@ sudo ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/big
 sudo /etc/init.d/nginx restart
 }}}
 
+== Old Translation ==
 If you get a "Old Translation" warning when starting the client, in `/var/www/bigbluebutton/client/conf/config.xml` change
 
 {{{
