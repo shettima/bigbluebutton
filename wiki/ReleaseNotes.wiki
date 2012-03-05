@@ -52,6 +52,9 @@ What's new in 0.8-beta-1:
 
 See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8 open issues for BigBlueButton 0.8 beta].
 
+== Fixed Issues ==
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8  issues fixed in BigBlueButton 0.8]
+
 = Release 0.71a =
 
 Released: January 13, 2011
