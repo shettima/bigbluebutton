@@ -3,11 +3,11 @@
 
 = Release 0.8-beta-4: Bailetti =
 
-Beta Released: March XX, 2012
+Beta Released: March XX, 2012  
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
-See [08InstallationUbuntu installation instructions]. 
+See [08InstallationUbuntu installation instructions]. (*Note: We are in the process of finishing the final build of 0.8-beta-4. We recommend holding off installing until you see the official announcement in bigbluebutton-dev.*)
 
 
 What's new in 0.8-beta-4:
