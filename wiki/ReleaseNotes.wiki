@@ -12,7 +12,9 @@ See [08InstallationUbuntu installation instructions].
 
 What's new in 0.8-beta-3:
 
-  * * Fit to Width for Layout of Portrait Documents * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width screenshot].
+  * * Fit-to-Width for Layout of Portrait Documents * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width screenshot].
+
+ * * BigBlueButton VM 0.8-beta-4 VM * - You can now download and install a !BigBlueButton 0.8-beta-4 virtual machine (VMWare and VMWare Fusion).  
 
 = Release 0.8-beta-3 =
 
