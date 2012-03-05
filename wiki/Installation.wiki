@@ -6,7 +6,7 @@ Try [08InstallationUbuntu Installing 0.8-beta] (see [http://code.google.com/p/bi
 
 The !BigBlueButton 0.71a server runs under Ubuntu 10.04 32-bit or 64-bit, as well as distributions listed below.  To setup your own !BigBlueButton server:
 
-    * [BigBlueButtonVM Download the BigBlueButton Virtual Machine (0.71a)] 
+    * [BigBlueButtonVM Download the BigBlueButton Virtual Machine (0.71a)] (see also [08BigBlueButtonVM 0.8-beta-4 VM)]
     * [InstallationUbuntu Install from packages on Ubuntu 10.04 (0.71a)]
     * [InstallingBigBlueButton Install from source on Ubuntu (0.71a)]
 
