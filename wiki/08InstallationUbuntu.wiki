@@ -67,7 +67,7 @@ At some point in the process you may be asked to update configuration files, as 
   *** bigbluebutton (Y/I/N/O/D/Z) [default=N] ? 
 }}}
 
-Enter 'Y' to continue the upgrade.  After !BigBlueButton updates, restart all the processes
+Enter 'Y' each time continue the upgrade.  After !BigBlueButton updates, restart all the processes
 
 After the install finishes, restart your !BigBlueButton server with 
 
