@@ -2,6 +2,8 @@
 
 * *Note* This is currently being edited.
 
+<wiki:toc max_depth="2" />
+
 = Overview =
 !BigBlueButton is developed by a dedicated core team of developers and a broad community that work together on all aspects of development: design, development, testing, documentation, localization, editing wikis, and, most importantly, supporting others.
 
