@@ -20,7 +20,7 @@ What's new in 0.8-beta-4:
 
  * *bbb-conf now Installs Development Tools* - To make it easer to develop !BigBlueButton, `bbb-conf` can now install a build environment on a !BigBlueButton server within any account with sudo privileges.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
 
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed since 0.8-beta-3].
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed in 0.8-beta-4].
 
 = Release 0.8-beta-3 =
 
