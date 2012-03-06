@@ -283,7 +283,7 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
 Run the setup script. This will remove the bbb-apps package from red5/webapps.
 
 {{{
-bbb-cong --setup-dev apps
+bbb-config --setup-dev apps
 }}}
 
 Stop red5
