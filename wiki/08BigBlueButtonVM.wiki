@@ -112,7 +112,7 @@ If not, it means that the VM is unable to acquire an IP address from a DHCP serv
     sudo /etc/init.d/networking restart
 }}}
 
-Try the ping command again.  If you are unable to acquire an IP address, check out this resource [https://help.ubuntu.com/9.04/internet/C/index.html Ubuntu Networking].
+Try the ping command again.  If you are unable to acquire an IP address, check out this resource [https://help.ubuntu.com/10.04/serverguide/C/networking.html Ubuntu Networking].
 
 Next, you can manually finish the setup to !BigBlueButton with the following commands:
 
