@@ -48,6 +48,7 @@ If you've made custom changes to BigBlueButton, such as
  * modified /var/www/bigbluebutton/client/conf/config.xml
  * modified /var/www/bigbluebutton-default/index.html
  * modified API demos
+ * modified settings to FreeSWITCH configurations
  * etc ...
 
 then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
