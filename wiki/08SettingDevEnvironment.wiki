@@ -1,7 +1,5 @@
 #summary Setting up a BigBlueButton 0.8 Development Environment
 
-* *Note* This is currently being edited.
-
 <wiki:toc max_depth="2" />
 
 = Overview =
