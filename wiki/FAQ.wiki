@@ -486,21 +486,23 @@ If you change the hostname (or IP address) of your !BigBlueButton server, you ca
 
 === We recommend running !BigBlueButton on port 80 ===
 
-We recommend running !BigBlueButton on a server where port 80 is available for binding by nginx.  In other words, we recommend against running !BigBlueButton on port 8081, 8088, or another port.
+We recommend running !BigBlueButton on port 80 -- specifically, having the nginx server in a !BigBlueButton server bind to port 80.  In other words, we recommend against running !BigBlueButton on port 8081, 8088, or another port.
 
-In !BigBlueButton versions prior to 0.8, bbb-conf would let you configure !BigBlueButton to run on a different port, but this has lead to a number of configuration issues: 
+Prior to 0.8, bbb-conf would let you configure !BigBlueButton to run on a different port, but this has lead to a number of problems that are not immediately obvious: 
 
   # !BigBlueButton client cannot use HTTP tunneling if the !BigBlueButton server is not listening on port 80 
   # Port conflicts with existing applications 
   # Resource contention with existing applications
 
-To an experienced system administrator, the above problems are not insurmountable, but most people setting up !BigBlueButton are not experienced system administrators, and changing the port results in clients unable to connect, !BigBlueButton doesn't load, and/or performance is less than expected (because of resource contention).
+To an experienced system administrator, the above problems are not insurmountable, but most people setting up !BigBlueButton are not experienced system administrators, and changing the port results in clients unable to connect, !BigBlueButton doesn't load, and/or performance is less than expected (because of resource contention).  
 
-Many people initially look to save money by running multiple applications on a single server.  This makes sense when your running multiple web-based applications.  If a web applications returns a web page in 500 milliseconds instead of 250 milliseconds due to resource contention, the perceptual difference to the user is minimal.  At worst, the user will think your web application a little slow, but it still works.
+Sometimes these problems do not manifest themselves immediately.  In the past, we've had people posting to our forums describing how their !BigBlueButton server occasionally has problems or does not let users connect.  In some cases, after a lengthy exchange of e-mails back and forth, we would be granted temporary remote access to their server to try and figure the error in !BigBlueButton, only to discover the server is running multiple web applications that are conflicting with !BigBlueButton's configuration, significantly reducing the resources available to !BigBlueButton, or both.  In these cases, there was no error with !BigBlueButton, but in the configuration.
 
-However, !BigBlueButton is a real-time application processing voice and video.  The human ear is very attuned to delays in audio.  If !BigBlueButton is returning audio packets later than normal, or the audio becomes garbled because the CPU is unable to process the all the RTMP audio packets quickly enough due to resource contention, the perceptible difference is much greater.  In this scenario, the user will not think your real-time session is slow, they will think it doesn't work.  Whatever cost savings you might have achieved is nullified by a poor user experience.
+We understand that administrators want to run multiple applications on a single server.  This makes sense when your running multiple web-based applications.  If a web applications returns a web page in 500 milliseconds instead of 250 milliseconds due to resource contention, the perceptual difference to the user is minimal.  At worst, the user will think your web application a little slow, but it still works.
 
-For the above reasons, we recommended you setup !BigBlueButton on a dedicated server listening to port 80. 
+However, !BigBlueButton is a real-time application processing voice and video.  The human ear is very attuned to delays in audio.  If !BigBlueButton is returning audio packets later than normal, or the audio becomes garbled because the CPU is unable to process the RTMP audio packets quickly enough due to resource contention, a delay in audio is much more perceptible to a user than a delay in loading a web page.   
+
+For the above reasons, we recommended you setup !BigBlueButton on a dedicated server listening to port 80.  (See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton what are the minimum hardware requirements for BigBluebutton].)
 
 === What ports must be open for external users to connect to !BigBluebutton? ===
 
