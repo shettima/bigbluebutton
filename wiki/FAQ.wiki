@@ -488,7 +488,7 @@ If you change the hostname (or IP address) of your !BigBlueButton server, you ca
 
 We recommend running !BigBlueButton on a server where port 80 is available for binding by nginx.  In other words, we recommend against running !BigBlueButton on port 8081, 8088, or another port.
 
-In previous versions, bbb-conf would let you configure !BigBlueButton to run on a different port, but this has lead to a number of configuration issues: 
+In !BigBlueButton versions prior to 0.8, bbb-conf would let you configure !BigBlueButton to run on a different port, but this has lead to a number of configuration issues: 
 
   # !BigBlueButton client cannot use HTTP tunneling if the !BigBlueButton server is not listening on port 80 
   # Port conflicts with existing applications 
