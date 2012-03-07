@@ -231,6 +231,8 @@ When done, join the demo meeting using the client. You'll see the message `-- Bi
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/rocks.png
 
+If you don't see your changes, try clearing your browser's cache and try loading the client again.
+
 
 == Switching back to the packaged client ==
 To switch to using the built-in version of !BigBlueButton, do
