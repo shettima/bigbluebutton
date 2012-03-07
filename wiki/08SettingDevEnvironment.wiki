@@ -255,7 +255,7 @@ bbb-conf --setup-dev web
 
 Now let's start grails webapp.
 {{{
-cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-web/
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-web/
 }}}
 
 Tell grails to listen on port 8888
@@ -291,7 +291,7 @@ Stop red5
 
 Compile and deploy bbb-apps
 {{{
-cd /home/firstuser/dev/source/bigbluebutton/bigbluebutton-apps
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-apps
 gradle resolveDeps
 gradle clean war deploy
 
