@@ -167,7 +167,7 @@ You need root access to install !BigBluebutton.
 
 If you have a hosting account that only gives you, for example, FTP access and a cPanel interface, you will not be able to install !BigBlueButton.  
 
-There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include Asterisk and nginx. The former provides to voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.  
+There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include FreeSWITCH and nginx. The former provides to voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.  See also [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton hardware requirements] and [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue required required ports].
 
 == Can I install !BigBlueButton on EC2? ==
 
