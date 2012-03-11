@@ -1,4 +1,5 @@
 #summary How to install BigBlueButton on CentOS
+#labels Deprecated
 
 _Note: These instructions are for 0.64 and are now out of date; furthermore, the links are no longer valid.  We are planning on updating them, but don't have a delivery date for the updates.  If you are a commercial company and would like to have supported RPM packages, please post your interest to this [http://code.google.com/p/bigbluebutton/issues/detail?id=624 issue]._
 
