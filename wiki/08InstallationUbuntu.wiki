@@ -215,6 +215,11 @@ To interactively test your !BigBlueButton server, you can install a set of API d
 
 You'll need the bbb-demo package installed if you want to join the Demo Meeting from your !BigBlueButton server's welcome page.  This is the same welcome page you see at [http://demo.bigbluebutton.org our demo server].
 
+Later on, if you wish to remove the API demos, you can enter the command
+
+{{{
+   sudo apt-get purge bbb-demo
+}}}
 
 == 5. Do a Clean Restart == 
 
