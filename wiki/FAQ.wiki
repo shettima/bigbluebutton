@@ -575,6 +575,8 @@ Escape character is '^]'.
 
 If you can connect to the service running on all three ports (nginx, red5, and deskshare), then your external users should be able to connect to !BigBlueButton.
 
+Once !BigBlueButton is setup for external access, internal must also use the external hostname for connecting to the !BigBlueButton server.  This is because !BigBlueButton is now looking for incoming requests from `external.host.com` not an internal IP address.
+
 == Classrooms ==
 
 === I tried the application at /bigbluebutton and it does not work? ===
