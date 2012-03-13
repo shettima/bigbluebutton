@@ -45,5 +45,4 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/fit-to-width.png
 
 There are now two buttons on visible to the presenter for switching between fit-to-width and fit-to-page.  
 
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/fit-to-width-buttons.png
+http://www.bigbluebutton.org/wp-content/themes/suco/themify/img.php?src=http://www.bigbluebutton.org/wp-content/uploads/2012/03/fit-to-width.png&w=549&h=
