@@ -7,7 +7,7 @@
 You need to have to have installed [08InstallationUbuntu BigBlueButton 0.8].  On a separate server (not the same server as !BigBlueButton) install [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+All+in+One++V1.1 Matterhorn 1.1] or [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2]. 
 
 *Note: *
-While Matterhorn 1.2.1 isn't officially released, we tested with it and recommend trying it with BigBlueButton. While following [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2 installation steps], you will need to check out Matterhorn source, change current url http://opencast.jira.com/svn/MH/tags/1.2.0/  by this  http://opencast.jira.com/svn/MH/tags/1.2.1-rc1/ 
+While Matterhorn 1.2.1 isn't officially released, we tested with it and recommend trying it with !BigBlueButton. While following [http://opencast.jira.com/wiki/display/MHDOC/Install+Source+Linux+V1.2 Matterhorn 1.2 installation steps], you will need to check out Matterhorn source, change current url http://opencast.jira.com/svn/MH/tags/1.2.0/  by this  http://opencast.jira.com/svn/MH/tags/1.2.1-rc1/ 
 
 = Overview =
 [http://opencast.org/matterhorn/ Matterhorn] is an open source lecture capture and video management system for education.  When integrated with Matterhorn (see instructions below), !BigBlueButton can record video, desktop, and audio and send the files to Matterhorn for processing and playback.
@@ -25,6 +25,27 @@ If you encounter any problems with these instructions, please post to [http://gr
 
 == Before you install ==
 You'll need to ensure your `/etc/apt/sources.list` has the multiverse enabled.  If you get an error message such as `libfaac-dev can't be found` with the instructions below, see [http://code.google.com/p/bigbluebutton/wiki/08InstallationUbuntu#Dependencies_are_not_met Dependencies not met].
+
+== Ensure BigBlueButton records video and desktop session ==
+!BigBlueButton uses two red5 applications -- bbb-video and bbb-deskshare -- to share video and desktop.  In !BigBlueButton 0.8-beta-4, these applications are configured to not record media by default (to reduce disk space usage).
+
+To record video, edit `/usr/share/red5/webapps/video/WEB-INF/red5-web.xml` and set `recordVideoStream` to `true`.
+
+{{{ 
+         <bean id="web.handler" class="org.bigbluebutton.app.video.VideoApplication">
+                <property name="recordVideoStream" value="true"/>
+                <property name="eventRecordingService" ref="redisRecorder"/>
+        </bean>
+}}}
+
+To record desktop sharing, edit `/usr/share/red5/webapps/deskshare/WEB-INF/red5-web.xml` and at line 41 set the value for `constructor-arg` to true.
+
+{{{
+  <bean id="streamManager" class="org.bigbluebutton.deskshare.server.stream.StreamManager">
+    <constructor-arg index="0" value="true"/>
+    <constructor-arg index="1" ref="recordingService"/>
+  </bean>
+}}}
 
 
 == 1. Install ffmpeg  == 
