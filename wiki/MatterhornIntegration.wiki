@@ -48,7 +48,7 @@ To record desktop sharing, edit `/usr/share/red5/webapps/deskshare/WEB-INF/red5-
 }}}
 
 
-== 1. Install ffmpeg  == 
+== Install ffmpeg  == 
 
 To install ffmpeg, login to your !BigBlueButton server with root access.  Copy the following script and and save as a file  `install_ffmpeg.sh` on your server
 
@@ -103,13 +103,13 @@ chmod +x install_ffmpeg.sh
 
 This script will take about thirty minutes to run, depending on your internet connection.
 
-== 2. Install Ingest and Processing package for Matterhorn == 
+== Install Ingest and Processing package for Matterhorn == 
 
 {{{
    sudo apt-get install bbb-playback-matterhorn
 }}}
 
-== 3. Configure the Matterhorn server to accept incoming files == 
+== Configure the Matterhorn server to accept incoming files == 
 
 The ingest and processing scripts will use a public/private key to move files to the Matterhorn server.  
 
