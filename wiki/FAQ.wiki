@@ -419,7 +419,7 @@ sip.server.username=bbbuser
 sip.server.password=secret
 }}}
 
-This IP address must match the setting for FreeSWITCH.  Prior to !BigBlueButton 0.8-beta-4, the FreeSWITCH was to bind to the external IP address for the server, which caused voice connection problems with the external IP address changed (as in rebooting an EC2 instance) or when the server had multiple IP addresses.
+This IP address must match the IP address which FreeSWITCH is listening for incoming SIP calls.  Prior to !BigBlueButton 0.8-beta-4, the FreeSWITCH attempted to use the server's external IP address; however, this caused [FAQ#Users_do_not_appear_in_the_listeners_window voice connection problems] whenever the external IP address changed (as in rebooting an EC2 instance) or when the server had multiple IP addresses.
 
 To configure FreeSWITCH to use the 127.0.0.1 address (and remove an vector for denial of service attacks), you can make the following changes.
 
@@ -465,6 +465,8 @@ Then restart !BigBlueButton.
 {{{
   sudo bbb-conf --clean
 }}}
+
+As of !BigBlueButton 0.8-beta-4, the default setting for FreeSWITCH is to use 127.0.0.1 (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=1133 1133]).
 
 === How do I forward calls from my Asterisk server to FreeSWITCH in !BigBlueButton? ===
 
