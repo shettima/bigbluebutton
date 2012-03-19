@@ -27,6 +27,12 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Port 80 is available and not used by another application
   # 400G of free disk space (or more) for recordings
 
+Currently, as of !BigBlueButton 0.8-beta-4, locale of the server must be en_US.UTF-8.  You can verify this by
+
+{{{
+$ cat /etc/default/locale
+LANG="en_US.UTF-8"
+}}}
 
 == Upgrading from !BigBlueButton 0.71a ==
 
