@@ -42,6 +42,12 @@ The ip and red5 application the client uses to test whether necessary ports are 
 
 Show or hide the button (lower right-hand corner) to display the debug window.
 
+In BigBlueButton 0.8, the value in is 
+
+{{{
+    <debug showLogButton="false" />
+}}}
+
 === application ===
 {{{
 <application uri="rtmp://192.168.0.225/bigbluebutton" host="conf/join-mock.xml" />
