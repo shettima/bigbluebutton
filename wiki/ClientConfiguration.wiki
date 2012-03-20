@@ -40,9 +40,10 @@ The ip and red5 application the client uses to test whether necessary ports are 
     <debug showDebugWindow="false" />
 }}}
 
-Show or hide the button (lower right-hand corner) to display the debug window.
+Show or hide the button (lower right-hand corner) to display the debug window.  If you are running !BigBlueButton 0.8, see [#showLogButton showLogButton].
 
-In BigBlueButton 0.8, the value in is 
+=== showLogButton ===
+In !BigBlueButton 0.8, the value in is 
 
 {{{
     <debug showLogButton="false" />
