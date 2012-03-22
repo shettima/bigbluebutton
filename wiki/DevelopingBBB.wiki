@@ -418,6 +418,70 @@ TBD
 
 =Troubleshooting=
 
+== Executing "ant" doesn't work ==
+Check if environment is setup properly.
+
+Type
+{{{
+env}}
+
+You should see
+{{{
+FLEX_HOME=/home/firstuser/dev/tools/flex
+}}}
+
+
+See if you are using the proper SDK.
+{{{
+ls -lt ~/dev/tools/
+}}}
+
+You should see
+{{{
+lrwxrwxrwx  1 firstuser firstuser   16 2011-10-18 19:12 flex -> flex-4.5.0.20967
+}}}
+
+See if the commands are executable
+
+{{{
+ls -lt ~/dev/tools/flex-4.5.0.20967/bin/
+}}}
+
+You should see {{{rwxrwx}}} for all files
+
+{{{
+-rwxrwx--- 1 firstuser firstuser   1487 2011-03-25 05:46 asdoc
+-rwxrwx--- 1 firstuser firstuser   1074 2011-03-25 05:46 fontswf
+-rwxrwx--- 1 firstuser firstuser    728 2011-03-25 05:46 aasdoc
+-rwxrwx--- 1 firstuser firstuser    728 2011-03-25 05:46 acompc
+-rwxrwx--- 1 firstuser firstuser    728 2011-03-25 05:46 amxmlc
+-rwxrwx--- 1 firstuser firstuser    586 2011-03-25 05:46 amxmlc.bat
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 asdoc.exe
+-rwxrwx--- 1 firstuser firstuser   1437 2011-03-25 05:46 compc
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 compc.exe
+-rwxrwx--- 1 firstuser firstuser   1441 2011-03-25 05:46 copylocale
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 copylocale.exe
+-rwxrwx--- 1 firstuser firstuser   1422 2011-03-25 05:46 digest
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 digest.exe
+-rwxrwx--- 1 firstuser firstuser   1422 2011-03-25 05:46 fcsh
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 fcsh.exe
+-rwxrwx--- 1 firstuser firstuser   1405 2011-03-25 05:46 fdb
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 fdb.exe
+-rwxrwx--- 1 firstuser firstuser     93 2011-03-25 05:46 fontswf.bat
+-rwxrwx--- 1 firstuser firstuser   1457 2011-03-25 05:46 jvm.config
+-rwxrwx--- 1 firstuser firstuser   1434 2011-03-25 05:46 mxmlc
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 mxmlc.exe
+-rwxrwx--- 1 firstuser firstuser   1441 2011-03-25 05:46 optimizer
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 optimizer.exe
+-rwxrwx--- 1 firstuser firstuser   1250 2011-03-25 05:46 swcdepends
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 swcdepends.exe
+-rwxrwx--- 1 firstuser firstuser   1259 2011-03-25 05:46 swfdump
+-rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 swfdump.exe
+-rwxrwx--- 1 firstuser firstuser    586 2011-03-25 05:46 aasdoc.bat
+-rwxrwx--- 1 firstuser firstuser    586 2011-03-25 05:46 acompc.bat
+
+}}}
+
 == Returning to the Packaged Client ==
 If you ever wish to revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client` match the following.
 
