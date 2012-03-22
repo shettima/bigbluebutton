@@ -423,7 +423,8 @@ Check if environment is setup properly.
 
 Type
 {{{
-env}}
+env
+}}}
 
 You should see
 {{{
