@@ -273,7 +273,7 @@ If the presenter has only 100 KByte/second upstream, then performing VoIP, video
 === Users on Windows 7 get disconnected after a minute ===
 
 The default config of Windows 7 (and Vista) does "ICMPv6
-Router Solicitation" while running the Flash client. Some routers  discard the Teredo packets and, causing the BigBlueButton client to disconnect at regular intervals.  One solution is to dispable Teredo packets in the client by entering 
+Router Solicitation" while running the Flash client. Some routers  discard the Teredo packets and, causing the BigBlueButton client to disconnect at regular intervals.  One solution is to disable Teredo packets in the client by entering 
 
 {{{
 netsh interface ipv6 set teredo disable
