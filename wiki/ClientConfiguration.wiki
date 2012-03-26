@@ -2,7 +2,7 @@
 <wiki:toc max_depth="3" />
 
 = Introduction =
-A detailed discussion of the client's config.xml file. This document shows you how to configure the client to work to your liking, and what options are available..
+A detailed discussion of the client's config.xml file. This document shows you how to configure the client to work to your liking, and what options are available.
 
 == Config.xml ==
 The config.xml file is located in the deployed client directory, default location /var/www/bigbluebutton/client/conf/config.xml. If you are working with the source code, it is located in the client's src/conf directory, default location /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/conf/config.xml.
@@ -95,19 +95,36 @@ The uri the module will connect to using rtmp. This is usually your bbb server i
 ==== depends on ====
 Optional parameter that should be included in the case that the module being loaded depends on another !BigBlueButton module being loaded first in order to work properly.
 
+==== windowVisible ====
+Set to false to hide the window.
+
+==== position ====
+Location of module on the screen.  There are a number of pre-defined positions that you can assign a module to change its layout.
+
+  # top-right
+
 === Chat Module ===
 {{{
-<module name="ChatModule" url="ChatModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/bigbluebutton" 
-	dependsOn="ViewersModule"	
-	translationOn="true"
-	translationEnabled="true"	 
-/>
+
+                <module name="ChatModule" url="ChatModule.swf?v=VERSION"
+                        uri="rtmp://192.168.0.36/bigbluebutton"
+                        dependsOn="ViewersModule"
+                        translationOn="false"
+                        translationEnabled="false"
+                        privateEnabled="true"
+                        position="top-right"
+                />
+
 }}}
 ==== translationOn ===
 Determines whether the automatic translation of Chat messages to the users' language on by default. If true, all messages the user receives in the chat will be translated to their detected or selected language. The users can see the original message by rolling over the message in the Chat. They can also disable the translation in the '+' Tab of the chat window.
+
 ==== translationEnabled ====
 If set to true, the user will have the option of enabling/disabling automatic translation from the '+' Tab in the chat window. They will also be able to detect the language they want their messages translated to.
+
+==== privateEnabled ====
+Set to true to enable private chat.
+
 
 === Viewers Module ===
 {{{
@@ -115,38 +132,67 @@ If set to true, the user will have the option of enabling/disabling automatic tr
 	uri="rtmp://192.168.0.225/bigbluebutton" 
 	host="http://192.168.0.225/bigbluebutton/api/enter"
 	allowKickUser="false"
+        windowVisible="true"
 />
 }}}
 ==== allowKickUser ====
 Determines whether or not the Moderators of the meeting are able to kick a user from the conference. If set to true, a Moderator will be given the option of kicking a selected user from the conference by clicking on their name and the Kick button inside the Viewers window.
 
+
 === Listeners Module ===
 {{{
-<module name="ListenersModule" url="ListenersModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/bigbluebutton" 
-	recordingHost="http://HOST"
-/>
+                <module name="ListenersModule" url="ListenersModule.swf?v=VERSION"
+                        uri="rtmp://192.168.0.36/bigbluebutton"
+                        recordingHost="http://192.168.0.36"
+                        windowVisible="true"
+                        position="bottom-left"
+                />
+
+
 }}}
 The Listeners Module is the window which shows who is currently connected to the voice conference in the Listeners window. Nothing special here. The recordingHost attribute is not functioning and should be removed.
 
 === Desktop Sharing ===
 {{{
-<module name="DeskShareModule" 
-	url="DeskShareModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/deskShare"
-/>
+                <module name="DeskShareModule"
+                        url="DeskShareModule.swf?v=VERSION"
+                        uri="rtmp://192.168.0.36/deskShare"
+                        autoStart="false"
+                />
 }}}
 The Desktop Sharing module. Note that it connects to /deskShare, which is a red5 application on the server separate from the /bigbluebutton application.
 
+==== autoStart ====
+Set to true to automatically start the desktop sharing module.
+
 === Phone Module ===
 {{{
-<module name="PhoneModule" url="PhoneModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/sip" 
-        autoJoin="false"
-	dependsOn="ViewersModule"
-/>
+                <module name="PhoneModule" url="PhoneModule.swf?v=VERSION"
+                        uri="rtmp://192.168.0.36/sip"
+                        autoJoin="true"
+                        skipCheck="false"
+                        showButton="true"
+                        enabledEchoCancel="true"
+                        dependsOn="ViewersModule"
+                />
+
+
+
 }}}
 The Phone Module is the shows as the small headset icon in the upper left of the client. It allows users to join the meeting through VoIP by using a headset. Note again the separate /sip server side application.
+
+
+==== autoStart ====
+Set to true to show the button in the title bar.
+
+==== autoJoin  ====
+Set to true to have the user automatically join the voice conference bridge.
+
+==== showButton  ====
+Set to true to have the headset icon visible on the toolbar.
+
+==== enabledEchoCancel====
+Set to true to enable the acoustic echo cancellation.
 
 === Videoconf Module ===
 {{{
@@ -213,12 +259,17 @@ See the following:
 This module will dock viewed webcams and and tile them.
 
 {{{
-  <module name="VideodockModule" url="VideodockModule.swf?v=VERSION"
-			uri="rtmp://HOST/bigbluebutton" 
-			dependsOn="VideoconfModule, ViewersModule"
-			autoDock="true"
-			maximizeWindow="false"
-  />
+                <module name="VideodockModule" url="VideodockModule.swf?v=VERSION"
+                        uri="rtmp://192.168.0.36/bigbluebutton"
+                        dependsOn="VideoconfModule, ViewersModule"
+                        autoDock="true"
+                        maximizeWindow="false"
+                        position="bottom-right"
+                        width="172"
+                        height="179"
+                        layout="smart"
+                        oneAlwaysBigger="false"
+                />
 }}}
 
 ==== autoDock ====
@@ -227,16 +278,29 @@ Automatically dock all webcam windows.
 ==== maximizeWindow ====
 Maximize the docking window.
 
+==== oneAlwaysBigger====
+Always have one of the video windows bigger.
+
 
 === Present Module ===
 {{{
-<module name="PresentModule" url="PresentModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/bigbluebutton" 
-	host="http://192.168.0.225" 
-	dependsOn="ViewersModule"
-/>
+       <module name="PresentModule" url="PresentModule.swf?v=VERSION"
+                        uri="rtmp://192.168.0.36/bigbluebutton"
+                        host="http://192.168.0.36"
+                        showPresentWindow="true"
+                        showWindowControls="true"
+                        dependsOn="ViewersModule"
+                />
+
 }}}
 The Presentation Module which lets users share slides and other documents in the main viewing area inside of !BigBlueButton.
+
+==== showPresentWindow====
+Set true to show the presentation window.
+
+==== showWindowControls====
+Set true to show the presentation window controls.
+
 
 === Whiteboard Module ===
 {{{
