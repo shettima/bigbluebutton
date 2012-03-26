@@ -398,8 +398,8 @@ meetingID (or set of meeting IDs).</p>
          <meetingID>CS101</meetingID> 
          <name><![CDATA[On-line session for CS 101]]></name> 
          <published>false</published> 
-         <startTime>Thu Mar 04 14:05:56 UTC 2010</startTime> 
-         <endTime>Thu Mar 04 15:01:01 UTC 2010</endTime> 
+         <startTime>34545465656</startTime> 
+         <endTime>34575565465</endTime> 
          <metadata> 
             <title><![CDATA[Test Recording]]></title> 
             <subject><![CDATA[English 232 session]]></subject> 
