@@ -228,17 +228,26 @@ Add more checks to bbb-conf to continue to trouble shoot any problems with the i
 === IMS Basic LTI integration ===
 Enable products such as Desire2Learn to launch !BigBlueButton meetings without having to create a custom module ([http://code.google.com/p/bigbluebutton/issues/detail?id=907]).
  
- 
+
+=== HTML5 integration ===
+
+With the ongoing work in [http://www.webrtc.org/ WebRTC] project, it's becoming possible for an HTML5 browser to access the user's webcam and microphone.
+
+We're planning the integration with HTML5 in three phases:
+  * Phase 1: Playback recordings in HTML5 (done in 0.8)
+  * Phase 2: Create a HTML5 !BigBlueButton client that can view a live session (does not need access to user's webcam or microphone)
+  * Phase 3: Create a full HTML5 based !BigBlueButton client that enables two-way interaction.
+
+Once !BigBlueButton 0.8 ships, our plans are to work on parallel on Phase 2 during the development of the next release of !BigBlueButton.
  
 = Beyond 1.0 =
 
-There are a number of capabilities that we want to add (soon) after 1.0 is released.
+There are a number of capabilities that we want to add that have 
+
 
   * *Plug-in Architecture* - Currently, !BigBlueButton is self-contained product.  Everything comes pre-assembled, ready to go.  That is great for initial adoption, but we want !BigBlueButton to become modular platform (like eclipse) to enable other developers to easily create an integrate their own modules.  
 
   * *Full mobile support* - This includes a Android ([http://code.google.com/p/bigbluebutton/issues/detail?id=851 851]), BlackBerry, and iPhone/iPad client ([http://code.google.com/p/bigbluebutton/issues/detail?id=852 852]).
-
-  * *HTML 5 client* - While the absence of an ability to access the microphone and web cam would prevent an HTML 5 client from becoming a first-class client, an HTML 5 client could receive a stream of the current video and audio, and it could participate in other areas, such as real-time chat ([http://code.google.com/p/bigbluebutton/issues/detail?id=850 850]).
 
   * *Integration with H.263* - This would enable !BigBlueButton to integrate with other commercial conferencing systems.
 
