@@ -231,14 +231,18 @@ Enable products such as Desire2Learn to launch !BigBlueButton meetings without h
 
 === HTML5 integration ===
 
-With the ongoing work in [http://www.webrtc.org/ WebRTC] project, it's becoming possible for an HTML5 browser to access the user's webcam and microphone.
+With the ongoing work in [http://www.webrtc.org/ WebRTC] project, it's now possible for an HTML5 browser to access the user's webcam and microphone.
 
-We're planning the integration with HTML5 in three phases:
-  * Phase 1: Playback recordings in HTML5 (done in 0.8)
-  * Phase 2: Create a HTML5 !BigBlueButton client that can view a live session (does not need access to user's webcam or microphone)
-  * Phase 3: Create a full HTML5 based !BigBlueButton client that enables two-way interaction.
+This means it should be possible to create an HTML5 !BigBlueButton client.
+
+We're planning the support of HTML5 in three phases:
+  * Phase 1: Playback recordings in HTML5 (Done in 0.8!)
+  * Phase 2: Create a HTML5 !BigBlueButton client that can view a live session, but does not need access to user's webcam or microphone.  This client should run in any HTML5 browser.
+  * Phase 3: Create a full HTML5 based !BigBlueButton client that enables two-way interaction.  This client should run in any HTML5 browser that supports WebRTC (Currently Firefox and Chrome).
 
 Once !BigBlueButton 0.8 ships, our plans are to work on parallel on Phase 2 during the development of the next release of !BigBlueButton.
+
+We're very keen to see a full version of !BigBlueButton in HTML5.
  
 = Beyond 1.0 =
 
