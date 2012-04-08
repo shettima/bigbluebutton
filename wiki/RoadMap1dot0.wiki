@@ -229,7 +229,7 @@ Add more checks to bbb-conf to continue to trouble shoot any problems with the i
 Enable products such as Desire2Learn to launch !BigBlueButton meetings without having to create a custom module ([http://code.google.com/p/bigbluebutton/issues/detail?id=907]).
  
 
-=== HTML5 integration ===
+=== HTML5 client ===
 
 With the ongoing work in [http://www.webrtc.org/ WebRTC] project, it's now possible for an HTML5 browser to access the user's webcam and microphone.
 
