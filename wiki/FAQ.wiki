@@ -1240,7 +1240,7 @@ Currently, !BigBlueButton does not record or playback mouse movements or whitebo
 === What browsers support playback ===
 The audio from the recorded session is converted to [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered, and enclosed in an OGG container.  
 
-Currently, playback only works on !FireFox and !Chrome browsers.  !BigBlueButton will soon include the .wav file to the HTML5 playback so Safari and IE can also playback the session.
+Currently, playback only works on !FireFox and Chrome browsers.  
 
 === Can I see the total time of the session ===
 The information displayed during playback is browser specific.  
