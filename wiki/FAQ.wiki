@@ -216,8 +216,22 @@ The easiest way to get your own !BigBlueButton server under OS X is to install V
 There is a !BigBlueButton Labs project (prototype and unsupported) that shows how to [GentooEBuild install BigBlueButton on Gentoo using ebuild].
 
 
+== Support for Mobile Devices ==
+
+=== Android ===
+
+Work is underway to build a native [http://www.bigbluebutton.org/2011/11/12/bbb-mobile-now-available-on-android-marketplace/ Android client].
+
+=== iOS ===
+
+There is no iOS (iPad or iPhone) !BigBlueButton client.  However, as !BigBlueButton is open source, we believe, like the [Android #Andriod] client, it is only a matter of time before other developers start to create an iOS client.
+
+If you would like to influence or support such development, see [FAQ#When_will_feature_X_be_implemented When will feature X be implemented].
+
+
 
 == Bandwidth Requirements ==
+
 
 
 === What are the bandwidth requirements for running a !BigBlueButton server? ===
