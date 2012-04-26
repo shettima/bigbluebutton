@@ -59,65 +59,31 @@ The url that the client queries for the user information when the user joins the
     <language userSelectionEnabled="true" />
 }}}
 
-??? Not sure what this is for.
+This enables/disables the language selector combo box in the client. Enable this if you would like your users to be able to select the language of their !BigBlueButton client themselves instead of the language being detected automatically for them.
 
 {{{
     <skinning enabled="false" url="branding/css/theme.css.swf" />
 }}}
 
-Set {{{enabled}}} to true and set the {{{url}}} to the swf file with your theme modifications.
+Set {{{enabled}}} to true and set the {{{url}}} to the swf file with your theme modifications. This enables/disables skinning support for the client. If the value is false, the url attribute will be ignored. Otherwise the url attribute specifies the compiled CSS file to load on startup. See [Branding Branding] for more details.
 
 {{{
     <layout showLogButton="false" showVideoLayout="false" showResetLayout="true" showToolbar="true" showHelpButton="true" showLogoutWindow="true"/>
 }}}
 
-
-
-=== showDebugWindow ===
-
-{{{
-    <debug showDebugWindow="false" />
-}}}
+{{{showLogButton="false"}}}
 
 Show or hide the button (lower right-hand corner) to display the debug window.  If you are running !BigBlueButton 0.8, see [#showLogButton showLogButton].
 
-=== showLogButton ===
-In !BigBlueButton 0.8, the value in is 
+{{{showVideoLayout="false"}}}
+Show or hide the video layout button on the lower-right corner of the client.
 
-{{{
-    <debug showLogButton="false" />
-}}}
+{{{showResetLayout="true"}}}
+Show or hide the reset layout button on the lower-right corner of the client.
 
-=== application ===
-{{{
-<application uri="rtmp://192.168.0.225/bigbluebutton" host="conf/join-mock.xml" />
-}}}
-The main ip that the client will try to connect to. The uri attribute should be left as is, with the ip as your bbb server ip. The host property can be changed depending on how you are using the client:
-==== Developing with source and launching from Flash Builder ====
-{{{
-host="conf/join-mock.xml"
-}}}
-==== Using bbb-web 0.71 and later ====
-{{{
-host="http://192.168.0.225/bigbluebutton/api/enter"
-}}}
-==== Using bbb-web 0.7 and earlier ====
-{{{
-host="http://192.168.0.167/bigbluebutton/conference-session/enter"
-}}}
-*NOTE* This third option is important if you've decided to develop only the client, and have compiled the latest client source for 0.71 but have not compiled and deployed the latest version of bbb-web.
+{{{showToolbar="true"}}}
+Show or hide the main toolbar on the top part of the client.
 
-=== language ===
-{{{
-<language userSelectionEnabled="true" />
-}}}
-This enables/disables the language selector combo box in the client. Enable this if you would like your users to be able to select the language of their !BigBlueButton client themselves instead of the language being detected automatically for them.
-
-=== skinning ===
-{{{
-<skinning enabled="false" url="branding/css/theme.swf" />
-}}}
-This enables/disables skinning support for the client. If the value is false, the url attribute will be ignored. Otherwise the url attribute specifies the compiled CSS file to load on startup. See [Branding Branding] for more details.
 
 == Modules ==
 The !BigBlueButton client is comprised of one or more modules. You can specify which modules you would like loaded in the config.xml file. The modules will be loaded at startup. The properties for the different currently available modules are shown here in no particular order. Most of the modules share certain attributes:
