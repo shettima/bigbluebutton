@@ -22,7 +22,9 @@ The template can be found [https://github.com/bigbluebutton/bigbluebutton/blob/m
     <application uri="rtmp://HOST/bigbluebutton" host="http://HOST/bigbluebutton/api/enter" />
     <language userSelectionEnabled="true" />
     <skinning enabled="false" url="branding/css/theme.css.swf" />
-    <layout showLogButton="false" showVideoLayout="false" showResetLayout="true" showToolbar="true" showHelpButton="true" showLogoutWindow="true"/>
+    <layout showLogButton="false" showVideoLayout="false" 
+      showResetLayout="true" showToolbar="true" 
+      showHelpButton="true" showLogoutWindow="true"/>
 }}}
 
 
@@ -68,7 +70,9 @@ This enables/disables the language selector combo box in the client. Enable this
 Set *enabled* to true and set the *url* to the swf file with your theme modifications. This enables/disables skinning support for the client. If the value is false, the url attribute will be ignored. Otherwise the url attribute specifies the compiled CSS file to load on startup. See [Branding Branding] for more details.
 
 {{{
-    <layout showLogButton="false" showVideoLayout="false" showResetLayout="true" showToolbar="true" showHelpButton="true" showLogoutWindow="true"/>
+    <layout showLogButton="false" showVideoLayout="false" 
+       showResetLayout="true" showToolbar="true" 
+       showHelpButton="true" showLogoutWindow="true"/>
 }}}
 
 {{{
@@ -130,14 +134,14 @@ Location of module on the screen.  There are a number of pre-defined positions t
 === Chat Module ===
 {{{
 
-                <module name="ChatModule" url="ChatModule.swf?v=VERSION"
-                        uri="rtmp://192.168.0.36/bigbluebutton"
-                        dependsOn="ViewersModule"
-                        translationOn="false"
-                        translationEnabled="false"
-                        privateEnabled="true"
-                        position="top-right"
-                />
+		<module name="ChatModule" url="ChatModule.swf?v=VERSION" 
+			uri="rtmp://HOST/bigbluebutton" 
+			dependsOn="ViewersModule"	
+			translationOn="false"
+			translationEnabled="false"	
+			privateEnabled="true"  
+			position="top-right"
+		/>
 
 }}}
 ==== translationOn ===
