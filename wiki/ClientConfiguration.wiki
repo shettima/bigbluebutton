@@ -147,6 +147,10 @@ Location of module on the screen.  There are a number of pre-defined positions t
 ==== translationOn ===
 Determines whether the automatic translation of Chat messages to the users' language on by default. If true, all messages the user receives in the chat will be translated to their detected or selected language. The users can see the original message by rolling over the message in the Chat. They can also disable the translation in the '+' Tab of the chat window.
 
+*NOTE*
+
+This feature won't work because Google has stopped the translate service.
+
 ==== translationEnabled ====
 If set to true, the user will have the option of enabling/disabling automatic translation from the '+' Tab in the chat window. They will also be able to detect the language they want their messages translated to.
 
@@ -156,15 +160,18 @@ Set to true to enable private chat.
 
 === Viewers Module ===
 {{{
-<module name="ViewersModule" url="ViewersModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/bigbluebutton" 
-	host="http://192.168.0.225/bigbluebutton/api/enter"
-	allowKickUser="false"
-        windowVisible="true"
-/>
+		<module name="ViewersModule" url="ViewersModule.swf?v=VERSION" 
+			uri="rtmp://HOST/bigbluebutton" 
+			host="http://HOST/bigbluebutton/api/enter"
+			allowKickUser="false"
+			windowVisible="true"
+		/>
 }}}
 ==== allowKickUser ====
 Determines whether or not the Moderators of the meeting are able to kick a user from the conference. If set to true, a Moderator will be given the option of kicking a selected user from the conference by clicking on their name and the Kick button inside the Viewers window.
+
+==== windowVisible ====
+Whether the viewers window will be displayed or not.
 
 
 === Listeners Module ===
