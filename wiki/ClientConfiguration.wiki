@@ -1,38 +1,77 @@
 #summary Configuring bbb-client.
 <wiki:toc max_depth="3" />
 
+= NOTE: This doc is in the process of being updated. =
+
 = Introduction =
 A detailed discussion of the client's config.xml file. This document shows you how to configure the client to work to your liking, and what options are available.
 
 == Config.xml ==
 The config.xml file is located in the deployed client directory, default location /var/www/bigbluebutton/client/conf/config.xml. If you are working with the source code, it is located in the client's src/conf directory, default location /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/conf/config.xml.
 
-Open up the config.xml file. This is a line by line discussion of it's properties, applicable for version 0.71.
+Open up the config.xml file. This is a line by line discussion of it's properties, applicable for version 0.8.
+
+The template can be found [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/config.xml.template here]
 
 == Main parameters ==
-=== localeversion ===
 {{{
-<localeversion suppressWarning="false">0.71</localeversion>
-}}} 
+    <localeversion suppressWarning="false">0.8-beta4</localeversion>
+    <version>VERSION</version>
+    <help url="http://HOST/help.html"/>
+    <porttest host="HOST" application="video"/>    
+    <application uri="rtmp://HOST/bigbluebutton" host="http://HOST/bigbluebutton/api/enter" />
+    <language userSelectionEnabled="true" />
+    <skinning enabled="false" url="branding/css/theme.css.swf" />
+    <layout showLogButton="false" showVideoLayout="false" showResetLayout="true" showToolbar="true" showHelpButton="true" showLogoutWindow="true"/>
+}}}
+
+
+{{{
+    <localeversion suppressWarning="false">0.8-beta4</localeversion>
+}}}
+
 This should be left as is. It has to do with the client caching localization files. If you're having problems with the Warning Dialog for old localizations, you can set the suppressWarning parameter to true.
 
-=== version ===
 {{{
-<version>VERSION</version>
-}}} 
+    <version>VERSION</version>
+}}}
 This has to do with the caching of the client as a whole. Should also be left alone, in general.
 
-=== help url ===
 {{{
-<help url="http://192.168.0.225/help.html"/>
+    <help url="http://HOST/help.html"/>
 }}}
+
 This is the url that you would like users redirected to when they click the Help button in the client.
 
-=== porttest ===
 {{{
-<porttest host="192.168.0.225" application="video"/> 
+    <porttest host="HOST" application="video"/> 
 }}}
+
 The ip and red5 application the client uses to test whether necessary ports are open, and determine whether tunneling should be used. The host should be your bbb server ip. The application should be left as video.
+
+{{{   
+    <application uri="rtmp://HOST/bigbluebutton" host="http://HOST/bigbluebutton/api/enter" />
+}}}
+
+The url that the client queries for the user information when the user joins the meeting.
+
+{{{
+    <language userSelectionEnabled="true" />
+}}}
+
+??? Not sure what this is for.
+
+{{{
+    <skinning enabled="false" url="branding/css/theme.css.swf" />
+}}}
+
+Set {{{enabled}}} to true and set the {{{url}}} to the swf file with your theme modifications.
+
+{{{
+    <layout showLogButton="false" showVideoLayout="false" showResetLayout="true" showToolbar="true" showHelpButton="true" showLogoutWindow="true"/>
+}}}
+
+
 
 === showDebugWindow ===
 
