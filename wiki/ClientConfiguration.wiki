@@ -72,23 +72,36 @@ Set *enabled* to true and set the *url* to the swf file with your theme modifica
 }}}
 
 {{{
-showLogButton="false"
+  showLogButton="false"
 }}}
 
 Show or hide the button (lower right-hand corner) to display the debug window.  If you are running !BigBlueButton 0.8, see [#showLogButton showLogButton].
 
 {{{
-showVideoLayout="false"
+  showVideoLayout="false"
 }}}
 Show or hide the video layout button on the lower-right corner of the client.
 
 {{{
-showResetLayout="true"
+  showResetLayout="true"
 }}}
 Show or hide the reset layout button on the lower-right corner of the client.
 
-{{{showToolbar="true"}}}
+{{{
+  showToolbar="true"
+}}}
 Show or hide the main toolbar on the top part of the client.
+
+{{{
+  showHelpButton="true" 
+}}}
+Show the help button on the main toolbar.
+
+
+{{{
+  showLogoutWindow="true"
+}}}
+Show the logout window when the client logs out.
 
 
 == Modules ==
