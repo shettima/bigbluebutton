@@ -65,20 +65,26 @@ This enables/disables the language selector combo box in the client. Enable this
     <skinning enabled="false" url="branding/css/theme.css.swf" />
 }}}
 
-Set {{{enabled}}} to true and set the {{{url}}} to the swf file with your theme modifications. This enables/disables skinning support for the client. If the value is false, the url attribute will be ignored. Otherwise the url attribute specifies the compiled CSS file to load on startup. See [Branding Branding] for more details.
+Set *enabled* to true and set the *url* to the swf file with your theme modifications. This enables/disables skinning support for the client. If the value is false, the url attribute will be ignored. Otherwise the url attribute specifies the compiled CSS file to load on startup. See [Branding Branding] for more details.
 
 {{{
     <layout showLogButton="false" showVideoLayout="false" showResetLayout="true" showToolbar="true" showHelpButton="true" showLogoutWindow="true"/>
 }}}
 
-{{{showLogButton="false"}}}
+{{{
+showLogButton="false"
+}}}
 
 Show or hide the button (lower right-hand corner) to display the debug window.  If you are running !BigBlueButton 0.8, see [#showLogButton showLogButton].
 
-{{{showVideoLayout="false"}}}
+{{{
+showVideoLayout="false"
+}}}
 Show or hide the video layout button on the lower-right corner of the client.
 
-{{{showResetLayout="true"}}}
+{{{
+showResetLayout="true"
+}}}
 Show or hide the reset layout button on the lower-right corner of the client.
 
 {{{showToolbar="true"}}}
