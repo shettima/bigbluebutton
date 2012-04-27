@@ -93,13 +93,13 @@ It's in this directory that you'll place the source for !BigBlueButton.
 
 == Checking out the Source ==
 
-We recommend you use !GitHub to fork !BigBlueButton.  This will make it easy for to work on your own copy of !BigBlueButton's source, store updates to GitHub, and [Contributing_to_BigBlueButton contribute] back to the project by sending us pull requests.
+We recommend you use !GitHub to fork !BigBlueButton.  This will make it easy for to work on your own copy of !BigBlueButton's source, store updates to !GitHub, and [Contributing_to_BigBlueButton contribute] back to the project by sending us pull requests.
 
 To checkout the source:
 
  # Setup an account on [https://github.com/plans GitHub] if you don't already have one (it's free!)
  # Setup your [http://help.github.com/linux-set-up-git/ ssh keys]. Skip to the "Set Up SSH Keys" section.
- # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your GitHub account
+ # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your !GitHub account
  # Clone your repository into your `~/dev` folder
 
 
