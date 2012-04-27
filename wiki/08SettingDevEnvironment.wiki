@@ -259,6 +259,7 @@ To develop the client using Flash Builder, follow these steps:
    # Click finish.
  # Right click on the project, go to Properties -> Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4)
  # In the same window, make sure the Flash Player specific version is set to at least 10.3.0. Also, check the "Flex 3 compatibility mode" option. Click Apply.
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/rocks.png
  # In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package).
  # In the Package Explorer navigate to src/(default package) and _Right Click_ on !BigBlueButton.mxml and click on Set As Default Application.
  # Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
