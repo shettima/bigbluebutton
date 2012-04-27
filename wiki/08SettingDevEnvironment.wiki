@@ -45,7 +45,7 @@ While it may seem obvious, we emphasize your !BigBlueButton server should be wor
 If you are on Windows, we recommend you download the 08BigBlueButtonVM and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
 
 === You'll need sudo abilities ===
- setup the !BigBlueButton development environment, yo To verify, you should be able to
+ setup the !BigBlueButton development environment. To verify, you should be able to
 
 {{{
   sudo ls
@@ -67,7 +67,7 @@ On a !BigBlueButton server, you can install all the necessary development tools 
 When you run this script asked to enter your password to sudo into root.  This script will:
 
   # Download and setup groovy, grails, and gradle
-  # Download and install FlexBuilder
+  # Download and install Open Source Flex SDK
   # Install OpenJDK 
   # Install git
   # Add the necessary environment variables in your ~/.profile
@@ -76,7 +76,7 @@ When you run this script asked to enter your password to sudo into root.  This s
 After the initial setup is complete, you'll need to reload your `.profile` to use the new environment variables for groovy, grails, and gradle.  To do this, run
 
 {{{
-source ~/.profile
+  source ~/.profile
 }}}
 
 You need only do this once.  When you next login to your account, you'll have the environment variables in place.
@@ -86,7 +86,7 @@ Again, you can use any account on a !BigBlueButton server that has sudo rights. 
 The `bbb-conf` script create for you a `dev` directory in your account.
 
 {{{
-/home/firstuser/dev
+  /home/firstuser/dev
 }}}
 
 It's in this directory that you'll place the source for !BigBlueButton.
