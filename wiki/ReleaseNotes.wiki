@@ -5,7 +5,7 @@
 
 RC1 Released: May 4, 2012  
 
-See [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 open issues for BigBlueButton 0.8 beta], [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed in 0.8-beta-4].
+See [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 open issues for BigBlueButton 0.8], [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed in 0.8].
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
