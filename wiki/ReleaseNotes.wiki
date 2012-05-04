@@ -20,11 +20,8 @@ What's new in 0.8-beta-4:
 
  * *bbb-conf now Installs Development Tools* - To make it easer to develop !BigBlueButton, `bbb-conf` can now install a build environment on a !BigBlueButton server within any account with sudo privileges.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
 
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed in 0.8-beta-4].
+See [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 open issues for BigBlueButton 0.8 beta], [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed in 0.8-beta-4].
 
-= Release 0.8-beta-3 =
-
-Beta Released: November 21, 2011
 
 What's new in 0.8-beta-3:
 
@@ -56,7 +53,7 @@ What's new in 0.8-beta-1:
 
   * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to a snapshot of 1.0.7.  !BigBlueButton no longer requires installation of mysql.
 
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.8 open issues for BigBlueButton 0.8 beta].
+
 
 = Release 0.71a =
 
