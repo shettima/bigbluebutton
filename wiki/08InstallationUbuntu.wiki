@@ -1,14 +1,14 @@
-#summary How to install  BigBlueButton 0.8-beta-4 on Ubuntu in under 30 minutes
+#summary How to install  BigBlueButton 0.8-RC1 on Ubuntu in under 30 minutes
 
 <wiki:toc max_depth="3" />
 
 = Overview =
 
-We're pleased to announce the release !BigBlueButton 0.8-beta-4. 
+We're pleased to announce the release !BigBlueButton 0.8-RC1. 
 
 Our goal since the beginning of this release has been to integrate record and playback into !BigBlueButton's core.   This release is the culmination of months of effort (our last release was January 14, 2010).  With this release, you can now record and playback slides, audio, and chat within !BigBlueButton.  This enables !BigBlueButton to address a much wider set of use cases for distance education.  
 
-For a detailed list of changes, see [ReleaseNotes 0.8-beta-4 release notes].
+For a detailed list of changes, see [ReleaseNotes 0.8-RC1 release notes].
 
 If you have any problems not answered by this document, or you have questions/feedback, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup].
 
@@ -27,7 +27,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # Port 80 is available and not used by another application
   # 400G of free disk space (or more) for recordings
 
-Currently, as of !BigBlueButton 0.8-beta-4, locale of the server must be en_US.UTF-8.  You can verify this by
+Currently, as of !BigBlueButton 0.8-RC1, locale of the server must be en_US.UTF-8.  You can verify this by
 
 {{{
 $ cat /etc/default/locale
@@ -86,10 +86,10 @@ After the install finishes, restart your !BigBlueButton server with
 
 
 
-= Installation of !BigBlueButton 0.8-beta-4 =
+= Installation of !BigBlueButton 0.8 =
 
 == Install Video ==
-To make it easy for you to setup your own !BigBlueButton 0.8-beta-4 server, we've put together the following overview video.
+To make it easy for you to setup your own !BigBlueButton 0.8 server, we've put together the following overview video.
 
 <wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
 
@@ -254,7 +254,7 @@ Got to [#Trying_out_your_server_(24:42_minutes_later) Trying out your sever].
 
 = Upgrading a !BigBlueButton 0.71a Server =
 
-The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8-beta-4.
+The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8.
 
 A 'standard installation' is an installation of !BigBlueButton 0.71a that has been configured using the standard commands
 
