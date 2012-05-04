@@ -9,7 +9,8 @@ _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony B
 
 See [08InstallationUbuntu installation instructions].
 
-Links: [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 open issues for BigBlueButton 0.8], [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 detailed list of issues fixed in 0.8].
+Links: [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 remaining issues for BigBlueButton 0.8], [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8+closed-after%3A2011%2F11%2F22 closed issues in 0.8].
+
 What's new in 0.8-beta-4:
 
   * * Fit-to-Width for Layout of Portrait Documents * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width screenshot].
