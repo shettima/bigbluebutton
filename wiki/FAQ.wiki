@@ -293,6 +293,8 @@ Router Solicitation" while running the Flash client. Some routers  discard the T
 netsh interface ipv6 set teredo disable
 }}}
 
+To run this command, you'll need to enter 'cmd' in the program search field (available when you click the start menu).  When you type 'cmd', you'll see the 'command prompt' appear.  Right-click and choose "Run as Administrator"
+
 === I've tried to install !BigBlueButton on a virtual private server running Ubuntu 10.04 but I'm getting packaging errors during the installation. ===
 Sometimes the hosting provider for a virtual private server (VPS) has removed the default entries from
 
