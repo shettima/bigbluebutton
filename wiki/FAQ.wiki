@@ -407,7 +407,7 @@ The music on hold is provided by FreeSWITCH.  To disable it, edit `confernece.co
    sudo vi /opt/freeswitch/conf/autoload_configs/conference.conf.xml
 }}}
 
-and change line 189 from
+and change line 139 from
 
 {{{
       <param name="moh-sound" value="$${hold_music}"/>
