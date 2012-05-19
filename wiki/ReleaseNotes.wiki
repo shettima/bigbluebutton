@@ -9,7 +9,7 @@ _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony B
 
 See [08InstallationUbuntu installation instructions].
 
-Links: [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed Issues closed in 0.8], [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 Issues remaining issues in 0.8], 
+Links: [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed Issues closed in 0.8], [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 Issues remaining issues in 0.8].
 
 What's new in 0.8-beta-4:
 
