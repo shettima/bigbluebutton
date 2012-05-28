@@ -1,8 +1,8 @@
-#summary How to setup your own BigBlueButton 0.8-beta-4 Virtual Machine
+#summary How to setup your own BigBlueButton 0.8-RC2 Virtual Machine
 
 <wiki:toc max_depth="2" />
 
-= How to setup your own !BigBlueButton 0.8-beta-4 server in a few minutes =
+= How to setup your own !BigBlueButton 0.8-RC2 server in a few minutes =
 
 This page describes how to download and run the !BigBlueButton 0.8-beta-4 VM.  The VM is an easy way to have a fully working !BigBlueButton server in a few minutes.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac (on the Mac it's called VMWare Fusion).  
 
@@ -23,6 +23,8 @@ The third requirement is important: the VM must be able to connect to the intern
   1.  Download and uncompress the the !BigBlueButton VM. 
 
 Download bigbluebutton08-beta-4-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
+
+Note: The VM will automatically update itself to 0.8-RC2 upon first boot.
 
   2.  Open the enclosed folder.
 
