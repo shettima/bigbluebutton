@@ -1,6 +1,6 @@
 #summary How to setup your own BigBlueButton Virtual Machine
 
-*Note:* We recommend you download and try the !BigBlueButton [08BigBlueButtonVM 0.8-beta-4 VM].
+*Note:* We recommend you download and try the !BigBlueButton [08BigBlueButtonVM 0.8-RC2 VM].
 
 <wiki:toc max_depth="2" />
 
