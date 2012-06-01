@@ -71,9 +71,9 @@ Because we will be panning and zooming the images directly, we want these images
   # Slides.rb will run, parse the events.xml as it does already, except this time parse the additional whiteboard events AddShapeEvent, UndoShapeEvent, ClearPageEvent and ResizeAndMoveSlideEvent. It will create the regular slides.xml with chat events in it, shapes.svg which includes the shapes for the presentation and panAndZooms.xml which will specify the panning and zooming events.
   # playback.html will be edited to include the SVG image, which by default will be not visible. 
   # playback.html will also be edited to include an additional javascript file which will specify the onFrame code for Popcorn.js. The code will consist of the following things to do on every frame:
-		# Get the page currently displayed
-		# Get the shapes on that page that need to be displayed
-		# Check if it is undone or not. If it has been undone, don't display it.
-		# Display them by toggling the SVG shapes style of visibility to visible, otherwise keep it hidden.
-		# Is there any pan and zoom event at this specific time? If there is, update it, if there isn't, update it to the previous pan and zoom event.
+	   # Get the page currently displayed
+	   # Get the shapes on that page that need to be displayed
+	   # Check if it is undone or not. If it has been undone, don't display it.
+	   # Display them by toggling the SVG shapes style of visibility to visible, otherwise keep it hidden.
+	   # Is there any pan and zoom event at this specific time? If there is, update it, if there isn't, update it to the previous pan and zoom event.
   # Popcorn.js will execute all this code with the specific shapes to be displayed at runtime.
