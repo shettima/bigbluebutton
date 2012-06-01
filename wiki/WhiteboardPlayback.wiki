@@ -1,0 +1,79 @@
+#summary Specifications for whiteboard playback in BigBlueButton.
+
+= DRAFT - Overview - DRAFT =
+
+Having playback of the whiteboard marks in BigBlueButton would satisfy the requests of numerous users. Its design specifications are detailed below. 
+
+= Specifications =
+
+The following whiteboard events are currently recorded with BigBlueButton:
+  * AddShapeEvent (pencil, rectangle, ellipse)
+     * Specifies a shape being drawn on the whiteboard.
+  * UndoShapeEvent
+     * Undo of the creation of a shape
+  * ClearPageEvent
+     * Clears the current page.
+  * ResizeAndMoveSlideEvent
+     * Pans and Zooms the current page.
+
+The concept behind playing back these events involves the use of Popcorn.js. Popcorn is currently used to change the slides and update the chat during playback. There are no other events that are currently played back. We hope to incorporate the use of the events previously listed above to create a better playback experience.
+
+= Design =
+
+Popcorn.js includes a plugin called Code. Code will execute an arbitrary amount of javascript code at the start and end of a duration of time, as well as 60 times/second using its onFrame option.
+
+To playback the whiteboard marks, Popcorn.js will be used in combination with custom Javascript code to render a frame 60 times per second using this Code plugin. The Javascript code will be the one doing all the work to render the current frame and Popcorn will manage the times at which they run. 
+
+The custom javascript code will more or less do the following things:
+	# Get the current time of the video playback.
+	# Use this time to gather the following information:
+		# What are the current shapes to be drawn?
+		# Is there any pan and zoom level on these shapes at this specific time?
+	# Draw the shapes at the appropriate pan and zoom level.
+	
+== How will this Javascript get this information? == 
+
+Currently a ruby script in the process folder called slides.rb is run after a recorded session and exports the slides.xml which specifies the slides and chat information. This xml is parsed by Popcorn.js during playback and it updates the slides and chat on the fly using the information found in this file. 
+
+Using this idea, we will expand on slides.rb to create more xml files which the javascript code can process at runtime.
+
+== Extending Slides.rb ==
+
+Slides.rb should be extended to process the other whiteboard events from the events.xml currently created. The following will step through the various events and discuss the possibility of how they could be used.
+
+=== AddShapeEvent ===
+	The shapes to be drawn involve a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.
+	
+	The other possibility of shapes involves a rectangle, an (x,y) point for the top left corner and a height and width of the rectangle. It also involves the additional properties such as colour, thickness, etc...
+	
+	The final possibility for shapes is an ellipse which involves an (x,y) point for the top left hand corner and a height and width. The drawn shape is an ellipse, not a rectangle despite the data given. 
+	
+	Using the data given by these three shapes, an SVG (Scalable Vector Graphics) image of the shapes should be possible to generate (using line, rect, ellipse shapes included in SVG). SVG technology enables many possibilities including groups of images to specify groups of shapes for pages of playback and most importantly, visibility. Visiblity will allow playback to specify which shapes are rendered for the given frame and selectively show them.
+	
+=== UndoShapeEvent ===
+	SVG images are basically XML files, so we can give each shape as many properties as we wish. One of the properties to give it would be a time when the shape is undone (if it ever is undone).
+	Javascript can look for this property and compare it with the current time to decide whether the shape should be displayed or not.
+	
+=== ClearPageEvent ===
+	SVG allows shapes to be grouped together. These groups could specify pages of shapes. Because pages can be selectively displayed as well, this will enable javascript to decide which pages are displayed at specific times, making playback of shapes on changing slides as simple as toggling the correct pages' visibilities. 
+	
+=== ResizeAndMoveSlideEvent ===
+	SVG includes a property called viewBox which specifies a section of the image to display. It takes in 4 values, the x and y top corner of the image and the height and width. This is then resized accordingly to fit the space the SVG image usually takes up. By specifying a smaller height and width you can create a zoom effect, and by specifying a new x and y top-corner value, we can create a panning effect. These four values are already recorded in the ResizeAndMoveSlideEvent, which can be more or less replicated to create a viewBox value for the SVG image at the specified time. Javascript can modify this value and playback the panning and zooming effects.
+
+Shapes.rb will be expanded to process these events into their own specific files. One file will be the SVG image created to hold all the shapes, undo events associated with those shapes, and when the pages of the shapes are cleared. Because panning and zooming is not neccesarily part of creating shapes, ResizeAndMoveEvents should be processed separately into their own XML file to be parsed by the Javascript.
+
+== Integration ==
+
+Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. To remove/refactor/integrate this change, changes to the slides.rb will also have to be made in that regard.
+
+= Putting it all Together =
+
+  # Slides.rb will run, parse the events.xml as it does already, except this time parse the additional whiteboard events AddShapeEvent, UndoShapeEvent, ClearPageEvent and ResizeAndMoveSlideEvent. It will create the regular slides.xml with chat events in it, shapes.svg which includes the shapes for the presentation and panAndZooms.xml which will specify the panning and zooming events.
+  # playback.html will be edited to include the SVG image, which by default will be not visible. 
+  # playback.html will also be edited to include an additional javascript file which will specify the onFrame code for Popcorn.js. The code will consist of the following things to do on every frame:
+		# Get the page currently displayed
+		# Get the shapes on that page that need to be displayed
+		# Check if it is undone or not. If it has been undone, don't display it.
+		# Display them by toggling the SVG shapes style of visibility to visible, otherwise keep it hidden.
+		# Is there any pan and zoom event at this specific time? If there is, update it, if there isn't, update it to the previous pan and zoom event.
+  # Popcorn.js will execute all this code with the specific shapes to be displayed at runtime.
