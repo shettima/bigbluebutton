@@ -1,9 +1,9 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 
-= Release 0.8-RC2: Bailetti =
+= Release 0.8-RC3: Bailetti =
 
-RC2 Released: May 18, 2012  
+RC2 Released: June 3, 2012  
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
 
