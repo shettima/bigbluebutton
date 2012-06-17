@@ -227,4 +227,6 @@ More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
 == I'm still having problems ==
 
-If you've tried both the above commands and your !BigBlueButton server is not working, please post to our [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] mailing list.  
+If you've tried both the above commands and your !BigBlueButton server is not working, please use Google to search for answers.  Try typing in a brief description of your problem or an error message.  There are over 14000 posts in our mailing lists and they are all indexed by Google -- there is an excellent chance that you'll find an answer right away.
+
+If your unable to find a solution, please post your question to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] mailing list.  Please be as descriptive as possible so we can help you.
