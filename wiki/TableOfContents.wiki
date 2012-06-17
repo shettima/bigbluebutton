@@ -2,7 +2,7 @@
     * [InstallationUbuntu Install via packages]
     * [BigBlueButtonVM Virtual Machine]
     * [BBBConf BigBlueButton's configuration tool]
-  * [Understanding Understanding BigBlueButton]
+  * [TechnicalOverview Technical Overview]
     * [ArchitectureOverview Architecture Overview]
     * [ClientConfiguration Client-side configuration]
     * [ConfigurationFiles Configuration Files]
