@@ -1,57 +1,49 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 
-= Release 0.8-RC3: Bailetti =
+= Release 0.8: Bailetti =
 
-RC2 Released: June 3, 2012  
+_Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton.  For more information, see [http://www.bigbluebutton.org/history/ History of the BigBlueButton Project]._
 
-_Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton._
+Released: June 18, 2012  
 
-See [08InstallationUbuntu installation instructions].
-
-Links: [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed Issues closed in 0.8], [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.8 Issues remaining in 0.8].
-
-What's new in 0.8-beta-4:
-
-  * * Fit-to-Width for Layout of Portrait Documents * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width screenshot].
-
- * * !BigBlueButton VM 0.8-beta-4 VM * - To quickly setup a !BigBlueButton server for testing, see download [08BigBlueButtonVM BigBlueButton 0.8-beta-4 VM] for VMWare Player/Workstation (Windows, Unix) and VMWare Fusion (Mac).
-
- * *Default Presentation* - You can now specify a default presentation for all !BigBlueButton sessions, which lets you, for example, show an initial help page in a session.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L130 defaultUploadedPresentation] property.
-
- * *bbb-conf now Installs Development Tools* - To make it easer to develop !BigBlueButton, `bbb-conf` can now install a build environment on a !BigBlueButton server within any account with sudo privileges.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
-
-
-What's new in 0.8-beta-3:
-
-  * * Push to Talk * -  Remote students can now mute/unmute themselves with a 'push to talk' button.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Push_To_Talk screenshot].
-
-  * * Auto-translate disabled * -  Google Translate APIs are [http://code.google.com/apis/language/translate/overview.html no longer free] so the auto translate feature is now disabled by default until we can determine the best way to support their new model (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1079 1079])
-
-What's new in 0.8-beta-2:
-
-  * * Audio Settings Dialog * -  To assist users in checking their audio setup *before* joining the voice conference, !BigBlueButton now displays an Audio Settings dialog box to enable the user to verify that audio and microphone are correctly configured for a headset.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Audio_Settings_Dialog audio settings screenshot].
-
-  * * Video Dock * -  To help users view webcams from multiple sources, a new video dock window now 'docks' all the webcams.  The user can drag individual windows in and out of the dock.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Video_Dock video dock screenshot].
-
-What's new in 0.8-beta-1:
+== Major Features ==
+  * * Reduced latency in audio * - The !BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
 
   * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
   * * Playback of recordings in HTML 5 * - The default playback format will playback synchronized slides, audio, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers are Chrome and Firefox; support for Safari and IE coming soon.  Playback of desktop sharing and webcam is supported through the Matterhorn integration.
 
-  * * Matterhorn Integration * -  When integrated with Matterhorn, !BigBlueButton can capture and process the desktop and webcam for automatic submission to a Matterhorn server (see [MatterhornIntegration Matterhorn integration]).
-
   * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings (see [API#Version_0.8 API updates for 0.8]).
+
+  * * Matterhorn integration * -  When integrated with Matterhorn, !BigBlueButton can capture and process the desktop and webcam for automatic submission to a Matterhorn server (see [MatterhornIntegration Matterhorn integration]).
+
+
+== Usability Updates == 
+  * * Audio Settings dialog * -  To assist users in checking their audio setup *before* joining the voice conference, !BigBlueButton now displays an Audio Settings dialog box to enable the user to verify that audio and microphone are correctly configured for a headset.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Audio_Settings_Dialog audio settings screenshot].
+
+  * * Video Dock * -  To help users view webcams from multiple sources, a new video dock window now 'docks' all the webcams.  The user can drag individual windows in and out of the dock.  See [http://code.google.com/p/bigbluebutton/wiki/08Overview#Video_Dock video dock screenshot].
+
+  * * Fit-to-Width for layout of portrait documents * -  Presentation module now enables presenter to switch between fit-to-width and fit-to-page layout for best viewing of  portrait and landscape documents.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Fit-to-width screenshot].
+
+  * * Push to Talk * -  Remote students can now mute/unmute themselves with a 'push to talk' button.  See  [http://code.google.com/p/bigbluebutton/wiki/08Overview#Push_To_Talk screenshot].
+
+
+== Configuration Updates == 
+  * * API demos now separate * - The API demos are installed in their own package (for easy addition and removal).  The install location has changed to `/var/lib/tomcat6/webapps/demo`, which changes the URL from accessing them from `/bigbluebutton/demo` to `/demo`.
 
   * * Upload slides on create * - The 'create' API now supports specification for upload of slides upon creation of the session.  To upload slides, developers can pass an xml with the 'create' request (send via POST).  The xml file may include the slides inline or reference them via URLs.
 
-  * * Reduced latency in audio * - The !BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
+  * * Default Presentation* - You can now specify a default presentation for all !BigBlueButton sessions, which lets you, for example, show an initial help page in a session.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L130 defaultUploadedPresentation] property.
 
-  * * API demos now separate * - The API demos are installed in their own package (for easy addition and removal).  The install location has changed to `/var/lib/tomcat6/webapps/demo`, which changes the URL from accessing them from `/bigbluebutton/demo` to `/demo`.
+  * * Auto-translate disabled * -  Google Translate APIs are [http://code.google.com/apis/language/translate/overview.html no longer free] so the auto translate feature is now disabled by default until we can determine the best way to support their new model (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1079 1079])
+
+  * * bbb-conf now Installs development tools* - To make it easer to develop !BigBlueButton, `bbb-conf` can now install a build environment on a !BigBlueButton server within any account with sudo privileges.  See [08SettingDevEnvironment#Setting_up_the_development_tools setting development tools].
 
   * * Under the hood * -  Replaced activemq with redis.  Updated red5 to RC1.  Updated FreeSWITCH to a snapshot of 1.0.7.  !BigBlueButton no longer requires installation of mysql.
 
+== Fixed Issues ==
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=status%3DFixed+milestone%3DRelease0.8&sort=priority  detailed list of issues fixed in BigBlueButton 0.8]
 
 
 = Release 0.71a =
@@ -61,7 +53,7 @@ Released: January 13, 2011
   * * Maintenance Release * - We spent six weeks profiling and testing the server code to speed handling of VoIP packets and lower memory usage on the server.  See documentation to [InstallationUbuntu install] or [InstallationUbuntu#Upgrading_to_BigBlueButton_0.71a for upgrade] your Ubuntu 10.04 server to !BigBlueButton 0.71a.
 
 == Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71a  issues fixed in BigBlueButton 0.71a]
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71a  detailed list of issues fixed in BigBlueButton 0.71a]
 
 = Release 0.71: Europa=
 
@@ -89,7 +81,7 @@ Released: November 9, 2010
   * * Mate * - The !BigBlueButton client is now fully migrated to the [http://mate.asfusion.com/ mate] framework.
 
 == Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71  issues fixed in BigBlueButton 0.71]
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.71  detailed list of issues fixed in BigBlueButton 0.71]
 
 == Known Issues ==
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=567 Issue 567] Hitting backspace on Safari causes the browser to go back one page
@@ -125,7 +117,7 @@ Released: July 15, 2010
   * * Improved Documentation * - There is a new, simpler, [SampleModule Example module] for bbb-client. As well, the [DevelopingBBB Developer documentation] has been updated to reflect the move to git. 
 
 == Fixed Issues ==
-See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  issues fixed in BigBlueButton 0.7]
+See [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.7  detailed list of issues fixed in BigBlueButton 0.7]
 
 == Known Issues ==
   * [http://code.google.com/p/bigbluebutton/issues/detail?id=524 Issue 524] Problems with audio delay using VoIP
