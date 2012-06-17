@@ -1,8 +1,8 @@
 #summary How to setup your own BigBlueButton 0.8 Virtual Machine
 #labels Deprecated
 
-= This page is depreciated =
+= You've reached an old page =
 
-This was a temporary page during the !BigBlueButton 0.8 release cycle. 
+This page was used temporarily during the !BigBlueButton 0.8 release cycle. 
 
-Please see the [BigBlueButtonVM BigBlueButton VM Installation].
+As we've released !BigBlueButton 0.8, please see the [BigBlueButtonVM BigBlueButton VM Installation] for the latest information.
