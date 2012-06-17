@@ -1,4 +1,5 @@
 #summary How to setup your own BigBlueButton 0.8 Virtual Machine
+#labels Deprecated
 
 = This page is depreciated =
 
