@@ -11,15 +11,24 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # 2 GB of memory (4 GB is better)
   # Dual-core 2.6 GHZ CPU (quad core is better)
   # Ports 80, 1935, 9123 accessible 
-  # Port 80 is available and not used by another application
-  # 400G of free disk space (or more) for recordings
+  # Port 80 is not used by another application
+  # 50G of free disk space (or more) for recordings
 
-Currently, as of !BigBlueButton 0.8-RC3, locale of the server must be en_US.UTF-8.  You can verify this by
+In addition to the above, the locale of the server must be en_US.UTF-8.  You can verify this by
 
 {{{
 $ cat /etc/default/locale
 LANG="en_US.UTF-8"
 }}}
+
+To verify that port 80 is not in use by another application, you can type
+
+{{{
+   sudo apt-get install lsof
+   lsof -i :80
+}}}
+
+
 
 == Upgrading from !BigBlueButton 0.71a ==
 
