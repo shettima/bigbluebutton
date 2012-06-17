@@ -1,4 +1,4 @@
-  * [Installation Install BigBlueButton 0.8]
+  * [Installation Install BigBlueButton 0.8] (June 18, 2012 - [ReleaseNotes Release Notes)
     * [InstallationUbuntu Install Ubuntu 10.04]
     * [BigBlueButtonVM Download Virtual Machine]
     * [BBBConf BigBlueButton's configuration tool]
