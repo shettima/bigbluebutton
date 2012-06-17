@@ -1,6 +1,6 @@
   * [Installation Install BigBlueButton 0.8]
     * [InstallationUbuntu Install Ubuntu 10.04]
-    * [BigBlueButtonVM Virtual Machine]
+    * [BigBlueButtonVM Download Virtual Machine]
     * [BBBConf BigBlueButton's configuration tool]
   * [TechnicalOverview Technical Overview]
     * [ArchitectureOverview Architecture Overview]
