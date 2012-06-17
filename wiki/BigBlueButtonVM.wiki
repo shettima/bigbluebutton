@@ -1,30 +1,30 @@
-#summary How to setup your own BigBlueButton Virtual Machine
-
-*Note:* We recommend you download and try the !BigBlueButton [08BigBlueButtonVM 0.8-RC2 VM].
+#summary How to setup your own BigBlueButton 0.8 Virtual Machine
 
 <wiki:toc max_depth="2" />
 
-= How to setup your own !BigBlueButton Server in a few minutes =
+= How to setup your own !BigBlueButton 0.8 server in a few minutes =
 
-Many universities and colleges have told us they want to run their own version  !BigBlueButton behind their firewall.  In addition, developers have asked how to setup a development environment to enhance and extend !BigBlueButton.
+This page describes how to download and run the !BigBlueButton 0.8 VM.  The VM is an easy way to have a fully working !BigBlueButton server in a few minutes.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac (on the Mac it's called VMWare Fusion).  
 
-In response to these requests, we've created a Ubuntu-based virtual machine (VM) that makes it easy for anyone to download and run a !BigBlueButton server.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac.  We've also pre-configured the VM so it can serve as a full [DevelopingBBB development environment].  We've added scripts (using `bbb-conf`) to make it easy for a developer to checkout !BigBlueButton's source from Google Code repository, make local changes, and, with a few commands, re-compile various components of !BigBlueButton for development and testing.  
+We've also pre-configured the VM so it can serve as a full [DevelopingBBB development environment].  We've added scripts (using `bbb-conf`) to make it easy for a developer to setup a development environment, make local changes, and, with a few commands, re-compile various components of !BigBlueButton for development and testing.  
 
-Prerequisites:
+Note: The !BigBlueButton VM is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your VM host), but if your are going to setup !BigBlueButton production use, we recommend running !BigBlueButton on dedicated hardware (not a virtualized environment) installed from packages.  See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements].
+
+== Requirements == 
+The requirements for running the !BigBlueButton VM are:
   # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
+  # 2 G of free memory to run the VM
   # A DHCP Server for the VM to acquire an IP address on boot
 
-The second point is key: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of !BigBlueButton.
-
-<wiki:video url="http://www.youtube.com/watch?v=--yC6LpeFqA" />
-
-Note: This video refers to 0.64, but the steps are valid for 0.71a.
+The third requirement is important: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of !BigBlueButton.
 
 == Installing !BigBlueButton VM  ==
 
-  1.  Download and uncompress the the VM. 
+  1.  Download and uncompress the the !BigBlueButton VM. 
 
-Download bigbluebutton071a-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
+Download bigbluebutton08-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
+
+Note: The VM will automatically update itself to the latest version of 0.8 upon first boot.
 
   2.  Open the enclosed folder.
 
@@ -33,7 +33,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   3.  Double-click on the bigbluebutton-vm.vmx icon.  
 
-This will start VMWare Player (or VMWare Workstation) and boot the VM. Note: In VMWare, make sure the networking is set to *Bridged*, not NAT.  
+This will start VMWare Player/Workstation (or VMWare Fusion on the Mac) and boot the VM. Note: Make sure the networking is set to *Bridged*, not NAT.  
 
 The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the !BigBlueButton VM goes through its initial startup script that 
 
@@ -42,7 +42,7 @@ The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, rel
   * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
 
-When it's done, you'll see a a login message.  *NOTE:* The VM has been pre-configured to have the following user-id/password:
+When it's done, you'll see a login prompt.  *NOTE:* The VM has been pre-configured to have the following user-id/password:
 
   user-id: *firstuser*
 
@@ -50,29 +50,15 @@ When it's done, you'll see a a login message.  *NOTE:* The VM has been pre-confi
 
 *To secure your server, immediately login with the above user-id/password.*  This password is set to expire, so you'll be asked to enter the password *default* again, then to provide a new password (entering it twice to confirm).  Again, do this now as it will secure your server.  
 
-After resetting the default password, you'll get the following welcome message (this appears each time you login as firstuser).
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-welcome.png
-
-Note: Due to an upgrade to OpenOffice 3.2, you'll need to restart the VM after this first boot sequence to have OpenOffice properly running for document conversation.  The next time the VM starts everything will be working properly.
-
-== Installing the !BigBlueButton VM using !VirtualBox ==
-
-See [BigBlueButtonVMVirtualBox Running BigBlueButton VM in Virtual Box].
+After resetting the default password, you'll get a welcome message (this appears each time you login as firstuser).  You can access the !BigBlueButton server using the URL given in the welcome message.
 
 == Running the !BigBlueButton VM ==
 
 At this point, you've got a full !BigBlueButton server up and running.  Open a web browser to the URL provided using the IP address of the VM.  
   
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-join.png
-
-Enter whatever name you like and then click Join.  You'll join the default meeting.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-bbb-running.png
-
 == Developing !BigBlueButton == 
 
-We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. See [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB developing BigBlueButton] for more information.
+We've included all the development tools in this VM to compile and deploy the source for bigbluebutton-client, bigbluebutton-web, and bigbluebutton-apps. (see 08SettingDevEnvironment)
 
 = Upgrading the !BigBlueButton VM =
 
@@ -82,7 +68,7 @@ We've included all the development tools in this VM to compile and deploy the so
 
 This is where packages make life easy.
 
-The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship !BigBlueButton 0.8 (for example), you'll be able to upgrade your server with two commands.
+The !BigBlueButton components are installed as Ubuntu packages.  The VM already has apt configure to check the repository http://archive.bigbluebutton.org for updates.  This means, when we ship !BigBlueButton 0.8 final (for example), you'll be able to upgrade your server with two commands.
 
 {{{
   # sudo apt-get update
@@ -92,12 +78,6 @@ The !BigBlueButton components are installed as Ubuntu packages.  The VM already 
 When you run these commands, you'll see !BigBlueButton download a packages for the new release.  You may be prompted to update an existing configuration file.
 
 *Note*: Best to always check the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes release notes] for specific instructions to upgrade to a new release.
-
-When updating, you'll see the upgrade messages.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm-apt-get-upgrade.png
-
-
 
 
 = Troubleshooting =
@@ -154,33 +134,6 @@ To check your current environment for possible problems that might prevent !BigB
 {{{
 
    sudo bbb-conf --check
-
-}}}
-
-You should see output such as 
-
-{{{ 
-$ sudo bbb-conf --check
-Current Configuration:
-
-/var/www/bigbluebutton/client/conf/config.xml (bbb-client)
-                 IP for tunnel check: 192.168.0.163
-                  IP for rtmp (red5): 192.168.0.163
-          host for bbb-web interface: 192.168.0.163
-
-/etc/nginx/sites-available/bigbluebutton (configuration file nginx)
-                         server_name: 192.168.0.163
-                                port: 80
-                client document root: /var/www/bigbluebutton
-
-/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties (bbb-web)
-                                host: 192.168.0.163
-
-/var/lib/tomcat6/webapps/bigbluebutton/demo/bbb_api_conf.jsp (API demos)
-                                host: 192.168.0.163
-
-/etc/asterisk/bbb_extensions.conf (asterisk)
-                   conference module: konference
 
 }}}
 
