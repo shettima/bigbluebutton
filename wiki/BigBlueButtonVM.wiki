@@ -1,4 +1,4 @@
-#summary How to setup your own BigBlueButton 0.8 Virtual Machine
+#summary Download and setup your own BigBlueButton 0.8 Virtual Machine
 
 <wiki:toc max_depth="2" />
 
