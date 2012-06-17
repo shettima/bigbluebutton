@@ -1,7 +1,7 @@
 #summary How to setup your own BigBlueButton 0.8 Virtual Machine
 #labels Deprecated
 
-= You've reached an old page =
+= This content has moved =
 
 This page was used temporarily during the !BigBlueButton 0.8 release cycle. 
 
