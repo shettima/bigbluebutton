@@ -30,11 +30,6 @@ To verify that port 80 is not in use by another application, you can type
 
 
 
-== Upgrading from !BigBlueButton 0.71a ==
-
-If you are upgrading from !BigBlueButton 0.71a, start [#Upgrading_a_BigBlueButton_0.71a_Server here].
-
-
 == Upgrading from an earlier !BigBlueButton 0.8 beta ==
 
 If you are upgrading from an earlier !BigBlueButton 0.8 beta/release candidate, please note, if you've made custom changes to BigBlueButton, such as
@@ -79,6 +74,10 @@ After the install finishes, restart your !BigBlueButton server with
    sudo bbb-conf --check 
 }}}
 
+
+== Upgrading from !BigBlueButton 0.71a ==
+
+If you are upgrading from !BigBlueButton 0.71a, start [#Upgrading_a_BigBlueButton_0.71a_Server here].
 
 = Installation of !BigBlueButton 0.8 =
 
