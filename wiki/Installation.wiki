@@ -2,9 +2,9 @@
 
 = Introduction =
 
-The !BigBlueButton 0.8 server runs under Ubuntu 10.04 32-bit or 64-bit, as well as distributions listed below.  To setup your own !BigBlueButton server:
+The !BigBlueButton 0.8 server runs under Ubuntu 10.04 32-bit or 64-bit.  To setup your own !BigBlueButton server:
 
-    * [InstallationUbuntu Install from packages on Ubuntu 10.04]
+    * [InstallationUbuntu Install from packages] (recommended)
     * [BigBlueButtonVM Download the BigBlueButton Virtual Machine]
 
 Configuration files:
