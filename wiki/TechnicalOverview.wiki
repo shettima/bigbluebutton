@@ -1,9 +1,10 @@
-#summary Technical Overview of !BigBlueButton
+#summary Overview of BigBlueButton
 
   * [TechnicalOverview Technical Overview]
     * [ArchitectureOverview Architecture Overview]
     * [ClientConfiguration Client-side configuration]
     * [ConfigurationFiles Configuration Files]
+    * [RecordPlaybackSpecification Record and playback specification]
     * [OpenSourceComponents Open Source Components]
     * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
     * [Integration Integrating BigBlueButton with your existing system]
