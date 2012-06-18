@@ -30,7 +30,7 @@ To verify that port 80 is not in use by another application, you can type
 
 
 
-== Upgrading from an earlier !BigBlueButton 0.8 beta ==
+== Upgrading from !BigBlueButton 0.8 beta/RC ==
 
 If you are upgrading from an earlier !BigBlueButton 0.8 beta/release candidate, please note, if you've made custom changes to BigBlueButton, such as
 
