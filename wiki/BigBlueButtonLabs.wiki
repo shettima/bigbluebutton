@@ -18,11 +18,13 @@ If you want to give feedback on a particular labs project, please post to [http:
 
 == Installation of !BigBlueButton on other systems  ==
 
-There are many components to !BigBlueButton and installing each component manually would take quite some time.  The following labs projects are efforts to install !BigBlueButton on other systems
+There are many components to !BigBlueButton and installing each component manually would take quite some time.  The Debian packaging for [InstallationUbuntu installing BigBlueButton] handles most of the steps.
+
+The following labs projects were efforts to install older versions !BigBlueButton on other systems.  These instructions are no longer valid and need to be updated.  
 
     * [InstallationBigBlueButtonDebian Debian Squeeze] (v0.71a)
     * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
-    * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
+    * [InstallingBigBlueButtonCentOS Installing on CentOS ] (0.64)
 
 
 These labs projects were exploring ways to expand the architecture (but are now inactive)
