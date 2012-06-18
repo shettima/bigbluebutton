@@ -16,11 +16,9 @@ If you want to give feedback on a particular labs project, please post to [http:
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [SummerOfCodeApplication GSOC Application Template]
 
-== Installation of BigBlueButton on other systems  ==
+== Installation of !BigBlueButton on other systems  ==
 
-There are many components to !BigBlueButton and installing each component manually would take quite some time.
-
-The following labs projects are efforts to install !BigBlueButton on other systems
+There are many components to !BigBlueButton and installing each component manually would take quite some time.  The following labs projects are efforts to install !BigBlueButton on other systems
 
     * [InstallationBigBlueButtonDebian Debian Squeeze] (v0.71a)
     * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
