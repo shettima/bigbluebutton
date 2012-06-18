@@ -22,9 +22,9 @@ The third requirement is important: the VM must be able to connect to the intern
 
   1.  Download and uncompress the the !BigBlueButton VM. 
 
-Download bigbluebutton08-vm.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
+Download bigbluebutton08-beta-4-VM.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
 
-Note: The VM will automatically update itself to the latest version of 0.8 upon first boot.
+Note: Don't worry that the file name is bigbluebutton08-beta-4-VM.zip -- the VM will automatically update itself to the latest version of BigBlueButton 0.8 upon first boot.
 
   2.  Open the enclosed folder.
 
@@ -35,10 +35,10 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
 This will start VMWare Player/Workstation (or VMWare Fusion on the Mac) and boot the VM. Note: Make sure the networking is set to *Bridged*, not NAT.  
 
-The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some youtube videos.  During this time, the !BigBlueButton VM goes through its initial startup script that 
+The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some YouTube videos.  During this time, the !BigBlueButton VM goes through its initial startup script that 
 
   * Sets up the networking (acquire an IP address from a DHCP server)
-  * Installs the  !BigBlueButton packages
+  * Downloads and installs the latest !BigBlueButton packages
   * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
 
