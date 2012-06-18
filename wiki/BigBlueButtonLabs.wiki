@@ -16,13 +16,20 @@ If you want to give feedback on a particular labs project, please post to [http:
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [SummerOfCodeApplication GSOC Application Template]
 
-== Older Labs projects ==
+== Installation of BigBlueButton on other systems  ==
 
-These labs projects have been inactive for a while, but are listed here to .
+There are many components to !BigBlueButton and installing each component manually would take quite some time.
+
+The following labs projects are efforts to install !BigBlueButton on other systems
+
+    * [InstallationBigBlueButtonDebian Debian Squeeze] (v0.71a)
+    * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
+   * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
+
+
+These labs projects were exploring ways to expand the architecture (but are now inactive)
 
     * [BigBlueButtonAPIPartitioning Partitioning the client]
       * [BigBlueButtonAPIPartitioningDemo How to build and run the Partitioning the client]
     * [BigbluebuttonSIPClientDemo SIP softphone and SIP applet]
-    * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
-    * [InstallingBigBlueButtonFedora Installing on Fedora (0.64)]
-    * [RPMPackaging Install on CentOS 5.4]
+ 
