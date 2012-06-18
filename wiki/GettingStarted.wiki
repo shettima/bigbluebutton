@@ -1,4 +1,4 @@
-#summary A quick guide to getting started with Developing in BigBlueButton.
+#summary A guide to getting started with Developing in BigBlueButton.
 
 = Overview =
 We've put a lot of thought into the architecture of !BigBlueButton.  Our goal was to make it easy for other developers to use !BigBlueButton as a platform to build other collaborative applications.
