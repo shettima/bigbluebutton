@@ -8,19 +8,21 @@ Unless a labs project states otherwise, these projects are exploratory in nature
 
 If you want to give feedback on a particular labs project, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
-
-    * [RecordPlaybackSpecification Record and playback specification]
-    * [PollingModule Polling module]
+    * [StressTesting Stress Testing the BigBlueButton server]
+    * [PollingModule Polling Module]
+    * [Phidgets Physical Widgets for External Notification]
+    * [http://readytopresent.wordpress.com/ Ready To Present]
+    * [Whiteboard Whiteboard using Wiimote]
     * [ArchitectureRoadmap Architecture Plans for the client]
+    * [SummerOfCodeApplication GSOC Application Template]
+
+== Older Labs projects ==
+
+These labs projects have been inactive for a while, but are listed here to .
+
     * [BigBlueButtonAPIPartitioning Partitioning the client]
       * [BigBlueButtonAPIPartitioningDemo How to build and run the Partitioning the client]
     * [BigbluebuttonSIPClientDemo SIP softphone and SIP applet]
-    * [StressTesting Stress Testing the BigBlueButton server]
-    * [SummerOfCodeApplication Summer of Code Application template]
-    * [IdeasPage Ideas Page for Google Summer of Code Students]
-    * [Phidgets Physical Widgets for External Notification]
-    * [http://readytopresent.wordpress.com/ Ready To Present]
-    * [Whiteboard Whiteboard using Wiimote]   
     * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
     * [InstallingBigBlueButtonFedora Installing on Fedora (0.64)]
     * [RPMPackaging Install on CentOS 5.4]
