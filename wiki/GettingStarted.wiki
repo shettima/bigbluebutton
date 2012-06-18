@@ -19,7 +19,7 @@ The trunk of the SVN repository contains the following important parts:
 The following links will get you going with setting up !BigBlueButton.  For most developers, we recommend using the VM.  But if you want to see all the components, go for [InstallingBigBlueButton Installing from source].
 
     * [API API for Integration with Third-Party Applications]  
-    * [08SettingDevEnvironment Developing BigBlueButton]
+    * [DevelopingBBB Developing BigBlueButton]
     * [SampleModule New Module Tutorial]
     * [Branding Branding and Theming of BigBlueButton]
     * [SettingUpBigBlueButtonWithJconsole Jconsole Setup]
