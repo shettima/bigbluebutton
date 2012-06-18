@@ -1,80 +1,253 @@
-#summary How to setup a development environment for BigBlueButton 0.71
+#summary Setting up a BigBlueButton 0.8 Development Environment
 
-Note: If you are using !BigBlueButton 0.80-beta, see [08SettingDevEnvironment setting up a development environment for 0.8].
+<wiki:toc max_depth="2" />
 
-<wiki:toc max_depth="4" />
+= Overview =
+!BigBlueButton is developed by a dedicated core team of developers and a broad community that work together on all aspects of development: design, development, testing, documentation, localization, editing wikis, and, most importantly, supporting others.
 
-Note: If you are using !BigBlueButton 0.80-beta, see [08SettingDevEnvironment setting up a development environment for 0.8].
+This document describes how to setup a development environment on a !BigblueButton server.  Once setup, you can develop and extend your local server and become part of the community of developers improving !BigBlueButton . 
 
-= Getting Help=
-We're developers as well, and we know the importance of both well-written documentation and accessible developer support.
+!BigBlueButton has a lot of components.  The main components are bbb-web, bbb-client, bbb-apps, bbb-voice, and desktop sharing.  You don't need to understand everything to develop or extend one component.  For example, if you are interested in improving the !BigBlueButton client, you need, at a minimum, to understand the bigbluebutton-client and the overall architgecture (see ArchitectureOverview).
 
-If you have any problems when following the documentation below, please post your questions to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2&pli=1 bigbluebutton-dev] mailing list, or visit the #bigbluebutton channel on Freenode, using IRC.
-
-= Setting up a !BigBlueButton Development Environment =
-To setup a !BigBlueButton development environment you need to download the BigBlueButtonVM.  The VM has tools already set up which will get you up and running quickly. The VM has an added benefit in that you can develop on it from your Windows or Mac environment, where you can get access to Flash Builder. This document explains how to develop with the VM in mind.
-
-*Tip*: For connecting to your !BigBlueButton VM via a terminal we recommend [http://www.chiark.greenend.org.uk/~sgtatham/putty/ PuTTY].
-
-== Acessing your VM ==
-From your Windows environment, you'll want to access the !BigBlueButton source code that resides on your VM.  To do this, login to the VM as `firstuser` and issue the following command
+To help you setup the necessary developer environment, we've put in much of the setup logic in `bbb-conf`, the !BigBlueButton configuration script.  While it's good to let the script do most the work, as you become more familiar with !BigBlueButton, you should take a look at the source code in `bbb-conf` 
 
 {{{
-bbb-conf --setup-samba
+/usr/local/bin/bbb-conf
 }}}
 
-This script will share the `/home/firstuser/dev` on your VM so you can access it from within Windows.  Some editors (such as Eclipse) can only access drives (not network shares).  To map this network share to a windows drive (e.g. V:), open Windows Explorer, hit the Alt key, and choose the menu command Tools -> Map Network Drive. For the path, enter `\\<ip>\firstuser`, the ip being the local address of your VM.
+to understand what it is doing.  The more you know about !BigBlueButton, the easier it is to make your own changes and contribute to the project.
 
-See the [BBBConf] page for troubleshooting tips.
+In !BigBlueButton 0.8-beta-4 (and later), we've generalized these instructions so you can use any unix account on a !BigBlueButton server.
 
 
-== Check Out the Source Code ==
-Type the following command to checkout !BigBlueButton from our [http://www.github.com/bigbluebutton github repository].
+
+The source for !BigBlueButton is on [https://github.com/bigbluebutton/bigbluebutton GitHub].  If you're not familiar with git, a good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  If you don't know what the terms *_clone_*, *_branch_*, and *_commit_* mean in git, make sure you do before working with the !BigBlueButton source.
+
+
+== Prerequisites ==
+
+This guide is written for !BigBlueButton 0.8-beta-4 or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see 08InstallationUbuntu).  
+
+=== The Basics ===
+Before setting up a development environment, you should have already
+
+  * An understanding of the !BigBlueButton ArchitectureOverview
+  * An understand of how git works
+
+=== A Working !BigBlueButton Server ===
+
+You need to have a working !BigBlueButton server 0.8-beta-4 (or later) to setup a development environment.
+
+While it may seem obvious, we emphasize your !BigBlueButton server should be working *before* you start setting up the development environment.  That way, if you do run a modified version of the !BigBlueButton client and something isn't working, you can switch back to the built-in client to check that your environment is working correctly.
+
+
+=== Developing on Windows ===
+If you are on Windows, we recommend you download the 08BigBlueButtonVM and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
+
+=== You'll need sudo abilities ===
+ setup the !BigBlueButton development environment. To verify, you should be able to
+
 {{{
-bbb-conf --checkout
-cd ~/dev/source/bigbluebutton
-git init
-git checkout v0.71a
-git checkout -b my_v0.71a
+  sudo ls
 }}}
 
-The second last command switches your development environment to the code tagged for release at BigBlueButton 0.71a.  The last command creates a new local branch for you to do development.  
+and get back a list of files in the current directory.
 
-See [http://stackoverflow.com/questions/791959/how-to-use-git-to-download-a-particular-tag]
 
-This will checkout into {{{/home/firstuser/dev/source/bigbluebutton}}}.  
+= Setup a Development Environment =
 
-Note - June 3, 2011: You want to checkout the source tagged for 0.71a as master is under active development for 0.8 and is currently not stable.
+== Setting up the development tools ==
 
-If you want to learn more about Git, read the book [http://progit.org/book/ Pro Git] especially chapters 1, 2, 3, 5. [http://help.github.com/ GitHub Help] has a lot of information too.
- 
-=Developing Components of !BigBlueButton=
+On a !BigBlueButton server, you can install all the necessary development tools with the following command:
 
-== Working on the Client side ==
-To setup a development environment for bbb-client, enter the following command
+{{{
+   bbb-conf --setup-dev tools
+}}}
+
+When you run this script, you will be asked to enter your password to sudo into root.  This script will:
+
+  # Download and setup groovy, grails, and gradle
+  # Download and install Open Source Flex SDK
+  # Install OpenJDK 
+  # Install git
+  # Add the necessary environment variables in your ~/.profile
+
+
+After the initial setup is complete, you'll need to reload your `.profile` to use the new environment variables for groovy, grails, and gradle.  To do this, run
+
+{{{
+  source ~/.profile
+}}}
+
+You need only do this once.  When you next login to your account, you'll have the environment variables in place.
+
+Again, you can use any account on a !BigBlueButton server that has sudo rights.  For the rest of this document we'll use the account `firstuser` for the examples.
+
+The `bbb-conf` script create for you a `dev` directory in your account.
+
+{{{
+  /home/firstuser/dev
+}}}
+
+It's in this directory that you'll place the source for !BigBlueButton.
+
+== Checking out the Source ==
+
+We recommend you use !GitHub to fork !BigBlueButton.  This will make it easy for to work on your own copy of !BigBlueButton's source, store updates to !GitHub, and [Contributing_to_BigBlueButton contribute] back to the project by sending us pull requests.
+
+To checkout the source:
+
+ # Setup an account on [https://github.com/plans GitHub] if you don't already have one (it's free!)
+ # Setup your [http://help.github.com/linux-set-up-git/ ssh keys]. Skip to the "Set Up SSH Keys" section.
+ # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your !GitHub account
+ # Clone your repository into your `~/dev` folder
+
+
+After cloning, you'll have the following directory
+{{{
+/home/firstuser/dev/bigbluebutton
+}}}
+
+Confirm that you are working on the master branch.
+
+{{{
+cd ~/dev/bigbluebutton
+git status
+}}}
+
+You should see
+
+{{{ 
+# On branch master
+nothing to commit (working directory clean)
+}}}
+
+
+A few suggestions when using git.  It is good practice to develop on a branch and merge the changes to master when you are done.
+Let's say you are trying to fix Issue 100.
+
+{{{
+git checkout -b fixing-issue-100
+}}}
+
+You should see
+
+{{{
+Switched to a new branch 'fixing-issue-100'
+}}}
+
+Do
+
+{{{
+git status
+}}}
+
+The output should be
+
+{{{
+# On branch fixing-issue-100
+nothing to commit (working directory clean)
+}}}
+
+= Client Development =
+With the development environment checked out and the code cloned, we're ready to start developing!
+
+This section will walk you through making a change to the !BigBlueButton client.  
+
+== Setting up the environment ==
+To setup the client for development for the client, do the following
+
 {{{
 bbb-conf --setup-dev client
 }}}
-This will setup some directories and modify nginx config to use your development client.
 
-Everything is now setup to compile bbb-client.
+This command modifies the nginx settings for !BigBlueButton so that HTTP request for loading the !BigBlueButton client are now serviced by 
 
-To compile the client:
 {{{
-cd ~/dev/source/bigbluebutton/bigbluebutton-client
+~/dev/bigbluebutton/bigbluebutton-client
+}}}
+
+instead of
+
+{{{
+/var/www/bigbluebutton
+}}}
+
+== Build the client ==
+Let's now build the client  Note we're not making any changes yet -- we're going to build the client to ensure it works.
+
+
+{{{
+cd ~/dev/bigbluebutton/bigbluebutton-client
+}}}
+
+
+First, we'll build the locales (language translation files).  If your not modifying the locales, you need only do this once.
+
+
+{{{
+cd ~/dev/bigbluebutton/bigbluebutton-client
+ant locales
+}}}
+
+This will take about 10 minutes (depending on the speed of your system). 
+
+Next, let's build the client
+{{{
 ant
 }}}
 
-Behind the scenes, nginx is now loading the client from `~/dev/source/bigbluebutton/bigbluebutton-client/bin`.
-If the IP address for your !BigBlueButtom VM is 192.168.0.211, you should be able to browse to http://192.168.0.211/, login to the web interface, and see your new client load.    
+After that, point your browser to your !BigBlueButton server and login ot the demo page.  The client should start properly.
 
-Every time you make a change to the client source, you need to rebuild it using the 'ant' command in order for the changes to show in your browser. If you haven't changed the localization files then you only need to run
+== Making a change ==
+
+ Before we build the !BigBlueButton client, let's make a small visible change to the interface.
+
 {{{
-ant modules
+  vi ~/dev/bigbluebutton/bigbluebutton-client/src/org/bigbluebutton/main/views/MainApplicationShell.mxml
 }}}
-This will skip building the localization .swf files, and save you a lot of time.
 
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/bbb-client-setup.png" />
+You can use any editor you want, but real Unix developers all use `vi`.  At line 311, you'll see the line
+
+{{{
+<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>
+}}}
+
+Insert the text ' -- !BigBlueButton Rocks!!' as shown below.
+
+{{{
+ <mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion]) + ' -- BigBlueButton Rocks!'}" id="copyrightLabel2"/>
+}}}
+
+
+Now, rebuild the !BigBlueButton client again.
+
+{{{
+cd ~/dev/bigbluebutton/bigbluebutton-client
+ant
+}}}
+
+When done, join the demo meeting using the client. You'll see the message `-- BigBlueButton Rocks!` added to the copyright line.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/rocks.png
+
+If you don't see your changes, try clearing your browser's cache and try loading the client again.
+
+
+== Switching back to the packaged client ==
+To switch to using the built-in version of !BigBlueButton, do
+
+{{{
+  sudo ln -s -f /etc/bigbluebutton/nginx/client /etc/bigbluebutton/nginx/client.nginx
+  sudo /etc/init.d/nginx restart
+}}}
+
+To switch back to your development setup, do
+
+{{{
+  sudo ln -s -f /etc/bigbluebutton/nginx/client_dev /etc/bigbluebutton/nginx/client.nginx
+  sudo /etc/init.d/nginx restart
+}}}
 
 === Using Flex/Flash Builder ===
 To develop the client using Flash Builder, follow these steps:
@@ -84,9 +257,10 @@ To develop the client using Flash Builder, follow these steps:
    # Select the Project Folder radio
    # Click Browse and choose the bigbluebutton-client directory in your VM. For example W:\dev\source\bigbluebutton\bigbluebutton-client
    # Click finish.
- # Right click on the project, go to Properties -> Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4)
- # In the same window, make sure the Flash Player specific version is set to at least 10.3.0. Also, check the "Flex 3 compatibility mode" option. Click Apply.
- # In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package).
+ # From the !BigBlueButton VM, copy the flx sdk from ~/dev/tools into the Flash Builder SDK dir. You can see the location on the image below. Then, on Flash Builder, click Window -> Preferences -> Installed Flex SDKs and Add the SDK you have just copied. http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/flex-sdk.png
+ # Right click on the project, go to Properties -> Flex Compiler, and change the Flex version to 3.5. (!BigBlueButton does not yet work with Flex 4). Make sure the Flash Player specific version is set to at least 10.3.0. Also, check the "Flex 3 compatibility mode" option. Click Apply. http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/flex-compiler.png
+ # Right-click on the project, click Properties -> Flex Build Path. Click on MX only component set. Make sure you add the libs directory into the path, the main source folder and the output folder. http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/flex-build-path.png
+ # In the Flex Modules section of the properties window, add all the modules that you would like compiled with bbb-client. The modules are mxml files located in the src/ directory (default package). http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/flex-modules.png
  # In the Package Explorer navigate to src/(default package) and _Right Click_ on !BigBlueButton.mxml and click on Set As Default Application.
  # Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
 
@@ -102,530 +276,186 @@ to
 }}}
  # You should now be able to launch from Flash Builder using the Run/Debug button.
 
-=== Your First Modification of !BigBlueButton ===
-At this point we are going to adorn our rubber boots and jump right in.  We are going to make a small modification to the UI so that you can start perusing the code.
- # In the Package Explorer navigate to src -> org.bigbluebutton -> main -> views -> !MainApplicationShell.mxml
- # Scroll down to near the end of the document and look for {{{<mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>}}}.  This string is the Footer label that contains copyright data, version, etc.
- # Modify the text property to change the text that is displayed. For example:
- {{{
- <mx:Label text="My Modified BigBlueButton Client" id="copyrightLabel2"/>
- }}}
- <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/FlashBuilderModify.png" height="500" />
- # To recompile the project save the file you just edited just save the file.
-
-<img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/ModifiedBBBClient.png" height="500" />
-
-Congradulations, you have now made your first change to !BigBlueButton.
-
-== Working with !BigBlueButton Web - The API part of BBB ==
-The !BigBlueButton web interface is written in grails, so the development environment different from building the Client (bbb-client).  As before, the first step is to use `bbb-conf` to setup the environment.
-
-Configure the environment
+= Developing BBB-Web =
 {{{
 bbb-conf --setup-dev web
 }}}
-	This script does the following steps:
-  # sets your local IP address into  `~/.grails/bigbluebutton-config.properties`
-  # make all files in `/var/bigbluebutton` writable by everyone
-	The first step sets up a global property for grails so it knows the IP address of your server when it runs.  The second step opens the permissions to slides directory so `firstuser` can upload a presentation.
-  <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/bbb-web-setup.png" />
 
-	 <b>Note</b>:  If you get an error upload slides when running bbb-web as `firstuser`, run the command `sudo chmod -R a+rwx /var/bigbluebutton`.
-
-Stop Tomcat so you can compile your bbb-web
+Now let's start grails webapp.
 {{{
-sudo service tomcat6 stop
-}}} 
-Compile and run bbb-web
-{{{
-cd ~/dev/source/bigbluebutton/bigbluebutton-web
-ant
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-web/
 }}}
 
-The default task for ant here is to make sure your libraries are up-to-date (using ivy), then execute the command `grails run-app`.  This will output the console to the command line, making it easier for you to see any exceptions thrown by grails.  To stop the grails server, just hit CTRL-C.
+Download the necessary libs.
+{{{
+gradle resolveDeps
+}}}
 
-== Working with !BigBlueButton-Apps ==
 
-The !BigBlueButton web apps run within the red5 server.  Unlike development with bbb-client and bbb-web, where we could leave the packaged versions installed, there is only one red5 server on the VM.  In order to do development with it we need to remove the existing bbb-apps first.  (Don't worry, you can easily restore them as shown at the end of this section).
+Tell grails to listen on port 8888
+{{{
+grails -Dserver.port=8888 run-app
+}}}
 
-Configure the environment
+If you get an error {{{ "Could not resolve placeholder 'apiVersion'"}}}., just run {{{grails -Dserver.port=8888 run-app}}} again. The error is grails not picking up the "bigbluebutton.properties" the first time.
+
+Now test again if you can join the demo meeting.
+
+= Developing the Red5 Applications =
+
+Make red5/webapps writeable. Otherwise, you will get permission error when you try to deploy into Red5.
+
+{{{
+  sudo chmod -R o+w /usr/share/red5/webapps
+}}}
+
+
+
+===Developing BBB-Apps===
+Run the setup script. This will remove the bbb-apps package from red5/webapps.
+
 {{{
 bbb-conf --setup-dev apps
 }}}
 
- This will 
-
-  # Enable write access to `/usr/share/red5/webapps`
-  # Uninstall the existing `bbb-apps` package
-  # Creates a `~/.bbb-apps-build.properties` file that sets the property `red5.home = /usr/share/red5`
- <img src="http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/dev/bbb-apps-setup.png" />
-
- Uninstalling the existing `bbb-apps` package will stop the red5 server, remove the directory `/usr/share/red5/webapps/bigbluebutton`, and restart red5.
-
-At this point Red5 would have restarted.  However, before we deploy the local version of bbb-apps, we need to stop the Red5 server.  Open a new terminal window (you will need to start and stop Red5 as you develop) and stop Red5. 
+Stop red5
 {{{
-sudo service red5 stop
+    sudo /etc/init.d/red5 stop
 }}}
 
-In version 0.71a, you will need to also add the local jar repository to your path:
+Compile and deploy bbb-apps
 {{{
-echo 'export FLAT_REPO=~/dev/repo' >> ~/.profile
-source ~/.profile
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-apps
+gradle resolveDeps
+gradle clean war deploy
+
 }}}
 
-We'll come back to this separate terminal window in a moment.  Now, let's build and deploy the local copy of bbb-apps.
-
+Start Red5
 {{{
-cd ~/dev/source/bigbluebutton/bigbluebutton-apps/
-gradle war deploy
-}}}
-
-At this point, the ant script has copied the local build of bbb-apps to `/usr/share/red5/webapps/bigbluebutton`.  Now switch back to the second terminal window and enter the following command:
-
-{{{
-cd /usr/share/red5
+cd /usr/share/red5/
 sudo -u red5 ./red5.sh
 }}}
 
-You'll now see all the output from red5 directly at the console.  Like running the grails server at the command line, running red5 from the command line gives you easy visibility of any errors or exceptions that may occure.
-
-= Using an IDE - Eclipse instructions =
-
-== Pre-requisites ==
-At this point it is assumed you have gone through setting up the client, bbb-web and bbb-apps environments and will be working with the !BigBlueButton Virtual Machine.  In this section, we will be Windows with Eclipse and Flash Builder.
-
-The following tools are installed in the Virtual Machine:
- # JDK 6 and add JAVA_HOME in your environment variables
- # Grails 1.1.1 and add GRAILS_HOME in your environment variables
- 
-The following tools are needed on Windows:
- # Eclipse
- # Flash Builder
- # [http://www.scala-ide.org/ Scala Eclipse plugin]
- # [http://groovy.codehaus.org/Eclipse+Plugin Groovy Eclipse plugin]
-
-== !BigBlueButton Commons Libraries ==
-The bbb-commons contain classes that are common to bbb-web and bbb-apps.
- # Switch to the location of {{{bbb-commons}}}
+== Developing BBB-Voice ==
 {{{
-cd ~/dev/source/bigbluebutton/bbb-common-message
-}}}
- # Generate Eclipse project files
-{{{
-gradle eclipse
-}}}
- # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-common-message}}}
- # Setup the build path. Right-click on the project, chose Build Path->Configure Build Path
- # Click on the Source tab and add folder {{{src/main/java}}}
- # Compile the classes
-{{{
-gradle jar  
-}}}
- # Copy the jar file to /home/firstuser/dev/repo
-{{{
-gradle uploadArchives 
+# Stop red5
+    sudo /etc/init.d/red5 stop
+
+cd /home/firstuser/dev/bigbluebutton/bbb-voice
+gradle resolveDeps
+
+# Compile and deploy bbb-voice
+gradle war deploy
+
+# On another terminal window, start Red5
+cd /usr/share/red5/
+sudo -u red5 ./red5.sh
+
 }}}
 
-== !BigBlueButton Web ==
- # Change directory to {{{bigbluebutton-web}}}
+== Developing Deskshare ==
 {{{
-cd ~/dev/source/bigbluebutton/bigbluebutton-web
-}}}
- # Download all dependencies specifically bbb-commons from {{{/home/firstuser/dev/repo}}}
-{{{
-gradle copyToLib 
-}}}
- # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-web}}}
- # Start bbb-web
-{{{
-ant 
-}}}
-
-*NOTE*: If you encounter an error with the webapp redirecting to an invalid client, open the file {{{./grails-app/conf/bigbluebutton.properties}}} and edit the line bigbluebutton.web.serverURL to point to the url of your machine.
-
-== !BigBlueButton Apps ==
- # Change directory to {{{bigbluebutton-apps}}}
-{{{
-cd ~/dev/source/bigbluebutton/bigbluebutton-apps
-}}}
- # Generate Eclipse project files
-{{{
-gradle eclipse
-}}}
- # Download all dependencies specifically bbb-commons from /home/firstuser/dev/repo
-{{{
+cd /home/firstuser/dev/bigbluebutton/deskshare
 gradle resolveDeps
 }}}
- # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bigbluebutton-apps}}}
- # Right-click on the project and add Scala Nature and Groovy Nature (*NOTE: This isn't really necessary. And in any case it's less than trivial. This document makes it seem matter-of-fact, but setting up Scala IDE with Eclipse is buggy and tricky. You will need a specific Eclipse version (3.5.2 Classic right now) - check the Scala plugin website for detailed instructions. For Groovy, you will need to install the Groovy plugin and for !BigBlueButton you currently need a very specific Groovy version that is hard to find. So just don't worry about this step * - Denis Zgonjanin, December 13 2010)
- # Setup your build path and library. If you get a bunch of jar errors at first, go to your build path, remove all the offending jars from the list. Then add the project's lib folder to your path. This should fix all the errors.
- # Build the application
-{{{
-gradle war
-}}}
- # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
-{{{
-sudo gradle deploy
-}}}
 
-== Video App ==
- # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/bbb-video}}}
+*Building the applet.*
 {{{
-cd ~/dev/source/bigbluebutton/bbb-video
-}}}  
- # Download all dependencies
-{{{  
-ant resolve
-}}}
- # Build the application
-{{{
-ant dist
-}}}
- # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
-{{{
-ant deploy
-}}}
-
-== Voice App ==
- # Import to your Eclipse by File -> New -> Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/bigbluebutton/bbb-voice}}}
-{{{
-cd ~/dev/source/bigbluebutton/bbb-voice
-}}}
- # Download all dependencies 
-{{{
-gradle resolveDeps
-}}}
- # Build the application
-{{{
-gradle war
-}}}
- # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
-{{{ 
-gradle deploy
-}}}
-
-== Desktop Sharing App ==
- # Import to your Eclipse by File->New->Java Project and then choose Create project from existing source pointing to your {{{~/dev/source/git/bigbluebutton/deskshare}}}
-{{{
-cd ~/dev/source/bigbluebutton/deskshare
-}}}
- # Download all dependencies 
-{{{
-gradle copyToLib
-}}}
- # Build the server component
-{{{ 
-cd app
-gradle war
-}}}
- # Deploy the application to Red5 ({{{/usr/share/red5/webapps}}})
-{{{ 
-gradle deploy
-}}}
- # To build the applet
-{{{  
 cd applet
 gradle jar
 }}}
- # Create the signing key
+
+Now we need to create a key to sign the applet. Enter a password when prompted for one. Make sure it is at least 6 chars long.
 {{{
 ant create-signing-key
 }}}
- # Sign the applet
-{{{ 
+
+Sign the jar file. Enter the password you created from the previous step when prompted.
+{{{
 ant sign-jar
 }}}
- # Copy deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar to ~/dev/source/bigbluebutton/bigbluebutton-client/resources
-{{{
-cp ~/dev/source/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.64.jar ~/dev/source/bigbluebutton/bigbluebutton-client/resources/prod
-}}}
- # compile the bbb-client (see Developing with bbb client)
 
-== Tips ==
-* Run bbb-conf --check *
-Run {{{sudo bbb-conf --check}}} to see if there are any potential problems.
+If you get an error something like
+{{{
+sign-jar:
+  [signjar] Signing JAR: /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.71.jar to /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.71.jar as code.signer
+  [signjar] jarsigner: unable to sign jar: java.util.zip.ZipException: duplicate entry: com/myjavatools/web/ClientHttpRequest.class
+  [signjar] Enter Passphrase for keystore:
 
-===Running Red5===
+BUILD FAILED
+/home/firstuser/dev/bigbluebutton/deskshare/applet/build.xml:70: jarsigner returned: 1
 
-It is better to have multiple ssh windows while developing. On one window, you can start and stop Red5.
- # Stop Red5
-{{{
-sudo service red5 stop
+Total time: 3 seconds
 }}}
- # cd to Red5 directory
+
+Somehow, some classes got duplicated. Try recompiling the common dir.
 {{{
-cd /usr/share/red5
+  cd ../common
+  gradle clean
+  gradle jar
 }}}
- # Start Red5 as red5 user
+
+Then sign the applet again.
+
+
+The signed jar file is located in {{{/home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar}}}
+
+We need to copy it to where nginx is loading the client.
+
+If you are developing also the bbb-client, then
 {{{
+cp /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar /home/firstuser/dev/bigbluebutton/bigbluebutton-client/client
+}}}
+
+If you are not developing the client, therefore, nginx will serve the client from the default location. Therefore, 
+{{{
+cp /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar /var/www/bigbluebutton/client/
+}}}
+
+*Building the server side component.*
+{{{
+
+cd /home/firstuser/dev/bigbluebutton/deskshare/app
+# Compile
+gradle war
+# Copy over to Red5
+gradle deploy
+
+# Stop red5
+    sudo /etc/init.d/red5 stop
+
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-apps
+# Compile and deploy bbb-apps
+gradle war deploy
+
+# On another terminal window, start Red5
+cd /usr/share/red5/
 sudo -u red5 ./red5.sh
 }}}
 
-In another window, you can make your code changes and deploy to Red5, e.g.
-{{{
-cd ~/dev/source/git/bigbluebutton/bigbluebutton-apps
-}}}
- # Make some changes
- # Build
-{{{
-gradle war
-}}}
- # Deploy 
-{{{
-gradle deploy
-}}}
+= Troubleshooting =
 
+== Welcome to Nginx page ==
+If you get the "Welcome to Nginx" page. Check if bigbluebutton is enabled in nginx. You should see *bigbluebutton* in {{{/etc/nginx/sites-enabled}}}.
 
-===Removing BBB packages===
-
-List the BBB packages by typing
-{{{
-dpkg -l | grep bbb
-}}}
-
-which results:
-{{{
-ii  bbb-apps                        0.71ubuntu2             BigBlueButton applications for Red5
-ii  bbb-apps-deskshare              0.71ubuntu2             BigBlueButton deskshare module for Red5
-ii  bbb-apps-sip                    0.71ubuntu2             BigBlueButton SIP module for Red5
-ii  bbb-apps-video                  0.71ubuntu2             BigBlueButton video module for Red5
-ii  bbb-client                      0.71ubuntu15            BigBlueButton Flash client
-ii  bbb-common                      0.71ubuntu6             BigBlueButton common files
-ii  bbb-config                      0.71ubuntu6             BigBlueButton group package
-ii  bbb-freeswitch-config           0.71ubuntu2             BigBlueButton group package
-ii  bbb-openoffice-headless         0.71ubuntu2             BigBlueButton wrapper for OpenOffice
-ii  bbb-voice-conference            0.71ubuntu3             BigBlueButton voice conference files
-ii  bbb-web                         0.71ubuntu4             BigBlueButton web interface
-ii  bigbluebutton                   0.71ubuntu4             Open Source Web Conferencing System (bbb)
-}}}
-
- * To remove a package type {{{apt-get remove <package name>}}}
-	Example, if you want to remove bbb-apps
-{{{
-sudo apt-get remove bbb-apps
-}}}
-
-== Creating a new !BigBlueButton Module ==
-Follow this short [SampleModule tutorial].
- 
-= Record and Playback Branch =
-
-The following section is still under heavy development, and is only intended for developers with good programming experience.
-
-== Setting up ==
-TBD
-
-
-=Troubleshooting=
-
-== Executing "ant" doesn't work ==
-Check if environment is setup properly.
-
-Type
-{{{
-env
-}}}
-
-You should see
-{{{
-FLEX_HOME=/home/firstuser/dev/tools/flex
-}}}
-
-
-See if you are using the proper SDK.
-{{{
-ls -lt ~/dev/tools/
-}}}
-
-You should see
-{{{
-lrwxrwxrwx  1 firstuser firstuser   16 2011-10-18 19:12 flex -> flex-4.5.0.20967
-}}}
-
-See if the commands are executable
+If not, enable it.
 
 {{{
-ls -lt ~/dev/tools/flex-4.5.0.20967/bin/
+sudo ln -s /etc/nginx/sites-available/bigbluebutton /etc/nginx/sites-enabled/bigbluebutton
+
+sudo /etc/init.d/nginx restart
 }}}
 
-You should see {{{rwxrwx}}} for all files
+== Old Translation ==
+If you get a "Old Translation" warning when starting the client, in `/var/www/bigbluebutton/client/conf/config.xml` change
 
 {{{
--rwxrwx--- 1 firstuser firstuser   1487 2011-03-25 05:46 asdoc
--rwxrwx--- 1 firstuser firstuser   1074 2011-03-25 05:46 fontswf
--rwxrwx--- 1 firstuser firstuser    728 2011-03-25 05:46 aasdoc
--rwxrwx--- 1 firstuser firstuser    728 2011-03-25 05:46 acompc
--rwxrwx--- 1 firstuser firstuser    728 2011-03-25 05:46 amxmlc
--rwxrwx--- 1 firstuser firstuser    586 2011-03-25 05:46 amxmlc.bat
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 asdoc.exe
--rwxrwx--- 1 firstuser firstuser   1437 2011-03-25 05:46 compc
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 compc.exe
--rwxrwx--- 1 firstuser firstuser   1441 2011-03-25 05:46 copylocale
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 copylocale.exe
--rwxrwx--- 1 firstuser firstuser   1422 2011-03-25 05:46 digest
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 digest.exe
--rwxrwx--- 1 firstuser firstuser   1422 2011-03-25 05:46 fcsh
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 fcsh.exe
--rwxrwx--- 1 firstuser firstuser   1405 2011-03-25 05:46 fdb
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 fdb.exe
--rwxrwx--- 1 firstuser firstuser     93 2011-03-25 05:46 fontswf.bat
--rwxrwx--- 1 firstuser firstuser   1457 2011-03-25 05:46 jvm.config
--rwxrwx--- 1 firstuser firstuser   1434 2011-03-25 05:46 mxmlc
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 mxmlc.exe
--rwxrwx--- 1 firstuser firstuser   1441 2011-03-25 05:46 optimizer
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 optimizer.exe
--rwxrwx--- 1 firstuser firstuser   1250 2011-03-25 05:46 swcdepends
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 swcdepends.exe
--rwxrwx--- 1 firstuser firstuser   1259 2011-03-25 05:46 swfdump
--rwxrwx--- 1 firstuser firstuser 106496 2011-03-25 05:46 swfdump.exe
--rwxrwx--- 1 firstuser firstuser    586 2011-03-25 05:46 aasdoc.bat
--rwxrwx--- 1 firstuser firstuser    586 2011-03-25 05:46 acompc.bat
-
+<localeversion suppressWarning="false">0.71</localeversion>
 }}}
 
-== Returning to the Packaged Client ==
-If you ever wish to revert back to the bbb-client installed from packages, edit `/etc/nginx/sites-available/bigbluebutton` and make the entry for `/client` match the following.
+to 
 
 {{{
-location /client {
-	root    /var/www/bigbluebutton;
-	index  index.html index.htm;
-}
+<localeversion suppressWarning="false">0.8</localeversion>
 }}}
-
-Then restart nginx.
-
-{{{
-sudo service nginx restart
-}}}
-
-== Returning to the Packaged BBB-Web==
-If you want to revert back to the web interface installed by the package bbb-web, stop grails and restart the tomcat6 server.
-{{{
-sudo service tomcat6 start
-}}}
-
-<b>Note</b>: After starting the tomcat server, try to join a conference. If you receive the message "_The page you are looking for is temporarily unavailable. Please try again later._", then the grails server could still be running and not tomcat. Enter the following command
-{{{
-sudo bbb-conf -c
-}}}
-
-Look under the Potential Problems heading to see if a problem has been detected.  If grails is still running then to resolve this we need to kill it.
-
- # Determine its pid (process id)
-{{{
-ps -aef | grep grails
-}}}
- # Kill it!
-{{{
-sudo kill -9 <Grails PID>
-}}}
- # Finally, we need to start Tomcat
-{{{
-sudo service tomcat6 start
-}}}
-
-== Returning to the Packaged BBB-Apps==
-If you want to revert back to the packaged versions of !BigBlueButton apps, do the following
-{{{
-rm -rf /usr/share/red5/webapps/bigbluebutton
-sudo apt-get install bbb-apps
-sudo service red5 start
-}}}
-
-==Debugging FreeSWITCH==
-To start FreeSWITCH so you can see any errors produced by it run:
-{{{
-sudo /opt/freeswitch/bin/fs_cli
-}}}
-
-If voice isn't working in the BBB interface or your listeners are not showing up the most likely reason is that FreeSWITCH and Red5 are not communicating properly.
-Check the configuration files and make sure that FreeSWITCH and Red5 are pointing at each other.
-Edit {{{/opt/freeswitch/conf/autoload_configs/event_socket.conf.xml}}}. 
-{{{
-vi /opt/freeswitch/conf/autoload_configs/event_socket.conf.xml
-}}}
-Check the listen-ip parameter
-{{{
-<param name="listen-ip" value="192.168.0.211"/>
-}}}
-
-Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
-Set esl.host to your IP
-{{{
-esl.host=192.168.0.211
-}}}
-
-Lastly, make sure that the sip.server.host property in {{{/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties}}} is set to your FreeSWITCH server.
-{{{
-vi /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
-}}}
-Edit the host address to match you own.
-{{{
-sip.server.host=192.168.0.211
-}}}
-
-*Note*: Make sure your two Red5 IPs are ponting to FreeSWITCH and that your FreeSWITCH IP ip pointing to your Red5 sever.  Otherwise, Red5 won't know what SIP server to use and both FreeSWITCH and Red5 won't be able to communicate events with eachother (stopping the voice users from showing up in the Listeners Window).
-
-==Launching from Flex/Flash Builder==
-If you get the compile error:
-{{{
-unable to open 'W:\dev\source\bigbluebutton\bigbluebutton-client\tests\unit'	bigbluebutton-client		Unknown	Flex Problem
-}}}
-Just create the missing directories. This is a problem caused by an improperly generated .actionScriptProperties file in bbb-client/
-
-
-If you get the compile error:
-{{{
-The style 'backgroundImage' is only supported by type 'flexlib.mdi.containers.MDIWindow' with the theme(s) 'halo'.	DesktopPublishWindow.mxml	/bigbluebutton-client/src/org/bigbluebutton/modules/deskshare/view/components	line 33	Flex Problem
-}}}
-Right click on your project, go to Flex Compiler. Change SDK to 3.5, and Flash Player version to 10.0.0.
-
-If the client hangs at startup:
-and the last line in the log is:
-{{{
-8/31/2010 21:16:28.795 [DEBUG] Join FAILED = <join>
-  <returncode>FAILED</returncode>
-  <message>Could not find conference null.</message>
-</join>
-}}}
-Make sure your config.xml file has the host property "conf/join-mock.xml".
-
-If your client throws an error at startup saying it cannot find the join-mock.xml, make sure you copy it over from bbb-client/resources/dev into bbb-client/src/conf.
-
-==Helpful Hints==
-If you run into issues, please send email to the bigbluebutton-dev mailing list.
-===Gradle===
-{{{gradle copyToLib}}} has been changed to {{{gradle resolveDeps}}}, if one doesn't work, try the other as not all instances have been converted.
-
-=== The Client ===
-If you notice you are running a version other than the newest here is how to bring your copy of the code upto date.
-
-The Git Repository is tagged to not give out the latest development version.  This way the code you are using is never broken.  To get the {{{master}}} version:
-{{{
-git pull origin master
-}}}
-
-===!BigBlueButton Web===
-You will need to run the grails version of bigbluebutton-web which will allow you to see debugging information.  Make sure tomcat6 is stopped and swich to the {{{bigbluebutton-web}}} directory.
-{{{
-sudo service tomcat6 stop
-cd ~/dev/source/bigbluebutton/bigbluebutton-web
-}}}
- * Did you already run "bbb-conf --setup-dev web"? If not setup [DevelopBigBlueButtonCurrent#BigBlueButton_Web BigBlueButton Web]
-Now run the war file
-{{{
-grails run-war
-}}}
-
-== Setting up a development on a package installation ==
-
-At the moment, the script bbb-conf is written to work for setting up a development environment only within the VM, not within a target !BigBlueButton server that has been installed via packages. 
-
-Why?  The short answer is there are a lot of steps to properly setting up a development environment.   You'll also see in the VM that the tools already installed in the /home/firstuser/dev/tools folder, as well as environment variables already setup in /home/firstuser/.profile file in anticipation of development. 
-
-Furthermore, there are a lot of commands needed to be run to setup the development environment correctly, and most everything is done for you by bbb-conf  (you can take a look at the source for bbb-conf in /usr/local/bin/bbb-conf to see the commands that get run). 
-
-We recommend you use the !BigBlueButton VM for development. However, if you want to setup a development environment on a target !BigBlueButton installed via packages, see [NonVMDevSetup non-VM Development Setup].
-
- 
