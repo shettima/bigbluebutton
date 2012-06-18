@@ -18,4 +18,4 @@ then post a message to one of the following groups:
 There are many users on these groups that have become very familiar with !BigBlueButton and can help you get the most from this open source project.
 
 = Commercial Support =
-There is a growing list of [http://bigbluebutton.org/support companies that can provide you with commercial support for !BigBlueButton].
+There is a growing list of [http://bigbluebutton.org/commercial-support companies that can provide you with commercial support for !BigBlueButton].
