@@ -22,7 +22,7 @@ There are many components to !BigBlueButton and installing each component manual
 
     * [InstallationBigBlueButtonDebian Debian Squeeze] (v0.71a)
     * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
-   * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
+    * [InstallingBigBlueButtonCentOS Installing on CentOS (0.64)]
 
 
 These labs projects were exploring ways to expand the architecture (but are now inactive)
