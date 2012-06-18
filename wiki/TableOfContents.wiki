@@ -2,7 +2,7 @@
     * [InstallationUbuntu Install BigBlueButton] (Ubuntu 10.04)
     * [BigBlueButtonVM Download Virtual Machine]
     * [BBBConf BigBlueButton's configuration tool]
-  * [TechnicalOverview Technical Overview]
+  * [TechnicalOverview Overview]
     * [ArchitectureOverview Architecture Overview]
     * [ClientConfiguration Client-side configuration]
     * [ConfigurationFiles Configuration Files]
