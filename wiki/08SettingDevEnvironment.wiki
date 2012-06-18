@@ -7,7 +7,7 @@
 
 This document describes how to setup a development environment on a !BigblueButton server.  Once setup, you can develop and extend your local server and become part of the community of developers improving !BigBlueButton . 
 
-!BigBlueButton has a lot of components.  The main components are bbb-web, bbb-client, bbb-apps, and desktop sharing.  You don't need to understand everything develop or extend one component.  For example, if you are interested in improving the !BigBlueButton client, you need, at a minimum, to understand the bigbluebutton-client and the overall architgecture (see ArchitectureOverview).
+!BigBlueButton has a lot of components.  The main components are bbb-web, bbb-client, bbb-apps, bbb-voice, and desktop sharing.  You don't need to understand everything to develop or extend one component.  For example, if you are interested in improving the !BigBlueButton client, you need, at a minimum, to understand the bigbluebutton-client and the overall architgecture (see ArchitectureOverview).
 
 To help you setup the necessary developer environment, we've put in much of the setup logic in `bbb-conf`, the !BigBlueButton configuration script.  While it's good to let the script do most the work, as you become more familiar with !BigBlueButton, you should take a look at the source code in `bbb-conf` 
 
@@ -64,7 +64,7 @@ On a !BigBlueButton server, you can install all the necessary development tools 
    bbb-conf --setup-dev tools
 }}}
 
-When you run this script asked to enter your password to sudo into root.  This script will:
+When you run this script, you will be asked to enter your password to sudo into root.  This script will:
 
   # Download and setup groovy, grails, and gradle
   # Download and install Open Source Flex SDK
