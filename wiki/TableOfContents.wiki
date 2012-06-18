@@ -7,7 +7,7 @@
     * [ClientConfiguration Client-side configuration]
     * [ConfigurationFiles Configuration Files]
     * [RecordPlaybackSpecification Record and playback specification]
-    * [OpenSourceComponents Open Source Components]
+    * [http://www.bigbluebutton.org/components/ Open Source Components]
     * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
     * [Integration Integrating BigBlueButton with your existing system]
   * [GettingStarted Developing]
