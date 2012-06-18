@@ -3,10 +3,7 @@
 <wiki:toc max_depth="4" />
 
 == Overview ==
-* NOTE * - This page is being updated to reflect what we have done so far.
-
-
-The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work to be done for the initial record and playback release.
+The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work implemented for the initial record and playback release in 0.8.
 
 The purpose of this document is to provide a clear understanding of the business needs, the long-term vision to address the needs, and the constraints that are being faced during this phase of this project.  It also details the requirements and specifications for implementation of the first iteration. The document also attempts to foresee and mitigate any risks that for the first iteration.
 
@@ -133,6 +130,7 @@ The directories below are where the different subsystems will write the recordin
 * Deskshare *
  * Records the deskshare stream as FLV in /var/bigbluebutton/deskshare/
  * Stores a start recording and stop recording event into redis
+
 * Webcam *
  * Records the webcam stream as FLV in {{{/usr/share/red5/webapps/video/<meeting-id>}}}
  * Stores a start recording and stop recording event into redis
