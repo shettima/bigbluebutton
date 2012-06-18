@@ -29,4 +29,7 @@
     * [Whiteboard Whiteboard using Wiimote]
     * [ArchitectureRoadmap Architecture Plans for the client]
     * [SummerOfCodeApplication GSOC Application Template]
+    * [InstallationBigBlueButtonDebian Debian Squeeze] (v0.71a)
+    * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
+
   * [http://code.google.com/p/bigbluebutton/w/list Raw List of Wiki Pages]
