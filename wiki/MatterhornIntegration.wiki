@@ -47,6 +47,11 @@ To record desktop sharing, edit `/usr/share/red5/webapps/deskshare/WEB-INF/red5-
   </bean>
 }}}
 
+After you make the changes, you need to restart !BigBlueButton.  
+
+{{{
+   sudo bbb-conf --restart
+}}}
 
 == Install ffmpeg  == 
 
