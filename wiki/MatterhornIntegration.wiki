@@ -26,7 +26,7 @@ If you encounter any problems with these instructions, please post to [http://gr
 == Before you install ==
 You'll need to ensure your `/etc/apt/sources.list` has the multiverse enabled.  If you get an error message such as `libfaac-dev can't be found` with the instructions below, see [http://code.google.com/p/bigbluebutton/wiki/08InstallationUbuntu#Dependencies_are_not_met Dependencies not met].
 
-== Ensure BigBlueButton records video and desktop session ==
+== Ensure !BigBlueButton records video and desktop session ==
 !BigBlueButton uses two red5 applications -- bbb-video and bbb-deskshare -- to share video and desktop.  In !BigBlueButton 0.8-beta-4, these applications are configured to not record media by default (to reduce disk space usage).
 
 To record video, edit `/usr/share/red5/webapps/video/WEB-INF/red5-web.xml` and set `recordVideoStream` to `true`.
@@ -199,7 +199,7 @@ Create and Start the !BigBlueButton Session. Now:
  * Start the webcam
  * Start desktop sharing
 
-You must start all three, if you omit one then the recording will not be processed by BigBlueButton's matterhorn scripts.
+You must start all three, if you omit one then the recording will not be processed by !BigBlueButton's matterhorn scripts.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/matterhorn/matt2.png
 
@@ -213,7 +213,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/matterhorn/matt4.png
 
 = Troubleshooting =
 
-You can check the logs of recording in the bigbluebutton server: `/var/log/bigbluebutton`
+You can check the logs of recording in the  !BigBlueButton server: `/var/log/bigbluebutton`
 
 = Getting Help =
 
