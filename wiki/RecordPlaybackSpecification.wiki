@@ -3,7 +3,7 @@
 <wiki:toc max_depth="4" />
 
 == Overview ==
-The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work implemented for the initial record and playback release in 0.8.
+The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work implemented for the iwnitial record and playback release in 0.8.
 
 The purpose of this document is to provide a clear understanding of the business needs, the long-term vision to address the needs, and the constraints that are being faced during this phase of this project.  It also details the requirements and specifications for implementation of the first iteration. The document also attempts to foresee and mitigate any risks that for the first iteration.
 
@@ -131,9 +131,54 @@ The directories below are where the different subsystems will write the recordin
  * Records the deskshare stream as FLV in /var/bigbluebutton/deskshare/
  * Stores a start recording and stop recording event into redis
 
+The capture of desktop sharing is turned off by default in !BigBlueButton 0.8.  To enable capture of desktop sharing as a video file, edit
+
+{{{
+  /usr/share/red5/webapps/deskshare/WEB-INF/red5-web.xml
+}}}
+
+and set the constructor-arg for index 0 to `true`
+
+{{{
+  <bean id="streamManager" class="org.bigbluebutton.deskshare.server.stream.StreamManager">
+    <constructor-arg index="0" value="true"/>
+    <constructor-arg index="1" ref="recordingService"/>
+  </bean>
+}}}
+
+then restart !BigBlueButton
+
+{{{
+   sudo bbb-conf --restart
+}}}
+
+
 * Webcam *
  * Records the webcam stream as FLV in {{{/usr/share/red5/webapps/video/<meeting-id>}}}
  * Stores a start recording and stop recording event into redis
+
+The capture of webcam is turned off by default in !BigBlueButton 0.8.  To enable capture of webcam, edit
+
+{{{
+  /usr/share/red5/webapps/video/WEB-INF/red5-web.xml
+}}}
+
+and set `recordVideoStream` to `true`
+
+{{{
+        <bean id="web.handler" class="org.bigbluebutton.app.video.VideoApplication">
+                <property name="recordVideoStream" value="true"/>
+                <property name="eventRecordingService" ref="redisRecorder"/>
+        </bean>
+}}}
+
+then restart !BigBlueButton
+
+{{{
+   sudo bbb-conf --restart
+}}}
+
+
 
 === Raw Archiving ===
 During archiving, scripts will copy the raw recordings into the following directories:
