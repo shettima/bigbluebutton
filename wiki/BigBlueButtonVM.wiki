@@ -24,7 +24,7 @@ The third requirement is important: the VM must be able to connect to the intern
 
 Download bigbluebutton08-beta-4-VM.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
 
-Note: Don't worry that the file name is bigbluebutton08-beta-4-VM.zip -- the VM will automatically update itself to the latest version of BigBlueButton 0.8 upon first boot.
+Note: Don't worry that the file name is bigbluebutton08-beta-4-VM.zip -- the VM will automatically update itself to the latest version of !BigBlueButton 0.8 upon first boot.
 
   2.  Open the enclosed folder.
 
