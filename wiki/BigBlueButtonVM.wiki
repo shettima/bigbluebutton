@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-= Running BigBlueButton in a Virtual Machine =
+= Running !BigBlueButton in a Virtual Machine =
 
 This page describes how to download and run the !BigBlueButton 0.8 VM.  The VM is an easy way to have a fully working !BigBlueButton server in a few minutes.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac (on the Mac it's called VMWare Fusion).  
 
