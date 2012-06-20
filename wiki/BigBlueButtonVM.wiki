@@ -40,6 +40,9 @@ The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, rel
   * Configures  !BigBlueButton to use the VM's current IP address
   * Installs OpenSSH
 
+
+== Logging In for the first time ==
+
 When it's done, you'll see a login prompt.  *NOTE:* The VM has been pre-configured to have the following user-id/password:
 
   user-id: *firstuser*
