@@ -4,14 +4,13 @@
 = Current Release =
 
 == Release 0.8 ==
-Development of !BigBlueButton 0.8 is underway.  The focus is the following features:
+Development of !BigBlueButton 0.81 is underway.  The focus is the following features:
 
+  # Capturing all activity in the presentation window for playback
+  # Support for students with disabilities
 
-  # Record and Playback (see [http://code.google.com/p/bigbluebutton/wiki/RecordPlaybackSpecification specification])
-  # Pre-upload of slides (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=356 356])
-  # Pre-flight checklist (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=122 122])
+Details of the committers meeting held 2012-05-18 that discusses the above features is on-line <a href="https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/e8cf67597405678f">here</a>.
 
-As part of 0.8 we're also exploring ways to reduce the audio latency for using the built-in VoIP (clicking the headset icon).  On March 3rd, we posted an [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/212cab1b0c8bdee4# update] on our progress towards !BigBlueButton 0.8.
 
 While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
 
