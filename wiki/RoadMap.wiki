@@ -9,7 +9,7 @@ Development of !BigBlueButton 0.81 is underway.  The focus is the following feat
   # Capturing all activity in the presentation window for playback
   # Support for students with disabilities
 
-Details of the committers meeting held 2012-05-18 that discusses the above features is on-line <a href="https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/e8cf67597405678f">here</a>.
+A link to the recording for the committers meeting (held 2012-05-18) that discusses the above features is available here <a href="https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/e8cf67597405678f">here</a>.
 
 
 While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
