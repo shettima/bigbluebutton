@@ -202,7 +202,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-g
 
 Type 'y' and press Enter.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
 
-If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You an resolve this by [#Unable_to_install_gems manually installing the gems].
+If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
 
 == 4. Install API Demos ==
 
