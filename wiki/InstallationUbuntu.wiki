@@ -229,6 +229,8 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
    sudo bbb-conf --check
 }}}
 
+The `--clean` option will clear out all the log files for !BigBlueButton.  The `--check` option will grep through the log files looking for errors.  
+
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected.  
 
 Got to [#Trying_out_your_server_(24:42_minutes_later) Trying out your sever].
