@@ -387,7 +387,7 @@ However, we quickly learned that most installations of !BigBlueButton wanted to 
   # Integrate !BigBlueButton within their custom web application and needed an API control and interact with their sessions (create a session, add a user, end a session, etc.)
   # Have a simple stand-alone landing page to create meetings
 
-As a result, we [FAQ#Is_the_scheduling_interface_in_bbb-web_still_supported? depreciated our administrative/scheduling interface] and focused on  creating and supporting [http://bigbluebutton.org/support open source integrations] for !BigBlueButton with the most popular content management systems, and ensuring there was an [API  API for integration] within other web-based application.
+As a result, we [FAQ#Is_the_scheduling_interface_in_bbb-web_still_supported? depreciated our administrative/scheduling interface] and focused on  creating and supporting [http://www.bigbluebutton.org/open-source-integrations/ open source integrations] for !BigBlueButton with the most popular content management systems, and ensuring there was an [API  API for integration] within other web-based application.
 
 For a stand-along landing page, for most cases modifying API demo3.jsp is sufficient.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_setup_new_classrooms_in_BigBlueButton_? How do I setup new classrooms in BigBlueButton?].
 
