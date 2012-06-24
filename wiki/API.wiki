@@ -42,7 +42,7 @@ Updates:
   * * join * - Added createTime parameter
   * * getMeetingInfo * - Added recording indicator and voiceBridge  
 
-For a detail of the updates in the api 0.8 check the following <a href="http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/c214cbe9bdb2268a">link</a>
+For a detail of the updates in the api 0.80 check the following <a href="http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/c214cbe9bdb2268a">link</a>
 
 == Version Master Branch ==
 No changes yet.
@@ -349,7 +349,7 @@ There is no XML response for this call if it is properly formatted.  You should 
 <a href="#">http://yourserver.com/bigbluebutton/api/getMeetings?checksum=[checksum]</a>
 
 <p>*Parameters:*</p> 
-Now, In BigBlueButton 0.8 is not required to pass any parameter for this call.
+Now, In BigBlueButton 0.80 is not required to pass any parameter for this call.
 
 <p>*Example Requests:*</p>
  * <a href="#">http://yourserver.com/bigbluebutton/api/getMeetings?checksum=1234</a>
