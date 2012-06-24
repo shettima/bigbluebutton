@@ -5,7 +5,7 @@
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton.  For more information, see [http://www.bigbluebutton.org/history/ History of the BigBlueButton Project]._
 
-Released: June 18, 2012  
+Released: June 18, 2012 ([Installation Installation])
 
 == Major Features ==
   * * Reduced latency in audio * - The !BigBlueButton server sets the audio codec for Flash to speex and passes through the packets to FreeSWITCH for processing.
