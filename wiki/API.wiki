@@ -17,7 +17,7 @@ Added new API calls:
   * * getMeetingInfo *
   * * getMeetings *
 
-== Version 0.7 ==
+== Version 0.70 ==
 In 0.70, we made a couple of changes that will require you to update your API integrations.  These changes were necessary to improve the security of the API and our ability to add features in future releases.  We apologize for any inconvenience this may have caused.
 
 Added new API calls:
@@ -30,7 +30,7 @@ Fixes:
   * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=247">Issue 247</a> * - !DynamicConferenceService never cleans out ended conferences.
   * * Fixed <a href="http://code.google.com/p/bigbluebutton/issues/detail?id=393">Issue 393</a> * - Need getMeetingInfo API call implemented.
 
-== Version 0.8 ==
+== Version 0.80 ==
 Added new API calls:
   * * getRecordings *
   * * publishRecordings *
