@@ -4,9 +4,9 @@
 = Overview = 
 This document outlines the API that is available for integrating BigBlueButton with other applications. The changes between releases will be described in the document. Features which are not currently implemented will be clearly marked as such.
 
-The API is implemented with the end-user in mind. To call the API, you simply make an HTTP request to a URL with the query parameters supplying the information needed for the call. The API returns an XML response.
+The API is implemented with developer in mind. To make and API call to !BigBlueButton, you simply make an HTTP request to a URL with the query parameters supplying the information needed for the call. The API returns an XML response.
 
-The current API implementation lies on the bigbluebutton-web component, which has been written using the Grails framework.
+The current API implementation is within on the bigbluebutton-web component, which has been written using the Grails framework.
 
 = API Changes in Releases =
 
@@ -18,7 +18,7 @@ Added new API calls:
   * * getMeetings *
 
 == Version 0.7 ==
-In 0.70, we made a couple of changes that will force you to update your API integrations.  These changes were necessary to improve the security of the API and our ability to add features in future releases.  We apologize for any inconvenience this may have caused.
+In 0.70, we made a couple of changes that will require you to update your API integrations.  These changes were necessary to improve the security of the API and our ability to add features in future releases.  We apologize for any inconvenience this may have caused.
 
 Added new API calls:
   * * api version returned on index *
@@ -54,7 +54,7 @@ For instance, a third party application that is integrated with the API may embe
 Those examples are clearly abuses of the system, and therefore must be protected against. The API must provide a way of enabling this protection.
 
 == _Configuration_ ==
-The securitySalt is set in 
+The securitySalt (think of this as the shared secret) is set in 
 
 {{{
    /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties 
@@ -93,6 +93,7 @@ Look for the parameter
         **You can use org.apache.commons.codec.digest.!DigestUtilsandcall !DigestUtils.shaHex(string + salt)
     * PHP: simply call sha(string + salt)
         ** See <a href="http://php.net/manual/en/function.sha1.php">http://php.net/manual/en/function.sha1.php</a>
+        ** !BigBlueButton [http://www.omarshammas.com/bbbapibuddy API Buddy] which lets you interactively create API calls and test them against a public !BigBlueButton server.
 
 == _Error handling_ ==
  * All API calls make a best-effort attempt to return a properly formatted document that contains enough information for the user to be able to determine what the error is.
@@ -218,7 +219,7 @@ For more information about the preupload slides check the following <a href="htt
 || fullName || Required || String || <p>The full name that is to be used to identify this user to other conference attendees.</p> ||
 || meetingID || Required || String || <p>The meeting ID that identifies the meeting you are attempting to join.</p> ||
 || password || Required || String || <p>The password that this attendee is using. If the moderator password is supplied, he will be given moderator status (and the same for attendee password, etc)</p> ||
-|| createTime || Optional || String || <p>Third-party apps using the API can now pass createTime parameter (which was created in the create call), BigBlueButton will ensure it matches the ‘createTime’ for the session.  If they differ, BigBlueButton will not proceed with the join request. This prevents a user from reusing their join URL for a subsequent session with the same meetingID.</p> ||
+|| createTime || Optional || String || <p style="font-weight: bold; color: red">NEW in 0.80</p><p><p>Third-party apps using the API can now pass createTime parameter (which was created in the create call), BigBlueButton will ensure it matches the ‘createTime’ for the session.  If they differ, BigBlueButton will not proceed with the join request. This prevents a user from reusing their join URL for a subsequent session with the same meetingID.</p> ||
 || userID || Optional || String || <p style="font-weight: bold; color: red">NEW in 0.7</p><p>An identifier for this user that will help your application to identify which person this is.  This user ID will be returned for this user in the getMeetingInfo API call so that you can check </p> ||
 || webVoiceConf|| Optional || String || <p>If you want to pass in a custom voice-extension when a user joins the voice conference using voip. This is useful if you want to collect more info in you Call Detail Records about the user joining the conference. You need to modify your /etc/asterisk/bbb-extensions.conf to handle this new extensions. </p> ||
 
