@@ -1,10 +1,10 @@
-#summary How to install  BigBlueButton 0.8 on Ubuntu 10.04 in under 30 minutes
+#summary How to install  BigBlueButton 0.80 on Ubuntu 10.04 in under 30 minutes
 
 <wiki:toc max_depth="3" />
 
 = Before you install =
 
-These instructions require you install !BigBlueButton 0.8 on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
+These instructions require you install !BigBlueButton 0.80 on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
 
 We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
@@ -30,9 +30,9 @@ To verify that port 80 is not in use by another application, you can type
 
 
 
-== Upgrading from !BigBlueButton 0.8 beta/RC ==
+== Upgrading from !BigBlueButton 0.80 beta/RC ==
 
-If you are upgrading from an earlier !BigBlueButton 0.8 beta/release candidate, please note, if you've made custom changes to BigBlueButton, such as
+If you are upgrading from an earlier !BigBlueButton 0.80 beta/release candidate, please note, if you've made custom changes to BigBlueButton, such as
 
  * applied custom branding
  * modified /var/www/bigbluebutton/client/conf/config.xml
@@ -79,10 +79,10 @@ After the install finishes, restart your !BigBlueButton server with
 
 If you are upgrading from !BigBlueButton 0.71a, start [#Upgrading_a_BigBlueButton_0.71a_Server here].
 
-= Installation of !BigBlueButton 0.8 =
+= Installation of !BigBlueButton 0.80 =
 
 == Install Video ==
-To make it easy for you to setup your own !BigBlueButton 0.8 server, we've put together the following overview video.
+To make it easy for you to setup your own !BigBlueButton 0.80 server, we've put together the following overview video.
 
 <wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
 
@@ -278,7 +278,7 @@ Follow the instructions [#2._Install_Ruby here].
 
 This step will uninstall FreeSWITCH 1.0.6.  
 
-!BigBlueButton 0.8 requires FreeSWITCH 1.0.7 for recording of sessions.   In later steps, the !BigBlueButton 0.8 will install and configure FreeSWITCH 1.0.7.
+!BigBlueButton 0.80 requires FreeSWITCH 1.0.7 for recording of sessions.   In later steps, the !BigBlueButton 0.80 will install and configure FreeSWITCH 1.0.7.
 
 Before upgrading, first remove the older FreeSWITCH packages.
 
