@@ -4,7 +4,7 @@
 
 = Before you install =
 
-These instructions require you install !BigBlueButton 0.80 on a Ubuntu 10.04 32-bit or 64-bit server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
+These instructions require you install !BigBlueButton 0.80 on a *Ubuntu 10.04 32-bit or 64-bit* server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
 
 We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
