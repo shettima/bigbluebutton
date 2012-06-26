@@ -244,5 +244,7 @@ There are a number of capabilities that we want to add that have
   * *Support for Jabber* - This would enable us to integrate with other popular IM systems ([http://code.google.com/p/bigbluebutton/issues/detail?id=921 921]).
 
   * *Support right-left languages* - See [http://code.google.com/p/bigbluebutton/issues/detail?id=686 686]. 
+
+  * *Native support for iOS devices* - See [http://code.google.com/p/bigbluebutton/issues/detail?id=852 852]. 
  
  
