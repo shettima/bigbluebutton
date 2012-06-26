@@ -343,6 +343,31 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
    sudo bbb-conf --setip 47.135.32.64
 }}}
 
+=== I get Cannot bind to URL [rmi://0.0.0.0:1099/red5] Exception ===
+{{{
+   -- Exceptions found in /usr/share/red5/log/* --
+/usr/share/red5/log/error.log:java.io.IOException: Cannot bind to URL [rmi://0.0.0.0:1099/red5]: javax.naming.ServiceUnavailableException [Root exception is java.rmi.ConnectException: Connection refused to host: 0.0.0.0; nested exception is:
+/usr/share/red5/log/error.log:  java.net.ConnectException: Connection timed out]
+/usr/share/red5/log/error.log:  at javax.management.remote.rmi.RMIConnectorServer.newIOException(RMIConnectorServer.java:818) ~[na:1.6.0_20]
+/usr/share/red5/log/error.log:Caused by: javax.naming.ServiceUnavailableException: null
+/usr/share/red5/log/error.log:Caused by: java.rmi.ConnectException: Connection refused to host: 0.0.0.0; nested exception is:
+/usr/share/red5/log/error.log:  java.net.ConnectException: Connection timed out
+/usr/share/red5/log/error.log:Caused by: java.net.ConnectException: Connection timed out
+/usr/share/red5/log/red5.log:java.io.IOException: Cannot bind to URL [rmi://0.0.0.0:1099/red5]: javax.naming.ServiceUnavailableException [Root exception is java.rmi.ConnectException: Connection refused to host: 0.0.0.0; nested exception is:
+/usr/share/red5/log/red5.log:   java.net.ConnectException: Connection timed out]
+/usr/share/red5/log/red5.log:   at javax.management.remote.rmi.RMIConnectorServer.newIOException(RMIConnectorServer.java:818) ~[na:1.6.0_20]
+/usr/share/red5/log/red5.log:Caused by: javax.naming.ServiceUnavailableException: null
+/usr/share/red5/log/red5.log:Caused by: java.rmi.ConnectException: Connection refused to host: 0.0.0.0; nested exception is:
+/usr/share/red5/log/red5.log:   java.net.ConnectException: Connection timed out
+/usr/share/red5/log/red5.log:Caused by: java.net.ConnectException: Connection timed out
+}}}
+
+Start RMI Registry {{{rmiregistry &}}}.
+
+If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}. Edit {{{/usr/share/red5/conf/red5.properties}}} and change {{{jmx.rmi.host}}} to the server ip instead of {{{0.0.0.0}}}
+
+
+
 
 
 = Configuration =
