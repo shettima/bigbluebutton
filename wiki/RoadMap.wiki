@@ -3,7 +3,7 @@
 
 = Current Release =
 
-== Release 0.8 ==
+== Release 0.81 ==
 Development of !BigBlueButton 0.81 is underway.  The focus is the following features:
 
   # Capturing all activity in the presentation window for playback
