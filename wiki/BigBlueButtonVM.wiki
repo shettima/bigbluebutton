@@ -16,7 +16,7 @@ The requirements for running the !BigBlueButton VM are:
   # 2 G of free memory to run the VM
   # A DHCP Server for the VM to acquire an IP address on boot
 
-The third requirement is important: the VM must be able to connect to the internet to update from packages.  If it does not acquire an IP address, it won't be able to finish the setup of !BigBlueButton.
+The third requirement is important: the VM must be able to connect to the internet on first bott to update from packages.  If the VM cannot connect, it won't be able to finish the setup of !BigBlueButton.
 
 == Installing !BigBlueButton VM  ==
 
