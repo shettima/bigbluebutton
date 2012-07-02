@@ -63,7 +63,7 @@ The securitySalt (think of this as the shared secret) is set in
 Look for the parameter 
 
 {{{
-   beans.dynamicConferenceService.securitySalt=<your_salt>
+   securitySalt=<your_salt>
 }}}
 
 You can also retrieve it's value using the command
