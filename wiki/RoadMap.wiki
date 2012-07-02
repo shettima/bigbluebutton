@@ -3,6 +3,9 @@
 
 = Current Release =
 
+The current release is BigBlueButton 0.80.  See the [ReleaseNotes release notes] for details on updates to the current release.
+
+
 == Release 0.81 ==
 Development of !BigBlueButton 0.81 is underway.  The focus is the following features:
 
@@ -18,23 +21,4 @@ While we don't give out release dates (we release on quality, not dates), you ca
 
 = Roadmap to !BigBlueButton 1.0 =
 
-To get a look at the plans beyond the current iteration, see [RoadMap1dot0 Roadmap to BigBlueButton 1.0].
-
-= Previous Releases =
-
-== Release 0.71 ==
-!BigBlueButton 0.71 was released on November 9, 2010.  You can see a full list of what has been added in the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes Release Notes].
-
-You can read the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/6ffa48133ea7d2e6# minutes of the committers meeting] on 0.71.
-
-
-== Release 0.7 ==
-!BigBlueButton 0.7 was released on July 15, 2010.  You can see a full list of what has been added in the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes Release Notes].
-
-You can see the original planning document for 0.7 in the [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/33c2080e30fb5f02# Minutes from BigBlueButton committers meeting 2010-04-27].  
-
-
-To see the results of previous releases, see [ReleaseNotes BigBlueButton Release Notes].
-
-= Architecture Roadmap =
-To see a roadmap of where the bbb architecture is headed, see the [ArchitectureRoadmap  roadmap].
+We have Big plans for !BigBlueButton.  To get a look at the plans beyond the current iteration, see [RoadMap1dot0 Roadmap to BigBlueButton 1.0].  
