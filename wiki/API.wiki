@@ -66,6 +66,12 @@ Look for the parameter
    beans.dynamicConferenceService.securitySalt=<your_salt>
 }}}
 
+You can also retrieve it's value using the command
+
+{{{
+   bbb-conf --salt
+}}}
+
 
 <p><font color="#FF0000">*IMPORTANT: DO NOT ALLOW END USERS TO KNOW YOUR SECURITY SALT OR ELSE YOUR SECURITY WILL BE COMPROMISED.*</font></p>
 
