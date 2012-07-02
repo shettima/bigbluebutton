@@ -5,7 +5,7 @@
 = Introduction =
 As the popularity of !BigBlueButton increases, we are increasingly asked "when are you going to release !BigBlueButton 1.0?" 
 
-We first released !BigBlueButton version 0.4 on June 12, 2009 (see [http://en.wikipedia.org/wiki/BigBlueButton#History project history]).  Since then, we've had nine subsequent releases: 0.50, 0.60, 0.61, 0.62, 0.63, 0.64, 0.70, 0.71, 0.71a, 0.80 – each release improving on the previous, each reflecting the desire by the core development team to build a solid product. 
+We first released !BigBlueButton version 0.4 on June 12, 2009 (see [http://en.wikipedia.org/wiki/BigBlueButton#History project history]).  Since then, we've had ten subsequent releases: 0.50, 0.60, 0.61, 0.62, 0.63, 0.64, 0.70, 0.71, 0.71a, 0.80 – each release improving on the previous, each reflecting the desire by the core development team to build a solid product. 
 
 This document outlines the *DRAFT* requirements for !BigBlueButton 1.0.  
  
@@ -247,4 +247,6 @@ There are a number of capabilities that we want to add that have
 
   * *Native support for iOS devices* - See [http://code.google.com/p/bigbluebutton/issues/detail?id=852 852]. 
  
+= References =
+See [http://www.bigbluebutton.org/history/ History of !BigBlueButton project].
  
