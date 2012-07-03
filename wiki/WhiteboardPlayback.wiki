@@ -1,4 +1,4 @@
-#summary Specifications for whiteboard playback in !BigBlueButton.
+#summary Specifications for whiteboard playback in BigBlueButton.
 
 = DRAFT - Overview - DRAFT =
 
