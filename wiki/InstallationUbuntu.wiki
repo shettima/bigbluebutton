@@ -424,18 +424,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
 
 
-== bbb-conf command not found ==
-
-When it first launches, if the !BigBlueButton VM is unable to connect to the internet it will not finish the installation.  You'll see this when yo type`bbb-conf` command and receive the error "command not found".
-
-The solution is to make sure the VM can connect with the internet.  You should be able to 
-
-{{{
-   ping ubuntu.bigbluebutton.org
-}}}
-
-and get a response.  Once connected, you can finish the installation manually by following [InstallationUbuntu#3.__Install_BigBlueButton  these steps].
-
 == Dependencies are not met ==
 
 For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
