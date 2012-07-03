@@ -1,20 +1,17 @@
-#summary Specifications for whiteboard playback in BigBlueButton.
+#summary Specifications for whiteboard playback in !BigBlueButton.
 
 = DRAFT - Overview - DRAFT =
 
-Having playback of the whiteboard marks in BigBlueButton would satisfy the requests of numerous users. Its design specifications are detailed below. 
+Having playback of the whiteboard marks in !BigBlueButton would satisfy the requests of numerous users. Its design specifications are detailed below. 
 
 = Specifications =
 
-The following whiteboard events are currently recorded with BigBlueButton:
-  * AddShapeEvent (pencil, rectangle, ellipse)
-     * Specifies a shape being drawn on the whiteboard.
-  * UndoShapeEvent
-     * Undo of the creation of a shape
-  * ClearPageEvent
-     * Clears the current page.
-  * ResizeAndMoveSlideEvent
-     * Pans and Zooms the current page.
+The following whiteboard events are currently recorded with !BigBlueButton:
+  * !AddShapeEvent (pencil, rectangle, ellipse) - Specifies a shape  drawn on the whiteboard
+  * !UndoShapeEvent - Specifies a clear of the last created shape
+  * !ClearPageEvent - Specifies an clear of all shapes on the current page
+  * !ResizeAndMoveSlideEvent - Specifies a change in the viewBox of the whiteboard (for pan and zoom events)
+  * !CursorMoveEvent - Specifies a change in the position of the mouse cursor over the whiteboard
 
 The concept behind playing back these events involves the use of Popcorn.js. Popcorn is currently used to change the slides and update the chat during playback. There are no other events that are currently played back. We hope to incorporate the use of the events previously listed above to create a better playback experience.
 
@@ -41,26 +38,130 @@ Using this idea, we will expand on slides.rb to create more xml files which the 
 
 Slides.rb should be extended to process the other whiteboard events from the events.xml currently created. The following will step through the various events and discuss the possibility of how they could be used.
 
-=== AddShapeEvent ===
-	The shapes to be drawn involve a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.
+=== !AddShapeEvent ===
+	Possible shapes to be drawn include:
+	* Pencil marks:
+		This involves a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.
 	
-	The other possibility of shapes involves a rectangle, an (x,y) point for the top left corner and a height and width of the rectangle. It also involves the additional properties such as colour, thickness, etc...
+	* Rectangles:
+		An (x,y) point for the top left corner and a height and width of the rectangle. It also includes the additional properties such as colour, thickness, etc...
 	
-	The final possibility for shapes is an ellipse which involves an (x,y) point for the top left hand corner and a height and width. The drawn shape is an ellipse, not a rectangle despite the data given. 
+	* Ellipses:
+		An ellipse which involves an (x,y) point for the top left hand corner and a height and width. A curve between these points is created.
+		
+	* Text:
+		Text includes font, font size, colour, x and y coordinates and the value of the text itself.
 	
-	Using the data given by these three shapes, an SVG (Scalable Vector Graphics) image of the shapes should be possible to generate (using line, rect, ellipse shapes included in SVG). SVG technology enables many possibilities including groups of images to specify groups of shapes for pages of playback and most importantly, visibility. Visiblity will allow playback to specify which shapes are rendered for the given frame and selectively show them.
+	Using the data given by these shapes, an SVG (Scalable Vector Graphics) image of the shapes should be possible to generate (using line, rect, ellipse, text shapes included in SVG). SVG technology enables many possibilities including groups of images to specify groups of shapes for pages of playback and most importantly, visibility. Visiblity will allow playback to specify which shapes are rendered for the given frame and selectively show them.
 	
-=== UndoShapeEvent ===
+	The following are example XML specifications created in the events.xml file for the various shapes to be drawn.
+	
+	=== Pencil Example ===
+	{{{
+<event timestamp="1340985829714" module="WHITEBOARD" eventname="AddShapeEvent">
+	<presentation>default</presentation>
+	<thickness>1</thickness>
+	<pageNumber>0</pageNumber>
+	<dataPoints>10.08,64.36,10.08,64.17,10.08,63.61</dataPoints>
+	<color>0</color>
+	<type>pencil</type>
+</event>
+	}}}
+	
+	=== Rectangle Example ===
+	{{{
+<event timestamp="1340907960410" module="WHITEBOARD" eventname="AddShapeEvent">
+	<presentation>default</presentation>
+	<thickness>1</thickness>
+	<pageNumber>0</pageNumber>
+	<dataPoints>4.83333333333333,11.77777777777779,66.3333333333333,68.4444444444444</dataPoints>
+	<type>rectangle</type>
+	<color>0</color>
+</event>
+	}}}
+	
+	=== Text Example ===
+	{{{
+<event timestamp="1340907921555" module="PRESENTATION" eventname="AddShapeEvent">
+	<type>text</type>
+	<dataPoints>14.166666666666666,58.44444444444444</dataPoints>
+	<presentation>default</presentation>
+	<fontsize>18</fontsize>
+	<color>0</colour>
+	<pageNumber>0</pageNumber>
+	<text>This is a test</text>
+	<font>Verdana</font>
+</event>
+	}}}
+	
+	=== Ellipse Example ===
+	{{{
+<event timestamp="1340907956089" module="WHITEBOARD" eventname="AddShapeEvent">
+	<pageNumber>0</pageNumber>
+	<type>ellipse</type>
+	<presentation>default</presentation>
+	<color>0</color>
+	<thickness>1</thickness>
+	<dataPoints>46.0,20.666666666666668,87.5,63.111111111111114</dataPoints>
+</event>
+	}}}
+	
+=== !GoToSlideEvent ===
+	The shapes are typically drawn on various slides so to process these different slides we use the !GoToSlideEvent in the events.xml file. Keeping track of the images associated with each slide number allows us to make sure that the correct slide is displayed when the shapes and other whiteboard events are drawn.
+	
+	An example !GoToSlideEvent is as follows: 
+	{{{
+<event timestamp="1340984980211" module="PRESENTATION" eventname="GotoSlideEvent">
+	<slide>0</slide>
+</event>
+	}}}
+	
+=== !UndoShapeEvent ===
 	SVG images are basically XML files, so we can give each shape as many properties as we wish. One of the properties to give it would be a time when the shape is undone (if it ever is undone).
-	Javascript can look for this property and compare it with the current time to decide whether the shape should be displayed or not.
+	Javascript can look for this property and compare it with the current time to decide whether the shape should be displayed or not. An undo event occurs on a single shape at a time.
 	
-=== ClearPageEvent ===
-	SVG allows shapes to be grouped together. These groups could specify pages of shapes. Because pages can be selectively displayed as well, this will enable javascript to decide which pages are displayed at specific times, making playback of shapes on changing slides as simple as toggling the correct pages' visibilities. 
+	An example of an !UndoShapeEvent is as follows:
+	{{{
+<event timestamp="1340907563662" module="WHITEBOARD" eventname="UndoShapeEvent">
+	<presentation>default</presentation>
+	<pageNumber>0</pageNumber>
+</event>
+	}}}
 	
-=== ResizeAndMoveSlideEvent ===
-	SVG includes a property called viewBox which specifies a section of the image to display. It takes in 4 values, the x and y top corner of the image and the height and width. This is then resized accordingly to fit the space the SVG image usually takes up. By specifying a smaller height and width you can create a zoom effect, and by specifying a new x and y top-corner value, we can create a panning effect. These four values are already recorded in the ResizeAndMoveSlideEvent, which can be more or less replicated to create a viewBox value for the SVG image at the specified time. Javascript can modify this value and playback the panning and zooming effects.
+=== !ClearPageEvent ===
+	SVG allows shapes to be grouped together. These groups could specify pages of shapes. Because pages can be selectively displayed as well, this will enable javascript to decide which pages are displayed at specific times, making playback of shapes on changing slides as simple as toggling the correct pages' visibilities. !ClearPageEvents are processed as an undo event occuring on all the page's shapes at the exact same time. Therefore, a shape will have an undo time associated with it if it gets undone via the !UndoShapeEvent or if it is cleared in a mass !ClearPageEvent, whichever occurs first.
+	
+	An example of a !ClearPageEvent in the events.xml file is as follows:
+	{{{
+<event timestamp="1340907564165" module="WHITEBOARD" eventname="ClearPageEvent">
+	<pageNumber>0</pageNumber>
+	<presentation>default</presentation>
+</event>
+	}}}
+	
+=== !ResizeAndMoveSlideEvent ===
+	SVG includes a property called viewBox which specifies a section of the image to display. It takes in 4 values, the x and y top corner of the image and the height and width. This is then resized accordingly to fit the space the SVG image usually takes up. By specifying a smaller height and width you can create a zoom effect, and by specifying a new x and y top-corner value, we can create a panning effect. These four values are already recorded in the !ResizeAndMoveSlideEvent, which can be more or less replicated to create a viewBox value for the SVG image at the specified time. Javascript can modify this value and playback the panning and zooming effects.
+	
+	An example !ResizeAndMoveEvent from the events.xml:
+	{{{
+<event timestamp="1340985831988" module="PRESENTATION" eventname="ResizeAndMoveSlideEvent">
+	<yOffset>-7.15379815414964</yOffset>
+	<xOffset>-5.346456543022041</xOffset>
+	<widthRatio>70.83333333333334</widthRatio>
+	<heightRatio>70.83333333333333</heightRatio>
+</event>
+	}}}
+	
+=== !CursorMoveEvent ===
+	Using and additional CSS circle, we can mimic the appearance of a moving cursor during playback. The cursor events are recorded in a !CursorMoveEvent in the events.xml. It is composed of an xOffset and yOffset value which are percentages of the entire screen as X and Y coordinates of the cursor at that specific time. An example XML snippet of this event from the events.xml is as follows:
+	{{{
+<event timestamp="1341323056855" module="PRESENTATION" eventname="CursorMoveEvent">
+	<xOffset>20</xOffset>
+	<yOffset>56</yOffset>
+</event>
+	}}}
 
-Shapes.rb will be expanded to process these events into their own specific files. One file will be the SVG image created to hold all the shapes, undo events associated with those shapes, and when the pages of the shapes are cleared. Because panning and zooming is not neccesarily part of creating shapes, ResizeAndMoveEvents should be processed separately into their own XML file to be parsed by the Javascript.
+Shapes.rb will be expanded to process these events into their own specific files. One file will be the SVG image created to hold all the shapes, undo events associated with those shapes, and when the pages of the shapes are cleared. Because panning and zooming is not neccesarily part of creating shapes, !ResizeAndMoveEvents should be processed separately into their own XML file to be parsed by the Javascript.
 
 == Integration ==
 
@@ -68,7 +169,7 @@ Because we will be panning and zooming the images directly, we want these images
 
 = Putting it all Together =
 
-  # Slides.rb will run, parse the events.xml as it does already, except this time parse the additional whiteboard events AddShapeEvent, UndoShapeEvent, ClearPageEvent and ResizeAndMoveSlideEvent. It will create the regular slides.xml with chat events in it, shapes.svg which includes the shapes for the presentation and panAndZooms.xml which will specify the panning and zooming events.
+  # Slides.rb will run, parse the events.xml as it does already, except this time parse the additional whiteboard events !AddShapeEvent, !UndoShapeEvent, !ClearPageEvent, !CursorMoveEvent and !ResizeAndMoveSlideEvent. It will create the regular slides.xml with chat events in it, shapes.svg which includes the shapes for the presentation and panAndZooms.xml which will specify the panning and zooming events.
   # playback.html will be edited to include the SVG image, which by default will be not visible. 
   # playback.html will also be edited to include an additional javascript file which will specify the onFrame code for Popcorn.js. The code will consist of the following things to do on every frame:
 	   # Get the page currently displayed
