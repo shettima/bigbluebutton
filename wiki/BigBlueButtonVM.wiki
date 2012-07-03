@@ -127,6 +127,20 @@ Next, you can manually finish the setup to !BigBlueButton with the following com
 
 There should be no errors when you type the above three commands.
 
+
+== bbb-conf command not found ==
+
+When it first launches, if the !BigBlueButton VM is unable to connect to the internet it will not finish the installation.  You'll see this when yo type`bbb-conf` command and receive the error "command not found".
+
+The solution is to make sure the VM can connect with the internet.  You should be able to 
+
+{{{
+   ping ubuntu.bigbluebutton.org
+}}}
+
+and get a response.  Once connected, you can finish the installation manually by following [InstallationUbuntu#3.__Install_BigBlueButton  these steps].
+
+
 == The IP address of my VM has changed and now !BigBlueButton does not work ==
 Next, you'll need to ensure that !BigBlueButton is listening to the IP address of your VM.  One symptom is when you try to access !BigBlueButton through the web browser you get the `Welcome to nginx!` message.
 
