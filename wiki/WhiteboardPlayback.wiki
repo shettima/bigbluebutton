@@ -26,7 +26,9 @@ The custom javascript code will more or less do the following things:
 	# Use this time to gather the following information:
 		# What are the current shapes to be drawn?
 		# Is there any pan and zoom level on these shapes at this specific time?
+		# What is the current coordinates of the cursor at this specific time?
 	# Draw the shapes at the appropriate pan and zoom level.
+	# Move the cursor if it needs to be moved.
 	
 == How will this Javascript get this information? == 
 
