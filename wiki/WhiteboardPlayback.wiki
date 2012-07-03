@@ -151,7 +151,7 @@ Slides.rb should be extended to process the other whiteboard events from the eve
 	}}}
 	
 === !CursorMoveEvent ===
-	Using and additional CSS circle, we can mimic the appearance of a moving cursor during playback. The cursor events are recorded in a !CursorMoveEvent in the events.xml. It is composed of an xOffset and yOffset value which are percentages of the entire screen as X and Y coordinates of the cursor at that specific time. An example XML snippet of this event from the events.xml is as follows:
+	Using and additional CSS circle, we can mimic the appearance of a moving cursor during playback. The cursor events are recorded in a !CursorMoveEvent in the events.xml. It is composed of an xOffset and yOffset value which are percentages of the entire screen as X and Y coordinates of the cursor at that specific time. An example XML snippet of this event can be seen below. It represents an cursor moving to 20% right of the left-hand side of the page and 56% down the page, where (0,0) represents the top left hand corner of the slide. The example from the events.xml is as follows:
 	{{{
 <event timestamp="1341323056855" module="PRESENTATION" eventname="CursorMoveEvent">
 	<xOffset>20</xOffset>
