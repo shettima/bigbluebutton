@@ -1,4 +1,4 @@
-#summary Specifications for whiteboard playback in BigBlueButton.
+#summary Specifications for whiteboard playback in !BigBlueButton.
 
 = DRAFT - Overview - DRAFT =
 
@@ -42,17 +42,13 @@ Slides.rb should be extended to process the other whiteboard events from the eve
 
 === !AddShapeEvent ===
 	Possible shapes to be drawn include:
-	* Pencil marks:
-		This involves a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.
+	* Pencil marks - This involves a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.
 	
-	* Rectangles:
-		An (x,y) point for the top left corner and a height and width of the rectangle. It also includes the additional properties such as colour, thickness, etc...
+	* Rectangles - An (x,y) point for the top left corner and a height and width of the rectangle. It also includes the additional properties such as colour, thickness, etc...
 	
-	* Ellipses:
-		An ellipse which involves an (x,y) point for the top left hand corner and a height and width. A curve between these points is created.
+	* Ellipses - An ellipse which involves an (x,y) point for the top left hand corner and a height and width. A curve between these points is created.
 		
-	* Text:
-		Text includes font, font size, colour, x and y coordinates and the value of the text itself.
+	* Text - Text includes font, font size, colour, x and y coordinates and the value of the text itself.
 	
 	Using the data given by these shapes, an SVG (Scalable Vector Graphics) image of the shapes should be possible to generate (using line, rect, ellipse, text shapes included in SVG). SVG technology enables many possibilities including groups of images to specify groups of shapes for pages of playback and most importantly, visibility. Visiblity will allow playback to specify which shapes are rendered for the given frame and selectively show them.
 	
@@ -171,7 +167,7 @@ Because we will be panning and zooming the images directly, we want these images
 
 = Putting it all Together =
 
-  # Slides.rb will run, parse the events.xml as it does already, except this time parse the additional whiteboard events !AddShapeEvent, !UndoShapeEvent, !ClearPageEvent, !CursorMoveEvent and !ResizeAndMoveSlideEvent. It will create the regular slides.xml with chat events in it, shapes.svg which includes the shapes for the presentation and panAndZooms.xml which will specify the panning and zooming events.
+  # Slides.rb will run, parse the events.xml as it does already, except this time parse the additional whiteboard events !AddShapeEvent, !UndoShapeEvent, !ClearPageEvent, !CursorMoveEvent and !ResizeAndMoveSlideEvent. It will create the regular slides.xml with chat events in it, shapes.svg which includes the shapes for the presentation and panAndZooms.xml which will specify the panning and zooming events along with cursor.xml which specifies the cursor movement events.
   # playback.html will be edited to include the SVG image, which by default will be not visible. 
   # playback.html will also be edited to include an additional javascript file which will specify the onFrame code for Popcorn.js. The code will consist of the following things to do on every frame:
 	   # Get the page currently displayed
@@ -179,4 +175,5 @@ Because we will be panning and zooming the images directly, we want these images
 	   # Check if it is undone or not. If it has been undone, don't display it.
 	   # Display them by toggling the SVG shapes style of visibility to visible, otherwise keep it hidden.
 	   # Is there any pan and zoom event at this specific time? If there is, update it, if there isn't, update it to the previous pan and zoom event.
+	   # Is there any cursor event at this specific time? If there is, update it, if there isn't, update it to the previous cursor event.
   # Popcorn.js will execute all this code with the specific shapes to be displayed at runtime.
