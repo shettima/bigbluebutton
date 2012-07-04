@@ -138,7 +138,14 @@ The solution is to make sure the VM can connect with the internet.  You should b
    ping ubuntu.bigbluebutton.org
 }}}
 
-and get a response.  Once connected, you can finish the installation manually by following [InstallationUbuntu#3.__Install_BigBlueButton  these steps].
+and get a response.  Once connected, do the following commands:
+
+{{{
+   sudo apt-get update
+   sudo apt-get dist-upgrade
+}}}
+
+Then you can finish the installation manually by following [InstallationUbuntu#3.__Install_BigBlueButton  these steps].
 
 
 == The IP address of my VM has changed and now !BigBlueButton does not work ==
