@@ -109,6 +109,8 @@ The following descirbes how each event will appear in the events.xml
 </event>
 	}}}
 
+== New shape(s) to be included in !BigBlueButton 0.81 ==
+
 	=== Text Example ===
 	Text includes font, font size, colour, x and y coordinates and the value of the text itself.  Example:
 	{{{
@@ -123,6 +125,8 @@ The following descirbes how each event will appear in the events.xml
 	<font>Verdana</font>
 </event>
 	}}}
+
+== Events in !BigBlueButton 0.80 ==
 	
 === !GoToSlideEvent ===
 	The shapes are typically drawn on various slides so to process these different slides we use the !GoToSlideEvent in the events.xml file. Keeping track of the images associated with each slide number allows us to make sure that the correct slide is displayed when the shapes and other whiteboard events are drawn.
@@ -170,6 +174,8 @@ The following descirbes how each event will appear in the events.xml
 </event>
 	}}}
 	
+== New event to be added in !BigBlueButton 0.81 ==
+
 === !CursorMoveEvent ===
 	Using and additional CSS circle, we can mimic the appearance of a moving cursor during playback. The cursor events are recorded in a !CursorMoveEvent in the events.xml. It is composed of an xOffset and yOffset value which are percentages of the entire screen as X and Y coordinates of the cursor at that specific time. An example XML snippet of this event can be seen below. It represents a cursor moving to 20% right of the left-hand side of the page and 56% down the page, where (0,0) represents the top left hand corner of the slide. The example from the events.xml is as follows:
 	{{{
