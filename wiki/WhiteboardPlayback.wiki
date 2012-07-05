@@ -1,4 +1,4 @@
-#summary Design for enhancments to record and playback in 0.81.
+#summary Design for enhancements to record and playback in 0.81.
 
 = Overview =
 
@@ -54,7 +54,7 @@ This function will be driven by data created by `slides.rb` (this time extractin
    * `panzooms.xml` which will specify the panning and zooming events 
    * `cursor.xml` which specifies the cursor movement events
 
-The whiteboard images will be encapsulated in SVG (Scalable Vector Graphics).  With SVG, it's possible to generate native line, rect, ellipse, text shapes, including groups of shapes, and, most importantly, visibility. Visiblity will allow playback to specify which shapes are rendered for the given frame and selectively show them.
+The whiteboard images will be encapsulated in SVG (Scalable Vector Graphics).  With SVG, it's possible to generate native line, rect, ellipse, text shapes, including groups of shapes, and, most importantly, visibility. Visibility will allow playback to specify which shapes are rendered for the given frame and selectively show them.
 
 `slides.rb` will place the new files in the playback directory for loading by playback.html.
 
@@ -64,8 +64,8 @@ Using the Popcorn.js function, it will follow the steps as previously outlined a
 
 Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. To integrate this change, changes to the `slides.rb` will also have to be made in that regard.
 
-== Specification of events ==
-The following descirbes how each event will appear in the events.xml
+== Current shapes recorded in !BigBlueButton 0.80 ==
+The following describes how each event will appear in the events.xml
 
 === !AddShapeEvent ===
 
@@ -151,7 +151,7 @@ The following descirbes how each event will appear in the events.xml
 	}}}
 	
 === !ClearPageEvent ===
-	SVG allows shapes to be grouped together. These groups could specify pages of shapes. Because pages can be selectively displayed as well, this will enable javascript to decide which pages are displayed at specific times, making playback of shapes on changing slides as simple as toggling the correct pages' visibilities. !ClearPageEvents are processed as an undo event occuring on all the page's shapes at the exact same time. Therefore, a shape will have an undo time associated with it if it gets undone via the !UndoShapeEvent or if it is cleared in a mass !ClearPageEvent, whichever occurs first.
+	SVG allows shapes to be grouped together. These groups could specify pages of shapes. Because pages can be selectively displayed as well, this will enable javascript to decide which pages are displayed at specific times, making playback of shapes on changing slides as simple as toggling the correct pages' visibilities. !ClearPageEvents are processed as an undo event occurring on all the page's shapes at the exact same time. Therefore, a shape will have an undo time associated with it if it gets undone via the !UndoShapeEvent or if it is cleared in a mass !ClearPageEvent, whichever occurs first.
 	
 	An example of a !ClearPageEvent in the events.xml file is as follows:
 	{{{
