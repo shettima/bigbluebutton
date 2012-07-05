@@ -10,13 +10,14 @@ When a session is recorded in !BigBlueButton 0.80, the !BigBlueButton server rec
 One of those scripts is `slides.rb` -- the Ruby program to create a playback of slides + audio + chat.  To playback the images, audio, and chat in sequence, playback.html uses Popcorn.js.  For example, here is a recent recording of the committers meeting for 0.81.
 
 The following events are recorded in 0.80
-
-  * !AddShapeEvent (pencil, rectangle, ellipse) - Specifies a shape  drawn on the whiteboard
+  * !PublicChatEvent - Specifies a chat message sent to all meeting participants
+  * !GotoSlideEvent - Specifies a change in slide
+  * !AddShapeEvent (pencil, rectangle, ellipse) - Specifies a shape drawn on the whiteboard
   * !UndoShapeEvent - Specifies a clear of the last created shape
   * !ClearPageEvent - Specifies an clear of all shapes on the current page
-  * !ResizeAndMoveSlideEvent - Specifies a change in the viewBox of the whiteboard (for pan and zoom events)
+  * !ResizeAndMoveSlideEvent - Specifies a change in the viewBox of the whiteboard (for pan and zoom)
 
-Note, the `slides.rb` ignores the above events.  It only uses the !ResizeAndMoveSlideEvent.
+Note, the `slides.rb` currently only uses the !PublicChatEvent and !GotoSlideEvent.
 
 == !BigBlueButton 0.81 ==
 
@@ -33,7 +34,7 @@ The !BigBlueButton 0.81 server will need to add the following event
 
 === Playback of all events ===
 
-Popcorn.js includes a plugin called 'Code', which are hooks to enable Popcorn.js to execute an external JavaScript function at the start and end of a duration of time, as well as 60 times/second using its onFrame option.
+Popcorn.js includes a plugin called 'Code', which are hooks to enable Popcorn.js to execute an external !JavaScript function at the start and end of a duration of time, as well as 60 times/second using its onFrame option.
 
 To playback all the presentation events, the requirement is to write an external JavaScript function to render a frame 60 times per second using this Code plugin. The function will
 
@@ -50,28 +51,18 @@ This function will be driven by data created by `slides.rb` (this time extractin
 1. The ingest and processing script `slides.rb` will run, parse the events.xml, and include !AddShapeEvent, !UndoShapeEvent, !ClearPageEvent, !CursorMoveEvent and !ResizeAndMoveSlideEvent in the output. It will create the regular slides.xml with chat events in it, and in addition create the following new files
 
    * `shapes.svg` which includes the shapes for the presentation
-   * `panAndZooms.xml` which will specify the panning and zooming events 
-   * `cursor.xml` which specifies the cursor movement events.
+   * `panzooms.xml` which will specify the panning and zooming events 
+   * `cursor.xml` which specifies the cursor movement events
 
 The whiteboard images will be encapsulated in SVG (Scalable Vector Graphics).  With SVG, it's possible to generate native line, rect, ellipse, text shapes, including groups of shapes, and, most importantly, visibility. Visiblity will allow playback to specify which shapes are rendered for the given frame and selectively show them.
 
+`slides.rb` will place the new files in the playback directory for loading by playback.html.
 
-`slides.rb` will place  new files in the playback directory for loading by plaback.html.
+2.  When the user opens playback.html in their browser, it will load the SVG image, which by default will be not visible.
+ 
+Using the Popcorn.js function, it will follow the steps as previously outlined above and thus display shapes and events at a rate of at most 10 frames/second. The downstep in performance from 60x/sec to 10x/sec is due to the precision of the events compared to the times that Popcorn fires as it is playing back audio.
 
-2.  When the user opens playback.html in their brlowser, in will load the SVG image XXX, which by default will be not visible. 
-
-The file playback.html will include an additional javascript file which will specify the onFrame code for Popcorn.js. The code will consist of the following steps for every frame [XXX per second]
-   # Get the current page
-   # Get the current shapes on that page to display
-   	# For each shape, check if they are visible or not (if a shape has been undone, hide it).
-   	# For visible shapes, toggle the SVG shapes style of visibility
-   # If there is a pan and zoom event at this specific time, update the [XXX]; otherwise, use the previous previous pan and zoom event.
-   # If there is a cursor event update it; otherwise, use the previous cursor event (the cursor is just hovering).
-  # Popcorn.js will execute all this code with the specific shapes to be displayed at runtime. [XXX]
-
-`Shapes.rb` XXX will be expanded to process these events into their own specific files. One file will be the SVG image created to hold all the shapes, undo events associated with those shapes, and when the pages of the shapes are cleared. Because panning and zooming is not neccesarily part of creating shapes, !ResizeAndMoveEvents should be processed separately into their own XML file to be parsed by the Javascript.
-
-Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. To remove/refactor/integrate this change, changes to the `slides.rb` will also have to be made in that regard.
+Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. To integrate this change, changes to the `slides.rb` will also have to be made in that regard.
 
 == Specification of events ==
 The following descirbes how each event will appear in the events.xml
@@ -80,8 +71,7 @@ The following descirbes how each event will appear in the events.xml
 
 	=== Pencil Example ===
 	This involves a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.  
-	
-	Example
+	Example:
 	{{{
 <event timestamp="1340985829714" module="WHITEBOARD" eventname="AddShapeEvent">
 	<presentation>default</presentation>
@@ -95,8 +85,6 @@ The following descirbes how each event will appear in the events.xml
 	
 	=== Rectangle Example ===
 	An (x,y) point for the top left corner and a height and width of the rectangle. It also includes the additional properties such as colour, thickness, [xxx]. Example:
-	
-	
 	{{{
 <event timestamp="1340907960410" module="WHITEBOARD" eventname="AddShapeEvent">
 	<presentation>default</presentation>
@@ -105,23 +93,6 @@ The following descirbes how each event will appear in the events.xml
 	<dataPoints>4.83333333333333,11.77777777777779,66.3333333333333,68.4444444444444</dataPoints>
 	<type>rectangle</type>
 	<color>0</color>
-</event>
-	}}}
-	
-	=== Text Example ===
-	Text includes font, font size, colour, x and y coordinates and the value of the text itself.  Example:
-	
-	
-	{{{
-<event timestamp="1340907921555" module="PRESENTATION" eventname="AddShapeEvent">
-	<type>text</type>
-	<dataPoints>14.166666666666666,58.44444444444444</dataPoints>
-	<presentation>default</presentation>
-	<fontsize>18</fontsize>
-	<color>0</colour>
-	<pageNumber>0</pageNumber>
-	<text>This is a test</text>
-	<font>Verdana</font>
 </event>
 	}}}
 	
@@ -135,6 +106,21 @@ The following descirbes how each event will appear in the events.xml
 	<color>0</color>
 	<thickness>1</thickness>
 	<dataPoints>46.0,20.666666666666668,87.5,63.111111111111114</dataPoints>
+</event>
+	}}}
+
+	=== Text Example ===
+	Text includes font, font size, colour, x and y coordinates and the value of the text itself.  Example:
+	{{{
+<event timestamp="1340907921555" module="PRESENTATION" eventname="AddShapeEvent">
+	<type>text</type>
+	<dataPoints>14.166666666666666,58.44444444444444</dataPoints>
+	<presentation>default</presentation>
+	<fontsize>18</fontsize>
+	<color>0</colour>
+	<pageNumber>0</pageNumber>
+	<text>This is a test</text>
+	<font>Verdana</font>
 </event>
 	}}}
 	
