@@ -36,7 +36,7 @@ The !BigBlueButton 0.81 server will need to add the following event
 
 Popcorn.js includes a plugin called 'Code', which are hooks to enable Popcorn.js to execute an external !JavaScript function at the start and end of a duration of time, as well as 60 times/second using its onFrame option.
 
-To playback all the presentation events, the requirement is to write an external JavaScript function to render a frame 60 times per second using this Code plugin. The function will
+To playback all the presentation events, the requirement is to write an external !JavaScript function to render a frame 60 times per second using this Code plugin. The function will
 
 	# Get the current time of the video playback.
 	# Use this time to compute the following information:
