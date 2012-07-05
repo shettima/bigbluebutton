@@ -64,10 +64,11 @@ Using the Popcorn.js function, it will follow the steps as previously outlined a
 
 Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. To integrate this change, changes to the `slides.rb` will also have to be made in that regard.
 
-== Current shapes recorded in !BigBlueButton 0.80 ==
-The following describes how each event will appear in the events.xml
+== Events to be recorded ==
 
 === !AddShapeEvent ===
+
+The !AddShapeEvent specifies when a shape is drawn and includes a few different possibilities for shapes. They are all outlined below. As more shapes are added to the whiteboard, this event will be expanded to include the new possibilities.
 
 	=== Pencil Example ===
 	This involves a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.  
@@ -126,8 +127,6 @@ The following describes how each event will appear in the events.xml
 </event>
 	}}}
 
-== Events in !BigBlueButton 0.80 ==
-	
 === !GoToSlideEvent ===
 	The shapes are typically drawn on various slides so to process these different slides we use the !GoToSlideEvent in the events.xml file. Keeping track of the images associated with each slide number allows us to make sure that the correct slide is displayed when the shapes and other whiteboard events are drawn.
 	
@@ -174,8 +173,6 @@ The following describes how each event will appear in the events.xml
 </event>
 	}}}
 	
-== New event to be added in !BigBlueButton 0.81 ==
-
 === !CursorMoveEvent ===
 	Using and additional CSS circle, we can mimic the appearance of a moving cursor during playback. The cursor events are recorded in a !CursorMoveEvent in the events.xml. It is composed of an xOffset and yOffset value which are percentages of the entire screen as X and Y coordinates of the cursor at that specific time. An example XML snippet of this event can be seen below. It represents a cursor moving to 20% right of the left-hand side of the page and 56% down the page, where (0,0) represents the top left hand corner of the slide. The example from the events.xml is as follows:
 	{{{
