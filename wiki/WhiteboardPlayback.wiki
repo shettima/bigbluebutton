@@ -110,8 +110,6 @@ The !AddShapeEvent specifies when a shape is drawn and includes a few different 
 </event>
 	}}}
 
-== New shape(s) to be included in !BigBlueButton 0.81 ==
-
 	=== Text Example ===
 	Text includes font, font size, colour, x and y coordinates and the value of the text itself.  Example:
 	{{{
