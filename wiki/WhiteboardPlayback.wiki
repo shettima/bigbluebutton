@@ -66,9 +66,11 @@ Because we will be panning and zooming the images directly, we want these images
 
 == Events to be recorded ==
 
+The following events will be recorded or modified to enhance the whiteboard playback.
+
 === !AddShapeEvent ===
 
-The !AddShapeEvent specifies when a shape is drawn and includes a few different possibilities for shapes. They are all outlined below. As more shapes are added to the whiteboard, this event will be expanded to include the new possibilities.
+         The !AddShapeEvent specifies when a shape is drawn and includes a few different possibilities for shapes. They are all outlined below. As more shapes are added to the whiteboard, this event will be expanded to include the new possibilities.
 
 	=== Pencil Example ===
 	This involves a series of vectors (a bunch of pairs of x and y coordinates) with a specified colour, thickness and a timestamp to specify when it was created.  
