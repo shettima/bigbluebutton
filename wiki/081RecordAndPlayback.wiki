@@ -7,7 +7,7 @@ One of the features we're working on for [RoadMap BigBlueButton 0.81] is to reco
 == !BigBlueButton 0.80 ==
 As a background to this work, when a session is recorded in!BigBlueButton 0.80, the !BigBlueButton server records the media (slides and audio) and events (join, leave, advancement of slides, chat messages, etc.) for later processing.   After a session ends, the server runs one (or more) ingest and processing scripts to process the archived recording.  (For more information see RecordPlaybackSpecification.)
 
-One of those scripts is `slides.rb`, which is a Ruby program to create a playback of slides, audio, and chat.  More specifically, `slides.rb` creates a file called `playback.html` which uses Popcorn.js to synchronized the playback of slides, audio, and chat.  For example, here is a recent [http://www.google.com/url?sa=D&q=http://bit.ly/JnUmTt&usg=AFQjCNFpIoFzj75BClpUztKiSxdd9iQAww recording] of the committers meeting for 0.81.
+One of those scripts is `slides.rb`, which is a Ruby program to create a playback of slides, audio, and chat.  More specifically, `slides.rb` creates a file called `playback.html` which uses Popcorn.js to synchronized the playback of slides, audio, and chat.  For example, here is a recent [http://www.google.com/url?sa=D&q=http://bit.ly/JnUmTt&usg=AFQjCNFpIoFzj75BClpUztKiSxdd9iQAww recording] of the committers meeting for 0.81 (you'll notice there is no whiteboard, pan/zoom, or mouse movements recorded).
 
 The following events are recorded in 0.80
   * !PublicChatEvent - Specifies a chat message sent to all meeting participants
