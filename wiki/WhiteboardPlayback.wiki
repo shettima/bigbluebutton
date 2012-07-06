@@ -183,6 +183,6 @@ The following events will be recorded or modified to enhance the whiteboard play
 	}}}
 
 == Demo ==
-Click the image below to see a demo [http://bigbluebutton.org/slides/test_081_demo/ demo] of the playback of a !BigBlueButton recording with whiteboard controls.
+Click the image below to see a demo [http://bigbluebutton.org/slides/test_081_playback_demo/ demo] of the playback of a !BigBlueButton recording with whiteboard controls.
 
-  <a href="http://bigbluebutton.org/slides/test_081_demo/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/playback.png</a>
+  <a href="http://bigbluebutton.org/slides/test_081_playback_demo/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/playback.png</a>
