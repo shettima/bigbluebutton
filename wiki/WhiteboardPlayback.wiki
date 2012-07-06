@@ -2,10 +2,10 @@
 
 = Overview =
 
-This document gives an overview of the specifications and design for enhancing recording and playback in !BigBlueButton 0.81 to capture and playback *all* activity in the presentation window.
+In !BigBlueButton 0.81 our goal is enhance the record and playback to capture and playback *all* activity in the presentation window.
 
 == !BigBlueButton 0.80 ==
-When a session is recorded in !BigBlueButton 0.80, the !BigBlueButton server records the media (slides and audio) and events (join, leave, advancement of slides, chat messages, etc.) for later playback.   After a session ends, the !BigBlueButton server runs one or more ingest and processing scripts to process the archived recording.
+As a background to this work, in !BigBlueButton 0.80 when a session is recorded, the !BigBlueButton server records the media (slides and audio) and events (join, leave, advancement of slides, chat messages, etc.) for later playback.   After a session ends, the server runs one (or more) ingest and processing scripts to process the archived recording.
 
 One of those scripts is `slides.rb` -- the Ruby program to create a playback of slides + audio + chat.  To playback the images, audio, and chat in sequence, playback.html uses Popcorn.js.  For example, here is a recent recording of the committers meeting for 0.81.
 
