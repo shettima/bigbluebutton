@@ -2,12 +2,12 @@
 
 = Overview =
 
-In !BigBlueButton 0.81 our goal is enhance the record and playback to capture and playback *all* activity in the presentation window.
+One of the features we're working on for [RoadMap !BigBlueButton 0.81] is to record and playback all* events in the presentation window.
 
 == !BigBlueButton 0.80 ==
-As a background to this work, in !BigBlueButton 0.80 when a session is recorded, the !BigBlueButton server records the media (slides and audio) and events (join, leave, advancement of slides, chat messages, etc.) for later playback.   After a session ends, the server runs one (or more) ingest and processing scripts to process the archived recording.
+As a background to this work, when a session is recorded in!BigBlueButton 0.80, the !BigBlueButton server records the media (slides and audio) and events (join, leave, advancement of slides, chat messages, etc.) for later processing.   After a session ends, the server runs one (or more) ingest and processing scripts to process the archived recording.  (For more information see RecordPlaybackSpecification.)
 
-One of those scripts is `slides.rb` -- the Ruby program to create a playback of slides + audio + chat.  To playback the images, audio, and chat in sequence, playback.html uses Popcorn.js.  For example, here is a recent recording of the committers meeting for 0.81.
+One of those scripts is `slides.rb`, which is a Ruby program to create a playback of slides, audio, and chat.  More specifically, `slides.rb` creates a file called `playback.html` which uses Popcorn.js to synchronized the playback of slides, audio, and chat.  For example, here is a recent [http://www.google.com/url?sa=D&q=http://bit.ly/JnUmTt&usg=AFQjCNFpIoFzj75BClpUztKiSxdd9iQAww recording] of the committers meeting for 0.81.
 
 The following events are recorded in 0.80
   * !PublicChatEvent - Specifies a chat message sent to all meeting participants
@@ -24,8 +24,8 @@ Note, the `slides.rb` currently only uses the !PublicChatEvent and !GotoSlideEve
 The requirements for !BigBlueButton 0.81 are
 
   * capture all the presentation events (whiteboard, pan/zoom, cursor movement, and slides) in the presentation area
-  * playback all events in HTML5 using Popcorn.js
-  
+  * create a new ingest and processing script (`playback.rb`) which will process all presentation events for playback in HTML5 using Popcorn.js
+
 === Capture of all events ===
 
 The !BigBlueButton 0.81 server will need to add the following event
@@ -48,7 +48,7 @@ To playback all the presentation events, the requirement is to write an external
 
 This function will be driven by data created by `slides.rb` (this time extracting all the presentation events).  Breaking down the series of steps:
 
-1. The ingest and processing script `slides.rb` will run, parse the events.xml, and include !AddShapeEvent, !UndoShapeEvent, !ClearPageEvent, !CursorMoveEvent and !ResizeAndMoveSlideEvent in the output. It will create the regular slides.xml with chat events in it, and in addition create the following new files
+1. The ingest and processing script `playback.rb` will run, parse the events.xml, and include !AddShapeEvent, !UndoShapeEvent, !ClearPageEvent, !CursorMoveEvent and !ResizeAndMoveSlideEvent in the output. It will create the regular slides.xml with chat events in it, and in addition create the following new files
 
    * `shapes.svg` which includes the shapes for the presentation
    * `panzooms.xml` which will specify the panning and zooming events 
@@ -56,13 +56,13 @@ This function will be driven by data created by `slides.rb` (this time extractin
 
 The whiteboard images will be encapsulated in SVG (Scalable Vector Graphics).  With SVG, it's possible to generate native line, rect, ellipse, text shapes, including groups of shapes, and, most importantly, visibility. Visibility will allow playback to specify which shapes are rendered for the given frame and selectively show them.
 
-`slides.rb` will place the new files in the playback directory for loading by playback.html.
+`playback.rb` will place the new files in the playback directory for loading by playback.html.
 
 2.  When the user opens playback.html in their browser, it will load the SVG image, which by default will be not visible.
  
 Using the Popcorn.js function, it will follow the steps as previously outlined above and thus display shapes and events at a rate of at most 10 frames/second. The downstep in performance from 60x/sec to 10x/sec is due to the precision of the events compared to the times that Popcorn fires as it is playing back audio.
 
-Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. To integrate this change, changes to the `slides.rb` will also have to be made in that regard.
+Because we will be panning and zooming the images directly, we want these images to be apart of the SVG image. This will result in the removal of the need for the Image plugin in Popcorn which we use currently to change the slide images during playback. 
 
 == Required events for playback enhancements ==
 
@@ -181,3 +181,8 @@ The following events will be recorded or modified to enhance the whiteboard play
 	<yOffset>56</yOffset>
 </event>
 	}}}
+
+== Demo ==
+Click the image below to see a demo [http://bigbluebutton.org/slides/test_081_demo/ demo] of the playback of a !BigBlueButton recording with whiteboard controls.
+
+  <a href="http://bigbluebutton.org/slides/test_081_demo/">http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/playback.png</a>
