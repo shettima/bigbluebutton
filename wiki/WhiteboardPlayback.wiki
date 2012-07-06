@@ -2,7 +2,7 @@
 
 = Overview =
 
-One of the features we're working on for [RoadMap !BigBlueButton 0.81] is to record and playback all* events in the presentation window.
+One of the features we're working on for [RoadMap BigBlueButton 0.81] is to record and playback all* events in the presentation window.
 
 == !BigBlueButton 0.80 ==
 As a background to this work, when a session is recorded in!BigBlueButton 0.80, the !BigBlueButton server records the media (slides and audio) and events (join, leave, advancement of slides, chat messages, etc.) for later processing.   After a session ends, the server runs one (or more) ingest and processing scripts to process the archived recording.  (For more information see RecordPlaybackSpecification.)
