@@ -176,7 +176,7 @@ Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 32-bit and 
 
   # Modify the default security group in EC2(or create a new security group) so you have port 80, 9123, and 1935 open (see [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue FAQ]).
   # Launch a 64-bit "lucid" elastic block storage (EBS) image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.medium (or greater CPU) instance.
-  # Follow the instructions to install [08InstallationUbuntu BigBlueButton 0.8-beta]
+  # Follow the instructions to install [InstallationUbuntu BigBlueButton 0.80]
   # Use `sudo bbb-conf --setip hostname` to instruct !BigBlueButton to listen to the external DNS name for the EC2 instance (see [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf])
 
 The IP addresses for an EC2 image are reset whenever you reboot the image; however, if you assign the EC2 image an elastic IP address, it will have a consistent IP address that will not change on reboot. 
@@ -453,7 +453,7 @@ Then restart !BigBlueButton
 
 and join an audio session.  You should no longer hear the music on hold.
 
-Note: The above settings became the default as of !BigBlueButton 0.8-beta-4.
+Note: The above settings became the default as of !BigBlueButton 0.80.
 
 
 === How do I configure FreeSWITCH to use 127.0.0.1? ===
@@ -468,7 +468,7 @@ sip.server.username=bbbuser
 sip.server.password=secret
 }}}
 
-This IP address must match the IP address which FreeSWITCH is listening for incoming SIP calls.  Prior to !BigBlueButton 0.8-beta-4, the FreeSWITCH attempted to use the server's external IP address; however, this caused [FAQ#Users_do_not_appear_in_the_listeners_window voice connection problems] whenever the external IP address changed (as in rebooting an EC2 instance) or when the server had multiple IP addresses.
+This IP address must match the IP address which FreeSWITCH is listening for incoming SIP calls.  Prior to !BigBlueButton 0.80, the FreeSWITCH attempted to use the server's external IP address; however, this caused [FAQ#Users_do_not_appear_in_the_listeners_window voice connection problems] whenever the external IP address changed (as in rebooting an EC2 instance) or when the server had multiple IP addresses.
 
 To configure FreeSWITCH to use the 127.0.0.1 address (and remove an vector for denial of service attacks), you can make the following changes.
 
@@ -515,7 +515,7 @@ Then restart !BigBlueButton.
   sudo bbb-conf --clean
 }}}
 
-As of !BigBlueButton 0.8-beta-4, the default setting for FreeSWITCH is to use 127.0.0.1 (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=1133 1133]).
+As of !BigBlueButton 0.80, the default setting for FreeSWITCH is to use 127.0.0.1 (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=1133 1133]).
 
 === How do I forward calls from my Asterisk server to FreeSWITCH in !BigBlueButton? ===
 
@@ -923,7 +923,7 @@ and set the script to be executable.
 sudo chmod +x /etc/cron.daily/bigbluebutton
 }}}
 
-Now, once a day, cron will execute this script and delete presentation directories in /var/bigbluebutton that are older than 11 days.  [Note: This script was incorporated in the build for !BigBlueButton-0.8-beta3.]
+Now, once a day, cron will execute this script and delete presentation directories in /var/bigbluebutton that are older than 11 days.  [Note: This script was incorporated in the build for !BigBlueButton 0.80, but is disabled by default.  To enable, edit /etc/cron.daily/bigbluebutton and comment out the `exit` command.]
 
 
 = Using !BigBlueButton =
@@ -1154,13 +1154,11 @@ The best solution is ask all users to use a headset -- this will ensure no feedb
 
 === Why is there a delay in the audio when I use VoIP? ===
 
-You will experience a 2-4 second delay in the audio when using the built-in VoIP in !BigBlueButton 0.71a (clicking the headset icon).
+You will experience a delay, depending on the network latency from the speaker to the !BigBlueButton server, when using the built-in VoIP in !BigBlueButton 0.80 (clicking the headset icon).
 
-The delay is largely due to the internal Java-based transcoding of audio packets with !BigBlueButton itself, and partly due to the restriction that Flash sockets are TCP/IP based, not UDP.
+Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using speex codec.  It is then transmitted by red5 to FreeSWITCH (via red5phone), thenFreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), and transmitted back to the client.
 
-Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using nellymoser codec.  It is then transcoded by red5phone (nellymoser -> mulaw), then sent to asterisk/FreeSWITCH (via SIP), then asterisk/FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), then is transcoded again (mulaw -> nellymoser), then goes down to the client.
-
-Lots of audio processing, and that what is introducing the delay.  We're investigating a number of ways to reducing the transcoding.
+While this all happens quite quickly.  We're investigating a number of ways to reducing the transcoding.
 
   # Use speex instead of nellymoser (requires more CPU to encode/decode audio packets)
   # Move the transcoding of nellymoser -> mulaw/mulaw -> nellymoser out of Java into native code
