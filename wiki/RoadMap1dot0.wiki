@@ -49,7 +49,7 @@ This section covers the enhancement and additions we want to make to !BigBlueBut
 === Record and Playback ===
 We've implemented our first iteration of record and playback for !BigBlueButton 0.80.  See [http://code.google.com/p/bigbluebutton/wiki/RecordPlaybackSpecification Record and Playback specifications].
 
-Release 0.80 will focus on record and playback of slides + audio + chat in an HTML5 interface.   Support an video playback of the slides + audio ([http://code.google.com/p/bigbluebutton/issues/list?thanks=900 900]).
+Release 0.80 will focus on record and playback of slides + audio + chat in an HTML5 interface.   Support an video playback of the slides + audio ([http://code.google.com/p/bigbluebutton/issues/detail?id=900 900]).
 
 === Pre-flight checklist ===
 Sometimes Flash has difficulty picking the right microphone, speaker, or webcam for the user’s setup.  Other times the presenter can’t start their desktop sharing because Java is not properly installed.  These problems can delay the start of a session.
