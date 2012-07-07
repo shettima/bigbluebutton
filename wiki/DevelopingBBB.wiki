@@ -42,7 +42,7 @@ While it may seem obvious, we emphasize your !BigBlueButton server should be wor
 
 
 === Developing on Windows ===
-If you are on Windows, we recommend you download the BigBlueButtonVM and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
+If you are on Windows, we recommend you download the [BigBlueButtonVM BigBlueButton VM] and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
 
 === You'll need sudo abilities ===
  setup the !BigBlueButton development environment. To verify, you should be able to
