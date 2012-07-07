@@ -26,7 +26,7 @@ The source for !BigBlueButton is on [https://github.com/bigbluebutton/bigbluebut
 
 == Prerequisites ==
 
-This guide is written for !BigBlueButton 0.8-beta-4 or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see 08InstallationUbuntu).  
+This guide is written for !BigBlueButton 0.8-beta-4 or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see InstallationUbuntu).  
 
 === The Basics ===
 Before setting up a development environment, you should have already
@@ -42,7 +42,7 @@ While it may seem obvious, we emphasize your !BigBlueButton server should be wor
 
 
 === Developing on Windows ===
-If you are on Windows, we recommend you download the 08BigBlueButtonVM and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
+If you are on Windows, we recommend you download the BigBlueButtonVM and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
 
 === You'll need sudo abilities ===
  setup the !BigBlueButton development environment. To verify, you should be able to
