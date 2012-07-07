@@ -22,6 +22,8 @@ The following diagram shows the major pieces of the !BigBlueButton architecture.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/arch_Diagrams/architecture_diagram_08.png
 
+Notes:
+   * !BigBlueButton uses nginx as a proxy server to route incoming requests to the !BigBlueButton client, to tomcat6 (running on port 8080) for api calls, and for supporting HTTP tunnelling when the client connects using RTMPT (port 80) instead of RTMP (port 1935).
 ----
 
 == !BigBlueButton Red5 Apps ==
