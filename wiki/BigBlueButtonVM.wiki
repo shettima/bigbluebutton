@@ -245,6 +245,13 @@ Reboot your machine. Check if you manage to connect to the internet. Make sure t
 
 More info can be found here http://ubuntuforums.org/showthread.php?t=221768
 
+== I can't cut-and-paste into the terminal window ==
+
+When running the !BigBlueButton VM, you can't use the clipboard in the terminal window provided by VMWare.  
+
+On Windows, we recommend you download and run putty, a terminal emulation program that supports cut-and-paste.
+
+On Mac, you can open a Terminal window and ssh into the VM using it's IP address.
 
 
 == I'm still having problems ==
