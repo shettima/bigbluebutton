@@ -218,6 +218,11 @@ After this, point your browser to your !BigBlueButton server and login ot the de
 
 And in `\etc\bigbluebutton\nginx\` created a link from `client.nginx` to `client_dev`. In other words, when receiving a request for `/client`, nginx is now serving up the client from your development directory.
 
+Also note, when setting up a development environment for the client, the `config.xml` file for the !BigBlueButton client is now loaded from `~/dev/bigbluebutton/bigbluebutton-client/bin/conf/config.xml`.  This means that any changes made to the default `config.xml` by bbb-conf will not affect the `config.xml` in your development environment.
+
+
+
+
 == Making a change ==
 
  Before we build the !BigBlueButton client, let's make a small visible change to the interface.
