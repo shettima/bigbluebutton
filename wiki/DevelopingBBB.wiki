@@ -231,7 +231,13 @@ Also note, when setting up a development environment for the client, the `config
   vi ~/dev/bigbluebutton/bigbluebutton-client/src/org/bigbluebutton/main/views/MainApplicationShell.mxml
 }}}
 
-You can use any editor you want, but real Unix developers all use `vi`.  At line 311, you'll see the line
+The above command using vi to make a change.  If you are on Windows and developing using the BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type
+
+{{{
+bbb-conf --setup-samba
+}}}
+
+When you are editing, `MainApplicationShell.mxml`, at line 311, you'll see the following text
 
 {{{
 <mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>
