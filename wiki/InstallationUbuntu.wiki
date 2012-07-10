@@ -567,7 +567,13 @@ gem install --http-proxy $HTTP_PROXY streamio-ffmpeg -v 0.7.8
 gem install --http-proxy $HTTP_PROXY trollop -v 1.16.2
 }}}
 
-Once all the gems are installed, you can restart the installation process with the command
+Once all the gems are installed, you need to tell !BigBlueButton install scripts `bbb-record-core` to not try to install the gems anymore.  Edit the file `/var/lib/dpkg/info/bbb-record-core.preinst' and comment out the line
+
+{{{
+#                        gem install $gem
+}}}
+
+Then run
 
 {{{
 sudo apt-get install -f
