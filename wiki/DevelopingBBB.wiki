@@ -123,12 +123,12 @@ You should see
 nothing to commit (working directory clean)
 }}}
 
+The master branch is where most of new development occurs and may break once in a while. If you want to work on the 0.8 release, you need to checkout the {{{v0.8}}} tag.
 
-A few suggestions when using git.  It is good practice to develop on a branch and merge the changes to master when you are done.
-Let's say you are trying to fix Issue 100.
+Let's say you are trying to fix Issue 100 and want to develop on v0.8.
 
 {{{
-git checkout -b fixing-issue-100
+git checkout -b fixing-issue-100 v0.8
 }}}
 
 You should see
