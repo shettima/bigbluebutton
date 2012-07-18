@@ -150,6 +150,19 @@ The output should be
 nothing to commit (working directory clean)
 }}}
 
+If you want to be on the bleeding edge, you can work on the master branch.
+
+Confirm you are on the master branch
+{{{
+git status
+}}}
+
+Then
+{{{
+git checkout -b fixing-issue-100
+}}}
+
+
 = Client Development =
 With the development environment checked out and the code cloned, we're ready to start developing!
 
