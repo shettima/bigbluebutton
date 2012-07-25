@@ -78,7 +78,7 @@ Active Committers:
   * Fred Dixon, Packaging
   * Gustavo Salazar, Record and Playback
 
-Currently Inactive:
+Previous Committers (currently inactive):
   * Tiago Jacobs, red5
   * Jeremy Thomerson, API
   * Denis Zgonjanin, Client
