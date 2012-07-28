@@ -386,7 +386,7 @@ Click 'Slides' to playback the slides, audio, and chat of the recording.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/playback.png
 
-The following [http://www.youtube.com/watch?v=4b_tC1JEX1E YouTube Video] will walk you through using record and playback.
+The following [http://www.youtube.com/watch?v=4b_tC1JEX1E YouTube Video] will walk you through using record and playback.  In almost all cases, you'll use !BigBlueButon through a 3rd party integration (see below).
 
 == URL and salt for 3rd party integrations ==
 If you want to use !BigBlueButton with a [http://www.bigbluebutton.org/open-source-integrations/ 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
