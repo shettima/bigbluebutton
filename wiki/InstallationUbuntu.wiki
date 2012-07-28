@@ -376,8 +376,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/welco
 
 To start using your !BigBlueButton server, enter your name and click the 'Join' button.  You'll join the Demo Meeting.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/running.png
-
 If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].
 
 To record a session, click 'API Demos' on the welcome page and choose 'Record'.  Start a meeting and upload slides.  When you are done, click 'Logout' and return to the 'API Demos' and the record demo.  Wait a few moments and refresh your browser, you should see your recording appear.
