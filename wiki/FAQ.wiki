@@ -725,7 +725,7 @@ Change this page to create your own landing page.
 Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/demo/demo3.jsp Join Courses] API example.  You can modify this demo page to setup your own branded landing page.
 
 === How do I setup new classrooms in !BigBlueButton? === 
-If you are using Sakai, Moodle, Drupal, or other content management systems, see the list of [http://bigbluebutton.org/support integration modules].  If you are not a developer, it going to be far easier to use one of these modules to setup your own virtual classrooms.
+If you are using Sakai, Moodle, Drupal, Joomla, Wordpress, or other systems that already have a [http://bigbluebutton.org/support BigBlueButton integration], then installing the integration provides the easiest way to enable your users to access !BigBlueButton sessions.
 
 If you have a bit of programming skills, you create your own virtual classrooms by modifying this [http://demo.bigbluebutton.org/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
 
@@ -741,6 +741,25 @@ allMeetings.put( "ENGL-2013: Research Methods in English", meeting );	// The tit
 	meeting.put("voiceBridge", 	"82013");			// The extension number for the voice bridge (use if connected to phone system)
 	meeting.put("logoutURL", 	"/demo/demo3.jsp");  // The logout URL (use if you want to return to your pages)
 
+}}}
+
+to define your own modules (such as changing the name to 'Community Room - 1'.  When modifying `demo3.jsp`, you don't have to restart any processes: you can modify the source file, then reload the demo page and you'll see the updated content.
+
+If you want users to open your demo page by default, you can modify
+
+{{{
+/var/www/bigbluebutton-default/index.html
+}}}
+
+to redirect the users to the demo page.  To do so, replace `index.html` with the contents
+
+{{{
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Refresh" content="0;url=/demo/demo3.jsp" />
+</head>
+</html>
 }}}
 
 
