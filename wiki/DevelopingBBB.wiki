@@ -125,7 +125,7 @@ nothing to commit (working directory clean)
 
 The master branch is where most of new development occurs and may break once in a while. If you want to work on the 0.8 release, you need to checkout the {{{v0.8}}} tag.
 
-Let's say you are trying to fix Issue 100 and want to develop on v0.8.
+Let's say you are trying to fix Issue 100 and want to develop on v0.8.  (Note: v0.81 is in development, so we recommend if you starting to develop on !BigBlueButton you checkout the release 0.8 as show below.)
 
 {{{
 git checkout -b fixing-issue-100 v0.8
