@@ -62,7 +62,7 @@ To install ffmpeg, login to your !BigBlueButton server with root access.  Copy t
 sudo apt-get install build-essential git-core checkinstall yasm texi2html libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev --yes
 
 # Install libvpx
-cd ~/usr/local/src
+cd /usr/local/src
 sudo git clone http://git.chromium.org/webm/libvpx.git
 cd libvpx
 sudo ./configure
