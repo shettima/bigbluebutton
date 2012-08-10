@@ -250,7 +250,7 @@ For example, if you have a room with 5 users, each sharing their webcam, then th
 
 For calculations:
   * server incoming bandwidth: W`*`Y 
-  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not have to subscrive to his own stream) 
+  * server outgoing bandwidth: W`*`(U-1)`*`Y  (minus one since a broadcaster does not have to subscribe to his own stream) 
 
 For example, with 5 users in a room with 5 webcams streaming, the bandwidth calculation is as follows:
 
