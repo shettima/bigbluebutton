@@ -545,7 +545,7 @@ bbb@bbb:~$ gem -v
         from /usr/bin/gem:8:in `<main>'
 }}}
 
-The solution is to run the ruby install script again.  
+The solution is to run the [InstallationUbuntu#2._Install_Ruby ruby install] script again.  
 
 == Unable to install gems ==
 The install script for bbb-record-core needs to install a number of ruby gems.  However, if you are behind a HTTP_PROXY, then the install script for bbb-record-core will likely exit with an error.  This occurs because the bash environment for bbb-record-core will not have a value for HTTP_PROXY.
