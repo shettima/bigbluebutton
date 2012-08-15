@@ -1009,6 +1009,30 @@ Your viewers have a resizable window showing your desktop.  You can see how this
 
 
 == Presentations ==
+=== How can I modify the default presentation? ===
+The default presentation is stored in
+
+{{{
+  /var/www/bigbluebutton-default/default.pdf
+}}}
+
+The location for the default presentation (default.pdf) is stored in [ConfigurationFiles#/var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebut bigbluebutton.properties], which is located in
+
+{{{
+   /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
+}}}
+
+bigbluebutton.properties.  The specification is 
+
+{{{
+# Default Uploaded presentation file
+beans.presentationService.defaultUploadedPresentation=${bigbluebutton.web.serverURL}/default.pdf
+}}}
+
+You can change `beans.presentationService.defaultUploadedPresentation` to point to any valid URL.
+
+If you want to specify the default presentation for a given meeting, you can also pass a URL to the presentation as part of the [API#Preupload_Slides create] meeting API call.
+
 === Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
 
 !BigBlueButton uses !OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 and Office 2010 documents (such as .pptx) are problematic with !OpenOffice 3.2.  In particular, the font alignment is not precise. 
@@ -1137,69 +1161,40 @@ Save the file, then do `sudo bbb-conf --restart` to restart !BigBlueButton.
 When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
 
 
-=== How do I disable the music on hold? ===
-
-If you want to disable this sound, for :
-
-!AppKonference, remove the `H` parameter in 
-
-{{{
-   /etc/asterisk/bbb_extensions.conf
-}}}
-
-see [http://github.com/jthomerson/AsteriskAudioKonf/blob/master/konference/Dialplan.txt Asterisk dialplan].  MeetMe, remove `M` parameter in 
-
-{{{
-   /etc/asterisk/bbb_extensions.conf
-
-}}}
-
-For more information see [http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe Asterisk Commands].  For FreeSWITCH, remove `moh-sound` entry in the wideband profile in 
-
-{{{
-   //opt/freeswitch/conf/autoload_configs/conference.conf.xml
-}}}
-
-For more information, see [http://wiki.freeswitch.org/wiki/Mod_conference Mod_conference] and [http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/freeswitch/conf/autoload_configs/conference.conf.xml BigBlueButton conference.xml].
-
 === Why is there an echo in the voice conference? ===
 
-You'll hear an echo when a user in the voice conference has joined over VoIP (by clicking the headset icon) is not using a headset.  
+In !BigBlueButton 0.80 we use the built-in acoustic echo cancellation, so in most cases you should not hear any echo from remote users.
 
-This usually occurs when a remote user is using a laptop.  They have activated the VoIP, and their audio is coming out through the laptop's built-in speakers and is immediately picked up by the built-in microphone and retransmitted to everyone else, causing an echo. 
+In any event, we always recommend that you have your remote users use a headset with microphone.  This will ensure the best audio in a session.
 
-To solve this problem, if you are logged in as a moderator, you can mute the user by clicking on the speaker icon to the left of their name. 
+If a remote user is using a laptop with built-in microphone, you should not hear an echo.  However, if two remote users are using laptops with built-in microphones and neither is using a headset and both are sitting close to each other (close enough for the microphone in one laptop to pickup the audio from the speakers in the other laptop) the you will hear an echo.  The reason is the built-in echo cancellation only works with the audio coming from the host laptop -- the audio coming from the second laptop will be picked up as an external audio source.
 
-If they want to speak, they can click the raise hand button to get your attention or type in the chat window.
+If a student is causing echo, the best way to solve this problem, if you are logged in as a moderator, is to mute the user by clicking the microphone icon to the left of their name. 
 
-The best solution is ask all users to use a headset -- this will ensure no feedback.
+Overall, the best solution is ask all users to use a headset -- this will ensure no background noise or echo.
 
 === Why is there a delay in the audio when I use VoIP? ===
 
 You will experience a delay, depending on the network latency from the speaker to the !BigBlueButton server, when using the built-in VoIP in !BigBlueButton 0.80 (clicking the headset icon).
 
-Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using speex codec.  It is then transmitted by red5 to FreeSWITCH (via red5phone), thenFreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), and transmitted back to the client.
+Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using speex codec.  It is then transmitted by red5 to FreeSWITCH (via red5phone), then FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), and transmitted back to the client.
 
-While this all happens quite quickly.  We're investigating a number of ways to reducing the transcoding.
+While this all happens quite quickly, we are investigating a number of ways to reducing the transcoding.
 
   # Use speex instead of nellymoser (requires more CPU to encode/decode audio packets)
   # Move the transcoding of nellymoser -> mulaw/mulaw -> nellymoser out of Java into native code
   # Launch an external Java-based SIP client to connect directly with asterisk/FreeSWITCH (bypassing red5 completely)
   # Implement a push-to-talk mode for one-to-many sessions (i.e. a remote class)
 
-Another option is to setup asterisk/FreeSWITCH to use a direct inward dialing (DID) number, which you can get from a SIP trunk provider, a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to asterisk/FreeSWITCH server when someone calls the DID using session initiation protocol (SIP).  You can see an example of this by joining http://demo.bigbluebutton.org/ and dial the phone number + extension listed in the chat window.
+Another option is to setup FreeSWITCH to use a direct inward dialing (DID) number, which you can get from a SIP trunk provider, a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to FreeSWITCH server when someone calls the DID using session initiation protocol (SIP). 
 
-Setting up DIDs involves configuration of Asterisk/FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
+Setting up DIDs involves configuration of FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
 
-Setting up DIDs will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your Asterisk/FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your Asterisk/FreeSWITCH server.
-
-Update (June 2, 2011): We've made progress in reducing the audio delay in the upcoming !BigBlueButton 0.8. See this [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b# thread] in bigbluebutton-dev group.  See also the results of an [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/3c7ce9815a9800c3 audio stress test] for the upcoming changes to audio in 0.8 and a [http://groups.google.com/group/bigbluebutton-setup/browse_thread/thread/e5aa76c6716bb395# discussion] on the scalability of the !BigBlueButton 0.8 server.
-
-Update (September 12, 2011): We released !BigBlueButton 0.8-beta, so you can now install on your own server and try out the improved audio on our [http://demo.bigbluebutton.org/ demo server].
+Setting up DIDs will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your reeSWITCH server.
 
 === Why is the audio not synced with the video? ===
 
-Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through Asterisk/FreeSWITCH, while the video goes through red5.  
+Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through FreeSWITCH, while the video goes through red5.  
 
 For the video, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients current subscribed to the video stream.  It's basically a straight pass through of the packets.
 
@@ -1212,10 +1207,6 @@ For FreeSWITCH, comment out {{{the following in /opt/freeswitch/conf/autoload_co
       <!--param name="enter-sound" value="tone_stream://%(200,0,500,600,700)"/-->
       <!--param name="exit-sound" value="tone_stream://%(500,0,300,200,100,50,25)"/-->
 }}}
-
-For Asterisk MeetMe, add {{{q}}} to the parameter list
-
-see http://www.voip-info.org/wiki/view/Asterisk+cmd+MeetMe
 
 === I'd like to connect my !BigBlueButton server to PSTN. Where can I det DIDs?===
 You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
@@ -1255,6 +1246,8 @@ and then restart FreeSWITCH.
 sudo /etc/init.d/freeswitch restart
 
 }}}
+
+In !BigBlueButton 0.80 and later you can specify any five digit number.
 
 == Chat ==
 
@@ -1450,7 +1443,7 @@ sudo bbb-conf --clean
 sudo bbb-conf --check
 }}}
 
-If the above does not resolve your problem, post to the output of the commands `sudo bbb-conf --check` and `ifconfig` to [groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll help you there.
+If the above does not resolve your problem, post to the output of the commands `sudo bbb-conf --check` and `ifconfig` to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll help you there.
 
  
 === I've started a new !BigBlueButton VM but I don't know the password to login via SSH ===
