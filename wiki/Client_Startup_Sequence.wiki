@@ -171,6 +171,10 @@ The request is handled in Red5 and returns success if all the parameters are val
 8/20/2012 13:20:59.461 [DEBUG] Successful result: 85
 }}}
 
+Now that we have successfully connected to Red5, load all the modules passed from config.xml
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/modules/ModuleManager.as#L172]
+
 {{{
 8/20/2012 13:20:59.462 [DEBUG] BBBManager Loading VideoconfModule
 8/20/2012 13:20:59.462 [DEBUG] Loading VideoconfModule.swf?v=VERSION
@@ -204,12 +208,22 @@ The request is handled in Red5 and returns success if all the parameters are val
 8/20/2012 13:20:59.607 [DEBUG] Module VideoconfModule loaded.
 8/20/2012 13:20:59.615 [DEBUG] DeskShareModulefinished loading
 8/20/2012 13:20:59.615 [DEBUG] Module DeskShareModule loaded.
+}}}
+
+White the modules are being loaded, query Red5 for the participants currently in the meeting.
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/users/UsersSOService.as#L85]
+
+{{{
 8/20/2012 13:20:59.685 [DEBUG] Successfully queried participants: 1
 8/20/2012 13:20:59.685 [DEBUG] User status: false
 8/20/2012 13:20:59.686 [INFO] Joined as [85,fdfdf,MODERATOR]
 8/20/2012 13:20:59.687 [DEBUG] Received status change [85,hasStream,false]
 8/20/2012 13:20:59.688 [DEBUG] Received status change [85,presenter,false]
 8/20/2012 13:20:59.688 [DEBUG] Received status change [85,raiseHand,false]
+}}}
+
+{{{
 8/20/2012 13:20:59.695 [DEBUG] PhoneModulefinished loading
 8/20/2012 13:20:59.695 [DEBUG] Module PhoneModule loaded.
 8/20/2012 13:20:59.709 [DEBUG] WhiteboardModulefinished loading
@@ -220,15 +234,37 @@ The request is handled in Red5 and returns success if all the parameters are val
 8/20/2012 13:20:59.721 [DEBUG] Module LayoutModule loaded.
 8/20/2012 13:20:59.731 [DEBUG] PresentModulefinished loading
 8/20/2012 13:20:59.731 [DEBUG] Module PresentModule loaded.
+}}}
+
+Compare if the locale versions from config.xml and the locale file are the same. This is a check if when during upgrades, the locales files are cached by the browser.
+
+{{{
 8/20/2012 13:20:59.731 [DEBUG] Received locale version fron config.xml
 8/20/2012 13:20:59.731 [DEBUG] Comparing locale versions.
 8/20/2012 13:20:59.732 [DEBUG] Locale from config=0.8, from locale file=0.8
+}}}
+
+Once all the modules are loaded, start the modules.
+
+{{{
 8/20/2012 13:20:59.732 [DEBUG] Sending start all modules event
+}}}
+
+Start the video/webcam module.
+{{{
 8/20/2012 13:20:59.732 [DEBUG] Starting module VideoconfModule
 8/20/2012 13:20:59.732 [DEBUG] VideoconfModule uri = RTMP://192.168.0.249/video
 8/20/2012 13:20:59.732 [DEBUG] Videoconf attr: fdfdf
 8/20/2012 13:20:59.738 [DEBUG] Starting module ListenersModule
+}}}
+
+Connect to the video appliecation.
+{{{
 8/20/2012 13:20:59.738 [DEBUG] ListenersModule uri = RTMP://192.168.0.249/bigbluebutton
+}}}
+
+Start all the other modules.
+{{{
 8/20/2012 13:20:59.824 [DEBUG] [ListenersSOService]:Voice is connected to Shared object
 8/20/2012 13:20:59.825 [DEBUG] [ListenersSOService]notifying connectionListener for Voice
 8/20/2012 13:20:59.825 [DEBUG] LISTENER-ROLE:MODERATOR
@@ -267,16 +303,43 @@ The request is handled in Red5 and returns success if all the parameters are val
 8/20/2012 13:21:00.132 [DEBUG] LayoutsLoader: completed, parsing...
 8/20/2012 13:21:00.134 [DEBUG] LayoutManager: layouts loaded successfully
 8/20/2012 13:21:00.144 [DEBUG] Received status change [85,presenter,true]
+}}}
+
+Check if another user is sharing their desktop. We do this so that latecomers are able to view the presenter's desktop.
+
+{{{
 8/20/2012 13:21:00.185 [DEBUG] Successully connection to RTMP://192.168.0.249/deskShare/183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248
 8/20/2012 13:21:00.185 [DEBUG] checking if desk share stream is publishing
+}}}
+
+See how many users are in the meeting. And if the user if the first one make the user the presenter.
+
+{{{
 8/20/2012 13:21:00.186 [DEBUG] Successfully queried participants: 0
 8/20/2012 13:21:00.187 [DEBUG] assignPresenterCallback 85,fdfdf,1
 8/20/2012 13:21:00.187 [DEBUG] Got MadePresenterEvent 
 8/20/2012 13:21:00.187 [DEBUG] DeskShare::addToolbarButton
+}}}
+
+Query for chat messages. This is for the latecomer to display previous chat messages.
+{{{
 8/20/2012 13:21:00.293 [DEBUG] Get transcript message: 
+}}}
+
+Query for the current presentation slide. Again, this is for the latecomer to sync with others on the presentation.
+{{{
 8/20/2012 13:21:00.293 [DEBUG] !!!!! Presentation sync handler - 1
 8/20/2012 13:21:00.293 [DEBUG] Query for slide info
+}}}
+
+Determined that no desktop is being shared.
+{{{
 8/20/2012 13:21:00.345 [DEBUG] No deskshare stream being published
+}}}
+
+Got the chat history.
+
+{{{
 8/20/2012 13:21:00.346 [DEBUG] Successfully sent get transcript message: 
 8/20/2012 13:21:00.346 [DEBUG] Sending transcript loaded Event
 8/20/2012 13:21:00.346 [DEBUG] Handling TranscriptLoadedEvent
@@ -289,6 +352,11 @@ The request is handled in Red5 and returns success if all the parameters are val
 8/20/2012 13:21:00.352 [DEBUG] trigger Switch to Presenter mode 
 8/20/2012 13:21:00.352 [DEBUG] Got MadePresenterEvent 
 8/20/2012 13:21:00.352 [DEBUG] DeskShare::addToolbarButton
+}}}
+
+Now display the current slide.
+
+{{{
 8/20/2012 13:21:00.353 [DEBUG] The presenter has shared slides and showing slide 0
 8/20/2012 13:21:00.353 [DEBUG] PresentProxy::loadPresentation: presentationName=default
 8/20/2012 13:21:00.353 [DEBUG] PresentationApplication::loadPresentation()... http://192.168.0.249/bigbluebutton/presentation/183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248/183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248/default/slides
@@ -327,10 +395,20 @@ The request is handled in Red5 and returns success if all the parameters are val
 8/20/2012 13:21:00.592 [DEBUG] PresentationService::parse()...  presentationName=default
 8/20/2012 13:21:00.592 [DEBUG] Available textfile: http://192.168.0.249/bigbluebutton/presentation/183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248/183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248/default/textfile/1
 8/20/2012 13:21:00.592 [DEBUG] presentation has been loaded  presentationName=default
+}}}
+
+Set-up the whiteboard and layout modules.
+
+{{{
 8/20/2012 13:21:00.607 [DEBUG] Successfully sent [whiteboard.setActivePresentation].
 8/20/2012 13:21:00.703 [DEBUG] LayoutsCombo: view initialized
 8/20/2012 13:21:00.706 [DEBUG] LayoutsCombo: populating list
 8/20/2012 13:21:00.767 [DEBUG] LayoutService: layoutSO connection established
+}}}
+
+Overlay the whiteboard on top of the presentation display. Query for the whiteboard history so that the latecomer is able to sync the whiteboard annotations.
+
+{{{
 8/20/2012 13:21:01.113 [DEBUG] OVERLAYING WHITEBOARD CANVAS
 8/20/2012 13:21:01.215 [DEBUG] Successfully sent [whiteboard.requestAnnotationHistory].
 8/20/2012 13:21:01.216 [DEBUG] handleRequestAnnotationHistoryReply: No annotations.
