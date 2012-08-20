@@ -9,6 +9,12 @@ We use the logs in the client to list the steps that happens when a user joins a
 
 = Details =
 
+Load the locales.xml file to determine what locales the sysadmin makes available to the users.
+
+{{{
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/util/i18n/ResourceUtil.as#L79
+}}}
+
 {{{
 8/20/2012 13:20:59.010 [DEBUG] initialization
 8/20/2012 13:20:59.074 [DEBUG] --- Supported locales --- 
@@ -58,12 +64,28 @@ We use the logs in the client to list the steps that happens when a user joins a
   <locale code="vi_VN" name="Vietnamese"/>
 </locales>
  --- 
+}}}
 
+Determine the preferred locale. The client tries to determine the preferred locale from the user's browser settings.
+{{{
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/prod/lib/bbb_localization.js
+}}}
+
+If the preferred locale is not the same as the master locale, it load the master locale. The master locale is US-English (en_US). If the preferred locale is not available, it will use the master locale.
+{{{
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/util/i18n/ResourceUtil.as#L85
+}}}
+
+Here it shows that the preferred local is en_GB and is not available. Thus, it defaults to the master locale (en_US).
+{{{
 8/20/2012 13:20:59.075 [DEBUG] Loading locale at [ locale/en_US_resources.swf?a=1345483259075 ]
 8/20/2012 13:20:59.076 [DEBUG] Setting up preferred locale en_GB
 8/20/2012 13:20:59.076 [DEBUG] The locale en_GB isn't available. Default will be: en_US
 8/20/2012 13:20:59.078 [DEBUG] Setting up preferred locale index 11
 8/20/2012 13:20:59.078 [DEBUG] Loading locale at [ locale/en_US_resources.swf?a=1345483259078 ]
+}}}
+
+{{{
 8/20/2012 13:20:59.084 [DEBUG] Dependency Order: 
 8/20/2012 13:20:59.084 [DEBUG] VideoconfModule
 8/20/2012 13:20:59.084 [DEBUG] ListenersModule
