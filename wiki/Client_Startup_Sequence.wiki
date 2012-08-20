@@ -123,11 +123,19 @@ Connecting using RTMP passed. Therefore, port 1935 is open.
 8/20/2012 13:20:59.183 [DEBUG] **** Using RTMP to connect to RTMP://192.168.0.249/bigbluebutton******
 }}}
 
+Query bigbluebutton-web for the information about the user.
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/users/JoinService.as#L48]
 
 {{{
 8/20/2012 13:20:59.184 [DEBUG] JoinService:load(...) http://192.168.0.249/bigbluebutton/api/enter
-8/20/2012 13:20:59.307 [DEBUG] Entering hotkeyCapture
-8/20/2012 13:20:59.307 [DEBUG] Leaving hotkeyCapture
+}}}
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/controllers/org/bigbluebutton/web/controllers/ApiController.groovy#L682]
+
+bigbluebutton-web will return the following:
+
+{{{
 8/20/2012 13:20:59.319 [DEBUG] Join SUCESS = <response>
   <returncode>SUCCESS</returncode>
   <fullname>fdfdf</fullname>
@@ -145,9 +153,25 @@ Connecting using RTMP passed. Therefore, port 1935 is open.
   <welcome>&lt;br&gt;Welcome to &lt;b&gt;Demo Meeting&lt;/b&gt;!&lt;br&gt;&lt;br&gt;For help on using BigBlueButton see these (short) &lt;a href="event:http://www.bigbluebutton.org/content/videos"&gt;&lt;u&gt;tutorial videos&lt;/u&gt;&lt;/a&gt;.&lt;br&gt;&lt;br&gt;To join the audio bridge click the headset icon (upper-left hand corner). &lt;b&gt;You can mute yourself in the Listeners window.&lt;/b&gt;&lt;br&gt;</welcome>
   <logoutUrl>http://192.168.0.249</logoutUrl>
 </response>
+}}}
+
+Connect to Red5 passing the required parameters.
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/users/NetConnectionDelegate.as#L152]
+
+{{{
 8/20/2012 13:20:59.322 [DEBUG] NetConnectionDelegate::Connecting to RTMP://192.168.0.249/bigbluebutton/183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248 [fdfdf,MODERATOR,183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248,false,183f0bf3a0982a127bdb8161e0c44eb696b3e75c-1345483284248]
+}}}
+
+The request is handled in Red5 and returns success if all the parameters are valid.
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-apps/src/main/java/org/bigbluebutton/conference/BigBlueButtonApplication.java#L91]
+
+{{{
 8/20/2012 13:20:59.442 [DEBUG] NetConnectionDelegate:Connection to viewers application succeeded.
 8/20/2012 13:20:59.461 [DEBUG] Successful result: 85
+}}}
+
+{{{
 8/20/2012 13:20:59.462 [DEBUG] BBBManager Loading VideoconfModule
 8/20/2012 13:20:59.462 [DEBUG] Loading VideoconfModule.swf?v=VERSION
 8/20/2012 13:20:59.464 [DEBUG] BBBManager Loading ListenersModule
