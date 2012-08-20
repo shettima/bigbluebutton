@@ -85,6 +85,11 @@ Here it shows that the preferred local is en_GB and is not available. Thus, it d
 8/20/2012 13:20:59.078 [DEBUG] Loading locale at [ locale/en_US_resources.swf?a=1345483259078 ]
 }}}
 
+Load the config.xml and calculate the module dependencies.
+{{{
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/ConfigParameters.as#L60
+}}}
+
 {{{
 8/20/2012 13:20:59.084 [DEBUG] Dependency Order: 
 8/20/2012 13:20:59.084 [DEBUG] VideoconfModule
@@ -97,11 +102,31 @@ Here it shows that the preferred local is en_GB and is not available. Thus, it d
 8/20/2012 13:20:59.084 [DEBUG] PresentModule
 8/20/2012 13:20:59.084 [DEBUG] VideodockModule
 8/20/2012 13:20:59.084 [DEBUG] WhiteboardModule
+}}}
+
+Initialize the options passed from config.xml
+{{{
 8/20/2012 13:20:59.086 [DEBUG] ***** Config Loaded ****
 8/20/2012 13:20:59.086 [DEBUG] **** Init layout options ***
 8/20/2012 13:20:59.086 [DEBUG] *** show toolbar = true
+}}}
+
+Do some port testing. Test if we can connect using RTMP. If not, test if we can connect using RTMPT.
+{{{
+https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/modules/ModulesProxy.as#L67
+}}}
+
+{{{
 8/20/2012 13:20:59.183 [DEBUG] Successfully connected to RTMP://192.168.0.249/video
+}}}
+
+Connecting using RTMP passed. Therefore, port 1935 is open.
+{{{
 8/20/2012 13:20:59.183 [DEBUG] **** Using RTMP to connect to RTMP://192.168.0.249/bigbluebutton******
+}}}
+
+
+{{{
 8/20/2012 13:20:59.184 [DEBUG] JoinService:load(...) http://192.168.0.249/bigbluebutton/api/enter
 8/20/2012 13:20:59.307 [DEBUG] Entering hotkeyCapture
 8/20/2012 13:20:59.307 [DEBUG] Leaving hotkeyCapture
