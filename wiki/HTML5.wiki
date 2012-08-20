@@ -1,5 +1,28 @@
 #summary Overview of plans for creating an HTML5 client for BigBlueButton
 
-= Introduction =
+= HTML5 =
 
-To be added ...
+We are investigating ways to extend !BigBlueButton's infrastructure to support HTML5.
+
+We are doing this in three phases:
+
+  # View a recording using HTML5 (implemented in !BigBlueButton 0.80)
+  # View a live session using an HTML5 browser
+  # View and broadcast audio/video in a live session (requires WebRTC) 
+  # Present into a live session
+
+== Overview of Architecture ==
+
+!BigBlueButton already provides the full client/server architecture for real-time collaboration.
+
+By building on this platform, we can extend the architecture to enable a HTML5 client to join.  
+
+The following diagram outlines our intended approach
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-architecture.png
+
+== HTML5 interface ==
+The following screen shot shows a prototype HTML5 client.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-a.png
+
