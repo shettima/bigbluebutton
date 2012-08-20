@@ -11,9 +11,8 @@ We use the logs in the client to list the steps that happens when a user joins a
 
 Load the locales.xml file to determine what locales the sysadmin makes available to the users.
 
-{{{
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/util/i18n/ResourceUtil.as#L79
-}}}
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/util/i18n/ResourceUtil.as#L79]
+
 
 {{{
 8/20/2012 13:20:59.010 [DEBUG] initialization
@@ -67,16 +66,16 @@ https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/
 }}}
 
 Determine the preferred locale. The client tries to determine the preferred locale from the user's browser settings.
-{{{
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/prod/lib/bbb_localization.js
-}}}
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/prod/lib/bbb_localization.js]
+
 
 If the preferred locale is not the same as the master locale, it load the master locale. The master locale is US-English (en_US). If the preferred locale is not available, it will use the master locale.
-{{{
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/util/i18n/ResourceUtil.as#L85
-}}}
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/util/i18n/ResourceUtil.as#L85]
 
 Here it shows that the preferred local is en_GB and is not available. Thus, it defaults to the master locale (en_US).
+
 {{{
 8/20/2012 13:20:59.075 [DEBUG] Loading locale at [ locale/en_US_resources.swf?a=1345483259075 ]
 8/20/2012 13:20:59.076 [DEBUG] Setting up preferred locale en_GB
@@ -86,9 +85,8 @@ Here it shows that the preferred local is en_GB and is not available. Thus, it d
 }}}
 
 Load the config.xml and calculate the module dependencies.
-{{{
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/ConfigParameters.as#L60
-}}}
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/ConfigParameters.as#L60]
 
 {{{
 8/20/2012 13:20:59.084 [DEBUG] Dependency Order: 
@@ -105,6 +103,7 @@ https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/
 }}}
 
 Initialize the options passed from config.xml
+
 {{{
 8/20/2012 13:20:59.086 [DEBUG] ***** Config Loaded ****
 8/20/2012 13:20:59.086 [DEBUG] **** Init layout options ***
@@ -112,9 +111,8 @@ Initialize the options passed from config.xml
 }}}
 
 Do some port testing. Test if we can connect using RTMP. If not, test if we can connect using RTMPT.
-{{{
-https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/modules/ModulesProxy.as#L67
-}}}
+
+[https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/src/org/bigbluebutton/main/model/modules/ModulesProxy.as#L67]
 
 {{{
 8/20/2012 13:20:59.183 [DEBUG] Successfully connected to RTMP://192.168.0.249/video
