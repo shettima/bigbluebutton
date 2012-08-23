@@ -1,10 +1,12 @@
 #summary Overview of BigBlueButton 0.81
 
+* Draft *
+
 = Introduction =
 
-This document gives a visual overview of what's new in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.
+This document gives an overview of what's new in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.
 
-
+!BigBlueButton is currently in development and will soon enter beta 
 = Record and Playback =
 
 !BigBlueButton 0.81 now records and playback all activity in the presentation area.  This includes
@@ -16,12 +18,30 @@ This document gives a visual overview of what's new in !BigBlueButton 0.81, our 
 It also records and playback all webcams.  
 
 = Accessibility =
+There was a Big Push to add more accessibility features into BigBlueButton this release.
+
+For the chat module:
+  * keyboard navigation
+  * Input box focus
+  * Screen reader cooperation
+  * Audio alerts
+
+For record and playback
+  * Thumbnail for labels
+  * Access to text from presentation
+  * Chat messages
+
+General changes
+  * Resize and move windows
+  * Hotkey Reference window
+  * Localized hotkeys
 
 = Layout Manger =
 
 The Layout Manager now keeps your windows organized as you resize the window.  It also gives you a number of preset layouts to choose from.
 
 For developers, you can use the Layout Manager to define new layout types.
+
 
 = API Examples =
 == Browser ID ==
@@ -31,9 +51,3 @@ There is an API example showing how to use Mozilla Persona (BrowserID) to let us
 == OAuth ==
 
 There is an OAuth API example demonstrating how to use OAuth to login to a session.
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
