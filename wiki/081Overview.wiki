@@ -6,7 +6,10 @@
 
 This document gives an overview of what's new in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.
 
-!BigBlueButton is currently in development and will soon enter beta 
+The focus of !BigBlueButton 0.81 is to enhance the record and playback, improve accessibility for students with disabilities, and simplify the management of windows.
+
+The following document highlights the changes.  For details of the work on this release, see the [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 details] in our issue tracking system.
+
 = Record and Playback =
 
 !BigBlueButton 0.81 now records and playback all activity in the presentation area.  This includes
@@ -36,9 +39,27 @@ General changes
   * Hotkey Reference window
   * Localized hotkeys
 
+There is a new 'Shortcuts' dialog that shows you all the keyboard shortcuts.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/shortcut.png
+
+
 = Layout Manger =
 
-The Layout Manager now keeps your windows organized as you resize the window.  It also gives you a number of preset layouts to choose from.
+The New Layout Manager now keeps your windows organized as you resize the browser window.  It also gives you a number of preset layouts to choose from.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/layout-1.png
+
+For example, on startup !BigBlueButton will use the default layout.  
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/layout-1a.png
+
+You can the switch to a different layout and your windows will automatically resize.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/layout-1b.png
+
+The layout manager is developer friendly.  You can create a new layout on the screen, save the layout to new_layouts.xml, and then use the new layout to update the contents 
+
 
 For developers, you can use the Layout Manager to define new layout types.
 
