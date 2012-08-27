@@ -231,29 +231,30 @@ Set to true to enable the acoustic echo cancellation.
 
 === Videoconf Module ===
 {{{
-<module name="VideoconfModule" url="VideoconfModule.swf?v=VERSION" 
-			uri="rtmp://HOST/video"
-			dependsOn="ViewersModule"
-			videoQuality="70"
-			presenterShareOnly="false"
-			resolutions="320x240,640x480,1280x720"
-			autoStart="false"
-			showButton="true"
-			publishWindowVisible="true"
-			viewerWindowMaxed="false"
-			viewerWindowLocation="top"
-			camKeyFrameInterval="5"
-			camModeFps="15"
-			camQualityBandwidth="0"
-			camQualityPicture="70"
-			h264Level="4.1"
-			h264Profile="main"			
-		/>
+                <module name="VideoconfModule" url="VideoconfModule.swf?v=3944"
+                        uri="rtmp://HOST/video"
+                        dependson = "ViewersModule"
+                        videoQuality = "100"
+                        presenterShareOnly = "false"
+                        resolutions = "320x240,640x480,1280x720"
+                        autoStart = "false"
+                        showButton = "true"
+                        showCloseButton = "true"
+                        publishWindowVisible = "true"
+                        viewerWindowMaxed = "false"
+                        viewerWindowLocation = "top"
+                        camKeyFrameInterval = "30"
+                        camModeFps = "10"
+                        camQualityBandwidth = "0"
+                        camQualityPicture = "90"
+                        enableH264 = "false"
+                        h264Level = "2.1"
+                        h264Profile = "main"
+                />
 }}}
-The Video Conferencing Module. Allows users to share their webcams with the room. It connects to the separate /video application on the bbb server.
 
-==== videoQuality ====
-An attribute set to between 0 and 100. 0 means that priority will be given to optimizing bandwidth at the cost of quality. 100 means that no compression will be done, for maximum quality. This takes up high bandwidth and the frame rate may suffer. A quality of 100 is NOT recommended as it will eat up your server bandwidth quickly. Default is 70. Set to lower if you are concerned about bandwidth.
+The Video Conferencing Module. Allows users to share their webcams with the room. It connects to the separate /video application on the bbb server. See also [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_change_the_video_quality_of_the_shared_webcams? changing quality of webcam picture] in the FAQ.
+
 ==== presenterShareOnly ====
 If set to true, only the current presenter will have the option of sharing their webcam. This is useful in one-to-many meetings, where there is one presenter that everyone should be focusing on, such as a webcast or a virtual classroom.
 
