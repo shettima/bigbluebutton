@@ -819,7 +819,23 @@ $proxy_add_x_forwarded_for;
 }}}
 
 === How do I change the video quality of the shared webcams? ===
-In !BigBlueButton 0.71 and later, you can change the video quality through the client's config.xml file, by default located in /var/www/bigbluebutton/client/conf. Scroll down to the entry named !VideoconfModule. The value of the videoQuality attribute can be anywhere from 0 to 100. 0 means priority is given to the bandwidth and if bandwidth is low quality will suffer. Quality of 100 means no video compression will be done at all, and you will get maximum quality at the expense of bandwidth. If the bandwidth is low, the frame rate will suffer.
+
+The setting for picture quality of the webcams are in http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml] in the videoconf module.
+
+In most cases you can leave the default settings, specify the Flash player use the maximum amount of bandwidth (camQualityBandwidth="0") to show an picture of ninety percent quality (camQualityPicture="90").
+
+{{{
+                        camQualityPicture="70"
+}}}
+
+To reduce the quality of the picture (and increase the frame rate), lower the value of camQualityPicture.  Corresponding, to increase the quality of the picture (and reduce the frame rate), increase the value of camQualityPicture.
+
+However, as camQualityPicture is already ninety percent, you'll find that slight increases are not very noticeable in picture quality, but do decrease the frame rate.
+
+
+  
+
+ou can change the video quality through the client's config.xml file, by default located in /var/www/bigbluebutton/client/conf. Scroll down to the entry named !VideoconfModule. The value of the videoQuality attribute can be anywhere from 0 to 100. 0 means priority is given to the bandwidth and if bandwidth is low quality will suffer. Quality of 100 means no video compression will be done at all, and you will get maximum quality at the expense of bandwidth. If the bandwidth is low, the frame rate will suffer.
 
 For more information see ClientConfiguration.
 
