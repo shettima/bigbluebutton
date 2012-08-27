@@ -1099,9 +1099,9 @@ sudo bbb-conf --restart
 See Ubuntu's documentation for [https://help.ubuntu.com/community/Webcam/Troubleshooting Webcam Troubleshooting].
 
  
-=== How do I prevent viewers from sharing their webcam? ===
+=== How do I restrict the webcam to only the presenters? ===
 
-On the !BigBlueButton server you can change
+You can restrict sharing of webcam to only the current presenter. To do so, change in [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml] in the parameters for videomodule, change
 
 {{{
 presenterShareOnly="false"
@@ -1113,7 +1113,7 @@ to
 presenterShareOnly="true"
 }}}
 
-in [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml for video module].
+.
 
 
 
