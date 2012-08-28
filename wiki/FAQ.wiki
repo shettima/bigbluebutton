@@ -162,7 +162,9 @@ For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/
 == What are the minimum hardware requirements for the !BigBlueButton Server ==
 As a minimum, we recommend you run !BigBlueButton on a dedicated dual-core machine with at least 2 GB of memory and a 2.0+ Ghz processor.  A quad-core machine with 4G of memory and a faster process is better.
 
-You'll need good upstream and downstream bandwidth from the server.  We recommend installing Ubuntu 10.04 32-bit/64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
+You'll need good upstream and downstream bandwidth from the server.  We recommend (at least) 100 MBits/second bandwidth in both directions.
+
+We recommend installing !BigBlueButton on Ubuntu 10.04 32-bit/64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
 
 While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
 
