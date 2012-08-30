@@ -12,7 +12,6 @@ Development of !BigBlueButton 0.81 is underway.  The focus is the following feat
   # Capturing all activity in the presentation window for playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191])
   # Support for students with disabilities ([http://code.google.com/p/bigbluebutton/issues/detail?id=853 853])
   # Layout manager ([http://code.google.com/p/bigbluebutton/issues/detail?id=1060 1060])
-  # H.264 video encoding ([http://code.google.com/p/bigbluebutton/issues/detail?id=640 640])
 
 We are also working on integrating [PollingModule Polling module] as a core module.
 
