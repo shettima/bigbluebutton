@@ -6,4 +6,4 @@ What's new ...
 
 = Details =
 
-Details to setup development environment.
+Details to setup development environment for 0.81 ... what are the differences over 0.80?
