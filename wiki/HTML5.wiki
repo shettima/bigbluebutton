@@ -1,5 +1,6 @@
+#summary Overview an HTML5 client for BigBlueButton
 
-#summary Overview an HTML5 client for !BigBlueButton -- DRAFT
+= Overview (DRAFT) =
 
 The current focus for the core developers is to finish !BigBlueButton 0.81, but we've been investigating how to leverage HTML5 in !BigBlueButton's architecture.
 
