@@ -845,7 +845,7 @@ For more information see ClientConfiguration.
 
 Using nginx, you can rewrite the incoming URL for `/client/BigBlueButton.html` to appear as a different link, such as `/conference/`.  
 
- # Modify `/etc/nginx/sites-avaialble/bigbluebutton` and comment out the following section
+ # Modify `/etc/bigbluebutton/nginx/client.nginx` and comment out the following section
 
 {{{
         # BigBlueButton.html is here so we can expire it every 1 minute to
