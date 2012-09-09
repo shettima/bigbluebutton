@@ -1,5 +1,7 @@
 #summary How to install BigBlueButton 0.81-beta
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 These instructions go through installing !BigBlueButton 0.81-beta.
@@ -193,4 +195,3 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 The `--clean` option will clear out all the log files for !BigBlueButton.  The `--check` option will grep through the log files looking for errors.  
 
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected.  
-
