@@ -126,27 +126,23 @@ You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
 
 {{{
-        sudo apt-get install build-essential git-core checkinstall yasm texi2html libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev --yes
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev --yes
 
+cd /usr/local/src
+sudo git clone http://git.chromium.org/webm/libvpx.git
+cd libvpx
+sudo ./configure
+sudo make
+sudo make install
 
-        # Setup libvpx
-        if [ ! -d /usr/local/src/libvpx ]; then
-                cd /usr/local/src
-                sudo git clone http://git.chromium.org/webm/libvpx.git
-                cd libvpx
-                sudo ./configure
-                sudo make
-                sudo make install
-        fi
-
-        cd /usr/local/src
-        sudo git clone git://git.videolan.org/ffmpeg
-        cd ffmpeg
-        sudo git checkout n0.8.1
-        sudo git checkout -b n0.8.1
-        sudo ./configure  --enable-version3 --enable-postproc  --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis  --enable-libvpx
-        sudo make
-        sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no --deldoc=yes --default
+cd /usr/local/src
+sudo git clone git://git.videolan.org/ffmpeg
+cd ffmpeg
+sudo git checkout n0.8.1
+sudo git checkout -b n0.8.1
+sudo ./configure  --enable-version3 --enable-postproc  --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis  --enable-libvpx
+sudo make
+sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no --deldoc=yes --default
 }}}
 
 
