@@ -22,6 +22,7 @@
     * [RoadMap Product Road Map]
     * [IssuesInstructions Issues/Bug Tracker]
   * [BigBlueButtonLabs BigBlueButton Labs]
+    * [HTML5 HTML5 client]
     * [StressTesting Stress Testing the BigBlueButton server]
     * [PollingModule Polling Module]
     * [Phidgets Physical Widgets for External Notification]
