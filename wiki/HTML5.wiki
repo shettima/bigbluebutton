@@ -86,7 +86,7 @@ Once a user enters a name and meetingID (which are both arbitrary and can be rea
 Node gives the user a two cookies: one for the meetingID they are in and one for their unique sessionID, and the user is directed to the client:
 Figure 4. The interface is written in HTML5, CSS and a little bit of JQueryUI. No Flash here! 
 
-Once the user has been served the client interface, it’s client-side javascript under the hood immediately connects back to the Node server using !WebSockets (through !SocketIO).  the !BigBlueButton client gives the Node server the cookies it was just given, and server-side verification of the meetingID and the user’s unique sessionID are cross referenced to Redis. The server then stores the cookie information right in the handshake data of the socket so it can be used when the client emits events through SocketIO.
+Once the user has been served the client interface, it’s client-side javascript under the hood immediately connects back to the Node server using !WebSockets (through SocketIO).  the !BigBlueButton client gives the Node server the cookies it was just given, and server-side verification of the meetingID and the user’s unique sessionID are cross referenced to Redis. The server then stores the cookie information right in the handshake data of the socket so it can be used when the client emits events through SocketIO.
 
 Aside from file uploads of presentations, almost all the communication from this point on between the client and the server is done through SocketIO.
 
