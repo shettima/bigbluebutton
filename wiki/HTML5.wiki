@@ -86,7 +86,7 @@ Once a user enters a name and meetingID (which are both arbitrary and can be rea
 Node gives the user a two cookies: one for the meetingID they are in and one for their unique sessionID, and the user is directed to the client:
 Figure 4. The interface is written in HTML5, CSS and a little bit of JQueryUI. No Flash here! 
 
-Once the user has been served the client interface, it’s client-side javascript under the hood immediately connects back to the Node server using WebSockets (through SocketIO).  the !BigBlueButton client gives the Node server the cookies it was just given, and server-side verification of the meetingID and the user’s unique sessionID are cross referenced to Redis. The server then stores the cookie information right in the handshake data of the socket so it can be used when the client emits events through SocketIO.
+Once the user has been served the client interface, it’s client-side javascript under the hood immediately connects back to the Node server using !WebSockets (through !SocketIO).  the !BigBlueButton client gives the Node server the cookies it was just given, and server-side verification of the meetingID and the user’s unique sessionID are cross referenced to Redis. The server then stores the cookie information right in the handshake data of the socket so it can be used when the client emits events through SocketIO.
 
 Aside from file uploads of presentations, almost all the communication from this point on between the client and the server is done through SocketIO.
 
@@ -94,7 +94,7 @@ Aside from file uploads of presentations, almost all the communication from this
 == SocketIO ==
 
 
-WebSockets is the key to having a real-time application built in the web browser using HTML5. Node at this point, acts as a delegate of information for every connected client, and WebSockets is the way it communicates back with the clients when it needs to, such as to send a message for example.
+!WebSockets is the key to having a real-time application built in the web browser using HTML5. Node at this point, acts as a delegate of information for every connected client, and !WebSockets is the way it communicates back with the clients when it needs to, such as to send a message for example.
 
 The intensive calculations for the whiteboard are done on the client.  ImageMagick takes care of the file conversions/processing, and Redis handles all the data store and retrieval actions. Node simply calls on all these pieces and tells the clients whenever it gets a reply back.
 
@@ -141,7 +141,7 @@ Features include:
 
 === Under the hood ===
 
-The HTML5 !BigBlueButton client started out as a simple chat between clients. It’s arguably one of the easiest things to implement using WebSockets. As long as our client has a connected socket through SocketIO, which will occur essentially immediately upon login, sending a message to all members of the meeting is as simple as “socket.emit(‘msg’, “Hello World!”);”. The server, after validation, relays the message to all members of the meeting, including the sender.
+The HTML5 !BigBlueButton client started out as a simple chat between clients. It’s arguably one of the easiest things to implement using !WebSockets. As long as our client has a connected socket through SocketIO, which will occur essentially immediately upon login, sending a message to all members of the meeting is as simple as “socket.emit(‘msg’, “Hello World!”);”. The server, after validation, relays the message to all members of the meeting, including the sender.
 
 This is to say, the user won’t see their update until everyone in the meeting sees the update, and this is the way communication is implemented for all actions in the client. This removes all the burden off of the presenter who may question whether the members of the meeting can see what they are presenting. If the presenter doesn’t see it, nobody can.
 User List/Switcher
