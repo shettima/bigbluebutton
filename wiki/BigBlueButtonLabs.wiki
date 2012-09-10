@@ -7,7 +7,8 @@ The purpose of !BigBlueButton Labs is to rapidly experiment and prototype new id
 Unless a labs project states otherwise, these projects are exploratory in nature with no implied timeline to merge them into !BigBlueButton core.  In this way, developers working on labs project are free to experiment, collaborate, and, most importantly, get feedback from the community.
 
 If you want to give feedback on a particular labs project, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
-
+    
+    * [HTML5 HTML5 client]
     * [StressTesting Stress Testing the BigBlueButton server]
     * [PollingModule Polling Module]
     * [Phidgets Physical Widgets for External Notification]
