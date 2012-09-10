@@ -28,7 +28,7 @@ The following describes our efforts to implement phase 2: viewing a live !BigBlu
 
 == Overview of Architecture ==
 
-BigBlueButton already provides the full client/server architecture for real-time collaboration and presentations, which includes
+!BigBlueButton already provides the full client/server architecture for real-time collaboration and presentations, which includes
   * API interface
   * Presentation conversion
   * Whiteboard
