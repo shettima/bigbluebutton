@@ -102,10 +102,10 @@ SocketIO allows the delegation of rooms so once the socket has connected success
 
 Room 1, SessionID: The value of the room is the sessionID of the user. By sending messages to all members of this room, a client is effectively sending messages to all connected sockets of that particular user. All open tabs in the same browser connected to the server will have the same sessionID (though different sockets) so if a user clicks logout on one tab, the server will reiterate the logout command to all sockets of that particular sessionID, effectively logging the user out of all tabs with a single click from one tab. Implementing private messages from user to user is another way that messages to a specific SessionID would be utilized.
 
-Room 2, MeetingID: The value of the room is the MeetingID of the user. By sending messages to all members of this room, a client is effectively sending messages to all connected sockets of every user in that particular meeting. When a user sends a public chat, the chat messages is saved in Redis and sent to all members of the room matching the MeetingID of the socket that sent the chat message. To send messages back to the client, messages will be published using Redis PubSub.
+Room 2, MeetingID: The value of the room is the MeetingID of the user. By sending messages to all members of this room, a client is effectively sending messages to all connected sockets of every user in that particular meeting. When a user sends a public chat, the chat messages is saved in Redis and sent to all members of the room matching the MeetingID of the socket that sent the chat message. To send messages back to the client, messages will be published using Redis !PubSub.
 
 
-== Redis PubSub ==
+== Redis !PubSub ==
 
 
 The Redis server in our infrastructure is actually serving multiple purposes. The first of its purposes is to store and serve data to and from the clients. It’s second purpose is for publishing and subscribing to allow the relay of messages to be picked up by any additional clients connected to the Redis server. This will be particularly useful when the existing !BigBlueButton infrastructure is implemented to connect to the Redis server being shared by the Node server, thus allowing the relay of messages between the Node server for HTML5 clients and the Red5 server for Flash based clients.
