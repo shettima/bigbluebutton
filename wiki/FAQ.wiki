@@ -288,6 +288,17 @@ A VoIP connection to the !BigBlueButton takes roughly 20 kB/sec per user.  The b
 If the presenter has only 100 KByte/second upstream, then performing VoIP, video, and desktop sharing will not fit within that upstream constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still receive updates, but the refresh will be much slower than if the presenter was on a LAN (such as within the university or college network).
 
 
+=== What are the minimum bandwidth requirements for a user? ===
+
+For viewers (students), we recommend users have (at least) 0.5 Mbits/sec -- which is 500 Kbits/sec -- upstream bandwidth, and (at least) 1 Mbits/sec download bandwidth.  
+
+These are not hard and fast numbers, as it depends on the activity of the viewer.  If the viewer is not broadcasting any webcam, the amount of bandwidth would be less than 0.5 Mbits/sec.
+
+A good way for users to check their bandwidth is to visit [speedtest.net http://speedtest.net/].  The results from speedtest.net give the user's _actual_ bandwidth.   This actual number is important because a user may report that their ISP provides them 0.5 Mbits/sec upstream bandwidth; however, speedtest.net may report an actual number that is much lower.   The difference may be throttling by the ISP and background activity on their computer (such as background downloads, file sharing clients, etc).  
+
+For presenters, we recommend as much upstream bandwidth as possible.  For example, if the presenter shares their desktop, then BigBlueButton's desktop sharing will attempt to publish their desktop updates as quickly as possible to the server.
+
+
 == Troubleshooting ==
 
 === Users on Windows 7 get disconnected after a minute ===
