@@ -148,7 +148,7 @@ In the following section is described the monitoring calls
 
 <br><br>
 == Create Meeting ==
-<p>Creates a bigbluebutton meeting, according to the parameters passed.  The create call is idempotent: you can call it multiple times with the same parameters without side effects.  One benefit is this simplifies the logic for joining a user into a session: your application can always call create before returning the join URL.   This way, regardless of the order in which users join, the meeting will always exist but won't be empty.  The BigBlueButton server will automatically remove empty that are created but have never had any users after a number of minutes specified by`defaultMeetingCreateJoinDuration`, which is defined in `bigbluebutton.properties`. </p>
+<p>Creates a BigBlueButton meeting, according to the parameters passed.  The create call is idempotent: you can call it multiple times with the same parameters without side effects.  One benefit is this simplifies the logic for joining a user into a session: your application can always call create before returning the join URL.   This way, regardless of the order in which users join, the meeting will always exist but won't be empty.  The !BigBlueButton server will automatically remove empty that are created but have never had any users after a number of minutes specified by`defaultMeetingCreateJoinDuration`, which is defined in `bigbluebutton.properties`. </p>
 
 <p>*Resource URL:*</p>
 <a href="#">http://yourserver.com/bigbluebutton/api/create?[parameters]&checksum=[checksum]</a>
