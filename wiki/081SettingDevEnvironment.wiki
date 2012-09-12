@@ -1,9 +1,16 @@
 #summary Setting up the development environment for BigBlueButton 0.81
 
-= Introduction =
+= Note =
 
-What's new ...
+We have not yet released !BigBlueButton 0.81-beta, so these instructions will change (and many not work) until 0.81-beta is release.
 
-= Details =
+We recommend that unless you've already been developing with !BigBlueButton to wait until 0.81-beta is out.
 
-Details to setup development environment for 0.81 ... what are the differences over 0.80?
+= Overview =
+!BigBlueButton 0.81-dev uses the latest version of red5.  You will not be able to develop 0.81-dev using the version of red5 that ships with 0.80.
+
+= Getting Started =
+
+To get started, first install !BigBlueButton 0.81-dev using the instructions [081InstallationUbuntu here].
+
+Next, setup your development environment following the instructions [DevelopingBBB here].
