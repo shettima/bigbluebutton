@@ -2,12 +2,14 @@
 
 = Note =
 
-We have not yet released !BigBlueButton 0.81-beta, so these instructions will change (and many not work) until 0.81-beta is release.
+We have not yet released !BigBlueButton 0.81-beta, so these instructions are draft until we formally release 0.81-beta.
 
-We recommend that unless you've already been developing with !BigBlueButton to wait until 0.81-beta is out.
+Until then, we recommend that unless you've already been developing with !BigBlueButton 0.81 to wait until 0.81-beta is out.
 
 = Overview =
-!BigBlueButton 0.81-dev uses the latest version of red5.  You will not be able to develop 0.81-dev using the version of red5 that ships with 0.80.
+!BigBlueButton 0.81-dev uses the latest version of red5.  You will not be able to develop 0.81-dev using the version of red5 that ships with 0.80.  
+
+The instructions below will update your !BigBlueButton packages, including the version of red5.
 
 = Getting Started =
 
