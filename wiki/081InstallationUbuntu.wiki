@@ -178,7 +178,15 @@ Later on, if you wish to remove the API demos, you can enter the command
    sudo apt-get purge bbb-demo
 }}}
 
-== 6. Do a Clean Restart == 
+
+== 6. Install Presentation record and playback scripts == 
+
+{{{
+   sudo apt-get install bbb-playback-presentation
+}}}
+
+
+== 7. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
