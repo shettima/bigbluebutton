@@ -4,9 +4,8 @@
 
 = Introduction =
 
-These instructions go through installing !BigBlueButton 0.81-beta.
+These instructions are currently for developers only.  If your not a developer working on !BigBlueButton 0.81-dev, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
 
-Note: These instructions are draft and will be updated before the 0.81-beta release.
 
 The requirements are
 
@@ -30,7 +29,7 @@ In a terminal window, copy and paste the following commands.
 wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
-echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+echo "deb http://ubuntu.bigbluebutton.org/linux_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 
 }}}
