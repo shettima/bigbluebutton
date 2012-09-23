@@ -1210,16 +1210,16 @@ Here's a breakdown of the path for the audio packets from your !BigBlueButton cl
 
 While this all happens quite quickly, we are investigating a number of ways to reducing the transcoding.
 
-  # Use speex instead of nellymoser (requires more CPU to encode/decode audio packets)
-  # Move the transcoding of nellymoser -> mulaw/mulaw -> nellymoser out of Java into native code
-  # Launch an external Java-based SIP client to connect directly with asterisk/FreeSWITCH (bypassing red5 completely)
-  # Implement a push-to-talk mode for one-to-many sessions (i.e. a remote class)
 
-Another option is to setup FreeSWITCH to use a direct inward dialing (DID) number, which you can get from a SIP trunk provider, a third-party company that essentially maps a DID to an IP address on internet, converts your voice to a digital format (such as µlaw), and authenticates and connects to FreeSWITCH server when someone calls the DID using session initiation protocol (SIP). 
+=== How to setup a external phone number for the !FreeSWITCH server ===
 
-Setting up DIDs involves configuration of FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
+!FreeSWITCH is a soft switch and can accept incoming phone numbers.  In the industry, these incoming phone numbers are called direct inward dialing (DID) number.  You can obtain a DID from a SIP trunk provider, which a third-party company that essentially maps a DID (a phone number) to an IP address on internet.  When users dial that phone number, the SIP trunk provider converts the voice call to a digital format (such as µlaw), and authenticates and forwards the call using SIP to an IP address of your !BigBlueButton server.  SIP stands for session initiation protocol and it's a protocol (like HTTP) for initiating a transfer of data, in this case setting up a two-way audio stream.
 
-Setting up DIDs will give your users the option to dial in directly through the phone (or Skype out to the DID), and use the phone system, which is very good at doing voice.  You'll then reduce the network latency down to the connection between your SIP trunk provider and your FreeSWITCHserver.  The trade off is that it will cost money to provide SIP trunking to your reeSWITCH server.
+Setting up DIDs involves configuration of FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  See [http://wiki.freeswitch.org/wiki/SIP_Provider_Examples FreeSWITCH documentation]. If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
+
+Setting up DIDs will give users with poor internet connection the option of dialing into the voice conference using phone.  The trade off is that it will cost money to provide SIP trunking to your reeSWITCH server.
+
+If your hosting your !BigBlueButton server on a university, college, or within a commercial company, there may already be VoIP network setup from which you may be able to obtain a DID. 
 
 === Why is the audio not synced with the video? ===
 
@@ -1414,6 +1414,57 @@ We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=
 = Troubleshooting =
 
 == General ==
+
+=== Some users are experiencing audio problems ===
+There are a number of factors that affect the audio quality of !BigBlueButton session. 
+
+!BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.
+
+If your run !BigBlueButton within a LAN environment, you can get a sense of the audio quality.  It should be much richer than plain ordinary telephone system (wich is 8 Khz audio).
+
+When remote users access BigBlueButton, the bandwidth, latency, and packet loss on the network becomes a factor in the audio quality.
+
+If your remote users are experiencing poor audio quality, there are four areas to check.
+
+
+1. Check CPU available on your !BigBlueButton server  
+
+We recommend running BigBlueButton on a dedicated (non-virtual) server.  
+
+To test login to your !BigBlueButton server and watch the CPU using top, then press '1'.  The top command will show Cpu0, Cpu1, etc. across to the top.   
+
+During a session with users, use top again to watch the overall CPU usage.  If the CPU consistently stays above 70%, you'll likely get audio troubles as the !BigBlueButton server will start to have problems keeping up with the audio packets.
+
+If your !BigBlueButton server is virtualized, there is no guarantee on how much CPU time your server will get.  If your sharing the host server with other virtualized servers, your sharing CPU time with them and it will take longer for !BigBlueButton to process audio packets.
+
+
+2.  Check bandwidth provided by the host of your !BigBlueButton server
+
+
+We recommend, at a minimum, your server have 100 Mbits/sec symmetrical bandwidth (both download and 
+upload speeds).  If the server's bandwidth starts to get saturated (reaches it's limit), then all users will start to experience lower audio quality.
+
+To test your server's bandiwdth you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection; otherwise.  Try transferring a large file to/from your !BigBlueButton server to the second external server using scp to get a rough idea of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
+
+
+3.  Check Network connection for clients 
+
+You may have a dedicated server and high-bandwidth internet connection, but if a remote users has a poor connection to the internet, their audio quality will not be good.
+
+We recommend that users have .5 Mbits upload speed and 1.0 Mbits download speed.  Of course, these are not hard numbers, and !BigBlueButton will certainly work with less bandwidth, but if your clients have bandwidth in this range, they should experience good audio
+
+To test a user's internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's actual upload and download speeds.  It will also check the ping time (the time to send/receive packets from a remote server).  
+
+
+
+If you are encountering audio problems, check if all users are encountring audio problems, or just specific users.  If all users are encountering problems, the issue might be with the !BigBlueButton CPU being overloaded or the bandwidth to the !BigBlueButton server is saturated.
+
+If a specific users is having poor audio quality (i.e. only their audio is choppy but everyone else sounds good), have the individual do a speed test.  You can also cross-check that individual using demo.bigbluebutton.org (which is on a dedicated, high-bandwidth connection).  If possilbe, have that user into one of the [http://demo.bigbluebutton.org/demo/demo2.jsp sample rooms], join them, and check their audio again.  If the audio sounds better, then it might be the user's internet connection to/from your !BigBlueButton server is dropping packets.  
+
+Flash restricts applications to using TCP/IP for audio, if the user's network connection to the !BigBlueButton server is experiening packet loss will cause the user's computer to resend, which will incur audio problems if coupled with load bandwidth.
+
+If most users are experiencing good auidio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could setup dial-in numbers using a SIP Trunk provider.
+
 
 === Client hangs loading at 100% ===
 The !BigBlueButton client needs to connect to Adobe for downloading libraries.  Clients will hang if they connect to a !BigBlueButton server without internet connectivity.
