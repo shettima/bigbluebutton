@@ -1416,20 +1416,18 @@ We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=
 == General ==
 
 === Some users are experiencing audio problems ===
-There are a number of factors that affect the audio quality of !BigBlueButton session. 
+There are a number of factors that affect the quality of a user's audio in a !BigBlueButton session. 
 
 !BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.
 
-If your run !BigBlueButton within a LAN environment, you can get a sense of the audio quality.  It should be much richer than plain ordinary telephone system (wich is 8 Khz audio).
+If your run !BigBlueButton within a LAN environment, you can get a sense of the audio quality.  It should should much richer than plain ordinary telephone system (wich is 8 Khz audio).
 
-When remote users access BigBlueButton, the bandwidth, latency, and packet loss on the network becomes a factor in the audio quality.
-
-If your remote users are experiencing poor audio quality, there are four areas to check.
+When remote users access your !BigBlueButton server and are experiencing audio problems, check the following areas:
 
 
 1. Check CPU available on your !BigBlueButton server  
 
-We recommend running BigBlueButton on a dedicated (non-virtual) server.  
+We [What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server.  
 
 To test login to your !BigBlueButton server and watch the CPU using top, then press '1'.  The top command will show Cpu0, Cpu1, etc. across to the top.   
 
