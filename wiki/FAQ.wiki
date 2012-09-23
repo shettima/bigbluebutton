@@ -1416,52 +1416,63 @@ We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=
 == General ==
 
 === Some users are experiencing audio problems ===
-There are a number of factors that affect the quality of a user's audio in a !BigBlueButton session. 
+!BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.   If your run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than plain ordinary telephone system (wich is 8 Khz audio).
 
-!BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.
+To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.
 
-If your run !BigBlueButton within a LAN environment, you can get a sense of the audio quality.  It should should much richer than plain ordinary telephone system (wich is 8 Khz audio).
+We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
 
 When remote users access your !BigBlueButton server and are experiencing audio problems, check the following areas:
 
 
 1. Check CPU available on your !BigBlueButton server  
 
-We [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server.  
+Login to your !BigBlueButton server during a session and watch it's CPU using the command `top`.  When running `top`, press '1' to see a list of all CPUs and their load.  You should see Cpu0, Cpu1, etc.  If you are running a quad-core CPU with hyper-threading, you'll see eight virtual CPUs.
 
-To test login to your !BigBlueButton server and watch the CPU using top, then press '1'.  The top command will show Cpu0, Cpu1, etc. across to the top.   
+The overall CPU should stay below 70%.  If the overall CPU consistently stays above 70%, you'll likely get audio troubles as the !BigBlueButton server will start to have problems keeping up with the audio packets.
 
-During a session with users, use top again to watch the overall CPU usage.  If the CPU consistently stays above 70%, you'll likely get audio troubles as the !BigBlueButton server will start to have problems keeping up with the audio packets.
-
-If your !BigBlueButton server is virtualized, there is no guarantee on how much CPU time your server will get.  If your sharing the host server with other virtualized servers, your sharing CPU time with them and it will take longer for !BigBlueButton to process audio packets.
+If your !BigBlueButton server is virtualized, there is no guarantee on how much CPU time your server will get.  If your sharing the host server with other virtualized servers, your sharing CPU time with other servers and it will will take longer for !BigBlueButton to process audio packets.  This may also affect audio quality.
 
 
-2.  Check bandwidth provided by the host of your !BigBlueButton server
+2.  Check bandwidth provided !BigBlueButton server's ISP
 
+If the server's bandwidth starts to get saturated (reaches it's limit), then all users will start to experience lower audio quality.
 
-We recommend, at a minimum, your server have 100 Mbits/sec symmetrical bandwidth (both download and 
-upload speeds).  If the server's bandwidth starts to get saturated (reaches it's limit), then all users will start to experience lower audio quality.
+To test your server's bandiwdth you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection; otherwise.  When there is no significant network activity on your !BigBlueButton server (such as not users logged in), try transferring a large file to/from your !BigBlueButton server to the second external server using scp to get a rough idea of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
 
-To test your server's bandiwdth you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection; otherwise.  Try transferring a large file to/from your !BigBlueButton server to the second external server using scp to get a rough idea of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
+Next, try monitoring your server traffic when a class begins. There are many Unix commands to monitor traffic, one of which is `bmon`.  To install
+
+{{{
+   sudo apt-get install bmon
+}}}
+
+`bmon` will show you the amount of incoming data (RX rate) and transmitted (TX data) in kilobytes or megabytes, so you'll need to multiply by 8 to get bits/sec.
+
+As users join a session on your !BigBlueButton server, you should see both numbers increase.  If they don't see these numbers increase, for example, when a presenter uploads new slides, or when someone shares a webcam, then you have hit the bandwidth cap on your server.  At this point, the audio for all users will start to degrade as there is insufficient bandwidth for a new user or any common operations (such as uploading slides).
+
+For getting a better estimate of the amount of bandwidth required for your users, see [#What_are_the_bandwidth_requirements_for_running_a_BigBlueButton this FAQ entry].
 
 
 3.  Check Network connection for clients 
 
-You may have a dedicated server and high-bandwidth internet connection, but if a remote users has a poor connection to the internet, their audio quality will not be good.
+You may have a dedicated server with sufficient bandwidth, but if a remote users' internet connection is poort, their audio quality will not be good.
 
-We recommend that users have .5 Mbits upload speed and 1.0 Mbits download speed.  Of course, these are not hard numbers, and !BigBlueButton will certainly work with less bandwidth, but if your clients have bandwidth in this range, they should experience good audio
+We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] that users have .5 Mbits/sec upload speed and 1.0 Mbits/sec download speed.  Of course, these are not hard numbers, and !BigBlueButton will certainly work with less bandwidth, but if your clients have bandwidth in this range, they should experience good audio
 
-To test a user's internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's actual upload and download speeds.  It will also check the ping time (the time to send/receive packets from a remote server).  
+To test a user's actual internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's upload and download speeds.  If these numbers are much less than .5 Mbits/sec upload speed and 1.0 Mbits/sec download, their audio will be poor.  One quick check is to ask the users to turn of any file transfer they have in the background (such as bittorrent clients) and run the test again. 
 
 
 
-If you are encountering audio problems, check if all users are encountring audio problems, or just specific users.  If all users are encountering problems, the issue might be with the !BigBlueButton CPU being overloaded or the bandwidth to the !BigBlueButton server is saturated.
+In general, if all users are encountering audio problems, the issue might be with the !BigBlueButton CPU being overloaded or the bandwidth to the !BigBlueButton server is saturated.
 
-If a specific users is having poor audio quality (i.e. only their audio is choppy but everyone else sounds good), have the individual do a speed test.  You can also cross-check that individual using demo.bigbluebutton.org (which is on a dedicated, high-bandwidth connection).  If possilbe, have that user into one of the [http://demo.bigbluebutton.org/demo/demo2.jsp sample rooms], join them, and check their audio again.  If the audio sounds better, then it might be the user's internet connection to/from your !BigBlueButton server is dropping packets.  
+If a specific user is having poor audio quality (i.e. only their audio is choppy but everyone else sounds good), have the individual do a speed test.  Furthermore, if possible, if you are in the session with them and can verify their audio is poor, have them cross-check using demo.bigbluebutton.org (which is on a dedicated, high-bandwidth connection).  Specifically, have that user into one of the [http://demo.bigbluebutton.org/demo/demo2.jsp sample rooms], join them in the room, and check their audio again.  If the audio sounds better, then it might be the user's internet connection to/from your !BigBlueButton server is dropping more packets than to/from the !BigBlueButton demo server.
 
-Flash restricts applications to using TCP/IP for audio, if the user's network connection to the !BigBlueButton server is experiening packet loss will cause the user's computer to resend, which will incur audio problems if coupled with load bandwidth.
+Flash restricts applications to using TCP/IP for audio, if the user's network connection to the !BigBlueButton server is experiening packet loss (dropped packets), their computer will resend dropped packets, which will incur audio problems if this occurs frequently.
 
-If most users are experiencing good auidio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could setup dial-in numbers using a SIP Trunk provider.
+If there is a lot of packets getting cued for resend, you can try having the user drop from audio and then rejoin (click the headset icon twice).  If you are a moderator, you can click the 'x' next to their name in the listener's window.  This will eject them from the audio session and have their !BigBlueButton client automatically rejoin.
+
+
+If most users are experiencing good auidio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could also [#How_to_setup_a_external_phone_number_for_the_!FreeSWITCH_server setup dial-in numbers using a SIP Trunk provider] to provide the few users with audio problems the ability to dial into the voice conference.
 
 
 === Client hangs loading at 100% ===
