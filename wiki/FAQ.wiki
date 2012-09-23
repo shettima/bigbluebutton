@@ -1211,9 +1211,9 @@ Here's a breakdown of the path for the audio packets from your !BigBlueButton cl
 While this all happens quite quickly, we are investigating a number of ways to reducing the transcoding.
 
 
-=== How to setup a external phone number for the !FreeSWITCH server ===
+=== How to setup a external phone number for the FreeSWITCH server ===
 
-!FreeSWITCH is a soft switch and can accept incoming phone numbers.  In the industry, these incoming phone numbers are called direct inward dialing (DID) number.  You can obtain a DID from a SIP trunk provider, which a third-party company that essentially maps a DID (a phone number) to an IP address on internet.  When users dial that phone number, the SIP trunk provider converts the voice call to a digital format (such as µlaw), and authenticates and forwards the call using SIP to an IP address of your !BigBlueButton server.  SIP stands for session initiation protocol and it's a protocol (like HTTP) for initiating a transfer of data, in this case setting up a two-way audio stream.
+FreeSWITCH is a soft switch and can accept incoming phone numbers.  In the industry, these incoming phone numbers are called direct inward dialing (DID) number.  You can obtain a DID from a SIP trunk provider, which a third-party company that essentially maps a DID (a phone number) to an IP address on internet.  When users dial that phone number, the SIP trunk provider converts the voice call to a digital format (such as µlaw), and authenticates and forwards the call using SIP to an IP address of your !BigBlueButton server.  SIP stands for session initiation protocol and it's a protocol (like HTTP) for initiating a transfer of data, in this case setting up a two-way audio stream.
 
 Setting up DIDs involves configuration of FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  See [http://wiki.freeswitch.org/wiki/SIP_Provider_Examples FreeSWITCH documentation]. If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
 
@@ -1418,29 +1418,25 @@ We have this marked in [http://code.google.com/p/bigbluebutton/issues/detail?id=
 === Some users are experiencing audio problems ===
 !BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.   If your run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than plain ordinary telephone system (wich is 8 Khz audio).
 
-To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.
+To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.  Furthermore, we [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
 
-We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
-
-When remote users access your !BigBlueButton server and are experiencing audio problems, check the following areas:
+When remote users experience audio problems, check the following areas:
 
 
 1. Check CPU available on your !BigBlueButton server  
 
-Login to your !BigBlueButton server during a session and watch it's CPU using the command `top`.  When running `top`, press '1' to see a list of all CPUs and their load.  You should see Cpu0, Cpu1, etc.  If you are running a quad-core CPU with hyper-threading, you'll see eight virtual CPUs.
+Login to your !BigBlueButton server during a session and watch it's CPU using the command `top`.  When running `top`, press '1' to see a list of all CPUs and their load.  You should see Cpu0, Cpu1, etc.  If you are running a quad-core CPU with hyper-threading (recommended), you'll see eight virtual CPUs.
 
-The overall CPU should stay below 70%.  If the overall CPU consistently stays above 70%, you'll likely get audio troubles as the !BigBlueButton server will start to have problems keeping up with the audio packets.
+The overall CPU usage should stay below 70%.  If the overall CPU consistently stays above 70%, you'll likely get audio troubles as the !BigBlueButton server will not have enough available CPU to keep up with the audio packets.
 
-If your !BigBlueButton server is virtualized, there is no guarantee on how much CPU time your server will get.  If your sharing the host server with other virtualized servers, your sharing CPU time with other servers and it will will take longer for !BigBlueButton to process audio packets.  This may also affect audio quality.
+If your !BigBlueButton server is virtualized, there is no guarantee on how much CPU time your server gets.  If your sharing the CPU of your !BigBlueButton server with other virtualized servers on the host, it will will take longer for !BigBlueButton to process audio packets.  This setup may also affect audio quality.
 
 
 2.  Check bandwidth provided !BigBlueButton server's ISP
 
-If the server's bandwidth starts to get saturated (reaches it's limit), then all users will start to experience lower audio quality.
+To test your server's bandiwdth you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection.  When there is no significant network activity on your !BigBlueButton server (such no active !BigBlueButton sessions), try transferring a large file to/from your !BigBlueButton server to the second external server using `scp`.  This will give you a rough estimate of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
 
-To test your server's bandiwdth you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection; otherwise.  When there is no significant network activity on your !BigBlueButton server (such as not users logged in), try transferring a large file to/from your !BigBlueButton server to the second external server using scp to get a rough idea of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
-
-Next, try monitoring your server traffic when a class begins. There are many Unix commands to monitor traffic, one of which is `bmon`.  To install
+Next, try monitoring your server's traffic during a class begins. There are many Unix commands to monitor traffic, one of which is `bmon`.  
 
 {{{
    sudo apt-get install bmon
@@ -1448,7 +1444,7 @@ Next, try monitoring your server traffic when a class begins. There are many Uni
 
 `bmon` will show you the amount of incoming data (RX rate) and transmitted (TX data) in kilobytes or megabytes, so you'll need to multiply by 8 to get bits/sec.
 
-As users join a session on your !BigBlueButton server, you should see both numbers increase.  If they don't see these numbers increase, for example, when a presenter uploads new slides, or when someone shares a webcam, then you have hit the bandwidth cap on your server.  At this point, the audio for all users will start to degrade as there is insufficient bandwidth for a new user or any common operations (such as uploading slides).
+As !BigBlueButton users join the audio on your server, you should see *both TX and RX numbers increase*.  If they don't see these numbers increase when new users join or, for example, when a presenter uploads new slides, or when someone shares a webcam, etc. then you have hit the bandwidth cap on your server.  At this point, the audio for all users will start to degrade as there is insufficient bandwidth for new users or any common operations (such as uploading slides).
 
 For getting a better estimate of the amount of bandwidth required for your users, see [#What_are_the_bandwidth_requirements_for_running_a_BigBlueButton this FAQ entry].
 
