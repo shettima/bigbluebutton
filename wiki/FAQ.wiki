@@ -72,10 +72,10 @@ Dont' worry if you are not a proficient developer -- there are many ways to help
 Like many open source projects, at the core of the developer team is small group that have commit rights and the overall responsibility for the quality of the project.  The committers are 
 
 Committers: 
+  * Fred Dixon, Project Manager
   * Richard Alam, Lead Architect
   * Marco Calderon, Server
   * Felipe Cecagno, Client
-  * Fred Dixon, Packaging
   * Gustavo Salazar, Record and Playback
 
 Previous Committers (currently inactive):
