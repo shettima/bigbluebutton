@@ -1427,7 +1427,7 @@ When remote users access your !BigBlueButton server and are experiencing audio p
 
 1. Check CPU available on your !BigBlueButton server  
 
-We [What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server.  
+We [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server.  
 
 To test login to your !BigBlueButton server and watch the CPU using top, then press '1'.  The top command will show Cpu0, Cpu1, etc. across to the top.   
 
