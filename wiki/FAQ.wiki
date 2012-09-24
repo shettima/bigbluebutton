@@ -1322,9 +1322,16 @@ When integrated with Matterhorn, !BigBlueButton can process the desktop and webc
 Currently, !BigBlueButton does not record or playback mouse movements or whiteboard events.  The intent is to add these elements to playback in a future iteration of !BigBlueButton.
 
 === What browsers support playback ===
-The audio from the recorded session is converted to [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered, and enclosed in an OGG container.  
+!BigBlueButton converst the audio from recorded sessions to [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered, and enclosed in an OGG container.  
 
-Currently, playback only works on !FireFox and Chrome browsers.  
+With the upcoming !BigBlueButton 0.81, !BigBlueButton will playback the webcams from a session using the WebM (VP8), which, thanks to Google, is a high-quality open source video codec.
+
+Using these open source codecs, playback of a recorded session works on !FireFox and Chrome browsers.  You can also use IE with the [http://www.google.com/chromeframe?quickenable=true Google Chrome Frame].
+
+Playback on Safari or iOS devices requires creation of h.264 videos and the AAC codec, both of which are patent encumbered and require licensing.  For h.265 licensing see [http://www.mpegla.com/main/default.aspx MPEG-LA] and for AAC licensing see [http://www.vialicensing.com/ VA Licensing].
+
+Some of the companies providing [http://www.bigbluebutton.org/commercial-support/ commercial support] for BigBlueButton have already obtained a license for these codecs and can provided you a license.
+ 
 
 === Can I see the total time of the session ===
 The information displayed during playback is browser specific.  
