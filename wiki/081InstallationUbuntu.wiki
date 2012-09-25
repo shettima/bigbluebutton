@@ -9,6 +9,7 @@ These instructions are currently for developers only.  If your not a developer w
 
 The requirements are
 
+  * Ubuntu 10.04 32-bit or 64-bit
   * 4 GB of memory (4 GB is better)
   * Quad-core 2.6 GHZ CPU (or faster)
   * Ports 80, 1935, 9123 accessible
