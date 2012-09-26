@@ -4,14 +4,14 @@
 
 The current focus for the core developers is to finish !BigBlueButton 0.81, but we've been investigating how to leverage HTML5 in !BigBlueButton's architecture.
 
-This DRAFT document outlines the current progress today, which has been to prototype a stand-alone HTML5 client that can be quickly integrated into the !BigBlueButton platform, thus providing an additional means for users to join a !BigBlueButton session.
+This DRAFT document outlines some of our progress to-date, which has been to prototype a stand-alone HTML5 client that is integrated into the !BigBlueButton platform, thus providing an additional entry point for users to join a !BigBlueButton session.
 
 = Vision =
 With the adoption of HTML5, the web browser is becoming the platform for rich client interfaces.  
 
-Furthermore, with the recent progress in WebRTC, an HTML5 application can access the user's webcam and microphone _without_ the need for plugins.
+Furthermore, with the recent progress in WebRTC, an HTML5-based application can access the user's webcam and microphone _without_ the need for plugins.
 
-The long-term vision for the !BigBlueButton HTML5 client is to enable users on all platforms supporting an HTML5 browser -- including mobile and tablets to -- to fully access to all of !BigBlueButton’s features at any time.
+The long-term vision for the !BigBlueButton HTML5 client is to enable users on all platforms supporting an HTML5 browser -- including mobile and tablets to -- to fully access to all of !BigBlueButton’s features.
 
 This means the HTML5 client will completely implement the current Flash-based functionality, including the ability to broadcast audio and video from within the browser using WebRTC.
 
@@ -26,6 +26,29 @@ We implemented the first phase for viewing a recording in HTML5 in !BigBlueButto
 
 The following describes our efforts to implement phase 2: viewing a live !BigBlueButton session using an HTML5 browser.
 
+== UI Mockups ==
+
+The following images show some rough early-stage designs of a !BigBlueButton HTML5 client interface.
+
+A mockup of a presentation view of the interface.  A viewer only mode for Phase 2 would be a simplification of this interface that removes the presenter controls.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html5_presenter.jpg
+
+Here are a series of mockups of showing how video could be viewed within the interface.  The first mockup shows a single webcam, which is what we are working to achieve in Phase 2.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html_cam1.png
+
+This shows multiple webcams.
+ 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html_cam2.png
+
+Here's a variation showing the webcams along the bottom.
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html_cam3.png
+
+Here's another variation showing the webcams taking a complete row.
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html_cam4.png
+
+
 == Overview of Architecture ==
 
 !BigBlueButton already provides the full client/server architecture for real-time collaboration and presentations, which includes
@@ -35,30 +58,19 @@ The following describes our efforts to implement phase 2: viewing a live !BigBlu
   * Record and playback infrastructure
   * real-time audio and video sharing
 
-Building on this platform, we need to extend !BigBlueButton’s architecture to enable a HTML5-based !BigBlueButton client, specifically:
+Building on this platform, we want to extend !BigBlueButton’s architecture to enable a HTML5-based !BigBlueButton client to join a live session, specifically:
 
-  * Join an existing session from an HTML5 client
   * Get presence information from the !BigBlueButton server
   * Two-way chat
   * View all the presentation events
+  * Hear the presenter's audio
+  * See the presenter's video
 
 The following diagram outlines our intended approach
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-architecture.png
 
-Figure 1. Prototype extension of the HTML5 implementation to the existing infrastructure.
-
-
-== HTML5 interface ==
-
-The following image shows a rough early-stage prototype of the HTML5 client interface.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-a.png
-
-
-Figure 2. Screenshot showing a prototype HTML5 client of !BigBlueButton
-
-
+Figure 1. Prototype extensions to the current !BigBlueButton architecture to support Phase 2: viewer receives presentation, audio, and video (single webcam) and has two-way chat.
 
 == Prototype Implementation ==
 
@@ -75,16 +87,7 @@ Node.js
 
 The web server for the HTML5 client is built using the Node.js platform. The Node server serves up static web pages to the clients that connect to it.  
 
-Currently, the prototype does not connect to the !BigBlueButton server; rather, it creates a temporary sessions directly from the HTML5 interface.  The intent is this interface will disappear and be replaced by the !BigBlueButton API.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/temporary_login.png
-
-Figure 3. The login page is what the user first sees when they connect using their browser.
-
-Once a user enters a name and meetingID (which are both arbitrary and can be really anything), Node creates for them a user entry in Redis so that they can be verified later whenever they attempt to do an action in a session. A meeting and its appropriate entries are also created in Redis immediately if a meeting with that meetingID does not already exist.
-
-Node gives the user a two cookies: one for the meetingID they are in and one for their unique sessionID, and the user is directed to the client:
-Figure 4. The interface is written in HTML5, CSS and a little bit of JQueryUI. No Flash here! 
+The Node server connects to !BigBlueButton via redis. When !BigBlueButton creates a session (when requested by an API call), it creates a corresponding session in Redis.  The user joins the HTML5 interface via a URL that is similar to the current join URL for !BigBlueButton. 
 
 Once the user has been served the client interface, it’s client-side javascript under the hood immediately connects back to the Node server using !WebSockets (through SocketIO).  the !BigBlueButton client gives the Node server the cookies it was just given, and server-side verification of the meetingID and the user’s unique sessionID are cross referenced to Redis. The server then stores the cookie information right in the handshake data of the socket so it can be used when the client emits events through SocketIO.
 
