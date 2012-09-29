@@ -15,26 +15,23 @@ The long-term vision for the !BigBlueButton HTML5 client is to enable users on a
 
 This means the HTML5 client will completely implement the current Flash-based functionality, including the ability to broadcast audio and video from within the browser using WebRTC.
 
-We’ve mapped out the strategy to achieve this vision in four phases:
+We’ve mapped out the strategy to achieve this vision in three phases:
 
-  # Support viewing of a recording using HTML5 (done in 0.80!)
   # Support viewing a live session using an HTML5 browser
   # Support broadcasting audio/video from an HTML5 browser using WebRTC
   # Support all presentation features of !BigBlueButton in HTML5
 
-We implemented the first phase for viewing a recording in HTML5 in !BigBlueButton 0.80, which uses popcorn.js to synchronize playback of slides, audio, and chat.  We will be enhancing the playback in 0.81 to include record and playback of all presentation events and video.
-
-The following describes our efforts to implement phase 2: viewing a live !BigBlueButton session using an HTML5 browser.
+The following describes our efforts to implement phase 1: viewing a live !BigBlueButton session using an HTML5 browser.
 
 == UI Mockups ==
 
 The following images show some rough early-stage designs of a !BigBlueButton HTML5 client interface.
 
-A mockup of a presentation view of the interface.  A viewer only mode for Phase 2 would be a simplification of this interface that removes the presenter controls.
+A mockup of a presentation view of the interface.  A viewer only mode for Phase 1 would be a simplification of this interface that removes the presenter controls.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html5_presenter.jpg
 
-Here are a series of mockups of showing how video could be viewed within the interface.  The first mockup shows a single webcam, which is what we are working to achieve in Phase 2.
+Here are a series of mockups of showing how video could be viewed within the interface.  The first mockup shows a single webcam, which is what we are working to achieve in Phase 1.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/bbb_html_cam1.png
 
@@ -70,7 +67,7 @@ The following diagram outlines our intended approach
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-architecture.png
 
-Figure 1. Prototype extensions to the current !BigBlueButton architecture to support Phase 2: viewer receives presentation, audio, and video (single webcam) and has two-way chat.
+Figure 1. Prototype extensions to the current !BigBlueButton architecture to support Phase 1: viewer receives presentation, audio, and video (single webcam) and has two-way chat.
 
 == Prototype Implementation ==
 
