@@ -2,8 +2,6 @@
 
 = Overview (DRAFT) =
 
-The current focus for the core developers is to finish !BigBlueButton 0.81, but we've been investigating how to leverage HTML5 in !BigBlueButton's architecture.
-
 This DRAFT document outlines some of our progress to-date, which has been to prototype a stand-alone HTML5 client that is integrated into the !BigBlueButton platform, thus providing an additional entry point for users to join a !BigBlueButton session.
 
 = Vision =
