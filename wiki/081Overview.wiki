@@ -18,7 +18,7 @@ The following document highlights the changes.  For details of the work on this 
   * Whiteboard marks
   * Pan/Zoom
 
-It also records and playback all webcams.  
+It also records and playback all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]).  
 
 = Accessibility =
 There was a Big Push to add more accessibility features into BigBlueButton this release.
