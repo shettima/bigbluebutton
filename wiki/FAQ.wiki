@@ -48,6 +48,126 @@ If you'd like examples and use cases of people running !BigBlueButton, feel free
 == Will !BigBlueButton always stay open source? ==
 Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit !BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
 
+= !BigBlueButton Development Process =
+#summary One-sentence summary of this page.
+
+As of June 2012, the !BigBlueButton project had 61,000 installs worldwide.  This is a big step since 2008, when the software had just one install at Carleton University.
+
+Today, there is a very active !BigBlueButton community comprising over +1200 members on the developer mailing list.  These members users, developers, educational institutions, and commercial companies -- all are benefiting from improvements to the product.
+
+As with any open source project, the continued growth of the community depends on the quality of the software.  The quality of the software, in turn, depends on the process we use to build a release.
+ 
+== Development Priorities ==
+
+The core group of !BigBlueButton committers have a adopted an open source development process with the following priorities (in order):
+
+  * Stability
+  * Usability
+  * Features
+  * Modularity
+
+It cannot be overstated that the focus of the project is primarily on stability.  For a university or college to deploy !BigBlueButton for live classes, or for a commercial company to embed !BigBlueButton into their product, the software has to be extremely stable. 
+
+Usability ranks a close second.  Without a simple-to-use interface, !BigBlueButton would not be adopted, nor viewed as a compelling alternative to more complex proprietary system.
+
+Achieving stability is no easy task.  !BigBlueButton itself is a very complex system, comprising over 14 open source projects, with sub-systems responsible for sharing of slides, video, audio, text, and desktop sharing. 
+
+The stability of the product today is a direct result of the committers. Richard Alam is the creator of !BigBlueButton and the chief architect.  As such, Richard has the overall responsibility for the core architecture and (like Linus with Linux) reviews many of the contributions from others.
+
+Fred Dixon serves as the release manager.  His responsibility includes managing the overall release process, coordinating the building and packaging of each release, and communicating with the community on the progress of the release. 
+
+There have been ten releases of !BigBlueButton to date.  
+
+== !BigBlueButton Development Process ==
+
+Each release cycle goes according to the following steps
+
+=== 1. Planning ===
+
+In the past, the committers held a meeting to decide on the main features for a release.  You can see a recording of the recent committer meeting [http://code.google.com/p/bigbluebutton/wiki/RoadMap here].
+
+During the meeting, the committers would review the [http://code.google.com/p/bigbluebutton/wiki/RoadMap1dot0 BigBlueButton Road Map] according to the following criteria:
+
+  # What items on the road map are important for our target market (distance education)?
+  # What refactoring/features do the core committers believe are necessary to improve the code base/maintainability/usability of the project?
+  # What features are our community asking to implement (specifically, those not related to our target market, like control of remote desktop)?
+
+The !BigBlueButton Road Map is the key document for discussion, along with the issue tracking system, where we track, amongst others, all [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Stability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles stability] and [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Usability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=tiles&nobtn=Update usability] issues.
+
+ 
+=== 2. Design ===
+
+At this point each feature for the release assigned an issue in the !BigBlueButton Issue Tracker (if it does not already have one).  This allows the community to track the progress of each release.  For example, to track the progress for 0.81, see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.81 list of issues tagged for 0.81].
+
+For small features, especially bug fixes, the associate issue provides a sufficient record for coordinating and tracking the development effort.
+
+For more complex features, such as record and playback, API changes, or creation of an HTML5 client, the lead developer for the feature would post specification to !BigBlueButton-dev for review and comment.  
+
+For examples of previous posts, see:
+
+  * [https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/c214cbe9bdb2268a 0.80 API changes]
+  * [https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/c17afb3e850b185a HTML5 Client Architecture]
+  * [https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79 Feature for pre-upload of documents]
+            	
+ 
+=== 3.  Development ===
+
+During the development phase, the committers hold bi-weekly (and sometimes weekly) calls as development proceeds towards beta.
+
+Each committer works on a fork of !BigBlueButton Master.  When feature is ready for commit, the committer sends a pull request to merge the work in the Master branch.   Since the core group is still small and the committers are communicating during development, Richard and others knows when any major pull requests are coming.
+
+*Note:* Not every request needs to be reviewed by the Richard.  If a committer is working on an area of their expertise, then they can usually commit to Master.   In general, any commit that has substantial changes are reviewed by the committer who is an expert on that area of the system and by Richard.
+
+The submitter of the pull request is responsible for ensuring the feature works correctly against Master.  For pull requests that make major changes, the submitter must provide with the pull request additional documentation to make it easy for others to review:
+
+  * What the code does (with reference to the associated issue)
+  * What changes were made to implement the feature/fix the bug
+  * Document of design changes
+
+If the reviewer of the update believes it will negatively affect stability or usability, the request will be rejected and the developer will need to rework the request based on feedback by the reviewer.
+
+BigBlueButton has two continuous integration servers that build packaging for 10.04 32-bit and 64-bit, respectively. Once a update has been committed, a new build of the development packages are available usually within fifteen minutes to the core developers.
+
+Once a release is moved to beta, the public packages are updated so others can begin beta testing.
+ 
+=== 4.  Beta Testing ===
+
+Once all features have been implemented and all major bugs have been fixed, the release moves to beta.  
+
+Before the beta release, the documentation for installation, setting up development environment, and overview of new features are all updated for the release.  For example:
+
+  * [http://code.google.com/p/bigbluebutton/wiki/081SettingDevEnvironment 081SettingDevEnvironment]
+  * [http://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu 081InstallationUbuntu]
+  * [http://code.google.com/p/bigbluebutton/wiki/081Overview 081Overview]
+  * [http://code.google.com/p/bigbluebutton/wiki/081RecordAndPlayback 081RecordAndPlayback]
+
+The product will go through one (or more) betas until the community reports no more major bugs.  Additional work that occurs during this phase includes:
+
+  * [http://code.google.com/p/bigbluebutton/wiki/LocalizationOfBBB Localization] of the product
+  * Updating and fixing documentation
+  * Updating packaging so it installs without errors on both 32-bit and 64-bit, both a new an install and upgrade from previous version
+
+When all the bugs are fixed and issues are closed, the product moves to Release Candidate. 
+
+=== 5.  Release Candidate ===
+
+Stability is paramount for reaching a release candidate build.   These are true release candidates and could be installed on production servers.
+
+Again, depending on feedback from the community, the committers monitor the mailing lists looking for any final bugs or issues that would gate the general release.
+
+Many times we’ll be asked during beta and release candidates what is the release date for !BigBlueButton.  Our motto is “we release on quality, not dates.”
+ 
+=== 6.  General Release ===
+
+After a (roughly) two week period in which no one has reported any issues for a release candidate , the committers change the label (such as 0.80-RC3 to 0.80) and announce the release (sample [https://groups.google.com/forum/#!msg/bigbluebutton-dev/80rKs0RiyUU/TYxi-3ucowsJ release announcement]).
+
+ 
+
+
+
+
+
+
 = Contributing to !BigBlueButton =
 
 == How can I contribute? == 
@@ -1769,18 +1889,17 @@ Keep in mind that !BigBlueButton is largely built by a group of (very determined
 Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://en.wikipedia.org/wiki/BigBlueButton over three years].
 
 Time is a precious commodity.  In general, when planning the a release, we look at the outstanding issues in the following order: 
-  # What are our (paying) customers asking us to implement?
   # What are the most important items on our [RoadMap1dot0 road map]? 
   # What refactoring/features do the [FAQ#BigBlueButton_Committer core committers] believe are necessary to improve the code base/maintainability/usability of the project? 
   # What features are our community asking to implement (specifically, those not related to distance education, like control of remote desktop)?
 
-For (1), the requests from our paying customers come first. This has two benefits: it funds the development of !BigBlueButton and makes sure we keep focused on delivering the requirements for our target market.  If you really want to see your feature implemented, helping your organization become (1) is the best way to achieve it.  
+For (1), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting are not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument the feature belongs in (1).  
 
-For (2), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting are not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument the feature belongs in (2).
+If you are a commercial company that wants to accelerate the development of a feature on the road map (or bug fixes), you can contact one of the companies that provides [http://www.bigbluebutton.org/commercial-support/ commercial support].
 
-For (3), sometimes we'll revisit a previously implemented feature to improve it's performance or refactor the code.  Other times, we'll implement the features that have the highest value to the community with with the least amount of effort.  The features that are high-value and high-effort usually already land in (1) or (2).
+For (2), sometimes we'll revisit a previously implemented feature to improve it's performance or refactor the code.  Other times, we'll implement the features that have the highest value to the community with with the least amount of effort.  The features that are high-value and high-effort usually already land in (1) or (2).
 
-For (4), if your feature does occur in the above during iteration, you have more options.  !BigBlueButton is an open source project: if you (or your organization) want to improve !BigBlueButton, we welcome your contribution.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
+For (3), if your feature does occur in the above during iteration, you have more options.  !BigBlueButton is an open source project: if you (or your organization) want to improve !BigBlueButton, we welcome your contribution.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
 
 === My Mac iSight camera no longer works in !BigBlueButton after a system update to Mac OS X 10.6.5 ===
 
