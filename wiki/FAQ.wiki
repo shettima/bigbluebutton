@@ -49,8 +49,6 @@ If you'd like examples and use cases of people running !BigBlueButton, feel free
 Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit !BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
 
 = !BigBlueButton Development Process =
-#summary One-sentence summary of this page.
-
 As of June 2012, the !BigBlueButton project had 61,000 installs worldwide.  This is a big step since 2008, when the software had just one install at Carleton University.
 
 Today, there is a very active !BigBlueButton community comprising over +1200 members on the developer mailing list.  These members users, developers, educational institutions, and commercial companies -- all are benefiting from improvements to the product.
