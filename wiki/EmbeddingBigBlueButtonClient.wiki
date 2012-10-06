@@ -20,10 +20,12 @@ In this diagram, the 3rd-party javascript will interact with the !BigBlueButton 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-1.png
 
-In the above diagram, we see the steps needed for the 3rd-party application and the Flash Client to be able to communicate with each other.
+In the above diagram, we see the steps needed for the 3rd-party application and the Flash Client to be able to communicate with each other. When the Flash Client loads, it needs to perform a handshake with the HTML container to make sure that communication between Flash and Javascript is possible.
 
 == Call Flow ==
 The diagram below shows a detailed interaction between the 3rd-party application and the Flash Client.
 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-2.png
+
+As an example, let's look at what happens when the user joins the voice conference. The user clicks a HTML button to join the voice conference. Clicking the button executes a javascript function (1) which calls into the !BigBlueButton API bridge. The bridge then executes a callback (2) method exposed by the Flash Client through the !ExternalInterface. The callback handler dispatches an event so that other parts of the client will (4) handle it and perform the necessary action to join the voice conference. An event is dispatched when the user has joined the voice conference which is received by the !EventApiMap (5). The !EventApiMap will invoke methods on the !ExternalApiCall (6) which forwards the call to the API bridge (7). The API bridge then broadcast the event to all interested listeners.
