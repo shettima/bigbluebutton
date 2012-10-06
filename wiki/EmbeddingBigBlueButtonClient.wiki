@@ -2,13 +2,26 @@
 
 = Introduction =
 
-Add your content here.
+This page describes how the Flash !BigBlueButton Client can be driven by an external 3rd-party Javascript.
+
+Some 3rd-party applications want to display parts of !BigBlueButton client in HTML5 while the other parts are still in Flash. To make this happen, we are creating an API bridge so that the 3rd-party application can embed !BigBlueButton Flash Client and be able to send commands as well as receive events from the Flash Client.
 
 
 = Design =
 
+== High-Level Overview ==
+The diagram below shows a high-level design of the capability of a 3rd-party application interacting with the Flash Client.
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb.png
 
+== Message Exchange Sequence ==
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-1.png
+
+In the above diagram, we see the steps needed for the 3rd-party application and the Flash Client to be able to communicate with each other.
+
+== Call Flow ==
+The diagram below shows a detailed interaction between the 3rd-party application and the Flash Client.
+
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-2.png
