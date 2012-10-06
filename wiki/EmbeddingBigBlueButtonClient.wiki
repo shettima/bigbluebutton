@@ -14,6 +14,8 @@ The diagram below shows a high-level design of the capability of a 3rd-party app
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb.png
 
+In this diagram, the 3rd-party javascript will interact with the !BigBlueButton API javascript. The 3rd-party js will register to receive events and call functions on the API bridge to send commands to the Flash Client. The Flash Client exposes some callbacks through the Flash [http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/external/ExternalInterface.html ExternalInterface] class.
+
 == Message Exchange Sequence ==
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-1.png
