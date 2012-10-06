@@ -67,6 +67,9 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-architectur
 
 Figure 1. Prototype extensions to the current !BigBlueButton architecture to support Phase 1: viewer receives presentation, audio, and video (single webcam) and has two-way chat.
 
+== Client Architecture ==
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/html5-client-arch.png
+
 == Prototype Implementation ==
 
 We have been working on an HTML5 prototype by extending !BigBlueButton’s architecture as described in Figure 1. The major pieces are:
