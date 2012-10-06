@@ -5,9 +5,10 @@
 Add your content here.
 
 
-= Details =
+= Design =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-1.png
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/api-bridge/embedding-bbb-2.png
