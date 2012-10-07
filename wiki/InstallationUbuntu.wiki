@@ -400,6 +400,19 @@ $ bbb-conf --salt
 
 We hope you enjoy using !BigBlueButton and welcome your feedback!
 
+
+= Stay Connect With Us =
+<table>
+	<tr>
+		<td><a href="http://facebook.com/bigbluebutton">http://bigbluebutton.org/wp-content/uploads/2011/12/facebook.png</a></td>
+		<td><a href="https://twitter.com/bigbluebutton">http://bigbluebutton.org/wp-content/uploads/2011/12/twitter.png</a></td>
+		<td><a href="http://www.youtube.com/bigbluebuttonshare">http://bigbluebutton.org/wp-content/uploads/2011/12/youtube_icon.png</a></td>
+		<td><a href="https://plus.google.com/b/108594579970371808676/108594579970371808676/posts">http://bigbluebutton.org/wp-content/uploads/2012/07/googleplus.png</a></td>
+	</tr>
+</table>
+<br/>
+
+
 = Troubleshooting =
 
 If you don't find an answer to your questions below, check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  A common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
