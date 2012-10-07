@@ -80,6 +80,16 @@ When you run these commands, you'll see !BigBlueButton download a packages for t
 
 *Note*: Best to always check the [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes release notes] for specific instructions to upgrade to a new release.
 
+=Stay Connected With Us=
+<table>
+	<tr>
+		<td><a href="http://facebook.com/bigbluebutton">http://bigbluebutton.org/wp-content/uploads/2011/12/facebook.png</a></td>
+		<td><a href="https://twitter.com/bigbluebutton">http://bigbluebutton.org/wp-content/uploads/2011/12/twitter.png</a></td>
+		<td><a href="http://www.youtube.com/bigbluebuttonshare">http://bigbluebutton.org/wp-content/uploads/2011/12/youtube_icon.png</a></td>
+		<td><a href="https://plus.google.com/b/108594579970371808676/108594579970371808676/posts">http://bigbluebutton.org/wp-content/uploads/2012/07/googleplus.png</a></td>
+	</tr>
+</table>
+<br/>
 
 = Troubleshooting =
 
