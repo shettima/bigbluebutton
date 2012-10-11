@@ -155,7 +155,7 @@ In the following section is described the monitoring calls
 
 <p>*Parameters:*</p>    
 || *Param Name* || *Required / Optional* || *Type* || *Description* ||
-|| name || Required || String || <p>A name for the meeting.</p> ||
+|| name || Optional|| String || <p>A name for the meeting.</p> ||
 || meetingID || Required || String || <p>A meeting ID that can be used to identify this meeting by the third party application.  This must be unique to the server that you are calling.  If you supply a non-unique meeting ID, you will still have a successful call, but will receive a warning message in the response. If you intend to use the recording feature, the meetingID shouldn't contain commas.</p> ||
 || attendeePW || Optional || String || <p>The password that will be required for attendees to join the meeting. This is optional, and if not supplied, BBB will assign a random password.</p> ||
 || moderatorPW || Optional || String || <p>The password that will be required for moderators to join the meeting or for certain administrative actions (i.e. ending a meeting). This is optional, and if not supplied, BBB will assign a random password.</p> ||
