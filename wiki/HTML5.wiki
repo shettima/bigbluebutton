@@ -122,7 +122,9 @@ sub.on("pmessage", function(pattern, channel, message) {
 
 
 Once the message has been received by sub, it immediately sends it back through SocketIO to all members of the particular room that was specified. From here the client takes care of the message.
-HTML5 Client
+
+
+== HTML5 Client ==
 
 
 The HTML5 client has many different features to it that can and should be taken as individual pieces. All parts of the client share the common goal which essentially will result in either sending a message to the server, or acting on a message received from the server. Usually it does this so fast you wouldn’t even know it has gone to the server and is already back waiting for more. The main features of the client can be seen at a glance (see Figure 4) and include:
@@ -145,7 +147,9 @@ Features include:
 The HTML5 !BigBlueButton client started out as a simple chat between clients. It’s arguably one of the easiest things to implement using !WebSockets. As long as our client has a connected socket through SocketIO, which will occur essentially immediately upon login, sending a message to all members of the meeting is as simple as “socket.emit(‘msg’, “Hello World!”);”. The server, after validation, relays the message to all members of the meeting, including the sender.
 
 This is to say, the user won’t see their update until everyone in the meeting sees the update, and this is the way communication is implemented for all actions in the client. This removes all the burden off of the presenter who may question whether the members of the meeting can see what they are presenting. If the presenter doesn’t see it, nobody can.
-User List/Switcher
+
+
+== User List/Switcher ==
 
 === Features include ===
   * See real-time current users connected.
