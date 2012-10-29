@@ -83,35 +83,6 @@ Also contains output from tomcat6.
 Contains !BigBlueButton grails app logs.
 
 
-= Asterisk =
-== Configuration files ===
-=== /etc/asterisk/bbb_extensions.conf ===
-
-http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bbb_extensions.conf
-
-=== /etc/asterisk/manager.d/bigbluebutton.conf ===
-
-http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bigbluebutton.conf
-
-=== /etc/asterisk/bbb_sip.conf ===
-
-[http://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-voice-conference/config/asterisk/bbb_sip.conf Click here to view the latest version]
-
-
-== Aditional Steps ==
-
-=== extensions.conf ===
-You must to edit the file: /etc/asterisk/extensions.conf and add the following line on the bottom of the file:
-
-#include "bbb_extensions.conf"
-
-=== sip.conf ===
-
-You must to edit the file: /etc/asterisk/sip.conf and add the following line on the bottom of the file:
-
-#include "bbb_sip.conf"
-
-
 = FreeSWITCH =
 == Configuration Files ==
 
