@@ -8,7 +8,8 @@ These instructions require you install !BigBlueButton 0.80 on a *Ubuntu 10.04 32
 
 You can verify you have Ubuntu 10.04 with the following command
 
-{{{~$ cat /etc/lsb-release
+{{{
+$ cat /etc/lsb-release
 DISTRIB_ID=Ubuntu
 DISTRIB_RELEASE=10.04
 DISTRIB_CODENAME=lucid
