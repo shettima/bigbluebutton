@@ -6,6 +6,15 @@
 
 These instructions require you install !BigBlueButton 0.80 on a *Ubuntu 10.04 32-bit or 64-bit* server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
 
+You can verify you have Ubuntu 10.04 with the following command
+
+{{{~$ cat /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=10.04
+DISTRIB_CODENAME=lucid
+DISTRIB_DESCRIPTION="Ubuntu 10.04.4 LTS"
+}}}
+
 We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
 
   # 2 GB of memory (4 GB is better)
