@@ -74,3 +74,7 @@ There is an API example showing how to use Mozilla Persona (BrowserID) to let us
 == OAuth ==
 
 There is an OAuth API example demonstrating how to use OAuth to login to a session.
+
+== LTI ==
+
+!BigBlueButton will have a new module that implements the IMS Learning Tools Integration (LTI) standard to enable !BigBlueButton to be a tool provider.
