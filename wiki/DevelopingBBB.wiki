@@ -123,18 +123,20 @@ You should see
 nothing to commit (working directory clean)
 }}}
 
-The master branch is where most of new development occurs and may break once in a while. If you want to work on the 0.8 release, you need to checkout the {{{v0.8}}} tag.
+To get started with development of !BigBlueButton, you want to use the stable 0.80 release.  When you install !BigBlueButton from packaging, you are installing packages built with the 0.80 release.  To develop on 0.80 packages, you want to be compiling and building on codebase for 0.80 release.
 
-Let's say you are trying to fix Issue 100 and want to develop on v0.8.  (Note: v0.81 is in development, so we recommend if you starting to develop on !BigBlueButton you checkout the release 0.8 as show below.)
+However, when you first clone the !BigBlueButton git repository, git will place you, by default, on the branch master.  This means you have latest checkins for 0.81 development.  Currently, 0.81 is in active development and has not yet reached beta.  As such, if you proceed to compile !BigBlueButton client using 0.81 source and attempt to run it with the other 0.80-based packages on your development environment, it will not work.  The client may crash (master is not always stable), or you may a message such as "Connecting to server ..." but the client never fully loads.
+
+It's really easy to switch git to the stable 0.80 release codebase. The 0.80 codebase was tagged with the label `0.8` when version 0.80 was released.   To switch your local repository to the 0.80 code base, you create a branch off the source tagged with '0.8`.
 
 {{{
-git checkout -b fixing-issue-100 v0.8
+git checkout -b my-bbb-branch v0.8
 }}}
 
 You should see
 
 {{{
-Switched to a new branch 'fixing-issue-100'
+Switched to a new branch 'my-bbb-branch'
 }}}
 
 Do
@@ -146,20 +148,8 @@ git status
 The output should be
 
 {{{
-# On branch fixing-issue-100
+# On branch my-bbb-branch
 nothing to commit (working directory clean)
-}}}
-
-If you want to be on the bleeding edge, you can work on the master branch.
-
-Confirm you are on the master branch
-{{{
-git status
-}}}
-
-Then
-{{{
-git checkout -b fixing-issue-100
 }}}
 
 
