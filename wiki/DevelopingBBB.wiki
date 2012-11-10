@@ -125,11 +125,11 @@ nothing to commit (working directory clean)
 
 When you installed !BigBlueButton from packaging, you have installed components built with the 0.80 release.  
 
-However, when you first clone the !BigBlueButton git repository, git will place you, by default, on the master branch which is the current snapshot of the latest code for !BigBlueButton 0.81.  !BigBlueButton 0.81 is under active development anda has not yet reached beta.  As such, if you proceed to compile !BigBlueButton client using 0.81 source, for example, and attempt to run it with the other 0.80-based components on server, it will not work.  The !BigBlueButton client may crash (the master branch is not always stable during a development cycle), or you may see a loading message such as "Connecting to server ..." that never clears.  
+However, when you first clone the !BigBlueButton git repository, git will place you, by default, on the master branch which is the current snapshot of the latest code for !BigBlueButton 0.81.  !BigBlueButton 0.81 is under active development.  As such, if you proceed to compile a component of !BigBlueButton, such as the !BigBlueButton client, using 0.81 source and attempt to run it with the other 0.80-based components on your server, it may not work.  The !BigBlueButton client may crash (the master branch is not always stable during a development cycle), or you may see a loading message such as "Connecting to server ..." that never clears.  
 
-To get started with development of !BigBlueButton, you want to compile and test on the corresponding source from the 0.80 release.
+To get started with development of !BigBlueButton, you want build components using the corresponding source from the 0.80 release.
 
-It's easy to switch your local git repository to the stable 0.80 codebase. When 0.80 was release, the git repository was tagged with the label `v0.8`.   To switch your local repository to the 0.80 codebase, you create a branch with your own name and append the label `v0.8`.  For example, to create a branch called `my-bbb-branch`, type the git command
+It's easy to switch your local git repository to the stable 0.80 codebase. When 0.80 was release, the git repository was tagged with the label `v0.8`.   To switch your local repository to the 0.80 codebase, you create a branch with a new name and append the label `v0.8`.  For example, to create a branch called 'my-bbb-branch', type the git command
 
 {{{
 git checkout -b my-bbb-branch v0.8
