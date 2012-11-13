@@ -1,7 +1,5 @@
 #summary How to install  BigBlueButton 0.80 on Ubuntu 10.04 in under 30 minutes
 
-* Note: * The package repository is off-line as of 6PM, Monday, November 12th.  We expect to have it back on-line (very) soon.
-
 <wiki:toc max_depth="3" />
 
 = Before you install =
