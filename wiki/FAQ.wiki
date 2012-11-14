@@ -1881,7 +1881,7 @@ in `bigbluebutton/client/BigBlueButton.html`.  You can see the list of languages
 
 Keep in mind that !BigBlueButton is largely built by a group of (very determined) open source developers that volunteer their time.   Some of us work for companies that provide commercial support for !BigBlueButton (see http://bigbluebutton.org/support). 
 
-Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://en.wikipedia.org/wiki/BigBlueButton over three years].
+Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://www.bigbluebutton.org/history/ over four years].
 
 Time is a precious commodity.  In general, when planning the a release, we look at the outstanding issues in the following order: 
   # What are the most important items on our [RoadMap1dot0 road map]? 
