@@ -71,9 +71,9 @@ For developers, you can use the Layout Manager to define new layout types.
 
 There is an API example showing how to use Mozilla Persona (BrowserID) to let users connect into a !BigBlueButton session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1276 1276]).
 
-== OAuth ==
+== OpenID ==
 
-There is an OAuth API example demonstrating how to use OAuth to login to a session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1361 1361]).
+There is an API example demonstrating how to use OpenID to login to a session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1361 1361]).
 
 == LTI ==
 
