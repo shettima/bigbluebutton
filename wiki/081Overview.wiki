@@ -8,7 +8,7 @@ This document gives an overview of what's new in !BigBlueButton 0.81, our eleven
 
 The focus of !BigBlueButton 0.81 is to enhance the record and playback, improve accessibility for students with disabilities, and simplify the management of windows.
 
-The following document highlights the changes.  For details of the work on this release, see the [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 details] in our issue tracking system.
+The following are the highlights of development effort for this upcoming release.  For more detail, see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 list of issues marked for BigBlueButton 0.81].
 
 = Record and Playback =
 
