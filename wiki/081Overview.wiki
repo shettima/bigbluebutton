@@ -12,7 +12,7 @@ The following document highlights the changes.  For details of the work on this 
 
 = Record and Playback =
 
-!BigBlueButton 0.81 now records and playback all activity in the presentation area.  This includes
+!BigBlueButton 0.81 now records and playback all activity in the presentation area (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191]).  This includes
 
   * Mouse movement
   * Whiteboard marks
@@ -21,7 +21,7 @@ The following document highlights the changes.  For details of the work on this 
 It also records and playback all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]).  
 
 = Accessibility =
-There was a Big Push to add more accessibility features into !BigBlueButton this release.
+There was a Big Push to add more accessibility features into !BigBlueButton this release (see [http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).
 
 For the chat module:
   * keyboard navigation
@@ -48,7 +48,7 @@ The whiteboard now has a line tool and text tool.
 
 = Layout Manger =
 
-The New Layout Manager now keeps your windows organized as you resize the browser window.  It also gives you a number of preset layouts to choose from.
+The New Layout Manager now keeps your windows organized as you resize the browser window.  It also gives you a number of preset layouts to choose from (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1060 1060]).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/layout-1.png
 
@@ -69,12 +69,12 @@ For developers, you can use the Layout Manager to define new layout types.
 = API Examples =
 == Browser ID ==
 
-There is an API example showing how to use Mozilla Persona (BrowserID) to let users connect into a !BigBlueButton session
+There is an API example showing how to use Mozilla Persona (BrowserID) to let users connect into a !BigBlueButton session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1276 1276]).
 
 == OAuth ==
 
-There is an OAuth API example demonstrating how to use OAuth to login to a session.
+There is an OAuth API example demonstrating how to use OAuth to login to a session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1361 1361]).
 
 == LTI ==
 
-!BigBlueButton will have a new module that implements the IMS Learning Tools Integration (LTI) standard to enable !BigBlueButton to be a tool provider.
+!BigBlueButton will have a new module that implements the IMS Learning Tools Integration (LTI) standard to enable !BigBlueButton to be a tool provider (see [http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).
