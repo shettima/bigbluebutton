@@ -44,7 +44,7 @@ There is a new 'Shortcuts' dialog that shows you all the keyboard shortcuts.
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/shortcut.png
 
 = Whiteboard =
-The whiteboard now has a line tool and text tool.  
+The whiteboard now has a line tool and text tool (see [http://code.google.com/p/bigbluebutton/issues/detail?id=591 591]).  
 
 = Layout Manger =
 
