@@ -65,6 +65,12 @@ The layout manager is developer friendly.  You can create a new layout on the sc
 
 For developers, you can use the Layout Manager to define new layout types.
 
+= Unify the Users and Listeners window =
+See [http://www.bigbluebutton.org/2012/10/19/simplifying-the-bigbluebutton-ui/ this blog post].
+
+= Make the icons and color scheme more consistent =
+See [http://www.bigbluebutton.org/2012/11/16/more-updates-to-the-bigbluebutton-ui/ this blog post].
+
 
 = API Examples =
 == Browser ID ==
