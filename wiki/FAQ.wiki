@@ -284,7 +284,7 @@ We recommend installing !BigBlueButton on Ubuntu 10.04 32-bit/64-bit on the serv
 
 While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
 
-== What are the minimum hardware requirements for the !BigBlueButton Server ==
+== What are the minimum bandwidth requirements for the !BigBlueButton Server ==
 
 You'll need good upstream and downstream bandwidth from the server.  We recommend (at least) 100 MBits/second bandwidth in both directions.
 
