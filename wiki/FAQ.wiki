@@ -221,7 +221,7 @@ Please read over the [http://bigbluebutton.googlecode.com/files/Contributor%20Ag
 Once we receive the signed Contributor Agreement, we can review your submission for inclusion in !BigBlueButton.  The process for submission depends is different on whether it's a fixing a bug (submitting a patch) or enhancement (submitting a feature).
 
 === Submission of a patch ===
-If you want to contribute a patch to !BigBlueButton, your chances of acceptance are *greatly* improved the following are true:
+If you want to contribute a patch to !BigBlueButton, your chances of acceptance are *greatly* improved if the following are true:
 
   # You are an active participant in [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] and have demonstrated an understanding of the product by helping others and participating in discussions on other patches
   # Your patch fixes an [http://code.google.com/p/bigbluebutton/wiki/IssuesInstructions?tm=3 open issue]. 
