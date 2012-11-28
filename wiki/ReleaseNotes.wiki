@@ -12,7 +12,7 @@ Released: June 18, 2012 ([Installation Installation])
 
   * * Recording of a session * - !BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback.  After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events + media into playback formats (see [RecordPlaybackSpecification Record and Playback Specification]).
 
-  * * Playback of recordings in HTML 5 * - The default playback format will playback synchronized slides, audio, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers are Chrome and Firefox; support for Safari and IE coming soon.  Playback of desktop sharing and webcam is supported through the Matterhorn integration.
+  * * Playback of recordings in HTML 5 * - The default playback format will playback synchronized slides, audio, and chat.  Playback uses  [http://popcornjs.org/ popcorn.js] for playback within an HTML5 browser.  Current supported browsers are Chrome, Firefox, and IE using the Google Chrome Frame.  Playback of desktop sharing and webcam is supported through the Matterhorn integration.
 
   * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings (see [API#Version_0.8 API updates for 0.8]).
 
