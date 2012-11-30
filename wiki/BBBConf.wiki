@@ -112,7 +112,7 @@ Assign a new security salt for the !BigBlueButton API.
 
 
 === `--setup-dev [web|client|apps]` ===
-Sets up the development environment for bbb-web, bbb-client, and bbb-apps.  *NOTE:* Do `bbb-conf --checkout` before running `bbb-conf --setup-dev`.
+Sets up the development environment for bbb-web, bbb-client, and bbb-apps.  *NOTE:* Do `bbb-conf --checkout` before running `bbb-conf --setup-dev`.  For more information, see [DevelopingBBB developing BigBlueButton].
 
 
 === `--start` ===
