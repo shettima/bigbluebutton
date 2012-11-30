@@ -75,11 +75,11 @@ Checks current settings and outlines any potential problems.
 
 
 === `--checkout <repo>` ===
-Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no {{{<repo>}}} is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.
+Checkout !BigBlueButton from http://github.com/bigbluebutton/bigbluebutton as READ-ONLY when no {{{<repo>}}} is passed. You can pass in a repository if when you want to checkout from your fork of !BigBlueButton.  [Note: This command is depreciated in 0.80.]
 
 
 === `--conference <conference_module>` ===
-Switches conference module in Asterisk.  Valid choices are `konference` or `meetme`.
+Switches conference module in Asterisk.  Valid choices are `konference` or `meetme`.  [Note: This command is depreciated in 0.80.]
 
 
 === `--debug` ===
