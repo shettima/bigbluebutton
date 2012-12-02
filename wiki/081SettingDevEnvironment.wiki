@@ -1,4 +1,4 @@
-#summary Setting up the development environment for BigBlueButton 0.81
+#summary Setting up the development environment for BigBlueButton 0.81-dev
 
 = Note =
 
