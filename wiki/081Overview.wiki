@@ -1,10 +1,10 @@
-#summary Overview of BigBlueButton 0.81
+#summary Overview of BigBlueButton 0.81-dev
 
 * Draft *
 
 = Introduction =
 
-This document gives an overview of what's new in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.
+This document gives an overview of what's coming in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.
 
 The focus of !BigBlueButton 0.81 is to enhance the record and playback, improve accessibility for students with disabilities, and simplify the management of windows.
 
