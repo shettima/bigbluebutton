@@ -1,4 +1,4 @@
-#summary How to install BigBlueButton 0.81-beta
+#summary How to install BigBlueButton 0.81-dev
 
 <wiki:toc max_depth="3" />
 
