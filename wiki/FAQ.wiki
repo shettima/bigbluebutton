@@ -1581,6 +1581,9 @@ We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] that use
 
 To test a user's actual internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's upload and download speeds.  If these numbers are much less than .5 Mbits/sec upload speed and 1.0 Mbits/sec download, their audio will be poor.  One quick check is to ask the users to turn of any file transfer they have in the background (such as bittorrent clients) and run the test again. 
 
+If you can have the use the ping command (windows or Unix prompt) to ping the BigBlueButton server, you want to see a ping response of less than 100ms. 
+
+Also, if the user's client takes over a minute to load, they are likely tunnelling through port 80, which will further degrade the audio.
 
 
 In general, if all users are encountering audio problems, the issue might be with the !BigBlueButton CPU being overloaded or the bandwidth to the !BigBlueButton server is saturated.
