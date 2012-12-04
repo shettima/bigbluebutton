@@ -499,3 +499,22 @@ to
 {{{
 <localeversion suppressWarning="false">0.8</localeversion>
 }}}
+
+= Developing Using Eclipse =
+This instructions assumes that you are developing with the VM running on a Windows machine.
+
+Set-up Samba
+
+{{{
+ bbb-conf --setup-samba 
+}}}
+
+Now map the VM as a network drive.
+
+For each project, you need to generate Eclipse project files. So, in bbb-app, you run the following to generate the project file.
+
+{{{
+  gradle eclipse
+}}}
+
+Then you can import the project into Eclipse by clicking on File->New-> Java Project. Uncheck "Use default location" and browse to the project you want to import. 
