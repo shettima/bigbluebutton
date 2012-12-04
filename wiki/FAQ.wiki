@@ -509,11 +509,18 @@ If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}.
 = Configuration =
 
 == What are the minimum requirements for the !BigBlueButton client? ==
-Users need to be running a web browser with Flash 10.3.  To check the version of flash visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
+Users need a web browser capable of running Flash 10.3.  To check the version of flash visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
 
 As of Mac OS X 10.6, Apple stopped updating Flash.  If a Mac user is running an out-of-date version of Flash (!BigBlueButton will check the version of flash), they can upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
 
 To run the desktop sharing the presenter (and only the presenter) needs to have a Java runtime.  You can test that Java is installed by visiting [http://java.com/en/download/testjava.jsp Java Test Page] (there are download links on this page if you need to install Java).
+
+For bandwidth we recommend 1Mbits download and 0.5 Mbits upload speed.  Users can test their actual bandwidth using speedtest.net.
+
+For hardware we recommend a Dual-core CPU with at least 2G of memory.  For Mac, we recommend any Mac running Mac OS X operating system.
+
+*Note*: There is currently an issue with Google Chrome 23 on Mac OS X.  We recommend users run FireFox or Safai until the next release of chrome.
+
   
 == How many simultaneous users can !BigBlueButton support == 
 
