@@ -99,11 +99,13 @@ chmod 755 ~/dev/tools/flex-4.5.0.20967/bin/*
 sudo chmod -R +r ~/dev/tools/flex-4.5.0.20967
 }}}
 
+We can now create a linked directory with a shortened name for easier referencing.
 {{{
-if [ ! -L $BASE/flex ]; then
-ln -s $BASE/flex-4.5.0.20967 $BASE/flex
-fi
+ln -s ~/dev/tools/flex-4.5.0.20967 ~/dev/tools/flex
+}}}
 
+
+{{{
 if [ ! -f $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2/playerglobal.swc ]; then
 mkdir -p $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2
                         cd $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2
