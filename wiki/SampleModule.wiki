@@ -1,4 +1,4 @@
-#summary Creating a simple module in BigBlueButton 0.7 and above
+#summary Creating a simple module in BigBlueButton 0.8 and above
 
 == Getting Started ==
 Follow the [DevelopingBBB instructions] on setting up your development environment.
@@ -33,113 +33,49 @@ The !ExampleChatWindow contains the UI for our module. The UI components in the 
 === !ExampleChatProxy.mxml ===
 The !ExampleChatProxy class has all the logic for communicating with the server, sending chat messages and receiving them. The class extracts the netConnection object from the attributes passed to it and uses the connection to the server to connect a !RemoteSharedObject to the server. When the user clicks the "Send Message" button on the UI, the !sendMessage() method on the Proxy class is called, which updates the [http://livedocs.adobe.com/flex/3/langref/flash/net/SharedObject.html RemoteSharedObject] on the server with the new message string value. The server then calls back all the client which are connected to that !RemoteSharedObject with the updated string. In this case, the server calls the method !serverCallback(). This method updates the UI of our module, and the message appears in the window.
 
-=== Compiling bbb-client Modules Under Ubuntu 10.04 using mxmlc ===
-As you might know Ubuntu does not support Flash Builder, instead it has command to compile packages - ***mxmlc*** (Flex SDK). Sometimes compiling modules could be  confusing, because of all libraries need to be included, also you need to move compiled file from directory it was  compiled (where mxmlc is located) to  directory it should be run from.
+=== Compiling bbb-client Modules Under Ubuntu 10.04 using [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/build.xml build.xml] ===
+As you might know Ubuntu does not support Flash Builder, instead we have ant commands which use mxmlc (Flex SDK) to compile the client components.
 
-Here is the command that can help you to compile bbb-client module (for example let's compile ExampleChatModule):
+In order to make !ant compile the !ExampleChatModule you need to edit the build.xml file in the root of bbb-client.
 
-{{{
-mxmlc  /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/ExampleChatModule.mxml -sp /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src  -l /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/libs -locale -accessible
-}}}
-
-Than you need to move * swf file that was created in src directory to bin directory by typing:
-{{{
-mv  /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/ExampleChatModule.swf /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/bin
-}}}
-
-If you don't want to do this process every time you need to compile the Module, please look below to the script that will do this commands for you.
-
-=== bbb-client Modules Bash Compiler ===
-
- To facilitate the whole process here is what you should do (script only works if you have development environment installed and the user account name is "firstuser")
-
-  1. Create new file call it ***compile-bbb-client-module*** (its ok not to use extension)
- 2. Copy and paste script below into the file
-
- 3. Run the script by opening Terminal and executing  file that you have copied the script (e.g ***./compile-bbb-client-module ExampleChatModule *** )
-
-  When it compiles just go to your BBB website and check if new module appeared.
-
-
- Here is small bash script that will help you compiling bbb-client modules:
-
- {{{
-
-#!/bin/bash
-
-
-#Checks number of arguments
-if [ ! -n "$1" ]
-then
-  echo ""	
-  echo "ERROR:Syntax for this command is ./compile-module <moduleName> (without extension just name) "
-  echo " "
-  exit 
-fi  
-# Shows current version of script
-if [ "$1" == "-v" ]
-	then
-		echo " bbb-client Module Compiler"
-		echo "     v 1.0  Created: September 28, 2011"
-		echo "		by Anatoly Spektor  << http://myprogrammingblog.com  >>"
-		exit
-fi
-
-#if number of arguments are correct check if file name that user passed exist
-if [ -f "/home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/$1.mxml" ]
-then
- #if exist compile using mxmlc parameters such as sourcepath libraries etc
-  mxmlc  /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/$1.mxml -sp /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src  -l /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/libs -locale -accessible
- else
- 	echo "$1.mxml does not exist, please choose another name"
-fi
-
-#if compilation went well compilable file should be in the directory
-if [ -f "/home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/$1.swf" ]
-  then
-
-	#IF  COMPILABLE FILE EXIST --> MOVE TO "BIN"
-		
-	mv  /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/$1.swf /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/bin
-	#OUTPUT SUCCESS
-	echo " ----------------------------------------------------- "
-	echo "CONGRATULATIONS FILE: $1.swf  COMPILED AND MOVED TO:"
-	echo " 						/home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/bin " 
-	echo " ----------------------------------------------------- "
-  else
-	#OUTPUT ERROR
-	echo " ----------------------------"
-	echo "$1.swf was not created"
-	echo " ----------------------------"
-  fi
-
-
-}}}
-
-To be able to run  the script from anywhere do the following:
-
- 1. open Terminal,  type
-
-  {{{
-    gedit ~/.bashrc
- }}}
-
- 2. Go to the end and append the following (change the cd part  to *** "cd the location of "compile-bbb-client-module" script ***):
-
- {{{
-  alias compile-bbb-client-module='cd /home/firstuser/dev/add-ons; ./compile-bbb-client-module'
-}}}
-
-  3. Close ***.bashrc*** file and ***source it*** by typing in terminal:
-
- {{{
-  source ~/.bashrc
-}}}
-
- 4. Run the script by typing:
+First you need to add a line near the top (line [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/build.xml#L25 25]).
 
 {{{
-  compile-bbb-client-module ExampleChatModule
+<property name="EXAMPLE_CHAT" value="ExampleChatModule" />
 }}}
 
- Now you have a script that can compile any bbb-client's module. Hope this will facilitate your work.
+This line is used throughout the rest of the build process as a shortened name for the module you're building.
+
+You now need to add an entry (line [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/build.xml#L165 165]) that will allow for the ExampleChatModule to actually be built.
+
+{{{
+<target name="build-example-chat" description="Compile Example Chat Module">
+	<build-module src="${SRC_DIR}" target="${EXAMPLE_CHAT}" />
+</target>
+}}}
+
+Because our ExampleChatModule is very simple and basic you don't need to add any extra information to the build process. You can take a take a look at the other target entries with the name "build-x" for examples of more complex build statements.
+
+Once you've added the previous two entries the build setup is finished. 
+
+To now actually build the ExampleChatModule you need to add a final entry near the end of the document that will give a build name for ant to look up.
+
+At the end of the document there should be a target entry with the name "build-custom". You could modify it and make it reference build-example-chat, but we're going to add our own entry instead.
+
+Add the following after the build-custom entry.
+
+{{{
+<target name="build-custom-chat" depends="init-ant-contrib, build-example-chat" description="Build the ExampleChatModule only to reduce build time" />
+}}}
+
+You can now build the module from the terminal.
+
+{{{ 
+ant build-custom-chat 
+}}}
+
+When you build this way only the module that you specify is built and updated. This method has advantages and disadvantages though. When you only build one module you can reduced the 3-5 minutes of build time down to a couple of seconds.
+
+If you want to be enable rebuilding of the ExampleChatModule when you run just ant as well you need to add a entry to the existing module groupings (line [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/build.xml#L227 227]) so that ours is linked in also.
+
+You now have build control over your client module.
