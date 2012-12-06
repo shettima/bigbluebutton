@@ -68,6 +68,7 @@ sudo apt-get install git-core ant openjdk-6-jdk
 Next you need to make a directory to hold the tools needed for BigBlueButton development.
 {{{
 mkdir -p ~/dev/tools
+cd ~/dev/tools
 }}}
 
 Then we need to grab and install the actual BigBlueButton development tools. We need to install gradle-0.8, grails-1.1.1, and groovy-1.6.5. It's a good idea to read up on your own and get familiar with the uses and roles of these tools, it will help you understanding of their use in BigBlueButton.
@@ -78,24 +79,27 @@ wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar.gz
 tar xvfz gradle-0.8.tar.gz
 }}}
 
-{{{
-if [ ! -f $BASE/flex-4.5.0.20967/flex-sdk-description.xml ]; then
-cd $BASE
-if [ ! -f flex_sdk_4.5.0.20967_mpl.zip ]; then
-wget http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.5/flex_sdk_4.5.0.20967_mpl.zip
-fi
-mkdir -p $BASE/flex-4.5.0.20967
-cd $BASE/flex-4.5.0.20967
-unzip $BASE/flex_sdk_4.5.0.20967_mpl.zip
-#
-# The permissions are not in good shape, so let's fix them
-#
-sudo find $BASE/flex-4.5.0.20967 -type d -exec chmod o+rx '{}' \;
-chmod 755 $BASE/flex-4.5.0.20967/bin/*
-sudo chmod -R +r $BASE/flex-4.5.0.20967
-#sudo chmod o+w /usr/share/flex-4.5.0.20967/frameworks/projects/framework/bundles
-fi
+Next we need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SKD BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
 
+First we have to download the zipped up SDK from the Adobe site.
+{{{
+wget http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.5/flex_sdk_4.5.0.20967_mpl.zip
+}}}
+
+Then we need to make a directory for it and unzip it.
+{{{
+mkdir -p ~/dev/tools/flex-4.5.0.20967
+unzip $BASE/flex_sdk_4.5.0.20967_mpl.zip -d flex-4.5.0.20967
+}}}
+
+The Flex SDK is now unzipped and ready to go, but the permissions aren't in good shape. We need to fix them.
+{{{
+sudo find ~/dev/tools/flex-4.5.0.20967 -type d -exec chmod o+rx '{}' \;
+chmod 755 ~/dev/tools/flex-4.5.0.20967/bin/*
+sudo chmod -R +r ~/dev/tools/flex-4.5.0.20967
+}}}
+
+{{{
 if [ ! -L $BASE/flex ]; then
 ln -s $BASE/flex-4.5.0.20967 $BASE/flex
 fi
