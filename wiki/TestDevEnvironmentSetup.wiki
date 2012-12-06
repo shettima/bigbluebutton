@@ -58,45 +58,27 @@ and get back a list of files in the current directory.
 
 == Setting up the development tools ==
 
-On a !BigBlueButton server, you can install all the necessary development tools with the following command:
+On a !BigBlueButton server, you can install all the necessary development tools by following the steps below:
 
+First you need to install the core development tools.
 {{{
-   bbb-conf --setup-dev tools
+sudo apt-get install git-core ant openjdk-6-jdk
+}}}
+
+Next you need to make a directory to hold the tools needed for BigBlueButton development.
+{{{
+mkdir -p ~/dev/tools
+}}}
+
+Then we need to grab and install the actual BigBlueButton development tools. We need to install gradle-0.8, grails-1.1.1, and groovy-1.6.5. It's a good idea to read up on your own and get familiar with the uses and roles of these tools, it will help you understanding of their use in BigBlueButton.
+
+For each of the three tools you will need to download a tar.gz file with wget and then unpack it with tar. The code for downloading and unpacking gradle is below.
+{{{
+wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar.gz
+tar xvfz gradle-0.8.tar.gz
 }}}
 
 {{{
-#
-# Check for core development tools
-#
-if ! which git > /dev/null; then
-sudo apt-get install git-core -y --force-yes
-fi
-
-if ! which ant > /dev/null; then
-sudo apt-get install ant -y --force-yes
-fi
-
-if ! which javac > /dev/null; then
-sudo apt-get install openjdk-6-jdk -y --force-yes
-fi
-
-BASE=~/dev/tools
-mkdir -p $BASE
-#
-# Check for BigBlueButton-specific development tools
-#
-TOOLS="gradle-0.8 grails-1.1.1 groovy-1.6.5"
-for tool in $TOOLS; do
-if [ ! -d $BASE/$tool ]; then
-cd $BASE
-if [ ! -f $tool.tar.gz ]; then
-wget http://bigbluebutton.googlecode.com/files/$tool.tar.gz
-fi
-echo "Installing $tool to $BASE/$tool"
-tar xvfz $tool.tar.gz
-fi
-done
-
 if [ ! -f $BASE/flex-4.5.0.20967/flex-sdk-description.xml ]; then
 cd $BASE
 if [ ! -f flex_sdk_4.5.0.20967_mpl.zip ]; then
