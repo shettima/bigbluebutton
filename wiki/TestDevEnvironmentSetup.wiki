@@ -104,21 +104,17 @@ We can now create a linked directory with a shortened name for easier referencin
 ln -s ~/dev/tools/flex-4.5.0.20967 ~/dev/tools/flex
 }}}
 
-
+For the final thing to download we need to get a library to facilitate h264 video in the client.
 {{{
-if [ ! -f $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2/playerglobal.swc ]; then
 mkdir -p $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2
-                        cd $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2
-                        if [ ! -f playerglobal11_2.swc ]; then
+cd $BASE/flex-4.5.0.20967/frameworks/libs/player/11.2
 wget http://download.macromedia.com/get/flashplayer/updaters/11/playerglobal11_2.swc
-                        fi
 mv -f playerglobal11_2.swc playerglobal.swc
-                fi
+}}}
 
+Now we need to setup environment variables for all the development tools we've just downloaded.
+{{{
 if ! grep -q GROOVY_HOME ~/.profile; then
-echo "
-#
-# BigBlueButton: Setup development environment
 
 export GROOVY_HOME=$HOME/dev/tools/groovy-1.6.5
 export PATH=\$PATH:\$GROOVY_HOME/bin
@@ -136,47 +132,12 @@ export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
 export ANT_OPTS=\"-Xmx512m -XX:MaxPermSize=512m\"
 " >> ~/.profile
 fi
-
-if [ ! -n "$GROOVY_HOME" ]; then
-echo "
-
-# Finished setting up your development environment variables in
-#
-# $HOME/.profile
-#
-# Before you continue, you need to load them into your environment.
-# Do the following
-#
-# source ~/.profile
-#
-# You then need to checkout the source for BigBlueButton. See
-#
-# http://code.google.com/p/bigbluebutton/wiki/08SettingDevEnvironment
-#
-"
-
-exit 0
-fi
-fi
-
-check_tools ~/dev/tools
-
-check_source ~/dev/bigbluebutton
 }}}
 
-When you run this script, you will be asked to enter your password to sudo into root.  This script will:
-
-  # Download and setup groovy, grails, and gradle
-  # Download and install Open Source Flex SDK
-  # Install OpenJDK 
-  # Install git
-  # Add the necessary environment variables in your ~/.profile
-
-
-After the initial setup is complete, you'll need to reload your `.profile` to use the new environment variables for groovy, grails, and gradle.  To do this, run
+For the final step in the process you'll need to reload your `.profile` to use the new environment variables for groovy, grails, and gradle.  To do this, run
 
 {{{
-  source ~/.profile
+source ~/.profile
 }}}
 
 You need only do this once.  When you next login to your account, you'll have the environment variables in place.
