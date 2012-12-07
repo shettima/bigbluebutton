@@ -378,27 +378,22 @@ to
  # You should now be able to launch from Flash Builder using the Run/Debug button.
 
 = Developing BBB-Web =
+
+This section will walk you through the steps to set up development for bigbluebutton-web.
+
+First we need to copy the bigbluebutton.properties file from the packaged bbb-web to our development folder.
 {{{
-bbb-conf --setup-dev web
+cp /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ~/dev/bigbluebutton/bigbluebutton-web/grails-app/conf
 }}}
+
+Now you need to give your user account access to upload slides to the presentation directory and also access to write log files.
 {{{
-	BBBWEBHOME=$HOME/dev/bigbluebutton/bigbluebutton-web
-check_source $BBBWEBHOME
+sudo chmod -R ugo+rwx /var/bigbluebutton
+sudo chmod -R ugo+rwx /var/log/bigbluebutton
+}}}
 
-        cp ${SERVLET_DIR}/bigbluebutton/WEB-INF/classes/bigbluebutton.properties $BBBWEBHOME/grails-app/conf
-
-
-        # Enabling $USER to write to /var/bigbluebutton to upload slides
-        sudo chmod -R ugo+rwx /var/bigbluebutton
-
-        # Enabling $USER to write to /var/log/bigbluebutton to write log files
-        sudo chmod -R ugo+rwx /var/log/bigbluebutton
-
-# Resolving dependencies
-cd $BBBWEBHOME
-gradle resolveDeps
-
-        if [ ! -f /etc/bigbluebutton/nginx/web_dev ]; then
+Now you need to create the nginx file that will redirect calls to your development bbb-web.
+{{{
 echo "
 # Handle request to bbb-web running within Tomcat. This is for
 # the BBB-API and Presentation.
@@ -423,36 +418,23 @@ proxy_temp_file_write_size 64k;
 include fastcgi_params;
 }
 " | sudo tee /etc/bigbluebutton/nginx/web_dev > /dev/null 2>&1
+}}}
 
-    fi
-
-    #sudo rm /etc/bigbluebutton/nginx/web.nginx
-    sudo ln -s -f /etc/bigbluebutton/nginx/web_dev /etc/bigbluebutton/nginx/web.nginx
-
-    sudo /etc/init.d/nginx restart
-
-    echo "
-# Done. To run your local build of bbb-web:
-
-cd ${BBBWEBHOME}
-grails -Dserver.port=8888 run-app
-
-## Note ##
-
-You'll get an error running the above the first time. Just cancel and run again.
-"
+Now we just need to create a link so that the requests are redirected properly and restart nginx.
+{{{
+sudo ln -s -f /etc/bigbluebutton/nginx/web_dev /etc/bigbluebutton/nginx/web.nginx
+sudo /etc/init.d/nginx restart
 }}}
 
 Now let's start grails webapp.
 {{{
-cd /home/firstuser/dev/bigbluebutton/bigbluebutton-web/
+cd ~/dev/bigbluebutton/bigbluebutton-web/
 }}}
 
-Download the necessary libs.
+Download the necessary libraries.
 {{{
 gradle resolveDeps
 }}}
-
 
 Tell grails to listen on port 8888
 {{{
@@ -471,8 +453,6 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
   sudo chmod -R o+w /usr/share/red5/webapps
 }}}
 
-
-
 ===Developing BBB-Apps===
 Run the setup script. This will remove the bbb-apps package from red5/webapps.
 
@@ -480,21 +460,21 @@ Run the setup script. This will remove the bbb-apps package from red5/webapps.
 bbb-conf --setup-dev apps
 }}}
 {{{
-	BBBAPPSHOME=~/dev/bigbluebutton/bigbluebutton-apps
+BBBAPPSHOME=~/dev/bigbluebutton/bigbluebutton-apps
 check_source $BBBAPPSHOME
 
-        #
-        # We're going to make it easier to deploy by giving write access to others to
-        # $RED5_DIR/webapps
-        #
-        sudo chmod -R o+w $RED5_DIR/webapps
+#
+# We're going to make it easier to deploy by giving write access to others to
+# $RED5_DIR/webapps
+#
+sudo chmod -R o+w $RED5_DIR/webapps
 
-        #
-        # Let's remove the existing bbb-apps
-        #
-        if dpkg-query -s bbb-apps | grep "install ok installed" > /dev/null 2>&1; then
+#
+# Let's remove the existing bbb-apps
+#
+if dpkg-query -s bbb-apps | grep "install ok installed" > /dev/null 2>&1; then
 sudo apt-get purge --yes bbb-apps
-        fi
+fi
 
 echo "
 # Done. To run your local build of bbb-apps:
