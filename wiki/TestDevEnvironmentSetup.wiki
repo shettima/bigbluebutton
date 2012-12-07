@@ -457,77 +457,43 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
 Run the setup script. This will remove the bbb-apps package from red5/webapps.
 
 {{{
-bbb-conf --setup-dev apps
-}}}
-{{{
-BBBAPPSHOME=~/dev/bigbluebutton/bigbluebutton-apps
-check_source $BBBAPPSHOME
-
-#
-# We're going to make it easier to deploy by giving write access to others to
-# $RED5_DIR/webapps
-#
-sudo chmod -R o+w $RED5_DIR/webapps
-
-#
-# Let's remove the existing bbb-apps
-#
-if dpkg-query -s bbb-apps | grep "install ok installed" > /dev/null 2>&1; then
 sudo apt-get purge --yes bbb-apps
-fi
-
-echo "
-# Done. To run your local build of bbb-apps:
-
-sudo /etc/init.d/red5 stop
-cd ${BBBAPPSHOME}
-gradle resolveDeps
-gradle clean war deploy
-cd $RED5_DIR
-sudo -u red5 ./red5.sh
-
-# To restore the packaged version of bbb-apps:
-
-rm -rf $RED5_DIR/webapps/bigbluebutton
-sudo apt-get install bigbluebutton
-sudo /etc/init.d/red5 start
-"
 }}}
 
-Stop red5
+Before you build and deploy bbb-apps you need to make sure to first stop the red5 service.
 {{{
-    sudo /etc/init.d/red5 stop
+sudo sevice red5 stop
 }}}
 
-Compile and deploy bbb-apps
+Now you can compile and deploy bigbluebutton-apps.
 {{{
 cd /home/firstuser/dev/bigbluebutton/bigbluebutton-apps
 gradle resolveDeps
 gradle clean war deploy
-
 }}}
 
-Start Red5
+And finally you can start the red5 service up again.
 {{{
-cd /usr/share/red5/
-sudo -u red5 ./red5.sh
+sudo service red5 start
 }}}
 
 == Developing BBB-Voice ==
-{{{
-# Stop red5
-    sudo /etc/init.d/red5 stop
 
+First you need to stop red5.
+{{{
+sudo service red5 stop
+}}}
+
+Then you can compile and deploy the application.
+{{{
 cd /home/firstuser/dev/bigbluebutton/bbb-voice
 gradle resolveDeps
-
-# Compile and deploy bbb-voice
 gradle war deploy
+}}}
 
-# On another terminal window, start Red5
-cd /usr/share/red5/
-sudo -u red5 ./red5.sh
-
+And finally start red5 up again.
+{{{
+sudo service red5 start
 }}}
 
 == Developing Deskshare ==
