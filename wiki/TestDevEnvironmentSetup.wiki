@@ -222,95 +222,57 @@ With the development environment checked out and the code cloned, we're ready to
 This section will walk you through making a change to the !BigBlueButton client.  
 
 == Setting up the environment ==
-To setup the client for development for the client, do the following
+To setup the client for development for the client follow the steps below.
 
+The first thing we need to do is copy the config.xml file from the packaged client to our development directory. 
 {{{
-bbb-conf --setup-dev client
+cp /var/www/bigbluebutton/client/conf/config.xml $BBBCLIENTHOME/src/conf/config.xml
 }}}
+
+The config.xml file is one of the first parts of the client that is loaded and it determines what modules are retrieved and what configurable settings they have. New developers should read it over to see what settings they can change without modifying the client code.
+
+It's also important to note that when packaged config.xml is updated by either a repository update or by changing your BigBlueButton server's ip with --setip, the copy of config.xml in your development directory isn't modified. It's up to you to make sure it has the latest changes.
+
+Next we're going to copy an xml file that is used to test the client. *Might be outdated*
 {{{
-	BBBCLIENTHOME=$HOME/dev/bigbluebutton/bigbluebutton-client
-check_source $BBBCLIENTHOME
+cp $BBBCLIENTHOME/resources/dev/join-mock.xml $BBBCLIENTHOME/src/conf/join-mock.xml
+}}}
 
-#
-# Setup initial values from the working environment
-#
-                cp /var/www/bigbluebutton/client/conf/config.xml $BBBCLIENTHOME/src/conf/config.xml
-                cp $BBBCLIENTHOME/resources/dev/join-mock.xml $BBBCLIENTHOME/src/conf/join-mock.xml
-
-#
-# We're going to create a symbolic link to the new location for BigBlueButton client
-#
-if [ ! -f /etc/bigbluebutton/nginx/client_dev ]; then
+Now we need to setup nginx to redirect calls to the client towards our development version. If you don't already have a nginx client development file at /etc/bigbluebutton/nginx/client_dev, create one with the following command. Make sure to replace "firstuser" with your own username if it's different.
+{{{
 echo "
 location /client/BigBlueButton.html {
-root $BBBCLIENTHOME;
+root /home/firstuser/dev/bigbluebutton/bigbluebutton-client;
 index index.html index.htm;
 expires 1m;
 }
 
 # BigBlueButton Flash client.
 location /client {
-root $BBBCLIENTHOME;
+root /home/firstuser/dev/bigbluebutton/bigbluebutton-client;
 index index.html index.htm;
 }
 " | sudo tee /etc/bigbluebutton/nginx/client_dev > /dev/null 2>&1
+}}}
 
-fi
+Now we need to create a symbolic link so our client redirect works.
+{{{
 sudo ln -f -s /etc/bigbluebutton/nginx/client_dev /etc/bigbluebutton/nginx/client.nginx
+}}}
 
-if [ ! -L $BBBCLIENTHOME/client ]; then
-ln -s $BBBCLIENTHOME/bin $BBBCLIENTHOME/client
-fi
+Now we need to create a symbolic link between the /bin directory where the client is built to and /client so the name is nicer looking.
+{{{
+ln -s ~/dev/bigbluebutton/bigbluebutton-client/bin ~/dev/bigbluebutton/bigbluebutton-client/client
+}}}
 
-echo
+Now we need to restart nginx so our changes take effect.
+{{{
 sudo /etc/init.d/nginx restart
-
-# xxx
-#if [ ! -d /var/bigbluebutton/conference-mock-default/conference-mock-default/room-mock-default ]; then
-# echo "# Creating /var/bigbluebutton/conference-mock-default/conference-mock-default/room-mock-default"
-                # sudo mkdir -p /var/bigbluebutton/conference-mock-default/conference-mock-default/room-mock-default
-# echo "# chown /var/bigbluebutton/conference-mock-default to tomcat6"
-# sudo chown -R tomcat6:tomcat6 /var/bigbluebutton/conference-mock-default
-                #fi
-
-                cd $BBBCLIENTHOME
-
-                echo "
-# Setup of development for bigbluebutton-client complete.
-#
-# 1. Build the language files. (You need only do this once unless
-# you change the language files in the future.)
-#
-# cd ${BBBCLIENTHOME}
-# ant locales
-#
-# 2. Modify the source for the client. The source is locatedt at
-#
-# $BBBCLIENTHOME
-#
-# 3. Build the client
-#
-# cd ${BBBCLIENTHOME}
-# ant
-
-"
 }}}
 
-This command modifies the nginx settings for !BigBlueButton so that HTTP request for loading the !BigBlueButton client are now serviced by 
-
-{{{
-~/dev/bigbluebutton/bigbluebutton-client/bin
-}}}
-
-instead of
-
-{{{
-/var/www/bigbluebutton
-}}}
 
 == Build the client ==
 Let's now build the client  Note we're not making any changes yet -- we're going to build the client to ensure it works.
-
 
 {{{
 cd ~/dev/bigbluebutton/bigbluebutton-client
