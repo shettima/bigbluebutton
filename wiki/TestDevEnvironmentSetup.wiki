@@ -112,7 +112,11 @@ wget http://download.macromedia.com/get/flashplayer/updaters/11/playerglobal11_2
 mv -f playerglobal11_2.swc playerglobal.swc
 }}}
 
-Now we need to setup environment variables for all the development tools we've just downloaded.  {{{ vi ~/.profile }}} and paste the following text at bottom of file.
+Now we need to setup environment variables for all the development tools we've just downloaded.  
+{{{ vi ~/.profile }}} 
+
+and paste the following text at bottom of file.
+
 {{{
 
 export GROOVY_HOME=$HOME/dev/tools/groovy-1.6.5
