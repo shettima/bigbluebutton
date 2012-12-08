@@ -17,7 +17,7 @@ To help you setup the necessary developer environment, we've put in much of the 
 
 to understand what it is doing.  The more you know about !BigBlueButton, the easier it is to make your own changes and contribute to the project.
 
-In !BigBlueButton 0.8-beta-4 (and later), we've generalized these instructions so you can use any unix account on a !BigBlueButton server.
+In !BigBlueButton 0.81, we've generalized these instructions so you can use any unix account on a !BigBlueButton server.
 
 
 
@@ -26,7 +26,7 @@ The source for !BigBlueButton is on [https://github.com/bigbluebutton/bigbluebut
 
 == Prerequisites ==
 
-This guide is written for !BigBlueButton 0.8-beta-4 or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see InstallationUbuntu).  
+This guide is written for !BigBlueButton 0.81 or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see InstallationUbuntu).  
 
 === The Basics ===
 Before setting up a development environment, you should have already
@@ -36,7 +36,7 @@ Before setting up a development environment, you should have already
 
 === A Working !BigBlueButton Server ===
 
-You need to have a working !BigBlueButton server 0.8-beta-4 (or later) to setup a development environment.
+You need to have a working !BigBlueButton server 0.81 (or later) to setup a development environment.
 
 While it may seem obvious, we emphasize your !BigBlueButton server should be working *before* you start setting up the development environment.  That way, if you do run a modified version of the !BigBlueButton client and something isn't working, you can switch back to the built-in client to check that your environment is working correctly.
 
@@ -89,7 +89,7 @@ wget http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.5/flex_sdk_4.5.0.2096
 Then we need to make a directory for it and unzip it.
 {{{
 mkdir -p ~/dev/tools/flex-4.5.0.20967
-unzip $BASE/flex_sdk_4.5.0.20967_mpl.zip -d flex-4.5.0.20967
+unzip flex_sdk_4.5.0.20967_mpl.zip -d flex-4.5.0.20967
 }}}
 
 The Flex SDK is now unzipped and ready to go, but the permissions aren't in good shape. We need to fix them.
