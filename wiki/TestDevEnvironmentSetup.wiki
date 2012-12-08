@@ -188,9 +188,9 @@ You should see
 nothing to commit (working directory clean)
 }}}
 
-When you installed !BigBlueButton from packaging, you have installed components built with the 0.80 release.  
+When you installed !BigBlueButton from packaging, you have installed components built with the production 0.81 release.  
 
-However, when you first clone the !BigBlueButton git repository, git will place you, by default, on the master branch which is the current snapshot of the latest code for !BigBlueButton 0.81.  !BigBlueButton 0.81 is under active development.  As such, if you proceed to compile a component of !BigBlueButton, such as the !BigBlueButton client, using 0.81 source and attempt to run it with the other 0.80-based components on your server, it may not work.  The !BigBlueButton client may crash (the master branch is not always stable during a development cycle), or you may see a loading message such as "Connecting to server ..." that never clears.  
+However, when you first clone the !BigBlueButton git repository, git will place you, by default, on the master branch which is the current snapshot of the latest code for !BigBlueButton.  !BigBlueButton is always under active development.  As such, if you proceed to compile a component of !BigBlueButton, such as the !BigBlueButton client, using master source and attempt to run it with the other 0.81-based components on your server, it may not work.  The !BigBlueButton client may crash (the master branch is not always stable during a development cycle), or you may see a loading message such as "Connecting to server ..." that never clears.  
 
 To get started with development of !BigBlueButton, you want build components using the corresponding source from the 0.80 release.
 
