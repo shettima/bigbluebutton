@@ -113,7 +113,9 @@ mv -f playerglobal11_2.swc playerglobal.swc
 }}}
 
 Now we need to setup environment variables for all the development tools we've just downloaded.  
-{{{ vi ~/.profile }}} 
+{{{ 
+vi ~/.profile
+}}} 
 
 and paste the following text at bottom of file.
 
