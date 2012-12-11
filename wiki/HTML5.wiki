@@ -226,3 +226,35 @@ Features include:
 Clicking the logout button sends a message to Node through SocketIO, which deletes that user from Redis, tells all sessions under the particular sessionID to log out themselves as well, and disconnects the socket. Basically telling every user to logout themselves will essentially force that particular socket to callback to the server, upon which it will be immediately verified as being an invalid user and thus they will be immediately redirected to the front page. 
 
 Telling every socket under that sessionID to logout is not necessary to complete the logout procedure as they will be forcefully logged out when the first request is made, however it forces them to realize they have been logged out and immediately redirect all tabs back to the main login page, resulting in a better experience for the user.
+
+= Setup Development =
+
+The following instructions are just for developers who wants to explore, develop and improve the current * html5 prototype*.
+The current branch for the html5 integration is "html5-bridge": https://github.com/bigbluebutton/bigbluebutton/tree/html5-bridge
+
+For use this branch, you will have:
+
+ * Install everything indicated here: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/README.md
+ * compile bigbluebutton-client
+ * compile bigbluebutton-web
+ * compile bigbluebutton-apps
+ * change this url for your IP: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/public/js/chat/whiteboard.js#L1
+ * clean the database:
+{{{
+redis-cli
+flushdb
+exit
+}}}
+ * clean restart BBB: sudo bbb-conf --clean
+ * inside labs/bbb-html5-client, run: node app.js
+
+it should run on port 3000...
+
+== What is working ==
+
+ * Users module: Join, leave, get list of participants, change presenter
+ * Chat Module: send public chat, get history chat 
+ * Presentation Module: load slides from Flex client, change slide, red dot
+ * Whiteboard Module: Draw and store pencil shape
+
+This is under labs. It's not recommended in anyway to use it on production, therefore there isn't any kind of support.
