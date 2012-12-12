@@ -228,33 +228,34 @@ Clicking the logout button sends a message to Node through SocketIO, which delet
 Telling every socket under that sessionID to logout is not necessary to complete the logout procedure as they will be forcefully logged out when the first request is made, however it forces them to realize they have been logged out and immediately redirect all tabs back to the main login page, resulting in a better experience for the user.
 
 = Setup Development =
-The following instructions are just for developers who wants to explore, develop and improve the current * html5 prototype*.
+The following instructions are just developers who want to explore, develop and improve the current * html5 prototype*.
 
-== Before setting up the development environment ==
+== Before you begin ==
 
-You will need to setup a BigBlueButton server, and setup the development enviroment for that server. See: http://code.google.com/p/bigbluebutton/wiki/Installation and http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB
+You will need a !BigBlueButton server, and setup the development enviroment for that server. See: Installation and DevelopingBBB
 
-== Modifying your development environment ==
+== First Steps ==
 
-The current branch for the html5 integration is "html5-bridge": https://github.com/bigbluebutton/bigbluebutton/tree/html5-bridge
+The HTML5 prototype uses as backend Node.js and some dependencies from the Node Package Manager (npm). We will need to install node.js from source and download the dependencies through npm by checking out the latest changes from the html5 branch. Therefore, we are going to compile the main components of !BigBlueButton which are bigbluebutton-client, bigbluebutton-web and bigbluebutton-apps.
 
+Install Node [http://www.nodejs.org/ Node.js] (includes npm)
+
+Checkout the latest source:
 {{{
 cd bigbluebutton
 git checkout html5-bridge
 }}}
 
-For use this branch, you will have:
-
- * Install [http://www.nodejs.org/ Node.js] and [https://npmjs.org/ npm]
- * Install the dependencies:
+Install dependencies:
 {{{
 cd bbb-html5-client
 npm install
 }}}
- * Compile [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Client_Development bigbluebutton-client]
- * Compile [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Web bigbluebutton-web]
- * Compile [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Apps bigbluebutton-apps]
- * change this url for your IP: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/public/js/chat/whiteboard.js#L1
+
+Compile and Deploy: [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Client_Development bigbluebutton-client] [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Web bigbluebutton-web]
+[http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Apps bigbluebutton-apps]
+
+Change this url for your IP: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/public/js/chat/whiteboard.js#L1
  
 
 == Running the HTML5 client ==
