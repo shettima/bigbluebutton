@@ -232,28 +232,33 @@ The following instructions are just developers who want to explore, develop and 
 
 == Before you begin ==
 
-You will need a !BigBlueButton server, and setup the development enviroment for that server. See: Installation and DevelopingBBB
+You will need a !BigBlueButton server. See: Installation
 
 == First Steps ==
 
 The HTML5 prototype uses as backend Node.js and some dependencies from the Node Package Manager (npm). We will need to install node.js from source and download the dependencies through npm by checking out the latest changes from the html5 branch. Therefore, we are going to compile the main components of !BigBlueButton which are bigbluebutton-client, bigbluebutton-web and bigbluebutton-apps.
 
-Install Node [http://www.nodejs.org/ Node.js] (includes npm)
+Install Node from [https://github.com/joyent/node source] (this includes npm)
 
-Checkout the latest source:
+Clone the !BigBlueButton repo and checkout the latest source:
 {{{
+git clone https://github.com/bigbluebutton/bigbluebutton.git
 cd bigbluebutton
 git checkout html5-bridge
 }}}
+
+Now, we need to compile and deploy the necessary components:
+
+For bigbluebutton-client: [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Client_Development link]
+For bigbluebutton-web: [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Web link]
+For bigbluebutton-apps: [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Apps link]
+
 
 Install dependencies:
 {{{
 cd bbb-html5-client
 npm install
 }}}
-
-Compile and Deploy: [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Client_Development bigbluebutton-client] [http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Web bigbluebutton-web]
-[http://code.google.com/p/bigbluebutton/wiki/DevelopingBBB#Developing_BBB-Apps bigbluebutton-apps]
 
 Change this url for your IP: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/public/js/chat/whiteboard.js#L1
  
