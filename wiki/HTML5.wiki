@@ -238,7 +238,15 @@ You will need a !BigBlueButton server. See: Installation
 
 The HTML5 prototype uses as backend Node.js and some dependencies from the Node Package Manager (npm). We will need to install node.js from source and download the dependencies through npm by checking out the latest changes from the html5 branch. Therefore, we are going to compile the main components of !BigBlueButton which are bigbluebutton-client, bigbluebutton-web and bigbluebutton-apps.
 
-Install Node from [https://github.com/joyent/node source] (this includes npm)
+Install Node from source (this includes npm):
+{{{
+git clone https://github.com/joyent/node
+cd node
+git checkout v0.9.0
+./configure
+make
+make install
+}}}
 
 Clone the !BigBlueButton repo and checkout the latest source:
 {{{
@@ -256,7 +264,7 @@ For bigbluebutton-apps: [http://code.google.com/p/bigbluebutton/wiki/DevelopingB
 
 Install dependencies:
 {{{
-cd bbb-html5-client
+cd labs/bbb-html5-client
 npm install
 }}}
 
@@ -264,22 +272,37 @@ Change this url for your IP: https://github.com/bigbluebutton/bigbluebutton/blob
  
 
 == Running the HTML5 client ==
- * Clean the database:
+The HTML5 client uses the redis database for store information about the meetings. Right now, there isn't an "automatic" way for delete the keys, so it's recommended that each time that you run the html5 client, you should clean the redis database.
+
+Clean the database:
 {{{
 redis-cli
-flushdb
-exit
+> flushdb
+> exit
 }}}
- * Clean restart BBB: sudo bbb-conf --clean
- * Inside labs/bbb-html5-client, run: node app.js
- * It will run on port 3000.
+Also, perform a clean restart of !BigBlueButton: 
+{{{
+sudo bbb-conf --clean
+}}}
 
-You can use the demo pages for create meetings, after you create a meeting you can join to a conference in the html5 client.
+For run and deploy the html5 client:
+{{{
+cd labs/bbb-html5-client
+node app.js
+}}}
 
-In the HTML5 client is working:
+== Usage ==
+
+ # Join to the Demo Meeting
+ # Open another tab or a new browser
+ # Go to the address: http://<your-IP>:3000
+ # Demo Meeting should appear from the dropdown menu
+ # Write your name and you will join to the meeting throught the HTML5 client
+
+What is working?
  * Users module: Join, leave, get list of participants, change presenter
  * Chat Module: send public chat, get history chat 
  * Presentation Module: load slides from Flex client, change slide, red dot
  * Whiteboard Module: Draw and store pencil shape
 
-This is under labs. It's not recommended in anyway to use it on production, therefore there isn't any kind of support.
+This is under labs. It's not recommended in anyway to use it on production.
