@@ -232,7 +232,7 @@ The following instructions are just developers who want to explore, develop and 
 
 == Before you begin ==
 
-You will need a !BigBlueButton server. See: wiki/Installation
+You will need a !BigBlueButton server. See: WikiInstallationLink
 
 == First Steps ==
 
