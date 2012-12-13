@@ -295,7 +295,7 @@ node app.js
 
  # Join to the Demo Meeting
  # Open another tab or a new browser
- # Go to the address: http://<your-IP>:3000
+ # Go to the address: http://yourIP:3000
  # Demo Meeting should appear from the dropdown menu
  # Write your name and you will join to the meeting throught the HTML5 client
 
