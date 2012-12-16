@@ -3,49 +3,41 @@
 <wiki:toc max_depth="2" />
 
 = Overview =
-!BigBlueButton is developed by a dedicated core team of developers and a broad community that work together on all aspects of development: design, development, testing, documentation, localization, editing wikis, and, most importantly, supporting others.
+This document describes how to setup a development environment on a !BigblueButton server.  Once setup, you can make changes to !BigBlueButton for deployment on your server.
 
-This document describes how to setup a development environment on a !BigblueButton server.  Once setup, you can develop and extend your local server and become part of the community of developers improving !BigBlueButton . 
+This guide is written for !BigBlueButton 0.81-dev or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see 081InstallationUbuntu).  
 
-!BigBlueButton has a lot of components.  The main components are bbb-web, bbb-client, bbb-apps, bbb-voice, and desktop sharing.  You don't need to understand everything to develop or extend one component.  For example, if you are interested in improving the !BigBlueButton client, you need, at a minimum, to understand the bigbluebutton-client and the overall architgecture (see ArchitectureOverview).
+!BigBlueButton has many components that are grouped together to provide the core funcationality.  The main components are 
 
-To help you setup the necessary developer environment, we've put in much of the setup logic in `bbb-conf`, the !BigBlueButton configuration script.  While it's good to let the script do most the work, as you become more familiar with !BigBlueButton, you should take a look at the source code in `bbb-conf` 
+  * bbb-web -- implementation of the !BigBlueButton API and conversion of documents
+  * bbb-client -- Flash based client
+  * bbb-apps -- Server side applications for modules that run within the client
+  * bbb-voice -- Server side components for implementing voice
+  * bbb-deskshare -- Desktop sharing applet and server  
 
-{{{
-/usr/local/bin/bbb-conf
-}}}
+You don't need to understand everything about each component, but you do need to understand how the overall architecture (see ArchitectureOverview).  If you are interested in improving the !BigBlueButton client, you need, at a minimum, to understand the bigbluebutton-client and the overall client architecture interacts with the server.
 
-to understand what it is doing.  The more you know about !BigBlueButton, the easier it is to make your own changes and contribute to the project.
+== Before you begin ==
 
-In !BigBlueButton 0.81, we've generalized these instructions so you can use any unix account on a !BigBlueButton server.
+These instructions setup a development environment on a working !BigBlueButton server installed via packaging (see InstallationUbuntu).
 
+The source for !BigBlueButton is managed by git and is hosted on GitHup (see [https://github.com/bigbluebutton/bigbluebutton source code].  You need to be familiar with how git works.  Specifically, how to
 
+  * clone a repository
+  * create a branch
+  * push changes back to a repository
 
-The source for !BigBlueButton is on [https://github.com/bigbluebutton/bigbluebutton GitHub].  If you're not familiar with git, a good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  If you don't know what the terms *_clone_*, *_branch_*, and *_commit_* mean in git, make sure you do before working with the !BigBlueButton source.
+If you don't know what the terms *_clone_*, *_branch_*, and *_commit_* mean in git, make sure you do before working with the !BigBlueButton source, a good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  
 
+=== Setup a Working !BigBlueButton Server ===
 
-== Prerequisites ==
-
-This guide is written for !BigBlueButton 0.81 or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see InstallationUbuntu).  
-
-=== The Basics ===
-Before setting up a development environment, you should have already
-
-  * An understanding of the !BigBlueButton ArchitectureOverview
-  * An understand of how git works
-
-=== A Working !BigBlueButton Server ===
-
-You need to have a working !BigBlueButton server 0.81 (or later) to setup a development environment.
-
-While it may seem obvious, we emphasize your !BigBlueButton server should be working *before* you start setting up the development environment.  That way, if you do run a modified version of the !BigBlueButton client and something isn't working, you can switch back to the built-in client to check that your environment is working correctly.
-
+While it may seem obvious, we emphasize your !BigBlueButton server should be working *before* you start setting up the development environment.  That way, if you do run a modified version of the !BigBlueButton client, for example, and something isn't working, you can switch back to the built-in client to check that your environment is working correctly.
 
 === Developing on Windows ===
-If you are on Windows, we recommend you download the [BigBlueButtonVM BigBlueButton VM] and use it for compiling and testing your changes.  That's how we (the core developers) develop !BigBlueButton.
+If you are on Windows, we recommend you download the [BigBlueButtonVM BigBlueButton VM] and use it for compiling and testing your changes.  Much of the core development of !BigBlueButton is done using FlexBuilder on Windows and running the !BigBlueButton server in a virtual machine under VMWare Workstation.
 
 === You'll need sudo abilities ===
- setup the !BigBlueButton development environment. To verify, you should be able to
+To setup the !BigBlueButton development environment. To verify, you should be able to
 
 {{{
   sudo ls
@@ -56,7 +48,7 @@ and get back a list of files in the current directory.
 
 = Setup a Development Environment =
 
-== Setting up the development tools ==
+== Setting up the Development Tools ==
 
 On a !BigBlueButton server, you can install all the necessary development tools by following the steps below:
 
