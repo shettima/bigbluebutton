@@ -35,8 +35,7 @@ echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /
 
 }}}
 
-Note:   At the time of writing, the packages are unstable.  The XXX will updated when the beta repository is ready.  
-
+*Note:* The repository for lucid_dev_081 currently _development_ builds of !BigBlueButton 0.81.  Until there is an announcement in [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] that !BigBlueButton 0.81-beta, these development packages may periodically break as development proceeds to beta.
 
 After you've made the above changes, do a dist-upgrade to ensure your running the latest packages and your server is up-to-date before installing !BigBlueButton.
 
