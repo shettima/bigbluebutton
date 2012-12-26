@@ -303,6 +303,6 @@ What is working?
  * Users module: Join, leave, get list of participants, change presenter
  * Chat Module: send public chat, get history chat 
  * Presentation Module: load slides from Flex client, change slide, red dot
- * Whiteboard Module: Draw and store pencil shape
+ * Whiteboard Module: Draw and store pencil shape from Flex client
 
 This is under labs. It's not recommended in anyway to use it on production.
