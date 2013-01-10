@@ -4,7 +4,8 @@
 
 = Introduction =
 
-This document gives an overview of what's coming in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.
+This document gives an overview of what's coming in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.  !BigBlueButton 0.81 is currently in development and has not yet reached beta.  To follow the development, we recommend you subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list for updates.
+
 
 The focus of !BigBlueButton 0.81 is to enhance the record and playback, improve accessibility for students with disabilities, and simplify the management of windows.
 
