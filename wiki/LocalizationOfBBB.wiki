@@ -55,3 +55,5 @@ There is a Firefox plug-in, "Quick Locale Switcher", that can be used for testin
 
 == Overwriting the English Translation with your Language ==
 If you think most of your users are running browsers set for English but would still like !BigBlueButton to load with a different language, you can delete the en_US.swf file from the directory where you deployed the bbb-client. Then rename your localization to en_US.swf. So for example if you wanted the Spanish language to be the default, just rename the file es_ES.swf to en_US.swf.
+
+Or you can edit [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/prod/lib/bbb_localization.js] to force the default to locale to what you want.
