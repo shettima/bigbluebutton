@@ -88,7 +88,15 @@ You will be prompted during installation to enter several passwords. You'll need
 
 === Freeswitch ===
 
-The build of freeswitch included with the BigBlueButton packaging doesn't have the shoutcast module enabled, so we'll have to build an updated version. Here are the steps:
+The build of freeswitch included with the BigBlueButton packaging doesn't have the shoutcast module enabled, so we'll have to build an updated version.
+
+Before starting, stop the current freeswitch:
+
+{{{
+/etc/init.d/bbb-freeswitch stop
+}}}
+
+Here are the steps:
 
 {{{
 sudo apt-get install autoconf automake libtool
@@ -107,3 +115,24 @@ sudo make install
 }}}
 
 This will install a new copy of freeswitch into /usr/local/freeswitch (the standard freeswitch install is under /opt/freeswitch). To get it running requires a few additional steps. First, you should copy the configuration from the BigBlueButton freeswitch to your new build:
+
+{{{
+sudo mv /usr/local/freeswitch/conf /usr/local/freeswitch/conf.dist
+sudo cp -R /opt/freeswitch/conf /usr/local/freeswitch/conf
+}}}
+
+You need to edit the file `/usr/local/freeswitch/conf/autoload_configs/modules.conf.xml` to uncomment the line that loads mod_shout.
+
+Now, reset the permissions on the installed directories:
+
+{{{
+sudo chown -R freeswitch:daemon /usr/local/freeswitch
+}}}
+
+And edit the init script `/etc/init.d/bbb-freeswitch`, and replace all references to /opt with /usr/local (make sure you get them all!) You can then start the new freeswitch,
+
+{{{
+/etc/init.d/bbb-freeswitch
+}}}
+
+=== Configuring BigBlueButton ===
