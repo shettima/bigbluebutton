@@ -11,9 +11,11 @@ You then have to convert your installation to a development environment, since t
 You can follow the instructions at [DevelopingBBB] with the following changes:
 
   * Under "Checking out the source", use the git command `git checkout -b html5-bridge origin/html5-bridge` to switch to the HTML5 client branch.
-  * At a minimum, you must build the Client, BBB-Web, and Red5 Applications components.
+  * At a minimum, you must build and deploy or run the Client, BBB-Web, and Red5 Applications components.
 
 == HTML5 Bridge component ==
+
+=== Installation ===
 
 The HTML5 bridge component is currently written using node.js. Since Ubuntu 10.04 doesn't ship an up-to-date version of node.js, it's easiest to use a PPA:
 
@@ -26,4 +28,29 @@ sudo apt-get install nodejs npm
 Now you can use `npm` to install the node.js dependencies:
 
 {{{
-cd ~/dev/bigbluebutton/labs/bbb-html
+cd ~/dev/bigbluebutton/labs/bbb-html5-client
+npm install
+}}}
+
+=== Running ===
+
+The HTML5 client uses the redis database to store information about the meetings. Right now, there isn't an "automatic" way to delete the keys, so it's recommended that each time that you run the html5 client, you should clean the redis database.
+
+Clean the database: 
+
+{{{
+redis-cli flushdb
+}}}
+
+Perform a clean restart of BigBlueButton
+
+{{{
+sudo bbb-conf --clean
+}}}
+
+Run the HTML5 client bridge:
+
+{{{
+cd ~/dev/bigbluebutton/labs/bbb-html5-client
+node app.js
+}}}
