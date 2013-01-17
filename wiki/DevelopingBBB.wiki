@@ -443,6 +443,7 @@ Somehow, some classes got duplicated. Try recompiling the common dir.
 Then sign the applet again.
 
 *Deploy the applet.*
+
 The signed jar file is located in {{{/home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar}}}
 
 We need to copy it to where nginx is loading the client.
