@@ -54,3 +54,56 @@ Run the HTML5 client bridge:
 cd ~/dev/bigbluebutton/labs/bbb-html5-client
 node app.js
 }}}
+
+=== Usage ===
+
+  1.  Before using the HTML5 client, you must create a meeting and join it using the Flash client. The easiest way to do this is to join the Demo Meeting.
+  2.  Open another tab or a new browser
+  3.  Go to the address: http://yourIP:3000
+  4.  Demo Meeting should appear from the dropdown menu
+  5.  Write your name and you will join to the meeting throught the HTML5 client 
+
+What is working?
+
+  *  Users module: Join, leave, get list of participants, change presenter
+  *  Chat Module: send public chat, get history chat
+  *  Presentation Module: load slides from Flex client, change slide, red dot
+  *  Whiteboard Module: Draw and store pencil shape from Flex client 
+
+== Streaming Audio ==
+
+Note that the streaming code is still a work in progress! The following instructions were correct at time of writing, but are subject to change.
+
+In the current prototype, streaming audio is achieved by using the freeswitch mod_shout module to stream audio via an icecast server. This requires installing some additional software and doing some manual configuration.
+
+=== Icecast ===
+
+The stock Ubuntu 10.04 packages for icecast are sufficient for mp3 or vorbis format streaming. You can install them with the command
+
+{{{
+apt-get install icecast2
+}}}
+
+You will be prompted during installation to enter several passwords. You'll need to remember the "source" password for later when configuring BigBlueButton
+
+=== Freeswitch ===
+
+The build of freeswitch included with the BigBlueButton packaging doesn't have the shoutcast module enabled, so we'll have to build an updated version. Here are the steps:
+
+{{{
+sudo apt-get install autoconf automake libtool
+cd ~/dev
+git clone git://git.freeswitch.org/freeswitch.git
+cd freeswitch
+./bootstrap.sh
+}}}
+
+You now have to edit the file `modules.conf` in the freeswitch build directory, and ensure that the line saying `formats/mod_shout` is uncommented. Then continue with configuring, building, and installing:
+
+{{{
+./configure
+make
+sudo make install
+}}}
+
+This will install a new copy of freeswitch into /usr/local/freeswitch (the standard freeswitch install is under /opt/freeswitch). To get it running requires a few additional steps. First, you should copy the configuration from the BigBlueButton freeswitch to your new build:
