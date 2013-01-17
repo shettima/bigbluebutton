@@ -2,6 +2,8 @@
 
 = HTML5 Development Environment Setup =
 
+<wiki:toc max_depth="2" />
+
 == Initial setup ==
 
 Before you begin, you will need to have a BigBlueButton server installed from packages. For best results, start with the BigBlueButton 0.81-development packages, as the HTML5 client is based on this version. Follow the instructions on [081InstallationUbuntu] for details.
