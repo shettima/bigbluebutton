@@ -132,7 +132,7 @@ sudo chown -R freeswitch:daemon /usr/local/freeswitch
 And edit the init script `/etc/init.d/bbb-freeswitch`, and replace all references to /opt with /usr/local (make sure you get them all!) You can then start the new freeswitch,
 
 {{{
-/etc/init.d/bbb-freeswitch
+/etc/init.d/bbb-freeswitch start
 }}}
 
 === Configuring BigBlueButton ===
