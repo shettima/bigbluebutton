@@ -399,6 +399,7 @@ gradle jar
 }}}
 
 *Signing the applet with a self key.*
+
 You can create a self signed key to sign the applet. By running the following command and enter a password when prompted for one. Make sure it is at least 6 chars long.
 {{{
 ant create-signing-key
@@ -410,6 +411,7 @@ ant sign-jar
 }}}
 
 *Signing the applet with a certificate.*
+
 You can also sign the applet with a certificate. By running the following command, just copy the certificate in the applet directory. When it asks you for the certificate name, enter the name with the extension of the file. This only works with PKCS12 files. 
 
 {{{
@@ -417,6 +419,7 @@ ant sign-certificate-jar
 }}}
 
 *Possible problems.*
+
 If you get an error something like
 {{{
 sign-jar:
