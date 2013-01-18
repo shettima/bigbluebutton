@@ -1,16 +1,20 @@
-#summary Set up a development environment for the BigBlueButton HTML5 client
+#summary Set up a development environment for the !BigBlueButton HTML5 client
 
 = HTML5 Development Environment Setup =
 
 <wiki:toc max_depth="2" />
 
+
+== !BigBlueButton HTML5 Client Design ==
+If you have not already done so, you should read through an [HTML5 Overview of HTML5 Client].
+
 == Initial setup ==
 
-Before you begin, you will need to have a BigBlueButton server installed from packages. For best results, start with the BigBlueButton 0.81-development packages, as the HTML5 client is based on this version. Follow the instructions on [081InstallationUbuntu] for details.
+Before you begin, you will need to have a !BigBlueButton server installed from packages built from the master branch, referred hereafter as 0.81-dev.  The !BigBlueButton HTML5 client is based on 0.81-dev. To install 0.81-dev from packages, follow the instructions at [081InstallationUbuntu Installing 0.81-dev packages].
 
-You then have to convert your installation to a development environment, since the HTML5 client is on a separate branch and requires some components to be rebuilt.
+Once you have 0.81-dev installed, you need to setup a development environment on the !BigBlueButton server.  This will allow you to rebuild specific components from source.  Since the HTML5 client is on a separate branch from master, setting up a development environment requires a few changes to the default steps for setting up a standard development environment.
 
-You can follow the instructions at [DevelopingBBB] with the following changes:
+To setup the standard development environment for the HTML5 client, follow the instructions at [DevelopingBBB] with the following changes:
 
   * Under "Checking out the source", use the git command `git checkout -b html5-bridge origin/html5-bridge` to switch to the HTML5 client branch.
   * At a minimum, you must build and deploy or run the Client, BBB-Web, and Red5 Applications components.
@@ -44,7 +48,7 @@ Clean the database:
 redis-cli flushdb
 }}}
 
-Perform a clean restart of BigBlueButton
+Perform a clean restart of !BigBlueButton
 
 {{{
 sudo bbb-conf --clean
@@ -86,11 +90,11 @@ The stock Ubuntu 10.04 packages for icecast are sufficient for mp3 or vorbis for
 apt-get install icecast2
 }}}
 
-You will be prompted during installation to enter several passwords. You'll need to remember the "source" password for later when configuring BigBlueButton
+You will be prompted during installation to enter several passwords. You'll need to remember the "source" password for later when configuring !BigBlueButton
 
 === Freeswitch ===
 
-The build of freeswitch included with the BigBlueButton packaging doesn't have the shoutcast module enabled, so we'll have to build an updated version.
+The build of freeswitch included with the !BigBlueButton packaging doesn't have the shoutcast module enabled, so we'll have to build an updated version.
 
 Before starting, stop the current freeswitch:
 
@@ -116,7 +120,7 @@ make
 sudo make install
 }}}
 
-This will install a new copy of freeswitch into /usr/local/freeswitch (the standard freeswitch install is under /opt/freeswitch). To get it running requires a few additional steps. First, you should copy the configuration from the BigBlueButton freeswitch to your new build:
+This will install a new copy of freeswitch into /usr/local/freeswitch (the standard freeswitch install is under /opt/freeswitch). To get it running requires a few additional steps. First, you should copy the configuration from the !BigBlueButton freeswitch to your new build:
 
 {{{
 sudo mv /usr/local/freeswitch/conf /usr/local/freeswitch/conf.dist
@@ -137,4 +141,4 @@ And edit the init script `/etc/init.d/bbb-freeswitch`, and replace all reference
 /etc/init.d/bbb-freeswitch start
 }}}
 
-=== Configuring BigBlueButton ===
+=== Configuring !BigBlueButton ===
