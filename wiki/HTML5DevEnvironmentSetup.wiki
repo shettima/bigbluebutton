@@ -140,5 +140,3 @@ And edit the init script `/etc/init.d/bbb-freeswitch`, and replace all reference
 {{{
 /etc/init.d/bbb-freeswitch start
 }}}
-
-=== Configuring !BigBlueButton ===
