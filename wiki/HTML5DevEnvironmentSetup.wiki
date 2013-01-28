@@ -1,4 +1,5 @@
 #summary Set up a development environment for the !BigBlueButton HTML5 client
+#labels Phase-Implementation
 
 = HTML5 Development Environment Setup =
 
@@ -148,3 +149,46 @@ You can now configure BigBlueButton to automatically start streaming the audio t
 You will need to set the `icecast.password` parameter to your configured password, and enable the streaming by setting `icecast.broadcast=true`
 
 There are some limitations in this streaming method right now: Unless either a) recording is enabled or b) there are at least 2 people in the audio conference (joined via flash) you will hear no audio. We're still investigating the best way to correct this in the freeswitch conference module.
+
+==Streaming Video==
+
+Even more than the streaming audio support, the streaming video is in the early prototype stages. At the moment, it's only possible to run a single stream, and it's a very manual process with multiple incomplete or development pieces.
+
+=== Setting up the Gstreamer Streaming Server ===
+
+Since the Gstreamer Streaming Server is fairly new code, it doesn't work properly on the Ubuntu 10.04 for the BigBlueButton server. At the moment, you'll want to use a separate machine running Ubuntu 12.04 for video development. We expect that once the HTML5 client is integrated, we will have updated the core BigBlueButton server to run on Ubuntu 12.04.
+
+Grab the server code from http://cgit.freedesktop.org/gstreamer/gst-streaming-server/ and build it. You will probably have to install some dependencies with development libraries.
+
+(someone should make a list and add it here, perhaps?)
+
+The server binary itself is under the tools/ directory. Before you can run it, you must use 'genkey' to create an example self-signed ssl certificate. Once that's done, you can run ./ew-stream-server to start the server.
+
+To log into the streaming server, navigate to http://_hostname_:8080/login and use the username/password "admin/admin".
+
+=== Sending a video stream to the Streaming Server ===
+
+At the moment, this must all be done manually. First, you must find the rtmp stream URL for the webcam that you're interested in streaming. To do this, [https://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Main_parameters enable the client debug log], and open it on the computer that's sharing the webcam. You should find a URL that will look something like
+
+{{{
+rtmp://143.54.31.81/video/cbd61416d989a8f69797578769d8110c8b787aa7-1356869148943/160x1201344-1356869184656
+}}}
+
+For WebM streaming, you'll want to run in a terminal a command like:
+
+{{{
+gst-launch-0.10 rtmpsrc location='rtmp://143.54.31.81/video/cbd61416d989a8f69797578769d8110c8b787aa7-1356869148943/160x1201344-1356869184656 live=1' \
+    ! decodebin name=demux threaded=true use-buffering=false ! vp8enc \
+    speed=2 max-latency=1 quality=5 max-keyframe-distance=120 threads=8 \
+    auto-alt-ref-frames=true tune=1 lag-in-frames=25 ! webmmux streamable=true \
+    ! shout2send ip=127.0.0.1 port=8080 mount=stream0
+}}}
+
+For H264 (TS/HLS streaming), try something like the following. NOte that you'll have to change the default/fallback streaming format on the web UI to H.264 Baseline prior to starting the stream, since souphttpclientsink doesn't correctly send a stream mime type.
+
+{{{
+gst-launch-0.10 rtmpsrc location='rtmp://143.54.31.81/video/cbd61416d989a8f69797578769d8110c8b787aa7-1356869148943/160x1201344-1356869184656 live=1' \
+    ! decodebin name=demux threaded=true use-buffering=false \
+    ! x264enc bitrate=600 key-int-max=90 profile=main ! mpegtsmux \
+    ! souphttpclientsink location=http://localhost:8080/stream0
+}}}
