@@ -140,3 +140,11 @@ And edit the init script `/etc/init.d/bbb-freeswitch`, and replace all reference
 {{{
 /etc/init.d/bbb-freeswitch start
 }}}
+
+===Configuring BigBlueButton===
+
+You can now configure BigBlueButton to automatically start streaming the audio to Icecast when the audio bridge is started. You have to edit the bigbluebutton-apps "bigbluebutton.properties" file to set the location of the Icecast server. See https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/bigbluebutton-apps/src/main/webapp/WEB-INF/bigbluebutton.properties
+
+You will need to set the `icecast.password` parameter to your configured password, and enable the streaming by setting `icecast.broadcast=true`
+
+There are some limitations in this streaming method right now: Unless either a) recording is enabled or b) there are at least 2 people in the audio conference (joined via flash) you will hear no audio. We're still investigating the best way to correct this in the freeswitch conference module.
