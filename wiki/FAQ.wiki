@@ -7,49 +7,52 @@
 
 = Welcome =
 
-Welcome to the !BigBlueButton Frequently Asked Questions (FAQ). 
+Welcome to the !BigBlueButton project's Frequently Asked Questions (FAQ). 
 
-We (the core developers) created this FAQ to help you quickly get started with installation, configuration, and using !BigBlueButton.  If you are a developer, you'll also find lots of answered herein that have been collected from discussions on our mailing lists.
+We (the [#BigBlueButton_Committer core developers]) created this FAQ to quickly answer common questions around installation, configuration, and using !BigBlueButton.  If you are a developer, you'll also find lots of answered herein that have been collected from discussions on our mailing lists.
 
 == What if I don't find my answer here? ==
 
-The !BigBlueButton community focuses its support in three mailing lists (all hosted by Google Groups).  They are:
+The !BigBlueButton community focuses its support in three mailing lists, each hosted by Google Groups.  Each group focuses on a different topic of questions:
 
   * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] -- Setup, instllation, and configuration questions, such as "How do I configure the !BigBlueButton client?"
   * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users] -- End user questions, such as "How do I do X with !BigBlueButton?"
   * [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] -- All other questions, such as "How do I integration !BigBlueButton with application Y?"
 
-The developer mailing list has almost 700 users, so before you post do the following:
+The developer mailing list has over 1000 users, so before you post:
 
-  # Scan the FAQ to see if you questions is answered herein
-  # Search the archives of the associated mailing list -- there's a good chance someone might have already asked your question and the ensuing discussion might help you as well 
-  # If you think you've found a bug, check the [http://code.google.com/p/bigbluebutton/issues/list issues database] first.  
+  # Scan the FAQ to see if you questions is answered herein.
+  # Use Google to search for keywords related to your question -- there's a good chance someone might have already asked your question in the Google groups.
+  # If you think you've found a bug, check the [http://code.google.com/p/bigbluebutton/issues/list issues database].  
 
 All of the core !BigBlueButton contributions subscribe to all three mailing lists.  Please don't cross post.
 
 
 == Why is this project called !BigBlueButton? ==
+The name comes from the goal of making the process to setup a virtual classroom as easy as pressing a (metaphorical) big blue button.
 
-The name comes from the goal of making setting up a virtual classroom as easy as pressing a (metaphorical) big blue button.
-
+== Why is it spelled !BigBlueButton (and not Big Blue Button)? ==
+The trademark is written as one word !BigBlueButton.  Doing so also makes it easy for others to use Google to search for information related abou the project.
 
 == Where is the source? ==
-We host the source on [http://github.com/bigbluebutton/bigbluebutton github]. We used to host it on Google Code, but we wanted to move to git because of the advantages it offers over svn.
+We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We used to host it on Google Code, but we moved to GitHub in 2010 to make it easier for others to fork and contribute.
 
 == What is the open source license used in !BigBlueButton? ==
 We use the LGPL license.  Some of the open source components we build on use different licenses, such as red5phone uses the GPL license.
 
-
 == Where can I find examples of people running !BigBlueButton? ==
-We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   We know from downloads there many !BigBlueButton servers running world-wide.  
+We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   In twelve months prior to June 2012 the project had over [http://www.bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ sixty thousand installs].
 
 If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bigbluebutton-users] or [http://groups.google.com/group/bigbluebutton-setup bigbluebutton-setup] mailing lists.
 
+
 == Will !BigBlueButton always stay open source? ==
-Yes. We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html independent not-for-profit !BigBlueButton Foundation] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
+Yes. 
+
+We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://www.bigbluebutton.org/2010/07/12/bigbluebutton-foundation/ independent not-for-profit !BigBlueButton organization] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
 
 = !BigBlueButton Development Process =
-As of June 2012, the !BigBlueButton project had 61,000 installs worldwide.  This is a big step since 2008, when the software had just one install at Carleton University.
+As of June 2012, the !BigBlueButton project had [http://www.bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ 61,000 installs worldwide].  This is a big step since 2008, when the software had just one install at [http://www.bigbluebutton.org/history/ Carleton University].
 
 Today, there is a very active !BigBlueButton community comprising over +1200 members on the developer mailing list.  These members users, developers, educational institutions, and commercial companies -- all are benefiting from improvements to the product.
 
@@ -64,17 +67,17 @@ The core group of !BigBlueButton committers have a adopted an open source develo
   * Features
   * Modularity
 
-It cannot be overstated that the focus of the project is primarily on stability.  For a university or college to deploy !BigBlueButton for live classes, or for a commercial company to embed !BigBlueButton into their product, the software has to be extremely stable. 
+It cannot be overstated that the project's focus is primarily on stability.  For a university or college to deploy !BigBlueButton for live classes, or for a commercial company to embed !BigBlueButton into their product, the software has to be extremely stable. 
 
-Usability ranks a close second.  Without a simple-to-use interface, !BigBlueButton would not be adopted, nor viewed as a compelling alternative to more complex proprietary system.
+Usability ranks a close second.  Without a simple-to-use interface, !BigBlueButton would not be adopted, nor viewed as a compelling alternative to more complex closed-source equivalents.
 
-Achieving stability is no easy task.  !BigBlueButton itself is a very complex system, comprising over 14 open source projects, with sub-systems responsible for sharing of slides, video, audio, text, and desktop sharing. 
+Achieving stability is no easy task.  !BigBlueButton itself is a very complex system, comprising over 14 open source projects, with sub-systems responsible for sharing of slides, video, audio, text, and desktop sharing.  The stability of the product today is a direct result of the committers, the development process, and the community all working together.  We release on quality, not dates.
 
-The stability of the product today is a direct result of the committers. Richard Alam is the creator of !BigBlueButton and the chief architect.  As such, Richard has the overall responsibility for the core architecture and (like Linus with Linux) reviews many of the contributions from others.
+Richard Alam is the creator of !BigBlueButton and the chief architect.  As such, Richard has the overall responsibility for the core architecture and (like Linus with Linux) reviews many of the contributions from others.
 
-Fred Dixon serves as the release manager.  His responsibility includes managing the overall release process, coordinating the building and packaging of each release, and communicating with the community on the progress of the release. 
+Fred Dixon serves as the project manager.  His responsibility includes managing the overall release process, coordinating the building and packaging of each release, and communicating with the community on the progress of the release. 
 
-There have been ten releases of !BigBlueButton to date.  
+There have been ten releases of !BigBlueButton to date.
 
 == !BigBlueButton Development Process ==
 
