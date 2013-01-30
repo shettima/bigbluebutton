@@ -253,7 +253,7 @@ Some of the items in our issue tracker are enhancements to the core product.  If
 
   # You have had patches accepted by a committer
   # You have posted a Request for Comments to the bigbluebuton-dev mailing list signaling your willingness to work on the enhancement.  In your post you have provide (at minimum) 
-    * An overview of the design and implementation of your feature.  For examples see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79/91de48842ae1ea75?lnk=gst&q=rfc#91de48842ae1ea75 RFC for Preupload of Documents]
+    * An overview of the design and implementation of your feature.  For examples see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79/91de48842ae1ea75?lnk=gst&q=rfc#91de48842ae1ea75 Proposal for Preupload of Documents]
     * An outline of how you intend to test the enhancement
     * An estimate of how much time you have to work on the enhancement
   # A committer has signaled their intent to work closely with you on the enhancement
