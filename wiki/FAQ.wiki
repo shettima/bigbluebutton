@@ -35,7 +35,7 @@ The name comes from the goal of making the process to setup a virtual classroom 
 The trademark is written as one word !BigBlueButton.  Doing so also makes it easy for others to use Google to search for information related abou the project.
 
 == Where is the source? ==
-We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We used to host it on Google Code, but we moved to GitHub in 2010 to make it easier for others to fork and contribute.
+We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We used to host it on Google Code, but we moved to !GitHub in 2010 to make it easier for others to fork and contribute.
 
 == What is the open source license used in !BigBlueButton? ==
 We use the LGPL license.  Some of the open source components we build on use different licenses, such as red5phone uses the GPL license.
@@ -239,14 +239,14 @@ There are a number of *must haves* for your submission to be accepted.
   # You have signed a [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_contribute_my_updates_to_BigBlueButton_? committers agreement] so there is no ambiguity that your contributions may be released under an open source license.
   # Your submission is LGPL (unless it modifies existing code that is under a different license).
 
-Specifically, for using GitHub, you need to do the following:
+Specifically, for using !GitHub, you need to do the following:
 
   1. [http://help.github.com/fork-a-repo/ Fork] !BigBlueButton on [http://www.github.com/bigbluebutton GitHub]
   1. Create a topic branch - {{{git checkout -b my_branch}}}
   1. Push to your branch - {{{git push origin my_branch}}}
   1. Create a [http://help.github.com/pull-requests/ Pull Request] from your branch
 
-GitHub provides some good [http://help.github.com/ help] in the above steps, and there is an excellent [http//progit.org/ Pro Git] book by Scott Chacon available on-line.
+!GitHub provides some good [http://help.github.com/ help] in the above steps, and there is an excellent [http//progit.org/ Pro Git] book by Scott Chacon available on-line.
 
 === Submission of a feature ===
 Some of the items in our issue tracker are enhancements to the core product.  If you are interested in contributing an enhancement, your chances of acceptance are *greatly* improved the following are true:
@@ -419,7 +419,7 @@ These are not hard and fast numbers, as it depends on the activity of the viewer
 
 A good way for users to check their bandwidth is to visit [speedtest.net http://speedtest.net/].  The results from speedtest.net give the user's _actual_ bandwidth.   This actual number is important because a user may report that their ISP provides them 0.5 Mbits/sec upstream bandwidth; however, speedtest.net may report an actual number that is much lower.   The difference may be throttling by the ISP and background activity on their computer (such as background downloads, file sharing clients, etc).  
 
-For presenters, we recommend as much upstream bandwidth as possible.  For example, if the presenter shares their desktop, then BigBlueButton's desktop sharing will attempt to publish their desktop updates as quickly as possible to the server.
+For presenters, we recommend as much upstream bandwidth as possible.  For example, if the presenter shares their desktop, then !BigBlueButton's desktop sharing will attempt to publish their desktop updates as quickly as possible to the server.
 
 
 == Troubleshooting ==
@@ -427,7 +427,7 @@ For presenters, we recommend as much upstream bandwidth as possible.  For exampl
 === Users on Windows 7 get disconnected after a minute ===
 
 The default config of Windows 7 (and Vista) does "ICMPv6
-Router Solicitation" while running the Flash client. Some routers  discard the Teredo packets and, causing the BigBlueButton client to disconnect at regular intervals.  One solution is to disable Teredo packets in the client by entering 
+Router Solicitation" while running the Flash client. Some routers  discard the Teredo packets and, causing the !BigBlueButton client to disconnect at regular intervals.  One solution is to disable Teredo packets in the client by entering 
 
 {{{
 netsh interface ipv6 set teredo disable
@@ -1212,7 +1212,7 @@ If you upload a PDF document, all your fonts will come through with the document
 
 If you upload a Word or Power Point document that has special fonts, such as Chinese language, the document must first be converted by !OpenOffice into PDF.  Unless you've configured the !OpenOffice server running within !BigBlueButton to have the necessary fonts, the you will see empty spaces (or boxes) for the missing fonts.
 
-To add the Japanese fonts, enter the following commands on the BigBlueButton server.
+To add the Japanese fonts, enter the following commands on the !BigBlueButton server.
 
 {{{
    sudo apt-get install language-support-fonts-ja
@@ -1545,7 +1545,7 @@ This is related to localization. Before you launch your client, you need to firs
 === Some users are experiencing audio problems ===
 !BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.   If your run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than plain ordinary telephone system (wich is 8 Khz audio).
 
-To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.  Furthermore, we [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
+To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running !BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.  Furthermore, we [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
 
 When remote users experience audio problems, check the following areas:
 
@@ -1584,7 +1584,7 @@ We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] that use
 
 To test a user's actual internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's upload and download speeds.  If these numbers are much less than .5 Mbits/sec upload speed and 1.0 Mbits/sec download, their audio will be poor.  One quick check is to ask the users to turn of any file transfer they have in the background (such as bittorrent clients) and run the test again. 
 
-If you can have the use the ping command (windows or Unix prompt) to ping the BigBlueButton server, you want to see a ping response of less than 100ms. 
+If you can have the use the ping command (windows or Unix prompt) to ping the !BigBlueButton server, you want to see a ping response of less than 100ms. 
 
 Also, if the user's client takes over a minute to load, they are likely tunnelling through port 80, which will further degrade the audio.
 
