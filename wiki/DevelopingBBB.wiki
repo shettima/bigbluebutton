@@ -324,10 +324,11 @@ gradle resolveDeps
 }}}
 
 Check if you have the same properties from the master with the ones in your local machine.
-
-Properties file from master: https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
-Properties file from your local machine:
+{{{
+# Properties file from master: https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
+# Properties file from your local machine:
 grails-app/conf/bigbluebutton.properties
+}}}
 
 Tell grails to listen on port 8888
 {{{
