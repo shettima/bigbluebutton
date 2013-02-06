@@ -140,13 +140,13 @@ You need only do this once.  When you next login to your account, you'll have th
 
 Again, you can use any account on a !BigBlueButton server that has sudo rights.  For the rest of this document we'll use the account `firstuser` for the examples.  Replace this with ubuntu or other user account name as needed.
 
-The `bbb-conf` script create for you a `dev` directory in your account.
+The following directory:
 
 {{{
   /home/firstuser/dev
 }}}
 
-It's in this directory that you'll place the source for !BigBlueButton.
+It's where you'll place the source for !BigBlueButton.
 
 == Checking out the Source ==
 
