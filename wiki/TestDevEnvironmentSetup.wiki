@@ -19,7 +19,7 @@ You don't need to understand everything about each component, but you do need to
 
 == Before you begin ==
 
-These instructions setup a development environment on a working !BigBlueButton server installed via packaging (see InstallationUbuntu).
+These instructions setup a development environment on a working !BigBlueButton server.
 
 The source for !BigBlueButton is managed by git and is hosted on GitHup (see [https://github.com/bigbluebutton/bigbluebutton source code].  You need to be familiar with how git works.  Specifically, how to
 
@@ -169,7 +169,7 @@ After cloning, you'll have the following directory (make sure the `bigbluebutton
 Confirm that you are working on the master branch.
 
 {{{
-cd ~/dev/bigbluebutton
+cd /home/firstuser/dev/bigbluebutton
 git status
 }}}
 
@@ -179,38 +179,14 @@ You should see
 # On branch master
 nothing to commit (working directory clean)
 }}}
+  
+When you first clone the !BigBlueButton git repository, git will place you, by default, on the master branch which is the current snapshot of the latest code for !BigBlueButton. !BigBlueButton is always under active development.  As such, if you proceed to compile a component of !BigBlueButton, such as the !BigBlueButton client, using master source and attempt to run it with the other component on your server that is on a different version, it may not work.  The !BigBlueButton client may crash (the master branch is not always stable during a development cycle), or you may see a loading message such as "Connecting to server ..." that never clears.  
 
-When you installed !BigBlueButton from packaging, you have installed components built with the production 0.81 release.  
+To get started with development of !BigBlueButton, you want build components using the corresponding source from release stated here, in this case 0.81-dev.
 
-However, when you first clone the !BigBlueButton git repository, git will place you, by default, on the master branch which is the current snapshot of the latest code for !BigBlueButton.  !BigBlueButton is always under active development.  As such, if you proceed to compile a component of !BigBlueButton, such as the !BigBlueButton client, using master source and attempt to run it with the other 0.81-based components on your server, it may not work.  The !BigBlueButton client may crash (the master branch is not always stable during a development cycle), or you may see a loading message such as "Connecting to server ..." that never clears.  
+It's also important that you should read any announcement in the bigbluebutton-dev mailing list related to some changes like a new tool or a new configuration.
 
-To get started with development of !BigBlueButton, you want build components using the corresponding source from the 0.80 release.
-
-It's easy to switch your local git repository to the stable 0.80 codebase. When 0.80 was release, the git repository was tagged with the label `v0.8`.   To switch your local repository to the 0.80 codebase, you create a branch with a new name and append the label `v0.8`.  For example, to create a branch called 'my-bbb-branch', type the git command
-
-{{{
-git checkout -b my-bbb-branch v0.8
-}}}
-
-You should see
-
-{{{
-Switched to a new branch 'my-bbb-branch'
-}}}
-
-Do
-
-{{{
-git status
-}}}
-
-The output should be
-
-{{{
-# On branch my-bbb-branch
-nothing to commit (working directory clean)
-}}}
-
+You will also see many branches created, you should be aware that some of these probably require install other components or compile specify modules. 
 
 = Client Development =
 With the development environment checked out and the code cloned, we're ready to start developing!
@@ -220,9 +196,13 @@ This section will walk you through making a change to the !BigBlueButton client.
 == Setting up the environment ==
 To setup the client for development for the client follow the steps below.
 
-The first thing we need to do is copy the config.xml file from the packaged client to our development directory. 
+The first thing we need to do is to copy the latest config.xml file and update accordingly to our installation. 
 {{{
-cp /var/www/bigbluebutton/client/conf/config.xml $BBBCLIENTHOME/src/conf/config.xml
+cd /home/firstuser/dev/bigbluebutton/
+cp bigbluebutton-client/resources/config.xml.template bigbluebutton-client/src/conf/config.xml
+
+# Update the file according to your needs. i.e. change the HOST to your URL or IP
+vi bigbluebutton-client/src/conf/config.xml
 }}}
 
 The config.xml file is one of the first parts of the client that is loaded and it determines what modules are retrieved and what configurable settings they have. New developers should read it over to see what settings they can change without modifying the client code.
@@ -231,7 +211,7 @@ It's also important to note that when packaged config.xml is updated by either a
 
 Next we're going to copy an xml file that is used to test the client. *Might be outdated*
 {{{
-cp $BBBCLIENTHOME/resources/dev/join-mock.xml $BBBCLIENTHOME/src/conf/join-mock.xml
+cp bigbluebutton-client/resources/dev/join-mock.xml bigbluebutton-client/src/conf/join-mock.xml
 }}}
 
 Now we need to setup nginx to redirect calls to the client towards our development version. If you don't already have a nginx client development file at /etc/bigbluebutton/nginx/client_dev, create one with the following command. Make sure to replace "firstuser" with your own username if it's different.
@@ -258,7 +238,7 @@ sudo ln -f -s /etc/bigbluebutton/nginx/client_dev /etc/bigbluebutton/nginx/clien
 
 Now we need to create a symbolic link between the /bin directory where the client is built to and /client so the name is nicer looking.
 {{{
-ln -s ~/dev/bigbluebutton/bigbluebutton-client/bin ~/dev/bigbluebutton/bigbluebutton-client/client
+ln -s bigbluebutton-client/bin bigbluebutton-client/client
 }}}
 
 Now we need to restart nginx so our changes take effect.
@@ -270,13 +250,13 @@ sudo /etc/init.d/nginx restart
 Let's now build the client  Note we're not making any changes yet -- we're going to build the client to ensure it works.
 
 {{{
-cd ~/dev/bigbluebutton/bigbluebutton-client
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-client
 }}}
 
 First, we'll build the locales (language translation files).  If your not modifying the locales, you only need to do this once.
 
 {{{
-cd ~/dev/bigbluebutton/bigbluebutton-client
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-client
 ant locales
 }}}
 
@@ -287,7 +267,7 @@ Next, let's build the client
 ant
 }}}
 
-This will create a build of the !BigBlueButton client in the `~/dev/bigbluebutton/bigbluebutton-client/bin` directory.
+This will create a build of the !BigBlueButton client in the `/home/firstuser/dev/bigbluebutton/bigbluebutton-client/bin` directory.
 
 After this, point your browser to your !BigBlueButton server and login to the demo page.  The client should start properly.
 
@@ -296,7 +276,8 @@ After this, point your browser to your !BigBlueButton server and login to the de
 Now that we've built the default client let's make a small visible change to the interface.
 
 {{{
-vi ~/dev/bigbluebutton/bigbluebutton-client/src/org/bigbluebutton/main/views/MainApplicationShell.mxml
+cd /home/firstuser/dev/bigbluebutton/
+vi bigbluebutton-client/src/org/bigbluebutton/main/views/MainApplicationShell.mxml
 }}}
 
 The above command uses vi to make a change.  If you are on Windows and developing using the BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type
@@ -377,9 +358,12 @@ to
 
 This section will walk you through the steps to set up development for bigbluebutton-web.
 
-First we need to copy the bigbluebutton.properties file from the packaged bbb-web to our development folder.
+First, we need to update the latest bigbluebutton.properties file according to your setup. Basically, you will have to change the URL and security salt. If you don't know your salt, run `sudo bbb-conf --salt`
 {{{
-cp /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ~/dev/bigbluebutton/bigbluebutton-web/grails-app/conf
+cd /home/firstuser/dev/bigbluebutton/
+
+# Edit the file and change the values of bigbluebutton.web.serverURL and securitySalt. 
+vi bigbluebutton-web/grails-app/conf/bigbluebutton.properties
 }}}
 
 Now you need to give your user account access to upload slides to the presentation directory and also access to write log files.
@@ -424,7 +408,7 @@ sudo /etc/init.d/nginx restart
 
 Now let's start grails webapp.
 {{{
-cd ~/dev/bigbluebutton/bigbluebutton-web/
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-web/
 }}}
 
 Download the necessary libraries.
