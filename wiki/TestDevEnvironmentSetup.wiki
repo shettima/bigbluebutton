@@ -238,7 +238,7 @@ sudo ln -f -s /etc/bigbluebutton/nginx/client_dev /etc/bigbluebutton/nginx/clien
 
 Now we need to create a symbolic link between the /bin directory where the client is built to and /client so the name is nicer looking.
 {{{
-ln -s bigbluebutton-client/bin bigbluebutton-client/client
+ln -s bin bigbluebutton-client/client
 }}}
 
 Now we need to restart nginx so our changes take effect.
