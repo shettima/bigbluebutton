@@ -440,15 +440,10 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
 }}}
 
 ===Developing BBB-Apps===
-Run the setup script. This will remove the bbb-apps package from red5/webapps.
-
-{{{
-sudo apt-get purge --yes bbb-apps
-}}}
 
 Before you build and deploy bbb-apps you need to make sure to first stop the red5 service.
 {{{
-sudo sevice red5 stop
+sudo service red5 stop
 }}}
 
 Now you can compile and deploy bigbluebutton-apps.
