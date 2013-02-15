@@ -65,10 +65,16 @@ cd ~/dev/tools
 
 Then we need to grab and install the actual BigBlueButton development tools. We need to install gradle-0.8, grails-1.1.1, and groovy-1.6.5. It's a good idea to read up on your own and get familiar with the uses and roles of these tools, it will help you understanding of their use in BigBlueButton.
 
-For each of the three tools you will need to download a tar.gz file with wget and then unpack it with tar. The code for downloading and unpacking gradle is below.
+For each of the three tools you will need to download a tar.gz file with wget and then unpack it with tar:
 {{{
 wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar.gz
 tar xvfz gradle-0.8.tar.gz
+
+wget http://bigbluebutton.googlecode.com/files/groovy-1.6.5.tar.gz
+tar xvfz groovy-1.6.5.tar.gz
+
+wget http://bigbluebutton.googlecode.com/files/grails-1.1.1.tar.gz
+tar xvfz grails-1.1.1.tar.gz
 }}}
 
 Next we need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SKD BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
