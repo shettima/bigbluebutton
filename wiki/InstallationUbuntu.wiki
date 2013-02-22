@@ -133,9 +133,16 @@ First, check if you have any previous versions of ruby installed.
   dpkg -l | grep ruby
 }}}
 
-If you do, uninstall them before proceeding further.  !BigBlueButton uses ruby version `1.9.2p290`, which is installed using the instructions below.  
+If you do, the version must match `1.9.2p290`.  
 
-To install ruby, first install the following dependencies to compile ruby.
+{{{
+$ ruby -v
+ruby 1.9.2p290 (2011-07-09 revision 32553)
+}}}
+
+If not, you must install the older version of before proceeding further.  
+
+To install ruby, first install the following dependencies.
 
 {{{
 sudo apt-get install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
