@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 = Overview =
-This document describes how to setup a development environment on a !BigblueButton server.  Once setup, you can make changes to !BigBlueButton for deployment on your server.
+This document describes how to setup a !BigBlueButton development environment on a !BigblueButton server.  Once setup, you can make changes to !BigBlueButton for deployment on your server.
 
 This guide is written for !BigBlueButton 0.81-dev or later.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see 081InstallationUbuntu).  
 
@@ -21,7 +21,7 @@ You don't need to understand everything about each component, but you do need to
 
 These instructions setup a development environment on a working !BigBlueButton server.
 
-The source for !BigBlueButton is managed by git and is hosted on GitHup (see [https://github.com/bigbluebutton/bigbluebutton source code].  You need to be familiar with how git works.  Specifically, how to
+The source for !BigBlueButton is managed by git and is hosted on !GitHub (see [https://github.com/bigbluebutton/bigbluebutton source code].  You need to be familiar with how git works.  Specifically, how to
 
   * clone a repository
   * create a branch
@@ -34,7 +34,7 @@ If you don't know what the terms *_clone_*, *_branch_*, and *_commit_* mean in g
 While it may seem obvious, we emphasize your !BigBlueButton server should be working *before* you start setting up the development environment.  That way, if you do run a modified version of the !BigBlueButton client, for example, and something isn't working, you can switch back to the built-in client to check that your environment is working correctly.
 
 === Developing on Windows ===
-If you are on Windows, we recommend you download the [BigBlueButtonVM BigBlueButton VM] and use it for compiling and testing your changes.  Much of the core development of !BigBlueButton is done using FlexBuilder on Windows and running the !BigBlueButton server in a virtual machine under VMWare Workstation.
+If you are on Windows, we recommend you download the [BigBlueButtonVM BigBlueButton VM] and use it for compiling and testing your changes.  Much of the core development of !BigBlueButton is done using !FlexBuilder on Windows and running the !BigBlueButton server in a virtual machine under VMWare Workstation.
 
 === You'll need sudo abilities ===
 To setup the !BigBlueButton development environment. To verify, you should be able to
@@ -57,13 +57,14 @@ First you need to install the core development tools.
 sudo apt-get install git-core ant openjdk-6-jdk
 }}}
 
-Next you need to make a directory to hold the tools needed for BigBlueButton development.
+Next you need to make a directory to hold the tools needed for !BigBlueButton development.
+
 {{{
 mkdir -p ~/dev/tools
 cd ~/dev/tools
 }}}
 
-Then we need to grab and install the actual BigBlueButton development tools. We need to install gradle-0.8, grails-1.1.1, and groovy-1.6.5. It's a good idea to read up on your own and get familiar with the uses and roles of these tools, it will help you understanding of their use in BigBlueButton.
+Then we need to grab and install the actual !BigBlueButton development tools. We need to install gradle-0.8, grails-1.1.1, and groovy-1.6.5. It's a good idea to read up on your own and get familiar with the uses and roles of these tools, it will help you understanding of their use in !BigBlueButton.
 
 For each of the three tools you will need to download a tar.gz file with wget and then unpack it with tar:
 {{{
@@ -77,7 +78,7 @@ wget http://bigbluebutton.googlecode.com/files/grails-1.1.1.tar.gz
 tar xvfz grails-1.1.1.tar.gz
 }}}
 
-Next we need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SKD BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
+Next we need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SKD !BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
 
 First we have to download the zipped up SDK from the Adobe site.
 {{{
@@ -213,7 +214,7 @@ vi bigbluebutton-client/src/conf/config.xml
 
 The config.xml file is one of the first parts of the client that is loaded and it determines what modules are retrieved and what configurable settings they have. New developers should read it over to see what settings they can change without modifying the client code.
 
-It's also important to note that when packaged config.xml is updated by either a repository update or by changing your BigBlueButton server's ip with --setip, the copy of config.xml in your development directory isn't modified. It's up to you to make sure it has the latest changes.
+It's also important to note that when packaged config.xml is updated by either a repository update or by changing your !BigBlueButton server's ip with --setip, the copy of config.xml in your development directory isn't modified. It's up to you to make sure it has the latest changes.
 
 Next we're going to copy an xml file that is used to test the client. *Might be outdated*
 {{{
@@ -286,7 +287,7 @@ cd /home/firstuser/dev/bigbluebutton/
 vi bigbluebutton-client/src/org/bigbluebutton/main/views/MainApplicationShell.mxml
 }}}
 
-The above command uses vi to make a change.  If you are on Windows and developing using the BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type
+The above command uses vi to make a change.  If you are on Windows and developing using the !BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type
 
 {{{
 bbb-conf --setup-samba
