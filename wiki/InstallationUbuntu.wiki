@@ -127,7 +127,15 @@ If you've not updated in a while, apt-get may recommend you reboot your server a
 == 2. Install Ruby == 
 The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
 
-First, you'll need to install the following dependencies to compile ruby.
+First, check if you have any previous versions of ruby installed.  
+
+{{{
+  dpkg -l | grep ruby
+}}}
+
+If you do, uninstall them before proceeding further.  !BigBlueButton uses ruby version `1.9.2p290`, which is installed using the instructions below.  
+
+To install ruby, first install the following dependencies to compile ruby.
 
 {{{
 sudo apt-get install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
