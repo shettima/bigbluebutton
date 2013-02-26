@@ -31,7 +31,16 @@ $ cat /etc/default/locale
 LANG="en_US.UTF-8"
 }}}
 
-To verify that port 80 is not in use by another application, you can type
+If you don't see `LANG="en_US.UTF-8"`, then do the following
+
+{{{
+sudo apt-get install language-pack-en
+sudo update-locale LANG=en_US.UTF-8
+}}}
+
+and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see `LANG="en_US.UTF-8"`.
+
+Next, verify that port 80 is not in use by another application. To verify, do
 
 {{{
    sudo apt-get install lsof
