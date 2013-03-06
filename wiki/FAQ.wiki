@@ -1922,7 +1922,7 @@ We've occasionally seen this and it's almost always a driver issue.  A quick [ht
 === How can I donate money to the project ===
 The !BigblueButton project doesn't take donations.  We think its a poor business model for running an large open source project.
 
-If you want to help the project financially, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton and engage their services.  This creates a healthy ecosystem around the project that helps it grow.
+If you want to help the project financially, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton and engage their services.  This creates a healthy ecosystem around the project that helps it grow faster.
 
 In the !BigBlueButton project, we would rather earn our revenues (we're entrepreneurs too!).
 
