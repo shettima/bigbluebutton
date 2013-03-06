@@ -1919,11 +1919,12 @@ There were some problems with the latest Flash update on Mac OS X.  See this [ht
 
 We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
-=== How can I donate or help the project ===
-The !BigblueButton project doesn't take donations.  If you have need of professional services to support your !BigBlueButton installation, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton. 
+=== How can I donate money to the project ===
+The !BigblueButton project doesn't take donations.  We think its a poor business model for running an large open source project.
 
-The biggest way you can help this project as a user is to SPREAD THE WORD.  Blog about it, tweet about it, and share your experiences (good, bad, and ugly) with others.  The larger and stronger the !BigBlueButton community, the better this project becomes.
+If you want to help the project financially, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton and engage their services.  This creates a healthy ecosystem around the project that helps it grow.
 
+In the !BigBlueButton project, we would rather earn our revenues (we're entrepreneurs too!).
 
 === How do I change the brand of !BigBlueButton  ===
 There have been a number of companies (and individuals) posting to the
