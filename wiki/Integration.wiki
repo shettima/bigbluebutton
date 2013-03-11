@@ -1,18 +1,1 @@
-#summary List of 3rd party Systems and libraries that integrate with BigBlueButton.
-
-== Introduction ==
-If you don't see your System bellow, feel free to request an integration on our [http://groups.google.com/group/bigbluebutton-dev/ mailing list].
-
-== List of Systems !BigBlueButton integrates with ==
-  * [https://github.com/instructure/canvas-lms/blob/stable/app/models/big_blue_button_conference.rb Canvas LMS]
-  * [http://confluence.sakaiproject.org/display/BBB/Home Sakai]
-  * [http://wordpress.org/extend/plugins/bigbluebutton/ WordPress]
-  * [http://drupal.org/project/bbb Drupal]
-  * [http://moodle.org/mod/data/view.php?d=13&perpage=10&search=bigbluebutton&sort=0&order=DESC&advanced=0&filter=1&f_44=&f_45=&f_46=&f_47=&f_48=&f_49=&f_51=&f_96=&f_97=&f_98=&f_99=&f_100=&f_101=&f_195=&f_213=&f_214=&f_215=&f_216=&u_fn=&u_ln= Moodle]
-  * [http://code.google.com/p/bigbluebuttongem/ Ruby Gem] - To help with developing Rails applications.
-  * [https://chrome.google.com/extensions/detail/ncbonhmhjnamefpmmjdpbohnkbeliehb Chrome extension] to help you test your applications with the BBB API.
-  * [http://doc.tiki.org/BigBlueButton Tiki Wiki CMS Groupware] integration. The integration is in the Tiki core so there is no need to download an extra plugin/extension. Tiki 6.x LTS supports BBB 0.7 and Tiki 8.x supports BBB 0.7 and 0.8  This is part of TikiSuite.
-  * [http://docs.efrontlearning.net/index.php/BigBlueButton eFront]
-  * [http://extensions.joomla.org/extensions/communication/video-conference/14317 Joomla]
-  * [http://code.google.com/p/www-bbb-api/ Perl Scripts] for interfacing Perl with BBB
-  * [http://code.google.com/p/chamilo/ Chamilo LMS] with 5-clicks integration inside course spaces
+Please see: [http://www.bigbluebutton.org/open-source-integrations/ http://www.bigbluebutton.org/open-source-integrations/]
