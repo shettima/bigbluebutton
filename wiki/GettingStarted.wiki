@@ -31,4 +31,3 @@ See also
     * [RecordPlaybackSpecification Record and playback specification]
     * [OpenSourceComponents Open Source Components]
     * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
-    * [Integration Integrating BigBlueButton with your existing system]
