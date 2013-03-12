@@ -233,4 +233,4 @@ Telling every socket under that sessionID to logout is not necessary to complete
 
 If you want to explore, develop and improve the current *html5 prototype*, please follow the instructions on [HTML5DevEnvironmentSetup]
 
-For more details on the curent HTML5 architecture, see HTML5Architecture.
+For more details on the curent HTML5 architecture, see [https://code.google.com/p/bigbluebutton/wiki/HTML5Architecture HTML5Architecture].
