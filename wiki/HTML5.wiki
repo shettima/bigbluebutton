@@ -232,3 +232,5 @@ Telling every socket under that sessionID to logout is not necessary to complete
 = Setup Development =
 
 If you want to explore, develop and improve the current *html5 prototype*, please follow the instructions on [HTML5DevEnvironmentSetup]
+
+For more details on the curent HTML5 architecture, see HTML5Architecture.
