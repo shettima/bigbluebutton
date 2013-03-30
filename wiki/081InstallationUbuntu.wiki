@@ -300,9 +300,9 @@ sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no 
 }}}
 
 
-== 4. Update BigBlueButton ==
+== 4. Update !BigBlueButton ==
 
-Next, update BigBlueButton itself
+Next, update !BigBlueButton itself
 
 {{{
    sudo apt-get dist-upgrade
