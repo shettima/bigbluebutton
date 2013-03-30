@@ -66,7 +66,29 @@ sudo apt-get dist-upgrade
 
 If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
-== 2. Install Ruby == 
+== 2. Install LibreOffice ==
+
+!BigBlueButton uses LibreOffice to convert uploaded MS office documents to PDF.  
+
+First, we'll install a stub package for openoffice.  This will serve as a placeholder for the expected openoffice package.
+
+{{{
+wget http://bigbluebutton.googlecode.com/files/openoffice.org_1.0.4_all.deb
+sudo dpkg -i openoffice.org_1.0.4_all.deb
+}}}
+
+Next, we'll install LibreOffice
+
+{{{
+sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
+sudo apt-get update
+
+sudo apt-get install libreoffice-common
+sudo apt-get install libreoffice
+}}}
+
+
+== 3. Install Ruby == 
 The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
 
 Check if you have a previous version of ruby install.
@@ -155,7 +177,7 @@ Make sure you can execute the above three commands without errors before continu
 
 You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
 
-== 3.  Install ffmpeg ==
+== 4.  Install ffmpeg ==
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
 
 {{{
@@ -184,7 +206,7 @@ sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no 
 }}}
 
 
-== 4.  Install !BigBlueButton == 
+== 5.  Install !BigBlueButton == 
 We're now ready to install !BigblueButton. Type
 
 {{{
@@ -200,7 +222,7 @@ Type 'y' and press Enter.  The packaging will do all the work for you to install
 
 If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
 
-== 5. Install API Demos ==
+== 6. Install API Demos ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
 
@@ -217,7 +239,7 @@ Later on, if you wish to remove the API demos, you can enter the command
 }}}
 
 
-== 6. Install record and playback script == 
+== 7. Install record and playback script == 
 
 !BigBlueButton 0.81 has a new playback format that will process all the activity in the presentation area and all the webcams.  To install the new record and playback script, type
 
@@ -226,7 +248,7 @@ Later on, if you wish to remove the API demos, you can enter the command
 }}}
 
 
-== 7. Do a Clean Restart == 
+== 8. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
