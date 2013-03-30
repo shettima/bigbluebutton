@@ -66,7 +66,7 @@ sudo apt-get dist-upgrade
 
 If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
-== 2. Install LibreOffice ==
+== 2. Install !LibreOffice ==
 
 !BigBlueButton uses LibreOffice to convert uploaded MS office documents to PDF.  
 
