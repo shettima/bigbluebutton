@@ -246,13 +246,15 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 The following steps will update a !BigBlueButton 0.80 server to 0.81.
 
-== 1. Update the BigBlueButton package URL ==
+== 1. Update your server ==
 
+First, update the package URL to point to the new BigBlueButton release.
 
-# Update the BigBlueButton repository URL and ensure the multiverse is enabled
-echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+{{{
+   echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+}}}
 
-Next 
+Next, update the package database on your server.
 
 {{{
    sudo apt-get update
@@ -261,12 +263,13 @@ Next
 
 == 2. Update red5 ==
 
-You must update red5 first before the other packages.
+You must update red5 first before the other !BigBlueButton packages. To update red5, do the following:
 
 {{{
    sudo /etc/init.d/red5 stop
    sudo apt-get install red5
 }}}
+
  
 == 3.  Install ffmpeg ==
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
@@ -299,11 +302,13 @@ sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no 
 
 == 4. Update BigBlueButton ==
 
-Next, update BigBlueButton 
+Next, update BigBlueButton itself
+
 {{{
    sudo apt-get dist-upgrade
 }}}
 
+After the update, make sure everything updated by cleaning out all the old log files, then using the !BigBlueButton configuration utility to check for any installation errors.
 
 {{{
    sudo bbb-conf --clean 
