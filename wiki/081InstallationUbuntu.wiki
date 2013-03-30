@@ -180,7 +180,6 @@ sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no 
 }}}
 
 
-
 == 4.  Install !BigBlueButton == 
 We're now ready to install !BigblueButton. Type
 
@@ -234,4 +233,85 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 The `--clean` option will clear out all the log files for !BigBlueButton.  The `--check` option will grep through the log files looking for errors.  
 
-The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected.  
+The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected. 
+
+
+
+
+= Upgrading from !BigBlueButton 0.80 =
+
+If you are upgrading from !BigBlueButton 0.80, please not if you've made custom changes to BigBlueButton, such as
+
+ * applied custom branding
+ * modified /var/www/bigbluebutton/client/conf/config.xml
+ * modified /var/www/bigbluebutton-default/index.html
+ * modified API demos
+ * modified settings to FreeSWITCH configurations
+ * etc ...
+
+then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
+
+== 1. Update the BigBlueButton package URL ==
+
+
+# Update the BigBlueButton repository URL and ensure the multiverse is enabled
+echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+
+Next 
+
+{{{
+   sudo apt-get update
+}}}
+
+
+== 2. Update red5 ==
+
+You must update red5 first before the other packages.
+
+{{{
+   sudo /etc/init.d/red5 stop
+   sudo apt-get install red5
+}}}
+ 
+== 3.  Install ffmpeg ==
+!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
+
+{{{
+# Install dependencies
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev --yes
+
+
+# Setup libvpx
+if [ ! -d /usr/local/src/libvpx ]; then
+  cd /usr/local/src
+  sudo git clone http://git.chromium.org/webm/libvpx.git
+  cd libvpx
+  sudo ./configure
+  sudo make
+  sudo make install
+fi
+
+# Install ffmpeg
+cd /usr/local/src
+sudo wget http://ffmpeg.org/releases/ffmpeg-0.11.2.tar.gz
+sudo tar -xvzf ffmpeg-0.11.2.tar.gz
+cd ffmpeg-0.11.2
+sudo ./configure  --enable-version3 --enable-postproc  --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis  --enable-libvpx
+sudo make
+sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no --deldoc=yes --default
+}}}
+
+
+== 4. Update BigBlueButton ==
+
+Next, update BigBlueButton 
+{{{
+   sudo apt-get dist-upgrade
+}}}
+
+
+{{{
+   sudo bbb-conf --clean 
+   sudo bbb-conf --check 
+}}}
+ 
