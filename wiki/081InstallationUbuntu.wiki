@@ -65,7 +65,22 @@ If you've not updated in a while, apt-get may recommend you reboot your server a
 == 2. Install Ruby == 
 The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
 
-First, you'll need to install the following dependencies to compile ruby.
+Check if you have a previous version of ruby install.
+
+{{{
+   dpkg -l | grep ruby
+}}}
+
+If you already have ruby installed, check it's version
+
+{{{
+~$ ruby -v
+ruby 1.9.2p290 (2011-07-09 revision 32553)
+}}}
+
+If the version of ruby does not match the above, uninstall it before continuing.
+
+Next, you'll need to install the following dependencies to compile ruby.
 
 {{{
 sudo apt-get install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
