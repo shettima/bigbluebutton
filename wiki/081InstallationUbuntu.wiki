@@ -77,7 +77,7 @@ wget http://bigbluebutton.googlecode.com/files/openoffice.org_1.0.4_all.deb
 sudo dpkg -i openoffice.org_1.0.4_all.deb
 }}}
 
-Next, we'll install LibreOffice
+Next, we'll install !LibreOffice
 
 {{{
 sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
