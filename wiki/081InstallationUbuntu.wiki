@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="3" />
 
-= Introduction =
+= Before You Install =
 
 *Note:* These instructions are currently for developers only.  If your not a developer working on !BigBlueButton 0.81-dev, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
 
@@ -33,6 +33,10 @@ sudo update-locale LANG=en_US.UTF-8
 }}}
 
 and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see `LANG="en_US.UTF-8"`.
+
+= Installing !BigBlueButton 0.81 =
+
+If you are upgrading from !BigBlueButton 0.80, start [#Upgrading_from_BigBlueButton_0.80 here].
 
 == 1. Update your server == 
 
