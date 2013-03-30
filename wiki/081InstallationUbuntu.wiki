@@ -248,7 +248,7 @@ The following steps will update a !BigBlueButton 0.80 server to 0.81.
 
 == 1. Update your server ==
 
-First, update the package URL to point to the new BigBlueButton release.
+First, update the package URL to point to the new !BigBlueButton release.
 
 {{{
    echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
