@@ -22,7 +22,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
   # quad-core 2.6 GHZ CPU
   # Ports 80, 1935, 9123 accessible 
   # Port 80 is not used by another application
-  # 50G of free disk space (or more) for recordings
+  # 500G of free disk space (or more) for recordings
 
 In addition to the above, the locale of the server must be en_US.UTF-8.  You can verify this by
 
