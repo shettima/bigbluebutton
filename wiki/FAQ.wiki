@@ -944,11 +944,40 @@ Note: If you are using a [http://bigbluebutton.org/support third-party plug-in] 
 
 
 === How do I change the maximum allowed size for uploading a presentation? ===
-Right now the maximum size is 30mb. To change it, edit the file:
+The default maximum file upload size for !BigBlueButton is 30 MB. 
+
+To change it, you need to modify two places: the !BigBlueButton client and the nginx configuration.  
+
+To modify the client, you'll need to [#DevelopingBBB setup a development environment] and recompile the client.  Once you have the development environment setup, modify the file 
+
+{{{
+/bigbluebutton-client/src/org/bigbluebutton/modules/present/ui/views/FileUploadWindow.mxml
+}}}
+
+and change the value for `maxFileSize:Number`, which is currently set to 30 MB.
+
+{{{
+var maxFileSize:Number = 30000000;
+
+        if (fileSize > maxFileSize) {     
+          // Hardcode for now to 30M limit. 
+          // This should be configurable to match what's allowed in nginx. (ralam feb 23, 2010) 
+          trace("File exceeds max limit:(" + fileSize + ">" + maxFileSize + ")");              
+          enableControls();
+          displayAlert(ResourceUtil.getInstance().getString('bbb.presentation.maxUploadFileExceededAlert'));
+        } 
+}}}
+
+
+
+Next, change the corresponding limit (again 30 MB) in nginx.  Edit the following file
+
 {{{
   /etc/nginx/sites-available/bigbluebutton 
 }}}
-right here 
+
+and modify the value for client_max_body_size. 
+
 {{{
        location /bigbluebutton { 
            proxy_pass         http://127.0.0.1:8080; 
@@ -959,6 +988,8 @@ $proxy_add_x_forwarded_for;
         # Allow 30M uploaded presentation document. 
            client_max_body_size       30m; 
 }}}
+
+Restart !BigBlueButto.  You should now have a different upload limit for uploading presentations from the !BigBlueButton client.
 
 === How do I change the video quality of the shared webcams? ===
 
