@@ -15,11 +15,13 @@ This means the HTML5 client will completely implement the current Flash-based fu
 
 The existing Flash client will not be replaced by the HTML5 client -- all current functionality of !BigBlueButton will remain intact.  We are adding to the functionality by providing users with the ability to join a session (and increasingly participate) through an HTML5 interface (no flash).
 
-We’ve mapped out the strategy to achieve this vision in three phases:
+== Phases for Development of HTML5 Client ===
 
-  # Support viewing a live session using an HTML5 browser
-  # Support broadcasting audio/video from an HTML5 browser using WebRTC
-  # Support all presentation features of !BigBlueButton in HTML5
+We’ve mapped out the development of the HTML5 client in three phases:
+
+  # Viewing a live !BigBlueButton session using an HTML5 browser (view presentation updates, streaming audio/video, two-way chat).
+  # Broadcast audio/video from an HTML5 browser using WebRTC
+  # Support for all presentation features of !BigBlueButton in HTML5
 
 The following describes our efforts to implement phase 1: viewing a live !BigBlueButton session using an HTML5 browser.
 
