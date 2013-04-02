@@ -948,7 +948,7 @@ The default maximum file upload size for !BigBlueButton is 30 MB.
 
 To change it, you need to modify two places: the !BigBlueButton client and the nginx configuration.  
 
-To modify the client, you'll need to [#DevelopingBBB setup a development environment] and recompile the client.  Once you have the development environment setup, modify the file 
+To modify the client, you'll need to [https://code.google.com/p/bigbluebutton/wiki/DevelopingBBB setup a development environment] and recompile the client.  Once you have the development environment setup, modify the file 
 
 {{{
 /bigbluebutton-client/src/org/bigbluebutton/modules/present/ui/views/FileUploadWindow.mxml
@@ -989,7 +989,7 @@ $proxy_add_x_forwarded_for;
            client_max_body_size       30m; 
 }}}
 
-Restart !BigBlueButto.  You should now have a different upload limit for uploading presentations from the !BigBlueButton client.
+Restart !BigBlueButton.  You should now have a different upload limit for uploading presentations from the !BigBlueButton client.
 
 === How do I change the video quality of the shared webcams? ===
 
