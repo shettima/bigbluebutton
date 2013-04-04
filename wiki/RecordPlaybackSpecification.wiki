@@ -294,12 +294,118 @@ Engage Tool
   # The Playback Client will download the entire audio file for playback (this removes the need to use red5 as a streaming server).
 
 
-==== bbb-record ====
+=== bbb-record ===
 
 Command line tool to manage recordings.
 
-=== --watch ===
+==== --watch ====
 
 [https://bigbluebutton.googlecode.com/files/bbb-record-watch-explanation.PNG]
 
-==== Troubleshooting ====
+===== Troubleshooting =====
+
+
+This section is intended to help you to find and in some cases to solve problems in the 
+Record and Playback component of BigBlueButton, watching the output of the command
+
+{{{
+bbb-record --watch
+}}}
+
+which output is explained [https://code.google.com/p/bigbluebutton/wiki/RecordPlaybackSpecification#--watch here].   
+
+Before trying anything, verify that the "rap worker", (file in charge of the record and playback phases),
+is working. Execute this command to verify:
+
+{{{
+ps ax | grep god | grep -v grep
+}}}
+
+Output should be similar to: 
+
+{{{
+23317 pts/0    Sl     0:00 /usr/bin/ruby1.9.2 /usr/bin/god -c /etc/bigbluebutton/god/god.rb
+}}}
+
+If you don't get any output, start the rap worker manually
+
+{{{
+sudo god -c /etc/bigbluebutton/god/god.rb
+}}}
+
+
+===== RAS ( RECORDED - ARCHIVED - SANITY CHECK ) =====
+
+Below *RAS* you won't see any *_X_* until the meeting has finished.
+
+Once the meeting has finished, an *_X_* under *R* appears, if it does not appear:
+
+ * Be sure all users left the meeting.
+
+ * Check out that the parameter _defaultMeetingExpireDuration_ in _/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties_ does not have a big value (default to 1).
+
+ * Be sure the parameter _record=true_ was passed in the _create_ api call. If not, you didn't record the meeting.
+
+Once the recording is archived, an *_X_* under *A* appears, if it does not appear:
+
+ * Verify this this file exists
+
+_/var/bigbluebutton/recording/status/recorded/INTERNAL-MEETING-ID.done_
+
+that means that the meeting was recorded.
+
+Once the recording passed the sanity check , an *_X_* appears under *S*, if it does not appear:
+
+ * A media file was not properly archived, find the cause of the problem in the sanity log 
+
+{{{
+grep INTERNAL-MEETING-ID /var/log/bigbluebutton/sanity.log
+}}}
+
+
+===== APVD =====
+
+This section is related to recorded media. By default Audio and Presentation are recorded, if you don't see any *_X_* under *V* or *D*, then you haven't
+shared your webcam or desktop, or you haven't enabled webcam or deskshare to be recorded, [MatterhornIntegration#Ensure_BigBlueButton_records_video_and_desktop_session ensure BigBlueButton is configured to record video and desktop session].
+
+===== APVDE =====
+
+This section is related to archived media. If you don't see an *_X_* under a media you are sure that was recorded, check out 
+the sanity log. Execute this command to find the problem:
+
+{{{
+grep INTERNAL-MEETING-ID /var/log/bigbluebutton/sanity.log
+}}}
+
+
+===== Processed =====
+
+If a script was applied to process your recording, its name should be listed under the column 'Processed', by default you should see "slides" and
+"presentation", if you don't see one of them, find the problem in the log file of the processed recording:
+
+{{{
+grep -B 3 "status: 1" /var/log/bigbluebutton/presentation/process-INTERNAL-MEETING-ID.log | grep ERROR
+}}}
+
+{{{
+grep -B 3 "status: 1" /var/log/bigbluebutton/slides/process-INTERNAL-MEETING-ID.log | grep ERROR
+}}}
+
+If there is some output it should show the problem. If there is not any output then tail the file to see which is the
+latest executed task , sure that is the one that failed and an error message with the problem is described few lines after.
+
+===== Published =====
+
+If a script is applied to publish your recording, its name should be listed under the column 'Published', by default you should see "slides" and
+"presentation", if you don't see one of them, find the problem in the log file of the published recording .
+
+{{{
+grep -B 3 "status: 1" /var/log/bigbluebutton/presentation/publish-INTERNAL-MEETING-ID.log | grep ERROR
+}}}
+
+{{{
+grep -B 3 "status: 1" /var/log/bigbluebutton/slides/publish-INTERNAL-MEETING-ID.log | grep ERROR
+}}}
+
+If there is some output then you found the problem, if there is not any output then tail the file to see which is the
+latest executed task , sure that is the one that failed and an error message with the problem is described few lines after.
