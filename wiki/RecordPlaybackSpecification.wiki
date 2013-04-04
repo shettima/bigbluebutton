@@ -292,3 +292,13 @@ Ingest and Processing
   # There will not be any security/passwords/or user accounts protecting the recordings, other than the third-party tool must know the meetingID to access the recordings.
 Engage Tool
   # The Playback Client will download the entire audio file for playback (this removes the need to use red5 as a streaming server).
+
+== Tools ==
+
+=== bbb-record ===
+
+Command line tool to manage recordings.
+
+==== --watch ====
+
+[https://bigbluebutton.googlecode.com/files/bbb-record-watch-explanation.PNG]
