@@ -293,12 +293,13 @@ Ingest and Processing
 Engage Tool
   # The Playback Client will download the entire audio file for playback (this removes the need to use red5 as a streaming server).
 
-== Tools ==
 
-=== bbb-record ===
+==== bbb-record ====
 
 Command line tool to manage recordings.
 
-==== --watch ====
+=== --watch ===
 
 [https://bigbluebutton.googlecode.com/files/bbb-record-watch-explanation.PNG]
+
+==== Troubleshooting ====
