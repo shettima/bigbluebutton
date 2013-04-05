@@ -87,6 +87,11 @@ sudo apt-get install libreoffice-common
 sudo apt-get install libreoffice
 }}}
 
+*Note:*You might get an error "command not found" running'apt-add-repository' if you have a fresh server install. Run the following command to install the tool.
+
+{{{
+sudo apt-get install python-software-properties
+}}}
 
 == 3. Install Ruby == 
 The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
