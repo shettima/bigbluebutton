@@ -1144,6 +1144,8 @@ Now, once a day, cron will execute this script and delete presentation directori
 
 Only the presenter need have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].  To download Java for your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
 
+If you can run the above test applet from your browser, you can run the desktop sharing in !BigBlueButton.  Please note that on Mac OS X with Java 7, you can run applets with FireFox but not Google Chrome, as Chrome is a 32-bit browser and Java 7 requires a 64-bit browser to run.  Hence, on Mac OS X, if you need to run desktop sharing, we recommend using FireFox.
+
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
 === How can I make desktop sharing faster? ===
