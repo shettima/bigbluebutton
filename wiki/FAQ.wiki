@@ -281,7 +281,7 @@ For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/
 = Installation =
 
 == What are the minimum hardware requirements for the !BigBlueButton Server ==
-As a minimum, we recommend you run !BigBlueButton on a dedicated quad-core machine with at least 4 GB of memory and a 2.0+ Ghz processor. 
+As a minimum, we recommend you run !BigBlueButton on a dedicated quad-core machine with at least 4 GB of memory and a 2.6+ Ghz processor. 
 
 We recommend installing !BigBlueButton on Ubuntu 10.04 32-bit/64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
 
