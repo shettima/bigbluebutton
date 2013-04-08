@@ -324,7 +324,7 @@ If at all possible, install on Ubuntu 10.04.  With a good internet connection, y
 === CentOS ===
 There is no support for CentOS.
 
-We do have experience with CentOS.  In April, 2010, we released [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes#Release_0.64:_Lickety-split BigBlueButton 0.64] with [RPMPackaging RPM Packages] for !CentOS 5.4.  However, based on our experience of developing, building, and testing both Ubuntu and !CentOS packages, we stopped supporting RPM packages after that release.
+We do have experience with CentOS.  In April, 2010, we released [http://code.google.com/p/bigbluebutton/wiki/ReleaseNotes#Release_0.64:_Lickety-split BigBlueButton 0.64] with [RPMPackaging RPM Packages] for CentOS 5.4.  However, based on our experience of developing, building, and testing both Ubuntu and CentOS packages, we stopped supporting RPM packages after that release.
 
 Why?  
 
