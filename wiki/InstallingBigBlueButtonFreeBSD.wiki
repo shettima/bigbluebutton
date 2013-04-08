@@ -1,5 +1,7 @@
 #summary How to Install BigBlueButton on FreeBSD/PC-BSD
 
+_Note: These instructions are for 0.70 and are now out of date._
+
 = Introduction =
 
 This how-to has been tested on FreeBSD and PC-BSD 8.1 and 8.2. It assumes some familiarity with installing software using FreeBSD ports and packages. All commands should be run as the superuser.
