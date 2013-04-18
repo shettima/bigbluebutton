@@ -1,6 +1,39 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 
+= Release 0.81 (DRAFT) =
+
+Released: XXX YY, 2013 (Development in progress)
+
+== Major Features ==
+  * * Simplified interface * - !BigBlueButton has a simplified interface for users, a layout manager to manage the windows, and updated icons and skin.
+
+  * * Recording of whiteboard and webacams * - !BigBlueButton now record and plays back all the activity in the presentation window (whiteboard, mouse movements, and pan/zoom) as well as webcams.  Multiple webcams shared during the session will be joined together in a single video for playback.
+  
+  * * Text tool for whiteboard * - Teachers can now annotate the whiteboard with text.
+
+  * * New APIs * - The API now includes a interface to control !BigBlueButton from JavaScript and the ability to dynamically configure the client on a per-user bases, enabling developers to set the skin, layout, buttons, etc. for each user.
+  
+  * * Accessiblity for screen readers * - !BigBlueButton now has support for popular screen readers such as JAWS (version 11+) and NVDA.  There is an extensive list of shortcut keys now supported.
+  
+  * * LTI Support * - There is a new package bbb-lti to enable any system that supports Learning Tools Integration to launch into !BigBlueButton without requiring a custom integration.
+  
+  * * Mozilla Persona * - We've included an API example for login using Mozilla Persona.
+  
+  * * Support for LibreOffice 4.0 * - We've updated the install guide to show how you can install the latest version of LibreOffice and get better conversion of .pptx files in !BigBlueButton.  (We still recommend uploading a PDF file where possible).
+  
+  * * Under the hood * -  We've updated !BigBlueButton to use red5 1.0.2 and a newer build of FreeSWITCH (1.5.x).
+  
+
+== Fixed Issues ==
+See [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary  detailed list of issues fixed in BigBlueButton 0.81]
+
+
+Here's a short video highlighting the new features:
+
+  http://youtu.be/4C-rOd8bi6s
+
+
 = Release 0.8: Bailetti =
 
 _Code named in honor of [http://www.sce.carleton.ca/faculty/bailetti.html Tony Bailetti], head of the Technology Information Management program (Carleton University) who inspired the creation of !BigBlueButton.  For more information, see [http://www.bigbluebutton.org/history/ History of the BigBlueButton Project]._
