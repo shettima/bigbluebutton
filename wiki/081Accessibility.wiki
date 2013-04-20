@@ -1,7 +1,19 @@
-#summary Implementation of accessibility in BigBlueButton
+#summary Implementation of accessibility in !BigBlueButton
 
-==Overview: How to develop accessible extensions, modules, and plugins for the BigBlueButton Flash client==
-Accessibility is an important part of the BigBlueButton application. Not only does it allow users with disabilities to run and participate in meetings, it's also mandated by law that if we CAN make it accessible, we HAVE to. For our purposes, disabilities fall into three main categories: Visual, Auditory, and Motor. This guide focuses mostly on Visual and Motor, simply because of the nature of BigBlueButton and what the CDOT team has run into so far.
+----
+These pages are under development as part of the documentation update for !BigBlueButton 0.81-beta.  
+  * [081InstallationUbuntu 081InstallationUbuntu]
+  * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
+  * [081Accessibility 081Accessibility]
+  * [081Overview 081Overview]
+  * [081RecordAndPlayback 081RecordAndPlayback]
+  * [ReleaseNotes ReleaseNotes].
+
+----
+
+==Overview: How to develop accessible extensions, modules, and plugins for the !BigBlueButton Flash client==
+
+Accessibility is an important part of the !BigBlueButton application. Not only does it allow users with disabilities to run and participate in meetings, it's also mandated by law that if we CAN make it accessible, we HAVE to. For our purposes, disabilities fall into three main categories: Visual, Auditory, and Motor. This guide focuses mostly on Visual and Motor, simply because of the nature of !BigBlueButton and what the CDOT team has run into so far.
 
 With Visual and Motor disabilities there is a common concern of the user being able to navigate through the application, since use of a mouse may not be possible. You'll accommodate this by including your code in the tab order, and also by providing shortcut keys for all user functionality in your code. The rule is, '''if you can do it with a mouse, you need to be able to do it with a keyboard.'''
 
@@ -18,7 +30,7 @@ the ChatOptions class at dev\bigbluebutton\bigbluebutton-client\src\org\bigblueb
 Within the Options class, declare the baseTabIndex instance variable like so:
 <pre>[Bindable] public var baseTabIndex:int;</pre>
 
-In the constructor, make a link to your module's entry in BigBlueButton's config.xml. You can add a baseTabIndex property to the config entry if you want, to allow customization later. This code includes a default value in the event that baseTabIndex is not defined in your module config:
+In the constructor, make a link to your module's entry in !BigBlueButton's config.xml. You can add a baseTabIndex property to the config entry if you want, to allow customization later. This code includes a default value in the event that baseTabIndex is not defined in your module config:
 <pre>
 public function ChatOptions() {
    var cxml:XML =     BBB.getConfigForModule("ChatModule");
@@ -37,9 +49,9 @@ public function getBaseIndex():int{
 }
 </pre>
 
-The core BigBlueButton modules have baseTabIndex values 100 elements apart, to accommodate future growth. Replace 701 in the else clause with another, more suitable number that reflects a logical place for your module.
+The core !BigBlueButton modules have baseTabIndex values 100 elements apart, to accommodate future growth. Replace 701 in the else clause with another, more suitable number that reflects a logical place for your module.
 
-For the existing default baseTabIndex values of the core BigBlueButton client, check \dev\bigbluebutton\bigbluebutton-client\README.
+For the existing default baseTabIndex values of the core !BigBlueButton client, check \dev\bigbluebutton\bigbluebutton-client\README.
 
 Lastly, determine which MXML file in your module is the "main" file. Continuing with the example of the Chat module, this is dev\bigbluebutton\bigbluebutton-client\src\org\bigbluebutton\modules\chat\views\ChatWindow.mxml. Import your Options class into that MXML with a standard import statement, and declare a baseIndex instance variable just as you did in your Options class, as well as an instance of your Options class, like so:
 <pre>
@@ -101,7 +113,7 @@ According to CDOT's research, there are two main screen-reader applications to b
 
 Before you can get any meaningful results from the screen-reader, you'll need to have your tab order sorted out. If you have not done so, please refer to the previous part of this guide.
 
-Adding screen-reader compatibility is relatively simple, and revolves around the accessibilityName property, or in some cases the toolTip property. However, not all Flash components are compatible; for example, Labels are not accessible. Adobe has released a comprehensive guide on the subject; we will focus on BigBlueButton here.
+Adding screen-reader compatibility is relatively simple, and revolves around the accessibilityName property, or in some cases the toolTip property. However, not all Flash components are compatible; for example, Labels are not accessible. Adobe has released a comprehensive guide on the subject; we will focus on !BigBlueButton here.
 
 One last thing to consider, is localization. All of your accessibilityNames must be in the locale file, so that the community can translate them to other languages and your module can be used worldwide.
 
@@ -119,10 +131,10 @@ Dynamic accessibilityNames can be assigned the same way. For static components, 
 If you change an accessibilityName dynamically, be sure to call Accessibility.updateProperties() to force the screen-reader to update it's cached version of the application. The operation is fairly memory-intensive, so use it efficiently.
 
 ===Testing===
-Testing can be done in a very similar manner to testing the tab order. Open your screen-reader of choice, start up the BigBlueButton application, and use the Tab key to navigate to your module. Listen to the reader's description of what is on the screen, and try to put yourself in the position of a blind or partially-sighted user. Turn your monitor off, if it helps. Also listen to the descriptions of established BigBlueButton core modules, and mimic the conventions there in your own accessiblityNames.
+Testing can be done in a very similar manner to testing the tab order. Open your screen-reader of choice, start up the !BigBlueButton application, and use the Tab key to navigate to your module. Listen to the reader's description of what is on the screen, and try to put yourself in the position of a blind or partially-sighted user. Turn your monitor off, if it helps. Also listen to the descriptions of established !BigBlueButton core modules, and mimic the conventions there in your own accessiblityNames.
 
 ==Shortcut Keys==
-The last main component of adding accessibility to your code is to add shortcut keys. Like hotkeys in any other application, these are key combinations that allow quick access to any feature. In BigBlueButton, there are two distinct sets of hotkeys: global and local. Each of these has it's own "modifier," depending on the browser, and an ASCII keycode. For example, the hotkey to focus the Presentation window has the keyCode 52, which translates to the number 4 key. In Firefox, since it is a global hotkey, the modifier is the Control key. So, Ctrl-4 focuses the Presentation window. The modifiers are in this table:
+The last main component of adding accessibility to your code is to add shortcut keys. Like hotkeys in any other application, these are key combinations that allow quick access to any feature. In !BigBlueButton, there are two distinct sets of hotkeys: global and local. Each of these has it's own "modifier," depending on the browser, and an ASCII keycode. For example, the hotkey to focus the Presentation window has the keyCode 52, which translates to the number 4 key. In Firefox, since it is a global hotkey, the modifier is the Control key. So, Ctrl-4 focuses the Presentation window. The modifiers are in this table:
 {| class="wikitable" border="1" cellpadding="5"
 |-
 ! Browser !! Global !! Local
@@ -224,20 +236,20 @@ Now that everything is in place, we can have a look at how it all fits together.
 But the important thing is, it works, and users can now see which hotkeys do what in your module. Now we actually have to make them do something.
 
 ===Global Shortcuts===
-Before we get into creating global shortcuts within BigBlueButton, first be sure that you have already added the ASCII codes for your hotkeys into the locale file, as described above in the section about the Shortcut Help Window. Also, make sure that you have added constants as necessary to ShortcutEvent.as, as described in "Deciding what hotkeys to add." Once you've done that, we can proceed.
+Before we get into creating global shortcuts within !BigBlueButton, first be sure that you have already added the ASCII codes for your hotkeys into the locale file, as described above in the section about the Shortcut Help Window. Also, make sure that you have added constants as necessary to ShortcutEvent.as, as described in "Deciding what hotkeys to add." Once you've done that, we can proceed.
 
-Global shortcuts, in the context of BigBlueButton, are hotkeys that can be used from anywhere within the application, such as the hotkey to focus into the Presentation window. Compare this to local shortcuts which can only be used within the module they affect, such as the hotkey WITHIN the Presentation window to advance to the next slide.
+Global shortcuts, in the context of !BigBlueButton, are hotkeys that can be used from anywhere within the application, such as the hotkey to focus into the Presentation window. Compare this to local shortcuts which can only be used within the module they affect, such as the hotkey WITHIN the Presentation window to advance to the next slide.
 
 '''REMINDER:''' As the table in the Shortcut Keys overview shows, global and local shortcut keys also use separate modifiers, to allow the entire keyboard to be used in the global scope and again in each module.
 
 All global shortcuts begin in /bigbluebutton-client/src/BigBlueButton.mxml. The framework for shortcut keys is already present, so all you need to worry about is adding your hotkeys to that framework. Moving forward, we will continue the example from the Shortcut Help Window section of the fictional Opinion module.
 
-In BigBlueButton.mxml, find the loadKeyCombos() method. This collects all available global shortcuts into an object called keyCombos. The Opinion module has only one global shortcut, so the only line we need to add to this method is:
+In !BigBlueButton.mxml, find the loadKeyCombos() method. This collects all available global shortcuts into an object called keyCombos. The Opinion module has only one global shortcut, so the only line we need to add to this method is:
 <code>keyCombos[modifier+(ResourceUtil.getInstance().getString('bbb.shortcutkey.focus.opinion') as String)] = ShortcutEvent.FOCUS_OPINION_MODULE;</code>
 
 '''NOTE: Generally, your module's only global shortcut will be to move the applications focus into your module, although this is not a rule by any means.'''
 
-That's it, that's all you need to add to BigBlueButton.mxml. The framework for detecting whether the user has pressed the correct keys to dispatch the event and then actually dispatching it is already coded in. If you are curious how it all fits together, we'll get into that in the "Local Hotkeys" section below.
+That's it, that's all you need to add to !BigBlueButton.mxml. The framework for detecting whether the user has pressed the correct keys to dispatch the event and then actually dispatching it is already coded in. If you are curious how it all fits together, we'll get into that in the "Local Hotkeys" section below.
 
 Now, you need to set up a listener for that event you've just dispatched. Assuming that the Opinion module is an MDIWindow like the other main modules, you'll want to open the main MXML file for it. Between the opening <MDIWindow> tag and the opening <mx:Script> tag, you need to add a <mate:Listener> tag like so:
 <code><mate:Listener type="{ShortcutEvent.FOCUS_OPINION_MODULE}" method="focusWindow" /></code>
