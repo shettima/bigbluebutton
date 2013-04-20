@@ -20,7 +20,7 @@ Released: XXX YY, 2013 (Development in progress)
   
   * * Mozilla Persona * - We've included an API example for login using Mozilla Persona.
   
-  * * Support for LibreOffice 4.0 * - We've updated the install guide to show how you can install the latest version of LibreOffice and get better conversion of .pptx files in !BigBlueButton.  (We still recommend uploading a PDF file where possible).
+  * * Support for !LibreOffice 4.0 * - We've updated the install guide to show how you can install the latest version of LibreOffice and get better conversion of .pptx files in !BigBlueButton.  (We still recommend uploading a PDF file where possible).
   
   * * Under the hood * -  We've updated !BigBlueButton to use red5 1.0.2 and a newer build of FreeSWITCH (1.5.x).
   
