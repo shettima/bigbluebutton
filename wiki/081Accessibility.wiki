@@ -1,16 +1,5 @@
 #summary Implementation of accessibility in !BigBlueButton
 
-----
-These pages are under development as part of the documentation update for !BigBlueButton 0.81-beta.  
-  * [081InstallationUbuntu 081InstallationUbuntu]
-  * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
-  * [081Accessibility 081Accessibility]
-  * [081Overview 081Overview]
-  * [081RecordAndPlayback 081RecordAndPlayback]
-  * [ReleaseNotes ReleaseNotes].
-
-----
-
 ==Overview: How to develop accessible extensions, modules, and plugins for the !BigBlueButton Flash client==
 
 Accessibility is an important part of the !BigBlueButton application. Not only does it allow users with disabilities to run and participate in meetings, it's also mandated by law that if we CAN make it accessible, we HAVE to. For our purposes, disabilities fall into three main categories: Visual, Auditory, and Motor. This guide focuses mostly on Visual and Motor, simply because of the nature of !BigBlueButton and what the CDOT team has run into so far.
