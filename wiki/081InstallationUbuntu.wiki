@@ -1,13 +1,15 @@
 #summary How to install BigBlueButton 0.81-dev
 
-<wiki:toc max_depth="3" />
-
-*Note* This page is under development as part of the work to update the documentation for BigBlueButton 0.81-beta.  Here are the following pages related to this upcoming release.
+*Note* This pages are under development as part of the documentation update for BigBlueButton 0.81-beta:  
   * [081InstallationUbuntu 081InstallationUbuntu]
   * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
   * [081Accessibility 081Accessibility]
   * [081Overview 081Overview]
   * [081RecordAndPlayback 081RecordAndPlayback]
+
+There is also the [ReleaseNotes release notes].
+
+<wiki:toc max_depth="3" />
 
 = Before You Install =
 
