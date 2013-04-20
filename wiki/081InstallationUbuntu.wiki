@@ -1,13 +1,15 @@
 #summary How to install BigBlueButton 0.81-dev
 
 ----
-These pages are under development as part of the documentation update for BigBlueButton 0.81-beta.  
+These pages are under development as part of the documentation update for !BigBlueButton 0.81-beta.  
   * [081InstallationUbuntu 081InstallationUbuntu]
   * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
   * [081Accessibility 081Accessibility]
   * [081Overview 081Overview]
   * [081RecordAndPlayback 081RecordAndPlayback]
-  * [ReleaseNotes ReleaseNotes].
+  * [ReleaseNotes ReleaseNotes]
+
+Watch for announcement in [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] when 0.81-beta is released.
 
 ----
 
