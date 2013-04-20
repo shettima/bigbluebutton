@@ -2,6 +2,13 @@
 
 <wiki:toc max_depth="3" />
 
+*Note* This page is under development as part of the work to update the documentation for BigBlueButton 0.81-beta.  Here are the following pages related to this upcoming release.
+  * [081InstallationUbuntu 081InstallationUbuntu]
+  * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
+  * [081Accessibility 081Accessibility]
+  * [081Overview 081Overview]
+  * [081RecordAndPlayback 081RecordAndPlayback]
+
 = Before You Install =
 
 *Note:* These instructions are currently for developers only.  If your not a developer working on !BigBlueButton 0.81-dev, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
