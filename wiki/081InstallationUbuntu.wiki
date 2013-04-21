@@ -87,7 +87,7 @@ sudo apt-get install libreoffice-common
 sudo apt-get install libreoffice
 }}}
 
-*Note:*You might get an error "command not found" running'apt-add-repository' if you have a fresh server install. Run the following command to install the tool.
+*Note:* You might get an error "command not found" running `apt-add-repository` if you have a fresh server install. Run the following command to install the tool.
 
 {{{
 sudo apt-get install python-software-properties
@@ -148,7 +148,7 @@ sudo update-alternatives --install /usr/bin/gem gem /usr/bin/gem1.9.2 500
 
 }}}
 
-Next, run the script
+Next, run the commands
 
 {{{
 chmod +x install-ruby.sh
@@ -183,7 +183,7 @@ Make sure you can execute the above three commands without errors before continu
 You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
 
 == 4.  Install ffmpeg ==
-!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
+!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
 {{{
 # Install dependencies
@@ -208,6 +208,29 @@ cd ffmpeg-0.11.2
 sudo ./configure  --enable-version3 --enable-postproc  --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis  --enable-libvpx
 sudo make
 sudo checkinstall --pkgname=ffmpeg --pkgversion="5:$(./version.sh)" --backup=no --deldoc=yes --default
+}}}
+
+Next, run the commands
+
+{{{
+chmod +x install-ffmpeg.sh
+./install-ffmpeg.sh
+}}}
+
+After the script finishes, check that ffmepg is installed by typing the command `ffmpeg -version`.  You should see the following
+
+{{{
+$ ffmpeg -version
+ffmpeg version 0.11.2
+built on Apr 11 2013 02:46:07 with gcc 4.4.3
+configuration: --enable-version3 --enable-postproc --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libvpx
+libavutil      51. 54.100 / 51. 54.100
+libavcodec     54. 23.100 / 54. 23.100
+libavformat    54.  6.100 / 54.  6.100
+libavdevice    54.  0.100 / 54.  0.100
+libavfilter     2. 77.100 /  2. 77.100
+libswscale      2.  1.100 /  2.  1.100
+libswresample   0. 15.100 /  0. 15.100
 }}}
 
 
