@@ -267,16 +267,7 @@ Later on, if you wish to remove the API demos, you can enter the command
 }}}
 
 
-== 7. Install record and playback script == 
-
-!BigBlueButton 0.81 has a new playback format that will process all the activity in the presentation area and all the webcams.  To install the new record and playback script, type
-
-{{{
-   sudo apt-get install bbb-playback-presentation
-}}}
-
-
-== 8. Do a Clean Restart == 
+== 7. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
