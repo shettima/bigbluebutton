@@ -4,7 +4,7 @@
 
 = Before You Install =
 
-*Note:* These instructions are currently for developers only.  If your not a developer working on !BigBlueButton 0.81-dev, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
+*Note:* These instructions are currently for developers only.  If your not a developer, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
 
 
 The requirements are
