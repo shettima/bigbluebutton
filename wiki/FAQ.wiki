@@ -198,6 +198,7 @@ Active Committers:
   * Felipe Cecagno, Client
   * Fred Dixon, Project Manager
   * Tiago Jacobs, red5
+  * Chad Pilkey, Client
   * Gustavo Salazar, Record and Playback
 
 Past Committers (fondly remembered):
