@@ -224,12 +224,6 @@ The config.xml file is one of the first parts of the client that is loaded and i
 
 It's also important to note that when packaged config.xml is updated by either a repository update or by changing your !BigBlueButton server's ip with --setip, the copy of config.xml in your development directory isn't modified. It's up to you to make sure it has the latest changes.
 
-Next we're going to copy an xml file that is used to test the client. *Might be outdated*
-
-{{{
-cp bigbluebutton-client/resources/dev/join-mock.xml bigbluebutton-client/src/conf/join-mock.xml
-}}}
-
 Now we need to setup nginx to redirect calls to the client towards our development version. If you don't already have a nginx client development file at /etc/bigbluebutton/nginx/client_dev, create one with the following command. Make sure to replace "firstuser" with your own username if it's different.
 {{{
 echo "
@@ -250,11 +244,6 @@ index index.html index.htm;
 Now we need to create a symbolic link so our client redirect works.
 {{{
 sudo ln -f -s /etc/bigbluebutton/nginx/client_dev /etc/bigbluebutton/nginx/client.nginx
-}}}
-
-Now we need to create a symbolic link between the /bin directory where the client is built to and /client so the name is nicer looking.
-{{{
-ln -s bin client
 }}}
 
 Now we need to restart nginx so our changes take effect.
