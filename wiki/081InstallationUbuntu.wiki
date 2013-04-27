@@ -9,7 +9,7 @@
 
 The requirements are
 
-  * Ubuntu 10.04 32-bit or 64-bit
+  * Ubuntu 10.04 64-bit
   * 4 GB of memory (8 GB is better)
   * Quad-core 2.6 GHZ CPU (or faster)
   * Ports 80, 1935, 9123 accessible
@@ -83,14 +83,9 @@ Next, we'll install !LibreOffice
 sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
 sudo apt-get update
 
+sudo apt-get install python-software-properties
 sudo apt-get install libreoffice-common
 sudo apt-get install libreoffice
-}}}
-
-*Note:* You might get an error "command not found" running `apt-add-repository` if you have a fresh server install. Run the following command to install the tool.
-
-{{{
-sudo apt-get install python-software-properties
 }}}
 
 == 3. Install Ruby == 
