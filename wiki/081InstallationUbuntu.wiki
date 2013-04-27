@@ -90,7 +90,7 @@ If you've not updated in a while, apt-get may recommend you reboot your server a
 
 == 2. Install !LibreOffice ==
 
-!BigBlueButton uses !LibreOffice to convert uploaded MS office documents to PDF. !LibreOffice does a far better job of converting documents than the default OpenOffice packages in Ubuntu 10.04.
+!BigBlueButton uses !LibreOffice to convert uploaded MS office documents to PDF. !LibreOffice does a far better job of converting documents than the default !OpenOffice packages in Ubuntu 10.04.
 
 First, we'll install a stub package for openoffice.  This will serve as a placeholder for !BigBlueButton's dependency on !OpenOffice..
 
@@ -102,10 +102,11 @@ sudo dpkg -i openoffice.org_1.0.4_all.deb
 Next, we'll install !LibreOffice
 
 {{{
+sudo apt-get install python-software-properties
+
 sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
 sudo apt-get update
 
-sudo apt-get install python-software-properties
 sudo apt-get install libreoffice-common
 sudo apt-get install libreoffice
 }}}
