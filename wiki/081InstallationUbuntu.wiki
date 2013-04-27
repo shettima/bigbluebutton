@@ -61,18 +61,29 @@ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
 echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
-echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
-
 }}}
 
 *Note:* The repository for lucid_dev_081 currently _development_ builds of !BigBlueButton 0.81.  Until there is an announcement in [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] that !BigBlueButton 0.81-beta, these development packages may periodically break as development proceeds to beta.
 
-After you've made the above changes, do a dist-upgrade to ensure your running the latest packages and your server is up-to-date before installing !BigBlueButton.
+Next, ensure that you have `lucid multiverse` in your `sources.list`.  Do the following.
+
+{{{
+$ grep "lucid multiverse" /etc/apt/sources.list
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+}}}
+
+If you don't see the deb line for `lucid multiverse`, execute the following line to add this repository to `sources.list`.
+
+{{{
+echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+}}}
+
+After you've made the above changes, do a dist-upgrade to ensure all the current packages on your server are up-to-date.
 
 {{{
 sudo apt-get update
 sudo apt-get dist-upgrade
-
 }}}
 
 If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
