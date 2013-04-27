@@ -26,6 +26,8 @@ LANG="en_US.UTF-8"
 }}}
 
 If you don't see `LANG="en_US.UTF-8"`, then do the following
+$ uname -a
+Linux ubuntu 2.6.32-46-generic #108-Ubuntu SMP Thu Apr 11 15:56:25 UTC 2013 x86_64 GNU/Linux
 
 {{{
 sudo apt-get install language-pack-en
@@ -33,6 +35,15 @@ sudo update-locale LANG=en_US.UTF-8
 }}}
 
 and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see `LANG="en_US.UTF-8"`.
+
+Also, check that you are running under 64-bit.
+
+{{{
+$ uname -m
+x86_64
+}}}
+
+You should see `x86_64`.  
 
 = Installing !BigBlueButton 0.81 =
 
