@@ -216,7 +216,21 @@ The first thing we need to do is to copy the latest config.xml file and update a
 cd /home/firstuser/dev/bigbluebutton/
 cp bigbluebutton-client/resources/config.xml.template bigbluebutton-client/src/conf/config.xml
 
-# Update the file according to your needs. i.e. change the HOST to your URL or IP
+}}}
+
+Change the HOST in config.xml with your DOMAIN or IP ADDRESS:
+
+{{{
+# Update config.xml with an ip address (Replace the ip address with yours)
+sed -i s/HOST/192.168.1.145/g bigbluebutton-client/src/conf/config.xml
+ 
+# Or with a domain (Replace the domain with yours)
+sed -i s/HOST/mydomain.com/g bigbluebutton-client/src/conf/config.xml
+}}}
+
+Update the file according to your needs. 
+
+{{{
 vi bigbluebutton-client/src/conf/config.xml
 }}}
 
