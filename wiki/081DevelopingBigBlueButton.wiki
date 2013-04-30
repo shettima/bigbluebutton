@@ -515,7 +515,7 @@ ant sign-jar
 If you get an error something like
 {{{
 sign-jar:
-  [signjar] Signing JAR: /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.71.jar to /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.71.jar as code.signer
+  [signjar] Signing JAR: /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.1.jar to /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.1.jar as code.signer
   [signjar] jarsigner: unable to sign jar: java.util.zip.ZipException: duplicate entry: com/myjavatools/web/ClientHttpRequest.class
   [signjar] Enter Passphrase for keystore:
 
@@ -535,18 +535,18 @@ Somehow, some classes got duplicated. Try recompiling the common dir.
 Then sign the applet again.
 
 
-The signed jar file is located in {{{/home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar}}}
+The signed jar file is located in {{{/home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.1.jar}}}
 
 We need to copy it to where nginx is loading the client.
 
 If you are developing also the bbb-client, then
 {{{
-cp /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar /home/firstuser/dev/bigbluebutton/bigbluebutton-client/client
+cp /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.1.jar /home/firstuser/dev/bigbluebutton/bigbluebutton-client/client
 }}}
 
 If you are not developing the client, therefore, nginx will serve the client from the default location. Therefore, 
 {{{
-cp /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.jar /var/www/bigbluebutton/client/
+cp /home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.1.jar /var/www/bigbluebutton/client/
 }}}
 
 *Building the server side component.*
