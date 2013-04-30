@@ -305,7 +305,7 @@ The above command uses vi to make a change.  If you are on Windows and developin
 bbb-conf --setup-samba
 }}}
 
-Once you have `MainApplicationShell.mxml` open, at line 311, you'll see the following text
+Once you have `MainApplicationShell.mxml` open, at line 417, you'll see the following text
 
 {{{
 <mx:Label text="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>
