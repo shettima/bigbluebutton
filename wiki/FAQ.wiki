@@ -530,7 +530,9 @@ For hardware we recommend a Dual-core CPU with at least 2G of memory.  For Mac, 
 
 As a rule of the thumb, without knowing anything about your server, we recommend you use !BigBlueButton with on-line classes totaling twenty-five (25) users or less.  This may be one class of 25 users, 2 x 12, 5 x 5, etc.
 
-Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  You should stress test your server before trying it with a live class (see below).
+See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum server requirements] and [https://code.google.com/p/bigbluebutton/wiki/FAQ#What_are_the_minimum_bandwidth_requirements_for_the_BigBlueButto minimum bandwidth requirements].
+
+Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  You should stress test your server before trying it with a live class (see below). 
 
 Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.   Take any stress test with a grain of salt.  There are many variables at play:
 
