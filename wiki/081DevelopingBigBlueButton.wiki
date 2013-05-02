@@ -449,7 +449,7 @@ Now test again if you can join the demo meeting.
 Make red5/webapps writeable. Otherwise, you will get permission error when you try to deploy into Red5.
 
 {{{
-  sudo chmod -R o+w /usr/share/red5/webapps
+  sudo chmod -R 777 /usr/share/red5/webapps
 }}}
 
 ===Developing BBB-Apps===
