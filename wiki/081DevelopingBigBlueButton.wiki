@@ -34,14 +34,17 @@ The source for !BigBlueButton is managed by git and is hosted on !GitHub (see [h
 If you don't know what the terms *_clone_*, *_branch_*, and *_commit_* mean in git, stop now and spend some time working with git to understand these concepts.  A good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  
 
 === Setup a Working !BigBlueButton Server ===
-You'll setup the development environment on an unmodified !BigBlueButton server installed from packages.
+You'll setup the development environment on an unmodified !BigBlueButton server installed from packages on a 64-bit server (or virtual machine). 
+
+*Note:* You must use a 64-bit server (or virtual machine).  There is no 32-bit packages, and the 32-bit virtual machine will not work.
 
 While it may seem obvious, we emphasize your !BigBlueButton server should be working *before* you start setting up the development environment.  That way, if you start to modify the !BigBlueButton client, for example, and something isn't working, you can switch back to the built-in client to check that your environment is working correctly.
 
 === Developing on Windows ===
-To develop !BigBlueButton from within a Windows OS, first download the [BigBlueButtonVM BigBlueButton VM] and use it for compiling and testing your changes.  Much of the core development of !BigBlueButton is done using !FlexBuilder on Windows and running the !BigBlueButton server in a virtual machine under VMWare Workstation.  (You can use VMWare player, but VMWare Workstation gives you the ability to snapshot the virtual machine, making it easy to return to previous working states.)
+To develop !BigBlueButton from within a Windows OS, you'll need to use VMWare Player or Virtual box to first create a Ubuntu 10.04 64-bit virtual machine.
 
-=== You'll need root privilidges ===
+
+=== You'll need root privileges ===
 To setup the !BigBlueButton development environment, you need to exectue commands as root, such as
 
 {{{
