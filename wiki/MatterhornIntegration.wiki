@@ -162,6 +162,37 @@ You can do a small test for checking the ssh connection by running a remote comm
 sudo -su tomcat6 ssh -i /usr/local/bigbluebutton/core/scripts/matt_id_rsa  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o CheckHostIP=no root@192.168.0.147 'ls /opt/matterhorn/felix/'
 }}}
 
+The output will be similar to this 
+{{{
+
+Could not create directory '/usr/share/tomcat6/.ssh'.
+Warning: Permanently added 'xxx.xxx.xx.x' (RSA) to the list of known hosts.
+root@xxx.xxx.xx.x's password: 
+
+bin
+bundle
+conf
+DEPENDENCIES
+doc
+etc
+felix-cache
+inbox
+LICENSE
+LICENSE.kxml2
+load
+logs
+matterhorn
+NOTICE
+
+}}}
+
+You can ignore the message 
+{{{
+Could not create directory '/usr/share/tomcat6/.ssh'.
+}}}
+
+at the beginning of the output, it won't affect the ssh connection.
+
 Now ingestion should work during the publish phase.
 
 
