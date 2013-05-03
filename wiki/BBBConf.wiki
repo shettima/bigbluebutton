@@ -86,6 +86,12 @@ Switches conference module in Asterisk.  Valid choices are `konference` or `meet
 Checks the log files for errors
 
 
+=== `--network` ===
+This command shows you the number of active connections for port 80 (HTTP), 1935 (RTMP), and 9123 (Desktop sharing) for each remote IP address.
+
+The main purpose of this command is to check for users that are tunnelling to the BigBlueButton server.  If you see a connected users that has no entries in 1935 or 9123, then that users is tunnelling (all their connections are going through port 80).
+
+
 === `--reset-dev` ===
 Resets the development environment back to using packages.
 
