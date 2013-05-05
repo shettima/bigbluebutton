@@ -347,10 +347,63 @@ Next, update !BigBlueButton itself
    sudo apt-get dist-upgrade
 }}}
 
+You'll be asked to update the nginx definition for BigBlueButton.
+
+{{{
+Configuration file `/etc/nginx/sites-available/bigbluebutton'
+ ==> Modified (by you or by a script) since installation.
+ ==> Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : background this process to examine the situation
+ The default action is to keep your current version.
+*** bigbluebutton (Y/I/N/O/D/Z) [default=N] ?
+}}}
+
+Enter 'Y' to continue the upgrade.  Next, we'll need to trigger an update to the !FreeSWITCH configuration as the dependencies of the packages have changed.  To trigger the update, we'll remove the old package
+
+{{{
+sudo apt-get remove bbb-freeswitch
+}}}
+
+Enter 'Y' to remove the old package, and then re-apply the new packages.  this will trigger a download and install of the new bbb-freeswitch package.
+
+{{{
+sudo apt-get install bigbluebutton
+}}}
+
+
 After the update, make sure everything updated by cleaning out all the old log files, then using the !BigBlueButton configuration utility to check for any installation errors.
 
 {{{
    sudo bbb-conf --clean 
    sudo bbb-conf --check 
 }}}
- 
+
+== 5. Updating the recording scripts ==
+The installation of 0.81 will install a new record and playback script called `presentation`.  This replaces the older record and playback script `slides` in 0.80.
+
+After upgrade, you'll still have the older record and playback scripts installed.  
+
+{{{
+$ dpkg -l | grep slides
+ii  bbb-playback-slides               0.80ubuntu94                                    BigBluebutton playback of slides and audio
+}}}
+
+If you didn't have any recordings in 0.80, you can simply remove the old script. 
+
+{{{
+sudo apt-get autoremove
+}}}
+
+If you do have recordings, you'll want to keep this package to enable users to view the older recordings; however, prevent !BigBlueButton from processing newer recordings using `slides` (again, you'll want to use the newer `presentation` scripts), you can disable the older scripts by doing the following.
+
+{{{
+mkdir -p /var/tmp/process /var/tmp/publish
+sudo mv /usr/local/bigbluebutton/core/scripts/process/slides.rb /var/tmp/process
+sudo mv /usr/local/bigbluebutton/core/scripts/publish/slides.rb /var/tmp/publish
+}}}
+
+
