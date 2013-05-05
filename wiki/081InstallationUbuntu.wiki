@@ -6,7 +6,7 @@
 
 *Note:* These instructions are currently for developers only.  If your not a developer, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
 
-*Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet (but there will be before final release of 0.81.
+*Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet (but there will be before final release of 0.81).
 
 
 The requirements are
