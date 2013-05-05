@@ -3,9 +3,7 @@
 <wiki:toc max_depth="2" />
 
 = Overview =
-*Note:* These instructions refer to !BigBlueButton 0.81-dev, referred hereafter as simply !BigBlueButton 0.81.
-
-This document describes how to setup a development environment using an existing !BigblueButton 0.81 server.  Once setup, you can make custom changes to !BigBlueButton source, compile the changes, and replace the corresponding components on the server (such as updating the !BigBigBlueButton client).
+*Note:* These instructions refer to !BigBlueButton 0.81-dev, referred hereafter as simply as "!BigBlueButton 0.81".
 
 This guide is written for !BigBlueButton 0.81.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see 081InstallationUbuntu).
 
@@ -18,56 +16,78 @@ A !BigBlueButton server is built from a number of compnents that corresponding t
 
 You don't need to understand everything about each component, but you do need to understand the [ArchitectureOverview overall architecture] works together. 
 
-The instructions in this guide are step-by-step.  This way, you can see every step needed to start developing and modifying !BigBlueButton.
+This document describes how to setup a development environment using an existing !BigblueButton 0.81 server.  Once the environment is setup, you will be able to make custom changes to !BigBlueButton source, compile the source, and replace the corresponding components on the server (such as updating the !BigBigBlueButton client).
 
-If you encounter problems or errors at any step, don't ignore the errors and continue.  Stop and double-check that you’ve entered the correct information.  If your unable to determine the cause of the error, do the following
+The instructions in this guide are step-by-step so you can understand each step needed to modify a component.  If you encounter problems or errors at any step, don't ignore the errors.  Stop and double-check that you have done the step correctly.  If your unable to determine the cause of the error, do the following
 
-  * Use Google to search for the error.  There is a wealth of information in bigbluebutton-dev that Google indexes.
+  * First, use Google to search for the error.  There is a wealth of information in bigbluebutton-dev that Google indexes.
+  * Try doing the same steps on a different !BigBlueButton server.
   * Post a question to bigbluebutton-dev with a description of the problem and the steps to reproduce.  
 
 
 == Before you begin ==
 
-For managing the source code, the !BigBlueButton project uses git, a distributed version control system. The source itself is hosted on !GitHub (see [https://github.com/bigbluebutton/bigbluebutton source code].  You need to be familiar with how git works.  Specifically, you need to know how to
+The !BigBlueButton project uses git to manage the source code.  Git is a distributed version control system. The source itself is hosted on !GitHub (see [https://github.com/bigbluebutton/bigbluebutton source code].  
 
-  * clone a repository
-  * create a branch
-  * push changes back to a repository
-
-If you have not used git before, or you have but the terms *_clone_*, *_branch_*, and *_commit_* are unfamiliar to you, stop now.  These are fundamental concepts to version control that you need to master before trying to develop on !BigBlueButton.   To become competent with using git, a good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  
 
 === You have a Working !BigBlueButton Server ===
-Before you can develop on !BigBlueButton, you need a working !BigBlueButton 0.81 server running on Ubuntu 10.04 64-bit.
-*Note:* You must use a 64-bit server (or virtual machine).  There is no 32-bit packages, and the 32-bit virtual machine from !BigBlueButton 0.80 will not work.
+Before you can start developing on !BigBlueButton, you need a working !BigBlueButton 0.81 server.
 
-We emphasize that your !BigBlueButton server must be working *before* you start setting up the development environment.  Be sure that you can login, start sessions, join the audio bridge, share your webcam, and record and playback sessions. 
-Starting with a working !BigBlueButton server will give you the ability to switch back-and-forth between the default component and your compiled equivalent.  This ability will help you debug and test your changes.  
-For example, if you modify the !BigBlueButton client and something isn't working, you can switch back to the built-in client to check that your environment is still working correctly.
-These instructions assume you have the `bbb-demo` package installed so you can run any of the API demos to test your setup.
+*Note:* You must use ubuntu 10.04 64-bit to setup the !BigBlueButton server.  Currently, there are no 32-bit packages for 0.81 (these will be available before the final release).
+
+We emphasize that your !BigBlueButton server must be working *before* you start setting up the development environment.  Be sure that you can login, start sessions, join the audio bridge, share your webcam, and record and playback sessions -- all using the built-in API demos.
+
+By starting with a working !BigBlueButton server, you have the ability to switch back-and-forth between the default packaged components and your modified equivalents.  
+
+For example, suppose you modify the !BigBlueButton client and something isn't working (such as the client is not fully loading), you can easily switch back to the default packaged client and check that your environment is still working correctly.
+
+*Note:* These instructions assume you have the `bbb-demo` package installed so you can run any of the API demos to test your setup.
 
 === Developing on Windows ===
-To develop !BigBlueButton from within a Windows OS, you can use VMWare Player or Virtual box to first create a Ubuntu 10.04 64-bit virtual machine.  See the documentation for these products on how to create a Ubuntu 10.04 64-bit VM.
-It does not matter if you install Ubuntu 10.04 server or desktop.  If you install desktop, you’ll have the option of using a graphical interface to edit files.  
+To develop !BigBlueButton from within a Windows OS, use VMWare Player or Virtual box to first create a Ubuntu 10.04 64-bit virtual machine.  The associated documentation for VMWare Player and Virtual Box will guide you on setting up a new 10.04 64-bit VM.
+
+When setting up the VM, it does not matter to !BigBlueButton if you setup Ubuntu 10.04 server or desktop.  If you install desktop, you’ll have the option of using a graphical interface to edit files.  
+
 Keep in mind, you’ll need a host capable of running a [http://stackoverflow.com/questions/56124/can-i-run-a-64-bit-vmware-image-on-a-32-bit-machine 64-bit virtual machine].
+
 === Root Privileges ===
+
 These instructions are written for an account called ‘firstuser’, but they will apply to any account that has the permissions to execute commands as root, such as
+
 {{{
   sudo ls
 }}}
+
 === wget ===
 You’ll need to download some files through these instructions using wget. If it’s not installed on your server, you can install using the following command
 {{{
   sudo apt-get install wget
 }}}
 
+=== Have a GitHub Account ===
+
+You need a GitHub account.  Also, you need to be very familiar with how git works.  Specifically, you need to know how to
+
+  * clone a repository
+  * create a branch
+  * push changes back to a repository
+
+If you have not used git before, or if the terms *_clone_*, *_branch_*, and *_commit_* are unfamiliar to you, stop now.  These are fundamental concepts to git that you need to become competent with before trying to develop on !BigBlueButton.   To become competent, a good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  
+
+
+Using GitHub makes it easy for you to work on your own copy of the !BigBlueButton source, store updates the source to your !GitHub account, and, if you are really interested in helping out the project, [FAQ#Contributing_to_BigBlueButton contribute] back updates by sending us pull requests.
+
+
 === Subscribe to bigbluebutton-dev ===
-Finally, we recommend you subscribe to the [groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list to follow updates to the development of !BigBlueButton.
+
+We recommend you subscribe to the [groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list to follow updates to the development of !BigBlueButton and to collaborate with other developers.
 
 
 = Setup a Development Environment =
 
 
 First you need to install the core development tools.
+
 {{{
 sudo apt-get install git-core ant openjdk-6-jdk	
 }}}
@@ -79,7 +99,7 @@ mkdir -p ~/dev/tools
 cd ~/dev/tools
 }}}
 
-You now need to download a tar.gz file with wget and then unpack each of these tools in the above directory.
+You now need to download a number of tools with wget and then unpack each of these tools in the above directory.
 
 {{{
 wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar.gz
@@ -95,11 +115,13 @@ tar xvfz grails-1.1.1.tar.gz
 Next you need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SDK, !BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
 
 First, you need to download the zipped up SDK from the Adobe site.
+
 {{{
 wget http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4.5/flex_sdk_4.5.0.20967_mpl.zip
 }}}
 
 Next, you need to make a directory for it and unzip it.
+
 {{{
 mkdir -p ~/dev/tools/flex-4.5.0.20967
 unzip flex_sdk_4.5.0.20967_mpl.zip -d flex-4.5.0.20967
@@ -161,13 +183,13 @@ Reload your profile to use these tools (this will happen automatically when you 
 source ~/.profile
 }}}
 
-Check that the tools are now in your path. 
+Check that the tools are now in your path by running the command `mxmlc -version`.
 
 {{{
 $ mxmlc -version
 Version 4.5.0 build 20967
 }}}
-Again, you can use any account on a !BigBlueButton server for development (remember: the account must have sudo privileges).  For the remainder of this document we'll the `firstuser` account. 
+
 
 == Checking out the Source ==
 
@@ -177,14 +199,12 @@ You'll clone the source in the following directory:
   /home/firstuser/dev
 }}}
 
-If you don’t have a GitHub account, setup one now.  Next, use GitHub to fork !BigBlueButton.   On GitHub, you’ll need to
-  # Setup your [http://help.github.com/linux-set-up-git/ ssh keys
-   # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your !GitHub account
-   # Clone your repository into your `~/dev` folder
+Next, using your GitHub account, do the following
+  # Setup your [http://help.github.com/linux-set-up-git/ ssh keys] on your !BigBlueButton server
+  # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your !GitHub account
+  # Clone your repository into your `~/dev` folder
 
 
-*Note:* if the term ‘fork’, ‘clone’, or any of the above steps are unfamiliar to you, stop at this point.  You need to read through the GitHub documentation and make sure you are familiar with these concepts before proceeding further.
-Using GitHub makes it easy for you to work on your own copy of the !BigBlueButton source, store updates the source to your !GitHub account, and, if you are really interested in helping out the project, [FAQ#Contributing_to_BigBlueButton contribute] back updates by sending us pull requests.
 
 After cloning, you'll have the following directory (make sure the `bigbluebutton` directory is within your `dev` directory).
 
