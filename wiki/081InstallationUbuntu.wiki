@@ -185,7 +185,7 @@ You might be wondering why not use the default Ruby packages for Ubuntu 10.04?  
 
 {{{
 # Install dependencies
-sudo apt-get install build-essential git-core checkinstall yasm texi2html libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev --yes
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev 
 
 
 # Setup libvpx
@@ -315,7 +315,7 @@ You must update red5 first before the other !BigBlueButton packages. To update r
 
 {{{
 # Install dependencies
-sudo apt-get install build-essential git-core checkinstall yasm texi2html libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev --yes
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev zlib1g-dev
 
 
 # Setup libvpx
