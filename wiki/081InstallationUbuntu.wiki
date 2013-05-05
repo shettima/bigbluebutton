@@ -8,6 +8,7 @@
 
 *Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet (but there will be before final release of 0.81).
 
+*Note:* These instructions install !BigBlueButton 0.81-dev.
 
 The requirements are
 
