@@ -6,6 +6,8 @@
 
 *Note:* These instructions are currently for developers only.  If your not a developer, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
 
+*Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet (but there will be before final release of 0.81.
+
 
 The requirements are
 
@@ -15,8 +17,6 @@ The requirements are
   * Ports 80, 1935, 9123 accessible
   * Port 80 is *not* used by another application
   * 500G of free disk space (or more) for recordings
-
-These instructions assume you do not have a previous version of !BigBlueButton installed.  (The final release of 0.81 will update from 0.80.)
 
 In addition to the above, the locale of the server must be en_US.UTF-8.  You can verify this by
 
@@ -45,13 +45,21 @@ x86_64
 
 You should see `x86_64`.  
 
+
+
 = Installing !BigBlueButton 0.81 =
 
-If you are upgrading from !BigBlueButton 0.80, start [#Upgrading_from_BigBlueButton_0.80 here].
+These instructions assume you do not have a previous version of !BigBlueButton installed.  
+
+If you are upgrading from !BigBlueButton 0.80 to 0.81, start [#Upgrading_from_BigBlueButton_0.80 here].
+
+
 
 == 1. Update your server == 
 
-You first need to give your server access to the !BigBlueButton package repository for 0.81.
+The following steps will ins tall 0.81-beta.
+
+You first need to give your server access to the !BigBlueButton package repository.
 
 In a terminal window, copy and paste the following commands.
 
@@ -62,8 +70,6 @@ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
 echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 }}}
-
-*Note:* The repository for lucid_dev_081 currently _development_ builds of !BigBlueButton 0.81.  Until there is an announcement in [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] that !BigBlueButton 0.81-beta, these development packages may periodically break as development proceeds to beta.
 
 Next, ensure that you have `lucid multiverse` in your `sources.list`.  Do the following.
 
@@ -240,11 +246,7 @@ We're now ready to install !BigblueButton. Type
 }}}
 
 
-This single command is where all the magic happens.  This command installs *all* of !BigBlueButton components with their dependencies.  Here's a screen shot of the packages it will install. 
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-get-install.png
-
-Type 'y' and press Enter.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
+This single command is where all the magic happens.  This command installs *all* of !BigBlueButton components with their dependencies.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
 
 If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
 
@@ -283,7 +285,19 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 = Upgrading from !BigBlueButton 0.80 =
 
-The following steps will update a !BigBlueButton 0.80 server to 0.81.
+
+If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've made any custom changes to BigBlueButton, such as
+
+ * applied custom branding
+ * modified /var/www/bigbluebutton/client/conf/config.xml
+ * modified /var/www/bigbluebutton-default/index.html
+ * modified API demos
+ * modified settings to FreeSWITCH configurations
+ * etc ...
+
+then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
+
+The following steps will update a !BigBlueButton 0.80 server to 0.81-beta.
 
 == 1. Update your server ==
 
@@ -407,3 +421,158 @@ sudo mv /usr/local/bigbluebutton/core/scripts/publish/slides.rb /var/tmp/publish
 }}}
 
 
+= Troubleshooting =
+
+If you encounter an error at one of the installation/upgrade steps,
+
+
+== Run sudo bbb-conf --check ==
+We've built in a !BigBlueButton configuration utility, called `bbb-conf`, to help you configure your !BigBlueButton server and trouble shoot your setup if something doesn't work right.
+
+If you think something isn't working correctly, the first step is enter the following command.
+
+{{{
+   sudo bbb-conf --check
+}}}
+
+This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
+
+
+If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
+
+
+== Dependencies are not met ==
+
+For some VPS installations of Ubuntu 10.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
+
+
+{{{
+#
+#
+# deb cdrom:[Ubuntu-Server 10.04 LTS _Lucid Lynx_ - Release amd64 (20100427)]/ lucid main restricted
+
+# deb cdrom:[Ubuntu-Server 10.04 LTS _Lucid Lynx_ - Release amd64 (20100427)]/ lucid main restricted
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+
+deb http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
+
+## Major bug fix updates produced after the final release of the
+## distribution.
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team. Also, please note that software in universe WILL NOT receive any
+## review or updates from the Ubuntu security team.
+deb http://us.archive.ubuntu.com/ubuntu/ lucid universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid universe
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
+
+## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
+## team, and may not be under a free licence. Please satisfy yourself as to
+## your rights to use the software. Also, please note that software in
+## multiverse WILL NOT receive any review or updates from the Ubuntu
+## security team.
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
+
+## Uncomment the following two lines to add software from the 'backports'
+## repository.
+## N.B. software from this repository may not have been tested as
+## extensively as that contained in the main release, although it includes
+## newer versions of some applications which may provide useful features.
+## Also, please note that software in backports WILL NOT receive any review
+## or updates from the Ubuntu security team.
+# deb http://us.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+# deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+
+## Uncomment the following two lines to add software from Canonical's
+## 'partner' repository.
+## This software is not part of Ubuntu, but is offered by Canonical and the
+## respective vendors as a service to Ubuntu users.
+# deb http://archive.canonical.com/ubuntu lucid partner
+# deb-src http://archive.canonical.com/ubuntu lucid partner
+
+deb http://security.ubuntu.com/ubuntu lucid-security main restricted
+deb-src http://security.ubuntu.com/ubuntu lucid-security main restricted
+deb http://security.ubuntu.com/ubuntu lucid-security universe
+deb-src http://security.ubuntu.com/ubuntu lucid-security universe
+deb http://security.ubuntu.com/ubuntu lucid-security multiverse
+deb-src http://security.ubuntu.com/ubuntu lucid-security multiverse
+}}}
+
+then do
+
+{{{ 
+   sudo apt-get update
+}}}
+
+and try installing !BigBlueButton again.
+
+
+== Change the !BigBlueButton Server's IP ==
+
+A common problem is the default install scripts in for !BigBlueButton configure it to list for an IP address, but if you are accessing your server via a DNS hostname, you'll see the 'Welcome to Nginx' message.
+
+To change all of !BigBlueButton's configuration files to use a different IP address or hostname, enter
+
+{{{
+   sudo bbb-conf --setip <ip_address_or_hostname>
+}}}
+
+For more information see [BBBConf bbb-conf options]. 
+
+
+== Unable to install gems ==
+The install script for bbb-record-core needs to install a number of ruby gems.  However, if you are behind a HTTP_PROXY, then the install script for bbb-record-core will likely exit with an error.  This occurs because the bash environment for bbb-record-core will not have a value for HTTP_PROXY.
+
+You can resolve this by manually installing the gems using the following script.
+{{{
+#!/bin/bash
+
+export HTTP_PROXY="<your_http_proxy>"
+
+gem install --http-proxy $HTTP_PROXY builder -v 2.1.2
+gem install --http-proxy $HTTP_PROXY diff-lcs -v 1.1.2
+gem install --http-proxy $HTTP_PROXY json -v 1.4.6
+gem install --http-proxy $HTTP_PROXY term-ansicolor -v 1.0.5
+gem install --http-proxy $HTTP_PROXY gherkin -v 2.2.9
+gem install --http-proxy $HTTP_PROXY cucumber -v 0.9.2
+gem install --http-proxy $HTTP_PROXY curb -v 0.7.15
+gem install --http-proxy $HTTP_PROXY mime-types -v 1.16
+gem install --http-proxy $HTTP_PROXY nokogiri -v 1.4.4
+gem install --http-proxy $HTTP_PROXY open4 -v 1.3
+gem install --http-proxy $HTTP_PROXY rack -v 1.2.2
+gem install --http-proxy $HTTP_PROXY redis -v 2.1.1
+gem install --http-proxy $HTTP_PROXY redis-namespace -v 0.10.0
+gem install --http-proxy $HTTP_PROXY tilt -v 1.2.2
+gem install --http-proxy $HTTP_PROXY sinatra -v 1.2.1
+gem install --http-proxy $HTTP_PROXY vegas -v 0.1.8
+gem install --http-proxy $HTTP_PROXY resque -v 1.15.0
+gem install --http-proxy $HTTP_PROXY rspec-core -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rspec-expectations -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rspec-mocks -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rspec -v 2.0.0
+gem install --http-proxy $HTTP_PROXY rubyzip -v 0.9.4
+gem install --http-proxy $HTTP_PROXY streamio-ffmpeg -v 0.7.8
+gem install --http-proxy $HTTP_PROXY trollop -v 1.16.2
+}}}
+
+Once all the gems are installed, you need to tell !BigBlueButton install scripts `bbb-record-core` to not try to install the gems anymore.  Edit the file `/var/lib/dpkg/info/bbb-record-core.preinst` and comment out the line
+
+{{{
+#                        gem install $gem
+}}}
+
+Then run
+
+{{{
+sudo apt-get install -f
+}}}
