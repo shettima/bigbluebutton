@@ -286,7 +286,7 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 = Upgrading from !BigBlueButton 0.80 =
 
 
-If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've made any custom changes to BigBlueButton, such as
+If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've made any custom changes to !BigBlueButton, such as
 
  * applied custom branding
  * modified /var/www/bigbluebutton/client/conf/config.xml
@@ -361,7 +361,7 @@ Next, update !BigBlueButton itself
    sudo apt-get dist-upgrade
 }}}
 
-You'll be asked to update the nginx definition for BigBlueButton.
+You'll be asked to update the nginx definition for !BigBlueButton.
 
 {{{
 Configuration file `/etc/nginx/sites-available/bigbluebutton'
