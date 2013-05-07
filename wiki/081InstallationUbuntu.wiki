@@ -106,6 +106,9 @@ wget http://bigbluebutton.googlecode.com/files/openoffice.org_1.0.4_all.deb
 sudo dpkg -i openoffice.org_1.0.4_all.deb
 }}}
 
+If you get an error in the above, check if you have openoffice.org-core installed.  If so, remove all the existing openoffice.org pacakges and try to install the above stub package again.
+
+
 Next, we'll install !LibreOffice
 
 {{{
