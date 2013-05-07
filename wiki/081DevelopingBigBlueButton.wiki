@@ -340,7 +340,7 @@ Next, let's build the client
 ant
 }}}
 
-This will create a build of the !BigBlueButton client in the `/home/firstuser/dev/bigbluebutton/bigbluebutton-client/bin` directory.
+This will create a build of the !BigBlueButton client in the `/home/firstuser/dev/bigbluebutton/bigbluebutton-client/client` directory.
 
 *Note:* In 0.81, the !BigBlueButton server will cache the config.xml for a given meetingID.  To ensure we load the new config.xml, restart the !BigBlueButton server
 {{{
