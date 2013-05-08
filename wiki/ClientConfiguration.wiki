@@ -387,7 +387,7 @@ Layouts documentation
 The layouts are defined in XML format, and the default layouts file is located at /var/www/bigbluebutton/client/conf/layout.xml.
 
 The format is as follows:
-
+{{{
 <layouts>
     <layout name=”LAYOUT_NAME” ... >
         <window name=”WINDOW_NAME” ... />
@@ -397,6 +397,7 @@ The format is as follows:
     <layout ... />
     ...
 </layouts>
+}}}
 
 Layout parameters
 
