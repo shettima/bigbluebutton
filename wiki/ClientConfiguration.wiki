@@ -380,7 +380,7 @@ The Breakout Module allows the Moderator of the meeting to create and launch use
 The security salt needed to create meeting. This is required by the !BigBlueButton API. By default, the salt is found in /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
 
-== layout.xml ==
+== Layouts ==
 
 Layouts documentation
 
