@@ -514,11 +514,11 @@ When the moderator clicks on the “lock layout” button, every participant wil
 New layouts can be created using the “add layout to list” button. Sysadmins always have the possibility to create a new layout, save it to file, edit is using a text editor to insert constraints like minWidth, and then copy this new layout to the default layouts definition file (/var/www/bigbluebutton/client/conf/layout.xml).
 
 Example of the layouts module definition on config.xml:
-
+{{{
 <module name="LayoutModule" 
     url="LayoutModule.swf?v=VERSION" 
     uri="rtmp://HOST/bigbluebutton" 
     layoutConfig="conf/layout.xml" 
     enableEdit="false"/>
-
+}}}
   
