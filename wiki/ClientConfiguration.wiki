@@ -480,7 +480,7 @@ Not implemented yet.
 You can have multiple layout definitions, and inside each layout, multiple window layout definitions.
 
 Example:
-
+{{{
 <layout name="Default minWidth">
 <window name="NotesWindow" hidden="true" width="0.7" height="1" x="0" y="0"/>
 <window name="BroadcastWindow" hidden="true"/>
@@ -491,6 +491,7 @@ Example:
 <window name="ViewersWindow" width="0.17" height="0.33" x="0" y="0"/>
 <window name="ListenersWindow" width="0.17" height="0.33" x="0" y="0.34"/>
 </layout>
+}}}
 
 Configuration on config.xml:
 
