@@ -409,20 +409,21 @@ role || Optional (default is “viewer”) || String || This parameter make poss
 Window parameters
 
 
-Name || Required / Optional || Type || Description
-name || Required || String || This is the window identifier. Example: NotesWindow, PresentationWindow, VideoDock, ChatWindow, UsersWindow, ViewersWindow, ListenersWindow, BroadcastWindow.
-width || Required (optional only if hidden=”true” or minimized=”true”) || Number || The width of the window relative to the canvas. Values are [0..1].
-height || Required (optional only if hidden=”true” or minimized=”true”) || Number || The height of the window relative to the canvas. Values are [0..1].
-x || Required (optional only if hidden=”true” or minimized=”true”) || Number || The x position of the window relative to the canvas. Values are [0..1].
-y || Required (optional only if hidden=”true” or minimized=”true”) || Number || The y position of the window relative to the canvas. Values are [0..1].
-order || Optional || Number || Specifies the z order of the window, i.e, which window is in front of the others.
-hidden || Optional (default is “false”) || Boolean || If hidden=”true” the window won’t show up in the BigBlueButton interface.
-minimized || Optional (default is “false”) || Boolean || If minimized=”true” the window will be minimized at the left bottom corner and can be restored.
-maximized || Optional (default is “false”) || Boolean || If maximized=”true” the window will be maximized to use the entire screen.
-minWidth || Optional || Number || The minimum width of the window expressed in pixels.
-minHeight || Optional || Number || The minimum height of the window expressed in pixels. Not implemented yet.
-draggable || Optional || Boolean || Not implemented yet.
-resizable || Optional || Boolean || Not implemented yet.
+Name || Required / Optional || Type || Description||
+name || Required || String || This is the window identifier. Example: NotesWindow, PresentationWindow, VideoDock, ChatWindow, UsersWindow, ViewersWindow, ListenersWindow, BroadcastWindow.||
+width || Required (optional only if hidden=”true” or minimized=”true”) || Number || The width of the window relative to the canvas. Values are [0..1].||
+height || Required (optional only if hidden=”true” or minimized=”true”) || Number || The height of the window relative to the canvas. Values are [0..1].||
+x || Required (optional only if hidden=”true” or minimized=”true”) || Number || The x position of the window relative to the canvas. Values are [0..1].||
+y || Required (optional only if hidden=”true” or minimized=”true”) || Number || The y position of the window relative to the canvas. Values are [0..1].||
+order || Optional || Number || Specifies the z order of the window, i.e, which window is in front of the others.||
+hidden || Optional (default is “false”) || Boolean || If hidden=”true” the window won’t show up in the BigBlueButton interface.||
+minimized || Optional (default is “false”) || Boolean || If minimized=”true” the window will be minimized at the left bottom corner and can be restored.||
+maximized || Optional (default is “false”) || Boolean || If maximized=”true” the window will be maximized to use the entire screen.||
+minWidth || Optional || Number || The minimum width of the window expressed in pixels.||
+minHeight || Optional || Number || The minimum height of the window expressed in pixels. Not implemented yet.||
+draggable || Optional || Boolean || Not implemented yet.||
+resizable || Optional || Boolean || Not implemented yet.||
+ 
 
 You can have multiple layout definitions, and inside each layout, multiple window layout definitions.
 
