@@ -76,6 +76,10 @@ Next, ensure that you have `lucid multiverse` in your `sources.list`.  Do the fo
 
 {{{
 $ grep "lucid multiverse" /etc/apt/sources.list
+}}}
+
+If you have the `lucid multiverse` in your `sources.list`, you should see
+{{{
 deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
 deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
 }}}
