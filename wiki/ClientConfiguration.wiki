@@ -445,8 +445,7 @@ You can have multiple layout definitions, and inside each layout, multiple windo
 
 ||Name || Required / Optional || Type || Description||
 ||layoutConfig || Required || String || URL of the layouts definition file.||
-||enableEdit || Required (default is “false”) || Boolean||
-||Enable the buttons for moderators to manage layouts within the session. The buttons enable the moderator to add custom layouts to the list, save layouts to file and load layouts back from file.||
+||enableEdit || Required (default is “false”) || Boolean||Enable the buttons for moderators to manage layouts within the session. The buttons enable the moderator to add custom layouts to the list, save layouts to file and load layouts back from file.||
 
 This is the moderator view when enableEdit=”true”.
 
