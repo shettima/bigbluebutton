@@ -64,18 +64,18 @@ node app.js
 
 === Usage ===
 
-  1.  Before using the HTML5 client, you must create a meeting and join it using the Flash client. The easiest way to do this is to join the Demo Meeting.
+ 1.  Before using the HTML5 client, you must create a meeting and join it using the Flash client. The easiest way to do this is to join the Demo Meeting.
 
- 2.  Open another tab or a new browser
-
-
- 3.  Go to the address: http://yourIP:3000
+2.  Open another tab or a new browser
 
 
- 4.  Demo Meeting should appear from the dropdown menu
+3.  Go to the address: http://yourIP:3000
 
 
- 5.  Write your name and you will join to the meeting throught the HTML5 client 
+4.  Demo Meeting should appear from the dropdown menu
+
+
+5.  Write your name and you will join to the meeting throught the HTML5 client 
 
 What is working?
 
