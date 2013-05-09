@@ -404,7 +404,7 @@ The format is as follows:
 ||Name || Required / Optional || Type || Description||
 ||name ||Required ||String ||This is the name that will appear in the list of layouts on BigBlueButton||
 ||default || Optional (default is “false”) || Boolean || Only one layout in the entire definition should be the default one (that will organize the windows on startup).||
-||role || Optional (default is “viewer”) || String || This parameter make possible to define multiple layouts with the same name but with different definitions depending on the participant role. They must have the same name to assign them together. Values are “viewer”, “moderator” and “presenter”.||||
+||role || Optional (default is “viewer”) || String || This parameter make possible to define multiple layouts with the same name but with different definitions depending on the participant role. They must have the same name to assign them together. Values are “viewer”, “moderator” and “presenter”.||
 
 === Window parameters ===
 
