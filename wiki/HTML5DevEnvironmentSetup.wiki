@@ -17,7 +17,7 @@ Once you have 0.81-dev installed, you need to setup a development environment on
 
 To setup the standard development environment for the HTML5 client, follow the instructions at [DevelopingBBB] with the following changes:
 
-  * Under "Checking out the source", use the git command `git checkout -b html5-bridge origin/html5-bridge` to switch to the HTML5 client branch.
+  * Under "Checking out the source", use the git command {{{git checkout -b html5-bridge origin/html5-bridge}}} to switch to the HTML5 client branch.
   * At a minimum, you must build and deploy or run the Client, BBB-Web, and Red5 Applications components.
 
 == HTML5 Bridge component ==
