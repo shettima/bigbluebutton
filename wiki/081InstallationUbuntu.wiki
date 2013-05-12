@@ -58,7 +58,7 @@ If you are upgrading from !BigBlueButton 0.80 to 0.81, start [#Upgrading_from_Bi
 
 == 1. Update your server == 
 
-The following steps will ins tall 0.81-beta.
+The following steps will ins tall 0.81-dev.
 
 You first need to give your server access to the !BigBlueButton package repository.
 
@@ -305,7 +305,7 @@ If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've m
 
 then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
 
-The following steps will update a !BigBlueButton 0.80 server to 0.81-beta.
+The following steps will update a !BigBlueButton 0.80 server to 0.81-dev.
 
 == 1. Update your server ==
 
