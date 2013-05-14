@@ -27,7 +27,7 @@ We recommend installing !BigBlueButton on a dedicated (non-virtual) server for o
 
 To understand why you need to check that port 80 is not in use, see [https://code.google.com/p/bigbluebutton/wiki/FAQ#We_recommend_running_BigBlueButton_on_port_80 we recommend running BigBlueButton on port 80].
 
-In addition to the above, the locale of the server must be en_US.UTF-8.  You can verify this by
+In addition to the above, the locale of the server must be en_US.UTF-8. Furthermore, the contents of `/etc/default/locale` must contain the single line `LANG="en_US.UTF-8"`.  You can verify this as below.
 
 {{{
 $ cat /etc/default/locale
@@ -41,7 +41,7 @@ sudo apt-get install language-pack-en
 sudo update-locale LANG=en_US.UTF-8
 }}}
 
-and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see `LANG="en_US.UTF-8"`.
+and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see only the single line `LANG="en_US.UTF-8"`.  Note: if you see an additional line `LC_ALL=en_US.UTF-8`, then remove the setting for `LC_ALL` before continuing.
 
 Next, verify that port 80 is not in use by another application. To verify, do
 
