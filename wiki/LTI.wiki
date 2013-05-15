@@ -8,9 +8,22 @@ The *bbb-lti* component is an external service that enables a BigBlueButton serv
 Example LTI compliant LMSs are Moodle, Sakai, Canvas and Blackboard. A full list can be found in the [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status].
 
 
-= Details =
+= Launching links =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+LMS implementing LTI offers to privileged users (i.e. Faculty, Mentor, Administrator, Instructor ) the possibility of creating links to external tools that can be included as resources for a context and used by all the users with access to it.
+
+The links provide single sign on (SSO) capability to users holding an account in the LMS.
+
+When privileged users (i.e. Faculty, Mentor, Administrator, Instructor) make use of the launching link they will join a meeting into the corresponding BigBlueButton server in the role of Moderators.  Unprivileged users (i.e. Student, Learner) will join in the role of Attendees.
+
+
+= LMS configuration =
+
+There are three values required from Chalk&Wire for configuration of the Basic LTI tool:
+
+    Launch URL    e.g. http://demo.bigbluebutton.org/lti/tool.xml
+    Key           e.g. bbb
+    Secret        e.g. welcome
+
+
+It is recomended that the privacy settings are set to public to allow the LMS for sending lis_person_sourcedid and lis_person_contact_email_primary. These parameters are going to be used for the user identification once logged into the BigBlueButton session. If none of them is sent by default a generic name is going to be used (Attendee for attendees, Moderator for moderators).
