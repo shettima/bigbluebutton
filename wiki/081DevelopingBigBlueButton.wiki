@@ -429,17 +429,7 @@ To develop the client using Flash Builder, follow these steps:
  # In the Package Explorer navigate to src/(default package) and _Right Click_ on !BigBlueButton.mxml and click on Set As Default Application.
  # Compile the client in Flash Builder, then open the client in your browser by going to the VM IP. The client running there should now be the client in your Flash Builder environment.
 
-This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger. To be able to launch the client from Flash Builder, do the following:
- # On the client code, edit {{{src/conf/config.xml}}} and near the top change the line:
-
-{{{
-<application uri="rtmp://<HOST-IP>/bigbluebutton" host="http://<HOST-IP>/bigbluebutton/api/enter" />
-}}} 
-to
-{{{
-<application uri="rtmp://<HOST-IP>/bigbluebutton" host="conf/join-mock.xml" />
-}}}
- # You should now be able to launch from Flash Builder using the Run/Debug button.
+This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger.
 
 = Developing BBB-Web =
 
