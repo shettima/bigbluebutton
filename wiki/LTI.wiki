@@ -1,4 +1,5 @@
-#summary description.
+#summary BigBlueButton LTI implementation.
+
 
 = Introduction =
 
