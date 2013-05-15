@@ -3,7 +3,7 @@
 
 = Overview =
 
-The bbb-lti service is a component that enables a BigBlueButton server to act as a Learning Tools Interoperability ([http://developers.imsglobal.org/ LTI]) Tool in any Learning Management System (LMS) supporting the LTI standard.
+The bbb-lti component is an external service that enables a BigBlueButton server to act as a Learning Tools Interoperability ([http://developers.imsglobal.org/ LTI]) Tool in any Learning Management System (LMS) supporting the LTI standard.
 
 Example LTI compliant LMSs are Moodle, Sakai, Canvas and Blackboard (See  [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status]).
 
