@@ -707,9 +707,9 @@ Lock down so that only Asterisk can forward calls to FreeSWITCH. In {{{/opt/free
 
 {{{
     <list name="asterisk-gw" default="deny">
-       <node type="allow" cidr="192.168.1.200"/>
-       <node type="allow" cidr="192.168.1.100"/>
-       <node type="allow" cidr="127.0.0.1"/>
+       <node type="allow" cidr="192.168.1.200/32"/>
+       <node type="allow" cidr="192.168.1.100/32"/>
+       <node type="allow" cidr="127.0.0.1/32"/>
     </list>
 }}}
 
