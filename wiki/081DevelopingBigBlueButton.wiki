@@ -502,6 +502,26 @@ If you get an error {{{ "Could not resolve placeholder 'apiVersion'"}}}., just r
 
 Now test again if you can join the demo meeting.
 
+This will run a development version of bbb-web, but if you want to instead deploy your custom built bbb-web you need to create a war file.
+{{{
+grails war
+}}}
+This will create a file with the name bigbluebutton<version>.war. The version number for the file doesn't matter, but you should rename the war file to bigbluebutton.war. You then need to deploy the archive to tomcat. You can do this by simply copying it into the tomcat6 webapps directory.
+{{{
+sudo cp bigbluebutton.war /var/lib/tomcat6/webapps
+}}}
+And now just restart tomcat.
+{{{
+sudo service tomcat6 restart
+}}}
+
+If you changed the linking of web.nginx as instructed above you will need to also revert that back to the packaged location for bbb-web.
+{{{
+sudo ln -s -f /etc/bigbluebutton/nginx/web /etc/bigbluebutton/nginx/web.nginx
+sudo service nginx restart
+}}}
+
+
 = Developing the Red5 Applications =
 
 Make red5/webapps writeable. Otherwise, you will get permission error when you try to deploy into Red5.
