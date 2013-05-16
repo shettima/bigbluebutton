@@ -506,7 +506,7 @@ This will run a development version of bbb-web, but if you want to instead deplo
 {{{
 grails war
 }}}
-This will create a file with the name bigbluebutton<version>.war. The version number for the file doesn't matter, but you should rename the war file to bigbluebutton.war. You then need to deploy the archive to tomcat. You can do this by simply copying it into the tomcat6 webapps directory.
+This will create a file with the name bigbluebuttonv0.7dev.war. The version number for the file doesn't matter, but you should rename the war file to bigbluebutton.war. You then need to deploy the archive to tomcat. You can do this by simply copying it into the tomcat6 webapps directory.
 {{{
 sudo cp bigbluebutton.war /var/lib/tomcat6/webapps
 }}}
