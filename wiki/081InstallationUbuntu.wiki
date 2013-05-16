@@ -153,8 +153,9 @@ This next install command will give you an error about dependencies not found.
   sudo dpkg -i ruby1.9.2_1.9.2-p290-1_amd64.deb
 }}}
 
-Enter this command to have apt-get find the dependencies and complete the installation.
+To resolve the dependencies, enter
 
+{{{
   sudo apt-get install -f
 }}}
 
