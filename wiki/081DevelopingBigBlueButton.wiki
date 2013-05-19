@@ -258,7 +258,7 @@ Update the file according to your needs.
 vi bigbluebutton-client/src/conf/config.xml
 }}}
 
-The config.xml file tells the BigBlueButton client what modules are retrieved and how to connect to the server.   
+The config.xml file tells the !BigBlueButton client what modules are retrieved and how to connect to the server.   
 Later on, when you deploy your modified client to the !BigBlueButton server, there will be two clients: your modified client and the default packaged client (again, this is good as you can switch back and forth).
 However, the !BigBlueButton configuration command `sudo bbb-conf ` only modifies the packaged client.   If you need to change your config.xml (such as when the IP address of your server changes), you need to do it manually.
 
