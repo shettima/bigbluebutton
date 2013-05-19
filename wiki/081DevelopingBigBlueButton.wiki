@@ -64,7 +64,7 @@ You’ll need to download some files through these instructions using wget. If i
   sudo apt-get install wget
 }}}
 
-=== Have a GitHub Account ===
+=== Have a !GitHub Account ===
 
 You need a !GitHub account.  Also, you need to be very familiar with how git works.  Specifically, you need to know how to
 
