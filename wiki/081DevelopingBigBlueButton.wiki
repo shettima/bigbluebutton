@@ -127,7 +127,7 @@ mkdir -p ~/dev/tools/flex-4.5.0.20967
 unzip flex_sdk_4.5.0.20967_mpl.zip -d flex-4.5.0.20967
 }}}
 
-The Flex SDK is now unzipped, but you need to modify the permissions to us the Flex tools. 
+The Flex SDK is now unzipped, but you need to modify the permissions to use the Flex tools. 
 
 {{{
 sudo find ~/dev/tools/flex-4.5.0.20967 -type d -exec chmod o+rx '{}' \;
