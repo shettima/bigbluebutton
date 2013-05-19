@@ -66,7 +66,7 @@ You’ll need to download some files through these instructions using wget. If i
 
 === Have a GitHub Account ===
 
-You need a GitHub account.  Also, you need to be very familiar with how git works.  Specifically, you need to know how to
+You need a !GitHub account.  Also, you need to be very familiar with how git works.  Specifically, you need to know how to
 
   * clone a repository
   * create a branch
@@ -75,7 +75,7 @@ You need a GitHub account.  Also, you need to be very familiar with how git work
 If you have not used git before, or if the terms *_clone_*, *_branch_*, and *_commit_* are unfamiliar to you, stop now.  These are fundamental concepts to git that you need to become competent with before trying to develop on !BigBlueButton.   To become competent, a good place to start is [http://progit.org/book/ free book] and http://help.github.com/ !GitHub Help pages].  
 
 
-Using GitHub makes it easy for you to work on your own copy of the !BigBlueButton source, store updates the source to your !GitHub account, and, if you are really interested in helping out the project, [FAQ#Contributing_to_BigBlueButton contribute] back updates by sending us pull requests.
+Using !GitHub makes it easy for you to work on your own copy of the !BigBlueButton source, store updates the source to your !GitHub account, and, if you are really interested in helping out the project, [FAQ#Contributing_to_BigBlueButton contribute] back updates by sending us pull requests.
 
 
 === Subscribe to bigbluebutton-dev ===
@@ -199,7 +199,7 @@ You'll clone the source in the following directory:
   /home/firstuser/dev
 }}}
 
-Next, using your GitHub account, do the following
+Next, using your !GitHub account, do the following
   # Setup your [http://help.github.com/linux-set-up-git/ ssh keys] on your !BigBlueButton server
   # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your !GitHub account
   # Clone your repository into your `~/dev` folder
