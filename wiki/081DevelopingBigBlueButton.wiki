@@ -52,6 +52,10 @@ Keep in mind, you’ll need a host capable of running a [http://stackoverflow.co
 
 === Root Privileges ===
 
+Make sure you create another user such as "firstuser", otherwise you'll run into permission errors such as Nginx 403 Forbidden error or [http://stackoverflow.com/questions/3863066/error-null-while-compiling-resource-bundles-under-linux-with-hudson].
+
+Do not run commands as the root user unless explicitly instructed. Better run the commands using sudo.
+
 These instructions are written for an account called ‘firstuser’, but they will apply to any account that has the permissions to execute commands as root, such as
 
 {{{
