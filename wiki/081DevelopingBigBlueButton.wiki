@@ -619,6 +619,20 @@ Then sign the applet again.
 
 The signed jar file is located in {{{/home/firstuser/dev/bigbluebutton/deskshare/applet/build/libs/bbb-deskshare-applet-0.8.1.jar}}}
 
+* Signing your own jar *
+
+ * Get a pkcs12 certificate from GoDaddy
+ * got to /var/www/bigbluebutton/client
+ * Make a backup of bbb-deskshare-applet-0.8.1.jar
+ * Sign the jar file overwriting bbb-deskshare-applet-0.8.1.jar. 
+
+You need to replace your-keystore, your-password, and your-cert-alias with your values.
+
+{{{
+jarsigner -keystore your-keystore -storepass your-password -storetype pkcs12 -signedjar bbb-deskshare-applet-0.8.1.jar bbb-deskshare-applet-unsigned-0.8.1.jar your-cert-alias
+}}}
+
+
 We need to copy it to where nginx is loading the client.
 
 If you are developing also the bbb-client, then
