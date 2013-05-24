@@ -621,7 +621,7 @@ The signed jar file is located in {{{/home/firstuser/dev/bigbluebutton/deskshare
 
 * Signing your own jar *
 
- * Get a pkcs12 certificate from GoDaddy
+ * Get a pkcs12 certificate from e.g. !GoDaddy
  * got to /var/www/bigbluebutton/client
  * Make a backup of bbb-deskshare-applet-0.8.1.jar
  * Sign the jar file overwriting bbb-deskshare-applet-0.8.1.jar. 
