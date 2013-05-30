@@ -44,8 +44,17 @@ Updates:
 
 For a detail of the updates in the api 0.80 check the following <a href="http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/c214cbe9bdb2268a">link</a>
 
-== Version Master Branch ==
-No changes yet.
+== Version 0.81 ==
+Added new API calls:
+  * * getConfigXML *
+  * * setDefaultConfigXML *
+
+Updates:
+  * * join * - Added configToken to reference associated config.xml
+  * * join * - Added avatar
+  * * create * - Added redirectClient=[true|false]
+  * * create * - Added clientURL to override default URL for !BigBlueButton client.
+
 
 <br />
 = API Security Model =
@@ -228,6 +237,7 @@ For more information about the preupload slides check the following <a href="htt
 || createTime || Optional || String || <p style="font-weight: bold; color: red">NEW in 0.80</p><p><p>Third-party apps using the API can now pass createTime parameter (which was created in the create call), BigBlueButton will ensure it matches the ‘createTime’ for the session.  If they differ, BigBlueButton will not proceed with the join request. This prevents a user from reusing their join URL for a subsequent session with the same meetingID.</p> ||
 || userID || Optional || String || <p style="font-weight: bold; color: red">NEW in 0.7</p><p>An identifier for this user that will help your application to identify which person this is.  This user ID will be returned for this user in the getMeetingInfo API call so that you can check </p> ||
 || webVoiceConf|| Optional || String || <p>If you want to pass in a custom voice-extension when a user joins the voice conference using voip. This is useful if you want to collect more info in you Call Detail Records about the user joining the conference. You need to modify your /etc/asterisk/bbb-extensions.conf to handle this new extensions. </p> ||
+|| configToken || Optional || String || <p>The token returned by a setConfigXML API call.  This causes the !BigBlueButton client to load the config.xml associated with the token (not the default config.xml)  ||
 
 <p>*Example Requests:*</p>
  * <a href="#">http://yourserver.com/bigbluebutton/api/join?meetingID=test01&password=mp&fullName=John&checksum=1234</a>
@@ -485,12 +495,18 @@ meetingID (or set of meeting IDs).</p>
 </response>
 }}}
 
-
-
 <br><br>
+== getDefaultConfigXML (Draft) ==
+<p>Retrieve the default config.xml from the server.  This call enables a 3rd party application to modify the default config.xml, associate the modified config.xml with a meeting (see setConfigXML), then reference the associated config.xml on the join URL. 
 
-== setConfigXML ==
-<p>Store a config.xml file in the current session.  This call returns a token that references the config.xml file.  A 3rd-party application could then use this token when creating a join URL.  The token instructs the !BigBlueButton server to use the stored.xml file for configuring the client, thus overriding the default config.xml.
+</p>
+<p>*Resource URL:*</p>
+<a href="#">http://yourserver.com/bigbluebutton/api/getDefaultConfigXML.xml?[parameters]&checksum=[checksum]</a>
+
+
+
+== setConfigXML (Draft) ==
+<p>Associate an config.xml file with the current session.  This call returns a token can later be passed as a parameter to a join URL.  When passed as a parameter, the !BigBlueButton client will use the associated config.xml for the user (not the default config.xml).  This enables 3rd party applications to provide user-specific config.xml files.
 
 </p>
 <p>*Resource URL:*</p>
@@ -503,14 +519,13 @@ meetingID (or set of meeting IDs).</p>
 
 
 <p>*Example Requests:*</p>
- * <a href="#">http://yourserver.com/bigbluebutton/api/setConfigXML?recordID=record123&checksum=1234</a>
- * <a href="#">http://yourserver.com/bigbluebutton/api/deleteRecordings?recordID=record123,recordABC&checksum=wxyz</a>
+ * <a href="#">http://yourserver.com/bigbluebutton/api/setConfigXML? XXX</a>
 
 <p>*Example Response:*</p>
 {{{
 <response>
     <returncode>SUCCESS</returncode>
-    <deleted>true</deleted>
+    <token>asdflkjasdfsadfy</token>
 </response>
 }}}
 
