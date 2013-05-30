@@ -489,6 +489,33 @@ meetingID (or set of meeting IDs).</p>
 
 <br><br>
 
+== setConfigXML ==
+<p>Store a config.xml file in the current session.  This call returns a token that references the config.xml file.  A 3rd-party application could then use this token when creating a join URL.  The token instructs the !BigBlueButton server to use the stored.xml file for configuring the client, thus overriding the default config.xml.
+
+</p>
+<p>*Resource URL:*</p>
+<a href="#">http://yourserver.com/bigbluebutton/api/setConfigXML.xml?[parameters]&checksum=[checksum]</a>
+
+<p>*Parameters:*</p>    
+|| *Param Name* || *Required / Optional* || *Type* || *Description* ||
+|| meetingID|| Required || String || <p>A meetingID to an active meeting. </p> ||
+|| configXML|| Required || String || <p>A valid config.xml file</p> ||
+
+
+<p>*Example Requests:*</p>
+ * <a href="#">http://yourserver.com/bigbluebutton/api/setConfigXML?recordID=record123&checksum=1234</a>
+ * <a href="#">http://yourserver.com/bigbluebutton/api/deleteRecordings?recordID=record123,recordABC&checksum=wxyz</a>
+
+<p>*Example Response:*</p>
+{{{
+<response>
+    <returncode>SUCCESS</returncode>
+    <deleted>true</deleted>
+</response>
+}}}
+
+<br><br>
+
 = API Sample Code = 
 == Overview ==
 BigBlueButton provides API Sample Codes so you can integrated easily with your application. Feel free to contribute and post your implementation of the API in other language code in the bigbluebutton-dev mailing list.
