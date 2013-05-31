@@ -80,7 +80,6 @@ $ grep "lucid multiverse" /etc/apt/sources.list
 If you have the `lucid multiverse` in your `sources.list`, you should see
 {{{
 deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
-deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
 }}}
 
 If you don't see the deb line for `lucid multiverse`, execute the following line to add this repository to `sources.list`.
