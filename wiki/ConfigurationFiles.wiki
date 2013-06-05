@@ -62,7 +62,7 @@ Debug output from the video red5 application, which is the red5 server component
 
 == Configuration files ==
 
-=== /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ===
+=== /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties ===
 This is one of the main configuration file for !BigBlueButton applications.
 
 http://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties
