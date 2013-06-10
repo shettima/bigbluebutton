@@ -3,9 +3,9 @@
 
 = Overview =
 
-!BigBlueButton 0.81 now provides support for IMS Learning Tools Interoperability (LTI) (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 conformance details]).
+!BigBlueButton now provides support for IMS Learning Tools Interoperability (LTI) (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 conformance details]).
 
-To support LTI, version 0.81 adds a new package called `bbb-lti`.  You can add LTI support by installing this package on a !BigBlueButton 0.81 server.
+To support LTI, version 0.81-dev adds a new package called `bbb-lti`.  You can add LTI support by installing this package on a !BigBlueButton 0.81-dev (or higher) server.
 
 {{{
    sudo apt-get install bbb-lti
@@ -15,6 +15,7 @@ Specifically, this module enables your !BigBlueButton server to become and LTI t
 
 In other words, any certified LTI consumer -- such as !Desire2Learn, !BlackBoard, Pearson Learning Studio, etc. -- can now provide integrated real-time collaboration using !BigBlueButton. See [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status] for a full list of LTI compliant systems.
 
+To see a video of launching !BigBlueButton from within !BlackBoard, see this [http://www.youtube.com/watch?v=BZ_gjj37meA&feature=youtu.be&hd=1 video].
 
 = Configuring !BigBlueButton as an External Tool =
 
@@ -53,6 +54,3 @@ The `bbb-lti` module also accepts a number of custom parameters.
 || Parameter || Type || Description ||
 || record || Boolean || Record meeting (default is false) ||
 || welcome || Text || Welcome message that appears in chat dialog (default is the global welcome message on the !BigBlueButton server) ||
-
-
-http://www.youtube.com/watch?v=BZ_gjj37meA&feature=youtu.be&hd=1
