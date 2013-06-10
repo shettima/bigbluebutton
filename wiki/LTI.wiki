@@ -13,7 +13,7 @@ To support LTI, version 0.81 adds a new package called `bbb-lti`.  You can add L
 
 Specifically, this module enables your !BigBlueButton server to become and LTI tool, which can now receive and validate incoming launch requests from an LTI consumer.  
 
-In other words, any certified LTI consumer -- such as Desire2Learn, BlackBoard, Pearson Learning Studio, etc. -- can now provide integrated real-time collaboration using !BigBlueButton. See [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status] for a full list of LTI compliant systems.
+In other words, any certified LTI consumer -- such as !Desire2Learn, !BlackBoard, Pearson Learning Studio, etc. -- can now provide integrated real-time collaboration using !BigBlueButton. See [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status] for a full list of LTI compliant systems.
 
 
 = Configuring !BigBlueButton as an External Tool =
