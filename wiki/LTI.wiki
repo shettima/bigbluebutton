@@ -27,14 +27,14 @@ After installing the `bbb-lti` package, you can use the command `bbb-conf --lti`
 {{{
 $ bbb-conf --lti
 
-       URL: http://10.0.3.3/lti/tool.xml
+       URL: http://test-install.blindsidenetworks.com/lti/tool.xml
   Customer: bbb
-    Secret: 34ea71ebd229f90cd44b14518929ef31
+    Secret: b00be971feb0726fa697671c9cf2e883
 
-  Icon URL: http://10.0.3.3/lti/images/icon.ico
+  Icon URL: http://test-install.blindsidenetworks.com/lti/images/icon.ico
 }}}
 
-Note: These are sample values.  The values on your !BigBlueButton server will be different.
+Note: These the above values are valid for testing.  The values on your !BigBlueButton server will be different.
 
 In the external tool configuration, we recommend privacy settings are set to *public* to allow the LMS to send lis_person_sourcedid and lis_person_contact_email_primary.  The `bbb-lti` module will use these parameters for user identification once logged into the BigBlueButton session.  If none of them is sent by default a generic name is going to be used (Viewer for viewer and Moderator for moderator).
 
@@ -54,3 +54,5 @@ The `bbb-lti` module also accepts a number of custom parameters.
 || record || Boolean || Record meeting (default is false) ||
 || welcome || Text || Welcome message that appears in chat dialog (default is the global welcome message on the !BigBlueButton server) ||
 
+
+http://www.youtube.com/watch?v=BZ_gjj37meA&feature=youtu.be&hd=1
