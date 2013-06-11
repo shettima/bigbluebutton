@@ -366,6 +366,8 @@ If you would like to influence or support such development, see [FAQ#When_will_f
 
 === What are the bandwidth requirements for running a !BigBlueButton server? ===
 
+You'll need good upstream and downstream bandwidth from the server. We recommend (at least) 100 MBits/second bandwidth in both directions.
+
 When sharing a webcam, as a moderator !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream.  Viewers can only share a 320x240 webcam.
 
 For example, if you have a room with 5 users, each sharing their webcam, then the you can calculate the bandwidth usage as follows: 
