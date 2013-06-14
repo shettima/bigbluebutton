@@ -52,7 +52,7 @@ Parameters:
 Response: List of the subscriptions with their status
 
 = Usage =
-== EndPoint service ==
+== !EndPoint service ==
 For testing this feature, you will need to have already the 3rd party application for handling the events. If you don't have it, you can use the following service: http://postcatcher.in/
 
 This service will help you to display all the events that you would like to track down. !PostCatcher will give you an unique endpoint URL that you can use for testing. The URL should be in this format: "http://postcatcher.in/catchers/XXX"
@@ -84,4 +84,4 @@ redis-cli
 redi> publish "bigbluebutton:events" "{\"data\":\"hola ola\",\"meetingID\":\"your-meeting-id\",\"event\":\"TestEvent\"}
 }}}
 
-This will generated a "TestEvent" which will be read it by the webhooks module and then it will perform a POST request to the !EndPoint URL that you passed. Now, go to the !PostCatcher site and you will see the generated event.
+This will generated a `TestEvent` which will be read it by the webhooks module and then it will perform a POST request to the !EndPoint URL that you passed. Now, go to the !PostCatcher site and you will see the generated event.
