@@ -1,15 +1,13 @@
-#summary Overview of BigBlueButton 0.81-dev
-
---
+#summary Overview of BigBlueButton 0.81-beta
 
 = Introduction =
 
-This document gives an overview of what's coming in !BigBlueButton 0.81, our eleventh release of !BigBlueButton to-date.  !BigBlueButton 0.81 is currently in development and has not yet reached beta.  To follow the development, we recommend you subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list for updates.
+This document gives an overview of !BigBlueButton 0.81-beta (referred hereafter as 0.81).  
+
+!BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development, we recommend you subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list for updates.
 
 
-The focus of !BigBlueButton 0.81 is to enhance the record and playback, improve accessibility for students with disabilities, and simplify the management of windows.
-
-This document gives the highlights of major updates, for details of all the items for this upcoming release, see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 list of issues marked for BigBlueButton 0.81].
+This document gives some highlights of major updates, for details of all the items for this upcoming release, see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 list of issues marked for BigBlueButton 0.81].
 
 = Record and Playback =
 
@@ -21,8 +19,10 @@ This document gives the highlights of major updates, for details of all the item
 
 It also records and playback all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]).  
 
+For more technical details see [081RecordAndPlayback RecordAndPlayback]
+
 = Accessibility =
-There was a Big Push to add more accessibility features into !BigBlueButton this release (see [http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).
+This release adds accessibility features for screen readers (see [http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).
 
 For the chat module:
   * keyboard navigation
@@ -43,6 +43,8 @@ General changes
 There is a new 'Shortcuts' dialog that shows you all the keyboard shortcuts.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/shortcut.png
+
+For more technical details see [081Accessibility Accessibility].
 
 = Whiteboard =
 The whiteboard now has a line tool and text tool (see [http://code.google.com/p/bigbluebutton/issues/detail?id=591 591]).  
@@ -85,3 +87,10 @@ There is an API example demonstrating how to use OpenID to login to a session (s
 == LTI ==
 
 !BigBlueButton will have a new module that implements the IMS Learning Tools Integration (LTI) standard to enable !BigBlueButton to be a tool provider (see [http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).
+
+For more technical details see [LTI LTI]
+
+= Documentation =
+== Developer Guide ==
+
+We've updated the developer guide so it now gives more step-by-step instructions for setting up your development environment.  See [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
