@@ -12,7 +12,7 @@ Beta Released: June YY, 2013
   
   * * Text tool for whiteboard * - Teachers can now annotate the whiteboard with text.
 
-  * * New APIs * - The !BigBlueButton API now includes a interface to control the client from JavaScript and the ability to dynamically configure the client on a per-user bases, thus enabling developers to configure the skin, layout, modules, etc. for each user.
+  * * New APIs * - The !BigBlueButton API now includes the ability to control the client from JavaScript and the ability to dynamically configure the client on a per-user bases, thus enabling developers to configure the skin, layout, modules, etc. for each user.
   
   * * Accessiblity for screen readers * - !BigBlueButton now supports screen readers such as JAWS (version 11+) and NVDA. There is an extensive list of shortcut keys now supported.
   
