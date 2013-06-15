@@ -1,5 +1,7 @@
 #summary Overview of BigBlueButton 0.81-beta
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
 This document summarizes the major updates in !BigBlueButton 0.81-beta (referred hereafter as 0.81) over the previous release.  For a list of details, see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 issues closed in 0.81-beta].
@@ -7,7 +9,8 @@ This document summarizes the major updates in !BigBlueButton 0.81-beta (referred
 !BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development, we recommend you subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list for updates.
 
 
-= Record and Playback =
+= Major updates =
+== Record and Playback ==
 
 !BigBlueButton 0.81 now records and playback all activity in the presentation area (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191]).  This includes
 
@@ -19,7 +22,7 @@ It also records and playback all webcams (see [http://code.google.com/p/bigblueb
 
 For more technical details see [081RecordAndPlayback RecordAndPlayback]
 
-= Accessibility =
+== Accessibility ==
 This release adds accessibility features for screen readers (see [http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).
 
 For the chat module:
@@ -44,10 +47,10 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/shortcut.png
 
 For more technical details see [081Accessibility Accessibility].
 
-= Whiteboard =
+== Whiteboard ==
 The whiteboard now has a line tool and text tool (see [http://code.google.com/p/bigbluebutton/issues/detail?id=591 591]).  
 
-= Layout Manger =
+== Layout Manger ==
 
 The New Layout Manager now keeps your windows organized as you resize the browser window.  It also gives you a number of preset layouts to choose from (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1060 1060]).
 
@@ -66,29 +69,29 @@ The layout manager is developer friendly.  You can create a new layout on the sc
 
 For developers, you can use the Layout Manager to define new layout types.
 
-= Unify the Users and Listeners window =
+== Unify the Users and Listeners window ==
 See [http://www.bigbluebutton.org/2012/10/19/simplifying-the-bigbluebutton-ui/ this blog post].
 
 = Make the icons and color scheme more consistent =
 See [http://www.bigbluebutton.org/2012/11/16/more-updates-to-the-bigbluebutton-ui/ this blog post].
 
 
-= API Examples =
-== Browser ID ==
+== API Examples ==
+=== Browser ID ===
 
 There is an API example showing how to use Mozilla Persona (BrowserID) to let users connect into a !BigBlueButton session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1276 1276]).
 
-== OpenID ==
+=== OpenID ===
 
 There is an API example demonstrating how to use OpenID to login to a session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1361 1361]).
 
-== LTI ==
+== IMS Learning Tools Interoperability Support ==
 
-!BigBlueButton will have a new module that implements the IMS Learning Tools Integration (LTI) standard to enable !BigBlueButton to be a tool provider (see [http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).
+!BigBlueButton will have a new module that implements the IMS Learning Tools Interoperability (LTI) standard to enable !BigBlueButton to be a tool provider (see [http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).
 
 For more technical details see [LTI LTI]
 
-= Documentation =
+== Documentation Updates ==
 == Developer Guide ==
 
 We've updated the developer guide so it now gives more step-by-step instructions for setting up your development environment.  See [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
