@@ -9,7 +9,7 @@
 
 What this means is that without any custom code, any LTI compliant system can add !BigBlueButton virtual classrooms to its system for end-users.
 
-To see a video of how this works with !BlackBoard, click [http://www.youtube.com/watch?v=BZ_gjj37meA&feature=youtu.be&hd=1 !BigBlueButton LTI video].
+To see a video of how this works with !BlackBoard, click [http://www.youtube.com/watch?v=BZ_gjj37meA&feature=youtu.be&hd=1 BigBlueButton LTI video].
 
 == Installation of LTI module ==
 
