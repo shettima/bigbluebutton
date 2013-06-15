@@ -1,32 +1,32 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 
-= Release 0.81 (DRAFT) =
+= Release 0.81-beta =
 
-Released: XXX YY, 2013 (Development in progress)
+Beta Released: June YY, 2013
 
 == Major Features ==
-  * * Simplified interface * - !BigBlueButton has a simplified interface for users, a layout manager to manage the windows, and updated icons and skin.
+  * * Simplified interface * - !BigBlueButton has a new interface that simplifies the controls, reduces the number of windows, and updates the skin and icons.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderators/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewers tutorial].  
 
-  * * Recording of whiteboard and webacams * - !BigBlueButton now record and plays back all the activity in the presentation window (whiteboard, mouse movements, and pan/zoom) as well as webcams.  Multiple webcams shared during the session will be joined together in a single video for playback.
+  * * Recording includes whiteboard and webacams * - !BigBlueButton now record for playback all the activity in the presentation window (whiteboard, mouse movements, and pan/zoom) as well as all webcams shared during a presentation.
   
   * * Text tool for whiteboard * - Teachers can now annotate the whiteboard with text.
 
-  * * New APIs * - The API now includes a interface to control !BigBlueButton from JavaScript and the ability to dynamically configure the client on a per-user bases, enabling developers to set the skin, layout, buttons, etc. for each user.
+  * * New APIs * - The API now includes a interface to control !BigBlueButton client from JavaScript within a web page and the ability to dynamically configure the client on a per-user bases, enabling developers to configure the skin, layout, modules, etc. for each user.
   
-  * * Accessiblity for screen readers * - !BigBlueButton now has support for popular screen readers such as JAWS (version 11+) and NVDA.  There is an extensive list of shortcut keys now supported.
+  * * Accessiblity for screen readers * - For blind, or partially-blind students that use a screen reader, !BigBlueButton now supports screen readers such as JAWS (version 11+) and NVDA.  There is an extensive list of shortcut keys now supported.
   
-  * * LTI Support * - There is a new package bbb-lti to enable any system that supports Learning Tools Integration to launch into !BigBlueButton without requiring a custom integration.
+  * * LTI Support * - BigBlueButton is certified by IMS to be Learning Tools Integration 1.0 compliant (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 certification]).  This enables any LTI consumer to integrate with !BigBlueButton without requiring custom integration.
   
-  * * Mozilla Persona * - We've included an API example for login using Mozilla Persona.
+  * * Mozilla Persona * - The API examples now demonstrate how to sign into a !BigBlueButton session using Mozilla Persona.
   
-  * * Support for !LibreOffice 4.0 * - We've updated the install guide to show how you can install the latest version of LibreOffice and get better conversion of .pptx files in !BigBlueButton.  (We still recommend uploading a PDF file where possible).
+  * * Support for !LibreOffice 4.0 * - The install guide includes instructions on how you can install the latest version of LibreOffice and get better conversion of .pptx files in !BigBlueButton.  
   
-  * * Under the hood * -  We've updated !BigBlueButton to use red5 1.0.2 and a newer build of FreeSWITCH (1.5.x).
+  * * Updated components * -  We've updated !BigBlueButton packaging to use red5 1.0.2,  FreeSWITCH (1.5.x), and grails 1.3.6.
   
 
 == Fixed Issues ==
-See [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary  detailed list of issues fixed in BigBlueButton 0.81]
+For a detailed list of updates, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.81].  The next step in development of 0.81 final is to finish a release candidate.
 
 
 Here's a short video highlighting the new features:
