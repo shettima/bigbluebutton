@@ -6,7 +6,7 @@
 Beta Released: June YY, 2013
 
 == Major Features ==
-  * * Simplified interface * - !BigBlueButton has a simplified layout for moderator and presenter controls, a reduced number of windows, and updates the skin and icons for more consistency.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderators/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewers tutorial].  
+  * * Simplified interface * - !BigBlueButton has a simplified layout for moderator and presenter controls, a reduced number of windows, and updates the skin and icons for more consistency.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
 
   * * Recording includes whiteboard and webacams * - !BigBlueButton now record all the activity in the presentation window (whiteboard, mouse movements, and pan/zoom) and all webcams shared during a presentation.
   
