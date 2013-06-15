@@ -2,12 +2,10 @@
 
 = Introduction =
 
-This document gives an overview of !BigBlueButton 0.81-beta (referred hereafter as 0.81).  
+This document summarizes the major updates in !BigBlueButton 0.81-beta (referred hereafter as 0.81) over the previous release.  For a list of details, see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 issues closed in 0.81-beta].
 
 !BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development, we recommend you subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list for updates.
 
-
-This document gives some highlights of major updates, for details of all the items for this upcoming release, see [http://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81 list of issues marked for BigBlueButton 0.81].
 
 = Record and Playback =
 
