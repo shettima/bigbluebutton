@@ -91,11 +91,11 @@ Developers can now specify the !BigBlueButton client config.xml (configuration p
 
 See [http://demo.bigbluebutton.org/demo/demo12.jsp Dynamic config.xml API demo].
 
-=== JavaScript Integration ===
+=== ~JavaScript Integration ===
 
 Developers can now control the !BigBlueButton client from within a web page via a !JavaScript interface.
 
-See [http://demo.bigbluebutton.org/demo/demo13.jsp !JavaScript API demo].
+See [http://demo.bigbluebutton.org/demo/demo11.jsp JavaScript API demo].  For details on the integration, see the source for [https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-api-demo/src/main/webapp/demo11.jsp demo11.jsp] and [https://github.com/bigbluebutton/bigbluebutton/blob/master/bbb-api-demo/src/main/webapp/demo11.html demo11.html].
 
 
 
