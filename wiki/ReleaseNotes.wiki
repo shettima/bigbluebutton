@@ -22,7 +22,7 @@ For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview
   
   * * LTI Support * - !BigBlueButton is IMS Learning Tools Interoperability (LTI) 1.0 compliant. This means any LTI consumer can integrate with !BigBlueButton without requiring custom plug-ins (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 BigBlueButton LTI certification] and [http://www.youtube.com/watch?v=OSTGfvICYX4 video]). 
 
-  * * Mozilla Persona * - The API examples now demonstrate how to sign into a !BigBlueButton session using Mozilla Persona.
+  * * Mozilla Persona * - The API demos now demonstrate how to sign into a !BigBlueButton session using Mozilla Persona.
   
   * * Support for !LibreOffice 4.0 * - !BigBlueButton now uses !LibreOffice 4.0 for conversion of of MS Office documents (upload of PDF is still recommend to provide best results).  
   
