@@ -1,4 +1,4 @@
-#summary BigBlueButton Third-Party Integration API.
+#summary Using the BigBlueButton 0.81-beta API.
 
 <wiki:toc max_depth="3" />
 
