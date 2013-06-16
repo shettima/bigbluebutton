@@ -5,6 +5,8 @@
 
 Beta Released: June 16, 2013
 
+This is our eleventh release of !BigBlueButton.  See [http://youtu.be/4C-rOd8bi6s overview video] of new features.
+
 == Major Features ==
   * * Usability Improvements * - !BigBlueButton has a simplified layout for moderator and presenter controls, a reduced number of windows, and more consistent skin and icons.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
 
@@ -29,9 +31,6 @@ Beta Released: June 16, 2013
 
 == Fixed Issues ==
 See [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.81] and [http://goo.gl/frxVz remaining issues].
-
-See this [http://youtu.be/4C-rOd8bi6s overview video] of some of the new features in 0.81.
-
   
 
 
