@@ -18,7 +18,7 @@ Beta Released: June 16, 2013
   
   * * Accessiblity for screen readers * - !BigBlueButton improves its accessibility by supporting screen readers such as JAWS (version 11+) and NVDA. A list of keyboard shortcuts have been added to make it easier to navigate through the interface using the keyboard.
   
-  * * LTI Support * - !BigBlueButton is IMS Learning Tools Interoperability (LTI) 1.0 compliant. This means any LTI consumer can integrate with !BigBlueButton without requiring custom plug-ins (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 certification] and [http://www.youtube.com/watch?v=OSTGfvICYX4 video of using BigBlueButton LTI integration]). 
+  * * LTI Support * - !BigBlueButton is IMS Learning Tools Interoperability (LTI) 1.0 compliant. This means any LTI consumer can integrate with !BigBlueButton without requiring custom plug-ins (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 BigBlueButton LTI certification] and [http://www.youtube.com/watch?v=OSTGfvICYX4 video]). 
 
   * * Mozilla Persona * - The API examples now demonstrate how to sign into a !BigBlueButton session using Mozilla Persona.
   
