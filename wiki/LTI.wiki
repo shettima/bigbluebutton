@@ -7,7 +7,7 @@
 
 !BigBlueButton 0.81 can accept incoming LTI launch requests from a tool consumer, which is the IMS term for any platform that can make a LTI request to an external tool (such as !BigBlueButton).  Such platforms include !Desire2Learn, !BlackBoard, Pearson Learning Studio, etc.  See [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status] for a full list of LTI compliant platforms.
 
-What this means is that without any custom code, any LTI compliant platform can add !BigBlueButton virtual classrooms to its system.  For example, the following video showshow !BigBlueButton uses LTI to integrate with !BlackBoard, click [http://www.youtube.com/watch?v=BZ_gjj37meA&feature=youtu.be&hd=1 BigBlueButton LTI video].
+What this means is that without any custom code, any LTI compliant platform can add !BigBlueButton virtual classrooms to its system.  For example, the following video showshow !BigBlueButton uses LTI to integrate with !BlackBoard, click [https://www.youtube.com/watch?v=OSTGfvICYX4&feature=youtu.be&hd=1 BigBlueButton LTI video].
 
 == Installation of LTI module ==
 
