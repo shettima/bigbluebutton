@@ -6,23 +6,23 @@
 Beta Released: June 16, 2013
 
 == Major Features ==
-  * * Usability Improvements * - !BigBlueButton has a simplified layout for moderator and presenter controls, a reduced number of windows, and updates the skin and icons for more consistency.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
+  * * Usability Improvements * - !BigBlueButton has a simplified layout for moderator and presenter controls, a reduced number of windows, and more consistent skin and icons.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
 
-  * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts of windows to quickly adapt to different modes of interaction.
+  * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts to quickly adapt to different modes of learning.
 
-  * * Recording includes whiteboard and webacams * - !BigBlueButton now record all the activity in the presentation window (whiteboard, mouse movements, and pan/zoom) and all webcams shared during a presentation.
+  * * Recording includes whiteboard and webacams * - !BigBlueButton now records for playback all the activity in the presentation window (whiteboard, mouse movements, and pan/zoom) and all webcams shared during a session.
   
-  * * Text tool for whiteboard * - Teachers can now annotate the whiteboard with text.
+  * * Text tool for whiteboard * - Presenters can now annotate their slides with text.
 
-  * * New APIs * - The !BigBlueButton API now includes the ability to control the client from JavaScript and the ability to dynamically configure the client on a per-user bases, thus enabling developers to configure the skin, layout, modules, etc. for each user.
+  * * New APIs * - The !BigBlueButton API now includes the ability to dynamically configure each client on a per-user bases, thus enabling developers to configure the skin, layout, modules, etc. for each user.  There is also a !JavaScript interface to control the client.
   
-  * * Accessiblity for screen readers * - !BigBlueButton now supports screen readers such as JAWS (version 11+) and NVDA. There is an extensive list of shortcut keys now supported.
+  * * Accessiblity for screen readers * - !BigBlueButton improves its accessibility by supporting screen readers such as JAWS (version 11+) and NVDA. A list of keyboard shortcuts have been added to make it easier to navigate through the interface using the keyboard.
   
-  * * LTI Support * - !BigBlueButton is certified by IMS to be Learning Tools Integration 1.0 compliant. This means any LTI consumer can integrate with !BigBlueButton without requiring custom plug-ins (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 certification]). 
+  * * LTI Support * - !BigBlueButton is IMS Learning Tools Interoperability (LTI) 1.0 compliant. This means any LTI consumer can integrate with !BigBlueButton without requiring custom plug-ins (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 certification] and [http://www.youtube.com/watch?v=OSTGfvICYX4 video of using BigBlueButton LTI integration]). 
 
   * * Mozilla Persona * - The API examples now demonstrate how to sign into a !BigBlueButton session using Mozilla Persona.
   
-  * * Support for !LibreOffice 4.0 * - The install guide includes instructions on how you can install the latest version of LibreOffice and get better conversion of .pptx files in !BigBlueButton.  
+  * * Support for !LibreOffice 4.0 * - BigBlueButton now uses !LibreOffice 4.0 for conversion of of MS Office documents (upload of PDF is still recommend to provide best results).  
   
   * * Updated components * -  We've updated !BigBlueButton packaging to use red5 1.0.2,  FreeSWITCH (1.5.x), and grails 1.3.6.
   
