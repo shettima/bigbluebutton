@@ -4,9 +4,9 @@
 
 = Introduction =
 
-This document summarizes the major updates in !BigBlueButton 0.81-beta (referred hereafter as 0.81) over the previous release.  For a list of details, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed issues closed in 0.81-beta].
+This document summarizes the major updates in !BigBlueButton 0.81-beta (referred hereafter as 0.81) over the previous release.  For a list of details, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed issues closed in 0.81].
 
-!BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development, we recommend you subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list for updates.
+!BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development and announcements, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
 
 = Updates in !BigBlueButton 0.81 =
@@ -21,7 +21,7 @@ This document summarizes the major updates in !BigBlueButton 0.81-beta (referred
 
 It also records and playback all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]).  
 
-For more technical details see [081RecordAndPlayback RecordAndPlayback]
+For  technical details see [081RecordAndPlayback RecordAndPlayback].
 
 == Accessibility ==
 This release adds accessibility features for screen readers (see [http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).
@@ -46,7 +46,7 @@ There is a new 'Shortcuts' dialog that shows you all the keyboard shortcuts.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/shortcut.png
 
-For more technical details see [081Accessibility Accessibility].
+For technical details see [081Accessibility Accessibility].
 
 == Whiteboard ==
 The whiteboard now has a line tool and text tool (see [http://code.google.com/p/bigbluebutton/issues/detail?id=591 591]).  
@@ -70,10 +70,10 @@ The layout manager is developer friendly.  You can create a new layout on the sc
 
 For developers, you can use the Layout Manager to define new layout types.
 
-== Unify the Users and Listeners window ==
+== Unified Users and Listeners window ==
 See [http://www.bigbluebutton.org/2012/10/19/simplifying-the-bigbluebutton-ui/ this blog post].
 
-== Updates to skin ==
+== New Skin ==
 See [http://www.bigbluebutton.org/2012/11/16/more-updates-to-the-bigbluebutton-ui/ this blog post].
 
 
@@ -104,7 +104,7 @@ See [http://demo.bigbluebutton.org/demo/demo11.jsp JavaScript API demo].  For de
 
 !BigBlueButton will have a new module that implements the IMS Learning Tools Interoperability (LTI) standard to enable !BigBlueButton to be a tool provider (see [http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).
 
-For more technical details see [LTI LTI].  For an example of using the support for LTI to integrate with an LMS, see [https://www.youtube.com/watch?v=OSTGfvICYX4 BigBlueButton LTI Integration].
+For more technical details see [LTI LTI].  For an example of using the support for LTI to integrate with an LMS, see [https://www.youtube.com/watch?v=OSTGfvICYX4 BigBlueButton LTI Integration video].
 
 = Documentation Updates =
 
