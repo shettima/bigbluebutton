@@ -1,4 +1,4 @@
-#summary Overview of BigBlueButton Learning Tools Interoperability support
+#summary Overview of BigBlueButton's support for IMS Learning Tools Interoperability
 
 
 = Overview =
