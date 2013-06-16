@@ -1,8 +1,6 @@
-#summary BigBlueButton Labs
+#summary BigBlueButton 0.81 documentation
 
-= Introduction =
-
-The following is a list of updated document for 0.81-beta.
+The following is a list of updated documentation for 0.81-beta.
     
     * [081Overview 081Overview]
     * [081InstallationUbuntu 081InstallationUbuntu]
