@@ -2,8 +2,8 @@
 
 
 = Release 0.81-beta =
-
-Beta Released: June 16, 2013
+ 
+Released: June 16, 2013
 
 For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview video].
 
