@@ -25,11 +25,7 @@ To support LTI, version 0.81 adds a new package called `bbb-lti`.  You can add L
 
 All LTI consumers have the ability to launch an external application that is LTI-compliant.  !BigBlueButton is [http://www.imsglobal.org/cc/detail.cfm?ID=172 LTI 1.0 compliant].  
 
-This means that your !BigBlueButton server can receive a single sign-on request that includes roles and additional custom parameters.
-
-To configure an external tool in the LTI consumer, you need to provide three pieces of information: URL, customer identifier, and shared secret.
-
-After installing the `bbb-lti` package, you can use the command `bbb-conf --lti` to retrieve these values.  
+This means that your !BigBlueButton server can receive a single sign-on request that includes roles and additional custom parameters.  To configure an external tool in the LTI consumer, you need to provide three pieces of information: URL, customer identifier, and shared secret.  After installing the `bbb-lti` package, you can use the command `bbb-conf --lti` to retrieve these values.  
 
 Here are the LTI configuration variables from a test !BigBlueButton server.
 
