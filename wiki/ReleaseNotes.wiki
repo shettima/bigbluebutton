@@ -8,7 +8,7 @@ Released: June 16, 2013
 For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview video].
 
 == Major Features ==
-  * * Usability Improvements * - !BigBlueButton has a simplified layout for moderator and presenter controls, a reduced number of windows, and more consistent skin and icons.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
+  * * Usability Improvements * - !BigBlueButton now has a consolidated Users window for easier session management and a more consistent user interface (including updated skin and icons) to help new users get started quickly.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
 
   * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts to quickly adapt to different modes of learning.
 
