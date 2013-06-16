@@ -49,7 +49,7 @@ Here's a sample return
 You should not embed the shared secret witin a web page and make !BigBlueButton API calls within !JavaScript running within a browser.  An end user will be able to see this URL in their browser, extract it, and use it to create their own API calls, such as creating meetings outside the control of the 3rd party application.
 
 
-== _Configuration_ ==
+== Configuration ==
 The securitySalt (shared secret) is set in 
 
 {{{
@@ -71,7 +71,7 @@ You can also retrieve it's value using the command
 
 <p><font color="#FF0000">*IMPORTANT: DO NOT ALLOW END USERS TO KNOW YOUR SHARED SECRET OR ELSE YOUR SECURITY WILL BE COMPROMISED.*</font></p>
 
-== _Usage_ ==
+== Usage ==
 <p>The implementation of this security model lies in !ApiController.groovy. It entails creating a checksum out of the combination of the entire HTTP query string and a server-configured security token.</p>
 
 <p>To use the security model, you must be able to create an SHA-1 checksum out of the call name _plus_ the query string _plus_ the shared secret that you configured on your server. To do so, follow these steps:</p>
@@ -100,7 +100,7 @@ You can also retrieve it's value using the command
         ** See <a href="http://php.net/manual/en/function.sha1.php">http://php.net/manual/en/function.sha1.php</a>
 
 
-== _Error handling_ ==
+== Error handling ==
 
 All API calls make a best-effort attempt to return a properly formatted document that contains enough information for the user to be able to determine what the error is.
 
