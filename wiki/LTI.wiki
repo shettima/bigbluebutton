@@ -37,14 +37,14 @@ $ bbb-conf --lti
   Icon URL: http://test-install.blindsidenetworks.com/lti/images/icon.ico
 }}}
 
-In the external tool configuration, we recommend privacy settings are set to *public* to allow the LMS to send lis_person_sourcedid and lis_person_contact_email_primary.  The `bbb-lti` module will use these parameters for user identification once logged into the BigBlueButton session.  If none of them is sent by default a generic name is going to be used (Viewer for viewer and Moderator for moderator).
+In the external tool configuration, we recommend privacy settings are set to *public* to allow the LMS to send lis_person_sourcedid and lis_person_contact_email_primary.  The `bbb-lti` module will use these parameters for user identification once logged into the !BigBlueButton session.  If none of them is sent by default a generic name is going to be used (Viewer for viewer and Moderator for moderator).
 
  
 = Launching !BigBlueButton as an External Tool =
 
 The LTI launch request passes along the user's role (, which `bbb-lti` will map to the two roles in !BigBlueButton: moderator or viewer.
 
-If no role information is given, or if the role is privileged (i.e. . Faculty, Mentor, Administrator, Instructor, etc.), then when `bbb-lti` receives a valid launch request, it will start a BigBlueButton session and join the user as *moderator*.  In all other cases, the user will join as a *viewer*.
+If no role information is given, or if the role is privileged (i.e. . Faculty, Mentor, Administrator, Instructor, etc.), then when `bbb-lti` receives a valid launch request, it will start a !BigBlueButton session and join the user as *moderator*.  In all other cases, the user will join as a *viewer*.
 
 
 == Custom Parameters ==
@@ -54,3 +54,5 @@ The `bbb-lti` module also accepts a number of custom parameters.
 || Parameter || Type || Description ||
 || record || Boolean || Record meeting (default is false) ||
 || welcome || Text || Welcome message that appears in chat dialog (default is the global welcome message on the !BigBlueButton server) ||
+
+For example, if you add `record=true` to as a custom launch parameter, then then `bbb-lti` module will record your session and show you a list of previously recorded sessions.
