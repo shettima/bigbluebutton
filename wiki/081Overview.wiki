@@ -72,11 +72,11 @@ For developers, you can use the Layout Manager to define new layout types.
 == Unify the Users and Listeners window ==
 See [http://www.bigbluebutton.org/2012/10/19/simplifying-the-bigbluebutton-ui/ this blog post].
 
-= Make the icons and color scheme more consistent =
+== Updates to skin ==
 See [http://www.bigbluebutton.org/2012/11/16/more-updates-to-the-bigbluebutton-ui/ this blog post].
 
 
-== API Examples ==
+== API Examples/Updates ==
 === Browser ID ===
 
 There is an API example showing how to use Mozilla Persona (BrowserID) to let users connect into a !BigBlueButton session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1276 1276]).
@@ -84,6 +84,20 @@ There is an API example showing how to use Mozilla Persona (BrowserID) to let us
 === OpenID ===
 
 There is an API example demonstrating how to use OpenID to login to a session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1361 1361]).
+
+=== Dynamic config.xml ===
+
+Developers can now specify the !BigBlueButton client config.xml (configuration parmeters) on a per-user basis.  This enables developers to modify any parameter, such as turning of webcam or specifying the default layout.  
+
+See [http://demo.bigbluebutton.org/demo/demo12.jsp Dynamic config.xml API demo].
+
+=== JavaScript Integration ===
+
+Developers can now control the !BigBlueButton client from within a web page via a !JavaScript interface.
+
+See [http://demo.bigbluebutton.org/demo/demo13.jsp !JavaScript API demo].
+
+
 
 == IMS Learning Tools Interoperability Support ==
 
