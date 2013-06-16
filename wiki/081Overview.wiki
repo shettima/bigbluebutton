@@ -9,7 +9,7 @@ This document summarizes the major updates in !BigBlueButton 0.81-beta (referred
 !BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development and announcements, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
 
-= Updates in !BigBlueButton 0.81 =
+= Overview of new features in !BigBlueButton 0.81-beta =
 
 == Record and Playback ==
 
