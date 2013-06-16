@@ -1,14 +1,12 @@
-#summary How to install BigBlueButton 0.81-dev
+#summary How to install BigBlueButton 0.81-beta
 
 <wiki:toc max_depth="3" />
 
 = Before You Install =
 
-*Note:* These instructions are currently for developers only.  If your not a developer, we recommend waiting until we announce release of 0.81-beta before doing the steps below.
+These instructions show how to install !BigBlueButton 0.81-beta (referred hereafter as 0.81).
 
-*Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet (but there will be before final release of 0.81).
-
-*Note:* These instructions install !BigBlueButton 0.81-dev.
+*Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet for 0.81.
 
 The requirements are
 
@@ -57,7 +55,7 @@ If you are upgrading from !BigBlueButton 0.80 to 0.81, start [#Upgrading_from_Bi
 
 == 1. Update your server == 
 
-The following steps will ins tall 0.81-dev.
+The following steps will install 0.81.
 
 You first need to give your server access to the !BigBlueButton package repository.
 
@@ -308,7 +306,7 @@ If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've m
 
 then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
 
-The following steps will update a !BigBlueButton 0.80 server to 0.81-dev.
+The following steps will update a !BigBlueButton 0.80 server to 0.81.
 
 == 1. Update your server ==
 
