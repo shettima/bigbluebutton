@@ -90,6 +90,8 @@ You can also retrieve it's value using the command
 In the following section is described the administration calls
 || Resource || Description ||
 || create || Creates a new meeting. ||
+|| getDefaultConfigXML || Gets the default config.xml (these settings configure the !BigBlueButton client for each user). ||
+|| setConfigXML || Add a custom config.xml to an existing meeting. ||
 || join || Join a new user to an existing meeting. ||
 || end || Ends meeting. ||
 
