@@ -1,4 +1,4 @@
-#summary BigBlueButton 0.81 documentation
+#summary BigBlueButton 0.81-beta documentation
 
 The following is a list of updated documentation for 0.81-beta.
     
