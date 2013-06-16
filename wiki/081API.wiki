@@ -466,7 +466,7 @@ meetingID (or set of meeting IDs).</p>
 }}}
 
 <br><br>
-== getDefaultConfigXML (Draft) ==
+== getDefaultConfigXML  ==
 <p>Retrieve the default config.xml.  This call enables a 3rd party application to get the current config.xml, modify it's parameters, and use setConfigXML to store it on the !BigBlueButton server (getting a reference token to the new config.xml), then using the token in as a parmeter in the join URL to override the default config.xml.
 
 </p>
@@ -475,7 +475,7 @@ meetingID (or set of meeting IDs).</p>
 
 
 
-== setConfigXML (Draft) ==
+== setConfigXML  ==
 <p>Associate an custom config.xml file with the current session .  This call returns a token can later be passed as a parameter to a join URL.  When passed as a parameter, the !BigBlueButton client will use the associated config.xml for the user (not the default config.xml).  This enables 3rd party applications to provide user-specific config.xml files.
 
 </p>
