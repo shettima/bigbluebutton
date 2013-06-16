@@ -28,7 +28,7 @@ Beta Released: June 16, 2013
 == Fixed Issues ==
 See[https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.81] and [http://goo.gl/frxVz remaining issues].
 
-Here's a [http://youtu.be/4C-rOd8bi6s short video] highlighting the new features:
+See this [http://youtu.be/4C-rOd8bi6s overview video] of some of the new features in 0.81.
 
   
 
