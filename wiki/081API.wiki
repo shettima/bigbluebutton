@@ -20,8 +20,8 @@ Added new API calls:
 Updates:
   * * join * - Added configToken to reference associated config.xml
   * * join * - Added avatarURL for image to display when config.xml is set to always display an window for user in the video dock and the user is not broadcasting a webcam.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L124 defaultAvatarURL] in bigbluebutton.properties and [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/config.xml.template#L76 displayAvatar] in config.xml.
-  * * create * - Added redirectClient=[true|false] (uses for JavaScript interface)
-  * * create * - Added clientURL to override default URL for !BigBlueButton client (used for JavaScript interface).
+  * * create * - Added redirectClient=[true|false] (uses for !JavaScript interface)
+  * * create * - Added clientURL to override default URL for !BigBlueButton client (used for !JavaScript interface).
 
 
 <br />
