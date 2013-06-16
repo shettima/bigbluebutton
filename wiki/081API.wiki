@@ -11,7 +11,7 @@ The !BigBlueButton server returns an XML response to all API calls.
 
 The current API implementation is within on the bigbluebutton-web component, which has been written using the Grails framework.
 
-= API Changes in !BigBlueButton 0.81 =
+== Updates in !BigBlueButton 0.81 ==
 
 Added new API calls:
   * * getConfigXML *
