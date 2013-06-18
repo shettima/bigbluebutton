@@ -112,8 +112,8 @@ tar xvfz gradle-0.8.tar.gz
 wget http://bigbluebutton.googlecode.com/files/groovy-1.6.5.tar.gz
 tar xvfz groovy-1.6.5.tar.gz
 
-wget https://bigbluebutton.googlecode.com/files/grails-1.3.9.zip
-unzip grails-1.3.9.zip
+wget https://bigbluebutton.googlecode.com/files/grails-1.3.9.tar.gz
+tar xvfz grails-1.3.9.tar.gz
 }}}
 
 Next you need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SDK, !BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
