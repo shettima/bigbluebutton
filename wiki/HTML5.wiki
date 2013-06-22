@@ -1,6 +1,6 @@
 #summary Overview an HTML5 client for BigBlueButton
 
-= Overview (DRAFT) =
+= Overview =
 
 This DRAFT document outlines some of our progress to-date, which has been to prototype a stand-alone HTML5 client that is integrated into the !BigBlueButton platform, thus providing an additional entry point for users to join a !BigBlueButton session.
 
