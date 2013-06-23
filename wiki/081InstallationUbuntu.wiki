@@ -259,6 +259,13 @@ This single command is where all the magic happens.  This command installs *all*
 
 If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
 
+If you get an error message
+{{{
+...... Error: FreeSWITCH didn't start 
+}}}
+you can ignore it as we'll do a clean restart of all the components in step 7.
+
+
 == 6. Install API Demos ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
