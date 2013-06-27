@@ -15,8 +15,9 @@ The requirements for running the !BigBlueButton VM are:
   # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
   # 2 G of free memory to run the VM
   # A DHCP Server for the VM to acquire an IP address on boot
+  # Ability to connect to the internet
 
-The third requirement is important: the VM must be able to connect to the internet on first bott to update from packages.  If the VM cannot connect, it won't be able to finish the setup of !BigBlueButton.
+The forth requirement is important: the VM must be able to connect to the internet on first boot to update from packages.  If the VM cannot connect, it won't be able to finish the setup of !BigBlueButton.
 
 == Installing !BigBlueButton VM  ==
 
