@@ -34,7 +34,6 @@ Name: *subscribeEvent*
 Parameters:
 || Param || Description ||
 || meetingID || String. the meeting that you would to check the events ||
-|| event || String. It's the type of event that you are going to subscribe ||
 || callbackURL || String. It's the URL of your third party application that will handle the events ||
 Response: Status and SubscriptionID
 
@@ -64,7 +63,7 @@ http://bbb-custom-calls.herokuapp.com/
 For example, for generate the subscribeEvent API Call:
  * Fill in the fields according to your server
  * Under "Custom API" write "call1=subscribeEvent"
- * Under "Custom Parameters" write "event=TestEvent", press enter, write another param `callbackURL=PostCatcher-EndPoint-URL`
+ * Under "Custom Parameters" write param `callbackURL=PostCatcher-EndPoint-URL`
  * Click "Generate"
 
 == Testing ==
