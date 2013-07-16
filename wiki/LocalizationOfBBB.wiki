@@ -2,15 +2,15 @@
 
 = Contributing the new language translation to !BigBlueButton =
 
-We are [http://mygengo.com/string/p/bigbluebutton-1 myGengo] to make contributing/updating a translation easy for !BigBlueButton community.
+We are [https://www.transifex.com/projects/p/bigbluebutton transifex] to make contributing/updating a translation easy for !BigBlueButton community.
 
 To help translate !BigBlueButton into your language, do the following.
 
-  # Create an account on [http://mygengo.com/string/p/bigbluebutton-1 myGengo.com].
-  # Click the [http://mygengo.com/string/p/bigbluebutton-1 Request Access] button on the !BigBlueButton page.
-  # Send an e-mail to Marcos Calderon (mcmarkos86 *at* gmail *dot* com) requesting access to modify !BigBlueButton language strings myGengo.
+  # Create an account on [https://www.transifex.com/projects/p/bigbluebutton/ transifex.com].
+  # Click the localization file you wish to update, such as [https://www.transifex.com/projects/p/bigbluebutton/language/de_DE/ German (Germany)].
+  # Click the *bbbResources.properties* to translate
+  # Click the Translate Now button.
 
-The last step is needed as sometimes the Request Access process doesn't work.  Marcos will add you as an editor and you can then update the language strings.  If you want to localize !BigBlueButton into a new language, let Marcos know in your e-mail.
 
 As the translations are updated by the community, we will sync them with   [https://github.com/bigbluebutton/bigbluebutton/tree/master/bigbluebutton-client/locale locale] so they get into master.
 
