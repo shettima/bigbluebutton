@@ -3,7 +3,7 @@
 
 = Release 0.81-beta-2 =
  
-Released: July 16, 2013 ([081InstallationUbuntu Installation])
+Released: July 17, 2013 ([081InstallationUbuntu Installation])
 
 For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview video].
 
