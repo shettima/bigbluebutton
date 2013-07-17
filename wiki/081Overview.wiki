@@ -9,17 +9,17 @@ This document summarizes the major updates in !BigBlueButton 0.81-beta-2 (referr
 !BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development and announcements, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
 
-= Overview of new features in !BigBlueButton 0.81-beta =
+= Overview of new features in !BigBlueButton 0.81 =
 
 == Record and Playback ==
 
-!BigBlueButton 0.81 now records and playback all activity in the presentation area (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191]).  This includes
+!BigBlueButton 0.81 now records and playback all activity in the presentation area (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191]), which includes
 
   * Mouse movement
   * Whiteboard marks
   * Pan/Zoom
 
-It also records and playback all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]).  
+along with chat, all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]), and desktop sharing (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1470 1470]).  
 
 For  technical details see [081RecordAndPlayback RecordAndPlayback].
 
