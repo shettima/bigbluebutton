@@ -10,10 +10,10 @@ For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview
 == Major Features ==
   * * Usability Improvements * - !BigBlueButton now has a consolidated Users window for easier session management and a more consistent user interface (including updated skin and icons) to help new users get started quickly.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
 
-  * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts to quickly adapt to different modes of learning.
-
   * * Recording * - The recording of a session now includes audio, webcams (all of them), chat, presentation, and desktop sharing.
   
+  * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts to quickly adapt to different modes of learning.
+
   * * Text tool for whiteboard * - Presenters can now annotate their slides with text.
 
   * * New APIs * - The !BigBlueButton API now includes the ability to dynamically configure each client on a per-user bases, thus enabling developers to configure the skin, layout, modules, etc. for each user.  There is also a !JavaScript interface to control the client.
