@@ -1,10 +1,10 @@
-#summary Using the BigBlueButton 0.81-beta API.
+#summary Using the BigBlueButton 0.81-beta-2 API.
 
 <wiki:toc max_depth="3" />
 
 = Overview = 
 
-This document describes the !BigBlueButton API available for integration 3rd party applications.  This document includes updates to the API for !BigBlueButton 0.81-beta (referred hereafter as 0.81).
+This document describes the !BigBlueButton API available for integration 3rd party applications.  This document includes updates to the API for !BigBlueButton 0.81-beta-2, referred hereafter as 0.81.
 
 The API is implemented with developer in mind. To make and API call a !BigBlueButton, your 3rd party application makes HTTP requests to a URL.  All API calls include a checksum that signs the parameters with a shared secret (called salt by !BigBlueButton).
 
