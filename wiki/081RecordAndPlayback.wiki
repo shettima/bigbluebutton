@@ -1,4 +1,4 @@
-#summary Design for enhancements to record and playback in 0.81-beta.
+#summary Design for enhancements to record and playback in 0.81-beta-2.
 
 = Overview =
 
