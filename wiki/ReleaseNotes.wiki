@@ -12,7 +12,7 @@ For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview
 
   * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts to quickly adapt to different modes of learning.
 
-  * * Recording * - The recording of a session includes audio, webcams (all of them), chat, presentation, and desktop sharing.
+  * * Recording * - The recording of a session now includes audio, webcams (all of them), chat, presentation, and desktop sharing.
   
   * * Text tool for whiteboard * - Presenters can now annotate their slides with text.
 
