@@ -18,7 +18,7 @@ For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview
 
   * * New APIs * - The !BigBlueButton API now includes the ability to dynamically configure each client on a per-user bases, thus enabling developers to configure the skin, layout, modules, etc. for each user.  There is also a !JavaScript interface to control the client.
   
-  * * Accessiblity for screen readers * - !BigBlueButton add accessibility by supporting screen readers such as JAWS (version 11+) and NVDA. A list of keyboard shortcuts have been added to make it easier to navigate through the interface using the keyboard.
+  * * Accessiblity for screen readers * - !BigBlueButton adds accessibility by supporting screen readers such as JAWS (version 11+) and NVDA. A list of keyboard shortcuts have been added to make it easier to navigate through the interface using the keyboard.
   
   * * LTI Support * - !BigBlueButton is IMS Learning Tools Interoperability (LTI) 1.0 compliant. This means any LTI consumer can integrate with !BigBlueButton without requiring custom plug-ins (see [http://www.imsglobal.org/cc/detail.cfm?ID=172 BigBlueButton LTI certification] and [http://www.youtube.com/watch?v=OSTGfvICYX4 video]). 
 
