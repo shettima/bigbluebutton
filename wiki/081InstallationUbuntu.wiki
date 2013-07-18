@@ -298,6 +298,18 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 
 
+= Upgrading !BigBlueButton 0.81 =
+If you have already installed an earlier version of 0.81, to upgrade to the latest version
+
+{{{
+   sudo apt-get update
+   sudo apt-get dist-upgrade
+
+   sudo bbb-conf --clean
+   sudo bbb-conf --check
+}}}
+
+
 
 = Upgrading from !BigBlueButton 0.80 =
 
