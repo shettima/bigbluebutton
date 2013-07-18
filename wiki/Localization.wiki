@@ -12,21 +12,21 @@ To help translate !BigBlueButton into your language, do the following.
 
 You'll see a list of languages ready for translation.  
 
-3.  Click the localization file you wish to update.  
+*3. Click the localization file you wish to update.*
 
-We'll describe the remaining steps for [https://www.transifex.com/projects/p/bigbluebutton/language/pl_PL/ Polish], but they are the same for all other languages.
+For  [https://www.transifex.com/projects/p/bigbluebutton/language/pl_PL/ Polish], but they are the same for all other languages.
 
-4.  Click 'Join team' to join the localization team for your language.
+*4. Click 'Join team' to join the localization team for your language.*
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/join.PNG
 
-This will send an e-mail to the coordinators for the !BigBlueButton localization. You should receive approval very quickly.
+At this point, Transifex will send an e-mail to the coordinators for the !BigBlueButton localization. You should receive approval very quickly.
 
-5.  Once approved, click the bbbResource.properties link.  
+*5. Once approved, click the bbbResource.properties link*
 
 You'll see a dialog box where you can begin translation.
 
-6.  Click the Translate Now button.
+*6. Click the Translate Now button*
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/approved.PNG
 
@@ -36,16 +36,18 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/translate.
 
 You can now click on a string in the left-hand panel and enter/review the translation for it.  
 
-For more help, see [http://support.transifex.com/customer/portal/articles/972120-introduction-to-the-web-editor Transifex's intro to web editor].
+Translation tips:
+  * You don't need to translate the numbers
+  * Some strings have variables in them such as {0} and {1} -- these will be substituted by !BigBlueButton with parameters.
+  * You'll see duplicate strings as many controls have two localations: one for sighted users, and one for blind users using a screen reader.  Please translate both.
 
+For help in using Transifex's web editor, see [http://support.transifex.com/customer/portal/articles/972120-introduction-to-the-web-editor intro to web editor].
 
 As the translations are updated by the community, we will sync them with   [https://github.com/bigbluebutton/bigbluebutton/tree/master/bigbluebutton-client/locale locale] so they get into master.
 
-If you have any questions, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
+If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
 
-
-  
-*NOTE: If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
+Finally, if you have any questions, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
 
 == Technical Background  ==
