@@ -18,6 +18,8 @@ If you don't find your langauge, please post on the [http://groups.google.com/gr
 
 *4. Click 'Join team' to join the localization team for your language*
 
+The 'Join team' button is in the upper right-hand corner.
+
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/join.PNG
 
 At this point, Transifex will send an e-mail to the coordinator for !BigBlueButton localization requesting approval. You should receive approval very quickly.
