@@ -16,7 +16,7 @@ You'll see a list of languages ready for translation.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/join.PNG
 
-At this point, Transifex will send an e-mail to the coordinators for the !BigBlueButton localization. You should receive approval very quickly.
+At this point, Transifex will send an e-mail to the coordinator for !BigBlueButton localization requesting approval. You should receive approval very quickly.
 
 *5. Once approved, click the bbbResource.properties link*
 
