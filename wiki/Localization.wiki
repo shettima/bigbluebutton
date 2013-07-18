@@ -1,8 +1,10 @@
 #summary How to localize BigBlueButton
 
-= Contributing the new language translation to !BigBlueButton =
+= Localizing !BigBlueButton =
 
-We are now using [https://www.transifex.com/projects/p/bigbluebutton transifex] to make contributing/updating a translation easy for !BigBlueButton community.  To help translate !BigBlueButton into your language, do the following:
+Thanks to help from our community, !BigBlueButton is localized in over twenty languages.
+
+If you would like to help translate !BigBlueButton into your language, or you see an error in current localization for your language that you would like to fix, here are the steps to help out:
 
 *1. Create an account on [https://www.transifex.com/ transifex.com]*
 
