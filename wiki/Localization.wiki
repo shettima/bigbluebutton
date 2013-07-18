@@ -6,9 +6,9 @@ We are [https://www.transifex.com/projects/p/bigbluebutton transifex] to make co
 
 To help translate !BigBlueButton into your language, do the following.
 
-1.  Create an account on [https://www.transifex.com/ transifex.com].
+  # Create an account on [https://www.transifex.com/ transifex.com].
 
-2.  Visit the [https://www.transifex.com/projects/p/bigbluebutton/ BigBlueButton project] on Transifex.  
+  # Visit the [https://www.transifex.com/projects/p/bigbluebutton/ BigBlueButton project] on Transifex.  
 
 You'll see a list of languages ready for translation.  
 
