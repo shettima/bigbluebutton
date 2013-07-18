@@ -12,6 +12,8 @@ You'll see a list of languages ready for translation.
 
 *3. Click the name of the language you wish to translate*
 
+If you don't find your langauge, please post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List] requesting it be added.  
+
 *4. Click 'Join team' to join the localization team for your language*
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/join.PNG
@@ -32,20 +34,17 @@ At this point, you'll see the Transifex localization window for your language.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/translate.PNG
 
-You can now click on a string in the left-hand panel and enter/review the translation for it.  
+You can now click on a string in the left-hand panel and enter/review the translation for it (see  [http://support.transifex.com/customer/portal/articles/972120-introduction-to-the-web-editor intro to web editor]). 
 
 Translation tips:
   * You don't need to translate the numbers
   * Some strings have variables in them such as {0} and {1} -- these will be substituted by !BigBlueButton with parameters.
   * You'll see duplicate strings as many controls have two localations: one for sighted users, and one for blind users using a screen reader.  Please translate both.
 
-For help in using Transifex's web editor, see [http://support.transifex.com/customer/portal/articles/972120-introduction-to-the-web-editor intro to web editor].
 
-As the translations are updated by the community, we will sync them with   [https://github.com/bigbluebutton/bigbluebutton/tree/master/bigbluebutton-client/locale locale] so they get into master.
+Finally, if you have any questions or need help, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
-If the language you are looking for is not available on the localization server, post on the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton Mailing List].
-
-Finally, if you have any questions, please post to [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
+Thanks again for your help in localizing !BigBlueButton into other languages!
 
 
 == Technical Background  ==
