@@ -9,7 +9,7 @@
     * [ConfigurationFiles Configuration Files]
     * [RecordPlaybackSpecification Record and playback specification]
     * [http://www.bigbluebutton.org/components/ Open Source Components]
-    * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
+    * [Localization Localization of BigBlueButton into Another Lanugage]  
   * [GettingStarted Developing]
     * [API API for Integration with Third-Party Applications]  
     * [DevelopingBBB Developing BigBlueButton]
