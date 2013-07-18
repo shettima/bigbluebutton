@@ -10,11 +10,9 @@ We are now using [https://www.transifex.com/projects/p/bigbluebutton transifex] 
 
 You'll see a list of languages ready for translation.  
 
-*3. Click the localization file you wish to update.*
+*3. Click the name of the language you wish to translate*
 
-For  [https://www.transifex.com/projects/p/bigbluebutton/language/pl_PL/ Polish], but they are the same for all other languages.
-
-*4. Click 'Join team' to join the localization team for your language.*
+*4. Click 'Join team' to join the localization team for your language*
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/join.PNG
 
