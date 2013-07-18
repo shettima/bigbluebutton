@@ -20,6 +20,8 @@ At this point, Transifex will send an e-mail to the coordinators for the !BigBlu
 
 *5. Once approved, click the bbbResource.properties link*
 
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/localization/image1.PNG
+
 You'll see a dialog box where you can begin translation.
 
 *6. Click the Translate Now button*
