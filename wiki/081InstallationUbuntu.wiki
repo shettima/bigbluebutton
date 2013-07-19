@@ -343,8 +343,40 @@ Next, update the package database on your server.
    sudo apt-get update
 }}}
 
+== 2. Switch from !OpenOffice to !LibreOffice ==
 
-== 2. Update red5 ==
+!LibreOffice does a far better job of converting documents than the default !OpenOffice packages in Ubuntu 10.04. 
+
+First, to avoid issues, stop the openoffice headless init script.
+{{{
+sudo /etc/init.d/bbb-openoffice-headless stop
+}}}
+
+Now we'll install a stub package for openoffice. This will serve as a placeholder for !BigBlueButton's dependency on !OpenOffice.
+{{{
+wget http://bigbluebutton.googlecode.com/files/openoffice.org_1.0.4_all.deb
+sudo dpkg -i openoffice.org_1.0.4_all.deb
+}}}
+
+And then we tell apt to clear out the old openoffice packages:
+{{{
+sudo apt-get autoremove
+}}}
+
+Next, we'll install libreoffice
+{{{
+sudo apt-get install python-software-properties
+
+sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
+sudo apt-get update
+
+sudo apt-get install libreoffice-common libreoffice
+}}}
+
+Note that you should not restart the openoffice headless init script, since the version from 0.80 may not correctly recognize libreoffice. The 0.81 installation process will start it later.
+
+
+== 3. Update red5 ==
 
 You must update red5 first before the other !BigBlueButton packages. To update red5, do the following:
 
@@ -354,7 +386,7 @@ You must update red5 first before the other !BigBlueButton packages. To update r
 }}}
 
  
-== 3.  Install ffmpeg ==
+== 4.  Install ffmpeg ==
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
 
 {{{
@@ -385,7 +417,7 @@ fi
 }}}
 
 
-== 4. Update !BigBlueButton ==
+== 5. Update !BigBlueButton ==
 
 Next, update !BigBlueButton itself
 
@@ -428,7 +460,7 @@ After the update, make sure everything updated by cleaning out all the old log f
    sudo bbb-conf --check 
 }}}
 
-== 5. Updating the recording scripts ==
+== 6. Updating the recording scripts ==
 The installation of 0.81 will install a new record and playback script called `presentation`.  This replaces the older record and playback script `slides` in 0.80.
 
 After upgrade, you'll still have the older record and playback scripts installed.  
