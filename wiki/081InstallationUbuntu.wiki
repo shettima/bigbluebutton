@@ -86,7 +86,7 @@ If you don't see the deb line for `lucid multiverse`, execute the following line
 echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
-After you've made the above changes, do a dist-upgrade to ensure all the current packages on your server are up-to-date.
+Before proceeding further, do a dist-upgrade to ensure all the current packages on your server are up-to-date.
 
 {{{
 sudo apt-get update
