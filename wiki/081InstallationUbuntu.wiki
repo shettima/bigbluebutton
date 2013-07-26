@@ -236,9 +236,9 @@ After the script finishes, check that ffmepg is installed by typing the command 
 
 {{{
 $ ffmpeg -version
-ffmpeg version 0.11.2
-built on Apr 11 2013 02:46:07 with gcc 4.4.3
-configuration: --enable-version3 --enable-postproc --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libvorbis --enable-libvpx
+ffmpeg version 0.11.3
+built on Jul 26 2013 01:34:22 with gcc 4.4.3
+configuration: --enable-version3 --enable-postproc --enable-libvorbis --enable-libvpx
 libavutil      51. 54.100 / 51. 54.100
 libavcodec     54. 23.100 / 54. 23.100
 libavformat    54.  6.100 / 54.  6.100
