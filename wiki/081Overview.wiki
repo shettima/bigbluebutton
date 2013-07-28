@@ -4,7 +4,7 @@
 
 = Introduction =
 
-This document summarizes the major updates in !BigBlueButton 0.81-beta-2 (referred hereafter as 0.81) over the previous release.  For a list of details, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed issues closed in 0.81].
+This document summarizes the major updates in !BigBlueButton 0.81-beta-2 (referred hereafter as 0.81) over the previous release.  For a list of details, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed issues closed in 0.81]..
 
 !BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.   To follow its development and announcements, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
