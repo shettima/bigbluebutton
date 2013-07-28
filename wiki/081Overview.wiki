@@ -85,7 +85,7 @@ There is an API example showing how to use Mozilla Persona (BrowserID) to let us
 
 There is an API example demonstrating how to use OpenID to login to a session (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1361 1361]).
 
-=== Per-user configuration of client
+=== Per-user configuration of client ===
 Developers can now specify the !BigBlueButton client config.xml (configuration parmeters) on a per-user basis.  This enables developers to modify any parameter, such as turning of webcam or specifying the default layout (see [http://demo.bigbluebutton.org/demo/demo12.jsp Dynamic config.xml API demo]).
 
 === !JavaScript Integration ===
@@ -100,7 +100,7 @@ See [http://demo.bigbluebutton.org/demo/demo11.jsp JavaScript API demo].  For de
 
 !BigBlueButton now implements the IMS Learning Tools Interoperability (LTI) standard to enable !BigBlueButton to be a tool provider (see [http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).
 
-For more technical details see [LTI LTI].  For an example of using the support for LTI to integrate with an LMS, see [https://www.youtube.com/watch?v=OSTGfvICYX4 BigBlueButton LTI Integration video].
+For more technical details see [LTI IMS LTI support in BigBlueButton].  For an example of using the support for LTI to integrate with an LMS, see [https://www.youtube.com/watch?v=OSTGfvICYX4 BigBlueButton LTI Integration video].
 
 = Documentation Updates =
 The setup of development environment now includes more step-by-step instructions (see 081DevelopingBigBlueButton).  For a full list of updates to documentation for 0.81, see [081Docs 0.81 Documentation].
