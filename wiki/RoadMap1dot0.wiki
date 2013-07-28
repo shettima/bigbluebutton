@@ -39,7 +39,7 @@ In drafting this document, we have some important outcomes that not specific to 
  
 Much of the feedback we receive on improving !BigBlueButton is captured in our mailing list and our issue tracking system.  
 
-In drafting this document, to avoid duplication,  we have linked a requirement in this document to its corresponding issue.  At the end of this document, you'll see a heading titled "Areas under investigation", which list those requirements that may (or may not) make the 1.0 release.  
+In drafting this document, to avoid duplication,  we have linked a requirement in this document to its corresponding issue.  Many of the items in this road map are being implemented in !BigBlueButton 0.81 (our eleventh release).  Click on the corresponding issue for details on its status.  At the end of this document, you'll see a heading titled "Areas under investigation", which list those requirements that may (or may not) make the 1.0 release.  
 
 Obviously, if we tried to do everything everyone wants do with !BigBlueButton 1.0, we’d never finish (and the product would be very complex too); therefore, there is section at the end of this document for those items planned for post 1.0.
 
@@ -54,8 +54,6 @@ This section covers the enhancement and additions we want to make to !BigBlueBut
 We've implemented our first iteration of record and playback for !BigBlueButton 0.80.  See [http://code.google.com/p/bigbluebutton/wiki/RecordPlaybackSpecification Record and Playback specifications].
 
 In !BigBlueButton 0.81 we intend to add support for playback of all activity in the session, including presentation window: mouse movement, whiteboard, and pan/zoom ([http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191]), support playback of webcams ([http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]), and desktop sharing ([https://code.google.com/p/bigbluebutton/issues/detail?id=1470 1470]).
-
-While the synchronized playback of content (slides, video, audio, and chat) using popcorn.js gives a rich playback experience, other times a video of the recording is easier to disseminate to YouTube and other content distribution sites that only work with video files.   To support this, add a playback format that creates a single video from the presentation + desktop sharing  ([http://code.google.com/p/bigbluebutton/issues/detail?id=900 900]).
 
   
 === Audio ===
@@ -105,7 +103,11 @@ We are reviewing these requirements for inclusion in 1.0.
 Investigate use of WebRTC for higher quality audio and video ([https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
 Include the following additional modules.
 
-Support ability to move objects around the whiteboard 
+While the synchronized playback of content (slides, video, audio, and chat) using popcorn.js gives a rich playback experience, other times a video of the recording is easier to disseminate to !YouTube and other content distribution sites that only work with video files.   To support this, add a playback format that creates a single video from the presentation + desktop sharing  ([http://code.google.com/p/bigbluebutton/issues/detail?id=900 900]).
+
+Support ability to move objects around the whiteboard ([https://code.google.com/p/bigbluebutton/issues/detail?id=1599 1599])
+
+Add additional modules:
   * Polling module ([http://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Breakout rooms module (see [http://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Shared notes module ([http://code.google.com/p/bigbluebutton/issues/detail?id=1180 1180])
@@ -123,15 +125,7 @@ It should be possible to setup a development environment on a non-!BigBlueButton
 === Documentation ===
 Ensure all classes in !BigBlueButton, both on the server (Java) and client (!ActionScript) -- have sufficient javadoc documentation for a developer to understand their role relative to others.
 
-Ensure all classes that implement the APIs are throughly documented.  The development environment (i.e ant scripts) should automatically compile the Java docs.
-
-== API ==
-All the APIs in !BigBlueButton should have API examples that demonstrate applications of using the API.
-Add additional API examples:  
-  * Embedding !BigBlueButton in an iFrame
-  * Using oAuth to log into a meeting
-  * Using Shibboleth to log into a meeting
-Add a !JavaScript interface so 3rd party applications could control !BigBlueButton from within a web page (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1328 1328]).
+Ensure all classes are documented to the level where another programmer could understand their intent.  The development environment (i.e ant scripts) should automatically compile the Java docs.
 
 == Stability and Testing ==
 
@@ -156,13 +150,9 @@ The term "large number of users" will need to be calibrated according to the ser
 
 The term "without any errors" means there were no freezes on the client, nor are there any exceptions in the server logs that indicate memory leaks or logic errors.
    	
-== API ==
-This section covers the extensions needed to the !BigBlueButton 1.0 API.
+=== API ===
+Add a !JavaScript interface so 3rd party applications could control !BigBlueButton from within a web page (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1328 1328]).  Add an API call to enable external applications to inject messages into the chat window (see [http://code.google.com/p/bigbluebutton/issues/detail?id=905 905]).
 
-=== Inject messages into the chat ===
-Add an API call to sending messages into the chat window (see [http://code.google.com/p/bigbluebutton/issues/detail?id=905 905]).
-This would enable tighter integration, such as enabling a 3rd party application to notify users that the meeting is about it end.  Clicking on a link could extend the meeting another 1 hour (and bill for it).
- 
 === Modularity ===
 When looking at !BigBlueButton 1.0, we want the developer to see a platform, not a closed application.  
 
@@ -172,6 +162,7 @@ For existing components:
   # Enable the administrator to configure on the server which items are visible on startup of the !BigblueButton client (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1060 1060]).
   # Enable the developer to configure which components are visible on creation of a meeting
   # Enable the developer to switch the layout of components
+
 By creating modularity, a developer could start a !BigBlueButton session specific with only the modules needed for her specific application (see [http://code.google.com/p/bigbluebutton/issues/detail?id=294 294]).
 For example
 
