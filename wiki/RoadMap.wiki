@@ -3,23 +3,22 @@
 
 = Current Release =
 
-The current release is !BigBlueButton 0.80.  See the [ReleaseNotes release notes] for details on updates to the current release.
-
+The current release is !BigBlueButton 0.80.  
 
 == Release 0.81 ==
 Development of [https://code.google.com/p/bigbluebutton/wiki/081Overview BigBlueButton 0.81] is underway.  The focus is the following features:
 
-  # Capturing all activity in the presentation window for playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191])
+  # Record all activity in the presentation window for playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191])
+  # Record desktop sharing for playback ([https://code.google.com/p/bigbluebutton/issues/detail?id=1470 1470])
   # Support for students with disabilities ([http://code.google.com/p/bigbluebutton/issues/detail?id=853 853])
   # Layout manager ([http://code.google.com/p/bigbluebutton/issues/detail?id=1060 1060])
 
-We are also working on integrating [PollingModule Polling module] as a core module.
-
 A link to the recording for the committers meeting (held 2012-05-18) that discusses the above features is available <a href="https://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/e8cf67597405678f">here</a>.
 
+The developers have released [https://groups.google.com/d/msg/bigbluebutton-dev/0vb3dMMRuYg/l1rUh7Pr1i4J 0.81-beta-2].
 
-While we don't give out release dates (we release on quality, not dates), you can tell when we enter our testing phase (and getting close to a release) by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list.
+When will the final version of 0.81 be released?  We release on quality, not dates.  Following our [https://code.google.com/p/bigbluebutton/wiki/FAQ#BigBlueButton_Development_Processdevelopment development process], you can tell how close we are to releasing 0.81 by subscribing to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list and monitoring the list of [https://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone%3DRelease0.81 remaining issues for 0.81].
 
 = Roadmap to !BigBlueButton 1.0 =
 
-We have Big plans for !BigBlueButton.  To get a look at the plans beyond the current iteration, see [RoadMap1dot0 Roadmap to BigBlueButton 1.0].  
+To get a look at the plans beyond the current iteration, see [RoadMap1dot0 Roadmap to BigBlueButton 1.0].  
