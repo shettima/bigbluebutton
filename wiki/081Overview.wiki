@@ -21,7 +21,7 @@ This document summarizes the major updates in !BigBlueButton 0.81-beta-2 (referr
 
 along with chat, all webcams (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]), and desktop sharing (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1470 1470]).  
 
-For  technical details see [081RecordAndPlayback RecordAndPlayback].
+For  technical details see [081RecordAndPlayback RecordAndPlayback].  See a [http://www.bigbluebutton.org/playback/presentation/playback.html?meetingId=cc6507847430b317c4ec8de1ad7083330d9756b5-1374785573783 sample recording] using !BigBlueButton 0.81.
 
 == Accessibility ==
 This release adds accessibility features for screen readers (see [http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).
