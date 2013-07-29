@@ -127,7 +127,7 @@ The submitter of the pull request is responsible for ensuring the feature works 
 
 If the reviewer of the update believes it will negatively affect stability or usability, the request will be rejected and the developer will need to rework the request based on feedback by the reviewer.
 
-BigBlueButton has two continuous integration servers that build packaging for 10.04 32-bit and 64-bit, respectively. Once a update has been committed, a new build of the development packages are available usually within fifteen minutes to the core developers.
+Once a update has been committed, they are tested by other developers and subsequently.
 
 Once a release is moved to beta, the public packages are updated so others can begin beta testing.
  
@@ -146,7 +146,7 @@ The product will go through one (or more) betas until the community reports no m
 
   * [http://code.google.com/p/bigbluebutton/wiki/LocalizationOfBBB Localization] of the product
   * Updating and fixing documentation
-  * Updating packaging so it installs without errors on both 32-bit and 64-bit, both a new an install and upgrade from previous version
+  * Updating packaging so it installs without errors on 64-bit, both a new an install and upgrade from previous version
 
 When all the bugs are fixed and issues are closed, the product moves to Release Candidate. 
 
@@ -284,7 +284,7 @@ For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/
 == What are the minimum hardware requirements for the !BigBlueButton Server ==
 As a minimum, we recommend you run !BigBlueButton on a dedicated quad-core machine with at least 4 GB of memory and a 2.6+ Ghz processor. 
 
-We recommend installing !BigBlueButton on Ubuntu 10.04 32-bit/64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
+We recommend installing !BigBlueButton on Ubuntu 10.04 64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
 
 While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
 
@@ -301,7 +301,7 @@ There are a number of OpenSourceComponents in !BigBlueButton that need root acce
 
 == Can I install !BigBlueButton on EC2? ==
 
-Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 32-bit and 64-bit.  To install !BigBlueButton on EC2, do the following: 
+Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 64-bit.  To install !BigBlueButton on EC2, do the following: 
 
   # Modify the default security group in EC2(or create a new security group) so you have port 80, 9123, and 1935 open (see [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue FAQ]).
   # Launch a 64-bit "lucid" elastic block storage (EBS) image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.medium (or greater CPU) instance.
@@ -315,7 +315,7 @@ The IP addresses for an EC2 image are reset whenever you reboot the image; howev
 
 
 === Ubuntu ===
-As of !BigBlueButton 0.71, you can install !BigBluebutton on *Ubuntu 10.04 32-bit* or *Ubuntu 10.04 64-bit*. See [InstallationUbuntu Ubuntu packages] using apt-get and Ubuntu packages.  
+As of !BigBlueButton 0.81-beta2, you can install !BigBluebutton on *Ubuntu 10.04 64-bit*. See [InstallationUbuntu Ubuntu packages] using apt-get and Ubuntu packages.  
 
 Please note, that the packages have not been tested on Ubuntu 9.04, Ubuntu 9.10, or Ubuntu 10.10; however, there are [InstallingBigBlueButton step-by-step instructions] for installing !BigBlueButton that you can adapt to these platforms.
 
@@ -338,7 +338,7 @@ You can see further discussion on the support for CentOS in  [http://code.google
 === Windows === 
 While technically it should be possible to manually install each of the individual OpenSourceComponents needed to run !BigBlueButton on Windows, we haven't tried it, nor have we tested it.
 
-Don't worry -- using [http://www.vmware.com/products/player/ VMWare Player] you can have a full !BigBlueButton server running in under an hour using the [BigBlueButtonVM BigBlueButton Virtual Machine].  The !BigBlueButton VM is running Ubuntu 10.04 32-bit and has all the components pre-installed. 
+Don't worry -- using [http://www.vmware.com/products/player/ VMWare Player] you can have a full !BigBlueButton 0.80 server running in under an hour using the [BigBlueButtonVM BigBlueButton Virtual Machine].  The !BigBlueButton VM is running Ubuntu 10.04 32-bit and has all the components pre-installed. 
 
 If you a brave soul and want to manually install the individual OpenSourceComponents natively on Windows and then install all the !BigBlueButton components, it should be possible.  However, beware, no one who has tried this has lived to post a success message to our mailing list :-).
 
