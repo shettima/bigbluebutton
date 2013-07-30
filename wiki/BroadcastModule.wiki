@@ -119,12 +119,12 @@ height="0.30851063829787234" x="0" y="0.6875" minWidth="280"
 
 ==Settin up Oflademo==
   
-  1. Download red5 from http://red5.org/downloads/red5/1_0_1/red5-1.0.1.tar.gz 
-  2. Extract into another VM
-  3. start red5 (cd red5-1.0.1) (./red5.sh)
-  4. Goto http://red5:5080
-  5. Click on Install a ready-made application
-  6. Install oflaDemo
-  7. Check red5/webapps/oflaDemo/streams if it has the sample flv files
-  8. modify streams.xml to use this new red5
-  9. test broadcast module and it should work	
+  #. Download red5 from http://red5.org/downloads/red5/1_0_1/red5-1.0.1.tar.gz 
+  #. Extract into another VM
+  #. start red5 (cd red5-1.0.1) (./red5.sh)
+  #. Goto http://red5:5080
+  #. Click on Install a ready-made application
+  #. Install oflaDemo
+  #. Check red5/webapps/oflaDemo/streams if it has the sample flv files
+  #. modify streams.xml to use this new red5
+  #. test broadcast module and it should work	
