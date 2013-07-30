@@ -6,14 +6,14 @@
   
   3. Open /var/www/bigbluebutton/client/conf/config.xml and uncomment the BroadcastModule section.
       
-      <module name="BroadcastModule" url="http://HOST/client/BroadcastModule.swf?v=VERSION"
+      {{<module name="BroadcastModule" url="http://HOST/client/BroadcastModule.swf?v=VERSION"
       	uri="rtmp://HOST/bigbluebutton"
-      	streamsUri="http://HOST/client/conf/streams.xml"
-      	position="top-left"
-      	showStreams="true"
-      	autoPlay="false"
-      	dependsOn="UsersModule"
-    	/>
+        streamsUri="http://HOST/client/conf/streams.xml"
+        position="top-left"
+        showStreams="true"
+        autoPlay="false"
+        dependsOn="UsersModule"
+       />}}
 
 
   4. Edit HOST to point to your BBB server and to streams.xml. 
