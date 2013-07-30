@@ -1,13 +1,17 @@
-#summary One-sentence summary of this page.
+==Set Up the broadcast module in Prod Mode==
 
-= Introduction =
+  1. Setup a Ubuntu 10.0.4 64-bit server.
+  
+  2. Install BigBlueButton following the instructions here 081InstallationUbuntu
 
-Add your content here.
+  3. Open /var/www/bigbluebutton/client/conf/config.xml and uncomment the BroadcastModule section.
 
+  4. Edit HOST to point to your BBB server and to streams.xml. 
 
-= Details =
+  5. Create the streams.xml in /var/www/bigbluebutton/client/conf/  
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  6. If the strems.xml is on a diferent server you should add a crossdomain.xml in root of the web server
+
+  7. Modify the layout to make appear the braodcast module in the client. Go to /var/www/bigbluebutton/client/conf/layout.xml and change the broadcast Windows like
+
+	
