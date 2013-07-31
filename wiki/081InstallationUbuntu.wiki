@@ -387,7 +387,7 @@ You must update red5 first before the other !BigBlueButton packages. To update r
 
  
 == 4.  Install ffmpeg ==
-!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, do the following
+!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
 {{{
 sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev
@@ -416,6 +416,12 @@ if [ ! -d "/usr/local/src/ffmpeg-${FFMPEG_VERSION}" ]; then
 fi
 }}}
 
+Next, run the commands
+
+{{{
+chmod +x install-ffmpeg.sh
+./install-ffmpeg.sh
+}}}
 
 == 5. Update !BigBlueButton ==
 
