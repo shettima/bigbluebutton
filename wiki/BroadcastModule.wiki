@@ -1,4 +1,4 @@
-==Set Up the broadcast module in Prod Mode==
+==Set Up the broadcast module==
 
   1. Setup a Ubuntu 10.0.4 64-bit server.
   
