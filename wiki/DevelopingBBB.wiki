@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-Note: If you are looking to develop on 0.81, please see 081DevelopingBigBlueButton.
+Note: If you are looking to develop on 0.81, please see [081DevelopingBigBlueButton these instructions].
 
 = Overview =
 !BigBlueButton is developed by a dedicated core team of developers and a broad community that work together on all aspects of development: design, development, testing, documentation, localization, editing wikis, and, most importantly, supporting others.
