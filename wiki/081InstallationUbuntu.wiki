@@ -454,17 +454,33 @@ sudo apt-get remove bbb-freeswitch
 
 Enter 'Y' to remove the old package, and then re-apply the new packages.  this will trigger a download and install of the new bbb-freeswitch package.
 
+Next, install the newer version of FreeSWITCH.
+
+{{{
+sudo apt-get install bbb-freeswitch=0.81ubuntu55
+}}}
+
+and then re-install the remaining !BigBlueButton packages.
+
 {{{
 sudo apt-get install bigbluebutton
 }}}
 
 
-After the update, make sure everything updated by cleaning out all the old log files, then using the !BigBlueButton configuration utility to check for any installation errors.
+Next, to enable recording of webcams for record and playback (webcams were not recorded by default in 0.80) edit `/usr/share/red5/webapps/video/WEB-INF/red5-web.xml` and change line 49 to show
+
+{{{
+                <property name="recordVideoStream" value="true"/>
+}}}
+
+
+Use the !BigBlueButton configuration utility to do a clean restart (clean out log files) check for any installation errors.
 
 {{{
    sudo bbb-conf --clean 
    sudo bbb-conf --check 
 }}}
+
 
 == 6. Updating the recording scripts ==
 The installation of 0.81 will install a new record and playback script called `presentation`.  This replaces the older record and playback script `slides` in 0.80.
