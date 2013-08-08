@@ -524,7 +524,7 @@ And now just restart tomcat.
 sudo service tomcat6 restart
 }}}
 
-If you changed the linking of web.nginx as instructed above you will need to also revert that back to the packaged location for bbb-web.
+*If you changed the linking of web.nginx as instructed above you will need to also revert that back to the packaged location for bbb-web.*
 {{{
 sudo ln -s -f /etc/bigbluebutton/nginx/web /etc/bigbluebutton/nginx/web.nginx
 sudo service nginx restart
