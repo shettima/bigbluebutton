@@ -4,5 +4,5 @@
     * [ArchitectureOverview Architecture Overview]
     * [ClientConfiguration Client-side configuration]
     * [ConfigurationFiles Configuration Files]
-    * [RecordPlaybackSpecification Record and playback specification]
+    * [RecordPlaybackSpecification Record and Playback]
     * [http://www.bigbluebutton.org/components/ Open Source Components]
