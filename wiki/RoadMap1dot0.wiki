@@ -180,7 +180,7 @@ Add additional modules:
   * Polling module ([http://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Breakout rooms module (see [http://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Shared notes module ([http://code.google.com/p/bigbluebutton/issues/detail?id=1180 1180])
-  * Synchronized video playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=218 218])
+  * Synchronized audio and video playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=218 218])
 
 
 = Beyond 1.0 =
