@@ -177,7 +177,7 @@ Add additional modules:
 
 
 == Parallel Development ==
-We have projects that are occurring in parallel to the core development with the expectation that this work will merge into core.
+We have projects that are occurring in parallel to the core development with the expectation that this work will merge into core.  
 
 === HTML5 ===
 
