@@ -43,7 +43,8 @@ In drafting this document, to avoid duplication,  we have linked a requirement i
 
 Obviously, if we tried to do everything everyone wants do with !BigBlueButton 1.0, we’d never finish (and the product would be very complex too); therefore, there is section at the end of this document for those items planned for post 1.0.
 
-If you have feedback on this document, please post to [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] mailing list.  We welcome your on this roadmap to 1.0.
+If you have feedback on this document, please post to [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] mailing list.  
+
 
 = The DRAFT Requirements for !BigBlueButton 1.0 =
 
