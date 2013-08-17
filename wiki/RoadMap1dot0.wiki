@@ -160,15 +160,10 @@ Add more checks to bbb-conf to continue to trouble shoot any problems with the i
             	      	
 === IMS Basic LTI integration ===
 Enable any LTI consumer to integrate with a !BigBlueButton server without having to create a custom module ([http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).   (This work is underway for [081Overview BigBlueButton 0.81].)
- 
+
 == Areas for investigation ==
 We are reviewing these requirements for inclusion in 1.0.
 
-Investigate use of WebRTC for higher quality audio and video ([https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
-Include the following additional modules.
-
-With the ongoing work in [http://www.webrtc.org/ WebRTC] project, it's now possible for an HTML5 browser to access the user's webcam and microphone.
-This means it should be possible to create an HTML5 !BigBlueButton client (see [http://code.google.com/p/bigbluebutton/issues/detail?id=850 850)] and [https://code.google.com/p/bigbluebutton/wiki/HTML5 HTML5 Client Specification].
 
 While the synchronized playback of content (slides, video, audio, and chat) using popcorn.js gives a rich playback experience, other times a video of the recording is easier to disseminate to !YouTube and other content distribution sites that only work with video files.   To support this, add a playback format that creates a single video from the presentation + desktop sharing  ([http://code.google.com/p/bigbluebutton/issues/detail?id=900 900]).
 
@@ -179,6 +174,21 @@ Add additional modules:
   * Breakout rooms module (see [http://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Shared notes module ([http://code.google.com/p/bigbluebutton/issues/detail?id=1180 1180])
   * Synchronized audio and video playback ([http://code.google.com/p/bigbluebutton/issues/detail?id=218 218])
+
+
+== Parallel Development ==
+We have projects that are occurring in parallel to the core development with the expectation that this work will merge into core.
+
+=== HTML5 ===
+
+Create an HTML5 !BigBlueButton client (see [http://code.google.com/p/bigbluebutton/issues/detail?id=850 850)] and [https://code.google.com/p/bigbluebutton/wiki/HTML5 HTML5 Client Specification].
+
+=== WebRTC === 
+
+Investigate use of WebRTC for higher quality audio and video ([https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
+Include the following additional modules.
+
+The use of WebRTC would benefit both the Flash and HTML5 client.
 
 
 = Beyond 1.0 =
