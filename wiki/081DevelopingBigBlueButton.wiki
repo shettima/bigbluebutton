@@ -539,7 +539,7 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
   sudo chmod -R 777 /usr/share/red5/webapps
 }}}
 
-===Developing BBB-Apps===
+== Developing BBB-Apps ==
 
 Before you build and deploy bbb-apps you need to make sure to first stop the red5 service.
 {{{
