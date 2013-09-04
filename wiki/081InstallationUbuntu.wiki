@@ -313,7 +313,7 @@ If you have already installed an earlier version of 0.81, to upgrade to the late
 
 If --check indicated you are running an older version of ffmpeg (you need version 2.0.1 installed), [re-install ffmpeg 081InstallationUbuntu#4.__Install_ffmpeg] and enter the following commands:
 
-{{
+{{{
    sudo bbb-conf --clean
    sudo bbb-conf --check
 }}}
