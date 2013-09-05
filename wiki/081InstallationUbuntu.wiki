@@ -6,7 +6,7 @@
 
 These instructions show how to install !BigBlueButton 0.81-RC (release candidate), referred hereafter as 0.81.
 
-*Note:* The packaging is for Ubuntu 10.04 64-bit only.  There is no 32-bit packaging yet for 0.81.
+*Note:* The packaging is for Ubuntu 10.04 64-bit only.  We no longer support 32-bit packaging for 0.81.
 
 The requirements are
 
