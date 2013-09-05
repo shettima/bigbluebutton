@@ -532,7 +532,7 @@ This will check your setup to ensure the correct processes are running, the !Big
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 
-If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
+If you see text after the line `** Potential problems described below **`, then `bbb-conf` it may be warnings (which you can ignore if you've change settings) or errors with the setup.
 
 
 == Dependencies are not met ==
