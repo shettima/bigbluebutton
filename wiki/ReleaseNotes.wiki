@@ -5,7 +5,7 @@
  
 Released: September 9, 2013 ([081InstallationUbuntu Installation])
 
-For a quick summary of what's new see this [http://youtu.be/4C-rOd8bi6s overview video].
+This is our eleventh release of !BigBlueButton.  For a quick summary of what's new since the previous release, see this [http://youtu.be/4C-rOd8bi6s overview video].
 
 == Major Features ==
   * * Usability Improvements * - !BigBlueButton now has a consolidated Users window for easier session management and a more consistent user interface (including updated skin and icons) to help new users get started quickly.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
