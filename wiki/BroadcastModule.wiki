@@ -1,8 +1,12 @@
+#summary Setup instructions for broadcast module
+
+* *Note:* The Broadcast Module is included in 0.81-RC (referred hereafter as 0.81), but its still in development and may change.
+
 ==Set Up the broadcast module==
 
   1. Setup a Ubuntu 10.0.4 64-bit server.
   
-  2. Install !BigBlueButton following the instructions [https://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu here]
+  2. Install !BigBlueButton 0.81 following the instructions [https://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu here]
   
   3. Open /var/www/bigbluebutton/client/conf/config.xml and uncomment the BroadcastModule section.    
       {{{ 
