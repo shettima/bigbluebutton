@@ -199,7 +199,7 @@ You might be wondering why not use the default Ruby packages for Ubuntu 10.04?  
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
 {{{
-sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev pkg-config
 
 LIBVPX_VERSION=1.2.0
 FFMPEG_VERSION=2.0.1
@@ -412,7 +412,7 @@ Respond with *Y* and press Enter.
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
 {{{
-sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev pkg-config
 
 LIBVPX_VERSION=1.2.0
 FFMPEG_VERSION=2.0.1
