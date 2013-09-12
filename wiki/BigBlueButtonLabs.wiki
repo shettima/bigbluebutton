@@ -10,6 +10,7 @@ If you want to give feedback on a particular labs project, please post to [http:
     
     * [HTML5 HTML5 client]
     * [WebhooksAPI WebhooksAPI]
+    * [BroadcastModule Broadcast Module]
     * [StressTesting Stress Testing the BigBlueButton server]
     * [PollingModule Polling Module]
     * [Phidgets Physical Widgets for External Notification]
