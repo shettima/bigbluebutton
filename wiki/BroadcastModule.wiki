@@ -2,7 +2,7 @@
 
   1. Setup a Ubuntu 10.0.4 64-bit server.
   
-  2. Install BigBlueButton following the instructions [https://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu here]
+  2. Install !BigBlueButton following the instructions [https://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu here]
   
   3. Open /var/www/bigbluebutton/client/conf/config.xml and uncomment the BroadcastModule section.    
       {{{ 
@@ -61,7 +61,7 @@ height="0.30851063829787234" x="0" y="0.6875" minWidth="280"
 
   1. Setup a Ubuntu 10.0.4 64-bit server.
   
-  2. Install BigBlueButton following the instructions [https://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu here]
+  2. Install !BigBlueButton following the instructions [https://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu here]
   
   3. Set up the Development Environment following the instructions from [https://code.google.com/p/bigbluebutton/wiki/081DevelopingBigBlueButton]
 
