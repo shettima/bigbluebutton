@@ -189,7 +189,7 @@ During archiving, scripts will copy the raw recordings into the following direct
  * {{{/var/bigbluebutton/archive/<meeting-id>/deskshare/}}}
 
 * Archive Scripts *
-In {{{/usr/local/bigbluebutton/scripts/archive}}}, there will be a master (master.rb) script. This master script will be invoked when the meeting ends. The master script will look into the archive/steps sub-directory and run all the scripts inside it.
+In {{{/usr/local/bigbluebutton/core/scripts/archive}}}, there will be a master (master.rb) script. This master script will be invoked when the meeting ends. The master script will look into the archive/steps sub-directory and run all the scripts inside it.
 
 The archive/steps sub-dir will contain the following scripts
 archive-events.rb, archive-audio.rb, archive-video.rb, archive-presentation.rb, archive-deskshare.rb
