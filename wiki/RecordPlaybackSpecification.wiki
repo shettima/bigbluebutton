@@ -3,7 +3,7 @@
 <wiki:toc max_depth="4" />
 
 == Overview ==
-The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work implemented for the iwnitial record and playback release in 0.8.
+The first part of this document describes the long-term vision and scope for implementing record and playback into !BigBlueButton. The second part outlines the work implemented for the initial record and playback release in 0.8.
 
 The purpose of this document is to provide a clear understanding of the business needs, the long-term vision to address the needs, and the constraints that are being faced during this phase of this project.  It also details the requirements and specifications for implementation of the first iteration. The document also attempts to foresee and mitigate any risks that for the first iteration.
 
@@ -189,14 +189,11 @@ During archiving, scripts will copy the raw recordings into the following direct
  * {{{/var/bigbluebutton/archive/<meeting-id>/deskshare/}}}
 
 * Archive Scripts *
-In {{{/usr/local/bigbluebutton/core/scripts/archive}}}, there will be a master (master.rb) script. This master script will be invoked when the meeting ends. The master script will look into the archive/steps sub-directory and run all the scripts inside it.
+In {{{/usr/local/bigbluebutton/core/scripts/archive}}}, there will be an archive (archive.rb) script. This archive script will be invoked when the meeting ends. The archive script contains functions for archiving components of the recording.
 
-The archive/steps sub-dir will contain the following scripts
-archive-events.rb, archive-audio.rb, archive-video.rb, archive-presentation.rb, archive-deskshare.rb
+The archive_events fuction will extract from redis the meeting info and the recorded events. These will be written into {{{/var/bigbluebutton/archive/<meeting-id>/events.xml}}}
 
-The archive-events.rb will extract from redis the meeting info and the recorded events. These will be written into {{{/var/bigbluebutton/archive/<meeting-id>/events.xml}}}
-
-The archive-*.rb scripts will copy all raw recordings into {{{/var/bigbluebutton/archive/<meeting-id>/}}}
+The archive-* functions will copy all raw recordings into {{{/var/bigbluebutton/archive/<meeting-id>/}}}
 
 * archive.done *
 The archive.done file is a status file where the scripts can store the archive status steps. This way, if something goes wrong on the first pass of archiving, another process (a cron job) can take a look at the archive.done file and attempt to continue archiving.
