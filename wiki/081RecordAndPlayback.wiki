@@ -15,6 +15,7 @@ If you want to see the Record and Playback feature in action there is a [http://
 Like !BigBlueButton sessions, management of recordings should be handled by [http://www.bigbluebutton.org/open-source-integrations/ third party software].  Third party software consumes the [https://code.google.com/p/bigbluebutton/wiki/API BigBlueButton API] to accomplish that. 
 
 
+
 == Record and Playback Phases ==
 
 !BigBlueButton processes the recordings in the following:
@@ -356,17 +357,8 @@ The main file is rap-worker.rb, it executes all the Record and Playback phases
 
 It is handled by HTML, CSS and Javascript libraries. There is not any single video file for playback. Playback works with the javascript library Popcorn.js which shows the slides, chat and webcam according to the current time played in the audio file. Playback files are located in /var/bigbluebutton/playback/presentation/ and used to play any published recording.
 
-
-
-
-
-
-
-
-
-
-
-
+Playback is fully available in Mozilla Firefox and Google Chrome;
+in Internet Explorer if you have installed [http://www.google.com/chromeframe Google Chrome Frame]
 
 == Troubleshooting ==
 
