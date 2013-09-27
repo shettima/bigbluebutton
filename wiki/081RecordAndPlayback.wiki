@@ -56,11 +56,13 @@ The Publish phase involves generating metadata and taking many or all the proces
 
 
 === Playback ===
-The Playback phase involves taking the published files (audio, webcam, deskshare, chat, events, metadata) and playing them
-in the browser. 
+The Playback phase involves taking the published files (audio, webcam, deskshare, chat, events, metadata) and playing them in the browser. 
+
+It is handled by HTML, CSS and Javascript libraries. There is not any single video file for playback.
 
 Playback is fully available in Mozilla Firefox and Google Chrome;
 in Internet Explorer if you have installed [http://www.google.com/chromeframe Google Chrome Frame]
+
 
 == Media storage ==
 
@@ -357,7 +359,7 @@ The main file is rap-worker.rb, it executes all the Record and Playback phases
 
 *Playback phase*
 
-It is handled by HTML, CSS and Javascript libraries. There is not any single video file for playback. Playback works with the javascript library Popcorn.js which shows the slides, chat and webcam according to the current time played in the audio file. Playback files are located in /var/bigbluebutton/playback/presentation/ and used to play any published recording.
+Playback works with the javascript library Popcorn.js which shows the slides, chat and webcam according to the current time played in the audio file. Playback files are located in /var/bigbluebutton/playback/presentation/ and used to play any published recording.
 
 
 == Troubleshooting ==
