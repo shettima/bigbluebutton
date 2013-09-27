@@ -1,4 +1,4 @@
-#summary Implementation of accessibility in BigBlueButton 0.81-RC
+#summary Implementation of accessibility in BigBlueButton 0.81-RC2
 
 ==Overview: How to develop accessible extensions, modules, and plugins for the !BigBlueButton Flash client==
 
