@@ -530,11 +530,11 @@ For hardware we recommend a Dual-core CPU with at least 2G of memory.  For Mac, 
   
 == How many simultaneous users can !BigBlueButton support == 
 
-As a rule of the thumb, without knowing anything about your server, we recommend each !BigBlueButton session have twenty-five (25) users or less.  If your server supports 75 simultaneous users (see notes below), then we recommend running up to three sessions of 25 users, 6 x 12, 12 x 6, etc.  
+As a rule of the thumb, without knowing anything about your server, we recommend running your !BigBlueButton with sessions of twenty-five (25) users or less.  For example, if after testing your server under load, you find it can support 75 simultaneous users, then we recommend running up to three sessions of 25 users, 6 x 12, 12 x 6, etc.  
 
 See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum server requirements] and [https://code.google.com/p/bigbluebutton/wiki/FAQ#What_are_the_minimum_bandwidth_requirements_for_the_BigBlueButto minimum bandwidth requirements].
 
-Of course, there is a big difference between a server with a single core Celeron and a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  
+Of course, there is a big difference running !BigBlueButton on a single core Celeron CPU vs. a quad core X3450 processor.  The latter will be able to hold more simultaneous users than the former.  
 
 Members of our community periodically host stress tests for !BigBlueButton, which gives others a data point on what a particular server was able to handle.   Take any stress test with a grain of salt.  There are many variables at play:
 
@@ -544,7 +544,7 @@ Members of our community periodically host stress tests for !BigBlueButton, whic
   * Configuration of !BigBlueButton
   * Version of !BigBlueButton
 
-Each user gets their own dedicated audio channel; the CPU load is the same whether the user is muted or unmuted.  Thus, the scaling factor for determining the number of users a server can support is usually the CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.  
+In !BigBlueButton, each user gets their own dedicated audio channel; the CPU load is the same whether the user is muted or unmuted.  Thus, the scaling factor for determining the number of users a server can support is usually the CPU: the faster the CPU, the higher the simultaneous number of users the server can support with audio.  
 
 We *strongly* recommend you first stress test own server with a group of users to get real-world data.  
 
