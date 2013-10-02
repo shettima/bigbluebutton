@@ -151,7 +151,7 @@ Create and Start the !BigBlueButton Session. Now:
  * Start the webcam
  * Start desktop sharing
 
-You must start all three, if you omit one then the recording will not be processed by !BigBlueButton's matterhorn scripts.
+You must start webcam + desktop sharing +  audio, or desktop sharing + audio. If you omit desktop sharing the recording won't be processed by !BigBlueButton's *matterhorn workflow*.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/matterhorn/matt2.png
 
