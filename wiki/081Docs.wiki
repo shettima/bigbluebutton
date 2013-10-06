@@ -7,4 +7,5 @@ The following is a list of updated documentation for 0.81-RC.
     * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
     * [081API 081API]
     * [081Accessibility 081Accessibility]
+    * [081RecordAndPlayback 081RecordAndPlayback]
     * [LTI LTI]
