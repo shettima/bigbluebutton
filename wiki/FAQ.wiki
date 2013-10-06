@@ -1195,13 +1195,6 @@ There are lots of opportunities to explore increasing the speed of desktop shari
 Yes.  As of !BigBlueButton 0.71, you can share a region of your desktop.  Just select the region of you window and, to your viewers, they will just see that window.
 
 
-=== As a presenter the preview window is too small and I can't resize it ===
-
-As the presenter, when you share your desktop, !BigBlueButton will show you a *thumbnail* view of what users are seeing for your desktop.  As a thumbnail view, this is not re-sizable.  
-
-Your viewers have a resizable window showing your desktop.  You can see how this works by watching this [http://bigbluebutton.org/sites/all/videos/join/index.html video overview] at 2:47.
-
-
 == Presentations ==
 === How can I modify the default presentation? ===
 The default presentation is stored in
