@@ -732,6 +732,9 @@ To debug, try connecting to FS CLI and increase logging level. Once connected, m
   Ctrl-D to exit
 }}}
 
+=== How do I connect !BigBlueButton to external Freeswitch? ===
+Check instructions [https://code.google.com/p/bigbluebutton/wiki/ConnectingBBBToExternalFreeSWITCH here]
+
 == How do I enable feature X in the !BigBlueButton client ==
 As of !BigBlueButton 0.71, you can configure some options in the client, such as enabling moderators to eject users from the virtual classroom.
 
