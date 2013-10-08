@@ -1,8 +1,8 @@
-#summary Connecting !BigBlueButton to an external !FreeSWITCH server.
+#summary Connecting BigBlueButton to an external FreeSWITCH server.
 
 = Introduction =
 
-This page provides instructions on how to connect !BigBlueButton to and external !FreeSWITCH server.
+This page provides instructions on how to connect !BigBlueButton to and external FreeSWITCH server.
 
 
 = Configurations =
@@ -15,7 +15,7 @@ freeswitch.esl.port=8021
 freeswitch.esl.password=ClueCon
 }}}
 
-Change {{{freeswitch.esl.host}}} to point to your external !FreeSWITCH ip address. Change {{{freeswitch.esl.password}}} to something else.
+Change {{{freeswitch.esl.host}}} to point to your external FreeSWITCH ip address. Change {{{freeswitch.esl.password}}} to something else.
 
 You can use [http://strongpasswordgenerator.com/] to generate passwords.
 
@@ -53,9 +53,9 @@ Change {{{bbb.sip.app.ip}}} to your !BigBlueButton server ip.
 
 Change {{{sip.server.password}}} to something else.
 
-Change {{{freeswitch.ip}}} to your external !FreeSWITCH ip.
+Change {{{freeswitch.ip}}} to your external FreeSWITCH ip.
 
-In your external !FreeSWITCH server. 
+In your external FreeSWITCH server. 
 
 Edit {{{/opt/freeswitch/conf/directory/default/bbbuser.xml}}}
 
@@ -70,4 +70,3 @@ Edit {{{/opt/freeswitch/conf/directory/default/bbbuser.xml}}}
 }}}
 
 Change {{{password}}} to match the password you set in {{{sip.server.password}}}.
-
