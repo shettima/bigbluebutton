@@ -34,7 +34,7 @@
     * [SummerOfCodeApplication GSOC Application Template]
     * [BigBlueButtonLabs more...]
   * [http://code.google.com/p/bigbluebutton/w/list Raw List of Wiki Pages]
-  * [081Docs 0.81-beta Documentation]
+  * [081Docs 0.81-RC3 Documentation]
     * [081Overview 081Overview]
     * [081InstallationUbuntu 081InstallationUbuntu]
     * [081DevelopingBigBlueButton 081DevelopingBigBlueButton]
