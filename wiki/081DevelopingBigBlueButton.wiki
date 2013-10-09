@@ -1,9 +1,9 @@
-#summary Setup a development environment for BigBlueButton 0.81-RC2
+#summary Setup a development environment for BigBlueButton 0.81-RC3
 
 <wiki:toc max_depth="2" />
 
 = Overview =
-*Note:* These instructions refer to !BigBlueButton 0.81-RC2 (referred hereafter as simply 0.81).
+*Note:* These instructions refer to !BigBlueButton 0.81-RC3 (referred hereafter as simply 0.81).
 
 This guide is written for !BigBlueButton 0.81.  If you are using an earlier version of !BigBlueButton, you'll need to update you server (see 081InstallationUbuntu).
 
