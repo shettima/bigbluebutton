@@ -1,10 +1,10 @@
-#summary Overview of BigBlueButton 0.81-RC2
+#summary Overview of BigBlueButton 0.81-RC3
 
 <wiki:toc max_depth="3" />
 
 = Introduction =
 
-This document summarizes the major updates in !BigBlueButton 0.81-RC2 (referred hereafter as 0.81) over the previous release.  For a list of details, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed issues closed in 0.81].
+This document summarizes the major updates in !BigBlueButton 0.81-RC3 (referred hereafter as 0.81) over the previous release.  For a list of details, see [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed issues closed in 0.81].
 
 Since we released the first version of !BigBlueButton on July 12, 2009, !BigBlueButton 0.81 represents our eleventh release of !BigBlueButton.  We've closed [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary over 160] issues in 0.81.  To follow the development of 0.81, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
