@@ -41,7 +41,7 @@ We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We
 We use the LGPL license.  Some of the open source components we build on use different licenses, such as red5phone uses the GPL license.
 
 == Where can I find examples of people running !BigBlueButton? ==
-We currently don't keep a list of organizations, colleges and universities, and hosting providers who run !BigBlueButton.   In twelve months prior to June 2012 the project had over [http://www.bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ sixty thousand installs].
+We currently don't keep a list of organizations, colleges/universities, and hosting providers who run !BigBlueButton.   In twelve months prior to June 2012, the project had over [http://www.bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ sixty thousand installs].
 
 If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bigbluebutton-users] or [http://groups.google.com/group/bigbluebutton-setup bigbluebutton-setup] mailing lists.
 
