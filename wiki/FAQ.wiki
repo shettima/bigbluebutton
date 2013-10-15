@@ -160,7 +160,7 @@ Many times we’ll be asked during beta and release candidates what is the relea
  
 === 6.  General Release ===
 
-After a (roughly) two week period in which no one has reported any issues for a release candidate , the committers change the label (such as 0.80-RC3 to 0.80) and announce the release (sample [https://groups.google.com/forum/#!msg/bigbluebutton-dev/80rKs0RiyUU/TYxi-3ucowsJ release announcement]).
+After a (roughly) two week period in which no one has reported any issues for a release candidate, the committers change the label (such as 0.80-RC3 to 0.80) and announce the release (sample [https://groups.google.com/forum/#!msg/bigbluebutton-dev/80rKs0RiyUU/TYxi-3ucowsJ release announcement]).
 
  
 
@@ -172,7 +172,7 @@ After a (roughly) two week period in which no one has reported any issues for a 
 = Contributing to !BigBlueButton =
 
 == How can I contribute? == 
-!BigBlueButton exists because many developers  have contributed their time and expertise to its development.  
+!BigBlueButton exists because many developers have contributed their time and expertise to its development.  
 
 At first glance at the underlying architecture, !BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in !ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as !ActionScript, grails, and scala are all similar to Java.
 
