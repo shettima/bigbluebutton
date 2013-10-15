@@ -250,14 +250,14 @@ Specifically, for using !GitHub, you need to do the following:
 !GitHub provides some good [http://help.github.com/ help] in the above steps, and there is an excellent [http//progit.org/ Pro Git] book by Scott Chacon available on-line.
 
 === Submission of a feature ===
-Some of the items in our issue tracker are enhancements to the core product.  If you are interested in contributing an enhancement, your chances of acceptance are *greatly* improved the following are true:
+Some of the items in our issue tracker are enhancements to the core product.  If you are interested in contributing an enhancement, your chances of acceptance are *greatly* improved if the following are true:
 
-  # You have had patches accepted by a committer
-  # You have posted a Request for Comments to the bigbluebuton-dev mailing list signaling your willingness to work on the enhancement.  In your post you have provide (at minimum) 
+  # You have had patches accepted by a committer.
+  # You have posted a Request for Comments to the bigbluebuton-dev mailing list signaling your willingness to work on the enhancement.  In your post, you have provided (at minimum) the following:
     * An overview of the design and implementation of your feature.  For examples see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79/91de48842ae1ea75?lnk=gst&q=rfc#91de48842ae1ea75 Proposal for Preupload of Documents]
-    * An outline of how you intend to test the enhancement
-    * An estimate of how much time you have to work on the enhancement
-  # A committer has signaled their intent to work closely with you on the enhancement
+    * An outline of how you intend to test the enhancement.
+    * An estimate of how much time you have to work on the enhancement.
+  # A committer has signaled their intent to work closely with you on the enhancement.
 
 Like other open source projects, the participation of a committer is central to the above process as they will take the responsibility for reviewing and signing off on your contribution. 
 
