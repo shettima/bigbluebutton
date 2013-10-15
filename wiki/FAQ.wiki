@@ -222,7 +222,7 @@ We've adopted to use the Sun Microsystems Contributer Agreement (yes, we know th
 
 Please read over the [http://bigbluebutton.googlecode.com/files/Contributor%20Agreement.pdf Contributor Agreement] and, if you (and your employer) are in agreement with its terms, then sign, scan, and e-mail a copy back to Fred Dixon (ffdixon at bigbluebutton _dot_ org).  Note: The agreement is currently between you (and your employer) and Blindside Networks.  When the [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html BigBlueButton foundation] launches, Blindside Networks will assign these agreements to the foundation.
 
-Once we receive the signed Contributor Agreement, we can review your submission for inclusion in !BigBlueButton.  The process for submission depends on whether it's fixing a bug (submitting a patch) or it's an enhancement (submitting a feature).
+Once we receive the signed Contributor Agreement, we can review your submission for inclusion in !BigBlueButton.  The process for submission depends on whether it's fixing a bug (submitting a patch) or whether it's an enhancement (submitting a feature).
 
 === Submission of a patch ===
 If you want to contribute a patch to !BigBlueButton, your chances of acceptance are *greatly* improved if the following are true:
