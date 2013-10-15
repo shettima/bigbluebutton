@@ -329,7 +329,7 @@ We do have experience with CentOS.  In April, 2010, we released [http://code.goo
 
 Why?  
 
-In a nutshell: quality.  We found it very difficult to test and maintain packaging for both RPM based systems (primarily CentOS) and Ubuntu.  Rather than try to do both and have them "kind of" work, which leads to many, many posts in our forums when users encounter difficulties with an install, we decided to invested heavily in testing and maintaining the Ubuntu packages.  They are now very solid and tested.
+In a nutshell: quality.  We found it very difficult to test and maintain packaging for both RPM based systems (primarily CentOS) and Ubuntu.  Rather than try to do both and have them "kind of" work, which leads to many, many posts in our forums when users encounter difficulties with an install, we decided to invest heavily in testing and maintaining the Ubuntu packages.  They are now very solid and tested.
 
 If you *really* want support for CentOS, you can contact one of the companies listed at http://bigbluebutton.org/support for commercial support.  Any financial contribution you make to updating CentOS packages will directly benefit other CentOS users in the community.
 
