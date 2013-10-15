@@ -32,7 +32,7 @@ All of the core !BigBlueButton contributors subscribe to all three mailing lists
 The name comes from the goal of making the process to setup a virtual classroom as easy as pressing a (metaphorical) big blue button.
 
 == Why is it spelled !BigBlueButton (and not Big Blue Button)? ==
-The trademark is written as one word !BigBlueButton.  Doing so also makes it easy for others to use Google to search for information related about the project.
+The trademark is written as one word !BigBlueButton.  Doing so makes it easy for others to use Google to search for information about the project.
 
 == Where is the source? ==
 We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We used to host it on Google Code, but we moved to !GitHub in 2010 to make it easier for others to fork and contribute.
