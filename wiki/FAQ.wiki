@@ -190,7 +190,7 @@ Dont' worry if you are not a proficient developer -- there are many ways to help
 
 == !BigBlueButton Committer ==
 
-Like many open source projects, at the core of the developer team is small group that have commit rights and the overall responsibility for the quality of the project.  The committers are as follows:
+Like many open source projects, at the core of the developer team is a small group that have commit rights and the overall responsibility for the quality of the project.  The committers are as follows:
 
 Active Committers: 
   * Richard Alam, Lead Architect
