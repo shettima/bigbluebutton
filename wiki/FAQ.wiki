@@ -9,7 +9,7 @@
 
 Welcome to the !BigBlueButton project's Frequently Asked Questions (FAQ). 
 
-We (the [#BigBlueButton_Committer core developers]) created this FAQ to quickly answer common questions around installation, configuration, and using !BigBlueButton.  If you are a developer, you'll also find lots of answered herein that have been collected from discussions on our mailing lists.
+We (the [#BigBlueButton_Committer core developers]) created this FAQ to quickly answer common questions around installation, configuration, and using !BigBlueButton.  If you are a developer, you'll also find lots of answers herein that have been collected from discussions on our mailing lists.
 
 == What if I don't find my answer here? ==
 
