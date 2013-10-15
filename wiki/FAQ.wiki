@@ -383,8 +383,8 @@ For calculations:
 For example, with 5 users in a room with 5 webcams streaming, the bandwidth calculation is as follows:
 
   * in: 5`*`40 = 200 Kbytes/sec incoming bandwidth needed to the server (e.g. 1.6 Mbit) 
-  * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec incoming bandwidth needed from the server (e.g. 6.4 Mbit) 
-  * Total traffic used after one our: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
+  * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec outgoing bandwidth needed from the server (e.g. 6.4 Mbit) 
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
 
 If you'd have a typical classroom situation with the presenter broadcasting their webcam to 30 remote students, the calculation is as follows: 
 
