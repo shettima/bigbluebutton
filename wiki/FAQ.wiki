@@ -277,7 +277,7 @@ For code written in Java, we will follow the [http://www.oracle.com/technetwork/
 
 For documentation of code method -- especially those classes that provides an API to other classes -- should be documented using the [http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html JavaDoc] format.
 
-For !Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/help.html?content=asdoc_1.html AsDoc] format.
+For Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/help.html?content=asdoc_1.html AsDoc] format.
 
 = Installation =
 
