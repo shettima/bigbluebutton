@@ -152,9 +152,9 @@ When all the bugs are fixed and issues are closed, the product moves to Release 
 
 === 5.  Release Candidate ===
 
-Stability is paramount for reaching a release candidate build.   These are true release candidates and could be installed on production servers.
+Stability is paramount for reaching a release candidate build.   
 
-Again, depending on feedback from the community, the committers monitor the mailing lists looking for any final bugs or issues that would gate the general release.
+Again, depending on feedback from the community, the committers monitor the mailing lists looking for any final bugs or issues that would negate the general release.
 
 Many times we’ll be asked during beta and release candidates what is the release date for !BigBlueButton.  Our motto is “we release on quality, not dates.”
  
