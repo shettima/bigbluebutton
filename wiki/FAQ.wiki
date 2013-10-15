@@ -407,10 +407,10 @@ Sharing slides takes almost no bandwidth beyond the initial uploading/downloadin
 
 Desktop sharing takes the most bandwidth, and it's dependent on the area chosen by the presenter (full screen and region) and how often their screen updates.  
 
-A VoIP connection to the !BigBlueButton takes roughly 20 kB/sec per user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 20 KBytes/sec = 400 kBytes/sec.
+A VoIP connection to the !BigBlueButton server takes roughly 20 kB/sec per user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 20 KBytes/sec = 400 kBytes/sec.
 
 
-If the presenter has only 100 KByte/second upstream, then performing VoIP, video, and desktop sharing will not fit within that upstream constraint.  In reality, red5/Flash does a good job of using limited bandwidth and it actually works quite well.  In the case of desktop sharing, the remote desktops will still receive updates, but the refresh will be much slower than if the presenter was on a LAN (such as within the university or college network).
+If the presenter has only 100 KByte/second upstream, then performing VoIP, video, and desktop sharing will not fit within that upstream constraint.  In reality, red5/Flash does a good job of using limited bandwidth and actually works quite well.  In the case of desktop sharing, the remote desktops will still receive updates, but the refresh will be much slower than if the presenter was on a LAN (such as within the university or college network).
 
 
 === What are the minimum bandwidth requirements for a user? ===
