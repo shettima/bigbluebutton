@@ -146,7 +146,7 @@ The product will go through one (or more) betas until the community reports no m
 
   * [http://code.google.com/p/bigbluebutton/wiki/LocalizationOfBBB Localization] of the product
   * Updating and fixing documentation
-  * Updating packaging so it installs without errors on 64-bit, both on a new install and upgrade from a previous version
+  * Updating packaging so it installs without errors on 64-bit, both on a new install and an upgrade from a previous version
 
 When all the bugs are fixed and issues are closed, the product moves to Release Candidate. 
 
