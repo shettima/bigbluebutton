@@ -98,7 +98,7 @@ The !BigBlueButton Road Map is the key document for discussion, along with the i
  
 === 2. Design ===
 
-At this point each feature for the release assigned an issue in the !BigBlueButton Issue Tracker (if it does not already have one).  This allows the community to track the progress of each release.  For example, to track the progress for 0.81, see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.81 list of issues tagged for 0.81].
+At this point, each feature for the release is assigned an issue in the !BigBlueButton Issue Tracker (if it does not already have one).  This allows the community to track the progress of each release.  For example, to track the progress for 0.81, see [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=milestone=Release0.81 list of issues tagged for 0.81].
 
 For small features, especially bug fixes, the associate issue provides a sufficient record for coordinating and tracking the development effort.
 
