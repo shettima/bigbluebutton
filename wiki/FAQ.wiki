@@ -395,17 +395,17 @@ If you'd have a typical classroom situation with the presenter broadcasting thei
 If you have 10 of those classes, then your server needs to be able to output 
 93 Mbit/sec; that's not much in a LAN, but it's pretty much if you're in a hosted environment.
 
-Large "cafe-style chatroom" : 20 viewers, 8 people broadcasting with a 
+Large "cafe-style chatroom": 20 viewers, 8 people broadcasting with a 
 webcam:  
 
-  * in: 8`*`40 = 320 kbyte/sec ( 2.5 Mbit ) 
-  * out: 8`*`(20-1)`*`40 = 6080 kbytes/sec ( 48.6 Mbit ) 
+  * in: 8`*`40 = 320 Kbytes/sec ( 2.5 Mbit ) 
+  * out: 8`*`(20-1)`*`40 = 6080 Kbytes/sec ( 48.6 Mbit ) 
   * Total traffic used after one hour: 60 mins`*`60 secs`*`( 320 + 6080 ) = 23 Gbyte traffic per hour 
 
 
-Sharing slides take almost no bandwidth beyond the initial uploading/downloading of slides.  When the presenter clicks to show the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and they load the next slide from the local cache. Chat also almost no bandwidth as well.
+Sharing slides takes almost no bandwidth beyond the initial uploading/downloading of slides.  When the presenter clicks to show the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and they load the next slide from the local cache. Chat has almost no bandwidth as well.
 
-Desktop sharing takes the most bandwidth, and it's dependent on area chosen by the presenter (full screen and region) and how often their screen updates.  
+Desktop sharing takes the most bandwidth, and it's dependent on the area chosen by the presenter (full screen and region) and how often their screen updates.  
 
 A VoIP connection to the !BigBlueButton takes roughly 20 kB/sec per user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 20 KBytes/sec = 400 kBytes/sec.
 
