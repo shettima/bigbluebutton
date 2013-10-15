@@ -60,7 +60,7 @@ As with any open source project, the continued growth of the community depends o
  
 == Development Priorities ==
 
-The core group of !BigBlueButton committers have a adopted an open source development process with the following priorities (in order):
+The core group of !BigBlueButton committers have adopted an open source development process with the following priorities (in order):
 
   * Stability
   * Usability
