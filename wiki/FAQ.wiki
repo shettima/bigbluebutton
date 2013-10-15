@@ -115,9 +115,9 @@ For examples of previous posts, see:
 
 During the development phase, the committers hold bi-weekly (and sometimes weekly) calls as development proceeds towards beta.
 
-Each committer works on a fork of !BigBlueButton Master.  When feature is ready for commit, the committer sends a pull request to merge the work in the Master branch.   Since the core group is still small and the committers are communicating during development, Richard and others knows when any major pull requests are coming.
+Each committer works on a fork of the !BigBlueButton Master.  When a feature is ready for commit, the committer sends a pull request to merge the work into the Master branch.   Since the core group is still small and the committers are communicating during development, Richard and others know when any major pull requests are coming.
 
-*Note:* Not every request needs to be reviewed by the Richard.  If a committer is working on an area of their expertise, then they can usually commit to Master.   In general, any commit that has substantial changes are reviewed by the committer who is an expert on that area of the system and by Richard.
+*Note:* Not every request needs to be reviewed by Richard.  If a committer is working on an area of their expertise, then they can usually commit to Master.   In general, any commit that has substantial changes are reviewed by the committer who is an expert on that area of the system and by Richard.
 
 The submitter of the pull request is responsible for ensuring the feature works correctly against Master.  For pull requests that make major changes, the submitter must provide with the pull request additional documentation to make it easy for others to review:
 
@@ -127,7 +127,7 @@ The submitter of the pull request is responsible for ensuring the feature works 
 
 If the reviewer of the update believes it will negatively affect stability or usability, the request will be rejected and the developer will need to rework the request based on feedback by the reviewer.
 
-Once a update has been committed, they are tested by other developers and subsequently.
+Once an update has been committed, it is tested by other developers.
 
 Once a release is moved to beta, the public packages are updated so others can begin beta testing.
  
