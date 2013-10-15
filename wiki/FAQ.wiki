@@ -17,7 +17,7 @@ The !BigBlueButton community focuses its support in three mailing lists, each ho
 
   * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] -- Setup, installation, and configuration questions, such as "How do I configure the !BigBlueButton client?"
   * [http://groups.google.com/group/bigbluebutton-users/topics?gvc=2 bigbluebutton-users] -- End user questions, such as "How do I do X with !BigBlueButton?"
-  * [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] -- All other questions, such as "How do I integration !BigBlueButton with application Y?"
+  * [http://groups.google.com/group/bigbluebutton-dev bigbluebutton-dev] -- All other questions, such as "How do I integrate !BigBlueButton with application Y?"
 
 The developer mailing list has over 1000 users, so before you post:
 
