@@ -340,7 +340,7 @@ While technically it should be possible to manually install each of the individu
 
 Don't worry -- using [http://www.vmware.com/products/player/ VMWare Player] you can have a full !BigBlueButton 0.80 server running in under an hour using the [BigBlueButtonVM BigBlueButton Virtual Machine].  The !BigBlueButton VM is running Ubuntu 10.04 32-bit and has all the components pre-installed. 
 
-If you a brave soul and want to manually install the individual OpenSourceComponents natively on Windows and then install all the !BigBlueButton components, it should be possible.  However, beware, no one who has tried this has lived to post a success message to our mailing list :-).
+If you are a brave soul and want to manually install the individual OpenSourceComponents natively on Windows and then install all the !BigBlueButton components, it should be possible.  However, beware, no one who has tried this has lived to post a success message to our mailing list :-).
 
 === OS X ===
 The easiest way to get your own !BigBlueButton server under OS X is to install VMWare Fusion and run the [BigBlueButtonVM BigBlueButton Virtual Machine].  
