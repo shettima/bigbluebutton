@@ -81,7 +81,7 @@ There have been ten releases of !BigBlueButton to date.
 
 == !BigBlueButton Development Process ==
 
-Each release cycle goes according to the following steps
+Each release cycle goes according to the following steps:
 
 === 1. Planning ===
 
