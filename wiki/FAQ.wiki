@@ -102,7 +102,7 @@ At this point, each feature for the release is assigned an issue in the !BigBlue
 
 For small features, especially bug fixes, the associate issue provides a sufficient record for coordinating and tracking the development effort.
 
-For more complex features, such as record and playback, API changes, or creation of an HTML5 client, the lead developer for the feature would post specification to !BigBlueButton-dev for review and comment.  
+For more complex features, such as record and playback, API changes, or creation of an HTML5 client, the lead developer for the feature, would post specifications to !BigBlueButton-dev for review and comment.  
 
 For examples of previous posts, see:
 
