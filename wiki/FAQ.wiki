@@ -135,7 +135,7 @@ Once a release is moved to beta, the public packages are updated so others can b
 
 Once all features have been implemented and all major bugs have been fixed, the release moves to beta.  
 
-Before the beta release, the documentation for installation, setting up development environment, and overview of new features are all updated for the release.  For example:
+Before the beta release, the documentation for installation, setting up of the development environment, and overview of new features are all updated for the release.  For example:
 
   * [http://code.google.com/p/bigbluebutton/wiki/081SettingDevEnvironment 081SettingDevEnvironment]
   * [http://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu 081InstallationUbuntu]
@@ -146,7 +146,7 @@ The product will go through one (or more) betas until the community reports no m
 
   * [http://code.google.com/p/bigbluebutton/wiki/LocalizationOfBBB Localization] of the product
   * Updating and fixing documentation
-  * Updating packaging so it installs without errors on 64-bit, both a new an install and upgrade from previous version
+  * Updating packaging so it installs without errors on 64-bit, both a new an install and upgrade from a previous version
 
 When all the bugs are fixed and issues are closed, the product moves to Release Candidate. 
 
