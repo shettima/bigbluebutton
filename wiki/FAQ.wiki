@@ -263,7 +263,7 @@ Like other open source projects, the participation of a committer is central to 
 
 
 === Testing your submission === 
-Depending on the complexity of your patch or feature, it should be accompanied by tests cases or, at minimum, a series of steps to test the code is functioning properly.  
+Depending on the complexity of your patch or feature, it should be accompanied by test cases or, at minimum, a series of steps to test whether the code is functioning properly.  
 
 We are continuously trying to incorporate more automated testing into !BigBlueButton development process, such as using [http://testng.org/doc/index.html TestNG]. 
 
