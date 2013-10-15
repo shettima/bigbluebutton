@@ -21,18 +21,18 @@ The !BigBlueButton community focuses its support in three mailing lists, each ho
 
 The developer mailing list has over 1000 users, so before you post:
 
-  # Scan the FAQ to see if you questions is answered herein.
+  # Scan the FAQ to see if your question is answered herein.
   # Use Google to search for keywords related to your question -- there's a good chance someone might have already asked your question in the Google groups.
   # If you think you've found a bug, check the [http://code.google.com/p/bigbluebutton/issues/list issues database].  
 
-All of the core !BigBlueButton contributions subscribe to all three mailing lists.  Please don't cross post.
+All of the core !BigBlueButton contributors subscribe to all three mailing lists.  Please don't cross post.
 
 
 == Why is this project called !BigBlueButton? ==
 The name comes from the goal of making the process to setup a virtual classroom as easy as pressing a (metaphorical) big blue button.
 
 == Why is it spelled !BigBlueButton (and not Big Blue Button)? ==
-The trademark is written as one word !BigBlueButton.  Doing so also makes it easy for others to use Google to search for information related abou the project.
+The trademark is written as one word !BigBlueButton.  Doing so also makes it easy for others to use Google to search for information related about the project.
 
 == Where is the source? ==
 We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We used to host it on Google Code, but we moved to !GitHub in 2010 to make it easier for others to fork and contribute.
