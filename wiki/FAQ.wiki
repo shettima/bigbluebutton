@@ -551,18 +551,18 @@ To test your own server, have five people login and have each open multiple brow
 
 If you also want to monitor, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
 
-== Where is the Admin interface for !BigBlueButton? ==
+== Where is the admin interface for !BigBlueButton? ==
 Early on in !BigBlueButton's development (around 2009), we started to create an admin interface to let administrators create accounts, schedule meetings, configure properties for meetings, etc.  
 
 However, we quickly learned that most installations of !BigBlueButton wanted to do one of the following:
 
   # Integrate !BigBlueButton within their open source application (Joomla, WordPress, Sakai, etc.) and had no use for an administrative application -- for example, they wanted to do everything from within Joomla.
-  # Integrate !BigBlueButton within their custom web application and needed an API control to interact with their sessions (create a session, add a user, end a session, etc.).
+  # Integrate !BigBlueButton within their custom web application and needed an API control to interact with their sessions (create a session, add a user, end a session, etc).
   # Have a simple stand-alone landing page to create meetings.
 
 As a result, we [FAQ#Is_the_scheduling_interface_in_bbb-web_still_supported? depreciated our administrative/scheduling interface] and focused on creating and supporting [http://www.bigbluebutton.org/open-source-integrations/ open source integrations] for !BigBlueButton with the most popular content management systems, and ensuring there was an [API  API for integration] within other web-based application.
 
-For a stand-alone landing page, for most cases modifying API demo3.jsp is sufficient.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_setup_new_classrooms_in_BigBlueButton_? How do I setup new classrooms in BigBlueButton?].
+For a stand-alone landing page, most cases modifying API demo3.jsp is sufficient.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_setup_new_classrooms_in_BigBlueButton_? How do I setup new classrooms in BigBlueButton?].
 
 
 
