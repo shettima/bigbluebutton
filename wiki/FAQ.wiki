@@ -606,7 +606,7 @@ Note: The above settings became the default as of !BigBlueButton 0.80.
 
 === How do I configure FreeSWITCH to use 127.0.0.1? ===
 
-When !BigBlueButton starts up bbb-apps-sip (a modified version of [http://code.google.com/p/red5phone/ red5phone]), it attempts to connect to FreeSWITCH using the IP address defined in `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties`
+When !BigBlueButton starts up bbb-apps-sip (a modified version of [http://code.google.com/p/red5phone/ red5phone]), it attempts to connect to FreeSWITCH using the IP address defined in `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties`.
 
 {{{
 # The address of your FreeSWITCH/asterisk server
@@ -618,7 +618,7 @@ sip.server.password=secret
 
 This IP address must match the IP address which FreeSWITCH is listening for incoming SIP calls.  Prior to !BigBlueButton 0.80, the FreeSWITCH attempted to use the server's external IP address; however, this caused [FAQ#Users_do_not_appear_in_the_listeners_window voice connection problems] whenever the external IP address changed (as in rebooting an EC2 instance) or when the server had multiple IP addresses.
 
-To configure FreeSWITCH to use the 127.0.0.1 address (and remove an vector for denial of service attacks), you can make the following changes.
+To configure FreeSWITCH to use the 127.0.0.1 address (and remove a vector for denial of service attacks), you can make the following changes.
 
 Edit `/opt/freeswitch/conf/vars.xml` and change
 
