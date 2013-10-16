@@ -851,7 +851,7 @@ Here is an example of forwarded ports on the D-Link DIR-665 router (the internal
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/ports_example.jpg]
 
-Next, when the firewall forwards incoming requests to the internal !BigBlueButton server at 192.168.10.198, the !BigBlueButton must be listening for these requests.  The HTTP headers will identify them as for the server `external.host.org`, so you must tell !BigBlueButton to listen for incoming requests for that hostname (not the internal IP address).  Use the following command to change the !BigBlueButton configuration files to detect incoming requests to `external.host.org`.
+Next, when the firewall forwards incoming requests to the internal !BigBlueButton server at 192.168.10.198, the !BigBlueButton server must be listening for these requests.  The HTTP headers will identify them as for the server `external.host.org`, so you must tell !BigBlueButton to listen for incoming requests for that hostname (not the internal IP address).  Use the following command to change the !BigBlueButton configuration files to detect incoming requests to `external.host.org`.
 
 {{{
 sudo bbb-conf --setip external.host.org
