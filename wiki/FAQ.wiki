@@ -932,7 +932,7 @@ The default HTML landing page is located in
 Change this page to create your own landing page.
 
 
-=== Can I run multiple virtual classrooms in a single !BigBlueButton server ===
+=== Can I run multiple virtual classrooms in a single !BigBlueButton server? ===
 Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/demo/demo3.jsp Join Courses] API example.  You can modify this demo page to setup your own branded landing page.
 
 === How do I setup new classrooms in !BigBlueButton? === 
