@@ -505,7 +505,7 @@ Once you acquire an IP address, you need to change the !BigBlueButton configurat
 
 Start RMI Registry {{{rmiregistry &}}}.
 
-If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}. Edit {{{/usr/share/red5/conf/red5.properties}}} and change {{{jmx.rmi.host}}} to the server ip instead of {{{0.0.0.0}}}
+If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}. Edit {{{/usr/share/red5/conf/red5.properties}}} and change {{{jmx.rmi.host}}} to the server ip instead of {{{0.0.0.0}}}.
 
 
 
