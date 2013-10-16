@@ -834,9 +834,9 @@ For the above reasons, we recommend you setup !BigBlueButton on a dedicated serv
 
 These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).  These ports are all TCP ports.
 
-=== Does !BigBlueButon support tunneling? ===
+=== Does !BigBlueButton support tunneling? ===
 
-Yes.  If a remote user is unable to connect to port 1935, which typically occurs when a remote user's corporate firewall blocks external access to all other ports except port 80, then their !BigBlueButton client will fail to connect to port 1935 and, after about ten seconds, fall back to tunneling through port 80.
+Yes.  If a remote user is unable to connect to port 1935, which typically occurs when a remote user's corporate firewall blocks external access to all other ports except port 80, then their !BigBlueButton client will fail to connect to port 1935 and, after about ten seconds, will fall back to tunneling through port 80.
 
 
 === Can I provide external access to a !BigBlueButton server behind my firewall? ===
@@ -845,7 +845,7 @@ Yes.  A typical scenario is you have !BigBlueButton running on an internal compu
 
 Note: The instructions below require that you use an external hostname (not IP address) for your firewall.  If you only have an IP address, you can setup a hostname using a free DNS service such as [http://dyn.com/dns/dyndns-free/ dny.com].
 
-First, on your firewall, you need to forward three ports to the the internal IP address of the !BigBlueButton server.  These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
+First, on your firewall, you need to forward three ports to the internal IP address of the !BigBlueButton server.  These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).
 
 Here is an example of forwarded ports on the D-Link DIR-665 router (the internal IP address of the !BigBlueButton server in this example  is 192.168.10.198):
 
