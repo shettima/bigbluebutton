@@ -954,7 +954,7 @@ allMeetings.put( "ENGL-2013: Research Methods in English", meeting );	// The tit
 
 }}}
 
-to define your own modules (such as changing the name to 'Community Room - 1'.  When modifying `demo3.jsp`, you don't have to restart any processes: you can modify the source file, then reload the demo page and you'll see the updated content.
+to define your own modules (such as changing the name to 'Community Room - 1').  When modifying `demo3.jsp`, you don't have to restart any processes: you can modify the source file, then reload the demo page and you'll see the updated content.
 
 If you want users to open your demo page by default, you can modify
 
