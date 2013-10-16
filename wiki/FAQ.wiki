@@ -798,7 +798,7 @@ Edit {{{/opt/freeswitch/conf/directory/default/bbbuser.xml}}}
 Change {{{password}}} to match the password you set in {{{sip.server.password}}}.
 
 
-== How do I enable feature X in the !BigBlueButton client ==
+== How do I enable feature X in the !BigBlueButton client? ==
 As of !BigBlueButton 0.71, you can configure some options in the client, such as enabling moderators to eject users from the virtual classroom.
 
 Check out [ClientConfiguration client configuration] for details on how to enable or disable specific modules and features.  These options are on a server-wide basis (not virtual classroom or individual basis).
