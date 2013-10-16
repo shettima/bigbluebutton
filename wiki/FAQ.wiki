@@ -863,7 +863,7 @@ Internally, !BigBlueButton must be able to call `external.host.org` to make API 
 192.168.10.198 external.host.org
 }}}
 
-To verify that the !BigBlueButton can access `external.host.org`, enter the following command
+To verify that the !BigBlueButton server can access `external.host.org`, enter the following command
 
 {{{
 wget -O - --quiet http://external.host.org/bigbluebutton/api 
@@ -901,7 +901,7 @@ Escape character is '^]'.
 
 If you can connect to the service running on all three ports (nginx, red5, and deskshare), then your external users should be able to connect to !BigBlueButton.
 
-Once !BigBlueButton is setup for external access, internal must also use the external hostname for connecting to the !BigBlueButton server.  This is because !BigBlueButton is now looking for incoming requests from `external.host.com` not an internal IP address.
+Once !BigBlueButton is setup for external access, internal access must also use the external hostname for connecting to the !BigBlueButton server.  This is because !BigBlueButton is now looking for incoming requests from `external.host.com` not an internal IP address.
 
 === Can I provide secure access to !BigBlueButton? ===
 We've learned from other projects to be very careful on any statements of security.
