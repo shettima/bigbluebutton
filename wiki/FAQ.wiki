@@ -437,14 +437,14 @@ netsh interface ipv6 set teredo disable
 
 To run this command, you'll need to enter 'cmd' in the program search field (available when you click the start menu).  When you type 'cmd', you'll see the 'command prompt' appear.  Right-click and choose "Run as Administrator".
 
-=== I've tried to install !BigBlueButton on a virtual private server running Ubuntu 10.04 but I'm getting packaging errors during the installation. ===
+=== I've tried to install !BigBlueButton on a virtual private server running Ubuntu 10.04, but I'm getting packaging errors during the installation ===
 Sometimes the hosting provider for a virtual private server (VPS) has removed the default entries from
 
 {{{
    /etc/apt/sources.list
 }}}
 
-The easiest way to solve this is replace `sources.list` with the standard entries (show below).
+The easiest way to solve this is to replace `sources.list` with the standard entries (show below).
 
 
 {{{
@@ -472,13 +472,13 @@ Then, issue a `sudo apt-get update` and try following the install instructions a
 
 
 === I've installed !BigBlueButton using the VM, but I can't access it from a browser ===
-Make sure your VMWave Player (or VMWare Fusion) network settings are set to *bridged*, not NAT.  If they were set to NAT and you changed to bridged, you'll need to tell the VM to acquire a network address.  Enter the following command
+Make sure your VMWave Player (or VMWare Fusion) network settings are set to *bridged*, not NAT.  If they were set to NAT and you changed to bridged, you'll need to tell the VM to acquire a network address.  Enter the following command:
 
 {{{
   sudo /etc/init.d/networking restart
 }}}
 
-Once you acquire an IP address, you need to change the !BigBlueButton configuration files to use this new IP address.  Don' worry, it's easy to do.   If your new IP address is 47.135.32.64, for example, enter the command
+Once you acquire an IP address, you need to change the !BigBlueButton configuration files to use this new IP address.  Don' worry, it's easy to do.   If your new IP address is 47.135.32.64, for example, enter the following command:
 
 {{{
    sudo bbb-conf --setip 47.135.32.64
