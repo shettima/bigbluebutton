@@ -1758,7 +1758,7 @@ If the above does not resolve your problem, post to the output of the commands `
 === I've started a new !BigBlueButton VM, but I don't know the password to login via SSH ===
 When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
 
-=== I can join the voice conference, but nothing appears on the Listener's window ===
+=== I can join the voice conference, but nothing appears in the Listener's window ===
  * Make sure {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}} values matches those with {{{/etc/asterisk/manager.d/bigbluebutton.conf}}}
  * Make sure {{{enabled = yes}}} in {{{/etc/asterisk/manager.conf}}}
  * See if changing {{{bindaddr = 0.0.0.0}}} to {{{bindaddr = 127.0.0.1}}} works.
