@@ -1727,7 +1727,7 @@ Here are the possible causes for this error with steps to resolve.
 
   * The init.d script for red5 must execute before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-config).  FreeSWITCH needs to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8-beta-2.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
 
-  * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to a an IP address, but !BigBlueButton is trying to connect on an old (or incorrect) IP address.  A fix has been applied for this in !BigBlueButton 0.8-beta-4 (see [FAQ#How_do_I_configure_FreeSWITCH_to_use_127.0.0.1? how do I configure FreeSWITCH to use 127.0.0.1]).
+  * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to an IP address, but !BigBlueButton is trying to connect on an old (or incorrect) IP address.  A fix has been applied for this in !BigBlueButton 0.8-beta-4 (see [FAQ#How_do_I_configure_FreeSWITCH_to_use_127.0.0.1? how do I configure FreeSWITCH to use 127.0.0.1]).
 
 If you don't want FreeSWITCH to bind to 127.0.0.1, you need to figure out which IP address it's using.  First, determine the IP address FreeSWITCH is monitoring for incoming SIP calls with the following command:
 
