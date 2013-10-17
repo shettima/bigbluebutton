@@ -1429,9 +1429,9 @@ Overall, the best solution is ask all users to use a headset -- this will ensure
 
 You will experience a delay, depending on the network latency from the speaker to the !BigBlueButton server, when using the built-in VoIP in !BigBlueButton 0.80 (clicking the headset icon).
 
-Here's a breakdown of the path for the audio packets from your !BigBlueButton client when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using speex codec.  It is then transmitted by red5 to FreeSWITCH (via red5phone), then FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), and transmitted back to the client.
+Here's a breakdown of the path for the audio packets, from your !BigBlueButton client, when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using speex codec.  It is then transmitted by red5 to FreeSWITCH (via red5phone), then FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), and transmitted back to the client.
 
-While this all happens quite quickly, we are investigating a number of ways to reducing the transcoding.
+While this all happens quite quickly, we are investigating a number of ways to reduce the transcoding.
 
 
 === How to setup a external phone number for the FreeSWITCH server ===
