@@ -1252,7 +1252,7 @@ There are a number of open issues for improving the desktop sharing: [http://cod
 
 Another approach is to explore creating platform specific code that would be downloaded by the Java applet and run natively (this is how commercial web conferencing systems achieve their speed).  
 
-There are lots of opportunities to explore to increase the speed of desktop sharing in !BigBlueButton.  To understand how the !BigBlueButton project allocates resources for each release, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#When_will_feature_X_be_implemented When will feature X be implemented?].
+There are lots of opportunities to explore on how to increase the speed of desktop sharing in !BigBlueButton.  To understand how the !BigBlueButton project allocates resources for each release, see [http://code.google.com/p/bigbluebutton/wiki/FAQ#When_will_feature_X_be_implemented When will feature X be implemented?].
 
 
 
