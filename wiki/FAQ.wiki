@@ -1616,9 +1616,9 @@ You can checkout the latest code from Git.  However, if you want to install the 
 
 === I want to develop from Windows! ===
 
-Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
+Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder, simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
 
-=== How to compile and deploy the components of !BigBlueButton? ===
+=== How to compile and deploy the components of !BigBlueButton ===
 For most components of BBB, the source on the !BigBlueButton VM includes ant scripts which you can use to compile and deploy that particular component. See DevelopingBBB.
 
 === What if I want to develop for the Client only? ===
