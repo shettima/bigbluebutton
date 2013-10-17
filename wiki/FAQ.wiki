@@ -1559,7 +1559,7 @@ The information displayed during playback is browser specific.
 
 In Chrome, the audio playback component shows only the current time index for the playback.  To see the overall length of the session, you can scrub to the end of the audio after the audio file has loaded.
 
-In FireFox, the audio playback component shows the both the current time index and total time of the audio file.
+In FireFox, the audio playback component shows both the current time index and total time of the audio file.
 
 
 === How do I modify the default playback format? ===
