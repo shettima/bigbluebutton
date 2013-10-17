@@ -1796,7 +1796,7 @@ which will analyze your current setup and print out any warnings/problems it fin
 
 !BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and a viewer to say "I don't see what you are pointing at".
 
-To keep the presentation windows in sync, when you upload a presentation (landscape or portrait), the size of the presentation window becomes a ratio of the presentation.  You and viewer may have different sized windows, due to the sizes of your respective monitors, but you both always see the same content.  As of !BigBlueButton 0.71, this mode is equivalent to always running in "fit to page" mode.  A presenter can zoom in and out, and when you zoom out completely !BigBlueButton shows the entire page.
+To keep the presentation windows in sync, when you upload a presentation (landscape or portrait), the size of the presentation window becomes a ratio of the presentation.  You and the viewer may have different sized windows, due to the sizes of your respective monitors, but you both always see the same content.  As of !BigBlueButton 0.71, this mode is equivalent to always running in "fit to page" mode.  A presenter can zoom in and out, and when you zoom out completely !BigBlueButton shows the entire page.
 
 For landscape documents, the "fit to page" approach works well.  Monitors are landscape, so presenting a landscape document makes good use of the screen space.  
 
