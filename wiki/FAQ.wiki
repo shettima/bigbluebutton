@@ -1637,27 +1637,27 @@ This is related to localization. Before you launch your client, you need to firs
 == General ==
 
 === Some users are experiencing audio problems ===
-!BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.   If your run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than plain ordinary telephone system (wich is 8 Khz audio).
+!BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.   If you run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than a plain ordinary telephone system (which is 8 Khz audio).
 
 To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running !BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.  Furthermore, we [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
 
 When remote users experience audio problems, check the following areas:
 
 
-1. Check CPU available on your !BigBlueButton server  
+1. Check CPU availablility on your !BigBlueButton server  
 
 Login to your !BigBlueButton server during a session and watch it's CPU using the command `top`.  When running `top`, press '1' to see a list of all CPUs and their load.  You should see Cpu0, Cpu1, etc.  If you are running a quad-core CPU with hyper-threading (recommended), you'll see eight virtual CPUs.
 
 The overall CPU usage should stay below 70%.  If the overall CPU consistently stays above 70%, you'll likely get audio troubles as the !BigBlueButton server will not have enough available CPU to keep up with the audio packets.
 
-If your !BigBlueButton server is virtualized, there is no guarantee on how much CPU time your server gets.  If your sharing the CPU of your !BigBlueButton server with other virtualized servers on the host, it will will take longer for !BigBlueButton to process audio packets.  This setup may also affect audio quality.
+If your !BigBlueButton server is virtualized, there is no guarantee how much CPU time your server gets.  If your sharing the CPU of your !BigBlueButton server with other virtualized servers on the host, it will take longer for !BigBlueButton to process audio packets.  This setup may also affect audio quality.
 
 
-2.  Check bandwidth provided !BigBlueButton server's ISP
+2.  Check bandwidth provided to !BigBlueButton server's ISP
 
-To test your server's bandiwdth you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection.  When there is no significant network activity on your !BigBlueButton server (such no active !BigBlueButton sessions), try transferring a large file to/from your !BigBlueButton server to the second external server using `scp`.  This will give you a rough estimate of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
+To test your server's bandwidth, you'll need a second server on the internet that has at least as good bandwidth as your server.  Make sure the second server is external and uses the ISP internet connection.  When there is no significant network activity on your !BigBlueButton server (such as no active !BigBlueButton sessions), try transferring a large file to/from your !BigBlueButton server to the second external server using `scp`.  This will give you a rough estimate of the maximum transfer rates.  Check with your ISP if these transfer rates are low.
 
-Next, try monitoring your server's traffic during a class begins. There are many Unix commands to monitor traffic, one of which is `bmon`.  
+Next, try monitoring your server's traffic during the beginning of a class. There are many Unix commands to monitor traffic, one of which is `bmon`.  
 
 {{{
    sudo apt-get install bmon
