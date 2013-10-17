@@ -1972,7 +1972,7 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
-=== How to I change the default startup language? ===
+=== How do I change the default startup language? ===
 
 By default, the !BigBlueButton client should detect the browser's locale and use that default language accordingly.
 
