@@ -2014,7 +2014,7 @@ There were some problems with the latest Flash update on Mac OS X.  See this [ht
 We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
 === How can I donate money to the project? ===
-The !BigblueButton project doesn't take donations.  We think it's a poor business model for running a large open source project.
+The !BigBlueButton project doesn't take donations.  We think it's a poor business model for running a large open source project.
 
 If you want to help the project financially, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton and engage their services.  This creates a healthy ecosystem around the project where companies are encouraged to contribute their resources to improve the project to create a larger pool of potential customers.
 
