@@ -1627,7 +1627,7 @@ If you are just working on the client side, you need to edit the file config.xml
 You need to create the following 2 directories on your BBB server, if they're not already there: /var/bigbluebutton/conference-mock-default/room-mock-default and change the owner to tomcat6:tomcat6 (chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default) 
 
 === My client fails at startup with RSL error; Error 2035:URL Not Found ===
-This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here]
+This is related to localization. Before you launch your client, you need to first separately run the ant localization task. This task is included in your client directory in the build.xml file. It needs to run separately because otherwise java will run out of memory if all tasks are ran together. You can run the localization task from the command line or from Flex if you've set up ant to work with Flex Builder. You can find instructions on how to get Ant working with Flex [http://livedocs.adobe.com/flex/3/html/help.html?content=anttasks_1.html here].
 
 
 
