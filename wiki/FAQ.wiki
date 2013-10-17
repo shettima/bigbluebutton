@@ -1536,13 +1536,13 @@ When instructed through the API call, the !BigBlueButton server will record all 
 
 === What parts of the session does !BigBlueButton record? ===
 
-!BigBlueButton now record events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback. After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events and media into playback formats (see Record and Playback Specification). 
+!BigBlueButton now records events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback. After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events and media into playback formats (see Record and Playback Specification). 
 
 The build-in ingest and processing script _slides_ will process the recorded events and media to create an HTML5 page that will playback slides, audio, and chat.
 
 When integrated with Matterhorn, !BigBlueButton can process the desktop and webcam for automatic submission to a Matterhorn server (see Matterhorn integration).  Playback of recorded content occurs within the Matterhorn interface.
 
-Currently, !BigBlueButton does not record or playback mouse movements or whiteboard events.  The intent is to add these elements to playback in a future iteration of !BigBlueButton.
+Currently, !BigBlueButton does not record or playback mouse movements or whiteboard events.  The intent is to add these elements to playback in a future itegration of !BigBlueButton.
 
 === What browsers support playback ===
 In !BigBlueButton 0.80, the audio from a recorded session is encoded into [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered.  Playback of Vorbis audio is supported in FireFox and Chrome, but not IE and Safari.
