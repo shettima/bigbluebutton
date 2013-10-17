@@ -1573,7 +1573,7 @@ The ingest and processing scripts, written in Ruby, process the recorded events 
 
 !BigBlueButton uses popcorn.js, an HTML5 media framework, for playback.  
 
-By modifying slides.rb, you could, for example, exclude chat from the layout, add themes or colors, or change the layout of the HTML5 web page, add a download link to the content, etc.
+By modifying slides.rb, you could, for example, exclude chat from the layout, add themes or colors, change the layout of the HTML5 web page, add a download link to the content, etc.
 
 
 === How do I download a recorded session? ===
