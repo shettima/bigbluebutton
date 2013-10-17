@@ -1992,16 +1992,16 @@ Keep in mind that !BigBlueButton is largely built by a group of (very determined
 
 Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://www.bigbluebutton.org/history/ over four years].
 
-Time is a precious commodity.  In general, when planning the a release, we look at the outstanding issues in the following order: 
+Time is a precious commodity.  In general, when planning a release, we look at the outstanding issues in the following order: 
   # What are the most important items on our [RoadMap1dot0 road map]? 
   # What refactoring/features do the [FAQ#BigBlueButton_Committer core committers] believe are necessary to improve the code base/maintainability/usability of the project? 
   # What features are our community asking to implement (specifically, those not related to distance education, like control of remote desktop)?
 
-For (1), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting are not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument the feature belongs in (1).  
+For (1), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting is not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument that the feature belongs in (1).  
 
 If you are a commercial company that wants to accelerate the development of a feature on the road map (or bug fixes), you can contact one of the companies that provides [http://www.bigbluebutton.org/commercial-support/ commercial support].
 
-For (2), sometimes we'll revisit a previously implemented feature to improve it's performance or refactor the code.  Other times, we'll implement the features that have the highest value to the community with with the least amount of effort.  The features that are high-value and high-effort usually already land in (1) or (2).
+For (2), sometimes we'll revisit a previously implemented feature to improve it's performance or refactor the code.  Other times, we'll implement the features that have the highest value to the community with the least amount of effort.  The features that are high-value and high-effort usually already land in (1) or (2).
 
 For (3), if your feature does occur in the above during iteration, you have more options.  !BigBlueButton is an open source project: if you (or your organization) want to improve !BigBlueButton, we welcome your contribution.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
 
