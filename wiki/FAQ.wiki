@@ -1434,15 +1434,15 @@ Here's a breakdown of the path for the audio packets, from your !BigBlueButton c
 While this all happens quite quickly, we are investigating a number of ways to reduce the transcoding.
 
 
-=== How to setup a external phone number for the FreeSWITCH server ===
+=== How to setup an external phone number for the FreeSWITCH server ===
 
-FreeSWITCH is a soft switch and can accept incoming phone numbers.  In the industry, these incoming phone numbers are called direct inward dialing (DID) number.  You can obtain a DID from a SIP trunk provider, which a third-party company that essentially maps a DID (a phone number) to an IP address on internet.  When users dial that phone number, the SIP trunk provider converts the voice call to a digital format (such as µlaw), and authenticates and forwards the call using SIP to an IP address of your !BigBlueButton server.  SIP stands for session initiation protocol and it's a protocol (like HTTP) for initiating a transfer of data, in this case setting up a two-way audio stream.
+FreeSWITCH is a soft switch and can accept incoming phone numbers.  In the industry, these incoming phone numbers are called direct inward dialing (DID) numbers.  You can obtain a DID from a SIP trunk provider, which is a third-party company that essentially maps a DID (a phone number) to an IP address on the internet.  When users dial that phone number, the SIP trunk provider converts the voice call to a digital format (such as µlaw), and authenticates and forwards the call using SIP to an IP address on your !BigBlueButton server.  SIP stands for "session initiation protocol" and it's a protocol (like HTTP) for initiating a transfer of data, in this case setting up a two-way audio stream.
 
-Setting up DIDs involves configuration of FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  See [http://wiki.freeswitch.org/wiki/SIP_Provider_Examples FreeSWITCH documentation]. If you want help in setup DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
+Setting up DIDs involves configuration of FreeSWITCH. If you've never done this before, be prepared to read some documentation. It's not going to be a one or two hour job.  See [http://wiki.freeswitch.org/wiki/SIP_Provider_Examples FreeSWITCH documentation]. If you want help in setting up DIDs, contact one of the [http://bigbluebutton.org/support companies offering BigBlueButton support] or a [http://www.digium.com/en/products/carrier-interop.php SIP Trunk provider].
 
-Setting up DIDs will give users with poor internet connection the option of dialing into the voice conference using phone.  The trade off is that it will cost money to provide SIP trunking to your reeSWITCH server.
+Setting up DIDs will give users with poor internet connection the option of dialing into the voice conference using a phone.  The trade off is that it will cost money to provide SIP trunking to your FreeSWITCH server.
 
-If your hosting your !BigBlueButton server on a university, college, or within a commercial company, there may already be VoIP network setup from which you may be able to obtain a DID. 
+If your hosting your !BigBlueButton server in an university, college, or within a commercial company, there may already be a VoIP network setup from which you may be able to obtain a DID. 
 
 === Why is the audio not synced with the video? ===
 
