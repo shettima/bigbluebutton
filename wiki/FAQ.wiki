@@ -1290,7 +1290,7 @@ If you want to specify the default presentation for a given meeting, you can als
 
 !BigBlueButton uses !OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 and Office 2010 documents (such as .pptx) are problematic with !OpenOffice 3.2.  In particular, the font alignment is not precise. 
 
-If you are using Office 2007, we recommend using Microsoft's free download to enable an Office 2007 to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
+If you are using Office 2007, we recommend using Microsoft's free download to enable Office 2007 to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
 
 You'll always get the best results with PDF.
 
