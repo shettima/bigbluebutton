@@ -1354,7 +1354,7 @@ See Ubuntu's documentation for [https://help.ubuntu.com/community/Webcam/Trouble
  
 === How do I restrict the webcam to only the presenters? ===
 
-You can restrict sharing of webcam to only the current presenter. To do so, change in [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml] in the parameters for videomodule, change
+You can restrict sharing of webcam to only the current presenter. To do so, open [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml] in the parameters for videomodule, change the following:
 
 {{{
 presenterShareOnly="false"
@@ -1366,7 +1366,6 @@ to
 presenterShareOnly="true"
 }}}
 
-.
 
 
 
