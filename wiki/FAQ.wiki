@@ -1934,7 +1934,7 @@ sudo /etc/init.d/nginx restart
 }}}
 
 
-=== I have 2 microphones and want to choose with which to join the voice conference ===
+=== I have 2 microphones and want to choose one to join the voice conference ===
 When you're inside the client, righclick, go to settings > microphone icon > select microphone, and talk to see if it works by checking the volume bar.
 
 === When I try to join the conference, I get logged out after loading the modules ===
