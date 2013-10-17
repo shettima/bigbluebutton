@@ -1895,7 +1895,7 @@ BigBlueButton server
 }}}
 
 What's likely happening is that !BigBlueButtonURL isn't resolving to a
-valid host.  You can verify by using it's value to interactively make an API call from your browser.  To do this, enter the following URL in your browser
+valid host.  You can verify this by using it's value to interactively make an API call from your browser.  To do this, enter the following URL in your browser:
 
 {{{
    http://<your_hostname>/bigbluebutton/api/isMeetingRunning?meetingID=abcdef
