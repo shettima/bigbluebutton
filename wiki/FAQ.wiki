@@ -1258,7 +1258,7 @@ There are lots of opportunities to explore on how to increase the speed of deskt
 
 === Can I share a specific window when sharing my desktop ===
 
-Yes.  As of !BigBlueButton 0.71, you can share a region of your desktop.  Just select the region of you window and, to your viewers, they will just see that window.
+Yes.  As of !BigBlueButton 0.71, you can share a region of your desktop.  Just select the region of your window and, to your viewers, they will just see that window.
 
 
 == Presentations ==
