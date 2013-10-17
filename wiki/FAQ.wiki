@@ -1286,7 +1286,7 @@ You can change `beans.presentationService.defaultUploadedPresentation` to point 
 
 If you want to specify the default presentation for a given meeting, you can also pass a URL to the presentation as part of the [API#Preupload_Slides create] meeting API call.
 
-=== Can I uploaded Microsoft Office 2007 documents to !BigBlueButton ? ===
+=== Can I upload Microsoft Office 2007 documents to !BigBlueButton? ===
 
 !BigBlueButton uses !OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 and Office 2010 documents (such as .pptx) are problematic with !OpenOffice 3.2.  In particular, the font alignment is not precise. 
 
