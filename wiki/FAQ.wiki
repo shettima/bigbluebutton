@@ -1517,7 +1517,7 @@ screen to your bank account.
 
 As of !BigBlueButton 0.71, we've removed the full screen button and instead recommend users make their browser full screen. This has the same effect, but allows you to use your keyboard.
 
-=== How come when I use a | (pipe character) in the chat any text after it disappears? ===
+=== How come when I use a | (pipe character) in the chat, any text after it disappears? ===
 
 This has to do with how some data is used internally.  The data after the | is stripped away and therefore will not show.
 
