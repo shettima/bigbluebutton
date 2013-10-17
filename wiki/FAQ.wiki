@@ -1578,11 +1578,11 @@ By modifying slides.rb, you could, for example, exclude chat from the layout, ad
 
 === How do I download a recorded session? ===
 
-Curently, `slides.rb` does not create a download package.
+Currently, `slides.rb` does not create a download package.
 
-When looking to download a recorded sessions, most expect a single link to download the video file.
+When looking to download a recorded session, most expect a single link to download the video file.
 
-In contrast, `slides.rb` does not create video file for playback.  Video files for a three hour lecture can get very large.  Instead, `slides.rb` creates an HTML5 page that referenes PNG images and audio, and time indexes the PNG images against the audio to match their display in the session.  The result is the source playback files are very small and can be hosted on any web server.  The drawback is there will be a pause for the browser to downloading all this content, but, once downloaded, there is no more load on the web server.
+In contrast, `slides.rb` does not create a video file for playback.  Video files for a three hour lecture can get very large.  Instead, `slides.rb` creates an HTML5 page that references PNG images and audio, and time indexes the PNG images against the audio to match their display in the session.  The result is the source playback files are very small and can be hosted on any web server.  The drawback is there will be a pause for the browser to download all this content, but, once downloaded, there is no more load on the web server.
 
 The script `slides.rb` could create a download package -- which would be .zip file of PNG images, audio file, HTML, XML, and javascript libraries for later playback.
 
