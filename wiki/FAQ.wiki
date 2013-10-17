@@ -1453,14 +1453,14 @@ For the video, red5 does not do much with the video packets -- it just re-broadc
 For audio, the voice packets have a longer route to take (see answer to question above).
 
 
-=== How do I remove sound when a user join or leave the conference? ===
+=== How do I remove sound when a user joins or leaves the conference? ===
 For FreeSWITCH, comment out {{{the following in /opt/freeswitch/conf/autoload_configs/conference.conf.xml}}}
 {{{
       <!--param name="enter-sound" value="tone_stream://%(200,0,500,600,700)"/-->
       <!--param name="exit-sound" value="tone_stream://%(500,0,300,200,100,50,25)"/-->
 }}}
 
-=== I'd like to connect my !BigBlueButton server to PSTN. Where can I det DIDs?===
+=== I'd like to connect my !BigBlueButton server to PSTN. Where can I get DIDs?===
 You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
 
 === Why did my voice conference number work in 0.7 but not in 0.71? ===
