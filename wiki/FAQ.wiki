@@ -1672,27 +1672,27 @@ For getting a better estimate of the amount of bandwidth required for your users
 
 3.  Check Network connection for clients 
 
-You may have a dedicated server with sufficient bandwidth, but if a remote users' internet connection is poort, their audio quality will not be good.
+You may have a dedicated server with sufficient bandwidth, but if a remote users' internet connection is poor, their audio quality will not be good.
 
-We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] that users have .5 Mbits/sec upload speed and 1.0 Mbits/sec download speed.  Of course, these are not hard numbers, and !BigBlueButton will certainly work with less bandwidth, but if your clients have bandwidth in this range, they should experience good audio
+We [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] that users have 0.5 Mbits/sec upload speed and 1.0 Mbits/sec download speed.  Of course, these are not hard numbers, and !BigBlueButton will certainly work with less bandwidth, but if your clients have bandwidth in this range, they should experience good audio.
 
-To test a user's actual internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's upload and download speeds.  If these numbers are much less than .5 Mbits/sec upload speed and 1.0 Mbits/sec download, their audio will be poor.  One quick check is to ask the users to turn of any file transfer they have in the background (such as bittorrent clients) and run the test again. 
+To test a user's actual internet bandwidth, have them visit http://speedtest.net/.  The results at http://speedtest.net/ will give a fairly accurate test of the user's upload and download speeds.  If these numbers are much less than 0.5 Mbits/sec upload speed and 1.0 Mbits/sec download speed, their audio will be poor.  One quick check is to ask users to turn off any file transfer they have in the background (such as bittorrent clients) and run the test again. 
 
-If you can have the use the ping command (windows or Unix prompt) to ping the !BigBlueButton server, you want to see a ping response of less than 100ms. 
+If you have them use the ping command (windows or Unix prompt) to ping the !BigBlueButton server, you want to see a ping response of less than 100ms. 
 
 Also, if the user's client takes over a minute to load, they are likely tunnelling through port 80, which will further degrade the audio.
 
 
 In general, if all users are encountering audio problems, the issue might be with the !BigBlueButton CPU being overloaded or the bandwidth to the !BigBlueButton server is saturated.
 
-If a specific user is having poor audio quality (i.e. only their audio is choppy but everyone else sounds good), have the individual do a speed test.  Furthermore, if possible, if you are in the session with them and can verify their audio is poor, have them cross-check using demo.bigbluebutton.org (which is on a dedicated, high-bandwidth connection).  Specifically, have that user into one of the [http://demo.bigbluebutton.org/demo/demo2.jsp sample rooms], join them in the room, and check their audio again.  If the audio sounds better, then it might be the user's internet connection to/from your !BigBlueButton server is dropping more packets than to/from the !BigBlueButton demo server.
+If a specific user is having poor audio quality (i.e. only their audio is choppy but everyone else sounds good), have the individual do a speed test.  Furthermore, if possible, if you are in the session with them and can verify their audio is poor, have them cross-check using demo.bigbluebutton.org (which is on a dedicated, high-bandwidth connection).  Specifically, have that user login to one of the [http://demo.bigbluebutton.org/demo/demo2.jsp sample rooms], join them in the room, and check their audio again.  If the audio sounds better, then it might be the user's internet connection to/from your !BigBlueButton server is dropping more packets than to/from the !BigBlueButton demo server.
 
-Flash restricts applications to using TCP/IP for audio, if the user's network connection to the !BigBlueButton server is experiening packet loss (dropped packets), their computer will resend dropped packets, which will incur audio problems if this occurs frequently.
+Flash restricts applications to use TCP/IP for audio, if the user's network connection to the !BigBlueButton server is experiencing packet loss (dropped packets).  Their computer will resend dropped packets, which will incur audio problems if this occurs frequently.
 
 If there is a lot of packets getting cued for resend, you can try having the user drop from audio and then rejoin (click the headset icon twice).  If you are a moderator, you can click the 'x' next to their name in the listener's window.  This will eject them from the audio session and have their !BigBlueButton client automatically rejoin.
 
 
-If most users are experiencing good auidio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could also [#How_to_setup_a_external_phone_number_for_the_!FreeSWITCH_server setup dial-in numbers using a SIP Trunk provider] to provide the few users with audio problems the ability to dial into the voice conference.
+If most users are experiencing good audio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could also [#How_to_setup_a_external_phone_number_for_the_!FreeSWITCH_server setup dial-in numbers using a SIP Trunk provider] to provide the few users with audio problems the ability to dial into the voice conference.
 
 
 === Client hangs loading at 100% ===
