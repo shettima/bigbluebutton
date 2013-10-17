@@ -1705,9 +1705,9 @@ If the !BigBlueButton client is able to connect to download the additional libra
 === Users do not appear in the listeners window ===
 For a user to appear in the listener's window, the 3rd party application using the !BigBlueButton API to create a room must pass a `voiceBridge` parameter with the `create` call.  See [API#Create_Meeting create meeting] call.  This is done using the [08InstallationUbuntu#4._Install_API_Demos built-in API demos].
 
-Next, !BigBlueButton must successfully connected to FreeSWITCH's SIP port and FreeSWITCH's Event Socket Layer.  To resolve connection problems, see question below.
+Next, !BigBlueButton must successfully connect to FreeSWITCH's SIP port and FreeSWITCH's Event Socket Layer.  To resolve connection problems, see question below.
 
-=== voice Application failed to register with sip server ===
+=== Voice Application failed to register with sip server ===
 When doing `sudo bbb-conf --check` you may see the error
 
 {{{
