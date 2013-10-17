@@ -1446,9 +1446,9 @@ If your hosting your !BigBlueButton server in an university, college, or within 
 
 === Why is the audio not synced with the video? ===
 
-Currently, the audio and video in !BigBlueButton go through two separate different systems: the audio goes through FreeSWITCH, while the video goes through red5.  
+Currently, the audio and video in !BigBlueButton go through two separate and different systems: the audio goes through FreeSWITCH, while the video goes through red5.  
 
-For the video, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients current subscribed to the video stream.  It's basically a straight pass through of the packets.
+For the video, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients currently subscribed to the video stream.  It's basically a straight pass through of the packets.
 
 For audio, the voice packets have a longer route to take (see answer to question above).
 
