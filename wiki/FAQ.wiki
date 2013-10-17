@@ -1121,15 +1121,15 @@ Now login to the demo page and you'll see the URL now shows `/conference/` inste
 
 === Does !BigBlueButton offer secure collaboration? ===
 
-There has been no effort to make the communication in !BigBlueButton secure.  For example, !BigBlueButton does not use https for the URLs, nor does it use RTMPS for sending of data.
+There has been no effort to make the communication in !BigBlueButton secure.  For example, !BigBlueButton does not use https for the URLs, nor does it use RTMPS for the sending of data.
 
-All API request must have a checksum that is computed using a share secret, but otherwise there is *no* security offered in !BigBlueButton.
+All API requests must have a checksum that is computed using a share secret, but otherwise there is *no* security offered in !BigBlueButton.
 
 
 = Administration =
 
 == How do I update !BigBlueButton to the newest version? ==
-If you are running a !BigBlueButton VM 0.70 VM or had installed !BigBlueButton 0.70 using Ubuntu packages on Ubuntu 10.04, you can upgrade to the newest stable release with two commands
+If you are running a !BigBlueButton VM 0.70 VM or had installed !BigBlueButton 0.70 using Ubuntu packages on Ubuntu 10.04, you can upgrade to the newest stable release with two commands:
 
 {{{
   sudo apt-get update
