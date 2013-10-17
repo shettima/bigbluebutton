@@ -1665,7 +1665,7 @@ Next, try monitoring your server's traffic during the beginning of a class. Ther
 
 `bmon` will show you the amount of incoming data (RX rate) and transmitted (TX data) in kilobytes or megabytes, so you'll need to multiply by 8 to get bits/sec.
 
-As !BigBlueButton users join the audio on your server, you should see *both TX and RX numbers increase*.  If they don't see these numbers increase when new users join or, for example, when a presenter uploads new slides, or when someone shares a webcam, etc. then you have hit the bandwidth cap on your server.  At this point, the audio for all users will start to degrade as there is insufficient bandwidth for new users or any common operations (such as uploading slides).
+As !BigBlueButton users join the audio on your server, you should see *both TX and RX numbers increase*.  If you don't see these numbers increase when new users join or, for example, when a presenter uploads new slides, or when someone shares a webcam, etc. then you have hit the bandwidth cap on your server.  At this point, the audio for all users will start to degrade as there is insufficient bandwidth for new users or any common operations (such as uploading slides).
 
 For getting a better estimate of the amount of bandwidth required for your users, see [#What_are_the_bandwidth_requirements_for_running_a_BigBlueButton this FAQ entry].
 
