@@ -2020,7 +2020,7 @@ If you want to help the project financially, then approach some of the companies
 
 In other words, in the !BigBlueButton project, we would rather earn our revenues (we're entrepreneurs too!).
 
-=== How do I change the brand of !BigBlueButton  ===
+=== How do I change the brand of !BigBlueButton?  ===
 There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton. 
 
