@@ -1421,7 +1421,7 @@ In any event, we always recommend that you have your remote users use a headset 
 
 If a remote user is using a laptop with a built-in microphone, you should not hear an echo.  However, if two remote users are using laptops with built-in microphones and neither is using a headset and both are sitting close to each other (close enough for the microphone in one laptop to pickup the audio from the speakers in the other laptop), then you will hear an echo.  The reason is the built-in echo cancellation only works with the audio coming from the host laptop -- the audio coming from the second laptop will be picked up as an external audio source.
 
-If a student is causing an echo, the best way to solve this problem, if you are logged in as a moderator, is to mute the user by clicking the microphone icon to the left of their name. 
+If a student is causing echo, the best way to solve this problem, if you are logged in as a moderator, is to mute the user by clicking the microphone icon to the left of their name. 
 
 Overall, the best solution is ask all users to use a headset -- this will ensure no background noise or echo.
 
