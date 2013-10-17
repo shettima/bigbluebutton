@@ -1463,7 +1463,7 @@ For FreeSWITCH, comment out {{{the following in /opt/freeswitch/conf/autoload_co
 === I'd like to connect my !BigBlueButton server to PSTN. Where can I get DIDs?===
 You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
 
-=== Why did my voice conference number work in 0.7 but not in 0.71? ===
+=== Why did my voice conference number work in 0.7, but not in 0.71? ===
 In !BigBlueButton 0.7, Asterisk was configured to use any 5-digit conference number. However, for !BigBlueButton 0.71, FreeSWITCH is configured to use any 5-digit number that begins with 7 (i.e. 7XXXX). 
 
 To configure FreeSWITCH to accept any 5-digit conference number, in /opt/freeswitch/conf/dialplan/public.xml change
