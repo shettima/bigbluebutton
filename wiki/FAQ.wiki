@@ -1294,7 +1294,7 @@ If you are using Office 2007, we recommend using Microsoft's free download to en
 
 You'll always get the best results with PDF.
 
-=== Will my animations in PowerPoint convert when uploading to !BigBlueButton ? ===
+=== Will my animations in PowerPoint convert when uploading to !BigBlueButton? ===
 
 Since !BigBlueButton must convert your PowerPoint document to PDF (using OpenOffice), none of the animations (visual or audio) will be converted.  
 
