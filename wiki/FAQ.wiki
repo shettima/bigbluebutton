@@ -1959,7 +1959,7 @@ If you're using Linux, UTF characters won't display correctly. This is a Flash l
 
 
 === Which log files should I check for errors?  ===
-Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here]
+Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here].
 
 
 === How to access the red5 directory on the VM ===
