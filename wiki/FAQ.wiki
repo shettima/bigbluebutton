@@ -1708,28 +1708,28 @@ For a user to appear in the listener's window, the 3rd party application using t
 Next, !BigBlueButton must successfully connect to FreeSWITCH's SIP port and FreeSWITCH's Event Socket Layer.  To resolve connection problems, see question below.
 
 === Voice Application failed to register with sip server ===
-When doing `sudo bbb-conf --check` you may see the error
+When doing `sudo bbb-conf --check`, you may see the error
 
 {{{
 voice Application failed to register with sip server
 }}}  
 
-This error occurs when bbb-apps-sip isn't able to make a SIP call to  FreeSWITCH.  You'll see this in !BigBlueButton when users click the headset icon and don't join the voice conference.
+This error occurs when bbb-apps-sip isn't able to make a SIP call to FreeSWITCH.  You'll see this in !BigBlueButton when users click the headset icon and don't join the voice conference.
 
 Here are the possible causes for this error with steps to resolve.
 
-  * You have just installed !BigBlueButton, but not restarted it.  The packages do not start up the !BigBlueButton components in the right order.  To restart !BigBlueButton, do the following 
+  * You have just installed !BigBlueButton, but not restarted it.  The packages do not start up the !BigBlueButton components in the right order.  To restart !BigBlueButton, do the following:
 
 {{{
     sudo bbb-conf --restart
     sudo bbb-conf --check
 }}}
 
-  * The init.d script for red5 must execute before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-config).  FreeSWITCH nees to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8-beta-2.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
+  * The init.d script for red5 must execute before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-config).  FreeSWITCH needs to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8-beta-2.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
 
-  * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to a an IP address, but !BigBlueButton trying to connect on an old (or incorrect) IP address.  A fix has been applied for this in !BigBlueButton 0.8-beta-4 (see [FAQ#How_do_I_configure_FreeSWITCH_to_use_127.0.0.1? how do I configure FreeSWITCH to use 127.0.0.1]).
+  * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to a an IP address, but !BigBlueButton is trying to connect on an old (or incorrect) IP address.  A fix has been applied for this in !BigBlueButton 0.8-beta-4 (see [FAQ#How_do_I_configure_FreeSWITCH_to_use_127.0.0.1? how do I configure FreeSWITCH to use 127.0.0.1]).
 
-If you don't want FreeSWITCH to bind to 127.0.0.1, you need to figure out which IP address it is using.  First, determine the IP address FreeSWITCH on which is monitoring for incoming SIP calls with the following command:
+If you don't want FreeSWITCH to bind to 127.0.0.1, you need to figure out which IP address it's using.  First, determine the IP address FreeSWITCH is monitoring for incoming SIP calls with the following command:
 
 {{{
 netstat -ant | grep 5060
