@@ -1530,7 +1530,7 @@ These answers are related to the !BigBlueButton 0.8-beta.
 === Where is the record button? ===
 In !BigBlueButton 0.8, the external application that uses the !BigBlueButton API can now pass an additional parameter `record=true` when creating a session.   This additional parameter instructs the !BigBlueButton server to record the session and make a recording available through subsequent [http://code.google.com/p/bigbluebutton/wiki/API#Get_Recordings getRecordings] calls.
 
-There is no user interface for the presenter to turn on/turn off a recording.  
+There is no user interface for the presenter to turn on or turn off a recording.  
 
 When instructed through the API call, the !BigBlueButton server will record all of the meeting, from the time the first person joins to when the last person leaves.  A meeting may also end when it reaches it's duration or the [http://code.google.com/p/bigbluebutton/wiki/API#End_Meeting end] is called on the meeting.
 
