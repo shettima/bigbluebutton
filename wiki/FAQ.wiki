@@ -1805,7 +1805,7 @@ However, for portrait documents, the "fit to page" approach means that text is u
 We plan to add a "fit to width" option in !BigBlueButton in a future iteration, one that both keeps the viewers and presenters in sync, but allows the presenter to better show portrait documents.  
 
 
-=== When I click on the headset icon, nothing happens? ===
+=== When I click on the headset icon, nothing happens ===
 
 First, as with most errors, run
 
@@ -1833,11 +1833,11 @@ eth0      Link encap:Ethernet  HWaddr 12:31:33:22:25:c2
 
   # Edit /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties
   # Change the property for sip.server.host for the internal IP address of the EC2 instance
-  # Type `sudo bbb-conf --clean` to do a clean restart of !BigBlueButton.
+  # Type `sudo bbb-conf --clean` to do a clean restart of !BigBlueButton
 
 After you do this, typing `sudo bbb-conf --clean` will report an 'IP does not match' warning, but you can ignore it.  In most cases, this would be an error, but on EC2 !BigBlueButton must use the private IP for connecting to FreeSWITCH, but the rest of !BigBlueButton must use the public IP (or hostname) for the configuration to work.
 
-If you are a developer making changes to !BigBlueButton, you can also check
+If you are a developer making changes to !BigBlueButton, you can also check the following:
  * look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
  * Open up asterisk console {{{sudo asterisk -vvvvvvr}}} and then try clicking on the headset icon on the client again. Look at the logs on the asterisk console for clues.
  * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf]
