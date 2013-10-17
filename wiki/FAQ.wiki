@@ -1319,16 +1319,16 @@ To add the Japanese fonts, enter the following commands on the !BigBlueButton se
 === I can't upload a presentation from Linux ===
 We've noticed that on some UNIX systems, such as Linux (openSUSE 11.2 x64), when you click the 'upload presentation' button (lower left-hand of Presentation window), Flash will not let you upload a presentation.
 
-If you encounter this problem, try the following
+If you encounter this problem, try the following:
 
   # Click 'upload presentation'
   # Close the File Open dialog box
-  # Click the (+) button next to the file name for the presentation (the File Open dialog box reappears).
+  # Click the (+) button next to the file name for the presentation (the File Open dialog box reappears)
   # Select a file to upload in the File Open dialog box
   # Click 'Open'
   # Click 'Upload'
   
-These steps trigger the opening of the File Open by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
+These steps trigger the opening of the File Open dialog box by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
   
 === Can I increase the 100 page limit for uploads? ===
 
