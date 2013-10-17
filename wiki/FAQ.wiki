@@ -1371,7 +1371,7 @@ presenterShareOnly="true"
 
 == Voice Conference ==
 
-=== How can't others hear me in the voice conference? ===
+=== Why can't others hear me in the voice conference? ===
 
 If others in the voice conference don't hear you when you speak, it's likely that Flash has picked the wrong microphone on your computer.  You can change this with the following steps:
 
