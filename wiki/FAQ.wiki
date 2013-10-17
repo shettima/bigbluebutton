@@ -2013,8 +2013,8 @@ There were some problems with the latest Flash update on Mac OS X.  See this [ht
 
 We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
-=== How can I donate money to the project ===
-The !BigblueButton project doesn't take donations.  We think its a poor business model for running a large open source project.
+=== How can I donate money to the project? ===
+The !BigblueButton project doesn't take donations.  We think it's a poor business model for running a large open source project.
 
 If you want to help the project financially, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton and engage their services.  This creates a healthy ecosystem around the project where companies are encouraged to contribute their resources to improve the project to create a larger pool of potential customers.
 
@@ -2024,14 +2024,14 @@ In other words, in the !BigBlueButton project, we would rather earn our revenues
 There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton. 
 
-In recent releases you can now [Branding skin] the !BigBlueButton interface.  However, the URL shows the word bigbluebutton.  There are lot of places in the code that need to be manually changed (and tested) to change this string, and these manual changes would need
+In recent releases you can now [Branding skin] the !BigBlueButton interface.  However, the URL shows the word bigbluebutton.  There are a lot of places in the code that need to be manually changed (and tested) to change this string, and these manual changes would need
 to be updated (and tested anew) for each new version of !BigBlueButton.
 
 From the point of view of the open source project, having the word bigbluebutton in the URL spreads awareness of the project and increases the community, which benefits everyone.  We know that many companies have released products based on !BigBlueButton, and they enjoy the commercial benefits of building on open source, and the project enjoys the increased awareness.  Everyone wins.
 
-Still, from time to time, we see individual posts in our developer mailing list (usually from a commercial company) asking for help to completely remove all references to !BigBlueButton.  Rather than have the core developers support such branding efforts, we believe best option is to have the individual contact one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
+Still, from time to time, we see individual posts in our developer mailing list (usually from a commercial company) asking for help to completely remove all references to !BigBlueButton.  Rather than have the core developers support such branding efforts, we believe the best option is to have the individual contact one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
 
-Doing this removes the inevitable problems that arise when manual code changes break in a new release and flood of forum posts ensue with the title "My
+Doing this removes the inevitable problems that arise when manual code changes break in a new release thereby creating a flood of forum posts with the title "My
 branding changes no longer work -- please help me!!"
 
 Most importantly for everyone, the efforts to support a [http://en.wikipedia.org/wiki/White-label_product white labeled] version of !BigBlueButton won't take away from core
@@ -2042,6 +2042,6 @@ development, but will rather support it.
 
 As of !BigBlueButton 0.63, we started transitioning away from the grails-based interface for scheduling conferences, located at http://ip/bigbluebutton.  We've found that most of our developers want to integrate !BigBlueButton into their application, so we've shifted focus to the !BigBlueButton API.
 
-There are also some legacy stuff in the bbb-web interface, such as limiting the number of users, that is not implemented yet and we'll be properly implementing in the API.  
+There is also some legacy stuff in the bbb-web interface, such as limiting the number of users, that is not implemented yet and we'll be properly implementing in the API.  
 
 It may be in the future that the bbb-web interface is reborn and becomes a reference implementation of how to use the API, but we're currently focusing on providing examples through .jsp pages, which are much more portable and brandable for our users. 
