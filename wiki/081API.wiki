@@ -15,7 +15,7 @@ The API implementation bigbluebutton-web component, which has been written using
 == Updates to API in !BigBlueButton 0.81 ==
 
 New API calls:
-  * * getConfigXML * - Get default config.xml
+  * * getDefaultConfigXML * - Get default config.xml
   * * setConfigXML * - Add a custom default config.xml to an active meeting so it can be referenced by a user joining.
 
 Updated API calls:
