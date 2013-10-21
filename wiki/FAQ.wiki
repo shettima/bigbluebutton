@@ -186,7 +186,7 @@ Some bugs are more important than others.  Stability and usability issues are ve
 
 == I'm not a developer, can I still contribute? ==
 
-Dont' worry if you are not a proficient developer -- there are many ways to help out!  You can become proficient in the installation and configuration of a !BigBlueButton server.  Each month, there are many new users in [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] that need help with setup of !BigBlueButton, especially setup  [Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m work behind a firewall].    You can [LocalizationOfBBB contribute a language file].  Or you can become an editor of the wiki pages to help provide documentation in a specific area, such as setup of !BigBlueButton on [InstallingBigBlueButtonFreeBSD FreeBSD].   Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
+Dont' worry if you are not a proficient developer -- there are many ways to help out!  You can become proficient in the installation and configuration of a !BigBlueButton server.  Each month, there are many new users in [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] that need help with setup of !BigBlueButton, especially setup behind a [#Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m firewall].    You can [LocalizationOfBBB contribute a language file].  Or you can become an editor of the wiki pages to help provide documentation in a specific area, such as setup of !BigBlueButton on [InstallingBigBlueButtonFreeBSD FreeBSD].   Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
 
 == !BigBlueButton Committer ==
 
@@ -524,7 +524,7 @@ For bandwidth, we recommend 1Mbits download and 0.5 Mbits upload speed.  Users c
 
 For hardware, we recommend a Dual-core CPU with at least 2G of memory.  For Mac, we recommend any Mac running Mac OS X operating system.
 
-*Note*: There is currently an issue with Google Chrome 23 on Mac OS X.  We recommend users run FireFox or Safai until the next release of chrome.
+*Note*: There is currently an issue with Google Chrome 23 on Mac OS X.  We recommend users run !FireFox or Safai until the next release of chrome.
 
   
 == How many simultaneous users can !BigBlueButton support == 
@@ -556,7 +556,7 @@ Early on in !BigBlueButton's development (around 2009), we started to create an 
 
 However, we quickly learned that most installations of !BigBlueButton wanted to do one of the following:
 
-  # Integrate !BigBlueButton within their open source application (Joomla, WordPress, Sakai, etc.) and had no use for an administrative application -- for example, they wanted to do everything from within Joomla.
+  # Integrate !BigBlueButton within their open source application (Joomla, !WordPress, Sakai, etc.) and had no use for an administrative application -- for example, they wanted to do everything from within Joomla.
   # Integrate !BigBlueButton within their custom web application and needed an API control to interact with their sessions (create a session, add a user, end a session, etc).
   # Have a simple stand-alone landing page to create meetings.
 
@@ -936,7 +936,7 @@ Change this page to create your own landing page.
 Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/demo/demo3.jsp Join Courses] API example.  You can modify this demo page to setup your own branded landing page.
 
 === How do I setup new classrooms in !BigBlueButton? === 
-If you are using Sakai, Moodle, Drupal, Joomla, Wordpress or other systems that already have a [http://bigbluebutton.org/support BigBlueButton integration], then installing the integration provides the easiest way to enable your users to access !BigBlueButton sessions.
+If you are using Sakai, Moodle, Drupal, Joomla, !Wordpress or other systems that already have a [http://bigbluebutton.org/support BigBlueButton integration], then installing the integration provides the easiest way to enable your users to access !BigBlueButton sessions.
 
 If you have a bit of programming skills, you can create your own virtual classrooms by modifying this [http://demo.bigbluebutton.org/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
 
@@ -1213,7 +1213,7 @@ Now, once a day, cron will execute this script and delete presentation directori
 
 Only the presenter needs to have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].  To download Java onto your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
 
-If you can run the above test applet from your browser, you can run the desktop sharing in !BigBlueButton.  Please note that on Mac OS X with Java 7, you can run applets with FireFox but not Google Chrome, as Chrome is a 32-bit browser and Java 7 requires a 64-bit browser to run.  Hence, on Mac OS X, if you need to run desktop sharing, we recommend using FireFox.
+If you can run the above test applet from your browser, you can run the desktop sharing in !BigBlueButton.  Please note that on Mac OS X with Java 7, you can run applets with !FireFox but not Google Chrome, as Chrome is a 32-bit browser and Java 7 requires a 64-bit browser to run.  Hence, on Mac OS X, if you need to run desktop sharing, we recommend using !FireFox.
 
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
@@ -1294,9 +1294,9 @@ If you are using Office 2007, we recommend using Microsoft's free download to en
 
 You'll always get the best results with PDF.
 
-=== Will my animations in PowerPoint convert when uploading to !BigBlueButton? ===
+=== Will my animations in !PowerPoint convert when uploading to !BigBlueButton? ===
 
-Since !BigBlueButton must convert your PowerPoint document to PDF (using OpenOffice), none of the animations (visual or audio) will be converted.  
+Since !BigBlueButton must convert your !PowerPoint document to PDF (using OpenOffice), none of the animations (visual or audio) will be converted.  
 
 You'll get a static image corresponding to the final state of each slide.
 
@@ -1545,9 +1545,9 @@ When integrated with Matterhorn, !BigBlueButton can process the desktop and webc
 Currently, !BigBlueButton does not record or playback mouse movements or whiteboard events.  The intent is to add these elements to playback in a future itegration of !BigBlueButton.
 
 === What browsers support playback? ===
-In !BigBlueButton 0.80, the audio from a recorded session is encoded into [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered.  Playback of Vorbis audio is supported in FireFox and Chrome, but not IE and Safari.
+In !BigBlueButton 0.80, the audio from a recorded session is encoded into [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered.  Playback of Vorbis audio is supported in !FireFox and Chrome, but not IE and Safari.
 
-With the upcoming !BigBlueButton 0.81, !BigBlueButton will playback the webcams from a session using the WebM container, which, thanks to Google, provides a high-quality open source video codec VP8.  Playback of video in VP8 is supported by FireFox and Chrome, but not IE and Safari.   See [http://en.wikipedia.org/wiki/HTML5_video HTML5 video] wikipedia article.
+With the upcoming !BigBlueButton 0.81, !BigBlueButton will playback the webcams from a session using the WebM container, which, thanks to Google, provides a high-quality open source video codec VP8.  Playback of video in VP8 is supported by !FireFox and Chrome, but not IE and Safari.   See [http://en.wikipedia.org/wiki/HTML5_video HTML5 video] wikipedia article.
 
 Using the  [http://www.google.com/chromeframe?quickenable=true Google Chrome Frame] within IE, you can also support the above codecs.
 
@@ -1559,7 +1559,7 @@ The information displayed during playback is browser specific.
 
 In Chrome, the audio playback component shows only the current time index for the playback.  To see the overall length of the session, you can scrub to the end of the audio after the audio file has loaded.
 
-In FireFox, the audio playback component shows both the current time index and total time of the audio file.
+In !FireFox, the audio playback component shows both the current time index and total time of the audio file.
 
 
 === How do I modify the default playback format? ===
@@ -1612,7 +1612,7 @@ The script `slides.rb` could create a download package -- which would be .zip fi
 See [DevelopingBBB Developing !BigBlueButton] for full instructions.
 
 === Where can I download the latest build? ===
-You can checkout the latest code from Git.  However, if you want to install the latest build from packages, see [The_Client using git to checkout from master].
+You can checkout the latest code from Git.  See [https://github.com/bigbluebutton/bigbluebutton BigBlueButton GitHub repository].
 
 === I want to develop from Windows! ===
 
