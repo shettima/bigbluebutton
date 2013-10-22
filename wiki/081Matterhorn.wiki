@@ -1,10 +1,10 @@
-#summary How to integrate BigBlueButton 0.8-RC3 with Matterhorn 1.4
+#summary How to integrate BigBlueButton 0.8-RC4 with Matterhorn 1.4
 
 <wiki:toc max_depth="3" />
 
 = Prerequisites =
 
-You need [081InstallationUbuntu BigBlueButton 0.81-RC3].  On a separate server (not the same server as !BigBlueButton) install [https://opencast.jira.com/wiki/display/mh14/Installation+and+Configuration Matterhorn 1.4] 
+You need [081InstallationUbuntu BigBlueButton 0.81-RC4].  On a separate server (not the same server as !BigBlueButton) install [https://opencast.jira.com/wiki/display/mh14/Installation+and+Configuration Matterhorn 1.4] 
 
 = Overview =
 [http://opencast.org/matterhorn/ Matterhorn] is an open source lecture capture and video management system for education.  When integrated with Matterhorn (see instructions below), !BigBlueButton can record video, desktop, and audio and send the files to Matterhorn for processing and playback. This gives you other option for playback apart from the default available in BigBlueButton.
