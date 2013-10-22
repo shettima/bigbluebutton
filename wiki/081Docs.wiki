@@ -1,6 +1,6 @@
-#summary BigBlueButton 0.81-RC3 documentation
+#summary BigBlueButton 0.81-RC4 documentation
 
-The following is a list of updated documentation for 0.81-RC3.
+The following is a list of updated documentation for 0.81-RC4.
     
     * [081Overview 081Overview]
     * [081InstallationUbuntu 081InstallationUbuntu]
