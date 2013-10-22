@@ -1,10 +1,10 @@
-#summary How to install BigBlueButton 0.81-RC3
+#summary How to install BigBlueButton 0.81-RC4
 
 <wiki:toc max_depth="3" />
 
 = Before You Install =
 
-These instructions show how to install !BigBlueButton 0.81-RC3 (release candidate), referred hereafter as 0.81.
+These instructions show how to install !BigBlueButton 0.81-RC4 (release candidate), referred hereafter as 0.81.
 
 *Note:* The packaging is for Ubuntu 10.04 64-bit only.  We no longer support 32-bit packaging for 0.81.
 
