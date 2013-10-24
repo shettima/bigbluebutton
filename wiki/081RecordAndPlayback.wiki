@@ -294,14 +294,14 @@ The unique way to start a recorded session in !BigBlueButton is setting the valu
 
 
 
-*Capture phase*
+===Capture phase===
 
 The Capture phase is handled by many components, to understand how it works you should have basic, intermediate or advanced understanding about tools like Freeswitch, Flex, Red5 , Redis, dig into the [https://github.com/bigbluebutton/bigbluebutton  BigBlueButton source code], or search for information in the [https://groups.google.com/forum/?hl=es#!forum/bigbluebutton-dev BigBlueButton mailing list for developers]
 
 
 
 
-*Archive, Sanity, Process and Publish*
+===Archive, Sanity, Process and Publish===
 
 These phases are handled by Ruby scripts. The  directory for those files is /usr/local/bigbluebutton/core/
 
@@ -362,7 +362,7 @@ The main file is rap-worker.rb, it executes all the Record and Playback phases
  * Yml files contain information used by process and publish scripts.
 
 
-*Playback phase*
+===Playback phase===
 
 Playback works with the javascript library Popcorn.js which shows the slides, chat and webcam according to the current time played in the audio file. Playback files are located in /var/bigbluebutton/playback/presentation/ and used to play any published recording.
 
