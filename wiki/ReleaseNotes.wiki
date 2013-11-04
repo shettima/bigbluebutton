@@ -1,9 +1,9 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 
-= Release 0.81-RC3 =
+= Release 0.81-RC5 =
  
-Released: October 9, 2013 ([081InstallationUbuntu Installation])
+Released: November 2, 2013 ([081InstallationUbuntu Installation])
 
 This is our eleventh release of !BigBlueButton.  For a quick summary of what's new since the previous release, see this [http://youtu.be/4C-rOd8bi6s overview video].
 
