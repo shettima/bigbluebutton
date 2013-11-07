@@ -1553,7 +1553,7 @@ Using the  [http://www.google.com/chromeframe?quickenable=true Google Chrome Fra
 
 Safari does not support the open source codecs.  Playback on Safari or iOS devices requires creation of h.264 videos and the AAC codec, both of which are patent encumbered and require licensing.  For h.264 licensing see [http://www.mpegla.com/main/default.aspx MPEG-LA] and for AAC licensing see [http://www.vialicensing.com/ VA Licensing].  It you need playback on Safari, some of the companies that provide [http://www.bigbluebutton.org/commercial-support/ commercial support] for !BigBlueButton can provide you a license and support for such playback.
 
-=== Disk space usage for storing recordings ===
+=== What is the disk space usage for storing 1 hour of recordings? ===
 
 Storage values (in MEG) for different types of session in !BigBlueButton 0.81.
 
