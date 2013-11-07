@@ -1552,7 +1552,39 @@ With the upcoming !BigBlueButton 0.81, !BigBlueButton will playback the webcams 
 Using the  [http://www.google.com/chromeframe?quickenable=true Google Chrome Frame] within IE, you can also support the above codecs.
 
 Safari does not support the open source codecs.  Playback on Safari or iOS devices requires creation of h.264 videos and the AAC codec, both of which are patent encumbered and require licensing.  For h.264 licensing see [http://www.mpegla.com/main/default.aspx MPEG-LA] and for AAC licensing see [http://www.vialicensing.com/ VA Licensing].  It you need playback on Safari, some of the companies that provide [http://www.bigbluebutton.org/commercial-support/ commercial support] for !BigBlueButton can provide you a license and support for such playback.
- 
+
+=== Disk space usage for storing recordings ===
+
+Storage values (in MEG) for different types of session in !BigBlueButton 0.81.
+
+The file sizes are for a one hour session.  When a recorded session ends, !BigBlueButton archives all the raw content, then runs the recording scripts to create a publish format (presentation).
+
+
+|| Media Shared || Archive || Publish || Total ||
+|| audio || 111 || 11 || 122 ||
+|| audio + webcam (1 webcam) || 131 || 51 || 182 ||
+|| audio + desktop sharing || 236 || 73 || 309 ||
+
+==== Archive ====
+
+For audio, the storage of the audio stream is 110/hr.  The storage is a .wav file
+
+For audio + webcam, the additional storage is for saving each individual webcam stream.  A one hour webcam stream is 20M. 
+
+For audio + deskshare, the additional storage is for the desktop sharing stream (there will only be one stream at any one time).  A one hour desktop sharing stream is 125M.
+
+==== Playback ====
+
+For playback, the audio, webcams, and desktop share are processed into a single playback file WebM (VP8 Codec).  
+
+For audio only, the WebM file is 5.4M. There is an additional Vorbis Audio File that is 5M.
+
+For audio + webcam only, there is a single webM file that is 51M
+
+For audio + desktop sharing, there is a single WebM that is 72M.
+
+
+
 
 === Can I see the total time of the session? ===
 The information displayed during playback is browser specific.  
