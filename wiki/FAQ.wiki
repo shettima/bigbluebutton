@@ -1555,21 +1555,21 @@ Safari does not support the open source codecs.  Playback on Safari or iOS devic
 
 === What is the disk space usage for storing 1 hour of recordings? ===
 
-Storage values (in MEG) for different types of session in !BigBlueButton 0.81.
+Storage values for different types of session in !BigBlueButton 0.81.
 
 The file sizes are for a one hour session.  When a recorded session ends, !BigBlueButton archives all the raw content, then runs the recording scripts to create a publish format (presentation).
 
 
 || Media Shared || Archive || Publish || Total ||
-|| audio || 111 || 11 || 122 ||
-|| audio + webcam (1 webcam) || 131 || 51 || 182 ||
-|| audio + desktop sharing || 236 || 73 || 309 ||
+|| audio || 111 MB/h || 11 MB/h || 122 MB/h ||
+|| audio + webcam (1 webcam) || 131 MB/h || 51 MB/h || 182 MB/h ||
+|| audio + desktop sharing || 236 MB/h || 73 MB/h || 309 MB/h ||
 
 ==== Archive ====
 
-For audio, the storage of the audio stream is 110/hr.  The storage is a .wav file
+For audio, the storage of the audio stream is 110 MB/h.  The storage is a .wav file
 
-For audio + webcam, the additional storage is for saving each individual webcam stream.  A one hour webcam stream is 20M. 
+For audio + webcam, the additional storage is for saving each individual webcam stream.  A one hour webcam stream at the default resolution (320x240) is 20M. 
 
 For audio + deskshare, the additional storage is for the desktop sharing stream (there will only be one stream at any one time).  A one hour desktop sharing stream is 125M.
 
