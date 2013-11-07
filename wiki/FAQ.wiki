@@ -290,7 +290,7 @@ While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system
 
 == What are the minimum bandwidth requirements for the !BigBlueButton Server ==
 
-You'll need good upstream and downstream bandwidth from the server.  We recommend (at least) 100 Mbits/second bandwidth in both directions.
+You'll need good upstream and downstream bandwidth from the server.  We recommend (at least) 100 Mbit/second bandwidth in both directions.
 
 == Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ==
 You need root access to install !BigBluebutton.
