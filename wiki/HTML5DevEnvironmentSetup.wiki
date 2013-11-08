@@ -95,3 +95,12 @@ What is working?
   *  Chat Module: send public chat, get history chat
   *  Presentation Module: load slides from Flex client, change slide, red dot
   *  Whiteboard Module: Draw and store pencil shape from Flex client 
+
+=== Documentation ===
+We use codo, a program installed video npm to generate html documentation pages based on comments in the code in the javadocs format.  https://github.com/coffeedoc/codo
+
+To generate the documentation:
+{{{
+cd ~/dev/bigbluebutton/labs/bbb-html5-client
+cake docs
+}}}
