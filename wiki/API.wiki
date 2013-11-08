@@ -2,9 +2,11 @@
 
 <wiki:toc max_depth="2" />
 
-= Overview =
+= Welcome =
 
 Welcome to the API guide for !BigBlueButton 0.81.
+
+= Overview =
 
 If you are using an earlier version of !BigBlueButton, you'll need to update you server (see InstallationUbuntu).
 
