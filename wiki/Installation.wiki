@@ -6,7 +6,7 @@ The !BigBlueButton 0.81 server runs under Ubuntu 10.04 64-bit.  To setup your ow
 
     * [InstallationUbuntu Install from packages] (Ubuntu 10.04 64-bit)
 
-After you've setup !BigBlueButton, you can configure the server using the `bbb-conf` tool. 
+After you've setup !BigBlueButton, you can configure the server using the `bbb-conf` tool, see
 
     * [BBBConf BigBlueButton configuration tool]
 
