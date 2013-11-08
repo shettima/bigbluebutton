@@ -1,5 +1,7 @@
 =Checkout the code and try out the API's=
 
+_This document is depreciated._
+
 You can check out the code for the API partitioning from the following repository {{{ git://github.com/coralcea/bigbluebutton.git }}} and here are the steps to checkout the code:
 
  # Create a directory to check out your code there, such as "/bigbluebutton_api/".
