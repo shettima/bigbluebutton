@@ -28,10 +28,4 @@ The following labs projects were efforts to install older versions !BigBlueButto
     * [InstallingBigBlueButtonFreeBSD FreeBSD/PC-BSD] (v0.70)
     * [InstallingBigBlueButtonCentOS Installing on CentOS ] (0.64)
 
-
-These labs projects were exploring ways to expand the architecture (but are now inactive)
-
-    * [BigBlueButtonAPIPartitioning Partitioning the client]
-      * [BigBlueButtonAPIPartitioningDemo How to build and run the Partitioning the client]
-    * [BigbluebuttonSIPClientDemo SIP softphone and SIP applet]
  
