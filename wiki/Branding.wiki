@@ -5,7 +5,7 @@
 
 
 = Details =
-The CSS file needs to be compiled before bbb-client can use it. In order to brand the client, you first need to check out the bigbluebutton source code. The instructions for this are outlined [http://code.google.com/p/bigbluebutton/wiki/08SettingDevEnvironment]. If you are not a developer or are not comfortable with checking out the source and compiling it yourself, you can hire one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
+The CSS file needs to be compiled before bbb-client can use it. In order to brand the client, you first need to check out the bigbluebutton source code. The instructions for this are outlined [Developing developing]. If you are not a developer or are not comfortable with checking out the source and compiling it yourself, you can hire one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
 
 == Finding the files ==
 Go to the directory where you've checkout out your source code. The branding files are located in the directory bbb-client/src/branding/css. Here you will find a file called theme.css, among other files. theme.css is the main style sheet that will be loaded by the bigbluebutton client. The other files are examples of different branding styles for !BigBlueButton (more on how you can try out these files later on in this document). The assets directory contains images and other files that are needed by the sample themes. You may not need these for your own branding, so you can ignore them for now.
