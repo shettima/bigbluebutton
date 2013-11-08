@@ -1,5 +1,7 @@
 #summary Setting up a BigBlueButton 0.8 Development Environment
 
+Note: This documentation is depreciated.  See [DevelopingBigBlueButton Developing BigBlueButton].
+
 <wiki:toc max_depth="2" />
 
 Note: If you are looking to develop on 0.81, please see [081DevelopingBigBlueButton these instructions].
