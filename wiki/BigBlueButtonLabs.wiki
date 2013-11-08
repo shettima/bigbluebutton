@@ -16,7 +16,6 @@ If you want to give feedback on a particular labs project, please post to [http:
     * [Phidgets Physical Widgets for External Notification]
     * [http://readytopresent.wordpress.com/ Ready To Present]
     * [Whiteboard Whiteboard using Wiimote]
-    * [ArchitectureRoadmap Architecture Plans for the client]
     * [SummerOfCodeApplication GSOC Application Template]
 
 == Installation of !BigBlueButton on other systems  ==
