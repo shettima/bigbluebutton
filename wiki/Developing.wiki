@@ -236,6 +236,19 @@ nothing to commit (working directory clean)
 When you first clone the !BigBlueButton git repository, git will place you, by default, on the _master branch_, which is the latest code for !BigBlueButton. 
 *Note:* We will soon be tagging the repository for 0.81-beta1, but for the moment you can checkout master.
 
+= Production Environment =
+
+Okay. Let's pause for a minute. You have set-up the necessary tools and cloned the source. Understand the diagram below on where the different configuration are in a production set-up. When developing, we want to change some configuration settings to load our new changes and not the ones deployed for production.
+
+[http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/prod-env.PNG]
+
+As you can see, nginx is configured to load the client from {{{/var/www/bigbluebutton/client}}} directory and forward calls to web-api on Tomcat6. During development, we need to tell nginx to load from our sources directory ({{{/home/firstuser/dev/bigbluebutton}}})
+
+After going through the steps below, you will end up with the following setup.
+
+[http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/dev-env.PNG]
+
+The components that runs in Red5 doesn't change as we actually deploy the development package for (bbb-apps, bbb-voice, bbb-video, and bbb-deskshare) into {{{/usr/share/red5}}}. However, notice that the client and web-api is served from a different place.
 
 = Client Development =
 With the development environment checked out and the code cloned, we're ready to start developing!
