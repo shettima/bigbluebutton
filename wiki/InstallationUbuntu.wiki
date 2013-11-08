@@ -1,31 +1,19 @@
-#summary How to install  BigBlueButton 0.80 on Ubuntu 10.04 in under 30 minutes
+#summary How to install BigBlueButton 0.81
 
 <wiki:toc max_depth="3" />
 
-= Before you install =
+= Before You Install =
 
-These instructions require you install !BigBlueButton 0.80 on a *Ubuntu 10.04 32-bit or 64-bit* server (or desktop).  We've not tested the installation on earlier or later versions of Ubuntu.
+*Note:* The packaging is for Ubuntu 10.04 64-bit only.  We no longer support 32-bit packaging for 0.81.
 
-You can verify you have Ubuntu 10.04 with the command `cat /etc/lsb-release`.  You should see `DISTRIB_RELEASE=10.04`.
+The requirements are
 
-{{{
-$ cat /etc/lsb-release
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=10.04
-DISTRIB_CODENAME=lucid
-DISTRIB_DESCRIPTION="Ubuntu 10.04.4 LTS"
-}}}
-
-We recommend installing !BigBlueButton on a dedicated (non-virtual) server for optimal performance.  To install !BigBlueButton, you'll need root access to a Ubuntu 10.04 server with
-
-  # 4 GB (or more of memory)
-  # quad-core 2.6 GHZ CPU (or faster)
-  # Ports 80, 1935, 9123 accessible 
-  # Port 80 is not used by another application
-  # 500G of free disk space (or more) for recordings
-  # Minimum of 100 MBits/sec bandwidth
-
-To understand why you need to check that port 80 is not in use, see [https://code.google.com/p/bigbluebutton/wiki/FAQ#We_recommend_running_BigBlueButton_on_port_80 we recommend running BigBlueButton on port 80].
+  * Ubuntu 10.04 64-bit
+  * 4 GB of memory (8 GB is better)
+  * Quad-core 2.6 GHZ CPU (or faster)
+  * Ports 80, 1935, 9123 accessible
+  * Port 80 is *not* used by another application
+  * 500G of free disk space (or more) for recordings
 
 In addition to the above, the locale of the server must be en_US.UTF-8. Furthermore, the contents of `/etc/default/locale` must contain the single line `LANG="en_US.UTF-8"`.  You can verify this as below.
 
@@ -43,76 +31,31 @@ sudo update-locale LANG=en_US.UTF-8
 
 and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see only the single line `LANG="en_US.UTF-8"`.  Note: if you see an additional line `LC_ALL=en_US.UTF-8`, then remove the setting for `LC_ALL` before continuing.
 
-Next, verify that port 80 is not in use by another application. To verify, do
+
+Also, check that you are running under 64-bit.
 
 {{{
-   sudo apt-get install lsof
-   lsof -i :80
+$ uname -m
+x86_64
 }}}
 
+You should see `x86_64`.  
 
 
-== Upgrading from !BigBlueButton 0.80 beta/RC ==
 
-If you are upgrading from an earlier !BigBlueButton 0.80 beta/release candidate, please note, if you've made custom changes to BigBlueButton, such as
+= Installing !BigBlueButton 0.81 =
 
- * applied custom branding
- * modified /var/www/bigbluebutton/client/conf/config.xml
- * modified /var/www/bigbluebutton-default/index.html
- * modified API demos
- * modified settings to FreeSWITCH configurations
- * etc ...
+These instructions assume you do not have a previous version of !BigBlueButton installed.  
 
-then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
-
-To do the following
-
-{{{
-   sudo apt-get update
-   sudo apt-get dist-upgrade
-}}}
-
-At some point in the process you may be asked to update configuration files, as in
-
-{{{
-  Configuration file `/etc/nginx/sites-available/bigbluebutton' 
-   ==> Modified (by you or by a script) since installation. 
-   ==> Package distributor has shipped an updated version. 
-     What would you like to do about it ?  Your options are: 
-      Y or I  : install the package maintainer's version 
-      N or O  : keep your currently-installed version 
-        D     : show the differences between the versions 
-        Z     : background this process to examine the situation 
-   The default action is to keep your current version. 
-  *** bigbluebutton (Y/I/N/O/D/Z) [default=N] ? 
-}}}
-
-Enter 'Y' each time continue the upgrade.  After !BigBlueButton updates, restart all the processes
-
-After the install finishes, restart your !BigBlueButton server with 
-
-{{{
-   sudo bbb-conf --clean 
-   sudo bbb-conf --check 
-}}}
+If you are upgrading from !BigBlueButton 0.80 to 0.81, start [#Upgrading_BigBlueButton_0.81 here].
 
 
-== Upgrading from !BigBlueButton 0.71a ==
-
-If you are upgrading from !BigBlueButton 0.71a, start [#Upgrading_a_BigBlueButton_0.71a_Server here].
-
-= Installation of !BigBlueButton 0.80 =
-
-== Install Video ==
-To make it easy for you to setup your own !BigBlueButton 0.80 server, we've put together the following overview video.
-
-<wiki:video url="http://www.youtube.com/watch?v=A_rYw82-9Bs" width=853 height=500/>
-
-We recommend you following the video with these step-by-step instructions below.
 
 == 1. Update your server == 
 
-You first need to give your server access to the !BigBlueButton package repository for 0.8.
+The following steps will install 0.81.
+
+You first need to give your server access to the !BigBlueButton package repository.
 
 In a terminal window, copy and paste the following commands.
 
@@ -121,67 +64,99 @@ In a terminal window, copy and paste the following commands.
 wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
-echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_08/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
-echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
-
+echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 }}}
 
-After you've made the above changes, do a dist-upgrade to ensure your running the latest packages and your server is up-to-date before installing !BigBlueButton.
+Next, ensure that you have `lucid multiverse` in your `sources.list`.  Do the following.
+
+{{{
+$ grep "lucid multiverse" /etc/apt/sources.list
+}}}
+
+If you have the `lucid multiverse` in your `sources.list`, you should see
+{{{
+deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
+}}}
+
+If you don't see the deb line for `lucid multiverse`, execute the following line to add this repository to `sources.list`.
+
+{{{
+echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+}}}
+
+Before proceeding further, do a dist-upgrade to ensure all the current packages on your server are up-to-date.
 
 {{{
 sudo apt-get update
 sudo apt-get dist-upgrade
-
 }}}
 
 If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
-== 2. Install Ruby == 
-The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
+== 2. Install !LibreOffice ==
 
-First, check if you have any previous versions of ruby installed.  
+!BigBlueButton uses !LibreOffice to convert uploaded MS office documents to PDF. !LibreOffice does a far better job of converting documents than the default !OpenOffice packages in Ubuntu 10.04.
+
+First, we'll install a stub package for openoffice.  This will serve as a placeholder for !BigBlueButton's dependency on !OpenOffice..
 
 {{{
-  dpkg -l | grep ruby
+wget http://bigbluebutton.googlecode.com/files/openoffice.org_1.0.4_all.deb
+sudo dpkg -i openoffice.org_1.0.4_all.deb
 }}}
 
-If you do, the version must match `1.9.2p290`.  
+If you get an error in the above, check if you have openoffice.org-core installed.  If so, remove all the existing openoffice.org pacakges and try to install the above stub package again.
+
+
+Next, we'll install !LibreOffice
 
 {{{
-$ ruby -v
+sudo apt-get install python-software-properties
+
+sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
+sudo apt-get update
+
+sudo apt-get install libreoffice-common
+sudo apt-get install libreoffice
+}}}
+
+== 3. Install Ruby == 
+The record and playback infrastructure uses Ruby for the processing of recorded sessions.  
+
+Check if you have a previous version of ruby install.
+
+{{{
+   dpkg -l | grep ruby
+}}}
+
+If you already have ruby installed, check it's version
+
+{{{
+~$ ruby -v
 ruby 1.9.2p290 (2011-07-09 revision 32553)
 }}}
 
-If not, you must install the older version of before proceeding further.  
+If the version of ruby does not match the above, uninstall it before continuing.
 
-To install ruby, first install the following dependencies.
-
+Download the following pre-build ruby package.
 {{{
-sudo apt-get install zlib1g-dev libssl-dev libreadline5-dev libyaml-dev build-essential bison checkinstall libffi5 gcc checkinstall libreadline5 libyaml-0-2
-
+wget https://bigbluebutton.googlecode.com/files/ruby1.9.2_1.9.2-p290-1_amd64.deb
 }}}
 
-Next, create a file called `install-ruby.sh` and copy and paste in the following script.
+This next install command will give you an error about dependencies not found.
 
 {{{
-#!/bin/bash
-cd /tmp
-wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p290.tar.gz
-tar xvzf ruby-1.9.2-p290.tar.gz
-cd ruby-1.9.2-p290
-./configure --prefix=/usr\
-            --program-suffix=1.9.2\
-            --with-ruby-version=1.9.2\
-            --disable-install-doc
-make
-sudo checkinstall -D -y\
-                  --fstrans=no\
-                  --nodoc\
-                  --pkgname='ruby1.9.2'\
-                  --pkgversion='1.9.2-p290'\
-                  --provides='ruby'\
-                  --requires='libc6,libffi5,libgdbm3,libncurses5,libreadline5,openssl,libyaml-0-2,zlib1g'\
-                  --maintainer=brendan.ribera@gmail.com
+  sudo dpkg -i ruby1.9.2_1.9.2-p290-1_amd64.deb
+}}}
+
+To resolve the dependencies, enter
+
+{{{
+  sudo apt-get install -f
+}}}
+
+After the package installs, run the following two commands to setup the paths to the ruby executable.  
+
+{{{
 sudo update-alternatives --install /usr/bin/ruby ruby /usr/bin/ruby1.9.2 500 \
                          --slave /usr/bin/ri ri /usr/bin/ri1.9.2 \
                          --slave /usr/bin/irb irb /usr/bin/irb1.9.2 \
@@ -191,27 +166,20 @@ sudo update-alternatives --install /usr/bin/gem gem /usr/bin/gem1.9.2 500
 
 }}}
 
-Next, run the script
-
-{{{
-chmod +x install-ruby.sh
-./install-ruby.sh
-}}}
-
-After the install finishes, type `ruby -v`.  You should see the ruby interpreter output `1.9.2p290` (or later). 
+Run the following command to check that ruby is now installed. 
 
 {{{
 $ ruby -v
 ruby 1.9.2p290 (2011-07-09 revision 32553)
 }}}
 
-Next type `gem -v`.
+And that gem is now installed.
 {{{
 $ gem -v
 1.3.7
 }}}
 
-Finally, to make sure you can install gems, type `sudo gem install hello` (!BigBlueButton does not need the gem hello; rather, we're just testing to makes sure gem is working properly).
+Finally, to make sure you can install gems, run the commands below to install a test gem.  (!BigBlueButton does not need the gem hello; rather, we're just testing to makes sure gem is working properly).
 
 {{{
 $ sudo gem install hello
@@ -223,9 +191,63 @@ Installing RDoc documentation for hello-0.0.1...
 
 Make sure you can execute the above three commands without errors before continuing with these instructions.  If you do encounter errors, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2&pli=1 bigbluebutton-setup] and we'll help you resolve the errors.
 
-You might be wondering why not use the default Ruby packages for Ubumtu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
+You might be wondering why not use the default Ruby packages for Ubuntu 10.04?  Unfortunately, they are out of date.  Thanks to [http://threebrothers.org/brendan/blog/ruby-1-9-2-on-ubuntu-11-04/ Brendan Ribera] for the above script for installing the latest ruby on Ubuntu 10.04 as a package.
 
-== 3.  Install !BigBlueButton == 
+== 4.  Install ffmpeg ==
+!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
+
+{{{
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev pkg-config
+
+LIBVPX_VERSION=1.2.0
+FFMPEG_VERSION=2.0.1
+
+if [ ! -d "/usr/local/src/libvpx-${LIBVPX_VERSION}" ]; then
+  cd /usr/local/src
+  sudo git clone http://git.chromium.org/webm/libvpx.git "libvpx-${LIBVPX_VERSION}"
+  cd "libvpx-${LIBVPX_VERSION}"
+  sudo git checkout "v${LIBVPX_VERSION}"
+  sudo ./configure
+  sudo make
+  sudo checkinstall --pkgname=libvpx --pkgversion="${LIBVPX_VERSION}" --backup=no --deldoc=yes --default
+fi
+
+if [ ! -d "/usr/local/src/ffmpeg-${FFMPEG_VERSION}" ]; then
+  cd /usr/local/src
+  sudo wget "http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.bz2"
+  sudo tar -xjf "ffmpeg-${FFMPEG_VERSION}.tar.bz2"
+  cd "ffmpeg-${FFMPEG_VERSION}"
+  sudo ./configure --enable-version3 --enable-postproc --enable-libvorbis --enable-libvpx
+  sudo make
+  sudo checkinstall --pkgname=ffmpeg --pkgversion="5:${FFMPEG_VERSION}" --backup=no --deldoc=yes --default
+fi
+}}}
+
+Next, run the commands
+
+{{{
+chmod +x install-ffmpeg.sh
+./install-ffmpeg.sh
+}}}
+
+After the script finishes, check that ffmepg is installed by typing the command `ffmpeg -version`.  You should see the following
+
+{{{
+$ ffmpeg -version
+ffmpeg version 2.0.1
+built on Sep  1 2013 02:02:28 with gcc 4.4.3 (Ubuntu 4.4.3-4ubuntu5.1)
+configuration: --enable-version3 --enable-postproc --enable-libvorbis --enable-libvpx
+libavutil      52. 38.100 / 52. 38.100
+libavcodec     55. 18.102 / 55. 18.102
+libavformat    55. 12.100 / 55. 12.100
+libavdevice    55.  3.100 / 55.  3.100
+libavfilter     3. 79.101 /  3. 79.101
+libswscale      2.  3.100 /  2.  3.100
+libswresample   0. 17.102 /  0. 17.102
+}}}
+
+
+== 5.  Install !BigBlueButton == 
 We're now ready to install !BigblueButton. Type
 
 {{{
@@ -233,15 +255,18 @@ We're now ready to install !BigblueButton. Type
 }}}
 
 
-This single command is where all the magic happens.  This command installs *all* of !BigBlueButton components with their dependencies.  Here's a screen shot of the packages it will install. 
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/apt-get-install.png
-
-Type 'y' and press Enter.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
+This single command is where all the magic happens.  This command installs *all* of !BigBlueButton components with their dependencies.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
 
 If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
 
-== 4. Install API Demos ==
+If you get an error message
+{{{
+...... Error: FreeSWITCH didn't start 
+}}}
+you can ignore it as we'll do a clean restart of all the components in step 7.
+
+
+== 6. Install API Demos ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
 
@@ -249,7 +274,7 @@ To interactively test your !BigBlueButton server, you can install a set of API d
    sudo apt-get install bbb-demo
 }}}
 
-You'll need the bbb-demo package installed if you want to join the Demo Meeting from your !BigBlueButton server's welcome page.  This is the same welcome page you see at [http://demo.bigbluebutton.org our demo server].
+You'll need the bbb-demo package installed if you want to join the Demo Meeting from your !BigBlueButton server's welcome page.  This is the same welcome page you see at [http://dev081.bigbluebutton.org dev081 demo server].
 
 Later on, if you wish to remove the API demos, you can enter the command
 
@@ -257,7 +282,8 @@ Later on, if you wish to remove the API demos, you can enter the command
    sudo apt-get purge bbb-demo
 }}}
 
-== 5. Do a Clean Restart == 
+
+== 7. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
@@ -268,95 +294,164 @@ To ensure !BigBlueButton has started cleanly, enter the following commands:
 
 The `--clean` option will clear out all the log files for !BigBlueButton.  The `--check` option will grep through the log files looking for errors.  
 
-The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected.  
-
-Got to [#Trying_out_your_server_(24:42_minutes_later) Trying out your sever].
+The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected. 
 
 
 
-
-
-= Upgrading a !BigBlueButton 0.71a Server =
-
-The following steps will upgrade a standard installation of !BigBlueButton 0.71a to 0.8.
-
-A 'standard installation' is an installation of !BigBlueButton 0.71a that has been configured using the standard commands
+= Upgrading !BigBlueButton 0.81 =
+If you have already installed an earlier version of 0.81, to upgrade to the latest version
 
 {{{
-   sudo bbb-conf --setip <ip/hostname>
-   sudo bbb-conf --setsalt <salt>
+   sudo apt-get update
+   sudo apt-get dist-upgrade
+
+   sudo bbb-conf --clean
+   sudo bbb-conf --check
 }}}
 
-If you've made custom changes to !BigBlueButton 0.71a, such as  
-  * applied custom branding
-  * modified `/var/www/bigbluebutton/client/conf/config.xml`
-  * modified `/var/www/bigbluebutton-default/index.html`
-  * modified API demos
-  * etc ...
+If `sudo bbb-conf --check` warns that you are running an older version of ffmpeg (you need version 2.0.1 installed), [081InstallationUbuntu#4.__Install_ffmpeg re-install ffmpeg] and enter the following commands:
+
+{{{
+   sudo bbb-conf --clean
+   sudo bbb-conf --check
+}}}
+
+
+= Upgrading from !BigBlueButton 0.80 =
+
+
+If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've made any custom changes to !BigBlueButton, such as
+
+ * applied custom branding
+ * modified /var/www/bigbluebutton/client/conf/config.xml
+ * modified /var/www/bigbluebutton-default/index.html
+ * modified API demos
+ * modified settings to FreeSWITCH configurations
+ * etc ...
 
 then you'll need to backup your changes before doing the following upgrade, after which you can reapply the changes.
 
-== 1.  Update your server == 
+The following steps will update a !BigBlueButton 0.80 server to 0.81.
 
-First, let's update all the current packages on your server (including the kernel) to ensure your starting with an up-to-date system.
+== 1. Update your server ==
+
+First, update the package URL to point to the new !BigBlueButton release.
 
 {{{
+   echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_081/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+}}}
+
+Next, update the package database on your server.
+
+{{{
+   sudo apt-get update
+}}}
+
+== 2. Switch from !OpenOffice to !LibreOffice ==
+
+!LibreOffice does a far better job of converting documents than the default !OpenOffice packages in Ubuntu 10.04. 
+
+First, to avoid issues, stop the openoffice headless init script.
+{{{
+sudo /etc/init.d/bbb-openoffice-headless stop
+}}}
+
+Now we'll install a stub package for openoffice. This will serve as a placeholder for !BigBlueButton's dependency on !OpenOffice.
+{{{
+wget http://bigbluebutton.googlecode.com/files/openoffice.org_1.0.4_all.deb
+sudo dpkg -i openoffice.org_1.0.4_all.deb
+}}}
+
+And then we tell apt to clear out the old openoffice packages:
+{{{
+sudo apt-get autoremove
+}}}
+
+Next, we'll install libreoffice
+{{{
+sudo apt-get install python-software-properties
+
+sudo apt-add-repository ppa:libreoffice/libreoffice-4-0
 sudo apt-get update
-sudo apt-get dist-upgrade
+
+sudo apt-get install libreoffice-common libreoffice
 }}}
 
-If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
+Note that you should not restart the openoffice headless init script, since the version from 0.80 may not correctly recognize libreoffice. The 0.81 installation process will start it later.
 
-== 2.  Install Ruby == 
 
-Follow the instructions [#2._Install_Ruby here].
+== 3. Update red5 ==
 
-== 3.  Remove FreeSWITCH 1.0.6 ==
-
-This step will uninstall FreeSWITCH 1.0.6.  
-
-!BigBlueButton 0.80 requires FreeSWITCH 1.0.7 for recording of sessions.   In later steps, the !BigBlueButton 0.80 will install and configure FreeSWITCH 1.0.7.
-
-Before upgrading, first remove the older FreeSWITCH packages.
+You must update red5 first before the other !BigBlueButton packages. To update red5, do the following:
 
 {{{
-sudo apt-get purge freeswitch freeswitch-sounds-en-us-callie-16000 freeswitch-sounds-en-us-callie-8000 freeswitch-sounds-music-16000
+   sudo /etc/init.d/red5 stop
+   sudo apt-get install red5
 }}}
 
-Check to ensure that there are no remaining FreeSWITCH packages.
+If you get prompted to update the the configuration file `/etc/init.d/red5'
 
 {{{
-   dpkg -l | grep freesw
+Configuration file `/etc/init.d/red5'
+ ==> Modified (by you or by a script) since installation.
+ ==> Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : background this process to examine the situation
+ The default action is to keep your current version.
+*** red5 (Y/I/N/O/D/Z) [default=N] ?
 }}}
 
-If there are any remaining packages, such as freeswitch-lang-en, then purge those as well
+Respond with *Y* and press Enter.
+ 
+== 4.  Install ffmpeg ==
+!BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
 {{{
-   sudo apt-get purge freeswitch-lang-en
+sudo apt-get install build-essential git-core checkinstall yasm texi2html libvorbis-dev libx11-dev libxfixes-dev zlib1g-dev pkg-config
+
+LIBVPX_VERSION=1.2.0
+FFMPEG_VERSION=2.0.1
+
+if [ ! -d "/usr/local/src/libvpx-${LIBVPX_VERSION}" ]; then
+  cd /usr/local/src
+  sudo git clone http://git.chromium.org/webm/libvpx.git "libvpx-${LIBVPX_VERSION}"
+  cd "libvpx-${LIBVPX_VERSION}"
+  sudo git checkout "v${LIBVPX_VERSION}"
+  sudo ./configure
+  sudo make
+  sudo checkinstall --pkgname=libvpx --pkgversion="${LIBVPX_VERSION}" --backup=no --deldoc=yes --default
+fi
+
+if [ ! -d "/usr/local/src/ffmpeg-${FFMPEG_VERSION}" ]; then
+  cd /usr/local/src
+  sudo wget "http://ffmpeg.org/releases/ffmpeg-${FFMPEG_VERSION}.tar.bz2"
+  sudo tar -xjf "ffmpeg-${FFMPEG_VERSION}.tar.bz2"
+  cd "ffmpeg-${FFMPEG_VERSION}"
+  sudo ./configure --enable-version3 --enable-postproc --enable-libvorbis --enable-libvpx
+  sudo make
+  sudo checkinstall --pkgname=ffmpeg --pkgversion="5:${FFMPEG_VERSION}" --backup=no --deldoc=yes --default
+fi
 }}}
 
-
-== 4.  Upgrade !BigBlueButton == 
-
-First, update the !BigBlueButton repository URL to the beta repository.
+Next, run the commands
 
 {{{
-echo "deb http://ubuntu.bigbluebutton.org/lucid_dev_08/ bigbluebutton-lucid main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+chmod +x install-ffmpeg.sh
+./install-ffmpeg.sh
 }}}
 
-Next, update the local  packages.  This will make `apt-get` aware of the newer packages for !BigBlueButton 0.8.
+== 5. Update !BigBlueButton ==
+
+Next, update !BigBlueButton itself
 
 {{{
-sudo apt-get update
+   sudo apt-get dist-upgrade
 }}}
 
-The following command will upgrade your packages to the latest beta.
-
-{{{
-sudo apt-get dist-upgrade
-}}}
-
-After a few moments you'll be prompted whether you want to overwrite `/etc/nginx/sites-available/bigbluebutton`.
+You'll be asked to update the nginx definition for !BigBlueButton.
 
 {{{
 Configuration file `/etc/nginx/sites-available/bigbluebutton'
@@ -371,88 +466,78 @@ Configuration file `/etc/nginx/sites-available/bigbluebutton'
 *** bigbluebutton (Y/I/N/O/D/Z) [default=N] ?
 }}}
 
-Type 'y' and hit Enter.  
- 
-
-== 5. Install FreeSWITCH Configuration and API demos ==
-Now let's install and configure FreeSWITCH 1.0.7.
+Enter 'Y' to continue the upgrade.  Next, we'll need to trigger an update to the !FreeSWITCH configuration as the dependencies of the packages have changed.  To trigger the update, we'll remove the old package
 
 {{{
-sudo apt-get install bbb-freeswitch-config
+sudo apt-get remove bbb-freeswitch
 }}}
 
-Install the API demos to interactively try !BigBlueButton.
+Enter 'Y' to remove the old package, and then re-apply the new packages.  this will trigger a download and install of the new bbb-freeswitch package.
+
+Next, install the newer version of FreeSWITCH.
 
 {{{
-sudo apt-get install bbb-demo
+sudo apt-get install bbb-freeswitch=0.81ubuntu55
 }}}
 
-== 6. Remove unneeded packages ==
-We no longer need activmq, so let's remove it.  The command `sudo apt-get autoremove` will remove all remaining packages that have no reference.
+and then re-install the remaining !BigBlueButton packages.
 
 {{{
-sudo apt-get purge activemq
+sudo apt-get install bigbluebutton
+}}}
+
+
+Next, to enable recording of webcams for record and playback (webcams were not recorded by default in 0.80) edit `/usr/share/red5/webapps/video/WEB-INF/red5-web.xml` and change line 49 to show
+
+{{{
+                <property name="recordVideoStream" value="true"/>
+}}}
+
+
+To ensure all configuration files have the correct hostname/IP, do
+
+{{{
+   sudo bbb-conf --set-ip <ip_or_hostname>
+}}}
+
+where <ip_or_hostname> is the IP or hostname for your !BigBlueButton server.
+
+Use the !BigBlueButton configuration utility to do a clean restart (clean out log files) check for any installation errors.
+
+{{{
+   sudo bbb-conf --clean 
+   sudo bbb-conf --check 
+}}}
+
+
+== 6. Updating the recording scripts ==
+The installation of 0.81 will install a new record and playback script called `presentation`.  This replaces the older record and playback script `slides` in 0.80.
+
+After upgrade, you'll still have the older record and playback scripts installed.  
+
+{{{
+$ dpkg -l | grep slides
+ii  bbb-playback-slides               0.80ubuntu94                                    BigBluebutton playback of slides and audio
+}}}
+
+If you didn't have any recordings in 0.80, you can simply remove the old script. 
+
+{{{
 sudo apt-get autoremove
 }}}
 
-== 7. Do a clean restart ==
-
-Let's do the standard clean restart and then check the system for any potential problems.
+If you do have recordings, you'll want to keep this package to enable users to view the older recordings; however, prevent !BigBlueButton from processing newer recordings using `slides` (again, you'll want to use the newer `presentation` scripts), you can disable the older scripts by doing the following.
 
 {{{
-sudo bbb-conf --clean
-sudo bbb-conf --check
+mkdir -p /var/tmp/process /var/tmp/publish
+sudo mv /usr/local/bigbluebutton/core/scripts/process/slides.rb /var/tmp/process
+sudo mv /usr/local/bigbluebutton/core/scripts/publish/slides.rb /var/tmp/publish
 }}}
-
-
-= Trying out your server (24:42 minutes later) =
-
-You've got a full !BigBlueButton server up and running (don't you just love the power of Ubuntu/Debian packages). Open a web browser to the URL of your server.  You should see the !BigBlueButton welcome screen.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/welcome.png
-
-To start using your !BigBlueButton server, enter your name and click the 'Join' button.  You'll join the Demo Meeting.
-
-If this is your first time using !BigBlueButton, take a moment and watch these [http://bigbluebutton.org/content/videos overview videos].
-
-To record a session, click 'API Demos' on the welcome page and choose 'Record'.  Start a meeting and upload slides.  When you are done, click 'Logout' and return to the 'API Demos' and the record demo.  Wait a few moments and refresh your browser, you should see your recording appear.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/record.png
-
-Click 'Slides' to playback the slides, audio, and chat of the recording.
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/install_ubuntu_08/playback.png
-
-The following [http://www.youtube.com/watch?v=4b_tC1JEX1E YouTube Video] will walk you through using record and playback.  In almost all cases, you'll use !BigBlueButon through a 3rd party integration (see below).
-
-== URL and salt for 3rd party integrations ==
-If you want to use !BigBlueButton with a [http://www.bigbluebutton.org/open-source-integrations/ 3rd party integration], you can get the URL and security salt from your server using the command `bbb-conf --salt`.
-
-{{{
-$ bbb-conf --salt
-
-       URL: http://192.168.0.36/bigbluebutton/
-      Salt: b22e37979cf3587dd616fa0a4e6228
-}}}
-
-We hope you enjoy using !BigBlueButton and welcome your feedback!
-
-
-= Stay Connect With Us =
-<table>
-	<tr>
-		<td><a href="http://facebook.com/bigbluebutton">http://bigbluebutton.org/wp-content/uploads/2011/12/facebook.png</a></td>
-		<td><a href="https://twitter.com/bigbluebutton">http://bigbluebutton.org/wp-content/uploads/2011/12/twitter.png</a></td>
-		<td><a href="http://www.youtube.com/bigbluebuttonshare">http://bigbluebutton.org/wp-content/uploads/2011/12/youtube_icon.png</a></td>
-		<td><a href="https://plus.google.com/b/108594579970371808676/108594579970371808676/posts">http://bigbluebutton.org/wp-content/uploads/2012/07/googleplus.png</a></td>
-	</tr>
-</table>
-<br/>
 
 
 = Troubleshooting =
 
-If you don't find an answer to your questions below, check out our [http://code.google.com/p/bigbluebutton/wiki/FAQ Frequently Asked Questions.]  A common question is  [http://code.google.com/p/bigbluebutton/wiki/FAQ#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How do I setup multiple virtual classrooms?]
+If you encounter an error at one of the installation/upgrade steps,
 
 
 == Run sudo bbb-conf --check ==
@@ -469,7 +554,7 @@ This will check your setup to ensure the correct processes are running, the !Big
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
 
 
-If you see text after the line `** Potential problems described below **`, then `bbb-conf` detected something wrong with your setup.
+If you see text after the line `** Potential problems described below **`, then `bbb-conf` it may be warnings (which you can ignore if you've change settings) or errors with the setup.
 
 
 == Dependencies are not met ==
@@ -558,44 +643,6 @@ To change all of !BigBlueButton's configuration files to use a different IP addr
 
 For more information see [BBBConf bbb-conf options]. 
 
-== Address already in use ==
-
-If you have apache2 already running on the server, you'll likely see the following error messages from nginx when it starts.
-
-{{{
-Restarting nginx: [emerg]: bind() to 0.0.0.0:80 failed (98: Address
-already in use)
-}}}
-
-If you see these errors, it means that nginx is unable to bind to port 80 on the local server.  To find out what's binding to port 80, do the following
-
-{{{
-   sudo apt-get install lsof
-   lsof -i :80
-}}}
-
-If you see apache2 listed, then stop apache2 and start nginx
-
-{{{
-   sudo /etc/init.d/apache2 stop
-   sudo /etc/init.d/nginx start
-}}}
-
-== no such file to load -- rubygems ==
-On some installations, you'll occasionally see the following error
-
-{{{
-bbb@bbb:~$ gem -v
-<internal:lib/rubygems/custom_require>:29:in `require': no such file to load -- rubygems (LoadError)
-        from <internal:lib/rubygems/custom_require>:29:in `require'
-        from <internal:gem_prelude>:167:in `load_full_rubygems_library'
-        from <internal:gem_prelude>:217:in `try_activate'
-        from <internal:lib/rubygems/custom_require>:32:in `rescue in require'
-        from <internal:lib/rubygems/custom_require>:29:in `require'
-        from /usr/bin/gem:8:in `<main>'
-}}}
-
-The solution is to run the [InstallationUbuntu#2._Install_Ruby ruby install] script again.  
 
 == Unable to install gems ==
 The install script for bbb-record-core needs to install a number of ruby gems.  However, if you are behind a HTTP_PROXY, then the install script for bbb-record-core will likely exit with an error.  This occurs because the bash environment for bbb-record-core will not have a value for HTTP_PROXY.
