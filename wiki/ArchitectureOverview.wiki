@@ -12,7 +12,7 @@ The master branch of the [http://github.com/bigbluebutton/bigbluebutton GIT repo
   * deskshare-app - The Desktop Sharing server side red5 web-app
   * deskshare-applet - The Applet program used to capture the screen on the client 
 
-There are over a dozen [OpenSourceComponents open source components] that comprise !BigBlueButton, along with the above parts.  The following diagrams describe how they all work together.
+There are over a dozen [http://bigbluebutton.org/components/ open source components] that comprise !BigBlueButton, along with the above parts.  The following diagrams describe how they all work together.
 
 ----
 
