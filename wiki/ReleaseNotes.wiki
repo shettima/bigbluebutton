@@ -3,7 +3,7 @@
 
 = Release 0.81 =
  
-Released: November 7, 2013 ([InstallationUbuntu Installation])
+Released: November 7, 2013 ([InstallationUbuntu Installation Instructions])
 
 This is our eleventh release of !BigBlueButton.  For a quick summary of what's new since the previous release, see this [http://youtu.be/4C-rOd8bi6s overview video].
 
