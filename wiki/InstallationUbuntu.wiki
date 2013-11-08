@@ -4,7 +4,7 @@
 
 = Welcome =
 
-Welcome to the installation guide for !BigBlueButton 0.81, our eleventh release to date.  For a quick overview, see [ReleaseNotes release notes] and [081Overview overview].
+Welcome to the installation guide for !BigBlueButton 0.81, our eleventh release to date.  For a quick overview of the capabilities of this release, see [ReleaseNotes release notes] and [081Overview overview].
 
 = Before You Install =
 
