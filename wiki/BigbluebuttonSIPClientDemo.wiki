@@ -1,7 +1,7 @@
 #labels Deprecated
 # Summary of how to install or build the SIP applet.
 
-_This page is still under construction so some information might not be accurate. Sorry for the inconvenience_
+_This document is depreciated._
 
 <wiki:toc max_depth="3" />
 
