@@ -19,7 +19,7 @@ The trunk of the SVN repository contains the following important parts:
 The following links will get you going with setting up !BigBlueButton.  For most developers, we recommend using the VM.  But if you want to see all the components, go for [InstallingBigBlueButton Installing from source].
 
     * [API API for Integration with Third-Party Applications]  
-    * [DevelopingBBB Developing BigBlueButton]
+    * [Developing Developing BigBlueButton]
     * [SampleModule New Module Tutorial]
     * [Branding Branding and Theming of BigBlueButton]
     * [SettingUpBigBlueButtonWithJconsole Jconsole Setup]
@@ -28,6 +28,6 @@ See also
     * [ArchitectureOverview Architecture Overview]
     * [ClientConfiguration Client-side configuration]
     * [ConfigurationFiles Configuration Files]
-    * [RecordPlaybackSpecification Record and playback specification]
+    * [Recording Record and playback specification]
     * [OpenSourceComponents Open Source Components]
-    * [LocalizationOfBBB Localization of BigBlueButton into Another Lanugage]  
+    * [Localization Localization of BigBlueButton into Another Lanugage]  
