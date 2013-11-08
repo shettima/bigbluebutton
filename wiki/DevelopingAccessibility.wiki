@@ -1,4 +1,5 @@
 #summary Implementation of accessibility in BigBlueButton 0.81-RC4
+#labels Deprecated
 
 ==Overview: How to develop accessible extensions, modules, and plugins for the !BigBlueButton Flash client==
 
