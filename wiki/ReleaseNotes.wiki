@@ -30,7 +30,7 @@ This is our eleventh release of !BigBlueButton.  For a quick summary of what's n
   
 
 == Fixed Issues ==
-See [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.81] and [http://goo.gl/frxVz remaining issues].  See also [081Docs 0.81-beta documentation].
+See [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.81%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.81].
   
 
 
