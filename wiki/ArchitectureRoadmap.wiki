@@ -1,4 +1,7 @@
 #summary A roadmap for architecture changes to bbb
+#labels depreciated
+
+This document is depreciated.
 
 <wiki:toc max_depth="2"/>
 
