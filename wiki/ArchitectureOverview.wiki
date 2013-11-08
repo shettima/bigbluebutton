@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2" />
 
-= Trunk Overview =
+= Overview =
 
 The master branch of the [http://github.com/bigbluebutton/bigbluebutton GIT repository] contains the following components of !BigBlueButton:
 
