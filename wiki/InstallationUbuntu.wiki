@@ -2,6 +2,10 @@
 
 <wiki:toc max_depth="3" />
 
+= Welcome =
+
+Welcome to the installation guide for !BigBlueButton 0.81, our eleventh release to date.  For a quick overview, see [ReleaseNotes release notes] and [081Overview overview].
+
 = Before You Install =
 
 *Note:* The packaging is for Ubuntu 10.04 64-bit only.  We no longer support 32-bit packaging for 0.81.
