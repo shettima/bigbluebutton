@@ -5,7 +5,7 @@
 = Introduction =
 As the popularity of !BigBlueButton increases, we are increasingly asked "when are you going to release !BigBlueButton 1.0?" 
 
-We first released !BigBlueButton version 0.4 on June 12, 2009 (see [http://en.wikipedia.org/wiki/BigBlueButton#History project history]).  Since then, we've had ten subsequent releases: 0.50, 0.60, 0.61, 0.62, 0.63, 0.64, 0.70, 0.71, 0.71a, 0.80 – each release improving on the previous, each reflecting the desire by the core development team to build a solid product. 
+We first released !BigBlueButton version 0.4 on June 12, 2009 (see [http://en.wikipedia.org/wiki/BigBlueButton#History project history]).  Since then, we've had ten subsequent releases: 0.50, 0.60, 0.61, 0.62, 0.63, 0.64, 0.70, 0.71, 0.71a, 0.80, 0.81 – each release improving on the previous, each reflecting the desire by the core development team to build a solid product. 
 
 This document outlines the *DRAFT* requirements for !BigBlueButton 1.0.  
  
@@ -52,32 +52,24 @@ If you have feedback on this document, please post to [https://groups.google.com
 This section covers the enhancements to !BigBlueButton’s core features. 
  
 === Record and Playback ===
-Add support for playback of all activity in the session, including presentation window: mouse movement, whiteboard, and pan/zoom ([http://code.google.com/p/bigbluebutton/issues/detail?id=1191 1191]), support playback of webcams ([http://code.google.com/p/bigbluebutton/issues/detail?id=1326 1326]), and desktop sharing ([https://code.google.com/p/bigbluebutton/issues/detail?id=1470 1470]).  (This work is underway for [081Overview BigBlueButton 0.81].)
+Start/stop button for record and playback
 
   
 === Audio ===
 !BigBlueButton must have *no* perceptual voice delay for 50 users running within a LAN environment (see [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/a36d61df9b9fc45b forum post]).  
 
-=== Video ===
-Support h.264 encoding of videos in Flash 10.2 ([http://code.google.com/p/bigbluebutton/issues/detail?id=640 640]).  (This work is underway for [081Overview BigBlueButton 0.81].)
- 
-=== Chat ===
-There are no major enhancements planned for chat for 1.0.
             	
 === Presentation ===
-Support full screen mode, similar to hitting F5 in power point.  Full screen mode should have optional notifications of new chat messages or join/leave events ([http://code.google.com/p/bigbluebutton/issues/detail?id=872 872]).  
+Support full-screen mode, similar to hitting F5 in power point.  Full screen mode should have optional notifications of new chat messages or join/leave events ([http://code.google.com/p/bigbluebutton/issues/detail?id=872 872]).  
 
 === Whiteboard ===
 Support keyboard input of text and symbols ([http://code.google.com/p/bigbluebutton/issues/detail?id=591 591]).
 
-Support for text tool in whiteboard ([http://code.google.com/p/bigbluebutton/issues/detail?id=1255 1255]).  (This work is underway for [081Overview BigBlueButton 0.81].)
             	
 === Desktop sharing ===
-Currently, !BigBlueButton uses a Java applet to capture and display the presenter’s screen to remote clients.  However, the screen updates can be slow, especially if there are 32-bit graphics on the presenter's screen.  
-
-Increase speed of desktop sharing by using Screen Video Codec 2 (see [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902]).  (This work is underway for [081Overview BigBlueButton 0.81].)
-
 Reduce the effort by viewers to view the screen sharing by automatically centring the screen sharing window and make it show original size if there is sufficient on the viewer’s monitor ([http://code.google.com/p/bigbluebutton/issues/detail?id=903 903]).
+
+Support full-screen mode for desktop sharing as well.
 
 == General Requirements ==
 === Pre-flight Checklist ===
@@ -85,21 +77,9 @@ Sometimes Flash has difficulty picking the right microphone, speaker, or webcam 
 
 Add a “pre-flight” checklist that appears in a web page just before the user joins the !BigBlueButton session to check internet connection, Flash version, Java version, and allow the user to adjust their audio levels and check that their webcam is working ([http://code.google.com/p/bigbluebutton/issues/detail?id=813 813]).
 
-=== Users and Listeners window ===
-When there are 25 (or more) users in a session, having a separate Users window (those logged in from the web) and Listeners window (those who have joined the voice conference) starts to cause usability problems for the presenter.  For example, when a student raises her hand in the Users window, the moderator must scroll and hunt for the associated user in the Listeners window to unmute the student ([http://code.google.com/p/bigbluebutton/issues/detail?id=901 901]).  (This work is underway for [081Overview BigBlueButton 0.81].)
-
-            	
-=== Accessibility ===
-!BigBlueButton must support students with disabilities.  Specifically, it must support the necessary [http://www.section508.gov/ Section 508] and [http://www.w3.org/TR/WCAG/ WCAG] requirements to enable use by students who are partially or fully blind or deaf ([http://code.google.com/p/bigbluebutton/issues/detail?id=853 853]).  (This work is underway for [081Overview BigBlueButton 0.81].)
-  
-=== Layout Management ===
-!BigBlueButton's window-based UI is very flexible, sometime too flexible as it requires the user to manage their windows.  For younger users, such as students in K12, too much flexibility can hinder the learning.  Add a window manager to give viewers and moderators the ability to manage their layout  ([http://code.google.com/p/bigbluebutton/issues/detail?id=904 904]).  (This work is underway for [081Overview BigBlueButton 0.81].)
-
-Reduce the number of open windows by displaying the presenter’s desktop in the viewer’s presentation window (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1327 1327]).  
-
 
 === Development Environment ===
-It should be possible to setup a development environment in under 30 minutes.  We made progress on this in 0.80 (see [081DevelopingBigBlueButton developing for BigBlueButton]).
+It should be possible to setup a development environment in under 30 minutes.  We made progress on this in 0.81 (see [Developing developing for BigBlueButton]).
  
 === Documentation ===
 Ensure all classes in !BigBlueButton, both on the server (Java) and client (!ActionScript) -- have sufficient javadoc documentation for a developer to understand their role relative to others.
@@ -128,27 +108,9 @@ The term "large number of users" will need to be calibrated according to the ser
 The term "without any errors" means there were no freezes on the client, nor are there any exceptions in the server logs that indicate memory leaks or logic errors.
    	
 === API ===
-Add a !JavaScript interface so 3rd party applications could control !BigBlueButton from within a web page (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1328 1328]).   (This work is underway for [081Overview BigBlueButton 0.81].)
-
 Add an API call to enable external applications to inject messages into the chat window (see [http://code.google.com/p/bigbluebutton/issues/detail?id=905 905]).
 
-=== Modularity ===
-When looking at !BigBlueButton 1.0, we want the developer to see a platform upon which they can leverage and build upon.
 
-There is a spectrum of modularity we can achieve.
-
-For existing components:
-  # Enable the administrator to configure, on a per-user bases, which modules are visible on startup of the !BigblueButton client (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1060 1060]).   (This work is underway for [081Overview BigBlueButton 0.81].)
-  # Enable the developer to configure which components are visible on creation of a meeting
-  # Enable the developer to switch the layout of components
-
-By creating modularity, a developer could start a !BigBlueButton session specific with only the modules needed for her specific application (see [http://code.google.com/p/bigbluebutton/issues/detail?id=294 294]).   (This work is underway for [081Overview BigBlueButton 0.81].)
-
-
-The next step is to create a full plug-in architecture with well-defined APIs (see post 1.0).
-
-=== Security ===
-There are no plans to add security for 1.0.  Secure connections to a !BigBlueButton can be achieved via VPN.
 
 === Installation and Upgrade ===
 Support installation of BigBlueButton on Ubuntu 12.04 or 64-bit (see [http://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275]).
@@ -158,12 +120,9 @@ Add more capabilities to bbb-conf to change the logging levels of all applicatio
  
 Add more checks to bbb-conf to continue to trouble shoot any problems with the installation.  Once the error messages have been removed, any error message would be a real error.
             	      	
-=== IMS Basic LTI integration ===
-Enable any LTI consumer to integrate with a !BigBlueButton server without having to create a custom module ([http://code.google.com/p/bigbluebutton/issues/detail?id=907 907]).   (This work is underway for [081Overview BigBlueButton 0.81].)
 
 == Areas for investigation ==
 We are reviewing these requirements for inclusion in 1.0.
-
 
 While the synchronized playback of content (slides, video, audio, and chat) using popcorn.js gives a rich playback experience, other times a video of the recording is easier to disseminate to !YouTube and other content distribution sites that only work with video files.   To support this, add a playback format that creates a single video from the presentation + desktop sharing  ([http://code.google.com/p/bigbluebutton/issues/detail?id=900 900]).
 
