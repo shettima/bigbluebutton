@@ -5,7 +5,7 @@
 This document assumes the reader understands the current [http://code.google.com/p/bigbluebutton/wiki/ArchitectureOverview BigBlueButton architecture].
 
 
-== Overview ===
+= Overview =
 
 !BigBlueButton records all the events and media data generated during a !BigBlueButton session for later playback. 
 
@@ -22,7 +22,7 @@ In BigBlueButton 0.81 there are two workflows, *presentation*, which is installe
 
 
 
-== Record and Playback Phases ==
+= Record and Playback Phases =
 
 !BigBlueButton processes the recordings in the following :
 
@@ -34,31 +34,31 @@ In BigBlueButton 0.81 there are two workflows, *presentation*, which is installe
   # Playback
 
 
-=== Capture ===
+== Capture ==
 The Capture phase involves enabling the !BigBlueButton modules (chat, presentation, video, voice, etc.) to emit events over an event bus for capture on the !BigBlueButton server. Components that generate media (webcam, voice, desktop sharing) must also store their data streams on the server as well.
 
 Whiteboard, cursor, chat and other events are stored on Redis. Webcam videos (.flv) and desktop sharing videos (.flv)  are recorded by Red5. The audio conference file (.wav) is recorded by Freeswitch.
 
 
-=== Archive ===
+== Archive ==
 The Archive phase involves taking the captured media and events into a *raw* directory. That directory contains ALL the necessary media and files to work with. 
 
 
-=== Sanity === 
+== Sanity == 
 The Sanity phase involves checking that all the archived files are _valid_ for processing. For example
 that media files have not zero length and events were archived.
 
 
-=== Process ===
+== Process ==
 The Process phase involves processing the archived  valid files of the recording according to the workflow (presentation or matterhorn). Usually it involves parsing the archived events, converting media files to other formats or concatenating them, etc.
 
 
 
-=== Publish ===
+== Publish ==
 The Publish phase involves generating metadata and taking many or all the processed files and placing them in a directory exposed publicly for later playback.
 
 
-=== Playback ===
+== Playback ==
 The Playback phase involves taking the published files (audio, webcam, deskshare, chat, events, metadata) and playing them in the browser. 
 
 Using the workflow *presentation*, playback is handled by HTML, CSS and Javascript libraries; it is fully available in Mozilla Firefox and Google Chrome(also in Android devices); in Internet Explorer if you have installed [http://www.google.com/chromeframe Google Chrome Frame]. In other browsers like Opera or Safari the playback will work without all its functionality , e.g, thumbnails won't be shown. There is not a unique video file for playback, there is not an available button or link to download the recording. We have opened an [https://code.google.com/p/bigbluebutton/issues/detail?id=1215 issue] for this enhancement
@@ -69,11 +69,11 @@ Using the workflow *matterhorn*, playback is handled by a media player in your M
 
 
 
-== Media storage ==
+= Media storage =
 
 Some Record and Playback phases store the media they handle in different directories
 
-=== Captured files ===
+== Captured files ==
 
 _AUDIO_:   
 /var/freeswitch/meetings
@@ -106,7 +106,7 @@ Same for archived files
 /var/bigbluebutton/published/presentation/_*internal-meeting-id*_/
 
 
-==  Manage recordings ==
+=  Manage recordings =
 
 BigBlueButton does not have an administrator web interface to control the sessions or recordings as in both cases they are handled by 3rd party software, but it has a useful tool to monitor the state and control your recordings through the phases described above.
 
