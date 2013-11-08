@@ -97,7 +97,7 @@ What is working?
   *  Whiteboard Module: Draw and store pencil shape from Flex client 
 
 === Documentation ===
-We use codo, a program installed video npm to generate html documentation pages based on comments in the code in the javadocs format.  https://github.com/coffeedoc/codo
+We use codo, a program we installed via npm to generate html documentation pages based on comments in the code in the javadocs format.  https://github.com/coffeedoc/codo
 
 To generate the documentation:
 {{{
