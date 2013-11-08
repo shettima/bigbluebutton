@@ -1,10 +1,10 @@
-#summary Setup a development environment for BigBlueButton 0.81-RC4
+#summary Setup a development environment for BigBlueButton 0.81
 
 <wiki:toc max_depth="2" />
 
 = Welcome =
 
-Welcome to the API guide for !BigBlueButton 0.81.
+Welcome to the API guide for !BigBlueButton 0.81.  This document will guide you through how to use the !BigBlueButton API for integration with your application.
 
 = Overview =
 
