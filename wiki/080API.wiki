@@ -1,7 +1,8 @@
 #summary BigBlueButton Third-Party Integration API.
-<wiki:toc max_depth="3" />
 
 This document is depreciated.  See [API API] for the latest version of the API docs.
+
+<wiki:toc max_depth="3" />
 
 = Overview = 
 This document outlines the API that is available for integrating BigBlueButton with other applications. The changes between releases will be described in the document. Features which are not currently implemented will be clearly marked as such.
