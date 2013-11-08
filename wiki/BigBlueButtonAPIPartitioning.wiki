@@ -1,6 +1,7 @@
 #summary BigBlueButton API partitioning design and roadmap
+#labels Deprecated
 
-_This document is a draft for the Bigbluebutton API partitioning  development, it contains material related to design and work progress for the API Partitioning._
+_This document depreciated_
 
 = Introduction =
 
