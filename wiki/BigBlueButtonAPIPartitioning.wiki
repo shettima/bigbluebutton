@@ -1,7 +1,7 @@
 #summary BigBlueButton API partitioning design and roadmap
 #labels Deprecated
 
-_This document depreciated_
+_This document is depreciated._
 
 = Introduction =
 
