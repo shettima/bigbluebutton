@@ -1,4 +1,4 @@
-#summary Setup a development environment for BigBlueButton 0.81-RC4
+#summary Setup a development environment for BigBlueButton 0.81
 
 <wiki:toc max_depth="2" />
 
