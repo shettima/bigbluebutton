@@ -1,4 +1,4 @@
-  * [InstallationUbuntu Install BigBlueButton 0.81] (November 7, 2013 - [ReleaseNotes Release Notes])
+  * [InstallationUbuntu Install BigBlueButton 0.81] (Nov 7, 2013 - [ReleaseNotes Release Notes])
     * [BBBConf BigBlueButton's configuration tool]
   * [TechnicalOverview Overview]
     * [ArchitectureOverview Architecture Overview]
