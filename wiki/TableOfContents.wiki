@@ -8,7 +8,7 @@
     * [http://www.bigbluebutton.org/components/ Open Source Components]
     * [Localization Localization]  
     * [Matterhorn Integration with Matterhorn]  
-* [GettingStarted Developing]
+  * [GettingStarted Developing]
     * [Developing Developing BigBlueButton]
     * [API API for Integration]  
     * [SampleModule New Module Tutorial]
