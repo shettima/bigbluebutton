@@ -4,7 +4,7 @@
 = Introduction =
 A detailed discussion of the client's config.xml file. This document shows you how to configure the client to work to your liking, and what options are available.
 
-* Note: * In 0.81 the config.xml is cached by the BigBlueButton server for any active meeting.  That is, making a change to the config.xml and refreshing the browser will not load the new config.xml.  To see the results of editing the config.xml, create a new meeting and join it, or restart the !BigBlueButton server.
+* Note: * In 0.81 the config.xml is cached by the !BigBlueButton server for any active meeting.  That is, making a change to the config.xml and refreshing the browser will not load the new config.xml.  To see the results of editing the config.xml, create a new meeting and join it, or restart the !BigBlueButton server.
 
 == Config.xml ==
 The config.xml file is located in the deployed client directory, default location /var/www/bigbluebutton/client/conf/config.xml. If you are working with the source code, it is located in the client's src/conf directory, default location /home/firstuser/dev/source/bigbluebutton/bigbluebutton-client/src/conf/config.xml.
