@@ -105,8 +105,9 @@ app.post('/upload', requiresLogin, routes.post_upload);
 app.get('/meetings', routes.meetings);
 }}}
 
-source: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/app.js#L93
+sources: https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/app.coffee#L30
 
+          https://github.com/bigbluebutton/bigbluebutton/blob/html5-bridge/labs/bbb-html5-client/routes/main_router.coffee#L21-L25
 
 == Redis ==
 
@@ -159,4 +160,3 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/html5/over-pubsub.png
 == Create  ==
 
 When a meeting is created, it’s also stored in Redis a new meeting, under the key: “meetings”. This key is used for validate that when a user joins to a meeting, the meeting should have been created.
-
