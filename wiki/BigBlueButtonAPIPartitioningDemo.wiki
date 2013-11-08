@@ -1,3 +1,4 @@
+#labels Deprecated
 =Checkout the code and try out the API's=
 
 _This document is depreciated._
