@@ -75,7 +75,7 @@ Achieving stability is no easy task.  !BigBlueButton itself is a very complex sy
 
 Richard Alam is the creator of !BigBlueButton and the chief architect.  As such, Richard has the overall responsibility for the core architecture and (like Linus with Linux) reviews many of the contributions from others.
 
-Fred Dixon serves as the project manager.  His responsibility includes managing the overall release process, coordinating the building and packaging of each release, and communicating with the community on the progress of the release. 
+Fred Dixon serves as the project manager.  His responsibility includes managing the overall release process, coordinating the building and packaging of each release, testing, and communicating with the community on the progress of the release. 
 
 There have been ten releases of !BigBlueButton to date.
 
@@ -135,16 +135,11 @@ Once a release is moved to beta, the public packages are updated so others can b
 
 Once all features have been implemented and all major bugs have been fixed, the release moves to beta.  
 
-Before the beta release, the documentation for installation, setting up of the development environment, and overview of new features are all updated for the release.  For example:
-
-  * [http://code.google.com/p/bigbluebutton/wiki/081SettingDevEnvironment 081SettingDevEnvironment]
-  * [http://code.google.com/p/bigbluebutton/wiki/081InstallationUbuntu 081InstallationUbuntu]
-  * [http://code.google.com/p/bigbluebutton/wiki/081Overview 081Overview]
-  * [http://code.google.com/p/bigbluebutton/wiki/081RecordAndPlayback 081RecordAndPlayback]
+Before the beta release, the documentation for installation, setting up of the development environment, and overview of new features are all updated for the release.  
 
 The product will go through one (or more) betas until the community reports no more major bugs.  Additional work that occurs during this phase includes:
 
-  * [http://code.google.com/p/bigbluebutton/wiki/LocalizationOfBBB Localization] of the product
+  * [http://code.google.com/p/bigbluebutton/wiki/Localization Localization] of the product
   * Updating and fixing documentation
   * Updating packaging so it installs without errors on 64-bit, both on a new install and an upgrade from a previous version
 
@@ -192,9 +187,8 @@ Dont' worry if you are not a proficient developer -- there are many ways to help
 
 Like many open source projects, at the core of the developer team is a small group that have commit rights and the overall responsibility for the quality of the project.  The committers are as follows:
 
-Active Committers: 
+Committers: 
   * Richard Alam, Lead Architect
-  * Marco Calderon, Server
   * Felipe Cecagno, Client
   * Fred Dixon, Project Manager
   * Tiago Jacobs, red5
@@ -202,6 +196,7 @@ Active Committers:
   * Gustavo Salazar, Record and Playback
 
 Past Committers (fondly remembered):
+  * Marco Calderon, Server
   * Jeremy Thomerson, API
   * Denis Zgonjanin, Client
 
@@ -282,22 +277,15 @@ For Flex/!ActionScript code, follow the [http://livedocs.adobe.com/flex/3/html/h
 = Installation =
 
 == What are the minimum hardware requirements for the !BigBlueButton Server ==
-As a minimum, we recommend you run !BigBlueButton on a dedicated quad-core machine with at least 4 GB of memory and a 2.6+ Ghz processor. 
-
-We recommend installing !BigBlueButton on Ubuntu 10.04 64-bit on the server (see [InstallationUbuntu Installing BigBlueButton]).
-
-While the [BigBlueButtonVM BigBlueButton VM] is a good way to try out the system, we recommend you run !BigBlueButton on a dedicated server to reduce audio lag.  In a virtual environment, the !BigBlueButton VM gets only a portion of the host's CPU, and any lag in the CPU cycles can translate to lag in processing VoIP packets.
+As a minimum, we recommend you run !BigBlueButton on a dedicated quad-core machine with at least 4 GB of memory and a 2.6+ Ghz processor. See [InstallationUbuntu#Before_You_Install before you install].
 
 == What are the minimum bandwidth requirements for the !BigBlueButton Server ==
 
 You'll need good upstream and downstream bandwidth from the server.  We recommend (at least) 100 Mbit/second bandwidth in both directions.
 
 == Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ==
-You need root access to install !BigBluebutton.
+Likely not.  First, you need root access to install !BigBluebutton.  If you have a hosting account that only gives you, for example, FTP access and a cPanel/plesk interface, you will not be able to install !BigBlueButton.  
 
-If you have a hosting account that only gives you, for example, FTP access and a cPanel/plesk interface, you will not be able to install !BigBlueButton.  
-
-There are a number of OpenSourceComponents in !BigBlueButton that need root access for installation.  These include FreeSWITCH and nginx. The former provides voice conferencing, while the later provides the proxy server for enabling clients to use !BigBlueButton behind a firewall.  See also [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton hardware requirements] and [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue required ports].
 
 == Can I install !BigBlueButton on EC2? ==
 
@@ -305,7 +293,7 @@ Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 64-bit.  To
 
   # Modify the default security group in EC2(or create a new security group) so you have port 80, 9123, and 1935 open (see [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue FAQ]).
   # Launch a 64-bit "lucid" elastic block storage (EBS) image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.medium (or greater CPU) instance.
-  # Follow the instructions to install [InstallationUbuntu BigBlueButton 0.80].
+  # Follow the instructions to install [InstallationUbuntu install BigBlueButton].
   # Use `sudo bbb-conf --setip hostname` to instruct !BigBlueButton to listen to the external DNS name for the EC2 instance (see [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf]).
 
 The IP addresses for an EC2 image are reset whenever you reboot the image; however, if you assign the EC2 image an elastic IP address, it will have a consistent IP address that will not change on reboot. 
@@ -315,7 +303,7 @@ The IP addresses for an EC2 image are reset whenever you reboot the image; howev
 
 
 === Ubuntu ===
-As of !BigBlueButton 0.81-beta2, you can install !BigBluebutton on *Ubuntu 10.04 64-bit*. See [InstallationUbuntu Ubuntu packages] using apt-get and Ubuntu packages.  
+!BigBluebutton requires *Ubuntu 10.04 64-bit*. See [InstallationUbuntu Install BigBlueButton].
 
 Please note, that the packages have not been tested on Ubuntu 9.04, Ubuntu 9.10, or Ubuntu 10.10; however, there are [InstallingBigBlueButton step-by-step instructions] for installing !BigBlueButton that you can adapt to these platforms.
 
@@ -350,14 +338,11 @@ The easiest way to get your own !BigBlueButton server under OS X is to install V
 
 === Android ===
 
-Work is underway to build a native [http://www.bigbluebutton.org/2011/11/12/bbb-mobile-now-available-on-android-marketplace/ Android client].
+This work is underway.  See [http://bigbluebutton.org/2013/11/05/bigbluebutton-summit-iii-recordings/ presentations from Developer Summit III].
 
 === iOS ===
 
-There is no iOS (iPad or iPhone) !BigBlueButton client.  However, as !BigBlueButton is open source, we believe, like the [Android #Andriod] client, it is only a matter of time before other developers start to create an iOS client.
-
-If you would like to influence or support such development, see [FAQ#When_will_feature_X_be_implemented When will feature X be implemented].
-
+This work is underway.  See [http://bigbluebutton.org/2013/11/05/bigbluebutton-summit-iii-recordings/ presentations from Developer Summit III].
 
 
 == Bandwidth Requirements ==
@@ -425,6 +410,12 @@ For presenters, we recommend as much upstream bandwidth as possible.  For exampl
 
 
 == Troubleshooting ==
+
+=== Users on Chrome get randomly disconnected ===
+
+When running !BigBlueButton in Google Chrome, if the network setup changes during a session, such as the wireless adapater connecting/disconnecting to a wireless network while the user is connected to the !BigBlueButton server through a wired network, the connection will drop.
+
+If this occurs, the solution is to disable wireless networking while using !BigBlueButton or use FireFox.
 
 === Users on Windows 7 get disconnected after a minute ===
 
@@ -514,7 +505,7 @@ If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}.
 = Configuration =
 
 == What are the minimum requirements for the !BigBlueButton client? ==
-Users need a web browser capable of running Flash 10.3.  To check the version of flash, visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
+Users need a web browser capable of running Flash 11.3.  To check the version of flash, visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
 
 As of Mac OS X 10.6, Apple stopped updating Flash.  If a Mac user is running an out-of-date version of Flash (!BigBlueButton will check the version of flash), they can upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
 
@@ -524,7 +515,6 @@ For bandwidth, we recommend 1Mbits download and 0.5 Mbits upload speed.  Users c
 
 For hardware, we recommend a Dual-core CPU with at least 2G of memory.  For Mac, we recommend any Mac running Mac OS X operating system.
 
-*Note*: There is currently an issue with Google Chrome 23 on Mac OS X.  We recommend users run !FireFox or Safai until the next release of chrome.
 
   
 == How many simultaneous users can !BigBlueButton support == 
@@ -603,67 +593,6 @@ and join an audio session.  You should no longer hear the music on hold.
 
 Note: The above settings became the default as of !BigBlueButton 0.80.
 
-
-=== How do I configure FreeSWITCH to use 127.0.0.1? ===
-
-When !BigBlueButton starts up bbb-apps-sip (a modified version of [http://code.google.com/p/red5phone/ red5phone]), it attempts to connect to FreeSWITCH using the IP address defined in `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties`.
-
-{{{
-# The address of your FreeSWITCH/asterisk server
-sip.server.host=127.0.0.1
-sip.server.port=5070
-sip.server.username=bbbuser
-sip.server.password=secret
-}}}
-
-This IP address must match the IP address which FreeSWITCH is listening for incoming SIP calls.  Prior to !BigBlueButton 0.80, the FreeSWITCH attempted to use the server's external IP address; however, this caused [FAQ#Users_do_not_appear_in_the_listeners_window voice connection problems] whenever the external IP address changed (as in rebooting an EC2 instance) or when the server had multiple IP addresses.
-
-To configure FreeSWITCH to use the 127.0.0.1 address (and remove a vector for denial of service attacks), you can make the following changes.
-
-Edit `/opt/freeswitch/conf/vars.xml` and change
-
-{{{
-  <X-PRE-PROCESS cmd="set" data="domain=$${local_ip_v4}"/>
-}}}
-
-to 
-
-{{{
-  <X-PRE-PROCESS cmd="set" data="local_ip_v4=127.0.0.1"/>
-  <X-PRE-PROCESS cmd="set" data="domain=$${local_ip_v4}"/>
-}}}
-
-Edit `/opt/freeswitch/conf/sip_profiles/external.xml` and change
-
-{{{
-    <!--
-        DO NOT USE HOSTNAMES, ONLY IP ADDRESSES IN THESE SETTINGS!
-    -->
-    <param name="rtp-ip" value="$${local_ip_v4}"/>
-    <param name="sip-ip" value="$${local_ip_v4}"/>
-    <param name="ext-rtp-ip" value="auto-nat"/>
-    <param name="ext-sip-ip" value="auto-nat"/>
-}}}
-
-to
-
-{{{
-    <!--
-        DO NOT USE HOSTNAMES, ONLY IP ADDRESSES IN THESE SETTINGS!
-    -->
-    <param name="rtp-ip" value="$${local_ip_v4}"/>
-    <param name="sip-ip" value="$${local_ip_v4}"/>
-    <param name="ext-rtp-ip" value="$${local_ip_v4}"/>
-    <param name="ext-sip-ip" value="$${local_ip_v4}"/>
-}}}
-
-Then restart !BigBlueButton.
-
-{{{
-  sudo bbb-conf --clean
-}}}
-
-As of !BigBlueButton 0.80, the default setting for FreeSWITCH is to use 127.0.0.1 (see issue [http://code.google.com/p/bigbluebutton/issues/detail?id=1133 1133]).
 
 === How do I forward calls from my Asterisk server to FreeSWITCH in !BigBlueButton? ===
 
@@ -798,10 +727,6 @@ Edit {{{/opt/freeswitch/conf/directory/default/bbbuser.xml}}}
 Change {{{password}}} to match the password you set in {{{sip.server.password}}}.
 
 
-== How do I enable feature X in the !BigBlueButton client? ==
-As of !BigBlueButton 0.71, you can configure some options in the client, such as enabling moderators to eject users from the virtual classroom.
-
-Check out [ClientConfiguration client configuration] for details on how to enable or disable specific modules and features.  These options are on a server-wide basis (not virtual classroom or individual basis).
 
 == Networking ==
 
@@ -987,9 +912,9 @@ The best approach is to see how others have integrated and adapt their code to y
 
 == Server Configuration ==
 
-=== Where is the security salt located? ===
+=== Where is the shared secret located? ===
 
-You'll find the security salt in the file 
+You'll find the shared secret (salt) in the file 
 
 {{{
    /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
@@ -1003,7 +928,7 @@ Look for the line
 
 This is the security salt used for enabling 3rd party plug-ins and external applications to access your !BigBlueButton server through it's API.  
 
-=== How do I change the security salt? ===
+=== How do I change the shared secret? ===
 
 To change the security salt, do the following: 
   # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers that will be impossible to reverse engineer.  
@@ -1126,91 +1051,13 @@ There has been no effort to make the communication in !BigBlueButton secure.  Fo
 All API requests must have a checksum that is computed using a share secret, but otherwise there is *no* security offered in !BigBlueButton.
 
 
-= Administration =
-
-== How do I update !BigBlueButton to the newest version? ==
-If you are running a !BigBlueButton VM 0.70 VM or had installed !BigBlueButton 0.70 using Ubuntu packages on Ubuntu 10.04, you can upgrade to the newest stable release with two commands:
-
-{{{
-  sudo apt-get update
-  sudo apt-get dist-upgrade
-}}}
-
-If you would like to update instead to the latest version currently under development, you can do that too, but note that the development version of !BigBlueButton is often unstable, and nobody guarantees that it will work correctly. Here's how to do it:
-
-Log into your VM, then edit `/etc/apt/sources.list.d/bigbluebutton.list` and change
-
-{{{
-#
-# Repository for BigBlueButton
-#
-deb http://ubuntu.bigbluebutton.org/lucid/ bigbluebutton-lucid main
-}}}
-
-to
-{{{
-#
-# Repository for BigBlueButton
-#
-deb http://ubuntu.bigbluebutton.org/lucid_dev/ bigbluebutton-lucid main
-}}}
-
-Do an `apt-get update/apt-get dist-upgrade` and you'll be running the latest builds.
-
-== VM won't resolve packages when updating, or is not connected to the internet ==
-If you're using VM player, please go to VM>Settings>Network Adapter and make sure it is set to Bridged, with the box underneath left unchecked. 
-Also restart the networking on the VM by running the following command:
-{{{
-  sudo /etc/init.d/networking restart
-}}}
-
-
-== How do I delete old presentations on the server? ==
-
-Documents uploaded to a presentation remain on the !BigBlueButton server until deleted by the administrator. 
-
-To setup an automatic deletion of old presentations, create the file in
-
-  /etc/cron.daily/bigbluebutton
-
-with the contents
-
-{{{
-#!/bin/sh
-
-test -x /var/bigbluebutton || exit 0
-
-#
-# Delete old presentation directories in /var/bigbluebutton
-#
-find /var/bigbluebutton -maxdepth 1 -type d -name "*-*" -mtime +11 -exec rm -r '{}' \;
-
-#
-# Delete saved webcam streams in red5
-#
-find /usr/share/red5/webapps/video/streams -name "*.flv" -mtime +1 -exec rm '{}' \;
-
-#
-# Delete saved desktop sharing streams in red5
-#
-find /var/bigbluebutton/deskshare -name "*.flv" -mtime +1 -exec rm '{}' \;
-
-}}}
-
-and set the script to be executable.  
-
-{{{
-sudo chmod +x /etc/cron.daily/bigbluebutton
-}}}
-
-Now, once a day, cron will execute this script and delete presentation directories in /var/bigbluebutton that are older than 11 days.  [Note: This script was incorporated in the build for !BigBlueButton 0.80, but is disabled by default.  To enable, edit /etc/cron.daily/bigbluebutton and comment out the `exit` command.]
-
-
 = Using !BigBlueButton =
 == Desktop Sharing ==
 === What is needed to run desktop sharing? ===
-!BigBlueButton uses a Java applet to capture screen updates.   This means desktop sharing works for Mac, Unix, and PC platforms.  
+!BigBlueButton uses a Java applet to capture screen updates.  !BigBlueButton requires Java 7u35 (or later).  
 
+Desktop sharing works for Mac, Unix, and PC platforms.  
+  
 Only the presenter needs to have Java installed to share their desktop.  You can test if your system has Java installed using the following [http://java.com/en/download/help/testvm.xml link].  To download Java onto your computer, visit the [http://www.java.com/en/download/index.jsp Java download page.]
 
 If you can run the above test applet from your browser, you can run the desktop sharing in !BigBlueButton.  Please note that on Mac OS X with Java 7, you can run applets with !FireFox but not Google Chrome, as Chrome is a 32-bit browser and Java 7 requires a 64-bit browser to run.  Hence, on Mac OS X, if you need to run desktop sharing, we recommend using !FireFox.
@@ -1246,7 +1093,7 @@ To increase upstream bandwidth, the presenter can turn off any applications that
 
 3) Improve the algorithm for desktop sharing
 
-There are a number of open issues for improving the desktop sharing: [http://code.google.com/p/bigbluebutton/issues/detail?id=512 512], [http://code.google.com/p/bigbluebutton/issues/detail?id=854 854], [http://code.google.com/p/bigbluebutton/issues/detail?id=902 902], and [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].  
+There some open issues for improving the desktop sharing, see [http://code.google.com/p/bigbluebutton/issues/detail?id=1141 1141].  
 
 4) Improve the architecture for desktop sharing
 
@@ -1258,7 +1105,7 @@ There are lots of opportunities to explore on how to increase the speed of deskt
 
 === Can I share a specific window when sharing my desktop ===
 
-Yes.  As of !BigBlueButton 0.71, you can share a region of your desktop.  Just select the region of your window and, to your viewers, they will just see that window.
+While you can't choose a specific window, you can share a region of your desktop and place the window within that region.
 
 
 == Presentations ==
@@ -1286,11 +1133,11 @@ You can change `beans.presentationService.defaultUploadedPresentation` to point 
 
 If you want to specify the default presentation for a given meeting, you can also pass a URL to the presentation as part of the [API#Preupload_Slides create] meeting API call.
 
-=== Can I upload Microsoft Office 2007 documents to !BigBlueButton? ===
+=== Can I upload Microsoft Office 2007/2010/2013 documents to !BigBlueButton? ===
 
-!BigBlueButton uses !OpenOffice 3.2 for converting Microsoft Office documents into PDF for display in !BigBlueButton.  Office 2003 documents convert well; however, Office 2007 and Office 2010 documents (such as .pptx) are problematic with !OpenOffice 3.2.  In particular, the font alignment is not precise. 
+!BigBlueButton uses !LibreOffice 4.0 for converting Microsoft Office documents into PDF for display in !BigBlueButton. 
 
-If you are using Office 2007, we recommend using Microsoft's free download to enable Office 2007 to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
+If possible, for best results, save your Word or !PowerPoint documet as PDF.  If you are using Office 2007, we recommend using Microsoft's free download to enable Office 2007 to save any document to PDF: [http://www.microsoft.com/downloads/details.aspx?FamilyID=4d951911-3e7e-4ae6-b059-a2e79ed87041&displaylang=en download link].
 
 You'll always get the best results with PDF.
 
@@ -1408,14 +1255,9 @@ and set energy-level to a lower value (.e.g 50)
 
 Save the file, then do `sudo bbb-conf --restart` to restart !BigBlueButton.
 
-=== Why do I hear music when I join the voice conference? ===
-
-When you are the only person in the voice conference, you'll hear 'music on hold'.  This indicates that you've successfully joined (as opposed to hearing nothing).  Once a second listener joins, the music stops and you can talk with the other person.
-
-
 === Why is there an echo in the voice conference? ===
 
-In !BigBlueButton 0.80, we use the built-in acoustic echo cancellation, so in most cases, you should not hear any echo from remote users.
+In !BigBlueButton, we use the built-in acoustic echo cancellation, so in most cases, you should not hear any echo from remote users.
 
 In any event, we always recommend that you have your remote users use a headset with microphone.  This will ensure the best audio in a session.
 
@@ -1427,7 +1269,7 @@ Overall, the best solution is ask all users to use a headset -- this will ensure
 
 === Why is there a delay in the audio when I use VoIP? ===
 
-You will experience a delay, depending on the network latency from the speaker to the !BigBlueButton server, when using the built-in VoIP in !BigBlueButton 0.80 (clicking the headset icon).
+You will experience a delay, depending on the network latency from the speaker to the !BigBlueButton server, when using the built-in VoIP in !BigBlueButton (clicking the headset icon).
 
 Here's a breakdown of the path for the audio packets, from your !BigBlueButton client, when using VoIP.  When you speak, your audio is transmitted by the !BigBlueButton client to red5 using speex codec.  It is then transmitted by red5 to FreeSWITCH (via red5phone), then FreeSWITCH mixes in the audio, then the resulting audio stream is sent back to red5phone (via SIP), and transmitted back to the client.
 
@@ -1453,53 +1295,9 @@ For the video, red5 does not do much with the video packets -- it just re-broadc
 For audio, the voice packets have a longer route to take (see answer to question above).
 
 
-=== How do I remove sound when a user joins or leaves the conference? ===
-For FreeSWITCH, comment out {{{the following in /opt/freeswitch/conf/autoload_configs/conference.conf.xml}}}
-{{{
-      <!--param name="enter-sound" value="tone_stream://%(200,0,500,600,700)"/-->
-      <!--param name="exit-sound" value="tone_stream://%(500,0,300,200,100,50,25)"/-->
-}}}
-
 === I'd like to connect my !BigBlueButton server to PSTN. Where can I get DIDs?===
 You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
 
-=== Why did my voice conference number work in 0.7, but not in 0.71? ===
-In !BigBlueButton 0.7, Asterisk was configured to use any 5-digit conference number. However, for !BigBlueButton 0.71, FreeSWITCH is configured to use any 5-digit number that begins with 7 (i.e. 7XXXX). 
-
-To configure FreeSWITCH to accept any 5-digit conference number, in /opt/freeswitch/conf/dialplan/public.xml change
-
-{{{
-    <extension name="bbb_conferences">
-      <condition field="destination_number" expression="^(7\d{4})$">
-          <action application="answer"/>
-          <action application="conference" data="$1@wideband"/>
-          <!-- <action application="conference" data="$1@wideband"/> -->
-      </condition>
-    </extension>
-
-}}}
-
-to
-
-{{{
-    <extension name="bbb_conferences">
-      <condition field="destination_number" expression="^(\d{5})$">
-          <action application="answer"/>
-          <action application="conference" data="$1@wideband"/>
-          <!-- <action application="conference" data="$1@wideband"/> -->
-      </condition>
-    </extension>
-}}}
-
-and then restart FreeSWITCH.  
-
-{{{
-
-sudo /etc/init.d/freeswitch restart
-
-}}}
-
-In !BigBlueButton 0.80 and later you can specify any five digit number.
 
 == Chat ==
 
@@ -1517,18 +1315,12 @@ screen to your bank account.
 
 As of !BigBlueButton 0.71, we've removed the full screen button and instead recommend users make their browser full screen. This has the same effect, but allows you to use your keyboard.
 
-=== How come when I use a | (pipe character) in the chat, any text after it disappears? ===
-
-This has to do with how some data is used internally.  The data after the | is stripped away and therefore will not show.
-
-
 
 == Record and Playback ==
 
-These answers are related to the !BigBlueButton 0.8-beta.
 
 === Where is the record button? ===
-In !BigBlueButton 0.8, the external application that uses the !BigBlueButton API can now pass an additional parameter `record=true` when creating a session.   This additional parameter instructs the !BigBlueButton server to record the session and make a recording available through subsequent [http://code.google.com/p/bigbluebutton/wiki/API#Get_Recordings getRecordings] calls.
+In !BigBlueButton, the external application that uses the !BigBlueButton API can now pass an additional parameter `record=true` when creating a session.   This additional parameter instructs the !BigBlueButton server to record the session and make a recording available through subsequent [http://code.google.com/p/bigbluebutton/wiki/API#Get_Recordings getRecordings] calls.
 
 There is no user interface for the presenter to turn on or turn off a recording.  
 
@@ -1536,22 +1328,15 @@ When instructed through the API call, the !BigBlueButton server will record all 
 
 === What parts of the session does !BigBlueButton record? ===
 
-!BigBlueButton now records events (join, leave, who's talking, chat) and media (audio, webcam, presentations, and desktop sharing) for later playback. After the session ends, the !BigBlueButton server will run one (or more) ingest and processing scripts to convert the recorded events and media into playback formats (see Record and Playback Specification). 
+!BigBlueButton records all activity in the presentation, chat, webcams, and desktop sharing for playback.
 
-The build-in ingest and processing script _slides_ will process the recorded events and media to create an HTML5 page that will playback slides, audio, and chat.
-
-When integrated with Matterhorn, !BigBlueButton can process the desktop and webcam for automatic submission to a Matterhorn server (see Matterhorn integration).  Playback of recorded content occurs within the Matterhorn interface.
-
-Currently, !BigBlueButton does not record or playback mouse movements or whiteboard events.  The intent is to add these elements to playback in a future itegration of !BigBlueButton.
 
 === What browsers support playback? ===
-In !BigBlueButton 0.80, the audio from a recorded session is encoded into [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered.  Playback of Vorbis audio is supported in !FireFox and Chrome, but not IE and Safari.
+!BigBlueButton supports playback in Chrome and !FireFox.
 
-With the upcoming !BigBlueButton 0.81, !BigBlueButton will playback the webcams from a session using the WebM container, which, thanks to Google, provides a high-quality open source video codec VP8.  Playback of video in VP8 is supported by !FireFox and Chrome, but not IE and Safari.   See [http://en.wikipedia.org/wiki/HTML5_video HTML5 video] wikipedia article.
+In !BigBlueButton, the audio from a recorded session is encoded into [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered.  Playback of Vorbis audio is supported in !FireFox and Chrome, but not IE and Safari.
 
-Using the  [http://www.google.com/chromeframe?quickenable=true Google Chrome Frame] within IE, you can also support the above codecs.
-
-Safari does not support the open source codecs.  Playback on Safari or iOS devices requires creation of h.264 videos and the AAC codec, both of which are patent encumbered and require licensing.  For h.264 licensing see [http://www.mpegla.com/main/default.aspx MPEG-LA] and for AAC licensing see [http://www.vialicensing.com/ VA Licensing].  It you need playback on Safari, some of the companies that provide [http://www.bigbluebutton.org/commercial-support/ commercial support] for !BigBlueButton can provide you a license and support for such playback.
+BigBlueButton will playback the webcams from a session using the WebM container, which, thanks to Google, provides a high-quality open source video codec VP8.  Playback of video in VP8 is supported by !FireFox and Chrome, but not IE and Safari.   See [http://en.wikipedia.org/wiki/HTML5_video HTML5 video] wikipedia article.
 
 === What is the disk space usage for storing 1 hour of recordings? ===
 
@@ -1596,43 +1381,23 @@ In !FireFox, the audio playback component shows both the current time index and 
 
 === How do I modify the default playback format? ===
 
-The ingest and processing scripts, written in Ruby, process the recorded events and media to create a playback option.  The default scripts, called `slides.rb` (there is a script for processing and publishing), are located in 
+The ingest and processing scripts, written in Ruby, process the recorded events and media to create a playback option.  The default scripts, called `presentation.rb` (there is a script for processing and publishing), are located in 
 
 {{{
-/usr/local/bigbluebutton/core/scripts/process/slides.rb
-/usr/local/bigbluebutton/core/scripts/publish/slides.rb
+/usr/local/bigbluebutton/core/scripts/process/presentation.rb
+/usr/local/bigbluebutton/core/scripts/publish/presentation.rb
 }}}
 
 !BigBlueButton uses popcorn.js, an HTML5 media framework, for playback.  
 
-By modifying slides.rb, you could, for example, exclude chat from the layout, add themes or colors, change the layout of the HTML5 web page, add a download link to the content, etc.
+By modifying presentation.rb, you could, for example, exclude chat from the layout, add themes or colors, change the layout of the HTML5 web page, add a download link to the content, etc.
 
 
 === How do I download a recorded session? ===
 
-Currently, `slides.rb` does not create a download package.
-
 When looking to download a recorded session, most expect a single link to download the video file.
 
-In contrast, `slides.rb` does not create a video file for playback.  Video files for a three hour lecture can get very large.  Instead, `slides.rb` creates an HTML5 page that references PNG images and audio, and time indexes the PNG images against the audio to match their display in the session.  The result is the source playback files are very small and can be hosted on any web server.  The drawback is there will be a pause for the browser to download all this content, but, once downloaded, there is no more load on the web server.
-
-The script `slides.rb` could create a download package -- which would be .zip file of PNG images, audio file, HTML, XML, and javascript libraries for later playback.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In contrast, !BigBlueButton does not create a video file for playback.  Video files for a three hour lecture can get very large.  Instead, !BigBlueButton creates an HTML5 page that references PNG images and audio, and time indexes the PNG images against the audio to match their display in the session.  The result is the source playback files are very small and can be hosted on any web server.  The drawback is there will be a pause for the browser to download all this content, but, once downloaded, there is no more load on the web server.
 
 
 
@@ -1641,17 +1406,16 @@ The script `slides.rb` could create a download package -- which would be .zip fi
 == Setup ==
 
 === Setting up the Dev environment ===
-See [DevelopingBBB Developing !BigBlueButton] for full instructions.
+See [Developing Developing !BigBlueButton] for full instructions.
 
 === Where can I download the latest build? ===
 You can checkout the latest code from Git.  See [https://github.com/bigbluebutton/bigbluebutton BigBlueButton GitHub repository].
 
 === I want to develop from Windows! ===
+We recommend you setup a Ubuntu 10.04 64-bit VM, using VMWare Fusion or Virtual Box, and then install !BigBlueButton on the VM, then install the development environemnt.
 
-Even though the !BigBlueButton VM makes your life much easier, some people prefer to develop in their Windows environment instead. Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder, simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
+Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder, simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
 
-=== How to compile and deploy the components of !BigBlueButton ===
-For most components of BBB, the source on the !BigBlueButton VM includes ant scripts which you can use to compile and deploy that particular component. See DevelopingBBB.
 
 === What if I want to develop for the Client only? ===
 If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of !BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of !BigBlueButton.
@@ -1757,8 +1521,6 @@ Here are the possible causes for this error with steps to resolve.
     sudo bbb-conf --check
 }}}
 
-  * The init.d script for red5 must execute before the init.d script for FreeSWITCH (or more specifically bbb-freeswitch-config).  FreeSWITCH needs to be running before red5 can successfully start.  A fix has been applied for this in !BigBlueButton 0.8-beta-2.  To apply this fix to 0.71a, see [http://code.google.com/p/bigbluebutton/issues/detail?id=916 issue 916].
-
   * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to an IP address, but !BigBlueButton is trying to connect on an old (or incorrect) IP address.  A fix has been applied for this in !BigBlueButton 0.8-beta-4 (see [FAQ#How_do_I_configure_FreeSWITCH_to_use_127.0.0.1? how do I configure FreeSWITCH to use 127.0.0.1]).
 
 If you don't want FreeSWITCH to bind to 127.0.0.1, you need to figure out which IP address it's using.  First, determine the IP address FreeSWITCH is monitoring for incoming SIP calls with the following command:
@@ -1785,43 +1547,6 @@ sudo bbb-conf --check
 }}}
 
 If the above does not resolve your problem, post to the output of the commands `sudo bbb-conf --check` and `ifconfig` to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll help you there.
-
- 
-=== I've started a new !BigBlueButton VM, but I don't know the password to login via SSH ===
-When the VM first asks you to change the password, you will need to enter the password 'default' twice before it lets you change to a new password. Many people miss this. Try logging in with 'firstuser' - 'default' again.
-
-=== I can join the voice conference, but nothing appears in the Listener's window ===
- * Make sure {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}} values matches those with {{{/etc/asterisk/manager.d/bigbluebutton.conf}}}
- * Make sure {{{enabled = yes}}} in {{{/etc/asterisk/manager.conf}}}
- * See if changing {{{bindaddr = 0.0.0.0}}} to {{{bindaddr = 127.0.0.1}}} works.
-{{{
-firstuser@bbb-vm-20091109:$ more /etc/asterisk/manager.conf
-;
-; Asterisk Call Management support
-;
-
-; By default asterisk will listen on localhost only.
-[general]
-enabled = yes
-port = 5038
-bindaddr = 127.0.0.1
-;bindaddr = 0.0.0.0
-
-; No access is allowed by default.
-; To set a password, create a file in /etc/asterisk/manager.d
-; use creative permission games to allow other serivces to create their own
-; files
-#include "manager.d/*.conf"
-
-}}}
-
-Try 
-
-{{{
-   sudo bbb-conf --check
-}}}
-
-which will analyze your current setup and print out any warnings/problems it finds.  Also see Why_did_my_voice_conference_number_worked_in_0.7_but_not_in_0.71.
 
 
 === Why can't I resize my portrait document? ===
@@ -2066,14 +1791,4 @@ Still, from time to time, we see individual posts in our developer mailing list 
 Doing this removes the inevitable problems that arise when manual code changes break in a new release thereby creating a flood of forum posts with the title "My
 branding changes no longer work -- please help me!!"
 
-Most importantly for everyone, the efforts to support a [http://en.wikipedia.org/wiki/White-label_product white labeled] version of !BigBlueButton won't take away from core
-development, but will rather support it.
-
-
-=== Is the scheduling interface in bbb-web still supported? ===
-
-As of !BigBlueButton 0.63, we started transitioning away from the grails-based interface for scheduling conferences, located at http://ip/bigbluebutton.  We've found that most of our developers want to integrate !BigBlueButton into their application, so we've shifted focus to the !BigBlueButton API.
-
-There is also some legacy stuff in the bbb-web interface, such as limiting the number of users, that is not implemented yet and we'll be properly implementing in the API.  
-
-It may be in the future that the bbb-web interface is reborn and becomes a reference implementation of how to use the API, but we're currently focusing on providing examples through .jsp pages, which are much more portable and brandable for our users. 
+Most importantly for everyone, the efforts to support a [http://en.wikipedia.org/wiki/White-label_product white labeled] version of !BigBlueButton won't take away from core development, but will rather support it.
