@@ -323,8 +323,9 @@ If `sudo bbb-conf --check` warns that you are running an older version of ffmpeg
 
 = Upgrading from !BigBlueButton 0.80 =
 
+The packaging is for Ubuntu 10.04 64-bit only.  We no longer support 32-bit packaging for 0.81.  This means you cannot upgrade the !BigBlueButton 0.80 virtual machine (VM) to 0.81 as the VM is 32-bit.  Recommend you create a new Ubuntu 10.04 64-bit server.  See  [https://help.ubuntu.com/community/VirtualMachines Ubuntu Virtual Machines].
 
-If you are upgrading from !BigBlueButton 0.80 candidate, please note if you've made any custom changes to !BigBlueButton, such as
+If you are upgrading from !BigBlueButton 0.80, please note if you've made any custom changes to !BigBlueButton, such as
 
  * applied custom branding
  * modified /var/www/bigbluebutton/client/conf/config.xml
