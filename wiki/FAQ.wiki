@@ -1548,6 +1548,19 @@ sudo bbb-conf --check
 
 If the above does not resolve your problem, post to the output of the commands `sudo bbb-conf --check` and `ifconfig` to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll help you there.
 
+=== Why can't I accept the Flash Security Dialog on Linux? ===
+
+On some versions of Linux desktop when loading the !BigBlueButton client, the user is unable to accept the Flash security dialog asking for permissions to access the computer's microphone and webcam.
+
+The solution is use the Flash security manager to add an exception for the !BigBlueButton host.  Doing so will no longer have Flash prompt for access to the microphone/webcam.  
+
+To add an exception, do the following.
+
+1.  Open the following URL in a browser [http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html Flash Security Manager settings].  (This will open the security manager settings for the local computer).
+2.  Click on the tab with screen showing an eye (Web Privacy Settings)
+3.  Look through the list for the hostname for your !BigBlueButton server
+4.  Click 'Always Allow' radio button
+
 
 === Why can't I resize my portrait document? ===
 
