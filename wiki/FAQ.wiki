@@ -505,7 +505,7 @@ If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}.
 = Configuration =
 
 == What are the minimum requirements for the !BigBlueButton client? ==
-Users need a web browser capable of running Flash 11.3.  To check the version of flash, visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
+Users need a web browser capable of running Flash 11.2.  To check the version of flash, visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
 
 As of Mac OS X 10.6, Apple stopped updating Flash.  If a Mac user is running an out-of-date version of Flash (!BigBlueButton will check the version of flash), they can upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
 
