@@ -43,8 +43,14 @@ $ uname -m
 x86_64
 }}}
 
-You should see `x86_64`.  
+You should see `x86_64`.  You should also not have any version of ruby installed.
 
+{{{
+$ ruby -v
+-bash: ruby: command not found
+}}}
+
+If you have a version of ruby installed (such as ruby 1.8) uninstall the packages first.  !BigBlueButton has been tested with ruby 1.9.2.
 
 
 = Installing !BigBlueButton 0.81 =
