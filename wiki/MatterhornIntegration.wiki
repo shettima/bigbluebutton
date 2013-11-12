@@ -1,4 +1,7 @@
 #summary How to integrate BigBlueButton 0.8-beta with Matterhorn 1.1/1.2
+#labels Deprecated
+
+This page is depreciated.  Please see [Matterhorn Matterhorn] for the latest documentation on Matterhorn integration.
 
 <wiki:toc max_depth="3" />
 
