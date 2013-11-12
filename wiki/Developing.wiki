@@ -262,9 +262,6 @@ nothing to commit (working directory clean)
 }}}
 
 
-
-*Note:* We will soon be tagging the repository for 0.81-beta1, but for the moment you can checkout master.
-
 = Production Environment =
 
 Okay. Let's pause for a minute. You have set-up the necessary tools and cloned the source. Understand the diagram below on where the different configuration are in a production set-up. When developing, we want to change some configuration settings to load our new changes and not the ones deployed for production.
