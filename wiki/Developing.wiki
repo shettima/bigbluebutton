@@ -234,6 +234,35 @@ nothing to commit (working directory clean)
 }}}
 
 When you first clone the !BigBlueButton git repository, git will place you, by default, on the _master branch_, which is the latest code for !BigBlueButton. 
+
+Now that 0.81 is shipped, you want to checkout the 0.81 release branch (marked 'v0.81-release'). 
+
+
+{{{
+git checkout -b my-bbb-branch v0.81-release
+}}}
+
+You should see
+
+{{{
+Switched to a new branch 'my-bbb-branch'
+}}}
+
+Do
+
+{{{
+git status
+}}}
+
+The output should be
+
+{{{
+# On branch my-bbb-branch
+nothing to commit (working directory clean)
+}}}
+
+
+
 *Note:* We will soon be tagging the repository for 0.81-beta1, but for the moment you can checkout master.
 
 = Production Environment =
