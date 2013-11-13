@@ -1,5 +1,7 @@
 #summary How to install BigBlueButton on Debian
-#labels Phase-Deploy
+#labels Phase-Deploy,Deprecated
+
+*Note: These instructions are over two years old and very out-of-date.  We may update them in the future, but for now we recommend using an Ubuntu 10.04 64-bit server for installation of !BigBlueButton.  See [Installation installation].*
 
 = How to install !BigBlueButton on Debian Squeeze =
 
