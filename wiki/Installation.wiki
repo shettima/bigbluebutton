@@ -5,7 +5,7 @@
 The !BigBlueButton 0.81 server runs under Ubuntu 10.04 64-bit.  To setup your own !BigBlueButton server:
 
     * [InstallationUbuntu Install from packages] (Ubuntu 10.04 64-bit)
-    * [BigBlueButtonVM Download BigBlueButton Virtual Machine] (OS X and Windows)
+    * [BigBlueButtonVM Download BigBlueButton Virtual Machine] (Mac OS X or Windows desktop)
 
 After you've setup a !BigBlueButton server, you can configure it using the `bbb-conf` tool, see
 
