@@ -147,7 +147,7 @@ To check your current environment for possible problems that might prevent !BigB
 
 If there are any problems (i.e. if bbb-conf detects that red5 isn't running), you'll see a warning message at the bottom.
 
-The output from above showed that !BigBlueButton's configuration files were listening to IP address 192.168.0.163.  When you type the command, if the IP address shown for your output differs from the IP address of your VM, you can change the IP address that !BigBlueButton is using `bbb-conf`.  
+The output from above showed that !BigBlueButton's configuration files were listening to IP address 192.168.0.163.  When you type the command, if the IP address shown for your output differs from the IP address of your VM, you can change the IP address that !BigBlueButton is using by using `bbb-conf`.  
 
 For example, if the output from `ifconfig` shows your VM is listening to IP address 192.168.0.125, then issue the following command
 
