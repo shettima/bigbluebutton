@@ -75,7 +75,7 @@ When the VM first boots, it acquires an IP address and runs a setup script to fi
   # updates the packages 
   # installs !BigBlueButton
 
-The update step ensures that any updates to packages issued after the release of the !BigBlueButton VM will be automatically downloaded before installation proceeds.
+The update step ensures that any updates to packages, issued after the release of the !BigBlueButton VM, will be automatically downloaded before installation proceeds.
 
 The most common error that prevents update and installation occurs when the !BigBlueButton VM failed to acquire an IP address.  When this occurs, you'll see errors in the console when booting.
 
