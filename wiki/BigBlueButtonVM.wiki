@@ -27,6 +27,8 @@ Note: If you compare the above requirements with those in [InstallationUbuntu#Be
 
 = Setting up the !BigBlueButton VM  =
 
+== Download and Run the VM == 
+
   1.  Download and uncompress the ZIP file. 
 
 Download bigbluebutton081-VM.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
