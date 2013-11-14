@@ -9,10 +9,12 @@ The VM is an easy way to have a fully working !BigBlueButton server in a few min
 
 If you are a developer, you can use the VM as a basis for setting up a [Developing development environment].
 
-== Capacity ==
-Running !BigBlueButton within a virtualized environment on desktop computer is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your computer and network) and developing and extending !BigBlueButton.  However, if you want to use !BigBlueButton in a production environment, we setting up !BigBlueButton on a dedicated server (see [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements]).
+= Before you install =
+Running !BigBlueButton within a virtualized environment on desktop computer is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your computer and network) and developing and extending !BigBlueButton.  
 
-== Requirements == 
+However, if your intent is to use !BigBlueButton in a production environment, we recommend setting up !BigBlueButton on a dedicated server (see [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements]).
+
+== Requirements for the !BigBlueButton VM == 
 The requirements for running the !BigBlueButton VM are:
   # VMWare Player (or VMWare Workstation) for Windows or VM Ware Fusion for Mac
   # 2 G of free memory to run the VM
@@ -23,7 +25,7 @@ The forth requirement is important: the VM must be able to connect to the intern
 
 Note: If you compare the above requirements with those in [InstallationUbuntu#Before_You_Install in installation from packages], you'll note the above requirements are less.  That's because the !BigBlueButton VM isn't intended for us in a production environment; rather, for for testing with small numbers of users and development of !BigBlueButton.
 
-== Installing !BigBlueButton VM  ==
+= Setting up the !BigBlueButton VM  =
 
   1.  Download and uncompress the ZIP file. 
 
@@ -57,10 +59,11 @@ When it's done, you'll see a login prompt.  *NOTE:* The VM has been pre-configur
 
 After resetting the default password, you'll get a welcome message (this appears each time you login as firstuser).  You can access the !BigBlueButton server using the URL given in the welcome message.
 
-== Running the !BigBlueButton VM ==
+== Using !BigBlueButton  ==
 
-At this point, you've got a full !BigBlueButton 0.81 server up and running.  Open a web browser to the URL displayed in the welcome message. 
-  
+At this point, you should have a full !BigBlueButton 0.81 server up and running.  Open a web browser to the URL displayed in the welcome message. 
+ 
+If you have any troubles, please read through the troubleshooting section below.
 
 = Troubleshooting =
 
