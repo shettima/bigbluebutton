@@ -72,12 +72,12 @@ If you have any troubles, please read through the troubleshooting section below.
 == The console gives an error when booting ==
 
 When the VM first boots, it acquires an IP address and runs a setup script to finish the installation of !BigBlueButton.   The script:
-  # updating the packages 
+  # updates the packages 
   # installs !BigBlueButton
 
-The update step ensures that any updates to packages issued after the release of the !BigBlueButton VM will be automatically downloaded before installation proceeded.
+The update step ensures that any updates to packages issued after the release of the !BigBlueButton VM will be automatically downloaded before installation proceeds.
 
-The most common error that prevents update and installation is occurs when the !BigBlueButton VM failed to acquire an IP address.  When this occurs, you'll see errors in the console when booting.
+The most common error that prevents update and installation occurs when the !BigBlueButton VM failed to acquire an IP address.  When this occurs, you'll see errors in the console when booting.
 
 You can manually finish the installation process, but you first need to ensure the VM has (1) acquired an IP address and (2) the IP address is accessible by the host computer.
 
@@ -95,7 +95,7 @@ You should get some ping results
    64 bytes from iad04s01-in-f99.1e100.net (72.14.204.99): icmp_seq=2 ttl=54 time=4.42 ms
 }}}
 
-If not, it means that the VM is unable to acquire an IP address from a DHCP server on the network.  If there is a DHCP serer, you can try 
+If not, it means that the VM is unable to acquire an IP address from a DHCP server on the network.  If there is a DHCP server, you can try 
 
 {{{
     sudo /etc/init.d/networking restart
@@ -116,7 +116,7 @@ There should be no errors when you type the above three commands.
 
 == bbb-conf command not found ==
 
-When it first launches, if the !BigBlueButton VM is unable to connect to the internet it will not finish the installation.  You'll see this when you type`bbb-conf` command and receive the error "command not found".
+When it first launches, if the !BigBlueButton VM is unable to connect to the internet, it will not finish the installation.  You'll see this when you type`bbb-conf` command and receive the error "command not found".
 
 The solution is to make sure the VM can connect with the internet.  You should be able to 
 
@@ -169,7 +169,7 @@ If you need to restart !BigBlueButton, do the command
 and this will do a clean restart.  
 
 
-== Check if you have a internet connection ==
+== Check if you have an internet connection ==
 
 {{{
 ping www.google.com
