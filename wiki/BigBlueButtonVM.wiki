@@ -2,44 +2,47 @@
 
 <wiki:toc max_depth="2" />
 
-= Running !BigBlueButton in a Virtual Machine =
+= Welcome = 
+This guild walks you through how to download and install the !BigBlueButton 0.81 virtual machine (VM).  
 
-This page describes how to download and run the !BigBlueButton 0.81 VM.  The VM is an easy way to have a fully working !BigBlueButton server in a few minutes.  The VM runs under VMWare Player, which is available on Unix, Windows, or Mac (on the Mac it's called VMWare Fusion).  
+The VM is an easy way to have a fully working !BigBlueButton server in a few minutes for testing and development.  The VM runs under VMWare Player, which is available on Windows or Mac (on the Mac it's called VMWare Fusion).   If your looking to install !BigBlueButton on Unix, see [Installation installing on Ubuntu 10.04 64-bit].
 
 If you are a developer, you can use the VM as a basis for setting up a [Developing development environment].
 
-Note: Running !BigBlueButton within a VM on desktop computer is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your VM host) and developing and extending !BigBlueButton, but if you want to use !BigBlueButton in a production environment, we recommend running !BigBlueButton on a dedicated server.  See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements].
+== Capacity ==
+Running !BigBlueButton within a virtualized environment on desktop computer is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your computer and network) and developing and extending !BigBlueButton.  However, if you want to use !BigBlueButton in a production environment, we setting up !BigBlueButton on a dedicated server (see [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements]).
 
 == Requirements == 
 The requirements for running the !BigBlueButton VM are:
-  # VMWare Player (or VMWare Workstation) for Windows or Unix, or VM Fusion for Mac
+  # VMWare Player (or VMWare Workstation) for Windows or VM Ware Fusion for Mac
   # 2 G of free memory to run the VM
   # A DHCP Server for the VM to acquire an IP address on boot
-  # Ability to connect to the internet
+  # Ability for the VM to connect to the internet
 
 The forth requirement is important: the VM must be able to connect to the internet on first boot to update from packages.  If the VM cannot connect, it won't be able to finish the setup of !BigBlueButton.
 
+Note: If you compare the above requirements with those in [InstallationUbuntu#Before_You_Install in installation from packages], you'll note the above requirements are less.  That's because the !BigBlueButton VM isn't intended for us in a production environment; rather, for for testing with small numbers of users and development of !BigBlueButton.
+
 == Installing !BigBlueButton VM  ==
 
-  1.  Download and uncompress the the !BigBlueButton VM. 
+  1.  Download and uncompress the ZIP file. 
 
 Download bigbluebutton081-VM.zip from !SourceForge: [http://sourceforge.net/projects/bigbluebutton/files/  Download ]
 
   2.  Open the enclosed folder.
 
-
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   3.  Double-click on the bigbluebutton-vm.vmx icon.  
 
-This will start VMWare Player/Workstation (or VMWare Fusion on the Mac) and boot the VM. Note: Make sure the networking is set to *Bridged*, not NAT.  
+This will start VMWare Player/Workstation (or VMWare Fusion on the Mac) and boot the VM. Note: Make sure the networking is set to *Bridged* (not NAT).  
 
-The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some YouTube videos.  During this time, the !BigBlueButton VM goes through its initial startup script that 
+The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some [http://www.youtube.com/user/bigbluebuttonshare YouTube videos].  During this time, the !BigBlueButton VM goes through its initial startup script that 
 
-  * Sets up the networking (acquire an IP address from a DHCP server)
-  * Downloads and installs the latest !BigBlueButton packages
-  * Configures  !BigBlueButton to use the VM's current IP address
-  * Installs OpenSSH
+  * Set up the networking (acquire an IP address from a DHCP server)
+  * Download and install the latest !BigBlueButton packages
+  * Configure !BigBlueButton to use the VM's current IP address
+  * Install OpenSSH
 
 
 == Change Default Password ==
@@ -50,13 +53,13 @@ When it's done, you'll see a login prompt.  *NOTE:* The VM has been pre-configur
 
   password: *default*
 
-*To secure your server, immediately login with the above user-id/password.*  This password is set to expire, so you'll be asked to enter the password *default* again, then to provide a new password (entering it twice to confirm).  Again, do this now as it will secure your server.  
+*To secure your server, immediately login with the above user-id/password.*  This password is set to expire immediately, so you'll be asked to enter the password *default* again, then to provide a new password (entering it twice to confirm).  Again, do this now as it will secure your server.  
 
 After resetting the default password, you'll get a welcome message (this appears each time you login as firstuser).  You can access the !BigBlueButton server using the URL given in the welcome message.
 
 == Running the !BigBlueButton VM ==
 
-At this point, you've got a full !BigBlueButton 0.81 server up and running.  Open a web browser to the URL provided using the IP address of the VM.  
+At this point, you've got a full !BigBlueButton 0.81 server up and running.  Open a web browser to the URL displayed in the welcome message. 
   
 
 = Troubleshooting =
@@ -234,6 +237,6 @@ On Mac, you can open a Terminal window and ssh into the VM using it's IP address
 
 == I'm still having problems ==
 
-If you've tried both the above commands and your !BigBlueButton server is not working, please use Google to search for answers.  For the Google search, use a brief description of your problem or the error message you are seeing.  There are over 14000 posts in our mailing lists and they are all indexed by Google -- there is an excellent chance that you'll find an answer right away.
+If you've tried both the above commands and your !BigBlueButton server is not working, use Google to search for help.  Enter a brief description of your problem or the error message you are seeing.  The reason we recommend using Google first is there are now over 14k posts in our mailing lists and they are all indexed by Google -- there is an excellent chance that you'll find a solution right away.
 
 If your unable to find a solution, please post your question to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] mailing list.  Please be as descriptive as possible so we can help you.
