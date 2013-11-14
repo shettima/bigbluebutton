@@ -59,7 +59,7 @@ When it's done, you'll see a login prompt.  *NOTE:* The VM has been pre-configur
 
 *To secure your server, immediately login with the above user-id/password.*  This password is set to expire immediately, so you'll be asked to enter the password *default* again, then to provide a new password (entering it twice to confirm).  Again, do this now as it will secure your server.  
 
-After resetting the default password, you'll get a welcome message (this appears each time you login as firstuser).  You can access the !BigBlueButton server using the URL given in the welcome message.
+After resetting the default password, you'll receive a welcome message (this appears each time you login as firstuser).  You can access the !BigBlueButton server using the URL given in the welcome message.
 
 == Using !BigBlueButton  ==
 
