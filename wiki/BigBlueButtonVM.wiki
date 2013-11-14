@@ -116,7 +116,7 @@ There should be no errors when you type the above three commands.
 
 == bbb-conf command not found ==
 
-When it first launches, if the !BigBlueButton VM is unable to connect to the internet, it will not finish the installation.  You'll see this when you type`bbb-conf` command and receive the error "command not found".
+When it first launches, if the !BigBlueButton VM is unable to connect to the internet, it will not finish the installation.  You'll see this when you type `bbb-conf` command and receive the error "command not found".
 
 The solution is to make sure the VM can connect with the internet.  You should be able to 
 
