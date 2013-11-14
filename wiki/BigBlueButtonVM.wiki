@@ -3,19 +3,19 @@
 <wiki:toc max_depth="2" />
 
 = Welcome = 
-This guild walks you through how to download and install the !BigBlueButton 0.81 virtual machine (VM).  
+This guide walks you through how to download and install the !BigBlueButton 0.81 virtual machine (VM).  
 
-The VM is an easy way to have a fully working !BigBlueButton server in a few minutes for testing and development.  The VM runs under VMWare Player, which is available on Windows or Mac (on the Mac it's called VMWare Fusion).   If your looking to install !BigBlueButton on Unix, see [Installation installing on Ubuntu 10.04 64-bit].
+The VM is an easy way to have a fully working !BigBlueButton server in a few minutes for testing and development.  The VM runs under VMWare Player, which is available on Windows or Mac (on the Mac it's called VMWare Fusion).   If you're looking to install !BigBlueButton on Unix, see [Installation installing on Ubuntu 10.04 64-bit].
 
 If you are a developer, you can use the VM as a basis for setting up a [Developing development environment].
 
 = Before you install =
-Running !BigBlueButton within a virtualized environment on desktop computer is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your computer and network) and developing and extending !BigBlueButton.  
+Running !BigBlueButton within a virtualized environment on a desktop computer is good for testing !BigBlueButton with small groups of people (the actual number will depend on the speed of your computer and network) and developing and extending !BigBlueButton.  
 
 However, if your intent is to use !BigBlueButton in a production environment, we recommend setting up !BigBlueButton on a dedicated server (see [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum requirements]).
 
 == Requirements for the !BigBlueButton VM == 
-The requirements for running the !BigBlueButton VM are:
+The requirements for running the !BigBlueButton VM are as follows:
   # VMWare Player (or VMWare Workstation) for Windows or VM Ware Fusion for Mac
   # 2 G of free memory to run the VM
   # A DHCP Server for the VM to acquire an IP address on boot
@@ -23,7 +23,7 @@ The requirements for running the !BigBlueButton VM are:
 
 The forth requirement is important: the VM must be able to connect to the internet on first boot to update from packages.  If the VM cannot connect, it won't be able to finish the setup of !BigBlueButton.
 
-Note: If you compare the above requirements with those in [InstallationUbuntu#Before_You_Install in installation from packages], you'll note the above requirements are less.  That's because the !BigBlueButton VM isn't intended for us in a production environment; rather, for for testing with small numbers of users and development of !BigBlueButton.
+Note: If you compare the above requirements with those in [InstallationUbuntu#Before_You_Install in installation from packages], you'll note the above requirements are less.  That's because the !BigBlueButton VM isn't intended for use in a production environment; rather, for testing with small numbers of users and development of !BigBlueButton.
 
 = Setting up the !BigBlueButton VM  =
 
