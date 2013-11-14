@@ -27,7 +27,7 @@ Note: If you compare the above requirements with those in [InstallationUbuntu#Be
 
 = Setting up the !BigBlueButton VM  =
 
-== Download and Run the VM == 
+== Download == 
 
   1.  Download and uncompress the ZIP file. 
 
