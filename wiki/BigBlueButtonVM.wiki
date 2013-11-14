@@ -65,7 +65,7 @@ After resetting the default password, you'll receive a welcome message (this app
 
 At this point, you should have a full !BigBlueButton 0.81 server up and running.  Open a web browser to the URL displayed in the welcome message. 
  
-If you have any troubles, please read through the troubleshooting section below.
+If you have any problems, please read through the troubleshooting section below.
 
 = Troubleshooting =
 
