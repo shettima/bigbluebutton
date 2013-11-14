@@ -244,4 +244,4 @@ On Mac, you can open a Terminal window and ssh into the VM using it's IP address
 
 If you've tried both the above commands and your !BigBlueButton server is not working, use Google to search for help.  Enter a brief description of your problem or the error message you are seeing.  The reason we recommend using Google first is there are now over 14k posts in our mailing lists and they are all indexed by Google -- there is an excellent chance that you'll find a solution right away.
 
-If your unable to find a solution, please post your question to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] mailing list.  Please be as descriptive as possible so we can help you.
+If you're unable to find a solution, please post your question to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] mailing list.  Please be as descriptive as possible so we can help you.
