@@ -39,7 +39,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/vm_icons.png
 
   3.  Double-click on the bigbluebutton-vm.vmx icon.  
 
-This will start VMWare Player/Workstation (or VMWare Fusion on the Mac) and boot the VM. Note: Make sure the networking is set to *Bridged* (not NAT).  
+This will start VMWare Player/Workstation (or VMWare Fusion on the Mac) and boot the VM. NOTE: Make sure the networking is set to *Bridged* (not NAT).  
 
 The !BigBlueButton VM takes about 10 minutes to first initialize.  Sit back, relax, go watch some [http://www.youtube.com/user/bigbluebuttonshare YouTube videos].  During this time, the !BigBlueButton VM goes through its initial startup script, which consists of the following:
 
