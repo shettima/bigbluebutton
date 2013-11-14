@@ -23,7 +23,7 @@ The requirements for running the !BigBlueButton VM are as follows:
 
 The forth requirement is important. The VM must be able to connect to the internet on first boot to update from packages.  If the VM cannot connect, it won't be able to finish the setup of !BigBlueButton.
 
-Note: If you compare the above requirements with those in [InstallationUbuntu#Before_You_Install in installation from packages], you'll note the above requirements are less.  That's because the !BigBlueButton VM isn't intended for use in a production environment; rather, for testing with small numbers of users and development of !BigBlueButton.
+Note: If you compare the above requirements with those [InstallationUbuntu#Before_You_Install in installation from packages], you'll note the above requirements are less.  That's because the !BigBlueButton VM isn't intended for use in a production environment; rather, for testing with small numbers of users and development of !BigBlueButton.
 
 = Setting up the !BigBlueButton VM  =
 
