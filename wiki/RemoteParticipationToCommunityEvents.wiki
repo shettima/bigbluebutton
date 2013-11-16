@@ -3,7 +3,7 @@ The main use case for BBB is distance education. This is a coordination page abo
 
 Community events do not typically benefit from a permanent setup. Thus, we should figure out a "mobile solution".
 
-The test case is the instance at http://Live.tikiwiki.org (which is integrated with Tiki), but it should be relevant with any or no CMS system. This will be a major topic at the [http://tikiwiki.org/TikiFestBigBlueButton TikiFestBigBlueButton]
+The test case is the instance at http://live.tiki.org (which is integrated with Tiki), but it should be relevant with any or no CMS system. This will be a major topic at the [http://tikiwiki.org/TikiFestBigBlueButton TikiFestBigBlueButton]
 
 ==State as of Tiki 5.0 and BigBlueButton 0.64==
 
