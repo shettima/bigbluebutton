@@ -425,7 +425,7 @@ cd ~/dev/bigbluebutton/bigbluebutton-client
 vi src/org/bigbluebutton/main/views/MainApplicationShell.mxml
 }}}
 
-Once you have `MainApplicationShell.mxml` open, go to line 417 and you'll see the following text
+Once you have `MainApplicationShell.mxml` open, go to line 446 and you'll see the following text
 
 {{{
 <<mx:Text htmlText="{ResourceUtil.getInstance().getString('bbb.mainshell.copyrightLabel2',[appVersion])}" id="copyrightLabel2"/>
