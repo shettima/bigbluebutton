@@ -36,7 +36,7 @@ The !BigBlueButton project uses git to manage the source code.  Git is a distrib
 === You have a Working !BigBlueButton Server ===
 Before you can start developing on !BigBlueButton, you need a working !BigBlueButton 0.81 server.
 
-*Note:* You must use ubuntu 10.04 64-bit to setup the !BigBlueButton server.  Currently, there are no 32-bit packages for 0.81 (these will be available before the final release).
+*Note:* You must use ubuntu 10.04 64-bit to setup the !BigBlueButton server.  There are no 32-bit packages available for 0.81.
 
 We emphasize that your !BigBlueButton server must be working *before* you start setting up the development environment.  Be sure that you can login, start sessions, join the audio bridge, share your webcam, and record and playback sessions -- all using the built-in API demos.
 
