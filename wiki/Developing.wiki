@@ -720,7 +720,7 @@ When the !BigBlueButton client loads, it runs a number of modules: chat, voice, 
 
 The URL for each connection is specified in [ClientConfiguration#Config.xml config.xml].  
 
-When setting up a development environment for the client, the `config.xml` file for the !BigBlueButton client is now loaded from `~/dev/bigbluebutton/bigbluebutton-client/bin/conf/config.xml`.  This means that any changes made to the default `config.xml` by `sudo bbb-conf --setip <hostname>` will _not_ affect the `config.xml` in your development environment.  Thus, if you change your hostname or IP address for the !BigBlueButton server, you'll need to manually change the `config.xml` for your development environment.
+When setting up a development environment for the client, the `config.xml` file for the !BigBlueButton client is now loaded from `~/dev/bigbluebutton/bigbluebutton-client/client/conf/config.xml`.  This means that any changes made to the default `config.xml` by `sudo bbb-conf --setip <hostname>` will _not_ affect the `config.xml` in your development environment.  Thus, if you change your hostname or IP address for the !BigBlueButton server, you'll need to manually change the `config.xml` for your development environment.
 
 
 == Welcome to Nginx page ==
