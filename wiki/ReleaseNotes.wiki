@@ -10,7 +10,7 @@ This is our eleventh release of !BigBlueButton.  For a quick summary of what's n
 == Major Features ==
   * * Usability Improvements * - !BigBlueButton now has a consolidated Users window for easier session management and a more consistent user interface (including updated skin and icons) to help new users get started quickly.  For a closer look, see [http://youtu.be/PHTZvbL1NT4 moderator/presenter tutorial] and for [http://www.youtube.com/watch?v=LS2lttmPi6A viewer tutorial].  
 
-  * * Recording * - !BigBlueButton now records all activity in the session (audio, video, presentation, chat, and desktop sharing) for playback.
+  * * Recording * - !BigBlueButton now records all activity in the session (audio, video, presentation, chat, and desktop sharing) for playback.  Playback of recording is supported in Chrome and FireFox.
   
   * * Layout Manager * - !BigBlueButton now enables users to choose from a number of preset layouts to quickly adapt to different modes of learning.
 
