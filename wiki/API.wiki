@@ -134,9 +134,7 @@ In the following section is described the monitoring calls
 
 <br /><br />
 = API Calls =
-
-
-== Standard parameters and responses ==            
+         
 <p> The following response parameters are standard to every call and may be returned from any call. </p>
 <p>*Parameters:*</p>    
 || *Param Name* || *Required / Optional* || *Type* || *Description* ||
