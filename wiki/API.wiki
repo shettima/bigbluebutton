@@ -244,7 +244,7 @@ There is no XML response for this call if it is properly formatted.  You should 
 
 <br /><br />
 
-== Is Meeting Running ==
+== isMeetingRunning ==
 <p>This call enables you to simply check on whether or not a meeting is running by looking it up with your meeting ID.</p>
 
 <p>*Resource URL:*</p>
@@ -269,7 +269,7 @@ There is no XML response for this call if it is properly formatted.  You should 
 
 <br /><br />
 
-== End Meeting ==
+== end ==
 <p>Use this to forcibly end a meeting and kick all participants out of the meeting.</p>
 
 <p>*Resource URL:*</p>
@@ -300,7 +300,7 @@ There is no XML response for this call if it is properly formatted.  You should 
 
 <br /><br />
 
-== Get Meeting Info ==
+== getMeetingInfo ==
 <p>This call will return all of a meeting's information, including the list of attendees as well as start and end times.</p>
 
 <p>*Resource URL:*</p>
@@ -351,7 +351,7 @@ There is no XML response for this call if it is properly formatted.  You should 
 
 <br /><br />
 
-== Get Meetings ==
+== getMeetings ==
 <p>This call will return a list of all the meetings found on this server.</p>
 
 <p>*Resource URL:*</p>
@@ -441,7 +441,7 @@ meetingID (or set of meeting IDs).</p>
 
 <br><br>
 
-== Publish Recordings ==
+== publishRecordings ==
 <p>Publish and unpublish recordings for a given recordID (or set of record IDs).</p>
 <p>*Resource URL:*</p>
 <a href="#">http://yourserver.com/bigbluebutton/api/publishRecordings?[parameters]&checksum=[checksum]</a>
@@ -467,7 +467,7 @@ meetingID (or set of meeting IDs).</p>
 
 <br><br>
 
-== Delete Recordings ==
+== deleteRecordings ==
 <p>Delete one or more recordings for a given recordID (or set of record IDs).</p>
 <p>*Resource URL:*</p>
 <a href="#">http://yourserver.com/bigbluebutton/api/deleteRecordings?[parameters]&checksum=[checksum]</a>
