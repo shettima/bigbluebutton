@@ -216,8 +216,8 @@ For more information about the preupload slides check the following <a href="htt
 
 <br><br>
 
-== Join Meeting ==
-<p>Joins automatically a user to the meeting specified in the meetingID parameter.</p>
+== join ==
+<p>Joins a user to the meeting specified in the meetingID parameter.</p>
 
 <p>*Resource URL:*</p>
 <a href="#">http://yourserver.com/bigbluebutton/api/join?[parameters]&checksum=[checksum]</a>
