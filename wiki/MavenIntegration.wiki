@@ -4,7 +4,7 @@
 
 One of our ongoing goals is to make it easier for other developers to build, extend, and help improve !BigBlueButton.
 
-Currently, !BigBlueButton uses different build systems (ant and gradel) with the requirement of using the VM for development.  To make it easier to build, we are working on moving to a unified build system using maven 3.
+Currently, !BigBlueButton uses different build systems (ant and gradle) with the requirement of using the VM for development.  To make it easier to build, we are working on moving to a unified build system using maven 3.
 
 You can try building !BigBlueButton using the following instructions.
 
