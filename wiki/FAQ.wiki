@@ -292,7 +292,7 @@ Likely not.  First, you need root access to install !BigBluebutton.  If you have
 Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 64-bit.  To install !BigBlueButton on EC2, do the following: 
 
   # Modify the default security group in EC2(or create a new security group) so you have port 80, 9123, and 1935 open (see [FAQ#What_ports_must_be_open_for_external_users_to_connect_to_BigBlue FAQ]).
-  # Launch a 64-bit "lucid" elastic block storage (EBS) image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.medium (or greater CPU) instance.
+  # Launch a 64-bit "lucid" elastic block storage (EBS) image from Canonical's [http://cloud.ubuntu.com/ami/ list of supported AMI].  We recommend running !BigBlueButton on a c1.xlarge (or greater CPU) instance.
   # Follow the instructions to install [InstallationUbuntu install BigBlueButton].
   # Use `sudo bbb-conf --setip hostname` to instruct !BigBlueButton to listen to the external DNS name for the EC2 instance (see [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf]).
 
