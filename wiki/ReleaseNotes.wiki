@@ -49,7 +49,7 @@ Released: June 18, 2012 ([Installation Installation])
 
   * * New API calls * - The API now includes calls for recording a meeting (pass record=true to the 'create' API call) and for accessing recordings: getRecordings, publishRecordings, deleteRecordings (see [API#Version_0.8 API updates for 0.8]).
 
-  * * Matterhorn integration * -  When integrated with Matterhorn, !BigBlueButton can capture and process the desktop and webcam for automatic submission to a Matterhorn server (see [MatterhornIntegration Matterhorn integration]).
+  * * Matterhorn integration * -  When integrated with Matterhorn, !BigBlueButton can capture and process the desktop and webcam for automatic submission to a Matterhorn server (see [Matterhorn Matterhorn integration]).
 
 
 == Usability Updates == 
