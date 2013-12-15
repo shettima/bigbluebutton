@@ -1,5 +1,5 @@
 #summary !BigBlueButton client User management API
-#labels Phase-Implementation
+#labels Deprecated
 
 = Description =
 The !UserManager of bbb-client allows you to easily receive notifications of when users join and leave the client, as well as when the presenter changes. This page contains everything you need to know about getting user updates from within bbb-client.
