@@ -76,7 +76,7 @@ Richard Alam is the creator of !BigBlueButton and the chief architect.  As such,
 
 Fred Dixon serves as the project manager.  His responsibility includes managing the overall release process, coordinating the building and packaging of each release, testing, and communicating with the community on the progress of the release. 
 
-There have been ten releases of !BigBlueButton to date.
+There have been eleven releases of !BigBlueButton to date.
 
 == !BigBlueButton Development Process ==
 
@@ -84,15 +84,11 @@ Each release cycle goes according to the following steps:
 
 === 1. Planning ===
 
-In the past, the committers held a meeting to decide on the main features for a release.  You can see a recording of the recent committer meeting [http://code.google.com/p/bigbluebutton/wiki/RoadMap here].
+Before each release begins, the committers decide on the main features for a release by looking at the outstanding features and development priorities (see [#When_will_feature_X_be_implemented  When will feature X be implemented?]
 
 During the meeting, the committers would review the [http://code.google.com/p/bigbluebutton/wiki/RoadMap1dot0 BigBlueButton Road Map] according to the following criteria:
 
-  # What items on the road map are important for our target market (distance education)?
-  # What refactoring/features do the core committers believe are necessary to improve the code base/maintainability/usability of the project?
-  # What features are our community asking to implement (specifically, those not related to our target market, like control of remote desktop)?
-
-The !BigBlueButton Road Map is the key document for discussion, along with the issue tracking system, where we track, amongst others, all [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Stability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles stability] and [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Usability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=tiles&nobtn=Update usability] issues.
+The !BigBlueButton [http://code.google.com/p/bigbluebutton/wiki/RoadMap1dot0 BigBlueButton Road Map]  is the key document for discussion, along with the issue tracking system, where we track, amongst others, all [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Stability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&x=priority&y=component&mode=grid&cells=tiles stability] and [http://code.google.com/p/bigbluebutton/issues/list?can=2&q=label:Usability&colspec=ID+Type+Status+Priority+Milestone+Owner+Component+Summary&sort=&mode=grid&y=Component&x=Priority&cells=tiles&nobtn=Update usability] issues.
 
  
 === 2. Design ===
