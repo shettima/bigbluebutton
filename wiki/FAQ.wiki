@@ -1,5 +1,4 @@
 #summary BigBlueButton Frequently Asked Questions
-#labels Phase-Support
 
 <wiki:toc max_depth="3"/>
 
