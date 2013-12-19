@@ -105,7 +105,7 @@ cd ~/dev/bigbluebutton/labs/bbb-html5-client
 cake docs
 }}}
 
-=== Testing Message Hndling ===
+=== Testing Message HAndling ===
 
 A tool has been created to test that messages passed through the redis pub/sub are handled correctly by the client. Follow set-up instructions in its Github page. 
 
