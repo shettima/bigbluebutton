@@ -14,7 +14,8 @@ If you want to see the Record and Playback feature in action there is a [http://
 
 Like !BigBlueButton sessions, management of recordings should be handled by [http://www.bigbluebutton.org/open-source-integrations/ third party software].  Third party software consumes the [https://code.google.com/p/bigbluebutton/wiki/API BigBlueButton API] to accomplish that. 
 
-From a technical point of view, in the !BigBlueButton API, when you pass the parameter 'record=true' with [API#Create_Meeting create], !BigBlueButton will create a session and record the slides, chat, audio, desktop, whiteboard events and webcam for later processing.
+From a technical point of view, in the !BigBlueButton API, when you pass the parameter 'record=true' with [API#Create_Meeting create], !BigBlueButton will create a session and record the slides, chat, audio, desktop, whiteboard events and webcam for later processing. This is the unique way to record a meeting. As user you may want to use third party software which sets the right value to the parameter "record". As developer you may want to use a (not official) library which implements the api calls in your preferred language, or implement it by yourself.
+
 
 After the session finishes, the !BigBlueButton server will run one (or more) ingest and processing scripts, named as workflows, that will _process_ and _publish_ the captured data into a format for _playback_.  
 
