@@ -104,3 +104,9 @@ To generate the documentation:
 cd ~/dev/bigbluebutton/labs/bbb-html5-client
 cake docs
 }}}
+
+=== Testing Message Hndling ===
+
+A tool has been created to test that messages passed through the redis pub/sub are handled correctly by the client. Follow set-up instructions in its Github page. 
+
+https://github.com/mohamed-ahmed/html5-api-mate/
