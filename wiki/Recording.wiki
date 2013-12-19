@@ -494,3 +494,11 @@ grep -B 3 "status: 1" /var/log/bigbluebutton/slides/publish-INTERNAL-MEETING-ID.
 
 If there is some output then you found the problem, if there is not any output then tail the file to see which is the
 latest executed task , sure that is the one that failed and an error message with the problem is described few lines after.
+
+= FAQS =
+
+== Is the recording activated automatically ? ==
+No, you need to pass record="true" in the _create_ api call to record a meeting. 
+
+== How to delete recordings before storage device is full ? ==
+ _/etc/cron.daily/bigbluebutton_ deletes the archived media. Edit the file and add more rules if you need to delete others like raw files or processed files.
