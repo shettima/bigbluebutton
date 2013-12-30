@@ -8,18 +8,18 @@
 The CSS file needs to be compiled before bbb-client can use it. In order to brand the client, you first need to check out the bigbluebutton source code. The instructions for this are outlined [Developing developing]. If you are not a developer or are not comfortable with checking out the source and compiling it yourself, you can hire one of the companies that provide [http://bigbluebutton.org/support commercial support] for !BigBlueButton.
 
 == Finding the files ==
-Go to the directory where you've checkout out your source code. The branding files are located in the directory bbb-client/src/branding/css. Here you will find a file called theme.css, among other files. theme.css is the main style sheet that will be loaded by the bigbluebutton client. The other files are examples of different branding styles for !BigBlueButton (more on how you can try out these files later on in this document). The assets directory contains images and other files that are needed by the sample themes. You may not need these for your own branding, so you can ignore them for now.
+Go to the directory where you've checkout out your source code. The branding files are located in the directory bbb-client/branding/default/style/BBBDefault.css. Here you will find a file called BBBDefault.css, among other files. BBBDefault.css is the main style sheet that will be loaded by the bigbluebutton client. The other files are examples of different branding styles for !BigBlueButton (more on how you can try out these files later on in this document). The assets directory contains images and other files that are needed by the sample themes. You may not need these for your own branding, so you can ignore them for now.
 
 == Compiling the style sheet ==
 In order for Flash to load your CSS file, it needs to be compiled to an .swf format. There are two ways to do this:
 === Compiling using Flash Builder ===
-In Flash Builder, right click on the theme.css file and check off 'Compile CSS to SWF'. This will compile the css file to swf, and the it should now appear as bbb-client/bin/branding/css/theme.swf
+In Flash Builder, right click on the BBBDefault.css file and check off 'Compile CSS to SWF'. This will compile the css file to swf, and the it should now appear as bbb-client/client/branding/css/theme.swf
 === Compiling using Ant ===
 In the command line, go to the bbb-client root directory and type in:
 {{{
-ant branding -DthemeFile=theme.css
+ant branding -DthemeFile=BBBDefault.css
 }}}
-If the build succeeds, you should be able to find the compiled .css file as bbb-client/bin/branding/css/theme.css.swf
+If the build succeeds, you should be able to find the compiled .css file as bbb-client/client/branding/css/BBBDefault.css.swf
 If you would like to compile any other .css file in the branding directory, you can substitute the name of the file in the ant branding command, so for example:
 {{{
 ant branding -DthemeFile=myTheme.css
@@ -49,10 +49,8 @@ to include the following line for the branding:
 <skinning enabled="true" url="branding/css/theme.css.swf" />
 }}}
 
-On a production server the only difference here is that there will be no /bin directory. The /client directory is essentially your bin directory. Also, if this is the first time you've deployed branding to your production server, you need to create the branding/css folders inside the client directory, as it won't be there by default.
-
 == Editing the config.xml ==
-To tell the !BigBlueButton client to load your the compiled .swf file you just created, open the file bbb-client/bin/conf/config.xml. Near the top of the file, you'll find the line:
+To tell the !BigBlueButton client to load your the compiled .swf file you just created, open the file bbb-client/client/conf/config.xml. Near the top of the file, you'll find the line:
 {{{
 <skinning enabled="false" />
 }}}
