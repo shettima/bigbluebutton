@@ -229,6 +229,7 @@ For more information about the preupload slides check the following <a href="htt
 || userID || Optional || String || <p style="font-weight: bold; color: red">NEW in 0.7</p><p>An identifier for this user that will help your application to identify which person this is.  This user ID will be returned for this user in the getMeetingInfo API call so that you can check </p> ||
 || webVoiceConf|| Optional || String || <p>If you want to pass in a custom voice-extension when a user joins the voice conference using voip. This is useful if you want to collect more info in you Call Detail Records about the user joining the conference. You need to modify your /etc/asterisk/bbb-extensions.conf to handle this new extensions. </p> ||
 || configToken || Optional || String || <p>The token returned by a setConfigXML API call.  This causes the !BigBlueButton client to load the config.xml associated with the token (not the default config.xml)  ||
+|| avatarURL || Optional || String || <p>The link for the user's avatar to be displayed when displayAvatar in config.xml is set to true.  ||
 
 <p>*Example Requests:*</p>
  * <a href="#">http://yourserver.com/bigbluebutton/api/join?meetingID=test01&password=mp&fullName=John&checksum=1234</a>
