@@ -208,9 +208,7 @@ Any source code you submit for inclusion into !BigBlueButton will be reviewed by
 
 Before we can accept contributions as an open source project, we need to ensure there isn't any ambiguity on the ownership of material committed to the project.  Therefore, before we can incorporate your code, we need to have a Contributor License Agreement in place.  For background on our reasons for doing this, please see http://www.oss-watch.ac.uk/resources/cla.xml.
 
-We've adopted to use the Sun Microsystems Contributer Agreement (yes, we know they are now Oracle, but we're using the agreement that Sun had published) as it provides for joint ownership.  Except as set out in the agreement, you (and your employer if you have an intellectual property agreement in place) keep all right, title, and interest in your contribution.  
-
-Please read over the [http://bigbluebutton.googlecode.com/files/Contributor%20Agreement.pdf Contributor Agreement] and, if you (and your employer) are in agreement with its terms, then sign, scan, and e-mail a copy back to Fred Dixon (ffdixon at bigbluebutton _dot_ org).  Note: The agreement is currently between you (and your employer) and Blindside Networks.  When the [http://bigbluebutton-blog.blogspot.com/2010/07/bigbluebutton-foundation.html BigBlueButton foundation] launches, Blindside Networks will assign these agreements to the foundation.
+Please download the [http://bigbluebutton.org/files/BigBlueButtonContributorAgreement121006.pdf BigBlueButton Inc. Contributor Agreement].  Except as set out in the agreement, you (and your employer if you have an intellectual property agreement in place) keep all right, title, and interest in your contribution.  If you (and your employer) are in agreement with its terms, then sign, scan, and e-mail a copy back to Fred Dixon (ffdixon at bigbluebutton _dot_ org). 
 
 Once we receive the signed Contributor Agreement, we can review your submission for inclusion in !BigBlueButton.  The process for submission depends on whether it's fixing a bug (submitting a patch) or whether it's an enhancement (submitting a feature).
 
