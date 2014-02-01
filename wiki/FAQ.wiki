@@ -196,7 +196,7 @@ Past Committers (fondly remembered):
   * Denis Zgonjanin, Client
 
 The committers have earned this responsibility through years of effort
-working on !BigBlueButton and related open source projects (i.e. red5).  In particular, we very much respect Richard's four year-plus effort to create !BigBlueButton.  As the Lead Architect for this project, he has the final say. 
+working on !BigBlueButton and related open source projects (i.e. red5).  In particular, we very much respect Richard's six year-plus effort to create !BigBlueButton.  As the Lead Architect for this project, he has the final say. 
 
 The committers are very active in the support and mentoring of other developers in the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list and, recently, in the 2010 Google Summer of Code (Google paid for two students to work on the project).  
 
@@ -1755,7 +1755,7 @@ in `bigbluebutton/client/BigBlueButton.html`.  You can see the list of languages
 
 Keep in mind that !BigBlueButton is largely built by a group of (very determined) open source developers that volunteer their time.   Some of us work for companies that provide commercial support for !BigBlueButton (see http://bigbluebutton.org/support). 
 
-Our goal is to make !BigBlueButton the leading open source web conferencing system for distance education.  That's no small task, and we've been working hard on it for [http://www.bigbluebutton.org/history/ over four years].
+Our goal is to make !BigBlueButton the leading open source web conferencing system for on-line learning.  That's no small task, and we've been working hard on it for [http://www.bigbluebutton.org/history/ over five years].
 
 Time is a precious commodity.  In general, when planning a release, we look at the outstanding issues in the following order: 
   # What are the most important items on our [RoadMap1dot0 road map]? 
@@ -1766,7 +1766,7 @@ For (1), you can see the work on the current iteration on our RoadMap  [RoadMap1
 
 If you are a commercial company that wants to accelerate the development of a feature on the road map (or bug fixes), you can contact one of the companies that provides [http://www.bigbluebutton.org/commercial-support/ commercial support].
 
-For (2), sometimes we'll revisit a previously implemented feature to improve it's performance or refactor the code.  Other times, we'll implement the features that have the highest value to the community with the least amount of effort.  The features that are high-value and high-effort usually already land in (1) or (2).
+For (2), often we'll revisit a previously implemented feature to improve it's performance or refactor the code.  This work focuses on the features that have the highest value to the community with the least amount of effort.  
 
 For (3), if your feature does occur in the above during iteration, you have more options.  !BigBlueButton is an open source project: if you (or your organization) want to improve !BigBlueButton, we welcome your contribution.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#Contributing_to_BigBlueButton Contributing to BigBlueButton].
 
