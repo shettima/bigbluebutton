@@ -17,7 +17,7 @@ The planned features included:
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
   * Installation on Ubuntu 12.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
-See detailed list [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.
+See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.
 
 = Roadmap to !BigBlueButton 1.0 =
 
