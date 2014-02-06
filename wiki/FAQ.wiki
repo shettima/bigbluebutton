@@ -1481,7 +1481,7 @@ Flash restricts applications to use TCP/IP for audio, if the user's network conn
 If there is a lot of packets getting cued for resend, you can try having the user drop from audio and then rejoin (click the headset icon twice).  If you are a moderator, you can click the 'x' next to their name in the listener's window.  This will eject them from the audio session and have their !BigBlueButton client automatically rejoin.
 
 
-If most users are experiencing good audio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could also [#How_to_setup_a_external_phone_number_for_the_!FreeSWITCH_server setup dial-in numbers using a SIP Trunk provider] to provide the few users with audio problems the ability to dial into the voice conference.
+If most users are experiencing good audio, but a few are not, since !BigBlueButton uses FreeSWITCH for audio, you could also [#How_to_setup_an_external_phone_number_for_the_!FreeSWITCH_server setup dial-in numbers using a SIP Trunk provider] to provide the few users with audio problems the ability to dial into the voice conference.
 
 
 === Client hangs loading at 100% ===
