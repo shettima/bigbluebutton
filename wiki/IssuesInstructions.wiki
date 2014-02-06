@@ -22,7 +22,7 @@ To reduce the duplication of submissions, we ask you take a few moments and go t
 
 *2.  Post to bigbluebutton-dev:* If you are not a !BigBlueButton developer, we ask that you first post to [http://groups.google.com/group/bigbluebutton-dev BigBlueButton-developers] mailing list.  
 
- * *For a defect post:* Please provide the host operating system, the version of the browser, the version of !BigBlueButton (the build number is visible in the lower left-hand corner), and the output of `sudo bbb-conf --check` if it's a server issue.
+ * *For a defect post:* Please provide the host operating system, the version of the browser, the version of !BigBlueButton (the build number is visible in the lower left-hand corner), the steps you have followed, the changes you have made, and the output of `sudo bbb-conf --check` if it's a server issue.
 
  * *For an enhancement request post:* Let us know how we can make !BigBlueButton better. Give us a use case or user story.  Well thought out requests will get more attention and usually create a spirited discussion. 
 
