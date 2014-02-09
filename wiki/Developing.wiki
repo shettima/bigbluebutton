@@ -448,7 +448,7 @@ When done, join the demo meeting using the client. You'll see the message `-- Bi
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/08/rocks.png
 
-If you don't see your changes, try clearing your browser's cache and then load the client again. It also might be easier to just try this using Firefox since it most likely will not cache this.
+If you don't see your changes, *try clearing your browser's cache and then load the client again*. It also might be easier to just try this using Firefox since it most likely will not cache this.
 
 == Switching back to the packaged client ==
 To switch back to using the packaged !BigBlueButton client, you only need to change the symbolic link for nginx and then restart !BigBlueButton.
@@ -746,6 +746,28 @@ to
 {{{
 <localeversion suppressWarning="false">0.8</localeversion>
 }}}
+
+== Warning: Try increasing the code cache size ==
+
+If you get a compiler warning during the building of bbb-client, such as
+
+{{{
+build-polling:
+    [mxmlc] Loading configuration file /home/dwelch/dev/tools/flex-4.5.0.20967/frameworks/flex-config.xml
+OpenJDK 64-Bit Server VM warning: CodeCache is full. Compiler has been disabled.
+OpenJDK 64-Bit Server VM warning: Try increasing the code cache size using -XX:ReservedCodeCacheSize=
+    [mxmlc] /home/dwelch/dev/bigbluebutton/bigbluebutton-client/client/PollingModule.swf (232039 bytes)
+}}}
+
+Add the following to `~/.profile`
+
+{{{
+export ANT_OPTS="-Xmx512m -XX:MaxPermSize=512m -XX:ReservedCodeCacheSize=1024m"
+}}}
+
+and then reload the .profile with the command `source ~/.profile`.
+
+
 
 = Developing Using Eclipse =
 This instructions assumes that you are developing with the VM running on a Windows machine.
