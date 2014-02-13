@@ -30,8 +30,8 @@ Here are the LTI configuration variables from a test !BigBlueButton server.
 {{{
 $ bbb-conf --lti
 
-       URL: http://test-install.blindsidenetworks.com/lti/tool.xml
-  Customer: bbb
+    URL:    http://test-install.blindsidenetworks.com/lti/tool.xml
+    Key:    bbb
     Secret: b00be971feb0726fa697671c9cf2e883
 
   Icon URL: http://test-install.blindsidenetworks.com/lti/images/icon.ico
