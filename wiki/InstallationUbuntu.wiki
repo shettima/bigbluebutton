@@ -50,7 +50,7 @@ $ ruby -v
 -bash: ruby: command not found
 }}}
 
-If you have a version of ruby installed (such as ruby 1.8) uninstall the packages first.  !BigBlueButton has been tested with ruby 1.9.2.
+If you have a version of ruby installed (such as ruby 1.8) uninstall the packages first.  !BigBlueButton has been tested with ruby 1.9.2, which will be installed in the steps below.
 
 
 = Installing !BigBlueButton 0.81 =
