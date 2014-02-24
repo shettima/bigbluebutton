@@ -7,7 +7,7 @@ The current release is !BigBlueButton 0.81.  See [ReleaseNotes release notes].
 
 = Next Release =
 
-The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver.org/ semantic versioning]).  We presented an [http://recordings.blindsidenetworks.com/summit/1d11d65bfd8dca493e343c255dbcc55af7ae94ec-1383324148360/presentation/ overview] of the planned features for 0.9.0 on November 5, 2014 at the !BigBlueButton summit in Porto Alegre, Brazil.  
+The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver.org/ semantic versioning]).  We presented an [http://recordings.blindsidenetworks.com/summit/1d11d65bfd8dca493e343c255dbcc55af7ae94ec-1383324148360/presentation/ overview] of the planned features for 0.9.0 on November 5, 2014 at the !BigBlueButton summit in Porto Alegre, Brazil.  We gave an update on our progress during this [http://bigbluebutton.org/2014/02/14/bigbluebutton-community-update/ community update] presentation.
 
 The planned features included:
 
