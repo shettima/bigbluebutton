@@ -23,13 +23,13 @@ git checkout -b html5-bridge origin/html5-bridge
 }}} 
 to switch to the HTML5 client branch.
 
-Compile BBB-CLient following the instructions in   https://code.google.com/p/bigbluebutton/wiki/081DevelopingBigBlueButton#Client_Development
+Compile BBB-Client following the instructions in   https://code.google.com/p/bigbluebutton/wiki/Developing#Client_Development
 
-Compile BBB-WEb following the instructions 
-https://code.google.com/p/bigbluebutton/wiki/081DevelopingBigBlueButton#Developing_BBB-Web
+Compile BBB-Web following the instructions 
+https://code.google.com/p/bigbluebutton/wiki/Developing#Developing_BBB-Web
 
 Compile BBB-Apps following the instructions
-https://code.google.com/p/bigbluebutton/wiki/081DevelopingBigBlueButton#Developing_the_Red5_Applications
+https://code.google.com/p/bigbluebutton/wiki/Developing#Developing_the_Red5_Applications
 
 
 == HTML5 Bridge component ==
