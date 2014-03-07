@@ -1426,7 +1426,7 @@ This is related to localization. Before you launch your client, you need to firs
 == General ==
 
 === Some users are experiencing audio problems ===
-!BigBlueButton uses 16 KHz wideband speeks audio codec, which is a high-quality audio codec that compresses very well.   If you run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than a plain ordinary telephone system (which is 8 Khz audio).
+!BigBlueButton uses 16 KHz wideband speexs audio codec, which is a high-quality audio codec that compresses very well.   If you run a !BigBlueButton server within a LAN environment, you can get a sense of the audio quality.  It should sound much richer than a plain ordinary telephone system (which is 8 Khz audio).
 
 To setup !BigBlueButton for external users, such as on-line classess, we [#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton recommend] running !BigBlueButton on a dedicated (non-virtual) server with 100Mbits/sec bandwidth to/from the server.  Furthermore, we [#What_are_the_minimum_bandwidth_requirements_for_a_user? recommend] remote users have a minimum upstream bandwidth of 0.5 Mbits/sec and downstream bandwidth of 1.0 Mbits/sec. 
 
