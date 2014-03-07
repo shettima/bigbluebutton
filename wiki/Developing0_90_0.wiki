@@ -109,14 +109,16 @@ cd ~/dev/tools
 You now need to download a number of tools with wget and then unpack each of these tools in the above directory.
 
 {{{
-wget http://bigbluebutton.googlecode.com/files/gradle-0.8.tar.gz
-tar xvfz gradle-0.8.tar.gz
+wget wget http://services.gradle.org/distributions/gradle-1.10-bin.zip
+unzip gradle-1.10-bin.zip
+ln -s gradle-1.10 gradle
 
 wget http://bigbluebutton.googlecode.com/files/groovy-1.6.5.tar.gz
 tar xvfz groovy-1.6.5.tar.gz
 
-wget https://bigbluebutton.googlecode.com/files/grails-1.3.9.tar.gz
-tar xvfz grails-1.3.9.tar.gz
+wget http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.3.6.zip
+unzip grails-2.3.6.zip
+ln -s grails-2.3.6 grails
 }}}
 
 Next you need to get the Flex 4.5 SDK package. It's important to note that even though we're downloading the Flex 4.5 SDK, !BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
@@ -170,13 +172,13 @@ Paste the following text at bottom of `.profile`.
 export GROOVY_HOME=$HOME/dev/tools/groovy-1.6.5
 export PATH=$PATH:$GROOVY_HOME/bin
 
-export GRAILS_HOME=$HOME/dev/tools/grails-1.3.9
+export GRAILS_HOME=$HOME/dev/tools/grails
 export PATH=$PATH:$GRAILS_HOME/bin
 
 export FLEX_HOME=$HOME/dev/tools/flex
 export PATH=$PATH:$FLEX_HOME/bin
 
-export GRADLE_HOME=$HOME/dev/tools/gradle-0.8
+export GRADLE_HOME=$HOME/dev/tools/gradle
 export PATH=$PATH:$GRADLE_HOME/bin
 
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
