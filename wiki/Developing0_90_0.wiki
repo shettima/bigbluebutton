@@ -179,7 +179,7 @@ export PATH=$PATH:$FLEX_HOME/bin
 export GRADLE_HOME=$HOME/dev/tools/gradle-0.8
 export PATH=$PATH:$GRADLE_HOME/bin
 
-export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 export ANT_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
 }}}
