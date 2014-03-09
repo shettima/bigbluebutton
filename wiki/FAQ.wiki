@@ -40,7 +40,7 @@ We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We
 We use the LGPL license.  Some of the open source components we build on use different licenses, such as red5phone uses the GPL license.
 
 == Where can I find examples of people running !BigBlueButton? ==
-We currently don't keep a list of organizations, colleges/universities, and hosting providers who run !BigBlueButton.   In twelve months prior to June 2012, the project had over [http://www.bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ sixty thousand installs].
+We currently don't keep a list of organizations, colleges/universities, and hosting providers who run !BigBlueButton.   In twelve months prior to June 2012, the project had over [http://bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ sixty thousand installs].
 
 If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bigbluebutton-users] or [http://groups.google.com/group/bigbluebutton-setup bigbluebutton-setup] mailing lists.
 
@@ -48,10 +48,10 @@ If you'd like examples and use cases of people running !BigBlueButton, feel free
 == Will !BigBlueButton always stay open source? ==
 Yes. 
 
-We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://www.bigbluebutton.org/2010/07/12/bigbluebutton-foundation/ independent not-for-profit !BigBlueButton organization] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
+We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton.org/2010/07/12/bigbluebutton-foundation/ independent not-for-profit !BigBlueButton organization] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
 
 = !BigBlueButton Development Process =
-As of June 2012, the !BigBlueButton project had [http://www.bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ 61,000 installs worldwide].  This is a big step since 2008, when the software had just one install at [http://www.bigbluebutton.org/history/ Carleton University].
+As of June 2012, the !BigBlueButton project had [http://bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ 61,000 installs worldwide].  This is a big step since 2008, when the software had just one install at [http://bigbluebutton.org/history/ Carleton University].
 
 Today, there is a very active !BigBlueButton community comprising of over +1200 members on the developer mailing list.  These members, users, developers, educational institutions, and commercial companies -- all are benefiting from improvements to the product.
 
@@ -166,7 +166,7 @@ After a (roughly) two week period in which no one has reported any issues for a 
 
 At first glance at the underlying architecture, !BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in !ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as !ActionScript, grails, and scala are all similar to Java.
 
-Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  The source code for !BigBlueButton is hosted at [https://github.com/bigbluebutton/bigbluebutton github], so you'll need to understand how [http://progit.org/ it works] and the workflow for distributed software development.  
+Before you can contribute as a developer, you need to invest some time into understanding !BigBlueButton's [ArchitectureOverview architecture], [OpenSourceComponents components], and how to setup a [DevelopingBBB development environment].  The source code for !BigBlueButton is hosted at [https://github.com/bigbluebutton/bigbluebutton github], so you'll need to understand [http://git-scm.com/book how git works] and the workflow for distributed software development.  
 
 Like other open source projects, a good place to start is to try fixing an [http://code.google.com/p/bigbluebutton/issues/list open issue].  We've tagged a few issues as [http://code.google.com/p/bigbluebutton/issues/list?q=label:FirstProject FirstProject] to make it easy for you to find those issues that are both (relatively simple) to fix, but would be meaningful to !BigBlueButton.
 
@@ -225,15 +225,15 @@ The ideal patch submission has all the above true, which essentially means you h
 There are a number of *must haves* for your submission to be accepted.
 
   # You have forked !BigBlueButton on !GitHub and submitted the patch as a pull request (this makes it *much* easier for a committer to review and incorporate your patch).
-  # You have signed a [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_contribute_my_updates_to_BigBlueButton_? committers agreement] so there is no ambiguity that your contributions may be released under an open source license.
+  # You have signed a [https://code.google.com/p/bigbluebutton/wiki/FAQ#How_can_I_contribute? committers agreement] so there is no ambiguity that your contributions may be released under an open source license.
   # Your submission is LGPL (unless it modifies existing code that is under a different license).
 
 Specifically, for using !GitHub, you need to do the following:
 
-  1. [http://help.github.com/fork-a-repo/ Fork] !BigBlueButton on [http://www.github.com/bigbluebutton GitHub]
+  1. [https://help.github.com/articles/fork-a-repo Fork] !BigBlueButton on [http://www.github.com/bigbluebutton GitHub]
   1. Create a topic branch - {{{git checkout -b my_branch}}}
   1. Push to your branch - {{{git push origin my_branch}}}
-  1. Create a [http://help.github.com/pull-requests/ Pull Request] from your branch
+  1. Create a [https://help.github.com/articles/using-pull-requests/ Pull Request] from your branch
 
 !GitHub provides some good [http://help.github.com/ help] in the above steps, and there is an excellent [http//progit.org/ Pro Git] book by Scott Chacon available on-line.
 
@@ -242,7 +242,7 @@ Some of the items in our issue tracker are enhancements to the core product.  If
 
   # You have had patches accepted by a committer.
   # You have posted a Request for Comments to the bigbluebuton-dev mailing list signaling your willingness to work on the enhancement.  In your post, you have provided (at minimum) the following:
-    * An overview of the design and implementation of your feature.  For examples see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d36ba6ff53e4aa79/91de48842ae1ea75?lnk=gst&q=rfc#91de48842ae1ea75 Proposal for Preupload of Documents]
+    * An overview of the design and implementation of your feature.  For examples see: [https://groups.google.com/forum/#!topic/bigbluebutton-dev/02um_1Pkqnk Proposal for Preupload of Documents]
     * An outline of how you intend to test the enhancement.
     * An estimate of how much time you have to work on the enhancement.
   # A committer has signaled their intent to work closely with you on the enhancement.
@@ -535,7 +535,7 @@ To test your own server, have five people login and have each open multiple brow
 If you also want to monitor, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
 
 == Where is the admin interface for !BigBlueButton? ==
-Early on in !BigBlueButton's development (around 2009), we started to create an admin interface to let administrators create accounts, schedule meetings, configure properties for meetings, etc.  
+Early in !BigBlueButton's development history (around 2009), we started to create an admin interface to let administrators create accounts, schedule meetings, configure properties for meetings, etc.  
 
 However, we quickly learned that most installations of !BigBlueButton wanted to do one of the following:
 
@@ -543,7 +543,7 @@ However, we quickly learned that most installations of !BigBlueButton wanted to 
   # Integrate !BigBlueButton within their custom web application and needed an API control to interact with their sessions (create a session, add a user, end a session, etc).
   # Have a simple stand-alone landing page to create meetings.
 
-As a result, we [FAQ#Is_the_scheduling_interface_in_bbb-web_still_supported? depreciated our administrative/scheduling interface] and focused on creating and supporting [http://www.bigbluebutton.org/open-source-integrations/ open source integrations] for !BigBlueButton with the most popular content management systems, and ensuring there was an [API  API for integration] within other web-based applications.
+As a result, we stopped building our own admin interface and focues our energies on improving !BigBlueButton itself and creating and supporting [http://bigbluebutton.org/open-source-integrations/ open source integrations] for !BigBlueButton with the most popular open source learning and content management systems.
 
 For a stand-alone landing page, in most cases modifying API demo3.jsp is sufficient.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_setup_new_classrooms_in_BigBlueButton_? How do I setup new classrooms in BigBlueButton?].
 
@@ -836,7 +836,7 @@ The grails applications at/bigbluebutton is old code and is now depreciated (it 
 
 We provide a number of [http://demo.bigbluebutton.org/demo/demo1.jsp API] demos with !BigBlueButton's install.  To modify one of these demos to create your own classrooms, see [#Can_I_run_multiple_virtual_classrooms_in_a_single_BigBlueButton How to create your own virtual classrooms].
 
-Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://www.bigbluebutton.org/open-source-integrations/ integration modules]. 
+Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://bigbluebutton.org/open-source-integrations/ integration modules]. 
 
 
 === How do I modify the default landing page? ===
@@ -1109,7 +1109,7 @@ The default presentation is stored in
   /var/www/bigbluebutton-default/default.pdf
 }}}
 
-The location for the default presentation (default.pdf) is stored in [ConfigurationFiles#/var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebut bigbluebutton.properties], which is located in
+The location for the default presentation (default.pdf) is stored in [https://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.prop bigbluebutton.properties], which is located in
 
 {{{
    /var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
@@ -1229,9 +1229,6 @@ Close this Flash settings dialog and others in the voice conference should now h
 
 FreeSWITCH has automatic audio clipping, which means it will not transmit a speaker's audio if the volume is too low.   If the speaker's audio is low, FreeSWITCH might take a moment to recognize that someone is speaking before transmitting, causing others to hear your audio only after you have started speaking a few words.
 
-
-Try placing the microphone closer to your mouth.  Also, try increasing the sensitivity of your microphone (see [FAQ#How_can't_others_hear_me_in_the_voice_conference? why can't others hear me when I join the voice conference]).
-
 You can also change the settings on FreeSWITCH to lower default threshold for audio.   To lower the threshold, switch to the root account, then edit
 
 {{{
@@ -1239,11 +1236,11 @@ You can also change the settings on FreeSWITCH to lower default threshold for au
 
 }}}
 
-and set energy-level to a lower value (.e.g 50)
+and set energy-level to a lower value (.e.g 100)
 
 {{{
    <profile name="wideband">
-     <param name="energy-level" value="50"/>
+     <param name="energy-level" value="100"/>
 }}}
 
 Save the file, then do `sudo bbb-conf --restart` to restart !BigBlueButton.
@@ -1288,10 +1285,6 @@ For the video, red5 does not do much with the video packets -- it just re-broadc
 For audio, the voice packets have a longer route to take (see answer to question above).
 
 
-=== I'd like to connect my !BigBlueButton server to PSTN. Where can I get DIDs?===
-You can try to find them here http://www.voip-info.org/wiki/view/DID+Service+Providers
-
-
 == Chat ==
 
 === How can I copy all chat messages to the clipboard? ===
@@ -1313,11 +1306,11 @@ As of !BigBlueButton 0.71, we've removed the full screen button and instead reco
 
 
 === Where is the record button? ===
-In !BigBlueButton, the external application that uses the !BigBlueButton API can now pass an additional parameter `record=true` when creating a session.   This additional parameter instructs the !BigBlueButton server to record the session and make a recording available through subsequent [http://code.google.com/p/bigbluebutton/wiki/API#Get_Recordings getRecordings] calls.
+In !BigBlueButton, the external application that uses the !BigBlueButton API can now pass an additional parameter `record=true` when creating a session.   This additional parameter instructs the !BigBlueButton server to record the session and make a recording available through subsequent [https://code.google.com/p/bigbluebutton/wiki/API#getRecordings getRecordings] calls.
 
 There is no user interface for the presenter to turn on or turn off a recording.  
 
-When instructed through the API call, the !BigBlueButton server will record all of the meeting, from the time the first person joins to when the last person leaves.  A meeting may also end when it reaches it's duration or the [http://code.google.com/p/bigbluebutton/wiki/API#End_Meeting end] is called on the meeting.
+When instructed through the API call, the !BigBlueButton server will record all of the meeting, from the time the first person joins to when the last person leaves.  A meeting may also end when it reaches it's duration or the [https://code.google.com/p/bigbluebutton/wiki/API#end end] is called on the meeting.
 
 === What parts of the session does !BigBlueButton record? ===
 
@@ -1492,7 +1485,7 @@ This usually occurs if they install !BigBlueButton on a server (or download the 
 If the !BigBlueButton client is able to connect to download the additional libraries, you can subsequently disable internet connection and use !BigBlueButton on a closed network.
 
 === Users do not appear in the listeners window ===
-For a user to appear in the listener's window, the 3rd party application using the !BigBlueButton API to create a room must pass a `voiceBridge` parameter with the `create` call.  See [API#Create_Meeting create meeting] call.  This is done using the [08InstallationUbuntu#4._Install_API_Demos built-in API demos].
+For a user to appear in the listener's window, the 3rd party application using the !BigBlueButton API to create a room must pass a `voiceBridge` parameter with the `create` call.  See [API#Create_Meeting create meeting] call.  This is done using the [https://code.google.com/p/bigbluebutton/wiki/InstallationUbuntu#6._Install_API_Demos built-in API demos].
 
 Next, !BigBlueButton must successfully connect to FreeSWITCH's SIP port and FreeSWITCH's Event Socket Layer.  To resolve connection problems, see question below.
 
@@ -1513,8 +1506,6 @@ Here are the possible causes for this error with steps to resolve.
     sudo bbb-conf --restart
     sudo bbb-conf --check
 }}}
-
-  * The IP address on the !BigBlueButton server has changed (or you have multiple IP addresses on the server) causing FreeSWITCH to bind (listen) to an IP address, but !BigBlueButton is trying to connect on an old (or incorrect) IP address.  A fix has been applied for this in !BigBlueButton 0.8-beta-4 (see [FAQ#How_do_I_configure_FreeSWITCH_to_use_127.0.0.1? how do I configure FreeSWITCH to use 127.0.0.1]).
 
 If you don't want FreeSWITCH to bind to 127.0.0.1, you need to figure out which IP address it's using.  First, determine the IP address FreeSWITCH is monitoring for incoming SIP calls with the following command:
 
@@ -1601,12 +1592,6 @@ eth0      Link encap:Ethernet  HWaddr 12:31:33:22:25:c2
   # Type `sudo bbb-conf --clean` to do a clean restart of !BigBlueButton
 
 After you do this, typing `sudo bbb-conf --clean` will report an 'IP does not match' warning, but you can ignore it.  In most cases, this would be an error, but on EC2 !BigBlueButton must use the private IP for connecting to FreeSWITCH, but the rest of !BigBlueButton must use the public IP (or hostname) for the configuration to work.
-
-If you are a developer making changes to !BigBlueButton, you can also check the following:
- * Look at the [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles#/usr/share/red5/log/sip.log sip.log] and look for errors.
- * Open up asterisk console {{{sudo asterisk -vvvvvvr}}} and then try clicking on the headset icon on the client again. Look at the logs on the asterisk console for clues.
- * Make sure [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice/src/main/webapp/WEB-INF/bigbluebutton-sip.properties /usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties] (startRtpPort and stopRtpPort) has entries in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_sip.conf /etc/asterisk/bbb_sip.conf].
- * If you are using Asterisk, make sure your conference number is at least 5-digits as defined by {{{exten => _XXXX.,n,Konference(${EXTEN},H)}}} in [http://code.google.com/p/bigbluebutton/source/browse/trunk/bbb-voice-conference/config/asterisk/bbb_extensions.conf /etc/asterisk/bbb_extensions.conf].
 
 
 === Using the API examples, I get a java.lang.!NullPointerException when trying to join a room ===
@@ -1755,7 +1740,7 @@ in `bigbluebutton/client/BigBlueButton.html`.  You can see the list of languages
 
 Keep in mind that !BigBlueButton is largely built by a group of (very determined) open source developers that volunteer their time.   Some of us work for companies that provide commercial support for !BigBlueButton (see http://bigbluebutton.org/support). 
 
-Our goal is to make !BigBlueButton the leading open source web conferencing system for on-line learning.  That's no small task, and we've been working hard on it for [http://www.bigbluebutton.org/history/ over five years].
+Our goal is to make !BigBlueButton the leading open source web conferencing system for on-line learning.  That's no small task, and we've been working hard on it for [http://bigbluebutton.org/history/ over five years].
 
 Time is a precious commodity.  In general, when planning a release, we look at the outstanding issues in the following order: 
   # What are the most important items on our [RoadMap1dot0 road map]? 
@@ -1764,7 +1749,7 @@ Time is a precious commodity.  In general, when planning a release, we look at t
 
 For (1), you can see the work on the current iteration on our RoadMap  [RoadMap1dot0 BigBlueButton 1.0].  If the feature you are requesting is not on our RoadMap, you could open a [http://code.google.com/p/bigbluebutton/issues/list new issue] and make a convincing argument that the feature belongs in (1).  
 
-If you are a commercial company that wants to accelerate the development of a feature on the road map (or bug fixes), you can contact one of the companies that provides [http://www.bigbluebutton.org/commercial-support/ commercial support].
+If you are a commercial company that wants to accelerate the development of a feature on the road map (or bug fixes), you can contact one of the companies that provides [http://bigbluebutton.org/commercial-support/ commercial support].
 
 For (2), often we'll revisit a previously implemented feature to improve it's performance or refactor the code.  This work focuses on the features that have the highest value to the community with the least amount of effort.  
 
