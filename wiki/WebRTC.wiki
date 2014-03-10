@@ -1,0 +1,46 @@
+#summary One-sentence summary of this page.
+#labels webrtc
+
+= Introduction =
+
+WebRTC enables real-time communication in the browser using Javascript APIs. In the BigBlueButton project, webrtc  is an alternative to the Flash audio communication.
+
+
+== Requirements == 
+
+=== For users ===
+BigBlueButton with support for WebRTC has been tested using these browsers 
+Google Chrome >= 28
+Mozilla Firefox >= 26
+
+Previous versions of these browsers may support WebRTC but won't work properly with BigBlueButton. 
+
+
+=== For admins ===
+WebRTC communication is available in BigBlueButton 0.90, it won't work in previous versions of BigBlueButton. Port TCP 5066 should be open for sip connections from the client.
+
+== Enabling /Disabling WebRTC ==
+While WebRTC could be a better option for audio during the BigBlueButton conference, it is up to the administrator to enable or disable WebRTC feature with these commands:
+{{{
+bbb-conf --enablewebrtc
+}}}
+ 
+{{{
+bbb-conf --disablewebrtc
+}}}
+When WebRTC feature is enabled by the server admin, users will have two options to join the audio conference, WebRTC or Flash. If the user's browser is WebRTC capable for BigBlueButton needs, his audio settings dialog will allow him to choose between Flash and WebRTC.
+
+PASTE AUDIO SETTINGS WITH WEBRTC OPTION HERE
+
+When WebRTC feature is disabled by the server admin, users will have Flash as unique option to join the voice conference, as in previous versions of BigBlueButton.
+
+PASTE AUDIO SETTINGS WITH FLASH OPTION HERE
+
+*By default WebRTC feature is disabled in your server.*
+
+== Security ==
+The WebRTC feature exposes external access to Freeswitch in your BigBlueButton server. It is an issue we will fix in the future, meanwhile it is recommended to install a tool like Fail2Ban to ban ip addresses which attempt a DOS attack.
+
+
+== For developers ==
+JSsip is the javascript library which handles the sip communication between the BigBlueButton client and Freeswitch. Port TCP 5066 is used for SIP connection. 
