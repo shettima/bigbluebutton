@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary WebRTC in BigBlueButton
 #labels webrtc
 
 = Introduction =
@@ -15,9 +15,10 @@ Mozilla Firefox >= 26
 
 Previous versions of these browsers may support WebRTC but won't work properly with BigBlueButton. 
 
+== 
 
-=== For admins ===
-WebRTC communication is available in BigBlueButton 0.90, it won't work in previous versions of BigBlueButton. Port TCP 5066 should be open for sip connections from the client.
+=== Getting Started ===
+WebRTC communication is available in BigBlueButton 0.90, it won't work in previous versions of BigBlueButton. Port TCP 5066 should be open for sip over websocket connections from the client.
 
 == Enabling /Disabling WebRTC ==
 While WebRTC could be a better option for audio during the BigBlueButton conference, it is up to the administrator to enable or disable WebRTC feature with these commands:
@@ -36,11 +37,28 @@ When WebRTC feature is disabled by the server admin, users will have Flash as un
 
 PASTE AUDIO SETTINGS WITH FLASH OPTION HERE
 
-*By default WebRTC feature is disabled in your server.*
+*By default  the WebRTC feature is disabled in your server.*
+
+== The OPUS codec ==
+OPUS is one of the codecs you can use with WebRTC. To use Opus codec during the voice conference in BigBlueButton, open the Freeswitch file _/opt/freeswitch/conf/vars.xml_  ,find the line with the global codec preferences
+{{{
+<X-PRE-PROCESS cmd="set" data="global_codec_prefs=speex@16000h@20i,speex@8000h@20i,G7221@32000h,G7221@16000h,G722,PCMU,PCMA,GSM" />
+}}}
+
+and add 'OPUS' at the beginning of the list of codecs
+{{{
+<X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,speex@16000h@20i,speex@8000h@20i,G7221@32000h,G7221@16000h,G722,PCMU,PCMA,GSM" />
+}}}
+
+Save your changes and restart the server
+{{{
+sudo bbb-conf --restart
+}}}
+
 
 == Security ==
-The WebRTC feature exposes external access to Freeswitch in your BigBlueButton server. It is an issue we will fix in the future, meanwhile it is recommended to install a tool like Fail2Ban to ban ip addresses which attempt a DOS attack.
+The WebRTC feature exposes external access to Freeswitch in your BigBlueButton server. 
 
 
 == For developers ==
-JSsip is the javascript library which handles the sip communication between the BigBlueButton client and Freeswitch. Port TCP 5066 is used for SIP connection. 
+JSsip is the javascript library which handles the sip communication between the BigBlueButton client and Freeswitch. Port TCP 5066 is used for SIP over websockets connection . 
