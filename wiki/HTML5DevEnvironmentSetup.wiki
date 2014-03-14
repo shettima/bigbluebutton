@@ -11,11 +11,11 @@ If you have not already done so, you should read through an [HTML5 Overview of H
 
 == Initial setup ==
 
-Before you begin, you will need to have a !BigBlueButton server installed from packages built from the master branch, referred hereafter as 0.81-dev.  The !BigBlueButton HTML5 client is based on 0.81-dev. To install 0.81-dev from packages, follow the instructions at [081InstallationUbuntu Installing 0.81-dev packages].
+Before you begin, you will need to have a !BigBlueButton server installed from packages built from the master branch, referred hereafter as 0.81.  The !BigBlueButton HTML5 client is based on 0.81-dev. To install 0.81 from packages, follow the instructions at [InstallationUbuntu Installing 0.81 packages].
 
-Once you have 0.81-dev installed, you need to setup a development environment on the !BigBlueButton server.  This will allow you to rebuild specific components from source.  Since the HTML5 client is on a separate branch from master, setting up a development environment requires a few changes to the default steps for setting up a standard development environment.
+Once you have 0.81 installed, you need to setup a development environment on the !BigBlueButton server.  This will allow you to rebuild specific components from source.  Since the HTML5 client is on a separate branch from master, setting up a development environment requires a few changes to the default steps for setting up a standard development environment.
 
-To setup the standard development environment for the HTML5 client, follow the instructions at [DevelopingBBB] with the following changes:
+To setup the standard development environment for the HTML5 client, follow the instructions at [Developing] with the following changes:
 
   * Under "Checking out the source", use the git command
  {{{
