@@ -8,7 +8,7 @@ Welcome to the installation guide for !BigBlueButton 0.81, our eleventh release 
 
 = Before You Install =
 
-*Note:* The packaging is for Ubuntu 10.04 64-bit only.  We no longer support 32-bit packaging for 0.81.
+*Note:* The packaging is for *Ubuntu 10.04 64-bit only*.  We no longer support 32-bit packaging for 0.81. 
 
 The requirements are
 
