@@ -490,7 +490,7 @@ First, we need to update the latest bigbluebutton.properties file according to y
 {{{
 cd /home/firstuser/dev/bigbluebutton/
 
-# Edit the file and change the values of bigbluebutton.web.serverURL and securitySalt. 
+# Edit the file and change the values of bigbluebutton.web.serverURL and securitySalt. Make sure you don't include the "/bigbluebutton" at the end of your serverURL.
 vi bigbluebutton-web/grails-app/conf/bigbluebutton.properties
 }}}
 
