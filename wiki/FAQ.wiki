@@ -1278,11 +1278,13 @@ If your hosting your !BigBlueButton server in an university, college, or within 
 
 === Why is the audio not synced with the video? ===
 
-In !BigBlueButton the audio and video in !BigBlueButton go through two separate paths: the audio goes through FreeSWITCH, while the video goes through red5.  See [ArchitectureOverview architecture overview] for more details.
+The audio and video packets go through two separate paths: the audio packets go through FreeSWITCH while the video packets go through red5.  There is no synchronization between these paths.
 
-Each path processes the packets differently: red5 does not do much with the video packets -- it just re-broadcasts them to all the clients currently subscribed to the video stream.  It's basically a straight pass through of the packets.  FreeSWITCH must decode the audio (from speex) mix it with everyone's audio in the channel, and re-encode each user's audio).  
+See [ArchitectureOverview architecture overview].
 
-For video packets, the us of the built-in h.264 codec in the Flash client does introduce delay as the codec must capture a number of video frames before encoding.  If you want to decrease the video delay further, you can turn off the h.264 encoder, which (at least) doubles the bandwidth for each video stream.  To turn off the h.264 codec, edit `/var/www/bigbluebutton/client/conf/config.xml` and set `enableH264 = "false"`.
+The processing of packets differs as well.  For video, on the server, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients currently subscribed to the video stream.  It's basically a straight pass through of the packets.  On the client, !BigBlueButton uses the default h.264 to encode/decode the packets.  The encoding process introduces slight delay as the codec must capture a few video frames before encoding.  
+
+You can experiment with turning off the h.264 codec by editing `/var/www/bigbluebutton/client/conf/config.xml` and setting `enableH264 = "false"`.
 
 {{{
                 <module name="VideoconfModule" url="..." 
@@ -1290,7 +1292,9 @@ For video packets, the us of the built-in h.264 codec in the Flash client does i
                         enableH264 = "false"
 }}}
 
-You can also experiment with reducing the delay in audio packets by turning off the acoustic echo cancellation by setting `enabledEchoCancel="true"`.
+The result of this change is the video quality will reduce and the bandwidth required for video will double.
+
+For audio, on the server, FreeSWITCH must decode each user's audio, mix it with everyone's audio in the conference, and re-encode each user's audio.  On the client, ~BigBlueButton uses the built-in acoustic echo cancellation (AEC) to reduce echo.  You can also experiment with reducing the delay in audio packets by turning off the AEC by setting `enabledEchoCancel="true"`.
 
 {{{
                 <module name="PhoneModule" url="..." 
@@ -1298,6 +1302,7 @@ You can also experiment with reducing the delay in audio packets by turning off 
                         enabledEchoCancel="true"
 }}}
 
+The result of this change is everyone must use a headset; otherwise, the audio coming through their speakers will loop back through their microphone and cause a echo for everyone in the conference.
 
 
 == Chat ==
