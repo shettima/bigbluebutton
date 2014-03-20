@@ -1285,7 +1285,7 @@ Each path processes the packets differently: red5 does not do much with the vide
 For video packets, the us of the built-in h.264 codec in the Flash client does introduce delay as the codec must capture a number of video frames before encoding.  If you want to decrease the video delay further, you can turn off the h.264 encoder, which (at least) doubles the bandwidth for each video stream.  To turn off the h.264 codec, edit `/var/www/bigbluebutton/client/conf/config.xml` and set `enableH264 = "false"`.
 
 {{{
-                <module name="VideoconfModule" url="http://test-install.blindsidenetworks.com/client/VideoconfModule.swf?v=4357" 
+                <module name="VideoconfModule" url="..." 
                        ..
                         enableH264 = "false"
 }}}
@@ -1293,7 +1293,7 @@ For video packets, the us of the built-in h.264 codec in the Flash client does i
 You can also experiment with reducing the delay in audio packets by turning off the acoustic echo cancellation by setting `enabledEchoCancel="true"`.
 
 {{{
-                <module name="PhoneModule" url="http://test-install.blindsidenetworks.com/client/PhoneModule.swf?v=4357" 
+                <module name="PhoneModule" url="..." 
                         ....
                         enabledEchoCancel="true"
 }}}
