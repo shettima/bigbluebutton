@@ -1278,11 +1278,26 @@ If your hosting your !BigBlueButton server in an university, college, or within 
 
 === Why is the audio not synced with the video? ===
 
-Currently, the audio and video in !BigBlueButton go through two separate and different systems: the audio goes through FreeSWITCH, while the video goes through red5.  
+In !BigBlueButton the audio and video in !BigBlueButton go through two separate paths: the audio goes through FreeSWITCH, while the video goes through red5.  See [ArchitectureOverview architecture overview] for more details.
 
-For the video, red5 does not do much with the video packets -- it just re-broadcasts them to all the clients currently subscribed to the video stream.  It's basically a straight pass through of the packets.
+Each path processes the packets differently: red5 does not do much with the video packets -- it just re-broadcasts them to all the clients currently subscribed to the video stream.  It's basically a straight pass through of the packets.  FreeSWITCH must decode the audio (from speex) mix it with everyone's audio in the channel, and re-encode each user's audio).  
 
-For audio, the voice packets have a longer route to take (see answer to question above).
+For video packets, the us of the built-in h.264 codec in the Flash client does introduce delay as the codec must capture a number of video frames before encoding.  If you want to decrease the video delay further, you can turn off the h.264 encoder, which (at least) doubles the bandwidth for each video stream.  To turn off the h.264 codec, edit `/var/www/bigbluebutton/client/conf/config.xml` and set `enableH264 = "false"`.
+
+{{{
+                <module name="VideoconfModule" url="http://test-install.blindsidenetworks.com/client/VideoconfModule.swf?v=4357" 
+                       ..
+                        enableH264 = "false"
+}}}
+
+You can also experiment with reducing the delay in audio packets by turning off the acoustic echo cancellation by setting `enabledEchoCancel="true"`.
+
+{{{
+                <module name="PhoneModule" url="http://test-install.blindsidenetworks.com/client/PhoneModule.swf?v=4357" 
+                        ....
+                        enabledEchoCancel="true"
+}}}
+
 
 
 == Chat ==
