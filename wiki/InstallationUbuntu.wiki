@@ -18,7 +18,7 @@ The requirements are
   * Ports 80, 1935, 9123 accessible
   * Port 80 is *not* used by another application
   * 500G of free disk space (or more) for recordings
-  * 100 Mbits/sec bandwidth (to/from the server)
+  * 100 Mbits/sec bandwidth (upstream and downstream)
 
 In addition to the above, the locale of the server must be en_US.UTF-8. Furthermore, the contents of `/etc/default/locale` must contain the single line `LANG="en_US.UTF-8"`.  You can verify this as below.
 
