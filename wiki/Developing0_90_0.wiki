@@ -111,7 +111,7 @@ cd ~/dev/tools
 You now need to download a number of tools with wget and then unpack each of these tools in the above directory.
 
 {{{
-wget wget http://services.gradle.org/distributions/gradle-1.10-bin.zip
+wget http://services.gradle.org/distributions/gradle-1.10-bin.zip
 unzip gradle-1.10-bin.zip
 ln -s gradle-1.10 gradle
 
