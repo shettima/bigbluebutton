@@ -25,15 +25,7 @@ git pull origin merge-polling-with-master
 }}}
 
 == Compile and Build ==
-You will need to compile and deploy !BigBlueButton-Web. After that, install Node.js. You can use NVM (Node Version Manager) for that - see [https://github.com/creationix/nvm#install-script NVM's README]. Then run:
-
-{{{
-$ nvm install 0.8.25
-
-# create a .nvmrc file that will be used to set the version on nvm
-$ echo "0.8.25" > .nvmrc
-$ nvm use # do it every time you open a new terminal!
-}}}
+You will need to compile and deploy !BigBlueButton-Web. After that, install Node.js (check out labs/bbb-callbacks/README for instructions).
 
 Then run the webhook module:
 {{{
