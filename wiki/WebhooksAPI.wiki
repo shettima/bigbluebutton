@@ -77,9 +77,9 @@ Like this is a development feature, you will need to create the URLs for the API
 
 For example, for generate the subscribeEvent API Call:
  * Fill in the fields according to your server
- * Under "Custom API" write "call1=subscribeEvent"
- * Under "Custom Parameters" write param `callbackURL=PostCatcher-EndPoint-URL`
- * Click "Generate"
+ * Click "Custom parameters" to open the custom section
+ * Under "Custom API calls" write "call1=subscribeEvent"
+ * Under "Custom parameters" write param `callbackURL=PostCatcher-EndPoint-URL`
 
 == Testing ==
 You will need to create a !BigBlueButton session, then subscribe to the Meeting Events, and finally test with a generated event.
