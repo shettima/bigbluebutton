@@ -109,19 +109,9 @@ If you want to use metadata inside _post scripts_ it should be sent using this c
 meta_post<phase><name>=value
 }}}
 
-Inside the _post script_ it is accessed this way
+Inside the _post script_ it is available in the hash *post_metadata*
 {{{
 my_variable = post_metadata["<name>"]
-}}}
-
-Example:
-The metadata parameter 
-{{{
-meta_postarchiveemail=admin@example.com
-}}}
-is accessed *only* inside the _post archive script_ , using the hash *post_metadata*
-{{{
-the_email_i_sent = post_metadata["email"]
 }}}
 
 == Post script Example ==
