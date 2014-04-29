@@ -1,4 +1,4 @@
-#summary Record and Playback in BigBlueButton 0.81.
+#summary Record and Playback in BigBlueButton 0.9.0 (draft).
 
 <wiki:toc max_depth="4" />
 
