@@ -366,16 +366,7 @@ An experimental module that allows you to inject custom data into the conference
 }}}
 A rudimentary module meant to provide sample code on how to build your own !BigBlueButton module. For more information see [SampleModule SampleModule]
 
-=== Breakout Module ===
-{{{
-<module name="BreakoutModule" url="BreakoutModule.swf?v=VERSION" 
-	uri="rtmp://192.168.0.225/bigbluebutton" 
-	host="http://192.168.0.225" 
-	dependsOn="ViewersModule"
-	salt="1708e5ecf25b7142b06f2338b4ea3cf1"
-/>
-}}}
-The Breakout Module allows the Moderator of the meeting to create and launch users of a meeting into other rooms. This is useful when you have a large meeting or a classroom which you would like to separate into smaller collaborative groups. This module uses the [API BigBlueButton API].
+
 ==== salt ====
 The security salt needed to create meeting. This is required by the !BigBlueButton API. By default, the salt is found in /var/lib/tomcat/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties
 
