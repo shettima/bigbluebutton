@@ -19,7 +19,7 @@ From a technical point of view, in the !BigBlueButton API, when you pass the par
 
 After the session finishes, the !BigBlueButton server will run one (or more) ingest and processing scripts, named as workflows, that will _process_ and _publish_ the captured data into a format for _playback_.  
 
-In BigBlueButton 0.81 there are two workflows, *presentation*, which is installed by default; and *matterhorn*, which is part of an integration with Matterhorn and should be [081Matterhorn installed manually]. You can have both workflows working in your server and at the end you will have two formats for playback.
+In BigBlueButton 0.90 there are two workflows, *presentation*, which is installed by default; and *matterhorn*, which is part of an integration with Matterhorn and should be [081Matterhorn installed manually]. You can have both workflows working in your server and at the end you will have two formats for playback.
 
 
 
@@ -67,7 +67,91 @@ Using the workflow *presentation*, playback is handled by HTML, CSS and Javascri
 
 Using the workflow *matterhorn*, playback is handled by a media player in your Matterhorn server.
 
+= Post scripts =
 
+_Post scripts_ allow you to manage your media files after each one of these  Record and Playback phases have finished: Archive, Process and Publish.  
+
+You may want to use _post scripts_ to:
+
+  *  Send you an email _after_ a recording is published.
+
+  *  Make a backup in other server _after_ your recording is archived or published.
+
+  *  Send a text message _after_ a recording is published.
+
+  *  Compress media files and make them public available for download _after_ it is archived.
+
+Each _post script_ has access to:
+
+  *  The directory of the archived, processed or published files. Depends on the _post script_ you edit.
+
+  *  The meeting ID via the variable "meeting_id"
+
+  *  The metadata explicitely sent for _post scripts_, via the hash "post_metadata". See [https://code.google.com/p/bigbluebutton/wiki/API#create how to send metadata].
+
+
+In your server,  _post scripts_ directory is */usr/local/bigbluebutton/core/scripts/post_scripts/_*
+{{{
+
+|-- post_archive.rb
+|-- post_phase_tools.rb
+|-- post_process.rb
+|-- post_publish.rb
+`-- Readme.md
+
+}}}
+
+== 'Post' Metadata ==
+
+If you want to use metadata inside _post scripts_ it should be sent using this convention in the create api call:
+
+{{{
+meta_post<phase><name>=value
+}}}
+
+Inside the _post script_ it is accessed this way
+{{{
+my_variable = post_metadata["<name>"]
+}}}
+
+Example:
+The metadata parameter 
+{{{
+meta_postarchiveemail=admin@example.com
+}}}
+is accessed *only* inside the _post archive script_ , using the hash *post_metadata*
+{{{
+the_email_i_sent = post_metadata["email"]
+}}}
+
+== Post script Example ==
+
+You want to receive an email after a recording is published.
+
+1. Open *post_publish.rb* and get the metadata you will send in the create api call later.
+{{{
+	email = post_metadata["email"]
+}}}
+
+2. Create a message using the available variables, for example, meeting_id
+{{{
+	message = "The recording #{meeting_id} has been published"
+	
+}}}
+
+3. Send the email using the metadata you retrieved and the meeting ID
+{{{
+       send_email(message, email)
+}}}
+
+Note that the method *send_email* is not implemented, you can do it in the file *post_phase_tools.rb*
+
+4. Create a recorded meeting sending your email as metadata parameter. The parameter should look like this
+{{{
+	meta_postpublishemail="johndoe@example.com"
+}}}
+
+After your recording is published, *post_publish.rb* is executed and your email should be sent.
 
 
 = Media storage =
@@ -107,6 +191,7 @@ Same for archived files
 /var/bigbluebutton/published/presentation/_*internal-meeting-id*_/
 
 
+
 =  Manage recordings =
 
 BigBlueButton does not have an administrator web interface to control the sessions or recordings as in both cases they are handled by 3rd party software, but it has a useful tool to monitor the state and control your recordings through the phases described above.
@@ -115,7 +200,7 @@ In the terminal of your server you can execute "bbb-record", which will show you
 
 {{{
 
-BigBlueButton Recording Diagnostic Utility (BigBlueButton Version 0.81)
+BigBlueButton Recording Diagnostic Utility (BigBlueButton Version 0.90)
 
    bbb-record [options]
 
