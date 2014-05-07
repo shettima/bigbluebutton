@@ -272,7 +272,7 @@ Okay. Let's pause for a minute. You have set-up the necessary tools and cloned t
 
 [http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/081/prod-env.PNG]
 
-As you can see, nginx is configured to load the client from {{{/var/www/bigbluebutton/client}}} directory and forward calls to web-api on Tomcat6. During development, we need to tell nginx to load from our sources directory ({{{/home/firstuser/dev/bigbluebutton}}})
+As you can see, nginx is configured to load the client from {{{/var/www/bigbluebutton/client}}} directory and forward calls to web-api on Tomcat7. During development, we need to tell nginx to load from our sources directory ({{{/home/firstuser/dev/bigbluebutton}}})
 
 After going through the steps below, you will end up with the following setup.
 
@@ -561,13 +561,13 @@ This will run a development version of bbb-web, but if you want to instead deplo
 {{{
 grails war
 }}}
-This will create a file with the name bigbluebuttonv0.7dev.war. The version number for the file doesn't matter, but you should rename the war file to bigbluebutton.war. You then need to deploy the archive to tomcat. You can do this by simply copying it into the tomcat6 webapps directory.
+This will create a file with the name bigbluebuttonv0.7dev.war. The version number for the file doesn't matter, but you should rename the war file to bigbluebutton.war. You then need to deploy the archive to tomcat. You can do this by simply copying it into the tomcat7 webapps directory.
 {{{
-sudo cp bigbluebutton.war /var/lib/tomcat6/webapps
+sudo cp bigbluebutton.war /var/lib/tomcat7/webapps
 }}}
 And now just restart tomcat.
 {{{
-sudo service tomcat6 restart
+sudo service tomcat7 restart
 }}}
 
 *If you changed the linking of web.nginx as instructed above you will need to also revert that back to the packaged location for bbb-web.*
@@ -589,7 +589,7 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
 
 Before you build and deploy bbb-apps you need to make sure to first stop the red5 service.
 {{{
-sudo service red5 stop
+sudo service bbb-red5 stop
 }}}
 
 Now you can compile and deploy bigbluebutton-apps.
@@ -601,14 +601,14 @@ gradle clean war deploy
 
 And finally you can start the red5 service up again.
 {{{
-sudo service red5 start
+sudo service bbb-red5 start
 }}}
 
 == Developing BBB-Voice ==
 
 First you need to stop red5.
 {{{
-sudo service red5 stop
+sudo service bbb-red5 stop
 }}}
 
 Then you can compile and deploy the application.
@@ -620,7 +620,7 @@ gradle war deploy
 
 And finally start red5 up again.
 {{{
-sudo service red5 start
+sudo service bbb-red5 start
 }}}
 
 == Developing Deskshare ==
