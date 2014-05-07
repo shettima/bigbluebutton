@@ -211,7 +211,7 @@ You'll clone the source in the following directory:
 }}}
 
 Next, using your !GitHub account, do the following
-  # Setup your [http://help.github.com/linux-set-up-git/ ssh keys] on your !BigBlueButton server
+  # Setup your [https://help.github.com/articles/set-up-git#platform-linux ssh keys] on your !BigBlueButton server
   # [http://help.github.com/fork-a-repo/ Fork] the !BigBlueButton repository into your !GitHub account
   # Clone your repository into your `~/dev` folder
 
