@@ -10,7 +10,7 @@ Welcome to the !BigBlueButton project's Frequently Asked Questions (FAQ).
 
 We (the [#BigBlueButton_Committer core developers]) created this FAQ to quickly answer common questions around installation, configuration, and using !BigBlueButton.  If you are a developer, you'll also find lots of answers herein that have been collected from discussions on our mailing lists.
 
-== What if I don't find my answer here? ==
+== What if I don't find my answer here ==
 
 The !BigBlueButton community focuses its support in three mailing lists, each hosted by Google Groups.  Each group focuses on a different topic of questions:
 
@@ -27,25 +27,25 @@ The developer mailing list has over 1500 users, so before you post:
 All of the core !BigBlueButton contributors subscribe to all three mailing lists.  Please don't cross post.
 
 
-== Why is this project called !BigBlueButton? ==
+== Why is this project called !BigBlueButton ==
 The name comes from the goal of making the process to setup a virtual classroom as easy as pressing a (metaphorical) big blue button.
 
-== Why is it spelled !BigBlueButton (and not Big Blue Button)? ==
+== Why is it spelled !BigBlueButton (and not Big Blue Button) ==
 The trademark is written as one word !BigBlueButton.  Doing so makes it easy for others to use Google to search for information about the project.
 
-== Where is the source? ==
+== Where is the source ==
 We host the source on [http://github.com/bigbluebutton/bigbluebutton GitHub]. We used to host it on Google Code, but we moved to !GitHub in 2010 to make it easier for others to fork and contribute.
 
-== What is the open source license used in !BigBlueButton? ==
+== What is the open source license used in !BigBlueButton ==
 We use the LGPL license.  Some of the open source components we build on use different licenses, such as red5phone uses the GPL license.
 
-== Where can I find examples of people running !BigBlueButton? ==
+== Where can I find examples of people running !BigBlueButton ==
 We currently don't keep a list of organizations, colleges/universities, and hosting providers who run !BigBlueButton.   In twelve months prior to June 2012, the project had over [http://bigbluebutton.org/2012/07/06/bigbluebutton-is-a-global-project/ sixty thousand installs].
 
 If you'd like examples and use cases of people running !BigBlueButton, feel free to ask the members of the [http://groups.google.com/group/bigbluebutton-users bigbluebutton-users] or [http://groups.google.com/group/bigbluebutton-setup bigbluebutton-setup] mailing lists.
 
 
-== Will !BigBlueButton always stay open source? ==
+== Will !BigBlueButton always stay open source ==
 Yes. 
 
 We started !BigBlueButton as an open source project, and we intend to keep it that way. One of the main goals we had was to create a large open source community around the project. To further this goal, we are in the process of putting together an [http://bigbluebutton.org/2010/07/12/bigbluebutton-foundation/ independent not-for-profit !BigBlueButton organization] (similar to the Eclipse Foundation) to oversee and accelerate the growth of the  !BigBlueButton project. 
@@ -159,7 +159,7 @@ After a (roughly) two week period in which no one has reported any issues for a 
 
 = Contributing to !BigBlueButton =
 
-== How can I contribute? == 
+== How can I contribute == 
 !BigBlueButton exists because many developers have contributed their time and expertise to its development.  
 
 At first glance at the underlying architecture, !BigBlueButton may seem complex, but it's not really once you get to know the system.  The !BigBlueButton client is written in !ActionScript.  The !BigBlueButton server components are written in a combination of Java, grails, and scala.  You don't need to learn all these languages to help out, but you should be very comfortable programming in Java as !ActionScript, grails, and scala are all similar to Java.
@@ -172,7 +172,7 @@ You can also browse the bugs by labels: [http://code.google.com/p/bigbluebutton/
 
 Some bugs are more important than others.  Stability and usability issues are very important to the !BigBlueButton community.
 
-== I'm not a developer, can I still contribute? ==
+== I'm not a developer, can I still contribute ==
 
 Dont' worry if you are not a proficient developer -- there are many ways to help out!  You can become proficient in the installation and configuration of a !BigBlueButton server.  Each month, there are many new users in [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] that need help with setup of !BigBlueButton, especially setup behind a [#Can_I_provide_external_access_to_a_BigBlueButton_server_behind_m firewall].    You can [LocalizationOfBBB contribute a language file].  Or you can become an editor of the wiki pages to help provide documentation in a specific area, such as setup of !BigBlueButton on [InstallingBigBlueButtonFreeBSD FreeBSD].   Such assistance  reduces the support load on us and gives us more time to work on improving !BigBlueButton.  
 
@@ -202,7 +202,7 @@ The committer's group is not closed.  Any developer that wishes to become a comm
 
 Any source code you submit for inclusion into !BigBlueButton will be reviewed by one (or more) of the committers.   The process for submission and review depends on the complexity of the contribution and requires that you have signed a Contributor License Agreement.  
 
-== Why do I need to sign a Contributor License Agreement to contribute source code? ==
+== Why do I need to sign a Contributor License Agreement to contribute source code ==
 
 Before we can accept contributions as an open source project, we need to ensure there isn't any ambiguity on the ownership of material committed to the project.  Therefore, before we can incorporate your code, we need to have a Contributor License Agreement in place.  For background on our reasons for doing this, please see http://www.oss-watch.ac.uk/resources/cla.xml.
 
@@ -274,11 +274,11 @@ As a minimum, we recommend you run !BigBlueButton on a dedicated quad-core machi
 
 You'll need good upstream and downstream bandwidth from the server.  We recommend (at least) 100 Mbit/second bandwidth in both directions.
 
-== Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy? ==
+== Can I install !BigBlueButton on a shared hosting server, such as !GoDaddy ==
 Likely not.  First, you need root access to install !BigBluebutton.  If you have a hosting account that only gives you, for example, FTP access and a cPanel/plesk interface, you will not be able to install !BigBlueButton.  
 
 
-== Can I install !BigBlueButton on EC2? ==
+== Can I install !BigBlueButton on EC2 ==
 
 Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 64-bit.  To install !BigBlueButton on EC2, do the following: 
 
@@ -340,7 +340,7 @@ This work is underway.  See [http://bigbluebutton.org/2013/11/05/bigbluebutton-s
 
 
 
-=== What are the bandwidth requirements for running a !BigBlueButton server? ===
+=== What are the bandwidth requirements for running a !BigBlueButton server ===
 
 You'll need good upstream and downstream bandwidth from the server. We recommend (at least) 100 MBits/second bandwidth in both directions.
 
@@ -389,7 +389,7 @@ A VoIP connection to the !BigBlueButton server takes roughly 20 kB/sec per user.
 If the presenter has only 100 KByte/second upstream, then performing VoIP, video, and desktop sharing will not fit within that upstream constraint.  In reality, red5/Flash does a good job of using limited bandwidth and actually works quite well.  In the case of desktop sharing, the remote desktops will still receive updates, but the refresh will be much slower than if the presenter was on a LAN (such as within the university or college network).
 
 
-=== What are the minimum bandwidth requirements for a user? ===
+=== What are the minimum bandwidth requirements for a user ===
 
 For viewers (students), we recommend users have (at least) 0.5 Mbits/sec -- which is 500 Kbits/sec -- upstream bandwidth, and (at least) 1 Mbits/sec download bandwidth.  
 
@@ -495,7 +495,7 @@ If you still see the error, maybe it's not allowing connection to {{{0.0.0.0}}}.
 
 = Configuration =
 
-== What are the minimum requirements for the !BigBlueButton client? ==
+== What are the minimum requirements for the !BigBlueButton client ==
 Users need a web browser capable of running Flash 11.2.  To check the version of flash, visit [http://kb2.adobe.com/cps/155/tn_15507.html Adobe's Flash Version Check] page.
 
 As of Mac OS X 10.6, Apple stopped updating Flash.  If a Mac user is running an out-of-date version of Flash (!BigBlueButton will check the version of flash), they can upgrade by visiting the  [http://get.adobe.com/flashplayer/ get Flash player] page at Adobe.
@@ -532,7 +532,8 @@ To test your own server, have five people login and have each open multiple brow
 
 If you also want to monitor, there are a number of [http://www.ubuntugeek.com/bandwidth-monitoring-tools-for-ubuntu-users.html tools] for Ubuntu. 
 
-== Where is the admin interface for !BigBlueButton? ==
+== Where is the admin interface for !BigBlueButton ==
+
 Early in !BigBlueButton's development history (around 2009), we started to create an admin interface to let administrators create accounts, schedule meetings, configure properties for meetings, etc.  
 
 However, we quickly learned that most installations of !BigBlueButton wanted to do one of the following:
@@ -551,11 +552,11 @@ For a stand-alone landing page, in most cases modifying API demo3.jsp is suffici
 
 == Voice Conference ==
 
-=== Does !BigBlueButton use Asterisk or FreeSWITCH? ===
+=== Does !BigBlueButton use Asterisk or FreeSWITCH ===
 
 !BigBlueButton started using Asterisk in the beginning, but over time we added support for using FreeSWITCH as well.   As of !BigBlueButton 0.8, we stopped testing with Asterisk and now focus on FreeSWITCH.  For reasons see: [http://groups.google.com/group/bigbluebutton-dev/browse_thread/thread/d53494bfa1d4685 Shifting BigBlueButton to using FreeSWITCH].
 
-=== How do I turn off the music on hold when there is only one user in the voice conference? ===
+=== How do I turn off the music on hold when there is only one user in the voice conference ===
 The music on hold is provided by FreeSWITCH.  To disable it, edit `confernece.conf.xml` (you need to edit it as root).
 
 {{{
@@ -585,7 +586,7 @@ and join an audio session.  You should no longer hear the music on hold.
 Note: The above settings became the default as of !BigBlueButton 0.80.
 
 
-=== How do I forward calls from my Asterisk server to FreeSWITCH in !BigBlueButton? ===
+=== How do I forward calls from my Asterisk server to FreeSWITCH in !BigBlueButton ===
 
 Let's assume the following:
 
@@ -651,7 +652,7 @@ To debug, try connecting to FS CLI and increase logging level. Once connected, m
   Ctrl-D to exit
 }}}
 
-=== How do I connect !BigBlueButton to external Freeswitch? ===
+=== How do I connect !BigBlueButton to external Freeswitch ===
 
 Edit {{{/usr/share/red5/webapps/bigbluebutton/WEB-INF/bigbluebutton.properties}}}
 
@@ -721,7 +722,7 @@ Change {{{password}}} to match the password you set in {{{sip.server.password}}}
 
 == Networking ==
 
-=== How do I change the hostname of my !BigBlueButton server? ===
+=== How do I change the hostname of my !BigBlueButton server ===
 
 If you change the hostname (or IP address) of your !BigBlueButton server, you can easily change all the related !BigBlueButton configuration files using the [http://code.google.com/p/bigbluebutton/wiki/BBBConf bbb-conf tool ].
 
@@ -746,16 +747,16 @@ However, !BigBlueButton is a real-time application processing voice and video.  
 
 For the above reasons, we recommend you setup !BigBlueButton on a dedicated server listening to port 80.  (See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton what are the minimum hardware requirements for BigBluebutton].)
 
-=== What ports must be open for external users to connect to !BigBluebutton? ===
+=== What ports must be open for external users to connect to !BigBluebutton ===
 
 These ports are 80 (HTTP), 9123 (Desktop Sharing), and 1935 (RTMP).  These ports are all TCP ports.
 
-=== Does !BigBlueButton support tunneling? ===
+=== Does !BigBlueButton support tunneling ===
 
 Yes.  If a remote user is unable to connect to port 1935, which typically occurs when a remote user's corporate firewall blocks external access to all other ports except port 80, then their !BigBlueButton client will fail to connect to port 1935 and, after about ten seconds, will fall back to tunneling through port 80.
 
 
-=== Can I provide external access to a !BigBlueButton server behind my firewall? ===
+=== Can I provide external access to a !BigBlueButton server behind my firewall ===
 
 Yes.  A typical scenario is you have !BigBlueButton running on an internal computer behind a firewall.  You have defined an external hostname, such as `external.host.org`, that will resolve to the IP address of your firewall. You want external users to access !BigBlueButton using that hostname.
 
@@ -819,7 +820,8 @@ If you can connect to the service running on all three ports (nginx, red5, and d
 
 Once !BigBlueButton is setup for external access, internal access must also use the external hostname for connecting to the !BigBlueButton server.  This is because !BigBlueButton is now looking for incoming requests from `external.host.com` not an internal IP address.
 
-=== Can I provide secure access to !BigBlueButton? ===
+=== Can I provide secure access to !BigBlueButton ===
+
 We've learned from other projects to be very careful on any statements regarding security.
 
 As such, the !BigBlueButton developers make no representation of any security in !BigBlueButton.  We've not developed nor tested !BigBlueButton with HTTPS, SSL or secure RTMP.
@@ -828,7 +830,7 @@ All API requests are validated with a checksum generated by a shared secret (sal
 
 == Classrooms ==
 
-=== I tried the application at/bigbluebutton and it does not work? ===
+=== I tried the application at/bigbluebutton and it does not work ===
 
 The grails applications at/bigbluebutton is old code and is now depreciated (it should no longer be accessible as of 0.71).  To control !BigBlueButton, we recommend using the [API API].  
 
@@ -837,7 +839,7 @@ We provide a number of [http://demo.bigbluebutton.org/demo/demo1.jsp API] demos 
 Also, most people integrate !BigBlueButton with an existing system using one of the existing [http://bigbluebutton.org/open-source-integrations/ integration modules]. 
 
 
-=== How do I modify the default landing page? ===
+=== How do I modify the default landing page ===
 
 The default HTML landing page is located in
 
@@ -848,10 +850,10 @@ The default HTML landing page is located in
 Change this page to create your own landing page.
 
 
-=== Can I run multiple virtual classrooms in a single !BigBlueButton server? ===
+=== Can I run multiple virtual classrooms in a single !BigBlueButton server ===
 Absolutely.  To see an example of this, check out the [http://demo.bigbluebutton.org/demo/demo3.jsp Join Courses] API example.  You can modify this demo page to setup your own branded landing page.
 
-=== How do I setup new classrooms in !BigBlueButton? === 
+=== How do I setup new classrooms in !BigBlueButton === 
 If you are using Sakai, Moodle, Drupal, Joomla, !Wordpress or other systems that already have a [http://bigbluebutton.org/support BigBlueButton integration], then installing the integration provides the easiest way to enable your users to access !BigBlueButton sessions.
 
 If you have a bit of programming skills, you can create your own virtual classrooms by modifying this [http://demo.bigbluebutton.org/demo/demo3.jsp Demo Page] on a !BigBlueButton server.
@@ -894,7 +896,7 @@ If you are looking for an integration module that does not exist, please post a 
 [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev].
 
 
-=== How do I integrate !BigBlueButton with my own server? === 
+=== How do I integrate !BigBlueButton with my own server === 
 
 !BigBlueButton provides an [http://code.google.com/p/bigbluebutton/wiki/API API] for integration with other web-based applications.  
 
@@ -903,7 +905,7 @@ The best approach is to see how others have integrated and adapt their code to y
 
 == Server Configuration ==
 
-=== Where is the shared secret located? ===
+=== Where is the shared secret located ===
 
 You'll find the shared secret (salt) in the file 
 
@@ -919,7 +921,7 @@ Look for the line
 
 This is the security salt used for enabling 3rd party plug-ins and external applications to access your !BigBlueButton server through it's API.  
 
-=== How do I change the shared secret? ===
+=== How do I change the shared secret ===
 
 To change the security salt, do the following: 
   # Generate a new Universal Unique ID (UUID) from a UUID generator such as at [http://www.somacon.com/p113.php http://www.somacon.com/p113.php]. This will give a long string of random numbers that will be impossible to reverse engineer.  
@@ -928,7 +930,7 @@ To change the security salt, do the following:
 Note: If you are using a [http://bigbluebutton.org/support third-party plug-in] to connect to !BigBlueButton, be sure to use the plug-in's administrative interface to specify the new value for the salt; otherwise, if the salts do not match, the API calls from the third-party plug-in will fail.
 
 
-=== How do I change the maximum allowed size for uploading a presentation? ===
+=== How do I change the maximum allowed size for uploading a presentation ===
 The default maximum file upload size for !BigBlueButton is 30 MB. 
 
 To change it, you need to modify two places: the !BigBlueButton client and the nginx configuration.  
@@ -976,7 +978,7 @@ $proxy_add_x_forwarded_for;
 
 Restart !BigBlueButton.  You should now have a different upload limit for uploading presentations from the !BigBlueButton client.
 
-=== How do I change the video quality of the shared webcams? ===
+=== How do I change the video quality of the shared webcams ===
 
 The setting for picture quality of the webcams is in http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml] in the videoconf module.
 
@@ -997,7 +999,7 @@ You can change the video quality through the client's config.xml file, by defaul
 
 For more information see ClientConfiguration.
 
-=== How do I change the /client/!BigBlueButton.html portion of the URL?===
+=== How do I change the /client/!BigBlueButton.html portion of the URL ===
 
 Using nginx, you can rewrite the incoming URL for `/client/BigBlueButton.html` to appear as a different link, such as `/conference/`.  
 
@@ -1035,16 +1037,20 @@ location /conference {
 
 Now login to the demo page and you'll see the URL now shows `/conference/` instead of `/client/BigBlueButton.html`.
 
-=== Does !BigBlueButton offer secure collaboration? ===
+=== Does !BigBlueButton offer secure collaboration ===
 
 There has been no effort to make the communication in !BigBlueButton secure.  For example, !BigBlueButton does not use https for the URLs, nor does it use RTMPS for the sending of data.
 
 All API requests must have a checksum that is computed using a share secret, but otherwise there is *no* security offered in !BigBlueButton.
 
 
+
 = Using !BigBlueButton =
+
 == Desktop Sharing ==
-=== What is needed to run desktop sharing? ===
+
+=== What is needed to run desktop sharing ===
+
 !BigBlueButton uses a Java applet to capture screen updates.  !BigBlueButton requires Java 7u35 (or later).  
 
 Desktop sharing works for Mac, Unix, and PC platforms.  
@@ -1055,7 +1061,7 @@ If you can run the above test applet from your browser, you can run the desktop 
 
 There are no additional requirements (beyond having Flash installed) for viewers to run !BigBlueButton and view the presenter's desktop.  
   
-=== How can I make desktop sharing faster? ===
+=== How can I make desktop sharing faster ===
 
 First, a bit of background: to share your screen, !BigBlueButton runs a Java applet (Flash can't see your screen).  The Java applet takes a few screen shots each second, divides up each captured screen shot into a checkerboard, and figures out which checkerboard tile is different than the previous screen shot.  Those different tiles are then compressed and sent to the !BigBlueButton server for broadcast to viewers.
 
@@ -1100,7 +1106,9 @@ While you can't choose a specific window, you can share a region of your desktop
 
 
 == Presentations ==
-=== How can I modify the default presentation? ===
+
+=== How can I modify the default presentation ===
+
 The default presentation is stored in
 
 {{{
@@ -1124,7 +1132,7 @@ You can change `beans.presentationService.defaultUploadedPresentation` to point 
 
 If you want to specify the default presentation for a given meeting, you can also pass a URL to the presentation as part of the [API#Preupload_Slides create] meeting API call.
 
-=== Can I upload Microsoft Office 2007/2010/2013 documents to !BigBlueButton? ===
+=== Can I upload Microsoft Office 2007/2010/2013 documents to !BigBlueButtonn===
 
 !BigBlueButton uses !LibreOffice 4.0 for converting Microsoft Office documents into PDF for display in !BigBlueButton. 
 
@@ -1132,7 +1140,7 @@ If possible, for best results, save your Word or !PowerPoint documet as PDF.  If
 
 You'll always get the best results with PDF.
 
-=== Will my animations in !PowerPoint convert when uploading to !BigBlueButton? ===
+=== Will my animations in !PowerPoint convert when uploading to !BigBlueButton ===
 
 Since !BigBlueButton must convert your !PowerPoint document to PDF (using OpenOffice), none of the animations (visual or audio) will be converted.  
 
@@ -1168,7 +1176,7 @@ If you encounter this problem, try the following:
   
 These steps trigger the opening of the File Open dialog box by a user action, which seems to work better than the automatic display of the File Open dialog box when there is currently no presentation loaded.
   
-=== Can I increase the 100 page limit for uploads? ===
+=== Can I increase the 100 page limit for uploads ===
 
 !BigBlueButton, by default, restricts uploads to 100 pages.  To increase this value, open `/var/lib/tomcat6/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties` and change the `maxNumPages` value:
 
@@ -1190,7 +1198,7 @@ sudo bbb-conf --restart
 See Ubuntu's documentation for [https://help.ubuntu.com/community/Webcam/Troubleshooting Webcam Troubleshooting].
 
  
-=== How do I restrict the webcam to only the presenters? ===
+=== How do I restrict the webcam to only the presenters ===
 
 You can restrict sharing of webcam to only the current presenter. To do so, open [http://code.google.com/p/bigbluebutton/wiki/ClientConfiguration#Videoconf_Module config.xml] in the parameters for videomodule, change the following:
 
@@ -1209,7 +1217,7 @@ presenterShareOnly="true"
 
 == Voice Conference ==
 
-=== Why can't others hear me in the voice conference? ===
+=== Why can't others hear me in the voice conference ===
 
 If others in the voice conference don't hear you when you speak, it's likely that Flash has picked the wrong microphone on your computer.  You can change this with the following steps:
 
@@ -1223,7 +1231,7 @@ You see a volume indicator next to the drop down for choosing a microphone.  Try
 Close this Flash settings dialog and others in the voice conference should now hear you.
 
 
-=== Why do others only hear part of my audio? ===
+=== Why do others only hear part of my audio ===
 
 FreeSWITCH has automatic audio clipping, which means it will not transmit a speaker's audio if the volume is too low.   If the speaker's audio is low, FreeSWITCH might take a moment to recognize that someone is speaking before transmitting, causing others to hear your audio only after you have started speaking a few words.
 
@@ -1243,7 +1251,7 @@ and set energy-level to a lower value (.e.g 100)
 
 Save the file, then do `sudo bbb-conf --restart` to restart !BigBlueButton.
 
-=== Why is there an echo in the voice conference? ===
+=== Why is there an echo in the voice conference ===
 
 In !BigBlueButton, we use the built-in acoustic echo cancellation, so in most cases, you should not hear any echo from remote users.
 
@@ -1255,7 +1263,7 @@ If a student is causing echo, the best way to solve this problem, if you are log
 
 Overall, the best solution is ask all users to use a headset -- this will ensure no background noise or echo.
 
-=== Why is there a delay in the audio when I use VoIP? ===
+=== Why is there a delay in the audio when I use VoIP ===
 
 You will experience a delay, depending on the network latency from the speaker to the !BigBlueButton server, when using the built-in VoIP in !BigBlueButton (clicking the headset icon).
 
@@ -1274,7 +1282,7 @@ Setting up DIDs will give users with poor internet connection the option of dial
 
 If your hosting your !BigBlueButton server in an university, college, or within a commercial company, there may already be a VoIP network setup from which you may be able to obtain a DID. 
 
-=== Why is the audio not synced with the video? ===
+=== Why is the audio not synced with the video ===
 
 The audio and video packets go through two separate paths: the audio packets go through FreeSWITCH while the video packets go through red5.  There is no synchronization between these paths.
 
@@ -1305,7 +1313,7 @@ The result of this change is everyone must use a headset; otherwise, the audio c
 
 == Chat ==
 
-=== How can I copy all chat messages to the clipboard? ===
+=== How can I copy all chat messages to the clipboard ===
 
 Right-click within the chat area and choose the option "Copy All Text".
 
@@ -1323,26 +1331,26 @@ As of !BigBlueButton 0.71, we've removed the full screen button and instead reco
 == Record and Playback ==
 
 
-=== Where is the record button? ===
+=== Where is the record button ===
 In !BigBlueButton, the external application that uses the !BigBlueButton API can now pass an additional parameter `record=true` when creating a session.   This additional parameter instructs the !BigBlueButton server to record the session and make a recording available through subsequent [https://code.google.com/p/bigbluebutton/wiki/API#getRecordings getRecordings] calls.
 
 There is no user interface for the presenter to turn on or turn off a recording.  
 
 When instructed through the API call, the !BigBlueButton server will record all of the meeting, from the time the first person joins to when the last person leaves.  A meeting may also end when it reaches it's duration or the [https://code.google.com/p/bigbluebutton/wiki/API#end end] is called on the meeting.
 
-=== What parts of the session does !BigBlueButton record? ===
+=== What parts of the session does !BigBlueButton record ===
 
 !BigBlueButton records all activity in the presentation, chat, webcams, and desktop sharing for playback.
 
 
-=== What browsers support playback? ===
+=== What browsers support playback ===
 !BigBlueButton supports playback in Chrome and !FireFox.
 
 In !BigBlueButton, the audio from a recorded session is encoded into [http://en.wikipedia.org/wiki/Vorbis Vorbis], an open source audio format that is not patent encumbered.  Playback of Vorbis audio is supported in !FireFox and Chrome, but not IE and Safari.
 
 BigBlueButton will playback the webcams from a session using the WebM container, which, thanks to Google, provides a high-quality open source video codec VP8.  Playback of video in VP8 is supported by !FireFox and Chrome, but not IE and Safari.   See [http://en.wikipedia.org/wiki/HTML5_video HTML5 video] wikipedia article.
 
-=== What is the disk space usage for storing 1 hour of recordings? ===
+=== What is the disk space usage for storing 1 hour of recordings ===
 
 Storage values for different types of session in !BigBlueButton 0.81.
 
@@ -1375,7 +1383,7 @@ For audio + desktop sharing, there is a single WebM that is 72M.
 
 
 
-=== Can I see the total time of the session? ===
+=== Can I see the total time of the session ===
 The information displayed during playback is browser specific.  
 
 In Chrome, the audio playback component shows only the current time index for the playback.  To see the overall length of the session, you can scrub to the end of the audio after the audio file has loaded.
@@ -1383,7 +1391,7 @@ In Chrome, the audio playback component shows only the current time index for th
 In !FireFox, the audio playback component shows both the current time index and total time of the audio file.
 
 
-=== How do I modify the default playback format? ===
+=== How do I modify the default playback format ===
 
 The ingest and processing scripts, written in Ruby, process the recorded events and media to create a playback option.  The default scripts, called `presentation.rb` (there is a script for processing and publishing), are located in 
 
@@ -1397,7 +1405,7 @@ The ingest and processing scripts, written in Ruby, process the recorded events 
 By modifying presentation.rb, you could, for example, exclude chat from the layout, add themes or colors, change the layout of the HTML5 web page, add a download link to the content, etc.
 
 
-=== How do I download a recorded session? ===
+=== How do I download a recorded session ===
 
 When looking to download a recorded session, most expect a single link to download the video file.
 
@@ -1412,7 +1420,7 @@ In contrast, !BigBlueButton does not create a video file for playback.  Video fi
 === Setting up the Dev environment ===
 See [Developing Developing !BigBlueButton] for full instructions.
 
-=== Where can I download the latest build? ===
+=== Where can I download the latest build ===
 You can checkout the latest code from Git.  See [https://github.com/bigbluebutton/bigbluebutton BigBlueButton GitHub repository].
 
 === I want to develop from Windows! ===
@@ -1421,7 +1429,7 @@ We recommend you setup a Ubuntu 10.04 64-bit VM, using VMWare Fusion or Virtual 
 Once you have the development environment setup, you can mount the VM drive to Windows. When you launch Eclipse of Flex Builder, simply create your workspace on the VM drive. This way you'll be developing in Windows with the source on the VM. Once you're ready to deploy, switch to the VM console and deploy using ant. We've found this is the easiest way to develop for !BigBlueButton.
 
 
-=== What if I want to develop for the Client only? ===
+=== What if I want to develop for the Client only ===
 If you are just working on the client side, you need to edit the file config.xml (located in the src/conf folder) to point to a running instance of !BigBlueButton. Change all the IP addresses in the file to the IP of your BBB server or BBB VM. In the entry for the Viewers Module, change the attribute host to host="conf/join-mock.xml". This will enable you to launch and test the client directly from the Flex environment, bypassing the Web component of !BigBlueButton.
 
 You need to create the following 2 directories on your BBB server, if they're not already there: /var/bigbluebutton/conference-mock-default/room-mock-default and change the owner to tomcat6:tomcat6 (chown -R tomcat6.tomcat6 /var/bigbluebutton/conference-mock-default) 
@@ -1550,7 +1558,7 @@ sudo bbb-conf --check
 
 If the above does not resolve your problem, post to the output of the commands `sudo bbb-conf --check` and `ifconfig` to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 bigbluebutton-setup] and we'll help you there.
 
-=== Why can't I accept the Flash Security Dialog on Linux? ===
+=== Why can't I accept the Flash Security Dialog on Linux ===
 
 On some versions of Linux desktop when loading the !BigBlueButton client, the user is unable to accept the Flash security dialog asking for permissions to access the computer's microphone and webcam.
 
@@ -1566,7 +1574,7 @@ To add an exception, do the following.
 
 Now launch the !BigBlueButton client.  You should no longer be prompted for the Flash Security Dialog.
 
-=== Why can't I resize my portrait document? ===
+=== Why can't I resize my portrait document ===
 
 !BigBlueButton is designed so the viewers of the presentation window are always in sync with the presenter's view.  It's not possible for the presenter to point at something and a viewer to say "I don't see what you are pointing at".
 
@@ -1726,7 +1734,7 @@ If you're using Linux, UTF characters won't display correctly. This is a Flash l
 
 
 
-=== Which log files should I check for errors?  ===
+=== Which log files should I check for errors  ===
 Log and configuration file information can be found [http://code.google.com/p/bigbluebutton/wiki/ConfigurationFiles here].
 
 
@@ -1740,7 +1748,7 @@ In /usr/share/red5
 In /home/firstuser/dev
   ln -s /usr/share/red5 red5
 
-=== How do I change the default startup language? ===
+=== How do I change the default startup language ===
 
 By default, the !BigBlueButton client should detect the browser's locale and use that default language accordingly.
 
@@ -1754,6 +1762,7 @@ in `bigbluebutton/client/BigBlueButton.html`.  You can see the list of languages
 
 
 == Other Questions ==
+
 === When will feature X be implemented ===
 
 Keep in mind that !BigBlueButton is largely built by a group of (very determined) open source developers that volunteer their time.   Some of us work for companies that provide commercial support for !BigBlueButton (see http://bigbluebutton.org/support). 
@@ -1777,18 +1786,18 @@ For (3), if your feature does occur in the above during iteration, you have more
 
 There were some problems with the latest Flash update on Mac OS X.  See this [http://discussions.apple.com/thread.jspa?messageID=12641342&#12641342 Apple Support thread] for suggested solutions.
 
-=== Why is my webcam image upside down? ===
+=== Why is my webcam image upside down ===
 
 We've occasionally seen this and it's almost always a driver issue.  A quick [http://www.google.ca/search?sourceid=chrome&ie=UTF-8&q=flash+webcam+upside+down google search] reveals some discussion threads of others who are experiencing the same issue with Flash.
 
-=== How can I donate money to the project? ===
+=== How can I donate money to the project ===
 The !BigBlueButton project doesn't take donations.  We think it's a poor business model for running a large open source project.
 
 If you want to help the project financially, then approach some of the companies offering [http://bigbluebutton.org/support commercial support] for !BigBlueButton and engage their services.  This creates a healthy ecosystem around the project where companies are encouraged to contribute their resources to improve the project to create a larger pool of potential customers.
 
 In other words, in the !BigBlueButton project, we would rather earn our revenues (we're entrepreneurs too!).
 
-=== How do I change the brand of !BigBlueButton?  ===
+=== How do I change the brand of !BigBlueButton  ===
 There have been a number of companies (and individuals) posting to the
 mailing list asking for help in branding !BigBlueButton. 
 
