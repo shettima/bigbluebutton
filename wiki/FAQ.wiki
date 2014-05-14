@@ -544,7 +544,7 @@ However, we quickly learned that most installations of !BigBlueButton wanted to 
 
 As a result, we stopped building our own admin interface and focues our energies on improving !BigBlueButton itself and creating and supporting [http://bigbluebutton.org/open-source-integrations/ open source integrations] for !BigBlueButton with the most popular open source learning and content management systems.
 
-For a stand-alone landing page, in most cases modifying API demo3.jsp is sufficient.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_setup_new_classrooms_in_BigBlueButton_? How do I setup new classrooms in BigBlueButton?].
+For a stand-alone landing page, in most cases modifying API demo3.jsp is sufficient.  See [http://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_setup_new_classrooms_in_BigBlueButton_? How do I setup new classrooms in BigBlueButton].
 
 
 
