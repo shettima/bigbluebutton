@@ -15,7 +15,7 @@ The planned features included:
   * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
-  * Installation on Ubuntu 12.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
+  * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
 See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.
 
