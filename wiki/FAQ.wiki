@@ -344,11 +344,11 @@ This work is underway.  See [http://bigbluebutton.org/2013/11/05/bigbluebutton-s
 
 You'll need good upstream and downstream bandwidth from the server. We recommend (at least) 100 MBits/second bandwidth in both directions.
 
-When sharing a webcam as a moderator, !BigBlueButton lets you select 320x240 or 640x480. Both use the same amount of bandwidth, roughly 30-50 kbytes/second per stream.  Viewers can only share a 320x240 webcam.
+When sharing a webcam as a moderator, !BigBlueButton lets you select 320x240, 640x480, or 1280x720.   For bandwidth calculations, each resolution corresponds (roughly) to a .25 Mbits/sec, 0.40 Mbits/sec, and 0.60 Mbits/sec video stream respectively.
 
-For example, if you have a room with 5 users, each sharing their webcam, then you can calculate the bandwidth usage as follows: 
+For example, if you have a room with 5 users, each sharing their webcam at 320x240, then you can calculate the bandwidth usage as follows: 
 
-  * Y = 30-50 Kbytes/sec; let's assume 40 Kbytes/sec on average 
+  * Y = .25 Mbits/sec 
   * W = amount of webcams that are streaming 
   * U = amount of users that are watching 
 
@@ -358,42 +358,39 @@ For calculations:
 
 For example, with 5 users in a room with 5 webcams streaming, the bandwidth calculation is as follows:
 
-  * in: 5`*`40 = 200 Kbytes/sec incoming bandwidth needed to the server (e.g. 1.6 Mbit) 
-  * out: 5`*`(5-1)`*`40 = 800 Kbytes/sec outgoing bandwidth needed from the server (e.g. 6.4 Mbit) 
-  * Total traffic used after one hour: 60 mins`*`60 secs`*`(200 + 800) = 3.6 Gbyte traffic per hour 
+  * in: 5`*`.25 = 1.25 Mbits/sec incoming bandwidth needed to the server 
+  * out: 5`*`(5-1)`*`.25 = 5 Mbits/sec outgoing bandwidth needed from the server 
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`(1.25 + 5) = 22.5 GBits/hour
 
-If you'd have a typical classroom situation with the presenter broadcasting their webcam to 30 remote students, the calculation is as follows: 
+If you'd have a typical classroom situation one presenter broadcasting their webcam to 30 remote students, the calculation is as follows: 
 
-  * in: 1`*`40 = 40 Kbytes/sec incoming (e.g. 0.32 Mbit/sec) 
-  * out: 1`*`(30-1)`*`40 = 1160 Kbytes/sec outgoing (e.g. 9.3 Mbit/sec) 
-  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 40 + 1160) = 4.3 Gbyte traffic per hour 
-
-If you have 10 of those classes, then your server needs to be able to output 
-93 Mbit/sec; that's not much in a LAN, but it's pretty much if you're in a hosted environment.
+  * in: 1`*`.25 = .25 Mbits/sec incoming
+  * out: 1`*`(30-1)`*`.25 = 7.25 Mbits/sec  outgoing
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`( .25 + 7.25) = 27 GBits/hour 
 
 Large "cafe-style chatroom": 20 viewers, 8 people broadcasting with a 
 webcam:  
 
-  * in: 8`*`40 = 320 Kbytes/sec ( 2.5 Mbit ) 
-  * out: 8`*`(20-1)`*`40 = 6080 Kbytes/sec ( 48.6 Mbit ) 
-  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 320 + 6080 ) = 23 Gbyte traffic per hour 
+  * in: 8`*`.25 = 4 Mbits/sec  incoming 
+  * out: 8`*`(20-1)`*`.25 = 38 Mbits/sec outgoing
+  * Total traffic used after one hour: 60 mins`*`60 secs`*`( 4 + 38 ) = 252 GBits/hour
 
 
 Sharing slides takes almost no bandwidth beyond the initial uploading/downloading of slides.  When the presenter clicks to show the next slide, the viewers receive a "move next slide" command in their !BigBlueButton client, and they load the next slide from the local cache. Chat has almost no bandwidth as well.
 
-Desktop sharing takes the most bandwidth, and it's dependent on the area chosen by the presenter (full screen and region) and how often their screen updates.  
+Desktop sharing takes the most bandwidth, and the actual bandwidth at any one time depends on the area chosen by the presenter (full screen and region) and how often their screen updates.  At the low end, if the presenter's screen is largely idle, the !BigBlueButton server would receive 0.2 Mbits/sec; at the high hend, if the presenter's screen is updating frequently,  the !BigBlueButton server could transmit 1.0 Mbits/sec.  For a session with N users, BigBlueButton server would also transmit N desktop sharing streams (the presenter gets a stream as well for their preview window). 
 
-A VoIP connection to the !BigBlueButton server takes roughly 20 kB/sec per user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 20 KBytes/sec = 400 kBytes/sec.
+A VoIP connection to the !BigBlueButton server takes roughly 0.04 Mbits/sec receiving and 0.04 Mbits/sec transmitting for each user.  The bandwidth for VoIP grows linearly with number of users.  For example, if there are 20 students in a classroom, then the bandwidth requirements for the server to support VoIP is 20 `*` 0.04 Mbits/sec = 0.8 Mbits/sec.
 
+From the perspective of the user's bandwidth needs, if a student is broadcasting their webcam and microphone they require a minimum (roughly) 0.3 Mbits/sec (.25 + .04) upstream bandwidth.  If the student is in a session with four other people that are all broadcasting their webcams as well, the student will require the roughly 1 Mbits/sec incoming bandwidth for the 4 * 0.25 = 1 Mbits/sec incoming webcams and 0.04 Mbits/sec for the incoming audio.
 
-If the presenter has only 100 KByte/second upstream, then performing VoIP, video, and desktop sharing will not fit within that upstream constraint.  In reality, red5/Flash does a good job of using limited bandwidth and actually works quite well.  In the case of desktop sharing, the remote desktops will still receive updates, but the refresh will be much slower than if the presenter was on a LAN (such as within the university or college network).
-
+The !BigBlueButton server will lower the bandwidth to a user if their bandwidth is insufficient to receive all stream.  For example, in the scenario above where there are 5 students in a session, each sharing a webcam, if 4 students have sufficient bandwidth to receive all incoming webcam streams, their clients will show roughly the same quality of video.  If one of the students is on a lower bandwidth, then they will get less frequent updates on the video streams.  They may also get degraded audio.
 
 === What are the minimum bandwidth requirements for a user ===
 
-For viewers (students), we recommend users have (at least) 0.5 Mbits/sec -- which is 500 Kbits/sec -- upstream bandwidth, and (at least) 1 Mbits/sec download bandwidth.  
+For viewers (students), we recommend users have (at least) 0.5 Mbits/sec -- which is 500 Kbits/sec -- upstream bandwidth, and (at least) 1 Mbits/sec download bandwidth.   The upstream bandwidth is the amount of bandwidth their computer has available to transmit data to the !BigBlueButton server.
 
-These are not hard and fast numbers, as it depends on the activity of the viewer.  If the viewer is not broadcasting any webcam, the amount of bandwidth would be less than 0.5 Mbits/sec.
+These are not hard and fast numbers, as it depends on the activity of the viewer.  If the viewer is not broadcasting any webcam, the amount of upstream bandwidth used would be less than 0.5 Mbits/sec.
 
 A good way for users to check their bandwidth is to visit [http://speedtest.net/ speedtest.net].  The results from speedtest.net give the user's _actual_ bandwidth.   This actual number is important because a user may report that their ISP provides them 0.5 Mbits/sec upstream bandwidth; however, speedtest.net may report an actual number that is much lower.   The difference may be throttling by the ISP and background activity on their computer (such as background downloads, file sharing clients, etc).  
 
