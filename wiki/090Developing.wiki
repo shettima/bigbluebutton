@@ -597,14 +597,14 @@ gradle clean war deploy
 
 And finally you can start the red5 service up again.
 {{{
-sudo service red5 start
+sudo service bbb-red5 start
 }}}
 
 == Developing BBB-Voice ==
 
 First you need to stop red5.
 {{{
-sudo service red5 stop
+sudo service bbb-red5 stop
 }}}
 
 Then you can compile and deploy the application.
@@ -616,7 +616,7 @@ gradle war deploy
 
 And finally start red5 up again.
 {{{
-sudo service red5 start
+sudo service bbb-red5 start
 }}}
 
 == Developing Deskshare ==
@@ -702,7 +702,7 @@ gradle war
 gradle deploy
 
 # Stop red5
-    sudo /etc/init.d/red5 stop
+    sudo service bbb-red5 stop
 
 cd /home/firstuser/dev/bigbluebutton/bigbluebutton-apps
 # Compile and deploy bbb-apps
