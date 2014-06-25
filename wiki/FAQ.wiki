@@ -289,6 +289,24 @@ Yes.  Canonical provides official Ubuntu EC2 images for Ubuntu 10.04 64-bit.  To
 
 The IP addresses for an EC2 image are reset whenever you reboot the image; however, if you assign the EC2 image an elastic IP address, it will have a consistent IP address that will not change on reboot. 
 
+Also, EC2 gives you a very small root partition, and you'll want to move three directories from BigBlueButton to the /mnt partition (which by default has 500G).  
+
+The following commands will move over the directories and create symbolic links.
+
+{{{
+sudo bbb-conf --stop
+
+sudo mv /opt/freeswitch/recordings /mnt
+sudo ln -s /mnt/recordings /opt/freeswitch/recordings
+
+sudo mv /usr/share/red5/webapps/video/streams /mnt
+sudo ln -s /mnt/streams /usr/share/red5/webapps/video/streams
+
+sudo /var/log/bigbluebutton /mnt
+sudo ln -s /mnt/bigbluebutton /var/log/bigbluebutton
+
+sudo bbb-conf --start
+}}}
  
 == OS Requirements ==
 
