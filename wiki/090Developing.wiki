@@ -585,7 +585,7 @@ Make red5/webapps writeable. Otherwise, you will get permission error when you t
 
 Before you build and deploy bbb-apps you need to make sure to first stop the red5 service.
 {{{
-sudo service red5 stop
+sudo service bbb-red5 stop
 }}}
 
 Now you can compile and deploy bigbluebutton-apps.
