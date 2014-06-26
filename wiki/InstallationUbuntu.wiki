@@ -509,7 +509,7 @@ Next, to enable recording of webcams for record and playback (webcams were not r
 To ensure all configuration files have the correct hostname/IP, do
 
 {{{
-   sudo bbb-conf --set-ip <ip_or_hostname>
+   sudo bbb-conf --setip <ip_or_hostname>
 }}}
 
 where <ip_or_hostname> is the IP or hostname for your !BigBlueButton server.
