@@ -1712,8 +1712,8 @@ Now, this URL isn't actually called by your web browser; rather, it's called by 
 
 and see if it again returns a valid XML.  If you get back a blank document or a server error, then this is the reason why you are getting the above exception.  You need to change your networking setup or the value of !BigBlueButtonURL so that `http://<your_hostname>/bigbluebutton/` correctly resolves on the !BigBlueButton server.
 
-=== All I get is a "Welcome to Nginx" screen" ===
-If bbb-conf -c returns:
+=== No Symbolic Link ===
+If `bbb-conf --check` returns:
 {{{
 ** Potential Problems **
                         nginx (conf): no symbolic link in /etc/nginx/sites-enabled for bigbluebutton
