@@ -7,7 +7,7 @@ The current release is !BigBlueButton 0.81.  See [ReleaseNotes release notes].
 
 = Next Release =
 
-The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver.org/ semantic versioning]).  We gave an update on our progress during this [http://bigbluebutton.org/2014/02/14/bigbluebutton-community-update/ community update] presentation.
+The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver.org/ semantic versioning]).  Here's a recent post to bigbluebutton-dev on an [https://groups.google.com/d/msg/bigbluebutton-dev/jb-H3uZO3cI/vmKJYdll0EIJ update] of our progress.
 
 The planned features included:
 
