@@ -47,7 +47,7 @@ For example, suppose you modify the !BigBlueButton client and something isn't wo
 *Note:* These instructions assume you have the `bbb-demo` package installed so you can run any of the API demos to test your setup.
 
 === Developing on Windows ===
-To develop !BigBlueButton from within a Windows OS, use VMWare Player or Virtual box to first create a Ubuntu 10.04 64-bit virtual machine.  The associated documentation for VMWare Player and Virtual Box will guide you on setting up a new 10.04 64-bit VM.
+To develop !BigBlueButton from within a Windows OS, use VMWare Player or Virtual box to first create a Ubuntu 10.04 64-bit virtual machine with 4G of memory.  The associated documentation for VMWare Player and Virtual Box will guide you on setting up a new 10.04 64-bit VM.
 
 When setting up the VM, it does not matter to !BigBlueButton if you setup Ubuntu 10.04 server or desktop.  If you install desktop, you’ll have the option of using a graphical interface to edit files.  
 
