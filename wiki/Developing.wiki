@@ -87,7 +87,7 @@ Using !GitHub makes it easy for you to work on your own copy of the !BigBlueButt
 
 === Subscribe to bigbluebutton-dev ===
 
-We recommend you subscribe to the [groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list to follow updates to the development of !BigBlueButton and to collaborate with other developers.
+We recommend you subscribe to the [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev] mailing list to follow updates to the development of !BigBlueButton and to collaborate with other developers.
 
 
 = Setup a Development Environment =
