@@ -11,11 +11,11 @@ The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver
 
 The planned features included:
 
-  * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
+  * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
   * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
+  * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
-  * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
   * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
   * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
