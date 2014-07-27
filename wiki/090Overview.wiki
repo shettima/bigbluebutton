@@ -1,0 +1,20 @@
+#summary Overview of new features in 0.9.0-dev
+
+Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-dev (referred to as 0.9.0 in this document) is ready for use.
+
+= Introduction =
+
+The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver.org/ semantic versioning]).  Here's a recent post to bigbluebutton-dev on an [https://groups.google.com/d/msg/bigbluebutton-dev/jb-H3uZO3cI/vmKJYdll0EIJ update] of our progress.
+
+The planned features included:
+
+  * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
+  * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
+  * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
+  * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
+  * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
+  * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
+  * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
+  * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
+
+See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.
