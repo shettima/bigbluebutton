@@ -49,7 +49,7 @@ x86_64
 You should see `x86_64`.  
 
 
-= Installing !BigBlueButton 0.90 =
+= Installing !BigBlueButton 0.9.0 =
 
 These instructions assume you do not have a previous version of !BigBlueButton installed.  
 
