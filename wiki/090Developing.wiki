@@ -1,6 +1,6 @@
-#summary Setup a development environment for BigBlueButton 0.9.0
+#summary Setup a development environment for BigBlueButton 0.9.0-dev
 
-Note: This page is currently under development and the instructions are not correct.  We'll update this page when we release the beta for 0.9.0.
+Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-dev (referred to as 0.9.0 in this document) is ready for use.
 
 <wiki:toc max_depth="2" />
 
@@ -8,7 +8,7 @@ Note: This page is currently under development and the instructions are not corr
 
 Welcome to the !BigBlueButton Developer's Guide.  This document will help you get started quickly with modifying and extending BigBlueButton.
 
-This guide assumes you have a working !BigBlueButton server (see InstallationUbuntu).
+This guide assumes you have a working !BigBlueButton server (see 090InstallationUbuntu).
 
 = Overview =
 
@@ -21,7 +21,7 @@ A !BigBlueButton server is built from a number of components that corresponding 
 
 You don't need to understand everything about each component, but you do need to understand the [ArchitectureOverview overall architecture] works together. 
 
-This document describes how to setup a development environment using an existing !BigblueButton 0.90.0 server.  Once the environment is setup, you will be able to make custom changes to !BigBlueButton source, compile the source, and replace the corresponding components on the server (such as updating the !BigBigBlueButton client).
+This document describes how to setup a development environment using an existing !BigblueButton 0.9.0 server.  Once the environment is setup, you will be able to make custom changes to !BigBlueButton source, compile the source, and replace the corresponding components on the server (such as updating the !BigBigBlueButton client).
 
 The instructions in this guide are step-by-step so you can understand each step needed to modify a component.  If you encounter problems or errors at any step, don't ignore the errors.  Stop and double-check that you have done the step correctly.  If your unable to determine the cause of the error, do the following
 
@@ -36,9 +36,9 @@ The !BigBlueButton project uses git to manage the source code.  Git is a distrib
 
 
 === You have a Working !BigBlueButton Server ===
-Before you can start developing on !BigBlueButton, you need a working !BigBlueButton 0.90.0 server.
+Before you can start developing on !BigBlueButton, you need a working !BigBlueButton 0.9.0 server.
 
-*Note:* You must use ubuntu 12.04 64-bit to setup the !BigBlueButton server.  There are no 32-bit packages available.
+*Note:* You must use ubuntu 14.04 64-bit to setup the !BigBlueButton server.  There are no 32-bit packages available.
 
 We emphasize that your !BigBlueButton server must be working *before* you start setting up the development environment.  Be sure that you can login, start sessions, join the audio bridge, share your webcam, and record and playback sessions -- all using the built-in API demos.
 
@@ -49,9 +49,9 @@ For example, suppose you modify the !BigBlueButton client and something isn't wo
 *Note:* These instructions assume you have the `bbb-demo` package installed so you can run any of the API demos to test your setup.
 
 === Developing on Windows ===
-To develop !BigBlueButton from within a Windows OS, use VMWare Player or Virtual box to first create a Ubuntu 12.04 64-bit virtual machine.  The associated documentation for VMWare Player and Virtual Box will guide you on setting up a new 12.04 64-bit VM.
+To develop !BigBlueButton from within a Windows OS, use VMWare Player or Virtual box to first create a Ubuntu 14.04 64-bit virtual machine.  The associated documentation for VMWare Player and Virtual Box will guide you on setting up a new 14.04 64-bit VM.
 
-When setting up the VM, it does not matter to !BigBlueButton if you setup Ubuntu 12.04 server or desktop.  If you install desktop, you’ll have the option of using a graphical interface to edit files.  
+When setting up the VM, it does not matter to !BigBlueButton if you setup Ubuntu 14.04 server or desktop.  If you install desktop, you’ll have the option of using a graphical interface to edit files.  
 
 Keep in mind, you’ll need a host capable of running a [http://stackoverflow.com/questions/56124/can-i-run-a-64-bit-vmware-image-on-a-32-bit-machine 64-bit virtual machine].
 
@@ -239,33 +239,6 @@ nothing to commit (working directory clean)
 
 When you first clone the !BigBlueButton git repository, git will place you, by default, on the _master branch_, which is the latest code for !BigBlueButton. 
 
-Now that 0.81 is shipped, you want to checkout the 0.81 release branch (marked 'v0.81-release'). 
-
-
-{{{
-git checkout -b my-bbb-branch v0.81-release
-}}}
-
-You should see
-
-{{{
-Switched to a new branch 'my-bbb-branch'
-}}}
-
-Do
-
-{{{
-git status
-}}}
-
-The output should be
-
-{{{
-# On branch my-bbb-branch
-nothing to commit (working directory clean)
-}}}
-
-
 = Production Environment =
 
 Okay. Let's pause for a minute. You have set-up the necessary tools and cloned the source. Understand the diagram below on where the different configuration are in a production set-up. When developing, we want to change some configuration settings to load our new changes and not the ones deployed for production.
@@ -397,7 +370,8 @@ ant
 
 This will create a build of the !BigBlueButton client in the `/home/firstuser/dev/bigbluebutton/bigbluebutton-client/client` directory.
 
-*Note:* In 0.81, the !BigBlueButton server will cache the config.xml for a given meetingID.  To ensure we load the new config.xml, restart the !BigBlueButton server
+*Note:* The!BigBlueButton server will cache the config.xml for a given meetingID.  To ensure we load the new config.xml, restart the !BigBlueButton server
+
 {{{
 sudo bbb-conf --clean
 }}}
@@ -419,6 +393,7 @@ This is OK as you are explicitly serving the client from your directory.
 == Making a change ==
 
 Now that we have successfully built and loaded the client from a development environment, let's make a small visible change to the interface.
+
 *Note:* We’re using `vi` to edit the client, but you can use any Unix text editor of course.
 
 *Note:* If you are on Windows and developing using the !BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type the command `bbb-conf –setup-samba`.
