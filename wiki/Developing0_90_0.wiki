@@ -1,1 +1,2 @@
+#labels Deprecated
 Page moved to [090Developing https://code.google.com/p/bigbluebutton/wiki/090Developing]
