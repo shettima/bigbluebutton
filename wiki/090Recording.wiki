@@ -1,5 +1,7 @@
 #summary Record and Playback in BigBlueButton 0.9.0 (draft).
 
+Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-dev (referred to as 0.9.0 in this document) is ready for use.
+
 <wiki:toc max_depth="4" />
 
 This document assumes the reader understands the current [http://code.google.com/p/bigbluebutton/wiki/ArchitectureOverview BigBlueButton architecture].
