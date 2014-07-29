@@ -10,7 +10,7 @@
     * [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup] - Setup questions ("How do I setup my !BigBlueButton server behind a firewall?")
     * [http://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 BigBlueButton-dev] - Development questions ("How do I use the API create method?")
 
-*3. Post your question:* If your search doesn't find an answer, please join the respective list and post your question. 
+*3. Post your question:* If your search doesn't find an answer, please join the respective list and post your question.   In particular, if you have a problem installing !BigBlueButton, please post to [http://groups.google.com/group/bigbluebutton-setup/topics?gvc=2 BigBlueButton-setup].  
 
 == I think I've found a bug ... ==
 
