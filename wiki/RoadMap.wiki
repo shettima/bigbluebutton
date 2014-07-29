@@ -16,11 +16,14 @@ The planned features included:
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
-  * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
-  * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
 See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.
+
+Items that will be in a release subsequent to 0.9.0 are
+
+  * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
+  * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
 
 = Roadmap to !BigBlueButton 1.0 =
 
