@@ -748,6 +748,25 @@ and then reload the .profile with the command `source ~/.profile`.
 
 
 
+== Pausing/Restarting VM gives wrong date in commit ==
+If you are developing using the BigBlueButton VM, and you've pause the VM and later restart it, the time on the VM will be incorrect and would affect any commits you do in GitHub.
+
+To ensure the VM has correct time, you can install ntp with
+
+{{{
+sudo apt-get install ntp
+sudo /etc/init.d/ntp restart
+}}}
+
+and then do the following after starting the VM from a paused state:
+
+{{{
+sudo /etc/init.d/ntp restart
+}}}
+
+The above will re-sync you clock.
+
+
 = Developing Using Eclipse =
 This instructions assumes that you are developing with the VM running on a Windows machine.
 
