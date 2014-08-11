@@ -55,7 +55,17 @@ that media files have not zero length and events were archived.
 == Process ==
 The Process phase involves processing the archived  valid files of the recording according to the workflow (presentation or matterhorn). Usually it involves parsing the archived events, converting media files to other formats or concatenating them, etc.
 
+== Post Scripts ==
 
+_Post scripts_ allow you to perform site-specific actions after each of the Archive, Process, and Publish steps of the Recording processing.
+
+Some examples of things you might use the post scripts to do:
+
+  * Send you an email after a recording is published.
+  * Backup a recording to another server after your recording is archived or published.
+  * Send a text message after a recording is published.
+  * Compress media files and make them public available for download after it is published.
+  * Delete raw media files after the recording processing complete.
 
 == Publish ==
 The Publish phase involves generating metadata and taking many or all the processed files and placing them in a directory exposed publicly for later playback.
@@ -68,83 +78,6 @@ Using the workflow *presentation*, playback is handled by HTML, CSS and Javascri
 
 
 Using the workflow *matterhorn*, playback is handled by a media player in your Matterhorn server.
-
-= Post Scripts (draft) =
-
-_Post scripts_ allow you to manage your media files after each one of these  Record and Playback phases have finished: Archive, Process and Publish.  
-
-You may want to use _post scripts_ to:
-
-  *  Send you an email _after_ a recording is published.
-
-  *  Make a backup in other server _after_ your recording is archived or published.
-
-  *  Send a text message _after_ a recording is published.
-
-  *  Compress media files and make them public available for download _after_ it is archived.
-
-Each _post script_ has access to:
-
-  *  The directory of the archived, processed or published files. Depends on the _post script_ you edit.
-
-  *  The meeting ID via the variable "meeting_id"
-
-  *  The metadata explicitely sent for _post scripts_, via the hash "post_metadata". See [https://code.google.com/p/bigbluebutton/wiki/API#create how to send metadata].
-
-
-In your server,  _post scripts_ directory is */usr/local/bigbluebutton/core/scripts/post_scripts/_*
-{{{
-
-|-- post_archive.rb
-|-- post_phase_tools.rb
-|-- post_process.rb
-|-- post_publish.rb
-`-- Readme.md
-
-}}}
-
-== 'Post' Metadata ==
-
-If you want to use metadata inside _post scripts_ it should be sent using this convention in the create api call:
-
-{{{
-meta_post<phase><name>=value
-}}}
-
-Inside the _post script_ it is available in the hash *post_metadata*
-{{{
-my_variable = post_metadata["<name>"]
-}}}
-
-== Post script Example ==
-
-You want to receive an email after a recording is published.
-
-1. Open *post_publish.rb* and get the metadata you will send in the create api call later.
-{{{
-	email = post_metadata["email"]
-}}}
-
-2. Create a message using the available variables, for example, meeting_id
-{{{
-	message = "The recording #{meeting_id} has been published"
-	
-}}}
-
-3. Send the email using the metadata you retrieved and the meeting ID
-{{{
-       send_email(message, email)
-}}}
-
-Note that the method *send_email* is not implemented, you can do it in the file *post_phase_tools.rb*
-
-4. Create a recorded meeting sending your email as metadata parameter. The parameter should look like this
-{{{
-	meta_postpublishemail="johndoe@example.com"
-}}}
-
-After your recording is published, *post_publish.rb* is executed and your email should be sent.
-
 
 = Media storage =
 
@@ -439,6 +372,39 @@ The main file is rap-worker.rb, it executes all the Record and Playback phases
 
  * Yml files contain information used by process and publish scripts.
 
+=== Writing Post Scripts ===
+
+In your server, there are separate "drop-in" directories under `/usr/local/bigbluebutton/core/scripts` for each of the `post_archive`, `post_process`, and `post_publish` steps. Each of these directories can contain ruby scripts (`.rb` extension required), which will be run in alphabetical order after the corresponding recording step.
+
+The scripts take the argument `-m`, which takes the meeting id as a parameter.
+
+A set of example scripts is provided to give you a framework to build your custom scripts from.
+
+{{{
+
+|-- post_archive
+|   `-- post_archive.rb.example
+|-- post_process
+|   `-- post_process.rb.example
+`-- post_publish
+    `-- post_publish.rb.example
+}}}
+
+The example files give the file paths where the files from the corresponding step are located, and include code for accessing the metadata variables from the meeting. For example, if you passed a variable named
+
+{{{
+meta_postpublishemail=user@example.com
+}}}
+
+when creating the meeting, you can access it by doing
+
+{{{
+email = meeting_metadata['postpublishemail']
+}}}
+
+in the script.
+
+You are free to do anything you like inside the post scripts, including modifying recording files from a previous step before the next step occurs.
 
 ===Playback phase===
 
