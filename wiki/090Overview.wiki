@@ -1,10 +1,15 @@
-#summary Overview of new features in 0.9.0-dev
+#summary Overview of BigBlueButton 0.9.0
 
-Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-dev (referred to as 0.9.0 in this document) is ready for use.
+<wiki:toc max_depth="3" />
+
+Note: The 0.9.0 release is currently under development and the content of this page is unfinished.  We'll post to bigbluebutton-dev when the release is available.
 
 = Introduction =
+This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.0.9).  See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
 
-The next release will be !BigBlueButton 0.9.0 (we're switching to [http://semver.org/ semantic versioning]).  Here's a recent post to bigbluebutton-dev on an [https://groups.google.com/d/msg/bigbluebutton-dev/jb-H3uZO3cI/vmKJYdll0EIJ update] of our progress.
+Most notably, !BigBlueButton 0.9.0 provides a significant update to the quality of the audio using webRTC.
+
+To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
 The planned features included:
 
@@ -17,4 +22,21 @@ The planned features included:
   * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
-See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.
+
+
+= Overview of new features in !BigBlueButton 0.9.0 =
+
+== Audio ==
+
+For users of Mozilla FireFox and Google Chrome, !BigBlueButton 0.9.0 now uses webRTC for the audio channel.
+
+== Whiteboard ==
+
+== Chat ==
+Users can now paste XML content into the chat window.  
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/xml-chat.png
+
+== API Examples/Updates ==
+
+=== Demos ===
