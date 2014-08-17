@@ -60,7 +60,7 @@ Your now ready to install !BigBlueButton.
 
 = Installing !BigBlueButton 0.9.0-dev =
 
-*Note: !BigBlueButton 0.9.0-dev is still under heavy development.  If you've already installed an earlier build, see [#Upgrading_BigBlueButton upgrading BigBlueButton]*.
+If you've already installed an earlier build, see [#Upgrading_BigBlueButton upgrading BigBlueButton 0.9.0].
 
 If you encounter an error at any step, STOP and double-check you've entered the proper commands.  Don't continue onto the next step (you'll only compound the errors).  If you can't resolve it (use Google to search for the error messages), please see [http://bigbluebutton.org/support support options].
 
