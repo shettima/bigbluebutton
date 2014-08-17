@@ -187,8 +187,11 @@ We're now ready to install !BigblueButton 0.9.0-dev. Type
    sudo apt-get install bigbluebutton
 }}}
 
-
 This single command is where all the magic happens.  This command installs *all* of !BigBlueButton's components with their dependencies.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/090install.png
+
+Type 'Y' and press enter to install.
 
 If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
 
@@ -265,17 +268,14 @@ If you think something isn't working correctly, the first step is enter the foll
 $ sudo bbb-conf --check
 }}}
 
-This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  For example, here's the output on one of our internal servers:
+This will check your setup to ensure the correct processes are running, the !BigBlueButton components have correctly started, and look for common configuration problems that might prevent !BigBlueButton from working properly.  
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/vm/71check.png
-
-
-If you see text after the line `** Potential problems described below **`, then `bbb-conf` it may be warnings (which you can ignore if you've change settings) or errors with the setup.
+If you see text after the line `** Potential problems described below **`, then it may be warnings (which you can ignore if you've change settings) or errors with the setup.
 
 
 == Dependencies are not met ==
 
-For some VPS installations of Ubuntu 14.04, the hosting provider does not give a full `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
+Some hosting providers do not provide a complete `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
 
 
 {{{
@@ -291,7 +291,7 @@ then do
 $ sudo apt-get update
 }}}
 
-and try installing !BigBlueButton again.
+and try installing !BigBlueButton again from the beginning steps.
 
 
 == Change the !BigBlueButton Server's IP ==
