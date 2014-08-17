@@ -5,7 +5,9 @@
 
 <wiki:toc max_depth="3" />
 
-Welcome to the installation guide for !BigBlueButton 0.9.0-dev.  For a quick overview what we've been working on in this release, see [090Overview overview].
+Welcome to the installation guide for !BigBlueButton 0.9.0-dev.  !BigBlueButton is an open source web conferencing system for on-line learning.
+
+For an overview what new in this release, see [090Overview overview].
 
 If already have a !BigBlueButton 0.81 server, these instructions will *not* upgrade your server.  To install !BigBlueButton 0.9.0-dev, you need to install on a clean installation of Ubuntu 14.04 64-bit.  The reason is that !BigBlueButton ran on Ubuntu 10.04 64-bit, whereas !BigBlueButton 0.9.0 runs on Ubuntu 14.04 64-bit.  While technically you could upgrade a Ubuntu 10.04 64-bit server to run Ubuntu 14.04 64-bit, the (much) easier approach is to start with a clean server.
 
