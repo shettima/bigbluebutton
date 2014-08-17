@@ -1,6 +1,6 @@
 #summary How to install BigBlueButton 0.9.0
 
-Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0 (referred to as 0.9.0 in this document) is ready for use.
+*Note: !BigBlueButton 0.9.0 is currently under development an not released.  We welcome everyone who is interested to install builds of the 0.9.0 release and give us feedback to [https://groups.google.com/forum/#!forum/bigbluebutton-dev bigbluebutton-dev].*
 
 
 <wiki:toc max_depth="3" />
@@ -12,44 +12,43 @@ Note: If you have a !BigBlueButton 0.81 installation running, do not attempt to 
 
 Instead, setup a new server running Ubuntu 14.04 and install !BigBlueButton on using the steps below.
 
-= Before You Install =
+= Before you install =
 
 The requirements are
 
   * Ubuntu 14.04 64-bit
   * 4 GB of memory (8 GB is better)
   * Quad-core 2.6 GHZ CPU (or faster)
-  * TCP ports 80, 1935, 9123, 5066 are accessible
+  * TCP ports 80, 1935, 9123, 5066 are accessible 
   * UDP ports 16384 - 32768 are accessible
   * Port 80 is *not* used by another application
   * 500G of free disk space (or more) for recordings
-  * 100 Mbits/sec bandwidth (upstream and downstream)
+  * 100 Mbits/sec bandwidth (symmetrical)
 
-In addition to the above, the locale of the server must be en_US.UTF-8. Furthermore, the contents of `/etc/default/locale` must contain the single line `LANG="en_US.UTF-8"`.  You can verify this as below.
+In addition to ensuring your server meets the above requirements, there are a few more checks.  First, the locale of the server must be en_US.UTF-8.  To verify , enter the following command
 
 {{{
 $ cat /etc/default/locale
 LANG="en_US.UTF-8"
 }}}
 
-If you don't see `LANG="en_US.UTF-8"`, then do the following
+If you don't see `LANG="en_US.UTF-8"`, then enter the following commands.
 
 {{{
-sudo apt-get install language-pack-en
-sudo update-locale LANG=en_US.UTF-8
+$ sudo apt-get install language-pack-en
+$ sudo update-locale LANG=en_US.UTF-8
 }}}
 
-and the logout and log back into your session.  After the above, do `cat /etc/default/locale` again and verify you see only the single line `LANG="en_US.UTF-8"`.  Note: if you see an additional line `LC_ALL=en_US.UTF-8`, then remove the setting for `LC_ALL` before continuing.
+Next, logout and log back into your session (this will reload your configuration).  Run `cat /etc/default/locale` again.  Verify you see only the single line `LANG="en_US.UTF-8"`.  Note: if you see an additional line `LC_ALL=en_US.UTF-8`, then remove the setting for `LC_ALL` before continuing.
 
-
-Also, check that you are running under 64-bit.
+Check that you are running under 64-bit.
 
 {{{
 $ uname -m
 x86_64
 }}}
 
-You should see `x86_64`.  Next, check your version of Ubuntu
+And check your version of Ubuntu is Ubuntu 14.04.  If you try to install !BigBlueButton 0.9.0 on any other release, it won't work.
 
 {{{
 $ cat /etc/lsb-release
@@ -59,10 +58,11 @@ DISTRIB_CODENAME=trusty
 DISTRIB_DESCRIPTION="Ubuntu 14.04.X LTS"
 }}}
 
-You should see `14.04` for `DISTRIB_RELEASE`.
+Your now ready to install !BigBlueButton.
 
+= Installing !BigBlueButton 0.9.0-dev =
 
-= Installing !BigBlueButton 0.9.0 =
+*Note: !BigBlueButton 0.9.0 is still under heavy development.  If you've already installed it, see [#Upgrading_BigBlueButton upgrading BigBlueButton]*.
 
 The following steps will install 0.9.0.  If you have problems with the setup, please post to [https://groups.google.com/forum/#!forum/bigbluebutton-setup bigbluebutton-setup]
 
