@@ -5,13 +5,14 @@ Note: This page is currently under development and the instructions not finished
 
 <wiki:toc max_depth="3" />
 
-= Welcome =
 
 Welcome to the installation guide for !BigBlueButton 0.9.0, our twelfth release to date.  For a quick overview of the capabilities of this release, see [ReleaseNotes release notes] and [090Overview overview].
 
-= Before You Install =
+Note: If you have a !BigBlueButton 0.81 installation running, do not attempt to upgrade the server using these instructions.  !BigBlueButton ran on Ubuntu 10.04 64-bit, whereas !BigBlueButton 0.9.0 runs on Ubuntu 14.04 64-bit.
 
-*Note:* The packaging is for *Ubuntu 14.04 64-bit only*. 
+Instead, setup a new server running Ubuntu 14.04 and install !BigBlueButton on using the steps below.
+
+= Before You Install =
 
 The requirements are
 
@@ -58,7 +59,7 @@ DISTRIB_CODENAME=trusty
 DISTRIB_DESCRIPTION="Ubuntu 14.04.X LTS"
 }}}
 
-You should see 14.04 for `DISTRIB_RELEASE`.
+You should see `14.04` for `DISTRIB_RELEASE`.
 
 
 = Installing !BigBlueButton 0.9.0 =
@@ -85,10 +86,12 @@ or
 deb http://archive.ubuntu.com/ubuntu trusty main restricted universe multiverse
 }}}
 
-If you don't see the deb line for `lucid multiverse`, execute the following line to add this repository to `sources.list`.
+Don't worry if the URL is different, what's important is you see a link that contains multiverse uncommented.
+
+If you don't see the deb line for `multiverse` uncommented, execute the following line to add this repository to `sources.list`.
 
 {{{
-echo "deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse" | sudo tee -a /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty multiverse" | sudo tee -a /etc/apt/sources.list
 }}}
 
 Before proceeding further, do a dist-upgrade to ensure all the current packages on your server are up-to-date.
@@ -118,7 +121,7 @@ echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-trusty main" | sudo
 
 Note: These instructions are draft and the 'XXX' will be replaced shortly with the proper text.
 
-== 2.  Install ffmpeg ==
+== 3.  Install ffmpeg ==
 !BigBlueButton uses ffmpeg to process video files for playback.  To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
 {{{
@@ -172,7 +175,7 @@ libswresample   0. 19.100 /  0. 19.100
 }}}
 
 
-== 5.  Install !BigBlueButton == 
+== 4.  Install !BigBlueButton == 
 We're now ready to install !BigblueButton. Type
 
 {{{
@@ -188,10 +191,10 @@ If you get an error message
 {{{
 ...... Error: FreeSWITCH didn't start 
 }}}
-you can ignore it as we'll do a clean restart of all the components in step 7.
+you can ignore it as we'll do a clean restart of all the components in step 6.
 
 
-== 6. Install API Demos ==
+== 5. Install API Demos ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
 
@@ -207,7 +210,7 @@ Later on, if you wish to remove the API demos, you can enter the command
    sudo apt-get purge bbb-demo
 }}}
 
-== 7. Enable webRTC audio == 
+== 6. Enable webRTC audio == 
 
 To enable webRTC audio, do the following
 
@@ -215,7 +218,7 @@ To enable webRTC audio, do the following
    sudo bbb-conf --enablewebrtc
 }}}
 
-== 8. Do a Clean Restart == 
+== 7. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
