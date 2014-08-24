@@ -55,7 +55,7 @@ This steps serves two functions
   # It emphasizes the need to have a headset for best audio experience
   # It ensures they have a functioning microphone _before_ entering the voice bridge for the session.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiotest.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/aduiotest.png
 
 In most cases, the default microphone chosen by the operating system is a functioning microphone.
 
@@ -65,9 +65,9 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/webrtcaudio.png
 
 If the user clicks 'No', they are brought to a new dialog to connect via Flash and choose a microphone.
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiotest.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/flashchoose.png
 
-
+Here the user gets 
 = Star/Stop Recording =
 Moderators can now choose the segments of their session that are recorded by clicking the Stop/Start Recording button.
 
