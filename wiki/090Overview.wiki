@@ -9,8 +9,8 @@ This document summarizes the major updates in !BigBlueButton 0.9.0  (referred he
 
 !BigBlueButton 0.9.0 has the following new features:
 
+  * Improved Audio Setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
-  * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
   * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
@@ -24,19 +24,84 @@ Other improvements include:
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
 
 To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
-= Overview of new features in !BigBlueButton 0.9.0 =
 
-== Audio ==
+= Improved Audio=
 
-For users of Mozilla FireFox and Google Chrome, !BigBlueButton 0.9.0 now uses webRTC for the audio channel.
+There were two main goals to improving the audio
+  # Improve overall sound quality
+  # Increase likelihood user has a functioning microphone
 
-== Whiteboard ==
+== Improved Audio Setup ==
 
-== Chat ==
+Users now have the ability to choose to join the session with their microphone or listen only, which will skip permission prompts and join the audio right away).
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
+
+A common issue with Chrome 36 (and earlier versions) was the users would sometimes miss Chrome's prompt for permissions to access their microphone.  If the user doesn't give permission, their microphone wil not work.
+
+!BigBlueButton 0.9.0 now provides users with floating dialog that prompts the user to respond to the browser's request for permissions to access their microphone.
+
+Here's how the dialog looks in Chrome:
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/chromerequest.png
+
+And here is the FireFox version:
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/firefoxrequest.png
+
+Once the user has given permission, !BigBlueButton will enable the user to test their microphone by saying a few words.  The user is actually placed in an "echo test" room where their audio will be sent to the server and back to their speakers.
+
+This steps serves two functions
+  # It emphasizes the need to have a headset for best audio experience
+  # It ensures they have a functioning microphone _before_ entering the voice bridge for the session.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiotest.png
+
+In most cases, the default microphone chosen by the operating system is a functioning microphone.
+
+If the user clicks 'Yes', they are joined into the audio bridge with their default microphone using WebRTC audio (FireFox and Chrome) 
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/webrtcaudio.png
+
+If the user clicks 'No', they are brought to a new dialog to connect via Flash and choose a microphone.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiotest.png
+
+
+= Star/Stop Recording =
+Moderators can now choose the segments of their session that are recorded by clicking the Stop/Start Recording button.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/startstop.png
+
+To help ensure that moderators do not forget to start recording their session, !BigBlueButton will remind them, after they join the audio bridge, they they can record the meeting.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/remind.png
+
+
+== Lock Viewers ==
+The moderator now has the ability to lock (restrict) viewers from having the following abilities:
+
+  # Webcam
+  # Microphone
+  # Public Chat
+  # Private Chat
+  # Layout
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiotest.png
+
+
+= Improvements =
+
+== Paste XML into Chat ==
+
 Users can now paste XML content into the chat window.  
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/xml-chat.png
 
-== API Examples/Updates ==
+== UTF-8 presentation file names now displayed ==
 
-=== Demos ===
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/utf8.png
+
+== Moderators can raise hand == 
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/moderatorraisehand.png
