@@ -7,6 +7,8 @@ Note: The 0.9.0 release is currently under development and the content of this p
 = Introduction =
 This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0).  See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
 
+To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
+
 !BigBlueButton 0.9.0 has the following new features:
 
   * Improved Audio Setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
@@ -22,23 +24,27 @@ Other improvements include:
   * UTF-8 presentation file names now displayed (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
 
-To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
+The following sections gives you some visuals of the new features.  You can try them yourself by visiting the [http://demo.bigbluebutton.org/ BigBlueButton Demo Server].
 
-= Improved Audio=
+= Improved Audio =
 
 There were two main goals to improving the audio
   # Improve overall sound quality
   # Increase likelihood user has a functioning microphone
 
-== Improved Audio Setup ==
+== Listen Only Audio ==
 
 Users now have the ability to choose to join the session with their microphone or listen only, which will skip permission prompts and join the audio right away).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
 
+Joining via listen only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
+
+== Highlight the Browser’s Request For Permission == 
+ 
 A common issue with Chrome 36 (and earlier versions) was the users would sometimes miss Chrome's prompt for permissions to access their microphone.  If the user doesn't give permission, their microphone wil not work.
 
-!BigBlueButton 0.9.0 now provides users with floating dialog that prompts the user to respond to the browser's request for permissions to access their microphone.
+!BigBlueButton 0.9.0 now provides users with prompts that highlight browser's request for permissions to access their microphone.
 
 Here's how the dialog looks in Chrome:
 
@@ -48,9 +54,11 @@ And here is the FireFox version:
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/firefoxrequest.png
 
+== Audio Test ==
+
 Once the user has given permission, !BigBlueButton will enable the user to test their microphone by saying a few words.  The user is actually placed in an "echo test" room where their audio will be sent to the server and back to their speakers.
 
-This steps serves two functions
+This steps serves two functions:
   # It emphasizes the need to have a headset for best audio experience
   # It ensures they have a functioning microphone _before_ entering the voice bridge for the session.
 
@@ -62,11 +70,19 @@ If the user clicks 'Yes', they are joined into the audio bridge with their defau
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/webrtcaudio.png
 
-If the user clicks 'No', they are brought to a new dialog to connect via Flash and choose a microphone.
+== Microphone Chooser ==
+
+If the user clicks 'No', they are brought to a new dialog to connect via Flash and choose a microphone.  This dialog is larger than the built-in dialog for Flash.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/flashchoose.png
 
-Here the user gets 
+Here the user gets immediate feedback on whether the current microphone is generating energy.
+
+If they click 'Next', they can return to the Audio Test to confirm their microphone is working before joining the session.
+
+If the user is unable to get their microphone to work, they can always join Listen Only.  This lets other users in the session know upfront the user can only hear the session.
+
+
 = Star/Stop Recording =
 Moderators can now choose the segments of their session that are recorded by clicking the Stop/Start Recording button.
 
