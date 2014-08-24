@@ -4,8 +4,8 @@
 
 Note: The 0.9.0 release is currently under development and the content of this page is unfinished.  We'll post to [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list] when the release is available.
 
-= Introduction to !BigBlueButton 0.9.0 =
-This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0).  This is the project's twelfth release.
+= Overview of Whats New in !BigBlueButton 0.9.0 (our twelfth release) =
+This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0). 
 
 !BigBlueButton 0.9.0 has the following new features:
 
