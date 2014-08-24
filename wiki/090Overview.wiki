@@ -71,6 +71,10 @@ If the user clicks 'Yes', they are joined into the audio bridge with their defau
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/webrtcaudio.png
 
+Compared with Flash Aduio, WebRTC audio uses UDP for transmission and is encoded using OPUS.  The browser transmits audio directly to FreeSWITCH.  The browser's acoustic echo cancellation is better than Flash, and both browsers support auto-leveling of that audio, removing the need for the user to manually adjust the sensitivity.  WebRTC audio is transmitted securely via SRTP at a rate of 48 Khz, whereas speex is transmitted via RTMP (not encrypted) at a rate of 16 khz.
+
+Overall, WebRTC should provide the user a higher quality and lower latency audio transmission.
+
 == Microphone Chooser ==
 
 If the user clicks 'No', they are brought to a new dialog to connect via Flash and choose a microphone.  This dialog is larger than the built-in dialog for Flash.
