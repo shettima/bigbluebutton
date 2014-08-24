@@ -10,7 +10,7 @@ This is our twelfth release of !BigBlueButton.
 
 == Major Features ==
 
-  * * Audio Improvements * - !BigBlueButton now uses web real-time communications (WebRTC) for audio on Chrome and !FireFox browsers.  This gives users of those browsers an improvement in the quality of audio (better sounding audio with lower latency).  
+  * * Audio Improvements * - !BigBlueButton now uses web real-time communications (WebRTC) for audio on Chrome and !FireFox browsers.  This improves the quality of audio (sound and latency) for users of these browsers.  (Users of other browsers will join audio via Flash.)
 
   * * Audio Check * - The redesigned audio setup dialogue boxes now has users test of their microphone _before_ entering the session, thus reducing the occurrences of users entering without a functioning microphone.
 
