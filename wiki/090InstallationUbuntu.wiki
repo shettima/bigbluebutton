@@ -1,7 +1,6 @@
 #summary How to install BigBlueButton 0.9.0
 
-*Note: !BigBlueButton 0.9.0 is currently under development an not released.  We welcome everyone who is interested to install builds of the 0.9.0 release and give us feedback to [https://groups.google.com/forum/#!forum/bigbluebutton-dev bigbluebutton-dev].*
-
+*Note: !BigBlueButton 0.9.0 is currently under development and not released yet.  You can test the latest build at our [http://demo.bigbluebutton.org/ Demo Server].
 
 <wiki:toc max_depth="3" />
 
