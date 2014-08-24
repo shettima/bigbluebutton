@@ -1,6 +1,22 @@
 #summary Release Notes for new versions of BigBlueButton.
 
 
+
+= Release 0.9.0-dev (draft) =
+ 
+Released: XXX YY, 2014 ([InstallationUbuntu090 Installation Instructions])
+
+This is our twelfth release of !BigBlueButton.  
+
+== Major Features ==
+
+  * * Audio Improvements * - !BigBlueButton now uses web real-time communications (WebRTC) for audio on Chrome and !FireFox browsers.  This gives users of those browsers an improvement in the quality of audio (better sounding audio with lower latency).  
+  * * Audio Check * - The redesigned audio setup dialogue boxes now has users test of their microphone _before_ entering the session, thus reducing the occurrences of users entering without a functioning microphone.
+  * * Start/Stop Button for Recording * - Moderators can now control which segments of their session are recorded.
+  * Installation on Ubuntu 14.04 64-bit 
+
+For a detailed summary (with screen shots) of what's new, see [090Overview BigBlueButton 0.9.0 Overview].
+
 = Release 0.81 =
  
 Released: November 7, 2013 ([InstallationUbuntu Installation Instructions])
