@@ -2,14 +2,10 @@
 
 <wiki:toc max_depth="3" />
 
-Note: The 0.9.0 release is currently under development and the content of this page is unfinished.  We'll post to bigbluebutton-dev when the release is available.
+Note: The 0.9.0 release is currently under development and the content of this page is unfinished.  We'll post to [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list] when the release is available.
 
 = Introduction to !BigBlueButton 0.9.0 =
 This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0).  This is the project's twelfth release.
-
-See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
-
-To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 
 !BigBlueButton 0.9.0 has the following new features:
 
@@ -26,7 +22,10 @@ Other improvements include:
   * UTF-8 presentation file names now displayed (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
 
-The following sections gives you some visuals of the new features.  You can try them yourself by visiting the [http://demo.bigbluebutton.org/ BigBlueButton Demo Server].
+See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
+
+The following sections gives you some visuals of the new features.  You can try them yourself by visiting the [http://demo.bigbluebutton.org/ BigBlueButton Demo Server].  Use Mozilla's FireFox browser or Google's Chrome browser to experience the WebRTC audio.
+
 
 = Improved Audio =
 
