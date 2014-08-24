@@ -16,7 +16,7 @@ This is our twelfth release of !BigBlueButton.
 
   * * Start/Stop Button for Recording * - Moderators can now control which segments of their session are recorded.
 
-  * Installation on Ubuntu 14.04 64-bit 
+  * * Installation on Ubuntu 14.04 64-bit * - Switching to Ubuntu 14.04 64-bit enabled us to update many of the underlying components of !BigBlueButton.
 
 For a detailed summary (with screen shots) of what's new, see [090Overview BigBlueButton 0.9.0 Overview].
 
