@@ -83,7 +83,7 @@ If they click 'Next', they can return to the Audio Test to confirm their microph
 If the user is unable to get their microphone to work, they can always join Listen Only.  This lets other users in the session know upfront the user can only hear the session.
 
 
-= Star/Stop Recording =
+= Start/Stop Recording =
 Moderators can now choose the segments of their session that are recorded by clicking the Stop/Start Recording button.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/startstop.png
@@ -93,7 +93,7 @@ To help ensure that moderators do not forget to start recording their session, !
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/remind.png
 
 
-== Lock Viewers ==
+= Lock Viewers =
 The moderator now has the ability to lock (restrict) viewers from having the following abilities:
 
   # Webcam
