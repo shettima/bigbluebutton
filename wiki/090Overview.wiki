@@ -52,7 +52,7 @@ Here's how the dialog looks in Chrome:
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/chromerequest.png
 
-And here is the FireFox version:
+And here is the !FireFox version:
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/firefoxrequest.png
 
