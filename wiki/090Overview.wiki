@@ -34,13 +34,13 @@ There were two main goals to improving the audio
   # Improve overall sound quality
   # Increase likelihood user has a functioning microphone
 
-== Listen Only Audio ==
+== Option for Listen Only Audio ==
 
-Users now have the ability to choose to join the session with their microphone or listen only, which will skip permission prompts and join the audio right away).
+Users now have the ability to choose to join the session with their microphone or Listen Only, which will skip permission prompts and join the audio right away).
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
 
-Joining via listen only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
+Joining via Listen Only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
 
 == Highlight the Browser’s Request For Permission == 
  
