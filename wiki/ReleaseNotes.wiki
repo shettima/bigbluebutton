@@ -18,7 +18,9 @@ This is our twelfth release of !BigBlueButton.
 
   * * Installation on Ubuntu 14.04 64-bit * - Switching to Ubuntu 14.04 64-bit enabled us to update many of the underlying components of !BigBlueButton.
 
-For a detailed summary (with screen shots) of what's new, see [090Overview BigBlueButton 0.9.0 Overview].
+For a detailed breakdown (with screen shots) see [090Overview BigBlueButton 0.9.0 Overview].
+
+== Fixed Issues ==
 
 See [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0%20status=Fixed&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Component%20Summary issues fixed in BigBlueButton 0.9.0].
 
