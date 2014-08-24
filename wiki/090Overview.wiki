@@ -113,7 +113,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/lock.png
 
 = Other Improvements =
 
-== Paste XML into Chat ==
+== Chat supports pasting in XML ==
 
 Users can now paste XML content into the chat window and !BigBlueButton will properly display it. 
 
