@@ -21,7 +21,7 @@ Other improvements include:
   * XML pasted into chat now properly displays (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1769 1769])
   * UTF-8 presentation file names now displayed (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
-  * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1772 1772])
+  * Enhance the Text Tool to allow user to enter in new lines (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1772 1772])
 
 See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
 
