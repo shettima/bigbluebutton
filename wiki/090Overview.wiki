@@ -107,13 +107,15 @@ The moderator now has the ability to lock (restrict) viewers from having the fol
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/lock.png
 
 
-= Improvements =
+= Other Improvements =
 
 == Paste XML into Chat ==
 
-Users can now paste XML content into the chat window.  
+Users can now paste XML content into the chat window and !BigBlueButton will properly display it. 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/xml-chat.png
+
+This will assist sessions that are covering HTML design or XML content -- example of which can be shared by users in the chat.
 
 == UTF-8 presentation file names now displayed ==
 When the presenter uploads a presentation with a UTF-8 file name, !BigBlueButton now properly displays the file name in the upload dialog box.
