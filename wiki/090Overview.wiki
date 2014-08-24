@@ -5,25 +5,25 @@
 Note: The 0.9.0 release is currently under development and the content of this page is unfinished.  We'll post to bigbluebutton-dev when the release is available.
 
 = Introduction =
-This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.0.9).  See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
+This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0).  See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
 
-Most notably, !BigBlueButton 0.9.0 provides a significant update to the quality of the audio using webRTC.
+!BigBlueButton 0.9.0 had the following major updates
 
-To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
-
-The planned features included:
-
-  * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
-  * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
-  * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
+  * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
+   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
+ * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
-  * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
-  * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
+Other improvements include:
 
+  * XML pasted into chat now properly displays (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1769 1769])
+  * UTF-8 presentation file names now displayed
+ (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
+  * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
 
+To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
 = Overview of new features in !BigBlueButton 0.9.0 =
 
 == Audio ==
