@@ -19,8 +19,7 @@ This document summarizes the major updates in !BigBlueButton 0.9.0  (referred he
 Other improvements include:
 
   * XML pasted into chat now properly displays (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1769 1769])
-  * UTF-8 presentation file names now displayed
- (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
+  * UTF-8 presentation file names now displayed (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
 
 To follow the development of 0.9.0, subscribe to the [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list].
