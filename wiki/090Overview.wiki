@@ -7,12 +7,12 @@ Note: The 0.9.0 release is currently under development and the content of this p
 = Introduction =
 This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0).  See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
 
-!BigBlueButton 0.9.0 had the following major updates
+!BigBlueButton 0.9.0 has the following new features:
 
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
   * Improved audio setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
-   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
- * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
+  * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
+  * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
