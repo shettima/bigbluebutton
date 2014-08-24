@@ -87,7 +87,7 @@ The moderator now has the ability to lock (restrict) viewers from having the fol
   # Private Chat
   # Layout
 
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiotest.png
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/lock.png
 
 
 = Improvements =
@@ -99,9 +99,10 @@ Users can now paste XML content into the chat window.
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/xml-chat.png
 
 == UTF-8 presentation file names now displayed ==
+When the presenter uploads a presentation with a UTF-8 file name, !BigBlueButton now properly displays the file name in the upload dialog box.
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/utf8.png
 
 == Moderators can raise hand == 
-
+Moderators can now raise their hand. 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/moderatorraisehand.png
