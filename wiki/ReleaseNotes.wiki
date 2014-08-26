@@ -12,7 +12,7 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
   * * WebRTC Audio * - Users of Chrome and !FireFox are now automatically connected to the audio bridge using web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in [http://www.opus-codec.org/ OPUS] codec, uses UDP for transport, and has a direct connection to [http://freeswitch.org/ FreeSWITCH], the underlying telephony platform used in !BigBlueButton.  Users should experience a lower latency, higher quality audio.
 
-  * * Audio Check * - Users now test their microphone _before_ joining the audio bridge, thus reducing the occurrences of users joining without a functioning microphone.  
+  * * Audio Check * - Users must now test their microphone, using an echo test with FreeSWITCH, _before_ joining the audio bridge, thus reducing the number of users joining without a functioning microphone.  
 
   * * Listen Only Audio * - Users can join the audio bridge in Listen Only mode (no microphone check).  These users share a single, one-way audio channel in FreeSWITCH, thus reducing the overall increase in CPU load as new Listen Only users join.
 
