@@ -14,7 +14,7 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
   * * Audio Check * - Users must now test their microphone, using an echo test with FreeSWITCH, _before_ joining the audio bridge, thus reducing the number of users joining without a functioning microphone.  
 
-  * * Listen Only Audio * - Users have the option to join the audio in Listen Only mode (no microphone check).  These users share a single, one-way audio channel in FreeSWITCH, thus reducing the overall increase in CPU load as new Listen Only users join.
+  * * Listen Only Audio * - Users have the option to join the audio in Listen Only mode (no microphone check).  These users share a single, one-way audio channel in FreeSWITCH, thus reducing the overall increase in CPU load as new Listen Only users join.  This brings !BigBlueButton closer to supporting webinar-type sessions.
 
   * * Start/Stop Button for Recording * - Using a new Start/Stop Recording button in the toolbar, Moderators can now mark segments of their session for playback.  After !BigBlueButton processes the recorded session, the playback files will contain only those marked segments.
 
