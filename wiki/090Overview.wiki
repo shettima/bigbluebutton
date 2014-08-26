@@ -36,11 +36,11 @@ We had two main goals for improving audio in this release
 
 == Listen Only audio ==
 
-Users now have the ability to choose to join the session with their microphone or Listen Only, which will skip permission prompts and join the audio right away).
+Users now have the ability to quickly join the session as a listener, which does not require any permissions from the browser. 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
 
-Joining via Listen Only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
+Unlike !BigBlueButton 0.81, which setup a two-way audio channel in FreeSWITCH for every user (even when users joined muted), thereby increasing the CPU load with each new user, in !BigBlueButton 0.9.0 users joining as Listen Only now share a single audio stream broadcasted from red5, which needs only one connection to FreeSWITCH for all Listen Only users.
 
 == Highlight the browser’s request for permission == 
  
