@@ -28,13 +28,13 @@ See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Rele
 The following sections gives you some visuals of the new features.  You can try them yourself by visiting the [http://demo.bigbluebutton.org/ BigBlueButton Demo Server].  Use Mozilla's !FireFox browser or Google's Chrome browser to experience the WebRTC audio.
 
 
-= Improved Audio =
+= Improved audio =
 
 There were two main goals to improving the audio
   # Improve overall sound quality
   # Increase likelihood user has a functioning microphone
 
-== Listen Only Audio ==
+== Listen Only audio ==
 
 Users now have the ability to choose to join the session with their microphone or Listen Only, which will skip permission prompts and join the audio right away).
 
@@ -42,7 +42,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
 
 Joining via Listen Only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
 
-== Highlight the Browser’s Request For Permission to Access Microphone == 
+== Highlight the browser’s request For permission to access user's microphone == 
  
 A common issue with Chrome 36 (and earlier versions) was the users would sometimes miss Chrome's prompt for permissions to access their microphone.  If the user doesn't give permission, their microphone wil not work.
 
@@ -56,7 +56,7 @@ And here is the !FireFox version:
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/firefoxrequest.png
 
-== Audio Test ==
+== Audio test ==
 
 Once the user has given permission, !BigBlueButton will enable the user to test their microphone by saying a few words.  The user is actually placed in an "echo test" room where their audio will be sent to the server and back to their speakers.
 
