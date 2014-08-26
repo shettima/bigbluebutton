@@ -12,11 +12,11 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
   * * Audio Improvements * - Users of Chrome and !FireFox now connect to the audio conference using web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in OPUS, uses UDP for transport, and has a direct connection from the browser to FreeSWITCH, the underlying telephony platform used in !BigBlueButton.  Users should experience a lower latency, higher quality audio.
 
-  * * Audio Check * - The audio setup dialogue boxes now lets users test of their microphone _before_ entering the session, thus reducing the number of users entering a !BigBlueButton session without a functioning microphone.
+  * * Audio Check * - Users now test their microphone _before_ joining the audio bridge, thus reducing the likelihood of entering the audio bridge without a functioning mic.  !BigBlueButton let's users change their microphone settings within the client (as opposed to opening the Flash microphone dialog).
 
-  * * Listen Only audio * - Users can join the audio listen only, which doesn't require any security prompts from the browser or Flash. This audio uses a shared stream and reduces the CPU load on the server as new users join.
+  * * Listen Only audio * - Users can join the audio bridge in Listen Only mode (no microphone check).  These users share a single, one-way audio channel in FreeSWITCH, thus reducing the overall increase in CPU load as new Listen Only users join.
 
-  * * Start/Stop Button for Recording * - Moderators now have a Start/Stop Recording button in the toolbar to control which segments of session are marked playback.  The underlying record and playback scripts will only publishing for playback the segments between the start/stop events.
+  * * Start/Stop Button for Recording * - Using a Start/Stop Recording button in the toolbar, Moderators can now mark the segments of their session for later processing by !BigBlueButton's record and playback scripts.  After processing, the playback files will contain only those marked segments.
 
   * * Installation on Ubuntu 14.04 64-bit * - !BigBlueButton now uses Ubuntu 14.04 64-bit for installation.
 
