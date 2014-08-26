@@ -10,7 +10,7 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
 == Major Features ==
 
-  * * WebRTC Audio * - Users of Chrome and !FireFox automatically connect to the audio bridge using web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in OPUS, uses UDP for transport, and has a direct connection to FreeSWITCH, the underlying telephony platform in !BigBlueButton.  Users should experience a lower latency, higher quality audio.
+  * * WebRTC Audio * - Users of Chrome and !FireFox now automatically connect to the audio bridge using web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in OPUS, uses UDP for transport, and has a direct connection to FreeSWITCH, the underlying telephony platform in !BigBlueButton.  Users should experience a lower latency, higher quality audio.
 
   * * Audio Check * - Users now test their microphone _before_ joining the audio bridge, thus reducing the likelihood of entering the audio bridge without a functioning mic.  !BigBlueButton let's users change their microphone settings within the client (as opposed to opening the Flash microphone dialog).
 
