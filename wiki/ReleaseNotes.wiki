@@ -6,7 +6,7 @@
  
 Released: XXX YY, 2014 ([090InstallationUbuntu Installation Instructions -- to be updated])
 
-This is a development release of 0.9.0, our twelfth release of !BigBlueButton to-date.  This development release is a step towards the final release (see [https://code.google.com/p/bigbluebutton/wiki/FAQ#BigBlueButton_Development_Process development process]).
+This is a development release 0.9.0 (the twelfth release of !BigBlueButton).  This development release is a step towards the final release (see [https://code.google.com/p/bigbluebutton/wiki/FAQ#BigBlueButton_Development_Process development process]).
 
 == Major Features ==
 
