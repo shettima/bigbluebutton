@@ -30,9 +30,9 @@ The following sections gives you some visuals of the new features.  You can try 
 
 = Improved audio =
 
-There were two main goals to improving the audio
+We had two main goals for improving audio in this release
   # Improve overall sound quality
-  # Increase likelihood user has a functioning microphone
+  # Increase the likelihood user has a functioning microphone when entering the session
 
 == Listen Only audio ==
 
