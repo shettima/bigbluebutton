@@ -16,7 +16,7 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
   * * Listen Only Audio * - Users can join the audio bridge in Listen Only mode (no microphone check).  These users share a single, one-way audio channel in FreeSWITCH, thus reducing the overall increase in CPU load as new Listen Only users join.
 
-  * * Start/Stop Button for Recording * - Using a Start/Stop Recording button in the toolbar, Moderators can now mark the segments of their session for later processing by !BigBlueButton's record and playback scripts.  After processing, the playback files will contain only those marked segments.
+  * * Start/Stop Button for Recording * - Using a new Start/Stop Recording button in the toolbar, Moderators can now mark the segments of their session.  After !BigBlueButton processes the recorded session, the playback files will contain only those marked segments.
 
   * * Installation on Ubuntu 14.04 64-bit * - !BigBlueButton now uses Ubuntu 14.04 64-bit for installation.
 
