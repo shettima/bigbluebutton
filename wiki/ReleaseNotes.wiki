@@ -18,7 +18,7 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
   * * Start/Stop Button for Recording * - Using a new Start/Stop Recording button in the toolbar, Moderators can now mark the segments of their session.  After !BigBlueButton processes the recorded session, the playback files will contain only those marked segments.
 
-  * * Installation on Ubuntu 14.04 64-bit * - !BigBlueButton now uses Ubuntu 14.04 64-bit for installation.
+  * * Ubuntu 14.04 64-bit * - !BigBlueButton now installs on Ubuntu 14.04 64-bit.
 
 For details of the new features (with screen shots) see [090Overview BigBlueButton 0.9.0 Overview].  
 
