@@ -4,7 +4,7 @@
 
 Note: The 0.9.0 release is currently under development and the content of this page is unfinished.  We'll post to [https://groups.google.com/group/bigbluebutton-dev/topics?gvc=2 bigbluebutton-dev mailing list] when the release is available.
 
-= Overview of what is new in !BigBlueButton 0.9.0 (our twelfth release) =
+= !BigBlueButton 0.9.0 (our twelfth release) =
 This document summarizes the major updates in !BigBlueButton 0.9.0  (referred hereafter as 0.9.0). 
 
 !BigBlueButton 0.9.0 has the following new features:
@@ -34,7 +34,7 @@ There were two main goals to improving the audio
   # Improve overall sound quality
   # Increase likelihood user has a functioning microphone
 
-== Option for Listen Only Audio ==
+== Listen Only Audio ==
 
 Users now have the ability to choose to join the session with their microphone or Listen Only, which will skip permission prompts and join the audio right away).
 
@@ -42,7 +42,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
 
 Joining via Listen Only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
 
-== Highlight the Browser’s Request For Permission == 
+== Highlight the Browser’s Request For Permission to Access Microphone == 
  
 A common issue with Chrome 36 (and earlier versions) was the users would sometimes miss Chrome's prompt for permissions to access their microphone.  If the user doesn't give permission, their microphone wil not work.
 
