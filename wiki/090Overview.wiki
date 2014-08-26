@@ -42,11 +42,11 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/audiochooser.png
 
 Joining via Listen Only audio also reduces the CPU load on the server as !BigBlueButton sends a shared stream to all listen-only users.
 
-== Highlight the browser’s request For permission to access user's microphone == 
+== Highlight the browser’s request for permission == 
  
-A common issue with Chrome 36 (and earlier versions) was the users would sometimes miss Chrome's prompt for permissions to access their microphone.  If the user doesn't give permission, their microphone wil not work.
+With Chrome, users are prompted twice for access to their microphone -- once from Flash, and once from Chrome. A common issue with Chrome 36 (and earlier versions) was that users miss Chrome's prompt for permissions to access their microphone.  If a user missed this request and does not give Chrome permission, the user's microphone will not work.
 
-!BigBlueButton 0.9.0 now provides users with prompts that highlight browser's request for permissions to access their microphone.
+!BigBlueButton 0.9.0 now calls the user's attention to the browser's request for permissions to access their microphone.
 
 Here's how the dialog looks in Chrome:
 
