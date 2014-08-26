@@ -10,7 +10,7 @@ This is a release of 0.9.0-dev, which is a step towards the release of 0.9.0 fin
 
 == Major Features ==
 
-  * * Audio Improvements * - Users of Chrome and !FireFox now connect to the audio stream via web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in OPUS, and uses UDP for transport.  The result should be lower latency, higher quality audio for users.
+  * * Audio Improvements * - Users of Chrome and !FireFox now connect to the audio conference using web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in OPUS, uses UDP for transport, and has a direct connection from the browser to FreeSWITCH, the underlying telephony platform used in !BigBlueButton.  Users should experience a lower latency, higher quality audio.
 
   * * Audio Check * - The audio setup dialogue boxes now lets users test of their microphone _before_ entering the session, thus reducing the number of users entering a !BigBlueButton session without a functioning microphone.
 
