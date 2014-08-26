@@ -4,21 +4,23 @@
 
 = Release 0.9.0-dev (draft) =
  
-Released: XXX YY, 2014 ([090InstallationUbuntu Installation Instructuons -- to be updated])
+Released: XXX YY, 2014 ([090InstallationUbuntu Installation Instructions -- to be updated])
 
 This is a development release of 0.9.0, our twelfth release of !BigBlueButton.  
 
 == Major Features ==
 
-  * * Audio Improvements * - !BigBlueButton now uses web real-time communications (WebRTC) for audio on Chrome and !FireFox browsers.  This improves the quality of audio (sound and latency) for users of these browsers.  (Users of other browsers will join audio via Flash.)
+  * * Audio Improvements * - Users of Chrome and !FireFox now connect to the audio stream via web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in OPUS, and uses UDP for transport.  The result should be lower latency, higher quality audio for users.
 
-  * * Audio Check * - The redesigned audio setup dialogue boxes now has users test of their microphone _before_ entering the session, thus reducing the occurrences of users entering without a functioning microphone.
+  * * Audio Check * - The audio setup dialogue boxes now lets users test of their microphone _before_ entering the session, thus reducing the number of users entering a !BigBlueButton session without a functioning microphone.
 
-  * * Start/Stop Button for Recording * - Moderators can now control which segments of their session are recorded.
+  * * Listen Only audio * - Users can join the audio listen only, which doesn't require any security prompts from the browser or Flash. This audio uses a shared stream and reduces the CPU load on the server as new users join.
 
-  * * Installation on Ubuntu 14.04 64-bit * - Switching to Ubuntu 14.04 64-bit enabled us to update many of the underlying components of !BigBlueButton.
+  * * Start/Stop Button for Recording * - Moderators now have a Start/Stop Recording button in the toolbar to control which segments of session are marked playback.  The underlying record and playback scripts will only publishing for playback the segments between the start/stop events.
 
-For a detailed breakdown (with screen shots) see [090Overview BigBlueButton 0.9.0 Overview].
+  * * Installation on Ubuntu 14.04 64-bit * - !BigBlueButton now uses Ubuntu 14.04 64-bit for installation.
+
+For details of the new features (with screen shots) see [090Overview BigBlueButton 0.9.0 Overview].  
 
 == Fixed Issues ==
 
