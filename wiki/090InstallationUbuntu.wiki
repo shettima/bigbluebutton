@@ -109,6 +109,8 @@ You first need to give your server access to the !BigBlueButton package reposito
 
 In a terminal window, copy and paste the following commands.
 
+Note: These instructions are currently being tested.  We will replace 'XXX' at the release of 0.9.0-dev.
+
 {{{
 # Add the BigBlueButton key
 $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
@@ -117,7 +119,7 @@ $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add 
 echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-trusty main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 }}}
 
-Note: These instructions are draft and the 'XXX' will be replaced shortly with the proper text.
+Note: These instructions are currently being tested.  We will replace 'XXX' at the release of 0.9.0-dev.
 
 
 == 3.  Install ffmpeg ==
