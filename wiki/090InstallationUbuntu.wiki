@@ -109,17 +109,17 @@ You first need to give your server access to the !BigBlueButton package reposito
 
 In a terminal window, copy and paste the following commands.
 
-Note: These instructions are currently being tested.  We will replace 'XXX' at the release of 0.9.0-dev.
+Note: These instructions are currently being tested.  We will replace 'COMING_SOON' at the release of 0.9.0-dev.
 
 {{{
 # Add the BigBlueButton key
 $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
-echo "deb http://ubuntu.bigbluebutton.org/XXX/ bigbluebutton-trusty main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+echo "deb http://ubuntu.bigbluebutton.org/COMING_SOON/ bigbluebutton-trusty main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 }}}
 
-Note: These instructions are currently being tested.  We will replace 'XXX' at the release of 0.9.0-dev.
+Note: These instructions are currently being tested.  We will replace 'COMING_SOON' at the release of 0.9.0-dev.
 
 
 == 3.  Install ffmpeg ==
