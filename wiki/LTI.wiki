@@ -53,6 +53,8 @@ The `bbb-lti` module also accepts a number of custom parameters.
 
 || Parameter || Type || Description ||
 || record || Boolean || Record meeting (default is false) ||
+|| duration || Integer || Meeting duration. An integer number defines the number of minutes the session is going to last. When reached the number of minutes all the users are kicked off. If parameter is not set or is set to 0 the value taken is the one in the server ||
 || welcome || Text || Welcome message that appears in chat dialog (default is the global welcome message on the !BigBlueButton server) ||
+|| voicebridge || Ingerer || An integer number can be used to define the voicebridge the session is going to have (Be aware that this number must be unique for the Meeting and the BigBlueButton server) ||
 
 For example, if you add `record=true` to as a custom launch parameter, then then `bbb-lti` module will record your session and show you a list of previously recorded sessions.
