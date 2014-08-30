@@ -13,6 +13,8 @@ If already have a !BigBlueButton 0.81 server, these instructions will *not* upgr
 
 = Before you install =
 
+*Note: !BigBlueButton 0.9.0 is currently under development and not released yet.  You can test the latest build at our [http://demo.bigbluebutton.org/ Demo Server].  We will update these instructions as soon as it's released.
+
 The requirements for !BigBlueButton 0.9.0-dev are
 
   * Ubuntu 14.04 64-bit
