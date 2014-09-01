@@ -76,7 +76,7 @@ First, ensure that you have `trusty multiverse` in your `sources.list`.  Do the 
 $ grep "multiverse" /etc/apt/sources.list
 }}}
 
-and you should see the line that has a URL to the trusty multiverse commentated, such as
+and you should see the line that has a URL to the trusty multiverse uncommented, such as
 
 {{{
 deb http://archive.ubuntu.com/ubuntu trusty multiverse
