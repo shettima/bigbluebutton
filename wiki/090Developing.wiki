@@ -1,6 +1,4 @@
-#summary Setup a development environment for BigBlueButton 0.9.0-dev
-
-Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-dev (referred to as 0.9.0 in this document) is ready for use.
+#summary Setup a development environment for BigBlueButton 0.9.0-beta
 
 <wiki:toc max_depth="2" />
 
