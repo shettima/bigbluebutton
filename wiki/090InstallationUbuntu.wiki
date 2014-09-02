@@ -223,8 +223,8 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 
 
-= Upgrading !BigBlueButton 0.9.0 =
-If you have already installed an earlier version of 0.9.0, to upgrade to the latest version
+= Upgrading !BigBlueButton 0.9.0-beta =
+As updates become available, to upgrade your !BigBlueButton 0.9.0-beta server, enter the following commands:
 
 {{{
 $ sudo apt-get update
