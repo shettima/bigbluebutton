@@ -1,10 +1,10 @@
-#summary Using the BigBlueButton 0.81 API.
+#summary Using the BigBlueButton 0.9 API.
 
 <wiki:toc max_depth="3" />
 
 = Overview = 
 
-This document describes the !BigBlueButton API available for integration 3rd party applications.  This document includes updates to the API for !BigBlueButton 0.81, referred hereafter as 0.81.
+This document describes the !BigBlueButton API available for integration 3rd party applications.  This document includes updates to the API for !BigBlueButton 0.9.0-beta, referred hereafter as 0.9.0.
 
 The API is implemented with developer in mind. To make and API call a !BigBlueButton, your 3rd party application makes HTTP requests to a URL.  All API calls include a checksum that signs the parameters with a shared secret (called salt by !BigBlueButton).
 
@@ -12,17 +12,12 @@ The !BigBlueButton server returns an XML response to all API calls.
 
 The API implementation bigbluebutton-web component, which has been written using the Grails framework.
 
-== Updates to API in !BigBlueButton 0.81 ==
+== Updates to API in !BigBlueButton 0.9.0 ==
 
-New API calls:
-  * * getDefaultConfigXML * - Get default config.xml
-  * * setConfigXML * - Add a custom default config.xml to an active meeting so it can be referenced by a user joining.
 
 Updated API calls:
-  * * join * - Added `configToken` to reference associated config.xml
-  * * join * - Added `avatarURL` for image to display when config.xml is set to always display an window for user in the video dock and the user is not broadcasting a webcam.  See [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-web/grails-app/conf/bigbluebutton.properties#L124 defaultAvatarURL] in bigbluebutton.properties and [https://github.com/bigbluebutton/bigbluebutton/blob/master/bigbluebutton-client/resources/config.xml.template#L76 displayAvatar] in config.xml.
-  * * create * - Added `redirectClient` to override default client URL with new clientURL
-  * * create * - Added `clientURL` URL for !BigBlueButton client.
+  * * join * - `configToken` can now reference a file in `/var/bigbluebutton/configs`
+  * * create * - Added `moderatorOnlyMessage` to display message only visible to moderators.
 
 
 <br />
