@@ -1,6 +1,6 @@
-#summary Record and Playback in BigBlueButton 0.9.0 (draft).
+#summary Record and Playback in BigBlueButton 0.9.0-beta.
 
-Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-dev (referred to as 0.9.0 in this document) is ready for use.
+Note: This page is currently under development and the instructions not finished.  We'll post to bigbluebutton-dev when 0.9.0-beta (referred to as 0.9.0 in this document) is ready for use.
 
 <wiki:toc max_depth="4" />
 
@@ -21,7 +21,7 @@ From a technical point of view, in the !BigBlueButton API, when you pass the par
 
 After the session finishes, the !BigBlueButton server will run one (or more) ingest and processing scripts, named as workflows, that will _process_ and _publish_ the captured data into a format for _playback_.  
 
-In BigBlueButton 0.90 there are two workflows, *presentation*, which is installed by default; and *matterhorn*, which is part of an integration with Matterhorn and should be [081Matterhorn installed manually]. You can have both workflows working in your server and at the end you will have two formats for playback.
+In BigBlueButton 0.9.0 there are two workflows, *presentation*, which is installed by default; and *matterhorn*, which is part of an integration with Matterhorn and should be [081Matterhorn installed manually]. You can have both workflows working in your server and at the end you will have two formats for playback.
 
 
 
@@ -125,7 +125,7 @@ In the terminal of your server you can execute "bbb-record", which will show you
 
 {{{
 
-BigBlueButton Recording Diagnostic Utility (BigBlueButton Version 0.90)
+BigBlueButton Recording Diagnostic Utility (BigBlueButton Version 0.9.0-beta)
 
    bbb-record [options]
 
