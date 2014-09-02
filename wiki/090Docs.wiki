@@ -1,6 +1,6 @@
-#summary BigBlueButton 0.9.0-dev documentation
+#summary BigBlueButton 0.9.0-beta documentation
 
-The following is a list of updated documentation for 0.9.0-dev.
+The following is a list of updated documentation for 0.9.0-beta.
     
     * [090Overview 090Overview]
     * [090InstallationUbuntu 090InstallationUbuntu]
