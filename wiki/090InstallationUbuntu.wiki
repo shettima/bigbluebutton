@@ -1,21 +1,18 @@
-#summary How to install BigBlueButton 0.9.0
+#summary How to install BigBlueButton 0.9.0-beta
 
-*Note: !BigBlueButton 0.9.0 is currently under development and not released yet.  You can test the latest build at our [http://demo.bigbluebutton.org/ Demo Server].
 
 <wiki:toc max_depth="3" />
 
-Welcome to the installation guide for !BigBlueButton 0.9.0-dev.  !BigBlueButton is an open source web conferencing system for on-line learning.
+Welcome to the installation guide for !BigBlueButton 0.9.0-beta.  !BigBlueButton is an open source web conferencing system for on-line learning.
 
 For an overview what new in this release, see [090Overview overview].
 
-If already have a !BigBlueButton 0.81 server, these instructions will *not* upgrade your server.  To install !BigBlueButton 0.9.0-dev, you need to install on a clean installation of Ubuntu 14.04 64-bit.  The reason is that !BigBlueButton ran on Ubuntu 10.04 64-bit, whereas !BigBlueButton 0.9.0 runs on Ubuntu 14.04 64-bit.  While technically you could upgrade a Ubuntu 10.04 64-bit server to run Ubuntu 14.04 64-bit, the (much) easier approach is to start with a clean server.
+If already have a !BigBlueButton 0.81 server, these instructions will *not* upgrade your server.  To install !BigBlueButton 0.9.0-beta, you need to install on a clean installation of Ubuntu 14.04 64-bit.  The reason is that !BigBlueButton ran on Ubuntu 10.04 64-bit, whereas !BigBlueButton 0.9.0 runs on Ubuntu 14.04 64-bit.  While technically you could upgrade a Ubuntu 10.04 64-bit server to run Ubuntu 14.04 64-bit, the (much) easier approach is to start with a clean server.
 
 
 = Before you install =
 
-*Note: !BigBlueButton 0.9.0 is currently under development and not released yet.  You can test the latest build at our [http://demo.bigbluebutton.org/ Demo Server].  We will update these instructions as soon as it's released.
-
-The requirements for !BigBlueButton 0.9.0-dev are
+The requirements for !BigBlueButton 0.9.0-beta are
 
   * Ubuntu 14.04 64-bit
   * 4 GB of memory (8 GB is better)
@@ -49,7 +46,7 @@ $ uname -m
 x86_64
 }}}
 
-And check your version of Ubuntu is Ubuntu 14.04.  If you try to install !BigBlueButton 0.9.0-dev on any other release, it won't work.
+And check your version of Ubuntu is Ubuntu 14.04.  If you try to install !BigBlueButton 0.9.0-beta on any other release, it won't work.
 
 {{{
 $ cat /etc/lsb-release
@@ -61,7 +58,7 @@ DISTRIB_DESCRIPTION="Ubuntu 14.04.X LTS"
 
 Your now ready to install !BigBlueButton.
 
-= Installing !BigBlueButton 0.9.0-dev =
+= Installing !BigBlueButton 0.9.0-beta =
 
 If you've already installed an earlier build, see [#Upgrading_BigBlueButton upgrading BigBlueButton 0.9.0].
 
@@ -111,8 +108,6 @@ You first need to give your server access to the !BigBlueButton package reposito
 
 In a terminal window, copy and paste the following commands.
 
-Note: These instructions are currently being tested.  We will replace 'COMING_SOON' at the release of 0.9.0-dev.
-
 {{{
 # Add the BigBlueButton key
 $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
@@ -121,11 +116,8 @@ $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add 
 echo "deb http://ubuntu.bigbluebutton.org/COMING_SOON/ bigbluebutton-trusty main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 }}}
 
-Note: These instructions are currently being tested.  We will replace 'COMING_SOON' at the release of 0.9.0-dev.
-
-
 == 3.  Install ffmpeg ==
-!BigBlueButton 0.9.0-dev uses ffmpeg to process recordings of a session for playback.
+!BigBlueButton 0.9.0-beta uses ffmpeg to process recordings of a session for playback.
 
 To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
 
@@ -157,21 +149,21 @@ After the script finishes, check that ffmepg is installed by typing the command 
 
 {{{
 $ ffmpeg -version
-ffmpeg version 2.3.2 Copyright (c) 2000-2014 the FFmpeg developers
-built on Aug 16 2014 20:52:16 with gcc 4.8 (Ubuntu 4.8.2-19ubuntu1)
-configuration: --enable-version3 --enable-postproc --enable-libvorbis --enable-libvpx
-libavutil      52. 92.100 / 52. 92.100
-libavcodec     55. 69.100 / 55. 69.100
-libavformat    55. 48.100 / 55. 48.100
-libavdevice    55. 13.102 / 55. 13.102
-libavfilter     4. 11.100 /  4. 11.100
-libswscale      2.  6.100 /  2.  6.100
-libswresample   0. 19.100 /  0. 19.100
+ffmpeg version 2.3.3 Copyright (c) 2000-2014 the FFmpeg developers
+  built on Aug 18 2014 17:35:05 with gcc 4.8 (Ubuntu 4.8.2-19ubuntu1)
+  configuration: --enable-version3 --enable-postproc --enable-libvorbis --enable-libvpx
+  libavutil      52. 92.100 / 52. 92.100
+  libavcodec     55. 69.100 / 55. 69.100
+  libavformat    55. 48.100 / 55. 48.100
+  libavdevice    55. 13.102 / 55. 13.102
+  libavfilter     4. 11.100 /  4. 11.100
+  libswscale      2.  6.100 /  2.  6.100
+  libswresample   0. 19.100 /  0. 19.100
 }}}
 
 
 == 4.  Install !BigBlueButton == 
-We're now ready to install !BigblueButton 0.9.0-dev. Type
+We're now ready to install !BigblueButton 0.9.0-beta. Type
 
 {{{
    sudo apt-get install bigbluebutton
