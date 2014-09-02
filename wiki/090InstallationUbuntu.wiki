@@ -1,5 +1,6 @@
 #summary How to install BigBlueButton 0.9.0-beta
 
+ * *Note: These instructions will be updated as soon as 0.9.0-beta is released. *
 
 <wiki:toc max_depth="3" />
 
@@ -108,6 +109,8 @@ You first need to give your server access to the !BigBlueButton package reposito
 
 In a terminal window, copy and paste the following commands.
 
+ * *Note: These instructions will be updated as soon as 0.9.0-beta is released (we'll replace COMMING_SOON with proper URL). *
+
 {{{
 # Add the BigBlueButton key
 $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add -
@@ -115,6 +118,8 @@ $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
 echo "deb http://ubuntu.bigbluebutton.org/COMING_SOON/ bigbluebutton-trusty main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
 }}}
+
+ * *Note: These instructions will be updated as soon as 0.9.0-beta is released (we'll replace COMMING_SOON with proper URL). *
 
 == 3.  Install ffmpeg ==
 !BigBlueButton 0.9.0-beta uses ffmpeg to process recordings of a session for playback.
