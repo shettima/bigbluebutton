@@ -6,17 +6,17 @@
  
 Released: September XX, 2014 ([090InstallationUbuntu Installation Instructions -- to be updated])
 
-After ten months of development and testing , this release of 0.9.0-beta is a significant towards the release of 0.9.0 final (see [https://code.google.com/p/bigbluebutton/wiki/FAQ#BigBlueButton_Development_Process development process]).
+This release of !BigBlueButton 0.9.0-beta is a significant towards the release of 0.9.0 final (see [https://code.google.com/p/bigbluebutton/wiki/FAQ#BigBlueButton_Development_Process development process]).
 
 == Major Features ==
 
-  * * WebRTC Audio * - BigBlueButton now uses web real-time communications (WebRTC) audio for users of FireFox and Chrome. WebRTC audio is sampled at 48 Khz, encoded in [http://www.opus-codec.org/ OPUS] codec, uses UDP for transport, and has a direct connection to [http://freeswitch.org/ FreeSWITCH] – all together giving users higher quality, lower latency audio.
+  * * WebRTC Audio * - BigBlueButton now uses web real-time communications (WebRTC) audio for users of FireFox and Chrome. WebRTC audio is sampled at 48 Khz, encoded in [http://www.opus-codec.org/ OPUS] codec, uses UDP for transport, and has a direct connection to [http://freeswitch.org/ FreeSWITCH] –- all together giving users higher quality, lower latency audio.
 
-  * * Audio Check * - To ensure users have a functioning microphone, BigBlueButton now does a microphone check with users _before_ they join the session.
+  * * Audio Check * - To help ensure users have a functioning microphone in a session, BigBlueButton now provides a microphone check for users _before_ they join the session. 
 
-  * * Listen Only Audio * - To quickly join the conference as a listener (no microphone), !BigBlueButton offers a Listen Only mode (no microphone check).  Under the hood, users joining as Listen Only share a single, one-way audio channel from FreeSWITCH, which means they require less CPU resources than full two-way audio.  This brings !BigBlueButton closer to supporting webinar-type sessions.
+  * * Listen Only Audio * - To quickly join the conference as a listener (no microphone check), !BigBlueButton offers a Listen Only mode.  Under the hood, Listen Only users share a single, one-way audio channel from FreeSWITCH, which means they require less CPU resources on the !BigBlueButton server compared with users joining with a microphone.  The support Listen Only mode brings !BigBlueButton closer to supporting webinar-type sessions.
 
-  * * Start/Stop Button for Recording * - Using a new Start/Stop Recording button in the toolbar, Moderators can now mark segments of their session for playback.  After !BigBlueButton processes the recorded session, the playback files will contain only those marked segments.
+  * * Start/Stop Button for Recording * - Using a new Start/Stop Recording button in the toolbar, Moderators can now mark segments of the recorded session for later publishing.  After the session is over, the playback recording of the session will contain only those marked segments.
 
   * * Ubuntu 14.04 64-bit * - !BigBlueButton now installs on Ubuntu 14.04 64-bit.
 
