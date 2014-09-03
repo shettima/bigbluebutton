@@ -253,6 +253,9 @@ nothing to commit (working directory clean)
 
 When you first clone the !BigBlueButton git repository, git will place you, by default, on the _master branch_, which is the latest code for !BigBlueButton. 
 
+To work on 0.9.0, checkout the {{{v0.9.0-beta}}} branch.
+
+
 = Production Environment =
 
 Okay. Let's pause for a minute. You have set-up the necessary tools and cloned the source. Understand the diagram below on where the different configuration are in a production set-up. When developing, we want to change some configuration settings to load our new changes and not the ones deployed for production.
