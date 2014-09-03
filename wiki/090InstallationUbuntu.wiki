@@ -1,7 +1,5 @@
 #summary How to install BigBlueButton 0.9.0-beta
 
- * *Note: These instructions will be updated as soon as 0.9.0-beta is released. *
-
 <wiki:toc max_depth="3" />
 
 Welcome to the installation guide for !BigBlueButton 0.9.0-beta.  !BigBlueButton is an open source web conferencing system for on-line learning.
