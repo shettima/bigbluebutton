@@ -10,11 +10,11 @@ After ten months of development and testing , this release of 0.9.0-beta is a si
 
 == Major Features ==
 
-  * * WebRTC Audio * - Users of Chrome and !FireFox are now automatically connected to the audio bridge using web real-time communications (WebRTC).  The WebRTC audio is sampled at 48 Khz, encoded in [http://www.opus-codec.org/ OPUS] codec, uses UDP for transport, and has a direct connection to [http://freeswitch.org/ FreeSWITCH], the underlying telephony platform used in !BigBlueButton.  Users should experience a lower latency, higher quality audio.
+  * * WebRTC Audio * - BigBlueButton now uses web real-time communications (WebRTC) audio for users of FireFox and Chrome. WebRTC audio is sampled at 48 Khz, encoded in [http://www.opus-codec.org/ OPUS] codec, uses UDP for transport, and has a direct connection to [http://freeswitch.org/ FreeSWITCH] – all together giving users higher quality, lower latency audio.
 
-  * * Audio Check * - Users must now test their microphone, using an echo test with FreeSWITCH, _before_ joining the audio bridge, thus reducing the number of users joining without a functioning microphone.  
+  * * Audio Check * - To ensure users have a functioning microphone, BigBlueButton now does a microphone check with users _before_ they join the session.
 
-  * * Listen Only Audio * - Users have the option to join the audio in Listen Only mode (no microphone check).  These users share a single, one-way audio channel in FreeSWITCH, thus reducing the overall increase in CPU load as new Listen Only users join.  This brings !BigBlueButton closer to supporting webinar-type sessions.
+  * * Listen Only Audio * - To quickly join the conference as a listener (no microphone), !BigBlueButton offers a Listen Only mode (no microphone check).  Under the hood, users joining as Listen Only share a single, one-way audio channel from FreeSWITCH, which means they require less CPU resources than full two-way audio.  This brings !BigBlueButton closer to supporting webinar-type sessions.
 
   * * Start/Stop Button for Recording * - Using a new Start/Stop Recording button in the toolbar, Moderators can now mark segments of their session for playback.  After !BigBlueButton processes the recorded session, the playback files will contain only those marked segments.
 
