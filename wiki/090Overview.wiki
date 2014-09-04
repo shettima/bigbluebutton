@@ -6,7 +6,7 @@
 This document summarizes the major updates in !BigBlueButton 0.9.0-beta  (referred hereafter as 0.9.0). 
 
 !BigBlueButton 0.9.0 has the following new features:
-e
+
   * Improved Audio Setup (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1699 1699])
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
