@@ -97,18 +97,6 @@ To help ensure that moderators do not forget to start recording their session, !
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/remind.png
 
 
-= Lock Viewers =
-The moderator now has the ability to lock (restrict) viewers from having the following abilities:
-
-  # Webcam
-  # Microphone
-  # Public Chat
-  # Private Chat
-  # Layout
-
-http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/lock.png
-
-
 = Ubuntu 14.04 64-bit =
 
 !BigBlueButton 0.9.0 now installs on Ubuntu 14.04 64-bit.  
@@ -139,6 +127,17 @@ To start (and restart) the recording a playback scripts and LibreOffice headless
 
 
 = Other Improvements =
+
+== Lock Viewers ==
+The moderator now has the ability to lock (restrict) viewers from having the following abilities:
+
+  # Webcam
+  # Microphone
+  # Public Chat
+  # Private Chat
+  # Layout
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/lock.png
 
 == Chat supports pasting in XML ==
 
