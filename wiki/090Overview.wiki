@@ -11,11 +11,11 @@ This document summarizes the major updates in !BigBlueButton 0.9.0-beta  (referr
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
   * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
-  * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
 Other improvements include:
 
+  * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
   * XML pasted into chat now properly displays (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1769 1769])
   * UTF-8 presentation file names now displayed (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
