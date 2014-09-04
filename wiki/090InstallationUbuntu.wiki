@@ -291,6 +291,50 @@ For more information see [BBBConf bbb-conf options].
 
 If you are installing on EC2 or a hosting provider that has a number of network interfaces, you need to tell FreeSWITCH to listen on your external interface.
 
+Edit `/opt/freeswitch/conf/vars.xml`
+
+Remove this line
+
+{{{
+<X-PRE-PROCESS cmd="set" data="local_ip_v4=xxx.yyy.zzz.qqqq"/>
+}}}
+
+Change
+
+{{{
+<X-PRE-PROCESS cmd="set" data="bind_server_ip=auto"/>
+}}}
+
+To
+
+{{{
+<X-PRE-PROCESS cmd="set" data="bind_server_ip=SERVER_IP_ADDRESS"/>
+}}}
+
+Change
+
+{{{
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
+}}}
+
+To
+
+{{{
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=SERVER_IP_ADDRESS"/>
+}}}
+
+Change
+{{{
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=stun:stun.freeswitch.org"/>
+}}}
+
+To
+
+{{{
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=SERVER_IP_ADDRESS"/>
+}}}
+
+
 Edit `/opt/freeswitch/conf/sip_profiles/external.xml` and change
 
 {{{
