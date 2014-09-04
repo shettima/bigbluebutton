@@ -182,6 +182,20 @@ If you get an error message
 }}}
 you can ignore it as we'll do a clean restart of all the components in step 6.
 
+If you get an error message
+{{{
+Setting up bbb-playback-presentation (0.9.0-1ubuntu5) ...
+chown: invalid user: ‘tomcat7:tomcat7’
+}}}
+
+then run the install again
+
+{{{
+   sudo apt-get install bigbluebutton
+}}}
+
+it should finish without errors.
+
 
 == 5. Install API Demos ==
 
