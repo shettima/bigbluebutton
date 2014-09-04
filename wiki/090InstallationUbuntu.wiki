@@ -308,3 +308,13 @@ to
     <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
     <param name="ext-sip-ip" value="$${external_sip_ip}"/>
 }}}
+
+Edit `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties`
+
+{{{
+bbb.sip.app.ip=<external ip>
+bbb.sip.app.port=5070
+
+freeswitch.ip=<external ip>
+freeswitch.port=5060
+}}}
