@@ -254,7 +254,7 @@ This will check your setup to ensure the correct processes are running, the !Big
 If you see text after the line `** Potential problems described below **`, then it may be warnings (which you can ignore if you've change settings) or errors with the setup.
 
 
-== Dependencies are not met ==
+
 
 Some hosting providers do not provide a complete `/etc/apt/source.list`.  If you are finding your are unable to install a package, try replacing your `/etc/apt/sources.list` with the following
 
@@ -286,3 +286,25 @@ $ sudo bbb-conf --setip <ip_address_or_hostname>
 }}}
 
 For more information see [BBBConf bbb-conf options]. 
+
+== Audio not working ==
+
+If you are installing on EC2 or a hosting provider that has a number of network interfaces, you need to tell FreeSWITCH to listen on your external interface.
+
+Edit `/opt/freeswitch/conf/sip_profiles/external.xml` and change
+
+{{{
+    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="sip-ip" value="$${local_ip_v4}"/>
+    <param name="ext-rtp-ip" value="$${local_ip_v4}"/>
+    <param name="ext-sip-ip" value="$${local_ip_v4}"/>
+}}}
+
+to
+
+{{{
+    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="sip-ip" value="$${local_ip_v4}"/>
+    <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
+    <param name="ext-sip-ip" value="$${external_sip_ip}"/>
+}}}
