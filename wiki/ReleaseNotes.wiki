@@ -14,7 +14,7 @@ This release of !BigBlueButton 0.9.0-beta is a significant towards the release o
 
   * * Audio Check * - To ensure users have a functioning microphone when joining a session, !BigBlueButton now provides a microphone check for users _before_ they join the session. 
 
-  * * Listen Only Audio * - To quickly join the conference as a listener  only (no microphone check), !BigBlueButton offers a Listen Only mode.  Under the hood, Listen Only users share a single, one-way audio channel from FreeSWITCH, which means they require less overall CPU resources on the !BigBlueButton server compared with users joining with a microphone.  The support Listen Only mode brings !BigBlueButton closer to supporting webinar-type sessions.
+  * * Listen Only Audio * - To quickly join the conference as a listener  only (no microphone check), !BigBlueButton offers a Listen Only mode.  Under the hood, Listen Only users share a single, one-way audio channel from FreeSWITCH, which means they require less overall CPU resources on the !BigBlueButton server compared with users joining with a microphone.  The Listen Only mode brings !BigBlueButton closer to supporting webinar-type sessions.
 
   * * Start/Stop Button for Recording * - Moderators can now mark segments of the recorded session for later publishing using a new Start/Stop Recording button in the toolbar.  After the session is over, the !BigBlueButton server extracts the marked segments for publishing the recording.
 
