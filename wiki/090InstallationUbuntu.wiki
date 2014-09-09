@@ -113,6 +113,9 @@ $ wget http://ubuntu.bigbluebutton.org/bigbluebutton.asc -O- | sudo apt-key add 
 
 # Add the BigBlueButton repository URL and ensure the multiverse is enabled
 echo "deb http://ubuntu.bigbluebutton.org/trusty-090/ bigbluebutton-trusty main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+
+# Update packages
+$ sudo apt-get update
 }}}
 
 == 3.  Install ffmpeg ==
