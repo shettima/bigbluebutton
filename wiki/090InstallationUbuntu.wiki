@@ -14,9 +14,9 @@ If already have a !BigBlueButton 0.81 server, these instructions will *not* upgr
 The requirements for !BigBlueButton 0.9.0-beta are
 
   * Ubuntu 14.04 64-bit
-  * 4 GB of memory (8 GB is better)
+  * 4 GB of memory (8 GB is better) with swap enabled
   * Quad-core 2.6 GHZ CPU (or faster)
-  * TCP ports 80, 1935, 9123, 5066 are accessible 
+  * TCP ports 80, 1935, 9123 are accessible 
   * UDP ports 16384 - 32768 are accessible
   * Port 80 is *not* used by another application
   * 500G of free disk space (or more) for recordings
