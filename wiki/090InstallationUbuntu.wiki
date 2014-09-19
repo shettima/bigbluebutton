@@ -168,8 +168,7 @@ ffmpeg version 2.3.3 Copyright (c) 2000-2014 the FFmpeg developers
 We're now ready to install !BigblueButton 0.9.0-beta. Type
 
 {{{
-   sudo apt-get update
-   sudo apt-get install bigbluebutton
+   sudo apt-get update && install bigbluebutton
 }}}
 
 This single command is where all the magic happens.  This command installs *all* of !BigBlueButton's components with their dependencies.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
