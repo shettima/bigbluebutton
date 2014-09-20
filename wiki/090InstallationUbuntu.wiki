@@ -379,3 +379,20 @@ bbb.sip.app.port=5070
 freeswitch.ip=<external ip>
 freeswitch.port=5060
 }}}
+
+Edit `/etc/bigbluebutton/nginx/sip.nginx` to
+
+{{{
+location /ws {
+        proxy_pass http://SERVER_IP_ADDRESS:5066;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "Upgrade";
+        proxy_read_timeout 6h;
+        proxy_send_timeout 6h;
+        client_body_timeout 6h;
+        send_timeout 6h;
+}
+}}}
+
+changing `SERVER_IP_ADDRESS` to your server's external IP address.
