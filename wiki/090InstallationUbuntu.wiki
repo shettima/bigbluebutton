@@ -252,6 +252,8 @@ $ sudo bbb-conf --clean
 $ sudo bbb-conf --check
 }}}
 
+Respond with 'Y', if you get prompted to update any configuration file during the upgrade
+
 
 = Troubleshooting =
 
