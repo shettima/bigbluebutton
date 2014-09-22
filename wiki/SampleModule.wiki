@@ -1,7 +1,7 @@
 #summary Creating a simple module in BigBlueButton 0.8 and above
 
 == Getting Started ==
-Follow the [DevelopingBBB instructions] on setting up your development environment.
+Follow the [Developing instructions] on setting up your development environment.
 
 == Running the Example Code ==
 There is an Example module in the code base. The main module class is in bbb-client/src/!ExampleChatModule.mxml. It uses two simple classes which are located in bbb-client/src/org.bigbluebutton.modules.example
