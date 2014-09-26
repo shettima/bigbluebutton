@@ -1,4 +1,4 @@
-  * [090InstallationUbuntu Install BigBlueButton 0.9.0-beta] (September 14, 2014 - [ReleaseNotes Release Notes])
+  * [090InstallationUbuntu Install BigBlueButton 0.9.0-beta] (September 25, 2014 - [ReleaseNotes Release Notes])
   * [Installation Install BigBlueButton 0.81] (Nov 7, 2013 - [ReleaseNotes Release Notes])
   * [TechnicalOverview Overview]
     * [ArchitectureOverview Architecture Overview]
