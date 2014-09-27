@@ -544,6 +544,10 @@ Tell grails to listen on port 8888
 {{{
 grails -Dserver.port=8888 run-war
 }}}
+or
+{{{
+grails -reloading -Dserver.port=8888 run-app
+}}}
 
 If you get an error {{{ "Could not resolve placeholder 'apiVersion'"}}}., just run {{{grails -Dserver.port=8888 run-war}}} again. The error is grails not picking up the "bigbluebutton.properties" the first time.
 
