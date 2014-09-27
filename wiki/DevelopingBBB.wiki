@@ -335,7 +335,7 @@ Check if you have the same properties from the master with the ones in your loca
 
 Tell grails to listen on port 8888
 {{{
-grails -reloading -Dserver.port=8888 run-app
+grails -Dserver.port=8888 run-app
 }}}
 
 If you get an error {{{ "Could not resolve placeholder 'apiVersion'"}}}., just run {{{grails -Dserver.port=8888 run-app}}} again. The error is grails not picking up the "bigbluebutton.properties" the first time.
