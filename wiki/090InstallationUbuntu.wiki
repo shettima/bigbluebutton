@@ -328,7 +328,7 @@ Change
 To
 
 {{{
-<X-PRE-PROCESS cmd="set" data="bind_server_ip=SERVER_IP_ADDRESS"/>
+<X-PRE-PROCESS cmd="set" data="bind_server_ip=EXTERNAL_IP_ADDRESS"/>
 }}}
 
 Change
@@ -340,7 +340,7 @@ Change
 To
 
 {{{
-<X-PRE-PROCESS cmd="set" data="external_rtp_ip=SERVER_IP_ADDRESS"/>
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=EXTERNAL_IP_ADDRESS"/>
 }}}
 
 Change
@@ -351,7 +351,7 @@ Change
 To
 
 {{{
-<X-PRE-PROCESS cmd="set" data="external_sip_ip=SERVER_IP_ADDRESS"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=EXTERNAL_IP_ADDRESS"/>
 }}}
 
 
@@ -376,10 +376,10 @@ to
 Edit `/usr/share/red5/webapps/sip/WEB-INF/bigbluebutton-sip.properties`
 
 {{{
-bbb.sip.app.ip=<external ip>
+bbb.sip.app.ip=<internal ip>
 bbb.sip.app.port=5070
 
-freeswitch.ip=<external ip>
+freeswitch.ip=<internal ip>
 freeswitch.port=5060
 }}}
 
@@ -387,7 +387,7 @@ Edit `/etc/bigbluebutton/nginx/sip.nginx` to
 
 {{{
 location /ws {
-        proxy_pass http://SERVER_IP_ADDRESS:5066;
+        proxy_pass http://EXTERNAL_IP_ADDRESS:5066;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "Upgrade";
@@ -398,4 +398,8 @@ location /ws {
 }
 }}}
 
-changing `SERVER_IP_ADDRESS` to your server's external IP address.
+changing `EXTERNAL_IP_ADDRESS` to your server's elastic IP address.
+
+Open the ff ports:
+TCP - 5066
+UDP - 16384 to 32768
