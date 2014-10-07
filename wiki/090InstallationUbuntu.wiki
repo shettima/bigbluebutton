@@ -309,14 +309,14 @@ For more information see [BBBConf bbb-conf options].
 
 == Audio not working ==
 
-If you are installing on EC2 or a hosting provider that has a number of network interfaces, you need to tell FreeSWITCH to listen on your external interface.
+If you are installing on EC2 or a hosting provider that has a number of network interfaces, you need to tell FreeSWITCH to listen on your external interface on it's IP address (shown below as EXTERNAL_IP_ADDRESS).  You must use the external IP address where EXTERNAL_IP_ADDRESS is show (not the external hostname).
 
 Edit `/opt/freeswitch/conf/vars.xml`
 
 Remove this line
 
 {{{
-<X-PRE-PROCESS cmd="set" data="local_ip_v4=xxx.yyy.zzz.qqqq"/>
+<X-PRE-PROCESS cmd="set" data="local_ip_v4=xxx.yyy.zzz.qqq"/>
 }}}
 
 Change
