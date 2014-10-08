@@ -400,7 +400,7 @@ location /ws {
 
 changing `EXTERNAL_IP_ADDRESS` to your server's elastic IP address.
 
-Open the ff ports:
+Open the FireWall (if you have on installed) and Security Groups (if your using EC2) the following ports:
 
 TCP - 5066
 
