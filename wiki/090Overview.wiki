@@ -32,6 +32,10 @@ We had two main goals for improving audio in this release
   # Improve overall sound quality
   # Increase the likelihood user has a functioning microphone when entering the session
 
+Compared with Flash Audio, WebRTC audio uses UDP for transmission and is encoded using OPUS.  The browser transmits audio directly to FreeSWITCH.  The browser's acoustic echo cancellation is better than Flash, and both browsers support auto-leveling of that audio, removing the need for the user to manually adjust the sensitivity.  WebRTC audio is transmitted securely via SRTP at a rate of 48 Khz, whereas speex is transmitted via RTMP (not encrypted) at a rate of 16 khz.
+
+Overall, WebRTC should provide the user a higher quality and lower latency audio transmission.
+
 == Listen Only audio ==
 
 Users now have the ability to quickly join the session as a listener, which does not require any permissions from the browser. 
@@ -66,13 +70,10 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/aduiotest.png
 
 In most cases, the default microphone chosen by the operating system is a functioning microphone.
 
-If the user clicks 'Yes', they are joined into the audio bridge with their default microphone using WebRTC audio (FireFox and Chrome) 
+If the user clicks 'Yes', they are joined into the audio bridge with their default microphone using WebRTC audio (!FireFox and Chrome) 
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/webrtcaudio.png
 
-Compared with Flash Aduio, WebRTC audio uses UDP for transmission and is encoded using OPUS.  The browser transmits audio directly to FreeSWITCH.  The browser's acoustic echo cancellation is better than Flash, and both browsers support auto-leveling of that audio, removing the need for the user to manually adjust the sensitivity.  WebRTC audio is transmitted securely via SRTP at a rate of 48 Khz, whereas speex is transmitted via RTMP (not encrypted) at a rate of 16 khz.
-
-Overall, WebRTC should provide the user a higher quality and lower latency audio transmission.
 
 == Microphone Chooser ==
 
