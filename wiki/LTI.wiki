@@ -17,7 +17,35 @@ You can add LTI support by installing the following package.
    sudo apt-get install bbb-lti
 }}}
 
+This should configure the LTI tool for your setup.  If you need to make any custom modifications, edit `/var/lib/tomcat7/webapps/lti/WEB-INF/classes/lti.properties`
 
+You'll see the following parameters
+
+{{{
+bigbluebuttonURL=http://test-install.blindsidenetworks.com/bigbluebutton
+# Salt which is used by 3rd-party apps to authenticate api calls
+bigbluebuttonSalt=8cd8ef52e8e101574e400365b55e11a6
+
+# LTI basic information
+#----------------------------------------------------
+# This URL is where the LTI plugin is accessible. It can be a different server than the BigBluebutton one
+# Only the hostname or IP address is required, plus the port number in case it is other than port 80
+# e.g. localhost or localhost:port
+ltiEndPoint=localhost
+# The list of consumers allowed to access this lti service.
+# Format: {consumerId1:sharedSecret1}
+ltiConsumers=bbb:b00be971feb0726fa697671c9cf2e883
+}}}
+
+|| Parameter || Type || Description ||
+|| bigbluebuttonURL || text || URL to the BigBlueButton server (must end in /bigbluebutton) ||
+|| bigbluebuttonSalt || text || The shared secret to the BigBlueButton server for making API calls ||
+|| ltiEndPoint || text || The hostname for the LTI endpoint from which to receive calls.  If it's on the same server, use localhost  ||
+|| ltiConsumers || text || The combination of Key and Share Secret  ||
+
+This is the same configuration for the LTI parameters shown in the next section.  
+
+If you make modifications to your own lti.properties, be sure to restart BigBlueButton (which restarts tomcat7) to reload the lti.propreties file.
 
 = Configuring !BigBlueButton as an External Tool =
 
