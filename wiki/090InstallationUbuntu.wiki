@@ -178,8 +178,6 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/090install.png
 
 Type 'Y' and press enter to install.
 
-If you are behind a HTTP Proxy, you will get an error from the package bbb-record-core.  You can resolve this by [#Unable_to_install_gems manually installing the gems].
-
 If you get an error message
 {{{
 ...... Error: FreeSWITCH didn't start 
