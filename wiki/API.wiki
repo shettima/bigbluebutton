@@ -108,6 +108,22 @@ Errors are returned with a "returncode" value of "FAILED" and a "message" and "m
 
 You can use the messageKey to determine the type of error and look up internationalized text within your own system if needed.  For example, an invalid request may return an error message of "No conference with that meeting ID exists", but the messageKey is simple "invalidMeetingIdentifier". 
 
+The errors handled are
+for create:
+|| messageKey || message ||
+|| checksumError || You did not pass the checksum security check ||
+|| missingParamMeetingID || You must specify a meeting ID for the meeting. ||
+|| checksumError || You did not pass the checksum security check ||
+|| idNotUnique || A meeting already exists with that meeting ID. Please use a different meeting ID. ||
+
+for join:
+|| messageKey || message ||
+|| missingParamFullName || You must specify a name for the attendee who will be joining the meeting.||
+|| missingParamMeetingID || You must specify a meeting ID for the meeting. ||
+|| invalidPassword || You either did not supply a password or the password supplied is neither the attendee or moderator password for this conference. ||
+|| checksumError || You did not pass the checksum security check ||
+|| invalidMeetingIdentifier || The meeting ID that you supplied did not match any existing meetings ||
+|| meetingForciblyEnded || You can not re-join a meeting that has already been forcibly ended. However, once the meeting is removed from memory (according to the timeout configured on this server, you will be able to once again create a meeting with the same meeting ID ||
 
 = API Resources =
 == Administration ==
