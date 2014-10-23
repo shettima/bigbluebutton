@@ -109,6 +109,7 @@ Errors are returned with a "returncode" value of "FAILED" and a "message" and "m
 You can use the messageKey to determine the type of error and look up internationalized text within your own system if needed.  For example, an invalid request may return an error message of "No conference with that meeting ID exists", but the messageKey is simple "invalidMeetingIdentifier". 
 
 The errors handled are
+
 for create:
 || messageKey || message ||
 || checksumError || You did not pass the checksum security check ||
