@@ -112,7 +112,7 @@ Compared with Ubuntu 10.04 64-bit (the distribution for 0.81), Ubuntu 14.04 64-b
 || nginx || 0.7.65 || 1.4.6 ||
 || !LibreOffice || 4.0.2 || 4.2.4 ||
 
-The installation instructions have simplified: with Ubuntu 10.04 64-bit, administrators don't need to manually install ruby or LibreOffice -- both are now well supported in Ubuntu's packaging.
+The installation instructions have simplified: with Ubuntu 10.04 64-bit, administrators don't need to manually install ruby or !LibreOffice -- both are now well supported in Ubuntu's packaging.
 
 Other notable updates include
 
@@ -122,9 +122,9 @@ Other notable updates include
 || ffmpeg || 2.1.4 || 2.3.3 ||
 || red5 || 1.0.2 || 1.0.3 ||
 
-Most notable has been the upgrade to FreeSWITCH, which now enabled !BigBlueButton to support WebRTC audio calls from the browser (Chrome and FireFox), while still remaining backward compatible with audio calls from Chrome and IE (via red5phone).
+Most notable has been the upgrade to FreeSWITCH, which now enabled !BigBlueButton to support WebRTC audio calls from the browser (Chrome and !FireFox), while still remaining backward compatible with audio calls from Chrome and IE (via red5phone).
 
-To start (and restart) the recording a playback scripts and LibreOffice headless, !BigBlueButton 0.9.0 now uses monit instead of god.
+To start (and restart) the recording a playback scripts and !LibreOffice headless, !BigBlueButton 0.9.0 now uses monit instead of god.
 
 
 = Other Improvements =
