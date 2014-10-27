@@ -164,7 +164,8 @@ In the following section is described the monitoring calls
 || duration || Optional || Number || <p>The duration parameter allows to specify the number of minutes for the meeting's length. When the length of the meeting reaches the duration, !BigBlueButton automatically ends the meeting. The default is 0, which means the meeting continues until the last person leaves or an end API calls is made with the associated meetingID.</p> ||
 || meta_* || Optional || String || <p>You can pass one or more metadata values for create a meeting. These will be stored by !BigBlueButton and later retrievable via the getMeetingInfo call and getRecordings. Examples of meta parameters are meta_Presenter, meta_category, meta_LABEL, etc.  All parameters are converted to lower case, so meta_Presenter would be the same as meta_PRESENTER. </p> ||
 || moderatorOnlyMessage || Optional || String || <p>Display a message to all moderators in the public chat. </p> ||
-
+|| autoStartRecording || Optional || Boolean (default false)|| <p>Automatically starts recording when first user joins. NOTE: Don't set to autoStartRecording =false and allowStartStopRecording=false as the user won't be able to record. </p> ||
+|| allowStartStopRecording|| Optional || Boolean (default true)|| <p>Allow the user to start/stop recording. This means the meeting can start recording automatically (autoStartRecording=true) with the user able to stop/start recording from the client. </p> ||
 <p>*Example Requests:*</p>
  * <a href="#">http://yourserver.com/bigbluebutton/api/create?name=Test&meetingID=test01&checksum=1234</a>
  * <a href="#">http://yourserver.com/bigbluebutton/api/create?name=Test&meetingID=test01&moderatorPW=mp&attendeePW=ap&checksum=wxyz</a>
