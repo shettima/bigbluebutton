@@ -17,7 +17,7 @@ The API implementation bigbluebutton-web component, which has been written using
 
 Updated API calls:
   * * join * - `configToken` can now reference a file in `/var/bigbluebutton/configs`
-  * * create * - Added `moderatorOnlyMessage` to display message only visible to moderators.
+  * * create * - Added `moderatorOnlyMessage` to display message only visible to moderators. Added `autoStartRecording` and `allowStartStopRecording` to provide finer control over recordings.
 
 
 <br />
