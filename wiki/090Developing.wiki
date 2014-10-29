@@ -478,6 +478,86 @@ To develop the client using Flash Builder, follow these steps:
 
 This approach is limited in the sense that you can't use the Run button within Flash Builder to launch the client. You also can't use the Flex debugger.
 
+= Pulling localization from Transifex =
+
+1.- Install the transifex client for Ubuntu
+
+{{{
+sudo apt-get install python-pip -y
+sudo pip install transifex-client
+}}}
+
+2.- Go to the locale folder
+
+{{{
+cd /home/firstuser/bigbluebutton/bigbluebutton-client/locale 
+}}}
+
+
+3.- Init the transifex project
+
+{{{
+tx init
+
+# Insert your transifex user and password
+}}}
+
+
+4.- Set the bigbluebutton transifex resource
+
+{{{
+tx set --auto-remote https://www.transifex.com/projects/p/bigbluebutton/resource/bbbresourcesproperties/
+}}}
+
+5.- Edit the configuration file of transifex to filter the languages as the same as in BBB repository
+
+{{{
+vi .tx/config
+
+file_filter = <lang>/bbbResources.properties 
+}}}
+
+6.- Update all the Languages from Transifex (updates only the languages existing in the current directory where the command is executed)
+
+{{{
+tx pull -f
+}}}
+
+  Pull all the Languages from Transifex (download also languages which don’t exist in the local directory where the command is executed, may download not desired language directories [lt, es_429])
+
+{{{
+tx pull -a
+}}}
+
+7.- This may happen or not Transifex download the es_LA Latinamerica spanish as es_419 instead of es_LA so we replace the es_LA for the es_419 
+
+{{{
+rm -r es_LA
+cp es_419 es_LA
+}}}
+
+8.- Add a gitignore to ignore the .tx folder or remove th .tx folder that is hidden
+
+{{{
+nano .gitignore
+.tx
+}}}
+
+
+or
+
+{{{
+rm -r .tx
+}}}
+
+9.- Compile 
+Compile to check you didn’t break anything
+
+{{{
+cd /home/firstuser/bigbluebutton/bigbluebutton-client
+ant locales
+}}}
+
 = Developing BBB-Web =
 
 This section will walk you through the steps to set up development for bigbluebutton-web.
