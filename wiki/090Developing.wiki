@@ -135,10 +135,19 @@ Next, you need to unpack it.
 tar xvfz apache-flex-sdk-4.13.0-bin.tar.gz
 }}}
 
-The Flex SDK is now unpacked, but you need to download third party tools. You will need them if you are going to use the advanced font rendering librairies.
+The Flex SDK is now unpacked, but you need to download third party tools. You will need them if you are going to use the advanced font rendering libraries.
+
+First you will need to download the Adobe Flex SDK manually because the download sometimes fails.
 
 {{{
-cd apache-flex-sdk-4.13.0-bin
+cd apache-flex-sdk-4.13.0-bin/in
+wget http://download.macromedia.com/pub/flex/sdk/builds/flex4.6/flex_sdk_4.6.0.23201B.zip
+}}}
+
+Once the SDK has downloaded we can continue with the rest of the process.
+
+{{{
+cd ..
 ant -f frameworks/build.xml thirdparty-downloads
 }}}
 
