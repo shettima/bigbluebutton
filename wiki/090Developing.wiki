@@ -140,14 +140,13 @@ The Flex SDK is now unpacked, but you need to download third party tools. You wi
 First you will need to download the Adobe Flex SDK manually because the download sometimes fails.
 
 {{{
-cd apache-flex-sdk-4.13.0-bin/in
+cd apache-flex-sdk-4.13.0-bin/
 wget http://download.macromedia.com/pub/flex/sdk/builds/flex4.6/flex_sdk_4.6.0.23201B.zip
 }}}
 
 Once the SDK has downloaded we can continue with the rest of the process.
 
 {{{
-cd ..
 ant -f frameworks/build.xml thirdparty-downloads
 }}}
 
