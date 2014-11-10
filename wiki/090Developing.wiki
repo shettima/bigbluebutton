@@ -121,7 +121,7 @@ unzip grails-2.3.6.zip
 ln -s grails-2.3.6 grails
 }}}
 
-Next you need to get the Flex 4.13.0 SDK package. It's important to note that even though we're downloading the Flex 4.13.0 SDK, !BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
+Next you need to get the Apache Flex 4.13.0 SDK package. It's important to note that even though we're downloading the Apache Flex 4.13.0 SDK, !BigBlueButton is developed and built with Flex 3 compatibility mode enabled.
 
 First, you need to download the zipped up SDK from an Apache mirror site.
 
