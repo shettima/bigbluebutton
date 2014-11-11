@@ -279,7 +279,7 @@ you can ignore it as we'll do a clean restart of all the components in step 7.
 Next, we've updated the desktop sharing applet with a new certificate.  You can download the JAR file using the following command
 
  {{{
-   wget https://github.com/bigbluebutton/bigbluebutton/blob/v0.81-release/bigbluebutton-client/resources/prod/bbb-deskshare-applet-0.8.1.jar
+   wget https://github.com/bigbluebutton/bigbluebutton/raw/v0.81-release/bigbluebutton-client/resources/prod/bbb-deskshare-applet-0.8.1.jar
 }}}
 
 and then update the existing applet with the following command
