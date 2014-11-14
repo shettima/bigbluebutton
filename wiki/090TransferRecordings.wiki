@@ -1,0 +1,12 @@
+#summary Instructions on transferring recordings from old server to new server
+= Introduction =
+
+With the update from BigBlueButton 0.81 to 0.9.0, we do not support upgrading a server in place. Instead, we recommend installing a fresh copy of Ubuntu 14.04 for BigBlueButton 0.9.0.
+
+There are two ways of importing recordings from an old BigBlueButton server to a new one; they are described separately
+
+= Re-process raw recordings from an old server =
+
+If your old server has all of the original recording files in the `/var/bigbluebutton/recording/raw` directory, then you can
+
+TODO
