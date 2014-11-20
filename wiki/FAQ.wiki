@@ -182,16 +182,18 @@ Like many open source projects, at the core of the developer team is a small gro
 
 Committers: 
   * Richard Alam, Lead Architect
-  * Felipe Cecagno, Client
+  * Felipe Cecagno, Client/Server
   * Fred Dixon, Project Manager
   * Tiago Jacobs, red5
   * Chad Pilkey, Client
-  * Gustavo Salazar, Record and Playback
+  * Calvin Walton, Record and Playback
+
 
 Past Committers (fondly remembered):
   * Marco Calderon, Server
   * Jeremy Thomerson, API
   * Denis Zgonjanin, Client
+  * Gustavo Salazar, Record and Playback
 
 The committers have earned this responsibility through years of effort
 working on !BigBlueButton and related open source projects (i.e. red5).  In particular, we very much respect Richard's six year-plus effort to create !BigBlueButton.  As the Lead Architect for this project, he has the final say. 
