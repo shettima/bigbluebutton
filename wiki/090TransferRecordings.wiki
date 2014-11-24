@@ -56,7 +56,7 @@ The transferred recordings should be immediately visible via the !BigBlueButton 
 
 == If you have !BigBlueButton 0.80 recordings (slides format) ==
 
-If you are transferring recordings from a !BigBlueButton 0.81 server, they may have been done in an older recording format called "slides". In order to correctly play back these recordings on a new !BigBlueButton server, you will have to install an additional package:
+If you are transferring recordings from a !BigBlueButton 0.80 server, they may have been done in an older recording format called "slides". In order to correctly play back these recordings on a new !BigBlueButton server, you will have to install an additional package:
 
 <code language="bash">
 apt-get install bbb-playback-slides
