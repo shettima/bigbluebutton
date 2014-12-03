@@ -215,9 +215,9 @@ Later on, if you wish to remove the API demos, you can enter the command
 $ sudo apt-get purge bbb-demo
 }}}
 
-== 6. Enable webRTC audio == 
+== 6. Enable WebRTC audio == 
 
-To enable webRTC audio, do the following
+To enable WebRTC audio, do the following
 
 {{{
 $ sudo bbb-conf --enablewebrtc
