@@ -406,3 +406,37 @@ Open the firewall (if you have on installed) and Security Groups (if your using 
 TCP - 5066
 
 UDP - 16384 to 32768
+
+== Client WebRTC Error Codes ==
+
+*1001: Websocket disconnected* - The WebSocket had connected successfully and has now disconnected
+Causes
+  * Loss of internet connection
+  * Nginx restarting can cause this
+
+*1002: Could not make a WebSocket connected* - The initial WebSocket connection was unsuccessful
+Causes
+  * Firewall blocking ws protocol
+  * Server is down or improperly configured
+
+* 1003: Browser version not supported* - Browser doesn’t implement the necessary WebRTC API methods
+Causes
+  * Out of date browser
+
+*1004: Failure on call* - The call was attempted, but failed
+Causes
+  * For a full list of causes refer here, http://sipjs.com/api/0.6.0/causes/
+  * There are 24 different causes so I don’t really want to list all of them
+
+*1005: Call ended unexpectedly* - The call was successful, but ended without user requesting it to
+Causes
+  * Unknown
+
+*1006: Call timed out* - The library took too long to try and connect the call
+Causes
+  * Previously caused by !Firefox 33-beta on Mac.   We've been unable to reproduce since release of !FireFox 34
+
+*1007: ICE negotiation failed* - The browser and !FreeSWITCH try to negotiate ports to use to stream the media and that negotiation failed.
+Causes
+  * NAT is blocking the connection
+  * Firewall is blocking the UDP connection/ports
