@@ -409,12 +409,12 @@ UDP - 16384 to 32768
 
 == Client WebRTC Error Codes ==
 
-*1001: Websocket disconnected* - The WebSocket had connected successfully and has now disconnected
+*1001: !Websocket disconnected* - The !WebSocket had connected successfully and has now disconnected
 Causes
   * Loss of internet connection
   * Nginx restarting can cause this
 
-*1002: Could not make a WebSocket connected* - The initial WebSocket connection was unsuccessful
+*1002: Could not make a !WebSocket connected* - The initial !WebSocket connection was unsuccessful
 Causes
   * Firewall blocking ws protocol
   * Server is down or improperly configured
