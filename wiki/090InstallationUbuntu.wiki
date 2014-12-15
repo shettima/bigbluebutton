@@ -434,7 +434,7 @@ Causes
 
 *1006: Call timed out* - The library took too long to try and connect the call
 Causes
-  * Previously caused by !Firefox 33-beta on Mac.   We've been unable to reproduce since release of !FireFox 34
+  * Previously caused by Firefox 33-beta on Mac.   We've been unable to reproduce since release of !FireFox 34
 
 *1007: ICE negotiation failed* - The browser and !FreeSWITCH try to negotiate ports to use to stream the media and that negotiation failed.
 Causes
