@@ -499,7 +499,7 @@ sudo pip install transifex-client
 2.- Go to the locale folder
 
 {{{
-cd /home/firstuser/bigbluebutton/bigbluebutton-client/locale 
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-client/locale 
 }}}
 
 
@@ -563,7 +563,7 @@ rm -r .tx
 Compile to check you didn’t break anything
 
 {{{
-cd /home/firstuser/bigbluebutton/bigbluebutton-client
+cd /home/firstuser/dev/bigbluebutton/bigbluebutton-client
 ant locales
 }}}
 
