@@ -262,7 +262,7 @@ nothing to commit (working directory clean)
 
 When you first clone the !BigBlueButton git repository, git will place you, by default, on the _master branch_, which is the latest code for !BigBlueButton. 
 
-To work on 0.9.0, checkout the {{{v0.9.0-beta}}} branch.
+To work on 0.9.0, checkout the master branch.  (Note: When we release 0.9.0 final, we'll update these instructions to checkout a branch related to 0.9.0 development).
 
 
 = Production Environment =
