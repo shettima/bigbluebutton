@@ -422,7 +422,7 @@ Now that we have successfully built and loaded the client from a development env
 
 *Note:* We’re using `vi` to edit the client, but you can use any Unix text editor of course.
 
-*Note:* If you are on Windows and developing using the !BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type the command `bbb-conf –setup-samba`.
+*Note:* If you are on Windows and developing using the !BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type the command `bbb-conf -–setup-samba`.
 
 
 {{{
