@@ -4,7 +4,7 @@
 
 = Release 0.9.0-beta =
  
-Updated: October 15, 2014 ([090InstallationUbuntu Installation Instructions])
+Updated: January 16, 2015 ([090InstallationUbuntu Installation Instructions])
 
 This release of !BigBlueButton 0.9.0-beta is a significant towards the release of 0.9.0 final (see [https://code.google.com/p/bigbluebutton/wiki/FAQ#BigBlueButton_Development_Process development process]).
 
