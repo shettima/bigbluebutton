@@ -5,7 +5,7 @@
 
 <wiki:toc max_depth="2" />
 
-*Note*: These instructions are currently out-of-date.  Work is underway to release a newer version of the HTML5 client on BigBlueButton 0.9.0-beta.  Watch the mailing list [bigbluebutton-dev https://groups.google.com/forum/#!forum/bigbluebutton-dev] for updates.
+*Note*: These instructions are currently out-of-date.  Work is underway to release a newer version of the HTML5 client on !BigBlueButton 0.9.0-beta.  Watch the mailing list https://groups.google.com/forum/#!forum/bigbluebutton-dev for updates.
 
 == !BigBlueButton HTML5 Client Design ==
 If you have not already done so, you should read through an [HTML5 Overview of HTML5 Client].
