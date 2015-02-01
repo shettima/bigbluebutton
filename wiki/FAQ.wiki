@@ -527,7 +527,9 @@ For hardware, we recommend a Dual-core CPU with at least 2G of memory.  For Mac,
   
 == How many simultaneous users can !BigBlueButton support == 
 
-As a rule of thumb, without knowing anything about your server, we recommend running your !BigBlueButton with sessions of twenty-five (25) users or less.  For example, if after testing your server under load, you find it can support 75 simultaneous users, then we recommend running up to three sessions of 25 users, 6 x 12, 12 x 6, etc.  
+As a rule of thumb, without knowing anything about your server, we recommend running your !BigBlueButton with sessions of twenty-five (25) users or less.  (Note: If your running !BigBlueButton 0.9.0-beta we recommend running with fifty (50) users or less).
+
+For example, if after testing your server under load, you find it can support 75 simultaneous users, then we recommend running up to three sessions of 25 users, 6 x 12, 12 x 6, etc.  
 
 See [FAQ#What_are_the_minimum_hardware_requirements_for_the_BigBlueButton minimum server requirements] and [https://code.google.com/p/bigbluebutton/wiki/FAQ#What_are_the_minimum_bandwidth_requirements_for_the_BigBlueButto minimum bandwidth requirements].
 
