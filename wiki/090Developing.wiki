@@ -126,7 +126,7 @@ Next you need to get the Apache Flex 4.13.0 SDK package. It's important to note 
 First, you need to download the zipped up SDK from an Apache mirror site.
 
 {{{
-wget http://mirrors.gigenet.com/apache/flex/4.13.0/binaries/apache-flex-sdk-4.13.0-bin.tar.gz
+wget http://mirrors.gigenet.com/apache/flex/4.14.0/binaries/apache-flex-sdk-4.14.0-bin.tar.gz
 }}}
 
 Next, you need to unpack it.
