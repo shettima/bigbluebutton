@@ -49,9 +49,9 @@ For example, suppose you modify the !BigBlueButton client and something isn't wo
 === Developing on Windows ===
 To develop !BigBlueButton from within a Windows OS, use VMWare Player or Virtual box to first create a Ubuntu 14.04 64-bit virtual machine.  The associated documentation for VMWare Player and Virtual Box will guide you on setting up a new 14.04 64-bit VM.
 
-When setting up the VM, it does not matter to !BigBlueButton if you setup Ubuntu 14.04 server or desktop.  If you install desktop, youâ€™ll have the option of using a graphical interface to edit files.  
+When setting up the VM, it does not matter to !BigBlueButton if you setup Ubuntu 14.04 server or desktop.  If you install desktop, you'll have the option of using a graphical interface to edit files.  
 
-Keep in mind, youâ€™ll need a host capable of running a [http://stackoverflow.com/questions/56124/can-i-run-a-64-bit-vmware-image-on-a-32-bit-machine 64-bit virtual machine].
+Keep in mind, you'll need a host capable of running a [http://stackoverflow.com/questions/56124/can-i-run-a-64-bit-vmware-image-on-a-32-bit-machine 64-bit virtual machine].
 
 === Root Privileges ===
 
@@ -59,14 +59,14 @@ Keep in mind, youâ€™ll need a host capable of running a [http://stackoverfl
 
 Do not run commands as the root user unless explicitly instructed. Better run the commands using sudo.
 
-These instructions are written for an account called â€˜firstuserâ€™, but they will apply to any account that has the permissions to execute commands as root, such as
+These instructions are written for an account called "firstuser", but they will apply to any account that has the permissions to execute commands as root, such as
 
 {{{
   sudo ls
 }}}
 
 === wget ===
-Youâ€™ll need to download some files through these instructions using wget. If itâ€™s not installed on your server, you can install using the following command
+You'll need to download some files through these instructions using wget. If it's not installed on your server, you can install using the following command
 {{{
   sudo apt-get install wget
 }}}
@@ -378,7 +378,7 @@ nginx.
 }}}
 
 == Building the client ==
-Let's now build the client.  Note we're not making any changes yet to the source, weâ€™re going to first build it and run the client to make sure it works. 
+Let's now build the client.  Note we're not making any changes yet to the source, we're going to first build it and run the client to make sure it works. 
 
 First, we'll build the locales (language translation files).  If you are not modifying the locales, you only need to do this once.
 
@@ -402,9 +402,9 @@ This will create a build of the !BigBlueButton client in the `/home/firstuser/de
 sudo bbb-conf --clean
 }}}
 After this, point your browser to your !BigBlueButton server and login to the demo page.  The client should start properly.
-*Note:* On the bottom of the client youâ€™ll see â€˜VERSIONâ€™, but thatâ€™s OK.  This is usually replaced in the packaging by the latest build number.  If you see â€˜VERSIONâ€™, this is good as !BigBlueButton is now loading your client.
+*Note:* On the bottom of the client you'll see "VERSION", but that's OK.  This is usually replaced in the packaging by the latest build number.  If you see "VERSION", this is good as !BigBlueButton is now loading your client.
 
-If you execute `sudo bbb-conf --check`, youâ€™ll notice it gives a warning
+If you execute `sudo bbb-conf --check`, you'll notice it gives a warning
 {{{
 ** Potential problems described below **
 # Warning: nginx is not serving the client from /var/www/bigbluebutton/.
@@ -420,7 +420,7 @@ This is OK as you are explicitly serving the client from your directory.
 
 Now that we have successfully built and loaded the client from a development environment, let's make a small visible change to the interface.
 
-*Note:* Weâ€™re using `vi` to edit the client, but you can use any Unix text editor of course.
+*Note:* We're using `vi` to edit the client, but you can use any Unix text editor of course.
 
 *Note:* If you are on Windows and developing using the !BigBlueButton VM, you may find it easier to setup samba so you can access your files through Windows Explorer and use a Windows editor.  To setup Samba, type the command `bbb-conf --setup-samba`.
 
@@ -532,7 +532,7 @@ file_filter = <lang>/bbbResources.properties
 tx pull -f
 }}}
 
-  Pull all the Languages from Transifex (download also languages which donâ€™t exist in the local directory where the command is executed, may download not desired language directories [lt, es_429])
+  Pull all the Languages from Transifex (download also languages which don't exist in the local directory where the command is executed, may download not desired language directories [lt, es_429])
 
 {{{
 tx pull -a
@@ -560,7 +560,7 @@ rm -r .tx
 }}}
 
 9.- Compile 
-Compile to check you didnâ€™t break anything
+Compile to check you didn't break anything
 
 {{{
 cd /home/firstuser/dev/bigbluebutton/bigbluebutton-client
