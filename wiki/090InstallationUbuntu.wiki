@@ -413,7 +413,7 @@ UDP - 16384 to 32768
   * Loss of internet connection
   * Nginx restarting can cause this
 
-*1002: Could not make a !WebSocket connected* - The initial !WebSocket connection was unsuccessful.  Possible Causes:
+*1002: Could not make a !WebSocket connection* - The initial !WebSocket connection was unsuccessful.  Possible Causes:
   * Firewall blocking ws protocol
   * Server is down or improperly configured
 
@@ -436,4 +436,4 @@ UDP - 16384 to 32768
 
 *1008: Call transfer failed* - A timeout while waiting for FreeSWITCH to transfer from the echo test to the real conference. This might be caused by a misconfiguration in FreeSWITCH, or there might be a media error and the DTMF command to transfer didn't go through (In this case, the voice in the echo test probably didn't work either.)
 
-*1009: Could not featch STUN/TURN server information* - This indicates either a BigBlueButton bug (or you're using an unsupported new client/old server combination), but could also happen due to a network interruption.
+*1009: Could not fetch STUN/TURN server information* - This indicates either a BigBlueButton bug (or you're using an unsupported new client/old server combination), but could also happen due to a network interruption.
