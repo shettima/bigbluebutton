@@ -199,7 +199,7 @@ then run the install again
 it should finish without errors.
 
 
-== 5. Install API Demos ==
+== 5. Install API Demos (optional) ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
 
@@ -207,7 +207,7 @@ To interactively test your !BigBlueButton server, you can install a set of API d
 $ sudo apt-get install bbb-demo
 }}}
 
-You'll need the bbb-demo package installed if you want to join the Demo Meeting from your !BigBlueButton server's welcome page.  This is the same welcome page you see at [http://demo.bigbluebutton.org dev081 demo server].
+You'll need the bbb-demo package installed if you want to join the Demo Meeting from your !BigBlueButton server's welcome page.  This is the same welcome page you see at [http://demo.bigbluebutton.org demo server].
 
 Later on, if you wish to remove the API demos, you can enter the command
 
@@ -215,7 +215,23 @@ Later on, if you wish to remove the API demos, you can enter the command
 $ sudo apt-get purge bbb-demo
 }}}
 
-== 6. Enable WebRTC audio == 
+== 6. Install Client Self-Check (optional) ==
+
+To install the client self-check page:
+
+{{{
+$ sudo apt-get install bbb-check
+}}}
+
+This is the same welcome page you see at [http://demo.bigbluebutton.org/check client check].
+
+Later on, if you wish to remove the self-check page, you can enter the command
+
+{{{
+$ sudo apt-get purge bbb-check
+}}}
+
+== 7. Enable WebRTC audio == 
 
 To enable WebRTC audio, do the following
 
