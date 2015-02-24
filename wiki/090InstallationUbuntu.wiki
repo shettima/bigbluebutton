@@ -239,7 +239,7 @@ To enable WebRTC audio, do the following
 $ sudo bbb-conf --enablewebrtc
 }}}
 
-== 7. Do a Clean Restart == 
+== 8. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
