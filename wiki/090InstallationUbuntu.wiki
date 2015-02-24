@@ -223,9 +223,9 @@ To install the client self-check page:
 $ sudo apt-get install bbb-check
 }}}
 
-This is the same welcome page you see at [http://demo.bigbluebutton.org/check client check].
+This is the same welcome page you see at [http://demo.bigbluebutton.org/check client self-check].
 
-Later on, if you wish to remove the self-check page, you can enter the command
+Later on, if you wish to remove the client self-check page, you can enter the command
 
 {{{
 $ sudo apt-get purge bbb-check
