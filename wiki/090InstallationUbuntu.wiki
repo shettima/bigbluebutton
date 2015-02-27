@@ -99,13 +99,19 @@ $ sudo apt-get dist-upgrade
 
 If you've not updated in a while, apt-get may recommend you reboot your server after `dist-upgrade` finishes.  Do the reboot before proceeding to the next step.
 
-
-
-== 2. Install key for !BigBlueButton == 
-
-You first need to give your server access to the !BigBlueButton package repository.
+== 2. Install PPA for LibreOffice 4.3 == 
+Ubuntu 14.04 installs LibreOffice  4.2.7 by default, but we want to use LibreOffice 4.3 for improved stability on conversion of Office documents to PDF.
 
 In a terminal window, copy and paste the following commands.
+
+{{{
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:libreoffice/libreoffice-4-3
+}}}
+
+== 3. Install key for !BigBlueButton == 
+
+You first need to give your server access to the !BigBlueButton package repository.
 
 {{{
 # Add the BigBlueButton key
@@ -118,7 +124,7 @@ $ echo "deb http://ubuntu.bigbluebutton.org/trusty-090/ bigbluebutton-trusty mai
 $ sudo apt-get update
 }}}
 
-== 3.  Install ffmpeg ==
+== 4.  Install ffmpeg ==
 !BigBlueButton 0.9.0-beta uses ffmpeg to process recordings of a session for playback.
 
 To install ffmpeg, create a file called `install-ffmpeg.sh` and copy and paste in the following script.
@@ -164,12 +170,12 @@ ffmpeg version 2.3.3 Copyright (c) 2000-2014 the FFmpeg developers
 }}}
 
 
-== 4.  Install !BigBlueButton == 
+== 5.  Install !BigBlueButton == 
 We're now ready to install !BigblueButton 0.9.0-beta. Type
 
 {{{
-   sudo apt-get update
-   sudo apt-get install bigbluebutton
+$ sudo apt-get update
+$ sudo apt-get install bigbluebutton
 }}}
 
 This single command is where all the magic happens.  This command installs *all* of !BigBlueButton's components with their dependencies.  The packaging will do all the work for you to install and configure your !BigBlueButton server.
@@ -193,13 +199,13 @@ chown: invalid user: ‘tomcat7:tomcat7’
 then run the install again
 
 {{{
-   sudo apt-get install bigbluebutton
+$ sudo apt-get install bigbluebutton
 }}}
 
 it should finish without errors.
 
 
-== 5. Install API Demos (optional) ==
+== 6. Install API Demos (optional) ==
 
 To interactively test your !BigBlueButton server, you can install a set of API demos.  
 
@@ -215,7 +221,7 @@ Later on, if you wish to remove the API demos, you can enter the command
 $ sudo apt-get purge bbb-demo
 }}}
 
-== 6. Install Client Self-Check (optional) ==
+== 7. Install Client Self-Check (optional) ==
 
 To install the client self-check page:
 
@@ -231,7 +237,7 @@ Later on, if you wish to remove the client self-check page, you can enter the co
 $ sudo apt-get purge bbb-check
 }}}
 
-== 7. Enable WebRTC audio == 
+== 8. Enable WebRTC audio == 
 
 To enable WebRTC audio, do the following
 
@@ -239,7 +245,7 @@ To enable WebRTC audio, do the following
 $ sudo bbb-conf --enablewebrtc
 }}}
 
-== 8. Do a Clean Restart == 
+== 9. Do a Clean Restart == 
 
 To ensure !BigBlueButton has started cleanly, enter the following commands:
 
@@ -257,6 +263,13 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 = Upgrading !BigBlueButton 0.9.0-beta =
 
 If already have a !BigBlueButton 0.81 server, these instructions will *not* upgrade your server.  To install !BigBlueButton 0.9.0-beta, you need to install on a clean installation of Ubuntu 14.04 64-bit and follow the steps previous in this document.
+
+First, add the package repository for LibreOffice 4.3.  You only need to do this once and can jump to the next steps in future upgrades.
+
+{{{
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:libreoffice/libreoffice-4-3
+}}}
 
 To upgrade earlier versions of !BigBlueButton 0.9.0-beta, do the following:
 
