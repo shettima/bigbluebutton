@@ -264,7 +264,7 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 If already have a !BigBlueButton 0.81 server, these instructions will *not* upgrade your server.  To install !BigBlueButton 0.9.0-beta, you need to install on a clean installation of Ubuntu 14.04 64-bit and follow the steps previous in this document.
 
-First, add the package repository for !LibreOffice 4.3.  You only need to do this once and can jump to the next steps in future upgrades.
+First, add the package repository for !LibreOffice 4.3.  You only need to do this once and can skip this step in applying future updates to !BigBlueButton 0.9.0-beta.
 
 {{{
 $ sudo apt-get install software-properties-common
