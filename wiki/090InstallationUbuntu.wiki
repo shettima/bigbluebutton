@@ -438,7 +438,7 @@ UDP - 16384 to 32768
 
 == Client WebRTC Error Codes ==
 
-*1001: !Websocket disconnected* - The !WebSocket had connected successfully and has now disconnected.  Possible Causes:
+*1001: !WebSocket disconnected* - The !WebSocket had connected successfully and has now disconnected.  Possible Causes:
   * Loss of internet connection
   * Nginx restarting can cause this
 
