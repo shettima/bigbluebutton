@@ -18,10 +18,7 @@ The planned features included:
   * Ability to disable features for viewers (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1702 1702])
   * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
-See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] of items planned for 0.9.0.  Items that will be in a release subsequent to 0.9.0 are
-
-  * Polling Module (see [https://code.google.com/p/bigbluebutton/issues/detail?id=831 831])
-  * Closed Captioning (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1776 1776])  
+See the [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 0.9.0 issues list] of items completed for 0.9.0 as well as [https://code.google.com/p/bigbluebutton/wiki/090Overview detailed overview] of what you can expect in the release.
 
 = Roadmap to !BigBlueButton 1.0 =
 
