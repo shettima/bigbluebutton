@@ -151,7 +151,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/utf8.png
 Moderators can now raise their hand. 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/moderatorraisehand.png
 
-== Presenters can use Enter key in text tool == 
+== Presenters can use enter key in text tool == 
 When typing into the presentation using the text tool, pressing the Enter key now puts in a new line instead of submitting the text.  Yeah!
 
 
