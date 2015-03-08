@@ -11,7 +11,6 @@ This document summarizes the major updates in !BigBlueButton 0.9.0-beta  (referr
   * WebRTC Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1544 1544])
   * Listen Only Audio (see [https://code.google.com/p/bigbluebutton/issues/detail?id=353 353])
   * Start/Stop button (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1037 1037])
-  * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
 
 Other improvements include:
 
@@ -20,6 +19,8 @@ Other improvements include:
   * UTF-8 presentation file names now displayed (see [https://code.google.com/p/bigbluebutton/issues/detail?id=594 594])  
   * Moderators can raise hand (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1788 1788])
   * Enhance the Text Tool to allow user to enter in new lines (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1772 1772])
+  * Installation on Ubuntu 14.04 64-bit (see [https://code.google.com/p/bigbluebutton/issues/detail?id=1275 1275])
+
 
 See  [https://code.google.com/p/bigbluebutton/issues/list?can=1&q=milestone=Release0.9.0 detailed list] for the items completed in this release.
 
@@ -98,36 +99,29 @@ To help ensure that moderators do not forget to start recording their session, !
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/remind.png
 
 
-= Ubuntu 14.04 64-bit =
-
-!BigBlueButton 0.9.0 now installs on Ubuntu 14.04 64-bit.  
-
-Compared with Ubuntu 10.04 64-bit (the distribution for 0.81), Ubuntu 14.04 64-bit gives !BigBlueButton a number of significant updates to the underlying packages.  
-
-|| *Package* || *0.81* || *0.9.0* ||
-|| tomcat || 6.0.24 || 7.0.52 ||
-|| javaJDK || 1.6.0_27 || 1.7.0_55 ||
-|| redis || 2.2.4 || 2.8.4 ||
-|| ruby || 1.9.2p290 || 1.9.3p484 ||
-|| nginx || 0.7.65 || 1.4.6 ||
-|| !LibreOffice || 4.0.2 || 4.2.4 ||
-
-The installation instructions have simplified: with Ubuntu 10.04 64-bit, administrators don't need to manually install ruby or !LibreOffice -- both are now well supported in Ubuntu's packaging.
-
-Other notable updates include
-
-|| *Component* || *0.81* || *0.9.0* ||
-|| FreeSWITCH || 1.5.1b || 1.5.14b ||
-|| swftools || 0.9.1 || 0.9.2 ||
-|| ffmpeg || 2.1.4 || 2.3.3 ||
-|| red5 || 1.0.2 || 1.0.3 ||
-
-Most notable has been the upgrade to FreeSWITCH, which now enabled !BigBlueButton to support WebRTC audio calls from the browser (Chrome and !FireFox), while still remaining backward compatible with audio calls from Chrome and IE (via red5phone).
-
-To start (and restart) the recording a playback scripts and !LibreOffice headless, !BigBlueButton 0.9.0 now uses monit instead of god.
-
 
 = Other Improvements =
+
+== Configuration Notifications ==
+
+While users can run !BigBlueButton in a variety of browsers and configurations, if a user is running !BigBlueButton on an out-of-date browser or behind a firewall that restricts access, for example, the user could have a better experience if they knew they could switch network locations.
+
+If the !BigBlueButton client detects the are possible improvements the user could make to their environment, the client will display a configuration notification icon.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/configurationnotifications.png
+
+Clicking on the icon will display one of the possible configuration messages
+
+  * Flash is out-of­‐date
+  * The current browser is not FireFox or Chrome
+  * FireFox or Chrome is out-­of­‐date
+  * Client is behind a firewall
+  * Client had troubles connecting to webRTC audio
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/possiblenotifications.png
+
+The configuration notification should help ensure users have a good experience and reduce the support effort for deploying !BigBlueButton.
+
 
 == Lock Viewers ==
 The moderator now has the ability to lock (restrict) viewers from having the following abilities:
@@ -159,3 +153,32 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/moderatorraisehand.
 
 == Presenters can use Enter key in text tool == 
 When typing into the presentation using the text tool, pressing the Enter key now puts in a new line instead of submitting the text.  Yeah!
+
+
+= Ubuntu 14.04 64-bit =
+
+!BigBlueButton 0.9.0 now installs on Ubuntu 14.04 64-bit.  
+
+Compared with Ubuntu 10.04 64-bit (the distribution for 0.81), Ubuntu 14.04 64-bit gives !BigBlueButton a number of significant updates to the underlying packages.  
+
+|| *Package* || *0.81* || *0.9.0* ||
+|| tomcat || 6.0.24 || 7.0.52 ||
+|| javaJDK || 1.6.0_27 || 1.7.0_55 ||
+|| redis || 2.2.4 || 2.8.4 ||
+|| ruby || 1.9.2p290 || 1.9.3p484 ||
+|| nginx || 0.7.65 || 1.4.6 ||
+|| !LibreOffice || 4.0.2 || 4.2.4 ||
+
+The installation instructions have simplified: with Ubuntu 10.04 64-bit, administrators don't need to manually install ruby or !LibreOffice -- both are now well supported in Ubuntu's packaging.
+
+Other notable updates include
+
+|| *Component* || *0.81* || *0.9.0* ||
+|| FreeSWITCH || 1.5.1b || 1.5.14b ||
+|| swftools || 0.9.1 || 0.9.2 ||
+|| ffmpeg || 2.1.4 || 2.3.3 ||
+|| red5 || 1.0.2 || 1.0.3 ||
+
+Most notable has been the upgrade to FreeSWITCH, which now enabled !BigBlueButton to support WebRTC audio calls from the browser (Chrome and !FireFox), while still remaining backward compatible with audio calls from Chrome and IE (via red5phone).
+
+To start (and restart) the recording a playback scripts and !LibreOffice headless, !BigBlueButton 0.9.0 now uses monit instead of god.
