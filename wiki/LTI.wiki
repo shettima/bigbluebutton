@@ -4,7 +4,9 @@
 
 = Overview =
 
-!BigBlueButton version 0.81 (and later) now provides support for IMS Learning Tools Interoperability (LTI). 
+!BigBlueButton version 0.81 (and later) now provides support for IMS Learning Tools Interoperability (LTI).  We are certified LTI 1.0 compliant.
+
+http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/lti/imscertifiedsm.png
 
 !BigBlueButton can accept incoming LTI launch requests from a tool consumer, which is the IMS term for any platform that can make a LTI request to an external tool (such as !BigBlueButton).  Such platforms include !Desire2Learn, !BlackBoard, Pearson Learning Studio, etc.  See [http://www.imsglobal.org/cc/statuschart.cfm IMS Interoperability Conformance Certification Status] for a full list of LTI compliant platforms.
 
