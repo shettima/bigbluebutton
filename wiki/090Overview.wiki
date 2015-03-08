@@ -76,7 +76,7 @@ If the user clicks 'Yes', they are joined into the audio bridge with their defau
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/webrtcaudio.png
 
 
-== Microphone Chooser ==
+== Microphone chooser ==
 
 If the user clicks 'No', they are brought to a new dialog to connect via Flash and choose a microphone.  This dialog is larger than the built-in dialog for Flash.
 
