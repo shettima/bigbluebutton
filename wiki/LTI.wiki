@@ -4,7 +4,7 @@
 
 = Overview =
 
-!BigBlueButton version 0.81 (and later) now provides support for IMS Learning Tools Interoperability (LTI).  We are certified LTI 1.0 compliant.
+!BigBlueButton version 0.81 (and later) now provides support for IMS Learning Tools Interoperability (LTI).  !BigBlueButton is [http://www.imsglobal.org/cc/detail.cfm?ID=172 certified LTI 1.0 compliant].
 
 http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/lti/imscertifiedsm.png
 
