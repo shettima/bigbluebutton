@@ -113,8 +113,8 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/configurationnotifi
 Clicking on the icon will display one of the possible configuration messages
 
   * Flash is out-of­‐date
-  * The current browser is not FireFox or Chrome
-  * FireFox or Chrome is out-­of­‐date
+  * The current browser is not !FireFox or Chrome
+  * !FireFox or Chrome is out-­of­‐date
   * Client is behind a firewall
   * Client had troubles connecting to webRTC audio
 
