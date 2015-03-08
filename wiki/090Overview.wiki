@@ -155,7 +155,7 @@ http://bigbluebutton.googlecode.com/svn/trunk/bbb-images/090/moderatorraisehand.
 When typing into the presentation using the text tool, pressing the Enter key now puts in a new line instead of submitting the text.  Yeah!
 
 
-= Ubuntu 14.04 64-bit =
+== Ubuntu 14.04 64-bit ==
 
 !BigBlueButton 0.9.0 now installs on Ubuntu 14.04 64-bit.  
 
