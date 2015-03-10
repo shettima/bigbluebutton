@@ -396,12 +396,13 @@ ant
 
 This will create a build of the !BigBlueButton client in the `/home/firstuser/dev/bigbluebutton/bigbluebutton-client/client` directory.
 
-*Note:* The!BigBlueButton server will cache the config.xml for a given meetingID.  To ensure we load the new config.xml, restart the !BigBlueButton server
+*Note:* The !BigBlueButton server will cache the config.xml for a given meetingID.  To ensure you load the new config.xml, you must restart your !BigBlueButton server after making a change to the config.xml.
 
 {{{
 sudo bbb-conf --clean
 }}}
 After this, point your browser to your !BigBlueButton server and login to the demo page.  The client should start properly.
+
 *Note:* On the bottom of the client you'll see "VERSION", but that's OK.  This is usually replaced in the packaging by the latest build number.  If you see "VERSION", this is good as !BigBlueButton is now loading your client.
 
 If you execute `sudo bbb-conf --check`, you'll notice it gives a warning
