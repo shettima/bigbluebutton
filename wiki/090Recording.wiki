@@ -541,7 +541,7 @@ latest executed task , sure that is the one that failed and an error message wit
 = FAQS =
 
 == Is the recording activated automatically ? ==
-No, you need to pass record="true" in the _create_ api call to record a meeting. 
+No, when creating the meeting the parameters must include record="true" to enable recording.  In !BigBlueButton 0.9.0, to have a recorded session create a playback file, a moderator must click the Start/Stop Record button during the session; otherwise, !BigBlueButton not create a playback file and delete the recorded session.
 
 == How to delete recordings before storage device is full ? ==
  _/etc/cron.daily/bigbluebutton_ deletes the archived media. Edit the file and add more rules if you need to delete others like raw files or processed files.
