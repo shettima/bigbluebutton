@@ -11,7 +11,7 @@ If you already have a !BigBlueButton 0.81 server, these instructions will *not* 
 
 = Before you install =
 
-The requirements for !BigBlueButton 0.9.0-beta are
+The requirements for !BigBlueButton 0.9.0-beta server are
 
   * Ubuntu 14.04 64-bit
   * 4 GB of memory (8 GB is better) with swap enabled
@@ -21,6 +21,8 @@ The requirements for !BigBlueButton 0.9.0-beta are
   * Port 80 is *not* used by another application
   * 500G of free disk space (or more) for recordings
   * 100 Mbits/sec bandwidth (symmetrical)
+
+For users we recommend (a minimum of) 1.0 Mbits/sec download speed and 0.5 Mbits/sec upload speed.
 
 In addition to ensuring your server meets the above requirements, there are a few more checks.  First, the locale of the server must be en_US.UTF-8.  To verify , enter the following command
 
