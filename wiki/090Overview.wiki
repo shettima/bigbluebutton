@@ -167,7 +167,7 @@ Compared with Ubuntu 10.04 64-bit (the distribution for 0.81), Ubuntu 14.04 64-b
 || redis || 2.2.4 || 2.8.4 ||
 || ruby || 1.9.2p290 || 1.9.3p484 ||
 || nginx || 0.7.65 || 1.4.6 ||
-|| !LibreOffice || 4.0.2 || 4.2.4 ||
+|| !LibreOffice || 4.0.2 || 4.3.6 ||
 
 The installation instructions have simplified: with Ubuntu 10.04 64-bit, administrators don't need to manually install ruby or !LibreOffice -- both are now well supported in Ubuntu's packaging.
 
