@@ -163,7 +163,7 @@ Compared with Ubuntu 10.04 64-bit (the distribution for 0.81), Ubuntu 14.04 64-b
 
 || *Package* || *0.81* || *0.9.0* ||
 || tomcat || 6.0.24 || 7.0.52 ||
-|| javaJDK || 1.6.0_27 || 1.7.0_55 ||
+|| javaJDK || 1.6.0_27 || 1.7.0_75 ||
 || redis || 2.2.4 || 2.8.4 ||
 || ruby || 1.9.2p290 || 1.9.3p484 ||
 || nginx || 0.7.65 || 1.4.6 ||
