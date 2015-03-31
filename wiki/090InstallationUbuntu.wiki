@@ -260,6 +260,9 @@ The `--clean` option will clear out all the log files for !BigBlueButton.  The `
 
 The output from `sudo bbb-conf --check` will display your current settings and, after the text, "** Potential problems described below **", print any potential configuration or startup problems it has detected. 
 
+= Transferring recordings from a !BigBlueButton 0.81 server =
+
+Please see [090RecordingTransfer]
 
 
 = Upgrading !BigBlueButton 0.9.0-beta =
