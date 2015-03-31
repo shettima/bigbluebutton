@@ -262,7 +262,7 @@ The output from `sudo bbb-conf --check` will display your current settings and, 
 
 = Transferring recordings from a !BigBlueButton 0.81 server =
 
-Please see [090RecordingTransfer]
+Please see [090TransferRecordings]
 
 
 = Upgrading !BigBlueButton 0.9.0-beta =
