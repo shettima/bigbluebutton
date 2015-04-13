@@ -566,7 +566,7 @@ See the following [https://github.com/mconf/bigbluebutton-api-ruby bigbluebutton
 
 
 == Testing API Calls ==
-To help you create valid API calls, use [http://mconf.org/m/tools/api-mate API Mate] which lets you interactively create API calls and test them against a public !BigBlueButton server.
+To help you create valid API calls, use [http://mconf.github.io/api-mate/ API Mate] which lets you interactively create API calls and test them against a public !BigBlueButton server.
 
 = Desired Future Features =
 
