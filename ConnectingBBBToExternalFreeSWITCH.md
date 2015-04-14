@@ -1,0 +1,1 @@
+[See FAQ Entry](https://code.google.com/p/bigbluebutton/wiki/FAQ#How_do_I_connect_BigBlueButton_to_external_Freeswitch?)
